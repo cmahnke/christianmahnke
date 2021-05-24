@@ -8,7 +8,49 @@ canonifyurls = true
 disablePathToLower = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
-theme = ["hugo-video", "projektemacher-base", "toha"]
+theme = ["projektemacher-base", "hugo-video"]
+
+[languages]
+    [languages.de]
+        languagename = "Deutsch"
+
+        [languages.de.params]
+
+        [languages.de.menu]
+
+            [[languages.de.menu.main]]
+                name = "Geplante Blogs"
+                URL = "/future"
+                weight = 1
+
+            [[languages.de.menu.main]]
+                name = "Über"
+                weight = 5
+                url = "about/"
+
+    [languages.en]
+        languagename = "English"
+
+        [languages.en.params]
+
+
+        [languages.en.menu]
+
+            [[languages.en.menu.main]]
+                name = "Planed Blogs"
+                weight = 1
+                url = "en/future"
+
+            [[languages.en.menu.main]]
+                name = "About"
+                weight = 2
+                url = "en/about/"
+
+[params]
+    paginate = 5
+    copyrightYears = "MMXXI"
+    enableBlogPost = true
+    enableTOC = true
 
 # navigation
 [menu]
@@ -23,8 +65,26 @@ theme = ["hugo-video", "projektemacher-base", "toha"]
 [imaging]
     quality = 95
 
-[outputs]
-    page = ["HTML", "JSON"]
+[mediaTypes]
+  [mediaTypes."application/geo+json"]
+    suffixes = ["geojson", "gjson"]
+  [mediaTypes."application/ld+json"]
+    suffixes = ["json"]
+
+[outputFormats]
+  [outputFormats.geojson]
+    mediaType = "application/geo+json"
+    isPlainText = true
+    isHTML = false
+    baseName = "map"
+    notAlternative = true
+
+  [outputFormats.iiif]
+    mediaType = "application/ld+json"
+    isPlainText = true
+    isHTML = false
+    baseName = "manifest"
+    notAlternative = true
 
 [module]
     [[module.mounts]]

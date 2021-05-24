@@ -1,0 +1,87 @@
+@import "fonts/league-spartan";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.headroom--unpinned {
+    display: none;
+}
+
+.img-background {
+    background-image: radial-gradient(closest-side, transparent 80%, #a41416), url('../images/bg.svg'), linear-gradient(#a41416 274px, transparent);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    /* margin: auto; */
+    /*            height: calc(273px + 75px);*/
+    height: 273px;
+    width: 320px;
+    position: relative;
+    filter: drop-shadow(0px 0px 23px #a41416) drop-shadow(0px 0px 23px #a41416) drop-shadow(0px 0px 23px #a41416) drop-shadow(0px 0px 23px #a41416);
+    border-radius: 50%;
+
+    .img-wrapper {
+        width: 190px;
+        height: auto;
+        width: 190px;
+        position: absolute;
+        top: 43px;
+        left: 68px;
+        background-image: linear-gradient(transparent 200px, #a41416);
+        border-radius: 50% 50% 50% 50%/ 90px 90px 90px 90px;
+
+        .me {
+            width: 190px;
+            /* his is the value if coloured filter: brightness(0.77); */
+            filter: brightness(0.8);
+            -moz-filter: brightness(1.1);
+            display: block;
+            border-radius: 50% 50% 50% 50%/ 90px 90px 90px 90px;
+
+            &:hover {
+                /* mix-blend-mode: luminosity; */
+                filter: brightness(1.1);
+            }
+        }
+    }
+}
+
+.hero {
+    filter: #{"grayscale()"};
+    background-image: linear-gradient(135deg, #701611, #a41416, #b2444d);
+    /*
+         background-image: linear-gradient(45deg, #701611, transparent), linear-gradient(#b2444d, transparent), linear-gradient(135deg,  transparent, #923f35);
+         background-color: #a41416;
+*/
+    background-size: cover;
+    height: calc(100vh);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .hero-caption {
+        font-family: 'League Spartan', Futura, sans-serif;
+        font-weight: 700;
+        text-align: center;
+        /* margin: 1em auto; */
+        padding-left: 5em;
+        color: white;
+        text-shadow: 10px 10px 0 #b2444d;
+
+        .name {
+            font-size: 5em;
+        }
+
+        .title {
+            font-size: 2em;
+            text-align: right;
+        }
+    }
+}
