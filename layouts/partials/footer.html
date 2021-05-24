@@ -1,0 +1,8 @@
+<footer class="footer" role="contentinfo">
+   {{- partialCached "footer-content.html" . -}}
+</footer>
+
+{{ $script := (resources.Get "js/script.js" | minify).Content }}
+<script type="text/javascript">
+    {{ $script | safeJS }}
+</script>

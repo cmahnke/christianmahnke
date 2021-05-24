@@ -1,4 +1,6 @@
 @import "fonts/league-spartan";
+@import "icons";
+
 
 html {
     scroll-behavior: smooth;
@@ -9,7 +11,62 @@ body {
     padding: 0;
 }
 
-.headroom--unpinned {
+a,
+a:active,
+a:focus,
+a:hover,
+a:visited {
+    text-decoration: none;
+}
+/*
+#head {
+    display: none;
+}
+*/
+
+
+.header {
+    font-family: 'League Spartan', Futura, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.headroom {
+        will-change: transform;
+        transition: transform 200ms linear;
+    }
+    &.headroom--pinned {
+        transform: translateY(0%);
+    }
+    &.headroom--unpinned {
+        transform: translateY(-100%);
+    }
+
+    &.headroom--top {
+        display: none;
+    }
+
+    .home-link {
+        flex-basis: 40%;
+    }
+
+    .header-title {
+        margin-block-start: 0.4em;
+        margin-block-end: 0.4em;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 3em;
+        height: 100%;
+
+        margin: auto;
+    }
+    .navigation-list {
+        display: inline-block;
+
+    }
+}
+
+#menu-toggle {
     display: none;
 }
 
@@ -26,15 +83,26 @@ body {
     filter: drop-shadow(0px 0px 23px #a41416) drop-shadow(0px 0px 23px #a41416) drop-shadow(0px 0px 23px #a41416) drop-shadow(0px 0px 23px #a41416);
     border-radius: 50%;
 
+    @media (max-width : 25em) {
+        background-image: radial-gradient(closest-side, transparent 80%, #a41416);
+        width: calc(320px * .75);
+
+    }
+
     .img-wrapper {
         width: 190px;
         height: auto;
-        width: 190px;
         position: absolute;
         top: 43px;
         left: 68px;
         background-image: linear-gradient(transparent 200px, #a41416);
         border-radius: 50% 50% 50% 50%/ 90px 90px 90px 90px;
+
+        @media (max-width : 25em) {
+            width: calc(190px * .75);
+            top: calc(43px * .75);
+            left: calc(68px * .75);
+        }
 
         .me {
             width: 190px;
@@ -44,11 +112,27 @@ body {
             display: block;
             border-radius: 50% 50% 50% 50%/ 90px 90px 90px 90px;
 
+            @media (max-width : 25em) {
+                width: calc(190px * .75);
+            }
+
             &:hover {
                 /* mix-blend-mode: luminosity; */
                 filter: brightness(1.1);
             }
         }
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
     }
 }
 
@@ -74,6 +158,15 @@ body {
         padding-left: 5em;
         color: white;
         text-shadow: 10px 10px 0 #b2444d;
+        @media (max-width : 75em) {
+            flex-basis: 100%;
+            margin-top: 4.2em;
+            padding-left: 0;
+        }
+
+        @media (max-width : 25em) {
+            margin-top: unset;
+        }
 
         .name {
             font-size: 5em;
@@ -82,6 +175,18 @@ body {
         .title {
             font-size: 2em;
             text-align: right;
+            @media (max-width : 75em) {
+                text-align: center;
+            }
         }
+    }
+    .bouncer {
+        content: url($down-light);
+        height: 2em;
+        width: 2em;
+        display: block;
+        animation: bounce 2s infinite;
+        box-sizing:border-box;
+        flex-basis: 100%;
     }
 }

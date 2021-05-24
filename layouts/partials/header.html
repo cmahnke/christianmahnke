@@ -1,9 +1,12 @@
 <header class="header header-main headroom headroom--unpinned" id="head">
-  <div class="menu">
-    {{ partial "menu.html" . }}
-  </div>
-  <a href="/"><h1 class="header-title">{{ .Title }}</h1></a>
-    
+    <div class="home-link">
+        <a href="/"><h1 class="header-title">{{ .Title }}</h1></a>
+    </div>
+    <div class="menu">
+        {{ partial "menu.html" . }}
+    </div>
+
+
     {{- $subtitle := .Params.subtitle | default "" -}}
     {{- if ne $subtitle "" -}}
           <h2 class="header-subtitle">{{ $subtitle }}</h2>
