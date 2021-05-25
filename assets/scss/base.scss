@@ -1,9 +1,11 @@
 @import "fonts/league-spartan";
-@import "fonts/open-sans";
+@import "fonts/poiret-one";
 @import "icons";
 
-$footer-bg-color: #701611;
 $content-width: 64em;
+$gradient-color-light: #b2444d;
+$gradient-color-mid: #a41416;
+$gradient-color-dark:  #701611;
 
 html {
     scroll-behavior: smooth;
@@ -12,6 +14,14 @@ html {
 body {
     margin: 0;
     padding: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poiret One';
+}
+
+p {
+    font-family: 'League Spartan', Futura, sans-serif;
 }
 
 a,
@@ -34,6 +44,7 @@ a:visited {
         display: none;
 
         @media (max-width : 25em) {
+            height: 1em;
 
         }
     }
@@ -142,11 +153,11 @@ a:visited {
 .header-spacer {
     width: 100%;
     height: .6rem;
-    background-image:linear-gradient(#b2444d, white);
+    background-image:linear-gradient($gradient-color-light, white);
 }
 
 .img-background {
-    background-image: radial-gradient(closest-side, transparent 80%, #a41416), url('../images/bg.svg'), linear-gradient(#a41416 274px, transparent);
+    background-image: radial-gradient(closest-side, transparent 80%, $gradient-color-mid), url('../images/bg.svg'), linear-gradient($gradient-color-mid 274px, transparent);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
@@ -155,11 +166,11 @@ a:visited {
     height: 273px;
     width: 320px;
     position: relative;
-    filter: drop-shadow(0px 0px 23px #a41416) drop-shadow(0px 0px 23px #a41416) drop-shadow(0px 0px 23px #a41416) drop-shadow(0px 0px 23px #a41416);
+    filter: drop-shadow(0px 0px 23px $gradient-color-mid) drop-shadow(0px 0px 23px $gradient-color-mid) drop-shadow(0px 0px 23px $gradient-color-mid) drop-shadow(0px 0px 23px $gradient-color-mid);
     border-radius: 50%;
 
     @media (max-width : 25em) {
-        background-image: radial-gradient(closest-side, transparent 80%, #a41416);
+        background-image: radial-gradient(closest-side, transparent 80%, $gradient-color-mid);
         width: calc(320px * .75);
 
     }
@@ -170,7 +181,7 @@ a:visited {
         position: absolute;
         top: 43px;
         left: 68px;
-        background-image: linear-gradient(transparent 200px, #a41416);
+        background-image: linear-gradient(transparent 200px, $gradient-color-mid);
         border-radius: 50% 50% 50% 50%/ 90px 90px 90px 90px;
 
         @media (max-width : 25em) {
@@ -213,17 +224,18 @@ a:visited {
 
 .hero {
     filter: #{"grayscale()"};
-    background-image: linear-gradient(135deg, #701611, #a41416, #b2444d);
+    background-image: linear-gradient(135deg,$gradient-color-dark, $gradient-color-mid, $gradient-color-light);
     box-shadow: inset -1px -11px 21px -15px rgba(0, 0, 0, .75);
     /*
-         background-image: linear-gradient(45deg, #701611, transparent), linear-gradient(#b2444d, transparent), linear-gradient(135deg,  transparent, #923f35);
-         background-color: #a41416;
+         background-image: linear-gradient(45deg,$gradient-color-dark, transparent), linear-gradient($gradient-color-light, transparent), linear-gradient(135deg,  transparent, #923f35);
+         background-color: $gradient-color-mid;
 */
     background-size: cover;
     height: calc(100vh - 3em);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     @media (max-width : 75em) {
         align-items: unset;
@@ -256,7 +268,7 @@ a:visited {
             /* margin: 1em auto; */
             padding-left: 5em;
             color: white;
-            text-shadow: 10px 10px 0 #b2444d;
+            text-shadow: 10px 10px 0 $gradient-color-light;
             @media (max-width : 75em) {
                 flex-basis: 100%;
                 margin-top: 6.6em;
@@ -290,17 +302,49 @@ a:visited {
         box-sizing:border-box;
         flex-basis: 100%;
         cursor: pointer;
+        position: absolute;
+        bottom: 1em;
     }
 }
 
-.home-container {
+.read-more {
+    background-image: linear-gradient(100deg ,$gradient-color-light, $gradient-color-dark);
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 3px;
+}
+
+.content-container {
+
     max-width: $content-width;
+    margin: 3em auto;
 
     .home-section {
         .title {
             border-bottom: 3px solid #ff3131;
             box-shadow: inset 0 -4px 0 #ff3131;
         }
+
+    }
+
+    .section-content {
+        &.even {
+            text-align: left;
+        }
+        &.odd {
+            text-align: right;
+        }
+
+    }
+
+    .section-menu {
+        /*
+        position: fixed;
+        left: -10em;
+        width: 8em;
+        */
+        display: none;
 
     }
 }
@@ -314,30 +358,48 @@ a:visited {
         width: 100%;
         height: 70px;
         clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-        /* background-color: $footer-bg-color; */
-        background-image:linear-gradient(#a41416, $footer-bg-color)
+        /* background-color: $gradient-color-dark; */
+        background-image:linear-gradient($gradient-color-mid, $gradient-color-dark)
 
     }
     .content {
-        background-color: $footer-bg-color;
-        display: flex;
+        background-color: $gradient-color-dark;
+        width: 100%;
         justify-content: center;
+        font-family: 'League Spartan', Futura, sans-serif;
+        font-weight: 200;
+        font-size: 1em;
 
         .wrapper {
-            box-sizing: border-box;
-            padding: 2rem;
-            max-width: $content-width;
             display: flex;
-            flex: 1 0 100%;
-            flex-wrap: wrap;
+            flex-direction: row;
+            max-width: $content-width;
+            margin: auto;
+            box-sizing: border-box;
+            padding: 2rem 0;
 
-            .navigation-item a {
-                color: white;
+            .menu-wrapper {
+                display: flex;
+                flex-direction: column;
+
+                .navigation-list {
+                    line-height: 1.6;
+                    text-align: left;
+                }
+
+                .navigation-item a {
+                    color: white;
+                }
+            }
+
+            .footer-placeholder {
+                display: flex;
+                flex-grow: 1;
             }
         }
     }
     .copyright {
-        font-family: 'Open Sans';
+        font-family: 'League Spartan', Futura, sans-serif;
         width: 100%;
         background-color: #24150e;
         padding: .6rem 0;

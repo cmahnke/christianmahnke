@@ -20,9 +20,19 @@ theme = ["projektemacher-base", "hugo-video"]
         [languages.de.menu]
 
             [[languages.de.menu.main]]
-                name = "Geplante Blogs"
-                URL = "/future"
-                weight = 1
+                name = "Start"
+                URL = "/"
+                weight = 2
+
+            [[languages.de.menu.main]]
+                name = "Sammlungen"
+                URL = "/collections"
+                weight = 3
+
+            [[languages.de.menu.main]]
+                name = "Blog"
+                URL = "/post"
+                weight = 4
 
             [[languages.de.menu.main]]
                 name = "Über"
@@ -38,9 +48,19 @@ theme = ["projektemacher-base", "hugo-video"]
         [languages.en.menu]
 
             [[languages.en.menu.main]]
-                name = "Planed Blogs"
-                weight = 1
-                url = "en/future"
+                name = "Start"
+                URL = "/"
+                weight = 2
+
+            [[languages.en.menu.main]]
+                name = "Collections"
+                URL = "/collections"
+                weight = 3
+
+            [[languages.en.menu.main]]
+                name = "Blog"
+                weight = 4
+                url = "en/post"
 
             [[languages.en.menu.main]]
                 name = "About"

@@ -12,17 +12,17 @@
             {{- end -}}
         </div>
     </div>
+    <div class="bouncer"></div>
+</div>
 
-</div>
-<div class="bouncer"></div>
-</div>
 <script>
   $(document).ready(function() {
       if (navigator.userAgent.indexOf("Firefox") > -1) {
           $(".me").css({
-              "filter": "brightness(1.1)"
+              "filter": "brightness(.75)"
           })
       }
+
       $(".me").on("click", function() {
           $(this).css({
               "mix-blend-mode": "luminosity"
@@ -37,6 +37,7 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
       }
       $(".bouncer").on("click", function() {
+          $(this).css({"display": "none"});
           var scrollTo = $(window).height();
           $('html, body').animate({
               scrollTop: (Math.floor($(window).scrollTop() / scrollTo) + 1) * scrollTo
@@ -55,10 +56,15 @@
       $(".hero").css({
           "filter": "grayscale(" + pixs + "%)"
       });
+      $(".bouncer").css({"opacity": pixs + "%"});
+      if (pixs <= 0) {
+          $(".bouncer").css({"display": "none"});
+      }
       var brightness;
       brightness = .75 + ((.8 - .75) / 100) * pixs;
+
       if (navigator.userAgent.indexOf("Firefox") > -1) {
-          brightness = .77 + (((1.1 - .77) / 100) * pixs);
+          brightness = .9 - ((0.9 - .75) / 100) * pixs;
       }
 
       $(".me").css({

@@ -2,9 +2,13 @@
     <div class="spacer"></div>
     <div class="content">
         <div class="wrapper">
-            <div class="footer-nav">
-                {{ partial "menu.html" . }}
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">{{ i18n "footerNavHeading" }}</h3>
+                    {{ partial "menu.html" . }}
+                </div>
             </div>
+            <div class="footer-placeholder"></div>
         </div>
     </div>
     <div class="copyright">&copy; {{ $.Sites.First.Params.copyrightYears }} {{ .Sites.First.Copyright | safeHTML }}
