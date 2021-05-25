@@ -3,6 +3,7 @@ languageCode = "de"
 title = "Christian Mahnke"
 languagecode = "de"
 defaultcontentlanguage = "de"
+copyright = "Christian Mahnke"
 publishDir = "docs"
 canonifyurls = true
 disablePathToLower = true

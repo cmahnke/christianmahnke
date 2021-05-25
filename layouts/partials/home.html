@@ -1,55 +1,6 @@
-{{ $pages := .Site.Pages }}
-{{ partial "hero.html" . }}
+{{- partial "hero.html" . -}}
+{{- partial "header.html" . -}}
+<div class="header-spacer"></div>
 <div class="home-container">
-    <div class="shelf">
-        <ul class="book-list">
-          {{- range where $pages "Params.type" "eq" "book" -}}
-            {{- $titleThumb := "" -}}
-            {{- $title := .Resources.GetMatch "title*" -}}
-            {{- $front := .Resources.GetMatch "front*" -}}
-            {{- if ne $title nil -}}
-                {{- $titleThumb = ($title.Resize "330x").RelPermalink -}}
-            {{- end -}}
-            {{- $frontThumb := $front.Resize "330x" -}}
-            {{- $large := $front.Resize "1600x" -}}
-            {{/* TODO: Get latest entry of book section */}}
-            {{- $latest := "" -}}
-
-            <li class="book-li">
-              <div class="context">
-                <div class="tilt">
-                    <div class="book-wrap">
-                      <a class="book-link" href="#" data-href="{{ .RelPermalink }}">
-                          <div class="page6 page" style="background-image: url({{ $titleThumb }});">
-                              <div class="page-content">
-                                  <div class="close-book"></div>
-                              </div>
-                          </div>
-                          <div class="page5 page">
-                              <div class="page-content">
-                                  {{- if .Params.title -}}
-                                      <h1 class="book-heading">{{- .Params.title | markdownify -}}</h1>
-                                  {{- end -}}
-                                  <div class="book-latest">{{ $latest }}</div>
-                              </div>
-                          </div>
-                          <div class="page4 page"></div>
-                          <div class="page3 page"></div>
-                          <div class="page2 page"></div>
-                          <div class="page1 page"></div>
-
-                          <div class="book preview page" data-title="{{ .Title }}" data-image="{{ $large.RelPermalink }}">
-                              <img class="preview" src="{{ $frontThumb.RelPermalink }}" alt="{{ .Title }}">
-                          </div>
-                          <div class="book-spine"></div>
-                      </a>
-
-                  </div>
-
-              </div>
-              </div>
-            </li>
-          {{ end }}
-        </ul>
-    </div>
+    {{- partial "home-sections.html" . -}}
 </div>

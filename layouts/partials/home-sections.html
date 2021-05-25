@@ -1,0 +1,17 @@
+{{- $pages := where .Site.Pages "Section" "home" -}}
+{{- range $i, $section := $pages -}}
+    {{- $class := "odd" -}}
+    {{- if modBool $i 2  -}}
+        {{- $class = "even" -}}
+    {{- end -}}
+
+    {{- $nav := path.Base .URL -}}
+    {{- $nav = replaceRE "^/$" "root" $class -}}
+    {{- $class = printf "section-%s %s" $class $class -}}
+
+    {{- $id := substr (md5 $class) 0 8 -}}
+
+    <div id="{{ $id }}" data-section="{{ $nav }}" class="{{ $class }} home-section">
+
+    </div>
+{{- end -}}

@@ -1,20 +1,20 @@
 <div class="hero">
-  <div class="img-background">
-      <div class="img-wrapper">
-          <img class="me" alt="Christan Mahnke" src="{{ .Site.Params.me }}">
-      </div>
-  </div>
-  <div class="hero-caption">
-      <div class="name">
-          Christian Mahnke
-      </div>
-      {{- with .Site.Params.subtitle -}}
-          <div class="title">
-              {{- . -}}
-          </div>
-      {{- end -}}
-  </div>
-  <div class="bouncer"></div>
+    <div class="wrapper">
+        <div class="img-background">
+            <div class="img-wrapper">
+                <img class="me" alt="Christan Mahnke" src="{{ .Site.Params.me }}">
+            </div>
+        </div>
+        <div class="hero-caption">
+            <div class="name">{{- .Site.Title -}}</div>
+            {{- with .Site.Params.subtitle -}}
+                <div class="title">{{- . -}}</div>
+            {{- end -}}
+        </div>
+    </div>
+
+</div>
+<div class="bouncer"></div>
 </div>
 <script>
   $(document).ready(function() {

@@ -1,5 +1,8 @@
 window.$ = window.jQuery = require('jquery');
-jQueryBridget = require('jquery-bridget');
 
+/* See https://github.com/rgalus/sticky-js */
+window.Sticky = require('sticky-js');
+/*
 import Headroom from 'headroom.js';
 window.Headroom = Headroom;
+*/

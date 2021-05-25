@@ -1,14 +1,16 @@
-<header class="header header-main headroom headroom--unpinned" id="head">
-    <div class="home-link">
-        <a href="/"><h1 class="header-title">{{ .Title }}</h1></a>
-    </div>
-    <div class="menu">
-        {{ partial "menu.html" . }}
-    </div>
+<header class="header header-main" id="head">
+    <div class="wrapper">
+        <div class="menu-close"></div>
+        <div class="menu">
+            {{ partial "menu.html" . }}
+        </div>
+        <div class="home-link">
+            <a href="/"><h1 class="header-title">{{ $.Site.Title }}</h1></a>
+        </div>
 
-
-    {{- $subtitle := .Params.subtitle | default "" -}}
-    {{- if ne $subtitle "" -}}
-          <h2 class="header-subtitle">{{ $subtitle }}</h2>
-    {{- end -}}
+        {{- $subtitle := .Params.subtitle | default "" -}}
+        {{- if ne $subtitle "" -}}
+              <h2 class="header-subtitle">{{ $subtitle }}</h2>
+        {{- end -}}
+    </div>
 </header>
