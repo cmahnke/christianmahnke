@@ -6,6 +6,7 @@ patches
 static/images/favicon*
 static/images/*.svg
 static/images/background.jpg
+static/images/red-lether.jpg
 resources
 content/**/front/
 content/**/title/

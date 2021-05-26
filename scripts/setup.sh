@@ -1,5 +1,7 @@
 #!/bin/bash
 
+convert Source\ Files/Images/Textures/red-lether.png -quality 10 static/images/red-lether.jpg
+
 # Generate Previews
 TARGETFORMAT=png ./themes/projektemacher-base/scripts/preview.sh
 

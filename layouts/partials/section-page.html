@@ -11,9 +11,17 @@
 {{- $sections := newScratch -}}
 {{- $sections.Set "sections" slice -}}
 
-{{- if ne .Content "" -}}
-    <div class="{{ printf "%s-section" (path.Base $head.Permalink) }} section-head">{{ .Content }}</div>
-{{- end -}}
+<div class="section-head">
+    {{- if ne .Title "" -}}
+        <div class="parallax-bg">
+            <h1 class="{{ printf "%s-section" (path.Base $head.Permalink) }} section-head-title">{{ .Title }}</h1>
+        </div>
+    {{- end -}}
+
+    {{- if ne .Content "" -}}
+        <div class="{{ printf "%s-section" (path.Base $head.Permalink) }} section-head-content">{{ .Content }}</div>
+    {{- end -}}
+</div>
 
 {{- range $i, $section := $pages -}}
     {{- $class := "odd" -}}
@@ -23,12 +31,12 @@
 
     {{- $nav := path.Base .Permalink -}}
     {{- $nav = replaceRE "^/$" "root" $nav -}}
-    {{- $class = printf "section-%s %s" $nav $class -}}
+    {{- $class = printf "section-%s %s section-%d" $nav $class $i -}}
 
     {{- $id := substr (md5 $class) 0 8 -}}
 
     {{- if ne .Content "" -}}
-        <div id="{{ $id }}" data-section="{{ $nav }}" class="{{ $class }} {{ printf "%s-section" (path.Base $section.Permalink) }} section-content">
+        <div id="{{ $id }}" data-section="{{ $nav }}" class="{{ $class }} section-content">
 
             <h1 class="section-content-title">
                 {{- .Title -}}
