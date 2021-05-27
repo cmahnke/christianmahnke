@@ -43,14 +43,15 @@
          {{- $class = printf "%s %s" $class "meta" -}}
      {{- end -}}
      <body class="{{ $class }} {{ if .IsHome }}home{{ end }}">
-       <div class="page-wrapper">
+         <a name="top"></a>
+         <div class="page-wrapper">
            {{/*
          {{ partial "header.html" . }}
 */}}
-         <div class="main">
-             {{ block "content" . }}{{ end }}
-         </div>
+             <div class="main">
+                 {{ block "content" . }}{{ end }}
+             </div>
          {{- partial "footer.html" . -}}
-       </div>
-   </body>
+         </div>
+     </body>
  </html>

@@ -8,6 +8,8 @@ $gradient-color-light: #b2444d;
 $gradient-color-mid: #a41416;
 $gradient-color-dark:  #701611;
 
+$text-underline-color: #ff073a;
+
 html {
     scroll-behavior: smooth;
 }
@@ -52,7 +54,7 @@ a:visited {
         }
     }
 
-    @media (max-width : 25em) {
+    @media (max-width : 30em) {
         height: 100%;
         left: 0;
         overflow-y: auto;
@@ -79,9 +81,9 @@ a:visited {
         height: 3em;
         display: flex;
         max-width: $content-width;
-        width: 100%;
+        width: calc(100% - 2 * 1rem);
         padding: 0 1rem;
-        @media (max-width : 25em) {
+        @media (max-width : 30em) {
             padding: unset;
         }
     }
@@ -103,6 +105,20 @@ a:visited {
 
     .menu {
         width:100%;
+        padding-top: .2rem;
+
+        .menu-icon {
+            display: none;
+            @media (max-width : 30em) {
+                content: url($bars-light);
+                display: inline-block;
+                vertical-align: bottom;
+                margin-top: 1rem;
+                margin-right: 0.5em;
+                height: 2.4em;
+                width: 2.4em;
+            }
+        }
 
         .navigation-list {
             display: flex;
@@ -125,7 +141,7 @@ a:visited {
                         display: block;
                     }
                 }
-                @media (max-width : 25em) {
+                @media (max-width : 30em) {
                      display: block;
                      text-align: center;
                      margin: 1rem 0;
@@ -135,7 +151,7 @@ a:visited {
                 }
             }
 
-            @media (max-width : 25em) {
+            @media (max-width : 30em) {
                 margin-top: 1em;
                  display: unset;
                  color: white;
@@ -149,7 +165,38 @@ a:visited {
         height: .6rem;
         background-image:linear-gradient($gradient-color-light, transparent);
     }
+
+    &.sticky-top .backToTop {
+        opacity:1;
+    }
+
+    .backToTop {
+        transition: opacity, transform .6s;
+        opacity: 0;
+        content: url($up-light);
+        height: 1.8em;
+        width: 1.8em;
+        cursor: pointer;
+        position: fixed;
+        border-radius: .2rem;
+        bottom: 4em;
+        right: 4em;
+        background-color: rgba(0, 0, 0, .6);
+        padding: .6em;
+
+        @media (max-width : 30em) {
+            display: none;
+        }
+    }
+
+    .backToTop:hover {
+        transform: scale(1.1);
+    }
+
+
 }
+
+
 
 .navigation-list {
     display: inline-block;
@@ -248,8 +295,9 @@ a:visited {
         align-items: unset;
         min-height: 32em;
     }
-    @media (max-width : 25em) {
+    @media (max-width : 30em) {
         min-height: 38em;
+        height: calc(100vh);
     }
 
     .wrapper {
@@ -284,7 +332,7 @@ a:visited {
             }
 
             @media (max-width : 25em) {
-                margin-top: unset;
+                margin-top: 3em;
             }
 
             .name {
@@ -304,13 +352,15 @@ a:visited {
         content: url($down-light);
         height: 2em;
         width: 2em;
-        display: block;
+        /* display: block; */
+        display:flex;
         animation: bounce 2s infinite;
         box-sizing:border-box;
         flex-basis: 100%;
         cursor: pointer;
         position: absolute;
         bottom: 1em;
+        left: 50vw;
     }
 }
 
@@ -326,6 +376,15 @@ a:visited {
 
     max-width: $content-width;
     margin: 3em auto;
+    margin-top: calc(3em + 1.4rem);
+
+    @media (max-width : 75em) {
+        margin: 0 1.6rem;
+    }
+
+    @media (max-width : 25em) {
+        margin: 0 .6rem;
+    }
 
     .home-section {
         .title {
@@ -336,11 +395,8 @@ a:visited {
     }
 
     .section-head {
-        position: relative;
-
         .section-head-title {
             font-size: 8em;
-
             font-weight: 800;
             background-color: white;
             color: black;
@@ -353,7 +409,7 @@ a:visited {
             background-attachment: fixed;
             background-position: center;
             background-repeat: repeat;
-            background-size: 50% 50%;
+            background-size: 10%;
         }
 
         .section-head-content {
@@ -382,7 +438,7 @@ a:visited {
             display: flex;
             justify-content: flex-end;
             width: min-content;
-            box-shadow: inset 0 -15px 0 lighten($gradient-color-light, 15%);
+            box-shadow: inset 0 -15px 0 $text-underline-color;
         }
 
         .section-content-body {
@@ -399,6 +455,46 @@ a:visited {
         */
         display: none;
 
+    }
+}
+
+.link-image {
+    margin-right: .6rem;
+    vertical-align: middle;
+    height: 1.2em;
+    width: 1.2em;
+    display: inline-block;
+}
+
+.github {
+    content: url($github-light);
+}
+
+.librarything {
+    content: url($librarything-light);
+}
+
+.projektemacher {
+    filter: #{"invert()"};
+    border-radius: 50%;
+}
+
+/* This is a .section-container only used on the start page */
+.home-container {
+    .section-head {
+        .section-head-title {
+            font-size: 8em;
+            font-weight: 800;
+            background-color: white;
+            color: black;
+            mix-blend-mode: unset;
+            padding-top: unset;
+        }
+
+        .parallax-bg {
+            background-image: unset;
+
+        }
     }
 }
 
@@ -430,24 +526,68 @@ a:visited {
             margin: auto;
             box-sizing: border-box;
             padding: 2rem 0;
+            gap: 6em;
+
+            @media (max-width : 75em) {
+                margin: 0 1.6rem;
+            }
+            @media (max-width : 35em) {
+                margin: 0 .6rem;
+                gap: 2em;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            h3 {
+                text-align: left;
+            }
+
+            ul {
+                list-style-type: none;
+                margin-block-start: 0;
+                margin-block-end: 0;
+                line-height: 1.6;
+                text-align: left;
+                padding-inline-start: .6rem;
+                line-height: 1.8;
+
+                li {
+                    width: max-content;
+
+                    a {
+                        color: white;
+                    }
+                }
+            }
+
+            .menu-top {
+                display: flex;
+            }
 
             .menu-wrapper {
                 display: flex;
                 flex-direction: column;
 
-                .navigation-list {
-                    line-height: 1.6;
-                    text-align: left;
-                }
+            }
 
-                .navigation-item a {
-                    color: white;
+            .link-wrapper {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .contact-wrapper {
+                text-align: right;
+                @media (max-width : 35em) {
+                    text-align: left;
                 }
             }
 
             .footer-placeholder {
                 display: flex;
                 flex-grow: 1;
+                @media (max-width : 35em) {
+                    display: none;
+                }
             }
         }
     }
@@ -468,6 +608,9 @@ a:visited {
         .icon {
             height: 1.4em;
             vertical-align: bottom;
+        }
+        a {
+            color: white;
         }
     }
 }

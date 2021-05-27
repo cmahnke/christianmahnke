@@ -8,10 +8,21 @@
                     {{ partial "menu.html" . }}
                 </div>
             </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">{{ i18n "footerLinksHeading" }}</h3>
+                <ul class="footer-links">
+                    {{- range .Site.Params.links -}}
+                        <li class="footer-links">{{- . | safeHTML -}}</li>
+                    {{- end -}}
+                </ul>
+            </div>
             <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">{{ i18n "footerContactHeading" }}</h3>
+            </div>
         </div>
     </div>
-    <div class="copyright">&copy; {{ $.Sites.First.Params.copyrightYears }} {{ .Sites.First.Copyright | safeHTML }}
+    <div class="copyright"><a href="{{ $.Sites.First.Params.copyrightlink }}">&copy; {{ $.Sites.First.Params.copyrightYears }} {{ .Sites.First.Copyright | safeHTML }}</a>
         <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="/images/cm.svg"></a></span>
     </div>
 

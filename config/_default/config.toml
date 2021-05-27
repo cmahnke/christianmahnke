@@ -1,3 +1,7 @@
 [params]
 subTitle = ""
 me = "/images/me-200.png"
+copyrightlink = "https://christianmahnke.de"
+links = ['<a href="https://github.com/cmahnke" target="_blank"><div class="link-image github"></div>GitHub</a>',
+         '<a href="https://projektemacher.org/" target="_blank"><img class="link-image projektemacher" src="/images/laborant.svg">Projektemacher</a>',
+         '<a href="https://www.librarything.com/profile/cmahnke" target="_blank"><div class="link-image librarything"></div>Librarything</a>']

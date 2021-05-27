@@ -1,6 +1,6 @@
 #!/bin/bash
 
-convert Source\ Files/Images/Textures/red-lether.png -quality 10 static/images/red-lether.jpg
+convert Source\ Files/Images/Textures/Red\ Lether.psd -resize 1000x -quality 20 static/images/red-lether.jpg
 
 # Generate Previews
 TARGETFORMAT=png ./themes/projektemacher-base/scripts/preview.sh

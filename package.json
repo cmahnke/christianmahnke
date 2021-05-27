@@ -9,8 +9,9 @@
         "svgo": "^2.3.0"
     },
     "scripts": {
+        "logo": "svgo --config Source\\ Files/svgo.config.js -i themes/projektemacher-base/Source\\ Files/Images/Laborant.svg -o static/images/laborant.svg",
         "background": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Background/Background.svg -o static/images/bg.svg",
         "icons": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Icons/No\\ Emoji.svg -o static/images/no-emoji.svg",
-        "svgo": "yarn run background && yarn run icons"
+        "svgo": "yarn run background && yarn run icons && yarn run logo"
     }
 }
