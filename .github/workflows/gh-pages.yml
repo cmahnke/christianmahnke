@@ -1,0 +1,66 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron:  '30 23 1 * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2.3.4
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 10.22.0
+
+      - name: Set up Python
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: 3.9
+
+      - name: Install required dependencies
+        run: |
+          ./themes/projektemacher-base/scripts/github/setup-dependencies.sh
+          ./themes/projektemacher-base/scripts/github/python-dependencies.sh
+          ./themes/projektemacher-base/scripts/github/setup-inkscape.sh
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2.4.13
+        with:
+          hugo-version: '0.83.1'
+          extended: true
+
+      - name: Create IIIF derivates
+# UID is also available via $(id -u)
+        run: |
+          echo "Running as ${UID}"
+          docker run -e CHOWN_UID=${UID} -e URL_PREFIX="https://labs.projektemacher.org/" -v ${PWD}:${PWD} ghcr.io/cmahnke/iiif-action:latest sh -c "cd ${PWD} && ./scripts/iiif.sh"
+
+      - name: Generate Files
+        env:
+          SKIP_IIIF: yes
+        run: |
+          ./scripts/setup.sh
+
+      - name: Build Hugo site
+        run: hugo --i18n-warnings
+
+      - name: Validate JSON
+        env:
+          OSTYPE: linux
+        run: |
+          yarn run validate
+
+      - name: Deploy site
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          force_orphan: true
