@@ -37,26 +37,12 @@ jobs:
           hugo-version: '0.83.1'
           extended: true
 
-      - name: Create IIIF derivates
-# UID is also available via $(id -u)
-        run: |
-          echo "Running as ${UID}"
-          docker run -e CHOWN_UID=${UID} -e URL_PREFIX="https://labs.projektemacher.org/" -v ${PWD}:${PWD} ghcr.io/cmahnke/iiif-action:latest sh -c "cd ${PWD} && ./scripts/iiif.sh"
-
       - name: Generate Files
-        env:
-          SKIP_IIIF: yes
         run: |
           ./scripts/setup.sh
 
       - name: Build Hugo site
         run: hugo --i18n-warnings
-
-      - name: Validate JSON
-        env:
-          OSTYPE: linux
-        run: |
-          yarn run validate
 
       - name: Deploy site
         uses: peaceiris/actions-gh-pages@v3.8.0
