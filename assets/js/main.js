@@ -1,8 +1,10 @@
 window.$ = window.jQuery = require('jquery');
+import { addConsent } from './iframe-consent';
 
 /* See https://github.com/rgalus/sticky-js */
 window.Sticky = require('sticky-js');
+window.addConsent = addConsent;
+
 /*
-import Headroom from 'headroom.js';
-window.Headroom = Headroom;
+$(.footer-icon).css({'bottom': '0.2em'});
 */

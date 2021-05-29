@@ -1,0 +1,31 @@
+
+{{ define "title" }}
+  {{- .Title }} · {{ .Site.Title -}}
+{{ end }}
+{{ define "content" }}
+    {{- partial "header.html" . -}}
+
+    <div class="content-container posts">
+        {{- partial "section-heading.html" . -}}
+        <div class="posts">
+            {{- $pages := where .Site.AllPages "Section" "post" -}}
+            {{- $paginator := .Paginate (where $pages "Params.displayinlist" "!=" false) -}}
+            {{- range $paginator.Pages -}}
+                {{ partial "page.html" . }}
+            {{ end }}
+        </div>
+    </div>
+    {{ if or $paginator.HasPrev $paginator.HasNext -}}
+        <div class="pagination">
+            <div class="pagination-links">
+                {{ if $paginator.HasPrev }}
+                    <a class="pagination-prev" href="{{ $paginator.Prev.URL }}">&#x25C0; {{ i18n "next_page" }}</a>
+                {{ end }}
+                {{ if $paginator.HasNext }}
+                    <a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "previous_page" }} &#x25B6;</a>
+                {{ end }}
+            </div>
+        </div>
+    {{- end }}
+
+{{ end }}

@@ -3,7 +3,6 @@
 {{- if .IsHome -}}
     {{- $pages = where .Site.Pages "Section" "home" -}}
 
-{{ warnf "--> %v" $pages}}
 {{- else -}}
     {{- $pages = .Pages -}}
 {{- end -}}
@@ -11,19 +10,9 @@
 {{- $sections := newScratch -}}
 {{- $sections.Set "sections" slice -}}
 
-<div class="section-head">
-    {{- if and (not .IsHome) (ne .Title "") -}}
-        <div class="parallax-bg">
-            <h1 class="{{ printf "%s-section" (path.Base $head.Permalink) }} section-head-title">{{ .Title }}</h1>
-        </div>
-    {{- end -}}
+{{- partial "section-heading.html" . -}}
 
-    {{- if ne .Content "" -}}
-        <div class="{{ printf "%s-section" (path.Base $head.Permalink) }} section-head-content">{{ .Content }}</div>
-    {{- end -}}
-</div>
-
-{{- range $i, $section := $pages -}}
+{{- range $i, $section := $pages.ByWeight -}}
     {{- $class := "odd" -}}
     {{- if modBool $i 2  -}}
         {{- $class = "even" -}}

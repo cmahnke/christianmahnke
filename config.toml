@@ -37,7 +37,7 @@ theme = ["projektemacher-base", "hugo-video"]
             [[languages.de.menu.main]]
                 name = "Über"
                 weight = 5
-                url = "about/"
+                url = "about"
 
     [languages.en]
         languagename = "English"
@@ -65,23 +65,19 @@ theme = ["projektemacher-base", "hugo-video"]
             [[languages.en.menu.main]]
                 name = "About"
                 weight = 2
-                url = "en/about/"
+                url = "en/about"
 
-[params]
-    paginate = 5
-    copyrightYears = "MMXXI"
-    enableBlogPost = true
-    enableTOC = true
+[markup.goldmark]
+    [markup.goldmark.renderer]
+        unsafe= true
 
-# navigation
-[menu]
-    [[menu.main]]
-        name = "Über"
-        URL = "/about"
-        weight = 1
+    [markup.goldmark.extensions]
+        typographer = true
+        attribute = true
 
-[markup.goldmark.renderer]
-  unsafe= true
+    [markup.goldmark.parser]
+        autoHeadingID = true
+        autoHeadingIDType = "github"
 
 [imaging]
     quality = 95

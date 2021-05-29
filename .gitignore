@@ -8,6 +8,8 @@ static/images/*.svg
 static/images/background.jpg
 static/images/red-lether.jpg
 static/images/laborant.svg
+static/images/cm.svg
+static/images/cm-black.svg
 resources
 content/**/front/
 content/**/title/

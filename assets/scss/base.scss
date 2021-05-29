@@ -1,3 +1,5 @@
+@import "normalize";
+@import "iframe-consent";
 @import "fonts/league-spartan";
 @import "fonts/poiret-one";
 @import "fonts/josefin-sans";
@@ -171,7 +173,7 @@ a:visited {
     }
 
     .backToTop {
-        transition: opacity, transform .6s;
+        transition: all .4s;
         opacity: 0;
         content: url($up-light);
         height: 1.8em;
@@ -191,12 +193,11 @@ a:visited {
 
     .backToTop:hover {
         transform: scale(1.1);
+        background-color: rgba(0, 0, 0, .4);
+        border: 1px solid white;
     }
 
-
 }
-
-
 
 .navigation-list {
     display: inline-block;
@@ -372,7 +373,77 @@ a:visited {
     border-radius: 3px;
 }
 
+/*
+.reveal-text {
+	position: relative;
+	white-space: nowrap;
+	animation-name: reveal-text;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(1,.01,0,1);
+  clip-path: inset(0 100% 0 0);
+}
+
+.reveal-text::after {
+	content: "";
+	position: absolute;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: $primary-color;
+	transform: scaleX(0);
+        transform-origin: 0 50%;
+        animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(1,.01,0,1);
+	animation-name: revealer-text;
+}
+
+@keyframes reveal-text {
+	from {
+        clip-path: inset(0 100% 0 0);
+	}
+	to {
+        clip-path: inset(0 0 0 0);
+	}
+}
+
+@keyframes revealer-text {
+	0%, 50% {
+    transform-origin: 0 50%;
+	}
+	51%, 100% {
+    transform-origin: 100% 50%;
+	}
+	50% {
+    transform: scaleX(1);
+	}
+	100% {
+    transform: scaleX(0);
+	}
+}
+*/
 .content-container {
+
+    a {
+        &:before {
+            content: '_';
+            color: $text-underline-color;
+            margin-right: -2px;
+
+        }
+        &:after {
+            content: '_';
+            color: $text-underline-color;
+            margin-left: -1px;
+        }
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: $text-underline-color;
+        }
+    }
 
     max-width: $content-width;
     margin: 3em auto;
@@ -402,6 +473,8 @@ a:visited {
             color: black;
             mix-blend-mode: screen;
             padding-top: .6rem;
+            padding-bottom: 1.1rem;
+            margin-bottom: .2em;
         }
 
         .parallax-bg {
@@ -418,31 +491,95 @@ a:visited {
 
     }
 
+    .section-head-content,
+    .section-content-body,
+    .post-body {
+        flex-direction: column;
+        display: flex;
+        flex-basis: 100%;
+        line-height: 1.4;
+        font-size: 1.2em;
+    }
+
     .section-content {
         background-color: white;
         display: flex;
         flex-direction: column;
 
-        &.even {
-             text-align: right;
-             justify-content: flex-end;
-             align-items: flex-end;
+        ul {
+            text-align: left;
+            list-style: disclosure-closed;
+            li::marker {
+                color: $text-underline-color;
+            }
         }
-        &.odd {
+
+        p, h2, h3 {
+            text-align: inherit;
+        }
+
+        p {
+            margin: auto .4em;
+        }
+
+        li {
+            font-family: 'League Spartan', Futura, sans-serif;
+        }
+
+        h2, h3 {
+            box-shadow: inset 0 -15px 0 $text-underline-color;
+            width: max-content;
+            display: flex;
+        }
+
+        &.even {
             text-align: left;
             justify-content: flex-start;
             align-items: flex-start;
+            p, h2, h3, .inline-list {
+                align-self: flex-start;
+            }
+        }
+
+        &.odd {
+             text-align: right;
+             justify-content: flex-end;
+             align-items: flex-end;
+             p, h2, h3, .inline-list {
+                 align-self: flex-end;
+             }
+             .inline-list {
+                 direction: rtl;
+             }
+        }
+
+        .inline-list {
+            display: flex;
+            width: max-content;
+            margin: 1em 2em;
+            flex-flow: column;
+            a {
+                &:before, &:after {
+                    content: '';
+
+                }
+                &:hover {
+                    text-decoration: none;
+                }
+            }
         }
 
         .section-content-title {
+            font-size: 2.4em;
+            margin-top: 2.6em;
             display: flex;
             justify-content: flex-end;
-            width: min-content;
+            width: max-content;
             box-shadow: inset 0 -15px 0 $text-underline-color;
         }
 
-        .section-content-body {
-            flex-basis: 100%;
+        .li-heading {
+            font-weight: 600;
         }
 
     }
@@ -455,6 +592,22 @@ a:visited {
         */
         display: none;
 
+    }
+}
+
+.iframe-wrapper {
+    .opt-in-overlay .opt-in-header {
+        box-shadow: unset;
+    }
+
+    .switch-wrapper {
+        .opt-in-switch input:checked+.opt-in-slider {
+            background-color: $text-underline-color;
+        }
+        .opt-in-confirm {
+            font-weight: 300;
+            font-family: 'League Spartan', Futura, sans-serif;
+        }
     }
 }
 
@@ -542,6 +695,10 @@ a:visited {
                 text-align: left;
             }
 
+            a {
+                color: white;
+            }
+
             ul {
                 list-style-type: none;
                 margin-block-start: 0;
@@ -553,10 +710,6 @@ a:visited {
 
                 li {
                     width: max-content;
-
-                    a {
-                        color: white;
-                    }
                 }
             }
 
@@ -564,19 +717,49 @@ a:visited {
                 display: flex;
             }
 
-            .menu-wrapper {
-                display: flex;
-                flex-direction: column;
-
-            }
-
-            .link-wrapper {
+            .menu-wrapper,
+            .link-wrapper,
+            .contact-wrapper {
                 display: flex;
                 flex-direction: column;
             }
 
             .contact-wrapper {
                 text-align: right;
+
+                .footer-title,
+                .footer-contact {
+                    text-align: inherit;
+                    position: relative;
+                }
+
+                .footer-title {
+                    margin-top: auto;
+                    margin-bottom: 0;
+                }
+
+                .contact-link {
+                    text-align: inherit;
+                    margin-block-start: .4em;
+                    margin-block-end: .4em;
+                    font-weight: 500;
+                }
+
+                .footer-icon {
+                    height: 1em;
+                    width: 1em;
+                    filter: #{"invert()"};
+                    vertical-align: unset;
+                    margin-right: .6em;
+                    position: absolute;
+                    left: -1.4em;
+                    bottom: 0em;
+                    @media (max-width : 30em) {
+                        display: none;
+                    }
+
+                }
+
                 @media (max-width : 35em) {
                     text-align: left;
                 }

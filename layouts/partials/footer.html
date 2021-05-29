@@ -12,18 +12,22 @@
                 <h3 class="footer-links">{{ i18n "footerLinksHeading" }}</h3>
                 <ul class="footer-links">
                     {{- range .Site.Params.links -}}
-                        <li class="footer-links">{{- . | safeHTML -}}</li>
+                        <li class="footer-link">{{- . | safeHTML -}}</li>
                     {{- end -}}
                 </ul>
             </div>
             <div class="footer-placeholder"></div>
             <div class="contact-wrapper">
                 <h3 class="footer-contact">{{ i18n "footerContactHeading" }}</h3>
+                {{- range .Site.Params.contacts -}}
+                    <div class="footer-contact">{{- . | safeHTML -}}</div>
+                {{- end -}}
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="{{ .Site.Params.monogramblack }}">{{- .Site.Title -}}</h1>
             </div>
         </div>
     </div>
     <div class="copyright"><a href="{{ $.Sites.First.Params.copyrightlink }}">&copy; {{ $.Sites.First.Params.copyrightYears }} {{ .Sites.First.Copyright | safeHTML }}</a>
-        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="/images/cm.svg"></a></span>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="{{ .Site.Params.monogram }}"></a></span>
     </div>
 
 </footer>
