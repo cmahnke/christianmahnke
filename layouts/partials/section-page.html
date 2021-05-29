@@ -12,7 +12,7 @@
 {{- $sections.Set "sections" slice -}}
 
 <div class="section-head">
-    {{- if ne .Title "" -}}
+    {{- if and (not .IsHome) (ne .Title "") -}}
         <div class="parallax-bg">
             <h1 class="{{ printf "%s-section" (path.Base $head.Permalink) }} section-head-title">{{ .Title }}</h1>
         </div>
