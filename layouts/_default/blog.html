@@ -10,9 +10,13 @@
         <div class="posts">
             {{- $pages := where .Site.AllPages "Section" "post" -}}
             {{- $paginator := .Paginate (where $pages "Params.displayinlist" "!=" false) -}}
-            {{- range $paginator.Pages -}}
-                {{ partial "page.html" . }}
-            {{ end }}
+            {{- range $i, $page :=  $paginator.Pages -}}
+                {{- .Scratch.Set "class" "odd" -}}
+                {{- if modBool $i 2  -}}
+                    {{- .Scratch.Set "class" "even" -}}
+                {{- end -}}
+                {{- partial "li.html" . -}}
+            {{- end -}}
         </div>
     </div>
     {{ if or $paginator.HasPrev $paginator.HasNext -}}

@@ -11,6 +11,7 @@ static/images/laborant.svg
 static/images/cm.svg
 static/images/cm-black.svg
 resources
+content/**/*-boxed.jpg
 content/**/front/
 content/**/title/
 content/**/cover/

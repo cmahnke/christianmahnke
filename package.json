@@ -1,13 +1,15 @@
 {
     "dependencies": {
+        "aos": "^2.3.4",
+        "enter-view": "^2.0.1",
         "jquery": "^3.6.0",
         "js-cookie": "^2.2.1",
         "normalize.css": "^8.0.1",
         "sticky-js": "^1.3.0"
     },
     "devDependencies": {
-        "svgo": "^2.3.0",
-        "replace-in-file": "6.2.0"
+        "replace-in-file": "6.2.0",
+        "svgo": "^2.3.0"
     },
     "scripts": {
         "logo-projektemacher": "svgo --config Source\\ Files/svgo.config.js -i themes/projektemacher-base/Source\\ Files/Images/Laborant.svg -o static/images/laborant.svg",

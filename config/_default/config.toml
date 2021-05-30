@@ -3,7 +3,7 @@ paginate = 5
 copyrightYears = "MMXXI"
 enableBlogPost = true
 enableTOC = true
-subTitle = ""
+subTitle = "Enthusiast & Sammler"
 me = "/images/me-200.png"
 monogram = "/images/cm.svg"
 monogramBlack = "/images/cm-black.svg"
@@ -12,3 +12,10 @@ links = ['<a href="https://github.com/cmahnke" target="_blank" title="GitHub"><d
          '<a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="/images/laborant.svg">Projektemacher</a>',
          '<a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="Librarything"><div class="link-image librarything"></div>Librarything</a>']
 contacts = ['<h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a>']
+
+
+[languages.de.params]
+
+[languages.en.params]
+    subTitle = "Enthusiast & collector"
+    contacts = ['<h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="Send eMail">mail@christianmahnke.de</a>']

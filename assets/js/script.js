@@ -1,5 +1,14 @@
 var sticky = new Sticky('#head');
 
+enterView({
+	selector: '.type-text',
+	enter: function(el) {
+		el.classList.add('show');
+	},
+    offset: 0.5,
+	once: true
+});
+
 /*
 function mobileMenu() {
     $('body').on('click', '.js-fh5co-nav-toggle', function(event){

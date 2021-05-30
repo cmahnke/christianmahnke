@@ -1,15 +1,15 @@
 ---
-title: "Kolophon"
+title: "Colophon"
 metaPage: true
 displayinlist: false
 weight: 9
 ---
 
-Diese Seite wurde mit [Hugo](https://gohugo.io/) generiert.
+This page was generated with [Hugo](https://gohugo.io/).
 
-Zur Einbindung von Videos kommt das Theme [`hugo-video`](https://github.com/martignoni/hugo-video) zum Einsatz. Als Schriftarten werden [Josefin Sans](https://github.com/googlefonts/josefinsans), [League Spartan](https://www.theleagueofmoveabletype.com/league-spartan) und [Inconsolata](https://github.com/googlefonts/inconsolata) eingesetzt.
+The theme [`hugo-video`](https://github.com/martignoni/hugo-video) is used to integrate videos. [Josefin Sans](https://github.com/googlefonts/josefinsans), [League Spartan](https://www.theleagueofmoveabletype.com/league-spartan) and [Inconsolata](https://github.com/googlefonts/inconsolata) are used as fonts.
 
-Folgende Javascript und CSS Frameworks und Bibliotheken kommen zum Einsatz:
+The following JavaScript and CSS libraries and frameworks  are used:
 
 <ul class="inline-list">
     <li><a href="https://jquery.com/">jQuery</a></li>
@@ -22,4 +22,4 @@ Folgende Javascript und CSS Frameworks und Bibliotheken kommen zum Einsatz:
     -->
 </ul>
 
-Die Seite wird von [GitHub](https://github.com/) gehosted.
+The site is hosted by [GitHub](https://github.com/).
