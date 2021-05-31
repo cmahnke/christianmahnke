@@ -7,7 +7,7 @@ weight: 2
 
 Hin und wieder finde ich auch Dinge, die für Archive, Museen oder überregional bekannte Sammler interessant sein können. In solchen Fällen kontaktiere ich die aus meiner Sicht passende Institution.
 
-<a name="donation-conditions" id="donation-conditions"></a>
+<a class="no-link" name="donation-conditions" id="donation-conditions"></a>
 ## Aktiver Spender
 
 Analog zum ["Aktiven Investor"](https://de.wikipedia.org/wiki/Aktiver_Investor) sehe ich mich als aktiven Spender, das bedeutet, dass es mir nicht nur wichtig ist, dass ein Artefakt oder ein Medium für die Allgemeinheit erhalten bleibt, sondern auch, dass der Zugang auf der Höhe der Zeit erfolgen kann. Dies ist natürlich auf der einen Seite [meinen beruflichem Hintergrund](/about/#professional-interests) geschuldet aber auf der anderen schlicht eine Notwendigkeit bei der Vermittlung von kulturellem Erbe. Falls Ihre Institution dazu nicht in der Lage ist, unterstütze ich Sie gerne.

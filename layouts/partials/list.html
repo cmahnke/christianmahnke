@@ -1,9 +1,13 @@
 <div class="content-container list">
     <div class="posts">
         {{- $paginator := .Paginate (where .RegularPages "Params.displayinlist" "!=" false) -}}
-        {{- range $paginator.Pages -}}
-            {{ partial "li.html" . }}
-        {{ end }}
+        {{- range $i, $page :=  $paginator.Pages -}}
+            {{- .Scratch.Set "class" "odd" -}}
+            {{- if modBool $i 2  -}}
+                {{- .Scratch.Set "class" "even" -}}
+            {{- end -}}
+            {{- partial "li.html" . -}}
+        {{- end -}}
     </div>
 </div>
 {{ if or $paginator.HasPrev $paginator.HasNext -}}

@@ -5,7 +5,7 @@
 {{- $class = printf "%s %s" $class (.Scratch.Get "class") -}}
 <div class="post {{ $class }}">
     <div class="content">
-        <h2 class="post-title">{{ .Title }}</h2>
+        <h2 class="post-title"><a class="readmore" href="{{ .RelPermalink}}" title="{{ i18n "readmore" }}">{{ .Title }}</a></h2>
         <div class="post-date">{{- partial "date.html" . -}}</div>
         <div class="post-body">
             {{ .Summary }}

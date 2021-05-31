@@ -1,5 +1,5 @@
 ---
-title: "Alltagskultur"
+title: "Everyday culture"
 metaPage: true
 displayinlist: false
 weight: 1

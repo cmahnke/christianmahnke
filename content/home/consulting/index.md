@@ -2,6 +2,7 @@
 title: "Beratung"
 metaPage: true
 displayinlist: false
+weight: 2
 ---
 
 Falls Sie Beratung bei der Digitalisierung und Präsentation ihrer Sammlung im Netz brauchen, unterstütze ich sie gerne.

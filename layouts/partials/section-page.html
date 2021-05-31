@@ -25,7 +25,7 @@
     {{- $id := substr (md5 $class) 0 8 -}}
 
     {{- if ne .Content "" -}}
-        <div id="{{ $id }}" data-section="{{ $nav }}" class="{{ $class }} section-content">
+        <div id="{{ $nav }}" data-section="{{ $nav }}" class="{{ $class }} section-content">
 
             <h1 class="section-content-title">
                 {{- .Title -}}
