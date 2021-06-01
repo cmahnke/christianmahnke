@@ -639,18 +639,24 @@ a:visited {
         p, h2, h3, .inline-list {
             align-self: flex-start;
         }
+        .meta .tags {
+            left: 0;
+        }
     }
 
     .odd {
-         text-align: right;
-         justify-content: flex-end;
-         align-items: flex-end;
-         p, h2, h3, .inline-list {
-             align-self: flex-end;
-         }
-         .inline-list {
-             direction: rtl;
-         }
+        text-align: right;
+        justify-content: flex-end;
+        align-items: flex-end;
+        p, h2, h3, .inline-list {
+            align-self: flex-end;
+        }
+        .inline-list {
+            direction: rtl;
+        }
+        .meta .tags {
+            right: 0;
+        }
     }
 
 }
@@ -710,9 +716,11 @@ a:visited {
     }
 
     .meta {
+        margin: 3em 0;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        position: relative;
 
         a {
             &:before,
@@ -746,6 +754,8 @@ a:visited {
             font-size: 1.6em;
             font-weight: 200;
             flex-direction: column;
+            position: absolute;
+            /* right: 0; */
         }
     }
 }
