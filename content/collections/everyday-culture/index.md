@@ -38,6 +38,8 @@ Meine Sammelschwerpunkte liegt im Bereich der Alltagskultur des  20. Jahrhundert
   * Architektur
   * Technik
 
+Ein (unvollständiger) Katalog meiner Bücher ist bei [Librarything](https://www.librarything.com/profile/cmahnke) einsehbar.
+
 ## Kunst
 * Druckgrafik
 
@@ -48,5 +50,3 @@ Meine Sammelschwerpunkte liegt im Bereich der Alltagskultur des  20. Jahrhundert
 * 3D Bilder / Viewmaster
 
 Mein Ziel ist dabei nicht eines dieser Themen auch nur halbwegs vollständig abzudecken, sondern einen (nicht notwendigerweise repräsentativen) Querschnitt abzubilden.
-
-Ein (unvollständiger) Katalog meiner Bücher ist bei [Librarything](https://www.librarything.com/profile/cmahnke) einsehbar.

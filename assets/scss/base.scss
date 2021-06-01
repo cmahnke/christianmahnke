@@ -12,7 +12,9 @@ $gradient-color-light: #b2444d;
 $gradient-color-mid: #a41416;
 $gradient-color-dark:  #701611;
 
-$text-underline-color: #ff073a;
+/* $text-underline-color: #ff073a; */
+$text-underline-color: #b2444d;
+$marker-color: #ff073a;
 $background-important: #cfff04;
 
 html {
@@ -143,7 +145,7 @@ a:visited {
                     font-weight: 400;
                     &:before {
                         margin-left: .4rem;
-                        color: $text-underline-color;
+                        color: $marker-color;
                         content: '_';
                     }
                 }
@@ -416,18 +418,18 @@ a:visited {
     a {
         &:before {
             content: '_';
-            color: $text-underline-color;
+            color: $marker-color;
             margin-right: -2px;
 
         }
         &:after {
             content: '_';
-            color: $text-underline-color;
+            color: $marker-color;
             margin-left: -1px;
         }
         &:hover {
             text-decoration: underline;
-            text-decoration-color: $text-underline-color;
+            text-decoration-color: $marker-color;
         }
     }
 
@@ -504,7 +506,7 @@ a:visited {
             text-align: left;
             list-style: disclosure-closed;
             li::marker {
-                color: $text-underline-color;
+                color: $marker-color;
             }
         }
 
@@ -736,7 +738,7 @@ a:visited {
 
             .button-gradient {
                 cursor: pointer;
-                padding: .5em .6em .6em .6em;
+                padding: .45em .6em .6em .6em;
             }
         }
 

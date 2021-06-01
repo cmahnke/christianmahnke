@@ -18,7 +18,7 @@ theme = ["projektemacher-base", "hugo-video"]
         [languages.de.menu]
 
             [[languages.de.menu.main]]
-                name = "Start"
+                name = "Schwerpunkte"
                 URL = "/"
                 weight = 2
 
@@ -43,7 +43,7 @@ theme = ["projektemacher-base", "hugo-video"]
         [languages.en.menu]
 
             [[languages.en.menu.main]]
-                name = "Start"
+                name = "Focuses"
                 URL = "/"
                 weight = 2
 

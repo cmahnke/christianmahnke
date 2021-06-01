@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 convert Source\ Files/Images/Textures/Red\ Lether.psd -resize 1000x -quality 20 static/images/red-lether.jpg
 

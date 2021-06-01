@@ -7,6 +7,7 @@ subTitle = "Enthusiast & Sammler"
 me = "/images/me-200.png"
 monogram = "/images/cm.svg"
 monogramBlack = "/images/cm-black.svg"
+favicon_svg = "/images/cm.svg"
 copyrightlink = "https://christianmahnke.de"
 links = ['<a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a>',
          '<a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="/images/laborant.svg">Projektemacher</a>',
