@@ -13,8 +13,8 @@ $gradient-color-mid: #a41416;
 $gradient-color-dark:  #701611;
 
 /* $text-underline-color: #ff073a; */
-$text-underline-color: #b2444d;
-$marker-color: #ff073a;
+$marker-color: #ff073a;;
+$text-underline-color: lighten(#ff073a, 15%);
 $background-important: #cfff04;
 
 html {
@@ -560,6 +560,9 @@ a:visited {
              }
              .inline-list {
                  direction: rtl;
+                 li {
+                     text-align: right;
+                 }
              }
         }
 
