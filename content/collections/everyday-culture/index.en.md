@@ -16,7 +16,8 @@ The main focus of my collection is on different everyday culture related artifac
 * Airplane cutlery
 * Ceramic, glass and porcelain objects
 
-## Books and printed matter (*mainly between 1890 and 1945*)
+## Books and printed matter
+ (*mainly between 1890 and 1945*)
 * Advisory literature (*especially with regard to transported role models*)
   * Letter-writer's guides
   * Entertainment

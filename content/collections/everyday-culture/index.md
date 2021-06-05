@@ -16,7 +16,8 @@ Meine Sammelschwerpunkte liegt im Bereich der Alltagskultur des  20. Jahrhundert
 * Flugzeugbestecke
 * Keramik, Glas und Porzellan Objekte
 
-## Bücher und Gedrucktes (*hauptsächlich zwischen 1890 und 1945*)
+## Bücher und Gedrucktes
+(*hauptsächlich zwischen 1890 und 1945*)
 * Ratgeberliteratur (*besonders mit Hinblick auf transportierte Rollenbilder*)
   * Briefsteller
   * Unterhaltung
