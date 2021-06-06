@@ -454,6 +454,14 @@ a:visited {
     white-space: nowrap;
 }
 
+.iframe-wrapper {
+    transform: translateX(100vw);
+    transition: all .5s;
+    &.show {
+        transform: translateX(0px);
+    }
+}
+
 .type-text {
     clip-path: inset(0 100% 0 0);
 
