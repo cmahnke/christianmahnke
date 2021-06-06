@@ -8,7 +8,12 @@
     <div class="content-container posts">
         {{- partial "section-heading.html" . -}}
         <div class="posts">
-            {{- $pages := where .Site.AllPages "Section" "post" -}}
+            {{- $pages := where .Site.Pages "Section" "post" -}}
+            {{- $mainSite := .Sites.First -}}
+            {{- if ne $mainSite .Site -}}
+                {{- $pages = ($pages | lang.Merge (where $mainSite.Pages "Section" "post")) -}}
+            {{- end -}}
+
             {{- $paginator := .Paginate (where $pages "Params.displayinlist" "!=" false) -}}
             {{- range $i, $page :=  $paginator.Pages -}}
                 {{- .Scratch.Set "class" "odd" -}}

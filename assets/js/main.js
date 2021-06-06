@@ -6,8 +6,3 @@ window.Sticky = require('sticky-js');
 window.addConsent = addConsent;
 
 window.enterView = require('enter-view');
-/*
-TODO: Check if this is still neded to fix Firefox
-
-$(.footer-icon).css({'bottom': '0.2em'});
-*/

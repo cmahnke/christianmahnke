@@ -9,6 +9,6 @@ enterView({
 	enter: function(el) {
 		el.classList.add('show');
 	},
-    offset: 0.5,
+    offset: 0.25,
 	once: true
 });
