@@ -1,16 +1,18 @@
 {{ $class := .Params.type }}
 <div class="post {{ $class }}">
     <div class="content">
-      <h1 class="post-title">{{ .Title }}</h1>
-      <div class="post-body">
-          {{ .Content }}
-      </div>
-     </div>
+        <h1 class="post-title">{{ .Title }}</h1>
+        {{- if not .Params.metaPage -}}
+            <div class="date">
+                <a href="{{ .RelPermalink }}">{{- partial "date.html" . -}}</a>
+            </div>
+        {{ end }}
+        <div class="post-body">
+            {{ .Content }}
+        </div>
+    </div>
     {{- if not .Params.metaPage -}}
         <div class="meta">
-          <div class="date">
-              <a href="{{ .RelPermalink }}">{{- partial "date.html" -}}</a>
-          </div>
           {{ partial "meta/tags.html" . }}
         </div>
     {{ end }}

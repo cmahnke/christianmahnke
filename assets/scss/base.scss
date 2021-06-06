@@ -477,6 +477,17 @@ a:visited {
 }
 
 .content-container {
+    max-width: $content-width;
+    margin: 3em auto;
+    margin-top: calc(3em + 1.4rem);
+
+    @media (max-width : 75em) {
+        margin: 0 1.6rem;
+    }
+
+    @media (max-width : 25em) {
+        margin: 0 .6rem;
+    }
 
     a {
         &:before {
@@ -494,18 +505,6 @@ a:visited {
             text-decoration: underline;
             text-decoration-color: $marker-color;
         }
-    }
-
-    max-width: $content-width;
-    margin: 3em auto;
-    margin-top: calc(3em + 1.4rem);
-
-    @media (max-width : 75em) {
-        margin: 0 1.6rem;
-    }
-
-    @media (max-width : 25em) {
-        margin: 0 .6rem;
     }
 
     .home-section {
@@ -745,6 +744,18 @@ a:visited {
             height: auto;
         }
     }
+
+    &.single .post {
+        .meta .tags {
+            position: absolute;
+            right: 0;
+        }
+
+        .date {
+            align-self: flex-end;
+            margin-bottom: .6em;
+        }
+    }
 }
 
 @media (min-width : calc( #{$content-width} + 12em )) {
@@ -768,6 +779,9 @@ a:visited {
         .meta .tags {
             left: 0;
         }
+        .post-date {
+            align-self: flex-end;
+        }
     }
 
     .odd {
@@ -782,6 +796,9 @@ a:visited {
         }
         .meta .tags {
             right: 0;
+        }
+        .post-date {
+            align-self: flex-start;
         }
     }
 
@@ -844,6 +861,18 @@ a:visited {
         margin-top: 0;
     }
 
+    .readmore,
+    .tags,
+    .date {
+        font-family: 'Josefin Sans', Futura, sans-serif;
+        display: flex;
+    }
+
+    .date,
+    .tags {
+        font-weight: 200;
+    }
+
     .meta {
         margin: 3em 0;
         display: flex;
@@ -865,12 +894,6 @@ a:visited {
             }
         }
 
-        .readmore,
-        .tags {
-            font-family: 'Josefin Sans', Futura, sans-serif;
-            display: flex;
-        }
-
         .readmore {
             text-align: center;
             width: max-content;
@@ -888,7 +911,6 @@ a:visited {
 
         .tags {
             font-size: 1.6em;
-            font-weight: 200;
             flex-direction: column;
             position: absolute;
             @media (max-width : 35em) {
