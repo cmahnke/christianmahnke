@@ -9,7 +9,9 @@ Finally, the last of the blogs stared during the second Corona Lockdown is now o
 
 <!--more-->
 
-{{<figure src="screenshot.png" alt="Screenshot Briefsteller.de" class="post-image">}}
+{{< zoom-link link="https://briefsteller.de" title="Briefsteller.de" >}}
+    {{<figure src="screenshot.png" alt="Screenshot Briefsteller.de" class="post-image">}}
+{{< /zoom-link >}}
 
 [Briefsteller](https://briefsteller.de) is about letter writing guides from the late 19th, early 20th Century. I plan to present some sample letters from the books in the future - ideally not just for reading...
 

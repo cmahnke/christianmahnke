@@ -6,6 +6,7 @@
 @import "fonts/inconsolata";
 @import "icons";
 @import "filters";
+@import "zoom-link";
 
 $content-width: 64em;
 $gradient-color-light: #b2444d;
@@ -1004,6 +1005,26 @@ a:visited {
     }
 }
 
+#contact .section-content-body {
+    width: calc(100% - 4em);
+    position: relative;
+    &:after {
+        position: absolute;
+        content: '';
+        background-image: url('/images/no-emoji.svg');
+        background-size: contain;
+        height: 100%;
+        width: 4em;
+        right: -4em;
+        background-repeat: no-repeat;
+        bottom: 0;
+        opacity: .7;
+        @media (max-width: 35em) {
+            display: none;
+        }
+    }
+}
+
 .footer {
     color: white;
     font-size: 1em;
@@ -1089,6 +1110,25 @@ a:visited {
                 .footer-title {
                     margin-top: auto;
                     margin-bottom: 0;
+                    position: relative;
+
+                    /*
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        background-image: url('/images/no-emoji.svg');
+                        background-size: contain;
+                        filter: #{"invert()"};
+                        height: 1em;
+                        width: 1em;
+                        right: -2em;
+                        bottom: 0;
+                        mix-blend-mode: saturation;
+                        @media (max-width: 35em) {
+                            display: none;
+                        }
+                    }
+                    */
                 }
 
                 .contact-link {

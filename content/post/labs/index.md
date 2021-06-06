@@ -9,6 +9,8 @@ Um in Zukunft eine Seite zu haben, die auch ruhig mal für ein paar Tage kaputt 
 
 <!--more-->
 
-{{< figure src="screenshot.png" alt="Screenshot Labs.projektmacher.de" class="post-image" >}}
+{{< zoom-link link="https://labs.projektemache.org" title="Projektemacher Labs" >}}
+    {{< figure src="screenshot.png" alt="Screenshot Labs.projektmacher.de" class="post-image" >}}
+{{< /zoom-link >}}
 
 Fertige Funktionalitäten oder neue Blogs aus den [Labs](https://labs.projektemache.org) sollen in den Blogs, wo die entsprechende Funktionalität die Präsentation verbessert landen, die Beiträge darüber hier...

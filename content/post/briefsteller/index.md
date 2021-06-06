@@ -9,7 +9,9 @@ Endlich, das letzte der im zweiten Corona Lockdown geplanten Blog ist nun online
 
 <!--more-->
 
-{{< figure src="screenshot.png" alt="Screenshot Briefsteller.de" class="post-image" >}}
+{{< zoom-link link="https://briefsteller.de" title="Briefsteller.de" >}}
+    {{< figure src="screenshot.png" alt="Screenshot Briefsteller.de" class="post-image" >}}
+{{< /zoom-link >}}
 
 [Briefsteller](https://briefsteller.de) soll in der Zukunft einige Musterbriefe aus den präsentierten Büchern gezeigt werden - im Idealfall nicht nur zum lesen.
 

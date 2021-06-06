@@ -20,7 +20,7 @@ Daher erwarte ich von der bedachten Institution, dass diese bereit ist einige Be
         </div>
     </li>
     <li><div class="li-heading">Digitalisierung</div></li>
-        <div class="li-body type-text">Das Objekt wird digitalisiert und mir die Digitalisate zur Präsentation bereitgestellt - dabei sollte die Lizenz eine möglichst breite Nachnutzung erlauben - idealerweise <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" title="CC0">CC0</a>.
+        <div class="li-body type-text">Das Objekt wird digitalisiert und mir die Digitalisate (inklusive Rohdaten) zur Präsentation bereitgestellt - dabei sollte die Lizenz eine möglichst breite Nachnutzung erlauben - idealerweise <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" title="CC0">CC0</a>.
         </div>
     </li>
     <li><div class="li-heading">Bereitstellung in Ihrem Online-Portal</div></li>
@@ -43,7 +43,7 @@ Hier eine Auswahl der bisherigen Objekte:
 
 {{< video src="marburg" >}}
 
-Ein [Film über Marburg](https://arcinsys.hessen.de/arcinsys/detailAction?detailid=v7729942).
+Ein [Film über Marburg](https://arcinsys.hessen.de/arcinsys/detailAction?detailid=v7729942) aus den 1940er Jahren.
 
 ### Film über München
 

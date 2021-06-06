@@ -1,0 +1,17 @@
+.zoom-link {
+    transition: all .5s;
+    animation-name: zoom-link;
+    animation-duration: .5s;
+    display: block;
+}
+
+@keyframes zoom-link {
+  from {
+      opacity: 1;
+      transform: scale(1);
+  }
+  to {
+      opacity: .4;
+      transform: scale(3);
+  }
+}

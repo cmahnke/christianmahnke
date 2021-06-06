@@ -1,0 +1,41 @@
+{{- $image := .Inner | safeHTML -}}
+{{- $href := "" -}}
+{{- $title := "" -}}
+
+{{- with .Get "link" -}}
+    {{- $href = . -}}
+{{- end -}}
+
+{{- with .Get "title" -}}
+    {{- $title = . -}}
+{{- end -}}
+
+{{- $id := printf "_link-%s" (md5 $image) -}}
+
+<div class="zoom-link-wrapper" id="{{ $id }}">
+    <a href="{{ $href }}" title="{{ $title }}">
+        {{- $image -}}
+    </a>
+    <script>
+        $(document).ready(function() {
+            var wrapper = $('#{{ $id }}');
+            var img = wrapper.find('a figure img');
+            img.parent().css({'position': 'relative'});
+            var clone = img.clone().appendTo(img.parent()).css({
+                'display': 'none',
+                'position': 'absolute',
+                'top': 0,
+                'bottom': img.offset().top + img.height(),
+                'left': 0,
+                'right': img.offset().left + img.width()
+            });
+
+            wrapper.find('a').on('click', function(e) {
+                console.log('img click');
+                clone.css({'display': 'block'});
+                clone.addClass('zoom-link');
+                $(e).delay(400);
+            });
+        });
+    </script>
+</div>
