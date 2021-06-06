@@ -1,36 +1,36 @@
 ---
-title: "Berufliche Schwerpunkte"
+title: "Professional focus"
 metaPage: true
 displayinlist: false
 weight: 6
 ---
 
-## Kompetenzen
+## Skills
 
-Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum digitaler Bibliotheken:
+My professional focus is on various topics from the spectrum of digital libraries:
 
-* Volltexte und Metadaten
+* Full texts and metadata
 
-  * TEI / Digitale Editionen
+  * TEI / Digital editions
   * OCR
-  * Suchtechnologien (Solr / ElasticSearch)
-  * XML Technologien
+  * Search technologies (Solr / ElasticSearch)
+  * XML technologies
   * IIIF
 
-* (Massen-) Digitalisierung
-  * Workflowsteuerung
+* (Mass-) Digitisation
+  * Workflow automatisation
 
-* Betriebs- und Entwicklungsinfrastrukturen
+* DevOps
   * Git
   * Docker / Cloud
 
 ## Vortäge und Publikationen
 (*Auswahl*)
-* **08.6.2011** - 100. Deutscher Bibliothekartag - "IMProving ACcess to Text - Entwicklung eines Interoperabilitätsframeworks in einem Bibliotheksprojekt" (mit Mustafa Dogan), Berlin
+* **08.6.2011** - 100. Deutscher Bibliothekartag - "IMProving ACcess to Text - Entwicklung eines Interoperabilitätsframeworks in einem Bibliotheksprojekt" (with Mustafa Dogan), Berlin
 * **16.3.2010** - 4. Leipziger Kongress für Information und Bibliothek "OCR Renderfarmen und TEI", Leipzig
 * **13.10.2008** - Sino-German Symposium on Development of Library and Information 2008 - "Goobi - web based digitisation lifecycle software", Hannover
 * **04.6.2008** - 97. Deutscher Bibliothekartag - "BibForge - developing Libraries", Mannheim
-* **25.4.2007** - Putting the TEI to the test (MPDL Tagung) - "Fulltext processing at the GDZ", Berlin
+* **25.4.2007** - Putting the TEI to the test (MPDL meeting) - "Fulltext processing at the GDZ", Berlin
 
 ## Publikationen
 * Fieseler C., **Mahnke C.** (2013): CERL Thesaurus used in an electronic edition of 18th-century university lectures, CERL Newsletter 27, Juni 2013
