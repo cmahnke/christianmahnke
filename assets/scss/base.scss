@@ -705,10 +705,12 @@ a:visited {
              .inline-list {
                  direction: rtl;
                  list-style: none;
+                 margin-right: 1em;
                  li {
                      text-align: right;
                         &:before {
                          content: '☜';
+                         padding-left: .4em;
                      }
                  }
              }
