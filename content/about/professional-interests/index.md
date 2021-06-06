@@ -2,7 +2,7 @@
 title: "Berufliche Schwerpunkte"
 metaPage: true
 displayinlist: false
-weight: 6
+weight: 4
 ---
 
 ## Kompetenzen
@@ -19,6 +19,13 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 
 * (Massen-) Digitalisierung
   * Workflowsteuerung
+
+* Programmiersprachen
+  * Java
+  * PHP
+  * Python
+  * Groovy
+  * Go
 
 * Betriebs- und Entwicklungsinfrastrukturen
   * Git

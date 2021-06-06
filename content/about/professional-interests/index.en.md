@@ -2,7 +2,7 @@
 title: "Professional focus"
 metaPage: true
 displayinlist: false
-weight: 6
+weight: 4
 ---
 
 ## Skills
@@ -19,6 +19,13 @@ My professional focus is on various topics from the spectrum of digital librarie
 
 * (Mass-) Digitisation
   * Workflow automatisation
+
+* Programming
+  * Java
+  * PHP
+  * Python
+  * Groovy
+  * Go
 
 * DevOps
   * Git
