@@ -31,7 +31,7 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
   * Git
   * Docker / Cloud
 
-## Vortäge und Publikationen
+## Vorträge
 (*Auswahl*)
 * **08.6.2011** - 100. Deutscher Bibliothekartag - "IMProving ACcess to Text - Entwicklung eines Interoperabilitätsframeworks in einem Bibliotheksprojekt" (mit Mustafa Dogan), Berlin
 * **16.3.2010** - 4. Leipziger Kongress für Information und Bibliothek "OCR Renderfarmen und TEI", Leipzig
