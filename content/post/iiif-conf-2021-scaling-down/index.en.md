@@ -6,6 +6,7 @@ tags:
 ---
 Today I gave my talk about the infrastructure of my blogs at this year's IIIF conference.
 
-As long as there is no PDF viewer as part of the theme, the slides can be downloaded [here](./Scaling%20down.pdf).
+<!--more-->
+{{< pdf file="./Scaling%20down.pdf" >}}
 
 This article will be updated as soon as the recording is available online.
