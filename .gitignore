@@ -10,6 +10,7 @@ static/images/red-lether.jpg
 static/images/laborant.svg
 static/images/cm.svg
 static/images/cm-black.svg
+static/pdfjs/**
 resources
 content/**/*-boxed.jpg
 content/**/front/
