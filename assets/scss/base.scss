@@ -1031,6 +1031,10 @@ a:visited {
     content: url($librarything-light);
 }
 
+.instagram {
+    content: url($insta-light);
+}
+
 .projektemacher {
     filter: #{"invert()"};
     border-radius: 50%;
@@ -1239,4 +1243,13 @@ a:visited {
             color: white;
         }
     }
+}
+
+.insta-inline:after {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 2em;
+    content: url($insta-dark);
+    vertical-align: sub;
 }
