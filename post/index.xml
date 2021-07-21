@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Christian Mahnke</title>
+    <link>https://christianmahnke.de/post/</link>
+    <description>Recent content in Blog on Christian Mahnke</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Thu, 24 Jun 2021 16:30:00 +0200</lastBuildDate><atom:link href="https://christianmahnke.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IIIF Konferenz 2021: Scaling down...</title>
+      <link>https://christianmahnke.de/post/iiif-conf-2021-scaling-down/</link>
+      <pubDate>Thu, 24 Jun 2021 16:30:00 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/post/iiif-conf-2021-scaling-down/</guid>
+      <description>&lt;p&gt;Heute war es soweit, ich habe meinen Vortrag zu der Infrastruktur meiner Blogs auf der diesjährigen IIIF Konferenz gehalten.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Instagram</title>
+      <link>https://christianmahnke.de/post/instagram/</link>
+      <pubDate>Mon, 31 May 2021 15:23:46 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/post/instagram/</guid>
+      <description>Seit heute gibt es einen ergänzenden  Instagram Kanal . Dies ist erstmal nur ein Experiment. Was aber schon negativ aufgefallen ist: Es scheint keine offizielle und stabile API zum Anlegen von Beträgen zu geben - sehr unprofessionell!</description>
+    </item>
+    
+    <item>
+      <title>DIY Projekt: Telefonhülle</title>
+      <link>https://christianmahnke.de/post/phone-case/</link>
+      <pubDate>Mon, 31 May 2021 13:58:44 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/post/phone-case/</guid>
+      <description>&lt;p&gt;Heute mal wieder eines der eher seltenen nicht-digitalen Projekte: Eine Hülle für mein neues Telefon.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sommerpause</title>
+      <link>https://christianmahnke.de/post/summer-break/</link>
+      <pubDate>Mon, 24 May 2021 19:22:44 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/post/summer-break/</guid>
+      <description>&lt;p&gt;Nachdem dieser Frühling bisher nicht das frühlingshafteste Wetter zu bieten hatte, soll es nächste Woche wohl besser werden.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Briefsteller.de gestartet</title>
+      <link>https://christianmahnke.de/post/briefsteller/</link>
+      <pubDate>Tue, 27 Apr 2021 19:22:44 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/post/briefsteller/</guid>
+      <description>&lt;p&gt;Endlich, das letzte der im zweiten Corona Lockdown geplanten Blog ist nun online!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>IIIF Konferenz 2021</title>
+      <link>https://christianmahnke.de/post/iiif-conference-2021/</link>
+      <pubDate>Sat, 13 Mar 2021 19:22:44 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/post/iiif-conference-2021/</guid>
+      <description>&lt;p&gt;Ich werde meine &lt;a href=&#34;https://projektemacher.org/blogs/&#34; target=&#34;_blank&#34;&gt;Corona-Projekte&lt;/a&gt;
+ auf der diesjährigen &lt;a href=&#34;https://iiif.io/event/2021/annual_conference/&#34; target=&#34;_blank&#34;&gt;IIIF Konferenz&lt;/a&gt;
+ vorstellen!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Labs.projektemache.org gestartet</title>
+      <link>https://christianmahnke.de/post/labs/</link>
+      <pubDate>Sat, 13 Mar 2021 19:22:44 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/post/labs/</guid>
+      <description>&lt;p&gt;Um in Zukunft eine Seite zu haben, die auch ruhig mal für ein paar Tage kaputt gehen kann und um auch mal einige Dinge halbfertig präsentieren zu können, gibt es nun die &lt;a href=&#34;https://labs.projektemache.org&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt;
+.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Der erste Beitrag</title>
+      <link>https://christianmahnke.de/post/first-post/</link>
+      <pubDate>Sun, 06 Dec 2020 19:22:44 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/post/first-post/</guid>
+      <description>&lt;p&gt;Nachdem in den letzten Monaten schon die Seite &lt;a href=&#34;https://projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher.org&lt;/a&gt;
+ online gegangen ist um als Dachmarke für meine alten Tumblr Blogs und die Projekte des ersten Corona Lockdowns unter einem Dach zu vereinen startet nun auch meine persönliche Homepage.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

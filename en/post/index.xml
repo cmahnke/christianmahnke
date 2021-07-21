@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/post/</link>
+    <description>Recent content in Blog on Christian Mahnke</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Thu, 24 Jun 2021 16:30:00 +0200</lastBuildDate><atom:link href="https://christianmahnke.de/en/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IIIF Conference 2021: Scaling down...</title>
+      <link>https://christianmahnke.de/en/post/iiif-conf-2021-scaling-down/</link>
+      <pubDate>Thu, 24 Jun 2021 16:30:00 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/en/post/iiif-conf-2021-scaling-down/</guid>
+      <description>&lt;p&gt;Today I gave my talk about the infrastructure of my blogs at this year&amp;rsquo;s IIIF conference.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Instagram</title>
+      <link>https://christianmahnke.de/en/post/instagram/</link>
+      <pubDate>Mon, 31 May 2021 15:23:46 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/en/post/instagram/</guid>
+      <description>As of today there is an additional  Instagram channel . This is just an experiment for now. But what has already annoys me me: There doesn&amp;rsquo;t seem to be an official and stable API for creating posts / uploading images - very disappointing!</description>
+    </item>
+    
+    <item>
+      <title>Summer break</title>
+      <link>https://christianmahnke.de/en/post/summer-break/</link>
+      <pubDate>Mon, 24 May 2021 19:22:44 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/en/post/summer-break/</guid>
+      <description>&lt;p&gt;This spring has not yet offered the most spring-like weather, but it should be better next week&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Briefsteller.de startet</title>
+      <link>https://christianmahnke.de/en/post/briefsteller/</link>
+      <pubDate>Tue, 27 Apr 2021 19:22:44 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/en/post/briefsteller/</guid>
+      <description>&lt;p&gt;Finally, the last of the blogs stared during the second Corona Lockdown is now online!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>IIIF Konferenz 2021</title>
+      <link>https://christianmahnke.de/en/post/iiif-conference-2021/</link>
+      <pubDate>Sat, 13 Mar 2021 19:22:44 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/en/post/iiif-conference-2021/</guid>
+      <description>&lt;p&gt;I will present my &lt;a href=&#34;https://projektemacher.org/blogs/&#34; target=&#34;_blank&#34;&gt;Corona projects&lt;/a&gt;
+ at this year&amp;rsquo;s &lt;a href=&#34;https://iiif.io/event/2021/annual_conference/&#34; target=&#34;_blank&#34;&gt;IIIF conference&lt;/a&gt;
+!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Labs.projektemache.org gestartet</title>
+      <link>https://christianmahnke.de/en/post/labs/</link>
+      <pubDate>Sat, 13 Mar 2021 19:22:44 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/en/post/labs/</guid>
+      <description>&lt;p&gt;In order to have a page in the future that can easily break for a few days and to be able to present some things half-finished, there is now the &lt;a href=&#34;https://labs.projektemache.org&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt;
+.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Der erste Beitrag</title>
+      <link>https://christianmahnke.de/en/post/first-post/</link>
+      <pubDate>Sun, 06 Dec 2020 19:22:44 +0200</pubDate>
+      
+      <guid>https://christianmahnke.de/en/post/first-post/</guid>
+      <description>&lt;p&gt;After the site &lt;a href=&#34;https://projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher.org&lt;/a&gt;
+ went online in the last few months to unite my old Tumblr blogs and the projects of the first Corona Lockdown under a single&lt;/p&gt;
+&lt;p&gt;one roof as an umbrella brand, mine is now starting personal homepage.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About me on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/about/</link>
+    <description>Recent content in About me on Christian Mahnke</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright><atom:link href="https://christianmahnke.de/en/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Professional focus</title>
+      <link>https://christianmahnke.de/en/about/professional-interests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://christianmahnke.de/en/about/professional-interests/</guid>
+      <description>Skills My professional focus is on various topics from the spectrum of digital libraries:
+  Full texts and metadata
+ TEI / Digital editions OCR Search technologies (Solr / ElasticSearch) XML technologies IIIF    (Mass-) Digitisation
+ Workflow automatisation    Programming
+ Java PHP Python Groovy Go    DevOps
+ Git Docker / Cloud    Talks (Auswahl)
+ 08.6.2011 - 100. Deutscher Bibliothekartag - &amp;ldquo;IMProving ACcess to Text - Entwicklung eines Interoperabilitätsframeworks in einem Bibliotheksprojekt&amp;rdquo; (with Mustafa Dogan), Berlin 16.</description>
+    </item>
+    
+    <item>
+      <title>Videos</title>
+      <link>https://christianmahnke.de/en/about/videos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://christianmahnke.de/en/about/videos/</guid>
+      <description>In the last few years I had the opportunity to be an extra in short films:
+Evelyns Geschichte External Content External content is included at this point. Personal data might be transmitted to third-party platforms.
+     Allow external content    $(document).ready(function() { var expire = 30 * 24 * 60 * 60; var overlay = $(&#39;#_iframe-1ca95ac40642efa3d0163bf1c6f08ee4&#39;).find(&#39;.opt-in&#39;); var toggle = $(&#39;#_iframe-1ca95ac40642efa3d0163bf1c6f08ee4&#39;).find(&#39;.opt-in-switch input&#39;); addConsent(toggle, overlay, &#39;1ca95ac40642efa3d0163bf1c6f08ee4&#39;, &#39;\n \n\u003cdiv style=\u0022position: relative; padding-bottom: 56.</description>
+    </item>
+    
+    <item>
+      <title>Blogs</title>
+      <link>https://christianmahnke.de/en/about/blogs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://christianmahnke.de/en/about/blogs/</guid>
+      <description>A list of my blogs on specific topics can be found on Projektemacher.org . I am also involved in Nebeleule.de .</description>
+    </item>
+    
+    <item>
+      <title>Colophon</title>
+      <link>https://christianmahnke.de/en/about/colophon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://christianmahnke.de/en/about/colophon/</guid>
+      <description>This page was generated with Hugo .
+The theme hugo-video is used to integrate videos. Josefin Sans , League Spartan and Inconsolata are used as fonts.
+The following JavaScript and CSS libraries and frameworks are used:
+jQuery js-cookie Normalize.css Sticky-js Enter-view.js AOS (Animate On Scroll Library) --  The site is hosted by GitHub .</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://christianmahnke.de/en/about/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://christianmahnke.de/en/about/contact/</guid>
+      <description>This page is a project by Christian Mahnke.
+Contact is possible via E-Mail .</description>
+    </item>
+    
+  </channel>
+</rss>
