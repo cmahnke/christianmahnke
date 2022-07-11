@@ -21,7 +21,7 @@ jobs:
           node-version: 10.22.0
 
       - name: Set up Python
-        uses: actions/setup-python@v4.0.0
+        uses: actions/setup-python@v4.1.0
         with:
           python-version: 3.9
 
