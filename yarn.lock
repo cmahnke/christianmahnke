@@ -231,10 +231,22 @@ jquery@^3.6.0:
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
   integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
 
-js-cookie@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.2.1.tgz#69e106dc5d5806894562902aa5baec3744e9b2b8"
-  integrity sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==
+js-cookie@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-3.0.1.tgz#9e39b4c6c2f56563708d7d31f6f5f21873a92414"
+  integrity sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==
+
+lg-fullscreen@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/lg-fullscreen/-/lg-fullscreen-1.2.1.tgz#9402aae62ce22148e13bee2fb177f2195dbbfbd6"
+  integrity sha512-mntHGBHEKWfbz/ZiFkWQhBgxzm8ZtWUcgI83GOv9uxmtGi5G9mhTxplkHODHNt9+Ss+IHYZJav/UTjcGPIcSVw==
+  dependencies:
+    jquery ">=1.7.0"
+
+lightgallery@^2.1.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/lightgallery/-/lightgallery-2.7.0.tgz#faa1ff6c7338557f39a29a63228b77793afad95d"
+  integrity sha512-iozIJNxKl3wPWcspCmRdaSYpYy3PjloC8BN0PDwaDOoTA1hsu1IhZdWQWI5cGgMJvnksP94/smElMwn2HS5d3Q==
 
 lg-fullscreen@^1.2.1:
   version "1.2.1"
