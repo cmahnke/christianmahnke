@@ -3,6 +3,8 @@ node_modules
 yarn-error.log
 docs
 patches
+.hugo_build.lock
+hugo_stats.json
 static/images/favicon*
 static/images/*.svg
 static/images/background.jpg
