@@ -10,7 +10,7 @@
         "lightgallery": "^2.1.0"
     },
     "devDependencies": {
-        "replace-in-file": "6.2.0",
+        "replace-in-file": "6.3.5",
         "svgo": "^2.3.0"
     },
     "scripts": {
