@@ -25,7 +25,7 @@ Therefore, I expect the institution to be prepared to meet the following of cond
         </div>
     </li>
     <li><div class="li-heading">Presentation in your online portal</div></li>
-        <div class="li-body type-text">he digitized material is presented in the context of your other digitised objects, regardless of whether the presentation takes place directly in your institution or in a (library) network.
+        <div class="li-body type-text">The digitized material is presented in the context of your other digitised objects, regardless of whether the presentation takes place directly in your institution or in a (library) network.
         </div>
     </li>
     <li><div class="li-heading">Publication in a supra-regional portal</div></li>

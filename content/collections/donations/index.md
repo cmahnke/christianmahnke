@@ -10,9 +10,9 @@ Hin und wieder finde ich auch Dinge, die für Archive, Museen oder überregional
 <a class="no-link" name="donation-conditions" id="donation-conditions"></a>
 ## Aktiver Spender
 
-Analog zum ["Aktiven Investor"](https://de.wikipedia.org/wiki/Aktiver_Investor) sehe ich mich als aktiven Spender, das bedeutet, dass es mir nicht nur wichtig ist, dass ein Artefakt oder ein Medium für die Allgemeinheit erhalten bleibt, sondern auch, dass der Zugang auf der Höhe der Zeit, also digital, erfolgen kann. Dies ist natürlich auf der einen Seite [meinen beruflichem Hintergrund](/about/#professional-interests) geschuldet aber auf der anderen schlicht eine Notwendigkeit bei der Vermittlung von kulturellem Erbe. Falls Ihre Institution dazu nicht in der Lage ist, unterstütze ich Sie gerne.
+Analog zum ["Aktiven Investor"](https://de.wikipedia.org/wiki/Aktiver_Investor) sehe ich mich als aktiven Spender, das bedeutet, dass es mir nicht nur wichtig ist, dass ein Artefakt oder ein Medium für die Allgemeinheit erhalten bleibt, sondern auch, dass der Zugang auf der Höhe der Zeit, also digital, erfolgen kann. Dies ist natürlich auf der einen Seite [meinen beruflichem Hintergrund](/about/#professional-interests) geschuldet, aber auf der anderen schlicht eine Notwendigkeit bei der Vermittlung von kulturellem Erbe. Falls Ihre Institution dazu nicht in der Lage ist, unterstütze ich Sie gerne.
 
-Daher erwarte ich von der bedachten Institution, dass diese bereit ist einige Bedingungen zu erfüllen:
+Daher erwarte ich von der bedachten Institution, dass diese bereit ist, einige Bedingungen zu erfüllen:
 
 <ul class="list-block">
     <li><div class="li-heading">Katalogisierung und Nachweis</div>
@@ -24,7 +24,7 @@ Daher erwarte ich von der bedachten Institution, dass diese bereit ist einige Be
         </div>
     </li>
     <li><div class="li-heading">Bereitstellung in Ihrem Online-Portal</div></li>
-        <div class="li-body type-text">Das Digitalisat wir im Kontext Ihrer sonstigen digitalisierten Objekte bereitgestellt, dabei ist es unerheblich, ob Sie die Präsentation direkt in Ihrer Institution oder in einem Verbund erfolgt.
+        <div class="li-body type-text">Das Digitalisat wird im Kontext Ihrer sonstigen digitalisierten Objekte bereitgestellt, dabei ist es unerheblich, ob Sie die Präsentation direkt in Ihrer Institution oder in einem Verbund erfolgt.
         </div>
     </li>
     <li><div class="li-heading">Bereitstellung in einem überreginalem Rechercheportal</div></li>
