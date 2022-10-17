@@ -36,3 +36,4 @@ content/**/img*-*.json
 !content/**/img*-map.json
 content/**/page*-*.json
 !content/**/page*-map.json
+**/.DS_Store
