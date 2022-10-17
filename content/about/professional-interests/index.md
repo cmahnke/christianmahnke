@@ -29,10 +29,11 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 
 * Betriebs- und Entwicklungsinfrastrukturen
   * Git
-  * Docker / Cloud
+  * Docker / Kubernetes / Cloud
 
 ## Vorträge
 (*Auswahl*)
+* **24.6.2021** - 2021 IIIF Annual Conference - [Scaling Down: IIIF at Small Scale](https://whova.com/embedded/session/EJt2h6EsBemAPdBLSvToVJA%403Er8F48foN7yx-cZscQ%3D/1646975/?widget=primary), Online
 * **08.6.2011** - 100. Deutscher Bibliothekartag - "IMProving ACcess to Text - Entwicklung eines Interoperabilitätsframeworks in einem Bibliotheksprojekt" (mit Mustafa Dogan), Berlin
 * **16.3.2010** - 4. Leipziger Kongress für Information und Bibliothek "OCR Renderfarmen und TEI", Leipzig
 * **13.10.2008** - Sino-German Symposium on Development of Library and Information 2008 - "Goobi - web based digitisation lifecycle software", Hannover
