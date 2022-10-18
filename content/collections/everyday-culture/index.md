@@ -5,7 +5,7 @@ displayinlist: false
 weight: 1
 ---
 
-Meine Sammelschwerpunkte liegt im Bereich der Alltagskultur des  20. Jahrhunderts. Dies ist zugegeben ein großes (und schwammiges bis sumpfiges) Gebiet, daher hier eine Auflistung der verschiedenen Ausprägungen:
+Meine Sammelschwerpunkte liegt im Bereich der Alltagskultur des 20. Jahrhunderts. Dies ist zugegeben ein großes (und schwammiges bis sumpfiges) Gebiet, daher hier eine Auflistung der verschiedenen Ausprägungen:
 
 ## Dinge / Artefakte
 * Optische Geräte und Spielzeuge
@@ -50,4 +50,4 @@ Ein (unvollständiger) Katalog meiner Bücher ist bei [Librarything](https://www
 * Dias
 * 3D Bilder / Viewmaster
 
-Mein Ziel ist dabei nicht eines dieser Themen auch nur halbwegs vollständig abzudecken, sondern einen (nicht notwendigerweise repräsentativen) Querschnitt abzubilden.
+Mein Ziel ist dabei nicht, eines dieser Themen auch nur halbwegs vollständig abzudecken, sondern einen (nicht notwendigerweise repräsentativen) Querschnitt abzubilden.

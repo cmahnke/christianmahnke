@@ -5,7 +5,7 @@ tags:
 - Projektemacher.org
 ---
 
-Endlich, das letzte der im zweiten Corona Lockdown geplanten Blog ist nun online!
+Endlich, der letzte der im zweiten Corona Lockdown geplanten Blog ist nun online!
 
 <!--more-->
 
