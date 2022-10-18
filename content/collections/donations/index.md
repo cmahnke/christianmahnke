@@ -10,7 +10,7 @@ Hin und wieder finde ich auch Dinge, die für Archive, Museen oder überregional
 <a class="no-link" name="donation-conditions" id="donation-conditions"></a>
 ## Aktiver Spender
 
-Analog zum ["Aktiven Investor"](https://de.wikipedia.org/wiki/Aktiver_Investor) sehe ich mich als aktiven Spender. Das bedeutet, dass es mir nicht nur wichtig ist, dass ein Artefakt oder ein Medium für die Allgemeinheit erhalten bleibt, sondern auch, dass der Zugang auf der Höhe der Zeit, also digital, erfolgen kann. Dies ist natürlich auf der einen Seite [meinen beruflichem Hintergrund](/about/#professional-interests) geschuldet, aber auf der anderen schlicht eine Notwendigkeit bei der Vermittlung von kulturellem Erbe. Falls Ihre Institution Unterstützung brauchen kann, sprechen Sie mich gerne an.
+Analog zum ["Aktiven Investor"](https://de.wikipedia.org/wiki/Aktiver_Investor) sehe ich mich als aktiven Spender. Das bedeutet, dass es mir nicht nur wichtig ist, dass ein Artefakt oder ein Medium für die Allgemeinheit erhalten bleibt, sondern auch, dass der Zugang auf der Höhe der Zeit, also digital, erfolgen kann. Dies ist natürlich auf der einen Seite [meinem beruflichen Hintergrund](/about/#professional-interests) geschuldet, aber auf der anderen schlicht eine Notwendigkeit bei der Vermittlung von kulturellem Erbe. Falls Ihre Institution Unterstützung brauchen kann, sprechen Sie mich gerne an.
 
 Im Gegenzug erwarte ich von der bedachten Institution, dass diese bereit ist, einige Bedingungen zu erfüllen:
 
