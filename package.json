@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "replace-in-file": "6.3.5",
-        "svgo": "^2.8.0"
+        "svgo": "^3.0.0"
     },
     "scripts": {
         "logo-projektemacher": "svgo --config Source\\ Files/svgo.config.js -i themes/projektemacher-base/Source\\ Files/Images/Laborant.svg -o static/images/laborant.svg",
