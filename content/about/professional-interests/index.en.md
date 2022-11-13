@@ -7,7 +7,7 @@ weight: 4
 
 ## Skills
 
-My professional focus is on various topics from the spectrum of digital libraries:
+My professional focus is on various topics from the spectrum of digital libraries and museums:
 
 * Full texts and metadata
 

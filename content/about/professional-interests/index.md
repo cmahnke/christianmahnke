@@ -7,7 +7,7 @@ weight: 4
 
 ## Kompetenzen
 
-Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum digitaler Bibliotheken:
+Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum digitaler Bibliotheken und Museen:
 
 * Volltexte und Metadaten
 

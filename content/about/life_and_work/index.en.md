@@ -5,6 +5,6 @@ displayinlist: false
 weight: 3
 ---
 
-## Life and work
+## Places
 
-I live and work in Göttingen and Westerland / Sylt. My professional focus is on libraries and museums.
+I live and work in Göttingen and Westerland / Sylt.
