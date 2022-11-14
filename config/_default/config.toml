@@ -15,6 +15,19 @@ links = ['<a href="https://github.com/cmahnke" target="_blank" title="GitHub"><d
          '<a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram"><div class="link-image instagram"></div>Instagram</a>']
 contacts = ['<h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a>']
 
+#[params.preview]
+#    outputPrefix = "ogPreview-overlay"
+#    outputSuffix = ".png"
+#    format =  "svg"
+#    image = "front.png"
+#    source = "overlay"
+#    [params.preview.size]
+#        height = 630
+#        width = 1200
+#    [params.preview.svg]
+#        template = "./Source Files/Other/preview-template.svg"
+#        scale = "width"
+#        removeMissing = true
 
 [languages.de.params]
 
