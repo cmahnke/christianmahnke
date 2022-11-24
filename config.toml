@@ -11,6 +11,9 @@ disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base", "hugo-video"]
 
+[params]
+disableScale = "minimum-scale=1"
+
 [languages]
     [languages.de]
         languagename = "Deutsch"
