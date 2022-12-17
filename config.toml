@@ -98,6 +98,11 @@ theme = ["projektemacher-base", "hugo-video"]
     baseName = "manifest"
     notAlternative = true
 
+[privacy]
+  [privacy.instagram]
+    disable = false
+    simple = false
+
 [module]
     [[module.mounts]]
         source = "assets/scss"
