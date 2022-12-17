@@ -38,13 +38,3 @@ Im Gegenzug erwarte ich von der bedachten Institution, dass diese bereit ist, ei
 ## Bisherige Schenkungen
 
 Hier eine Auswahl der bisherigen Objekte:
-
-### Film über Marburg
-
-{{< video src="marburg" >}}
-
-Ein [Film über Marburg](https://arcinsys.hessen.de/arcinsys/detailAction?detailid=v7729942) aus den 1940er Jahren.
-
-### Film über München
-
-Der [Film über München](https://stadtarchiv.muenchen.de/scopeQuery/detail.aspx?ID=617667) ist leider noch nicht online verfügbar.

@@ -35,8 +35,10 @@
                 {{- .Content -}}
             </div>
 
-            {{- if eq .Kind "Section" -}}
-                {{- errorf "%s is a nested section" (path.Base .Permalink) -}}
+            {{- if eq .Kind "section" -}}
+              <div class="section-content-subsection">
+                {{- partial "subsection.html" . -}}
+              </div>
             {{- end -}}
 
         </div>

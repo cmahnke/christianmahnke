@@ -199,7 +199,6 @@ a:visited {
                 height: 100%;
                 font-size: 1.6em;
                 font-weight: 300;
-                /* display: inline-flex; */
                 vertical-align: middle;
                 border-top: 2px solid transparent;
 
@@ -296,8 +295,6 @@ a:visited {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
-    /* margin: auto; */
-    /*            height: calc(273px + 75px);*/
     height: 273px;
     width: 320px;
     position: relative;
@@ -433,7 +430,6 @@ a:visited {
         content: url($down-light);
         height: 2em;
         width: 2em;
-        /* display: block; */
         display:flex;
         animation: bounce 2s infinite;
         box-sizing:border-box;
@@ -557,6 +553,7 @@ a:visited {
 
     .section-head-content,
     .section-content-body,
+    .section-content-subsection,
     .post-body {
         flex-direction: column;
         display: flex;

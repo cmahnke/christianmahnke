@@ -39,13 +39,3 @@ Therefore, I expect the institution to be prepared to meet the following of cond
 ## Previous donations
 
 The previously donated highlights:
-
-### Amateur film about Marburg
-
-{{< video src="marburg" >}}
-
-A [Amateur film about Marburg](https://arcinsys.hessen.de/arcinsys/detailAction?detailid=v7729942) from the 1940ies.
-
-### Amateur film about Munich
-
-The [Amateur film about Munich](https://stadtarchiv.muenchen.de/scopeQuery/detail.aspx?ID=617667) is unfortunately not yet available online.

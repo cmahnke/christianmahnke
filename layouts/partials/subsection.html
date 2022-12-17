@@ -1,0 +1,13 @@
+{{- $previewEntries := 3 -}}
+{{- range .Pages -}}
+  <h3>
+    {{- .Title -}}
+  </h3>
+  <p>{{- .Summary -}}</p>
+  {{- if .Truncated -}}
+    <a href="{{ .RelPermalink }}" class="subsection-more-link">{{ i18n "readmore" }}</a>
+  {{- end -}}
+{{- end -}}
+{{- if lt $previewEntries (len .Pages) -}}
+  <a href="{{ .RelPermalink }}" class="subsection-more-link">{{ i18n "readmore" }}</a>
+{{- end -}}
