@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Set SKIP_IIIF to something to disable generation of IIIF derivates"
+./scripts/iiif.sh
+
 convert Source\ Files/Images/Textures/Red\ Lether.psd -resize 1000x -quality 20 static/images/red-lether.jpg
 
 find content/about/videos -name '*.jpg' -print -exec bash -c 'convert "{}" -resize 1152x -gravity center -background black -quality 95 -extent 1152x864 $(dirname "{}")/$(basename "{}" .jpg)-boxed.jpg' \;
