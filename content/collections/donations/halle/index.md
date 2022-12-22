@@ -26,7 +26,7 @@ resources:
     hint: non-paged
     label: Vorderseite
 ---
-Postcards of the sales outlets of the Gimritz estate.
+Postkarten der Verkaufstellen des Landgutes Gimritz.
 
 <!--more-->
 
