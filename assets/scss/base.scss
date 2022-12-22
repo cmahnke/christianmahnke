@@ -8,6 +8,8 @@
 @import "filters";
 @import "zoom-link";
 @import "pdf-viewer";
+@import "iiif";
+@import "ol-iiif";
 
 $content-width: 64em;
 $gradient-color-light: #b2444d;
@@ -501,6 +503,11 @@ a:visited {
         height:100%;
         object-fit: contain;
       }
+    }
+
+    .post-body hr {
+        width: 80%;
+        border: 6px solid #ff5477;
     }
 
     .post-body a,
@@ -1261,4 +1268,39 @@ a:visited {
 
 a.anchor {
     display: none !important;
+}
+
+.iiif {
+    margin-top: 3em;
+    width: 100%;
+    position: relative;
+    padding-bottom: 100%;
+
+    .description {
+        display: none;
+        font-size: 2em;
+        font-weight: 200;
+        padding-bottom: 1.6em;
+    }
+
+    .viewer {
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin: auto;
+        position: absolute;
+      }
+
+    a {
+        &:before {
+            content: '' !important;
+        }
+        &:after {
+            content: '' !important;
+        }
+    }
+
+    .share {
+        display: none;
+    }
 }
