@@ -6,3 +6,5 @@ window.Sticky = require('sticky-js');
 window.addConsent = addConsent;
 
 window.enterView = require('enter-view');
+
+import Elevator from 'elevator.js';

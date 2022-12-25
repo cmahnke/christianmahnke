@@ -21,3 +21,12 @@ enterView({
     offset: 0.45,
 	once: true
 });
+
+window.onload = function() {
+  var elevator = new Elevator({
+    mainAudio: '/sounds/elevator.mp3',
+    endAudio: '/sounds/ding.mp3',
+    element: document.querySelector('.backToTop'),
+    duration: 1000 
+  });
+}

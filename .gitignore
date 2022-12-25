@@ -37,3 +37,7 @@ content/**/img*-*.json
 content/**/page*-*.json
 !content/**/page*-map.json
 **/.DS_Store
+
+postcss.config.js
+browserslist 
+.stylelintrc.json

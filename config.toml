@@ -115,3 +115,7 @@ theme = ["projektemacher-base", "hugo-video"]
     [[module.mounts]]
         source = "assets/js"
         target = "assets/js"
+
+    [[module.mounts]]
+        source = "node_modules/elevator.js/demo/music/"
+        target = "static/sounds"
