@@ -508,6 +508,10 @@ a:visited {
     .post-body hr {
         width: 80%;
         border: 6px solid #ff5477;
+
+        &:first-of-type {
+            margin-top: 2em;
+        }
     }
 
     .post-body a,
@@ -1302,5 +1306,58 @@ a.anchor {
 
     .share {
         display: none;
+    }
+}
+
+.quote {
+    margin-top: -2.4em;
+
+    &:before,
+    .quote-body:after {
+        color: #ff5477;
+        font-size: 4em;
+    }
+
+    &:before {
+        content: '„' !important;
+        margin-inline-start: 0.2em
+    }
+
+    blockquote {
+        font-weight: 200;
+        font-style: italic;
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+
+        p:last-of-type {
+            margin-block-end: 0em;
+        }
+    }
+
+    .quote-body {
+        &:after {
+            content: '“' !important;
+            display: block;
+            width: 100%;
+            text-align: right;
+            margin-bottom: -.4em;
+        }
+    }
+
+    .quote-from {
+        text-align: right;
+
+        a {
+            &:before {
+                content: '' !important;
+            }
+            &:after {
+                content: '' !important;
+            }
+            &:hover {
+                text-decoration: none !important;
+            }
+        }
+
     }
 }

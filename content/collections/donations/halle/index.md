@@ -30,7 +30,22 @@ Postkarten der Verkaufstellen des Landgutes Gimritz.
 
 <!--more-->
 
-{{< iiif/iiif contextPath="collections/donations/halle" src="img001/info.json" share="false" >}}
+Herr Jacob vom [Stadtarchiv Halle/Saale](https://www.halle.de/de/Kultur/Stadtgeschichte/Stadtarchiv/Aufgaben/) schreibt folgendes zu den Postkarten:
+
+{{< quote from="Ralf Jacob" from-link="https://de.wikipedia.org/wiki/Ralf_Jacob" >}}
+Ich konnte auch schon einen Blick in erste Quellen zur Molkerei werfen.
+
+So gab es eine Filiale in der Reilstraße 133:
+
+Bl. 113 - 114, Aufstellung: Reilstraße 133, Inhaber/Antragsteller: Görg, H., Berufs- und Firmenbezeichnung: Sanitäts-Molkerei Gimritz (1913)
+Quelle: A 2.6  Baupolizei
+Abt. I Tit. 12 Kap. 5 Nr. 2 Bd. 31
+
+Johannes Görg war Königl. Oberamtmann und Pächter des Landgutes und der Stadtgutmühle Gimritz.
+
+Da die Stellenvermittlerin Louise Bärwinkel ihr Geschäft in der Merseburger Straße 9 betrieb, muss der Molkerei-Laden der unteren Postkarte in der Merseburger Straße 9 angesiedelt gewesen sein.
+
+{{</ quote >}}
 
 ---
 
@@ -40,3 +55,8 @@ Postkarten der Verkaufstellen des Landgutes Gimritz.
 ---
 
 {{< iiif/iiif contextPath="collections/donations/halle" src="img003/info.json" share="false" >}}
+
+
+---
+
+{{< iiif/iiif contextPath="collections/donations/halle" src="img001/info.json" share="false" >}}
