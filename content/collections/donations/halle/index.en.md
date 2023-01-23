@@ -38,8 +38,8 @@ I could also already take a look into first sources about the dairy.
 So there was a branch in the Reilstraße 133:
 
 Bl. 113 - 114, listing: Reilstraße 133, owner/applicant: Görg, H., occupational and company name: Sanitäts-Molkerei Gimritz (1913).
-Source: A 2.6 Building police
-Dept. I Tit. 12 Chap. 5 No. 2 Vol. 31
+Source: A 2.6 Building police  
+Dept. I Tit. 12 Chap. 5 No. 2 Vol. 31  
 
 Johannes Görg was a royal senior officer and tenant of the Gimritz estate and town mill.
 

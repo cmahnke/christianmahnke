@@ -37,8 +37,8 @@ Ich konnte auch schon einen Blick in erste Quellen zur Molkerei werfen.
 
 So gab es eine Filiale in der Reilstraße 133:
 
-Bl. 113 - 114, Aufstellung: Reilstraße 133, Inhaber/Antragsteller: Görg, H., Berufs- und Firmenbezeichnung: Sanitäts-Molkerei Gimritz (1913)
-Quelle: A 2.6  Baupolizei
+Bl. 113 - 114, Aufstellung: Reilstraße 133, Inhaber/Antragsteller: Görg, H., Berufs- und Firmenbezeichnung: Sanitäts-Molkerei Gimritz (1913)  
+Quelle: A 2.6  Baupolizei  
 Abt. I Tit. 12 Kap. 5 Nr. 2 Bd. 31
 
 Johannes Görg war Königl. Oberamtmann und Pächter des Landgutes und der Stadtgutmühle Gimritz.
