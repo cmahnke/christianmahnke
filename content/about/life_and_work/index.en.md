@@ -7,4 +7,4 @@ weight: 3
 
 ## Places
 
-I live and work in Göttingen and Westerland / Sylt.
+I live and work in Göttingen<del> and Westerland / Sylt</del>.

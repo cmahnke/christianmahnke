@@ -7,4 +7,4 @@ weight: 3
 
 ## Orte
 
-Ich lebe und arbeite in Göttingen und Westerland / Sylt.
+Ich lebe und arbeite in Göttingen<del> und Westerland / Sylt</del>.
