@@ -19,7 +19,10 @@ Therefore, I expect the institution to be prepared to meet the following of cond
     <li><div class="li-heading">Cataloging</div>
         <div class="li-body type-text">The object will be placed in your publicly and online accessible record system (catalogue, etc.) at short notice. The record can be retrieved at least via a persistent URL in HTML format. The catalog entry is not subject to any restrictions on subsequent re-use (e.g. <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" title="CC0">CC0</a>). The provenance (i.e. the donor) part of the catalogue entry.
         </div>
-        <div class="li-body type-text">Ideally, the catalogue record is also available in machine-readable form in an internationally recognised file format for the respective object type via an interface.</div>
+        <div class="li-body type-text">Ideally, the catalogue record is also available in machine-readable form in an internationally recognised file format for the respective object type via an interface.
+        </div>
+        <div class="li-body type-text">Exhibition or lending of the shall take place with mention of the provenance.
+        </div>
     </li>
     <li><div class="li-heading">Digitisation</div></li>
         <div class="li-body type-text">The object is digitized and the resulting files (including raw data) are made available to me for presentation - the license should allow the widest possible reuse - ideally <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" title="CC0">CC0</a>.

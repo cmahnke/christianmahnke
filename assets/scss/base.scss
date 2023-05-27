@@ -474,6 +474,10 @@ a:visited {
         /* clip-path: inset(0 100% 0 0); */
     }
 
+    &.para {
+        margin-top: 0.2rem;
+    }
+
     @keyframes show-text {
     	from {
             clip-path: inset(0 100% 0 0);
