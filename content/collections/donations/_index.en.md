@@ -19,6 +19,7 @@ Therefore, I expect the institution to be prepared to meet the following of cond
     <li><div class="li-heading">Cataloging</div>
         <div class="li-body type-text">The object will be placed in your publicly and online accessible record system (catalogue, etc.) at short notice. The record can be retrieved at least via a persistent URL in HTML format. The catalog entry is not subject to any restrictions on subsequent re-use (e.g. <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" title="CC0">CC0</a>). The provenance (i.e. the donor) part of the catalogue entry.
         </div>
+        <div class="li-body type-text">Ideally, the catalogue record is also available in machine-readable form in an internationally recognised file format for the respective object type via an interface.</div>
     </li>
     <li><div class="li-heading">Digitisation</div></li>
         <div class="li-body type-text">The object is digitized and the resulting files (including raw data) are made available to me for presentation - the license should allow the widest possible reuse - ideally <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" title="CC0">CC0</a>.
@@ -30,6 +31,10 @@ Therefore, I expect the institution to be prepared to meet the following of cond
     </li>
     <li><div class="li-heading">Publication in a supra-regional portal</div></li>
         <div class="li-body type-text">You upload or reference the digitised object including metadata into a research portal with at least a nationwide reach (for archive material, for example <a href="https://www.archivportal-d.de/" title="Archivportal D">Archivportal D</a>, for printed items the <a href="https://www.deutsche-digitale-bibliothek.de/" title="Deutsche Digitale Bibliothek">Deutsche Digitale Bibliothek</a>).
+        </div>
+    </li>
+    <li><div class="li-heading">Research / Classification / Contextualization</div></li>
+        <div class="li-body type-text">The catalogue record is enriched with further information known to them. In the process, cross-references are formed, e.g. via norm data, the object is described and (organisation-specific) keywords are added.
         </div>
     </li>
 </ul>

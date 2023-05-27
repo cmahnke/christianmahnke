@@ -18,6 +18,8 @@ Im Gegenzug erwarte ich von der bedachten Institution, dass diese bereit ist, ei
     <li><div class="li-heading">Katalogisierung und Nachweis</div>
         <div class="li-body type-text">Das Objekt wird kurzfristig in Ihrem öffentlich und online zugänglichen Nachweissystem (Katalog etc.) eingestellt. Der Nachweis ist mindestens über eine persistente URL im HTML Format abrufbar. Das Katalogisat unterliegt keinen Beschränkungen in der Nachnutzung (z.B. <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" title="CC0">CC0</a>). Im Katalogisat ist die Provenienz (also der Spender) vermerkt.
         </div>
+        <div class="li-body type-text">Idealerweise ist das Katalogisat auch maschinenlesbar in einem international anerkannten Dateiformat für den jeweiligen Objekttypen über eine Schnittstelle verfügbar.
+        </div>
     </li>
     <li><div class="li-heading">Digitalisierung</div></li>
         <div class="li-body type-text">Das Objekt wird digitalisiert und mir die Digitalisate (inklusive Rohdaten) zur Präsentation bereitgestellt - dabei sollte die Lizenz eine möglichst breite Nachnutzung erlauben - idealerweise <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" title="CC0">CC0</a>.
@@ -28,7 +30,11 @@ Im Gegenzug erwarte ich von der bedachten Institution, dass diese bereit ist, ei
         </div>
     </li>
     <li><div class="li-heading">Bereitstellung in einem überregionalen Rechercheportal</div></li>
-        <div class="li-body type-text">Sie stellen das Objekt (digitalisiert und mit Metadaten ausgestattet) in ein Recherche-Portal mit mindestens nationaler Reichweite ein (bei Archivgut z.B. <a href="https://www.archivportal-d.de/" title="Archivportal D">Archivportal D</a>, für Gedrucktes z.B. die <a href="https://www.deutsche-digitale-bibliothek.de/" title="Deutsche Digitale Bibliothek">Deutsche Digitale Bibliothek</a>).
+        <div class="li-body type-text">Das Objekt (digitalisiert und mit Metadaten ausgestattet) wird in einem Recherche-Portal mit mindestens nationaler Reichweite bereitgestellt (bei Archivgut z.B. <a href="https://www.archivportal-d.de/" title="Archivportal D">Archivportal D</a>, für Gedrucktes z.B. die <a href="https://www.deutsche-digitale-bibliothek.de/" title="Deutsche Digitale Bibliothek">Deutsche Digitale Bibliothek</a>).
+        </div>
+    </li>
+    <li><div class="li-heading">Recherche / Einordnung / Kontextualisierung</div></li>
+        <div class="li-body type-text">Sie reichern das Katalogisat mit weiteren ihnen bekannten Informationen an, bilden Querverweise z.B. über Normdaten
         </div>
     </li>
 </ul>
