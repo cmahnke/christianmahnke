@@ -2,7 +2,6 @@
 {{- $pages := slice -}}
 {{- if .IsHome -}}
     {{- $pages = where .Site.Pages "Section" "home" -}}
-
 {{- else -}}
     {{- $pages = .Pages -}}
 {{- end -}}
@@ -48,9 +47,9 @@
 
 {{- if ne ($sections.Get "sections" ) nil -}}
     <div class="section-menu">
-        <ul>
+        <ul class="section-menu-list">
         {{- range $i, $section := $sections.Get "sections" -}}
-            <li><a href="#{{ $section.nav }}">{{ $section.title }}</a></li>
+            <li class="section-menu-list-item"><a href="#{{ $section.nav }}">{{ $section.title }}</a></li>
         {{- end -}}
         </ul>
     </div>
