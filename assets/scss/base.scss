@@ -249,10 +249,6 @@ a:visited {
         }
     }
 
-    &.sticky-top .backToTop {
-        opacity:1;
-    }
-
     .backToTop {
         transition: all .4s;
         opacity: 0;
@@ -278,6 +274,11 @@ a:visited {
         border: 1px solid white;
     }
 
+}
+
+.home .sticky-top .backToTop,
+.show-top-button .backToTop {
+    opacity:1;
 }
 
 .navigation-list {

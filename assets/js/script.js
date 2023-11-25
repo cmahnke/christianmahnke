@@ -28,4 +28,15 @@ if (document.querySelector('.iframe-wrapper')) {
 
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelector('.backToTop').removeAttribute("href");
+  if (!document.querySelector('body').classList.contains('home')) {
+    console.log("Back to top button won't hide");
+    document.addEventListener("scroll", function(e) {
+      if (window.scrollY > window.innerHeight) {
+        document.querySelector('#head').classList.add('show-top-button');
+      } else {
+        document.querySelector('#head').classList.remove('show-top-button');
+      }
+    });
+  }
+
 });
