@@ -7,6 +7,4 @@ TODO
 
 ## Content
 
-* Donation Halle
 * Grass Exhibition
-* Include Links in menues

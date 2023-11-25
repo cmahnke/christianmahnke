@@ -1143,6 +1143,7 @@ a:visited {
                 gap: 2em;
                 flex-wrap: wrap;
                 justify-content: space-around;
+                /* padding: 2rem 0 16rem; */
             }
 
             h3 {
@@ -1191,6 +1192,10 @@ a:visited {
                     margin-top: auto;
                     margin-bottom: 0;
                     position: relative;
+
+                    @media (max-width : 35em) {
+                      padding-top: 0.8rem;
+                    }
 
                     /*
                     &:after {

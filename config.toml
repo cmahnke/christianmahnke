@@ -33,8 +33,13 @@ theme = ["projektemacher-base", "hugo-video"]
                 weight = 4
 
             [[languages.de.menu.main]]
-                name = "Über"
+                name = "Links"
+                URL = "/links"
                 weight = 5
+
+            [[languages.de.menu.main]]
+                name = "Über"
+                weight = 6
                 url = "about"
 
     [languages.en]
@@ -58,8 +63,13 @@ theme = ["projektemacher-base", "hugo-video"]
                 url = "en/post"
 
             [[languages.en.menu.main]]
-                name = "About"
+                name = "Links"
                 weight = 5
+                url = "en/links"
+
+            [[languages.en.menu.main]]
+                name = "About"
+                weight = 6
                 url = "en/about"
 
 [markup.goldmark]
