@@ -24,7 +24,6 @@ The conditions to be fulfilled are listed here:
         <div class="li-body type-text">Online exhibitions, accompanying websites and press releases presenting the object must also mention my name. However, this can be realised implicitly (e.g. mouseover or alternative text).
         </div>
         <div class="li-body type-text">I am granted the right to present corresponding screenshots online.
-Specimen copy / photo
         </div>
     </li>
     <li><div class="li-heading">Specimen copy / -photo</div></li>
@@ -33,7 +32,10 @@ Specimen copy / photo
         <div class="li-body type-text">A photo of the object in the context of the exhibition will be provided and I will be granted the rights to present it online.
         </div>
     </li>
-
+    <li><div class="li-heading">Other conditions</div></li>
+        <div class="li-body type-text">Depending on the object, further conditions may apply, e.g. with regard to presentation conditions and insurance.
+        </div>
+    </li>
 </ul>
 
 ## Previous loans

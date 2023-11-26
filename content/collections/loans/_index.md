@@ -32,7 +32,10 @@ Die dabei zu erfüllenden Bedingungen sind hier aufgeführt:
         <div class="li-body type-text">Es wird ein Foto des Objekte im Ausstellungszusammenhang bereitgestellt und mir die Rechte eingeräumt, es online zu präsentieren.
         </div>
     </li>
-
+    <li><div class="li-heading">Sonstige Bedingungen</div></li>
+        <div class="li-body type-text">Je nach Objekt können weitere Bedingungen, z.B. in Bezug auf Präsentationssbedingungen und Versicherung bestehen.
+        </div>
+    </li>
 </ul>
 
 
