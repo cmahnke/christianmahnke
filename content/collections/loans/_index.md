@@ -23,8 +23,7 @@ Die dabei zu erfüllenden Bedingungen sind hier aufgeführt:
     <li><div class="li-heading">Zusätzliche Anforderungen für Online-Ausstellungen</div></li>
         <div class="li-body type-text">Auch bei Online-Ausstellungen, begleitenden Webseiten und Pressemitteilungen, die das Objekt präsentieren, erfolgt eine Namensnennung. Diese kann auch implizit (z.B. durch Mouseover oder Alternativtext) realisiert werden.
         </div>
-        <div class="li-body type-text"> Mir wird das Recht eingeräumt, Screenshots der Online-Ausstellung oder Aufnahmen aus der Präsenzausstellung einschließlich von den Räumlichkeiten und anderen Ausstellungsobjekten und -texten online zu präsentieren.
-
+        <div class="li-body type-text">Mir wird das Recht eingeräumt, Screenshots der Online-Ausstellung oder Aufnahmen aus der Präsenzausstellung einschließlich von den Räumlichkeiten und anderen Ausstellungsobjekten und -texten online zu präsentieren.
         </div>
     </li>
     <li><div class="li-heading">Belegexemplar / -foto</div></li>
