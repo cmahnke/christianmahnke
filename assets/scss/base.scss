@@ -1063,6 +1063,10 @@ a:visited {
     content: url($insta-light);
 }
 
+.linkedin {
+    content: url($linkedin-icon);
+}
+
 .projektemacher {
     filter: #{"invert()"};
     border-radius: 50%;
@@ -1179,6 +1183,10 @@ a:visited {
             .contact-wrapper {
                 display: flex;
                 flex-direction: column;
+            }
+
+            .link-wrapper .footer-link:has(a .hidden) {
+              display: none;
             }
 
             .contact-wrapper {
