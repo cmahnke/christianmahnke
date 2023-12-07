@@ -11,4 +11,8 @@ Heute war es soweit, ich habe meinen Vortrag zu der Infrastruktur meiner Blogs a
 <!--more-->
 {{< pdf file="./Scaling%20down.pdf" >}}
 
-Dieser Artikel wir aktualisiert, sobald die Aufzeichnung online abrufbar ist.
+# Aufzeichnung
+
+{{< html/iframe-consent preview="<img class='video-preview' src='preview.jpg' alt='Vorschau'>" >}}
+    {{< youtube id="7NJhcARjZSs" title="Scaling Down: IIIF at Small Scale - 2021 IIIF Annual Conference" >}}
+{{< /html/iframe-consent >}}
