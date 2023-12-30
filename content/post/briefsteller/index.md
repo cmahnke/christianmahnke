@@ -3,6 +3,7 @@ date: 2021-04-27T19:22:44+02:00
 title: "Briefsteller.de gestartet"
 tags:
 - Projektemacher.org
+- Blog
 ---
 
 Endlich, der letzte der im zweiten Corona Lockdown geplanten Blog ist nun online!

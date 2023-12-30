@@ -6,7 +6,9 @@ tags:
 draft: true
 ---
 
-Eine alte Idee von mir ist nun um gesetzt: 
+Eine alte Idee von mir ist nun um gesetzt:
+
+<!--more-->
 
 # Der 11.9.2001 im Fernsehen
 
