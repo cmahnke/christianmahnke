@@ -47,7 +47,7 @@ jobs:
           ./scripts/setup.sh
 
       - name: Build Hugo site
-        run: hugo --printI18nWarnings
+        run: hugo --printI18nWarnings --printUnusedTemplates
 
       - name: Puppeteer
         run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh
