@@ -21,3 +21,4 @@ SOURCE="themes/projektemacher-base/static/images/cm.svg" OPTIONS="-transparent w
 
 yarn install
 yarn run svgo
+./themes/projektemacher-base/scripts/3d-models.sh
