@@ -17,6 +17,7 @@
   contacts = ['<h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a>']
   disableScale = true
   description = "Persönliche Homepage von Christian Mahnke"
+  debug = false
 
 #[params.preview]
 #    outputPrefix = "ogPreview-overlay"
