@@ -39,5 +39,7 @@ content/**/page*-*.json
 **/.DS_Store
 **/vips-properties.xml
 postcss.config.js
-browserslist 
+browserslist
 .stylelintrc.json
+assets/css/fonts
+static/fonts
