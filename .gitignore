@@ -44,3 +44,6 @@ browserslist
 .stylelintrc.json
 assets/css/fonts
 static/fonts
+# 3D Models
+content/**/*.gtlf
+content/**/*.glb
