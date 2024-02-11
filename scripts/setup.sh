@@ -3,7 +3,10 @@
 echo "Set SKIP_IIIF to something to disable generation of IIIF derivates"
 ./scripts/iiif.sh
 
+# Convert Images
 convert Source\ Files/Images/Textures/Red\ Lether.psd -resize 1000x -quality 20 static/images/red-lether.jpg
+convert Source\ Files/Images/Bill-Nye.psd[1] -resize 400x static/images/bill-nye.png
+convert Source\ Files/Images/Bills-Finger.psd[0] -resize 110x static/images/bills-finger.png
 
 find content/about/videos -name '*.jpg' -print -exec bash -c 'convert "{}" -resize 1152x -gravity center -background black -quality 95 -extent 1152x864 $(dirname "{}")/$(basename "{}" .jpg)-boxed.jpg' \;
 
@@ -18,10 +21,6 @@ TARGETFORMAT=png ./themes/projektemacher-base/scripts/preview.sh
 
 # Favicons
 SOURCE="themes/projektemacher-base/static/images/cm.svg" OPTIONS="-transparent white static/images/favicon-128.png" ./themes/projektemacher-base/scripts/favicon.sh
-
-# Convert Images
-convert Source\ Files/Images/Bill-Nye.psd[1] -resize 400x static/images/bill-nye.png
-convert Source\ Files/Images/Bills-Finger.psd[0] -resize 110x static/images/bills-finger.png
 
 yarn install
 yarn run svgo
