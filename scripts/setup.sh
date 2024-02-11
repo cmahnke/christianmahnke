@@ -8,6 +8,9 @@ convert Source\ Files/Images/Textures/Red\ Lether.psd -resize 1000x -quality 20 
 convert Source\ Files/Images/Bill-Nye.psd[1] -resize 400x static/images/bill-nye.png
 convert Source\ Files/Images/Bills-Finger.psd[0] -resize 110x static/images/bills-finger.png
 
+echo "Generated images:"
+ls -l static/images
+
 find content/about/videos -name '*.jpg' -print -exec bash -c 'convert "{}" -resize 1152x -gravity center -background black -quality 95 -extent 1152x864 $(dirname "{}")/$(basename "{}" .jpg)-boxed.jpg' \;
 
 echo "Calling theme scripts"
