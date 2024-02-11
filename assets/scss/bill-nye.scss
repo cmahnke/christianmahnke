@@ -1,0 +1,85 @@
+h1 {
+  font-size: 2em !important;
+  padding-top: 0.4rem !important;
+}
+
+.applications-section.section-head-content{
+  column-gap: 2%;
+  column-count: 2;
+  display: flow;
+  @media (max-width: 52em) {
+    display: flex;
+  }
+}
+
+.bill-nye {
+  margin-top: .4em;
+  position: relative;
+  height: 100%;
+  width: fit-content;
+  break-after: column;
+
+  .body {
+    animation: blur 2.5s linear forwards;
+    box-shadow: 0 0 8px 8px white inset;
+    @media (max-width: 36em) {
+      width: 95%;
+    }
+  }
+
+  .finger {
+    position: absolute;
+    animation: blur-finger 2.5s linear forwards, finger 1.5s linear 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 40% 75%;
+    bottom: 19%;
+    right: -8.5%;
+  }
+
+  ~ p {
+    margin-left: .4em;
+    box-sizing: border-box;
+    margin-block-end: 0;
+  }
+
+}
+
+@keyframes blur {
+  to {
+    filter: blur(2.5px);
+  }
+}
+
+@keyframes blur-finger {
+  from {
+    filter: blur(1.5px);
+  }
+
+  to {
+    filter: blur(.5px);
+  }
+}
+
+@keyframes finger {
+  20% {
+    transform: rotate(0turn);
+  }
+  30% {
+    transform: rotate(-0.05turn);
+  }
+  40% {
+    transform: rotate(0.05turn);
+  }
+  50% {
+    transform: rotate(-0.05turn);
+  }
+  60% {
+    transform: rotate(0.05turn);
+  }
+  70% {
+    transform: rotate(-0.05turn);
+  }
+  80% {
+    transform: rotate(0turn);
+  }
+}

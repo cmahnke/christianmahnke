@@ -19,6 +19,10 @@ TARGETFORMAT=png ./themes/projektemacher-base/scripts/preview.sh
 # Favicons
 SOURCE="themes/projektemacher-base/static/images/cm.svg" OPTIONS="-transparent white static/images/favicon-128.png" ./themes/projektemacher-base/scripts/favicon.sh
 
+# Convert Images
+convert Source\ Files/Images/Bill-Nye.psd[1] -resize 400x static/images/bill-nye.png
+convert Source\ Files/Images/Bills-Finger.psd[0] -resize 110x static/images/bills-finger.png
+
 yarn install
 yarn run svgo
 ./themes/projektemacher-base/scripts/3d-models.sh
