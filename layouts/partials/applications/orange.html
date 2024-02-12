@@ -1,0 +1,53 @@
+{{- $head := .CurrentSection -}}
+
+{{- $pages := .Pages -}}
+{{- $sections := newScratch -}}
+{{- $sections.Set "sections" slice -}}
+
+{{- partial "section-heading.html" . -}}
+
+{{- range $i, $section := $pages.ByWeight -}}
+    {{- $class := "odd" -}}
+    {{- if modBool $i 2  -}}
+        {{- $class = "even" -}}
+    {{- end -}}
+
+    {{- $nav := path.Base .Permalink -}}
+    {{- $nav = replaceRE "^/$" "root" $nav -}}
+    {{- $class = printf "section-%s %s section-%d" $nav $class $i -}}
+
+    {{- $id := substr (md5 $class) 0 8 -}}
+
+    {{- if ne .Content "" -}}
+        <a name="{{ $nav }}" class="anchor" /></a>
+        <div id="{{ $nav }}" data-section="{{ $nav }}" class="{{ $class }} section-content">
+
+            <h1 class="section-content-title">
+                {{- .Title -}}
+            </h1>
+            <div class="section-content-body">
+                {{- .Content -}}
+            </div>
+
+            {{- if eq .Kind "section" -}}
+              <div class="section-content-subsection">
+                {{- partial "subsection.html" . -}}
+              </div>
+            {{- end -}}
+
+        </div>
+        {{- $sections.Add "sections" (dict "nav" $nav "title" .Title) -}}
+    {{- end -}}
+{{- end -}}
+
+{{/*
+{{- if ne ($sections.Get "sections" ) nil -}}
+    <div class="section-menu">
+        <ul class="section-menu-list">
+        {{- range $i, $section := $sections.Get "sections" -}}
+            <li class="section-menu-list-item"><a href="#{{ $section.nav }}">{{ $section.title }}</a></li>
+        {{- end -}}
+        </ul>
+    </div>
+{{- end -}}
+*/}}

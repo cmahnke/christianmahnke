@@ -1,0 +1,60 @@
+$background-color: #222222;
+$foreground-color: #d15431;
+
+body:has(.content-container.orange) {
+  background-color: $background-color;
+
+  .page-wrapper {
+    background-color: $background-color;
+
+
+    .main {
+      background-color: $background-color;
+      margin-top: unset;
+
+      .header .header-spacer {
+        background-color: $background-color;
+        background-image: linear-gradient(#b2444d, $background-color);
+      }
+
+      .content-container.orange {
+
+        .section-content {
+          background-color: $background-color;
+        }
+
+        a, a:active, a:focus, a:hover, a:visited {
+          color: $foreground-color;
+        }
+
+        p {
+          color: $foreground-color;
+        }
+
+        h1, h2, h3 {
+          box-shadow: unset;
+        }
+
+        .section-head h1 {
+          font-size: 4em;
+          mix-blend-mode: unset;
+          background-color: $background-color;
+        }
+
+        .aframe-3d-model {
+          height: 300px;
+          width: 100%;
+        }
+
+
+      }
+    }
+
+  }
+}
+
+.content-container.orange {
+  ~ footer {
+    color: $background-color;
+  }
+}

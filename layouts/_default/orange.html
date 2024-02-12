@@ -1,0 +1,9 @@
+{{ define "title" }}
+  {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+    {{- partial "header.html" . -}}
+    <div class="content-container orange">
+        {{- partial "applications/orange.html" . -}}
+    </div>
+{{ end }}
