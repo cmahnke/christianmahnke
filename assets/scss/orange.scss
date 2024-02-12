@@ -1,5 +1,11 @@
+@use 'sass:color';
+
+@import 'fonts/caprasimo';
+
 $background-color: #222222;
 $foreground-color: #d15431;
+/*$body-text-color: #717b7b;*/
+$body-text-color: #f1f1f1;
 
 body:has(.content-container.orange) {
   background-color: $background-color;
@@ -21,31 +27,71 @@ body:has(.content-container.orange) {
 
         .section-content {
           background-color: $background-color;
+          padding: 1.6em;
+          margin-bottom: 1.6em;
+          border-radius: 4em;
+          box-sizing: border-box;
+          border: 2px solid transparent;
+
+          &.odd {
+            background-image: linear-gradient(210deg, color.scale($background-color, $lightness: 2%) 60%, color.scale($foreground-color, $lightness: -70%));
+          }
+
+          &.even {
+            background-image: linear-gradient(160deg, color.scale($background-color, $lightness: 2%) 60%, color.scale($foreground-color, $lightness: -70%));
+          }
+
+          &:hover {
+            border-color: color.scale($foreground-color, $lightness: -50%);
+            box-shadow: 3px 3px 3px color.scale($foreground-color, $lightness: -50%);
+          }
         }
 
         a, a:active, a:focus, a:hover, a:visited {
           color: $foreground-color;
         }
 
+        a:hover {
+          text-decoration: underline;
+          text-decoration-color: $foreground-color;
+        }
+
+        a:before,
+        a:after {
+          content: unset;
+          color: #ff073a;
+          margin-right: unset;
+          margin-right: unset;
+        }
+
         p {
-          color: $foreground-color;
+          color: $body-text-color;
         }
 
         h1, h2, h3 {
           box-shadow: unset;
+          color: $foreground-color;
+          font-family: 'Caprasimo', serif;
+          font-weight: 400;
         }
 
-        .section-head h1 {
-          font-size: 4em;
-          mix-blend-mode: unset;
-          background-color: $background-color;
+        .section-head {
+          .parallax-bg {
+            background-image: unset;
+
+             h1 {
+              font-size: 6em;
+              mix-blend-mode: unset;
+              background-image: linear-gradient(0deg, color.scale($foreground-color, $lightness: -25%), color.scale($foreground-color, $lightness: 25%));
+              background-clip: text;
+              color: transparent;
+            }
+          }
         }
 
-        .aframe-3d-model {
-          height: 300px;
-          width: 100%;
+        ~ footer {
+          color: $background-color;
         }
-
 
       }
     }
@@ -53,8 +99,14 @@ body:has(.content-container.orange) {
   }
 }
 
-.content-container.orange {
-  ~ footer {
-    color: $background-color;
+.aframe-3d-model {
+  height: 300px;
+  width: 100%;
+
+  a-scene {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
   }
 }
