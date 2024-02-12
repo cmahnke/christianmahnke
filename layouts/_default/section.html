@@ -3,7 +3,13 @@
 {{ end }}
 {{ define "content" }}
     {{- partial "header.html" . -}}
-    <div class="content-container">
-        {{- partial "section-page.html" . -}}
+    {{- $class := "content-container" -}}
+    {{- $theme := "section-page.html" -}}
+    {{- if and (ne .Params.class nil) (ne .Params.class "") -}}
+      {{- $class = printf "%s %s" $class .Params.class -}}
+      {{- $theme = printf "themes/%s.html" .Params.class -}}
+    {{- end -}}
+    <div class="{{ $class | safeCSS }}">
+        {{- partial $theme . -}}
     </div>
 {{ end }}
