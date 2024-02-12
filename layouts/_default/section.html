@@ -5,9 +5,9 @@
     {{- partial "header.html" . -}}
     {{- $class := "content-container" -}}
     {{- $theme := "section-page.html" -}}
-    {{- if and (ne .Params.class nil) (ne .Params.class "") -}}
-      {{- $class = printf "%s %s" $class .Params.class -}}
-      {{- $theme = printf "themes/%s.html" .Params.class -}}
+    {{- if and (ne .Params.theme nil) (ne .Params.theme "") -}}
+      {{- $class = printf "%s %s" $class .Params.theme -}}
+      {{- $theme = printf "themes/%s.html" .Params.theme -}}
     {{- end -}}
     <div class="{{ $class | safeCSS }}">
         {{- partial $theme . -}}
