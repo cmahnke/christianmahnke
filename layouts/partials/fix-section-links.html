@@ -1,6 +1,6 @@
 {{- $content := .content -}}
-{{- $nav := .nav -}}
+{{- $prefix := .prefix -}}
 {{- if strings.Contains $content `"./` -}}
-  {{- $content = replace $content `"./` (printf `"./%s/` $nav) -}}
+  {{- $content = replace $content `"./` (printf `"./%s/` $prefix) -}}
 {{- end -}}
 {{- return $content -}}

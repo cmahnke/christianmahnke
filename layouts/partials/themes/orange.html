@@ -27,7 +27,7 @@
                 {{- .Title -}}
             </h1>
 
-            {{- $content := partial "partials/fix-section-links.html" (dict "content" .Content "nav" $nav) -}}
+            {{- $content := partial "partials/fix-section-links.html" (dict "content" .Content "prefix" $nav) -}}
 
             <div class="section-content-body">
                 {{- $content | safeHTML -}}
