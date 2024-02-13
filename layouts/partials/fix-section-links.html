@@ -1,0 +1,6 @@
+{{- $content := .content -}}
+{{- $nav := .nav -}}
+{{- if strings.Contains $content `"./` -}}
+  {{- $content = replace $content `"./` (printf `"./%s/` $nav) -}}
+{{- end -}}
+{{- return $content -}}

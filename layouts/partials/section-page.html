@@ -23,6 +23,8 @@
 
     {{- $id := substr (md5 $class) 0 8 -}}
 
+    {{- partial "partials/check-section-includes.html" . -}}
+
     {{- if ne .Content "" -}}
         <a name="{{ $nav }}" class="anchor" /></a>
         <div id="{{ $nav }}" data-section="{{ $nav }}" class="{{ $class }} section-content">

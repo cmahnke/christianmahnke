@@ -1,0 +1,16 @@
+{{- $debug := partialCached "partials/functions/debug/enabled.html" . -}}
+{{- if $debug -}}
+  {{- if and (ne .Params.js nil) (ne .Params.js "") -}}
+    {{- warnf "[partials/check-section-includes.html] File %s includes page specifig JS" .File.Dir  -}}
+  {{- end -}}
+  {{- if and (ne .Params.scss nil) (ne .Params.scss "") -}}
+    {{- warnf "[partials/check-section-includes.html] File %s includes page specifig SCSS" .File.Dir  -}}
+  {{- end -}}
+  {{- if and (ne .Params.css nil) (ne .Params.css "") -}}
+    {{- warnf "[partials/check-section-includes.html] File %s includes page specifig CSS" .File.Dir  -}}
+  {{- end -}}
+  {{- $includes := unmarshal (partial "shortcodes/shortcode-helper.html" .) -}}
+  {{- if (len $includes) -}}
+    {{- warnf "[partials/check-section-includes.html] File %s includes Shortcodes with JS/SCSS/CSS" .File.Dir  -}}
+  {{- end -}}
+{{- end -}}
