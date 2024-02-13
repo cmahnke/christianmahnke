@@ -25,6 +25,12 @@ body:has(.content-container.orange) {
 
       .content-container.orange {
 
+        /*
+        @media (max-width: 35em) {
+          margin-right: unset;
+        }
+        */
+
         .section-content {
           background-color: $background-color;
           padding: 1.6em;
@@ -32,6 +38,7 @@ body:has(.content-container.orange) {
           border-radius: 4em;
           box-sizing: border-box;
           border: 2px solid transparent;
+
 
           &.odd {
             background-image: linear-gradient(210deg, color.scale($background-color, $lightness: 2%) 60%, color.scale($foreground-color, $lightness: -70%));
@@ -76,8 +83,26 @@ body:has(.content-container.orange) {
         }
 
         .section-head {
+
+          @media (max-width: 35em) {
+            .parallax-bg {
+
+              h1 {
+                margin-top: 1.4em;
+                /*
+                word-break: break-word !important;
+                display: inline-block;
+                word-wrap: break-word;
+                white-space: break-spaces;
+                */
+                font-size: 13vw !important;
+              }
+            }
+
+          }
           .parallax-bg {
             background-image: unset;
+            width: unset;
 
              h1 {
               font-size: 6em;
@@ -86,6 +111,19 @@ body:has(.content-container.orange) {
               background-clip: text;
               color: transparent;
             }
+          }
+
+        }
+
+        .aframe-3d-model {
+          height: 20em;
+          width: 100%;
+
+          a-scene {
+            display: block;
+            position: relative;
+            height: 100%;
+            width: 100%;
           }
         }
 
@@ -96,17 +134,5 @@ body:has(.content-container.orange) {
       }
     }
 
-  }
-}
-
-.aframe-3d-model {
-  height: 300px;
-  width: 100%;
-
-  a-scene {
-    display: block;
-    position: relative;
-    height: 100%;
-    width: 100%;
   }
 }
