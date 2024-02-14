@@ -132,6 +132,10 @@ body:has(.content-container.orange) {
           height: 20em;
           width: 100%;
 
+          button {
+            z-index: 99;
+          }
+
           a-scene {
             display: block;
             position: relative;
