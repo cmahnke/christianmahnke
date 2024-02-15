@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-
+    <title>{{- block "title" . }}{{ end -}}</title>
     {{ partial "html/head/meta.html" . }}
 
     {{- if and (eq .Kind "term") (eq .Content "") -}}
