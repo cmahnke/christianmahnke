@@ -15,7 +15,7 @@ The following JavaScript and CSS libraries and frameworks  are used:
     <li><a href="https://jquery.com/">jQuery</a></li>
     <li><a href="https://github.com/js-cookie/js-cookie">js-cookie</a></li>
     <li><a href="https://necolas.github.io/normalize.css/">Normalize.css</a></li>
-    <li><a href="https://rgalus.github.io/sticky-js/">Sticky-js</a></li>
+    <li><a href="https://dollarshaveclub.github.io/stickybits/">Stickybits</a></li>
     <li><a href="https://russellgoldenberg.github.io/enter-view/">Enter-view.js</a></li>
     <!--
     <li><a href="https://michalsnik.github.io/aos/">AOS (Animate On Scroll Library)</a></li>

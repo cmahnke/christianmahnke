@@ -1,7 +1,9 @@
 let mql = window.matchMedia('(max-width: 35em)');
 
 if (!mql.matches) {
-    var sticky = new Sticky('#head');
+    /* var sticky = new Sticky('#head');*/
+    /* useGetBoundingClientRect: true, customVerticalPosition: true */
+    var sticky = stickybits('#head', { useStickyClasses: true, stuckClass: "sticky-top"});
 }
 
 if (document.querySelector('.type-text')) {
@@ -28,8 +30,8 @@ if (document.querySelector('.iframe-wrapper')) {
 
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelector('.backToTop').removeAttribute("href");
-  if (!document.querySelector('body').classList.contains('home')) {
-    console.log("Back to top button won't hide");
+  //if (!document.querySelector('body').classList.contains('home')) {
+    //console.log("Back to top button won't hide");
     document.addEventListener("scroll", function(e) {
       if (window.scrollY > window.innerHeight) {
         document.querySelector('#head').classList.add('show-top-button');
@@ -37,6 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('#head').classList.remove('show-top-button');
       }
     });
-  }
+  //}
 
 });
