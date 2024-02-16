@@ -2,6 +2,7 @@
 @import "functions/color";
 
 @import 'fonts/caprasimo';
+@import 'fonts/purple-purse';
 
 $background-color: #222222;
 $foreground-color: #d15431;
@@ -35,7 +36,13 @@ body:has(.content-container.orange) {
 
       .content-container.orange {
 
+        .section-content-body {
+          font-size: 1.4em;
+        }
+
         .section-head-content {
+          font-size: 1.4em;
+
           h1, h2, h3 {
             text-align: center;
             margin-bottom: .2em;
@@ -51,6 +58,9 @@ body:has(.content-container.orange) {
           border: 2px solid transparent;
           transition: all 200ms;
 
+          .section-content-title {
+            margin-top: 1em;
+          }
 
           &.odd {
             background-image: linear-gradient(210deg, color.scale($background-color, $lightness: 2%) 60%, color.scale($foreground-color, $lightness: -70%));
@@ -92,7 +102,7 @@ body:has(.content-container.orange) {
         h1, h2, h3 {
           box-shadow: unset;
           color: $foreground-color;
-          font-family: 'Caprasimo', serif;
+          font-family: 'Purple Purse', serif;
           font-weight: 400;
         }
 
@@ -129,9 +139,13 @@ body:has(.content-container.orange) {
               background-image: linear-gradient(0deg, color.scale($foreground-color, $lightness: -30%), color.scale($foreground-color, $lightness: 30%));
               background-clip: text;
               color: transparent;
+              font-family: 'Caprasimo', serif;
+              font-weight: 400;
             }
           }
-
+          h1:last-child {
+            margin-bottom: 1em;
+          }
         }
 
         .browser-banner {
