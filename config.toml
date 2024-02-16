@@ -72,6 +72,9 @@ theme = ["projektemacher-base", "hugo-video"]
                 weight = 6
                 url = "en/about"
 
+[markup]
+defaultMarkdownHandler = 'goldmark'
+
 [markup.goldmark]
     [markup.goldmark.renderer]
         unsafe= true
@@ -79,6 +82,20 @@ theme = ["projektemacher-base", "hugo-video"]
     [markup.goldmark.extensions]
         typographer = true
         attribute = true
+        strikethrough = true
+
+    [markup.goldmark.extensions.typographer]
+            apostrophe = '&rsquo;'
+            disable = false
+            ellipsis = '&hellip;'
+            emDash = '&mdash;'
+            enDash = '&ndash;'
+            leftAngleQuote = '&laquo;'
+            leftDoubleQuote = '&ldquo;'
+            leftSingleQuote = '&lsquo;'
+            rightAngleQuote = '&raquo;'
+            rightDoubleQuote = '&rdquo;'
+            rightSingleQuote = '&rsquo;'
 
     [markup.goldmark.parser]
         autoHeadingID = true

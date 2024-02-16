@@ -38,14 +38,9 @@ body:has(.content-container.orange) {
         .section-head-content {
           h1, h2, h3 {
             text-align: center;
+            margin-bottom: .2em;
           }
         }
-
-        /*
-        @media (max-width: 35em) {
-          margin-right: unset;
-        }
-        */
 
         .section-content {
           background-color: $background-color;
@@ -101,6 +96,17 @@ body:has(.content-container.orange) {
           font-weight: 400;
         }
 
+        ul {
+          margin-block-start: 0;
+          font-family: "League Spartan",Futura,sans-serif;
+
+          li {
+            &::marker {
+              color: #f1f1f1;
+            }
+          }
+        }
+
         .section-head {
 
           @media (max-width: 35em) {
@@ -120,7 +126,7 @@ body:has(.content-container.orange) {
              h1 {
               font-size: 6em;
               mix-blend-mode: unset;
-              background-image: linear-gradient(0deg, color.scale($foreground-color, $lightness: -25%), color.scale($foreground-color, $lightness: 25%));
+              background-image: linear-gradient(0deg, color.scale($foreground-color, $lightness: -30%), color.scale($foreground-color, $lightness: 30%));
               background-clip: text;
               color: transparent;
             }
@@ -128,19 +134,49 @@ body:has(.content-container.orange) {
 
         }
 
+        .browser-banner {
+          width: calc(100% - 2em);
+          position: absolute;
+          top: 3.6em;
+          left: 0;
+          right: 0;
+
+          .text-container p {
+            background-color: rgb(238,232,170);
+            color: black;
+            padding: 0 1em;
+          }
+        }
+
         .aframe-3d-model {
           height: 20em;
           width: 100%;
+          /*
+          height: unset;
+          width: unset;
+          */
 
           button {
             z-index: 99;
           }
 
+
           a-scene {
+            /* aspect-ratio: 16/9; */
+
+
+            /*
             display: block;
             position: relative;
             height: 100%;
             width: 100%;
+            */
+          }
+
+
+          .a-canvas {
+            height: inherit !important;
+            width: inherit !important;
           }
 
           .a-enter-vr.fullscreen  {
