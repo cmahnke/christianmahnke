@@ -2,6 +2,9 @@
 title: "Bewerbungen"
 metaPage: true
 displayinlist: false
+archive: false
+news: false
+sectionContent: false
 ---
 
 {{< bill-nye >}}
@@ -10,4 +13,4 @@ displayinlist: false
 
 Durch diese Rolle ist er auch eine beliebte Person zur Illustration von [Internet Memes](https://de.wikipedia.org/wiki/Meme_(Kulturph%C3%A4nomen)), auch wenn diese nicht der Wissenschaftskommunikation dienen.
 
-Dieses Beispiel soll auf Meme's als Methode der Wissenschafts- und Kulturvermittlung hinweisen.
+Dieses Beispiel soll auf Meme's als Methode der Wissenschafts- und Kulturvermittlung hinweisen, die Nachricht ist sicher angekommen 😉

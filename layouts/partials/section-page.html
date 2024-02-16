@@ -1,9 +1,18 @@
+{{- $debug := partialCached "partials/functions/debug/enabled.html" . -}}
+
 {{- $head := .CurrentSection -}}
 {{- $pages := slice -}}
 {{- if .IsHome -}}
-    {{- $pages = where .Site.Pages "Section" "home" -}}
+  {{- $pages = where .Site.Pages "Section" "home" -}}
 {{- else -}}
-    {{- $pages = .Pages -}}
+  {{- $pages = .Pages -}}
+  {{/* TODO: Add a filter for subsections
+  {{- if .Params. -}}
+
+  {{- else -}}
+    {{- $pages = where .Pages "Section" .CurrentSection -}}
+  {{- end -}}
+  */}}
 {{- end -}}
 
 {{- $sections := newScratch -}}
@@ -11,40 +20,46 @@
 
 {{- partial "section-heading.html" . -}}
 
-{{- range $i, $section := $pages.ByWeight -}}
-    {{- $class := "odd" -}}
-    {{- if modBool $i 2  -}}
-        {{- $class = "even" -}}
-    {{- end -}}
+{{- if and (not (isset .Params "sectioncontent")) (not .Params.sectioncontent) -}}
+  {{- range $i, $section := $pages.ByWeight -}}
+      {{- $class := "odd" -}}
+      {{- if modBool $i 2  -}}
+          {{- $class = "even" -}}
+      {{- end -}}
 
-    {{- $nav := path.Base .Permalink -}}
-    {{- $nav = replaceRE "^/$" "root" $nav -}}
-    {{- $class = printf "section-%s %s section-%d" $nav $class $i -}}
+      {{- $nav := path.Base .Permalink -}}
+      {{- $nav = replaceRE "^/$" "root" $nav -}}
+      {{- $class = printf "section-%s %s section-%d" $nav $class $i -}}
 
-    {{- $id := substr (md5 $class) 0 8 -}}
+      {{- $id := substr (md5 $class) 0 8 -}}
 
-    {{- partial "partials/check-section-includes.html" . -}}
+      {{- partial "partials/check-section-includes.html" . -}}
 
-    {{- if ne .Content "" -}}
-        <a name="{{ $nav }}" class="anchor" /></a>
-        <div id="{{ $nav }}" data-section="{{ $nav }}" class="{{ $class }} section-content">
+      {{- if ne .Content "" -}}
+          <a name="{{ $nav }}" class="anchor" /></a>
+          <div id="{{ $nav }}" data-section="{{ $nav }}" class="{{ $class }} section-content">
 
-            <h1 class="section-content-title">
-                {{- .Title -}}
-            </h1>
-            <div class="section-content-body">
-                {{- .Content -}}
-            </div>
-
-            {{- if eq .Kind "section" -}}
-              <div class="section-content-subsection">
-                {{- partial "subsection.html" . -}}
+              <h1 class="section-content-title">
+                  {{- .Title -}}
+              </h1>
+              <div class="section-content-body">
+                  {{- .Content -}}
               </div>
-            {{- end -}}
 
-        </div>
-        {{- $sections.Add "sections" (dict "nav" $nav "title" .Title) -}}
-    {{- end -}}
+              {{- if eq .Kind "section" -}}
+                <div class="section-content-subsection">
+                  {{- partial "subsection.html" . -}}
+                </div>
+              {{- end -}}
+
+          </div>
+          {{- $sections.Add "sections" (dict "nav" $nav "title" .Title) -}}
+      {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- if $debug -}}
+    {{- warnf "[partials/section-page.html] Excluding sub pages for section %s" .File.Dir -}}
+  {{- end -}}
 {{- end -}}
 
 {{- if ne ($sections.Get "sections" ) nil -}}
