@@ -35,6 +35,14 @@ Vermutlich auch begünstigt durch die Tatsache dass entsprechende Objekte Uran e
 
 Das Verfahren nennt sich [Photogrammetrie](https://de.wikipedia.org/wiki/Photogrammetrie), dabei wird ein 3D Modell (und die Textur) aus Einzelbildern aus verschiedenen Blickrichtungen rekonstruiert. Für jedes der gezeigten Exponate waren trotz der relative einfachen Geometrie und geringen (gezeigten) räumlichen Auflösung zwischen 50 und 70 Bilder notwendig.
 
+<details>
+<summary>Datenbearbeitung und -konversion</summary>
+
+* Die erstellten Modelle wurden in [Blender](https://www.blender.org/) nachbearbeitet.
+* Die Konvertierung in das GLTF/GLB-Format wurde mit [`obj2gltf`](https://github.com/CesiumGS/obj2gltf) gemacht.
+* Die Metadaten mit [`gltf-transform`](https://gltf-transform.dev/) hinzugefügt.
+</details>
+
 ## Präsentation
 
 Die gezeigten Exponate lassen sich rotieren und Vergrößern, ebenfalls ist eine Vollbildanzeige möglich. Die Darstellung mittels VR-Brille konnte mangels entsprechender Ausstattung nicht getestet werden. Die Realisierung erfolgte prototypisch mit Hilfe der JavaScript Bibliothek [A-Frame](https://aframe.io/), daher sind kleinere Probleme wie verzehrte Perspektiven möglich.

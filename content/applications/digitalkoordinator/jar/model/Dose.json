@@ -1,0 +1,75 @@
+{
+  "@context": {
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "cc": "http://creativecommons.org/ns#",
+    "xmpRights": "http://ns.adobe.com/xap/1.0/rights/"
+  },
+  "@id": "",
+  "dc:creator": {
+    "@list": ["Christian Mahnke", "cmahnke@gmail.com"]
+  },
+  "dc:date": {
+    "@list": ["2024-02-16T19:20:00+02:00"]
+  },
+  "dc:description": {
+    "@type": "rdf:Alt",
+    "rdf:_1": {
+      "@language": "en-us",
+      "@value": "text"
+    }
+  },
+  "dc:language": {
+    "@set": ["en"]
+  },
+  "dc:publisher": {
+    "@set": ["Christian Mahnke"]
+  },
+  "dc:relation": {
+    "@set": ["https://christianmahnke.de/"]
+  },
+  "dc:rights": {
+    "@type": "rdf:Alt",
+    "rdf:_1": {
+      "@language": "x-default",
+      "@value": "This work is licensed under &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/4.0/&quot;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;"
+    },
+    "rdf:_2": {
+      "@language": "en-en",
+      "@value": "This work is licensed under &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/4.0/&quot;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;"
+    }
+  },
+  "dc:subject": {
+    "@set": ["jar", "ceramic", "earthenware", "art deco"]
+  },
+  "dc:title": {
+    "@type": "rdf:Alt",
+    "rdf:_1": {
+      "@language": "en-en",
+      "@value": "Art Deco ceramic / earthenware jar"
+    },
+    "rdf:_2": {
+      "@language": "de-de",
+      "@value": "Art Deco Dose aus Keramik / Steingut"
+    }
+  },
+  "dc:type": {
+    "@set": ["Physical Object"]
+  },
+  "xmpRights:Marked:": "True",
+  "xmpRights:WebStatement": "This work is licensed under &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/4.0/&quot;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;",
+  "xmpRights:UsageTerms": {
+    "@type": "rdf:Alt",
+    "rdf:_1": {
+      "@language": "x-default",
+      "@value": "This work is licensed under &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/4.0/&quot;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;"
+    },
+    "rdf:_2": {
+      "@language": "en-en",
+      "@value": "This work is licensed under &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/4.0/&quot;&gt;Attribution-ShareAlike 4.0 International&lt;/a&gt;"
+    }
+  },
+  "cc:attributionName": "Christian Mahnke",
+  "cc:attributionURL": "https://christianmahnke.de/",
+  "cc:licence": "http://creativecommons.org/licenses/by-sa/4.0/"
+}

@@ -34,10 +34,44 @@ body:has(.content-container.orange) {
         background-image: linear-gradient(#b2444d, $background-color);
       }
 
+      details {
+        color: #f1f1f1;
+
+        code {
+          font-size: unset;
+        }
+      }
+
       .content-container.orange {
 
         .section-content-body {
           font-size: 1.4em;
+
+          details {
+            width: 50%;
+
+            font-size: 1.2em;
+            font-family: "League Spartan", Futura, sans-serif;
+
+            summary {
+              margin-bottom: -10px; /* for more prominent move */
+              transition: margin 150ms ease-out;
+            }
+
+            &[open] summary {
+              margin-bottom: 10px;
+            }
+
+            @media (max-width: 35em) {
+              width: fit-content;
+            }
+
+            table {
+              width: 100%;
+              margin-block-start: .6em;
+            }
+          }
+
         }
 
         .section-head-content {
@@ -47,6 +81,14 @@ body:has(.content-container.orange) {
             text-align: center;
             margin-bottom: .2em;
           }
+
+          details summary {
+            font-family: "Purple Purse",serif;
+            font-weight: 400;
+            color: $foreground-color;
+            margin-bottom: .2em;
+          }
+
         }
 
         .section-content {

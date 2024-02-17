@@ -35,6 +35,14 @@ Presumably also favoured by the fact that such objects contain uranium, there is
 
 The process is called [photogrammetry](https://de.wikipedia.org/wiki/Photogrammetrie), whereby a 3D model (and the texture) is reconstructed from individual images from different viewing directions. Despite the relatively simple geometry and low (shown) spatial resolution, between 50 and 70 images were required for each of the exhibits shown.
 
+<details>
+<summary>Data editing and conversion</summary>
+
+* The created models were post-processed in [Blender](https://www.blender.org/).
+* The conversion to GLTF/GLB format was done with [`obj2gltf`](https://github.com/CesiumGS/obj2gltf).
+* The metadata was added with [`gltf-transform`](https://gltf-transform.dev/).
+</details>
+
 ## Presentation
 
 The exhibits shown can be rotated and enlarged, and a full-screen display is also possible. The presentation using VR glasses could not be tested due to a lack of appropriate equipment. The prototype was realised using the JavaScript library [A-Frame](https://aframe.io/), so minor problems such as blurred perspectives are possible.
