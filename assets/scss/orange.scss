@@ -6,7 +6,6 @@
 
 $background-color: #222222;
 $foreground-color: #d15431;
-/*$body-text-color: #717b7b;*/
 $body-text-color: #f1f1f1;
 
 body:has(.content-container.orange) {
@@ -48,14 +47,14 @@ body:has(.content-container.orange) {
           font-size: 1.4em;
 
           details {
-            width: 50%;
-
-            font-size: 1.2em;
+            margin: 0.8rem 0.5rem;
+            font-size: 1.2rem;
             font-family: "League Spartan", Futura, sans-serif;
 
             summary {
+              font-size: 1.4rem;
               margin-bottom: -10px; /* for more prominent move */
-              transition: margin 150ms ease-out;
+              transition: all 200ms ease-out;
             }
 
             &[open] summary {
@@ -67,8 +66,46 @@ body:has(.content-container.orange) {
             }
 
             table {
-              width: 100%;
+              margin-left: 0.8em;
               margin-block-start: .6em;
+
+              tbody {
+                display: flex;
+                flex-wrap: wrap;
+                column-gap: 10%;
+
+                @media (max-width: 35em) {
+                  display: table;
+                }
+              }
+
+              tr {
+                box-sizing: border-box;
+                width: 45%;
+                display: flex;
+                justify-content: space-between;
+
+                td {
+                  &:first-child {
+                    font-weight: bold;
+                    flex-basis: 60%;
+                  }
+
+                  &:empty {
+                    display: none;
+                  }
+                }
+
+                @media (max-width: 35em) {
+                  width: 100%;
+
+                  td {
+                    &:first-child {
+                      flex-basis: 50%;
+                    }
+                  }
+                }
+              }
             }
           }
 
@@ -80,6 +117,11 @@ body:has(.content-container.orange) {
           h1, h2, h3 {
             text-align: center;
             margin-bottom: .2em;
+
+            @media (max-width: 35em) {
+              text-align: unset;
+              mix-blend-mode: unset;
+            }
           }
 
           details summary {
@@ -174,6 +216,7 @@ body:has(.content-container.orange) {
           .parallax-bg {
             background-image: unset;
             width: unset;
+            overflow: hidden;
 
              h1 {
               font-size: 6em;
@@ -196,6 +239,10 @@ body:has(.content-container.orange) {
           top: 3.6em;
           left: 0;
           right: 0;
+
+          @media (max-width: 35em) {
+            top: unset;
+          }
 
           .text-container p {
             background-color: rgb(238,232,170);
