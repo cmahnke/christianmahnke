@@ -129,13 +129,6 @@ theme = ["projektemacher-base", "hugo-video"]
     disable = false
     simple = false
 
-[[cascade]]
-  [cascade._target]
-    kind = 'section'
-    path = '/**'
-  [cascade.params]
-    indexRecursive = true
-
 [module]
     [[module.mounts]]
         source = "assets/scss"
