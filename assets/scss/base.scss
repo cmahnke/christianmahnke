@@ -1388,3 +1388,10 @@ a.anchor {
 
     }
 }
+
+a:has(.post-image) {
+  &::before,
+  &::after {
+    display: none;
+  }
+}

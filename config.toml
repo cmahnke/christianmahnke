@@ -76,6 +76,8 @@ theme = ["projektemacher-base", "hugo-video"]
     defaultMarkdownHandler = 'goldmark'
 
 [markup.goldmark]
+    duplicateResourceFiles = true
+
     [markup.goldmark.renderer]
         unsafe= true
 
