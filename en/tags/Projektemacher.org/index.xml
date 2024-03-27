@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projektemacher.org on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Projektemacher.org/</link>
+    <description>Recent content in Projektemacher.org on Christian Mahnke</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Tue, 05 Mar 2024 19:22:44 +0200</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/en/tags/Projektemacher.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VintageReality gestartet</title>
+      <link>https://christianmahnke.de/en/post/vintagereality/</link>
+      <pubDate>Tue, 05 Mar 2024 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/vintagereality/</guid>
+      <description>&lt;p&gt;The latest blog incubated at the &lt;a href=&#34;https://labs.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt; has been started.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Briefsteller.de startet</title>
+      <link>https://christianmahnke.de/en/post/briefsteller/</link>
+      <pubDate>Tue, 27 Apr 2021 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/briefsteller/</guid>
+      <description>&lt;p&gt;Finally, the last of the blogs stared during the second Corona Lockdown is now online!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Labs.projektemache.org gestartet</title>
+      <link>https://christianmahnke.de/en/post/labs/</link>
+      <pubDate>Sat, 13 Mar 2021 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/labs/</guid>
+      <description>&lt;p&gt;In order to have a page in the future that can easily break for a few days and to be able to present some things half-finished, there is now the &lt;a href=&#34;https://labs.projektemache.org&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
