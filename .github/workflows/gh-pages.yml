@@ -53,6 +53,9 @@ jobs:
       - name: Puppeteer
         run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh
 
+      - name: Archive links
+        run: python ./themes/projektemacher-base/scripts/archive.py -d docs/ -e christianmahnke.de,projektemacher.org
+
       - name: Deploy site
         uses: peaceiris/actions-gh-pages@v4.0.0
         with:
