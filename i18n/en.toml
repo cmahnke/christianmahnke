@@ -6,3 +6,7 @@ other = "Links"
 
 [footerContactHeading]
 other = "Contact"
+
+# Tags
+[light]
+other = "Light"

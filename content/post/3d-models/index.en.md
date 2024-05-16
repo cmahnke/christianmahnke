@@ -6,6 +6,9 @@ scss:
 js:
   - https://aframe.io/releases/1.5.0/aframe.min.js
   - https://unpkg.com/aframe-orbit-controls@1.3.2/dist/aframe-orbit-controls.min.js
+tags:
+  - light
+  - Licht2024
 ---
 
 Maybe it will become a virtual exhibition about orange ceramics...
@@ -33,4 +36,4 @@ The display was tested with Chrome and Safari, in Firefox and Edge the objects m
 
 ## Result
 
-{{< aframe-3d-model src="/applications/digitalkoordinator/vase1/model/LavaVase.glb" initialPosition="0 0.5 6" minDistance=5  >}}
+{{< aframe-3d-model src="/applications/digitalkoordinator/vase2/model/Vase2.glb" minDistance=1 maxDistance=3 initialPosition="0 0.5 1.5" >}}

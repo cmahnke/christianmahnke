@@ -1,17 +1,10 @@
 ---
-title: "Links"
+title: "Art"
 metaPage: true
 displayinlist: false
+weight: 2
+draft: true
 ---
-
-# Partner
-
-## General
-
-* [Freies Verlagshaus](https://freies-verlagshaus.de/) by Michel Graver
-* [Kulturmaps Göttingen](https://kulturmaps.de/) by Michel Graver
-
-## Art
 
 For my art specific projects (mainly [Ric - an unknown artist](https://ric-unknownartist.projektemacher.org/)) I would like to thank the following collectors, and recommend a visit to their websites.
 

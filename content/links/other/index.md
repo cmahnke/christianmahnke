@@ -1,7 +1,10 @@
-Links TODO
-==========
-
-# Add other sites
+---
+title: "Andere"
+metaPage: true
+displayinlist: false
+weight: 4
+draft: true
+---
 
 ## Collections
 
