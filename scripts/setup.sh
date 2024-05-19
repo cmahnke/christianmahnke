@@ -25,7 +25,10 @@ TARGETFORMAT=png ./themes/projektemacher-base/scripts/preview.sh
 # Favicons
 SOURCE="themes/projektemacher-base/static/images/cm.svg" OPTIONS="-transparent white static/images/favicon-128.png" ./themes/projektemacher-base/scripts/favicon.sh
 
-yarn install
+yarn install --ignore-engines #--ignore-platform 
+npm install --cpu=arm64 --os=darwin sharp
+npm install --cpu=x64 --os=linux --libc=glibc sharp
+npm install --cpu=x64 --os=linux --libc=musl sharp
 yarn run svgo
-./themes/projektemacher-base/scripts/json-lint.sh 
+./themes/projektemacher-base/scripts/json-lint.sh
 ./themes/projektemacher-base/scripts/3d-models.sh
