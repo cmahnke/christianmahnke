@@ -35,4 +35,4 @@ Die Darstellung wurde mit Chrome und Safari getestet, in Firefox und Edge könne
 
 ## Ergebnis
 
-{{< aframe-3d-model src="/applications/digitalkoordinator/vase2/model/Vase2.glb" minDistance=1 maxDistance=3 initialPosition="0 0.5 1.5" >}}
+{{< aframe-3d-model src="/applications/digitalkoordinator/vase1/model/LavaVase.glb" initialPosition="0 0.5 6" minDistance=5  >}}

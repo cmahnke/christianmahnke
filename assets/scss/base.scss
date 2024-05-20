@@ -9,6 +9,7 @@
 @import "zoom-link";
 @import "pdf-viewer";
 @import "iiif";
+@import "ol";
 @import "ol-iiif";
 
 $content-width: 64em;
@@ -827,9 +828,24 @@ a:visited {
     }
 
     &.single .post {
-        .meta .tags {
-            position: absolute;
-            right: 0;
+        .meta {
+            margin: 1.6em 0;
+            justify-content: flex-end;
+            position: relative;
+
+            .tags {
+              position: unset;
+                /*
+                position: absolute;
+                right: 0;
+                */
+
+            }
+        }
+
+        .aframe-3d-model {
+          width: 100%;
+          max-height: 60vh;
         }
 
         .date {
