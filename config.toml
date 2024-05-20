@@ -10,6 +10,7 @@ disablePathToLower = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base", "hugo-video"]
+enableGitInfo = true
 
 [languages]
     [languages.de]
@@ -110,6 +111,8 @@ theme = ["projektemacher-base", "hugo-video"]
     suffixes = ["geojson", "gjson"]
   [mediaTypes."application/ld+json"]
     suffixes = ["json"]
+  [mediaTypes."application/activity+json"]
+    suffixes = ["ajson"]
 
 [outputFormats]
   [outputFormats.geojson]
@@ -150,3 +153,6 @@ theme = ["projektemacher-base", "hugo-video"]
     [[module.mounts]]
         source = "node_modules/elevator.js/demo/music/"
         target = "static/sounds"
+
+[build]
+  writeStats = true
