@@ -86,7 +86,7 @@ enableGitInfo = true
         attribute = true
         strikethrough = true
 
-    [markup.goldmark.extensions.typographer]
+    [markup.goldmark.extensions.extras]
         [markup.goldmark.extensions.extras.insert]
             enable = true
         [markup.goldmark.extensions.extras.mark]
