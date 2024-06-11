@@ -4,7 +4,12 @@
         <h1 class="post-title">{{ .Title }}</h1>
         {{- if not .Params.metaPage -}}
             <div class="date">
-                <a href="{{ .RelPermalink }}">{{- partial "date.html" . -}}</a>
+                <a href="{{ .RelPermalink }}">
+                  {{- .Date | time.Format ":date_full" -}}
+                  {{/*
+                    {{- partial "date.html" . -}}
+                  */}}
+                </a>
             </div>
         {{ end }}
         <div class="post-body">
