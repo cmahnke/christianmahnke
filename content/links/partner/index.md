@@ -11,6 +11,7 @@ Diese Partner haben zu meinen Projekten beigetragen bzw. anderweitig gefördert:
 
 * [Freies Verlagshaus](https://freies-verlagshaus.de/) von Michel Graver
 * [Kulturmaps Göttingen](https://kulturmaps.de/) von Michel Graver
+* [Nebeleule](https://nebeleule.de/)
 
 # Kunst
 

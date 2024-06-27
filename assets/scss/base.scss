@@ -583,7 +583,13 @@ a:visited {
         }
 
         .section-head-content {
+            font-size: 1.6em;
+            font-style: italic;
+            text-align: end;
 
+            p {
+                margin: unset;
+            }
         }
 
     }
