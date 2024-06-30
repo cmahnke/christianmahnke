@@ -10,3 +10,9 @@ other = "Contact"
 # Tags
 [light]
 other = "Light"
+
+[maps]
+other = "Maps"
+
+[digitalImages]
+other = "Digital images"
