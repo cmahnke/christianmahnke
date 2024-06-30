@@ -1,5 +1,6 @@
 window.$ = window.jQuery = require('jquery');
 import { addConsent } from './iframe-consent';
+import { initMap } from './maps/osm-map.js';
 
 /* See https://github.com/rgalus/sticky-js */
 /* window.Sticky = require('sticky-js'); */
@@ -7,6 +8,7 @@ import stickybits from 'stickybits'
 window.stickybits = stickybits;
 
 window.addConsent = addConsent;
+window.initMap = initMap;
 
 window.enterView = require('enter-view');
 
