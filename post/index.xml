@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Christian Mahnke</title>
+    <link>https://christianmahnke.de/post/</link>
+    <description>Recent content in Blog on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TTS für Briefsteller</title>
+      <link>https://christianmahnke.de/post/tts/</link>
+      <pubDate>Tue, 25 Jun 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/tts/</guid>
+      <description>Nachdem das Briefsteller Blog seit Anfang 2021 als Gerüst existierte, habe ich meinen Sommerurlaub genutzt um den Musterbrief, der mich überhaupt erst zu dem Thema &amp;ldquo;Briefsteller&amp;rdquo; gebracht hat, online zu bringen.&#xA;Ursprünglich war die Idee die Briefe als Podcast zu präsentieren. Auch die Aufnahmehardware (Audio-Interface, mehr oder weniger historische Mikrophone) ist beschafft, einzig es fehlt die Zeit. Daher war der erste Eintrag eine gute Gelegenheit sich einmal mit AI gestützter Sprachgenerierung zu beschäftigen.</description>
+    </item>
+    <item>
+      <title>HDR Bilder im Browser</title>
+      <link>https://christianmahnke.de/post/hdr-awesome-list/</link>
+      <pubDate>Wed, 01 May 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/hdr-awesome-list/</guid>
+      <description>&lt;p&gt;Für ein in Vorbereitung befindliches Projekt habe ich eine &lt;a href=&#34;https://github.com/cmahnke/awesome-browser-hdr/blob/main/README.md&#34; target=&#34;_blank&#34;&gt;Liste von Links&lt;/a&gt; zu HDR im Web bzw. im Browser zusammengestellt.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VintageReality gestartet</title>
+      <link>https://christianmahnke.de/post/vintagereality/</link>
+      <pubDate>Tue, 05 Mar 2024 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/vintagereality/</guid>
+      <description>&lt;p&gt;Das neueste Kind der &lt;a href=&#34;https://labs.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt; ist die seit Anfang 2023 ausgebaute Kategorie &amp;ldquo;1900 in 3D&amp;rdquo;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3D Modelle im Browser</title>
+      <link>https://christianmahnke.de/post/3d-models/</link>
+      <pubDate>Sat, 24 Feb 2024 10:16:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/3d-models/</guid>
+      <description>&lt;p&gt;Vielleicht wird mal eine virtuelle Ausstellung über orangene Keramik draus&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kartenmaterial für Projektemacher Blogs</title>
+      <link>https://christianmahnke.de/post/maps/</link>
+      <pubDate>Sun, 01 Jan 2023 20:14:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/maps/</guid>
+      <description>Ein weiterer Beitrag aus Projektemacher Labs:&#xA;Vorbereitungen Bevor Beiträge auf Karten angezeigt werden können, müssen folgende Schritte erlegdigt sein:&#xA;Geokodierung von Beiträgen und / oder Tags Generierung einer anwendungsspezifischen Repräsentation (GeoJSON, KML) Erst danach kann das auf einer Karte visualisiert werden.&#xA;Ein Beispiel für die alten 3D Bilder ist hier zu finden.&#xA;Anzeige im Browser Um die generierten Daten im Browser anzuzeigen, kann das von OpenStreetMap bereitgestellte Kartenmaterial verwendet werden. Dabei übernimmt ein externer Server die Erzeugung der Bilddaten.</description>
+    </item>
+    <item>
+      <title>Spende ans Stadtarchiv Halle</title>
+      <link>https://christianmahnke.de/post/postcards-halle/</link>
+      <pubDate>Sat, 31 Dec 2022 12:00:00 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/postcards-halle/</guid>
+      <description>&lt;p&gt;Eine weitere Spende an ein Archiv dürfte inzwischen in Stadtarchiv von &lt;a href=&#34;https://de.wikipedia.org/wiki/Halle_%28Saale%29&#34; target=&#34;_blank&#34;&gt;Halle an der Saale&lt;/a&gt; eingetroffen sein. Es handelt sich um drei Postkarten, die Verkaufsstellen des &lt;a href=&#34;https://de.wikipedia.org/wiki/Pei%C3%9Fnitzinsel#Das_Gut_Gimritz&#34; target=&#34;_blank&#34;&gt;Stadtgutes Gimritz&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ausstellung &#34;Wilma Bräuner&#34;</title>
+      <link>https://christianmahnke.de/post/wilma-brauner/</link>
+      <pubDate>Sat, 03 Dec 2022 12:00:00 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/wilma-brauner/</guid>
+      <description>&lt;p&gt;Ab 6. Dezember findet in der Stadtgalerie „Alte Post“, Stephanstraße 4, Sylt / OT Westerland die Ausstellung &amp;ldquo;Spurensuche im Sylter Archiv -  Zum Leben und Werk von &lt;strong&gt;Wilma Bräuner&lt;/strong&gt; (1891 – 1985)&amp;rdquo; statt, an der Evelyn Kraßmann und ich zusammen mit einem &lt;a href=&#34;https://xn--wilmabruner-r8a.de/about/#ausstellung&#34; target=&#34;_blank&#34;&gt;Team&lt;/a&gt; gearbeitet haben. Die &lt;a href=&#34;https://xn--wilmabruner-r8a.de/&#34; target=&#34;_blank&#34;&gt;Webseite&lt;/a&gt; befindet sich noch im Aufbau&amp;hellip;&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;figure&gt;&#xA;    &#xA;        &lt;img src=&#34;https://christianmahnke.de/post/wilma-brauner/Plakat.jpg&#34;/&gt; &lt;figcaption&gt;&#xA;                &#xA;                    &lt;h4&gt;Ausstellungsplakat&lt;/h4&gt;&#xA;                &#xA;                &#xA;            &lt;/figcaption&gt;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Die Vernissage findet am Montag, den 5. Dezember 2022 um 18 Uhr in der Stadtgalerie statt.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Konferenz 2021: Scaling down...</title>
+      <link>https://christianmahnke.de/post/iiif-conf-2021-scaling-down/</link>
+      <pubDate>Thu, 24 Jun 2021 16:30:00 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/iiif-conf-2021-scaling-down/</guid>
+      <description>&lt;p&gt;Heute war es soweit, ich habe meinen Vortrag zu der Infrastruktur meiner Blogs auf der diesjährigen IIIF Konferenz gehalten.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instagram</title>
+      <link>https://christianmahnke.de/post/instagram/</link>
+      <pubDate>Mon, 31 May 2021 15:23:46 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/instagram/</guid>
+      <description>Seit heute gibt es einen ergänzenden Instagram Kanal. Dies ist erstmal nur ein Experiment. Was aber schon negativ aufgefallen ist: Es scheint keine offizielle und stabile API zum Anlegen von Beiträgen zu geben - sehr unprofessionell!</description>
+    </item>
+    <item>
+      <title>DIY Projekt: Telefonhülle</title>
+      <link>https://christianmahnke.de/post/phone-case/</link>
+      <pubDate>Mon, 31 May 2021 13:58:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/phone-case/</guid>
+      <description>&lt;p&gt;Heute mal wieder eines der eher seltenen nicht-digitalen Projekte: Eine Hülle für mein neues Telefon.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Briefsteller.de gestartet</title>
+      <link>https://christianmahnke.de/post/briefsteller/</link>
+      <pubDate>Tue, 27 Apr 2021 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/briefsteller/</guid>
+      <description>&lt;p&gt;Endlich, der letzte der im zweiten Corona Lockdown geplanten Blog ist nun online!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JPEG XL</title>
+      <link>https://christianmahnke.de/post/jpeg-xl/</link>
+      <pubDate>Sat, 17 Apr 2021 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/jpeg-xl/</guid>
+      <description>Warum JPEG XL? JPEG XL ist ein neues Format für Rasterbilder, so neu, das zur Zeit als dieser Text geschrieben wurde, es als Lemma noch nicht in der deutschen Wikipedia geführt wurde. Was genau JPEG XL anders bzw. besser macht als das allseits bekannte JPEG kann man dort nachlesen. Wir beschränken uns hier auf den Mehrwert für die Projektmacher Blogs:&#xA;Weniger Speicherplatz benötigt Verlustfreie Kompression möglich Nachteile sind derzeit noch:</description>
+    </item>
+    <item>
+      <title>IIIF Konferenz 2021</title>
+      <link>https://christianmahnke.de/post/iiif-conference-2021/</link>
+      <pubDate>Sat, 13 Mar 2021 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/iiif-conference-2021/</guid>
+      <description>&lt;p&gt;Ich werde meine &lt;a href=&#34;https://projektemacher.org/blogs/&#34; target=&#34;_blank&#34;&gt;Corona-Projekte&lt;/a&gt; auf der diesjährigen &lt;a href=&#34;https://iiif.io/event/2021/annual_conference/&#34; target=&#34;_blank&#34;&gt;IIIF Konferenz&lt;/a&gt; vorstellen!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Labs.projektemache.org gestartet</title>
+      <link>https://christianmahnke.de/post/labs/</link>
+      <pubDate>Sat, 13 Mar 2021 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/labs/</guid>
+      <description>&lt;p&gt;Um in Zukunft eine Seite zu haben, die auch ruhig mal für ein paar Tage kaputt gehen kann und um auch mal einige Dinge halbfertig präsentieren zu können, gibt es nun die &lt;a href=&#34;https://labs.projektemache.org&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Der erste Beitrag</title>
+      <link>https://christianmahnke.de/post/first-post/</link>
+      <pubDate>Sun, 06 Dec 2020 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/first-post/</guid>
+      <description>&lt;p&gt;Nachdem in den letzten Monaten schon die Seite &lt;a href=&#34;https://projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher.org&lt;/a&gt; online gegangen ist, um als Dachmarke für meine alten Tumblr Blogs und die Projekte des ersten Corona Lockdowns unter einem Dach zu vereinen, startet nun auch meine persönliche Homepage.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DigitalImages on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/digitalImages/</link>
+    <description>Recent content in DigitalImages on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Tue, 02 Jul 2024 00:08:14 +0200</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/en/tags/digitalImages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JPEG XL</title>
+      <link>https://christianmahnke.de/en/post/jpeg-xl/</link>
+      <pubDate>Sat, 17 Apr 2021 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/jpeg-xl/</guid>
+      <description>Why JPEG XL? JPEG XL is a new format for raster images, in fact, is&amp;rsquo;s so recent (at the time this text was written) there haven&amp;rsquo;t even been an entry in the German Wikipedia.&#xA;You can read there what exactly JPEG XL does differently or better than the well-known JPEG. We limit ourselves here to the advantages for the Projektemacher blogs:&#xA;Less storage space required Lossless compression available Disadvantages are currently:</description>
+    </item>
+  </channel>
+</rss>

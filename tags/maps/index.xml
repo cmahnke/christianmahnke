@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maps on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/maps/</link>
+    <description>Recent content in Maps on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Tue, 02 Jul 2024 00:08:14 +0200</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/tags/maps/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kartenmaterial für Projektemacher Blogs</title>
+      <link>https://christianmahnke.de/post/maps/</link>
+      <pubDate>Sun, 01 Jan 2023 20:14:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/maps/</guid>
+      <description>Ein weiterer Beitrag aus Projektemacher Labs:&#xA;Vorbereitungen Bevor Beiträge auf Karten angezeigt werden können, müssen folgende Schritte erlegdigt sein:&#xA;Geokodierung von Beiträgen und / oder Tags Generierung einer anwendungsspezifischen Repräsentation (GeoJSON, KML) Erst danach kann das auf einer Karte visualisiert werden.&#xA;Ein Beispiel für die alten 3D Bilder ist hier zu finden.&#xA;Anzeige im Browser Um die generierten Daten im Browser anzuzeigen, kann das von OpenStreetMap bereitgestellte Kartenmaterial verwendet werden. Dabei übernimmt ein externer Server die Erzeugung der Bilddaten.</description>
+    </item>
+  </channel>
+</rss>

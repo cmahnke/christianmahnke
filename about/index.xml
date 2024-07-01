@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Über mich on Christian Mahnke</title>
+    <link>https://christianmahnke.de/about/</link>
+    <description>Recent content in Über mich on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leben und Arbeit</title>
+      <link>https://christianmahnke.de/about/life_and_work/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/about/life_and_work/</guid>
+      <description>Orte Ich lebe und arbeite in Göttingen und Westerland / Sylt.</description>
+    </item>
+    <item>
+      <title>Berufliche Schwerpunkte</title>
+      <link>https://christianmahnke.de/about/professional-interests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/about/professional-interests/</guid>
+      <description>Kompetenzen Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum digitaler Bibliotheken und Museen:&#xA;Volltexte und Metadaten&#xA;TEI / Digitale Editionen OCR Suchtechnologien (Solr / ElasticSearch) XML Technologien IIIF (Massen-) Digitalisierung&#xA;Workflowsteuerung Programmiersprachen&#xA;Java PHP Python Groovy Go Betriebs- und Entwicklungsinfrastrukturen&#xA;Git Docker / Kubernetes / Cloud Vorträge (Auswahl)&#xA;24.6.2021 - 2021 IIIF Annual Conference - Scaling Down: IIIF at Small Scale, Online 08.6.2011 - 100. Deutscher Bibliothekartag - &amp;ldquo;IMProving ACcess to Text - Entwicklung eines Interoperabilitätsframeworks in einem Bibliotheksprojekt&amp;rdquo; (mit Mustafa Dogan), Berlin 16.</description>
+    </item>
+    <item>
+      <title>Videos</title>
+      <link>https://christianmahnke.de/about/videos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/about/videos/</guid>
+      <description>In den letzten Jahren habe ich auch kleinere Statistenrollen in kurzen Filmen übernommen:&#xA;Evelyns Geschichte Externer Inhalt An dieser Stelle wird ein externer Inhalt eingebunden. Damit können personenbezogene Daten an Drittplattformen übermittelt werden.&#xA;Externe Inhalte zulassen Hier spiele ich mich selbst und begleite eine sehr gute Freundin mit einer schweren Erkrankung zum Flohmarkt.&#xA;Black as Chalk - Snake Handler Externer Inhalt An dieser Stelle wird ein externer Inhalt eingebunden. Damit können personenbezogene Daten an Drittplattformen übermittelt werden.</description>
+    </item>
+    <item>
+      <title>Blogs</title>
+      <link>https://christianmahnke.de/about/blogs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/about/blogs/</guid>
+      <description>Eine Liste meiner Themen-Blogs ist auf Projektemacher.org zu finden. Zusätzlich bin ich an der Nebeleule beteiligt.</description>
+    </item>
+    <item>
+      <title>Kolophon</title>
+      <link>https://christianmahnke.de/about/colophon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/about/colophon/</guid>
+      <description>Diese Seite wurde mit Hugo generiert.&#xA;Zur Einbindung von Videos kommt das Theme hugo-video zum Einsatz. Als Schriftarten werden Josefin Sans, League Spartan und Inconsolata eingesetzt.&#xA;Folgende Javascript und CSS Frameworks und Bibliotheken kommen zum Einsatz:&#xA;jQuery js-cookie Normalize.css Stickybits Enter-view.js Die Seite wird von GitHub gehosted.</description>
+    </item>
+    <item>
+      <title>Kontakt</title>
+      <link>https://christianmahnke.de/about/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/about/contact/</guid>
+      <description>Diese Seite ist ein Projekt von Christian Mahnke.&#xA;Kontakt ist via E-Mail möglich.</description>
+    </item>
+  </channel>
+</rss>

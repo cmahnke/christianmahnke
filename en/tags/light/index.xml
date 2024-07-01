@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Light on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/light/</link>
+    <description>Recent content in Light on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Tue, 02 Jul 2024 00:08:14 +0200</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/en/tags/light/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>‘HDR images in the browser’</title>
+      <link>https://christianmahnke.de/en/post/hdr-awesome-list/</link>
+      <pubDate>Wed, 01 May 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/hdr-awesome-list/</guid>
+      <description>&lt;p&gt;For a project in preparation I have compiled a &lt;a href=&#34;https://github.com/cmahnke/awesome-browser-hdr/blob/main/README.md&#34; target=&#34;_blank&#34;&gt;list of links&lt;/a&gt; to HDR on the web or in the browser.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3D Models in the browser</title>
+      <link>https://christianmahnke.de/en/post/3d-models/</link>
+      <pubDate>Sat, 24 Feb 2024 10:16:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/3d-models/</guid>
+      <description>&lt;p&gt;Maybe it will become a virtual exhibition about orange ceramics&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projektemacher on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Projektemacher/</link>
+    <description>Recent content in Projektemacher on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Tue, 02 Jul 2024 00:08:14 +0200</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/tags/Projektemacher/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TTS für Briefsteller</title>
+      <link>https://christianmahnke.de/post/tts/</link>
+      <pubDate>Tue, 25 Jun 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/tts/</guid>
+      <description>Nachdem das Briefsteller Blog seit Anfang 2021 als Gerüst existierte, habe ich meinen Sommerurlaub genutzt um den Musterbrief, der mich überhaupt erst zu dem Thema &amp;ldquo;Briefsteller&amp;rdquo; gebracht hat, online zu bringen.&#xA;Ursprünglich war die Idee die Briefe als Podcast zu präsentieren. Auch die Aufnahmehardware (Audio-Interface, mehr oder weniger historische Mikrophone) ist beschafft, einzig es fehlt die Zeit. Daher war der erste Eintrag eine gute Gelegenheit sich einmal mit AI gestützter Sprachgenerierung zu beschäftigen.</description>
+    </item>
+    <item>
+      <title>Kartenmaterial für Projektemacher Blogs</title>
+      <link>https://christianmahnke.de/post/maps/</link>
+      <pubDate>Sun, 01 Jan 2023 20:14:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/maps/</guid>
+      <description>Ein weiterer Beitrag aus Projektemacher Labs:&#xA;Vorbereitungen Bevor Beiträge auf Karten angezeigt werden können, müssen folgende Schritte erlegdigt sein:&#xA;Geokodierung von Beiträgen und / oder Tags Generierung einer anwendungsspezifischen Repräsentation (GeoJSON, KML) Erst danach kann das auf einer Karte visualisiert werden.&#xA;Ein Beispiel für die alten 3D Bilder ist hier zu finden.&#xA;Anzeige im Browser Um die generierten Daten im Browser anzuzeigen, kann das von OpenStreetMap bereitgestellte Kartenmaterial verwendet werden. Dabei übernimmt ein externer Server die Erzeugung der Bilddaten.</description>
+    </item>
+    <item>
+      <title>JPEG XL</title>
+      <link>https://christianmahnke.de/post/jpeg-xl/</link>
+      <pubDate>Sat, 17 Apr 2021 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/jpeg-xl/</guid>
+      <description>Warum JPEG XL? JPEG XL ist ein neues Format für Rasterbilder, so neu, das zur Zeit als dieser Text geschrieben wurde, es als Lemma noch nicht in der deutschen Wikipedia geführt wurde. Was genau JPEG XL anders bzw. besser macht als das allseits bekannte JPEG kann man dort nachlesen. Wir beschränken uns hier auf den Mehrwert für die Projektmacher Blogs:&#xA;Weniger Speicherplatz benötigt Verlustfreie Kompression möglich Nachteile sind derzeit noch:</description>
+    </item>
+  </channel>
+</rss>

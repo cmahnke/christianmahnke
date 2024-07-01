@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Start on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/home/</link>
+    <description>Recent content in Start on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/home/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Interessen</title>
+      <link>https://christianmahnke.de/en/home/interests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/en/home/interests/</guid>
+      <description>I&amp;rsquo;m interested in various aspects of everyday culture in the 20th century and how it can be transported digitally. To do this, I collect various artifacts and also like to try them out. I also present some of the results and collections online.&#xA;My aim is to use up-to-date (i.e. digital) transport methods to support the immersion into the younger past, which has the most lasting effect on our everyday life today, the 20th century&amp;hellip;</description>
+    </item>
+    <item>
+      <title>Projektemacher.org</title>
+      <link>https://christianmahnke.de/en/home/projektemacher.org/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/en/home/projektemacher.org/</guid>
+      <description>My &amp;ldquo;proving ground&amp;rdquo; to try out ideas and to present some of my collections since the corona pandemic is Projektemacher.org, there are various (sub-) projects linked. To a certain extent, these are old blog projects that were previously hosted on Tumblr. The newer part revolves around the presentation of various collections. These in turn can be divided into the following groups:&#xA;Resources for other pages (such as Schriftmuster and Vorsatzpapier) Interesting content (such as Blaufusstölpel and Kinderbücher) Experiments on presentation (such as Kleiderbügel) Continuous improvements to the existing blogs as well as some new ones are planed for the future&amp;hellip;</description>
+    </item>
+    <item>
+      <title>Consulting</title>
+      <link>https://christianmahnke.de/en/home/consulting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/en/home/consulting/</guid>
+      <description>If you need advice on digitizing and presenting your collection online, I will be happy to offer my help and experience. Regardless whether it is a small collection, a very specific topic (e.g. to present an exhibition) or an entire library. This offer is aimed at all institutions of cultural heritage and other similar interested and is not limited to printed matter.</description>
+    </item>
+  </channel>
+</rss>

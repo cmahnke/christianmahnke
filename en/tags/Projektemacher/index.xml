@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projektemacher on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Projektemacher/</link>
+    <description>Recent content in Projektemacher on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Tue, 02 Jul 2024 00:08:14 +0200</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/en/tags/Projektemacher/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TTS for &#34;Briefsteller&#34;</title>
+      <link>https://christianmahnke.de/en/post/tts/</link>
+      <pubDate>Tue, 25 Jun 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/tts/</guid>
+      <description>After the Briefsteller blog had existed as a skeleton since the beginning of 2021, I used my summer holiday to bring the sample letter, which brought me to the topic &amp;ldquo;letter writing guides&amp;rdquo; in the first place, online.&#xA;The original idea was to present the letters as a podcast. The recording hardware (audio interface, more or less historical microphones) is ready, the only thing missing is time. The first entry was therefore a good opportunity to dig into AI-supported speech generation.</description>
+    </item>
+    <item>
+      <title>Maps for my Projektemacher blogs</title>
+      <link>https://christianmahnke.de/en/post/maps/</link>
+      <pubDate>Sun, 01 Jan 2023 20:14:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/maps/</guid>
+      <description>Another addition from Projektemacher Labs:&#xA;Preparations Before posts can be displayed on maps, the following steps must be taken:&#xA;Geocoding of posts and / or tags Generation of an application-specific representations (GeoJSON, KML) After this has been done, the next step can be approached.&#xA;An example of the old 3D images can be found here.&#xA;Plotting data on a map in a browser The map material provided by OpenStreetMap can be used to display the generated data in the browser.</description>
+    </item>
+    <item>
+      <title>JPEG XL</title>
+      <link>https://christianmahnke.de/en/post/jpeg-xl/</link>
+      <pubDate>Sat, 17 Apr 2021 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/jpeg-xl/</guid>
+      <description>Why JPEG XL? JPEG XL is a new format for raster images, in fact, is&amp;rsquo;s so recent (at the time this text was written) there haven&amp;rsquo;t even been an entry in the German Wikipedia.&#xA;You can read there what exactly JPEG XL does differently or better than the well-known JPEG. We limit ourselves here to the advantages for the Projektemacher blogs:&#xA;Less storage space required Lossless compression available Disadvantages are currently:</description>
+    </item>
+  </channel>
+</rss>
