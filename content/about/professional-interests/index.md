@@ -43,3 +43,6 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 ## Publikationen
 * Fieseler C., **Mahnke C.** (2013): CERL Thesaurus used in an electronic edition of 18th-century university lectures, CERL Newsletter 27, Juni 2013
 * Voigt K., **Mahnke C.**, Dr. Tech M., Dogan M. (2014): Heyne Digital - Exploring the origins of Classical Archaeology through a digital edition, [Konferenzband QQML 2014](http://www.isast.org/images/FINAL_BOOK_OF_ABSTRACTS_e-book_version.pdf)
+
+## Ausstellungen
+* **6.12. - 17.12.2022**: “Spurensuche im Sylter Archiv - Zum Leben und Werk von **Wilma Bräuner** (1891 – 1985)” - Stadtgalerie „Alte Post“, Sylt / OT Westerland mit Evelyn Kraßmann.
