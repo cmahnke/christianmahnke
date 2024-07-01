@@ -123,6 +123,8 @@ enableGitInfo = true
     suffixes = ["json"]
   [mediaTypes."application/activity+json"]
     suffixes = ["ajson"]
+  [mediaTypes."image/jxl"]
+    suffixes = ["jxl"]
 
 [outputFormats]
   [outputFormats.geojson]
