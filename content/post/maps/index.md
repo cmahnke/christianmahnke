@@ -27,6 +27,8 @@ Hier als Beispiel die Darstellung der Orte der 3D Bilder auf einer Karte:
     {{< maps/osm src="/post/maps/map.geojson" >}}
 {{< /html/iframe-consent >}}
 
+**Update**: Das Beispiel zeigt Posts für [VintageReality](https://vintagereality.projektemacher.org/).
+
 # Ausblick
 
 Nun fehlt nur noch der letzte Schritt, eigenes Kartenmaterial erzeugen um unabhängig von externen Diensten zu sein und auch mehr Gestaltungsspielraum zu haben...
