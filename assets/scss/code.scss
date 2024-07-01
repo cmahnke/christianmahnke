@@ -1,0 +1,15 @@
+code {
+  background-color: rgba(0, 0, 0, .1);
+  padding: 0 .2em;
+}
+
+pre {
+  width: 100%;
+
+  code {
+    padding: 1em;
+    border-radius: .4em;
+    display: block;
+    overflow-x: auto;
+  }
+}
