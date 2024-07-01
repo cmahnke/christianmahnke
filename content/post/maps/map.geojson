@@ -4,7 +4,7 @@
   "type": "Feature",
   "properties": {
       "name": "Eisenbahnzug den Pilatus hinaufkletternd. Schweiz",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Eisenbahnzug den Pilatus hinaufkletternd. Schweiz\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Ein Abschnitt der \u003ca href=\"https://de.wikipedia.org/wiki/Pilatusbahn\" target=\"_blank\"\u003ePilatusbahn\u003c/a\u003e\n    \u003c/div\u003e\u003cimg alt=\"Eisenbahnzug den Pilatus hinaufkletternd. Schweiz Vorschau\" src=\"/post/pilatus/front-anaglyph_hu4a502f01afe623a29799afa8da45c322_435109_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/pilatus/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+        "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Eisenbahnzug den Pilatus hinaufkletternd. Schweiz\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Ein Abschnitt der \u003ca href=\"https://de.wikipedia.org/wiki/Pilatusbahn\" target=\"_blank\"\u003ePilatusbahn\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -19,7 +19,7 @@
   "type": "Feature",
   "properties": {
       "name": "Die eisigen Höhen des Mont Blanc von Le Brévent aus gesehen",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Die eisigen Höhen des Mont Blanc von Le Brévent aus gesehen\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Der Mont Blanc.\n    \u003c/div\u003e\u003cimg alt=\"Die eisigen Höhen des Mont Blanc von Le Brévent aus gesehen Vorschau\" src=\"/post/mont-blanc/front-anaglyph_huc694f6e68f415598cabd6ed95291cbde_295474_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/mont-blanc/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Die eisigen Höhen des Mont Blanc von Le Brévent aus gesehen\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Der Mont Blanc.\n    \u003c/div\u003e\n\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -34,7 +34,7 @@
   "type": "Feature",
   "properties": {
       "name": "General View, Niagara Falls, N.Y., U.S.A.",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        General View, Niagara Falls, N.Y., U.S.A.\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die \u003ca href=\"https://de.wikipedia.org/wiki/Niagaraf%C3%A4lle\" target=\"_blank\"\u003eNiagarafälle\u003c/a\u003e.\n    \u003c/div\u003e\u003cimg alt=\"General View, Niagara Falls, N.Y., U.S.A. Vorschau\" src=\"/post/niagara1/front-anaglyph_hub5b92e82d60b36067e35549d71f30276_285536_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/niagara1/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        General View, Niagara Falls, N.Y., U.S.A.\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die \u003ca href=\"https://de.wikipedia.org/wiki/Niagaraf%C3%A4lle\" target=\"_blank\"\u003eNiagarafälle\u003c/a\u003e.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -49,7 +49,7 @@
   "type": "Feature",
   "properties": {
       "name": "Der Sphinx und die größte Pyramide von den Ruinen des Tempels aus gesehen",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Der Sphinx und die größte Pyramide von den Ruinen des Tempels aus gesehen\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die große Sphinx von Gizeh.\n    \u003c/div\u003e\u003cimg alt=\"Der Sphinx und die größte Pyramide von den Ruinen des Tempels aus gesehen Vorschau\" src=\"/post/sphinx1/front-anaglyph_hu5a4872d42b9b1ec607e39c94704f8413_375021_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/sphinx1/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Der Sphinx und die größte Pyramide von den Ruinen des Tempels aus gesehen\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die große Sphinx von Gizeh.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -64,7 +64,7 @@
   "type": "Feature",
   "properties": {
       "name": "Milan from its Cathedral Spires, Italy",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Milan from its Cathedral Spires, Italy\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Dieses Bild zeigt einen Blick über Mailand vom Mailänder Dom aus gesehen.\n    \u003c/div\u003e\u003cimg alt=\"Milan from its Cathedral Spires, Italy Vorschau\" src=\"/post/milan/front-anaglyph_hu361e339798399453da9d5bf934944e0a_409240_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/milan/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Milan from its Cathedral Spires, Italy\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Dieses Bild zeigt einen Blick über Mailand vom Mailänder Dom aus gesehen.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -79,7 +79,7 @@
   "type": "Feature",
   "properties": {
       "name": "Empfangssaal des Maharajah von Tangore in Calcutta, Indien",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Empfangssaal des Maharajah von Tangore in Calcutta, Indien\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Dieser Saal ist im “Marble Palace” in Kalkutta zu finden.\n    \u003c/div\u003e\u003cimg alt=\"Empfangssaal des Maharajah von Tangore in Calcutta, Indien Vorschau\" src=\"/post/calcutta/front-anaglyph_huec70cb1cdf84556318b8b56e212ec004_374453_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/calcutta/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Empfangssaal des Maharajah von Tangore in Calcutta, Indien\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Dieser Saal ist im “Marble Palace” in Kalkutta zu finden.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -94,7 +94,7 @@
   "type": "Feature",
   "properties": {
       "name": "Stalheims Hotel und das herrliche Naerödal. Norwegen",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Stalheims Hotel und das herrliche Naerödal. Norwegen\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Das berühmte Hotel in Stalheim, Norwegen.\n    \u003c/div\u003e\u003cimg alt=\"Stalheims Hotel und das herrliche Naerödal. Norwegen Vorschau\" src=\"/post/stalheim/front-anaglyph_hu2473c25f8b20316502dc462ae463bb87_421712_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/stalheim/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Stalheims Hotel und das herrliche Naerödal. Norwegen\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Das berühmte Hotel in Stalheim, Norwegen.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -109,7 +109,7 @@
   "type": "Feature",
   "properties": {
       "name": "Ein Sommertag am Strade von Brighton. England",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Ein Sommertag am Strade von Brighton. England\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Der Strand von \u003ca href=\"https://de.wikipedia.org/wiki/Brighton\" target=\"_blank\"\u003eBrighton\u003c/a\u003e.\n    \u003c/div\u003e\u003cimg alt=\"Ein Sommertag am Strade von Brighton. England Vorschau\" src=\"/post/brighton/front-anaglyph_hu3d47f652b52a69d7456b35ad4a5d9126_480425_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/brighton/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Ein Sommertag am Strade von Brighton. England\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Der Strand von \u003ca href=\"https://de.wikipedia.org/wiki/Brighton\" target=\"_blank\"\u003eBrighton\u003c/a\u003e.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -124,7 +124,7 @@
   "type": "Feature",
   "properties": {
       "name": "Salon in the harem of a Mohammedan Pasha, Damascus",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Salon in the harem of a Mohammedan Pasha, Damascus\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Vermutlich der Nizam Palast in Damaskus, das Weintraubenzimme.\n    \u003c/div\u003e\u003cimg alt=\"Salon in the harem of a Mohammedan Pasha, Damascus Vorschau\" src=\"/post/damascus/front-anaglyph_hu134ab6b9bd175da67f0abb9a72e5755e_385904_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/damascus/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Salon in the harem of a Mohammedan Pasha, Damascus\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Vermutlich der Nizam Palast in Damaskus, das Weintraubenzimme.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -139,7 +139,7 @@
   "type": "Feature",
   "properties": {
       "name": "Calton Jail Edinburgh",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Calton Jail Edinburgh\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Das Calton Jail in Edinburgh, die Reste sind heute als Governor’s House bekannt.\n    \u003c/div\u003e\u003cimg alt=\"Calton Jail Edinburgh Vorschau\" src=\"/post/edinburgh/front-anaglyph_hu8772867f90118593816c3bd3602b57cc_283127_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/edinburgh/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Calton Jail Edinburgh\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Das Calton Jail in Edinburgh, die Reste sind heute als Governor’s House bekannt.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -154,7 +154,7 @@
   "type": "Feature",
   "properties": {
       "name": "Georgetown Loop Railroad - Colorado",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Georgetown Loop Railroad - Colorado\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die Georgetown Loop Railroad in Colorado.\n    \u003c/div\u003e\u003cimg alt=\"Georgetown Loop Railroad - Colorado Vorschau\" src=\"/post/colorado/front-anaglyph_hub4dbda5414cad29e121f42d457323100_416102_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/colorado/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Georgetown Loop Railroad - Colorado\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die Georgetown Loop Railroad in Colorado.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -169,7 +169,7 @@
   "type": "Feature",
   "properties": {
       "name": "Bischofspalast Beauvais",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Bischofspalast Beauvais\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Nicht das Holstentor, sondern der Bischofspalast in \u003ca href=\"https://de.wikipedia.org/wiki/Beauvais\" target=\"_blank\"\u003eBeauvais\u003c/a\u003e.\n    \u003c/div\u003e\u003cimg alt=\"Bischofspalast Beauvais Vorschau\" src=\"/post/beauvais/front-anaglyph_hu09dc4e939a016a6f16da1d3e6243628a_408273_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/beauvais/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Bischofspalast Beauvais\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Nicht das Holstentor, sondern der Bischofspalast in \u003ca href=\"https://de.wikipedia.org/wiki/Beauvais\" target=\"_blank\"\u003eBeauvais\u003c/a\u003e.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -184,7 +184,7 @@
   "type": "Feature",
   "properties": {
       "name": "Kathedrale von Bayeux",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Kathedrale von Bayeux\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die \u003ca href=\"https://de.wikipedia.org/wiki/Kathedrale_von_Bayeux\" target=\"_blank\"\u003eKathedrale von Bayeux\u003c/a\u003e.\n    \u003c/div\u003e\u003cimg alt=\"Kathedrale von Bayeux Vorschau\" src=\"/post/bayeux/front-anaglyph_hu786a42c8a6966f773976f1a25c1bec75_489786_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/bayeux/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Kathedrale von Bayeux\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die \u003ca href=\"https://de.wikipedia.org/wiki/Kathedrale_von_Bayeux\" target=\"_blank\"\u003eKathedrale von Bayeux\u003c/a\u003e.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -199,7 +199,7 @@
   "type": "Feature",
   "properties": {
       "name": "Neue Elbbrücke Hamburg",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Neue Elbbrücke Hamburg\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die damals \u003ca href=\"https://de.wikipedia.org/wiki/Hamburger_Elbbr%C3%BCcken#Neue_Elbbr%C3%BCcke\" target=\"_blank\"\u003eneue Elbbrücke\u003c/a\u003e in Hamburg.\n    \u003c/div\u003e\u003cimg alt=\"Neue Elbbrücke Hamburg Vorschau\" src=\"/post/hamburg/front-anaglyph_hud8f58296cf2e39dde52fb7eebf3dcc8e_292870_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/hamburg/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Neue Elbbrücke Hamburg\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die damals \u003ca href=\"https://de.wikipedia.org/wiki/Hamburger_Elbbr%C3%BCcken#Neue_Elbbr%C3%BCcke\" target=\"_blank\"\u003eneue Elbbrücke\u003c/a\u003e in Hamburg.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -214,7 +214,7 @@
   "type": "Feature",
   "properties": {
       "name": "Louvre Paris",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Louvre Paris\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die Galerie d’Apollon im \u003ca href=\"https://de.wikipedia.org/wiki/Louvre\" target=\"_blank\"\u003eLouvre\u003c/a\u003e in Paris. \u003ca href=\"https://en.wikipedia.org/wiki/Galerie_d%27Apollon\" target=\"_blank\"\u003eIn der englischen Wikipedia\u003c/a\u003e\n    \u003c/div\u003e\u003cimg alt=\"Louvre Paris Vorschau\" src=\"/post/louvre/front-anaglyph_hu8425cd670df11422f37045931678f45c_455742_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/louvre/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Louvre Paris\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die Galerie d’Apollon im \u003ca href=\"https://de.wikipedia.org/wiki/Louvre\" target=\"_blank\"\u003eLouvre\u003c/a\u003e in Paris. \u003ca href=\"https://en.wikipedia.org/wiki/Galerie_d%27Apollon\" target=\"_blank\"\u003eIn der englischen Wikipedia\u003c/a\u003e\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -229,7 +229,7 @@
   "type": "Feature",
   "properties": {
       "name": "Neues Museum - Gruppe des farnesischen Stiers",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Neues Museum - Gruppe des farnesischen Stiers\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Das Bild zeigt einen Abguss einer Gruppe aus den \u003ca href=\"https://de.wikipedia.org/wiki/Farnesische_Sammlungen\" target=\"_blank\"\u003eFarnesische Sammlungen\u003c/a\u003e im Apollosaal des \u003ca href=\"https://de.wikipedia.org/wiki/Neues_Museum_%28Berlin%29\" target=\"_blank\"\u003eNeuen Museum Berlin\u003c/a\u003e.\n    \u003c/div\u003e\u003cimg alt=\"Neues Museum - Gruppe des farnesischen Stiers Vorschau\" src=\"/post/neues-museum/front-anaglyph_hu21944a20393051ef3985c02d5ce62094_357443_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/neues-museum/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Neues Museum - Gruppe des farnesischen Stiers\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Das Bild zeigt einen Abguss einer Gruppe aus den \u003ca href=\"https://de.wikipedia.org/wiki/Farnesische_Sammlungen\" target=\"_blank\"\u003eFarnesische Sammlungen\u003c/a\u003e im Apollosaal des \u003ca href=\"https://de.wikipedia.org/wiki/Neues_Museum_%28Berlin%29\" target=\"_blank\"\u003eNeuen Museum Berlin\u003c/a\u003e.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
@@ -244,7 +244,7 @@
   "type": "Feature",
   "properties": {
       "name": "Trouville-sur-Mer",
-      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Trouville-sur-Mer\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        \u0026ldquo;Calvaire de la Corniche\u0026rdquo; in \u003ca href=\"https://de.wikipedia.org/wiki/Trouville-sur-Mer\" target=\"_blank\"\u003eTrouville-sur-Mer\u003c/a\u003e.\n    \u003c/div\u003e\u003cimg alt=\"Trouville-sur-Mer Vorschau\" src=\"/post/trouville/front-anaglyph_hu98ddc07ca5b6b94ee2caee4929875fdf_407498_150x0_resize_q95_box.jpg\" class=\"preview-img\"\u003e\u003cdiv class=\"link\"\u003e\n        \u003ca href=\"/post/trouville/\"\u003eMehr lesen...\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Trouville-sur-Mer\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        \u0026ldquo;Calvaire de la Corniche\u0026rdquo; in \u003ca href=\"https://de.wikipedia.org/wiki/Trouville-sur-Mer\" target=\"_blank\"\u003eTrouville-sur-Mer\u003c/a\u003e.\n    \u003c/div\u003e\u003c/div\u003e\n"
   },
   "geometry": {
     "type": "Point",
