@@ -25,10 +25,12 @@ TARGETFORMAT=png ./themes/projektemacher-base/scripts/preview.sh
 # Favicons
 SOURCE="themes/projektemacher-base/static/images/cm.svg" OPTIONS="-transparent white static/images/favicon-128.png" ./themes/projektemacher-base/scripts/favicon.sh
 
+# Additional NPM dependencies - npm is a crappy piece of software, can't decuple install from cleanup
 #yarn install --ignore-engines #--ignore-platform
-npm install --force --cpu=arm64 --os=darwin sharp
-npm install --force --cpu=x64 --os=linux --libc=glibc sharp
-npm install --force --cpu=x64 --os=linux --libc=musl sharp
+#npm install --no-package-lock --no-save --force --cpu=arm64 --os=darwin sharp
+#npm install --no-package-lock --no-save --force --cpu=x64 --os=linux --libc=glibc sharp
+#npm install --no-package-lock --no-save --force --cpu=x64 --os=linux --libc=musl sharp
+
 yarn run svgo
 ./themes/projektemacher-base/scripts/json-lint.sh
 ./themes/projektemacher-base/scripts/3d-models.sh
