@@ -2,8 +2,6 @@ window.$ = window.jQuery = require('jquery');
 import { addConsent } from './iframe-consent';
 import { initMap } from './maps/osm-map.js';
 
-require('./iiif-presentation-viewer');
-
 /* See https://github.com/rgalus/sticky-js */
 /* window.Sticky = require('sticky-js'); */
 import stickybits from 'stickybits'
