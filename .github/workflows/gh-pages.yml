@@ -44,6 +44,8 @@ jobs:
         run: docker run -e CHOWN_UID=${UID} -e URL_PREFIX="https://christianmahnke.de/" -v ${PWD}:${PWD} ghcr.io/cmahnke/iiif-action:latest-jxl-uploader sh -c "cd ${PWD} && ./scripts/iiif.sh"
 
       - name: Generate Files
+        env:
+          SKIP_IIIF: yes
         run: |
           ./scripts/setup.sh
 
