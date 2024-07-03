@@ -8,6 +8,7 @@ tags:
 ---
 
 Für ein in Vorbereitung befindliches Projekt war es nach der [Recherche](/post/hdr-awesome-list/) notwendig einige Wege zu erkunden und Werkzeuge zu schaffen. Ausgehend von den Vorarbeiten von [Greg Benz](https://gregbenzphotography.com/hdr/), zur HDR-Unterstützung, war LibUltraHDR der sinnvollste Kandidat für weitere Experimente.
+<!--more-->
 
 # LibUltraHDR
 
