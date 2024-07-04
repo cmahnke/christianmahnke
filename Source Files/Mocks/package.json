@@ -1,0 +1,48 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "eslint": "eslint . -c eslint.config.mjs --report-unused-disable-directives --max-warnings 0",
+    "stylelint": "stylelint '**/*.scss'",
+    "model": "obj2gltf -i webgpu/public/model/3DModel.obj -o webgpu/public/model/uranium.glb"
+  },
+  "dependencies": {
+    "@fontsource-variable/josefin-sans": "^5.0.21",
+    "@fontsource-variable/league-spartan": "^5.0.20",
+    "@monogrid/gainmap-js": "^3.0.5",
+    "color": "^4.2.3",
+    "colorjs.io": "^0.5.0",
+    "js-cookie": "^3.0.5",
+    "marked": "^12.0.2",
+    "motion": "^10.17.0",
+    "three": "^0.166.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/three": "^0.166.0",
+    "eslint": "^9.4.0",
+    "eslint-plugin-markdownlint": "^0.6.0",
+    "globals": "^15.3.0",
+    "mime-types": "^2.1.35",
+    "obj2gltf": "^3.1.6",
+    "postcss-cli": "^11.0.0",
+    "postcss-discard-duplicates": "^7.0.0",
+    "postcss-inline-svg": "^6.0.0",
+    "sass": "^1.77.0",
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-order": "^6.0.4",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.12.0",
+    "vite": "^5.2.0",
+    "vite-multiple-assets": "^1.2.10",
+    "vite-plugin-checker": "^0.6.4",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-node-polyfills": "^0.21.0",
+    "vite-plugin-singlefile": "^2.0.1",
+    "vite-plugin-stylelint": "^5.3.1",
+    "vite-plugin-top-level-await": "^1.4.1"
+  }
+}

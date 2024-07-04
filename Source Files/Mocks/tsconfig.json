@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "module": "system",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "noEmit": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./webgpu/assets/ts/@types"
+    ],
+    "target": "es2017",
+    "lib": [
+      "dom",
+      "es2017"
+    ]
+  },
+  "include": ["webgpu/assets/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
