@@ -48,3 +48,4 @@ static/fonts
 content/**/*.gtlf
 content/**/*.glb
 data/stats.json
+!content/**/img/*.hdr.jpeg

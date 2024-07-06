@@ -65,3 +65,11 @@ docker pull ghcr.io/cmahnke/hdr-tools:latest
 Derzeit ist die HDR Unterstützung von HDR-Bildern und -Inhalten auf Chrome und davon abgeleitete Browser beschränkt, diese habe allerdings einen Marktanteil von 75%. Die [HDR Unterstützung von Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=hdr), oder besser der Weg dahin, ist eher peinlich - so werden nicht mal HDR Video-Formate voll unterstützt.
 
 Für die Chrome-basierten Browsern allerdings soll es auch möglich sein, HTML Canvas Elemente mit HDR Inhalten zu bespielen.
+
+# Update 6.7.24
+
+Hier zwei Beispiele aus meinem Urlaub:
+
+[![Sonnenuntergang über Hörnum](./img/IMG_5255-m.hdr.jpeg)](./img/IMG_5255.hdr.jpeg)
+
+[![Sonnenuntergang auf Föhr](./img/IMG_5256-m.hdr.jpeg)](./img/IMG_5256.hdr.jpeg)
