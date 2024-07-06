@@ -1,9 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-//import { HDRJPGLoader } from '@monogrid/gainmap-js'
-import WebGPURenderer from 'three/addons/renderers/webgpu/WebGPURenderer.js';
-import HDRWebGPURenderer from './three/HDRWebGPURenderer.js';
+import HDRWebGPURenderer from 'hdr-canvas/three/HDRWebGPURenderer.js';
 
 let scene, renderer, camera, controls, model;
 
@@ -37,17 +35,12 @@ export function initModel(canvas, modelUrl, replacements) {
       model = gltf.scene;
       scene.add(model);
 
-      //render();
-
-
       // This replaces the texture from the GLB file  - currently the lighting seems wrong
+      /*
       if (replacements !== undefined && replacements !== null) {
         for (var materialName in replacements) {
           model.traverse(child => {
             if (child.material && child.material.name === materialName) {
-
-              //const uHDRResult = uHDRLoader.load(replacements[materialName]);
-
               const newTexture = new THREE.TextureLoader().load(replacements[materialName],
                 function ( texture ) {
               		const material = new THREE.MeshBasicMaterial( {
@@ -56,15 +49,14 @@ export function initModel(canvas, modelUrl, replacements) {
               	}
               );
               newTexture.flipY = false;
-              //child.material.map = newTexture;
+              child.material.map = newTexture;
 
               console.log(child);
             }
           });
         }
       }
-
-
+      */
 
   	},
     function (xhr) {
@@ -93,9 +85,7 @@ export function initModel(canvas, modelUrl, replacements) {
     camera.aspect = canvas.parentNode.clientWidth / canvas.parentNode.clientHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(canvas.parentNode.clientWidth, canvas.parentNode.clientHeight);
-    //render();
   });
-
 
   canvas.scene = scene;
 };
@@ -124,14 +114,7 @@ const modelUrl = '/model/uranium.glb';
 const hdrTextures = {'3DModel': '/model/3DModel.jpg'};
 const canvas = document.querySelector('#renderer');
 
-//const uHDRLoader = new HDRJPGLoader()
-
 initModel(canvas, modelUrl, hdrTextures);
-
-/*
- * See https://discourse.threejs.org/t/how-to-list-and-replace-texture-is-a-loaded-gltf-model/20541/2
- */
-
 
 //document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("load", () => {
