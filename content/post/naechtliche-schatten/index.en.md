@@ -11,7 +11,7 @@ tags:
   - Projektemacher.org
 ---
 
-In some [previous](/post/hdr-awesome-list/) [Posts](/post/ultrahdr/) a new blog project was already mentioned, now it' finally done:
+In some [previous](/en/post/hdr-awesome-list/) [Posts](/en/post/ultrahdr/) a new blog project was already mentioned, now it' finally done:
 <!--more-->
 
 The latest Projektemacher Blog (or better site) "[Nocturnal shadows](https://schatten.yaapb.projektemacher.org/)" is online!

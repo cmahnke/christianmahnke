@@ -8,10 +8,10 @@ tags:
   - HDR
 ---
 
-Die JavaScript Unterstützung für die letzten Beiträge ist nun auch einzeln als [NPM Modul](https://github.com/cmahnke/hdr-canvas/) verfügbar.
+Die JavaScript Unterstützung für die letzten Beiträge ist nun auch einzeln als NPM Modul verfügbar.
 <!--more-->
 
-Derzeit GitHub und [NPM](https://www.npmjs.com/package/hdr-canvas) zu beziehen:
+Derzeit bei [GitHub](https://github.com/cmahnke/hdr-canvas/) und [NPM](https://www.npmjs.com/package/hdr-canvas) zu beziehen:
 
 ```
 npm -i hdr-canvas
