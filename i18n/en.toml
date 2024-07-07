@@ -10,8 +10,11 @@ other = "Contact"
 # Tags
 
 # HDR
+[hdrCheck]
+other = "HDR check"
+
 [hdrNotSupported]
-other = "Your yrowser doesn't support HDR, please retry with a recent Cromium-based Chromium browser, like Chrome, Edge or Brave!"
+other = "Your browser doesn't support HDR, please retry with a recent Cromium-based Chromium browser, like Chrome, Edge or Brave!"
 
 [hdrSupported]
 other = "Your browser supports HDR!"

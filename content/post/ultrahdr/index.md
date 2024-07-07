@@ -71,6 +71,8 @@ Für die Chrome-basierten Browsern allerdings soll es auch möglich sein, HTML C
 
 Hier zwei Beispiele aus meinem Urlaub:
 
+{{< hdr-check >}}
+
 [![Sonnenuntergang über Hörnum](./img/IMG_5255-m.hdr.jpeg)](./img/IMG_5255.hdr.jpeg)
 
 [![Sonnenuntergang auf Föhr](./img/IMG_5256-m.hdr.jpeg)](./img/IMG_5256.hdr.jpeg)

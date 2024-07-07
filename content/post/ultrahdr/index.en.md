@@ -71,6 +71,8 @@ For Chrome-based browsers, however, it should also be possible to add HDR conten
 
 Two examples from my recent vacation:
 
+{{< hdr-check >}}
+
 [![Sunset over Hörnum](./img/IMG_5255-m.hdr.jpeg)](./img/IMG_5255.hdr.jpeg)
 
 [![Sunset on Föhr](./img/IMG_5256-m.hdr.jpeg)](./img/IMG_5256.hdr.jpeg)

@@ -1,0 +1,18 @@
+{{- $src := .Page.File -}}
+{{- $id := printf "_hdr-check-%s" (md5 (printf "%s-%s" $src now.UnixNano)) -}}
+<div ></div>
+<details id="{{ $id }}" class="hdr-check-result">
+  <summary>{{ i18n "hdrCheck" }}</summary>
+  <p></p>
+</details>
+
+<script type="text/javascript">
+  const hdrCheckResult = document.getElementById("{{ $id | safeJS }}");
+  if (checkHDRCanvas()) {
+    hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrSupported" | safeJS }}";
+    hdrCheckResult.classList.add("success");
+  } else {
+    hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrNotSupported" | safeJS }}";
+    hdrCheckResult.classList.add("fail");
+  }
+</script>

@@ -10,14 +10,17 @@ other = "Kontakt"
 # Tags
 
 # HDR
+[hdrCheck]
+other = "HDR Überprüfung"
+
 [hdrNotSupported]
-other = "Ihr Browser unterstützt kein HDR, bitte probieren sie es iun einem aktuellen Chromium basiertem Browser, wie Chrome, Edge oder Brave!"
+other = "Ihr Browser unterstützt kein HDR, bitte probieren sie es in einem aktuellen Chromium basiertem Browser, wie Chrome, Edge oder Brave!"
 
 [hdrSupported]
 other = "Ihr Browser unterstützt HDR!"
 
 [hdrCanvasNotSupported]
-other = "Das Canvas Element ihres Browser unterstützt kein HDR, bitte probieren sie es iun einem aktuellen Chromium basiertem Browser, wie Chrome, Edge oder Brave!"
+other = "Das Canvas Element ihres Browser unterstützt kein HDR, bitte probieren sie es in einem aktuellen Chromium basiertem Browser, wie Chrome, Edge oder Brave!"
 
 [hdrCanvasSupported]
 other = "Das Canvas Element ihres Browser unterstützt HDR!"
