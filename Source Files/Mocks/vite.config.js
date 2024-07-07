@@ -19,7 +19,7 @@ export default defineConfig({
       apply: 'build'
     },
     stylelint({'build': true, 'dev': false, 'lintOnStart': true}),
-    DynamicPublicDirectory(['webgpu/public'], {
+    DynamicPublicDirectory(['webgpu/public', 'hdr-canvas/public'], {
         ssr: false,
         mimeTypes
     }),
@@ -37,7 +37,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'webgpu/index.html'),
-
+        canvas: resolve(__dirname, 'hdr-canvas/index.html'),
       },
       output: {
         assetFileNames: `assets/[name].[ext]`

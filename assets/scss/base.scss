@@ -927,6 +927,9 @@ a:visited {
     line-height: 1.4;
     font-size: 1.2em;
     margin-top: 3em;
+    /* This prevents overlaps in to long tag lists
+    padding-top: 1em;
+    */
 
     .content {
         display: flex;

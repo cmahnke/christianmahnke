@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet preload prefetch" as="style" href="./assets/scss/base.scss" crossorigin>
+
+    <title>HDR Canvas</title>
+  </head>
+
+  <body>
+
+    <div class="article-container">
+      <div class="content">
+        <h1>HDR Canvas</h1>
+      </div>
+    </div>
+    <div id="status"></div>
+    <div class="hdr-content">
+      <div class="canvas">
+        <canvas id="renderer"></canvas>
+      </div>
+      <div class="slider-container">
+        <input type="range" min="1" max="1024" value="255" class="slider" id="redSlider">
+        <label for="redSlider">Red <span class="value"></span></label>
+        <input type="range" min="1" max="1024" value="255" class="slider" id="greenSlider">
+        <label for="greenSlider">Green <span class="value"></span></label>
+        <input type="range" min="1" max="1024" value="255" class="slider" id="blueSlider">
+        <label for="blueSlider">Blue <span class="value"></span></label>
+      </div>
+    </div>
+    <div class="analysis-container">
+      <img src="/images/sample-large.jpeg" alt="HDR texture image" class="texture"></img>
+    </div>
+
+    <script type="module" src="./assets/js/main.js" type="text/javascript"></script>
+
+  </body>
+</html>

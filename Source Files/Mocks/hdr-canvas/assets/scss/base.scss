@@ -1,0 +1,25 @@
+.canvas {
+  #renderer {
+    background: black;
+  }
+
+}
+
+.slider-container {
+  .slider {
+    writing-mode: vertical-lr;
+    direction: rtl;
+    appearance: slider-vertical;
+    width: 16px;
+    vertical-align: bottom;
+  }
+}
+
+.texture-container {
+  width: 100%;
+
+  .texture {
+     max-width: 100%;
+  }
+
+}
