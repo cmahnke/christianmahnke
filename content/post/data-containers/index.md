@@ -1,11 +1,12 @@
 ---
 date: 2024-04-19T17:33:44+02:00
-title: "Data Containers"
+title: "Daten Container"
 tags:
   - data
 ---
 
 Auch wenn es nicht notwendigerweise der intendierte Use Case ist, kann man mit Docker sehr einfach auch umfangreiche Datenmengen mit Anwendungen zur vereinfachten Bereitstellungen (wie z.B. APIs) verpacken. Das kann besonders hilfreich sein wenn z.B. Normdaten aus verschiedenen Quellen für Datenanreicherungen zusammenführen will.
+<!--more-->
 
 # GND
 

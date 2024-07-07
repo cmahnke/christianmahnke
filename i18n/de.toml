@@ -8,8 +8,6 @@ other = "Links"
 other = "Kontakt"
 
 # Tags
-[photography]
-other = "Fotografie"
 
 # HDR
 [hdrNotSupported]
