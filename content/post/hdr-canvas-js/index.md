@@ -9,6 +9,7 @@ tags:
 ---
 
 Die JavaScript Unterstützung für die letzten Beiträge ist nun auch einzeln als [NPM Modul](https://github.com/cmahnke/hdr-canvas/) verfügbar.
+<!--more-->
 
 Derzeit GitHub und [NPM](https://www.npmjs.com/package/hdr-canvas) zu beziehen:
 

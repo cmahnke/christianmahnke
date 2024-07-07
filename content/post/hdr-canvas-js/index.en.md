@@ -9,6 +9,7 @@ tags:
 ---
 
 The JavaScript implementation for the last posts is now also available as [NPM module](https://github.com/cmahnke/hdr-canvas/).
+<!--more-->
 
 Currently available via GitHub and [NPM](https://www.npmjs.com/package/hdr-canvas):
 
