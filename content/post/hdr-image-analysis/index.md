@@ -24,3 +24,5 @@ Diese Kopierbuch gehörte , der im späteren Verlauf des Buches offenbar auch al
 Dieses Buch enthält auch Kopien von Stempelabdrücken. Teilweise lässt sich die benutzte Stempelfarbe durch UV Strahlung anregen...
 
 # Beispiel
+
+{{< hdr-canvas-check >}}

@@ -42,3 +42,5 @@ colorMetadata: { mode:"extended" }
 Zusätzlich sollte die UltraHDR Textur ohne zusätzliche Beleuchtung angezeigt werden, da ansonsten die Beleuchtung zu Umrechnungen er Farbigkeit der Textur führt.
 
 # Beispiel
+
+{{< hdr-canvas-check >}}

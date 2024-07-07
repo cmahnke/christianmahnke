@@ -8,11 +8,11 @@
 
 <script type="text/javascript">
   const hdrCheckResult = document.getElementById("{{ $id | safeJS }}");
-  if (checkHDR()) {
-    hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrSupported" | safeJS }}";
+  if (checkHDRCanvas()) {
+    hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrCanvasSupported" | safeJS }}";
     hdrCheckResult.classList.add("success");
   } else {
-    hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrNotSupported" | safeJS }}";
+    hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrCanvasNotSupported" | safeJS }}";
     hdrCheckResult.classList.add("fail");
   }
 </script>

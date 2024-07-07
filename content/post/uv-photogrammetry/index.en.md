@@ -43,3 +43,5 @@ colourMetadata: { mode: "extended" }
 In addition, the UltraHDR texture should be displayed without additional lighting, as otherwise the lighting will lead to conversions of the texture's colour.
 
 # Example
+
+{{< hdr-canvas-check >}}

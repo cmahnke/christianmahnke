@@ -24,3 +24,5 @@ This copy book belonged to , who in the later course of the book apparently also
 This book also contains copies of stamp impressions. Some of the stamp colours used can be excited by UV radiation...
 
 # Example
+
+{{< hdr-canvas-check >}}
