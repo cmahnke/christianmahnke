@@ -2,7 +2,6 @@
 date: 2024-05-01T11:22:44+02:00
 title: "HDR images in the browser"
 tags:
-  - light
   - Licht2024
   - HDR
 ---

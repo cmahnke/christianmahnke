@@ -7,6 +7,7 @@ tags:
   - Licht2024
   - digitalImages
   - HDR
+  - 3D
 ---
 
 **In diesem Beitrag wird die weltweit erste HDR Darstellung einer UV-Photogrammetrie im Browser präsentiert.**

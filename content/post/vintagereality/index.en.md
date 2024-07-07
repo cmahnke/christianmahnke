@@ -2,8 +2,9 @@
 date: 2024-03-05T19:22:44+02:00
 title: "VintageReality launched"
 tags:
-- Projektemacher.org
-- Blog
+  - Projektemacher.org
+  - Blog
+  - light
 ---
 
 The latest blog incubated at the [Projektemacher Labs](https://labs.projektemacher.org/) has been started.
