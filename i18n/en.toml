@@ -10,3 +10,16 @@ other = "Contact"
 # Tags
 [photography]
 other = "Photography"
+
+# HDR
+[hdrNotSupported]
+other = "Your yrowser doesn't support HDR, please retry with a recent Cromium-based Chromium browser, like Chrome, Edge or Brave!"
+
+[hdrSupported]
+other = "Your browser supports HDR!"
+
+[hdrCanvasNotSupported]
+other = "The canvas element of your browser doesn't support HDR, please retry with a recent Cromium-based Chromium browser, like Chrome, Edge or Brave!"
+
+[hdrCanvasSupported]
+other = "The canvas element of your browser supports HDR!"
