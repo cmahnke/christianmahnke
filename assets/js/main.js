@@ -1,6 +1,7 @@
 window.$ = window.jQuery = require('jquery');
 import { addConsent } from './iframe-consent';
 import { initMap } from './maps/osm-map.js';
+import {checkHDR, checkHDRCanvas} from 'hdr-canvas';
 
 /* See https://github.com/rgalus/sticky-js */
 /* window.Sticky = require('sticky-js'); */
@@ -9,6 +10,8 @@ window.stickybits = stickybits;
 
 window.addConsent = addConsent;
 window.initMap = initMap;
+window.checkHDR = checkHDR;
+window.checkHDRCanvas = checkHDRCanvas;
 
 window.enterView = require('enter-view');
 

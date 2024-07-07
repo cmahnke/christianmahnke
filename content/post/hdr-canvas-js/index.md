@@ -5,6 +5,7 @@ tags:
   - light
   - Licht2024
   - digitalImages
+  - HDR
 ---
 
 Die JavaScript Unterstützung für die letzten Beiträge ist nun auch einzeln als [NPM Modul](https://github.com/cmahnke/hdr-canvas/) verfügbar.

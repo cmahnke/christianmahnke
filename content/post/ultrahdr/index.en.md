@@ -5,6 +5,7 @@ tags:
   - light
   - Licht2024
   - digitalImages
+  - HDR
 ---
 
 After [research](/post/hdr-awesome-list/), it was necessary to explore some possible workflows and to create tools for a project in preparation. Based on [Greg Benz](https://gregbenzphotography.com/hdr/)'s preliminary work on HDR support, LibUltraHDR was the most sensible candidate for further experimentation.
