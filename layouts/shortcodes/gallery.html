@@ -1,0 +1,23 @@
+{{- $src := .Page.File -}}
+{{- $id := printf "_gallery-%s" (md5 (printf "%s-%s" $src now.UnixNano)) -}}
+{{- $json := .Inner -}}
+{{- $image := unmarshal $json -}}
+{{- $previewWidth := "300" -}}
+
+<div id="{{ $id }}" class="pswp-gallery gallery {{ with .Get "class" }}{{ . }}{{ end }}">
+  {{- range $image := $image -}}
+    {{- $imgRes := $.Page.Resources.Get $image.src -}}
+    {{- with $imgRes -}}
+      <a href="{{ $image.src }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank">
+        {{- $preview := $imgRes.Resize (printf "%sx" $previewWidth) -}}
+        <img src="{{ $preview.RelPermalink }}" alt="" />
+      </a>
+      {{- else -}}
+      {{ warnf "[shortcodes/gallery.html] Not found %s for %s" $image.src $.Page.File.Path }}
+    {{- end -}}
+  {{- end -}}
+</div>
+
+<script type="text/javascript">
+  window.photoswipe("{{ $id | safeJS }}", "a")
+</script>

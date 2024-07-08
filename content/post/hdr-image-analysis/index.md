@@ -2,6 +2,10 @@
 date: 2024-06-06T11:33:44+02:00
 title: "Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung"
 draft: true
+js:
+  - js/photoswipe.js
+css:
+  - css/photoswipe/dist/photoswipe.css
 tags:
   - light
   - Licht2024
@@ -17,11 +21,19 @@ Das Beispiel unten funktioniert derzeit nur mit Chrome-basierten Browsern (wie E
 
 Bei dem gezeigten Stück handelt es sich um einen Ausschnitt aus einem Kopierbuch aus der ersten Hälfte der 20er-Jahre.
 
-Ein Kopierbuch ist eine Sammlung von kopierten Briefen in einem Buch. Dabei wurden diese Kopien nicht mittels eines Photokopierers erstellt, sondern mittels eines Kopierstiftes handgeschrieben, dann auf einer der Seidenpapierseiten gelegt, dabei die Vorder- und Rückseite mit einer Art Wachstuch eingeschlagen, um die anderen Seiten zu schützen und so gepresst. Dazu gab entweder entsprechnde Pressen oder wie in diesem Fall, einen Gusseisernen "Schutzumschlag", der gleichzeitig die Presse ist.
+Ein Kopierbuch ist eine Sammlung von kopierten Briefen in einem Buch. Dabei wurden diese Kopien nicht mittels eines Photokopierers erstellt, sondern mittels eines Kopierstiftes handgeschrieben, dann auf einer der Seidenpapierseiten gelegt, dabei die Vorder- und Rückseite mit einer Art Wachstuch eingeschlagen, um die anderen Seiten zu schützen und so gepresst. Dazu gab entweder entsprechende Pressen oder wie in diesem Fall, einen Gusseisernen "Schutzumschlag", der gleichzeitig die Presse ist.
 
 Diese Kopierbuch gehörte , der im späteren Verlauf des Buches offenbar auch als Korrespondent für den [Hannoverscher Kurier](https://de.wikipedia.org/wiki/Hannoverscher_Kurier) arbeitete.
 
 Dieses Buch enthält auch Kopien von Stempelabdrücken. Teilweise lässt sich die benutzte Stempelfarbe durch UV Strahlung anregen...
+
+{{< gallery >}}
+[
+  {"src": "img/presse.jpg"},
+  {"src": "img/front.jpg"},
+  {"src": "img/page.jpg"}
+]
+{{</ gallery >}}
 
 # Beispiel
 

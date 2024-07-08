@@ -1,0 +1,23 @@
+.gallery {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  background-color: #f1ffb7;
+  padding: 1.4em;
+  /*padding-left: 2.4em;*/
+  border-radius: 1rem;
+  box-shadow: 0 0px 2px #ff5477;
+
+  @media (max-width: 35em) {
+    flex-direction: column;
+    gap: 2vwh;
+  }
+
+  img {
+    border-radius: .4rem;
+  }
+
+}

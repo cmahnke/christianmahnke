@@ -166,5 +166,9 @@ enableGitInfo = true
         source = "node_modules/elevator.js/demo/music/"
         target = "static/sounds"
 
+    [[module.mounts]]
+        source = "node_modules/photoswipe/dist"
+        target = "assets/css/photoswipe"
+
 [build]
   writeStats = true
