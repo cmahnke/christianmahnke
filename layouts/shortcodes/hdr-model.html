@@ -5,15 +5,13 @@
   {{- $model = . -}}
 {{- end -}}
 
-<div class="canvas">
+<div class="renderer-canvas">
   <canvas id="{{ $id }}"></canvas>
 </div>
-
 
 <script type="text/javascript">
   const modelUrl = '{{ $model | safeJS }}';
   const canvas = document.querySelector('#{{ $id | safeJS }}');
-
   initModel(canvas, modelUrl);
 </script>
 

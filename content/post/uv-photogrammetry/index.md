@@ -46,4 +46,6 @@ Zusätzlich sollte die UltraHDR Textur ohne zusätzliche Beleuchtung angezeigt w
 
 {{< hdr-canvas-check >}}
 
-{{/* hdr-model model="img/sample.jpeg" */}}
+Wenn die HDR Überprüfung fehl geschlagen ist, werden die Farben nicht in voller Pracht angezeigt.
+
+{{< hdr-model model="model/uranium.glb" >}}

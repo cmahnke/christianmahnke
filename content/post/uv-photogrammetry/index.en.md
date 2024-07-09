@@ -46,3 +46,7 @@ In addition, the UltraHDR texture should be displayed without additional lightin
 # Example
 
 {{< hdr-canvas-check >}}
+
+If the HDR check fails, the colours are not displayed in their full luminance. 
+
+{{< hdr-model model="model/uranium.glb" >}}
