@@ -1,0 +1,38 @@
+{{- $src := .Page.File -}}
+{{- $id := printf "_hdr-canvas-%s" (md5 (printf "%s-%s" $src now.UnixNano)) -}}
+{{- $image := "" -}}
+{{- with .Get "image" -}}
+  {{- $image = . -}}
+{{- end -}}
+
+<div class="hdr-canvas-container">
+  <div class="canvas-container">
+    <canvas id="{{ $id }}"></canvas>
+  </div>
+
+  <div class="slider-container">
+    <div class="channel-container">
+      <input type="range" min="1" max="100" value="50" class="slider" id="redSlider">
+      <label for="redSlider">Red <span class="value"></span></label>
+    </div>
+    <div class="channel-container">
+      <input type="range" min="1" max="100" value="50" class="slider" id="greenSlider">
+      <label for="greenSlider">Green <span class="value"></span></label>
+    </div>
+    <div class="channel-container">
+      <input type="range" min="1" max="100" value="50" class="slider" id="blueSlider">
+      <label for="blueSlider">Blue <span class="value"></span></label>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    const imageUrl = '{{ $image | safeJS }}';
+    const canvas = document.querySelector('#{{ $id | safeJS }}');
+
+    initCanvas(canvas, imageUrl);
+  </script>
+</div>
+
+{{- define "partials/shortcodes/hdr-canvas-metadata.html" -}}
+  {{- (dict "css" slice "js" (slice "js/slider-canvas.js") "scss" (slice "scss/slider-canvas.scss")) | jsonify -}}
+{{- end -}}

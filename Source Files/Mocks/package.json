@@ -43,7 +43,6 @@
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-node-polyfills": "^0.21.0",
     "vite-plugin-singlefile": "^2.0.1",
-    "vite-plugin-stylelint": "^5.3.1",
-    "vite-plugin-top-level-await": "^1.4.1"
+    "vite-plugin-stylelint": "^5.3.1"
   }
 }

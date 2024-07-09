@@ -2,10 +2,6 @@
 date: 2024-06-06T11:33:44+02:00
 title: "Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung"
 draft: true
-js:
-  - js/gallery.js
-css:
-  - css/photoswipe/photoswipe.css
 tags:
   - light
   - Licht2024
@@ -38,3 +34,8 @@ Dieses Buch enthält auch Kopien von Stempelabdrücken. Teilweise lässt sich di
 # Beispiel
 
 {{< hdr-canvas-check >}}
+
+Wenn die HDR Überprüfung fehl geschlagen ist, werden die Farben nicht in voller Pracht angezeigt. Derzeit können nur die Intensitäten der einzelnen Kanäle angepasst werden, prinzipiell sind aber deutlich mehr Parametrisierungen denkbar.
+Daher erhöht das Beispiel in den meisten Einstellungen die Lesbarkeit nur marginal, macht aber das Potential sichtbar.
+
+{{< hdr-canvas image="img/sample.jpeg" >}}

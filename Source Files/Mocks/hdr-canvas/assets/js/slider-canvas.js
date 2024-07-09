@@ -1,0 +1,1 @@
+../../../../../assets/js/slider-canvas.js

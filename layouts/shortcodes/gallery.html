@@ -4,7 +4,7 @@
 {{- $image := unmarshal $json -}}
 {{- $previewWidth := "250" -}}
 
-<div id="{{ $id }}" class="pswp-gallery gallery {{ with .Get "class" }}{{ . }}{{ end }}">
+<div id="{{ $id }}" class="gallery {{ with .Get "class" }}{{ . }}{{ end }}">
   {{- range $image := $image -}}
     {{- $imgRes := $.Page.Resources.Get $image.src -}}
     {{- with $imgRes -}}
@@ -19,5 +19,9 @@
 </div>
 
 <script type="text/javascript">
-  window.photoswipe("{{ $id | safeJS }}", "a.gallery-image")
+  window.photoswipe("#{{ $id | safeJS }}", "a.gallery-image")
 </script>
+
+{{- define "partials/shortcodes/gallery-metadata.html" -}}
+  {{- (dict "scss" slice "js" (slice "js/gallery.js") "css" (slice "css/photoswipe/photoswipe.css")) | jsonify -}}
+{{- end -}}

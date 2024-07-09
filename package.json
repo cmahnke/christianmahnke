@@ -5,8 +5,9 @@
     "enter-view": "^2.0.1",
     "js-cookie": "^3.0.5",
     "lg-fullscreen": "^1.2.1",
-    "hdr-canvas": "^0.0.2",
-    "lightgallery": "^2.7.2"
+    "hdr-canvas": "^0.0.4",
+    "lightgallery": "^2.7.2",
+    "photoswipe": "^5.4.4"
   },
   "devDependencies": {
     "replace-in-file": "8.1.0",

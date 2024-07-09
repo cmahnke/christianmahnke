@@ -45,3 +45,5 @@ Zusätzlich sollte die UltraHDR Textur ohne zusätzliche Beleuchtung angezeigt w
 # Beispiel
 
 {{< hdr-canvas-check >}}
+
+{{/* hdr-model model="img/sample.jpeg" */}}

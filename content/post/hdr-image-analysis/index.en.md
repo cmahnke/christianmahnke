@@ -26,3 +26,8 @@ This book also contains copies of stamp impressions. Some of the stamp colours u
 # Example
 
 {{< hdr-canvas-check >}}
+
+If the HDR check fails, the colours are not displayed in their full luminance. Currently, only the intensities of the individual channels can be adjusted, but in principle significantly more parameters are conceivable.
+Therefore, the example only marginally increases readability in most settings, but makes the potential visible.
+
+{{< hdr-canvas image="img/sample.jpeg" >}}

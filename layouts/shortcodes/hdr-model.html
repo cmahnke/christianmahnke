@@ -1,0 +1,22 @@
+{{- $src := .Page.File -}}
+{{- $id := printf "_hdr-model-%s" (md5 (printf "%s-%s" $src now.UnixNano)) -}}
+{{- $model := "" -}}
+{{- with .Get "model" -}}
+  {{- $model = . -}}
+{{- end -}}
+
+<div class="canvas">
+  <canvas id="{{ $id }}"></canvas>
+</div>
+
+
+<script type="text/javascript">
+  const modelUrl = '{{ $model | safeJS }}';
+  const canvas = document.querySelector('#{{ $id | safeJS }}');
+
+  initModel(canvas, modelUrl);
+</script>
+
+{{- define "partials/shortcodes/hdr-model-metadata.html" -}}
+  {{- (dict "css" slice "js" (slice "js/hdr-model.js") "scss" (slice "scss/hdr-model.scss")) | jsonify -}}
+{{- end -}}

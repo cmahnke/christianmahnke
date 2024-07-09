@@ -16,3 +16,7 @@
     hdrCheckResult.classList.add("fail");
   }
 </script>
+
+{{- define "partials/shortcodes/hdr-check-metadata.html" -}}
+  {{- (dict "css" slice "js" (slice "js/hdr-check.js") "scss" (slice "scss/hdr-check.scss")) | jsonify -}}
+{{- end -}}

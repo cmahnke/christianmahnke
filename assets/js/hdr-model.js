@@ -107,3 +107,5 @@ function getImageDataFromImg(img) {
   const imData = loadCtx.getImageData(0, 0, img.width, img.height);
   return imData;
 }
+
+window.initModel = initModel;
