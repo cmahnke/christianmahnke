@@ -3,9 +3,9 @@ date: 2024-06-06T11:33:44+02:00
 title: "Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung"
 draft: true
 js:
-  - js/photoswipe.js
+  - js/gallery.js
 css:
-  - css/photoswipe/dist/photoswipe.css
+  - css/photoswipe/photoswipe.css
 tags:
   - light
   - Licht2024

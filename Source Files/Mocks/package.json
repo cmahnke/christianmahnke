@@ -13,7 +13,7 @@
     "@monogrid/gainmap-js": "^3.0.5",
     "color": "^4.2.3",
     "colorjs.io": "^0.5.0",
-    "hdr-canvas": "^0.0.2",
+    "hdr-canvas": "^0.0.4",
     "js-cookie": "^3.0.5",
     "marked": "^12.0.2",
     "motion": "^10.17.0",

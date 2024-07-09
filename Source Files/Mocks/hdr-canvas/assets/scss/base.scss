@@ -1,24 +1,44 @@
 .canvas {
+  display: flex;
+
   #renderer {
     background: black;
+    margin: auto;
   }
 
 }
 
 .slider-container {
-  .slider {
-    writing-mode: vertical-lr;
-    direction: rtl;
-    appearance: slider-vertical;
-    width: 16px;
-    vertical-align: bottom;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  border-radius: .6rem;
+  padding: .8rem;
+  margin: 1.4rem;
+  width: fit-content;
+
+  .channel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .slider {
+      writing-mode: vertical-lr;
+      direction: rtl;
+      width: 16px;
+      vertical-align: bottom;
+    }
+
+    label {
+      min-width: 5rem;
+    }
   }
 }
 
-.texture-container {
+.analysis-container {
   width: 100%;
 
-  .texture {
+  .sample {
      max-width: 100%;
   }
 
