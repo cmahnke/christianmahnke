@@ -1,5 +1,7 @@
-.canvas {
-  #renderer {
+.renderer-canvas {
+  min-height: 50vh;
+
+  canvas {
     background: black;
   }
 

@@ -16,7 +16,7 @@ function render() {
   camera.lookAt(model.position);
   controls.update();
 
-  camera.aspect = canvas.parentNode.clientWidth / canvas.parentNode.clientHeight;
+  camera.aspect = renderer.domElement.parentNode.clientWidth / renderer.domElement.parentNode.clientHeight;
   camera.updateProjectionMatrix();
 
   renderer.renderAsync(scene, camera);
@@ -67,19 +67,26 @@ export function initModel(canvas, modelUrl, replacements) {
   	}
   );
 
-  camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 20);
-	camera.position.set(0, 0, 5);
+
 
   // Add alpha: true for transparency
   renderer = new HDRWebGPURenderer({canvas: canvas, antialias: true});
-  const ratio = window.devicePixelRatio || 1;
-	renderer.setPixelRatio(ratio);
   const parentWidth = renderer.domElement.parentNode.clientWidth;
   const parentHeight = renderer.domElement.parentNode.clientHeight;
+
+  //camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 20);
+  camera = new THREE.PerspectiveCamera(45, parentWidth / parentHeight, 0.25, 20);
+	camera.position.set(0, 0, 5);
+
+  const ratio = window.devicePixelRatio || 1;
+	renderer.setPixelRatio(ratio);
+
   renderer.setSize(parentWidth, parentHeight);
-  renderer.setAnimationLoop( animate );
+  renderer.setAnimationLoop(animate);
   renderer.setClearColor(0x000000, 0);
-  controls = new OrbitControls( camera, renderer.domElement );
+  controls = new OrbitControls(camera, renderer.domElement);
+  controls.minPolarAngle = 0;
+	controls.maxPolarAngle =  Math.PI * 0.5;
 
   window.addEventListener("resize", () => {
     camera.aspect = canvas.parentNode.clientWidth / canvas.parentNode.clientHeight;
@@ -98,14 +105,15 @@ function animate() {
 	renderer.render(scene, camera);
 }
 
+/*
 function getImageDataFromImg(img) {
   const colorSpace = 'rec2100-hlg';
   const offscreen = new OffscreenCanvas(img.width, img.height);
-//  offscreen.configureHighDynamicRange({mode:'extended'});
   const loadCtx = offscreen.getContext("2d", {colorSpace: colorSpace, pixelFormat:'float16'});
   loadCtx.drawImage(img, 0, 0);
   const imData = loadCtx.getImageData(0, 0, img.width, img.height);
   return imData;
 }
+*/
 
 window.initModel = initModel;
