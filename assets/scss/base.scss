@@ -1457,3 +1457,28 @@ a:has(.post-image) {
     display: none;
   }
 }
+
+.section-content-body {
+  /* See https://stackoverflow.com/a/73447722 */
+  details {
+    padding: 10px;
+
+    &[open] > summary:before {
+      transform: rotate(90deg);
+    }
+
+    &[open] summary {
+      margin-bottom: 10px;
+    }
+
+    summary {
+      transition: margin 150ms ease-out;
+
+      h3 {
+        margin: unset;
+        display: inline-block;
+      }
+    }
+
+  }
+}

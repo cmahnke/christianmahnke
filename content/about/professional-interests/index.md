@@ -35,10 +35,25 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 (*Auswahl*)
 * **24.6.2021** - 2021 IIIF Annual Conference - [Scaling Down: IIIF at Small Scale](https://whova.com/embedded/session/EJt2h6EsBemAPdBLSvToVJA%403Er8F48foN7yx-cZscQ%3D/1646975/?widget=primary), Online
 * **08.6.2011** - 100. Deutscher Bibliothekartag - "IMProving ACcess to Text - Entwicklung eines Interoperabilitätsframeworks in einem Bibliotheksprojekt" (mit Mustafa Dogan), Berlin
-* **16.3.2010** - 4. Leipziger Kongress für Information und Bibliothek "OCR Renderfarmen und TEI", Leipzig
-* **13.10.2008** - Sino-German Symposium on Development of Library and Information 2008 - "Goobi - web based digitisation lifecycle software", Hannover
-* **04.6.2008** - 97. Deutscher Bibliothekartag - "BibForge - developing Libraries", Mannheim
+* **16.3.2010** - 4. Leipziger Kongress für Information und Bibliothek ["OCR Renderfarmen und TEI"](https://de.slideshare.net/slideshow/bibtag2010-mahnke/3453550), Leipzig
+* **13.10.2008** - Sino-German Symposium on Development of Library and Information 2008 - ["Goobi - web based digitisation lifecycle software"](https://de.slideshare.net/slideshow/goobi/985215), Hannover
+* **04.6.2008** - 97. Deutscher Bibliothekartag - ["BibForge - developing Libraries"](https://de.slideshare.net/slideshow/bibforge-447644/447644), Mannheim
 * **25.4.2007** - Putting the TEI to the test (MPDL Tagung) - "Fulltext processing at the GDZ", Berlin
+
+<details>
+<summary><h3>Alte Präsentionen</h3></summary>
+<div class="summary-content">
+
+* [Bestellzetteldruck 2.0](https://subugoe.github.io/ous-print/slides.xhtml)
+* [SUB OCR Implementierung](https://de.slideshare.net/slideshow/goobi-berlin239201103/11869015)
+* [Tomcat as a service](https://de.slideshare.net/slideshow/tomcat-as-a-service/15317294)
+* [Ideen Goobi Storage API](https://de.slideshare.net/slideshow/storage-api-berlin23902/11868798)
+* [Basisinfrastruktur aus Entwicklersicht](https://de.slideshare.net/slideshow/prsentation-basisinfrastruktur/11868748)
+* [eXist für Editionsprojekte](https://de.slideshare.net/slideshow/e-xist-279/11868742)
+* [Development Toolbox](https://de.slideshare.net/slideshow/development-toolbox/991862)
+
+</div>
+</details>
 
 ## Publikationen
 * Fieseler C., **Mahnke C.** (2013): CERL Thesaurus used in an electronic edition of 18th-century university lectures, CERL Newsletter 27, Juni 2013

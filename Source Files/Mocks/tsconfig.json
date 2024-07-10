@@ -8,17 +8,20 @@
     "moduleResolution": "node",
     "noEmit": true,
     "esModuleInterop": true,
-    "strict": true,
+    "strict": false,
     "typeRoots": [
       "./node_modules/@types",
-      "./webgpu/assets/ts/@types"
+      "./webgpu/assets/ts/@types",
+      "./pong/assets/ts/@types"
     ],
     "target": "es2017",
-    "lib": [
-      "dom",
-      "es2017"
-    ]
+    "skipLibCheck": true,
+    "lib": ["dom", "es2017"]
   },
-  "include": ["webgpu/assets/**/*"],
+  "include": [
+    "webgpu/assets/**/*",
+    "pong/assets/**/*",
+    "node_modules/ts-pong/src/**/*"
+  ],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

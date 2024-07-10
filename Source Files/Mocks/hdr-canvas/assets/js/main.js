@@ -1,6 +1,6 @@
-import {initCanvas} from "./slider-canvas";
+import { initCanvas } from "./slider-canvas";
 
-const imageUrl = '/images/sample.jpeg';
-const canvas = document.querySelector('#renderer');
+const imageUrl = "/images/sample.jpeg";
+const canvas = document.querySelector("#renderer");
 
 initCanvas(canvas, imageUrl);

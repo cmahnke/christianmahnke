@@ -5,15 +5,14 @@
     background: black;
     margin: auto;
   }
-
 }
 
 .slider-container {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  border-radius: .6rem;
-  padding: .8rem;
+  border-radius: 0.6rem;
+  padding: 0.8rem;
   margin: 1.4rem;
   width: fit-content;
 
@@ -39,7 +38,6 @@
   width: 100%;
 
   .sample {
-     max-width: 100%;
+    max-width: 100%;
   }
-
 }
