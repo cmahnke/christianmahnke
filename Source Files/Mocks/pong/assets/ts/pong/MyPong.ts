@@ -1,5 +1,5 @@
 import { images, sounds } from "./resources";
-import { Pong, Config } from "ts-pong/src/pong/Pong";
+import { Pong, Config, PlayerNumber } from "ts-pong/src/pong/Pong";
 
 import { Ball } from "ts-pong/src/pong/Ball";
 import { Court } from "ts-pong/src/pong/Court";
@@ -25,6 +25,7 @@ const MyConfig = {
 
 export class MyPong extends Pong {
   //private _menu: Menu;
+  public stopped: boolean = false;
 
   constructor() {
     super();
@@ -75,15 +76,34 @@ export class MyPong extends Pong {
 
   goal(playerNumber: PlayerNumber) {
     this.sounds("goal");
-    this._scores[playerNumber] += 1;
-    if (this._scores[playerNumber] == 9) {
-      this._menu.declareWinner(playerNumber);
+    (this as any)._scores[playerNumber] += 1;
+    if ((this as any)._scores[playerNumber] == 9) {
+      (this as any)._menu.declareWinner(playerNumber);
       this.stop();
-      console.log(`${playerNumber} won!`);
+      console.log(`Player ${playerNumber} won!`);
     } else {
-      this._ball.reset(playerNumber);
-      this._leftPaddle.setLevel(this.level(0));
-      this._rightPaddle.setLevel(this.level(1));
+      (this as any)._ball.reset(playerNumber);
+      (this as any)._leftPaddle.setLevel(this.level(0));
+      (this as any)._rightPaddle.setLevel(this.level(1));
     }
+  }
+
+  continuousDemo() {
+    this.stopped = false;
+    setInterval(() => {
+      var playing = (this as any)._playing;
+      if (!playing && !this.stopped) {
+        console.log("(Re-)starting demo.");
+        this.start(0);
+        //this.startDemo();
+      }
+    }, 500);
+  }
+
+  stop() {
+    (this as any)._playing = false;
+    (this as any).stopped = true;
+    (this as any)._leftPaddle.setAuto(false);
+    (this as any)._rightPaddle.setAuto(false);
   }
 }

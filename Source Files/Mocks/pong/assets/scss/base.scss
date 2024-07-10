@@ -18,3 +18,17 @@ canvas {
     max-width: 50vw;
   }
 }
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .game-controls {
+    gap: 2rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}

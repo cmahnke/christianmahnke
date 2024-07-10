@@ -1,5 +1,6 @@
 import "ts-pong/src/styles.scss";
 import "../scss/base.scss";
+import { setupRecorder } from "../js/recorder.js";
 
 import { Engine } from "ts-pong/src/engine/Engine";
 import { Pong, loader } from "ts-pong/src/pong";
@@ -8,7 +9,8 @@ import { MyPong } from "./pong/MyPong";
 //import { images, sounds } from './pong/resources';
 
 const pong = new MyPong();
-const engine = new Engine(pong, { canvasElementId: "game" });
+const fps = 60;
+const engine = new Engine(pong, { fps: fps, canvasElementId: "game" });
 
 engine.start(loader).then(() => {
   const stats = document.getElementById("stats") as HTMLInputElement;
@@ -19,16 +21,37 @@ engine.start(loader).then(() => {
   ) as HTMLInputElement;
 
   engine.showStats(false);
-  pong.playSounds(sound.checked);
-  pong.showFootprints(footprints.checked);
-  pong.showPredictions(predictions.checked);
+  pong.playSounds(false);
 
-  stats.addEventListener("change", () => engine.showStats(stats.checked));
-  sound.addEventListener("change", () => pong.playSounds(sound.checked));
-  footprints.addEventListener("change", () =>
-    pong.showFootprints(footprints.checked),
+  /*
+  pong.showFootprints(footprints?.checked || false);
+  pong.showPredictions(predictions?.checked || false);
+
+  stats?.addEventListener("change", () =>
+    engine.showStats(stats?.checked || false),
   );
-  predictions.addEventListener("change", () =>
-    pong.showPredictions(predictions.checked),
+  sound?.addEventListener("change", () =>
+    pong.playSounds(sound?.checked || false),
   );
+  footprints?.addEventListener("change", () =>
+    pong.showFootprints(footprints?.checked || false),
+  );
+  predictions?.addEventListener("change", () =>
+    pong.showPredictions(predictions?.checked || false),
+  );
+  */
+
+  const gameStop = document.getElementById("game-stop") as HTMLInputElement;
+  const gameStart = document.getElementById("game-start") as HTMLInputElement;
+  gameStop.addEventListener("click", () => {
+    console.log("Stopping game");
+    pong.stop();
+  });
+  gameStart.addEventListener("click", () => {
+    console.log("Starting game");
+    pong.continuousDemo();
+  });
+  setupRecorder();
+  // Start
+  pong.continuousDemo();
 });
