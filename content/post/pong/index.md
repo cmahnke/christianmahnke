@@ -3,6 +3,9 @@ date: 2024-04-15T13:58:44+02:00
 title: "DIY Projekt: Pong Visualisierung"
 tags:
 - DIY
+- light
+- fun
+- Retrocomputing
 draft: true
 ---
 https://codeincomplete.com/games/pong/

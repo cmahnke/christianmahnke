@@ -59,6 +59,10 @@ ffmpeg -i input.webm -c copy output.mp4
 - https://github.com/wq2012/video-average-frame
 - https://github.com/dohliam/video-averaging
 
+# Heatmap
+
+- https://stackoverflow.com/questions/59478962/how-to-convert-a-grayscale-image-to-heatmap-image-with-python-opencv
+
 # TODO
 
 - Remove images
