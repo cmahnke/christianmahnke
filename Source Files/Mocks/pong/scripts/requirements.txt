@@ -1,4 +1,5 @@
 matplotlib
+#seaborn
 numpy<2
 opencv-python
 #video-average-frame @ git+https://github.com/wq2012/video-average-frame@master

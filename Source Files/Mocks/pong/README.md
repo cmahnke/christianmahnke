@@ -54,12 +54,14 @@ ffmpeg -fflags +genpts -i 1.webm -r 24 1.mp4
 ffmpeg -i input.webm -c copy output.mp4
 ```
 
-# Image from video
+# Postprocessing
+
+## Image from video
 
 - https://github.com/wq2012/video-average-frame
 - https://github.com/dohliam/video-averaging
 
-# Heatmap
+## Heatmap
 
 - https://stackoverflow.com/questions/59478962/how-to-convert-a-grayscale-image-to-heatmap-image-with-python-opencv
 

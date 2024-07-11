@@ -7,7 +7,8 @@
     "stylelint": "stylelint '**/*.scss'",
     "model": "obj2gltf -i webgpu/public/model/3DModel.obj -o webgpu/public/model/uranium.glb",
     "format": "prettier . --check",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "record": "playwright test"
   },
   "dependencies": {
     "@fontsource-variable/josefin-sans": "^5.0.21",
@@ -25,13 +26,16 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.4.0",
+    "@playwright/test": "^1.45.1",
     "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.14.10",
     "@types/three": "^0.166.0",
     "eslint": "^9.6.0",
     "eslint-plugin-markdownlint": "^0.6.0",
     "globals": "^15.8.0",
     "mime-types": "^2.1.35",
     "obj2gltf": "^3.1.6",
+    "playwright-test-coverage": "^1.2.12",
     "postcss-cli": "^11.0.0",
     "postcss-discard-duplicates": "^7.0.0",
     "postcss-inline-svg": "^6.0.0",

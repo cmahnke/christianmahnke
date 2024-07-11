@@ -2,8 +2,8 @@
 
 - Pong
   - Fix asset loading
-  - increase speed
   - fix dimensions
+  - Check frame rate
 
 # Notes
 

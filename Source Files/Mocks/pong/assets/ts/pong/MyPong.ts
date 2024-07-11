@@ -6,7 +6,7 @@ import { Court } from "ts-pong/src/pong/Court";
 import { Menu } from "ts-pong/src/pong/Menu";
 import { Paddle } from "ts-pong/src/pong/Paddle";
 
-const speedDevider = 12;
+const speedDevider = 8;
 
 const MyConfig = {
   width: Config.width,
@@ -26,10 +26,12 @@ const MyConfig = {
 export class MyPong extends Pong {
   //private _menu: Menu;
   public stopped: boolean = false;
+  public canvas: HTMLCanvasElement;
 
-  constructor() {
+  constructor(canvas: HTMLCanvasElement) {
     super();
     (this as any)._playSounds = false;
+    this.canvas = canvas;
 
     const paddleOptions = {
       paddleWidth: MyConfig.paddleWidth,
@@ -80,6 +82,7 @@ export class MyPong extends Pong {
     if ((this as any)._scores[playerNumber] == 9) {
       (this as any)._menu.declareWinner(playerNumber);
       this.stop();
+      this.stopped = false;
       console.log(`Player ${playerNumber} won!`);
     } else {
       (this as any)._ball.reset(playerNumber);
@@ -95,7 +98,10 @@ export class MyPong extends Pong {
       if (!playing && !this.stopped) {
         console.log("(Re-)starting demo.");
         this.start(0);
-        //this.startDemo();
+        this.canvas.classList.add("running");
+        this.canvas.classList.remove("stopped");
+      } else if (!playing && this.stopped) {
+        console.log("Restarting blocked");
       }
     }, 500);
   }
@@ -105,5 +111,7 @@ export class MyPong extends Pong {
     (this as any).stopped = true;
     (this as any)._leftPaddle.setAuto(false);
     (this as any)._rightPaddle.setAuto(false);
+    this.canvas.classList.remove("running");
+    this.canvas.classList.add("stopped");
   }
 }

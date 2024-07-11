@@ -1,0 +1,8 @@
+**/*.webm
+**/*.mp4
+scripts/process.py
+scripts/*.zip
+scripts/*.jpg
+scripts/*.png
+scripts/*.tif
+scripts/video-average-frame-master

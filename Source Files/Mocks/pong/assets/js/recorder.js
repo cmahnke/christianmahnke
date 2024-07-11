@@ -1,5 +1,6 @@
 let video, recordButton, playButton, downloadButton;
 let stream, mediaRecorder, recordedBlobs, sourceBuffer;
+let frameRate;
 
 function handleSourceOpen(event) {
   console.log("MediaSource opened");
@@ -46,7 +47,7 @@ function download() {
   const a = document.createElement("a");
   a.style.display = "none";
   a.href = url;
-  a.download = "test.webm";
+  a.download = "video.webm";
   document.body.appendChild(a);
   a.click();
   setTimeout(() => {
@@ -91,7 +92,8 @@ function startRecording() {
   console.log("MediaRecorder started", mediaRecorder);
 }
 
-export function setupRecorder() {
+export function setupRecorder(fps) {
+  frameRate = fps;
   const canvas = document.getElementById("game");
 
   const mediaSource = new MediaSource();
@@ -106,8 +108,14 @@ export function setupRecorder() {
   playButton.onclick = play;
   downloadButton.onclick = download;
 
-  stream = canvas.captureStream(24); // frames per second
-  console.log("Started stream capture from canvas element: ", stream);
+  if (fps === undefined) {
+    stream = canvas.captureStream();
+    fps = "unlimited";
+  } else {
+    stream = canvas.captureStream(fps);
+  }
+  stream = canvas.captureStream(frameRate); // frames per second
+  console.log(`Started stream capture from canvas element at ${fps}: `, stream);
 }
 
 /*
