@@ -7,6 +7,7 @@ import { Menu } from "ts-pong/src/pong/Menu";
 import { Paddle } from "ts-pong/src/pong/Paddle";
 
 const speedDevider = 8;
+const runningCheckInterval = 500;
 
 const MyConfig = {
   width: Config.width,
@@ -98,12 +99,13 @@ export class MyPong extends Pong {
       if (!playing && !this.stopped) {
         console.log("(Re-)starting demo.");
         this.start(0);
+        this.canvas.dispatchEvent(new CustomEvent("game-started"));
         this.canvas.classList.add("running");
         this.canvas.classList.remove("stopped");
       } else if (!playing && this.stopped) {
         console.log("Restarting blocked");
       }
-    }, 500);
+    }, runningCheckInterval);
   }
 
   stop() {
@@ -111,6 +113,7 @@ export class MyPong extends Pong {
     (this as any).stopped = true;
     (this as any)._leftPaddle.setAuto(false);
     (this as any)._rightPaddle.setAuto(false);
+    this.canvas.dispatchEvent(new CustomEvent("game-stopped"));
     this.canvas.classList.remove("running");
     this.canvas.classList.add("stopped");
   }

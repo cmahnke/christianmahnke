@@ -33,3 +33,20 @@ canvas {
     justify-content: center;
   }
 }
+
+.color-scale {
+  content: " ";
+  display: block;
+  width: 50%;
+  height: 2rem;
+  margin: auto;
+
+  &.cool {
+    background: rgb(0, 255, 255);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 255, 255, 1) 0%,
+      rgba(255, 0, 255, 1) 100%
+    );
+  }
+}

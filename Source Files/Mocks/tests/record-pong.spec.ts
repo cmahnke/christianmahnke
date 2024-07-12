@@ -1,5 +1,15 @@
 import { test, expect } from "@playwright/test";
 
+const recordings = 3;
+const canvasID = "game";
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+// See https://stackoverflow.com/a/58296791
+const waitFor = async (f) => {
+  while (!f()) await delay(1000);
+  return f();
+};
+
 test("test startup", async ({ page }) => {
   await page.goto(".");
   test
@@ -10,62 +20,65 @@ test("test startup", async ({ page }) => {
 });
 
 test("start recording", async ({ page }) => {
-  test.setTimeout(5 * 60 * 1000);
-
-  async function download() {
-    //await page.click("#play");
-
-    // See https://github.com/microsoft/playwright/issues/15408
-    const [download] = await Promise.all([
-      page.click("#play"),
-      // It is important to call waitForEvent before click to set up waiting.
-      page.waitForEvent("download"),
-      // Triggers the download.
-      page.click("#download", { timeout: 10000 }),
-    ]);
-    download
-      .then((download) => {
-        var fileName = download.suggestedFilename();
-        fileName = fileName.replace(/(.*)(\..*)/g, `$1-${counter}$2`);
-        download.saveAs(fileName);
-        return download;
-      })
-      .then((download) => {
-        var downloadPath = download.path();
-        test
-          .info()
-          .annotations.push({
-            type: "download",
-            description: `Downlaoded to '${downloadPath}'`,
-          });
-      });
-  }
-
+  const timeout = 2 * 60 * 1000 * recordings;
+  const iterationTimeout = 3 * 60 * 1000;
+  test.setTimeout(timeout);
+  test.slow();
+  console.log(
+    `Set timeout to ${timeout}, ${iterationTimeout} for a single game`,
+  );
+  const canvasHandle = await page.locator(`#${canvasID}`);
+  expect(canvasHandle).toBeTruthy();
   let counter = 0;
 
-  page.on("console", (msg) => {
-    if (msg.type() === "log" && msg.text() == "(Re-)starting demo.") {
-      console.log(`Restarted ${counter}`);
-      /*
-      if (counter > 1) {
+  const start = async () => {
+    await page.click("#game-start");
+    await page.click("#record");
+    console.log(`1.) Started game and recording {counter}`);
+  };
 
+  const stopAndDownload = async () => {
+    await page.click("#game-stop");
+    await page.click("#record");
+    await page.locator("#download").isEnabled().then(page.click("#download"));
+    await page.click("#game-start");
+    await page.click("#record");
+    console.log(`Downloaded and restarted`);
+  };
+
+  page.on("download", (download) => {
+    var fileName = download.suggestedFilename();
+    fileName = fileName.replace(/(.*)(\..*)/g, `$1-${counter}$2`);
+    download.saveAs(fileName);
+    console.log(`3a)Download triggered, saving as '${fileName}'`);
+    test.info().annotations.push({
+      type: "download",
+      description: `Downloaded to '${fileName}'`,
+    });
+  });
+
+  page.on("console", (msg) => {
+    if (msg.type() === "log") {
+      if (msg.text() == "(Re-)starting demo.") {
+        console.log(`Restarted ${counter}`);
+        counter++;
+      } else if (msg.text().match(/Player . won!/)) {
+        console.log("Finished round");
+        stopAndDownload();
+      } else {
+        //console.log(`Got ${msg.text()}`);
       }
-      */
-      counter++;
     }
   });
 
   await page.goto(".");
   await page.click("#game-stop");
-  await page.click("#game-start");
-  await page.click("#record");
+  start();
+  counter = 1;
+  console.log("Started first round");
 
-  const stoppedCanvas = page.locator("canvas.stopped");
-  stoppedCanvas.waitFor({ timeout: 2 * 60 * 1000 }).then(() => {
-    console.log("Game stopped");
-    download();
+  await waitFor(() => {
+    //console.log(`${counter} > ${recordings}`);
+    return counter > recordings;
   });
-
-  //const download = await page.waitForEvent("download");
-  //console.log(`File downloaded to ${downloadPath}`);
 });

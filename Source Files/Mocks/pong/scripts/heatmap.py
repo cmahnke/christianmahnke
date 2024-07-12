@@ -1,54 +1,127 @@
-import sys, argparse, pathlib
+import sys, argparse, pathlib, glob
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 
 # See https://matplotlib.org/stable/users/explain/colors/colormaps.html
 # Also try 'rainbow' and 'jet', 'cool'
-map = 'rainbow'
+map = 'cool'
 linear = True
 video_debug_file = 'video_out.tif'
+debug_file = 'debug.tif'
+debug = False
+# 1.3 is working, hight leads to overflows
+gamma = 1.3
+
+# See https://stackoverflow.com/a/71741069
+def adjust_gamma(image, gamma=1.0):
+    inv_gamma = 1.0 / gamma
+    table = ((np.arange(0, np.iinfo(image.dtype).max) / np.iinfo(image.dtype).max) ** inv_gamma) * np.iinfo(image.dtype).max
+    table = table.astype(image.dtype)
+    return table[image]
+
+def create_mask(image):
+    # Mask contains the static parts
+    mask = ((image == np.amax(image, keepdims=True, axis=0)) + 0).astype(np.uint8)
+    if debug:
+        debug(mask, title="mask", full_dump=False)
+    return mask
+
+def log(image):
+    #Log transform
+    c = np.iinfo(image.dtype).max / (np.log(1 + np.max(image)))
+    image_log = c * np.log(1 + image)
+    return image_log
 
 def heatmap(image):
+    mask = create_mask(image)
+    dynamic_regions = image.copy()
+    np.putmask(dynamic_regions, mask, 0)
+    #dynamic_regions = normalize(dynamic_regions)
 
-    #fig, ax = plt.subplots()
-    #im = ax.imshow(image, cmap=map)
-    #print(image.max())
+    # Gamma correction: https://pyimagesearch.com/2015/10/05/opencv-gamma-correction/
+    #TODO: This can lead to cliping when converting to uint8
+    gamma_corrected = adjust_gamma(dynamic_regions, gamma=gamma)
+    #np.set_printoptions(threshold=sys.maxsize)
+    #print(f"(type: {gamma_corrected.dtype}) array:")
+    #print(gamma_corrected)
+    #gamma_corrected_Uint8 = cv2.convertScaleAbs(gamma_corrected)
+    #cv2.imshow(f"scaled {gamma}", gamma_corrected_Uint8)
+    #cv2.waitKey()
+
+    #cv2.imshow(f"{gamma_corrected.dtype}", gamma_corrected)
+    #cv2.waitKey()
+
+    if debug:
+        print(f"Image format {image.dtype} dynamic format {dynamic_regions.dtype}")
+        debug(dynamic_regions, title="dynamic regions", full_dump=False)
+        debug(gamma_corrected, title=f"gamma {gamma}")
+        #debug(cv2.convertScaleAbs(gamma_corrected), title=f"abs gamma {gamma}")
+        #debug(cv2.normalize(gamma_corrected, None, 255, 0, cv2.NORM_L2, cv2.CV_8U), title=f"norm gamma {gamma}")
+
+
+    #plt.hist(gamma_corrected)
     #plt.show()
-    #return
-    # See https://stackoverflow.com/questions/66699743/apply-a-colormap-only-to-unmasked-region-excluding-the-black-mask
-    #mask = cv2.inRange(image, np.array([image.max() - 1]), np.array([image.max()]))
-    #print(image.dtype)
-    masked = (image < image.max()) * image
-    mask = cv2.bitwise_not(masked.astype(np.uint8))
-    img_masked = cv2.bitwise_and(image, image, mask=mask)
+
+    #debug(equalize(dynamic_regions)[0], title="test")
+
+
+    #image = normalize(gamma_corrected)
+    #image = normalize(gamma_corrected).astype(np.uint8)
+    image = gamma_corrected.astype(np.uint8)
+    #image = cv2.normalize(gamma_corrected, None, 0, np.iinfo(np.uint8).max, cv2.NORM_MINMAX)
+    #image = image.astype(np.uint8)
+    #image = dynamic_regions
+
     colormap = plt.get_cmap(map)
-    #heatmap = (colormap(image) * 2**16).astype(np.uint16)[:,:,:3]
-    heatmap = (colormap(image) * 2**16).astype(np.uint16)
-    #colormap = cv2.applyColorMap(image, cv2.COLORMAP_COOL)
-    #heatmap_masked = cv2.bitwise_and(colormap, colormap, mask=(255-mask))
-    mask = (image < image.max()) * image
+    #heatmap = (colormap(image) * 2**16).astype(np.uint16)
+    heatmap = (colormap(image) * np.iinfo(image.dtype).max).astype(image.dtype)
+
+    #print(f"types {heatmap.shape} {mask.shape}")
+    mask = np.dstack((mask, mask, mask, mask))
+    np.putmask(heatmap, mask, np.iinfo(heatmap.dtype).max)
+
     heatmap = cv2.cvtColor(heatmap, cv2.COLOR_RGB2BGR)
     return heatmap
 
-def debug(img):
+def debug(img, title="Normalized", full_dump=False):
     if img.dtype == np.dtype('bool'):
+        print(f"converting bool -> uint8 ({img.max()})")
         img = img.astype(np.uint8)
     elif img.dtype == np.dtype('uint32') or img.dtype == np.dtype('uint64'):
+        print(f"converting uint32 or uint64 -> uint8")
         img = img.astype(np.uint8)
+    elif img.dtype == np.dtype('int32'):
+        print(f"converting int32 -> uint8 ({img.max()})")
+        img = img.astype(np.uint8)
+    elif img.dtype == np.dtype('uint16'):
+        print(f"converting uint16 -> uint8 ({img.max()})")
+        img = img.astype(np.uint8)
+    elif img.dtype != np.dtype('uint8'):
+        print(f"Unhandled type {img.dtype}")
     img = cv2.normalize(img, None, 0, 255, cv2.NORM_MINMAX)
+    if full_dump:
+        np.set_printoptions(threshold=sys.maxsize)
+    print(f"{title} (type: {img.dtype}) array:")
     print(img)
-    cv2.imshow('Normalized', img)
+    cv2.imshow(title, img)
+    cv2.imwrite(debug_file, img)
     cv2.waitKey()
 
 def normalize(image):
-    # TODO: Create a mask max value
-    #masked = (image < image.max()) * image
     if linear:
-        image = cv2.normalize(image, None, 0, 2**16-1, cv2.NORM_MINMAX)
+        image = cv2.normalize(image, None, 0, np.iinfo(image.dtype).max - 1, cv2.NORM_MINMAX)
     else:
-        c = 2**16-1 / np.log(1 + np.max(image))
-        image = (c * (np.log(image + 1))).astype(np.uint16)
+        image = adjust_gamma(image, gamma=gamma)
+    return image.astype(np.uint16)
+
+def toUInt16(image):
+    if image.dtype == np.dtype('uint16'):
+        return image
+    if np.iinfo(np.uint16).max < image.max():
+        #raise OverflowError("Possible overflow")
+        normalized = cv2.normalize(image, None, 0, 2**16-1, cv2.NORM_MINMAX)
+        return normalized.astype(np.uint16)
     return image.astype(np.uint16)
 
 def process_video(video):
@@ -89,21 +162,36 @@ def process_video(video):
     # Return result here, number of frames should be out_frame.max()
     return out_frame
 
+def process_videos(videos):
+    out_frame = None
+    for video in videos:
+        print('', flush=True)
+        print(f"Processing {video}")
+        frame = process_video(video)
+        if out_frame is None:
+            out_frame = np.zeros(frame.shape, dtype=np.uint64)
+        out_frame = np.add(frame, out_frame)
+    print(f"Processed approx {out_frame.max()} frames")
+    return out_frame
+
 def main(args):
     parser = argparse.ArgumentParser(description='Create heatmap')
     group = parser.add_argument_group('Input', 'Input files')
     input_group = group.add_mutually_exclusive_group(required=True)
     input_group.add_argument('--image', '-i', type=pathlib.Path, help='Image to process', required=False)
     input_group.add_argument('--video', '-v', type=pathlib.Path, help='Video to process', required=False)
+    input_group.add_argument('--video-list', '-l', help='Videos to process', required=False)
     parser.add_argument('--output', '-o', type=pathlib.Path, help='Result file, otherwise result will be displayed', required=False)
     parser.add_argument('--debug', '-d', action='store_true', help='Save processed video image', default=True, required=False)
 
     args = parser.parse_args()
 
+    if args.debug:
+        debug = True
+
     if args.image:
         if args.image.exists():
             input = str(args.image)
-            preprocess = False
         else:
             print(f"File {str(args.image)} doesn't exist!")
             sys.exit(1)
@@ -111,17 +199,23 @@ def main(args):
     if args.video:
         if args.video.exists():
             video = str(args.video)
-            preprocess = True
         else:
             print(f"File {str(args.video)} doesn't exist!")
             sys.exit(2)
+        image = process_video(video)
+
+    if args.video_list:
+        files = glob.glob(args.video_list)
+        files.sort()
+        if files is None or len(files) < 1:
+            print(f"File {args.video_list} dons't match any files!")
+            sys.exit(3)
+        image = process_videos(files)
 
     print("Input initialized")
 
-    if preprocess:
-        image = process_video(video)
-        np.set_printoptions(threshold=sys.maxsize)
-        if args.debug:
+    if 'image' in vars() or 'image' in globals():
+        if debug:
             cv2.imwrite(video_debug_file, image)
             print(f"Saved {video_debug_file}")
     else:
@@ -130,7 +224,8 @@ def main(args):
         else:
             image = cv2.imread(input, cv2.IMREAD_GRAYSCALE)
 
-    image = normalize(image)
+    print(f"Loaded image as {image.dtype}")
+    image = toUInt16(image)
     out = heatmap(image)
     if not args.output:
         #cv2.imshow('image', image)
