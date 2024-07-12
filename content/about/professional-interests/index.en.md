@@ -10,7 +10,6 @@ weight: 4
 My professional focus is on various topics from the spectrum of digital libraries and museums:
 
 * Full texts and metadata
-
   * TEI / Digital editions
   * OCR
   * Search technologies (Solr / ElasticSearch)
@@ -20,6 +19,9 @@ My professional focus is on various topics from the spectrum of digital librarie
 * (Mass-) Digitisation
   * Workflow automatisation
 
+* Digital images
+  * Image processing
+
 * Programming
   * Java
   * PHP
@@ -28,7 +30,7 @@ My professional focus is on various topics from the spectrum of digital librarie
   * Go
 
 * DevOps
-  * Git
+  * Git / GitHub
   * Docker / Kubernetes / Cloud
 
 ## Talks

@@ -10,7 +10,6 @@ weight: 4
 Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum digitaler Bibliotheken und Museen:
 
 * Volltexte und Metadaten
-
   * TEI / Digitale Editionen
   * OCR
   * Suchtechnologien (Solr / ElasticSearch)
@@ -20,6 +19,9 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 * (Massen-) Digitalisierung
   * Workflowsteuerung
 
+* Digitale Bilder
+  * Bildverarbeitung
+
 * Programmiersprachen
   * Java
   * PHP
@@ -28,7 +30,7 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
   * Go
 
 * Betriebs- und Entwicklungsinfrastrukturen
-  * Git
+  * Git / GitHub
   * Docker / Kubernetes / Cloud
 
 ## Vorträge
