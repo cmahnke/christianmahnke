@@ -29,6 +29,11 @@ My professional focus is on various topics from the spectrum of digital librarie
   * Groovy
   * Go
 
+* Web development
+  * HTML
+  * CSS
+  * JavaSript / TypeScript
+
 * DevOps
   * Git / GitHub
   * Docker / Kubernetes / Cloud

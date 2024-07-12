@@ -29,6 +29,11 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
   * Groovy
   * Go
 
+* Webentwicklung
+  * HTML
+  * CSS
+  * JavaSript / TypeScript
+
 * Betriebs- und Entwicklungsinfrastrukturen
   * Git / GitHub
   * Docker / Kubernetes / Cloud
