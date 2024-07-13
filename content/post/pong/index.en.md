@@ -7,7 +7,7 @@ tags:
 - Licht2024
 - fun
 - Retrocomputing
-draft: true
+- digitalImages
 ---
 
 For some reason I came up with the idea of visualising [Pong](https://de.wikipedia.org/wiki/Pong)...
@@ -50,13 +50,13 @@ A few post-processing steps are necessary to generate the image based on the rec
 * Gamma correction of the dynamic areas to emphasise differences, blur, then colourise
 * merge areas again
 
-OpenCV](https://opencv.org/) and [NumPy](https://numpy.org/) are used for the image operations, [Matplotlib](https://matplotlib.org/) for the colouring.
+[OpenCV](https://opencv.org/) and [NumPy](https://numpy.org/) are used for the image operations, [Matplotlib](https://matplotlib.org/) for the colouring.
 
-# Visualisierung
+# Visualisation
 
 {{< gallery >}}
 [
-  {"src": "pong-vis1.png", "alt": "Pong Heatmap", "scalePreview": false}
+  {"src": "pong-heatmap1.png", "alt": "Pong Heatmap", "scalePreview": false}
 ]
 {{</ gallery >}}
 
@@ -66,6 +66,6 @@ The distribution follows this scale: On the left (cyan) little activity, on the 
 
 <div style="content: ' '; display: block; width: 70%; height: 2rem; margin: auto; background: linear-gradient(90deg, rgba(0, 255, 255, 1) 0%, rgba(255, 0, 255, 1) 100%);"></div>
 
-# Statistik
+# Statistics
 
 The image consists of 1777136 individual images, or 2:42 hours of gameplay, or 333 rounds.

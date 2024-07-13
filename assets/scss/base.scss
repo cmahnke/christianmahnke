@@ -527,12 +527,32 @@ a:visited {
       }
     }
 
-    .post-body hr {
-        width: 80%;
-        border: 6px solid #ff5477;
+    .post-body {
+        ul {
+            list-style: none;
+            /*padding-inline-start: 0;*/
 
-        &:first-of-type {
-            margin-top: 2em;
+            li {
+                padding-left: 1em;
+            }
+
+            li::marker {
+                content: '☞';
+                color: $marker-color;
+                font-size: 1.4em;
+                display: inline-block;
+                vertical-align: sub;
+                padding-right: .4em
+            }
+        }
+
+        hr {
+            width: 80%;
+            border: 6px solid #ff5477;
+
+            &:first-of-type {
+                margin-top: 2em;
+            }
         }
     }
 
@@ -926,6 +946,35 @@ a:visited {
         .post-date {
             align-self: flex-end;
         }
+    }
+
+    .odd .meta .tags {
+        justify-content: flex-end;
+        a {
+          padding-left: 1rem
+        }
+    }
+
+    .even .meta .tags {
+        justify-content: flex-start;
+        a {
+          padding-right: 1rem
+        }
+    }
+
+    .meta .tags {
+        max-height: 7em;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: row !important;
+        width: 30%;
+        flex-wrap: wrap;
+        /* TODO: Try to reduce linehight if there are to many tags */
+        /*
+        a {
+          line-height: 1.2;
+        }
+        */
     }
 
     .odd {

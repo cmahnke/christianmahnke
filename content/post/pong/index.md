@@ -7,7 +7,7 @@ tags:
 - Licht2024
 - fun
 - Retrocomputing
-draft: true
+- digitalImages
 ---
 
 Aus irgendeinem Grund bin ich auf die Idee gekommen [Pong](https://de.wikipedia.org/wiki/Pong) zu visualisieren...
@@ -56,7 +56,7 @@ Dabei kommen für die Bildoperationen [OpenCV](https://opencv.org/) und [NumPy](
 
 {{< gallery >}}
 [
-  {"src": "pong-vis1.png", "alt": "Pong Heatmap", "scalePreview": false}
+  {"src": "pong-heatmap1.png", "alt": "Pong Heatmap", "scalePreview": false}
 ]
 {{</ gallery >}}
 

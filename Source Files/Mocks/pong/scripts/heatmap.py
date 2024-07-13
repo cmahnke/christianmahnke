@@ -12,6 +12,7 @@ linear = True
 video_debug_file = 'video_out.tif'
 debug_file = 'debug.png'
 debug = False
+blur = True
 # 1.3 is working, hight leads to overflows
 gamma = 1.3
 
@@ -29,35 +30,44 @@ def create_mask(image):
         debug(mask, title="mask", full_dump=False)
     return mask
 
-def log(image):
-    #Log transform
-    c = np.iinfo(image.dtype).max / (np.log(1 + np.max(image)))
-    image_log = c * np.log(1 + image)
-    return image_log
+#def log(image):
+#    #Log transform
+#    c = np.iinfo(image.dtype).max / (np.log(1 + np.max(image)))
+#    image_log = c * np.log(1 + image)
+#    return image_log
+
+# TODO: Add border
+def smoothen(image):
+    border = 50
+    work_image = np.copy(image)
+    #work_image = cv2.copyMakeBorder(work_image, border, border, border, border, cv2.BORDER_REFLECT)
+    if work_image.dtype != np.dtype('float32'):
+        work_image = work_image.astype(np.float32)
+    (diameter, sigmaColor, sigmaSpace) = (11, 21, 7)
+    blurred = cv2.bilateralFilter(work_image, diameter, sigmaColor, sigmaSpace)
+    #return blurred[border:border, blurred.shape[0]-50:blurred.shape[1]-50]
+    return blurred
 
 def heatmap(image):
     mask = create_mask(image)
     dynamic_regions = image.copy()
-    np.putmask(dynamic_regions, mask, 0)
-    #dynamic_regions = normalize(dynamic_regions)
+    #np.putmask(dynamic_regions, mask, 0)
+    np.putmask(dynamic_regions, mask, np.iinfo(dynamic_regions.dtype).max // 2)
 
     # Gamma correction: https://pyimagesearch.com/2015/10/05/opencv-gamma-correction/
     #TODO: This can lead to cliping when converting to uint8
     gamma_corrected = adjust_gamma(dynamic_regions, gamma=gamma)
-    #np.set_printoptions(threshold=sys.maxsize)
-    #print(f"(type: {gamma_corrected.dtype}) array:")
-    #print(gamma_corrected)
-    #gamma_corrected_Uint8 = cv2.convertScaleAbs(gamma_corrected)
-    #cv2.imshow(f"scaled {gamma}", gamma_corrected_Uint8)
-    #cv2.waitKey()
 
-    #cv2.imshow(f"{gamma_corrected.dtype}", gamma_corrected)
-    #cv2.waitKey()
+    if blur:
+        blurred = smoothen(gamma_corrected)
+    else:
+        blurred = gamma_corrected
 
     if debug:
         print(f"Image format {image.dtype} dynamic format {dynamic_regions.dtype}")
         debug(dynamic_regions, title="dynamic regions", full_dump=False)
         debug(gamma_corrected, title=f"gamma {gamma}")
+        debug(blurred, title=f"blurred")
         #debug(cv2.convertScaleAbs(gamma_corrected), title=f"abs gamma {gamma}")
         #debug(cv2.normalize(gamma_corrected, None, 255, 0, cv2.NORM_L2, cv2.CV_8U), title=f"norm gamma {gamma}")
 
@@ -70,7 +80,7 @@ def heatmap(image):
 
     #image = normalize(gamma_corrected)
     #image = normalize(gamma_corrected).astype(np.uint8)
-    image = gamma_corrected.astype(np.uint8)
+    image = blurred.astype(np.uint8)
     #image = cv2.normalize(gamma_corrected, None, 0, np.iinfo(np.uint8).max, cv2.NORM_MINMAX)
     #image = image.astype(np.uint8)
     #image = dynamic_regions
@@ -240,7 +250,7 @@ def main(args):
         else:
             image = cv2.imread(input, cv2.IMREAD_GRAYSCALE)
 
-    print(f"Loaded image as {image.dtype}")
+    print(f"Loaded image as {image.dtype}, approx {image.max()} frames")
     image = toUInt16(image)
     out = heatmap(image)
     end = time.time()
