@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-const recordings = 3;
+const recordings = 500;
 const canvasID = "game";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -29,18 +29,20 @@ test("start recording", async ({ page }) => {
   );
   const canvasHandle = await page.locator(`#${canvasID}`);
   expect(canvasHandle).toBeTruthy();
-  let counter = 0;
+  let counter;
 
   const start = async () => {
     await page.click("#game-start");
     await page.click("#record");
-    console.log(`1.) Started game and recording {counter}`);
+    console.log(`Started game and recording ${counter}`);
   };
 
   const stopAndDownload = async () => {
     await page.click("#game-stop");
     await page.click("#record");
-    await page.locator("#download").isEnabled().then(page.click("#download"));
+    if (await page.locator("#download").isEnabled()) {
+      await page.click("#download");
+    }
     await page.click("#game-start");
     await page.click("#record");
     console.log(`Downloaded and restarted`);
@@ -48,7 +50,8 @@ test("start recording", async ({ page }) => {
 
   page.on("download", (download) => {
     var fileName = download.suggestedFilename();
-    fileName = fileName.replace(/(.*)(\..*)/g, `$1-${counter}$2`);
+    var nr = counter.toString().padStart(recordings.toString().length, "0");
+    fileName = fileName.replace(/(.*)(\..*)/g, `$1-${nr}$2`);
     download.saveAs(fileName);
     console.log(`3a)Download triggered, saving as '${fileName}'`);
     test.info().annotations.push({
@@ -60,7 +63,9 @@ test("start recording", async ({ page }) => {
   page.on("console", (msg) => {
     if (msg.type() === "log") {
       if (msg.text() == "(Re-)starting demo.") {
-        console.log(`Restarted ${counter}`);
+        if (counter > 0) {
+          console.log(`Restarted ${counter}`);
+        }
         counter++;
       } else if (msg.text().match(/Player . won!/)) {
         console.log("Finished round");
@@ -74,7 +79,7 @@ test("start recording", async ({ page }) => {
   await page.goto(".");
   await page.click("#game-stop");
   start();
-  counter = 1;
+  counter = 0;
   console.log("Started first round");
 
   await waitFor(() => {

@@ -17,6 +17,11 @@
     gap: 2vwh;
   }
 
+  a {
+    overflow: hidden;
+    width: inherit;
+  }
+
   img {
     border-radius: .4rem;
   }

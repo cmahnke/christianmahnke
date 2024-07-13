@@ -1,5 +1,4 @@
 import "ts-pong/src/styles.scss";
-import "../scss/base.scss";
 import { setupRecorder } from "../js/recorder.js";
 
 import { Engine } from "ts-pong/src/engine/Engine";
@@ -7,6 +6,8 @@ import { Pong, loader } from "ts-pong/src/pong";
 
 import { MyPong } from "./pong/MyPong";
 import { MyEngine } from "./pong/MyEngine";
+import "../scss/base.scss";
+
 //import { images, sounds } from './pong/resources';
 
 const canvasID = "game";

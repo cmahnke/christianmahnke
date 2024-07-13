@@ -7,10 +7,20 @@
 <div id="{{ $id }}" class="gallery {{ with .Get "class" }}{{ . }}{{ end }}">
   {{- range $image := $image -}}
     {{- $imgRes := $.Page.Resources.Get $image.src -}}
+    {{- $alt := "" -}}
+    {{- $alt = $image.alt -}}
+    {{- $scalePreview := true -}}
+    {{- if isset $image "scalePreview" -}}
+      {{- $scalePreview = $image.scalePreview -}}
+    {{- end -}}
     {{- with $imgRes -}}
       <a class="gallery-image" href="{{ $image.src }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank">
         {{- $preview := $imgRes.Resize (printf "%sx" $previewWidth) -}}
-        <img src="{{ $preview.RelPermalink }}" alt="" />
+        {{- if (not $scalePreview) -}}
+          {{- $preview = $imgRes -}}
+        {{- end -}}
+
+        <img src="{{ $preview.RelPermalink }}" alt="{{ $alt }}" />
       </a>
       {{- else -}}
       {{ warnf "[shortcodes/gallery.html] Not found %s for %s" $image.src $.Page.File.Path }}

@@ -1,4 +1,5 @@
 matplotlib
 numpy<2
 opencv-python
+imageio
 #video-average-frame @ git+https://github.com/wq2012/video-average-frame@master

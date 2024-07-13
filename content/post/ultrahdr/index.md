@@ -73,6 +73,11 @@ Hier zwei Beispiele aus meinem Urlaub:
 
 {{< hdr-check >}}
 
-[![Sonnenuntergang über Hörnum](./img/IMG_5255-m.hdr.jpeg)](./img/IMG_5255.hdr.jpeg)
+{{< gallery >}}
+[
+  {"src": "img/IMG_5255.hdr.jpeg", "alt": "Sonnenuntergang über Hörnum"},
+  {"src": "img/IMG_5256.hdr.jpeg", "alt": "Sonnenuntergang auf Föhr"}
+]
+{{</ gallery >}}
 
-[![Sonnenuntergang auf Föhr](./img/IMG_5256-m.hdr.jpeg)](./img/IMG_5256.hdr.jpeg)
+HDR wird in der Vollbildansicht aktiviert.

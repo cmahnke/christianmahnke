@@ -73,6 +73,11 @@ Two examples from my recent vacation:
 
 {{< hdr-check >}}
 
-[![Sunset over Hörnum](./img/IMG_5255-m.hdr.jpeg)](./img/IMG_5255.hdr.jpeg)
+{{< gallery >}}
+[
+  {"src": "img/IMG_5255.hdr.jpeg", "alt": "Sunset over Hörnum"},
+  {"src": "img/IMG_5256.hdr.jpeg", "alt": "Sunset on Föhr"}
+]
+{{</ gallery >}}
 
-[![Sunset on Föhr](./img/IMG_5256-m.hdr.jpeg)](./img/IMG_5256.hdr.jpeg)
+HDR will be activated in the full screen view.

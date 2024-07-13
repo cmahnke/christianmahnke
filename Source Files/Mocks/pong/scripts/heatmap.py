@@ -1,14 +1,16 @@
-import sys, argparse, pathlib, glob
+import sys, argparse, pathlib, glob, time
+from datetime import timedelta
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2
+import imageio
 
 # See https://matplotlib.org/stable/users/explain/colors/colormaps.html
 # Also try 'rainbow' and 'jet', 'cool'
 map = 'cool'
 linear = True
 video_debug_file = 'video_out.tif'
-debug_file = 'debug.tif'
+debug_file = 'debug.png'
 debug = False
 # 1.3 is working, hight leads to overflows
 gamma = 1.3
@@ -124,11 +126,19 @@ def toUInt16(image):
         return normalized.astype(np.uint16)
     return image.astype(np.uint16)
 
+def safeUint16(image, file):
+    if image.dtype != np.dtype('uint16'):
+        raise ValueError("Image has wrong data type")
+    if not file.endswith('.png'):
+        raise ValueError("Only PNG is supported")
+    imageio.imwrite(file, image)
+
 def process_video(video):
     cap = cv2.VideoCapture(video)
     num_frames = 0
     out_frame = None
     previuos_frame = None
+    drop_counter = 0
     while cap.isOpened():
         ret, frame = cap.read()
         if frame is None:
@@ -143,7 +153,9 @@ def process_video(video):
 
             # Remove duplicatzed frames
             if previuos_frame is not None and np.array_equal(previuos_frame, frame_sw):
-                print(".", end="")
+                if debug:
+                    print(".", end="")
+                drop_counter += 1
                 continue
             else:
                 previuos_frame = frame_sw
@@ -160,6 +172,8 @@ def process_video(video):
     if num_frames != out_frame.max():
         raise OverflowError("Possible overflow")
     # Return result here, number of frames should be out_frame.max()
+    print('', flush=True)
+    print(f"Averaged {num_frames} frames, droped {drop_counter} frames")
     return out_frame
 
 def process_videos(videos):
@@ -210,9 +224,11 @@ def main(args):
         if files is None or len(files) < 1:
             print(f"File {args.video_list} dons't match any files!")
             sys.exit(3)
+        print(f"Processing {len(files)} videos")
         image = process_videos(files)
 
     print("Input initialized")
+    start = time.time()
 
     if 'image' in vars() or 'image' in globals():
         if debug:
@@ -227,6 +243,7 @@ def main(args):
     print(f"Loaded image as {image.dtype}")
     image = toUInt16(image)
     out = heatmap(image)
+    end = time.time()
     if not args.output:
         #cv2.imshow('image', image)
         cv2.imshow('heatmap', out)
@@ -234,6 +251,7 @@ def main(args):
         #plt.imshow(out)
     else:
         cv2.imwrite(str(args.output), out)
+    print(f"Processing took {timedelta(seconds=end-start)}")
 
 if __name__ == "__main__":
     main(sys.argv[1:])

@@ -631,6 +631,11 @@ a:visited {
             }
         }
 
+        div.gallery + p,
+        script + p {
+          margin-top: 1em;
+        }
+
         p {
             img {
                   width: 100%;

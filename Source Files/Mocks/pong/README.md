@@ -76,4 +76,36 @@ ffmpeg -i input.webm -c copy output.mp4
 
 # TODO
 
-- Sharp edges: ctx.imageSmoothingEnabled = false;
+## Sharp edges:
+
+### Not working:
+
+```
+ctx.imageSmoothingEnabled = false;
+```
+
+# Processing
+
+## Generating Game recordings
+
+Run `npm -i` if needed.
+
+Run with `--headed` to reduce duplicate frames
+
+```
+npx playwright test --headed
+```
+
+## Pong Post postprocessing
+
+### Required Dependencies
+
+```
+python -m pip install -r requirements.txt
+```
+
+### Postprocessing
+
+```
+python heatmap.py --video video.webm -d -o out.jpg
+```

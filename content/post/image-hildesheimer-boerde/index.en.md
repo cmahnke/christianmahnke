@@ -11,8 +11,11 @@ tags:
 The rest stop "Hildesheimer Börde" on a foggy night.
 <!--more-->
 
-[![Hildesheimer Börde at night](./img/IMG_4538-m.hdr.jpeg)](./img/IMG_4538.hdr.jpeg)
-
+{{< gallery >}}
+[
+  {"src": "img/IMG_4538-m.hdr.jpeg", "alt": "Hildesheimer Börde bei Nacht", "scalePreview": false}
+]
+{{</ gallery >}}
 
 # Update 7.7.24
 
