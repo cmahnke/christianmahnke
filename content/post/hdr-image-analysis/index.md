@@ -1,10 +1,10 @@
 ---
 date: 2024-06-06T11:33:44+02:00
 title: "Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung"
-draft: true
 tags:
   - light
   - Licht2024
+  - digitalImages
 ---
 
 # Bildanalyse mittels HDR Darstellung

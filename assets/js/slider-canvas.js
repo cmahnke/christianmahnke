@@ -1,4 +1,4 @@
-import {Uint16Image} from 'hdr-canvas';
+import {checkHDRCanvas, Uint16Image} from 'hdr-canvas';
 
 const colorSpace = 'rec2100-hlg';
 const colors = {'red': 0, 'green': 0, 'blue': 0};
@@ -26,14 +26,33 @@ function setupCanvas(canvas, width, height) {
   if (height !== undefined && height != 0) {
     canvas.height = height;
   }
-  canvas.configureHighDynamicRange({mode:'extended'});
-  /* See https://github.com/Fyrd/caniuse/issues/6504#issuecomment-1426886762 */
-  const ctx = canvas.getContext("2d", {colorSpace: colorSpace, pixelFormat:'float16'});
-  ctx.imageSmoothingEnabled = false;
+
+  let ctx;
+  if (checkHDRCanvas()) {
+    canvas.configureHighDynamicRange({mode:'extended'});
+    /* See https://github.com/Fyrd/caniuse/issues/6504#issuecomment-1426886762 */
+    ctx = canvas.getContext("2d", {colorSpace: colorSpace, pixelFormat:'float16'});
+    ctx.imageSmoothingEnabled = false;
+  } else {
+    console.log("Canvas ist't HDR enabled");
+    ctx = canvas.getContext("2d");
+  }
   return ctx;
 }
 
 export function initCanvas(canvas, imageUrl) {
+  if (!checkHDRCanvas()) {
+    loadSDRImage(imageUrl)
+    .then((imageData) => {
+      ctx = setupCanvas(canvas, imageData.width, imageData.height);
+      ctx.putImageData(imageData, 0, 0);
+      ctx.font = "bold 36px sans-serif";
+      ctx.fillStyle = "#ff0000";
+      ctx.fillText("HDR not supported!", 90, 100);
+      ctx.fillText("Image manipulation disabled", 10, 150);
+    });
+    return;
+  }
   loadSDRImage(imageUrl)
   .then((imageData) => {
     hdrCtx = setupCanvas(canvas, imageData.width, imageData.height);

@@ -1,10 +1,10 @@
 ---
 date: 2024-06-06T11:33:44+02:00
 title: "Contrast enhancement for UV images using HDR"
-draft: true
 tags:
   - light
   - Licht2024
+  - digitalImages
 ---
 
 # Image analysis using HDR visualisation

@@ -949,14 +949,14 @@ a:visited {
     }
 
     .odd .meta .tags {
-        justify-content: flex-end;
+        flex-direction: row-reverse !important;
+
         a {
-          padding-left: 1rem
+            padding-left: 1rem
         }
     }
 
     .even .meta .tags {
-        justify-content: flex-start;
         a {
           padding-right: 1rem
         }
