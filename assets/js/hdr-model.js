@@ -85,6 +85,8 @@ export function initModel(canvas, modelUrl, replacements) {
   renderer.setAnimationLoop(animate);
   renderer.setClearColor(0x000000, 0);
   controls = new OrbitControls(camera, renderer.domElement);
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = .15;
   controls.minPolarAngle = 0;
 	controls.maxPolarAngle =  Math.PI * 0.5;
 
