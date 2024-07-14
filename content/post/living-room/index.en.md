@@ -1,13 +1,13 @@
 ---
 date: 2021-01-13T19:22:44+02:00
-title: "Wohnzimmer renoviert"
+title: "Living room renovated"
 tags:
 - DIY
 ---
 
-Neben meinen Blogs habe ich die Corona-Zeit genutzt mein Wohnzimmer zu renovieren. Auch hier konnte ich einige jahrealte Ideen umsetzen:
-* Gestreift historisch Tapeten vom [Zeitzeug](http://zeitzeug.de/) anbringen
-* Meine Bibliothek neu aufstellen
+In addition to my blogs, I used the corona period to renovate my living room. Here, too, I was able to realise some ideas that were years old:
+* Put up striped historical wallpaper from [Zeitzeug](http://zeitzeug.de/)
+* Rearrange my library
 
 {{< gallery >}}
 [
