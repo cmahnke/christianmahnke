@@ -58,6 +58,8 @@ def heatmap(image):
     #TODO: This can lead to cliping when converting to uint8
     gamma_corrected = adjust_gamma(dynamic_regions, gamma=gamma)
 
+    # Try this: https://docs.opencv.org/4.x/d5/daf/tutorial_py_histogram_equalization.html
+
     if blur:
         blurred = smoothen(gamma_corrected)
     else:

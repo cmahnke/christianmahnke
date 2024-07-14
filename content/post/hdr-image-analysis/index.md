@@ -19,7 +19,9 @@ Bei dem gezeigten Stück handelt es sich um einen Ausschnitt aus einem Kopierbuc
 
 Ein Kopierbuch ist eine Sammlung von kopierten Briefen in einem Buch. Dabei wurden diese Kopien nicht mittels eines Photokopierers erstellt, sondern mittels eines Kopierstiftes handgeschrieben, dann auf einer der Seidenpapierseiten gelegt, dabei die Vorder- und Rückseite mit einer Art Wachstuch eingeschlagen, um die anderen Seiten zu schützen und so gepresst. Dazu gab entweder entsprechende Pressen oder wie in diesem Fall, einen Gusseisernen "Schutzumschlag", der gleichzeitig die Presse ist.
 
-Diese Kopierbuch gehörte , der im späteren Verlauf des Buches offenbar auch als Korrespondent für den [Hannoverscher Kurier](https://de.wikipedia.org/wiki/Hannoverscher_Kurier) arbeitete.
+Diese Kopierbuch gehörte Carl Spannaus aus Northeim, der im Verlauf des Buches offenbar auch als Korrespondent für den [Hannoverscher Kurier](https://de.wikipedia.org/wiki/Hannoverscher_Kurier) auftrat.
+
+In der Ausgabe vom Sonntag, dem 14. September 1902 (Seite 5) des Hannoverscher Kurier ist er als Agent der Zeitung und Inhaber einer Buchhandlung in Northeim [genannt](https://digitale-sammlungen.gwlb.de/content/73496076X_HannoverscherKurier_19020914_01/pdf/00000005.pdf). Zusätzlich verlegt er auch [Postkarten](https://ansichtskarten-lexikon.de/verlag-carl-spannaus-northeim-i-hann-14621.html). Zusätzlich lässt sich im [Spiegel](https://www.spiegel.de/geschichte/ortstermin-a-946572.html) nachlesen, dass er der erste Northeimer in der NSDAP war...
 
 Dieses Buch enthält auch Kopien von Stempelabdrücken. Teilweise lässt sich die benutzte Stempelfarbe durch UV Strahlung anregen...
 

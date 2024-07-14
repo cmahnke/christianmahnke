@@ -19,7 +19,10 @@ The piece shown is an excerpt from a copybook from the first half of the 1920s.
 
 A copybook is a collection of copied letters in a book. These copies were not made using a photocopier, but were handwritten using a copying pen, then placed on one of the tissue paper pages, with the front and back wrapped in a kind of oilcloth to protect the other pages and pressed in this way. There were either corresponding presses or, as in this case, a cast-iron "protective cover", which was also the press.
 
-This copy book belonged to , who in the later course of the book apparently also worked as a correspondent for the [Hannoverscher Kurier](https://de.wikipedia.org/wiki/Hannoverscher_Kurier).
+This copy book belonged to Carl Spannaus, who in the course of the book also worked as a correspondent for the [Hannoverscher Kurier (German)](https://de.wikipedia.org/wiki/Hannoverscher_Kurier).
+
+In the issue of Sunday 14 September 1902 (page 5) of the Hannoverscher Kurier, he is [listed (German)](https://digitale-sammlungen.gwlb.de/content/73496076X_HannoverscherKurier_19020914_01/pdf/00000005.pdf) as an agent of the newspaper and owner of a bookshop in Northeim. He also published [postcards (German)](https://ansichtskarten-lexikon.de/verlag-carl-spannaus-northeim-i-hann-14621.html). You can also read in [Spiegel (German)](https://www.spiegel.de/geschichte/ortstermin-a-946572.html) that he was the first citizen of Northeim who became member of the NSDAP...
+And there are also some entries in the "Börsenblatt des deutschen Buchhandels".
 
 This book also contains copies of stamp impressions. Some of the stamp colours used can be excited by UV radiation...
 
