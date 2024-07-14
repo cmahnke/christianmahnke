@@ -9,6 +9,8 @@ Neben meinen Blogs habe ich die Corona-Zeit genutzt mein Wohnzimmer zu renoviere
 * Gestreift historisch Tapeten vom [Zeitzeug](http://zeitzeug.de/) anbringen
 * Meine Bibliothek neu aufstellen
 
+Hier die einzelnen Schritte:
+
 {{< gallery >}}
 [
   {"src": "wallpapering.jpg", "alt": "Tapezieren"},

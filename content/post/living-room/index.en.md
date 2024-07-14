@@ -9,6 +9,8 @@ In addition to my blogs, I used the corona period to renovate my living room. He
 * Put up striped historical wallpaper from [Zeitzeug](http://zeitzeug.de/)
 * Rearrange my library
 
+Here are the individual steps:
+
 {{< gallery >}}
 [
   {"src": "wallpapering.jpg", "alt": "Tapezieren"},
