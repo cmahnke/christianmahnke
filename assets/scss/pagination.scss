@@ -7,16 +7,23 @@
 
 
   .pagination-links {
-    display: grid;
+    display: flex;
+    justify-content: space-between;
     flex-direction: row;
+
+    .pagination-next,
+    .pagination-prev {
+      max-width: 49%;
+    }
 
     .pagination-next {
       justify-self: flex-end;
-
+      margin-right: 1rem;
     }
 
     .pagination-prev {
       justify-self: flex-start;
+      margin-left: 1rem;
     }
 
   }
