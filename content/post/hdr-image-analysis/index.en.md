@@ -26,6 +26,14 @@ And there are also some entries in the "Börsenblatt des deutschen Buchhandels".
 
 This book also contains copies of stamp impressions. Some of the stamp colours used can be excited by UV radiation...
 
+{{< gallery >}}
+[
+  {"src": "img/presse.jpg", "alt": "Press"},
+  {"src": "img/front.jpg", "alt": "Book cover"},
+  {"src": "img/page.jpg", "alt": "Page"}
+]
+{{</ gallery >}}
+
 # Example
 
 {{< hdr-canvas-check >}}

@@ -28,9 +28,9 @@ Dieses Buch enthält auch Kopien von Stempelabdrücken. Teilweise lässt sich di
 
 {{< gallery >}}
 [
-  {"src": "img/presse.jpg"},
-  {"src": "img/front.jpg"},
-  {"src": "img/page.jpg"}
+  {"src": "img/presse.jpg", "alt": "Presse"},
+  {"src": "img/front.jpg", "alt": "Buchdeckel"},
+  {"src": "img/page.jpg", "alt": "Seite"}
 ]
 {{</ gallery >}}
 
