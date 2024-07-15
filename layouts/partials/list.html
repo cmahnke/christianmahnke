@@ -1,24 +1,25 @@
 <div class="content-container list">
-    <div class="posts">
-        {{- $paginator := .Paginate (where .RegularPages "Params.displayinlist" "!=" false) -}}
-        {{- range $i, $page :=  $paginator.Pages -}}
-            {{- .Scratch.Set "class" "odd" -}}
-            {{- if modBool $i 2  -}}
-                {{- .Scratch.Set "class" "even" -}}
-            {{- end -}}
-            {{- partial "li.html" . -}}
-        {{- end -}}
-    </div>
+  <div class="posts">
+    {{- $paginator := .Paginate (where .RegularPages "Params.displayinlist" "!=" false) -}}
+    {{- range $i, $page :=  $paginator.Pages -}}
+      {{- .Scratch.Set "class" "odd" -}}
+      {{- if modBool $i 2  -}}
+        {{- .Scratch.Set "class" "even" -}}
+      {{- end -}}
+      {{- partial "li.html" . -}}
+    {{- end -}}
+  </div>
 </div>
 {{ if or $paginator.HasPrev $paginator.HasNext -}}
-    <div class="pagination">
-        <div class="pagination-links">
-            {{ if $paginator.HasPrev }}
-                <a class="pagination-prev" href="{{ $paginator.Prev.URL }}">&#x25C0; {{ i18n "next_page" }}</a>
-            {{ end }}
-            {{ if $paginator.HasNext }}
-                <a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "previous_page" }} &#x25B6;</a>
-            {{ end }}
-        </div>
+{{/* See https://stackoverflow.com/a/39900080 */}}
+  <div class="pagination">
+    <div class="pagination-links">
+      {{ if $paginator.HasPrev }}
+        <a class="pagination-prev" href="{{ $paginator.Prev.URL }}">&#x25c0;&#xfe0e; {{ i18n "next_page" }}</a>
+      {{ end }}
+      {{ if $paginator.HasNext }}
+        <a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "previous_page" }} &#x25b6;&#xfe0e;</a>
+      {{ end }}
     </div>
+  </div>
 {{- end }}
