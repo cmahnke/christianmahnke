@@ -1,7 +1,6 @@
 ---
 date: 2024-01-23T19:33:44+02:00
 title: "Mystery Box"
-draft: true
 tags:
   - object
 ---
@@ -11,9 +10,9 @@ I bought a (more or less) mysterious box:
 
 {{< gallery >}}
 [
-  {"src": "img/top.jpg", "alt": "Oberseite"},
-  {"src": "img/front.jpg", "alt": "Vorderseite"},
-  {"src": "img/back.jpg", "alt": "Rückseite"}
+  {"src": "img/top.jpeg", "alt": "Oberseite"},
+  {"src": "img/front.jpeg", "alt": "Vorderseite"},
+  {"src": "img/back.jpeg", "alt": "Rückseite"}
 ]
 {{</ gallery >}}
 

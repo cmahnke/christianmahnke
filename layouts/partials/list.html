@@ -14,12 +14,16 @@
 {{/* See https://stackoverflow.com/a/39900080 */}}
   <div class="pagination">
     <div class="pagination-links">
-      {{ if $paginator.HasPrev }}
+      {{- if $paginator.HasPrev -}}
         <a class="pagination-prev" href="{{ $paginator.Prev.URL }}">&#x25c0;&#xfe0e; {{ i18n "next_page" }}</a>
-      {{ end }}
-      {{ if $paginator.HasNext }}
+      {{- else -}}
+        <div class="pagination-prev"></div>
+      {{- end }}
+      {{- if $paginator.HasNext -}}
         <a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "previous_page" }} &#x25b6;&#xfe0e;</a>
-      {{ end }}
+      {{- else -}}
+        <div class="pagination-next"></div>
+      {{- end -}}
     </div>
   </div>
-{{- end }}
+{{- end -}}
