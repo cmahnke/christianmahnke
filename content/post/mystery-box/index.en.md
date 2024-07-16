@@ -2,7 +2,7 @@
 date: 2024-01-23T19:33:44+02:00
 title: "Mystery Box"
 tags:
-  - object
+  - Object
 ---
 
 I bought a (more or less) mysterious box:

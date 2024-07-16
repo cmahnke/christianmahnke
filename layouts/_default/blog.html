@@ -17,9 +17,13 @@
         {{- $tag := .Page.Title -}}
         {{- $i18nTag := i18n $tag -}}
         {{- if eq $i18nTag "" -}}
-          <a class="tag" data-count="{{ .Count }}" href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}" title="{{ $tag }}">#{{ partial (printf "tagcloud/%s.html" $render) $tag }} <span class="badge">({{ .Count }})</span></a>
+          {{- $i18nTag = i18n .Term -}}
+        {{- end -}}
+        {{/*  <span class="badge">({{ .Count }})</span> */}}
+        {{- if eq $i18nTag "" -}}
+          <a class="tag" data-count="{{ .Count }}" href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}" title="{{ $tag }}">{{ partial (printf "tagcloud/%s.html" $render) $tag }}</a>
         {{- else -}}
-          <a class="tag" data-count="{{ .Count }}" href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}" title="{{ $i18nTag }}">#{{ $i18nTag }} <span class="badge">({{ .Count }})</span></a>
+          <a class="tag" data-count="{{ .Count }}" href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}" title="{{ $i18nTag }}">{{ $i18nTag }}</a>
         {{- end -}}
       {{- end -}}
     {{- end -}}

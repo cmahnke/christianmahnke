@@ -3,7 +3,7 @@ date: 2022-11-27T08:33:44+02:00
 title: "Hang pictures in Sweet Home 3D"
 tags:
   - 3D
-  - exhibition
+  - Exhibition
   - Blender
 ---
 

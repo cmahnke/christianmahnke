@@ -3,10 +3,10 @@ date: 2024-06-12T11:33:44+02:00
 title: "Nocturnal shadows"
 draft: true
 tags:
-  - light
+  - Light
   - Licht2024
   - HDR
-  - photography
+  - Photography
   - Blog
   - Projektemacher.org
 ---

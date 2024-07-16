@@ -7,7 +7,7 @@ js:
   - https://aframe.io/releases/1.5.0/aframe.min.js
   - https://unpkg.com/aframe-orbit-controls@1.3.2/dist/aframe-orbit-controls.min.js
 tags:
-  - light
+  - Light
   - Licht2024
   - 3D
 ---

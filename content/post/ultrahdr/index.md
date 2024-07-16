@@ -2,9 +2,9 @@
 date: 2024-05-23T11:22:44+02:00
 title: "LibUltraHDR"
 tags:
-  - light
+  - Light
   - Licht2024
-  - digitalImages
+  - DigitalImages
   - HDR
 ---
 

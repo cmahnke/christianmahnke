@@ -2,7 +2,7 @@
 date: 2024-07-16T18:22:44+02:00
 title: 'Blogserie zum Thema "Licht"'
 tags:
-  - light
+  - Light
   - Licht2024
 draft: true
 ---

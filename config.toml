@@ -11,7 +11,7 @@ disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base", "hugo-video"]
 enableGitInfo = true
-#preserveTaxonomyNames = true
+preserveTaxonomyNames = true
 
 [languages]
     [languages.de]

@@ -3,9 +3,9 @@ date: 2024-06-12T11:33:44+02:00
 title: "UV-Photogrammetrie"
 draft: true
 tags:
-  - light
+  - Light
   - Licht2024
-  - digitalImages
+  - DigitalImages
   - HDR
   - 3D
 ---

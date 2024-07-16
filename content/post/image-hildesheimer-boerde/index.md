@@ -2,10 +2,10 @@
 date: 2023-03-02T22:39:44+02:00
 title: "Hildesheimer Börde"
 tags:
-  - light
+  - Light
   - HDR
-  - photography
-  - photo
+  - Photography
+  - Photo
 ---
 
 Eine nächtliche Aufnahme der Raststätte "Hildesheimer Börde" im Nebel.

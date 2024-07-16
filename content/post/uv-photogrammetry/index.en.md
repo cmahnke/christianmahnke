@@ -3,9 +3,9 @@ date: 2024-06-12T11:33:44+02:00
 title: "UV-Photogrammetrie"
 draft: true
 tags:
-  - light
+  - Light
   - Licht2024
-  - digitalImages
+  - DigitalImages
   - HDR
   - 3D
 ---
@@ -47,6 +47,6 @@ In addition, the UltraHDR texture should be displayed without additional lightin
 
 {{< hdr-canvas-check >}}
 
-If the HDR check fails, the colours are not displayed in their full luminance. 
+If the HDR check fails, the colours are not displayed in their full luminance.
 
 {{< hdr-model model="model/uranium.glb" >}}

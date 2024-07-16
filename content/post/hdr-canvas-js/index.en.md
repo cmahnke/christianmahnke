@@ -3,7 +3,7 @@ date: 2024-07-06T12:00:44+02:00
 title: "JavaScript library for HDR"
 tags:
   - Licht2024
-  - digitalImages
+  - DigitalImages
   - HDR
 ---
 

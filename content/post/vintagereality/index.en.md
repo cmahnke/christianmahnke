@@ -4,7 +4,7 @@ title: "VintageReality launched"
 tags:
   - Projektemacher.org
   - Blog
-  - light
+  - Light
 ---
 
 The latest blog incubated at the [Projektemacher Labs](https://labs.projektemacher.org/) has been started.

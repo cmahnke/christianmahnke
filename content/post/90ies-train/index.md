@@ -2,9 +2,9 @@
 date: 2023-11-03T19:39:44+02:00
 title: "Reisen wie 1996"
 tags:
-  - fun
-  - travel
-  - photo
+  - Fun
+  - Travel
+  - Photo
   - Retrocomputing
 ---
 

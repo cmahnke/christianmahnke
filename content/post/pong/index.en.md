@@ -3,11 +3,11 @@ date: 2024-04-15T13:58:44+02:00
 title: "DIY Project: Pong Visualisation"
 tags:
 - DIY
-- light
+- Light
 - Licht2024
-- fun
+- Fun
 - Retrocomputing
-- digitalImages
+- DigitalImages
 ---
 
 For some reason I came up with the idea of visualising [Pong](https://de.wikipedia.org/wiki/Pong)...
