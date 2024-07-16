@@ -3,7 +3,7 @@ date: 2024-06-25T11:22:44+02:00
 title: 'TTS for "Briefsteller"'
 tags:
   - TTS
-  - Projektemacher
+  - Projektemacher.org
 ---
 
 After the [Briefsteller blog](https://briefsteller.de/) had existed as a skeleton since the beginning of 2021, I used my summer holiday to bring the sample letter, which brought me to the topic ["letter writing guides"](https://en.wikipedia.org/wiki/Victorian_letter_writing_guides) in the first place, [online](https://briefsteller.de/post/der-haussekretaer/286/).

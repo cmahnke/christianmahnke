@@ -3,7 +3,7 @@ date: 2023-01-01T20:14:44+02:00
 title: "Kartenmaterial für Projektemacher Blogs"
 tags:
 - maps
-- Projektemacher
+- Projektemacher.org
 ---
 
 Ein weiterer Beitrag aus [Projektemacher Labs](https://labs.projektemacher.org/):

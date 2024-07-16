@@ -3,7 +3,7 @@ date: 2021-04-17T11:22:44+02:00
 title: "JPEG XL"
 tags:
 - digitalImages
-- Projektemacher
+- Projektemacher.org
 iiifContext: http://iiif.io/api/presentation/2/context.json
 outputs:
 - html
