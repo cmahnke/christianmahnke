@@ -5,6 +5,7 @@ tags:
   - light
   - Licht2024
   - digitalImages
+  - object
 ---
 
 # Bildanalyse mittels HDR Darstellung

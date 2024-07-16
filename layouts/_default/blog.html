@@ -1,8 +1,29 @@
 {{ define "title" -}}
   {{- .Title }} · {{ .Site.Title -}}
 {{- end }}
+
 {{ define "content" }}
-    {{- partial "header.html" . -}}
+  {{- $render := "tag" -}}
+  {{- if isset .Params "render" -}}
+    {{- $render = printf "tag-%s" (.Params.render) -}}
+  {{- end -}}
+
+  {{- partial "header.html" . -}}
+  <div class="tag-cloud-container">
+    {{- $tags := $.Site.Taxonomies.tags.ByCount -}}
+    {{- range $tags -}}
+      {{- if .Term -}}
+        {{- $tagURL := printf "tags/%s" .Term | relURL -}}
+        {{- $tag := .Page.Title -}}
+        {{- $i18nTag := i18n $tag -}}
+        {{- if eq $i18nTag "" -}}
+          <a class="tag" data-count="{{ .Count }}" href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}" title="{{ $tag }}">#{{ partial (printf "tagcloud/%s.html" $render) $tag }} <span class="badge">({{ .Count }})</span></a>
+        {{- else -}}
+          <a class="tag" data-count="{{ .Count }}" href="{{ "tags/" | relLangURL }}{{ $tag | urlize }}" title="{{ $i18nTag }}">#{{ $i18nTag }} <span class="badge">({{ .Count }})</span></a>
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  </div>
 
     <div class="content-container posts blog">
         {{- partial "section-heading.html" . -}}
