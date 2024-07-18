@@ -3,6 +3,7 @@ date: 2021-03-13T19:22:44+02:00
 title: "IIIF Konferenz 2021"
 tags:
 - IIIF
+- Conference
 ---
 
 I will present my [Corona projects](https://projektemacher.org/blogs/) at this year's [IIIF conference](https://iiif.io/event/2021/annual_conference/)!

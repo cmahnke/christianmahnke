@@ -3,6 +3,7 @@ date: 2021-06-24T16:30:00+02:00
 title: "IIIF Conference 2021: Scaling down..."
 tags:
 - IIIF
+- Conference
 js:
   - js/pdf-viewer.js
 ---
