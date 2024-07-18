@@ -528,6 +528,29 @@ a:visited {
       }
     }
 
+    .posts .post-body .post-preview {
+      display: flex;
+      justify-content: center;
+      margin: .6em 0;
+
+      @media (min-width : 75em) {
+          margin-bottom: 1.2em 0;
+      }
+
+      picture {
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 100%;
+
+          @media (min-width : 75em) {
+              width: 60%;
+          }
+        }
+      }
+    }
+
     .post-body {
         ul {
             list-style: none;

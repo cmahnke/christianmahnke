@@ -4,9 +4,10 @@ title: 'Siedelhof Jena von Curt Mücke (1985-1940)'
 tags:
   - Art
   - Etching
+preview: img/print.jpg
 ---
 
-Ich habe eine Radierung von [Curt Mücke](https://de.wikipedia.org/wiki/Curt_M%C3%BCcke) (1985-1940) gefunden...
+Ich habe eine kolorierte Radierung von [Curt Mücke](https://de.wikipedia.org/wiki/Curt_M%C3%BCcke) (1985-1940) gefunden...
 <!--more-->
 
 {{< gallery >}}

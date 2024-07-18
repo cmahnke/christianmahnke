@@ -4,9 +4,10 @@ title: 'Sheet by Imao Keinen (1855-1924)'
 tags:
   - Art
   - WoodblockPrint
+preview: img/print.jpg
 ---
 
-I bought a colour woodcut by [Imao Keinen (1855-1924)](https://de.wikipedia.org/wiki/Imao_Keinen)...
+I bought a Japanese colour woodcut by [Imao Keinen (1855-1924)](https://de.wikipedia.org/wiki/Imao_Keinen)...
 <!--more-->
 
 {{< gallery >}}

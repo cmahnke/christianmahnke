@@ -4,6 +4,7 @@ title: 'Puppen by Elsa Hoppe (1901-1992)'
 tags:
   - Art
   - Linocut
+preview: img/print.jpg
 ---
 
 I have acquired a linocut by Elsa Hoppe (1901-1992)...

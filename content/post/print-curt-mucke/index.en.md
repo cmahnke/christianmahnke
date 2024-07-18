@@ -4,9 +4,10 @@ title: 'Siedelhof Jena by Curt Mücke (1985-1940)'
 tags:
   - Art
   - Etching
+preview: img/print.jpg
 ---
 
-I found an etching by [Curt Mücke](https://de.wikipedia.org/wiki/Curt_M%C3%BCcke) (1985-1940)...
+I found an colourised etching by [Curt Mücke](https://de.wikipedia.org/wiki/Curt_M%C3%BCcke) (1985-1940)...
 <!--more-->
 
 {{< gallery >}}

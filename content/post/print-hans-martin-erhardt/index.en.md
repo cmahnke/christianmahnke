@@ -5,6 +5,7 @@ tags:
   - Art
   - Lithography
 draft: true
+preview: img/print.jpg
 ---
 
 I have acquired a lithograph by [Hans Martin Erhardt](https://de.wikipedia.org/wiki/Hans_Martin_Erhardt) (1935-2015)...

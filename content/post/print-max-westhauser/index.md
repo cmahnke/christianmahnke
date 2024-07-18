@@ -4,6 +4,7 @@ title: '"Liebespaar" von Max Westhäuser (1885-1956)'
 tags:
   - Art
   - WoodblockPrint
+preview: img/print.jpg
 ---
 
 Ich habe einen Farbholzschnitt von [Max Westhäuser (1885-1956)](https://de.wikipedia.org/wiki/Max_Westh%C3%A4user) erstanden...

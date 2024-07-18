@@ -4,6 +4,7 @@ title: 'Puppen von Elsa Hoppe (1901-1992)'
 tags:
   - Art
   - Linocut
+preview: img/print.jpg
 ---
 
 Ich habe einen Linolschnitt von Elsa Hoppe (1901-1992) erstanden...

@@ -4,6 +4,7 @@ title: '"Liebespaar" (Lovers) by Max Westhäuser (1885-1956)'
 tags:
   - Art
   - WoodblockPrint
+preview: img/print.jpg
 ---
 
 I have acquired a colour woodcut by [Max Westhäuser (1885-1956)](https://de.wikipedia.org/wiki/Max_Westh%C3%A4user)...
