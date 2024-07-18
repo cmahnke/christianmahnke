@@ -1,0 +1,80 @@
+<div class="tag-cloud-container">
+  <div class="tag-cloud-control">
+    <div class="tag-cloud-activate">{{ i18n "showTagcloud" }}</div>
+  </div>
+  <div id="tag-cloud" class="tag-cloud background"></div>
+  <script type="text/javascript">
+    {{- $tags := $.Site.Taxonomies.tags.ByCount -}}
+    const tags = [
+      {{- range $tags -}}
+        {{- if .Term -}}
+          {{- $tagURL := printf "tags/%s" .Term | relURL -}}
+          {{- $tag := .Page.Title -}}
+          {{- $i18nTag := i18n $tag -}}
+          {{- if eq $i18nTag "" -}}
+            {{- $i18nTag = i18n .Term -}}
+          {{- end -}}
+          {{- if eq $i18nTag "" -}}
+            ['{{ $tag }}', {{ .Count | safeJS }}, '{{ "tags/" | relLangURL }}{{ .Term | urlize }}'],
+          {{- else -}}
+            ['{{ $i18nTag }}', {{ .Count | safeJS }}, '{{ "tags/" | relLangURL }}{{ .Term | urlize }}'],
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    ];
+    let maxCount = 0;
+    tags.map((tag) => {
+      const i = tag[1];
+      maxCount = Math.max(maxCount, i);
+    });
+    const template = [ '#ff073a', '#701611']; //Green: '#f1ffb7'
+    let colors = chroma.bezier(template);
+    colors = chroma.scale(colors).mode('lch').colors(maxCount); //.correctLightness(true);
+
+    const options = {
+      list: tags,
+      /*
+      weightFactor: function (size) {
+        return Math.pow(size, 2.3) * $('#canvas').width() / 1024;
+      },
+      */
+      color: function(word, weight, fontSize, distance, theta) {
+        const count = tags.find(x => x[0] === word)[1];
+        return colors[count - 1];
+      },
+      gridSize: 10,
+      weightFactor: 14,
+      fontFamily: '"League Spartan", Futura, sans-serif',
+      rotateRatio: 0.5,
+      rotationSteps: 2,
+      classes: 'tag'
+    };
+
+    const cloud = document.getElementById('tag-cloud');
+    WordCloud(cloud, options);
+    /* See https://blog.cubieserver.de/2020/adding-a-tag-cloud-to-my-hugo-blog/ */
+    cloud.addEventListener('wordcloudstop', function (e) {
+      cloud.classList.add('hidden');
+      cloud.classList.remove('background');
+
+      document.querySelectorAll('#tag-cloud .tag').forEach(function (element) {
+        const word = element.innerHTML;
+        const meta = tags.find(x => x[0] === word);
+        const link = meta[2];
+        const title = `${word} (${meta[1]})`;
+        element.innerHTML = `<a href="${link}" style="color: inherit;" title="${title}">${word}</a>`;
+      });
+      const handle = cloud.closest('.tag-cloud-container').querySelector('.tag-cloud-activate');
+      handle.addEventListener('click', function (e) {
+        if (!cloud.classList.contains('show')) {
+          cloud.classList.remove('hidden');
+          cloud.classList.add('show');
+          cloud.classList.remove('hide');
+        } else {
+          cloud.classList.remove('show');
+          cloud.classList.add('hide');
+        }
+      });
+    });
+  </script>
+</div>

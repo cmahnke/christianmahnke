@@ -12,7 +12,7 @@ I bought a Japanese colour woodcut by [Imao Keinen (1855-1924)](https://de.wikip
 
 {{< gallery >}}
 [
-  {"src": "img/print.jpg", "alt": "Druck"}
+  {"src": "img/print.jpg", "alt": "Print"}
 ]
 {{</ gallery >}}
 
