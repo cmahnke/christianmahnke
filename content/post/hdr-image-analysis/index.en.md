@@ -8,9 +8,8 @@ tags:
   - Object
 ---
 
-# Image analysis using HDR visualisation
-
-This example is about a practical use case for HDR visualisation in the browser.
+This example is about a practical use case for HDR visualisation in the browser...
+<!--more-->
 
 The example below currently only works with Chrome-based browsers (such as Edge or Brave), as these already support HDR with the HTML canvas element. There are two reasons for this:
 * Standardisation is still ongoing

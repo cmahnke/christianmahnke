@@ -6,7 +6,8 @@ tags:
   - Projektemacher.org
 ---
 
-Nachdem das [Briefsteller Blog](https://briefsteller.de/) seit Anfang 2021 als Gerüst existierte, habe ich meinen Sommerurlaub genutzt um den Musterbrief, der mich überhaupt erst zu dem Thema ["Briefsteller"](https://de.wikipedia.org/wiki/Briefsteller) gebracht hat, [online](https://briefsteller.de/post/der-haussekretaer/286/) zu bringen.
+Nachdem das [Briefsteller Blog](https://briefsteller.de/) seit Anfang 2021 als Gerüst existierte, habe ich meinen Sommerurlaub genutzt um den Musterbrief, der mich überhaupt erst zu dem Thema ["Briefsteller"](https://de.wikipedia.org/wiki/Briefsteller) gebracht hat, [online](https://briefsteller.de/post/der-haussekretaer/286/) zu bringen...
+<!--more-->
 
 Ursprünglich war die Idee die Briefe als Podcast zu präsentieren. Auch die Aufnahmehardware (Audio-Interface, mehr oder weniger historische Mikrophone) ist beschafft, einzig es fehlt die Zeit. Daher war der erste Eintrag eine gute Gelegenheit sich einmal mit AI gestützter Sprachgenerierung zu beschäftigen.
 

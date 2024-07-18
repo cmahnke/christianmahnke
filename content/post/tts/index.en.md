@@ -6,7 +6,8 @@ tags:
   - Projektemacher.org
 ---
 
-After the [Briefsteller blog](https://briefsteller.de/) had existed as a skeleton since the beginning of 2021, I used my summer holiday to bring the sample letter, which brought me to the topic ["letter writing guides"](https://en.wikipedia.org/wiki/Victorian_letter_writing_guides) in the first place, [online](https://briefsteller.de/post/der-haussekretaer/286/).
+After the [Briefsteller blog](https://briefsteller.de/) had existed as a skeleton since the beginning of 2021, I used my summer holiday to bring the sample letter, which brought me to the topic ["letter writing guides"](https://en.wikipedia.org/wiki/Victorian_letter_writing_guides) in the first place, [online](https://briefsteller.de/post/der-haussekretaer/286/)...
+<!--more-->
 
 The original idea was to present the letters as a podcast. The recording hardware (audio interface, more or less historical microphones) is ready, the only thing missing is time. The first entry was therefore a good opportunity to dig into AI-supported speech generation.
 
