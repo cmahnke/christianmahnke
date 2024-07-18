@@ -7,7 +7,9 @@
     "lg-fullscreen": "^1.2.1",
     "hdr-canvas": "^0.0.5",
     "lightgallery": "^2.7.2",
-    "photoswipe": "^5.4.4"
+    "photoswipe": "^5.4.4",
+    "wordcloud": "^1.2.2",
+    "chroma-js": "^2.4.2"
   },
   "devDependencies": {
     "replace-in-file": "8.1.0",
@@ -19,7 +21,9 @@
     "logo-monogram-black": "yarn run logo-monogram && replace-in-file 'fill-opacity:.5' 'fill-opacity:1.0' static/images/cm-black.svg && replace-in-file 'fill:#d40000' 'fill:#000000' static/images/cm-black.svg",
     "logos": "yarn run logo-projektemacher && yarn run logo-monogram-black",
     "background": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Background/Background.svg -o static/images/bg.svg",
-    "icons": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Icons/No\\ Emoji.svg -o static/images/no-emoji.svg",
+    "icons": "yarn run no-emoji && yarn run tagcloud",
+    "no-emoji": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Icons/No\\ Emoji.svg -o static/images/no-emoji.svg",
+    "tagcloud": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Icons/Tagcloud.svg -o static/images/tagcloud.svg",
     "svgo": "yarn run background && yarn run icons && yarn run logos"
   }
 }

@@ -24,3 +24,6 @@ other = "The canvas element of your browser doesn't support HDR, please retry wi
 
 [hdrCanvasSupported]
 other = "The canvas element of your browser supports HDR!"
+
+[showTagcloud]
+other = "Show tag cloud"

@@ -924,7 +924,7 @@ a:visited {
 }
 
 @media (min-width : calc( #{$content-width} + 12em )) {
-    .sticky-top +  .content-container .section-menu {
+    .show-top-button +  .content-container .section-menu {
         display: block;
         opacity: 1;
     }

@@ -13,6 +13,7 @@ static/images/laborant.svg
 static/images/cm.svg
 static/images/cm-black.svg
 static/images/bill*.png
+static/images/tagcloud.svg
 static/pdfjs/**
 resources
 content/**/*-boxed.jpg

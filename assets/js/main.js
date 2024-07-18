@@ -9,6 +9,8 @@ window.stickybits = stickybits;
 
 window.addConsent = addConsent;
 window.initMap = initMap;
+window.chroma = require('chroma-js');
+window.WordCloud = require('wordcloud');
 
 window.enterView = require('enter-view');
 
