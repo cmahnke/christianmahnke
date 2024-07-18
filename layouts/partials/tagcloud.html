@@ -8,16 +8,16 @@
     const tags = [
       {{- range $tags -}}
         {{- if .Term -}}
-          {{- $tagURL := printf "tags/%s" .Term | relURL -}}
+          {{- $tagURL := printf "%s%s" ("tags/" | relLangURL) .Page.Title | urlize -}}
           {{- $tag := .Page.Title -}}
           {{- $i18nTag := i18n $tag -}}
           {{- if eq $i18nTag "" -}}
             {{- $i18nTag = i18n .Term -}}
           {{- end -}}
           {{- if eq $i18nTag "" -}}
-            ['{{ $tag }}', {{ .Count | safeJS }}, '{{ "tags/" | relLangURL }}{{ .Term | urlize }}'],
+            ['{{ $tag }}', {{ .Count | safeJS }}, '{{ $tagURL }}'],
           {{- else -}}
-            ['{{ $i18nTag }}', {{ .Count | safeJS }}, '{{ "tags/" | relLangURL }}{{ .Term | urlize }}'],
+            ['{{ $i18nTag }}', {{ .Count | safeJS }}, '{{ $tagURL }}'],
           {{- end -}}
         {{- end -}}
       {{- end -}}

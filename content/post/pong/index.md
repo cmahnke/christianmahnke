@@ -61,7 +61,7 @@ Dabei kommen für die Bildoperationen [OpenCV](https://opencv.org/) und [NumPy](
 ]
 {{</ gallery >}}
 
-Auf dem Bild sind die statischen Bereiche weiß, wie auf im Spiel, die farbigen Flächen zeigen, wie häufig in welchem Bereich des Bildes etwas passiert.
+Auf dem Bild sind die statischen Bereiche weiß, wie auf dem Spielfeld, die farbigen Flächen zeigen, wie häufig in welchem Bereich des Bildes etwas passiert.
 
 Die Verteilung folgt dieser Skala: Auf der linken Seite (Cyan) wenig Aktivität, rechts (Magenta) viel Aktivität.
 
