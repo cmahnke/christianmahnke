@@ -8,6 +8,7 @@ tags:
 - Fun
 - Retrocomputing
 - DigitalImages
+preview: pong-heatmap1.png
 ---
 
 Aus irgendeinem Grund bin ich auf die Idee gekommen [Pong](https://de.wikipedia.org/wiki/Pong) zu visualisieren...

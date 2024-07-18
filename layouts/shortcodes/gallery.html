@@ -20,7 +20,7 @@
           {{- $preview = $imgRes -}}
         {{- end -}}
 
-        <img src="{{ $preview.RelPermalink }}" alt="{{ $alt }}" />
+        <img src="{{ $preview.RelPermalink }}" alt="{{ $alt }}" class="gallery-preview" />
       </a>
       {{- else -}}
       {{ warnf "[shortcodes/gallery.html] Not found %s for %s" $image.src $.Page.File.Path }}

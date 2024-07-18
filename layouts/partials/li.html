@@ -21,7 +21,9 @@
                   <source media="(min-width:{{ . }}px)" srcset="{{ ($imgRes.Resize (printf "%sx" .)).RelPermalink }}">
                 {{- end -}}
                 {{- $imgRes := $.Page.Resources.Get $src -}}
-                <img src="{{ ($imgRes.Resize (printf "%sx" "1280")).RelPermalink }}" alt="{{ $.Title }}" />
+                <a title="{{ $.Title}}" href="{{ $.RelPermalink }}">
+                  <img src="{{ ($imgRes.Resize (printf "%sx" "1280")).RelPermalink }}" alt="{{ $.Title }}" />
+                </a>
               </picture>
             </div>
           {{- end -}}

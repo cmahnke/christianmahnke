@@ -537,11 +537,28 @@ a:visited {
           margin-bottom: 1.2em 0;
       }
 
+      a::before,
+      a::after {
+        content: unset;
+      }
+
       picture {
         display: flex;
         justify-content: center;
 
-        img {
+        a {
+          width: 100%;
+
+          @media (min-width : 75em) {
+              width: 60%;
+          }
+
+          img {
+            width: 100%;
+          }
+        }
+
+         &> img {
           width: 100%;
 
           @media (min-width : 75em) {
@@ -554,12 +571,23 @@ a:visited {
     .post-body {
         ul {
             list-style: none;
+            padding-inline-start: 0;
             /*padding-inline-start: 0;*/
 
             li {
                 padding-left: 1em;
             }
 
+            li::before {
+                content: '☞';
+                color: $marker-color;
+                font-size: 1.4em;
+                display: inline-block;
+                vertical-align: sub;
+                padding-right: .8em
+            }
+
+            /* Doesn't work in Safari
             li::marker {
                 content: '☞';
                 color: $marker-color;
@@ -568,6 +596,7 @@ a:visited {
                 vertical-align: sub;
                 padding-right: .4em
             }
+            */
         }
 
         hr {
