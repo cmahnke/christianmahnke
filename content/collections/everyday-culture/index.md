@@ -13,6 +13,7 @@ Meine Sammelschwerpunkte liegen im Bereich der Alltagskultur des 20. Jahrhundert
   * Tonbandgeräte
   * Projektoren
 * Kleiderbügel
+* Brillen
 * Flugzeugbestecke
 * Keramik, Glas und Porzellan Objekte
 

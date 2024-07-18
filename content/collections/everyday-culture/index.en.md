@@ -13,6 +13,7 @@ The main focus of my collection is on different everyday culture related artifac
   * Tape recorders
   * Projectors
 * Hangers
+* Glasses
 * Airplane cutlery
 * Ceramic, glass and porcelain objects
 
