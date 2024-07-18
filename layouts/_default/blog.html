@@ -10,25 +10,30 @@
   {{- partial "header.html" . -}}
 
     <div class="content-container posts blog">
+      {{- $pages := where .Site.Pages "Section" "post" -}}
+      {{- $mainSite := .Sites.First -}}
+      {{- if ne $mainSite .Site -}}
+        {{- $pages = ($pages | lang.Merge (where $mainSite.Pages "Section" "post")) -}}
+      {{- end -}}
+
+      {{- $paginator := .Paginate (where $pages "Params.displayinlist" "!=" false) -}}
+
+      {{- if eq .Paginator.PageNumber 1 -}}
         {{- partial "section-heading.html" . -}}
         {{- partial "tagcloud.html" . -}}
+      {{- else -}}
+        {{- partial "section-title.html" . -}}
+      {{- end -}}
 
-        <div class="posts">
-            {{- $pages := where .Site.Pages "Section" "post" -}}
-            {{- $mainSite := .Sites.First -}}
-            {{- if ne $mainSite .Site -}}
-                {{- $pages = ($pages | lang.Merge (where $mainSite.Pages "Section" "post")) -}}
-            {{- end -}}
-
-            {{- $paginator := .Paginate (where $pages "Params.displayinlist" "!=" false) -}}
-            {{- range $i, $page :=  $paginator.Pages -}}
-                {{- .Scratch.Set "class" "odd" -}}
-                {{- if modBool $i 2  -}}
-                    {{- .Scratch.Set "class" "even" -}}
-                {{- end -}}
-                {{- partial "li.html" . -}}
-            {{- end -}}
-        </div>
+      <div class="posts">
+        {{- range $i, $page :=  $paginator.Pages -}}
+          {{- .Scratch.Set "class" "odd" -}}
+          {{- if modBool $i 2  -}}
+            {{- .Scratch.Set "class" "even" -}}
+          {{- end -}}
+          {{- partial "li.html" . -}}
+        {{- end -}}
+      </div>
     </div>
     {{ if or $paginator.HasPrev $paginator.HasNext -}}
       <div class="pagination">
