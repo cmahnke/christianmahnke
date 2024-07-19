@@ -540,6 +540,12 @@ a:visited {
       a::before,
       a::after {
         content: unset;
+        margin-right: unset;
+        margin-left: unset
+      }
+
+      a:hover {
+          text-decoration: none;
       }
 
       picture {
@@ -648,6 +654,20 @@ a:visited {
             @media (max-width : 35em) {
                 font-size: 15vw;
             }
+        }
+
+        &.paginator {
+          a::before,
+          a::after {
+            content: unset;
+            margin-right: unset;
+            margin-left: unset
+          }
+
+          a:hover {
+            text-decoration: none ;
+          }
+
         }
 
         .parallax-bg {

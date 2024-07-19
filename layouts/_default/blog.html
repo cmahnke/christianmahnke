@@ -22,7 +22,14 @@
         {{- partial "section-heading.html" . -}}
         {{- partial "tagcloud.html" . -}}
       {{- else -}}
-        {{- partial "section-title.html" . -}}
+        <div class="section-head paginator">
+          <div class="parallax-bg">
+            <a href="{{ .RelPermalink }}" title="{{ .Title }}">
+              {{- $head := .CurrentSection -}}
+              <h1 class="{{ printf "%s-section" (path.Base $head.Permalink) }} section-head-title">{{ .Title }} {{ printf "%d / %d" .Paginator.PageNumber .Paginator.TotalPages }}</h1>
+            </a>
+          </div>
+        </div>
       {{- end -}}
 
       <div class="posts">
