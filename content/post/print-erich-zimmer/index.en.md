@@ -3,7 +3,7 @@ date: 2023-07-31T19:07:44+02:00
 title: 'Holzschnitt von Erich Zimmer (1908-2001)'
 tags:
   - Art
-  - Woodcut
+  - WoodblockPrint
 preview: img/print.jpg
 ---
 
