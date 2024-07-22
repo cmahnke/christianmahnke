@@ -12,8 +12,8 @@ I have purchased a woodcut by Erich Zimmer (1908-2001)...
 
 {{< gallery >}}
 [
-  {"src": "img/print.jpg", "alt": "Druck"},
-  {"src": "img/signature.jpg", "alt": "Signatur"}
+  {"src": "img/print.jpg", "alt": "Sheet"},
+  {"src": "img/signature.jpg", "alt": "Signature"}
 ]
 {{</ gallery >}}
 
