@@ -1,13 +1,13 @@
 ---
 date: 2024-06-21T14:07:44+02:00
-title: 'Siedelhof Jena von Curt Mücke (1985-1940)'
+title: 'Siedelhof Jena von Curt Mücke (1885-1940)'
 tags:
   - Art
   - Etching
 preview: img/print.jpg
 ---
 
-Ich habe eine kolorierte Radierung von [Curt Mücke](https://de.wikipedia.org/wiki/Curt_M%C3%BCcke) (1985-1940) gefunden...
+Ich habe eine kolorierte Radierung von [Curt Mücke](https://de.wikipedia.org/wiki/Curt_M%C3%BCcke) (1885-1940) gefunden...
 <!--more-->
 
 {{< gallery >}}
