@@ -25,9 +25,13 @@ Da Uranglas ein beliebtes Sammelgebiet ist, hier ein paar weitere Informationen 
 
 Da eines meiner technischen Interessengebiete ist, die digitale Vermittlung von Artefakten zu verbessern, hier ein Beispiel für eine solches Objekt unter UV-Bestrahlung. Dazu wurde das Objekt mittels Photogrammetrie erfasst, digital leicht nachbearbeitet und die Textur im Farbraum so verschoben, dass sie von einem HDR fähigen Browser angezeigt werden kann. Grundsätzlich funktioniert die Darstellung wie bei der [Vase aus dem Februar](/post/3d-model), nur die Aufnahmemethode und das Rendering der Textur unterscheiden sich. Letzteres erfordert allerdings (derzeit) einen Chrome-basierten Browser.
 
-# Technische Umsetzung
+# Digitalisierung und Nachbearbeitung
 
-Die Umsetzung war einfacher als gedacht, es sind im Grunde nur zwei Schritte erforderlich. Für das Beispiel wurde eine Angepasste Version von [Three.js](https://threejs.org/) verwendet.
+Allerdings war deutlich mehr Nachbearbeitung notwendig, da bei der Aufnahme unter UV Licht deutlich mehr Schatten geworfen wurden.
+
+# Präsentation
+
+Die Umsetzung war einfacher als gedacht, es sind im Grunde nur zwei Schritte erforderlich. Für das Beispiel wurde eine angepasste Version von [Three.js](https://threejs.org/) verwendet.
 * Erstellen eines GLTF Modells mit UltraHDR Textur, für das Konvertieren der Textur siehe [LibUltraHDR](/post/ultrahdr/). Die angepasste Textur muss im nächsten Schritt mit dem Modell zu einem Paket verpackt werden, dabei kommt [`obj2gltf`](https://github.com/CesiumGS/obj2gltf) zum Einsatz:
 
 ```
