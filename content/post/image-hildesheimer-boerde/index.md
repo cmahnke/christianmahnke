@@ -6,6 +6,7 @@ tags:
   - HDR
   - Photography
   - Photo
+preview: img/IMG_4538.hdr.jpeg
 ---
 
 Eine nächtliche Aufnahme der Raststätte "Hildesheimer Börde" im Nebel.

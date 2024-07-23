@@ -6,6 +6,7 @@ tags:
   - HDR
   - Photography
   - Photo
+preview: img/IMG_4538.hdr.jpeg
 ---
 
 The rest stop "Hildesheimer Börde" on a foggy night.
