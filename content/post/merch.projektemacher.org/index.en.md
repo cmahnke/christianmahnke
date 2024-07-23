@@ -3,6 +3,7 @@ date: 2022-10-26T19:58:44+02:00
 title: "Projektemacher Merch started"
 tags:
 - Fun
+- Projektemacher.org
 ---
 
 Even though some of the designs are older, the time has finally come:
