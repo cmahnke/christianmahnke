@@ -1,5 +1,5 @@
 ---
-date: 2024-06-12T11:33:44+02:00
+date: 2024-07-22T11:33:44+02:00
 title: "UV-Photogrammetrie"
 draft: true
 tags:
@@ -26,8 +26,7 @@ Da Uranglas ein beliebtes Sammelgebiet ist, hier ein paar weitere Informationen 
 Da eines meiner technischen Interessengebiete ist, die digitale Vermittlung von Artefakten zu verbessern, hier ein Beispiel für eine solches Objekt unter UV-Bestrahlung. Dazu wurde das Objekt mittels Photogrammetrie erfasst, digital leicht nachbearbeitet und die Textur im Farbraum so verschoben, dass sie von einem HDR fähigen Browser angezeigt werden kann. Grundsätzlich funktioniert die Darstellung wie bei der [Vase aus dem Februar](/post/3d-model), nur die Aufnahmemethode und das Rendering der Textur unterscheiden sich. Letzteres erfordert allerdings (derzeit) einen Chrome-basierten Browser.
 
 # Digitalisierung und Nachbearbeitung
-
-Allerdings war deutlich mehr Nachbearbeitung notwendig, da bei der Aufnahme unter UV Licht deutlich mehr Schatten geworfen wurden.
+Die Erstellung und Nachbereitung folgte [dem erprobtem Ablauf](/post/3d-models/), allerdings war deutlich mehr Nachbearbeitung notwendig, da bei der Aufnahme unter UV Licht deutlich mehr Schatten geworfen wurden. Ebenfalls wurden violette Reflexionen der UV Lampe entfernt.
 
 # Präsentation
 
