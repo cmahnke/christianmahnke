@@ -1,15 +1,15 @@
 ---
-title: "Andere"
+title: "Other"
 metaPage: true
 displayinlist: false
 weight: 4
 draft: true
 ---
 
-## Sammlungen
+## Collections
 
 * [Keramik Manufaktur Kupfermühle](http://kmk.golz.info/kmk.htm)
 
-## Bücher
+## Books
 
 * [josef chladek on photobooks and books](https://josefchladek.com/)
