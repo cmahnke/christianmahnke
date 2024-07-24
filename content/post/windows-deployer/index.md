@@ -5,8 +5,8 @@ tags:
   - Windows
 ---
 
-Wie installiert man eine frisch gebaute Software von GitLab / GitHub?
-Auf einem Windows-Rechner.
+Wie installiert man eine frisch gebaute Software von GitLab / GitHub?<br/>
+Auf einem Windows-Rechner.<br/>
 In einem internen Netz - hinter einem VPN Gateway
 <!--more-->
 
