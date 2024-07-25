@@ -7,7 +7,7 @@ tags:
 preview: img/print.jpg
 ---
 
-Ich habe einen japanischenFarbholzschnitt von [Imao Keinen (1855-1924)](https://de.wikipedia.org/wiki/Imao_Keinen) gekauft...
+Ich habe einen japanischen Farbholzschnitt von [Imao Keinen (1855-1924)](https://de.wikipedia.org/wiki/Imao_Keinen) gekauft...
 <!--more-->
 
 {{< gallery >}}

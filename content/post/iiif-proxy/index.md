@@ -4,6 +4,7 @@ title: "IIIF Proxy"
 tags:
   - IIIF
   - OpenCV
+  - DigitalImages
 ---
 
 Zur Verbesserung der "Ausstellbarkeit" digitaler Objekte, wie Münzen und Büchern habe ich einen Proxy für IIIF-Ressourcen geschrieben...
