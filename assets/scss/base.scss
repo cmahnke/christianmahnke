@@ -66,6 +66,9 @@ a:visited {
 .header {
     font-family: 'League Spartan', Futura, sans-serif;
     background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 
     &.sticky-top,
     &.js-is-sticky {

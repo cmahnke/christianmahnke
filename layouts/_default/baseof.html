@@ -33,16 +33,18 @@
 
   </head>
 
-     {{- $class := "" }}
-     {{- with .Page.File -}}
-       {{- if or (hasPrefix .Path "about") (hasPrefix .Path "/about") -}}
-           {{- $class = "about" -}}
-       {{- end -}}
-     {{- end -}}
+    {{- $class := "" }}
+    {{- with .Page.File -}}
+      {{- if or (hasPrefix .Path "about") (hasPrefix .Path "/about") -}}
+        {{- $class = "about" -}}
+      {{- else -}}
+        {{- $class = printf "%s-%s" "section" (replace .Dir "/" "" ) -}}
+      {{- end -}}
+    {{- end -}}
 
-     {{- if .Params.metaPage -}}
-         {{- $class = printf "%s %s" $class "meta" -}}
-     {{- end -}}
+    {{- if .Params.metaPage -}}
+      {{- $class = printf "%s %s" $class "meta" -}}
+    {{- end -}}
      <body class="{{ $class }} {{ if .IsHome }}home{{ end }}">
          <a name="top"></a>
          <div class="page-wrapper">

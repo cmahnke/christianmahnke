@@ -3,7 +3,7 @@ let mql = window.matchMedia('(max-width: 35em)');
 if (!mql.matches) {
     /* var sticky = new Sticky('#head');*/
     /* useGetBoundingClientRect: true, customVerticalPosition: true */
-    var sticky = stickybits('#head', { useStickyClasses: true, stuckClass: "sticky-top"});
+    //var sticky = stickybits('#head', { useStickyClasses: true, stuckClass: "sticky-top"});
 }
 
 if (document.querySelector('.type-text')) {
