@@ -16,12 +16,18 @@ Folgende Javascript und CSS Frameworks und Bibliotheken kommen zum Einsatz:
     <li><a href="https://jquery.com/">jQuery</a></li>
     <li><a href="https://github.com/js-cookie/js-cookie">js-cookie</a></li>
     <li><a href="https://necolas.github.io/normalize.css/">Normalize.css</a></li>
-    <li><a href="https://dollarshaveclub.github.io/stickybits/">Stickybits</a></li>
     <li><a href="https://russellgoldenberg.github.io/enter-view/">Enter-view.js</a></li>
     <li><a href="https://wordcloud2-js.timdream.org/#love">wordcloud2.js</a></li>
     <!--
     <li><a href="https://michalsnik.github.io/aos/">AOS (Animate On Scroll Library)</a></li>
     -->
+</ul>
+
+Einträge mit 3D Inhalten nutzen:
+
+<ul class="inline-list">
+    <li><a href="https://aframe.io/">A-FRAME</a></li>
+    <li><a href="https://threejs.org/">Three.js</a></li>
 </ul>
 
 Die Seite wird von [GitHub](https://github.com/) gehosted.
