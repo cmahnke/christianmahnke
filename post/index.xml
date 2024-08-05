@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Christian Mahnke</title>
+    <link>https://christianmahnke.de/post/</link>
+    <description>Recent content in Blog on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>&#34;Liebespaar&#34; von Max Westhäuser (1885-1956)</title>
+      <link>https://christianmahnke.de/post/print-max-westhauser/</link>
+      <pubDate>Tue, 16 Jul 2024 15:00:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/print-max-westhauser/</guid>
+      <description>&lt;p&gt;Ich habe einen Farbholzschnitt von &lt;a href=&#34;https://de.wikipedia.org/wiki/Max_Westh%C3%A4user&#34; target=&#34;_blank&#34;&gt;Max Westhäuser (1885-1956)&lt;/a&gt; erstanden&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript Bibliothek für HDR</title>
+      <link>https://christianmahnke.de/post/hdr-canvas-js/</link>
+      <pubDate>Sat, 06 Jul 2024 12:00:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/hdr-canvas-js/</guid>
+      <description>&lt;p&gt;Die JavaScript Unterstützung für die letzten Beiträge ist nun auch einzeln als NPM Modul verfügbar.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TTS für Briefsteller</title>
+      <link>https://christianmahnke.de/post/tts/</link>
+      <pubDate>Tue, 25 Jun 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/tts/</guid>
+      <description>&lt;p&gt;Nachdem das &lt;a href=&#34;https://briefsteller.de/&#34; target=&#34;_blank&#34;&gt;Briefsteller Blog&lt;/a&gt; seit Anfang 2021 als Gerüst existierte, habe ich meinen Sommerurlaub genutzt, um den Musterbrief, der mich überhaupt erst zu dem Thema &lt;a href=&#34;https://de.wikipedia.org/wiki/Briefsteller&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Briefsteller&amp;rdquo;&lt;/a&gt; gebracht hat, &lt;a href=&#34;https://briefsteller.de/post/der-haussekretaer/286/&#34; target=&#34;_blank&#34;&gt;online&lt;/a&gt; zu bringen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Siedelhof Jena von Curt Mücke (1885-1940)</title>
+      <link>https://christianmahnke.de/post/print-curt-mucke/</link>
+      <pubDate>Fri, 21 Jun 2024 14:07:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/print-curt-mucke/</guid>
+      <description>&lt;p&gt;Ich habe eine kolorierte Radierung von &lt;a href=&#34;https://de.wikipedia.org/wiki/Curt_M%C3%BCcke&#34; target=&#34;_blank&#34;&gt;Curt Mücke&lt;/a&gt; (1885-1940) gefunden&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung</title>
+      <link>https://christianmahnke.de/post/hdr-image-analysis/</link>
+      <pubDate>Thu, 06 Jun 2024 11:33:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/hdr-image-analysis/</guid>
+      <description>&lt;p&gt;In diesem Beispiel geht es um einen praktischen Anwendungsfall für die HDR Darstellung im Browser&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LibUltraHDR</title>
+      <link>https://christianmahnke.de/post/ultrahdr/</link>
+      <pubDate>Thu, 23 May 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/ultrahdr/</guid>
+      <description>&lt;p&gt;Für ein in Vorbereitung befindliches Projekt war es nach der &lt;a href=&#34;https://christianmahnke.de/post/hdr-awesome-list/&#34;&gt;Recherche&lt;/a&gt; notwendig einige Wege zu erkunden und Werkzeuge zu schaffen. Ausgehend von den Vorarbeiten von &lt;a href=&#34;https://gregbenzphotography.com/hdr/&#34; target=&#34;_blank&#34;&gt;Greg Benz&lt;/a&gt;, zur HDR-Unterstützung, war LibUltraHDR der sinnvollste Kandidat für weitere Experimente.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Blatt von Imao Keinen (1855-1924)</title>
+      <link>https://christianmahnke.de/post/print-iamo-keinen/</link>
+      <pubDate>Tue, 14 May 2024 19:55:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/print-iamo-keinen/</guid>
+      <description>&lt;p&gt;Ich habe einen japanischen Farbholzschnitt von &lt;a href=&#34;https://de.wikipedia.org/wiki/Imao_Keinen&#34; target=&#34;_blank&#34;&gt;Imao Keinen (1855-1924)&lt;/a&gt; gekauft&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Daten Container</title>
+      <link>https://christianmahnke.de/post/data-containers/</link>
+      <pubDate>Fri, 19 Apr 2024 17:33:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/data-containers/</guid>
+      <description>&lt;p&gt;Auch wenn es nicht notwendigerweise der intendierte Use Case ist, kann man mit Docker sehr einfach auch umfangreiche Datenmengen mit Anwendungen zur vereinfachten Bereitstellungen (wie z.B. APIs) verpacken. Das kann besonders hilfreich sein wenn z.B. Normdaten aus verschiedenen Quellen für Datenanreicherungen zusammenführen will.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DIY Projekt: Pong Visualisierung</title>
+      <link>https://christianmahnke.de/post/pong/</link>
+      <pubDate>Mon, 15 Apr 2024 13:58:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/pong/</guid>
+      <description>&lt;p&gt;Aus irgendeinem Grund bin ich auf die Idee gekommen &lt;a href=&#34;https://de.wikipedia.org/wiki/Pong&#34; target=&#34;_blank&#34;&gt;Pong&lt;/a&gt; zu visualisieren&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Radierung von Kurt Mühlenhaupt (1921-2006)</title>
+      <link>https://christianmahnke.de/post/print-kurt-muhlenhaupt/</link>
+      <pubDate>Wed, 27 Mar 2024 16:47:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/print-kurt-muhlenhaupt/</guid>
+      <description>&lt;p&gt;Ich habe eine Radierung von &lt;a href=&#34;https://de.wikipedia.org/wiki/Kurt_M%C3%BChlenhaupt&#34; target=&#34;_blank&#34;&gt;Kurt Mühlenhaupt&lt;/a&gt; (1921-2006) gefunden&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VintageReality gestartet</title>
+      <link>https://christianmahnke.de/post/vintagereality/</link>
+      <pubDate>Tue, 05 Mar 2024 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/vintagereality/</guid>
+      <description>&lt;p&gt;Das neueste Kind der &lt;a href=&#34;https://labs.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt; ist die seit Anfang 2023 ausgebaute Kategorie &amp;ldquo;1900 in 3D&amp;rdquo;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3D Modelle im Browser</title>
+      <link>https://christianmahnke.de/post/3d-models/</link>
+      <pubDate>Sat, 24 Feb 2024 10:16:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/3d-models/</guid>
+      <description>&lt;p&gt;Vielleicht wird mal eine virtuelle Ausstellung über orangene Keramik draus&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Radierung von Marie Gey-Heinze (1881-1908)</title>
+      <link>https://christianmahnke.de/post/print-maria-gey-heinze/</link>
+      <pubDate>Fri, 02 Feb 2024 14:07:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/print-maria-gey-heinze/</guid>
+      <description>&lt;p&gt;Ich habe eine Radierung von &lt;a href=&#34;https://de.wikipedia.org/wiki/Marie_Gey-Heinze&#34; target=&#34;_blank&#34;&gt;Marie Gey-Heinze&lt;/a&gt; (1881-1908) gekauft&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mystery Box</title>
+      <link>https://christianmahnke.de/post/mystery-box/</link>
+      <pubDate>Tue, 23 Jan 2024 19:33:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/mystery-box/</guid>
+      <description>&lt;p&gt;Ich habe eine (mehr oder weniger) mysteriöse Kiste gekauft:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Abstrakte Grafik von Hans Martin Erhardt (1935-2015)</title>
+      <link>https://christianmahnke.de/post/print-hans-martin-erhardt/</link>
+      <pubDate>Fri, 15 Dec 2023 16:07:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/print-hans-martin-erhardt/</guid>
+      <description>&lt;p&gt;Ich habe eine Linolschnitt von &lt;a href=&#34;https://de.wikipedia.org/wiki/Hans_Martin_Erhardt&#34; target=&#34;_blank&#34;&gt;Hans Martin Erhardt&lt;/a&gt; (1935-2015) erworben&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reisen wie 1996</title>
+      <link>https://christianmahnke.de/post/90ies-train/</link>
+      <pubDate>Fri, 03 Nov 2023 19:39:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/90ies-train/</guid>
+      <description>Manchmal wundert man sich wie alt die Systeme in Zügen sind, hier das Fahrgastinformationssystem eines ICE 1 mit einer AMD 5x86 P-75 S CPU.</description>
+    </item>
+    <item>
+      <title>Windows Deployer</title>
+      <link>https://christianmahnke.de/post/windows-deployer/</link>
+      <pubDate>Mon, 21 Aug 2023 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/windows-deployer/</guid>
+      <description>&lt;p&gt;Wie installiert man eine frisch gebaute Software von GitLab / GitHub?&lt;br/&gt;&#xA;Auf einem Windows-Rechner.&lt;br/&gt;&#xA;In einem internen Netz - hinter einem VPN Gateway&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Holzschnitt von Erich Zimmer (1908-2001)</title>
+      <link>https://christianmahnke.de/post/print-erich-zimmer/</link>
+      <pubDate>Mon, 31 Jul 2023 19:07:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/print-erich-zimmer/</guid>
+      <description>&lt;p&gt;Ich habe einen Holzschnitt von Erich Zimmer (1908-2001) erstanden&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Puppen von Elsa Hoppe (1901-1992)</title>
+      <link>https://christianmahnke.de/post/print-elsa-hoppe/</link>
+      <pubDate>Thu, 27 Jul 2023 09:07:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/print-elsa-hoppe/</guid>
+      <description>&lt;p&gt;Ich habe einen Linolschnitt von Elsa Hoppe (1901-1992) erstanden&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Farbholzschnitt von Oscar Droege (1898-1983)</title>
+      <link>https://christianmahnke.de/post/print-oscar-droege/</link>
+      <pubDate>Sat, 08 Jul 2023 15:15:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/print-oscar-droege/</guid>
+      <description>&lt;p&gt;Ich habe einen Farbholzschnitt von &lt;a href=&#34;https://de.wikipedia.org/wiki/Oscar_Droege&#34; target=&#34;_blank&#34;&gt;Oscar Droege&lt;/a&gt; (1898-1983) aufgetan&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GeoIP Tool</title>
+      <link>https://christianmahnke.de/post/geoip-tool/</link>
+      <pubDate>Sun, 30 Apr 2023 16:15:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/geoip-tool/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.elastic.co/de/kibana&#34; target=&#34;_blank&#34;&gt;Kibana&lt;/a&gt; Visualisierung mit Raumplänen braucht Daten, z.B. von Geräten in einem Gebäude. Aber irgendwo müssen die Daten herkommen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OAI-PMH Harvester</title>
+      <link>https://christianmahnke.de/post/oai-harvester/</link>
+      <pubDate>Sun, 16 Apr 2023 19:58:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/oai-harvester/</guid>
+      <description>&lt;p&gt;Den millionsten OAI-PMH Harvester wollte ich nicht schreiben,&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Holzschnitt von Eva Roemer (1989-1977)</title>
+      <link>https://christianmahnke.de/post/print-eva-roemer/</link>
+      <pubDate>Sun, 19 Mar 2023 15:18:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/print-eva-roemer/</guid>
+      <description>&lt;p&gt;Ich habe einen Holzschnitt von &lt;a href=&#34;https://de.wikipedia.org/wiki/Eva_Roemer&#34; target=&#34;_blank&#34;&gt;Eva Roemer&lt;/a&gt; (1989-1977) gefunden&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hildesheimer Börde</title>
+      <link>https://christianmahnke.de/post/image-hildesheimer-boerde/</link>
+      <pubDate>Thu, 02 Mar 2023 22:39:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/image-hildesheimer-boerde/</guid>
+      <description>&lt;p&gt;Eine nächtliche Aufnahme der Raststätte &amp;ldquo;Hildesheimer Börde&amp;rdquo; im Nebel.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kartenmaterial für Projektemacher Blogs</title>
+      <link>https://christianmahnke.de/post/maps/</link>
+      <pubDate>Sun, 01 Jan 2023 20:14:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/maps/</guid>
+      <description>Ein weiterer Beitrag aus Projektemacher Labs:&#xA;Vorbereitungen Bevor Beiträge auf Karten angezeigt werden können, müssen folgende Schritte erlegdigt sein:&#xA;Geokodierung von Beiträgen und / oder Tags Generierung einer anwendungsspezifischen Repräsentation (GeoJSON, KML) Erst danach kann das auf einer Karte visualisiert werden.&#xA;Ein Beispiel für die alten 3D Bilder ist hier zu finden.&#xA;Anzeige im Browser Um die generierten Daten im Browser anzuzeigen, kann das von OpenStreetMap bereitgestellte Kartenmaterial verwendet werden. Dabei übernimmt ein externer Server die Erzeugung der Bilddaten.</description>
+    </item>
+    <item>
+      <title>Spende ans Stadtarchiv Halle</title>
+      <link>https://christianmahnke.de/post/postcards-halle/</link>
+      <pubDate>Sat, 31 Dec 2022 12:00:00 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/postcards-halle/</guid>
+      <description>&lt;p&gt;Eine weitere Spende an ein Archiv dürfte inzwischen in Stadtarchiv von &lt;a href=&#34;https://de.wikipedia.org/wiki/Halle_%28Saale%29&#34; target=&#34;_blank&#34;&gt;Halle an der Saale&lt;/a&gt; eingetroffen sein. Es handelt sich um drei Postkarten, die Verkaufsstellen des &lt;a href=&#34;https://de.wikipedia.org/wiki/Pei%C3%9Fnitzinsel#Das_Gut_Gimritz&#34; target=&#34;_blank&#34;&gt;Stadtgutes Gimritz&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ausstellung &#34;Wilma Bräuner&#34;</title>
+      <link>https://christianmahnke.de/post/wilma-brauner/</link>
+      <pubDate>Sat, 03 Dec 2022 12:00:00 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/wilma-brauner/</guid>
+      <description>&lt;p&gt;Ab 6. Dezember findet in der Stadtgalerie „Alte Post“, Stephanstraße 4, Sylt / OT Westerland die Ausstellung &amp;ldquo;Spurensuche im Sylter Archiv -  Zum Leben und Werk von &lt;strong&gt;Wilma Bräuner&lt;/strong&gt; (1891 – 1985)&amp;rdquo; statt, an der Evelyn Kraßmann und ich zusammen mit einem &lt;a href=&#34;https://xn--wilmabruner-r8a.de/about/#ausstellung&#34; target=&#34;_blank&#34;&gt;Team&lt;/a&gt; gearbeitet haben. Die &lt;a href=&#34;https://xn--wilmabruner-r8a.de/&#34; target=&#34;_blank&#34;&gt;Webseite&lt;/a&gt; befindet sich noch im Aufbau&amp;hellip;&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;figure&gt;&#xA;    &#xA;        &lt;img src=&#34;https://christianmahnke.de/post/wilma-brauner/Plakat.jpg&#34;/&gt; &lt;figcaption&gt;&#xA;                &#xA;                    &lt;h4&gt;Ausstellungsplakat&lt;/h4&gt;&#xA;                &#xA;                &#xA;            &lt;/figcaption&gt;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Die Vernissage findet am Montag, den 5. Dezember 2022 um 18 Uhr in der Stadtgalerie statt.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bilder aufhängen in Sweet Home 3D</title>
+      <link>https://christianmahnke.de/post/hang-pictures-in-sweethome3d/</link>
+      <pubDate>Sun, 27 Nov 2022 08:33:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/hang-pictures-in-sweethome3d/</guid>
+      <description>&lt;p&gt;Für die Planung einer &lt;a href=&#34;https://christianmahnke.de/post/wilma-brauner/&#34;&gt;Ausstellung&lt;/a&gt; in 3D habe ich mich damit beschäftigt, wie vorarrangierte Bilderrahmen in &lt;a href=&#34;https://www.sweethome3d.com/&#34; target=&#34;_blank&#34;&gt;Sweet Home 3D&lt;/a&gt; importiert werden könnten&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Projektemacher Merch gestartet</title>
+      <link>https://christianmahnke.de/post/merch.projektemacher.org/</link>
+      <pubDate>Wed, 26 Oct 2022 19:58:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/merch.projektemacher.org/</guid>
+      <description>&lt;p&gt;Auch wenn einige Entwürfe schon älter sind, ist es nun endlich so weit:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Proxy</title>
+      <link>https://christianmahnke.de/post/iiif-proxy/</link>
+      <pubDate>Wed, 26 Jan 2022 11:44:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/iiif-proxy/</guid>
+      <description>&lt;p&gt;Zur Verbesserung der &amp;ldquo;Ausstellbarkeit&amp;rdquo; digitaler Objekte, wie Münzen und Büchern habe ich einen Proxy für IIIF-Ressourcen geschrieben&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Konferenz 2021: Scaling down...</title>
+      <link>https://christianmahnke.de/post/iiif-conf-2021-scaling-down/</link>
+      <pubDate>Thu, 24 Jun 2021 16:30:00 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/iiif-conf-2021-scaling-down/</guid>
+      <description>&lt;p&gt;Heute war es soweit, ich habe meinen Vortrag zu der Infrastruktur meiner Blogs auf der diesjährigen IIIF Konferenz gehalten.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instagram</title>
+      <link>https://christianmahnke.de/post/instagram/</link>
+      <pubDate>Mon, 31 May 2021 15:23:46 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/instagram/</guid>
+      <description>Seit heute gibt es einen ergänzenden Instagram Kanal. Dies ist erstmal nur ein Experiment. Was aber schon negativ aufgefallen ist: Es scheint keine offizielle und stabile API zum Anlegen von Beiträgen zu geben - sehr unprofessionell!</description>
+    </item>
+    <item>
+      <title>DIY Projekt: Telefonhülle</title>
+      <link>https://christianmahnke.de/post/phone-case/</link>
+      <pubDate>Mon, 31 May 2021 13:58:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/phone-case/</guid>
+      <description>&lt;p&gt;Heute mal wieder eines der eher seltenen nicht-digitalen Projekte: Eine Hülle für mein neues Telefon.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Briefsteller.de gestartet</title>
+      <link>https://christianmahnke.de/post/briefsteller/</link>
+      <pubDate>Tue, 27 Apr 2021 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/briefsteller/</guid>
+      <description>&lt;p&gt;Endlich, der letzte der im zweiten Corona Lockdown geplanten Blog ist nun online!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JPEG XL</title>
+      <link>https://christianmahnke.de/post/jpeg-xl/</link>
+      <pubDate>Sat, 17 Apr 2021 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/jpeg-xl/</guid>
+      <description>Warum JPEG XL? JPEG XL ist ein neues Format für Rasterbilder, so neu, das zur Zeit als dieser Text geschrieben wurde, es als Lemma noch nicht in der deutschen Wikipedia geführt wurde. Was genau JPEG XL anders bzw. besser macht als das allseits bekannte JPEG kann man dort nachlesen. Wir beschränken uns hier auf den Mehrwert für die Projektmacher Blogs:&#xA;Weniger Speicherplatz benötigt Verlustfreie Kompression möglich Nachteile sind derzeit noch:</description>
+    </item>
+    <item>
+      <title>IIIF Konferenz 2021</title>
+      <link>https://christianmahnke.de/post/iiif-conference-2021/</link>
+      <pubDate>Sat, 13 Mar 2021 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/iiif-conference-2021/</guid>
+      <description>&lt;p&gt;Ich werde meine &lt;a href=&#34;https://projektemacher.org/blogs/&#34; target=&#34;_blank&#34;&gt;Corona-Projekte&lt;/a&gt; auf der diesjährigen &lt;a href=&#34;https://iiif.io/event/2021/annual_conference/&#34; target=&#34;_blank&#34;&gt;IIIF Konferenz&lt;/a&gt; vorstellen!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Labs.projektemache.org gestartet</title>
+      <link>https://christianmahnke.de/post/labs/</link>
+      <pubDate>Sat, 13 Mar 2021 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/labs/</guid>
+      <description>&lt;p&gt;Um in Zukunft eine Seite zu haben, die auch ruhig mal für ein paar Tage kaputt gehen kann und um auch mal einige Dinge halbfertig präsentieren zu können, gibt es nun die &lt;a href=&#34;https://labs.projektemache.org&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wohnzimmer renoviert</title>
+      <link>https://christianmahnke.de/post/living-room/</link>
+      <pubDate>Wed, 13 Jan 2021 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/living-room/</guid>
+      <description>Neben meinen Blogs habe ich die Corona-Zeit genutzt mein Wohnzimmer zu renovieren. Auch hier konnte ich einige jahrealte Ideen umsetzen:&#xA;Gestreift historisch Tapeten vom Zeitzeug anbringen Meine Bibliothek neu aufstellen Hier die einzelnen Schritte:</description>
+    </item>
+    <item>
+      <title>Der erste Beitrag</title>
+      <link>https://christianmahnke.de/post/first-post/</link>
+      <pubDate>Sun, 06 Dec 2020 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/first-post/</guid>
+      <description>&lt;p&gt;Nachdem in den letzten Monaten schon die Seite &lt;a href=&#34;https://projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher.org&lt;/a&gt; online gegangen ist, um als Dachmarke für meine alten Tumblr Blogs und die Projekte des ersten Corona Lockdowns unter einem Dach zu vereinen, startet nun auch meine persönliche Homepage.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

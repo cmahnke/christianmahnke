@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>IIIF Proxy · Christian Mahnke</title>
+    
+
+<meta http-equiv="Content-Language" content="en">
+
+<meta name="description" content="Persönliche Homepage von Christian Mahnke">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/en/post/iiif-proxy/" /><meta property="og:title" content="IIIF Proxy" />
+
+  
+  
+    
+  
+
+
+
+<meta name="generator" content="Hugo 0.129.0">
+<meta name="projektemacher.org:build-date" content="2024-08-05 23:38:27.98607284 &#43;0000 UTC m=&#43;25.974083412"><meta name="projektemacher.org:git-commit" content=""><meta name="projektemacher.org:stats" content="{&#34;count&#34;:&#34;156&#34;,&#34;latest&#34;:&#34;2024-07-22T11:33:44&#43;02:00&#34;}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link href="https://christianmahnke.de/css/fc464f93a99db4b076ffd74c4b484086.min.af2b0d4800c92fbffbadc0f58ed23680f701a554063a9e34d36bf1b7970ae1f4.css" rel="stylesheet" integrity="sha256-rysNSADJL7/7rcD1jtI2gPcBpVQGOp4002vxt5cK4fQ=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.921f190e94de53b05aab0adefbae836f33433e3299779b7828ae97caa2b2ca43.js" integrity="sha256-kh8ZDpTeU7Baqwre+66DbzNDPjKZd5t4KK6XyqKyykM="></script>
+<script src="https://christianmahnke.de/js/721c4fdccbf9e7c9a389daf09b558bfc.min.4e32458dd49b055ebc538e08a2af335b376dc373cf097fd6c2a377a9ebb48744.js" integrity="sha256-TjJFjdSbBV68U44Ioq8zWzdtw3PPCX/WwqN3qeu0h0Q="></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/img/favicon.ico" type="image/x-icon">
+
+
+    </head><body class="section-postiiif-proxy ">
+         <a name="top"></a>
+         <div class="page-wrapper">
+             <div class="main">
+                 <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-">
+            <a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses</a>
+          </li><li class="navigation-item navto-collections">
+            <a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections</a>
+          </li><li class="navigation-item current navto-post">
+            <a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog</a>
+          </li><li class="navigation-item navto-links">
+            <a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links</a>
+          </li><li class="navigation-item navto-about">
+            <a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About</a>
+          </li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/iiif-proxy/" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+        
+<div class="post ">
+    <div class="content">
+        <h1 class="post-title">IIIF Proxy</h1><div class="date">
+                <a href="https://christianmahnke.de/en/post/iiif-proxy/">Wednesday, January 26, 2022
+                </a>
+            </div>
+        
+        <div class="post-body">
+            <p>To improve the &lsquo;displayability&rsquo; of digital objects such as coins and books, I have written a proxy for IIIF resources&hellip;</p>
+<p>The digital collections of the University of Göttingen are mainly fed from two portals:</p>
+<ul>
+<li><a href="https://sammlungen.uni-goettingen.de/index/" target="_blank">Scientific Collections of the Georg-August-Universität Göttingen</a></li>
+<li><a href="https://gdz.sub.uni-goettingen.de/" target="_blank">Göttingen Digitisation Centre</a></li>
+</ul>
+<p>Both make their digitised material available via <a href="https://iiif.io/" target="_blank">IIIF</a>. Unfortunately, the images provided are not optimised for aesthetically pleasing secondary use.</p>
+<p>In order to minimise manual post-processing and the resulting storage effort, I have slightly extended an existing IIIF server - <a href="https://github.com/dbmdz/iiif-server-hymir/" target="_blank">Hymir from MDZ</a> - so that it is able to sit on an institutional server and reshape the images delivered by it.</p>
+<p>In order to keep the image processing configurable, a field of the IIIF Image API is used to specify the operation. The <a href="https://iiif.io/api/image/2.1/#quality" target="_blank"><code>quality</code></a> field was suitable for this, the proxy allows:</p>
+<ul>
+<li><code>nofold</code> - remove page fold</li>
+<li><code>transparent-background</code> - Transparent background</li>
+<li><code>nofold+transparentbg</code> - both together</li>
+</ul>
+<p>For the image operations themselves, <a href="https://opencv.org/" target="_blank">OpenCV</a> is used, whereby the background is simply removed with a threshold value and only at the edges - i.e. made transparent. Recognising the folds is a little more complicated, but it&rsquo;s not rocket science either:</p>
+<ul>
+<li>Recognising lines (<a href="https://en.wikipedia.org/wiki/Hough_transform" target="_blank">Probabilistic Hough Line Transform</a>) in the fold area depending on whether they are left or right-sided</li>
+<li>Sorting the recognised lines by angle and length to find the fold</li>
+<li>Rotation to align the detected fold vertically</li>
+</ul>
+<p>But here the reliability could be improved.</p>
+<h1 id="examples">Examples</h1>
+<p>The following examples show digital copies in the respective portal and in the viewer of the proxy. The viewer of the proxy allows the background colour to be changed in order to increase the contrast. A blue background is preset in the examples.</p>
+<h2 id="transparent-background">Transparent background</h2>
+<div id="_gallery-32e5c4df7636454e2ebc918cf3c6552d" class="gallery "><a class="gallery-image" href="img/Sammlungsportal-record_DE-MUS-062622_kenom_127703.png" data-pswp-width="2980" data-pswp-height="1664" target="_blank"><img src="https://christianmahnke.de/en/post/iiif-proxy/img/Sammlungsportal-record_DE-MUS-062622_kenom_127703_hue04789cb18bfad7b329d7cc25081aa3a_1540800_250x0_resize_box_3.png" alt="Before" class="gallery-preview" />
+      </a><a class="gallery-image" href="img/Proxy-record_DE-MUS-062622_kenom_127703.png" data-pswp-width="2980" data-pswp-height="1664" target="_blank"><img src="https://christianmahnke.de/en/post/iiif-proxy/img/Proxy-record_DE-MUS-062622_kenom_127703_hu9151c49b2554c2cd3558bd4e1dd5571a_2535425_250x0_resize_box_3.png" alt="After" class="gallery-preview" />
+      </a></div>
+
+<script type="text/javascript">
+  window.photoswipe("#_gallery-32e5c4df7636454e2ebc918cf3c6552d", "a.gallery-image")
+</script>
+<p><a href="https://sammlungen.uni-goettingen.de/objekt/record_DE-MUS-062622_kenom_127703/" target="_blank">Original presentation</a></p>
+<div class="small-font-right">
+Picture: Coin Cabinet of the University of Göttingen, Stephan Eckardt, Archaeological Institute Göttingen, 2014 / Licence: Namensnennung - Nicht kommerziell 4.0 (CC BY-NC 4.0)
+</div>
+<h2 id="without-page-fold">Without page fold</h2>
+<div id="_gallery-790d2c60336301a0e526cd9b4ddb7435" class="gallery "><a class="gallery-image" href="img/GDZ-DE-611-HS-3461927_00000016.png" data-pswp-width="2980" data-pswp-height="1664" target="_blank"><img src="https://christianmahnke.de/en/post/iiif-proxy/img/GDZ-DE-611-HS-3461927_00000016_hue04789cb18bfad7b329d7cc25081aa3a_3284433_250x0_resize_box_3.png" alt="Before" class="gallery-preview" />
+      </a><a class="gallery-image" href="img/Proxy-DE-611-HS-3461927_00000016.png" data-pswp-width="2980" data-pswp-height="1664" target="_blank"><img src="https://christianmahnke.de/en/post/iiif-proxy/img/Proxy-DE-611-HS-3461927_00000016_hu9151c49b2554c2cd3558bd4e1dd5571a_1940711_250x0_resize_box_3.png" alt="After" class="gallery-preview" />
+      </a></div>
+
+<script type="text/javascript">
+  window.photoswipe("#_gallery-790d2c60336301a0e526cd9b4ddb7435", "a.gallery-image")
+</script>
+<p><a href="https://gdz.sub.uni-goettingen.de/id/DE-611-HS-3461927?tify=%7B%22pages%22%3A%5B16%5D%2C%22view%22%3A%22info%22%7D" target="_blank">Original presentation</a></p>
+<div class="small-font-right">
+Picture: Niedersächsische Staats- und Universitätsbibliothek Göttingen / Licence: Public Domain Mark 1.0 (PDM)
+</div>
+<br>
+<p>The project is available on <a href="https://github.com/cmahnke/iiif-proxy" target="_blank">GitHub</a>.</p>
+<h1 id="update-11422">Update 11.4.22</h1>
+<p>Due to time constraints, the project will not be continued for the time being, especially as the upstream project is not very active at the moment&hellip;</p>
+        </div>
+    </div><div class="meta">
+          <div class="tags"><a href="https://christianmahnke.de/en/tags/IIIF" title="IIIF">#IIIF</a><a href="https://christianmahnke.de/en/tags/OpenCV" title="OpenCV">#OpenCV</a><a href="https://christianmahnke.de/en/tags/DigitalImages" title="Digital images">#Digital images</a></div>
+        </div>
+    
+</div>
+
+    </div>
+
+             </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-">
+            <a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses</a>
+          </li><li class="navigation-item navto-collections">
+            <a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections</a>
+          </li><li class="navigation-item current navto-post">
+            <a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog</a>
+          </li><li class="navigation-item navto-links">
+            <a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links</a>
+          </li><li class="navigation-item navto-about">
+            <a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About</a>
+          </li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/iiif-proxy/" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="Librarything"><div class="link-image librarything"></div>Librarything</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Contact</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="Send eMail">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="privacy" title="Privacy policy">Privacy policy</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXXI - MMXXIV Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+     </body>
+ </html>

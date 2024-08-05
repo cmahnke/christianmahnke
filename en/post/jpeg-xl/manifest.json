@@ -1,0 +1,77 @@
+{"@context":"http://iiif.io/api/presentation/2/context.json",
+    "@type":"sc:Manifest",
+    "@id":"https://christianmahnke.de/en/post/jpeg-xl/",
+    "viewingDirection":"left-to-right",
+    "viewingHint":"paged",
+
+    "label":"JPEG XL","sequences":[
+      {
+         "@id":"https://christianmahnke.de/en/post/jpeg-xl/sequence/normal",
+         "@type":"sc:Sequence",
+         "label":"Current Page Order",
+         "viewingDirection":"left-to-right",
+         "viewingHint":"paged",
+         "startCanvas":"https://christianmahnke.de/en/post/jpeg-xl/canvas/front",
+         "canvases":[{
+                   "@id":"https://christianmahnke.de/en/post/jpeg-xl/canvas/front",
+                   "@type":"sc:Canvas","viewingHint":"non-paged","label":"Front","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://christianmahnke.de/en/post/jpeg-xl/front/full/full/0/default_hu4ef75312e1fd2f653e04f502716dbcbf_4962144_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://christianmahnke.de/post/jpeg-xl/annotation/front",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://christianmahnke.de/post/jpeg-xl/front",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://christianmahnke.de/post/jpeg-xl/front",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 6933,
+                            "width": 4946
+                         },
+                         "on":"https://christianmahnke.de/en/post/jpeg-xl/canvas/front"
+                    }]
+               },{
+                   "@id":"https://christianmahnke.de/en/post/jpeg-xl/canvas/back",
+                   "@type":"sc:Canvas","viewingHint":"non-paged","label":"Back","height": 400,
+                   "width": 300,"thumbnail": {
+                       "@id": "https://christianmahnke.de/en/post/jpeg-xl/back/full/full/0/default_hub0fe8811f1d150023fdc982121a5e81e_5735988_120x80_resize_q95_box.jpg",
+                       "format": "image/jpeg",
+                       "@type":"dctypes:Image",
+                       "height": 80,
+                       "width": 120
+
+                    },
+                    "images":[{
+                         "@context":"http://iiif.io/api/presentation/2/context.json",
+                         "@id":"https://christianmahnke.de/post/jpeg-xl/annotation/back",
+                         "@type":"oa:Annotation",
+                         "motivation":"sc:painting",
+                         "resource":{
+                            "@id":"https://christianmahnke.de/post/jpeg-xl/back",
+                            "@type":"dctypes:Image",
+                            "format":"image/jpeg",
+                            "service":{
+                               "@context":"http://iiif.io/api/image/2/context.json",
+                               "@id":"https://christianmahnke.de/post/jpeg-xl/back",
+                               "profile":"http://iiif.io/api/image/2/level0.json"
+                            },
+                            "height": 6953,
+                            "width": 4956
+                         },
+                         "on":"https://christianmahnke.de/en/post/jpeg-xl/canvas/back"
+                    }]
+               }]
+     }
+  ]}

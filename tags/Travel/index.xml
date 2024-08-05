@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Travel on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Travel/</link>
+    <description>Recent content in Travel on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Mon, 29 Jul 2024 20:58:11 +0200</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/tags/Travel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reisen wie 1996</title>
+      <link>https://christianmahnke.de/post/90ies-train/</link>
+      <pubDate>Fri, 03 Nov 2023 19:39:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/90ies-train/</guid>
+      <description>Manchmal wundert man sich wie alt die Systeme in Zügen sind, hier das Fahrgastinformationssystem eines ICE 1 mit einer AMD 5x86 P-75 S CPU.</description>
+    </item>
+  </channel>
+</rss>

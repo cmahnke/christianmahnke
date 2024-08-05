@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Object on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Object/</link>
+    <description>Recent content in Object on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Mon, 29 Jul 2024 20:58:11 +0200</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/tags/Object/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung</title>
+      <link>https://christianmahnke.de/post/hdr-image-analysis/</link>
+      <pubDate>Thu, 06 Jun 2024 11:33:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/hdr-image-analysis/</guid>
+      <description>&lt;p&gt;In diesem Beispiel geht es um einen praktischen Anwendungsfall für die HDR Darstellung im Browser&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mystery Box</title>
+      <link>https://christianmahnke.de/post/mystery-box/</link>
+      <pubDate>Tue, 23 Jan 2024 19:33:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/mystery-box/</guid>
+      <description>&lt;p&gt;Ich habe eine (mehr oder weniger) mysteriöse Kiste gekauft:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

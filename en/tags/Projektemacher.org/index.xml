@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projektemacher.org on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Projektemacher.org/</link>
+    <description>Recent content in Projektemacher.org on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Mon, 29 Jul 2024 20:58:11 +0200</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/en/tags/Projektemacher.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TTS for &#34;Briefsteller&#34;</title>
+      <link>https://christianmahnke.de/en/post/tts/</link>
+      <pubDate>Tue, 25 Jun 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/tts/</guid>
+      <description>&lt;p&gt;After the &lt;a href=&#34;https://briefsteller.de/&#34; target=&#34;_blank&#34;&gt;Briefsteller blog&lt;/a&gt; had existed as a skeleton since the beginning of 2021, I used my summer holiday to bring the sample letter, which brought me to the topic &lt;a href=&#34;https://en.wikipedia.org/wiki/Victorian_letter_writing_guides&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;letter writing guides&amp;rdquo;&lt;/a&gt; in the first place, &lt;a href=&#34;https://briefsteller.de/post/der-haussekretaer/286/&#34; target=&#34;_blank&#34;&gt;online&lt;/a&gt;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VintageReality launched</title>
+      <link>https://christianmahnke.de/en/post/vintagereality/</link>
+      <pubDate>Tue, 05 Mar 2024 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/vintagereality/</guid>
+      <description>&lt;p&gt;The latest blog incubated at the &lt;a href=&#34;https://labs.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt; has been started.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Maps for my Projektemacher blogs</title>
+      <link>https://christianmahnke.de/en/post/maps/</link>
+      <pubDate>Sun, 01 Jan 2023 20:14:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/maps/</guid>
+      <description>Another addition from Projektemacher Labs:&#xA;Preparations Before posts can be displayed on maps, the following steps must be taken:&#xA;Geocoding of posts and / or tags Generation of an application-specific representations (GeoJSON, KML) After this has been done, the next step can be approached.&#xA;An example of the old 3D images can be found here.&#xA;Plotting data on a map in a browser The map material provided by OpenStreetMap can be used to display the generated data in the browser.</description>
+    </item>
+    <item>
+      <title>Projektemacher Merch started</title>
+      <link>https://christianmahnke.de/en/post/merch.projektemacher.org/</link>
+      <pubDate>Wed, 26 Oct 2022 19:58:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/merch.projektemacher.org/</guid>
+      <description>&lt;p&gt;Even though some of the designs are older, the time has finally come:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Briefsteller.de startet</title>
+      <link>https://christianmahnke.de/en/post/briefsteller/</link>
+      <pubDate>Tue, 27 Apr 2021 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/briefsteller/</guid>
+      <description>&lt;p&gt;Finally, the last of the blogs stared during the second Corona Lockdown is now online!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JPEG XL</title>
+      <link>https://christianmahnke.de/en/post/jpeg-xl/</link>
+      <pubDate>Sat, 17 Apr 2021 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/jpeg-xl/</guid>
+      <description>Why JPEG XL? JPEG XL is a new format for raster images, in fact, is&amp;rsquo;s so recent (at the time this text was written) there haven&amp;rsquo;t even been an entry in the German Wikipedia.&#xA;You can read there what exactly JPEG XL does differently or better than the well-known JPEG. We limit ourselves here to the advantages for the Projektemacher blogs:&#xA;Less storage space required Lossless compression available Disadvantages are currently:</description>
+    </item>
+    <item>
+      <title>Labs.projektemache.org gestartet</title>
+      <link>https://christianmahnke.de/en/post/labs/</link>
+      <pubDate>Sat, 13 Mar 2021 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/labs/</guid>
+      <description>&lt;p&gt;In order to have a page in the future that can easily break for a few days and to be able to present some things half-finished, there is now the &lt;a href=&#34;https://labs.projektemache.org&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

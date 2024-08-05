@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Light on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Light/</link>
+    <description>Recent content in Light on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Mon, 29 Jul 2024 20:58:11 +0200</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/tags/Light/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung</title>
+      <link>https://christianmahnke.de/post/hdr-image-analysis/</link>
+      <pubDate>Thu, 06 Jun 2024 11:33:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/hdr-image-analysis/</guid>
+      <description>&lt;p&gt;In diesem Beispiel geht es um einen praktischen Anwendungsfall für die HDR Darstellung im Browser&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LibUltraHDR</title>
+      <link>https://christianmahnke.de/post/ultrahdr/</link>
+      <pubDate>Thu, 23 May 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/ultrahdr/</guid>
+      <description>&lt;p&gt;Für ein in Vorbereitung befindliches Projekt war es nach der &lt;a href=&#34;https://christianmahnke.de/post/hdr-awesome-list/&#34;&gt;Recherche&lt;/a&gt; notwendig einige Wege zu erkunden und Werkzeuge zu schaffen. Ausgehend von den Vorarbeiten von &lt;a href=&#34;https://gregbenzphotography.com/hdr/&#34; target=&#34;_blank&#34;&gt;Greg Benz&lt;/a&gt;, zur HDR-Unterstützung, war LibUltraHDR der sinnvollste Kandidat für weitere Experimente.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DIY Projekt: Pong Visualisierung</title>
+      <link>https://christianmahnke.de/post/pong/</link>
+      <pubDate>Mon, 15 Apr 2024 13:58:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/pong/</guid>
+      <description>&lt;p&gt;Aus irgendeinem Grund bin ich auf die Idee gekommen &lt;a href=&#34;https://de.wikipedia.org/wiki/Pong&#34; target=&#34;_blank&#34;&gt;Pong&lt;/a&gt; zu visualisieren&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VintageReality gestartet</title>
+      <link>https://christianmahnke.de/post/vintagereality/</link>
+      <pubDate>Tue, 05 Mar 2024 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/vintagereality/</guid>
+      <description>&lt;p&gt;Das neueste Kind der &lt;a href=&#34;https://labs.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt; ist die seit Anfang 2023 ausgebaute Kategorie &amp;ldquo;1900 in 3D&amp;rdquo;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3D Modelle im Browser</title>
+      <link>https://christianmahnke.de/post/3d-models/</link>
+      <pubDate>Sat, 24 Feb 2024 10:16:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/3d-models/</guid>
+      <description>&lt;p&gt;Vielleicht wird mal eine virtuelle Ausstellung über orangene Keramik draus&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hildesheimer Börde</title>
+      <link>https://christianmahnke.de/post/image-hildesheimer-boerde/</link>
+      <pubDate>Thu, 02 Mar 2023 22:39:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/image-hildesheimer-boerde/</guid>
+      <description>&lt;p&gt;Eine nächtliche Aufnahme der Raststätte &amp;ldquo;Hildesheimer Börde&amp;rdquo; im Nebel.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

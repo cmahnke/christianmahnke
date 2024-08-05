@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DigitalImages on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/DigitalImages/</link>
+    <description>Recent content in DigitalImages on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Mon, 29 Jul 2024 20:58:11 +0200</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/en/tags/DigitalImages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript library for HDR</title>
+      <link>https://christianmahnke.de/en/post/hdr-canvas-js/</link>
+      <pubDate>Sat, 06 Jul 2024 12:00:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/hdr-canvas-js/</guid>
+      <description>&lt;p&gt;The JavaScript implementation for the last posts is now also available as NPM module.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contrast enhancement for UV images using HDR</title>
+      <link>https://christianmahnke.de/en/post/hdr-image-analysis/</link>
+      <pubDate>Thu, 06 Jun 2024 11:33:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/hdr-image-analysis/</guid>
+      <description>&lt;p&gt;This example is about a practical use case for HDR visualisation in the browser&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LibUltraHDR</title>
+      <link>https://christianmahnke.de/en/post/ultrahdr/</link>
+      <pubDate>Thu, 23 May 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/ultrahdr/</guid>
+      <description>&lt;p&gt;After &lt;a href=&#34;https://christianmahnke.de/en/post/hdr-awesome-list/&#34;&gt;research&lt;/a&gt;, it was necessary to explore some possible workflows and to create tools for a project in preparation. Based on &lt;a href=&#34;https://gregbenzphotography.com/hdr/&#34; target=&#34;_blank&#34;&gt;Greg Benz&lt;/a&gt;&amp;rsquo;s preliminary work on HDR support, LibUltraHDR was the most sensible candidate for further experimentation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DIY Project: Pong Visualisation</title>
+      <link>https://christianmahnke.de/en/post/pong/</link>
+      <pubDate>Mon, 15 Apr 2024 13:58:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/pong/</guid>
+      <description>&lt;p&gt;For some reason I came up with the idea of visualising &lt;a href=&#34;https://de.wikipedia.org/wiki/Pong&#34; target=&#34;_blank&#34;&gt;Pong&lt;/a&gt;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Proxy</title>
+      <link>https://christianmahnke.de/en/post/iiif-proxy/</link>
+      <pubDate>Wed, 26 Jan 2022 11:44:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/iiif-proxy/</guid>
+      <description>&lt;p&gt;To improve the &amp;lsquo;displayability&amp;rsquo; of digital objects such as coins and books, I have written a proxy for IIIF resources&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JPEG XL</title>
+      <link>https://christianmahnke.de/en/post/jpeg-xl/</link>
+      <pubDate>Sat, 17 Apr 2021 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/jpeg-xl/</guid>
+      <description>Why JPEG XL? JPEG XL is a new format for raster images, in fact, is&amp;rsquo;s so recent (at the time this text was written) there haven&amp;rsquo;t even been an entry in the German Wikipedia.&#xA;You can read there what exactly JPEG XL does differently or better than the well-known JPEG. We limit ourselves here to the advantages for the Projektemacher blogs:&#xA;Less storage space required Lossless compression available Disadvantages are currently:</description>
+    </item>
+  </channel>
+</rss>

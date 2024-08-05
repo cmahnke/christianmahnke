@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fun on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Fun/</link>
+    <description>Recent content in Fun on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Mon, 29 Jul 2024 20:58:11 +0200</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/tags/Fun/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DIY Projekt: Pong Visualisierung</title>
+      <link>https://christianmahnke.de/post/pong/</link>
+      <pubDate>Mon, 15 Apr 2024 13:58:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/pong/</guid>
+      <description>&lt;p&gt;Aus irgendeinem Grund bin ich auf die Idee gekommen &lt;a href=&#34;https://de.wikipedia.org/wiki/Pong&#34; target=&#34;_blank&#34;&gt;Pong&lt;/a&gt; zu visualisieren&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reisen wie 1996</title>
+      <link>https://christianmahnke.de/post/90ies-train/</link>
+      <pubDate>Fri, 03 Nov 2023 19:39:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/90ies-train/</guid>
+      <description>Manchmal wundert man sich wie alt die Systeme in Zügen sind, hier das Fahrgastinformationssystem eines ICE 1 mit einer AMD 5x86 P-75 S CPU.</description>
+    </item>
+    <item>
+      <title>Projektemacher Merch gestartet</title>
+      <link>https://christianmahnke.de/post/merch.projektemacher.org/</link>
+      <pubDate>Wed, 26 Oct 2022 19:58:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/merch.projektemacher.org/</guid>
+      <description>&lt;p&gt;Auch wenn einige Entwürfe schon älter sind, ist es nun endlich so weit:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

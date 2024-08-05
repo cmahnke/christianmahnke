@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>LibUltraHDR · Christian Mahnke</title>
+    
+
+<meta http-equiv="Content-Language" content="en">
+
+<meta name="description" content="Persönliche Homepage von Christian Mahnke">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/en/post/ultrahdr/" /><meta property="og:title" content="LibUltraHDR" />
+
+  
+  
+    
+  
+
+
+
+<meta name="generator" content="Hugo 0.129.0">
+<meta name="projektemacher.org:build-date" content="2024-08-05 23:38:27.98607284 &#43;0000 UTC m=&#43;25.974083412"><meta name="projektemacher.org:git-commit" content=""><meta name="projektemacher.org:stats" content="{&#34;count&#34;:&#34;156&#34;,&#34;latest&#34;:&#34;2024-07-22T11:33:44&#43;02:00&#34;}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link href="https://christianmahnke.de/css/e83cd18efd0946a6c3f7f795eb7cb796.min.ea9e99ffdcf57ade6719db8e7fbb83ba8ea4d869ef3d48991e0b24f8168a57e7.css" rel="stylesheet" integrity="sha256-6p6Z/9z1et5nGduOf7uDuo6k2GnvPUiZHgsk&#43;BaKV&#43;c=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.921f190e94de53b05aab0adefbae836f33433e3299779b7828ae97caa2b2ca43.js" integrity="sha256-kh8ZDpTeU7Baqwre+66DbzNDPjKZd5t4KK6XyqKyykM="></script>
+<script src="https://christianmahnke.de/js/5c255f817a93e09587e188b3abbce066.min.d97a0e75a7f94458bcf8467c62b51d7c9fa7508b93e69abc7bb58d80051eed7f.js" integrity="sha256-2XoOdaf5RFi8+EZ8YrUdfJ+nUIuT5pq8e7WNgAUe7X8="></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/img/favicon.ico" type="image/x-icon">
+
+
+    </head><body class="section-postultrahdr ">
+         <a name="top"></a>
+         <div class="page-wrapper">
+             <div class="main">
+                 <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-">
+            <a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses</a>
+          </li><li class="navigation-item navto-collections">
+            <a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections</a>
+          </li><li class="navigation-item current navto-post">
+            <a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog</a>
+          </li><li class="navigation-item navto-links">
+            <a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links</a>
+          </li><li class="navigation-item navto-about">
+            <a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About</a>
+          </li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/ultrahdr/" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+        
+<div class="post ">
+    <div class="content">
+        <h1 class="post-title">LibUltraHDR</h1><div class="date">
+                <a href="https://christianmahnke.de/en/post/ultrahdr/">Thursday, May 23, 2024
+                </a>
+            </div>
+        
+        <div class="post-body">
+            <p>After <a href="https://christianmahnke.de/en/post/hdr-awesome-list/">research</a>, it was necessary to explore some possible workflows and to create tools for a project in preparation. Based on <a href="https://gregbenzphotography.com/hdr/" target="_blank">Greg Benz</a>&rsquo;s preliminary work on HDR support, LibUltraHDR was the most sensible candidate for further experimentation.</p>
+<h1 id="libultrahdr">LibUltraHDR</h1>
+<p><a href="https://github.com/google/libultrahdr" target="_blank">LibUltraHDR</a> is primarily a library for UltraHDR content. The format itself is comparable to <a href="https://en.wikipedia.org/wiki/JPEG#JPEG_Multi-Picture_Format" target="_blank">MPO</a>. There is a primary (SDR) image, which is also used as a fallback for software without UltraHDR support, and a secondary image in the metadata, the so-called gain map. This maps the luminance gain to be applied to the SDR. More information on how gain maps work can be found at <a href="https://helpx.adobe.com/camera-raw/using/gain-map.html" target="_blank">Adobe</a>.</p>
+<p>Technical documentation is available at <a href="https://developer.android.com/media/platform/hdr-image-format" target="_blank">Android Developers</a>.</p>
+<h2 id="status">Status</h2>
+<p>Greg Benz and others are currently working on promoting support for the format among relevant open source projects:</p>
+<ul>
+<li><a href="https://github.com/libvips/libvips/issues/3799" target="_blank">LibVips #3799</a></li>
+<li><a href="https://github.com/ImageMagick/ImageMagick/issues/6377" target="_blank">ImageMagick #6377</a></li>
+<li><a href="https://github.com/Tom94/tev/issues/226" target="_blank"><strong>Tev</strong> #226</a></li>
+<li><a href="https://github.com/13thsymphony/HDRImageViewer/issues/66" target="_blank">HDRImageViewer #66</a></li>
+<li><a href="https://trac.ffmpeg.org/ticket/10974" target="_blank"><code>ffmpeg</code> #10974</a></li>
+<li><a href="https://github.com/python-pillow/Pillow/issues/8036" target="_blank">Pillow #8036</a></li>
+<li><a href="https://github.com/Fyrd/caniuse/issues/6759" target="_blank">CanIUse #6759</a></li>
+<li><a href="https://github.com/libjxl/libjxl/issues/2685" target="_blank"><code>libjxl</code> #2685</a></li>
+<li><a href="https://github.com/pulsejet/memories/issues/1110" target="_blank">Memories #1110</a></li>
+</ul>
+<p>There are also some first websites with support:</p>
+<ul>
+<li><a href="https://gainmap-creator.monogrid.com/" target="_blank">Gainmap Creator</a></li>
+<li><a href="https://github.com/albertz/playground/wiki/HDR-demo" target="_blank">Demo for conversion using <code>ffmpeg</code> and <code>libultrahdr</code></a> by <a href="https://github.com/albertz" target="_blank">Albert Zeyer</a></li>
+<li><a href="https://github.com/albertz/playground/blob/master/ultrahdr.py" target="_blank"><code>libultrahdr</code> and Python</a>, also by Albert Zeyer</li>
+</ul>
+<h2 id="manual-conversion-with-ffmpeg">Manual conversion with <code>ffmpeg</code></h2>
+<p>Since the release of version 0.8 of <code>libultrahdr</code> the command line options have changed, here is the current (May 2024) version. It is important that:</p>
+<ul>
+<li>The dimensions of the input image are known (X, Y)</li>
+<li>The dimensions are divisible by two (even)</li>
+</ul>
+<p>In the first step, a YUV representation of the input image must be generated, this is used as a gain map, i.e. as a definition of the gain.</p>
+<pre tabindex="0"><code>ffmpeg -i input.jpg -filter:v format=p010 output.yuv
+</code></pre><p>In the next step, the gain map created can then be used to generate the desired image:</p>
+<pre tabindex="0"><code>ultrahdr_app -m 0 -p output.yuv -i input.jpg -w X -h Y -a 0
+</code></pre><p>In the coming months it can be expected that the somewhat esoteric YUV format will either be easier to generate or can be dispensed with altogether.</p>
+<h2 id="docker-image">Docker Image</h2>
+<p>There is now also a Docker image that provides the latest version of <code>libultrahdr</code> together with ImageMagick with UltraHDR support.</p>
+<pre tabindex="0"><code>docker pull ghcr.io/cmahnke/hdr-tools:latest
+</code></pre><h1 id="next-steps">Next steps</h1>
+<p>Currently, HDR support for HDR images and content is limited to Chrome and its derivative browsers, which have a 75% market share. The <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=hdr" target="_blank">HDR support of Firefox</a>, or rather the way to get there, is rather embarrassing - not even HDR video formats are fully supported.</p>
+<p>For Chrome-based browsers, however, it should also be possible to add HDR content to HTML canvas elements.</p>
+<h1 id="update-6724">Update 6.7.24</h1>
+<p>Two examples from my recent vacation:</p>
+<div ></div>
+<details id="_hdr-check-6bb010ef72366d2d75b35ef2c047721a" class="hdr-check-result">
+  <summary>HDR check</summary>
+  <p></p>
+</details>
+
+<script type="text/javascript">
+  const hdrCheckResult = document.getElementById("_hdr-check-6bb010ef72366d2d75b35ef2c047721a");
+  if (checkHDR()) {
+    hdrCheckResult.querySelector('p').innerText = "Your browser supports HDR!";
+    hdrCheckResult.classList.add("success");
+  } else {
+    hdrCheckResult.querySelector('p').innerText = "Your browser doesn\u0027t support HDR, please retry with a recent Cromium-based Chromium browser, like Chrome, Edge or Brave!";
+    hdrCheckResult.classList.add("fail");
+  }
+</script>
+<div id="_gallery-fa6e09f4c23df1ca3b117b35b732beb3" class="gallery "><a class="gallery-image" href="img/IMG_5255.hdr.jpeg" data-pswp-width="4032" data-pswp-height="3024" target="_blank"><img src="https://christianmahnke.de/en/post/ultrahdr/img/IMG_5255.hdr_hu64dccf1a51904394fef15f454c14c433_5764575_250x0_resize_q95_box.jpeg" alt="Sunset over Hörnum" class="gallery-preview" />
+      </a><a class="gallery-image" href="img/IMG_5256.hdr.jpeg" data-pswp-width="8188" data-pswp-height="2340" target="_blank"><img src="https://christianmahnke.de/en/post/ultrahdr/img/IMG_5256.hdr_hu77af7e2a44fbfc5386d7641a69e2de59_13116643_250x0_resize_q95_box.jpeg" alt="Sunset on Föhr" class="gallery-preview" />
+      </a></div>
+
+<script type="text/javascript">
+  window.photoswipe("#_gallery-fa6e09f4c23df1ca3b117b35b732beb3", "a.gallery-image")
+</script>
+<p>HDR will be activated in the full screen view.</p>
+        </div>
+    </div><div class="meta">
+          <div class="tags"><a href="https://christianmahnke.de/en/tags/Light" title="Light">#Light</a><a href="https://christianmahnke.de/en/tags/Licht2024" title="Licht2024">#Licht2024</a><a href="https://christianmahnke.de/en/tags/DigitalImages" title="Digital images">#Digital images</a><a href="https://christianmahnke.de/en/tags/HDR" title="HDR">#HDR</a></div>
+        </div>
+    
+</div>
+
+    </div>
+
+             </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-">
+            <a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses</a>
+          </li><li class="navigation-item navto-collections">
+            <a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections</a>
+          </li><li class="navigation-item current navto-post">
+            <a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog</a>
+          </li><li class="navigation-item navto-links">
+            <a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links</a>
+          </li><li class="navigation-item navto-about">
+            <a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About</a>
+          </li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/ultrahdr/" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="Librarything"><div class="link-image librarything"></div>Librarything</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Contact</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="Send eMail">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="privacy" title="Privacy policy">Privacy policy</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXXI - MMXXIV Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+     </body>
+ </html>

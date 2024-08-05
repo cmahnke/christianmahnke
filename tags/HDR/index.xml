@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HDR on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/HDR/</link>
+    <description>Recent content in HDR on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Mon, 29 Jul 2024 20:58:11 +0200</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/tags/HDR/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript Bibliothek für HDR</title>
+      <link>https://christianmahnke.de/post/hdr-canvas-js/</link>
+      <pubDate>Sat, 06 Jul 2024 12:00:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/hdr-canvas-js/</guid>
+      <description>&lt;p&gt;Die JavaScript Unterstützung für die letzten Beiträge ist nun auch einzeln als NPM Modul verfügbar.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LibUltraHDR</title>
+      <link>https://christianmahnke.de/post/ultrahdr/</link>
+      <pubDate>Thu, 23 May 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/ultrahdr/</guid>
+      <description>&lt;p&gt;Für ein in Vorbereitung befindliches Projekt war es nach der &lt;a href=&#34;https://christianmahnke.de/post/hdr-awesome-list/&#34;&gt;Recherche&lt;/a&gt; notwendig einige Wege zu erkunden und Werkzeuge zu schaffen. Ausgehend von den Vorarbeiten von &lt;a href=&#34;https://gregbenzphotography.com/hdr/&#34; target=&#34;_blank&#34;&gt;Greg Benz&lt;/a&gt;, zur HDR-Unterstützung, war LibUltraHDR der sinnvollste Kandidat für weitere Experimente.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hildesheimer Börde</title>
+      <link>https://christianmahnke.de/post/image-hildesheimer-boerde/</link>
+      <pubDate>Thu, 02 Mar 2023 22:39:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/image-hildesheimer-boerde/</guid>
+      <description>&lt;p&gt;Eine nächtliche Aufnahme der Raststätte &amp;ldquo;Hildesheimer Börde&amp;rdquo; im Nebel.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
