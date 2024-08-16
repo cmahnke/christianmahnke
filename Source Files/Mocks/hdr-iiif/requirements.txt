@@ -1,0 +1,9 @@
+iiif
+#pillow>=10.4.0
+pillow @ git+https://github.com/python-pillow/Pillow.git@refs/pull/8286/head
+defusedxml
+numpy<2
+ffmpeg-python
+opencv-contrib-python-headless
+docker
+pyexiv2

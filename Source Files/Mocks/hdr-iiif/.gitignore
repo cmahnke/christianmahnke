@@ -1,0 +1,6 @@
+scripts/front-hdr
+scripts/__pycache__
+img/*.yuv
+img/*.jpeg
+img/*.jpg
+front-hdr
