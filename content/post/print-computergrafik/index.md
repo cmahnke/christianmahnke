@@ -14,5 +14,6 @@ Diese Grafik habe ich vor Jahren gerahmt auf dem Flohmarkt erstanden. Sie ist hi
 
 Daher hier die Einschätzung von [Prof. Dr. Frieder Nake](https://de.wikipedia.org/wiki/Frieder_Nake) vom ["compArt | center of excellence digital art"](http://dada.compart-bremen.de/):
 
-{{< quote from="Prof. Dr. Frieder Nake" >}}
+{{< quote from="[Prof. Dr. Frieder Nake](https://de.wikipedia.org/wiki/Frieder_Nake)" >}}
+Diese Grafik kenne ich nicht und ich habe auch keine unmittelbare Vermutung, von wem sie sein könnte. Der deutliche Hinweis auf "Nixdorf" müsste der Beginn der Spur sein. Vermuten lässt er ja, dass ein Angestellter dort das Bild geschaffen hat. Auch falls er es im Auftrag nur von Nixdorf getan hat oder Nixdorf es von einem unabhängigen Menschen erworben haben sollte, in den 1960er Jahren erscheinen solche Bilder als Produkte, die mit Digitalrechnern hergestellt sind. Die mathematisch-geometrischen Organisationen sind meist recht schlicht, so wie hier auch. Wir haben es ja mit einer Masse von recht raffiniert definierten Geraden zu tun, die von Punkten entlang einer Ellipse ausgehen und bei solchen enden. Nur im mittleren Bereich oben iegen diese Ausgangspunkte etwas außerhalb der Ellipse und erzeugen so eine kleine, besondere Spannung.
 {{< /quote >}}

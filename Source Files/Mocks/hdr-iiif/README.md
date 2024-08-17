@@ -35,8 +35,16 @@ ffmpeg -i img/white.jpg -filter:v format=p010 img/white.yuv
 docker run -i -v "`pwd`":"`pwd`" -w "`pwd`" ghcr.io/cmahnke/hdr-tools:latest /usr/bin/ultrahdr_app -m 0 -p img/white.yuv -i img/white.jpg -w 32 -h 32 -a 0
 ```
 
+# Running the converter / enhancer
+
+It's possible to try brightness (`-b`), contrast (`-b`) and preprocessing pipeline (`-p`).
+
+```
+/opt/homebrew/bin/python3 scripts/enhance_image.py -i img/front.jxl -o front-hdr.jpg -b -0.2 -p grayscale invert
+```
+
 # Running image tiler
 
 ```
-
+/opt/homebrew/bin/python3 scripts/hdr_iiif_static.py -d -i img/front.jxl
 ```

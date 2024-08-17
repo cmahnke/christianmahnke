@@ -4,3 +4,6 @@ img/*.yuv
 img/*.jpeg
 img/*.jpg
 front-hdr
+*.yuv
+tmp*
+front
