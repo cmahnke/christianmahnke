@@ -1,0 +1,1 @@
+{"pipeline": ["grayscale", "white_balance", "invert"]}

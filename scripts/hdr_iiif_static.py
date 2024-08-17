@@ -17,7 +17,7 @@ from iiif.static import IIIFStatic
 # from manipulator_uhdr_pillow import IIIFManipulatorUHDR
 from manipulator_uhdr_app import IIIFManipulatorUHDR
 
-sys.path.append(os.path.join(os.path.dirname(__file__), "../themes/projektemacher-base/scripts"))
+sys.path.append(os.path.join(os.path.dirname(__file__), "../../../../themes/projektemacher-base/scripts"))
 
 from PyUHDR import get_processors
 
@@ -102,6 +102,7 @@ def main(args):
 
     parser.add_argument("--contrast", "-uc", help="contrast 0 to 2, default 1")
     parser.add_argument("--brightness", "-ub", help="brightness -1 to 1, default 0")
+    parser.add_argument("--json", "-j", help="JSON config")
     parser.add_argument(
         "--pipeline", "-up", nargs="+", choices=actions.keys(), help=f"Pipeline arguments, some of {', '.join(actions.keys())}"
     )
@@ -132,6 +133,11 @@ def main(args):
 
     if args.brightness:
         uhdr_options["brightness"] = args.brightness
+
+    if args.json:
+        config = load_config(args.json)
+        if "pipeline" in config:
+            uhdr_options["pipeline"]= config.pipeline
 
     if args.pipeline:
         uhdr_options["pipeline"] = args.pipeline
