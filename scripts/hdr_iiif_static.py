@@ -7,6 +7,7 @@ import pathlib
 import sys
 import time
 import datetime
+import json
 from math import floor
 
 from io import StringIO
@@ -25,6 +26,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../../../../themes/proj
 from PyUHDR import get_processors, init_docker
 
 DEFAULT_LOG_LEVEL = logging.WARN
+INFO_JSON = "info.json"
 
 start_time = time.time()
 logger = logging.getLogger()
@@ -46,6 +48,8 @@ def check_scale_factors(infile, tilesize):
         tiles_width = floor(size[0] / tile)
         tiles_height = floor(size[1] / tile)
         print(f"Size: {tile}, width {tiles_width}, height {tiles_height}, total {tiles_width * tiles_height}, overlaps {size[0] - (tiles_width * tile)} {size[1] - (tiles_height * tile)}")
+        #if multiplier - 1 > 1:
+
         total += tiles_width * tiles_height
         multiplier *= 2
     print(f"Generating {total} tiles")
@@ -56,6 +60,12 @@ def manipulator_generator(uhdr_options):
 
     return uhdr_manipulator
 
+def update_info_json(info_file, url):
+    with open(info_file, 'r', encoding='utf-8') as f:
+        info = json.load(f)
+    #TODO: Update here
+    with open(info_file, 'w', encoding='utf-8') as f:
+        json.dump(info, f)
 
 def main(args):
     actions = get_processors()
@@ -111,6 +121,7 @@ def main(args):
         default=False,
         required=False,
     )
+    parser.add_argument("--identifier", "-id", help="identifier")
 
     parser.add_argument("--contrast", "-uc", help="contrast 0 to 2, default 1")
     parser.add_argument("--brightness", "-ub", help="brightness -1 to 1, default 0")
@@ -168,12 +179,14 @@ def main(args):
             logger.warning("%s is not a UHDR image!", infile)
             sys.exit(1)
 
-    generator = IIIFStatic(dst=args.output, tilesize=args.tilesize, api_version=args.api_version)
-    #generator.manipulator_klass = IIIFManipulatorUHDR
+    logging.info(f"Generating from {infile} in {os.getcwd()} into {args.output}, tile size {args.tilesize}, prefix {args.prefix}, identifier {args.identifier}")
+    generator = IIIFStatic(dst=args.output, prefix=args.prefix, tilesize=args.tilesize, api_version=args.api_version)
     generator.manipulator_klass = manipulator_generator(uhdr_options)
-    generator.generate(infile, identifier=args.prefix)
+    #generator.generate(infile, identifier=args.identifier)
+    generator.generate(infile)
     print(f"Processing took {datetime.timedelta(seconds=(time.time() - start_time))} seconds")
-
+    info = os.path.join(args.output, INFO_JSON)
+    print(f"Updating {info}")
 
 if __name__ == "__main__":
     main(sys.argv[1:])

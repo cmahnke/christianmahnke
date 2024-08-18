@@ -24,7 +24,6 @@ class IIIFManipulatorUHDR(IIIFManipulator):
         super(IIIFManipulatorUHDR, self).__init__(**super_args)
         self.compliance_level = 2
         self.image = None
-        self.outtmp = None
         self.height = 0
         self.width = 0
         self.mime_type = None
@@ -111,17 +110,13 @@ class IIIFManipulatorUHDR(IIIFManipulator):
         if format != "jpg" or format is None:
             raise NotImplementedError(f"Unsuported format: {format}!")
         if self.outfile is None:
-            # Create temp
-            # temp_file = tempfile.NamedTemporaryFile(delete=False)
-            # self.outfile = temp_file.name
             raise ValueError("Output file not set")
         w, h = self.image.size
-        self.logger.debug("Saving fragment %dx%d format '%s'", w, h, format)
+        self.logger.debug("Saving fragment %dx%d format '%s' to %s", w, h, format, self.outfile)
         self.mime_type = "image/jpeg"
-        # self._save(self.outfile)
         if self.image is None:
             raise ValueError("No image to process!")
-        uhdr = UHDR(self.image, metadata=self.exif, contrast=self.contrast, brightness=self.brightness, pipeline=self.pipeline, scale=False, config=self.config, docker_client=self.docker_client)
+        uhdr = UHDR(self.image, metadata=self.exif, contrast=self.contrast, brightness=self.brightness, pipeline=self.pipeline, scale=True, config=self.config, docker_client=self.docker_client)
         uhdr.process(self.outfile)
 
     def cleanup(self):

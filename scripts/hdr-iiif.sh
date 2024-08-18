@@ -24,12 +24,8 @@ if [ -z "$SKIP_IIIF" ] ; then
         IMAGE_SUFFIX=$(echo $IMAGE |awk -F . '{print $NF}')
         OUTPUT_DIR=`dirname $IMAGE`
         IIIF_DIR=`basename $IMAGE .$IMAGE_SUFFIX`
-        if [ $OUTPUT_PREFIX = ""] ; then
-            TARGET=$OUTPUT_DIR/$IIIF_DIR
-        else
-            TARGET=$OUTPUT_PREFIX/$OUTPUT_DIR/$IIIF_DIR
-            mkdir -p $TARGET
-        fi
+        # The script creates a diretory based on the file name itself
+        TARGET=$OUTPUT_DIR/
 
         CONFIG="$OUTPUT_DIR/config.json"
 
@@ -37,9 +33,11 @@ if [ -z "$SKIP_IIIF" ] ; then
             ARGS="-j $CONFIG"
         fi
 
+        IIIF_ID="$URL_PREFIX/$(echo $OUTPUT_DIR |cut -d'/' -f2-)"
+
         echo "Processing $IMAGE"
 
-        python ./scripts/hdr_iiif_static.py -p "$URL_PREFIX" -t "$TILE_SIZE" -d -i $IMAGE -o "$TARGET" $ARGS
+        python ./scripts/hdr_iiif_static.py -p "$IIIF_ID" -t "$TILE_SIZE" -d -i $IMAGE -o "$TARGET" $ARGS
     done
 
 fi
