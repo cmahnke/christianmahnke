@@ -1,6 +1,7 @@
 import os
 import sys
 import tempfile
+import logging
 
 from iiif.manipulator import IIIFManipulator
 
@@ -58,7 +59,7 @@ class IIIFManipulatorUHDR(IIIFManipulator):
         w, h = self.image.size
         if (w % 2 or h % 2):
 
-            new_w, new_h = iself.image.size
+            new_w, new_h = self.image.size
             new_w -= w % 2
             new_h -= h % 2
             logging.info(f"Resizing image, from {w}x{h} to {new_w}x{new_h}")
