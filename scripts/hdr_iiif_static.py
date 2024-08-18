@@ -5,6 +5,7 @@ import argparse
 import logging
 import pathlib
 import sys
+import time
 from math import floor
 
 from io import StringIO
@@ -24,6 +25,7 @@ from PyUHDR import get_processors
 
 DEFAULT_LOG_LEVEL = logging.WARN
 
+start_time = time.time()
 logger = logging.getLogger()
 
 
@@ -36,14 +38,16 @@ def check_scale_factors(infile, tilesize):
     # logger.warning("Image process %s dimensions are %s, longest side %s", infile, size, max(size))
 
     multiplier = 1
+    total = 0
     while max(size) >= tilesize * multiplier:
         tile = tilesize * multiplier
         # print(f"Size: {tile} {(size[0] // tile) * (size[1] // tile)}")
         tiles_width = floor(size[0] / tile)
         tiles_height = floor(size[1] / tile)
         print(f"Size: {tile}, width {tiles_width}, height {tiles_height}, total {tiles_width * tiles_height}, overlaps {size[0] - (tiles_width * tile)} {size[1] - (tiles_height * tile)}")
-
+        total += tiles_width * tiles_height
         multiplier *= 2
+    print(f"Generating {total} tiles")
 
 def manipulator_generator(uhdr_options):
     def uhdr_manipulator(**kwargs):
@@ -165,6 +169,7 @@ def main(args):
     #generator.manipulator_klass = IIIFManipulatorUHDR
     generator.manipulator_klass = manipulator_generator(uhdr_options)
     generator.generate(infile, identifier=args.prefix)
+    print(f"Processing took {(time.time() - start_time)} seconds")
 
 
 if __name__ == "__main__":

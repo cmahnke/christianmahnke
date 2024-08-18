@@ -51,3 +51,5 @@ content/**/*.glb
 data/stats.json
 !content/**/img/*.hdr.jpeg
 scripts/__pycache__
+tmp*.yuv
+tmp*.jpg

@@ -48,3 +48,10 @@ It's possible to try brightness (`-b`), contrast (`-b`) and preprocessing pipeli
 ```
 /opt/homebrew/bin/python3 scripts/hdr_iiif_static.py -d -i img/front.jxl
 ```
+
+
+# Preprocessing Example
+
+```
+URL_PREFIX="https://christianmahnke.de/" IMAGES=$(find content -maxdepth 6 -name '*.hdr.jxl') ./scripts/hdr-iiif.sh
+```

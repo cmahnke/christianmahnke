@@ -1,5 +1,5 @@
 ---
-date: 2024-08-02T11:33:44+02:00
+date: 2024-08-18T11:33:44+02:00
 title: "HDR IIIF"
 draft: true
 tags:
@@ -15,6 +15,7 @@ resources:
   name: front
   params:
     iiif: front.hdr/info.json
+notes: Add https://iiif.io/api/image/3.0/#57-extra-functionality
 ---
 
 Beim [Zeitzeug](http://www.zeitzeug.de/) wird die Tapetensammlung des Inhabers veräußert und ich habe mir ein besonders grelles Exemplar gesichert...
@@ -33,8 +34,14 @@ Am Ende habe ich einfach ein Backend auf Basis von [`libultrahdr`](/post/ultrahd
 
 Unten das Ergebnis.
 
-
 # Nächste Schritte
 
 Derzeit gibt es für IIIF noch keine standardisierte Möglichkeit auf UltraHDR Inhalte hinzuweisen. Prinzipiell gibt es Felder, die für diese Aufgabe genutzt werden können, aber eine Aufnahme in den Standart ist wünschenswert, damit Viewer Implementierungen darauf hinweisen können, wenn der Monitor die Anzeige nicht unterstützen.
-https://iiif.io/api/image/3.0/#57-extra-functionality
+
+# Ergebnis
+
+{{< hdr-canvas-check >}}
+
+Wenn der Test fehlschlägt, sind die Farben nicht so leuchtend.
+
+**Das weltweit erste HDR IIIF Bild ist eine 70er Jahre Tapete!**

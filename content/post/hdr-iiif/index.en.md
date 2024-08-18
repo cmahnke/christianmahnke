@@ -1,5 +1,5 @@
 ---
-date: 2024-08-02T11:33:44+02:00
+date: 2024-08-18T11:33:44+02:00
 title: "HDR IIIF"
 draft: true
 tags:
@@ -15,6 +15,7 @@ resources:
   name: front
   params:
     iiif: front.hdr/info.json
+notes: Add https://iiif.io/api/image/3.0/#57-extra-functionality
 ---
 
 At [Zeitzeug](http://www.zeitzeug.de/) the owner's wallpaper collection is being sold and I have secured a particularly bright example...
@@ -37,4 +38,10 @@ Below is the result.
 
 There is currently no standardised way for IIIF to indicate UltraHDR content. In principle, there are fields that can be used for this task, but inclusion in the standard is desirable so that viewer implementations can point this out if the monitor does not support the display.
 
-https://iiif.io/api/image/3.0/#57-extra-functionality
+# Result
+
+{{< hdr-canvas-check >}}
+
+If the test fails, the colours are not as bright.
+
+**The worlds first HDR IIIF image is a 70ies wallpaper!**
