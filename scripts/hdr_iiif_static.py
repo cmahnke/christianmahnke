@@ -12,6 +12,7 @@ from io import StringIO
 from PIL import Image
 
 from iiif.static import IIIFStatic
+from iiif.error import IIIFZeroSizeError
 
 # from UhdrImagePlugin import check_uhdr
 # from manipulator_uhdr_pillow import IIIFManipulatorUHDR
@@ -43,6 +44,12 @@ def check_scale_factors(infile, tilesize):
         print(f"Size: {tile}, width {tiles_width}, height {tiles_height}, total {tiles_width * tiles_height}, overlaps {size[0] - (tiles_width * tile)} {size[1] - (tiles_height * tile)}")
 
         multiplier *= 2
+
+def manipulator_generator(uhdr_options):
+    def uhdr_manipulator(**kwargs):
+        return IIIFManipulatorUHDR(**uhdr_options, **kwargs)
+
+    return uhdr_manipulator
 
 
 def main(args):
@@ -102,6 +109,7 @@ def main(args):
 
     parser.add_argument("--contrast", "-uc", help="contrast 0 to 2, default 1")
     parser.add_argument("--brightness", "-ub", help="brightness -1 to 1, default 0")
+    parser.add_argument("--quality", "-q", help="JPEG quality", default=90)
     parser.add_argument("--json", "-j", help="JSON config")
     parser.add_argument(
         "--pipeline", "-up", nargs="+", choices=actions.keys(), help=f"Pipeline arguments, some of {', '.join(actions.keys())}"
@@ -134,12 +142,13 @@ def main(args):
     if args.brightness:
         uhdr_options["brightness"] = args.brightness
 
-    if args.json:
-        config = load_config(args.json)
-        if "pipeline" in config:
-            uhdr_options["pipeline"]= config.pipeline
+    if args.quality:
+        uhdr_options["quality"] = args.quality
 
-    if args.pipeline:
+    if args.json:
+        uhdr_options["config"] = args.json
+
+    if args.pipeline is not None:
         uhdr_options["pipeline"] = args.pipeline
 
     print(check_scale_factors(infile, args.tilesize))
@@ -153,7 +162,8 @@ def main(args):
             sys.exit(1)
 
     generator = IIIFStatic(dst=args.output, tilesize=args.tilesize, api_version=args.api_version)
-    generator.manipulator_klass = IIIFManipulatorUHDR
+    #generator.manipulator_klass = IIIFManipulatorUHDR
+    generator.manipulator_klass = manipulator_generator(uhdr_options)
     generator.generate(infile, identifier=args.prefix)
 
 

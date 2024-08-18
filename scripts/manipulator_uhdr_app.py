@@ -16,9 +16,11 @@ class IIIFManipulatorUHDR(IIIFManipulator):
     tmpdir = "/tmp"
     filecmd = None
     pnmdir = None
+    uhdr_args = ["contrast", "brightness", "pipeline", "config", "quality"]
 
     def __init__(self, **kwargs):
-        super(IIIFManipulatorUHDR, self).__init__(**kwargs)
+        super_args = {k: v for k, v in kwargs.items() if not k in self.uhdr_args }
+        super(IIIFManipulatorUHDR, self).__init__(**super_args)
         self.compliance_level = 2
         self.image = None
         self.outtmp = None
@@ -38,6 +40,10 @@ class IIIFManipulatorUHDR(IIIFManipulator):
             self.pipeline = kwargs["pipeline"]
         else:
             self.pipeline = None
+        if "config" in kwargs:
+            self.config = kwargs["config"]
+        else:
+            self.config = None
 
     def set_max_image_pixels(self, pixels):
         # Default is alway UHDR max
@@ -97,7 +103,7 @@ class IIIFManipulatorUHDR(IIIFManipulator):
         # self._save(self.outfile)
         if self.image is None:
             raise ValueError("No image to process!")
-        uhdr = UHDR(self.image, metadata=self.exif, contrast=self.contrast, brightness=self.brightness, pipeline=self.pipeline, scale=False)
+        uhdr = UHDR(self.image, metadata=self.exif, contrast=self.contrast, brightness=self.brightness, pipeline=self.pipeline, scale=False, config=self.config)
         uhdr.process(self.outfile)
 
     def cleanup(self):

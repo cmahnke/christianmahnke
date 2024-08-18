@@ -31,9 +31,15 @@ if [ -z "$SKIP_IIIF" ] ; then
             mkdir -p $TARGET
         fi
 
+        CONFIG="$OUTPUT_DIR/config.json"
+
+        if [ -r $CONFIG ] ; then
+            ARGS="-j $CONFIG"
+        fi
+
         echo "Processing $IMAGE"
 
-        python ./scripts/hdr_iiif_static.py -p "$URL_PREFIX" -t "$TILE_SIZE" -d -i $IMAGE -o "$TARGET"
+        python ./scripts/hdr_iiif_static.py -p "$URL_PREFIX" -t "$TILE_SIZE" -d -i $IMAGE -o "$TARGET" $ARGS
     done
 
 fi
