@@ -55,6 +55,18 @@ class IIIFManipulatorUHDR(IIIFManipulator):
     def do_first(self):
         self.image = Image.open(self.srcfile)
         self.exif = self.image.getexif()
+        w, h = self.image.size
+        if (w % 2 or h % 2):
+
+            new_w, new_h = iself.image.size
+            new_w -= w % 2
+            new_h -= h % 2
+            logging.info(f"Resizing image, from {w}x{h} to {new_w}x{new_h}")
+            left = (w - new_w) // 2
+            top = (h - new_h) // 2
+
+            self.image = self.image.crop((left, top, new_w, new_h))
+
         self.logger.debug("Loaded image size %s", self.image.size)
         self.width, self.height = self.image.size
 

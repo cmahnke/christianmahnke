@@ -6,6 +6,7 @@ import logging
 import pathlib
 import sys
 import time
+import datetime
 from math import floor
 
 from io import StringIO
@@ -169,7 +170,7 @@ def main(args):
     #generator.manipulator_klass = IIIFManipulatorUHDR
     generator.manipulator_klass = manipulator_generator(uhdr_options)
     generator.generate(infile, identifier=args.prefix)
-    print(f"Processing took {(time.time() - start_time)} seconds")
+    print(f"Processing took {datetime.timedelta(seconds=(time.time() - start_time))} seconds")
 
 
 if __name__ == "__main__":
