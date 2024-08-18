@@ -22,7 +22,7 @@ from manipulator_uhdr_app import IIIFManipulatorUHDR
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "../../../../themes/projektemacher-base/scripts"))
 
-from PyUHDR import get_processors
+from PyUHDR import get_processors, init_docker
 
 DEFAULT_LOG_LEVEL = logging.WARN
 
@@ -155,6 +155,8 @@ def main(args):
 
     if args.pipeline is not None:
         uhdr_options["pipeline"] = args.pipeline
+
+    uhdr_options["docker_client"] = init_docker()
 
     print(check_scale_factors(infile, args.tilesize))
 

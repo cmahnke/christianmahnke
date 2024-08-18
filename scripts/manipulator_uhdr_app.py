@@ -17,7 +17,7 @@ class IIIFManipulatorUHDR(IIIFManipulator):
     tmpdir = "/tmp"
     filecmd = None
     pnmdir = None
-    uhdr_args = ["contrast", "brightness", "pipeline", "config", "quality"]
+    uhdr_args = ["contrast", "brightness", "pipeline", "config", "quality", "docker_client"]
 
     def __init__(self, **kwargs):
         super_args = {k: v for k, v in kwargs.items() if not k in self.uhdr_args }
@@ -45,6 +45,11 @@ class IIIFManipulatorUHDR(IIIFManipulator):
             self.config = kwargs["config"]
         else:
             self.config = None
+        if "docker_client" in kwargs:
+            self.docker_client = kwargs["docker_client"]
+        else:
+            self.docker_client = None
+
 
     def set_max_image_pixels(self, pixels):
         # Default is alway UHDR max
@@ -116,7 +121,7 @@ class IIIFManipulatorUHDR(IIIFManipulator):
         # self._save(self.outfile)
         if self.image is None:
             raise ValueError("No image to process!")
-        uhdr = UHDR(self.image, metadata=self.exif, contrast=self.contrast, brightness=self.brightness, pipeline=self.pipeline, scale=False, config=self.config)
+        uhdr = UHDR(self.image, metadata=self.exif, contrast=self.contrast, brightness=self.brightness, pipeline=self.pipeline, scale=False, config=self.config, docker_client=self.docker_client)
         uhdr.process(self.outfile)
 
     def cleanup(self):
