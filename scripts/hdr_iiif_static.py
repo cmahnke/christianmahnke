@@ -23,7 +23,7 @@ from manipulator_uhdr_app import IIIFManipulatorUHDR
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "../../../../themes/projektemacher-base/scripts"))
 
-from PyUHDR import get_processors, init_docker
+from PyUHDR import UHDR, get_processors, init_docker
 
 DEFAULT_LOG_LEVEL = logging.WARN
 INFO_JSON = "info.json"
@@ -198,7 +198,7 @@ def main(args):
     full(infile, dir, uhdr_options)
     print(f"Processing took {datetime.timedelta(seconds=(time.time() - start_time))} seconds")
     info_file = os.path.join(dir, INFO_JSON)
-    print(f"Updating {info}")
+    print(f"Updating {info_file}")
     update_info_json(info_file, url)
 
 if __name__ == "__main__":
