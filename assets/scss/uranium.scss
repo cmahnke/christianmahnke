@@ -1,48 +1,56 @@
 $background-color: #96ff00;
-$foreground-color: rgb(64,0,148);
-$accents-color;
+$foreground-color: #3D1673;
+$accents-color: #F0C640;
 
 body.uranium {
-  .main {
+  .page-wrapper {
     background: $background-color;
 
-    .header {
-      .header-spacer {
-        background-image: linear-gradient(#b2444d, $background-color);
+    .main {
+
+
+      .header {
+        .header-spacer {
+          background-image: linear-gradient(#b2444d, $background-color);
+        }
+      }
+
+      .content-container.single {
+        color: $foreground-color;
+        font-weight: 400;
+
+        .post .post-title {
+          box-shadow: inset 0 -15px $accents-color;
+        }
+
+        .post-body {
+          .gallery {
+            background-color: transparent;
+            box-shadow: 0 0 2px $accents-color;
+          }
+
+        }
+
+
+        a {
+          color: $foreground-color;
+
+          &::before,
+          &::after {
+            color: $accents-color;
+          }
+
+          &:hover {
+
+            text-decoration-color: $accents-color;
+          }
+
+        }
       }
     }
 
-    .content-container.single {
-      color: $foreground-color;
-      font-weight: 400;
+    .footer {
 
-      .post .post-title {
-        box-shadow: inset 0 -15px $accents-color;
-      }
-
-      .post-body {
-        .gallery {
-          background-color: transparent;
-          box-shadow: 0 0 2px $accents-color;
-        }
-
-      }
-
-
-      a {
-        color: $foreground-color;
-
-        &::before,
-        &::after {
-          color: $accents-color;
-        }
-
-        &:hover {
-
-          text-decoration-color: $accents-color;
-        }
-
-      }
     }
   }
 }
