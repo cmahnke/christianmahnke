@@ -28,6 +28,7 @@ from PyUHDR import UHDR, get_processors, init_docker
 DEFAULT_LOG_LEVEL = logging.WARN
 INFO_JSON = "info.json"
 FULL = "full/full/0/default.jpg"
+PROFILE_SUPPORTS = "https://christianmahnke.de/iiif-hdr/"
 
 start_time = time.time()
 logger = logging.getLogger()
@@ -48,12 +49,15 @@ def check_scale_factors(infile, tilesize):
         # print(f"Size: {tile} {(size[0] // tile) * (size[1] // tile)}")
         tiles_width = floor(size[0] / tile)
         tiles_height = floor(size[1] / tile)
-        print(f"Size: {tile}, width {tiles_width}, height {tiles_height}, total {tiles_width * tiles_height}, overlaps {size[0] - (tiles_width * tile)} {size[1] - (tiles_height * tile)}")
-        #if multiplier - 1 > 1:
+        print(
+            f"Size: {tile}, width {tiles_width}, height {tiles_height}, total {tiles_width * tiles_height}, overlaps {size[0] - (tiles_width * tile)} {size[1] - (tiles_height * tile)}"
+        )
+        # if multiplier - 1 > 1:
 
         total += tiles_width * tiles_height
         multiplier *= 2
     print(f"Generating {total} tiles")
+
 
 def manipulator_generator(uhdr_options):
     def uhdr_manipulator(**kwargs):
@@ -61,14 +65,23 @@ def manipulator_generator(uhdr_options):
 
     return uhdr_manipulator
 
+
 def update_info_json(info_file, url):
-    with open(info_file, 'r', encoding='utf-8') as f:
+    with open(info_file, "r", encoding="utf-8") as f:
         info = json.load(f)
-    #TODO: Update here
+    # TODO: Update here
+    if "profile" in info:
+        if len(info["profile"]) > 1 and isinstance(info["profile"][1], dict):
+            if "supports" in info["profile"][1]:
+                info["profile"][1]["supports"].append(PROFILE_SUPPORTS)
+            else:
+                info["profile"][1]["supports"] = [PROFILE_SUPPORTS]
+
     if "sizes" in info:
         del info["sizes"]
-    with open(info_file, 'w', encoding='utf-8') as f:
+    with open(info_file, "w", encoding="utf-8") as f:
         json.dump(info, f)
+
 
 def full(infile, dir, uhdr_options):
     result = os.path.join(dir, FULL)
@@ -83,7 +96,14 @@ def main(args):
     log_stream = StringIO()
     logging.basicConfig(stream=log_stream, level=logging.DEBUG)
     parser = argparse.ArgumentParser(description="Create a staic IIIF Image API directory and file structure")
-    parser.add_argument("--input", "-i", action="store", type=pathlib.Path, required=True, help="Input file")
+    parser.add_argument(
+        "--input",
+        "-i",
+        action="store",
+        type=pathlib.Path,
+        required=True,
+        help="Input file",
+    )
     parser.add_argument(
         "--output",
         "-o",
@@ -138,7 +158,11 @@ def main(args):
     parser.add_argument("--quality", "-q", help="JPEG quality", default=90)
     parser.add_argument("--json", "-j", help="JSON config")
     parser.add_argument(
-        "--pipeline", "-up", nargs="+", choices=actions.keys(), help=f"Pipeline arguments, some of {', '.join(actions.keys())}"
+        "--pipeline",
+        "-up",
+        nargs="+",
+        choices=actions.keys(),
+        help=f"Pipeline arguments, some of {', '.join(actions.keys())}",
     )
 
     args = parser.parse_args()
@@ -189,17 +213,25 @@ def main(args):
             logger.warning("%s is not a UHDR image!", infile)
             sys.exit(1)
 
-    logging.info(f"Generating from {infile} in {os.getcwd()} into {args.output}, tile size {args.tilesize}, prefix {args.prefix}, identifier {args.identifier}")
-    generator = IIIFStatic(dst=args.output, prefix=args.prefix, tilesize=args.tilesize, api_version=args.api_version)
+    logging.info(
+        f"Generating from {infile} in {os.getcwd()} into {args.output}, tile size {args.tilesize}, prefix {args.prefix}, identifier {args.identifier}"
+    )
+    generator = IIIFStatic(
+        dst=args.output,
+        prefix=args.prefix,
+        tilesize=args.tilesize,
+        api_version=args.api_version,
+    )
     generator.manipulator_klass = manipulator_generator(uhdr_options)
-    #generator.generate(infile, identifier=args.identifier)
+    # generator.generate(infile, identifier=args.identifier)
     generator.generate(infile)
     dir = os.path.join(args.output, os.path.splitext(os.path.basename(infile))[0])
     full(infile, dir, uhdr_options)
     print(f"Processing took {datetime.timedelta(seconds=(time.time() - start_time))} seconds")
     info_file = os.path.join(dir, INFO_JSON)
     print(f"Updating {info_file}")
-    update_info_json(info_file, url)
+    update_info_json(info_file, args.prefix)
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])

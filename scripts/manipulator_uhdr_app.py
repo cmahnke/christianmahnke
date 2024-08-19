@@ -17,10 +17,17 @@ class IIIFManipulatorUHDR(IIIFManipulator):
     tmpdir = "/tmp"
     filecmd = None
     pnmdir = None
-    uhdr_args = ["contrast", "brightness", "pipeline", "config", "quality", "docker_client"]
+    uhdr_args = [
+        "contrast",
+        "brightness",
+        "pipeline",
+        "config",
+        "quality",
+        "docker_client",
+    ]
 
     def __init__(self, **kwargs):
-        super_args = {k: v for k, v in kwargs.items() if not k in self.uhdr_args }
+        super_args = {k: v for k, v in kwargs.items() if not k in self.uhdr_args}
         super(IIIFManipulatorUHDR, self).__init__(**super_args)
         self.compliance_level = 2
         self.image = None
@@ -49,7 +56,6 @@ class IIIFManipulatorUHDR(IIIFManipulator):
         else:
             self.docker_client = None
 
-
     def set_max_image_pixels(self, pixels):
         # Default is alway UHDR max
         if pixels < 32768 * 32768:
@@ -61,7 +67,7 @@ class IIIFManipulatorUHDR(IIIFManipulator):
         self.image = Image.open(self.srcfile)
         self.exif = self.image.getexif()
         w, h = self.image.size
-        if (w % 2 or h % 2):
+        if w % 2 or h % 2:
 
             new_w, new_h = self.image.size
             new_w -= w % 2
@@ -89,10 +95,18 @@ class IIIFManipulatorUHDR(IIIFManipulator):
             self.logger.debug("Ignore scale without args")
         else:
             if w % 2:
-                self.logger.info("Got scale request for uneven width (%d) - setting to %d", w, w + w % 2)
+                self.logger.info(
+                    "Got scale request for uneven width (%d) - setting to %d",
+                    w,
+                    w + w % 2,
+                )
                 w += w % 2
             if h % 2:
-                self.logger.info("Got scale request for uneven height (%d) - setting to %d", h, h + h % 2)
+                self.logger.info(
+                    "Got scale request for uneven height (%d) - setting to %d",
+                    h,
+                    h + h % 2,
+                )
                 h += h % 2
             if w < 8:
                 self.logger.info("Got scale request for width (%d) < 8 - setting to 8", w)
@@ -128,7 +142,16 @@ class IIIFManipulatorUHDR(IIIFManipulator):
         self.mime_type = "image/jpeg"
         if self.image is None:
             raise ValueError("No image to process!")
-        uhdr = UHDR(self.image, metadata=self.exif, contrast=self.contrast, brightness=self.brightness, pipeline=self.pipeline, scale=True, config=self.config, docker_client=self.docker_client)
+        uhdr = UHDR(
+            self.image,
+            metadata=self.exif,
+            contrast=self.contrast,
+            brightness=self.brightness,
+            pipeline=self.pipeline,
+            scale=True,
+            config=self.config,
+            docker_client=self.docker_client,
+        )
         uhdr.process(self.outfile)
 
     def cleanup(self):
