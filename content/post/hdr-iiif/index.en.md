@@ -1,7 +1,6 @@
 ---
 date: 2024-08-18T11:33:44+02:00
 title: "HDR IIIF"
-draft: true
 tags:
   - Light
   - Licht2024
@@ -9,7 +8,6 @@ tags:
   - HDR
   - IIIF
 iiifContext: http://iiif.io/api/image/2/context.json
-draft: true
 resources:
 - src: "front.hdr.jxl"
   name: front
@@ -45,3 +43,5 @@ There is currently no standardised way for IIIF to indicate UltraHDR content. In
 If the test fails, the colours are not as bright.
 
 **The worlds first HDR IIIF image is a 70ies wallpaper!**
+
+{{< iiif/iiif src="front.hdr/info.json" share=false hdr=true >}}
