@@ -10,6 +10,12 @@ draft: true
 Ich habe alte Computergrafik rahmen lassen...
 <!--more-->
 
+{{< gallery >}}
+[
+  {"src": "img/print.jpg", "alt": "Druck"}
+]
+{{</ gallery >}}
+
 Diese Grafik habe ich vor Jahren gerahmt auf dem Flohmarkt erstanden. Sie ist hinter dem Passepartout ist es mit "Nixdorf Computer AG" unterschrieben. Leider lässt sich relativ wenig darüber herausfinden. Eine Anfrage beim [Heinz Nixdorf MuseumsForum](https://www.hnf.de/home.html) ergab leider keine konkreteren Hinweise.
 
 Daher hier die Einschätzung von [Prof. Dr. Frieder Nake](https://de.wikipedia.org/wiki/Frieder_Nake) vom ["compArt | center of excellence digital art"](http://dada.compart-bremen.de/):

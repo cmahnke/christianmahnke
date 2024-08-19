@@ -10,6 +10,12 @@ draft: true
 I had old computer graphics framed...
 <!--more-->
 
+{{< gallery >}}
+[
+  {"src": "img/print.jpg", "alt": "Druck"}
+]
+{{</ gallery >}}
+
 I bought this framed graphic at a flea market years ago. It is signed "Nixdorf Computer AG" behind the passe-partout. Unfortunately, relatively little can be found out about it. An enquiry at the [Heinz Nixdorf MuseumsForum](https://www.hnf.de/home.html) did not yield any concrete information.
 
 Therefore, here is the assessment of [Prof. Dr Frieder Nake](https://de.wikipedia.org/wiki/Frieder_Nake) from ["compArt | centre of excellence digital art"](http://dada.compart-bremen.de/):

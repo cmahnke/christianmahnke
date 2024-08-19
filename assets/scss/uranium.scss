@@ -1,6 +1,6 @@
 $background-color: #96ff00;
-$foreground-color: #3D1673;
-$accents-color: #F0C640;
+$foreground-color: #5107b7; /* #3D1673; */
+$accents-color: #ff5477;
 
 body.uranium {
   .page-wrapper {
@@ -28,9 +28,7 @@ body.uranium {
             background-color: transparent;
             box-shadow: 0 0 2px $accents-color;
           }
-
         }
-
 
         a {
           color: $foreground-color;
@@ -44,13 +42,14 @@ body.uranium {
 
             text-decoration-color: $accents-color;
           }
-
         }
       }
     }
 
     .footer {
-
+      .copyright a {
+        color: $background-color;
+      }
     }
   }
 }
