@@ -88,6 +88,18 @@ class IIIFManipulatorUHDR(IIIFManipulator):
         if w is None:
             self.logger.debug("Ignore scale without args")
         else:
+            if w % 2:
+                self.logger.info("Got scale request for uneven width (%d) - setting to %d", w, w + w % 2)
+                w += w % 2
+            if h % 2:
+                self.logger.info("Got scale request for uneven height (%d) - setting to %d", h, h + h % 2)
+                h += h % 2
+            if w < 8:
+                self.logger.info("Got scale request for width (%d) < 8 - setting to 8", w)
+                w = 8
+            if h < 8:
+                self.logger.info("Got scale request for height (%d) < 8 - setting to 8", h)
+                h = 8
             self.logger.debug("Scaling to %dx%d", w, h)
             self.image = self.image.resize((w, h))
             self.width = w

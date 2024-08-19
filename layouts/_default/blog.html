@@ -11,7 +11,7 @@
 
     <div class="content-container posts blog">
       {{- $pages := where .Site.Pages "Section" "post" -}}
-      {{- $mainSite := .Sites.First -}}
+      {{- $mainSite := .Sites.Default -}}
       {{- if ne $mainSite .Site -}}
         {{- $pages = ($pages | lang.Merge (where $mainSite.Pages "Section" "post")) -}}
       {{- end -}}

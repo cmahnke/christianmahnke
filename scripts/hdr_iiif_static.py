@@ -27,6 +27,7 @@ from PyUHDR import get_processors, init_docker
 
 DEFAULT_LOG_LEVEL = logging.WARN
 INFO_JSON = "info.json"
+FULL = "full/full/0/default.jpg"
 
 start_time = time.time()
 logger = logging.getLogger()
@@ -64,8 +65,17 @@ def update_info_json(info_file, url):
     with open(info_file, 'r', encoding='utf-8') as f:
         info = json.load(f)
     #TODO: Update here
+    if "sizes" in info:
+        del info["sizes"]
     with open(info_file, 'w', encoding='utf-8') as f:
         json.dump(info, f)
+
+def full(infile, dir, uhdr_options):
+    result = os.path.join(dir, FULL)
+    os.makedirs(os.path.dirname(result))
+    uhdr = UHDR(infile, **uhdr_options)
+    uhdr.process(result)
+
 
 def main(args):
     actions = get_processors()
@@ -184,9 +194,12 @@ def main(args):
     generator.manipulator_klass = manipulator_generator(uhdr_options)
     #generator.generate(infile, identifier=args.identifier)
     generator.generate(infile)
+    dir = os.path.join(args.output, os.path.splitext(os.path.basename(infile))[0])
+    full(infile, dir, uhdr_options)
     print(f"Processing took {datetime.timedelta(seconds=(time.time() - start_time))} seconds")
-    info = os.path.join(args.output, INFO_JSON)
+    info_file = os.path.join(dir, INFO_JSON)
     print(f"Updating {info}")
+    update_info_json(info_file, url)
 
 if __name__ == "__main__":
     main(sys.argv[1:])

@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="copyright"><a href="{{ $.Sites.First.Params.copyrightlink }}">&copy; {{ $.Sites.First.Params.copyrightYears }} {{ .Sites.First.Copyright | safeHTML }}</a>
+    <div class="copyright"><a href="{{ $.Sites.Default.Params.copyrightlink }}">&copy; {{ $.Sites.Default.Params.copyrightYears }} {{ .Sites.Default.Copyright | safeHTML }}</a>
         <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="{{ .Site.Params.monogram }}"></a></span>
     </div>
 

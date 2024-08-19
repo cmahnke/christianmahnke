@@ -42,6 +42,10 @@
       {{- end -}}
     {{- end -}}
 
+    {{- if .Params.layout -}}
+      {{- $class = printf "%s %s" $class .Params.layout -}}
+    {{- end -}}
+
     {{- if .Params.metaPage -}}
       {{- $class = printf "%s %s" $class "meta" -}}
     {{- end -}}
