@@ -1,5 +1,5 @@
-$background-color: #96ff00;
-$foreground-color: #5107b7; /* #3D1673; */
+$background-color: #5107b7; /* #3D1673; */
+$foreground-color: #96ff00;
 $accents-color: #ff5477;
 
 body.uranium {
@@ -34,6 +34,10 @@ body.uranium {
 
           ul li::before {
             color: $accents-color;
+          }
+
+          .renderer-canvas canvas {
+            background: $background-color;
           }
         }
 
