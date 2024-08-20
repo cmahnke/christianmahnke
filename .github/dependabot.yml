@@ -21,3 +21,11 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "/Source Files/Mocks/"
+    schedule:
+      interval: "weekly"
+    groups:
+      npm-mocks:
+        patterns:
+        - '*'
