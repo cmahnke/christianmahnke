@@ -1,6 +1,6 @@
 ---
 date: 2023-03-19T15:18:44+02:00
-title: 'Holzschnitt von Eva Roemer (1989-1977)'
+title: 'Holzschnitt von Eva Roemer (1889-1977)'
 tags:
   - Art
   - WoodblockPrint
