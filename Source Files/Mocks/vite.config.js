@@ -54,6 +54,24 @@ export default defineConfig({
         find: /~(.+)/,
         replacement: join(process.cwd(), "node_modules/$1"),
       },
+/*
+      {
+        find:'three/examples/jsm',
+        replacement:'three/examples/jsm',
+      },
+      {
+        find:'three/addons',
+        replacement: 'three/examples/jsm',
+      },
+      {
+        find:'three/tsl',
+        replacement: 'three/webgpu',
+      },
+      {
+        find:'three',
+        replacement: 'three/webgpu',
+      }
+      */
     ],
   },
   optimizeDeps: {

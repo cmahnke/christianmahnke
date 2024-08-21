@@ -3,6 +3,9 @@
 
   canvas {
     background: #5107b7;
+    max-height: 100%;
+    position: absolute !important;
+    height: 100%;
   }
 }
 

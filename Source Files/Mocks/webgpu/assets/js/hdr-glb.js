@@ -18,14 +18,41 @@ export function initModel(canvas, modelUrl, replacements) {
   loader.load(modelUrl,
     function (gltf) {
       model = gltf.scene;
+
+      //console.log("Updating material")
       model.traverse((element) => {
         if( element?.material?.type != undefined ) {
           let targetMaterial = new THREE.MeshBasicMaterial();
           THREE.MeshBasicMaterial.prototype.copy.call( targetMaterial, element.material );
           element.material = targetMaterial;
+          //console.log(`Replaced texture for ${element.name}`, element)
         }
       });
+
       scene.add(model);
+
+      // This replaces the texture from the GLB file  - currently the lighting seems wrong
+      /*
+      if (replacements !== undefined && replacements !== null) {
+        for (var materialName in replacements) {
+          model.traverse(child => {
+            if (child.material && child.material.name === materialName) {
+              const newTexture = new THREE.TextureLoader().load(replacements[materialName],
+                function ( texture ) {
+              		const material = new THREE.MeshBasicMaterial( {
+              			map: texture
+              		 } );
+              	}
+              );
+              newTexture.flipY = false;
+              child.material.map = newTexture;
+
+              console.log(child);
+            }
+          });
+        }
+      }
+      */
 
   	},
     function (xhr) {
