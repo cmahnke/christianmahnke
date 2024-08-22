@@ -19,9 +19,9 @@ export function initModel(canvas, modelUrl, replacements) {
     function (gltf) {
       model = gltf.scene;
       model.traverse((element) => {
-        if( element?.material?.type != undefined ) {
+        if (element?.material?.type != undefined) {
           let targetMaterial = new THREE.MeshBasicMaterial();
-          THREE.MeshBasicMaterial.prototype.copy.call( targetMaterial, element.material );
+          THREE.MeshBasicMaterial.prototype.copy.call(targetMaterial, element.material);
           element.material = targetMaterial;
         }
       });

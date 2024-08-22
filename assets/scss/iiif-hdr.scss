@@ -2,6 +2,16 @@ body.hdr-iiif {
   .page-wrapper .main {
     .content-container .post-body {
       font-size: xx-large;
+
+      .highlight {
+        pre {
+          border-radius: 1rem;
+
+          code {
+            background-color: unset;
+          }
+        }
+      }
     }
   }
 }
