@@ -53,3 +53,7 @@ Zusätzlich sollte die UltraHDR Textur ohne zusätzliche Beleuchtung angezeigt w
 Wenn die HDR Überprüfung fehl geschlagen ist, werden die Farben nicht in voller Pracht angezeigt.
 
 {{< hdr-model model="model/uranium.glb" >}}
+
+# Update für Three.js R167
+
+Nach dem Update auf Three.js R167 ist eine weitere Anpassung des Models notwendig. Da das Modell nicht beleuchtet werden darf, damit die Textur nicht durch Shading "eingefärbt" werden darf, muss der Typ des Materials auf `MeshBasicMaterial` geändert werden.

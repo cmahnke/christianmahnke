@@ -54,3 +54,7 @@ In addition, the UltraHDR texture should be displayed without additional lightin
 If the HDR check fails, the colours are not displayed in their full luminance.
 
 {{< hdr-model model="model/uranium.glb" >}}
+
+# Update for Three.js R167
+
+After the update to Three.js R167, a further adjustment of the model is necessary. As the model must not be illuminated so that the texture cannot be "coloured" by shading, the material type must be changed to ‘MeshBasicMaterial’.

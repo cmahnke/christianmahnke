@@ -6,7 +6,7 @@ tags:
   - Projektemacher.org
 ---
 
-Zu Abschluss von 2024 hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 220 Beiträge veröffentlicht.
+Zu Abschluss von 2024 hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 220 Beiträge (das zweitaktivste Jahr bisher) veröffentlicht.
 Einige der Highlight sind
 * [70er Jahre Tapete](https://vorsatzpapier.projektemacher.org/post/tapete-20/) - die dann auch als [erstes HDR IIIF Bild veröffentlicht wurde](https://christianmahnke.de/post/hdr-iiif/).
 * [Fritz Neumann (1928–2014) ist nicht Ric!](https://ric-unknownartist.projektemacher.org/post/mystery-again/) - Das Rätsel ist doch nicht gelöst!
