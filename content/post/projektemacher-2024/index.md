@@ -22,3 +22,4 @@ Einige der Highlight sind
 
 * [Kleiderbügel](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/map/) werden nun auf einer Karte angezeigt
 * [Kinderbücher](https://xn--kinderbcher-zhb.projektemacher.org/) können nun als PDFs exportiert werden
+* [Ric - An unknown artist](https://ric-unknownartist.projektemacher.org/) ist nun in einer deutschen Übersetzung verfügbar

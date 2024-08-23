@@ -22,3 +22,4 @@ Some of the highlights are
 
 * [Clothes hangers](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/map/) are now displayed on a map
 * [Children's books](https://xn--kinderbcher-zhb.projektemacher.org/) can now be exported as PDFs
+* [Ric - An unknown artist](https://ric-unknownartist.projektemacher.org/) is now available in a German translation
