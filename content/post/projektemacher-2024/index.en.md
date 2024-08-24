@@ -12,7 +12,8 @@ Some of the highlights are
 * [Fritz Neumann (1928-2014) is not Ric!](https://ric-unknownartist.projektemacher.org/post/mystery-again/) - The mystery is not solved after all!
 * [On the ruthless nature of metropolitan day-trippers](https://briefsteller.de/post/der-haussekretaer/286/) - the first entry with text to speech
 * [die neue linie March 1930](https://xn--blaufusstlpel-qmb.de/post/die-neue-linie-3-1930/) - *The* Bauhaus lifestyle magazine.
-* [terraced house facades commercial and residential buildings from old and new times](https://backsteinexpressionismus.projektemacher.org/post/reihenhaus-fassaden/) - Many examples of avant-garde architecture from 1929
+* ["Reihenhaus-Fassaden Geschäfts- und Wohnhäuser aus alter und neuer Zeit"](https://backsteinexpressionismus.projektemacher.org/post/reihenhaus-fassaden/) - Many examples of avant-garde architecture from 1929
+* [Licht](https://christianmahnke.de/post/licht) - Meine Projekte mit Licht und Bildern
 
 ## New pages
 * [Nocturnal Shadows]()
@@ -23,3 +24,4 @@ Some of the highlights are
 * [Clothes hangers](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/map/) are now displayed on a map
 * [Children's books](https://xn--kinderbcher-zhb.projektemacher.org/) can now be exported as PDFs
 * [Ric - An unknown artist](https://ric-unknownartist.projektemacher.org/) is now available in a German translation
+* Web archiving - Some blogs now send their links to the Internet Archive
