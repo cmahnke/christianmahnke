@@ -27,7 +27,7 @@ SOURCE="themes/projektemacher-base/static/images/cm.svg" OPTIONS="-transparent w
 
 cp themes/projektemacher-base/static/images/cm.svg static/image/
 sed -i 's/fill-opacity:0.5/fill-opacity:1.0/g' static/image/cm.svg
-convert -density 2400 static/image/cm.svg static/images/cm-monogram.png
+convert -density 2400 static/image/cm.svg -resize '1024x1024!' static/images/cm-monogram.png
 
 # Additional NPM dependencies - npm is a crappy piece of software, can't decuple install from cleanup
 #yarn install --ignore-engines #--ignore-platform
