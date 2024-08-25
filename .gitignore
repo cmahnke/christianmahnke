@@ -54,3 +54,5 @@ scripts/__pycache__
 tmp*.yuv
 tmp*.jpg
 Source Files/front.hdr
+static/images/cm.*
+static/images/logo.*
