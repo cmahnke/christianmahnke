@@ -8,6 +8,9 @@ tags:
   - HDR
   - IIIF
 iiifContext: http://iiif.io/api/image/2/context.json
+outputs:
+- html
+- iiif-manifest
 resources:
 - src: "front.hdr.jxl"
   name: front
