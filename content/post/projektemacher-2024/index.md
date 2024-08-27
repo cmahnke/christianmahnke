@@ -25,3 +25,4 @@ Einige der Highlight sind
 * [Kinderbücher](https://xn--kinderbcher-zhb.projektemacher.org/) können nun als PDFs exportiert werden
 * [Ric - An unknown artist](https://ric-unknownartist.projektemacher.org/) ist nun in einer deutschen Übersetzung verfügbar
 * Web-Archivierung - Einige Blogs senden ihre Links nun an das Internet Archiv
+* IIIF Kollektionen für Inhalte der Blogs ([Ansicht in Theseus](https://theseusviewer.org/?iiif-content=https://projektemacher.org/collection.json)) 
