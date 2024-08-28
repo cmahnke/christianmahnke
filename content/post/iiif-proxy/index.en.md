@@ -16,7 +16,7 @@ The digital collections of the University of Göttingen are mainly fed from two 
 
 Both make their digitised material available via [IIIF](https://iiif.io/). Unfortunately, the images provided are not optimised for aesthetically pleasing secondary use.
 
-In order to minimise manual post-processing and the resulting storage effort, I have slightly extended an existing IIIF server - [Hymir from MDZ](https://github.com/dbmdz/iiif-server-hymir/) - so that it is able to sit on an institutional server and reshape the images delivered by it.
+In order to minimise manual post-processing and the resulting storage effort, I have slightly extended an existing IIIF server - [Hymir from MDZ](https://github.com/dbmdz/iiif-server-hymir/) - so that it is able to sit on an institutional server and process the images delivered by it.
 
 In order to keep the image processing configurable, a field of the IIIF Image API is used to specify the operation. The [`quality`](https://iiif.io/api/image/2.1/#quality) field was suitable for this, the proxy allows:
 * `nofold` - remove page fold
@@ -26,7 +26,7 @@ In order to keep the image processing configurable, a field of the IIIF Image AP
 For the image operations themselves, [OpenCV](https://opencv.org/) is used, whereby the background is simply removed with a threshold value and only at the edges - i.e. made transparent. Recognising the folds is a little more complicated, but it's not rocket science either:
 * Recognising lines ([Probabilistic Hough Line Transform](https://en.wikipedia.org/wiki/Hough_transform)) in the fold area depending on whether they are left or right-sided
 * Sorting the recognised lines by angle and length to find the fold
-* Rotation to align the detected fold vertically
+* Rotate to align the detected fold vertically
 
 But here the reliability could be improved.
 
