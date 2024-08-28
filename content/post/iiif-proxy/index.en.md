@@ -23,9 +23,9 @@ In order to keep the image processing configurable, a field of the IIIF Image AP
 * `transparent-background` - Transparent background
 * `nofold+transparentbg` - both together
 
-For the image operations themselves, [OpenCV](https://opencv.org/) is used, whereby the background is simply removed with a threshold value and only at the edges - i.e. made transparent. Recognising the folds is a little more complicated, but it's not rocket science either:
+For the image operations themselves, [OpenCV](https://opencv.org/) is used, whereby the background is simply removed with a threshold value and only at the edges - i.e. made transparent. Recognising the folds is a little more complicated, but it's not rocket surgery either:
 * Recognising lines ([Probabilistic Hough Line Transform](https://en.wikipedia.org/wiki/Hough_transform)) in the fold area depending on whether they are left or right-sided
-* Sorting the recognised lines by angle and length to identify the most likely candidate of the fold 
+* Sorting the recognised lines by angle and length to identify the most likely candidate of the fold
 * Rotate to align the detected fold vertically
 
 But here the reliability could be improved.
@@ -50,6 +50,8 @@ Picture: Coin Cabinet of the University of Göttingen, Stephan Eckardt, Archaeol
 </div>
 
 ## Without page fold
+
+And with transparent background...
 
 {{< gallery >}}
 [

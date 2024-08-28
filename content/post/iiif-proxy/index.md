@@ -51,6 +51,8 @@ Abbildung: Münzkabinett der Universität Göttingen, Stephan Eckardt, Archäolo
 
 ## Ohne Falz
 
+Und mit transparentem Hintergrund...
+
 {{< gallery >}}
 [
   {"src": "img/GDZ-DE-611-HS-3461927_00000016.png", "alt": "Vorher"},
