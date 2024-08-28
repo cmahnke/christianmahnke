@@ -30,7 +30,7 @@ This gave me the idea of trying to provide an [UltraHDR](https://developer.andro
 
 Since my blogs initially used `iiif_static.py` from the Python module [`iiif`](https://github.com/zimeon/iiif) (which turned out to be too slow and was also not as easy to marry with [JPEG XL](https://github.com/libjxl/libjxl) as [`vips`](https://github.com/libvips/libvips)), there was already a candidate for the necessary adaptations. In addition, a Python implementation has the advantage that [Pillow](https://github.com/python-pillow/Pillow) can be used: The [MPO](https://de.wikipedia.org/wiki/Multi_Picture_Object) (a JPEG derivative that is structurally related to UltraHDR) implementation has already been used for [VintageReality](https://vintagereality.projektemacher.org/).
 
-It ‘only’ lacked support for writing [XMP](https://de.wikipedia.org/wiki/Extensible_Metadata_Platform) metadata. For normal JPEG files, it was still quite [simple](https://github.com/python-pillow/Pillow/discussions/8269#discussioncomment-10201110)...
+It 'only' lacked support for writing [XMP](https://de.wikipedia.org/wiki/Extensible_Metadata_Platform) metadata. For normal JPEG files, it was still quite [simple](https://github.com/python-pillow/Pillow/discussions/8269#discussioncomment-10201110)...
 In the end, I simply wrote a backend based on [`libultrahdr`](/post/ultrahdr/).
 
 Below is the result.

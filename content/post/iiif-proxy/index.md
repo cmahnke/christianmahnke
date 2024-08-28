@@ -25,7 +25,7 @@ Um die Bildverarbeitung konfigurierbar zu halten, wird ein Feld der IIIF Image A
 
 Für die Bildoperationen selbst kommt [OpenCV](https://opencv.org/) zum Einsatz, dabei wird der Hintergrund einfach mit einem Schwellwert und nur an den Rändern entfernt - also transparent gemacht. Die Erkennung der Falzist etwas komplizierter, aber auch kein Hexenwerk:
 * Erkennung von Linien ([Probabilistic Hough Line Transform](https://de.wikipedia.org/wiki/Hough-Transformation)) im Falzbereich je nach Links- oder Rechtsseitigkeit
-* Sortierung der erkannten Linien nach Winkel und Länge um die Falz zu finden
+* Sortierung der erkannten Linien nach Winkel und Länge um den wahrscheinlichsten Kandidaten für die Falz zu finden
 * Rotation um die erkannte Falz vertikal auszurichten
 
 Aber hier könnte die Zuverlässigkeit noch etwas erhöht werden.
