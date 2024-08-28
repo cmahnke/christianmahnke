@@ -29,3 +29,5 @@ You can add the URL to this page in the `supports` section of the `profile` defi
   }
 ]
 ```
+
+You can join the discussion on HDR for IIIF on [GitHub](https://github.com/IIIF/api/issues/2312).

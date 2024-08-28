@@ -51,4 +51,4 @@ Wenn der Test fehlschlägt, sind die Farben nicht so leuchtend.
 
 # Update 28.8.2024
 
-Es gibt nun ein entsprechendes [Github Issue](https://github.com/IIIF/api/issues/2312) um zu schauen ob es Interesse an der Erstellung einer Spezifikation gibt.
+Es gibt nun ein entsprechendes [GitHub Issue](https://github.com/IIIF/api/issues/2312) um zu schauen ob es Interesse an der Erstellung einer Spezifikation gibt.
