@@ -48,3 +48,7 @@ If the test fails, the colours are not as bright.
 **The worlds first HDR IIIF image is a 70ies wallpaper!**
 
 {{< iiif/iiif src="front.hdr/info.json" share=false hdr=true >}}
+
+# Update 28.8.2024
+
+There is now a corresponding [Github Issue](https://github.com/IIIF/api/issues/2312) to see if there is interest in creating a specification.

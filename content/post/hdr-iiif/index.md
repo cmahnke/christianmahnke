@@ -48,3 +48,7 @@ Wenn der Test fehlschlägt, sind die Farben nicht so leuchtend.
 **Das weltweit erste HDR IIIF Bild ist eine 70er Jahre Tapete!**
 
 {{< iiif/iiif src="front.hdr/info.json" share=false hdr=true >}}
+
+# Update 28.8.2024
+
+Es gibt nun ein entsprechendes [Github Issue](https://github.com/IIIF/api/issues/2312) um zu schauen ob es Interesse an der Erstellung einer Spezifikation gibt.
