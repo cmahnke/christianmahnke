@@ -24,7 +24,7 @@ Beim [Zeitzeug](http://www.zeitzeug.de/) wird die Tapetensammlung des Inhabers v
 
 Und da ich mit [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/) ein Blog habe, dass auch alte Tapeten präsentiert, habe ich dieses digitalisiert. Nur leider kommt dabei der leuchtende Charakter nicht wirklich zum [Vorschein](https://vorsatzpapier.projektemacher.org/post/tapete-20/).
 
-Das brachte mich auf die Idee mal zu versuchen ein UltraHDR Bild in Form von IIIF bereitzustellen. Das Hauptproblem dabei war das zerlegen des Bildes in Kacheln, da gängige Werkzeuge dafür nur die SDR Repräsentation des Bildes heranziehen.
+Das brachte mich auf die Idee mal zu versuchen ein [UltraHDR](https://developer.android.com/media/platform/hdr-image-format) Bild in Form von IIIF bereitzustellen. Das Hauptproblem dabei war das zerlegen des Bildes in Kacheln, da gängige Werkzeuge dafür nur die SDR Repräsentation des Bildes heranziehen.
 
 # Image Tiler für UltraHDR
 
