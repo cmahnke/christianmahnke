@@ -5,6 +5,8 @@ tags:
   - Projektemacher.org
   - Blog
   - Light
+  - 3D
+  - DigitalImages
 ---
 
 The latest blog incubated at the [Projektemacher Labs](https://labs.projektemacher.org/) has been started.

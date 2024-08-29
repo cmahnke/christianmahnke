@@ -5,6 +5,8 @@ tags:
   - Projektemacher.org
   - Blog
   - Light
+  - 3D
+  - DigitalImages
 ---
 
 Das neueste Kind der [Projektemacher Labs](https://labs.projektemacher.org/) ist die seit Anfang 2023 ausgebaute Kategorie "1900 in 3D"...
@@ -17,7 +19,7 @@ Das neueste Kind der [Projektemacher Labs](https://labs.projektemacher.org/) ist
     {{< figure src="screenshot.png" alt="Screenshot VintageReality" class="post-image" >}}
 {{< /zoom-link >}}
 
-# Präsentationen
+# Präsentation
 
 Um die Präsentation mit verschiedenen Brillen und Techniken zu ermöglichen, sind neben der IIIF Präsentation auch zusätzliche Format bzw. Repräsentationen verfügbar:
 
