@@ -22,7 +22,7 @@ updates:
     schedule:
       interval: "daily"
   - package-ecosystem: "npm"
-    directory: "/Source\ Files/Mocks/"
+    directory: "'/Source Files/Mocks/'"
     schedule:
       interval: "weekly"
     groups:
