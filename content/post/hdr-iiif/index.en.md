@@ -24,7 +24,7 @@ At [Zeitzeug](http://www.zeitzeug.de/) the owner's wallpaper collection is being
 
 And since I have a blog, [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/), which also presents old wallpapers, I digitised it. Unfortunately, the luminous character isn't visible in the [original post](https://vorsatzpapier.projektemacher.org/post/tapete-20/).
 
-This gave me the idea of trying to provide an [UltraHDR](https://developer.android.com/media/platform/hdr-image-format) image in the form of IIIF. The main problem was to split the image into tiles, as common tools only use the SDR representation of the image.
+This gave me the idea of trying to provide a [HDR](https://en.wikipedia.org/wiki/High_dynamic_range) (respectively [UltraHDR](https://developer.android.com/media/platform/hdr-image-format)) image in the form of IIIF. The main problem was to split the image into tiles, as common tools only use the SDR representation of the image.
 
 # Image Tiler for UltraHDR
 

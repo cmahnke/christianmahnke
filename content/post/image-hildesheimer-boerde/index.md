@@ -20,4 +20,4 @@ Eine nächtliche Aufnahme der Raststätte "Hildesheimer Börde" im Nebel.
 
 # Update 7.7.24
 
-Das Bild enthält nun HDR Informationen.
+Das Bild enthält nun [HDR](https://de.wikipedia.org/wiki/High_Dynamic_Range_Image) Informationen.

@@ -8,7 +8,7 @@ tags:
   - Object
 ---
 
-In diesem Beispiel geht es um einen praktischen Anwendungsfall für die HDR Darstellung im Browser...
+In diesem Beispiel geht es um einen praktischen Anwendungsfall für die [HDR](https://de.wikipedia.org/wiki/High_Dynamic_Range_Image) Darstellung im Browser...
 <!--more-->
 
 Das Beispiel unten funktioniert derzeit nur mit Chrome-basierten Browsern (wie Edge oder Brave), da diese bereits HDR mit dem HTML Canvas Element funktioniert. Dafür gibt es zwei Gründe:

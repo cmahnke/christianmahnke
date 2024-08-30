@@ -20,4 +20,4 @@ The rest stop "Hildesheimer Börde" on a foggy night.
 
 # Update 7.7.24
 
-HDR display metadata added.
+[HDR](https://en.wikipedia.org/wiki/High_dynamic_range) display metadata added.
