@@ -12,8 +12,8 @@ I have acquired a linocut by Elsa Hoppe (1901-1992)...
 
 {{< gallery >}}
 [
-  {"src": "img/print.jpg", "alt": "Druck"},
-  {"src": "img/signature.jpg", "alt": "Signatur"}
+  {"src": "img/print.jpg", "alt": "Print"},
+  {"src": "img/signature.jpg", "alt": "Signature"}
 ]
 {{</ gallery >}}
 
