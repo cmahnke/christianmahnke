@@ -3,6 +3,7 @@ date: 2022-04-27T08:07:44+02:00
 title: 'Computergrafik'
 tags:
   - Art
+  - Retrocomputing
 preview: img/print.jpg
 ---
 
