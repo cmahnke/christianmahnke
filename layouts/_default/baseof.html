@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>{{- block "title" . }}{{ end -}}</title>
     {{ partial "html/head/meta.html" . }}
+    {{ partialCached "html/head/theme.html" . }}
 
     {{- if and (eq .Kind "term") (eq .Content "") -}}
         <meta name="projektemacher:term" content="empty">
