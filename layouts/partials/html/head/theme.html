@@ -1,13 +1,13 @@
 {{- $color := "" -}}
 
 {{- if .Site.Params.pagetheme -}}
-  {{- $color := "" -}}
+  {{- $color = "" -}}
 {{- end -}}
 
 {{- if .Params.pagetheme -}}
-  {{- $color := "" -}}
+  {{- $color = "" -}}
 {{- end -}}
 
 {{- if ne $color "" -}}
-  <meta name="theme-color" content="#701611">
+  <meta name="theme-color" content="{{ $color }}">
 {{- end -}}
