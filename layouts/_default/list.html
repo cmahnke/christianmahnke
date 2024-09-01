@@ -1,5 +1,9 @@
 {{ define "title" -}}
-  {{ .Title }} · {{ .Site.Title }}
+  {{- if ne .Title "" -}}
+    {{- .Title }} · {{ .Site.Title -}}
+  {{- else -}}
+    {{- .Site.Title -}}
+  {{- end -}}
 {{- end }}
 {{ define "content" }}
     {{ if .IsHome }}
