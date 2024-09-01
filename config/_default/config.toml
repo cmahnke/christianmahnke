@@ -18,6 +18,7 @@
   disableScale = true
   description = "Persönliche Homepage von Christian Mahnke"
   debug = false
+  pagetheme = "#701611"
 
 #[params.preview]
 #    outputPrefix = "ogPreview-overlay"
