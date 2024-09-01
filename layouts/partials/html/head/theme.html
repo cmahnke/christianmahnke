@@ -1,11 +1,11 @@
 {{- $color := "" -}}
 
 {{- if .Site.Params.pagetheme -}}
-  {{- $color = "" -}}
+  {{- $color = .Site.Params.pagetheme -}}
 {{- end -}}
 
 {{- if .Params.pagetheme -}}
-  {{- $color = "" -}}
+  {{- $color = .Params.pagetheme -}}
 {{- end -}}
 
 {{- if ne $color "" -}}
