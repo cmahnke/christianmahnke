@@ -3,6 +3,7 @@ date: 2024-08-13T11:33:44+02:00
 title: "UV-Photogrammetrie"
 draft: true
 class: uranium
+pagetheme: #5107b7
 tags:
   - Light
   - Licht2024
