@@ -6,7 +6,7 @@ tags:
   - Projektemacher.org
 ---
 
-At the end of 2024, here is the annual review for Projektemacher.org. Over 220 articles were published over the course of the year (the second most active year to date).
+At the end of 2024, here is the annual review for Projektemacher.org. Over 230 articles were published over the course of the year (the second most active year to date).
 Some of the highlights are
 * [70s wallpaper](https://vorsatzpapier.projektemacher.org/post/tapete-20/) - which was then also published as [first HDR IIIF image](https://christianmahnke.de/post/hdr-iiif/).
 * [Fritz Neumann (1928-2014) is not Ric!](https://ric-unknownartist.projektemacher.org/post/mystery-again/) - The mystery is not solved after all!
@@ -25,4 +25,4 @@ Some of the highlights are
 * [Children's books](https://xn--kinderbcher-zhb.projektemacher.org/) can now be exported as PDFs
 * [Ric - An unknown artist](https://ric-unknownartist.projektemacher.org/) is now available in a German translation
 * Web archiving - Some blogs now send their links to the Internet Archive
-* IIIF collections for blog content ([View in Theseus](https://theseusviewer.org/?iiif-content=https://projektemacher.org/collection.json)) 
+* IIIF collections for blog content ([View in Theseus](https://theseusviewer.org/?iiif-content=https://projektemacher.org/collection.json))

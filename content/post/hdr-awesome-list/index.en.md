@@ -4,7 +4,6 @@ title: "HDR images in the browser"
 tags:
   - Licht2024
   - HDR
-draft: true
 ---
 
 For a project in preparation I have compiled a [list of links](https://github.com/cmahnke/awesome-browser-hdr/blob/main/README.md) to HDR on the web or in the browser.

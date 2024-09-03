@@ -6,7 +6,7 @@ tags:
   - Projektemacher.org
 ---
 
-Zu Abschluss von 2024 hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 220 Beiträge (das zweitaktivste Jahr bisher) veröffentlicht.
+Zu Abschluss von 2024 hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 230 Beiträge (das zweitaktivste Jahr bisher) veröffentlicht.
 Einige der Highlight sind
 * [70er Jahre Tapete](https://vorsatzpapier.projektemacher.org/post/tapete-20/) - die dann auch als [erstes HDR IIIF Bild veröffentlicht wurde](https://christianmahnke.de/post/hdr-iiif/).
 * [Fritz Neumann (1928–2014) ist nicht Ric!](https://ric-unknownartist.projektemacher.org/post/mystery-again/) - Das Rätsel ist doch nicht gelöst!
@@ -25,4 +25,4 @@ Einige der Highlight sind
 * [Kinderbücher](https://xn--kinderbcher-zhb.projektemacher.org/) können nun als PDFs exportiert werden
 * [Ric - An unknown artist](https://ric-unknownartist.projektemacher.org/) ist nun in einer deutschen Übersetzung verfügbar
 * Web-Archivierung - Einige Blogs senden ihre Links nun an das Internet Archiv
-* IIIF Kollektionen für Inhalte der Blogs ([Ansicht in Theseus](https://theseusviewer.org/?iiif-content=https://projektemacher.org/collection.json)) 
+* IIIF Kollektionen für Inhalte der Blogs ([Ansicht in Theseus](https://theseusviewer.org/?iiif-content=https://projektemacher.org/collection.json))
