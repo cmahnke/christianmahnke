@@ -75,6 +75,6 @@ Das Bild besteht aus 1777136 Einzelbildern, bzw. 2:42 Stunden Spieldauer, bzw. 3
 
 Ich bin nicht der einzige, der auf die Idee gekommen ist Pong für die Visualisierung einzusetzen: [Song Pong](https://victortao.substack.com/p/song-pong).
 
-{{< html/iframe-consent  preview="<img class='video-preview' src='./videos/snakehandler-boxed.jpg' alt='Vorschau'>" >}}
+{{< html/iframe-consent  preview="<img class='video-preview' src='./song-pong-preview.jpg' alt='Vorschau'>" >}}
     {{< youtube id="lxjElOAgkPg" title="Song Pong - Liszt - Hungarian Rhapsody No.8 in F sharp minor" >}}
 {{< /html/iframe-consent >}}
