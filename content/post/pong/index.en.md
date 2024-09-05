@@ -70,3 +70,11 @@ The distribution follows this scale: On the left (cyan) little activity, on the 
 # Statistics
 
 The image consists of 1777136 individual images, or 2:42 hours of gameplay, or 333 rounds.
+
+# Update 9.9.2024
+
+I'm not the only one who has come up with the idea of using Pong for visualisation: [Song Pong](https://victortao.substack.com/p/song-pong).
+
+{{< html/iframe-consent  preview="<img class='video-preview' src='./song-pong-preview.jpg' alt='Preview'>" >}}
+    {{< youtube id="lxjElOAgkPg" title="Song Pong - Liszt - Hungarian Rhapsody No.8 in F sharp minor" >}}
+{{< /html/iframe-consent >}}
