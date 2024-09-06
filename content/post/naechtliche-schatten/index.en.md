@@ -1,7 +1,9 @@
 ---
-date: 2024-08-31T11:33:44+02:00
+date: 2024-09-08T20:33:44+02:00
 title: "Nocturnal shadows"
 draft: true
+class: night
+pagetheme: black
 tags:
   - Light
   - Licht2024
