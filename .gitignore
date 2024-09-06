@@ -48,6 +48,7 @@ static/fonts
 # 3D Models
 content/**/*.gtlf
 content/**/*.glb
+!content/**/uranium.glb
 data/stats.json
 !content/**/img/*.hdr.jpeg
 scripts/__pycache__
