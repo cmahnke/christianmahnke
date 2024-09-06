@@ -6,14 +6,16 @@ tags:
   - Projektemacher.org
 ---
 
-Zu Abschluss von 2024 hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 230 Beiträge (das zweitaktivste Jahr bisher) veröffentlicht.
+Zu Abschluss von 2024 hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 240 Beiträge (das zweitaktivste Jahr bisher) veröffentlicht.
 Einige der Highlight sind
 * [70er Jahre Tapete](https://vorsatzpapier.projektemacher.org/post/tapete-20/) - die dann auch als [erstes HDR IIIF Bild veröffentlicht wurde](https://christianmahnke.de/post/hdr-iiif/).
-* [Fritz Neumann (1928–2014) ist nicht Ric!](https://ric-unknownartist.projektemacher.org/post/mystery-again/) - Das Rätsel ist doch nicht gelöst!
+* [Fritz Neumann (1928–2014) ist nicht Ric!](https://ric-unknownartist.projektemacher.org/de/post/mystery-again/) - Das Rätsel ist doch nicht gelöst!
 * [Über die rücksichtslose Art der großstädtischen Ausflügler.](https://briefsteller.de/post/der-haussekretaer/286/) - der erste Eintrag mit Text to Speech
-* [die neue linie März 1930](https://xn--blaufusstlpel-qmb.de/post/die-neue-linie-3-1930/) - *Die* Bauhaus Lifestyle-Zeitschrift.
+* [die neue linie - März 1930](https://xn--blaufusstlpel-qmb.de/post/die-neue-linie-3-1930/) - *Die* Bauhaus Lifestyle-Zeitschrift.
 * ["Reihenhaus-Fassaden Geschäfts- und Wohnhäuser aus alter und neuer Zeit"](https://backsteinexpressionismus.projektemacher.org/post/reihenhaus-fassaden/) - Viele Beispiele avantgardistischer Architektur von 1929
-* [Light](https://christianmahnke.de/post/licht) - My projects on light and images
+* [Light 2024](https://christianmahnke.de/post/licht2024) - Meine Projekte mit Licht und Bildern, wie
+  * [Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung](https://christianmahnke.de/post/hdr-image-analysis/)
+  * [UV-Photogrammetrie](https://christianmahnke.de/post/uv-photogrammetry/)
 
 ## Neue Seiten
 * [Nächtliche Schatten]()
