@@ -73,7 +73,11 @@ export function initModel(canvas, modelUrl, replacements) {
 };
 
 function animate() {
-	requestAnimationFrame(animate);
+
+  setTimeout( function() {
+    requestAnimationFrame( animate );
+  }, 1000 / 30 );
+	//requestAnimationFrame(animate);
 
 	// required if controls.enableDamping or controls.autoRotate are set to true
 	controls.update();
