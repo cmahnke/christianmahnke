@@ -41,6 +41,10 @@ body.uranium {
             background: black;
             border-radius: .8rem;
           }
+
+          h1, h2, h3, h4 {
+            overflow-x: auto;
+          }
         }
 
         a {
