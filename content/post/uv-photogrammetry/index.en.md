@@ -16,23 +16,23 @@ tags:
 
 # Uranium glass
 
-Since I have been buying [uranium glass](https://de.wikipedia.org/wiki/Uranglas) from time to time for years, when I can get it cheap, I already have a small collection. The really fascinating thing is the irradiation with UV light: then the glass is stimulated to glow. The effect also occurs with the UV component in sunlight, but is then much weaker. However, it is usually sufficient for the trained eye at the flea market.
+Since I have been buying [uranium glass](https://en.wikipedia.org/wiki/Uranium_glass) from time to time for years, when I can get it cheap, I already have a small collection. The really fascinating thing is the irradiation with UV light: then the glass is stimulated to glow. The effect also occurs with the UV component in sunlight, but is then much weaker. However, it is usually sufficient for the trained eye at the flea market.
 
-As uranium glass is a popular collecting area, here is some more information and collections:
+As uranium glass is a popular collecting area, here is some more information and collections (mostly in German):
 * [Uranium glass | From collectors for collectors](https://www.uranglas.ch/)
 * [Hands-on radioactivity](https://www.radioaktivitaet-zum-anfassen.com/uranglas-mehr/photogalerie-urangl%C3%A4ser/)
 * [J. Grzesina: Radiantly beautiful things](https://www.grzesina.de/radioakt/dinge.htm)
 * And of course you can also find items on eBay etc...
 
-As one of my technical interests is to improve the digital mediation of artefacts, here is an example of such an object under UV radiation. The object was captured using photogrammetry, digitally post-processed slightly and the texture was shifted in the colour space so that it can be displayed by an HDR-capable browser. Basically, the display works in the same way as with the [vase from February](/post/3d-model), only the recording method and the rendering of the texture differ. However, the latter (currently) requires a Chrome-based browser.
+As one of my technical interests is to improve the digital mediation of artefacts, here is an example of such an object under UV radiation. The object was captured using photogrammetry, digitally post-processed slightly and the texture was shifted in the colour space so that it can be displayed by an HDR-capable browser. Basically, the display works in the same way as with the [vase from February](/en/post/3d-model), only the recording method and the rendering of the texture differ. However, the latter (currently) requires a Chrome-based browser.
 
 # Digitisation and post-processing
-The creation and post-processing followed [the tried and tested procedure](/post/3d-models/), but considerably more post-processing was necessary, as significantly more shadows were cast when the picture was taken under UV light. Violet reflections from the UV lamp were also removed.
+The creation and post-processing followed [the tried and tested procedure](/en/post/3d-models/), but considerably more post-processing was necessary, as significantly more shadows were cast when the picture was taken under UV light. Violet reflections from the UV lamp were also removed.
 
 # Presentation
 
 The implementation was easier than expected, basically only two steps are required. A customised version of [Three.js](https://threejs.org/) was used for the example.
-* Create a GLTF model with UltraHDR texture, for converting the texture see [LibUltraHDR](/post/ultrahdr/). The customised texture must be packaged with the model in the next step, using [`obj2gltf`](https://github.com/CesiumGS/obj2gltf):
+* Create a GLTF model with UltraHDR texture, for converting the texture see [LibUltraHDR](/en/post/ultrahdr/). The customised texture must be packaged with the model in the next step, using [`obj2gltf`](https://github.com/CesiumGS/obj2gltf):
 
 ```
 obj2gltf -i static/model/3DModel.obj -o static/model/uranium.glb
