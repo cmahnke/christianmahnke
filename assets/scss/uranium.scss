@@ -37,7 +37,9 @@ body.uranium {
           }
 
           .renderer-canvas canvas {
-            background: $background-color;
+            /*background: $background-color;*/
+            background: black;
+            border-radius: .8rem;
           }
         }
 

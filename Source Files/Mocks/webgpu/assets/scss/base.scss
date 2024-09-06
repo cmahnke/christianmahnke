@@ -2,7 +2,9 @@
   min-height: 50vh;
 
   canvas {
-    background: #5107b7;
+    /*background: #5107b7;*/
+    background: black;
+    border-radius: .8rem;
     max-height: 100%;
     position: absolute !important;
     height: 100%;
@@ -10,6 +12,7 @@
 }
 
 .texture-container {
+  margin-top: 2rem;
   width: 100%;
 
   .texture {

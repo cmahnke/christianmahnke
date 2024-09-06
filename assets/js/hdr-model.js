@@ -25,6 +25,7 @@ export function initModel(canvas, modelUrl, replacements) {
           element.material = targetMaterial;
         }
       });
+      model.position.y = -1.0;
       scene.add(model);
 
   	},
@@ -45,8 +46,10 @@ export function initModel(canvas, modelUrl, replacements) {
   const parentWidth = renderer.domElement.parentNode.clientWidth;
   const parentHeight = renderer.domElement.parentNode.clientHeight;
 
-  camera = new THREE.PerspectiveCamera(45, parentWidth / parentHeight, 0.25, 20);
-	camera.position.set(0, 0, 5);
+  camera = new THREE.PerspectiveCamera(40, parentWidth / parentHeight, 0.25, 20);
+
+	camera.position.set(0, 6, 10);
+  camera.lookAt(0,0,0)
 
   const ratio = window.devicePixelRatio || 1;
 	renderer.setPixelRatio(ratio);
@@ -56,7 +59,7 @@ export function initModel(canvas, modelUrl, replacements) {
   renderer.setClearColor(0x000000, 0);
   controls = new OrbitControls(camera, renderer.domElement);
   controls.autoRotate = true;
-  controls.autoRotateSpeed = .15;
+  controls.autoRotateSpeed = .05;
   controls.minPolarAngle = 0;
 	controls.maxPolarAngle =  Math.PI * 0.5;
 
