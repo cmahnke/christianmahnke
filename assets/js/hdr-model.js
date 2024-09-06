@@ -62,6 +62,8 @@ export function initModel(canvas, modelUrl, replacements) {
   controls.autoRotateSpeed = .05;
   controls.minPolarAngle = 0;
 	controls.maxPolarAngle =  Math.PI * 0.5;
+  controls.maxDistance = 18;
+  controls.minDistance = 4;
 
   window.addEventListener("resize", () => {
     camera.aspect = canvas.parentNode.clientWidth / canvas.parentNode.clientHeight;
