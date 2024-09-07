@@ -7,6 +7,7 @@ tags:
   - Light
   - 3D
   - DigitalImages
+  - OpenCV
 ---
 
 Das neueste Kind der [Projektemacher Labs](https://labs.projektemacher.org/) ist die seit Anfang 2023 ausgebaute Kategorie "1900 in 3D"...

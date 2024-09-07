@@ -7,6 +7,7 @@ tags:
   - Light
   - 3D
   - DigitalImages
+  - OpenCV
 ---
 
 The latest blog incubated at the [Projektemacher Labs](https://labs.projektemacher.org/) has been started.
