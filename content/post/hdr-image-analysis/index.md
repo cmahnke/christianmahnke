@@ -38,7 +38,9 @@ Dieses Buch enthält auch Kopien von Stempelabdrücken. Teilweise lässt sich di
 
 {{< hdr-canvas-check >}}
 
-Wenn die HDR Überprüfung fehl geschlagen ist, werden die Farben nicht in voller Pracht angezeigt. Derzeit können nur die Intensitäten der einzelnen Kanäle angepasst werden, prinzipiell sind aber deutlich mehr Parametrisierungen denkbar.
+Wenn die HDR Überprüfung fehl geschlagen ist, werden die Farben nicht in voller Pracht angezeigt. **Selbst wenn die Darstellung von HDR Bildern funktioniert, muss in Chrome noch das Flag `enable-experimental-web-platform-features` (chrome://flags#enable-experimental-web-platform-features) aktiviert werden.**
+
+Derzeit können nur die Intensitäten der einzelnen Kanäle angepasst werden, prinzipiell sind aber deutlich mehr Parametrisierungen denkbar.
 Daher erhöht das Beispiel in den meisten Einstellungen die Lesbarkeit nur marginal, macht aber das Potential sichtbar.
 
 {{< hdr-canvas image="img/sample.jpeg" >}}

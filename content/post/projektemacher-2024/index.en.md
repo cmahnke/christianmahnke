@@ -6,7 +6,7 @@ tags:
   - Projektemacher.org
 ---
 
-At the end of 2024, here is the annual review for Projektemacher.org. Over 240 articles were published over the course of the year (the second most active year to date).
+At the end of 2024, here is the annual retrospect for Projektemacher.org. Over 240 articles were published over the course of the year (the second most active year to date).
 Some of the highlights are
 * [70s wallpaper](https://vorsatzpapier.projektemacher.org/post/tapete-20/) - which was then also published as [first HDR IIIF image](https://christianmahnke.de/en/post/hdr-iiif/).
 * [Fritz Neumann (1928-2014) is not Ric!](https://ric-unknownartist.projektemacher.org/post/mystery-again/) - The mystery is not solved after all!
@@ -19,8 +19,8 @@ Some of the highlights are
 
 
 ## New pages
-* [Nocturnal Shadows]()
-* [Vintage Reality](https://vintagereality.projektemacher.org/) - historical stereo images
+* [Nocturnal Shadows](https://schatten.yaapb.projektemacher.org/)
+* [Vintage Reality](https://vintagereality.projektemacher.org/) - Historical stereo images
 
 ## New functions
 

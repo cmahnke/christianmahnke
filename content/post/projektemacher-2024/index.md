@@ -18,8 +18,8 @@ Einige der Highlight sind
   * [UV-Photogrammetrie](https://christianmahnke.de/post/uv-photogrammetry/)
 
 ## Neue Seiten
-* [Nächtliche Schatten]()
-* [Vintage Reality](https://vintagereality.projektemacher.org/) - historische Stereobilder
+* [Nächtliche Schatten](https://schatten.yaapb.projektemacher.org/#1/1)
+* [Vintage Reality](https://vintagereality.projektemacher.org/) - Historische Stereobilder
 
 ## Neue Funktionen
 

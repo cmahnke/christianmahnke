@@ -51,7 +51,7 @@ In addition, the UltraHDR texture should be displayed without additional lightin
 
 {{< hdr-canvas-check >}}
 
-If the HDR check fails, the colours are not displayed in their full luminance.
+If the HDR check fails, the colours are not displayed in their full luminance. **Even if the display of HDR images works, the `enable-experimental-web-platform-features` flag (chrome://flags#enable-experimental-web-platform-features) must still be activated in Chrome.**
 
 {{< hdr-model model="model/uranium.glb" >}}
 

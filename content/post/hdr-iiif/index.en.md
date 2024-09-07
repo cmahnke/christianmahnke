@@ -43,7 +43,7 @@ There is currently no standardised way for IIIF to indicate UltraHDR content. In
 
 {{< hdr-canvas-check >}}
 
-If the test fails, the colours are not as bright.
+If the test fails, the colours are not as bright. **Even if the display of HDR images works, the `enable-experimental-web-platform-features` flag (chrome://flags#enable-experimental-web-platform-features) must still be activated in Chrome.**
 
 **The worlds first HDR IIIF image is a 70ies wallpaper!**
 
