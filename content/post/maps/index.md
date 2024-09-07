@@ -7,6 +7,7 @@ tags:
 ---
 
 Ein weiterer Beitrag aus [Projektemacher Labs](https://labs.projektemacher.org/):
+<!--more-->
 
 # Vorbereitungen
 

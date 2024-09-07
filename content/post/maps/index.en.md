@@ -7,6 +7,7 @@ tags:
 ---
 
 Another addition from [Projektemacher Labs](https://labs.projektemacher.org/):
+<!--more-->
 
 # Preparations
 

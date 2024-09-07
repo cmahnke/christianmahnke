@@ -21,6 +21,9 @@ resources:
     label: Rückseite
 ---
 
+Da meine Blogs auf GitHub verwaltet werden, müssen die Bilder so platzsparend wie möglich gespeichert werden...
+<!--more-->
+
 # Warum JPEG XL?
 
 [JPEG XL](https://en.wikipedia.org/wiki/JPEG_XL) ist ein neues Format für Rasterbilder, so neu, das zur Zeit als dieser Text geschrieben wurde, es als Lemma noch nicht in der deutschen Wikipedia geführt wurde. Was genau JPEG XL anders bzw. besser macht als das allseits bekannte JPEG kann man dort nachlesen. Wir beschränken uns hier auf den Mehrwert für die Projektmacher Blogs:

@@ -21,6 +21,9 @@ resources:
     label: Back
 ---
 
+Since my blogs are managed on GitHub, the images have to be stored as storage-saving as possible...
+<!--more-->
+
 # Why JPEG XL?
 [JPEG XL](https://en.wikipedia.org/wiki/JPEG_XL) is a new format for raster images, in fact, is's so recent (at the time this text was written) there haven't even been an entry in the German Wikipedia.
 
