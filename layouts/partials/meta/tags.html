@@ -5,6 +5,9 @@
 {{- if isset .Params "tags" -}}
   <div class="tags">
     {{- range $tag := .Params.tags -}}
+      {{- if hasPrefix $tag "hidden_" -}}
+        {{- continue -}}
+      {{- end -}}
       {{- if ne $tag "" -}}
         {{- $i18nTag := i18n $tag -}}
         {{- if eq $i18nTag "" -}}

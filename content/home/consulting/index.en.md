@@ -2,7 +2,7 @@
 title: "Consulting"
 metaPage: true
 displayinlist: false
-weight: 3
+weight: 4
 ---
 
 If you need advice on digitizing and presenting your collection online, I will be happy to offer my help and experience.
