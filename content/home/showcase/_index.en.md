@@ -2,7 +2,6 @@
 title: "Showcase"
 metaPage: true
 displayinlist: false
-draft: true
 weight: 3
 ---
 
