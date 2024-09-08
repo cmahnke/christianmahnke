@@ -7,7 +7,7 @@ tags:
 preview: img/print.jpg
 ---
 
-Ich habe einen Holzschnitt von [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Roemer) (1989-1977) gefunden...
+Ich habe einen Holzschnitt von [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Roemer) (1889-1977) gefunden...
 <!--more-->
 
 {{< gallery >}}
@@ -17,7 +17,7 @@ Ich habe einen Holzschnitt von [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Ro
 ]
 {{</ gallery >}}
 
-Da ich seit Jahren eine lockere Zusammenarbeit mit Gerbrand Caspers pflege, bietet dier Beitrag wieder eine gute Gelegenheit auf  seine Arbeiten über Eva Roemer zu verweisen:
+Da ich seit Jahren eine lockere Zusammenarbeit mit Gerbrand Caspers pflege, bietet dieser Beitrag wieder eine gute Gelegenheit auf  seine Arbeiten über Eva Roemer zu verweisen:
 
 * [The Linosaurus: Eva Roemer](https://gerrie-thefriendlyghost.blogspot.com/2011/07/eva-roemer.html)
 * [DAS HAUS DER FRAU: Eva Roemer](https://www.dashausderfrau.nl/roemer-eva.html) - hier ist auch der abgebildete Druck zu finden.
