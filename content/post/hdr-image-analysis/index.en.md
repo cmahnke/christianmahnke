@@ -38,7 +38,7 @@ This book also contains copies of stamp impressions. Some of the stamp colours u
 
 {{< hdr-canvas-check >}}
 
-If the HDR check fails, the colours are not displayed in their full luminance. **Even if the display of HDR images works, the `enable-experimental-web-platform-features` flag (chrome://flags#enable-experimental-web-platform-features) must still be activated in Chrome.**
+If the HDR check fails, the colours are not displayed in their full luminance. **Even if the display of HDR images works, the HDR support for the `canvas` element needs the browser flag `enable-experimental-web-platform-features` to be enabled. For example, open "chrome://flags#enable-experimental-web-platform-features" in Chrome to activate it.**
 
 Currently, only the intensities of the individual channels can be adjusted, but in principle significantly more parameters are conceivable.
 Therefore, the example only marginally increases readability in most settings, but makes the potential visible.

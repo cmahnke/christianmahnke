@@ -43,7 +43,7 @@ Derzeit gibt es für IIIF noch keine standardisierte Möglichkeit auf UltraHDR I
 
 {{< hdr-canvas-check >}}
 
-Wenn der Test fehlschlägt, sind die Farben nicht so leuchtend. **Selbst wenn die Darstellung von HDR Bildern funktioniert, muss in Chrome noch das Flag `enable-experimental-web-platform-features` (chrome://flags#enable-experimental-web-platform-features) aktiviert werden.**
+Wenn der Test fehlschlägt, sind die Farben nicht so leuchtend. **Selbst wenn die Darstellung von HDR Bildern funktioniert, mus die HDR Unterstützung für das `canvas` Element noch aktiviert werden: Dazu muss `enable-experimental-web-platform-features` auf `enabled` gesetzt werden. In Chrome kann die Einstellung über die URL "chrome://flags#enable-experimental-web-platform-features" angesteuert werden.**
 
 **Das weltweit erste HDR IIIF Bild ist eine 70er Jahre Tapete!**
 
