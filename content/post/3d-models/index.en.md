@@ -10,6 +10,7 @@ tags:
   - Light
   - Licht2024
   - 3D
+  - Three.js
 ---
 
 Maybe it will become a virtual exhibition about orange ceramics...

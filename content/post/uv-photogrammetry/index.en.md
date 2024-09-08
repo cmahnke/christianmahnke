@@ -9,6 +9,7 @@ tags:
   - DigitalImages
   - HDR
   - 3D
+  - Three.js
 ---
 
 **This article presents the world's first HDR model of UV photogrammetry in a browser.**

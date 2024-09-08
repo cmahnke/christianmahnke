@@ -8,3 +8,14 @@ TODO
 ## Content
 
 * Grass Exhibition
+
+# Posts
+
+## TODO
+* Otto Richard Bossert
+* Helmut Bönitz
+
+### Commands
+```
+convert preview.png -channel a -negate +channel -fill black -colorize 100% preview-negative.png
+```

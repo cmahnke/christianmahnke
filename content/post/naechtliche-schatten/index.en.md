@@ -13,6 +13,8 @@ tags:
   - Projektemacher.org
 ---
 
+{{< figure src="preview-negative.png" alt="Preview" style="background: white; border-radius: 1rem;" >}}
+
 In some [previous](/en/post/hdr-awesome-list/) [Posts](/en/post/ultrahdr/) a new blog project was already mentioned, now it' finally done:
 <!--more-->
 
