@@ -1,0 +1,27 @@
+
+input[type=checkbox]:checked ~ .touch-content .touch-back {
+  z-index: 2;
+}
+
+.touch-content {
+  position: relative;
+  width: fit-content;
+
+  .touch-front {
+    /* position: absolute; */
+  }
+
+  .touch-back {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .2;
+
+  }
+
+}
