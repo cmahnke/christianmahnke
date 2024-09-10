@@ -77,10 +77,10 @@ chalk@^5.3.0:
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.3.0.tgz#67c20a7ebef70e7f3970a01f90fa210cb6860385"
   integrity sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==
 
-chroma-js@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-3.0.0.tgz#c19b3b728352bb02b8906c60d7c7d223d3d9b721"
-  integrity sha512-ZFn4qxtZTvRJ7XatOLgaHGJYN10LoS6T0EMsu7IVayFG5+b6Yw8wCGQL5qLgo4B+wrRZ9niCrozOQ4a584bvaA==
+chroma-js@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-3.1.1.tgz#380103ce1f8bb119be2b18303d598b3c113cf6b1"
+  integrity sha512-CGr6w73Gi86142RWqZ1RjED/CyduYw2vMTikQZUvr2jGIihnZlMo/Kzm9rYHWDP2pJc6eebwc8CkX0iteBon+A==
 
 classlist-polyfill@^1.0.3:
   version "1.2.0"
@@ -107,11 +107,6 @@ color-name@~1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
-
-colorjs.io@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/colorjs.io/-/colorjs.io-0.5.2.tgz#63b20139b007591ebc3359932bef84628eb3fcef"
-  integrity sha512-twmVoizEW7ylZSN32OgKdXRmo1qg+wT5/6C3xu5b9QsWzSFAhHLn2xd8ro0diCsKfCj1RdaTP/nrcW+vAoQPIw==
 
 commander@^7.2.0:
   version "7.2.0"
@@ -255,13 +250,6 @@ glob@^10.4.2:
     minipass "^7.1.2"
     package-json-from-dist "^1.0.0"
     path-scurry "^1.11.1"
-
-hdr-canvas@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/hdr-canvas/-/hdr-canvas-0.0.5.tgz#4eb9afbac012511dc5c6c84768c7297794af250b"
-  integrity sha512-GmzRirExwGhsLZAArf92xD17P41JOUqF3E/s77jKx9Y8aRkx1ExZw6WSjQxLLFL5hkNturxShpLLWW9atJB9MQ==
-  dependencies:
-    colorjs.io "^0.5.2"
 
 is-fullwidth-code-point@^3.0.0:
   version "3.0.0"
