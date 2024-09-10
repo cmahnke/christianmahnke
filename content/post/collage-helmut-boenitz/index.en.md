@@ -4,8 +4,7 @@ title: 'Collage by Helmut Bönitz (1914-1999)'
 tags:
   - Art
   - Collage
-preview: img/print.jpg
-draft: true
+preview: img/collage.jpg
 ---
 
 I found a collage by Helmut Bönitz (1914-1999)...
@@ -13,7 +12,7 @@ I found a collage by Helmut Bönitz (1914-1999)...
 
 {{< gallery >}}
 [
-  {"src": "img/print.jpg", "alt": "Druck"},
+  {"src": "img/collage.jpg", "alt": "Collage"},
   {"src": "img/signature.jpg", "alt": "Signatur"}
 ]
 {{</ gallery >}}
