@@ -12,6 +12,7 @@
     "record": "playwright test"
   },
   "dependencies": {
+    "@atlas-viewer/atlas": "^2.2.8",
     "@fontsource-variable/josefin-sans": "^5.0.22",
     "@fontsource-variable/league-spartan": "^5.0.21",
     "@monogrid/gainmap-js": "^3.0.6",
