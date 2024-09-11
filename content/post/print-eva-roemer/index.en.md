@@ -10,6 +10,8 @@ preview: img/print.jpg
 I found a woodcut by [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Roemer) (1889-1977)...
 <!--more-->
 
+The title is probably "Snow on the reeds (Lake Starnberg)" (German: "Schnee auf dem Schilf (Starnberger See)").
+
 {{< gallery >}}
 [
   {"src": "img/print.jpg", "alt": "Druck"},

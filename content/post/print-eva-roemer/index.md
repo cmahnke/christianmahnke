@@ -10,6 +10,8 @@ preview: img/print.jpg
 Ich habe einen Holzschnitt von [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Roemer) (1889-1977) gefunden...
 <!--more-->
 
+Der Titel ist vermutlich "Schnee auf dem Schilf (Starnberger See)".
+
 {{< gallery >}}
 [
   {"src": "img/print.jpg", "alt": "Druck"},
