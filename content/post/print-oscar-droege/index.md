@@ -1,5 +1,5 @@
 ---
-date: 2023-07-08T15:15:44+02:00
+date: 2023-09-09T15:15:44+02:00
 title: 'Farbholzschnitt von Oscar Droege (1898-1983)'
 tags:
   - Art

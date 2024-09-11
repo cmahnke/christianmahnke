@@ -1,11 +1,10 @@
 ---
 date: 2023-07-08T15:15:44+02:00
-title: 'Woodcut by  Otto Richard Bossert (1874-1919)'
+title: 'Woodcut by Otto Richard Bossert (1874-1919)'
 tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
-draft: true
 ---
 
 I have found a woodcut by [Otto Richard Bossert](https://de.wikipedia.org/wiki/Otto_Richard_Bossert) (1874-1919)...
