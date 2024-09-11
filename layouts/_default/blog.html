@@ -13,7 +13,7 @@
   {{- end -}}
   {{- partial "header.html" . -}}
 
-    <div class="content-container posts blog">
+    <div class="content-container blog">
       {{- $pages := where .Site.Pages "Section" "post" -}}
       {{- $mainSite := .Sites.Default -}}
       {{- if ne $mainSite .Site -}}
