@@ -5,17 +5,22 @@ input[type=checkbox]:checked ~ .touch-content .touch-back {
 
 .touch-content {
   position: relative;
-  width: fit-content;
+  /*width: fit-content;*/
+  margin: auto;
+  width: 33%;
 
   .touch-front {
     /* position: absolute; */
+    width: 100%;
   }
 
   .touch-back {
     position: absolute;
     z-index: -1;
+    /*
     height: 100%;
     width: 100%;
+    */
     top: 0;
     left: 0;
     right: 0;

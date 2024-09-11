@@ -1,3 +1,0 @@
-
-const image = document.querySelector("#touch-target");
-const heightMap = "/page031-1.json";
