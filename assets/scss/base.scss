@@ -15,6 +15,7 @@
 @import "./pagination";
 @import "./code";
 @import "./gallery";
+@import "./blog";
 @import "./tagcloud";
 @import "./uranium";
 @import "./night";
@@ -524,14 +525,6 @@ a:visited {
 
     @media (max-width : 25em) {
         margin: 0 .6rem;
-    }
-
-    &.blog {
-      figure img {
-        width:100%;
-        height:100%;
-        object-fit: contain;
-      }
     }
 
     .posts .post-body .post-preview {

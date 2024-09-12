@@ -28,6 +28,10 @@ body.night {
           .post-body {
             font-size: 1.4em;
 
+            img {
+              background: white;
+            }
+
             .gallery {
               background-color: transparent;
               box-shadow: 0 0 2px $accents-color;

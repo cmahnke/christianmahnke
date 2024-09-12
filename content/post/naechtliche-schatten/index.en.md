@@ -4,6 +4,9 @@ title: "Nocturnal shadows"
 draft: true
 class: night
 pagetheme: black
+preview:
+  image: preview-negative.png
+  class: preview-black
 tags:
   - Light
   - Licht2024
@@ -13,10 +16,10 @@ tags:
   - Projektemacher.org
 ---
 
-{{< figure src="preview-negative.png" alt="Preview" style="background: white; border-radius: 1rem;" >}}
-
 In some [previous](/en/post/hdr-awesome-list/) [Posts](/en/post/ultrahdr/) a new blog project was already mentioned, now it' finally done:
 <!--more-->
+
+{{< figure src="preview-negative.png" alt="Preview" style="background: white; border-radius: 1rem;" >}}
 
 The latest Projektemacher Blog (or better site) "[Nocturnal shadows](https://schatten.yaapb.projektemacher.org/)" is online!
 

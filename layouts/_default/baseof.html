@@ -39,7 +39,7 @@
       {{- if or (hasPrefix .Path "about") (hasPrefix .Path "/about") -}}
         {{- $class = "about" -}}
       {{- else -}}
-        {{- $class = printf "%s-%s" "section" (replace .Dir "/" "" ) -}}
+        {{- $class = printf "section-%s dir-%s" .Section (replace .Dir "/" "" ) -}}
       {{- end -}}
     {{- end -}}
 

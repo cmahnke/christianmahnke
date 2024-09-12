@@ -4,6 +4,9 @@ title: "Nächtliche Schatten"
 draft: true
 class: night
 pagetheme: black
+preview:
+  image: preview-negative.png
+  class: preview-black
 tags:
   - Light
   - Licht2024
@@ -13,10 +16,10 @@ tags:
   - Projektemacher.org
 ---
 
-{{< figure src="preview-negative.png" alt="Schriftzug" style="background: white; border-radius: 1rem;" >}}
-
 In einigen [vorherigen](/post/hdr-awesome-list/) [Beiträgen](/post/ultrahdr/) war ja schon die Rede von einem neuen Blog Projekt die Rede, nun ist es so weit:
 <!--more-->
+
+{{< figure src="preview-negative.png" alt="Schriftzug" style="background: white; border-radius: 1rem;" >}}
 
 Das neueste Projektemacher Blog (oder besser Seite) "[Nächtliche Schatten](https://schatten.yaapb.projektemacher.org/)" ist online!
 

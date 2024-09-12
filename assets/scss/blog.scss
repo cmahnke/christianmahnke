@@ -1,0 +1,36 @@
+.content-container {
+  &.blog {
+    figure img {
+      width:100%;
+      height:100%;
+      object-fit: contain;
+    }
+
+    .post-preview {
+      img {
+        border-radius: .4rem;
+      }
+    }
+
+    .preview-black {
+      box-shadow: 0px 0px 15px 10px #000000;
+      filter: blur(0px);
+      transition: all 1s linear;
+
+      &:hover {
+        transition: all 3s linear;
+        filter: blur(5px);
+      }
+    }
+  }
+}
+
+.section-post {
+  .content-container.single {
+    .post-body {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

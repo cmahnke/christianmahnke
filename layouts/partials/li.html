@@ -14,6 +14,11 @@
         <div class="post-body">
           {{- with .Params.preview -}}
             {{- $src := . -}}
+            {{- $class := "" -}}
+            {{- if reflect.IsMap . -}}
+              {{- $src = index . "image" -}}
+              {{- $class = index . "class" -}}
+            {{- end -}}
             <div class="post-preview">
               <picture>
                 {{- range $previewWidth -}}
@@ -22,7 +27,7 @@
                 {{- end -}}
                 {{- $imgRes := $.Page.Resources.Get $src -}}
                 <a title="{{ $.Title}}" href="{{ $.RelPermalink }}">
-                  <img src="{{ ($imgRes.Resize (printf "%sx" "1280")).RelPermalink }}" alt="{{ $.Title }}" />
+                  <img src="{{ ($imgRes.Resize (printf "%sx" "1280")).RelPermalink }}" alt="{{ $.Title }}" {{ if ne $class "" }}class="{{ $class }}"{{ end }} />
                 </a>
               </picture>
             </div>
