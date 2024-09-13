@@ -7,6 +7,8 @@ tags:
 draft: true
 ---
 
-Ein Schwerpunkt der letzten Monate ist das Thema "Licht". Angefangen mit den historischen 3D Bildern in [Vintage Reality](https://vintagereality.projektemacher.org/) über erste Versuche mit [Photogrammetrie](/post/3d-models/) zu [HDR](/post/ultrahdr/). Hier die komplette Liste:
+Ein Schwerpunkt der letzten Monate ist das Thema "Licht". Angefangen mit den historischen 3D Bildern in [Vintage Reality](https://vintagereality.projektemacher.org/) über erste Versuche mit [Photogrammetrie](/post/3d-models/) zu [HDR](/post/ultrahdr/).
+<!--more-->
+Hier die komplette Liste:
 
 {{< list-tag-posts tag="Licht2024" section="post" >}}
