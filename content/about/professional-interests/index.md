@@ -20,7 +20,8 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
   * Workflowsteuerung
 
 * Digitale Bilder
-  * Bildverarbeitung
+  * Computer Vision für die Aufbereitung von kulturellem Erbe
+  * Bildverarbeitung und -formate
 
 * Programmiersprachen
   * Java

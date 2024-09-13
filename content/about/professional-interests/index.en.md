@@ -20,7 +20,8 @@ My professional focus is on various topics from the spectrum of digital librarie
   * Workflow automatisation
 
 * Digital images
-  * Image processing
+  * Computer vision for the enhancement of cultural heritage
+  * Image processing and formats
 
 * Programming
   * Java
