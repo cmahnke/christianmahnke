@@ -72,6 +72,8 @@ My professional focus is on various topics from the spectrum of digital librarie
 * Fieseler C., **Mahnke C.** (2013): CERL Thesaurus used in an electronic edition of 18th-century university lectures, CERL Newsletter 27, Juni 2013
 * Voigt K., **Mahnke C.**, Dr. Tech M., Dogan M. (2014): Heyne Digital - Exploring the origins of Classical Archaeology through a digital edition, [Conference proceedings QQML 2014](http://www.isast.org/images/FINAL_BOOK_OF_ABSTRACTS_e-book_version.pdf)
 
+See also <a id="grolink" href="//publications.goettingen-research-online.de/cris/rp/rp115268?open=all1&rppall=1000&etalall=-1&startall=0&" target="_blank">Göttingen Research online</a>
+
 <!--
 <script type="text/javascript" charset="UTF-8" src="https://publications.goettingen-research-online.de/cris/rp/rp115268?open=all1&rppall=1000&etalall=-1&startall=0&ft=js&cs=default"></script>
 -->
