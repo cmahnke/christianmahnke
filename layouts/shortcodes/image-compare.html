@@ -40,13 +40,6 @@
   </figure>
 </img-comparison-slider>
 
-{{/*
-<script type="text/javascript">
-  const compareContainer = document.querySelector('#{{ $id | safeJS }}');
-  initCompare(compareContainer);
-</script>
-*/}}
-
 {{- define "partials/shortcodes/image-compare-metadata.html" -}}
   {{- (dict "css" slice "js" (slice "js/image-compare.js") "scss" (slice "scss/image-compare.scss")) | jsonify -}}
 {{- end -}}
