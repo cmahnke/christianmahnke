@@ -55,9 +55,6 @@ p {
     }
 }
 
-
-
-
 a,
 a:active,
 a:focus,
@@ -633,6 +630,42 @@ a:visited {
         }
     }
 
+    .post-body a.blog,
+    a.blog {
+        display: block;
+        font-style: italic;
+        font-weight: 100;
+        margin-left: auto;
+        text-align: end;
+
+        @media (min-width : 35em) {
+            display: inline-block;
+            float: inline-end;
+            margin-right: 4rem;
+        }
+
+        &:before {
+            content: '🡒';
+            color: $marker-color;
+            margin: 0 7px;
+
+        }
+        &:after {
+            content: '⌘';
+            color: $marker-color;
+            margin-left: 5px;
+        }
+        &:hover {
+            font-weight: 300;
+            transition: all 100ms;
+            text-decoration: none;
+            /*
+            text-decoration: underline;
+            text-decoration-color: $marker-color;
+            */
+        }
+    }
+
     .home-section {
         .title {
             border-bottom: 3px solid #ff3131;
@@ -735,16 +768,23 @@ a:visited {
         }
     }
 
-    ul li {
-        padding-left: .4rem;
-        p {
-            margin-left: 0 !important;
-            display: inline-block !important;
-        }
+    ul {
+        display: flex;
+        flex-direction: column;
 
-        ul {
-            li {
-                padding-left: 2.4em;
+        li {
+            padding-left: .4rem;
+
+            p {
+                display: inline-flex;
+                margin: .4rem 0 !important;
+                display: unset;
+            }
+
+            ul {
+                li {
+                    padding-left: 3rem;
+                }
             }
         }
     }
@@ -1069,7 +1109,7 @@ a:visited {
 
 .post {
     line-height: 1.4;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     margin-top: 3em;
     /* This prevents overlaps in to long tag lists
     padding-top: 1em;

@@ -9,19 +9,23 @@ weight: 4
 
 Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum digitaler Bibliotheken und Museen:
 
-* Volltexte und Metadaten
+* Volltexte und Metadaten {{< link link="/tags/Data" class="blog" >}}Blog Beiträge{{< /link >}}
   * TEI / Digitale Editionen
   * OCR
   * Suchtechnologien (Solr / ElasticSearch)
   * XML Technologien
-  * IIIF
+  * IIIF {{< link link="/tags/IIIF" class="blog" >}}Blog Beiträge{{< /link >}}
 
 * (Massen-) Digitalisierung
   * Workflowsteuerung
 
 * Digitale Bilder
-  * Computer Vision für die Aufbereitung von kulturellem Erbe
-  * Bildverarbeitung und -formate
+  * Computer Vision für die Aufbereitung von kulturellem Erbe {{< link link="/tags/Geodata/" class="blog" >}}Blog Beiträge{{< /link >}}
+  * Bildverarbeitung und -formate {{< link link="/tags/OpenCV" class="blog" >}}Blog Beiträge{{< /link >}}
+
+* 3D {{< link link="/tags/3D/" class="blog" >}}Blog Beiträge{{< /link >}}
+
+* Geodaten {{< link link="/tags/Geodata/" class="blog" >}}Blog Beiträge{{< /link >}}
 
 * Programmiersprachen
   * Java
@@ -37,7 +41,7 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 
 * Betriebs- und Entwicklungsinfrastrukturen
   * Git / GitHub
-  * Docker / Kubernetes / Cloud
+  * Docker / Kubernetes / Cloud {{< link link="/tags/Docker/" class="blog" >}}Blog Beiträge{{< /link >}}
 
 ## Vorträge
 (*Auswahl*)

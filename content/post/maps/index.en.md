@@ -4,6 +4,7 @@ title: "Maps for my Projektemacher blogs"
 tags:
 - Maps
 - Projektemacher.org
+- Geodata
 ---
 
 Another addition from [Projektemacher Labs](https://labs.projektemacher.org/):

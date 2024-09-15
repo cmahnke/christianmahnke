@@ -9,19 +9,23 @@ weight: 4
 
 My professional focus is on various topics from the spectrum of digital libraries and museums:
 
-* Full texts and metadata
+* Full texts and metadata {{< link link="/tags/Data" class="blog" >}}Blog posts{{< /link >}}
   * TEI / Digital editions
   * OCR
   * Search technologies (Solr / ElasticSearch)
   * XML technologies
-  * IIIF
+  * IIIF {{< link link="/tags/IIIF" class="blog" >}}Blog posts{{< /link >}}
 
 * (Mass-) Digitisation
   * Workflow automatisation
 
 * Digital images
-  * Computer vision for the enhancement of cultural heritage
-  * Image processing and formats
+  * Computer vision for the enhancement of cultural heritage {{< link link="/tags/Geodata/" class="blog" >}}Blog posts{{< /link >}}
+  * Image processing and formats {{< link link="/tags/OpenCV" class="blog" >}}Blog posts{{< /link >}}
+
+* 3D {{< link link="/tags/3D/" class="blog" >}}Blog posts{{< /link >}}
+
+* Geodata {{< link link="/tags/Geodata/" class="blog" >}}Blog posts{{< /link >}}
 
 * Programming
   * Java
@@ -37,7 +41,7 @@ My professional focus is on various topics from the spectrum of digital librarie
 
 * DevOps
   * Git / GitHub
-  * Docker / Kubernetes / Cloud
+  * Docker / Kubernetes / Cloud {{< link link="/tags/Docker/" class="blog" >}}Blog posts{{< /link >}}
 
 ## Talks
 (*Auswahl*)

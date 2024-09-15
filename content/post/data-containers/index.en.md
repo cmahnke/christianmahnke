@@ -3,6 +3,7 @@ date: 2024-04-19T17:33:44+02:00
 title: "Data Containers"
 tags:
   - Data
+  - Docker
 ---
 
 Even if it is not necessarily the intended use case, Docker makes it very easy to package large amounts of data with applications for simplified provisioning (such as APIs). This can be particularly helpful if, for example, standardisation data from different sources is to be merged for data enrichment.
