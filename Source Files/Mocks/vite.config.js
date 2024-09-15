@@ -20,7 +20,7 @@ export default defineConfig({
       apply: "build",
     },
     stylelint({ build: true, dev: false, lintOnStart: true }),
-    DynamicPublicDirectory(["webgpu/public", "hdr-canvas/public", "touch/public"], {
+    DynamicPublicDirectory(["webgpu/public", "hdr-canvas/public", "touch/public", "imagecompare/public"], {
       ssr: false,
       mimeTypes,
     }),
@@ -43,6 +43,7 @@ export default defineConfig({
         main: resolve(__dirname, "webgpu/index.html"),
         canvas: resolve(__dirname, "hdr-canvas/index.html"),
         touch: resolve(__dirname, "touch/index.html"),
+        imagecompare: resolve(__dirname, "imagecompare/index.html"),
       },
       output: {
         assetFileNames: `assets/[name].[ext]`,

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet preload prefetch"
+      as="style"
+      href="./assets/scss/base.scss"
+      crossorigin
+    />
+
+    <title>Marmolata</title>
+  </head>
+
+  <body>
+    <div class="article-container">
+      <div class="content">
+        <h1>Image compare</h1>
+
+        <img-comparison-slider class="compare">
+          <figure slot="first" class="first">
+            <img width="100%" src="/img/print.jpg">
+            <figcaption>Holzschnitt</figcaption>
+          </figure>
+          <figure slot="second" class="second">
+            <img width="100%" src="/img/august-2024.jpg">
+            <figcaption>Aufnahme August 2024 von <a href="https://maps.app.goo.gl/vFW7pE6TXFaHUbgp7">Marco Beretta</a></figcaption>
+          </figure>
+        </img-comparison-slider>
+      </div>
+    </div>
+
+
+    <script
+      type="module"
+      src="./assets/js/main.js"
+      type="text/javascript"
+    ></script>
+  </body>
+</html>
