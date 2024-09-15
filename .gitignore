@@ -57,3 +57,5 @@ tmp*.jpg
 Source Files/front.hdr
 static/images/cm.*
 static/images/logo.*
+Source Files/Marmolada/model.blend1
+Source Files/Marmolada/clipped.tif.aux.xml
