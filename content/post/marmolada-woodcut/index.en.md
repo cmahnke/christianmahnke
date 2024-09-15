@@ -1,5 +1,5 @@
 ---
-date: 2024-09-13T18:07:44+02:00
+date: 2024-09-15T18:07:44+02:00
 title: 'Climate change in art...'
 tags:
   - Art
