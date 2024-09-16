@@ -21,7 +21,7 @@
   pagetheme = "#701611"
 
 [params.preview]
-    outputPrefix = "ogPreview-overlay"
+    outputPrefix = "ogPreview"
     outputSuffix = ".png"
     format =  "svg"
     image = "front.png"
