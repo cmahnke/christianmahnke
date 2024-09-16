@@ -34,3 +34,13 @@
     }
   }
 }
+
+.section-post .post .post-body {
+  .citation {
+    margin-left: 5rem;
+
+    @media (max-width : 36em) {
+      margin-left: 2.4rem;
+    }
+  }
+}

@@ -114,6 +114,9 @@ preserveTaxonomyNames = true
         autoHeadingID = true
         autoHeadingIDType = "github"
 
+        [markup.goldmark.parser.attribute]
+            block = true
+
 [imaging]
     quality = 95
 

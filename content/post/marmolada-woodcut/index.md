@@ -49,7 +49,9 @@ Da Abbildungen eingängiger sind als Statistiken, hier der Vergleich mit einer A
 * Die Höheninformationen stammen aus [Tinitaly](https://tinitaly.pi.ingv.it/):
 
 **Tarquini S., I. Isola, M. Favalli, A. Battistini, G. Dotta** (2023). *TINITALY, a digital elevation model of Italy with a 10 meters cell size (Version 1.1).* Istituto Nazionale di Geofisica e Vulcanologia (INGV). https://doi.org/10.13127/tinitaly/1.1.
+{.citation}
 
 **Tarquini S., I. Isola, M. Favalli, F. Mazzarini, M. Bisson, M.T. Pareschi, E. Boschi** (2007). *TINITALY/01: a new triangular irregular network of Italy.* Annals of Geophysics. https://doi.org/10.4401/ag-4424
+{.citation}
 
 **P.S.:** Fall jemand das Monogramm wieder erkennt, bin ich für einen Hinweis dankbar.
