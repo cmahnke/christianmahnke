@@ -1228,31 +1228,32 @@ a:visited {
 }
 
 .iframe-wrapper {
-    position: relative;
+    line-height: unset;
+
     .opt-in {
         max-width: $content-width;
 
         .video-preview {
-            padding: 1rem;
+            padding: 1rem 1rem 0 1rem;
             max-width: 100%;
             filter: url($sunset-filter);
+            padding-bottom: unset;
 
             & + .opt-in-overlay-content {
-                position: absolute;
                 bottom: 0;
-                margin: 1rem;
-                right: -1rem;
-                left: 1rem;
-                width: calc(100% - 2rem);
+                margin: -.6rem 1rem 1rem;
                 padding-top: 0;
                 box-sizing: border-box;
+                line-height: 1.4;
+                width: 100%;
             }
         }
 
         .opt-in-overlay {
-            position: relative;
 
             .opt-in-header {
+                padding-top: 1rem;
+                margin-top: unset;
                 box-shadow: unset;
             }
         }
