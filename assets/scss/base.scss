@@ -1237,11 +1237,13 @@ a:visited {
             padding: 1rem 1rem 0 1rem;
             max-width: 100%;
             filter: url($sunset-filter);
-            padding-bottom: unset;
+            @supports (font: -apple-system-body) and (-webkit-appearance: none) {
+                filter: sepia(100%) hue-rotate(360deg) saturate(800%) brightness(110%) contrast(75%);
+            }
 
             & + .opt-in-overlay-content {
                 bottom: 0;
-                margin: -.6rem 1rem 1rem;
+                margin: -.8rem 1rem 1rem;
                 padding-top: 0;
                 box-sizing: border-box;
                 line-height: 1.4;
@@ -1255,6 +1257,11 @@ a:visited {
                 padding-top: 1rem;
                 margin-top: unset;
                 box-shadow: unset;
+            }
+
+            .opt-in-text {
+              margin-block-start: unset;
+              margin-block-end: unset;
             }
         }
     }
