@@ -2,7 +2,7 @@
 date: 2024-02-24T10:16:44+02:00
 title: "3D Models in the browser"
 preview:
-  image: img/front.jpg
+  image: preview.png
   hide: true
 scss:
   - scss/3d/3d-model.scss

@@ -2,7 +2,7 @@
 date: 2024-01-23T19:33:44+02:00
 title: "Mystery Box"
 preview:
-  image: img/front.jpg
+  image: img/front.jpeg
   hide: true
 tags:
   - Object
