@@ -1,6 +1,9 @@
 ---
 date: 2024-09-05T11:33:44+02:00
 title: "Ultraviolet Photogrammetry"
+preview:
+  image: img/front.jpg
+  hide: true
 class: uranium
 pagetheme: #5107b7
 tags:
