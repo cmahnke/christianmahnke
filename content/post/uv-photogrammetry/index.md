@@ -20,7 +20,7 @@ tags:
 
 # Uranglas
 
-Da seit Jahren schon ab und zu [Uranglas](https://de.wikipedia.org/wiki/Uranglas) kaufe, wenn ich es günstig bekommen kann, habe ich inzwischen schon einer kleine Sammlung. Das wirklich faszinierende, ist die Bestrahlung mit UV-Licht: Dann wird das Glas zum leuchten angeregt. Der Effekt tritt auch schon mit dem UV-Anteil im Sonnenlicht auf, ist dann aber deutlich schwächer. Für as geübte Auge auf dem Flohmarkt allerdings meist ausreichend.
+Da seit Jahren schon ab und zu [Uranglas](https://de.wikipedia.org/wiki/Uranglas) kaufe, wenn ich es günstig bekommen kann, habe ich inzwischen schon einer kleine Sammlung. Das wirklich faszinierende, ist die Bestrahlung mit UV-Licht: Dann wird das Glas zum leuchten angeregt. Der Effekt tritt auch schon mit dem UV-Anteil im Sonnenlicht auf, ist dann aber deutlich schwächer. Für das geübte Auge auf dem Flohmarkt allerdings meist ausreichend.
 
 Da Uranglas ein beliebtes Sammelgebiet ist, hier ein paar weitere Informationen und Sammlungen:
 * [Uranglas | Vom Sammler für Sammler](https://www.uranglas.ch/)
