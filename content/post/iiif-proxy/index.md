@@ -1,6 +1,9 @@
 ---
 date: 2022-01-26T11:44:44+02:00
 title: "IIIF Proxy"
+preview:
+  image: img/Proxy-DE-611-HS-3461927_00000016.png
+  hide: true
 tags:
   - IIIF
   - OpenCV

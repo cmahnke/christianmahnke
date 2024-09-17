@@ -1,6 +1,9 @@
 ---
 date: 2024-03-05T19:22:44+02:00
 title: "VintageReality gestartet"
+preview:
+  image: screenshot.png
+  hide: true
 tags:
   - Projektemacher.org
   - Blog

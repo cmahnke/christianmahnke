@@ -1,6 +1,9 @@
 ---
 date: 2024-06-06T11:33:44+02:00
 title: "Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung"
+preview:
+  image: img/front.jpg
+  hide: true
 tags:
   - Light
   - Licht2024

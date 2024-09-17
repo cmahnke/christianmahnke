@@ -1,6 +1,9 @@
 ---
 date: 2021-03-13T19:22:44+02:00
 title: "Labs.projektemache.org gestartet"
+preview:
+  image: screenshot.png
+  hide: true
 tags:
 - Projektemacher.org
 ---

@@ -1,11 +1,15 @@
 ---
 date: 2021-01-13T19:22:44+02:00
 title: "Wohnzimmer renoviert"
+preview:
+  image: furnished.jpg
+  hide: true
 tags:
 - DIY
 ---
 
 Neben meinen Blogs habe ich die Corona-Zeit genutzt mein Wohnzimmer zu renovieren. Auch hier konnte ich einige jahrealte Ideen umsetzen:
+<!--more-->
 * Gestreift historisch Tapeten vom [Zeitzeug](http://zeitzeug.de/) anbringen
 * Meine Bibliothek neu aufstellen
 

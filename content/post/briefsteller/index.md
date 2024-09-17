@@ -1,6 +1,9 @@
 ---
 date: 2021-04-27T19:22:44+02:00
 title: "Briefsteller.de gestartet"
+preview:
+  image: screenshot.png
+  hide: true
 tags:
 - Projektemacher.org
 - Blog

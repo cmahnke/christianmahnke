@@ -1,6 +1,9 @@
 ---
 date: 2024-08-18T11:33:44+02:00
 title: "HDR IIIF"
+#preview:
+#  image: preview.png
+#  hide: true
 tags:
   - Light
   - Licht2024
