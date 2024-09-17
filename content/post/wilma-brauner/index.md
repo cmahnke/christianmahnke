@@ -1,18 +1,18 @@
 ---
 date: 2022-12-03T12:00:00+02:00
 title: Ausstellung "Wilma Bräuner"
+preview: Plakat.jpg
 tags:
 - Projekt
 - Website
 ---
 
 Ab 6. Dezember findet in der Stadtgalerie „Alte Post“, Stephanstraße 4, Sylt / OT Westerland die Ausstellung "Spurensuche im Sylter Archiv -  Zum Leben und Werk von **Wilma Bräuner** (1891 – 1985)" statt, an der Evelyn Kraßmann und ich zusammen mit einem [Team](https://xn--wilmabruner-r8a.de/about/#ausstellung) gearbeitet haben. Die [Webseite](https://xn--wilmabruner-r8a.de/) befindet sich noch im Aufbau...
+<!--more-->
 
 {{< figure src="Plakat.jpg" title="Ausstellungsplakat" >}}
 
-
 Die Vernissage findet am Montag, den 5. Dezember 2022 um 18 Uhr in der Stadtgalerie statt.
-<!--more-->
 
 # Nachtrag
 
