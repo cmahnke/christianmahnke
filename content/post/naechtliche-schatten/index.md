@@ -5,7 +5,7 @@ draft: true
 class: night
 pagetheme: black
 preview:
-  image: preview-negative.png
+  image: preview.png
   class: preview-black
 tags:
   - Light

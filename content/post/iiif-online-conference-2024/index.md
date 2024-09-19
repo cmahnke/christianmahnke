@@ -4,7 +4,6 @@ title: "IIIF Online Meeting 2024"
 preview:
   image: ../../../static/images/IIIF-logo.png
   hide: true
-draft: true
 tags:
 - IIIF
 - Conference
