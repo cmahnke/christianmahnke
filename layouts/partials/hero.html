@@ -8,7 +8,7 @@
         <div class="hero-caption">
             <div class="name">{{- .Site.Title -}}</div>
             {{- with .Site.Params.subtitle -}}
-                <div class="title">{{- . -}}</div>
+                <div id="tag-line" class="title">{{- . -}}</div>
             {{- end -}}
         </div>
     </div>
@@ -71,4 +71,20 @@
           "filter": "brightness(" + brightness + ")"
       });
   });
+  //Random translated tagline
+  var lang = 'en';
+  if (document.documentElement.lang !== undefined) {
+      /* See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/language */
+      const locale = new Intl.Locale(document.documentElement.lang);
+      lang = locale.language;
+  }
+  const titles = { 'de': ["Creative Technologist"],
+                   'en': ["Creative Technologist"]};
+  const chance = 3;
+  const index = Math.floor(Math.random() * (chance * titles[lang].length + 1))
+  if (index < titles[lang].length) {
+    const title = document.querySelector("#tag-line");
+    title.innerText = titles[lang][index];
+  }
+
 </script>
