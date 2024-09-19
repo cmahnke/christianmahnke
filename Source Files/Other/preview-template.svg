@@ -260,17 +260,17 @@
      y="0"
      ry="3.0299747"
      inkscape:label="background" />
-  <image
-     id="logo"
-     style="filter:url(#filter4459)"
-     xlink:href="../../themes/projektemacher-base/static/images/cm.svg"
-     preserveAspectRatio="xMidYMid"
-     width="97.239998"
-     height="100"
-     x="1075.9791"
-     y="506"
-     inkscape:label="logo" />
     <image id="preview-image" xlink:href="../../content/post/marmolada-woodcut/img/print.jpg" y="350" x="100" style="image-rendering:optimizeQuality" preserveAspectRatio="xMidYMid meet" height="600" width="1000"/>
+    <image
+       id="logo"
+       style="filter:url(#filter4459)"
+       xlink:href="../../themes/projektemacher-base/static/images/cm.svg"
+       preserveAspectRatio="xMidYMid"
+       width="97.239998"
+       height="100"
+       x="1075.9791"
+       y="506"
+       inkscape:label="logo" />
   <text
      id="text-container"
      xml:space="preserve"
