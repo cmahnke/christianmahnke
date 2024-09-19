@@ -80,3 +80,9 @@ Siehe auch <a id="grolink" href="//publications.goettingen-research-online.de/cr
 
 ## Ausstellungen
 * **6.12. - 17.12.2022**: "Spurensuche im Sylter Archiv - Zum Leben und Werk von **Wilma Bräuner** (1891 – 1985)" - Stadtgalerie "Alte Post", Sylt / OT Westerland mit Evelyn Kraßmann.
+
+## ORCID
+<a href="https://orcid.org/0009-0003-1361-4159" class="orcid">
+<img alt="ORCID logo" src="/images/ORCIDiD_iconvector.svg" width="24" height="24" />
+https://orcid.org/0009-0003-1361-4159
+</a>

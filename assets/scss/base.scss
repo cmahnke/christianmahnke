@@ -1667,3 +1667,14 @@ a:has(.post-image) {
   font-size: small;
   text-align: right;
 }
+
+.orcid {
+  img {
+    vertical-align: middle;
+  }
+
+  &::before,
+  &::after {
+    content: '' !important;
+  }
+}
