@@ -21,7 +21,7 @@ While the last approach had perhaps already reached its climax with ["Soylent Gr
 ]
 {{</ gallery >}}
 
-I acquired this woodcut a few weeks ago and after I couldn't find out anything about the monogram and thus the artist. Even the respected experts Gerbrand Caspers (curator of [Das Haus der Frau](https://www.dashausderfrau.nl/) and [The Linosaurus](https://gerrie-thefriendlyghost.blogspot.com/)) and [Wolfgang Barina](http://www.wolfgang-barina.de/kunst/) were unable to identify it. But Wolfgang was able to determine the motif, i.e. the mountain, many thanks for that!
+I acquired this woodcut a few weeks ago and I couldn't find out anything about the monogram and thus the artist. Even the respected experts Gerbrand Caspers (curator of [Das Haus der Frau](https://www.dashausderfrau.nl/) and [The Linosaurus](https://gerrie-thefriendlyghost.blogspot.com/)) and [Wolfgang Barina](http://www.wolfgang-barina.de/kunst/) were unable to identify it. But Wolfgang was able to determine the motif, i.e. the mountain, many thanks for that!
 
 # Perspective
 

@@ -21,7 +21,7 @@ Während letzter Ansatz vielleicht schon mit ["… Jahr 2022 … die überleben 
 ]
 {{</ gallery >}}
 
-Diesen Holzschnitt habe ich vor einigen Wochen erworben und nach dem sich nichts über das Monogramm und damit den Künstler herausfinden lies. Auch die geschätzten Experten Gerbrand Caspers (Betreiber von [Das Haus der Frau](https://www.dashausderfrau.nl/) und [The Linosaurus](https://gerrie-thefriendlyghost.blogspot.com/)) und [Wolfgang Barina](http://www.wolfgang-barina.de/kunst/) konnten es nicht zuordnen. Aber Wolfgang konnte das Motiv, also den Berg bestimmen, vielen Dank an dieser Stelle dafür!
+Diesen Holzschnitt habe ich vor einigen Wochen erworben und es lies sich nichts über das Monogramm und damit den Künstler herausfinden. Auch die geschätzten Experten Gerbrand Caspers (Betreiber von [Das Haus der Frau](https://www.dashausderfrau.nl/) und [The Linosaurus](https://gerrie-thefriendlyghost.blogspot.com/)) und [Wolfgang Barina](http://www.wolfgang-barina.de/kunst/) konnten es nicht zuordnen. Aber Wolfgang konnte das Motiv, also den Berg bestimmen, vielen Dank an dieser Stelle dafür!
 
 # Perspektive
 
