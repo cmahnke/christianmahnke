@@ -1,5 +1,5 @@
 ---
-date: 2024-09-20T19:22:44+02:00
+date: 2024-09-19T19:22:44+02:00
 title: "IIIF Online Meeting 2024"
 preview:
   image: ../../../static/images/IIIF-logo.png
