@@ -9,7 +9,7 @@ tags:
 - Conference
 ---
 
-Ich werde mein [IIIF HDR](/post/) Projekt auf der diesjährigen [IIIF Online Meeting](https://iiif.io/event/2024/online-meeting/) vorstellen!
+Ich werde mein [IIIF HDR](/post/) Projekt auf dem diesjährigen [IIIF Online Meeting](https://iiif.io/event/2024/online-meeting/) vorstellen!
 <!--more-->
 
 Dabei soll es aber gar nicht nur um das Beispiel aus dem Blog gehen, sondern auch um den breiteren Kontext und die aktuellen Bemühungen zur Standardisierung...
