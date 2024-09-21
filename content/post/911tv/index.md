@@ -4,6 +4,7 @@ title: "911TV gestartet"
 tags:
 - Website
 - Media
+- Archives
 draft: true
 ---
 
@@ -37,3 +38,9 @@ Daher fasst diese Webseite die Videos zusammen und präsentiert sie in einer seh
 Entgegen aktueller Mediennutzungsgewohnheiten verläuft das Fernsehprogramm linear, man kann aber die Kanäle wechseln.
 Schlüsselereignisse lassen sich als Teletexttafel einblenden. Ebenfalls kann der Teletext deaktiviert werden und der "Fernseher" im Vollbildmodus anzeigen. Das Laden der Teletexttafeln kann etwas dauern.
 Bei Fehlern, wie längeren Ladezeiten oder fehlende Aufzeichnungen, kommt es zu einer Bildstörung. Diese tritt auch auf, wenn man versucht den Fernseher auszuschalten.
+
+Dies erlaubt auch die Präsentation auf einem Röhrenbildschirm, z.B. im Rahmen einer Installation.
+
+## Technische Realisierung
+
+Die Seite ist als [React](https://react.dev/), also JavaScript Anwendung realisiert, die zusätzlichen Abhängigkeiten sind auf der Seite dokumentiert. Um die Nutzerschnittstelle so weit wie möglich zu reduzieren, sind die Interaktionsmöglichkeiten mit dem Bildschirmtext auf Tastatureingaben beschränkt.

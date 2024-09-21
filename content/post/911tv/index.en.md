@@ -4,6 +4,7 @@ title: "911TV started"
 tags:
 - Website
 - Media
+- Archives
 draft: true
 ---
 
@@ -37,3 +38,9 @@ Therefore, this website summarises the videos and presents them in a very reduce
 Contrary to current media usage habits, the TV programme is linear, but you can change channels.
 Key events can be displayed as teletext sub titles. Teletext can also be deactivated and the "TV" displayed in full-screen mode. Loading the teletext panels can take some time.
 If errors occur, such as longer loading times or missing recordings, there is a picture disturbance. This also occurs when you try to switch off the television.
+
+This also allows presentation on a CRT screen, e.g. as part of an installation.
+
+## Technical realisation
+
+The page is realised as a [React](https://react.dev/), i.e. JavaScript application, the additional dependencies are documented on the page. In order to reduce the user interface as much as possible, the interaction options with the screen text are limited to keyboard input.
