@@ -1,0 +1,29 @@
+{{- $pdf := "" -}}
+{{- with .Get "pdf" -}}
+  {{- $pdf = . -}}
+{{- end -}}
+
+{{- $page := 1 -}}
+{{- with .Get "page" -}}
+  {{- $page = . -}}
+{{- end -}}
+
+{{- $pdf-link := printf "%s/%s" .Page.Permalink $pdf -}}
+
+{{- $id := printf "_pdf-%s" (md5 $pdf) -}}
+
+{{- if ne $pdf "" -}}
+  <div id="{{ $id | safeHTML }}"></div>
+  <script>
+    {{/* See https://pdfobject.com/api/ */}}
+    let options = {
+      page: {{ $page }},
+      fallbackLink: "<p class='pdf-preview-download'><a href='{{ $pdf-link }}'>PDF Download</a></p>"
+    };
+    PDFObject.embed("{{ $pdf }}", "{{ $id }}", options);
+  </script>
+{{- end -}}
+
+{{- define "partials/shortcodes/ipdf-preview-metadata.html" -}}
+  {{- (dict "css" slice "js" (slice "js/pdf-preview.js") "scss" (slice "scss/pdf-preview.scss")) | jsonify -}}
+{{- end -}}
