@@ -8,7 +8,12 @@
   {{- $page = . -}}
 {{- end -}}
 
-{{- $pdf-link := printf "%s/%s" .Page.Permalink $pdf -}}
+{{- $pdflink := printf "%s/%s" .Page.Permalink $pdf -}}
+
+{{- $file := path.Join .Page.Path $pdf -}}
+{{- if not (fileExists $file) -}}
+  {{- warnf "File %s doens't exist!" $file -}}
+{{- end -}}
 
 {{- $id := printf "_pdf-%s" (md5 $pdf) -}}
 
@@ -18,7 +23,7 @@
     {{/* See https://pdfobject.com/api/ */}}
     let options = {
       page: {{ $page }},
-      fallbackLink: "<p class='pdf-preview-download'><a href='{{ $pdf-link }}'>PDF Download</a></p>"
+      fallbackLink: "<p class='pdf-preview-download'><a href='{{ $pdflink }}'>PDF Download</a></p>"
     };
     PDFObject.embed("{{ $pdf }}", "{{ $id }}", options);
   </script>

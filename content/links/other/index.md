@@ -2,9 +2,10 @@
 title: "Andere"
 metaPage: true
 displayinlist: false
-weight: 4
-draft: true
+weight: 5
 ---
+
+Weitere Links und ohne direkte Zusammenarbeit
 
 ## Sammlungen
 

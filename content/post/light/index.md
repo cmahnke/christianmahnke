@@ -1,5 +1,5 @@
 ---
-date: 2024-09-17T18:22:44+02:00
+date: 2024-10-01T18:22:44+02:00
 title: 'Blogserie zum Thema "Licht"'
 tags:
   - Light

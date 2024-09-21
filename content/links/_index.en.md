@@ -9,4 +9,4 @@ cascade:
       indexRecursive: true
 ---
 
-Partner und Links
+These partners have contributed to or otherwise promoted my projects
