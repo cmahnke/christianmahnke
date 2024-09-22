@@ -14,7 +14,7 @@ Merry Christmas to all readers, this year there is another present...
 
 You guessed right, the [instructions](./instructions-2022.pdf) for the Christmas cards again.
 
-{{< figure src="card-2021.jpg" alt="Christmas card" caption="Finished Christmas card" class="post-image" >}}
+{{< figure src="card-2022.jpg" alt="Christmas card" caption="Finished Christmas card" class="post-image" >}}
 
 The wallpaper used is from [Zeitzeug](http://zeitzeug.de/) in Göttingen and is also shown in high resolution at [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/tapete-17/).
 
