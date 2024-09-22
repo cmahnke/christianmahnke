@@ -14,7 +14,7 @@ Frohe Weihnachten an alle Leser, dieses Jahr wieder gibt es ein Geschenk...
 
 Schon fast eine Tradition: Die [Bastelanleitung](./instructions-2023.pdf) für die Weihnachtskarten.
 
-{{< figure src="card-2023.jpg" alt="Weihnachtskarte" caption="Fertige Weihnachtskarte" class="post-image" >}}
+{{< figure src="card-2023.jpg" alt="Weihnachtskarte" caption="Fertige Weihnachtskarte" class="christmas-card" >}}
 
 Die benutzten Tapeten ist von [Zeitzeug](http://zeitzeug.de/) in Göttingen und auch bei [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/tapete-18/) ([zweite Tapete](https://vorsatzpapier.projektemacher.org/post/tapete-19/)) hochauflösend abgebildet.
 
