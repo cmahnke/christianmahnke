@@ -8,6 +8,13 @@
   {{- $page = . -}}
 {{- end -}}
 
+{{- $class := "pdf-preview" -}}
+{{- with .Get "class" -}}
+  {{- $class = . -}}
+{{- end -}}
+
+{{- $download := false -}}
+
 {{- $pdflink := printf "%s/%s" .Page.Permalink $pdf -}}
 
 {{- $file := path.Join .Page.Path $pdf -}}
@@ -18,14 +25,18 @@
 {{- $id := printf "_pdf-%s" (md5 $pdf) -}}
 
 {{- if ne $pdf "" -}}
-  <div id="{{ $id | safeHTML }}"></div>
+  <div id="{{ $id | safeHTML }}" class="{{ $class }}"></div>
+  <div id="{{ printf `%s-download` $id | safeHTML }}" class="{{ printf `%s-download` $class }}"></div>
   <script>
     {{/* See https://pdfobject.com/api/ */}}
     let options = {
       page: {{ $page }},
-      fallbackLink: "<p class='pdf-preview-download'><a href='{{ $pdflink }}'>PDF Download</a></p>"
+      pdfOpenParams: {
+        zoom: '100%'
+      },
+      fallbackLink: "<p class='{{ printf `%s-download-fallback` $class }}'><a href='{{ $pdflink }}'>PDF Download</a></p>"
     };
-    PDFObject.embed("{{ $pdf }}", "{{ $id }}", options);
+    PDFObject.embed("{{ $pdf }}", "#{{ $id }}", options);
   </script>
 {{- end -}}
 
