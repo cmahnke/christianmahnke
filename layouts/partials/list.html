@@ -1,4 +1,15 @@
 <div class="content-container list">
+  {{- with .Data.Term -}}
+    {{- $tag := i18n . -}}
+    {{- if eq $tag "" -}}
+      {{- $tag = . -}}
+    {{- end -}}
+    <div class="section-head">
+      <div class="parallax-bg">
+        <h1 class="post-section section-head-title tag-list-title">{{ i18n "Tag" }}: {{ $tag }}</h1>
+      </div>
+    </div>
+  {{- end -}}
   <div class="posts">
     {{- $paginator := .Paginate (where .RegularPages "Params.displayinlist" "!=" false) -}}
     {{- range $i, $page :=  $paginator.Pages -}}
