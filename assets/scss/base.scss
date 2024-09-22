@@ -695,6 +695,10 @@ a:visited {
 
             &.tag-list-title {
                 font-size: 5vw;
+
+                @media screen and (orientation:portrait) {
+                    font-size: 7.2vw;
+                }
             }
 
             @media (max-width : 35em) {

@@ -27,3 +27,8 @@ other = "The canvas element of your browser supports HDR!"
 
 [showTagcloud]
 other = "Show tag cloud"
+
+# PDF Preciew
+
+[InlinePDFNotSupported]
+other = "PDF is not supported"

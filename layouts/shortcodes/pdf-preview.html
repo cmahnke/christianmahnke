@@ -34,7 +34,7 @@
       pdfOpenParams: {
         zoom: '100%'
       },
-      fallbackLink: "<p class='{{ printf `%s-download-fallback` $class }}'><a href='{{ $pdflink }}'>PDF Download</a></p>"
+      fallbackLink: "<p class='{{ printf `%s-download-fallback` $class }}'><a href='{{ $pdflink }}'>{{ i18n "InlinePDFNotSupported" }} PDF Download</a></p>"
     };
     PDFObject.embed("{{ $pdf }}", "#{{ $id }}", options);
   </script>

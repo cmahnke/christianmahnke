@@ -27,3 +27,8 @@ other = "Das Canvas Element ihres Browser unterstützt HDR!"
 
 [showTagcloud]
 other = "Tagcloud einblenden"
+
+# PDF Preciew
+
+[InlinePDFNotSupported]
+other = "PDF Vorschau wird nicht unterstützt"
