@@ -3,6 +3,8 @@ title: "Blog"
 metaPage: true
 displayinlist: false
 layout: blog
+aliases:
+  - blog
 ---
 
 On this page I'll post updates on my projects, about the technologies used interesting additions to my collections (mainly art).

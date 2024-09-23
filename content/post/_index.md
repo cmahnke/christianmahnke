@@ -3,6 +3,8 @@ title: "Blog"
 metaPage: true
 displayinlist: false
 layout: blog
+aliases:
+  - blog
 ---
 
 Hier gibt es in unregelmäßigen Abständen Beiträge über meine Projekte, über die eingesetzten Technologien und neue Fundstücke.

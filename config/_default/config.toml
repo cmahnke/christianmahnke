@@ -41,7 +41,7 @@
     icon = "images/logo.png"
     image = ""
     outbox = "outbox.json"
-    links = { "GitHub" = "<a title=\"GitHub\" href=\"https://github.com/cmahnke\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">GitHub</a>", "Blog" = "<a title=\"Blog\" href=\"https://christianmahnke.de/blog/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Blog</a>" }
+    links = { "GitHub" = "<a title=\"GitHub\" href=\"https://github.com/cmahnke\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">GitHub</a>", "Blog" = "<a title=\"Blog\" href=\"https://christianmahnke.de/post/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Blog</a>" }
 
 [languages.de.params]
 
