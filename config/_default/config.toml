@@ -36,6 +36,13 @@
         scale = "width"
         removeMissing = true
 
+[params.activitypub]
+    author = "cmahnke"
+    icon = "images/logo.png"
+    image = ""
+    outbox = "outbox.json"
+    links = { "GitHub" = "", "Blog" = "" }
+
 [languages.de.params]
 
 [languages.en.params]

@@ -1,0 +1,55 @@
+{
+    "@context": "https://www.w3.org/ns/activitystreams",
+    "type": "Person",
+    "url": "{{ .Site.BaseURL }}",
+    "discoverable": true,
+    "name": "{{ .Site.Title }}",
+    {{- with .Site.Params.Description -}}
+      "summary": "{{ . }}",
+    {{- end -}}
+    {{- with .Site.Params.activitypub -}}
+      {{- if and (isset . "author") (ne .author "") -}}
+        "id": "{{ $.Site.BaseURL }}@{{ .author }}",
+        "preferredUsername": "{{ .author }}",
+      {{- end -}}
+      {{- if and  (isset . "outbox") (ne .outbox "") -}}
+        "outbox": "{{ $.Site.BaseURL }}{{ .outbox }}",
+      {{- end -}}
+      {{- if and (isset . "icon") (ne .icon "") -}}
+        {{ with resources.Get .icon }}
+          "icon": {
+            "type": "Image",
+            "mediaType": "{{ .MediaType.Type }}",
+            "url": "{{ .Permalink }}"
+          },
+        {{ end }}
+      {{- end -}}
+      {{- if and (isset . "image") (ne .image "") -}}
+        {{- with resources.Get .image -}}
+          "image": {
+            "type": "Image",
+            "mediaType": "{{ .MediaType.Type }}",
+            "url": "{{ .Permalink }}"
+          },
+        {{- end -}}
+      {{- end -}}
+
+      {{- if and (isset . "links") (reflect.IsMap .links) -}}
+        {{- $links := .links -}}
+        "attachment": [
+          {{- $i := 0 -}}
+          {{- range $name, $value := $links -}}
+            {
+              "type": "PropertyValue",
+              "name": {{ $name | jsonify }},
+              "value": {{ $value | jsonify }}
+            }
+            {{- if lt (len $links) $i  -}}
+              ,
+            {{- end -}}
+            {{- $i = add $i 1 -}}
+          {{- end -}}
+        ]
+      {{- end -}}
+    {{- end -}}
+}
