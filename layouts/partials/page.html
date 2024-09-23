@@ -13,11 +13,6 @@
             {{ .Content }}
         </div>
     </div>
-    {{- if not .Params.metaPage -}}
-        <div class="meta">
-          {{ partial "meta/tags.html" . }}
-        </div>
-    {{ end }}
 
     {{- if eq .Kind "section" -}}
       <div class="subsection-list-container">
@@ -29,4 +24,10 @@
         </ul>
       </div>
     {{- end -}}
+    
+    {{- if not .Params.metaPage -}}
+        <div class="meta">
+          {{ partial "meta/tags.html" . }}
+        </div>
+    {{ end }}
 </div>
