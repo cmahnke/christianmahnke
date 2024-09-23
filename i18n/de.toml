@@ -32,3 +32,8 @@ other = "Tagcloud einblenden"
 
 [InlinePDFNotSupported]
 other = "PDF Vorschau wird nicht unterstützt"
+
+# Subsections
+
+[HasSubsections]
+other = "Dieser Artikel hat weitere Abschnitte"

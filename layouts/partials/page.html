@@ -6,9 +6,6 @@
             <div class="date">
                 <a href="{{ .RelPermalink }}">
                   {{- .Date | time.Format ":date_full" -}}
-                  {{/*
-                    {{- partial "date.html" . -}}
-                  */}}
                 </a>
             </div>
         {{ end }}
@@ -21,4 +18,15 @@
           {{ partial "meta/tags.html" . }}
         </div>
     {{ end }}
+
+    {{- if eq .Kind "section"-}}
+      <div class="subsection-list-container">
+        <div class="subsection-list-heading">{{ i18n "HasSubsections" }}:</div>
+        <ul class="subsection-list">
+          {{- range .CurrentSection.Pages.Reverse -}}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{- end -}}
+        </ul>
+      </div>
+    {{- end -}}
 </div>

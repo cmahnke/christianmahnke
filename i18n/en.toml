@@ -32,3 +32,8 @@ other = "Show tag cloud"
 
 [InlinePDFNotSupported]
 other = "PDF is not supported"
+
+# Subsections
+
+[HasSubsections]
+other = "This article has further subsections"
