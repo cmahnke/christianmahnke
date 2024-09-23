@@ -1,0 +1,48 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "name": "{{ .Site.Title }}",
+  {{- with .Site.Params.Description -}}
+    "summary": "{{ . }}",
+  {{- end -}}
+  "type": "OrderedCollection",
+  {{- with .Site.Params.activitypub -}}
+    {{- if and  (isset . "outbox") (ne .outbox "") -}}
+      "outbox": "{{ $.Site.BaseURL }}{{ .outbox }}",
+    {{- end -}}
+
+    {{- $actor := "" -}}
+    {{- if and (isset . "author") (ne .author "") -}}
+      {{- $actor = printf "%s%s" $.Site.BaseURL .author -}}
+    {{- end -}}
+
+    {{- $pages := where $.Site.Pages "Section" "post" -}}
+    {{- $pages = where $pages "Params.displayinlist" "!=" false -}}
+    "totalItems": {{ (len $pages) }},
+    "orderedItems": [
+      {{ range $i, $page := $pages  }}
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "{{.Permalink}}",
+          "type": "Create",
+          {{- if ne $actor "" -}}
+            "actor": "{{ $actor }}",
+          {{- end -}}
+          "object": {
+            "id": "{{ .Permalink }}",
+            "type": "Note",
+            "content": {{ printf "<a href=\"%s\">%s</a>" .Permalink .Title | jsonify }},
+            "url": "{{.Permalink}}",
+            {{- if ne $actor "" -}}
+              "attributedTo": "{{ $actor }}",
+            {{- end -}}
+            "to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": {{ dateFormat "2006-01-02T15:04:05-07:00" .Date | jsonify }}
+          }
+        }
+        {{- if lt $i (sub (len $pages) 1) -}}
+          ,
+        {{- end -}}
+      {{ end }}
+    ]
+  {{- end -}}
+}

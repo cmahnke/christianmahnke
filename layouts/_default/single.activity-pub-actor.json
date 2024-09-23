@@ -44,7 +44,7 @@
               "name": {{ $name | jsonify }},
               "value": {{ $value | jsonify }}
             }
-            {{- if lt (len $links) $i  -}}
+            {{- if lt $i (sub (len $links) 1) -}}
               ,
             {{- end -}}
             {{- $i = add $i 1 -}}

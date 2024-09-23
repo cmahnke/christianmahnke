@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-mv docs/@cmahnke.json docs/@cmahnke
+cp docs/@cmahnke.json docs/@cmahnke

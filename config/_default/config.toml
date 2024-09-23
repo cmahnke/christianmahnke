@@ -13,7 +13,7 @@
            '<a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="/images/laborant.svg">Projektemacher</a>',
            '<a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a>',
            '<a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a>',
-           '<a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="Librarything"><div class="link-image librarything"></div>Librarything</a>',
+           '<a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a>',
            '<a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram"><div class="link-image instagram"></div>Instagram</a>'
            ]
   contacts = ['<h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a>']
@@ -41,7 +41,7 @@
     icon = "images/logo.png"
     image = ""
     outbox = "outbox.json"
-    links = { "GitHub" = "", "Blog" = "" }
+    links = { "GitHub" = "<a title=\"GitHub\" href=\"https://github.com/cmahnke\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">GitHub</a>", "Blog" = "<a title=\"Blog\" href=\"https://christianmahnke.de/blog/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Blog</a>" }
 
 [languages.de.params]
 

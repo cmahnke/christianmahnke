@@ -126,7 +126,7 @@ preserveTaxonomyNames = true
   [mediaTypes."application/ld+json"]
     suffixes = ["json", "jsonld"]
   [mediaTypes."application/activity+json"]
-    suffixes = ["ajson"]
+    suffixes = ["json"]
   [mediaTypes."image/jxl"]
     suffixes = ["jxl"]
 
@@ -163,14 +163,14 @@ preserveTaxonomyNames = true
     mediaType = "application/activity+json"
     isPlainText = true
     isHTML = false
-    baseName = "index"
+    baseName = "actor"
     notAlternative = true
 
   [outputFormats.activity-pub-outbox]
     mediaType = "application/activity+json"
     isPlainText = true
     isHTML = false
-    baseName = "index"
+    baseName = "outbox"
     notAlternative = true
 
 [privacy]
