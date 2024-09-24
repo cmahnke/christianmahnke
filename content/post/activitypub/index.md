@@ -10,9 +10,29 @@ tags:
 draft: true
 ---
 
-Diese Seite unterstütz nun eine Untermenge von ActivityPub...
+Diese Seite unterstützt nun eine Untermenge von ActivityPub...
 
 <!--more-->
+
+...also den Teil, der sich statisch implementieren lässt.
+Grundsätzlich nicht wirklich schwer, zu mal es auch einige Artikel zu dem Thema gibt:
+* [Justin Garrison: Mastodon instance with 6 files](https://justingarrison.com/blog/2022-12-06-mastodon-files-instance/)
+* [Maho Pacheco: A guide to implement ActivityPub in a static site (or any website)](https://maho.dev/2024/02/a-guide-to-implement-activitypub-in-a-static-site-or-any-website/)
+
+# Umsetzung
+
+
+
+```
+...
+content-type: application/octet-stream
+...
+```
+
+
+# Tests
+
+Um die Webfinger
 
 https://git.qoto.org/fedipage/fedipage/
 
