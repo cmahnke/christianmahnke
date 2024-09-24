@@ -73,5 +73,5 @@ async function initTouch(element) {
 
 //console.log(`Loaded metadata for touch map width: ${map.width}, height: ${map.height}, scale: ${initialScale}`, map);
 
-await initTouch(image);
+initTouch(image);
 //image.addEventListener("mousemove", await generateHandler(heightMapUrl));
