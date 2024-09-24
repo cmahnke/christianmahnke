@@ -38,3 +38,4 @@ convert -density 2400 static/images/cm.svg -resize '1024x1024!' static/images/lo
 yarn run svgo
 ./themes/projektemacher-base/scripts/json-lint.sh
 ./themes/projektemacher-base/scripts/3d-models.sh
+./scripts/height-map.sh

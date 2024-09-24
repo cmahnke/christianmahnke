@@ -1,6 +1,6 @@
 ---
-date: 2020-12-04T18:22:44+02:00
-title: "Haptisches Feedback"
+date: 2024-10-04T18:22:44+02:00
+title: "Taktiles Feedback"
 description: 'Eine Einzelseite aus "Textil-Atlas: ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und die Gewebeverarbeitung: Textilwarenkunde und Gewebemuster von Wilhelm Spitschka"'
 tags:
 - IIIF
