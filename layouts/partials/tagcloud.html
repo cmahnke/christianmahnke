@@ -8,7 +8,12 @@
     const tags = [
       {{- range $tags -}}
         {{- if .Term -}}
-          {{- $tagURL := printf "%s%s" ("tags/" | relLangURL) .Page.Title | urlize -}}
+          {{- $tagURL := "" -}}
+          {{- if eq .Page.File nil -}}
+            {{- $tagURL = printf "%s%s" ("tags/" | relLangURL) .Page.Title | urlize -}}
+          {{- else -}}
+            {{- $tagURL = .Page.RelPermalink -}}
+          {{- end -}}
           {{- $tag := .Page.Title -}}
           {{- $i18nTag := i18n $tag -}}
           {{- if eq $i18nTag "" -}}

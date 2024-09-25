@@ -742,6 +742,7 @@ a:visited {
     }
 
     .section-head-content,
+    .tag-list-content,
     .section-content-body,
     .section-content-subsection,
     .post-body {
@@ -783,6 +784,13 @@ a:visited {
             img {
                   width: 100%;
             }
+        }
+    }
+
+    .tag-list-content {
+        font-size: 1.6rem;
+        p {
+          margin: unset;
         }
     }
 

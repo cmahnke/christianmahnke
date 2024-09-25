@@ -18,9 +18,14 @@ resources:
     label: Tafel 31
 ---
 
-Da es in diesem Blog auch darum gehen soll analoge Inhalte innovativ in den digitalen Raum zu transportieren, hier ein Versuch Stoffe fühlbar zu machen...
+Wieder ein Beitrag aus den Projektemacher Labs...
 
 <!--more-->
+
+...nun endlich abgeschlossen
+
+
+Da es in diesem Blog auch darum gehen soll analoge Inhalte innovativ in den digitalen Raum zu transportieren, hier ein Versuch Stoffe fühlbar zu machen...
 
 # Vorbereitung der Bilddaten
 

@@ -9,6 +9,13 @@
         <h1 class="post-section section-head-title tag-list-title">{{ i18n "Tag" }}: {{ $tag }}</h1>
       </div>
     </div>
+    {{- if ne $.Page.File nil -}}
+      {{- if ne $.Content "" -}}
+        <div class="tag-list-content">
+          {{ $.Content }}
+        </div>
+      {{- end -}}
+    {{- end -}}
   {{- end -}}
   <div class="posts">
     {{- $paginator := .Paginate (where .RegularPages "Params.displayinlist" "!=" false) -}}
