@@ -14,6 +14,7 @@ tags:
   - Licht2024
   - 3D
   - Three.js
+  - Blender
 ---
 
 Vielleicht wird mal eine virtuelle Ausstellung über orangene Keramik draus...
