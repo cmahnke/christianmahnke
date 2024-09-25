@@ -6,6 +6,7 @@ tags:
   - HDR
   - Photography
   - Photo
+  - Travel
 preview: img/IMG_4538.hdr.jpeg
 ---
 

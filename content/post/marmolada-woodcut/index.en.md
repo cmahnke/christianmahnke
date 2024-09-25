@@ -6,6 +6,7 @@ tags:
   - ClimateChange
   - WoodblockPrint
   - Geodata
+  - Blender
 preview: img/print.jpg
 ---
 
@@ -27,7 +28,7 @@ I acquired this woodcut a few weeks ago and I couldn't find out anything about t
 
 {{< image-compare image1="img/print.jpg" caption1="Holzschnitt" image2="img/render.jpg" caption2="3D Bild aus Höhenprofil" >}}
 
-The picture shows the mountain [Marmolata](https://de.wikipedia.org/wiki/Marmolata), which had a turbulent history, for example during the First World War, from the north, very probably from the vicinity of "falesia Col Rodella" near [Canazei](https://de.wikipedia.org/wiki/Canazei). An elevation profile converted into a 3D view helped to determine the perspective more precisely. Minor inconsistencies certainly fall under artistic liberty. For comparison, here is a current all-round view from the specific position:
+The picture shows the mountain [Marmolata](https://de.wikipedia.org/wiki/Marmolata), which had a turbulent history, for example during the First World War, from the north, very probably from the vicinity of "falesia Col Rodella" near [Canazei](https://de.wikipedia.org/wiki/Canazei). An elevation profile converted into a 3D view (using [Blender](https://www.blender.org/)) helped to determine the perspective more precisely. Minor inconsistencies certainly fall under artistic liberty. For comparison, here is a current all-round view from the specific position:
 
 {{< html/iframe-consent  preview="<img class='video-preview' src='img/preview.jpg' alt='Preview'>" >}}
   <iframe src="https://www.google.com/maps/embed?pb=!4v1726427311620!6m8!1m7!1sCAoSLEFGMVFpcE1hWDRoN0Z5NExFdlpaSFFQUXh4NV9MZ3g0aHRYY1d0d0NKMWVS!2m2!1d46.495287!2d11.7513511!3f98.78276099443083!4f4.4556945190209944!5f1.4219312166764295" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

@@ -20,8 +20,8 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
   * Workflowsteuerung
 
 * Digitale Bilder
-  * Computer Vision für die Aufbereitung von kulturellem Erbe {{< link link="/tags/Geodata/" class="blog" >}}Blog Beiträge{{< /link >}}
-  * Bildverarbeitung und -formate {{< link link="/tags/OpenCV" class="blog" >}}Blog Beiträge{{< /link >}}
+  * Computer Vision für die Aufbereitung von kulturellem Erbe {{< link link="/tags/OpenCV" class="blog" >}}Blog Beiträge{{< /link >}}
+  * Bildverarbeitung und -formate {{< link link="/tags/DigitalImages" class="blog" >}}Blog Beiträge{{< /link >}}
 
 * 3D {{< link link="/tags/3D/" class="blog" >}}Blog Beiträge{{< /link >}}
 

@@ -2,7 +2,6 @@
 date: 2024-04-15T13:58:44+02:00
 title: "DIY Projekt: Pong Visualisierung"
 tags:
-- DIY
 - Light
 - Licht2024
 - Fun
