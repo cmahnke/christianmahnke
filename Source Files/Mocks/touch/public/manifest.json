@@ -1,0 +1,198 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "type": "Manifest",
+  "id": "https://christianmahnke.de/post/tactile-feedback/",
+  "viewingDirection": "left-to-right",
+  "behavior": [
+    "paged"
+  ],
+  "summary": {
+    "de": [
+      "Eine Einzelseite aus \"Textil-Atlas: ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und die Gewebeverarbeitung: Textilwarenkunde und Gewebemuster von Wilhelm Spitschka\""
+    ],
+    "en": [
+      "A page from 'Textil-Atlas: ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und die Gewebeverarbeitung: Textilwarenkunde und Gewebemuster von Wilhelm Spitschka'"
+    ]
+  },
+  "requiredStatement": {
+    "label": {
+      "en": [
+        "Attribution"
+      ],
+      "de": [
+        "Namensnennung"
+      ]
+    },
+    "value": {
+      "en": [
+        "Provided by Projektemacher"
+      ],
+      "de": [
+        "Bereitgestellt von Projektemacher"
+      ]
+    }
+  },
+  "thumbnail": [
+    {
+      "id": "https://christianmahnke.de/post/tactile-feedback/page031_hu4139229655379798729.jpg",
+      "format": "image/jpeg",
+      "type": "Image",
+      "height": 459,
+      "width": 300
+    },
+    {
+      "id": "https://christianmahnke.de/post/tactile-feedback/page031.jpg",
+      "format": "image/jpeg",
+      "type": "Image",
+      "height": 6138,
+      "width": 4013,
+      "service": [
+        {
+          "id": "https://christianmahnke.de/post/tactile-feedback/page031",
+          "type": "ImageService2",
+          "profile": "level0"
+        }
+      ]
+    }
+  ],
+  "provider": [
+    {
+      "id": "https://projektemacher.org/",
+      "type": "Agent",
+      "label": {
+        "en": [
+          "Projektemacher"
+        ],
+        "de": [
+          "Projektemacher"
+        ]
+      },
+      "homepage": [
+        {
+          "id": "https://projektemacher.org/",
+          "type": "Text",
+          "label": {
+            "en": [
+              "Projektemacher"
+            ],
+            "de": [
+              "Projektemacher"
+            ]
+          },
+          "format": "text/html"
+        }
+      ],
+      "logo": [
+        {
+          "id": "https://projektemacher.org/images/logo.png",
+          "type": "Image",
+          "format": "image/png",
+          "height": 1024,
+          "width": 1024
+        }
+      ],
+      "seeAlso": [
+        {
+          "id": "https://projektemacher.org/projektemacher.json",
+          "type": "Dataset",
+          "format": "application/ld+json",
+          "profile": "https://schema.org/"
+        }
+      ]
+    }
+  ],
+  "homepage": [
+    {
+      "id": "https://christianmahnke.de/post/tactile-feedback/",
+      "type": "Text",
+      "format": "text/html",
+      "label": {
+        "de": [
+          "Christian Mahnke: Taktiles Feedback"
+        ],
+        "en": [
+          "Christian Mahnke: Tactile Feedback"
+        ]
+      }
+    }
+  ],
+  "label": {
+    "de": [
+      "Taktiles Feedback"
+    ],
+    "en": [
+      "Tactile Feedback"
+    ]
+  },
+  "items": [
+    {
+      "id": "https://christianmahnke.de/post/tactile-feedback/canvas/page031",
+      "type": "Canvas",
+      "label": {
+        "none": [
+          "Tafel 31"
+        ]
+      },
+      "behavior": [
+        "non-paged"
+      ],
+      "height": 6138,
+      "width": 4013,
+      "thumbnail": [
+        {
+          "id": "https://christianmahnke.de/post/tactile-feedback/page031_hu4139229655379798729.jpg",
+          "format": "image/jpeg",
+          "type": "Image",
+          "height": 459,
+          "width": 300
+        }
+      ],
+      "items": [
+        {
+          "id": "https://christianmahnke.de/post/tactile-feedback/annotation/page031",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://christianmahnke.de/post/tactile-feedback/annotation/page031/image",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://christianmahnke.de/post/tactile-feedback/page031/full/full/0/default.jpg",
+                "type": "Image",
+                "format": "image/jpeg",
+                "height": 6138,
+                "width": 4013,
+                "service": [
+                  {
+                    "id": "https://christianmahnke.de/post/tactile-feedback/page031",
+                    "type": "ImageService2",
+                    "profile": "level0"
+                  }
+                ]
+              },
+              "target": "https://christianmahnke.de/post/tactile-feedback/canvas/page031"
+            }
+          ],
+          "annotations": [
+            {
+              "id": "https://christianmahnke.de/post/tactile-feedback/canvas/page031/annotations",
+              "type": "AnnotationPage",
+              "items": [
+                {
+                  "id": "https://christianmahnke.de/post/tactile-feedback/canvas/page031/touch",
+                  "type": "Annotation",
+                  "motivation": "augmenting",
+                  "body": {
+                    "id": ""
+
+                  },
+                  "target": "https://christianmahnke.de/post/tactile-feedback/canvas/page031"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

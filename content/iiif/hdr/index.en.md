@@ -24,7 +24,7 @@ You can add the URL to this page in the `supports` section of the `profile` defi
       "default"
     ],
     "supports": [
-      "https://christianmahnke.de/iiif-hdr/"
+      "https://christianmahnke.de/iiif/hdr/"
     ]
   }
 ]

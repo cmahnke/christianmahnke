@@ -9,3 +9,10 @@ Touch API test
 
 * https://googlechrome.github.io/samples/vibration/
 * https://sbedell.github.io/vibrate
+
+# Web Annotations
+* https://www.w3.org/TR/annotation-model
+* IIIF embeded annotations
+
+* https://github.com/w3c/web-annotation/issues/428
+* https://medium.com/@atakanguney94/the-standardization-of-annotations-3c9a5115f5fe
