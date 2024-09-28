@@ -11,6 +11,13 @@
     "tsc": "tsc",
     "record": "playwright test"
   },
+  "engines": {
+      "node": ">=20",
+      "npm": ">=8.3.0"
+  },
+  "overrides": {
+    "canvas": "npm:@napi-rs/canvas@0.1.56"
+  },
   "dependencies": {
     "@atlas-viewer/atlas": "^2.2.8",
     "@fontsource-variable/josefin-sans": "^5.1.0",

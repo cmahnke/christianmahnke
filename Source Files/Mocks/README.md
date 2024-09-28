@@ -8,6 +8,7 @@
 # Notes
 
 - Installation might need `npm i --ignore-scripts` due to building issues
+- You might also need to run `--prefix ./` to avoid inclusion of parent `package.json`
 
 # convert model
 
