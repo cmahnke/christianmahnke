@@ -32,17 +32,32 @@
         max-width: 100%;
       }
 
-      .christmas-card {
-        width: 70%;
-        margin: 1rem auto 2rem auto;
+      .iiif.iiif-image {
+        margin-top: unset;
+        margin-bottom: 3em;
+        border-radius: unset;
+      }
+
+      figure {
+
+        img {
+          border-radius: .4rem;
+        }
 
         figcaption {
           text-align: end;
           font-style: italic;
         }
 
+      }
+
+      .christmas-card {
+        width: 70%;
+        margin: 1rem auto 2rem auto;
+
         img {
           border: 1px solid;
+          border-radius: unset;
         }
 
         @media (max-width : 36em) {

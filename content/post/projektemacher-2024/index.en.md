@@ -6,7 +6,7 @@ tags:
   - Projektemacher.org
 ---
 
-At the end of 2024, here is the annual retrospect for Projektemacher.org. Over 240 articles were published over the course of the year (the second most active year to date).
+At the end of 2024, here is the annual retrospect for Projektemacher.org. Over 250 articles were published over the course of the year (the second most active year to date).
 <!--more-->
 Some of the highlights are
 * [70s wallpaper](https://vorsatzpapier.projektemacher.org/post/tapete-20/) - which was then also published as [first HDR IIIF image](https://christianmahnke.de/en/post/hdr-iiif/).
