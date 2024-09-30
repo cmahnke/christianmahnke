@@ -1,5 +1,5 @@
 ---
-date: 2024-10-04T18:22:44+02:00
+date: 2024-10-15T18:22:44+02:00
 title: "Tactile Feedback"
 description: "A page from 'Textil-Atlas: ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und die Gewebeverarbeitung: Textilwarenkunde und Gewebemuster von Wilhelm Spitschka'"
 tags:
