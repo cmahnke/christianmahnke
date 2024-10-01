@@ -4,7 +4,7 @@ title: "Hildesheimer Börde"
 tags:
   - Light
   - HDR
-  - Photography
+#  - Photography
   - Photo
   - Travel
 preview: img/IMG_4538.hdr.jpeg
