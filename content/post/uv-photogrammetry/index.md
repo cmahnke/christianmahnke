@@ -13,6 +13,7 @@ tags:
   - HDR
   - 3D
   - Three.js
+  - Photogrammetry
 ---
 
 **In diesem Beitrag wird die weltweit erste HDR Darstellung einer UV-Photogrammetrie im Browser präsentiert.**

@@ -1,6 +1,6 @@
 ---
 date: 2024-04-15T13:58:44+02:00
-title: "DIY Project: Pong Visualisation"
+title: "Pong Visualisation"
 tags:
 - Light
 - Licht2024
