@@ -46,7 +46,7 @@ The main focus of my collection is on different everyday culture related artifac
 ## Media
 * Tapes
 * Films (*e.g. Super 8*)
-* Slides
+* Slides / Photos / Postcards
 * 3D images / Viewmaster
 
 My goal is not to cover any these topics even halfway complete, but to depict a (not necessarily representative) cross-section.

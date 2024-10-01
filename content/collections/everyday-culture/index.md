@@ -48,7 +48,7 @@ Ein (unvollständiger) Katalog meiner Bücher ist bei [Librarything](https://www
 ## Medien
 * Tonbänder
 * Filme (*z.B. Super 8*)
-* Dias
+* Dias / Fotos / Postkarten
 * 3D Bilder / Viewmaster
 
 Mein Ziel ist dabei nicht, eines dieser Themen auch nur halbwegs vollständig abzudecken, sondern einen (nicht notwendigerweise repräsentativen) Querschnitt abzubilden.
