@@ -1,6 +1,9 @@
 ---
 date: 2023-11-09T19:22:44+02:00
 title: "911TV started"
+preview:
+  image: screenshot.png
+  hide: true
 tags:
 - Website
 - Media
@@ -15,6 +18,10 @@ An old idea of mine has now been realised:
 # 9/11/2001 on television
 
 The original idea was to present the content "physically", i.e. in the form of an armchair and a television in an otherwise empty room in order to increase the immersion. However, this could only have been a temporary installation and would have required some (interesting) technical gimmicks, so the project has now been realised as a [website](https://911tv.projektemacher.org/).
+
+{{< zoom-link link="https://911tv.projektemacher.org/" title="911TV" >}}
+    {{< figure src="screenshot.png" alt="Screenshot 911TV" class="post-image" >}}
+{{< /zoom-link >}}
 
 # Why?
 

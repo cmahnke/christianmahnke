@@ -1,6 +1,9 @@
 ---
 date: 2023-11-09T19:22:44+02:00
 title: "911TV gestartet"
+preview:
+  image: screenshot.png
+  hide: true
 tags:
 - Website
 - Media
@@ -15,6 +18,10 @@ Eine alte Idee von mir ist nun um gesetzt:
 # Der 11.9.2001 im Fernsehen
 
 Die ursprüngliche Idee war die Inhalte "physisch" zu präsentieren, also in Form eines Sessels und eines Fernsehers in einem ansonsten leeren Raum, um die Immersion zu verstärken. Allerdings hätte das nur eine temporäre Umsetzung werden können und hätte auch einige (interessante) technische Spielereien erfordert, daher ist das Projekt nun als [Webseite](https://911tv.projektemacher.org/) realisiert.
+
+{{< zoom-link link="https://911tv.projektemacher.org/" title="911TV" >}}
+    {{< figure src="screenshot.png" alt="Screenshot 911TV" class="post-image" >}}
+{{< /zoom-link >}}
 
 # Warum?
 
