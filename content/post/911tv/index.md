@@ -6,7 +6,7 @@ preview:
   hide: true
 tags:
 - Website
-- Media
+- HybridMedia
 - Archives
 draft: true
 ---

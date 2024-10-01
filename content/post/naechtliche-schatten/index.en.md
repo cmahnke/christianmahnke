@@ -14,6 +14,7 @@ tags:
   - Photography
   - Blog
   - Projektemacher.org
+  - HybridMedia
 ---
 
 In some [previous](/en/post/hdr-awesome-list/) [Posts](/en/post/ultrahdr/) a new blog project was already mentioned, now it' finally done:
