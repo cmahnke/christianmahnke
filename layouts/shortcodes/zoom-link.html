@@ -18,6 +18,10 @@
     </a>
     <script>
         $(document).ready(function() {
+            const head = document.querySelector('head');
+            const prefetch = "<link rel='prefetch' href='{{ $href }}' as='document'>";
+            head.insertAdjacentHTML('beforeend', prefetch);
+
             var wrapper = $('#{{ $id }}');
             var img = wrapper.find('a figure img');
             img.parent().css({'position': 'relative'});
