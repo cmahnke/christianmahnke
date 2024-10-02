@@ -2,7 +2,7 @@
 date: 2022-12-24T12:22:44+02:00
 title: "Christmas 2022"
 preview:
-  image: card-2021.jpg
+  image: card-2022.jpg
   hide: true
 tags:
 - DIY

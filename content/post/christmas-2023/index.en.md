@@ -2,7 +2,7 @@
 date: 2023-12-24T12:22:44+02:00
 title: "Christmas 2023"
 preview:
-  image: card-2021.jpg
+  image: card-2023.jpg
   hide: true
 tags:
 - DIY
