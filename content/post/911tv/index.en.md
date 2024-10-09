@@ -44,9 +44,7 @@ Therefore, this website summarises the videos and presents them in a very reduce
 
 Contrary to current media usage habits, the TV programme is linear, but you can change channels.
 Key events can be displayed as teletext sub titles. Teletext can also be deactivated and the "TV" displayed in full-screen mode. Loading the teletext panels can take some time.
-If errors occur, such as longer loading times or missing recordings, there is a picture disturbance. This also occurs when you try to switch off the television.
-
-This also allows presentation on a CRT screen, e.g. as part of an installation.
+If errors occur, such as longer loading times or missing recordings, there is a picture disturbance. This also occurs when you try to switch off the television. Therefore, it can happen that you have to wait a little while until a picture for the respective channel appears...
 
 ## Technical realisation
 

@@ -43,10 +43,8 @@ Dazu gibt es eine [Tagesansicht](https://archive.org/details/911), die wie ein [
 Daher fasst diese Webseite die Videos zusammen und präsentiert sie in einer sehr reduzierten Oberfläche.
 
 Entgegen aktueller Mediennutzungsgewohnheiten verläuft das Fernsehprogramm linear, man kann aber die Kanäle wechseln.
-Schlüsselereignisse lassen sich als Teletexttafel einblenden. Ebenfalls kann der Teletext deaktiviert werden und der "Fernseher" im Vollbildmodus anzeigen. Das Laden der Teletexttafeln kann etwas dauern.
-Bei Fehlern, wie längeren Ladezeiten oder fehlende Aufzeichnungen, kommt es zu einer Bildstörung. Diese tritt auch auf, wenn man versucht den Fernseher auszuschalten.
-
-Dies erlaubt auch die Präsentation auf einem Röhrenbildschirm, z.B. im Rahmen einer Installation.
+Schlüsselereignisse lassen sich als Teletexttafel einblenden. Ebenfalls kann der Teletext deaktiviert und der "Fernseher" im Vollbildmodus anzeigen werden. Das Laden der Teletexttafeln kann etwas dauern.
+Bei Fehlern, wie längeren Ladezeiten oder fehlende Aufzeichnungen, kommt es zu Bildstörungen. Diese tritt auch auf, wenn man versucht den Fernseher auszuschalten. Daher kann es passieren, dass man etwas warten muss, bis ein Bild für den jeweiligen Kanal kommt...
 
 ## Technische Realisierung
 
