@@ -28,6 +28,7 @@ Die Verfügbarkeit als Desktop App lässt auch eine Bereitstellung als Mediensta
 ## Technische Realisierung
 
 Die Anwendung ist [Electron](https://www.electronjs.org/) realisiert und daher prinzipiell für Windows, Linux und MacOS verfügbar. Derzeit wird die MacOS Variante allerdings nicht automatisch erstellt.
+Ansonsten hat sich nicht viel an der Implementierung geändert, einige Module wurde auf [TypeScript](https://www.typescriptlang.org/) umgestellt und mein nächstes Projekt wird sicher nicht mit dem [React](https://react.dev/) Framework gemacht. 
 
 ## Download
 

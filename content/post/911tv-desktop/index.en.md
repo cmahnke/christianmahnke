@@ -28,6 +28,7 @@ The availability as a desktop app also means that provision as a media station, 
 ## Technical realization
 
 The application is realized [Electron](https://www.electronjs.org/) and is therefore in principle available for Windows, Linux and MacOS. However, the MacOS version is currently not created automatically.
+Apart from that, not much has changed implementation wise, some modules have been switched to [TypeScript](https://www.typescriptlang.org/) and my next project will certainly not be made with the [React](https://react.dev/) framework. 
 
 ## Download
 
