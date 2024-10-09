@@ -8,7 +8,7 @@ tags:
 - Website
 - HybridMedia
 - Archives
-draft: true
+- JavaScript
 ---
 
 An old idea of mine has now been realised:
