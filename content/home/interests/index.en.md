@@ -9,4 +9,4 @@ I'm interested in various aspects of everyday culture in the 20th century and ho
 
 My aim is to use up-to-date (i.e. digital) transport methods to support the immersion into the younger past, which has the most lasting effect on our everyday life today, the 20th century...
 
-I am also interested in old media and media formats, which can be seen in the [collection focuses](https://christianmahnke.de/collections/#medien), as well as in practical projects such as [YAAPB](https://yaapb.projektemacher.org/), my photo blog or the older ["Diapräsentation"](https://diapraesentation.projektemacher.org/) ("slide presentation"). 
+I am also interested in old media and media formats, which can be seen in the [collection focuses](https://christianmahnke.de/collections/#medien), as well as in practical projects such as [YAAPB](https://yaapb.projektemacher.org/), my photo blog or the older ["Diapräsentation"](https://diapraesentation.projektemacher.org/) ("slide presentation"). {{< link link="/tags/HybridMedia" class="blog inline" >}}Blog Beiträge{{< /link >}}

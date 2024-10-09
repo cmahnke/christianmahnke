@@ -674,6 +674,11 @@ a:visited {
             text-decoration-color: $marker-color;
             */
         }
+        &.inline {
+            display: unset;
+            float: unset;
+            margin-right: unset;
+        }
     }
 
     .home-section {
