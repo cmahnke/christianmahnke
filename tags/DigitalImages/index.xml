@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Digitale Bilder on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/DigitalImages/</link>
+    <description>Recent content in Digitale Bilder on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/DigitalImages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UV-Photogrammetrie</title>
+      <link>https://christianmahnke.de/post/uv-photogrammetry/</link>
+      <pubDate>Thu, 05 Sep 2024 11:33:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/uv-photogrammetry/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;In diesem Beitrag wird die weltweit erste HDR Darstellung einer UV-Photogrammetrie im Browser präsentiert.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDR IIIF</title>
+      <link>https://christianmahnke.de/post/hdr-iiif/</link>
+      <pubDate>Sun, 18 Aug 2024 11:33:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/hdr-iiif/</guid>
+      <description>&lt;p&gt;Beim &lt;a href=&#34;http://www.zeitzeug.de/&#34; target=&#34;_blank&#34;&gt;Zeitzeug&lt;/a&gt; wird die Tapetensammlung des Inhabers veräußert und ich habe mir ein besonders grelles Exemplar gesichert&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript Bibliothek für HDR</title>
+      <link>https://christianmahnke.de/post/hdr-canvas-js/</link>
+      <pubDate>Sat, 06 Jul 2024 12:00:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/hdr-canvas-js/</guid>
+      <description>&lt;p&gt;Die JavaScript Unterstützung für die letzten Beiträge ist nun auch einzeln als NPM Modul verfügbar.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung</title>
+      <link>https://christianmahnke.de/post/hdr-image-analysis/</link>
+      <pubDate>Thu, 06 Jun 2024 11:33:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/hdr-image-analysis/</guid>
+      <description>&lt;p&gt;In diesem Beispiel geht es um einen praktischen Anwendungsfall für die &lt;a href=&#34;https://de.wikipedia.org/wiki/High_Dynamic_Range_Image&#34; target=&#34;_blank&#34;&gt;HDR&lt;/a&gt; Darstellung im Browser&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LibUltraHDR</title>
+      <link>https://christianmahnke.de/post/ultrahdr/</link>
+      <pubDate>Thu, 23 May 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/ultrahdr/</guid>
+      <description>&lt;p&gt;Für ein in Vorbereitung befindliches Projekt war es nach der &lt;a href=&#34;https://christianmahnke.de/post/hdr-awesome-list/&#34;&gt;Recherche&lt;/a&gt; notwendig einige Wege zu erkunden und Werkzeuge zu schaffen. Ausgehend von den Vorarbeiten von &lt;a href=&#34;https://gregbenzphotography.com/hdr/&#34; target=&#34;_blank&#34;&gt;Greg Benz&lt;/a&gt;, zur HDR-Unterstützung, war LibUltraHDR der sinnvollste Kandidat für weitere Experimente.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pong Visualisierung</title>
+      <link>https://christianmahnke.de/post/pong/</link>
+      <pubDate>Mon, 15 Apr 2024 13:58:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/pong/</guid>
+      <description>&lt;p&gt;Aus irgendeinem Grund bin ich auf die Idee gekommen &lt;a href=&#34;https://de.wikipedia.org/wiki/Pong&#34; target=&#34;_blank&#34;&gt;Pong&lt;/a&gt; zu visualisieren&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VintageReality gestartet</title>
+      <link>https://christianmahnke.de/post/vintagereality/</link>
+      <pubDate>Tue, 05 Mar 2024 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/vintagereality/</guid>
+      <description>&lt;p&gt;Das neueste Kind der &lt;a href=&#34;https://labs.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt; ist die seit Anfang 2023 ausgebaute Kategorie &amp;ldquo;1900 in 3D&amp;rdquo;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Proxy</title>
+      <link>https://christianmahnke.de/post/iiif-proxy/</link>
+      <pubDate>Wed, 26 Jan 2022 11:44:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/iiif-proxy/</guid>
+      <description>&lt;p&gt;Zur Verbesserung der &amp;ldquo;Ausstellbarkeit&amp;rdquo; digitaler Objekte, wie Münzen und Büchern habe ich einen Proxy für IIIF-Ressourcen geschrieben&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JPEG XL</title>
+      <link>https://christianmahnke.de/post/jpeg-xl/</link>
+      <pubDate>Sat, 17 Apr 2021 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/jpeg-xl/</guid>
+      <description>&lt;p&gt;Da meine Blogs auf GitHub verwaltet werden, müssen die Bilder so platzsparend wie möglich gespeichert werden&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

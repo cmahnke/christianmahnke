@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Geodata on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Geodata/</link>
+    <description>Recent content in Geodata on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Geodata/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Climate change in art...</title>
+      <link>https://christianmahnke.de/en/post/marmolada-woodcut/</link>
+      <pubDate>Sun, 15 Sep 2024 18:07:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/marmolada-woodcut/</guid>
+      <description>&lt;p&gt;&amp;hellip;is &amp;ldquo;old news&amp;rdquo; by now: Neither when it comes to the effects that can be recognised in old works, nor as an object of art itself.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Maps for my Projektemacher blogs</title>
+      <link>https://christianmahnke.de/en/post/maps/</link>
+      <pubDate>Sun, 01 Jan 2023 20:14:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/maps/</guid>
+      <description>&lt;p&gt;Another addition from &lt;a href=&#34;https://labs.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt;:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
