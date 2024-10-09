@@ -5,6 +5,7 @@ tags:
   - Licht2024
   - DigitalImages
   - HDR
+  - JavaScript
 ---
 
 Die JavaScript Unterstützung für die letzten Beiträge ist nun auch einzeln als NPM Modul verfügbar.

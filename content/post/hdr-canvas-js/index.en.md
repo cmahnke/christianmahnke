@@ -5,6 +5,7 @@ tags:
   - Licht2024
   - DigitalImages
   - HDR
+  - JavaScript
 ---
 
 The JavaScript implementation for the last posts is now also available as NPM module.
