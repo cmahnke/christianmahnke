@@ -16,3 +16,7 @@ Touch API test
 
 * https://github.com/w3c/web-annotation/issues/428
 * https://medium.com/@atakanguney94/the-standardization-of-annotations-3c9a5115f5fe
+
+# Further considerations
+
+* single touch is certainly reserved for panning - needs to be changed to double touch
