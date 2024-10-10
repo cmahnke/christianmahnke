@@ -1,6 +1,3 @@
-const image = document.querySelector("#touch-target");
-const status = document.querySelector("#status");
-const heightMapUrl = "/page031-1.json";
 
 async function getHeights(url) {
   try {
@@ -21,7 +18,7 @@ async function getHeights(url) {
   }
 }
 
-async function generateHandler(url) {
+async function generateHandler(url, image) {
   const map = await getHeights(url);
   const initialScale = map.meta.scale;
   const clientScale = image.clientWidth / image.naturalWidth;
@@ -51,7 +48,7 @@ async function generateHandler(url) {
 
 }
 
-export async function initTouch(element) {
+export async function initTouch(element, heightMapUrl) {
 
   const startTouch = (e) => {
     e.preventDefault();
@@ -67,5 +64,5 @@ export async function initTouch(element) {
   element.addEventListener("touchstart", startTouch);
   element.addEventListener("touchend", endTouch);
   element.addEventListener("touchcancel", endTouch);
-  element.addEventListener("touchmove", await generateHandler(heightMapUrl));
+  element.addEventListener("touchmove", await generateHandler(heightMapUrl, element));
 }
