@@ -1,13 +1,17 @@
 import { Engine, Game, IGameOptions } from "ts-pong/src/engine/Engine";
 import { PartialBy } from "ts-pong/src/utils";
 
+export interface MyIGameOptions extends IGameOptions {
+  hz: number;
+}
+
 export class MyEngine extends Engine {
   hz: number;
-  devicePixels: bool;
+  devicePixels: boolean;
 
   constructor(
     game: Game,
-    options?: PartialBy<IGameOptions, "canvasElementId">,
+    options?: PartialBy<MyIGameOptions, "canvasElementId">,
   ) {
     super(game, options);
     if ("hz" in (this as any)._options) {

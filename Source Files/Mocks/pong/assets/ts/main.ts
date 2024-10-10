@@ -5,7 +5,7 @@ import { Engine } from "ts-pong/src/engine/Engine";
 import { Pong, loader } from "ts-pong/src/pong";
 
 import { MyPong } from "./pong/MyPong";
-import { MyEngine } from "./pong/MyEngine";
+import { MyEngine, MyIGameOptions } from "./pong/MyEngine";
 import "../scss/base.scss";
 
 //import { images, sounds } from './pong/resources';
@@ -15,7 +15,7 @@ const fps = 60;
 const stats = false;
 const canvas = document.getElementById(canvasID);
 
-const pong = new MyPong(canvas);
+const pong = new MyPong(canvas as HTMLCanvasElement);
 const engine = new MyEngine(pong, {
   fps: fps,
   canvasElementId: canvasID,
