@@ -67,7 +67,7 @@ if (len(set(dpi)) > 1):
     cprint("Resolutions for x and y aren't equal!", 'red')
 dpi = dpi[0]
 
-unit_divisors = {"mm": 25.4, "cm": 25.4, "inch": 1}
+unit_divisors = {"mm": 25.4, "cm": 254, "inch": 1}
 pixelPerMm = dpi * 1 / unit_divisors[unit]
 cprint("Input DPI: {}, pixel per mmm: {}".format(dpi, pixelPerMm), 'yellow')
 fragments = []
