@@ -19,10 +19,13 @@
           {{- if eq $i18nTag "" -}}
             {{- $i18nTag = i18n .Term -}}
           {{- end -}}
+          {{- $count := .Count -}}
+          {{- $tagPages := where .Pages "Params.displayinlist" "!=" false -}}
+          {{- $count = len $tagPages -}}
           {{- if eq $i18nTag "" -}}
-            ['{{ $tag }}', {{ .Count | safeJS }}, '{{ $tagURL }}'],
+            ['{{ $tag }}', {{ $count | safeJS }}, '{{ $tagURL }}'],
           {{- else -}}
-            ['{{ $i18nTag }}', {{ .Count | safeJS }}, '{{ $tagURL }}'],
+            ['{{ $i18nTag }}', {{ $count | safeJS }}, '{{ $tagURL }}'],
           {{- end -}}
         {{- end -}}
       {{- end -}}

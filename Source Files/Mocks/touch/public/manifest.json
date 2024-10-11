@@ -3,9 +3,7 @@
   "type": "Manifest",
   "id": "https://christianmahnke.de/post/tactile-feedback/",
   "viewingDirection": "left-to-right",
-  "behavior": [
-    "paged"
-  ],
+  "behavior": ["paged"],
   "summary": {
     "de": [
       "Eine Einzelseite aus \"Textil-Atlas: ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und die Gewebeverarbeitung: Textilwarenkunde und Gewebemuster von Wilhelm Spitschka\""
@@ -16,20 +14,12 @@
   },
   "requiredStatement": {
     "label": {
-      "en": [
-        "Attribution"
-      ],
-      "de": [
-        "Namensnennung"
-      ]
+      "en": ["Attribution"],
+      "de": ["Namensnennung"]
     },
     "value": {
-      "en": [
-        "Provided by Projektemacher"
-      ],
-      "de": [
-        "Bereitgestellt von Projektemacher"
-      ]
+      "en": ["Provided by Projektemacher"],
+      "de": ["Bereitgestellt von Projektemacher"]
     }
   },
   "thumbnail": [
@@ -60,24 +50,16 @@
       "id": "https://projektemacher.org/",
       "type": "Agent",
       "label": {
-        "en": [
-          "Projektemacher"
-        ],
-        "de": [
-          "Projektemacher"
-        ]
+        "en": ["Projektemacher"],
+        "de": ["Projektemacher"]
       },
       "homepage": [
         {
           "id": "https://projektemacher.org/",
           "type": "Text",
           "label": {
-            "en": [
-              "Projektemacher"
-            ],
-            "de": [
-              "Projektemacher"
-            ]
+            "en": ["Projektemacher"],
+            "de": ["Projektemacher"]
           },
           "format": "text/html"
         }
@@ -107,35 +89,23 @@
       "type": "Text",
       "format": "text/html",
       "label": {
-        "de": [
-          "Christian Mahnke: Taktiles Feedback"
-        ],
-        "en": [
-          "Christian Mahnke: Tactile Feedback"
-        ]
+        "de": ["Christian Mahnke: Taktiles Feedback"],
+        "en": ["Christian Mahnke: Tactile Feedback"]
       }
     }
   ],
   "label": {
-    "de": [
-      "Taktiles Feedback"
-    ],
-    "en": [
-      "Tactile Feedback"
-    ]
+    "de": ["Taktiles Feedback"],
+    "en": ["Tactile Feedback"]
   },
   "items": [
     {
       "id": "https://christianmahnke.de/post/tactile-feedback/canvas/page031",
       "type": "Canvas",
       "label": {
-        "none": [
-          "Tafel 31"
-        ]
+        "none": ["Tafel 31"]
       },
-      "behavior": [
-        "non-paged"
-      ],
+      "behavior": ["non-paged"],
       "height": 6138,
       "width": 4013,
       "thumbnail": [
@@ -184,7 +154,6 @@
                   "motivation": "augmenting",
                   "body": {
                     "id": ""
-
                   },
                   "target": "https://christianmahnke.de/post/tactile-feedback/canvas/page031"
                 }

@@ -1,4 +1,3 @@
-
 async function getHeights(url) {
   try {
     const response = await fetch(url);
@@ -8,8 +7,8 @@ async function getHeights(url) {
 
     const json = await response.json();
     //Sanity check
-    if (json.height !== json.data.length || json.width !== json.data[0].length) {
-      console.log("dimensions don't match!")
+    if (json.height !== json.data.length || json.width !== json.data[0].length) {
+      console.log("dimensions don't match!");
     }
 
     return json;
@@ -38,18 +37,16 @@ async function generateHandler(url, image) {
 
     if ("vibrate" in window.navigator) {
       if (map.data[y][x] > 0) {
-        window.navigator.vibrate(200)
+        window.navigator.vibrate(200);
       }
     } else {
       console.warn("Vibrate not supported!");
     }
     //console.log(`Value at ${x} ${y}: ${map.data[y][x]}`);
-  }
-
+  };
 }
 
 export async function initTouch(element, heightMapUrl) {
-
   const startTouch = (e) => {
     e.preventDefault();
     const current = e.changedTouches[0];
@@ -58,7 +55,6 @@ export async function initTouch(element, heightMapUrl) {
   const endTouch = (e) => {
     e.preventDefault();
     //startTouch = [];
-
   };
 
   element.addEventListener("touchstart", startTouch);

@@ -21,7 +21,7 @@ def load_heightmap(src):
 
 def write(manifest, file):
     with open(file, "w", encoding="utf-8") as out:
-        json.dump(manifest, out)
+        out.write(manifest.json())
 
 def convert_heightmap(heightmap, id, canvas):
     def convert_single(heightmap, id, canvas):

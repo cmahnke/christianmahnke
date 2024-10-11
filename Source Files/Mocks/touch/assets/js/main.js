@@ -1,4 +1,4 @@
-import {initTouch} from "./image-touch.js";
+import { initTouch } from "./image-touch.js";
 
 const image = document.querySelector("#touch-target");
 const status = document.querySelector("#status");

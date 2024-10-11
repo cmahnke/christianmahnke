@@ -5,6 +5,8 @@ import numpy as np
 import argparse, pathlib, json
 from termcolor import cprint
 
+unit = "mm"
+
 def image_array(image):
     return np.array(image, dtype=int).tolist()
 
@@ -52,7 +54,7 @@ def filter(operations, image):
 parser = argparse.ArgumentParser(description='Create height map')
 parser.add_argument('--image', type=pathlib.Path, help='Image to process', required=True)
 parser.add_argument('--metadata', type=pathlib.Path, help='File containing metadata', required=True)
-parser.add_argument('--pixel-size', type=int, help='Size of a pixel in mm', default=1)
+parser.add_argument('--pixel-size', type=int, help=f"Size of a pixel in {unit}", default=1)
 parser.add_argument('--join', '-j', action='store_true', help='Join JSON fragments')
 parser.add_argument('--output', choices=['json', 'png'], action='append', nargs='+', help='Output format', default=[])
 parser.add_argument('--debug', '-d', action='store_true', help='Create images for each filter step', default=False)
@@ -64,10 +66,11 @@ dpi = inImg.info['dpi']
 if (len(set(dpi)) > 1):
     cprint("Resolutions for x and y aren't equal!", 'red')
 dpi = dpi[0]
-pixelPerMm = dpi * 1 / 25.4
+
+unit_divisors = {"mm": 25.4, "cm": 25.4, "inch": 1}
+pixelPerMm = dpi * 1 / unit_divisors[unit]
 cprint("Input DPI: {}, pixel per mmm: {}".format(dpi, pixelPerMm), 'yellow')
 fragments = []
-
 
 if (len(args.output) == 0):
     outputs = ['png']
@@ -126,7 +129,7 @@ for i in range(len(metadata)):
     if ('json' in outputs):
         outFileName = args.image.parent.joinpath(args.image.stem + "-{}".format(i) + '.json')
         cprint("Saving image {}".format(outFileName), 'yellow')
-        meta = {"scale": pixelPerMm, 'x': left, 'y': top, "width": right - left, "height": bottom - top, "dpi": image.info['dpi']}
+        meta = {"scale": pixelPerMm, "unit": unit, 'x': left, 'y': top, "width": right - left, "height": bottom - top, "dpi": image.info['dpi']}
 
         heightmap_fragment = {"meta": meta, 'height': height, 'width': width, 'data': image_array(image)}
         json_fragments.append(heightmap_fragment)
