@@ -7,6 +7,6 @@ for META in `ls -1 $IMAGE_PREFIX/**/*-map.json`
 do
     DIR=`dirname $META`
     IMAGE=`basename $META -map.json`
-    python3 $SCRIPT --image $DIR/$IMAGE.jpg --metadata $META --output json png --debug
+    python3 $SCRIPT --image $DIR/$IMAGE.jpg --metadata $META --output json png --debug -j
 
 done

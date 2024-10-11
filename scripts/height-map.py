@@ -53,6 +53,7 @@ parser = argparse.ArgumentParser(description='Create height map')
 parser.add_argument('--image', type=pathlib.Path, help='Image to process', required=True)
 parser.add_argument('--metadata', type=pathlib.Path, help='File containing metadata', required=True)
 parser.add_argument('--pixel-size', type=int, help='Size of a pixel in mm', default=1)
+parser.add_argument('--join', '-j', action='store_true', help='Join JSON fragments')
 parser.add_argument('--output', choices=['json', 'png'], action='append', nargs='+', help='Output format', default=[])
 parser.add_argument('--debug', '-d', action='store_true', help='Create images for each filter step', default=False)
 
@@ -85,6 +86,7 @@ if "defaults" in page and "filters" in page["defaults"]:
     default_filters = page["defaults"]["filters"]
 else:
     default_filters = None
+json_fragments = []
 for i in range(len(metadata)):
     cprint("Processing image {} from file {}".format(i, args.image), 'yellow')
 
@@ -124,8 +126,17 @@ for i in range(len(metadata)):
     if ('json' in outputs):
         outFileName = args.image.parent.joinpath(args.image.stem + "-{}".format(i) + '.json')
         cprint("Saving image {}".format(outFileName), 'yellow')
-        meta = {"scale": pixelPerMm, "width": right - left, "height": bottom - top, "dpi": image.info['dpi']}
-        json.dump({"meta": meta, 'height': height, 'width': width, 'data': image_array(image)}, open(outFileName, 'w'))
+        meta = {"scale": pixelPerMm, 'x': left, 'y': top, "width": right - left, "height": bottom - top, "dpi": image.info['dpi']}
+
+        heightmap_fragment = {"meta": meta, 'height': height, 'width': width, 'data': image_array(image)}
+        json_fragments.append(heightmap_fragment)
+        with open(outFileName, "w", encoding="utf-8") as file:
+            file.write(json.dumps(heightmap_fragment))
         #for h in range(height):
         #    for w in range(width):
         #        image.getpixel((0,0))
+
+if args.join and ('json' in outputs):
+    outFileName = args.image.parent.joinpath(args.image.stem + '.json')
+    with open(outFileName, "w", encoding="utf-8") as file:
+        file.write(json.dumps(json_fragments))

@@ -20,3 +20,17 @@ Touch API test
 # Further considerations
 
 * single touch is certainly reserved for panning - needs to be changed to double touch
+
+## Preprocessing
+
+### Force reinstall of Pillow
+
+```
+pip install --upgrade --force-reinstall pillow
+```
+
+### Updating Manifests
+
+```
+python scripts/update-manifest.py -i public/manifest.json -a public/page031-1.json
+```

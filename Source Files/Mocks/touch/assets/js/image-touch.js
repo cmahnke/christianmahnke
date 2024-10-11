@@ -41,7 +41,7 @@ async function generateHandler(url, image) {
         window.navigator.vibrate(200)
       }
     } else {
-      status.innerText = "Vibrate not supported!";
+      console.warn("Vibrate not supported!");
     }
     //console.log(`Value at ${x} ${y}: ${map.data[y][x]}`);
   }
