@@ -19,7 +19,7 @@ export default defineConfig({
       apply: "build",
     },
     stylelint({ build: true, dev: false, lintOnStart: true }),
-    DynamicPublicDirectory(["webgpu/public", "hdr-canvas/public", "touch/public", "imagecompare/public"], {
+    DynamicPublicDirectory(["webgpu/public", "hdr-canvas/public", "touch/public", "imagecompare/public", "node_modules/openseadragon/build/openseadragon"], {
       ssr: false,
       mimeTypes,
     }),

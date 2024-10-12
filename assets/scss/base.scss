@@ -482,6 +482,24 @@ a:visited {
     border-radius: .2rem;
     border: 0;
     white-space: nowrap;
+
+    &.animated {
+      mask-size: 300%;
+      mask-image: linear-gradient(135deg, rgba(255,255,255,1) 45%, rgba(0,0,0,0.2) 50%, rgba(255,255,255,1) 55%);
+
+      @keyframes shine {
+        from {
+          mask-position: 100%;
+        }
+        to {
+          mask-position: 0%;
+        }
+      }
+
+      &:hover {
+        animation: .5s forwards shine;
+      }
+    }
 }
 
 .iframe-wrapper {

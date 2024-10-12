@@ -35,3 +35,14 @@ pip install --upgrade --force-reinstall pillow
 ```
 python scripts/update-manifest.py -i public/manifest.json -a public/page031-1.json
 ```
+
+# Hints
+
+## Annotorious
+
+- https://github.com/annotorious/annotorious-openseadragon/issues/189
+
+```
+onMouseEnterAnnotation={this.handleMouseEnterAnnotation}
+        onMouseLeaveAnnotation={this.handleMouseLeaveAnnotation}
+```

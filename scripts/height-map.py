@@ -97,6 +97,7 @@ for i in range(len(metadata)):
     top = metadata[i]['coords']['position']['y']
     right = metadata[i]['coords']['size']['x'] + metadata[i]['coords']['position']['x']
     bottom = metadata[i]['coords']['size']['y'] + metadata[i]['coords']['position']['y']
+    name = metadata[i]['name']
 
     image = inImg.crop((left, top, right, bottom))
     if (debug):
@@ -131,7 +132,7 @@ for i in range(len(metadata)):
         cprint("Saving image {}".format(outFileName), 'yellow')
         meta = {"scale": pixelPerMm, "unit": unit, 'x': left, 'y': top, "width": right - left, "height": bottom - top, "dpi": image.info['dpi']}
 
-        heightmap_fragment = {"meta": meta, 'height': height, 'width': width, 'data': image_array(image)}
+        heightmap_fragment = {"name": name, "meta": meta, 'height': height, 'width': width, 'data': image_array(image)}
         json_fragments.append(heightmap_fragment)
         with open(outFileName, "w", encoding="utf-8") as file:
             file.write(json.dumps(heightmap_fragment))
@@ -141,5 +142,6 @@ for i in range(len(metadata)):
 
 if args.join and ('json' in outputs):
     outFileName = args.image.parent.joinpath(args.image.stem + '.json')
+    cprint("Saving joined JSON {}".format(outFileName), 'yellow')
     with open(outFileName, "w", encoding="utf-8") as file:
         file.write(json.dumps(json_fragments))

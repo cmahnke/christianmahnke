@@ -33,3 +33,25 @@ input[type="checkbox"]:checked ~ .touch-content .touch-back {
 #status {
   color: red;
 }
+
+.section-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#iiif-container {
+  aspect-ratio: 4 / 3;
+  width: 80%;
+  position: absolute;
+  min-height: 50vh;
+
+  &:focus-visible {
+    border: 0;
+    outline: unset;
+  }
+}
+
+.openseadragon-canvas {
+  outline: none;
+}

@@ -26,16 +26,21 @@ def write(manifest, file):
 def convert_heightmap(heightmap, id, canvas):
     def convert_single(heightmap, id, canvas):
         target_suffix = f"#xywh={heightmap["meta"]["x"]},{heightmap["meta"]["y"]},{heightmap["meta"]["width"]},{heightmap["meta"]["height"]}"
+        if "name" in heightmap:
+            name_body = ResourceItem(id= id + "/name/body",type = "TextualBody", value = heightmap["name"])
+            name_anno = Annotation(id=id + "/name", target=canvas+target_suffix, motivation="tagging", body=name_body)
+            annos.append(name_anno)
         body = ResourceItem(id= id + "/body",type = "DataSet", value = heightmap)
         anno = Annotation(id=id, target=canvas+target_suffix, motivation="tagging", body=body)
-        return anno
+        annos = [anno]
+        return annos
 
     converted = []
     if isinstance(heightmap, list):
-        for i, fragment in enumerate(json):
-            converted.append(convert_single(fragment, id.format(i=i), canvas))
+        for i, fragment in enumerate(heightmap):
+            converted.extend(convert_single(fragment, id.format(i=i), canvas))
     elif isinstance(heightmap, dict):
-        converted.append(convert_single(heightmap, id.format(i=1), canvas))
+        converted.extend(convert_single(heightmap, id.format(i=1), canvas))
     else:
         raise RuntimeError("Unexpected format")
     return converted
@@ -57,14 +62,16 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     manifest = load_manifest(args.input)
-    canvas = manifest.items[0]
-    id = canvas.id
-    heightmap = load_heightmap(args.annotation)
 
-    generated_annotations = convert_heightmap(heightmap, id + "/annotation/{i}",  id)
+    for canvas in manifest.items:
+        #canvas = manifest.items[0]
+        id = canvas.id
+        heightmap = load_heightmap(args.annotation)
 
-    for anno in generated_annotations:
-        manifest.add_annotation(anno)
+        generated_annotations = convert_heightmap(heightmap, id + "/annotation/{i}",  id)
+
+        for anno in generated_annotations:
+            canvas.add_annotation(anno)
 
     if args.output:
         if args.output == '-':
