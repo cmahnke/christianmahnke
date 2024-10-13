@@ -17,10 +17,11 @@
     "npm": ">=8.3.0"
   },
   "dependencies": {
+    "@annotorious/openseadragon": "^3.0.11",
     "@fontsource-variable/josefin-sans": "^5.1.0",
     "@fontsource-variable/league-spartan": "^5.1.0",
     "@monogrid/gainmap-js": "^3.0.6",
-    "@annotorious/openseadragon": "^3.0.11",
+    "@turf/turf": "^7.1.0",
     "canvas-record": "^5.1.0",
     "color": "^4.2.3",
     "colorjs.io": "^0.5.2",
@@ -31,6 +32,7 @@
     "marked": "^12.0.2",
     "motion": "^10.18.0",
     "openseadragon": "^5.0.0",
+    "svgo": "^3.3.2",
     "three": "^0.168.0",
     "ts-pong": "github:adam-s/typescript-pong"
   },

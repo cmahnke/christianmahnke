@@ -46,3 +46,7 @@ python scripts/update-manifest.py -i public/manifest.json -a public/page031-1.js
 onMouseEnterAnnotation={this.handleMouseEnterAnnotation}
         onMouseLeaveAnnotation={this.handleMouseLeaveAnnotation}
 ```
+
+# Debugging
+
+- [Visualize SVG](https://www.svgviewer.dev/)
