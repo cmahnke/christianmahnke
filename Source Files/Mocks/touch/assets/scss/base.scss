@@ -55,3 +55,10 @@ input[type="checkbox"]:checked ~ .touch-content .touch-back {
 .openseadragon-canvas {
   outline: none;
 }
+
+#browserConsole {
+  background: lightgrey;
+  padding: 1.2rem;
+  margin: 1rem;
+  border-radius: .4rem;
+}

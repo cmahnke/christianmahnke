@@ -1,1 +1,4 @@
 prezi-iiif3
+shapely
+scour
+numpy<2

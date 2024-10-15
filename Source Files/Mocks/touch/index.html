@@ -22,6 +22,18 @@
       <a href="https://googlechrome.github.io/samples/vibration/">Testpage</a>
       <script type="module" src="./assets/js/main.js" type="text/javascript"></script>
     </div>
+    <h1>Console</h1>
+      <pre id="browserConsole"></pre>
+      <script language="javascript">
+      /*
+        var realConsoleLog = console.log;
+        console.log = function () {
+            var message = [].join.call(arguments, " ") + "\n";
+            document.querySelector(`#browserConsole`).innerText += message;
+            realConsoleLog.apply(console, arguments);
+        };
+        */
+    </script>
     <h1>IIIF Variant</h1>
     <div class="section-container">
       <div id="iiif-container" class="iiif-container"></div>

@@ -20,6 +20,7 @@ import {
   featureCollection
 } from "@turf/turf";
 //import { polygon, multiPolygon, featureCollection } from "@turf/helpers";
+import {GeometryUtil} from "@terrestris/ol-util"
 import { loadManifest, getServiceId, loadInfoJson, getAnnotations } from "./loader.ts";
 
 import "@annotorious/openseadragon/annotorious-openseadragon.css";
@@ -321,7 +322,8 @@ function generateTouchAreaAnnotationsRLE(annotations: Annotation[]) {
         let rle = [0];
         for (var j = 0; j < width; j++) {
           if (data[i][j] == last) {
-            rle[rle.length - 1] = rle[rle.length - 1] + 1;
+            //rle[rle.length - 1] = rle[rle.length - 1] + 1;
+            rle[rle.length - 1] += 1;
           } else {
             rle.push(1);
             last = data[i][j];
@@ -515,7 +517,7 @@ export default async function createViewer(containerId, manifestUrl: URL, page =
   const annotations = getAnnotations(manifest, page);
   let annotationsJson;
 
-  //generateTouchAreaAnnotationsSVG(annotations);
+  generateTouchAreaAnnotationsSVG(annotations);
 
   if (true) {
     annotationsJson = generateTouchAreaAnnotationsRLE(annotations);
