@@ -1,0 +1,31 @@
+{{- $src := .Page.File -}}
+{{- $id := printf "_vibrate-check-%s" (md5 (printf "%s-%s" $src now.UnixNano)) -}}
+<div ></div>
+<details id="{{ $id }}" class="vibrate-check-result">
+  <summary>{{ i18n "vibrateCheck" }}</summary>
+  <p></p>
+</details>
+
+<script type="text/javascript">
+
+  function checkVibrate() {
+    if ("vibrate" in window.navigator) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  const vibrateCheckResult = document.getElementById("{{ $id | safeJS }}");
+  if (checkVibrate()) {
+    vibrateCheckResult.querySelector('p').innerText = "{{ i18n "vibrateSupported" | safeJS }}";
+    vibrateCheckResult.classList.add("success");
+  } else {
+    vibrateCheckResult.querySelector('p').innerText = "{{ i18n "vibrateNotSupported" | safeJS }}";
+    vibrateCheckResult.classList.add("fail");
+  }
+</script>
+
+{{- define "partials/shortcodes/vibrate-check-metadata.html" -}}
+  {{- (dict "css" slice "js" slice "scss" (slice "scss/vibrate-check.scss")) | jsonify -}}
+{{- end -}}

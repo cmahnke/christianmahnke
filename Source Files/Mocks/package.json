@@ -21,8 +21,6 @@
     "@fontsource-variable/josefin-sans": "^5.1.0",
     "@fontsource-variable/league-spartan": "^5.1.0",
     "@monogrid/gainmap-js": "^3.0.6",
-    "@terrestris/ol-util": "^20.0.0",
-    "@turf/turf": "^7.1.0",
     "canvas-record": "^5.1.0",
     "color": "^4.2.3",
     "colorjs.io": "^0.5.2",

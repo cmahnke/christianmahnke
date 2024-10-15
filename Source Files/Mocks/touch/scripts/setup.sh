@@ -6,7 +6,7 @@ cd ..
 
 cd  ./scripts/
 
-python ./update-manifest.py -i ../public/manifest.json -a ../public/page031.json -o ../public/manifest-enriched.json
+python ./update-manifest.py -i ../public/manifest.json -a ../public/page031.json -o ../public/manifest-enriched.json $1
 
 SED=sed
 OS="`uname`"

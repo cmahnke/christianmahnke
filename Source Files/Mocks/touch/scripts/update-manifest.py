@@ -1,6 +1,7 @@
 import json
 import argparse
 import math
+import sys
 from termcolor import cprint
 from typing import Any, Dict, List, Optional
 from iiif_prezi3.loader import monkeypatch_schema
@@ -9,6 +10,7 @@ from shapely import Polygon, MultiPolygon, LineString, box, union_all, to_geojso
 import scour
 
 selectorType = "media-frag"
+compact = True
 
 class ValueBody():
     value: Optional[Any] = None
@@ -24,9 +26,9 @@ def load_heightmap(src):
         heightmap_json = json.load(heightmap_data)
     return heightmap_json
 
-def write(manifest, file):
+def write(str, file):
     with open(file, "w", encoding="utf-8") as out:
-        out.write(manifest.json())
+        out.write(str)
 
 def bbox_to_svg_polygon(x, y, w, h):
     points = f"{x},{y} {x+w},{y} {x+w},{y+h} {x},{y+h}"
@@ -71,7 +73,6 @@ def decompose(polygon_union):
         return [polygon.intersection(leftHalf.envelope), polygon.intersection(rightHalf.envelope)]
 
     simple_polygons = []
-    #print("->", to_geojson(polygon_union))
     if polygon_union.geom_type == 'MultiPolygon':
         for polygon in polygon_union.geoms:
             simple_polygons.extend(decompose(polygon))
@@ -107,7 +108,7 @@ def svg_wrap(elements, options=None):
     return svg
 
 def gen_selector(type, bbox, options=None):
-    if isinstance(bbox, tuple):
+    if isinstance(bbox, (tuple, list)):
         x, y ,w, h = bbox
     if type == "media-frag":
         selector = {
@@ -116,7 +117,7 @@ def gen_selector(type, bbox, options=None):
             "value": f"xywh=pixel:{x},{y},{w},{h}"
             }
     elif type == "svg":
-        if isinstance(bbox, tuple):
+        if isinstance(bbox, (tuple, list)):
             points = bbox_to_svg_polygon(x, y, w, h)
         else:
             if not isinstance(bbox, str):
@@ -233,61 +234,61 @@ def create_annotation(selector, target, id_prefix, id_suffix, type="Boolean", va
     anno = Annotation(id=id_prefix + id_suffix, target=target, motivation=motivation, body=body)
     return anno
 
-def prepare_heightmap(heightmap, filter=True, compact=False):
+def prepare_heightmap(heightmap, filter=True, compact=True):
     height = heightmap["meta"]["height"]
     width = heightmap["meta"]["width"]
     x = heightmap["meta"]["x"]
     y = heightmap["meta"]["y"]
     fragments = transform_heightmap(heightmap, filter=filter)
-    cprint(f"Generated {len(fragments)} filtered? {filter}", 'yellow')
+    cprint(f"Generated {len(fragments)} filtered? {filter}", 'yellow', file=sys.stderr)
+    selectors = []
     if compact:
         svg = compact_shapely(fragments, {"viewBox": f"{x} {y} {width} {height}"})
-        cprint(f"Reduced to {len(svg)} filtered? {filter}", 'yellow')
+        cprint(f"Reduced to {len(svg)} filtered? {filter}", 'yellow', file=sys.stderr)
+
+        for s in svg:
+            selectors.append(gen_selector("svg", s))
     else:
         # This returns just the squares
-        svg = []
+        #svg = []
         for polygon in fragments:
-            polygon = bbox_to_polygon(**polygon["selector"])
-            svg.append(polygon_to_svg_polygon(polygon))
-
-    selectors = []
-    for s in svg:
-        selectors.append(gen_selector("svg", s))
-    return selectors
-
-    #return map(lambda n: gen_selector("svg", n, {"viewBox": f"{x} {y} {width} {height}"}), svg)
+            selectors.append(gen_selector("media-frag", list(polygon["selector"].values())))
+            #polygon = bbox_to_polygon(**polygon["selector"])
+            #svg.append(polygon_to_svg_polygon(polygon))
 
     # TODO: Use this to debug SVG
     #print(svg_wrap(svg, {"viewBox": f"{x} {y} {width} {height}"}))
 
-    #return fragments
+    return selectors
 
-def convert_heightmap(heightmap, id, canvas):
-    def convert_single(heightmap, id, canvas):
+def convert_heightmap(heightmap, id, canvas, compact=True):
+    def convert_single(heightmap, id, canvas, compact=True):
         target_suffix = f"#xywh={heightmap["meta"]["x"]},{heightmap["meta"]["y"]},{heightmap["meta"]["width"]},{heightmap["meta"]["height"]}"
         annos = []
         if "name" in heightmap:
             name_body = ResourceItem(id= id + "/name/body",type = "TextualBody", value = heightmap["name"])
-            name_anno = Annotation(id=id + "/name", target=canvas+target_suffix, motivation="tagging", body=name_body)
+            target = {"source": canvas, "selector": gen_selector("media-frag",( heightmap["meta"]["x"], heightmap["meta"]["y"], heightmap["meta"]["width"], heightmap["meta"]["height"]))}
+
+            name_anno = Annotation(id=id + "/name", target=target, motivation="tagging", body=name_body)
             annos.append(name_anno)
-        for i, touch_area in enumerate(prepare_heightmap(heightmap, filter=True, compact=True)):
-            print(touch_area)
+        for i, touch_area in enumerate(prepare_heightmap(heightmap, filter=True, compact=compact)):
             target = { "source": canvas, "selector": touch_area}
             touch_anno = create_annotation(touch_area, target, id, f"/touch/{i}")
             annos.append(touch_anno)
 
         #heightmap["compacted"] = compact_heightmap(heightmap)
-        body = ResourceItem(id= id + "/body",type = "DataSet", value = heightmap)
-        anno = Annotation(id=id, target=canvas+target_suffix, motivation="tagging", body=body)
+        body = ResourceItem(id= id + "/body",type = "TextualBody", value = heightmap["name"])
+        target = {"source": canvas, "selector": gen_selector("media-frag",( heightmap["meta"]["x"], heightmap["meta"]["y"], heightmap["meta"]["width"], heightmap["meta"]["height"]))}
+        anno = Annotation(id=id, target=target, motivation="tagging", body=body)
         annos.append(anno)
         return annos
 
     converted = []
     if isinstance(heightmap, list):
         for i, fragment in enumerate(heightmap):
-            converted.extend(convert_single(fragment, id.format(i=i), canvas))
+            converted.extend(convert_single(fragment, id.format(i=i), canvas, compact=compact))
     elif isinstance(heightmap, dict):
-        converted.extend(convert_single(heightmap, id.format(i=1), canvas))
+        converted.extend(convert_single(heightmap, id.format(i=1), canvas, compact=compact))
     else:
         raise RuntimeError("Unexpected format")
     return converted
@@ -306,22 +307,26 @@ if __name__ == '__main__':
     parser.add_argument('--input', '-i', required=True, help='Input file')
     parser.add_argument('--annotation', '-a', required=True, help='Input file')
     parser.add_argument('--output', '-o', help='Output file')
+    parser.add_argument('--single', '-s', action='store_true', default=(not compact), help=f"Compact default: {compact}")
     args = parser.parse_args()
 
     manifest = load_manifest(args.input)
-
+    compact = not args.single
+    cprint(f"compact set to {compact}", 'yellow', file=sys.stderr)
     for canvas in manifest.items:
-        #canvas = manifest.items[0]
         id = canvas.id
         heightmap = load_heightmap(args.annotation)
 
-        generated_annotations = convert_heightmap(heightmap, id + "/annotation/{i}",  id)
+        generated_annotations = convert_heightmap(heightmap, id + "/annotation/{i}",  id, compact)
 
         for anno in generated_annotations:
             canvas.add_annotation(anno)
 
+
+
     if args.output:
+        # Clean up "target": {"type": "SpecificResource",
         if args.output == '-':
             print(manifest.json(indent=4))
         else:
-            write(manifest, args.output)
+            write(manifest.json(), args.output)

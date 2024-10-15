@@ -25,6 +25,17 @@ other = "The canvas element of your browser doesn't support HDR, please retry wi
 [hdrCanvasSupported]
 other = "The canvas element of your browser supports HDR!"
 
+# Vibrate
+[vibrateCheck]
+other = "Vibrarion API check"
+
+[vibrateNotSupported]
+other = "Your browser does not support the Vibrarion API, please try it in a current Chromium based browser on an Android mobile device!"
+
+[vibrateSupported]
+other = "Your browser supports the Vibrarion API!"
+
+
 [showTagcloud]
 other = "Show tag cloud"
 
