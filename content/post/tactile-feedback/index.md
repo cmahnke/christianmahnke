@@ -7,16 +7,16 @@ tags:
 - TactileFeedback
 - DigitalImages
 draft: true
-iiifContext: http://iiif.io/api/presentation/2/context.json
+#iiifContext: http://iiif.io/api/presentation/2/context.json
 outputs:
 - html
 - iiif-manifest
-#resources:
-#- src: "page031.jpg"
-#  params:
-#    iiif: page031/info.json
-#    hint: non-paged
-#    label: Tafel 31
+resources:
+- src: "page031.jpg"
+  params:
+    iiif: page031/info.json
+    hint: non-paged
+    label: Tafel 31
 ---
 
 Wieder ein Beitrag aus den Projektemacher Labs...
@@ -25,14 +25,14 @@ Wieder ein Beitrag aus den Projektemacher Labs...
 
 ...dank Corona nun endlich abgeschlossen:
 
-
 Da es in diesem Blog auch darum gehen soll analoge Inhalte innovativ in den digitalen Raum zu transportieren, hier ein Versuch Stoffe fühlbar zu machen...
 
 Vor einiger Zeit habe ich ein Stoffmusterbuch erworben:
-Textil-Lexikon: Ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und die Gewebeverarbeitung
+<p class="reference">
+Textil-Lexikon: Ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und die Gewebeverarbeitung von Wilhelm Spitschka, Franckh, Stuttgart 1928. <a class="worldcat" href="http://www.worldcat.org/oclc/249121078">&nbsp;</a>
+</p>
 
-
-Darin sind die Muster nicht einfach abgedruckt, sondern aufwendig ausgeschnitten und eingeklebt. Der entsprechende Eintrag findet sich bei [Blaufußtölpel](https://xn--blaufusstlpel-qmb.de/post/textil-atlas-1928/)
+Darin sind die Muster nicht einfach abgedruckt, sondern aufwendig ausgeschnitten und eingeklebt. Der entsprechende Eintrag findet sich bei [Blaufußtölpel](https://xn--blaufusstlpel-qmb.de/post/textil-atlas-1928/). Diese sollen mit diesem Beitrag auf eine neue Art erfühl und damit erfahrbar gemacht werden.
 
 # Vorbereitung der Bilddaten
 
@@ -60,8 +60,9 @@ Als Beispiel dient hier der Cordsamt:
 {{< figure src="./page031-1.png" caption="Reduktion auf eine Pixelkantenlänge von 1mm" class="img-center" >}}
 
 <details>
-  <summary>Das Ergebnis dieser Vorverarbeitung ist ein Array in dieser Form:</summary>
+  <summary>Beispiel: Das Ergebnis der Vorverarbeitung als JSON-Array</summary>
 <pre>
+{{< highlight json >}}
 [
   [1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,0,1,0,0,0,0,1,1,1,1,0,1,1,0,1,0,0,0,0,0,1,0,1,0,0,0,1,0,0,0,1,0,0,1,0,1,1,1,0,1,1],
   [0,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,0,0,1,1,0,1,1,1,0,1,1,1,1,0,0,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0],
@@ -101,7 +102,7 @@ Als Beispiel dient hier der Cordsamt:
   [1,1,1,0,1,1,0,0,1,1,0,1,1,0,1,1,0,1,0,0,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,0,1,1],
   [1,0,1,1,0,0,0,0,0,1,0,0,1,1,0,1,0,0,0,0,1,1,1,1,1,1,1,0,0,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,0,1]
 ]
-</pre>
+{{< / highlight >}}
 </details>
 
 # Präsentation
@@ -114,13 +115,11 @@ Aber selbst wenn man bedenkt, dass man fast die Hälfte der Punkte wegwerfen kan
 
 {{< figure src="./merged.jpg" caption="Darstellung Polygone" >}}
 
-Diese SVG Polygone lassen sich in Webannotationen übersetzen und so direkt in das IIIF Manifest einbetten. Zur Darstellung desselben kommt hier dann [OpenSeadragon](https://openseadragon.github.io/) zusammen mit [Annotorious](https://annotorious.dev/)
-
-## Beispiel Annotation
+Diese SVG Polygone lassen sich in Webannotationen übersetzen und so direkt in das IIIF Manifest einbetten.
 
 <details>
-  <summary>Das zweite Polygon als Annotation</summary>
-  <pre>
+  <summary>Beispiel: Das zweite Polygon als Annotation</summary>
+  {{< highlight json >}}
   {
     "id": "http://localhost:5173/canvas/page031/annotation/0/touch/1",
     "type": "Annotation",
@@ -134,17 +133,21 @@ Diese SVG Polygone lassen sich in Webannotationen übersetzen und so direkt in d
         "value": "<svg  xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"805,596 806,596 829,596 853,596 853,572 829,572 806,572 805,572 782,572 758,572 758,596 782,596\" /></svg>"
       }
     }
-  },
-  </pre>
+  }
+{{< / highlight >}}
 </details>
+
+Zur Darstellung desselben kommt hier dann [OpenSeadragon](https://openseadragon.github.io/) zusammen mit [Annotorious](https://annotorious.dev/) zum Einsatz.
 
 # Endergebnis
 
-"Leider" wird die Vibrate API nicht von allen Browsern unterstützt. Der erfolgversprecheste Kadidat ist sicher Chome auf Android, aber auch da müssen ein paar Rahmenbedingungen beachtet werden:
+"Leider" wird die Vibrate API nicht von allen Browsern unterstützt. Der erfolgversprechendste Kandidat ist sicher Chrome auf Android, aber auch da müssen ein paar Rahmenbedingungen beachtet werden:
 * Vibration muss aktivier sein
 * Ton muss aktiviert sein
 * Der Stromsparmodus deaktiviert sein
 
+Weitere potentielle Browser listet [Can I Use](https://caniuse.com/vibration) auf, es existiert auch eine Testseite vom [Chrome Projekt auf Github](https://googlechrome.github.io/samples/vibration/).
+
 {{< vibrate-check >}}
 
-{{< iiif/mirador manifestUrl="manifest.json" >}}
+{{< iiif/touch-iiif manifestUrl="manifest-enriched.json" >}}

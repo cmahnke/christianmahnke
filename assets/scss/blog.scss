@@ -87,6 +87,47 @@
         }
 
       }
+
+      details {
+        margin-bottom: 1em;
+      }
+
+      .reference {
+        margin-left: 1.4rem;
+        font-style: italic;
+        font-weight: 500;
+
+
+        .worldcat {
+          &:before {
+            content: '';
+          }
+
+          &:after {
+            display: inline-block;
+            width: 1em;
+            content: url($link-light);
+
+          }
+
+          &:hover {
+            text-decoration: unset;
+          }
+
+
+        }
+      }
+
+      .highlight {
+
+        pre {
+
+          border-radius: 1rem;
+          background-color: #f1ffb7;
+          box-shadow: 0 0px 2px #ff5477;
+        }
+      }
+
     }
   }
 
