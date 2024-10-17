@@ -60,7 +60,7 @@ parser.add_argument('--pixel-size', type=int, help=f"Size of a pixel in {unit}",
 parser.add_argument('--join', '-j', action='store_true', help='Join JSON fragments')
 parser.add_argument('--output', choices=['json', 'png'], action='append', nargs='+', help='Output format', default=[])
 parser.add_argument('--debug', '-d', action='store_true', help='Create images for each filter step', default=False)
-parser.add_argument('--resolution', '-r', type=int, default=600, help='Default DPI, currentlky needed for JXL', default=False)
+parser.add_argument('--resolution', '-r', type=int, default=600, help='Default DPI, currentlky needed for JXL')
 
 
 args = parser.parse_args()
