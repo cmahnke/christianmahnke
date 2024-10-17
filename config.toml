@@ -205,5 +205,14 @@ preserveTaxonomyNames = true
         source = "node_modules/photoswipe/dist"
         target = "assets/css/photoswipe"
 
+    [[module.mounts]]
+        source = "node_modules/@annotorious/openseadragon/dist"
+        target = "assets/css/openseadragon"
+
 [build]
   writeStats = true
+
+[segments]
+  [segments.manifests]
+    [[segments.manifests.includes]]
+      output = 'iiif-manifest'

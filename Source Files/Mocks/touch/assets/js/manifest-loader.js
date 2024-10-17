@@ -1,0 +1,1 @@
+../../../../../assets/js/iiif/manifest-loader.js

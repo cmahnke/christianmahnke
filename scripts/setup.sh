@@ -35,7 +35,11 @@ convert -density 2400 static/images/cm.svg -resize '1024x1024!' static/images/lo
 #npm install --no-package-lock --no-save --force --cpu=x64 --os=linux --libc=glibc sharp
 #npm install --no-package-lock --no-save --force --cpu=x64 --os=linux --libc=musl sharp
 
+find content/iiif/ -name index.md -exec cp -n {} $(dirname {})/index.en.md \;
+
 yarn run svgo
 ./themes/projektemacher-base/scripts/json-lint.sh
 ./themes/projektemacher-base/scripts/3d-models.sh
+
+hugo --renderSegments manifests
 ./scripts/height-map.sh

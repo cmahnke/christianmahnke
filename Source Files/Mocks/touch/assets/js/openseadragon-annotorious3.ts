@@ -1,0 +1,1 @@
+../../../../../assets/js/iiif/openseadragon-annotorious3.ts

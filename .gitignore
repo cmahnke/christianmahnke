@@ -62,3 +62,4 @@ Source Files/Marmolada/clipped.tif.aux.xml
 content/**/ogPreview.*g
 content/**/ogPreview-tmp*.*g
 content/**/ogPreview-overlay.*g
+content/**/manifest-enriched.json
