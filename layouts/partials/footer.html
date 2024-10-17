@@ -22,7 +22,7 @@
                 {{- range .Site.Params.contacts -}}
                     <div class="footer-contact">{{- . | safeHTML -}}</div>
                 {{- end -}}
-                <h3 class="footer-privacy"><a href="privacy" title="{{ i18n "privacyPolicy" }}">{{ i18n "privacyPolicy" }}</a></h3>
+                <h3 class="footer-privacy"><a href="/privacy" title="{{ i18n "privacyPolicy" }}">{{ i18n "privacyPolicy" }}</a></h3>
                 <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="{{ .Site.Params.monogramblack }}">{{- .Site.Title -}}</h1>
             </div>
         </div>

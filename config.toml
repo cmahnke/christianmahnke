@@ -12,6 +12,7 @@ ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base", "hugo-video"]
 enableGitInfo = true
 preserveTaxonomyNames = true
+enableRobotsTXT = true
 
 [languages]
     [languages.de]
