@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import sys
 from PIL import Image, ImageFilter, ImageOps
 import numpy as np
 import argparse, pathlib, json
