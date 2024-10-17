@@ -7,6 +7,7 @@ import argparse, pathlib, json
 from termcolor import cprint
 
 unit = "mm"
+default_dpi = 600
 
 def image_array(image):
     return np.array(image, dtype=int).tolist()
@@ -59,6 +60,8 @@ parser.add_argument('--pixel-size', type=int, help=f"Size of a pixel in {unit}",
 parser.add_argument('--join', '-j', action='store_true', help='Join JSON fragments')
 parser.add_argument('--output', choices=['json', 'png'], action='append', nargs='+', help='Output format', default=[])
 parser.add_argument('--debug', '-d', action='store_true', help='Create images for each filter step', default=False)
+parser.add_argument('--resolution', '-r', type=int, default=600, help='Default DPI, currentlky needed for JXL', default=False)
+
 
 args = parser.parse_args()
 
@@ -68,10 +71,15 @@ if str(args.image).endswith(".jxl"):
         from jxlpy import JXLImagePlugin
 
 inImg = Image.open(args.image)
-dpi = inImg.info['dpi']
-if (len(set(dpi)) > 1):
-    cprint("Resolutions for x and y aren't equal!", 'red')
-dpi = dpi[0]
+if "dpi" in inImg.info:
+    dpi = inImg.info['dpi']
+    if (len(set(dpi)) > 1):
+        cprint("Resolutions for x and y aren't equal!", 'red')
+    dpi = dpi[0]
+elif args.resolution:
+    dpi = args.resolution
+else:
+    dpi = default_dpi
 
 unit_divisors = {"mm": 25.4, "cm": 254, "inch": 1}
 pixelPerMm = dpi * 1 / unit_divisors[unit]
