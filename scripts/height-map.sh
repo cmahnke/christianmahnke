@@ -24,7 +24,7 @@ do
     OUT_DIR=`echo $DIR |sed -e "s/content/$DOCS_DIR/"`
     BASE=`echo "$META" |sed -E 's/.*\\/(.*)-map.json/\1/g'`.json
 
-    python $MANIFEST_SCRIPT -i $OUT_DIR/manifest.json -a "$OUT_DIR/$BASE" -o $DIR/manifest-enriched.json
+    python $MANIFEST_SCRIPT -i $OUT_DIR/manifest.json -a "$DIR/$BASE" -o $DIR/manifest-enriched.json
 
 
 done
