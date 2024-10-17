@@ -1,0 +1,66 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://christianmahnke.de/collection.json",
+  "type": "Collection",
+  "label": {
+      "de": [
+        "Christian Mahnke"
+      ],
+        "en": [
+          "Christian Mahnke"
+        ]
+      },
+  "items": [{
+        "id": "https://christianmahnke.de/post/hdr-iiif/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://christianmahnke.de/post/hdr-iiif/front.hdr/full/full/0/default_hu5987271825329174638.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 286,
+    "width": 300
+  },{
+        "id": "https://christianmahnke.de/post/hdr-iiif/front.hdr/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 11944,
+        "width": 12544,
+        "service": [{
+          "id":"https://christianmahnke.de/post/hdr-iiif/front.hdr",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "HDR IIIF"
+          ],
+                "en": [
+                  "HDR IIIF"
+                ]}
+      },{
+        "id": "https://christianmahnke.de/post/jpeg-xl/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://christianmahnke.de/post/jpeg-xl/front/full/full/0/default_hu16636529981546375981.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 421,
+    "width": 300
+  },{
+        "id": "https://christianmahnke.de/post/jpeg-xl/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 6933,
+        "width": 4946,
+        "service": [{
+          "id":"https://christianmahnke.de/post/jpeg-xl/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "JPEG XL"
+          ],
+                "en": [
+                  "JPEG XL"
+                ]}
+      }]
+}

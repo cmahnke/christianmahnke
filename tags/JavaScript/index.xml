@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/JavaScript/</link>
+    <description>Recent content in JavaScript on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/JavaScript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>911TV als Desktop Anwendung</title>
+      <link>https://christianmahnke.de/post/911tv-desktop/</link>
+      <pubDate>Wed, 09 Oct 2024 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/911tv-desktop/</guid>
+      <description>&lt;p&gt;Wieder ein Corona Projekt:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript Bibliothek für HDR</title>
+      <link>https://christianmahnke.de/post/hdr-canvas-js/</link>
+      <pubDate>Sat, 06 Jul 2024 12:00:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/hdr-canvas-js/</guid>
+      <description>&lt;p&gt;Die JavaScript Unterstützung für die letzten Beiträge ist nun auch einzeln als NPM Modul verfügbar.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>911TV gestartet</title>
+      <link>https://christianmahnke.de/post/911tv/</link>
+      <pubDate>Thu, 09 Nov 2023 19:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/post/911tv/</guid>
+      <description>&lt;p&gt;Eine alte Idee von mir ist nun um gesetzt:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

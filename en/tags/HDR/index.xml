@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HDR on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/HDR/</link>
+    <description>Recent content in HDR on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/HDR/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ultraviolet Photogrammetry</title>
+      <link>https://christianmahnke.de/en/post/uv-photogrammetry/</link>
+      <pubDate>Thu, 05 Sep 2024 11:33:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/uv-photogrammetry/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;This article presents the world&amp;rsquo;s first HDR model of UV photogrammetry in a browser.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDR IIIF</title>
+      <link>https://christianmahnke.de/en/post/hdr-iiif/</link>
+      <pubDate>Sun, 18 Aug 2024 11:33:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/hdr-iiif/</guid>
+      <description>&lt;p&gt;At &lt;a href=&#34;http://www.zeitzeug.de/&#34; target=&#34;_blank&#34;&gt;Zeitzeug&lt;/a&gt; the owner&amp;rsquo;s wallpaper collection is being sold and I have secured a particularly bright example&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript library for HDR</title>
+      <link>https://christianmahnke.de/en/post/hdr-canvas-js/</link>
+      <pubDate>Sat, 06 Jul 2024 12:00:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/hdr-canvas-js/</guid>
+      <description>&lt;p&gt;The JavaScript implementation for the last posts is now also available as NPM module.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LibUltraHDR</title>
+      <link>https://christianmahnke.de/en/post/ultrahdr/</link>
+      <pubDate>Thu, 23 May 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/ultrahdr/</guid>
+      <description>&lt;p&gt;After &lt;a href=&#34;https://christianmahnke.de/en/post/hdr-awesome-list/&#34;&gt;research&lt;/a&gt;, it was necessary to explore some possible workflows and to create tools for a project in preparation. Based on &lt;a href=&#34;https://gregbenzphotography.com/hdr/&#34; target=&#34;_blank&#34;&gt;Greg Benz&lt;/a&gt;&amp;rsquo;s preliminary work on HDR support, LibUltraHDR was the most sensible candidate for further experimentation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDR images in the browser</title>
+      <link>https://christianmahnke.de/en/post/hdr-awesome-list/</link>
+      <pubDate>Wed, 01 May 2024 11:22:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/hdr-awesome-list/</guid>
+      <description>&lt;p&gt;For a project in preparation I have compiled a &lt;a href=&#34;https://github.com/cmahnke/awesome-browser-hdr/blob/main/README.md&#34; target=&#34;_blank&#34;&gt;list of links&lt;/a&gt; to HDR on the web or in the browser.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hildesheimer Börde</title>
+      <link>https://christianmahnke.de/en/post/image-hildesheimer-boerde/</link>
+      <pubDate>Thu, 02 Mar 2023 22:39:44 +0200</pubDate>
+      <guid>https://christianmahnke.de/en/post/image-hildesheimer-boerde/</guid>
+      <description>&lt;p&gt;The rest stop &amp;ldquo;Hildesheimer Börde&amp;rdquo; on a foggy night.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
