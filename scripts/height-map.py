@@ -61,6 +61,11 @@ parser.add_argument('--debug', '-d', action='store_true', help='Create images fo
 
 args = parser.parse_args()
 
+if str(args.image).endswith(".jxl"):
+    if "jxlpy" not in sys.modules:
+        import jxlpy
+        from jxlpy import JXLImagePlugin
+
 inImg = Image.open(args.image)
 dpi = inImg.info['dpi']
 if (len(set(dpi)) > 1):
