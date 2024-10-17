@@ -13,6 +13,8 @@ cascade:
     params:
       archive: false
       news: false
+      sitemap:
+        disable: true
 ---
 
 {{< bill-nye >}}

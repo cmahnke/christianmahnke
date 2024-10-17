@@ -3,6 +3,17 @@ title: "Blog"
 metaPage: true
 displayinlist: false
 layout: blog
+cascade:
+  - _target:
+      kind: section
+    params:
+    sitemap:
+      priority: 0.8
+  - _target:
+      kind: page
+    params:
+      sitemap:
+        priority: 0.6
 aliases:
   - blog
 ---

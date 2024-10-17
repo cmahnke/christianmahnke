@@ -38,6 +38,7 @@ convert -density 2400 static/images/cm.svg -resize '1024x1024!' static/images/lo
 #npm install --no-package-lock --no-save --force --cpu=x64 --os=linux --libc=musl sharp
 
 find content/iiif/ -name index.md -exec cp -n {} $(dirname {})/index.en.md \;
+find content/@cmahnke/ -name index.md -exec cp -n {} $(dirname {})/index.en.md \;
 
 yarn run svgo
 ./themes/projektemacher-base/scripts/json-lint.sh
