@@ -1,1 +1,5 @@
 @import "openseadragon/annotorious-openseadragon.css";
+
+.iiif:has(.touch) {
+  padding-bottom: unset
+}

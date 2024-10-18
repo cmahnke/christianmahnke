@@ -2,6 +2,7 @@
 date: 2024-10-15T18:22:44+02:00
 title: "Haptisches Feedback"
 description: 'Eine Einzelseite aus "Textil-Atlas: ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und die Gewebeverarbeitung: Textilwarenkunde und Gewebemuster von Wilhelm Spitschka"'
+keywords: Touch, Berührung, Haptic Internet
 displayinlist: false
 archive: false
 news: false
@@ -147,10 +148,10 @@ Diese SVG Polygone lassen sich in Webannotationen übersetzen und so direkt in d
 
 Zur Darstellung desselben kommt hier dann [OpenSeadragon](https://openseadragon.github.io/) zusammen mit [Annotorious](https://annotorious.dev/) zum Einsatz.
 
-# Endergebnis
+# Ergebnis
 
 "Leider" wird die Vibrate API nicht von allen Browsern unterstützt. Der erfolgversprechendste Kandidat ist sicher Chrome auf Android, aber auch da müssen ein paar Rahmenbedingungen beachtet werden:
-* Vibration muss aktivier sein
+* Vibration muss aktiviert sein
 * Ton muss aktiviert sein
 * Der Stromsparmodus deaktiviert sein
 
