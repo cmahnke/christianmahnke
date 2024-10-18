@@ -1,4 +1,5 @@
 {{- if not .IsHome -}}
+  {{- $keywords := "" -}}
   {{- $tags := "" -}}
   {{- with .Params.tags -}}
     {{- range $tag := . -}}
@@ -16,10 +17,15 @@
     {{- end -}}
   {{- end -}}
   {{- with .Params.keywords -}}
-    {{- $keywords := . -}}
+    {{- $keywords = . -}}
     {{- if reflect.IsSlice $keywords -}}
       {{- $keywords = delimit $keywords " " -}}
     {{- end -}}
-    <meta name="keywords" content="{{ $keywords }}{{ if ne $tags `` }} {{ $tags }}{{ end }}">
+  {{- end -}}
+  {{- if ne $tags "" -}}
+    {{- $keywords = printf "%s%s" $keywords $tags -}}
+  {{- end -}}
+  {{- if ne $keywords "" -}}
+    <meta name="keywords" content="{{ $keywords }}">
   {{- end -}}
 {{- end -}}

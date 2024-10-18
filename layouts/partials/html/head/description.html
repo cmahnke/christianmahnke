@@ -1,0 +1,17 @@
+{{- $description := "" -}}
+{{- if $.Site.Params.description -}}
+  {{- $description = $.Site.Params.description -}}
+{{- end -}}
+{{- if .Params.description -}}
+  {{- $description = .Params.description -}}
+{{- end -}}
+{{- if .Description -}}
+  {{- $description = .Description -}}
+{{- end -}}
+{{- if eq $description "" -}}
+  {{- $description = .Summary -}}
+{{- end -}}
+
+{{- if ne $description "" -}}
+  <meta name="description" content="{{ $description }}">
+{{- end -}}
