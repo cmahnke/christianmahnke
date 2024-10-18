@@ -156,7 +156,7 @@ OpenSeadragon](https://openseadragon.github.io/) and [Annotorious](https://annot
 * Sound must be activated
 * Power saving mode must be deactivated
 
-Tested with Chrome Android 12, 13 and 14.
+Tested with Chrome on Android 12, 13 and 14.
 
 Other potential browsers are listed by [Can I Use](https://caniuse.com/vibration), there is also a test page from the [Chrome project on Github](https://googlechrome.github.io/samples/vibration/).
 
