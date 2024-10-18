@@ -1,6 +1,7 @@
 ---
 date: 2022-12-24T12:22:44+02:00
 title: "Weihnachten 2022"
+keywords: Bastelanleitung, Weihnachtskarte
 preview:
   image: card-2022.jpg
   hide: true

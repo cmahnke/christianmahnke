@@ -1,6 +1,7 @@
 ---
 date: 2023-12-24T12:22:44+02:00
 title: "Christmas 2023"
+keywords: Craft instructions, Christmas card
 preview:
   image: card-2023.jpg
   hide: true
