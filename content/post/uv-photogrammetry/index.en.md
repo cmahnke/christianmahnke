@@ -1,6 +1,7 @@
 ---
 date: 2024-09-05T11:33:44+02:00
 title: "Ultraviolet Photogrammetry"
+keywords: "photogrammetry, UV, UV photogrammetry, ultraviolet, ultraviolet photogrammetry, uranium glass, 3D, Three.js"
 preview:
   image: preview.png
   hide: true

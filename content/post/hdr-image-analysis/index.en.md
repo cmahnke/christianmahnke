@@ -1,6 +1,7 @@
 ---
 date: 2024-06-06T11:33:44+02:00
 title: "Contrast enhancement for UV images using HDR"
+keywords: UV, ultraviolet, image analysis, Northeim, copy book, letters
 preview:
   image: img/front.jpg
   hide: true

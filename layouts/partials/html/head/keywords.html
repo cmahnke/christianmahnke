@@ -1,0 +1,25 @@
+{{- if not .IsHome -}}
+  {{- $tags := "" -}}
+  {{- with .Params.tags -}}
+    {{- range $tag := . -}}
+      {{- if hasPrefix . "hidden_" -}}
+        {{- continue -}}
+      {{- end -}}
+      {{- if ne . "" -}}
+        {{- $i18nTag := i18n . -}}
+        {{- if eq $i18nTag "" -}}
+          {{- $tags = printf "%s, %s" $tags . -}}
+        {{- else -}}
+          {{- $tags = printf "%s, %s" $tags $i18nTag -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with .Params.keywords -}}
+    {{- $keywords := . -}}
+    {{- if reflect.IsSlice $keywords -}}
+      {{- $keywords = delimit $keywords " " -}}
+    {{- end -}}
+    <meta name="keywords" content="{{ $keywords }}{{ if ne $tags `` }} {{ $tags }}{{ end }}">
+  {{- end -}}
+{{- end -}}

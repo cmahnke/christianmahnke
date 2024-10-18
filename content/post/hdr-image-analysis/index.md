@@ -1,6 +1,7 @@
 ---
 date: 2024-06-06T11:33:44+02:00
 title: "Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung"
+keywords: UV, Ultraviolet, Bildanalyse, Northeim, Kopierbuch, Briefe
 preview:
   image: img/front.jpg
   hide: true

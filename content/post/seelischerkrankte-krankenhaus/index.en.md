@@ -2,6 +2,7 @@
 date: 2024-10-02T09:22:44+02:00
 title: '“Seelischerkrankte Krankenhaus” (Mental health hospital)'
 class: sepia
+keywords: Psychiatry, history of medicine, LKH Göttingen, Lukaskirche Göttingen
 tags:
   - Object
   - Göttingen

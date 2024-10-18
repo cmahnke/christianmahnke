@@ -1,6 +1,7 @@
 ---
 date: 2024-09-05T11:33:44+02:00
 title: "UV-Photogrammetrie"
+keywords: Photogrammetrie, UV, UV-Photogrammetrie, Ultraviolet, Ultraviolet-Photogrammetrie, Uranglas
 preview:
   image: preview.png
   hide: true

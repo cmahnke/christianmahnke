@@ -1,6 +1,7 @@
 ---
 date: 2023-11-09T19:22:44+02:00
 title: "911TV gestartet"
+keywords: React, 9/11, 11. September, Terror, TV, Nachrichten, Live-Berichterstattung
 preview:
   image: screenshot.png
   hide: true
@@ -25,7 +26,7 @@ Die ursprüngliche Idee war die Inhalte "physisch" zu präsentieren, also in For
 
 # Warum?
 
-Der [11. September 2001](https://en.wikipedia.org/wiki/September_11_attacks) war ein nicht nur ein beispielloser Terroranschlag, sondern auch ein besonderes Medienereignis. Ikonisch sind natürlich die Bilder geworden, aber auch die Dichte an (Teil-) Ereignissen und Länge, vermittelt durch die Live-Berichterstattung im Fernsehen waren ohne Beispiel.
+Der [11. September 2001](https://de.wikipedia.org/wiki/Terroranschl%C3%A4ge_am_11._September_2001) war ein nicht nur ein beispielloser Terroranschlag, sondern auch ein besonderes Medienereignis. Ikonisch sind natürlich die Bilder geworden, aber auch die Dichte an (Teil-) Ereignissen und Länge, vermittelt durch die Live-Berichterstattung im Fernsehen waren ohne Beispiel.
 
 Ich kann mich noch an diesen und die darauffolgenden Tage erinnern, wie sich das Ereignis entwickelte: Zuerst "nur" ein Laufband zu einem spektakulären Unglück...
 Und die weiteren Entwicklungen führten dann dazu, dass sich immer mehr Sender dem Thema annahmen und mit Sondersendungen begleiteten.
