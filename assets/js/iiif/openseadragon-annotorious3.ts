@@ -25,13 +25,12 @@ export default async function touchViewer(containerId, manifestUrl, page = 0) {
   const options = {
     showNavigator: false,
     showNavigationControl: false,
-    //debugMode:  true,
     id: containerId,
     preserveViewport: true,
     visibilityRatio: 1,
     minZoomLevel: 0.5,
     defaultZoomLevel: 0.5,
-    sequenceMode: true,
+    //sequenceMode: true,
     tileSources: [service],
     gestureSettingsMouse: {
       clickToZoom: false
@@ -44,6 +43,7 @@ export default async function touchViewer(containerId, manifestUrl, page = 0) {
 
   if (debug) {
     options.showNavigationControl = true;
+    //options.debugMode: true;
   }
 
   const viewer = OpenSeadragon(options);

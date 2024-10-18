@@ -210,6 +210,14 @@ enableRobotsTXT = true
         source = "node_modules/@annotorious/openseadragon/dist"
         target = "assets/css/openseadragon"
 
+    [[module.mounts]]
+        source = "static/images"
+        target = "static/images"
+
+    [[module.mounts]]
+        source = "node_modules/openseadragon/build/openseadragon/images"
+        target = "static/images"
+
 [build]
   writeStats = true
 
