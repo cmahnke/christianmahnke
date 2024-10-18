@@ -152,7 +152,7 @@ Zur Darstellung desselben kommt hier dann [OpenSeadragon](https://openseadragon.
 * Ton muss aktiviert sein
 * Der Stromsparmodus deaktiviert sein
 
-Getestet wurde mit Android 12.
+Getestet wurde mit Android 12 und 13.
 
 Weitere potentielle Browser listet [Can I Use](https://caniuse.com/vibration) auf, es existiert auch eine Testseite vom [Chrome Projekt auf Github](https://googlechrome.github.io/samples/vibration/).
 
