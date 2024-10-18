@@ -160,3 +160,17 @@ Weitere potentielle Browser listet [Can I Use](https://caniuse.com/vibration) au
 {{< vibrate-check >}}
 
 {{< iiif/touch-iiif manifestUrl="manifest-enriched.json" >}}
+
+# Genutzte Bibliotheken
+
+* Bild- und Datenaufbereitung
+  * [`jxlpy`](https://github.com/olokelo/jxlpy)
+  * [VIPS](https://www.libvips.org/)
+  * [Pillow](https://python-pillow.org/)
+  * [IIIF-Prezi3](https://iiif-prezi.github.io/iiif-prezi3/)
+  * [Shapely](https://shapely.readthedocs.io/en/stable/)
+
+* Darstellung
+  * [OpenSeadragon](https://openseadragon.github.io/)
+  * [Annotorious](https://annotorious.dev/)
+  * [Manifesto](https://github.com/IIIF-Commons/manifesto)
