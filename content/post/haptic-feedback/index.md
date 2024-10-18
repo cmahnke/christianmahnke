@@ -3,9 +3,6 @@ date: 2024-10-15T18:22:44+02:00
 title: "Haptisches Feedback"
 description: 'Eine Einzelseite aus "Textil-Atlas: ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und die Gewebeverarbeitung: Textilwarenkunde und Gewebemuster von Wilhelm Spitschka"'
 keywords: Touch, Berührung, Haptic Internet
-displayinlist: false
-archive: false
-news: false
 tags:
 - IIIF
 - TactileFeedback
@@ -154,6 +151,8 @@ Zur Darstellung desselben kommt hier dann [OpenSeadragon](https://openseadragon.
 * Vibration muss aktiviert sein
 * Ton muss aktiviert sein
 * Der Stromsparmodus deaktiviert sein
+
+Getestet wurde mit Android 12.
 
 Weitere potentielle Browser listet [Can I Use](https://caniuse.com/vibration) auf, es existiert auch eine Testseite vom [Chrome Projekt auf Github](https://googlechrome.github.io/samples/vibration/).
 
