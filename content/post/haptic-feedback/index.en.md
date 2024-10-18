@@ -7,6 +7,7 @@ tags:
 - IIIF
 - TactileFeedback
 - DigitalImages
+- JavaScript
 outputs:
 - html
 - iiif-manifest
