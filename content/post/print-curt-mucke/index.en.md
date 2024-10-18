@@ -1,6 +1,7 @@
 ---
 date: 2024-06-21T14:07:44+02:00
 title: 'Siedelhof Jena by Curt Mücke (1885-1940)'
+keywords: Jena, Curt Mücke, Sondershausen, Sidelhof Jena, City Museum Jena
 tags:
   - Art
   - Etching

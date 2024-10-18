@@ -1,6 +1,7 @@
 ---
 date: 2023-07-27T09:07:44+02:00
 title: 'Puppen by Elsa Hoppe (1901-1992)'
+keywords: Elsa Hoppe, Göttingen
 tags:
   - Art
   - Linocut

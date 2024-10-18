@@ -1,6 +1,7 @@
 ---
 date: 2023-03-19T15:18:44+02:00
 title: 'Holzschnitt von Eva Roemer (1889-1977)'
+keywords: Eva Roemer, Göttingen
 tags:
   - Art
   - WoodblockPrint
