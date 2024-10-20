@@ -39,9 +39,9 @@ The patterns are not simply printed, but carefully cut out and glued in. The cor
 
 # Preparation of the image data
 
-The first step is to prepare the image data: The starting point for tactile feedback are the image files, as well as a manual marker for the sections (bounding box) with fabric.
+The first step was to prepare the image data:The starting point for tactile feedback is the image files, as well as a manual marker for the sections (bounding box) with fabric.
 
-Height information is obtained from them with a little automated post-processing. However, there are only two gradations. These steps can be configured for each individual image section; after processing, the result is rasterised again to obtain a resolution of tangible points, using an edge length of 1 mm.
+"Height information" was obtained from these with some automated post-processing.However, there are only two gradations.These steps can be configured for each individual image section. After processing, the result was rasterised again to obtain a resolution of tangible points, using an edge length of 1 mm, as this corresponds approximately to the resolution of a human fingertip.
 
 The Cordsamt (corduroy) serves as an example here:
 
@@ -111,15 +111,15 @@ The Cordsamt (corduroy) serves as an example here:
 
 # Presentation
 
-In order for the generated data structure to be seamlessly integrated with the digitised image in the usual functionality, it must somehow become part of the IIIF manifest. this supports the creation of references to descriptive data on image regions via annotations. i.e. exactly what is needed here.
+The generated data structure had to become part of the IIIF manifest so that it could be integrated with the digitised image using the usual functionality (like zooming). In a manifest, annotations can be used to create references between descriptive data and image regions, this capability was also used here.
 
-But even if you consider that you can throw away almost half of the points because they do not contain necessary information (in the example above "0"), there are still 1232 points left over. It is therefore necessary to summarise the contiguous areas, making sure that no holes are left out. At the end of this optimisation, 120 areas remain, which are represented as SVG polygons.
+However, this required a further data preparation step: Even if almost half of the points were discarded because they contained no necessary information (in the example above "0"), there were still 1232 points left over. Therefore, the contiguous areas were summarised and care was taken to ensure that no "holes" were closed. At the end of this optimisation, 120 areas remained, which are represented as SVG polygons:
 
 {{< figure src="./single.jpg" caption="Individual squares" >}}
 
 {{< figure src="./merged.jpg" caption="Polygons" >}}
 
-These SVG polygons can be translated into web annotations and embedded directly in the IIIF manifest.
+These SVG polygons can be translated into [web annotations](https://www.w3.org/TR/annotation-model/) and embedded directly in the IIIF manifest. As such a content type has not yet been provided for, it still had to be defined.
 
 <details>
   <summary>Example: The second polygon as an annotation</summary>
@@ -147,7 +147,7 @@ These SVG polygons can be translated into web annotations and embedded directly 
   The required extension is defined [here](https://christianmahnke.de/iiif/touch/).
 </details>
 
-OpenSeadragon](https://openseadragon.github.io/) and [Annotorious](https://annotorious.dev/) are then used to display this.
+OpenSeadragon](https://openseadragon.github.io/) and [Annotorious](https://annotorious.dev/) are then used to display the result.
 
 # Result
 

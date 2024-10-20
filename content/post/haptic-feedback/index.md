@@ -37,8 +37,9 @@ Darin sind die Muster nicht einfach abgedruckt, sondern aufwendig ausgeschnitten
 
 # Vorbereitung der Bilddaten
 
-Der erste Schritt ist die Vorbereitung der Bilddaten: Ausgangsbasis für taktiles Feedback sind die Bilddateien, sowie einer manuellen Markierungen für die Abschnitte (Boundig Box) mit Stoff.
-Aus ihnen werden mit etwas automatisierter Nachbearbeitung "Höheninformationen" gewonnen. Wobei es allerdings nur zwei Abstufungen gibt. Diese Schritte sind für jeden einzelnen Bildausschnitt konfigurierbar, nach der Bearbeitung wird das Ergebnis nochmals gerastert, um eine Auflösung von fühlbarer Punkten zu erhalten, dabei wird eine Kantenlänge von 1mm verwendet.
+Der erste Schritt war die Vorbereitung der Bilddaten: Ausgangsbasis für taktiles Feedback sind die Bilddateien, sowie einer manuellen Markierungen für die Abschnitte (Bounding Box) mit Stoff.
+
+Aus ihnen wurden mit etwas automatisierter Nachbearbeitung "Höheninformationen" gewonnen. Wobei es allerdings nur zwei Abstufungen gibt. Diese Schritte sind für jeden einzelnen Bildausschnitt konfigurierbar, nach der Bearbeitung wurde das Ergebnis nochmals gerastert, um eine Auflösung von fühlbarer Punkten zu erhalten, dabei wird eine Kantenlänge von 1mm verwendet, da das ungefähr der Auflösung einer menschlichen Fingerkuppe entspricht.
 
 Als Beispiel dient hier der Cordsamt:
 
@@ -108,15 +109,15 @@ Als Beispiel dient hier der Cordsamt:
 
 # Präsentation
 
-Damit sich die erzeugte Datenstruktur in nahtlos mit dem Digitalisat, in der gewohnten Funktionalität einbinden lässt, muss sie irgendwie in das Teil des IIIF Manifestes werden. dieses unterstützt über Annotationen Bezüge zu beschreibenden Daten zu Bildregionen aufzubauen. also genau das was hier gebraucht wird.
+Damit sich die erzeugte Datenstruktur mit dem Digitalisat, in der gewohnten Funktionalität (z.B. Zoom) einbinden lies, musste sie  Teil des IIIF Manifestes werden. In einem Manifest lassen sich über Annotationen Bezüge zwischen beschreibenden Daten und Bildregionen herstellen, das Verfahren kam auch hier zum Einsatz.
 
-Aber selbst wenn man bedenkt, dass man fast die Hälfte der Punkte wegwerfen kann, da sie keine notwendigen Informationen (im Beispiel oben "0") beinhalten, bleiben immer noch 1232 Punkte über. Daher ist es notwendig die zusammenhängenden Bereiche zusammenzufassen und dabei darauf zu achten, dass keine Löcher ausgelassen werden. Am Ende dieser Optimierung bleiben 120 Bereiche über, die als SVG Polygon repräsentiert werden.
+Dafür war allerdings ein weiterer Datenaufbereitungsschritt notwendig: Selbst wenn man fast die Hälfte der Punkte verwerfen würde, da sie keine notwendigen Informationen (im Beispiel oben "0") beinhalten, blieben immer noch 1232 Punkte über. Daher wurden die zusammenhängenden Bereiche zusammengefasst und dabei darauf geachtet, dass keine "Löcher" geschlossen wurden. Am Ende dieser Optimierung blieben 120 Bereiche über, die als SVG Polygone repräsentiert sind:
 
 {{< figure src="./single.jpg" caption="Darstellung als einzelne Quadrate" >}}
 
 {{< figure src="./merged.jpg" caption="Darstellung Polygone" >}}
 
-Diese SVG Polygone lassen sich in Webannotationen übersetzen und so direkt in das IIIF Manifest einbetten.
+Diese SVG Polygone ließen sich dann in [Webannotationen](https://www.w3.org/TR/annotation-model/) übersetzen und so direkt in das IIIF Manifest einbetten. Da ein solcher Inhaltstyp bisher nicht vorgesehen ist, musste er noch definiert werden.
 
 <details>
   <summary>Beispiel: Das zweite Polygon als Annotation</summary>
@@ -144,7 +145,7 @@ Diese SVG Polygone lassen sich in Webannotationen übersetzen und so direkt in d
   Die notwendige Extension ist [hier](https://christianmahnke.de/iiif/touch/) definiert.
 </details>
 
-Zur Darstellung desselben kommt hier dann [OpenSeadragon](https://openseadragon.github.io/) zusammen mit [Annotorious](https://annotorious.dev/) zum Einsatz.
+Zur Darstellung kommt hier dann [OpenSeadragon](https://openseadragon.github.io/) zusammen mit [Annotorious](https://annotorious.dev/) zum Einsatz.
 
 # Ergebnis
 
