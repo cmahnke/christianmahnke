@@ -1,15 +1,16 @@
 {{- $description := "" -}}
-{{- if $.Site.Params.description -}}
-  {{- $description = $.Site.Params.description -}}
-{{- end -}}
 {{- if .Params.description -}}
   {{- $description = .Params.description -}}
 {{- end -}}
-{{- if .Description -}}
+{{- if and .Description (eq $description "") -}}
   {{- $description = .Description -}}
 {{- end -}}
 {{- if eq $description "" -}}
   {{- $description = .Summary -}}
+{{- end -}}
+
+{{- if or (and $.Site.Params.description (eq $description "")) $.IsHome -}}
+  {{- $description = $.Site.Params.description -}}
 {{- end -}}
 
 {{- if ne $description "" -}}

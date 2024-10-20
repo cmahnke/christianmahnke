@@ -1,7 +1,7 @@
 ---
 date: 2024-05-23T11:22:44+02:00
 title: "LibUltraHDR"
-keywords: libultrahdr, HDR, Photography
+keywords: libultrahdr, UltraHDR, HDR, Photography
 tags:
   - Light
   - Licht2024

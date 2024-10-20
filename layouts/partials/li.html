@@ -12,6 +12,11 @@
           {{- .Date | time.Format ":date_full" -}}
         </div>
         <div class="post-body">
+          {{- with .Params.description -}}
+            <div class="post-description">
+              {{- . -}}
+            </div>
+          {{- end -}}
           {{- with .Params.preview -}}
             {{- $src := . -}}
             {{- $class := "" -}}
@@ -38,7 +43,6 @@
               </div>
             {{- end -}}
           {{- end -}}
-
           {{ .Summary }}
         </div>
         <div class="meta">

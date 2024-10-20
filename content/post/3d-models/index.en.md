@@ -1,6 +1,8 @@
 ---
 date: 2024-02-24T10:16:44+02:00
 title: "3D Models in the browser"
+keywords: Fat Lava Vase, GLTF, GLB, A-Frame
+description: "3D representation of a 60s vase in the browser"
 preview:
   image: preview.png
   hide: true

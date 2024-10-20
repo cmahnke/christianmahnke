@@ -1,6 +1,8 @@
 ---
 date: 2024-04-19T17:33:44+02:00
 title: "Daten Container"
+keywords: GND, Geonames, Datenanreicherung, Datenquellen
+description: "Die GND und Geonames als lokale Datenquellen"
 tags:
   - Data
   - Docker
@@ -21,7 +23,7 @@ Der Container kann recht einfach gestartet werden:
 docker run -it -p3030:3030  ghcr.io/cmahnke/data-containers/gnd:latest /bin/sh
 ```
 
-Nach dem Starten kann der Datenbestand komfortabel im Broser recherchiert werden: [http://localhost:3030/#/dataset/gnd/query](http://localhost:3030/#/dataset/gnd/query)
+Nach dem Starten kann der Datenbestand komfortabel im Browser recherchiert werden: [http://localhost:3030/#/dataset/gnd/query](http://localhost:3030/#/dataset/gnd/query)
 
 # GeoNames
 

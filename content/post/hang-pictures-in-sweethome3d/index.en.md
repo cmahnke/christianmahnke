@@ -1,6 +1,7 @@
 ---
 date: 2022-11-27T08:33:44+02:00
 title: "Hang pictures in Sweet Home 3D"
+keywords: Sweet Home 3D, PDF, Inkscape, 3D Model
 description: "A tool for hanging PDF posters in Sweet Home 3D"
 tags:
   - 3D

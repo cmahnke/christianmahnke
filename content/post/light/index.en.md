@@ -1,9 +1,11 @@
 ---
 date: 2024-10-01T18:22:44+02:00
 title: 'Blog series on the topic of "light"'
+keywords: HDR, Projekts
 tags:
   - Light
   - Licht2024
+  - Project
 draft: true
 ---
 

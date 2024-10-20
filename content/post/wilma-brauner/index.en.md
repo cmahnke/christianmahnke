@@ -3,7 +3,7 @@ date: 2022-12-03T12:00:00+02:00
 title: Exhibition "Wilma Bräuner"
 preview: Plakat.jpg
 tags:
-- Projekt
+- Project
 - Website
 - Archive
 - Exhibition

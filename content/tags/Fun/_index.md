@@ -3,4 +3,4 @@ title: 'Spaß'
 description: ''
 ---
 
-Lustige und unterhaltsame Artikel und Schnappschüsse.
+Lustige und unterhaltsame Artikel und Schnappschüsse

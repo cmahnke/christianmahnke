@@ -1,6 +1,8 @@
 ---
 date: 2024-08-18T11:33:44+02:00
 title: "HDR IIIF"
+keywords: libultrahdr, ultrahdr, Pillow, XMP, JPEGXL
+description: "HDR Bilder über die IIIF Image API"
 #preview:
 #  image: preview.png
 #  hide: true

@@ -2,6 +2,7 @@
 date: 2024-09-05T11:33:44+02:00
 title: "UV-Photogrammetrie"
 keywords: Photogrammetrie, UV, UV-Photogrammetrie, Ultraviolet, Ultraviolet-Photogrammetrie, Uranglas
+description: "3D Modell eines UV-Licht bestrahlten Uranglasobjekts"
 preview:
   image: preview.png
   hide: true

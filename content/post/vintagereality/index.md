@@ -1,6 +1,8 @@
 ---
 date: 2024-03-05T19:22:44+02:00
 title: "VintageReality gestartet"
+keywords: "Stereoskopie, Anaglyphen"
+description: "Die Sammlung an alten 3D Bildern hat nun ihr eigenes Blog"
 preview:
   image: screenshot.png
   hide: true

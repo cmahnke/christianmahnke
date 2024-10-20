@@ -1,6 +1,8 @@
 ---
 date: 2022-12-31T12:00:00+02:00
 title: Spende ans Stadtarchiv Halle
+keywords: Halle/Saale, Postkarten, Gimritz
+description: "Postkaten von Verkaufsstellen des Stadtgutes Gimritz"
 tags:
 - Donation
 - Archive

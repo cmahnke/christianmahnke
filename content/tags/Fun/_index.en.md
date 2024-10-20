@@ -3,4 +3,4 @@ title: 'Fun'
 description: ''
 ---
 
-Funny and entertaining articles and snapshots.
+Funny and entertaining articles and snapshots

@@ -1,6 +1,7 @@
 ---
 date: 2024-12-24T12:22:44+02:00
 title: "For the pre-Christmas period"
+keywords: Children's book, anaglyphs
 preview:
   image: front.jpg
   hide: true

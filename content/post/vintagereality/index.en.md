@@ -1,6 +1,8 @@
 ---
 date: 2024-03-05T19:22:44+02:00
 title: "VintageReality launched"
+keywords: stereoscopy, anaglyphs
+description: "The collection of old 3D images now has its own blog"
 preview:
   image: screenshot.png
   hide: true

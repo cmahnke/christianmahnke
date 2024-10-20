@@ -1,3 +1,11 @@
+@use 'sass:color';
+
+@mixin light-text {
+  font-weight: 200;
+  font-size: smaller;
+  color: color.adjust($text-color, $lightness: 15%);
+}
+
 .content-container {
   &.blog {
     figure img {
@@ -13,6 +21,17 @@
       }
     }
 
+    .post-description {
+      @include light-text;
+      width: 90%;
+      margin-bottom: 1.4rem;
+      font-style: italic;
+
+      @media (max-width: 36em) {
+        width: unset;
+      }
+    }
+
     .preview-black {
       box-shadow: 0px 0px 15px 10px #000000;
       filter: blur(0px);
@@ -22,6 +41,22 @@
         transition: all 3s linear;
         filter: blur(5px);
       }
+    }
+
+    .posts .post {
+      &.even {
+        .post-description {
+          margin-left: 1rem;
+        }
+      }
+
+      &.odd {
+        .post-description {
+          margin-right: 1rem;
+          align-self: flex-end;
+        }
+      }
+
     }
   }
 }
