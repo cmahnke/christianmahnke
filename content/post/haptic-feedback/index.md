@@ -162,6 +162,8 @@ Weitere potentielle Browser listet [Can I Use](https://caniuse.com/vibration) au
 
 {{< iiif/touch-iiif manifestUrl="manifest-enriched.json" >}}
 
+<a class="iiif-link" href="./manifest-enriched.json">IIIF-Manifest</a>
+
 # Genutzte Bibliotheken
 
 * Bild- und Datenaufbereitung

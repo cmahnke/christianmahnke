@@ -153,6 +153,26 @@
         }
       }
 
+      p:has(.iiif-link) {
+        text-align: end;
+
+        .iiif-link {
+          @include light-text;
+          font-size: smaller;
+
+          &:before {
+            background-image: url(/images/iiif-logo.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: "IIIF";
+            color: transparent;
+            vertical-align: middle;
+            margin-right: .8rem;
+          }
+
+        }
+      }
+
       .highlight {
 
         pre {
