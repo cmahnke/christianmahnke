@@ -1,12 +1,15 @@
 ---
 date: 2024-04-15T13:58:44+02:00
 title: "Pong Visualisierung"
+keywords: Pong, Videospiel, Browserautomatisierung, Playwright
+description: "Ein 70er Jahre Videospiel als Heatmap"
 tags:
 - Light
 - Licht2024
 - Fun
 - Retrocomputing
 - DigitalImages
+- JavaScript
 preview: pong-heatmap1.png
 ---
 

@@ -2,6 +2,7 @@
 date: 2022-12-24T12:22:44+02:00
 title: "Christmas 2022"
 keywords: Craft instructions, Christmas card
+description: "Craft instructions for the 2022 Christmas card"
 preview:
   image: card-2022.jpg
   hide: true

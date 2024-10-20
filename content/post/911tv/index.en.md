@@ -2,6 +2,7 @@
 date: 2023-11-09T19:22:44+02:00
 title: "911TV started"
 keywords: React, 911, September 11 attacks, terror, TV, news, live coverage
+description: "A web application that makes it possible to experience the news of 11 September 2001 in real time"
 preview:
   image: screenshot.png
   hide: true

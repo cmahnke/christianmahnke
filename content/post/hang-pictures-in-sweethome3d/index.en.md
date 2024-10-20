@@ -1,6 +1,7 @@
 ---
 date: 2022-11-27T08:33:44+02:00
 title: "Hang pictures in Sweet Home 3D"
+description: "A tool for hanging PDF posters in Sweet Home 3D"
 tags:
   - 3D
   - Exhibition

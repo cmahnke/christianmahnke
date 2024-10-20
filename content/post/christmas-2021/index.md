@@ -2,6 +2,7 @@
 date: 2021-12-24T12:22:44+02:00
 title: "Weihnachten 2021"
 keywords: Bastelanleitung, Weihnachtskarte
+description: "Bastelanleitung für die Weihnachtskarte 2021"
 preview:
   image: card-2021.jpg
   hide: true

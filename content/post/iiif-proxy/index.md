@@ -1,6 +1,8 @@
 ---
 date: 2022-01-26T11:44:44+02:00
 title: "IIIF Proxy"
+keywords: "Falzentfernung, Proxy-Server, Bildbearbeitung"
+description: "On-the-fly Bildbearbeitung für IIIF Ressourcen"
 preview:
   image: img/Proxy-DE-611-HS-3461927_00000016.png
   hide: true

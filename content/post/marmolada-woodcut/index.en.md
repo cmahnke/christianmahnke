@@ -1,6 +1,7 @@
 ---
 date: 2024-09-15T18:07:44+02:00
 title: 'Climate change in art...'
+description: "Visually determine camera positions with geodata in Blender"
 tags:
   - Art
   - ClimateChange

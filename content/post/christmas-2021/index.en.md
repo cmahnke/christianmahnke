@@ -2,6 +2,7 @@
 date: 2021-12-24T12:22:44+02:00
 title: "Christmas 2021"
 keywords: Craft instructions, Christmas card
+description: "Craft instructions for the 2021 Christmas card"
 preview:
   image: card-2021.jpg
   hide: true

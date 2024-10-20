@@ -4,6 +4,7 @@ displayinlist: false
 archive: false
 news: false
 title: "911TV als Desktop Anwendung"
+description: "Eine Webseite als Medieninstallation am Beispiel von 911TV"
 preview:
   image: 911tv-mac.png
   hide: true
@@ -13,6 +14,7 @@ tags:
 - Archives
 - JavaScript
 - Electron
+- MediaInstallation
 ---
 
 Wieder ein Corona Projekt:
@@ -25,7 +27,7 @@ Diesmal bin ich selber betroffen. Das gab mir die Möglichkeit ein Projekt aus d
 
 {{< figure src="911tv-mac.png" alt="Screenshot 911TV Desktop Mac" caption="Screenshot 911TV Desktop auf MacOS" >}}
 
-Die Verfügbarkeit als Desktop App lässt auch eine Bereitstellung als Medienstation, also einer Art von physischer Installation näher rücken. Alleine schon weil diese einfacher handhab- und verteilbar sind als Webseiten in einem Browser (keine zusätzlichen Einstellungen für Lockdown / Kiosk Modi, kein Management von Medienhandling).
+Die Verfügbarkeit als Desktop App lässt auch eine Bereitstellung als Medienstation bzw. -installation, also einer Art von physischer Installation näher rücken. Alleine schon weil diese einfacher handhab- und verteilbar sind als Webseiten in einem Browser (keine zusätzlichen Einstellungen für Lockdown / Kiosk Modi, kein Management von Medienhandling).
 
 
 ## Technische Realisierung

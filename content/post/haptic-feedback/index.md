@@ -1,11 +1,11 @@
 ---
 date: 2024-10-15T18:22:44+02:00
 title: "Haptisches Feedback"
-description: 'Eine Einzelseite aus "Textil-Atlas: ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und die Gewebeverarbeitung: Textilwarenkunde und Gewebemuster von Wilhelm Spitschka"'
+description: 'Eine Einzelseite aus "Textil-Atlas: ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und die Gewebeverarbeitung: Textilwarenkunde und Gewebemuster" von Wilhelm Spitschka fühlbar gemacht mit IIIF'
 keywords: Touch, Berührung, Haptic Internet
 tags:
 - IIIF
-- TactileFeedback
+- HapticFeedback
 - DigitalImages
 - JavaScript
 outputs:
@@ -110,7 +110,7 @@ Als Beispiel dient hier der Cordsamt:
 
 Damit sich die erzeugte Datenstruktur in nahtlos mit dem Digitalisat, in der gewohnten Funktionalität einbinden lässt, muss sie irgendwie in das Teil des IIIF Manifestes werden. dieses unterstützt über Annotationen Bezüge zu beschreibenden Daten zu Bildregionen aufzubauen. also genau das was hier gebraucht wird.
 
-Aber selbst wenn man bedenkt, dass man fast die Hälfte der Punkte wegwerfen kann, da sie keine notwendigen informationen (im Beispiel oben "0"), bleiben immer noch 1232 Punkte über. Daher ist es notwendig die zusammenhängenden Bereiche zusammenzufassen und dabei darauf zu achten, dass keine Löcher ausgelassen werden. Am Ende dieser Optimierung bleiben 120 Bereiche über, die als SVG Polygon repräsentiert werden.
+Aber selbst wenn man bedenkt, dass man fast die Hälfte der Punkte wegwerfen kann, da sie keine notwendigen Informationen (im Beispiel oben "0") beinhalten, bleiben immer noch 1232 Punkte über. Daher ist es notwendig die zusammenhängenden Bereiche zusammenzufassen und dabei darauf zu achten, dass keine Löcher ausgelassen werden. Am Ende dieser Optimierung bleiben 120 Bereiche über, die als SVG Polygon repräsentiert werden.
 
 {{< figure src="./single.jpg" caption="Darstellung als einzelne Quadrate" >}}
 

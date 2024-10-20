@@ -2,6 +2,7 @@
 date: 2024-06-06T11:33:44+02:00
 title: "Contrast enhancement for UV images using HDR"
 keywords: UV, ultraviolet, image analysis, Northeim, copy book, letters
+description: "An old copy book from Northeim as an example of HDR visualisation of UV images"
 preview:
   image: img/front.jpg
   hide: true

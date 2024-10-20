@@ -4,6 +4,7 @@ title: "911TV as desktop application"
 displayinlist: false
 archive: false
 news: false
+description: "A website as a media installation using the example of 911TV"
 preview:
   image: 911tv-mac.png
   hide: true
@@ -13,6 +14,7 @@ tags:
 - Archives
 - JavaScript
 - Electron
+- MediaInstallation
 ---
 
 Another corona project:

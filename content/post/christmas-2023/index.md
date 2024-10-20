@@ -2,6 +2,7 @@
 date: 2023-12-24T12:22:44+02:00
 title: "Weihnachten 2023"
 keywords: Bastelanleitung, Weihnachtskarte
+description: "Bastelanleitung für die Weihnachtskarte 2023"
 preview:
   image: card-2023.jpg
   hide: true
