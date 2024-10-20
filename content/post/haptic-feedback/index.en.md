@@ -61,7 +61,7 @@ The Cordsamt (corduroy) serves as an example here:
 
 {{< figure src="./page031-1-filter_6_BINARIZE.png" caption="Binarisation" >}}
 
-{{< figure src="./page031-1.png" caption="scaled down to a edge length of 1mm" >}}
+{{< figure src="./page031-1.png" caption="scaled down to a edge length of 1mm" class="img-center" >}}
 
 <details>
   <summary>Example: The result of preprocessing as a JSON array</summary>
