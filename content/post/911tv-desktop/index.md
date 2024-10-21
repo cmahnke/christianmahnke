@@ -1,8 +1,5 @@
 ---
 date: 2024-10-09T19:22:44+02:00
-displayinlist: false
-archive: false
-news: false
 title: "911TV als Desktop Anwendung"
 description: "Eine Webseite als Medieninstallation am Beispiel von 911TV"
 preview:
@@ -39,11 +36,11 @@ Ansonsten hat sich nicht viel an der Implementierung geändert, einige Module wu
 
 * **Windows**
   * {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Installer 64 Bit Intel / ARM]()
-  * {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Zip 64 Bit Intel]()
-  * {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Zip64 Bit ARM]()
+  * {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Zip 64 Bit Intel](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-win-x64.zip)
+  * {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Zip 64 Bit ARM](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-win-arm64.zip)
 
 * **Linux**
-  * {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Tar.gz 64 Bit Intel]()
-  * {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Tar.gz 64 Bit ARM]()
+  * {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Tar.gz 64 Bit Intel](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-linux-amd64.tgz)
+  * {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Tar.gz 64 Bit ARM](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-linux-arm64.tgz)
 
 Die Anwendung kann bei [GitHub heruntergeladen](https://github.com/cmahnke/911tv/releases) werden.
