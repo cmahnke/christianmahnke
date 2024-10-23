@@ -14,7 +14,7 @@ tags:
 - MediaInstallation
 ---
 
-Another corona project:
+I had some time, since I was ill:
 
 <!--more-->
 

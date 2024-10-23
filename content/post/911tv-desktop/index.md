@@ -14,7 +14,7 @@ tags:
 - MediaInstallation
 ---
 
-Wieder ein Corona Projekt:
+Ich hatte Zeit, da ich krank war:
 
 <!--more-->
 
