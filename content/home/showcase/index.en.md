@@ -13,6 +13,7 @@ Examples of immersive or unconventional presentations include these blogs:
 
 Several individual experiments can be found in the blog:
 
+* [Haptic feedback for digitised fabrics](https://christianmahnke.de/post/haptic-feedback/) - IIIF annotations with vibration
 * [Uranium glass in 3D](https://christianmahnke.de/en/post/uv-photogrammetry/) - Ultra violet photogrammetry
 * [A "glowing" wallpaper](https://christianmahnke.de/en/post/hdr-iiif/) - HDR IIIF
 * [An AI reads out an old letter template](https://christianmahnke.de/en/post/tts/) - The letter [itself](https://briefsteller.de/post/der-haussekretaer/286/) (in German)
