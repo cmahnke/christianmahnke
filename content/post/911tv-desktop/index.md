@@ -7,10 +7,10 @@ preview:
   hide: true
 tags:
 - Website
+- Electron
 - HybridMedia
 - Archives
 - JavaScript
-- Electron
 - MediaInstallation
 ---
 
@@ -35,7 +35,6 @@ Ansonsten hat sich nicht viel an der Implementierung geändert, einige Module wu
 ## Download (aktualisiert)
 
 * **Windows**
-  * {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Installer 64 Bit Intel / ARM]()
   * {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Zip 64 Bit Intel](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-win-x64.zip)
   * {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Zip 64 Bit ARM](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-win-arm64.zip)
 

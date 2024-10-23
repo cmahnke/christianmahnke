@@ -7,10 +7,10 @@ preview:
   hide: true
 tags:
 - Website
+- Electron
 - HybridMedia
 - Archives
 - JavaScript
-- Electron
 - MediaInstallation
 ---
 
