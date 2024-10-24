@@ -17,4 +17,4 @@ Since the beginning of 2019 I have been running the blog ["Ric Unknown Artist"](
 
 I then searched through some old Berlin address books and discovered that the correct artist had lived in Berlin Spandau / Haselhorst for about 50 years.
 
-An enquiry at the archive of the Spandau City History Museum provided the solution, [more in the blog](https://ric-unknownartist.projektemacher.org/de/post/fritz-neumann-spandauer-volksblatt-19-2-1972/).
+An enquiry at the archive of the Spandau City History Museum provided the solution, [more in the blog](https://ric-unknownartist.projektemacher.org/post/fritz-neumann-spandauer-volksblatt-19-2-1972/).
