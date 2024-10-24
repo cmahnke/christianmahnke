@@ -24,12 +24,12 @@ jobs:
           submodules: true  # Fetch Hugo themes (true OR recursive)
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4.0.4
+        uses: actions/setup-node@v4.1.0
         with:
           node-version-file: '.nvmrc'
 
       - name: Set up Python
-        uses: actions/setup-python@v5.2.0
+        uses: actions/setup-python@v5.3.0
         with:
           python-version: '3.12'
 
