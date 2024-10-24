@@ -1,6 +1,7 @@
 ---
 date: 2024-10-24T07:03:44+02:00
 title: "Das Geheimnis um Ric ist gelüftet"
+description: "Fritz Neumann (1897-1984) war Ric"
 tags:
   - Archive
   - Art

@@ -1,6 +1,7 @@
 ---
 date: 2024-10-24T07:03:44+02:00
 title: "The mystery about Ric is solved"
+description: "Fritz Neumann (1897-1984) was Ric"
 tags:
   - Archive
   - Art
