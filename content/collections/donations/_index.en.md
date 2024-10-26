@@ -37,7 +37,7 @@ Therefore, I expect the institution to be prepared to meet the following of cond
         </div>
     </li>
     <li><div class="li-heading">Research / Classification / Contextualization</div></li>
-        <div class="li-body type-text">The catalogue record is enriched with further information known to them. In the process, cross-references are formed, e.g. via norm data, the object is described and (organisation-specific) keywords are added.
+        <div class="li-body type-text">The catalogue record is enriched with further information known to them. In the process, cross-references are formed, e.g. via norm data, the object is described and (organisation-specific) keywords are added. If the necessary norm data (for persons or organisations) does not exist, the institution involved creates it.
         </div>
     </li>
 </ul>

@@ -36,7 +36,7 @@ Im Gegenzug erwarte ich von der bedachten Institution, dass diese bereit ist, ei
         </div>
     </li>
     <li><div class="li-heading">Recherche / Einordnung / Kontextualisierung</div></li>
-        <div class="li-body type-text">Das Katalogisat wird mit weiteren, ihnen bekannten Informationen angereichert. Dabei werden  Querverweise z.B. über Normdaten gebildet, das Objekt beschrieben und mit (organisationsspezifischen) Schlagworten versehen.
+        <div class="li-body type-text">Das Katalogisat wird mit weiteren, ihnen bekannten Informationen angereichert. Dabei werden  Querverweise z.B. über Normdaten gebildet, das Objekt beschrieben und mit (organisationsspezifischen) Schlagworten versehen. Falls notwendige Normdaten (zu Personen oder Organisationen) nicht existieren, legt die bedachte Einrichtung diese an.
         </div>
     </li>
 </ul>
