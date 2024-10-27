@@ -6,11 +6,11 @@ tags:
   - Projektemacher.org
 ---
 
-Zu Abschluss von 2024 hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 250 Beiträge (das zweitaktivste Jahr bisher) veröffentlicht.
+Zu Abschluss von 2024 hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 260 Beiträge (das aktivste Jahr bisher) veröffentlicht.
 <!--more-->
 Einige der Highlight sind
 * [70er Jahre Tapete](https://vorsatzpapier.projektemacher.org/post/tapete-20/) - die dann auch als [erstes HDR IIIF Bild veröffentlicht wurde](https://christianmahnke.de/post/hdr-iiif/).
-* [Fritz Neumann (1928–2014) ist nicht Ric!](https://ric-unknownartist.projektemacher.org/de/post/mystery-again/) - Das Rätsel ist doch nicht gelöst!
+* [Fritz Neumann (1928–2014) ist nicht Ric!](https://ric-unknownartist.projektemacher.org/de/post/mystery-again/) - Aber der richtige [Fritz Neumann (1897-1984) wurde endlich gefunden](https://ric-unknownartist.projektemacher.org/post/fritz-neumann-spandauer-volksblatt-19-2-1972/)
 * [Über die rücksichtslose Art der großstädtischen Ausflügler.](https://briefsteller.de/post/der-haussekretaer/286/) - der erste Eintrag mit Text to Speech
 * [die neue linie - März 1930](https://xn--blaufusstlpel-qmb.de/post/die-neue-linie-3-1930/) - *Die* Bauhaus Lifestyle-Zeitschrift.
 * ["Reihenhaus-Fassaden Geschäfts- und Wohnhäuser aus alter und neuer Zeit"](https://backsteinexpressionismus.projektemacher.org/post/reihenhaus-fassaden/) - Viele Beispiele avantgardistischer Architektur von 1929
