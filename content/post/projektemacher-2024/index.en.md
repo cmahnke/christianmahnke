@@ -10,7 +10,7 @@ At the end of 2024, here is the annual retrospect for Projektemacher.org. Over 2
 <!--more-->
 Some of the highlights are
 * [70s wallpaper](https://vorsatzpapier.projektemacher.org/post/tapete-20/) - which was then also published as [first HDR IIIF image](https://christianmahnke.de/en/post/hdr-iiif/).
-* [Fritz Neumann (1928-2014) is not Ric!](https://ric-unknownartist.projektemacher.org/post/mystery-again/) - The mystery is not solved after all!
+* [Fritz Neumann (1928-2014) is not Ric!](https://ric-unknownartist.projektemacher.org/post/mystery-again/) - But the right [Fritz Neumann (1897-1984) was finally found](https://ric-unknownartist.projektemacher.org/post/fritz-neumann-spandauer-volksblatt-19-2-1972/)
 * [On the ruthless nature of metropolitan day-trippers](https://briefsteller.de/post/der-haussekretaer/286/) - the first entry with text to speech
 * [die neue linie - March 1930](https://xn--blaufusstlpel-qmb.de/post/die-neue-linie-3-1930/) - *The* Bauhaus lifestyle magazine.
 * ["Reihenhaus-Fassaden Geschäfts- und Wohnhäuser aus alter und neuer Zeit"](https://backsteinexpressionismus.projektemacher.org/post/reihenhaus-fassaden/) - Many examples of avant-garde architecture from 1929
