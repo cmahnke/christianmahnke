@@ -8,7 +8,7 @@ tags:
 preview: img/image.jpg
 ---
 
-I bought an interesting drawing from 1965...
+I bought an interesting [Art Brut](https://en.wikipedia.org/wiki/Outsider_art) drawing from 1965...
 <!--more-->
 
 {{< gallery >}}

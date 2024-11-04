@@ -8,7 +8,7 @@ tags:
 preview: img/image.jpg
 ---
 
-Ich habe einen interessante Zeichnung von 1965 gekauft...
+Ich habe einen interessante [Art Brut](https://de.wikipedia.org/wiki/Art_brut) Zeichnung von 1965 gekauft...
 <!--more-->
 
 {{< gallery >}}
