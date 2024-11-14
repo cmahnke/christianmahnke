@@ -3,7 +3,6 @@ title: Graphic by an artist from Spandau
 metaPage: true
 displayinlist: false
 weight: 2
-draft: true
 iiifContext: http://iiif.io/api/image/2/context.json
 resources:
 - src: "front.jxl"
