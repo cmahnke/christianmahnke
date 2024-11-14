@@ -14,13 +14,16 @@
       {{- $scalePreview = $image.scalePreview -}}
     {{- end -}}
     {{- with $imgRes -}}
-      <a class="gallery-image" href="{{ $image.src }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank">
+      <a class="gallery-image {{ if ne $alt "" }}caption{{ end }}" href="{{ $image.src }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank">
         {{- $preview := $imgRes.Resize (printf "%sx" $previewWidth) -}}
         {{- if (not $scalePreview) -}}
           {{- $preview = $imgRes -}}
         {{- end -}}
 
         <img src="{{ $preview.RelPermalink }}" alt="{{ $alt }}" class="gallery-preview" />
+        {{- if ne $alt "" -}}
+          <div class="hidden-caption-content">{{ $alt }}</div>
+        {{- end -}}
       </a>
       {{- else -}}
       {{ warnf "[shortcodes/gallery.html] Not found %s for %s" $image.src $.Page.File.Path }}
