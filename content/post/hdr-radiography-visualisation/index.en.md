@@ -16,13 +16,13 @@ Another use case for HDR images...
 
 <!--more-->
 
-...is the visualisation of X-ray diagnostic images of old paintings. This exciting process is used, for example, to visualise overpaintings, corrections or even underlying drawings ‘behind’ paintings in a non-destructive manner.
+...is the visualisation of X-ray diagnostic images of old paintings. This exciting process is used, for example, to visualise overpaintings, corrections or even underlying drawings "behind" paintings in a non-destructive manner.
 
 # Example
 
 The [Metropolitan Museum of Art in New York](https://www.metmuseum.org/) makes some of its highlights available in high resolution and sometimes in different wavelengths under free licences.
 
-The ‘Mars and Venus United by Love’ by [Paolo Veronese](https://en.wikipedia.org/wiki/Paolo_Veronese) from around 1578 used here as an example can be found at the museum under the accession number 10.189. As this is only a possible depiction, the work itself will not be discussed further. Further detailed information can be found at the [Metropolitan Museum itself](https://www.metmuseum.org/art/collection/search/437891).
+The "Mars and Venus United by Love" by [Paolo Veronese](https://en.wikipedia.org/wiki/Paolo_Veronese) from around 1578 used here as an example can be found at the museum under the accession number 10.189. As this is only a possible depiction, the work itself will not be discussed further. Further detailed information can be found at the [Metropolitan Museum itself](https://www.metmuseum.org/art/collection/search/437891).
 
 This late Renaissance work shows some conspicuous deviations from visible light in the X-ray image. These include a change in the position of Venus' head and a hidden crack.
 
