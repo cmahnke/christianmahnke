@@ -23,6 +23,8 @@ The slides of my presentation on HDR content via IIIF are now available...
 
 # Links to example posts
 
+These posts are part of the demo:
+
 * [HDR Image of a 70s wallpaper](https://christianmahnke.de/en/post/hdr-iiif/)
 * [3D model of a milk pourer made of uranium glas](https://christianmahnke.de/en/post/uv-photogrammetry/)
 * [Image analysis color enhancement example](https://christianmahnke.de/en/post/hdr-image-analysis/)

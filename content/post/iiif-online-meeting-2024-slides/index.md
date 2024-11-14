@@ -23,7 +23,7 @@ Die Folien meiner Präsentation zu HDR Inhalten über IIIF sind nun verfügbar..
 
 # Links zu Beiträgen mit Beispielen
 
-These are part of the demo:
+Diese Beiträge sind Teil der Demonstration:
 
 * [HDR-Bild einer 70er-Jahre-Tapete (HDR IIIF)](https://christianmahnke.de/post/hdr-iiif/)
 * [3D model of a milk pourer made of uranium glas (UV-Photogrammetrie)](https://christianmahnke.de/post/uv-photogrammetry/)
