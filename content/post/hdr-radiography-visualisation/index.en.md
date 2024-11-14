@@ -1,6 +1,7 @@
 ---
 date: 2024-11-13T12:00:44+02:00
-title: "HDR images for the visualisation of X-ray examinations of old paintings"
+title: "HDR images for the visualisation of X-ray examinations"
+description: "A new way to display X-rayed paintings"
 keywords: Radiography, MET, Metropolitan Museum of Art, Paolo Veronese
 tags:
   - DigitalImages

@@ -1,6 +1,7 @@
 ---
 date: 2024-11-13T12:00:44+02:00
-title: "HDR Bilder zur Visualisierung von Röntgenuntersuchungen alter Gemälde"
+title: "HDR Bilder zur Visualisierung von Röntgenuntersuchungen"
+description: "Eine neue Art, geröntgte Gemälde zu präsentieren"
 keywords: Radiography, MET, Metropolitan Museum of Art, Paolo Veronese
 tags:
   - DigitalImages
