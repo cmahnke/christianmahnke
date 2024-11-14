@@ -26,6 +26,6 @@ Die Folien meiner Präsentation zu HDR Inhalten über IIIF sind nun verfügbar..
 Diese Beiträge sind Teil der Demonstration:
 
 * [HDR-Bild einer 70er-Jahre-Tapete (HDR IIIF)](https://christianmahnke.de/post/hdr-iiif/)
-* [3D model of a milk pourer made of uranium glas (UV-Photogrammetrie)](https://christianmahnke.de/post/uv-photogrammetry/)
+* [3D-Modell eines Milchgießers aus Uranglas (UV-Photogrammetrie)](https://christianmahnke.de/post/uv-photogrammetry/)
 * [Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung](https://christianmahnke.de/post/hdr-image-analysis/)
 * [HDR Bilder zur Visualisierung von Röntgenuntersuchungen alter Gemälde](https://christianmahnke.de/post/hdr-radiography-visualisation/)
