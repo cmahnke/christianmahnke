@@ -45,6 +45,7 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 
 ## Vorträge
 (*Auswahl*)
+* **14.11.2024** - 2024 IIIF Online Meeting - HDR Images via IIIF Image API
 * **24.6.2021** - 2021 IIIF Annual Conference - [Scaling Down: IIIF at Small Scale](https://whova.com/embedded/session/EJt2h6EsBemAPdBLSvToVJA%403Er8F48foN7yx-cZscQ%3D/1646975/?widget=primary), Online
 * **08.6.2011** - 100. Deutscher Bibliothekartag - "IMProving ACcess to Text - Entwicklung eines Interoperabilitätsframeworks in einem Bibliotheksprojekt" (mit Mustafa Dogan), Berlin
 * **10.5.2011** - ​​Europeana4D – Exploring data in space and time​ (mit Ralf Stockmann und Stefan Jänicke), Wien
