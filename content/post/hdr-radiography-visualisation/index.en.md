@@ -6,7 +6,9 @@ tags:
   - DigitalImages
   - HDR
   - Art
-preview: img/step1-xray.jpg
+preview:
+  image: img/step1-xray.jpg
+  hide: true
 ---
 
 Another use case for HDR images...
