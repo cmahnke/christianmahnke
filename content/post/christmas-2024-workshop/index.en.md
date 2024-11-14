@@ -1,5 +1,5 @@
 ---
-date: 2024-11-12T12:22:44+02:00
+date: 2024-11-14T12:22:44+02:00
 title: "Craft workshop Christmas 2024"
 keywords: Handicrafts, Christmas card, Forum Wissen Göttingen
 tags:

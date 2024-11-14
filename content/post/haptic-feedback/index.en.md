@@ -39,7 +39,7 @@ The patterns are not simply printed, but carefully cut out and glued in. The cor
 
 # Preparation of the image data
 
-The first step was to prepare the image data:The starting point for tactile feedback is the image files, as well as a manual marker for the sections (bounding box) with fabric.
+The first step was to prepare the image data: The starting point for tactile feedback is the image files, as well as a manual marker for the sections (bounding box) with fabric.
 
 "Height information" was obtained from these with some automated post-processing.However, there are only two gradations.These steps can be configured for each individual image section. After processing, the result was rasterised again to obtain a resolution of tangible points, using an edge length of 1 mm, as this corresponds approximately to the resolution of a human fingertip.
 
