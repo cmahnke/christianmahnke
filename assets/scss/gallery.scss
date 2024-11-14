@@ -50,3 +50,19 @@
     }
   }
 }
+
+.pswp__custom-caption {
+  background: #f1ffb7;
+  box-shadow: 0 0px 2px #ff5477;
+  align-content: center;
+  text-align: center;
+  width: calc(100% - 32px);
+  max-width: 400px;
+  padding: .4rem;
+  border-radius: .1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  font-size: 1.2em;
+  transform: translateX(-50%);
+}
