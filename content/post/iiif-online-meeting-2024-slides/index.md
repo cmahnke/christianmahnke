@@ -1,7 +1,7 @@
 ---
 date: 2024-11-14T15:30:00+02:00
-title: "IIIF Online Meeting 2024: Scaling down..."
-description: "Statisches IIIF hosting"
+title: "IIIF Online Meeting 2024: HDR Images via IIIF Image API"
+description: "HDR Bilder über IIIF bereitstellen"
 preview:
   image: preview.jpg
   hide: true
@@ -20,7 +20,7 @@ Die Folien meiner Präsentation zu HDR Inhalten über IIIF sind nun verfügbar..
 
 # Folien
 
-{{< pdf file="./Scaling%20down.pdf" >}}
+{{< pdf file="./HDR Images via IIIF Image API.pdf" >}}
 
 # Links zu Beiträgen mit Beispielen
 
