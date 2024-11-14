@@ -51,6 +51,8 @@ The previous result can certainly still be optimised in order to achieve better 
 
 Warning: The result is approx. 14 megabytes in size, HDR view after clicking on the preview image.
 
+{{< hdr-check >}}
+
 {{< gallery >}}
 [
   {"src": "img/Mars and Venus United by Love.jpeg", "alt": "HDR image with highlighting"}
