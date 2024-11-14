@@ -1,5 +1,5 @@
 ---
-date: 2024-11-14T16:00:00+02:00
+date: 2024-11-14T16:00:00+01:00
 title: Spende ans Archiv des Stadtgeschichtlichen Museums Spandau
 keywords: Fritz Neumann, Spandau
 description: "Kolorierte Radierung eines Flamingos von Fritz Neumann an das Archiv Spandau gespendet"

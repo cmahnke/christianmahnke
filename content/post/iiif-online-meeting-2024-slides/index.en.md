@@ -1,17 +1,16 @@
 ---
-date: 2024-11-14T15:30:00+02:00
+date: 2024-11-14T15:30:00+01:00
 title: "IIIF Online Meeting 2024: HDR Images via IIIF Image API"
 description: "Serving HDR Images via IIIF"
-preview:
-  image: preview.jpg
-  hide: true
+#preview:
+#  image: preview.jpg
+#  hide: true
 tags:
 - IIIF
 - Conference
 - HDR
 js:
   - js/pdf-viewer.js
-draft: true
 ---
 
 The slides of my presentation on HDR content via IIIF are now available...
@@ -20,7 +19,7 @@ The slides of my presentation on HDR content via IIIF are now available...
 
 # Slides
 
-{{< pdf file="./Scaling%20down.pdf" >}}
+{{< pdf file="./IIIF 2024 Lightning Talk.pdf" >}}
 
 # Links to example posts
 
