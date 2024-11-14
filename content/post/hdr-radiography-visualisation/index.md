@@ -1,6 +1,6 @@
 ---
 date: 2024-11-13T12:00:44+02:00
-title: "HDR Bilder zur Visualisierung von Röntgendiagnostik"
+title: "HDR Bilder zur Visualisierung von Röntgenuntersuchungen alter Gemälde"
 keywords: Radiography, MET, Metropolitan Museum of Art, Paolo Veronese
 tags:
   - DigitalImages
@@ -46,7 +46,7 @@ Die Ausgangsbilder und Bearbeitungsschritte:
 
 Das bisherige Ergebnis kann sicher noch optimiert werden, um eine bessere Auslöschung bei Überlappung von Röntgenaufnahme und Graustufenbild zu erreichen.
 
-Achtung: Das Ergebnis ist ca. 14 Megabyte groß.
+Achtung: Das Ergebnis ist ca. 14 Megabyte groß, HDR Ansicht nach dem Klick auf das Vorschaubild.
 
 {{< gallery >}}
 [

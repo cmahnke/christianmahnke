@@ -1,6 +1,6 @@
 ---
 date: 2024-11-13T12:00:44+02:00
-title: "HDR images for the visualisation of X-ray diagnostics"
+title: "HDR images for the visualisation of X-ray examinations of old paintings"
 keywords: Radiography, MET, Metropolitan Museum of Art, Paolo Veronese
 tags:
   - DigitalImages
@@ -45,7 +45,7 @@ The initial images and processing steps:
 
 The previous result can certainly still be optimised in order to achieve better erasure when the X-ray image and greyscale image overlap.
 
-Warning: The result is approx. 14 megabytes in size.
+Warning: The result is approx. 14 megabytes in size, HDR view after clicking on the preview image.
 
 {{< gallery >}}
 [
