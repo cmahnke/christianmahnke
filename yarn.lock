@@ -966,10 +966,10 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-wordcloud@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/wordcloud/-/wordcloud-1.2.2.tgz#2d32a99d8ac6a54d8b56915be1d41928f205854d"
-  integrity sha512-fUnDsGrHXou+49j1OeKaC7nOeZPx+sWjIet0L/j6eAcm0nXy+a+AuUs/iDAX4PLBg1Zc6wgXWXhoXdQsXRWAEw==
+wordcloud@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/wordcloud/-/wordcloud-1.2.3.tgz#68eb755d5f34680fb4e9cc9808da3ef02eb9b82b"
+  integrity sha512-9by77b7Sd9e1K75kSmVeAD+JnGpiLR1Z4EX1mYQL91jKrU1/4bHw4h4DExQ+dzfT+PvihDcH7OS7V4Y5UkbF2w==
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0":
   version "7.0.0"
