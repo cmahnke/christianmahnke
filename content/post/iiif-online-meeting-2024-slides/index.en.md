@@ -2,6 +2,7 @@
 date: 2024-11-14T15:30:00+01:00
 title: "IIIF Online Meeting 2024: HDR Images via IIIF Image API"
 description: "Serving HDR Images via IIIF"
+doi: 10.5281/zenodo.14168673
 #preview:
 #  image: preview.jpg
 #  hide: true
