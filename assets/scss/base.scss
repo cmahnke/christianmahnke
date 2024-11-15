@@ -26,6 +26,7 @@ $text-color: #000;
 @import "./sepia";
 @import "./iiif-hdr";
 @import "./syntax";
+@import "./doi";
 
 $content-width: 64em;
 $gradient-color-light: #b2444d;
@@ -1726,22 +1727,5 @@ a:has(.post-image) {
       font-size: larger;
       margin-top: .6rem;
     }
-  }
-}
-
-.doi-reference {
-  line-height: 1.4;
-  font-size: 1.2rem;
-  font-family: "Josefin Sans", Futura, sans-serif;
-  margin-bottom: .8em;
-  display: flex;
-  justify-content: flex-end;
-
-  .doi-prefix {
-    font-weight: 200;
-  }
-
-  .doi-link {
-    font-weight: 300;
   }
 }

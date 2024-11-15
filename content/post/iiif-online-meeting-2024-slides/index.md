@@ -2,7 +2,7 @@
 date: 2024-11-14T15:30:00+01:00
 title: "IIIF Online Meeting 2024: HDR Images via IIIF Image API"
 description: "HDR Bilder über IIIF bereitstellen"
-doi: 10.5281/zenodo.14168673
+#doi: 10.5281/zenodo.14168673
 #preview:
 #  image: preview.jpg
 #  hide: true
@@ -20,7 +20,8 @@ Die Folien meiner Präsentation zu HDR Inhalten über IIIF sind nun verfügbar..
 
 # Folien
 
-{{< pdf file="./IIIF 2024 Lightning Talk.pdf" >}}
+{{< pdf file="./IIIF 2024 Lightning Talk.pdf" download="false" >}}
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14168673.svg)](https://doi.org/10.5281/zenodo.14168673)
 
 # Links zu Beiträgen mit Beispielen
 

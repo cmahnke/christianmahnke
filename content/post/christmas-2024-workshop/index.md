@@ -1,5 +1,5 @@
 ---
-date: 2024-11-14T12:22:44+02:00
+date: 2024-11-15T12:22:44+02:00
 title: "Bastelworkshop Weihnachten 2024"
 keywords: Basteln, Weihnachtskarte, Forum Wissen Göttingen
 tags:
