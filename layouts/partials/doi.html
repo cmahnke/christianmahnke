@@ -1,0 +1,4 @@
+{{- $doi := . -}}
+{{- $resolver := "" -}}
+{{- $doiPrefix := "https://doi.org/" -}}
+<span class="doi-prefix">{{ i18n "doiPerfix" }}</span><a href="{{ $doiPrefix }}{{ $doi }}" title="{{ i18n "doiLink" }}" class="doi-link">{{ $doi }}</a>
