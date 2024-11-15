@@ -1718,3 +1718,13 @@ a:has(.post-image) {
   font-size: small;
   text-align: right;
 }
+
+.section-content-subsection {
+  .subsection-more-link {
+
+    &.more-posts {
+      font-size: larger;
+      margin-top: .6rem;
+    }
+  }
+}
