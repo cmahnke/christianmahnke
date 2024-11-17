@@ -13,6 +13,7 @@ Beispiele für immersive bzw. unkonventionelle Präsentationen sind unter andere
 
 Dazu sind im Blog mehrere Einzelexperimente zu finden:
 
+* [HDR Bilder zur Visualisierung von Röntgenuntersuchungen alter Gemälde](/post/hdr-radiography-visualisation/)
 * [Haptisches Feedback für Stoffmuster](https://christianmahnke.de/post/haptic-feedback/) - IIIF Annotationen mit Vibration
 * [Uranglas in 3D](https://christianmahnke.de/post/uv-photogrammetry/) - UV-Photogrammetrie
 * [Eine leuchtende Tapete](https://christianmahnke.de/post/hdr-iiif/) - HDR IIIF
