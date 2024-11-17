@@ -27,3 +27,18 @@
     }
   }
 }
+
+#professional-interests {
+  .section-content-body {
+    ul li {
+      a:has(img) {
+        margin-left: 1em;
+        
+        &:before,
+        &:after {
+          content: '';
+        }
+      }
+    }
+  }
+}
