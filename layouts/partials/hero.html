@@ -78,8 +78,8 @@
       const locale = new Intl.Locale(document.documentElement.lang);
       lang = locale.language;
   }
-  const titles = { 'de': ["Creative Technologist"],
-                   'en': ["Creative Technologist"]};
+  const titles = { 'de': ["Creative Technologist", "Digital Humanities Communicator"],
+                   'en': ["Creative Technologist", "Digital Humanities Communicator"]};
   const chance = 3;
   const index = Math.floor(Math.random() * (chance * titles[lang].length + 1))
   if (index < titles[lang].length) {
