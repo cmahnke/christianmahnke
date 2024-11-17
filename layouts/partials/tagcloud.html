@@ -42,9 +42,10 @@
     const options = {
       list: tags,
       /*
-      weightFactor: function (size) {
-        return Math.pow(size, 2.3) * $('#canvas').width() / 1024;
-      },
+      weightFactor: function(size) {
+        const canvasWidth = document.getElementById('canvas').width;
+        return Math.pow(size, 2.3) * canvasWidth / 1024;
+      }
       */
       color: function(word, weight, fontSize, distance, theta) {
         const count = tags.find(x => x[0] === word)[1];
