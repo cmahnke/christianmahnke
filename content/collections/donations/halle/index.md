@@ -49,14 +49,14 @@ Da die Stellenvermittlerin Louise Bärwinkel ihr Geschäft in der Merseburger St
 
 ---
 
-{{< iiif/iiif contextPath="collections/donations/halle" src="img002a/info.json" share="false" >}}
-{{< iiif/iiif contextPath="collections/donations/halle" src="img002b/info.json" share="false" >}}
+{{< iiif/iiif contextPath="/collections/donations/halle" src="img002a/info.json" share="false" >}}
+{{< iiif/iiif contextPath="/collections/donations/halle" src="img002b/info.json" share="false" >}}
 
 ---
 
-{{< iiif/iiif contextPath="collections/donations/halle" src="img003/info.json" share="false" >}}
+{{< iiif/iiif contextPath="/collections/donations/halle" src="img003/info.json" share="false" >}}
 
 
 ---
 
-{{< iiif/iiif contextPath="collections/donations/halle" src="img001/info.json" share="false" >}}
+{{< iiif/iiif contextPath="/collections/donations/halle" src="img001/info.json" share="false" >}}

@@ -18,4 +18,4 @@ A graphic by the Spandau artist Fritz Neumann
 
 After Mr Schuth from the archive of the Spandau City History Museum provided me with the [key hint](/post/ric-unknownartist/) to Fritz Neumann, also known as [Ric](https://ric-unknownartist.projektemacher.org/), it was time to give one of his works to a cultural institution in his hometown.
 
-{{< iiif/iiif contextPath="collections/donations/spandau" src="front/info.json" share="false" >}}
+{{< iiif/iiif contextPath="/collections/donations/spandau" src="front/info.json" share="false" >}}

@@ -18,4 +18,4 @@ Eine Grafik des Spandauer Künstlers Fritz Neumann
 
 Nachdem mir Herr Schuth vom Archiv des Stadtgeschichtlichen Museums Spandaus den [entscheidenden Hinweis](/post/ric-unknownartist/) zu Fritz Neumann, auch bekannt als [Ric](https://ric-unknownartist.projektemacher.org/) geliefert hat, war es Zeit, ein Werk von ihm in eine kulturelle Einrichtung seiner Heimat zu geben.
 
-{{< iiif/iiif contextPath="collections/donations/spandau" src="front/info.json" share="false" >}}
+{{< iiif/iiif contextPath="/collections/donations/spandau" src="front/info.json" share="false" >}}
