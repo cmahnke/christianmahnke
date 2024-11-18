@@ -18,28 +18,43 @@
     </a>
     <script>
         $(document).ready(function() {
-            const head = document.querySelector('head');
-            const prefetch = "<link rel='prefetch' href='{{ $href }}' as='document'>";
-            head.insertAdjacentHTML('beforeend', prefetch);
+          const head = document.querySelector('head');
+          const prefetch = "<link rel='prefetch' href='{{ $href }}' as='document'>";
+          head.insertAdjacentHTML('beforeend', prefetch);
 
-            var wrapper = $('#{{ $id }}');
-            var img = wrapper.find('a figure img');
-            img.parent().css({'position': 'relative'});
-            var clone = img.clone().appendTo(img.parent()).css({
-                'display': 'none',
-                'position': 'absolute',
-                'top': 0,
-                'bottom': img.offset().top + img.height(),
-                'left': 0,
-                'right': img.offset().left + img.width()
-            });
+          const wrapper = document.getElementById('{{ $id }}');
+          const img = wrapper.querySelector('a figure img');
+          const parent = img.parentNode;
+          parent.style.position = 'relative';
 
-            wrapper.find('a').on('click', function(e) {
-                console.log('img click');
-                clone.css({'display': 'block'});
-                clone.addClass('zoom-link');
-                $(e).delay(400);
-            });
+          /*
+          var clone = img.clone().appendTo(img.parent()).css({
+            'display': 'none',
+            'position': 'absolute',
+            'top': 0,
+            'bottom': img.offset().top + img.height(),
+            'left': 0,
+            'right': img.offset().left + img.width()
+          });
+          */
+          const clone = img.cloneNode(true);
+          parent.appendChild(clone);
+          clone.style.display = 'none';
+          clone.style.position = 'absolute';
+          clone.style.top = 0;
+          clone.style.bottom = img.offsetTop + img.offsetHeight;
+          clone.style.left = 0;
+          clone.style.right = img.offsetLeft + img.offsetWidth;
+
+          wrapper.querySelector('a').addEventListener('click', (e) => {
+            clone.style.display = 'block';
+            clone.classList.add('zoom-link');
+            // Delay the event, was $(e).delay(400);
+            setTimeout(() => {
+              //
+            }, 400);
+          });
+
         });
     </script>
 </div>
