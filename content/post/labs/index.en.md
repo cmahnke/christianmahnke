@@ -8,12 +8,12 @@ tags:
 - Projektemacher.org
 ---
 
-In order to have a page in the future that can easily break for a few days and to be able to present some things half-finished, there is now the [Projektemacher Labs](https://labs.projektemache.org).
+In order to have a page in the future that can easily break for a few days and to be able to present some things half-finished, there is now the [Projektemacher Labs](https://labs.projektemacher.org).
 
 <!--more-->
 
-{{< zoom-link link="https://labs.projektemache.org" title="Projektemacher Labs" >}}
+{{< zoom-link link="https://labs.projektemacher.org" title="Projektemacher Labs" >}}
     {{<figure src="screenshot.png" alt="Screenshot Labs.projektmacher.de" class="post-image">}}
 {{< /zoom-link >}}
 
-Finished functionalities or new Blogs from the [Lab](https://labs.projektemache.org) should end up in the blogs, where the corresponding functionality improves the presentation. Articles about these functionalities might end up here ...
+Finished functionalities or new Blogs from the [Lab](https://labs.projektemacher.org) should end up in the blogs, where the corresponding functionality improves the presentation. Articles about these functionalities might end up here ...
