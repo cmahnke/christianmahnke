@@ -2,32 +2,32 @@
 # yarn lockfile v1
 
 
-"@annotorious/annotorious@3.0.13":
-  version "3.0.13"
-  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.0.13.tgz#42b63fc26694174fb051e71ad11313acb0aae012"
-  integrity sha512-ZJxkvpBHkQUyp1SCK1HtEu4fMLULH58z+3wrDnPim4DchI/qIMiAyjJ/prDBqvcwVV2WE+S3mgMnvC8wj3wFaQ==
+"@annotorious/annotorious@3.0.14":
+  version "3.0.14"
+  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.0.14.tgz#3c6fced3ac1c95c4e756f237bfa0198898ed768e"
+  integrity sha512-X5sSCddo9sB6TIE+blEjHMaHW3pOIuDuHxRtHHxh5puDPSTlIgJjOnXR5y/+B7k3pQDD/gKVBWzBYb72antjLQ==
   dependencies:
-    "@annotorious/core" "3.0.13"
+    "@annotorious/core" "3.0.14"
     rbush "^4.0.1"
     uuid "^11.0.3"
 
-"@annotorious/core@3.0.13":
-  version "3.0.13"
-  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.0.13.tgz#ed5ea4b9c2ee6bd6f5499a9b13f50b05c4da25a6"
-  integrity sha512-leqYIrp09xzGJsQGg8VKhx5L1IFJTnP6KVsqNL5rZ2iltGD/jKgpSKnJyz8eAmtx3tJDucWp3xh0Qy0zMrKaxA==
+"@annotorious/core@3.0.14":
+  version "3.0.14"
+  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.0.14.tgz#6190935f8f912d39b88912a3ca78cdeefa447d16"
+  integrity sha512-RiNWFN7w7/EbbkPRRWFz3k0B3pvDNOLthVTyjnfBRtGMhhKwkU9w3JdD0O5QwTvhaVxnnBdgT5UUNa47JtBCsQ==
   dependencies:
     dequal "^2.0.3"
     nanoevents "^9.1.0"
     nanoid "^5.0.8"
     uuid "^11.0.3"
 
-"@annotorious/openseadragon@^3.0.13":
-  version "3.0.13"
-  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.0.13.tgz#7ea08eaff4d3ca21a3d6e5621d4d8229220ef6ab"
-  integrity sha512-tdWBcivSu9Kh8j5tShy4GJjss4qQzZdjriXs4i4FER6cd6bvtbvKwMeeSIU1mAphY5UVKolAhfP5FvfuFcBngg==
+"@annotorious/openseadragon@^3.0.14":
+  version "3.0.14"
+  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.0.14.tgz#1931d19fa7e91cea5862f808a37f6f28665c674c"
+  integrity sha512-ctIUGYmgUmzkE49n+uLt7vXGSPCH7stswWxpiImuh4E8JT4E+N99j0h3z65dNI3CaX9oUxhAW5bRRDKAp/KhLQ==
   dependencies:
-    "@annotorious/annotorious" "3.0.13"
-    "@annotorious/core" "3.0.13"
+    "@annotorious/annotorious" "3.0.14"
+    "@annotorious/core" "3.0.14"
     pixi.js "^7.4.2"
     uuid "^11.0.3"
 
