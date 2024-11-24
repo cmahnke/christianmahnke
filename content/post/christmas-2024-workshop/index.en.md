@@ -13,3 +13,6 @@ As my Christmas cards made from old wallpaper and paper have found a few fans in
 <!--more-->
 
 On 5 December at 16:00 the time has come. Registration is possible [here](https://www.forum-wissen.de/event/adventsprogramm-weihnachtskarten/).
+
+The instructions from previous years can be found here:
+{{< list-tag-posts tags="Christmas,DIY" section="post" >}}
