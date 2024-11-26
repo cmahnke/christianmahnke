@@ -30,7 +30,7 @@ Dieses Werk der Spätrenaissance zeigt im Röntgenbild einige auffällige Abweic
 
 Der erste Schritt ist die möglichst genaue Überlagerung des Ausgangsbildes und der Röntgenaufnahme, damit die weiteren Bildoperationen möglichst wenig Artefakte produzieren. Dabei stellte sich heraus, dass die Röntgenaufnahme minimal verzerrt ist.
 
-Um die Unterschiede besser darstellen zu können, muss ein Graustufenderivat des Bildes im Bereich des sichtbaren Licht von der Röntgenaufnahme "abgezogen" werden. Das Ergebnis kann dann benutzt werden um die Farben in den hellen Bereichen zu verstärken.
+Um die Unterschiede besser darstellen zu können, muss ein Graustufenderivat des Bildes im Bereich des sichtbaren Licht von der Röntgenaufnahme "abgezogen" (auch als Mischmodus ["Substract"](https://en.wikipedia.org/wiki/Blend_modes#Subtract) bekannt) werden. Das Ergebnis kann dann benutzt werden um die Farben in den hellen Bereichen zu verstärken.
 
 Bereits in der Gainmap selbst sind schon der "alte" Kopf und Fuß sowie die überarbeitete Schulter deutlich erkennbar.
 

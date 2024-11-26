@@ -30,7 +30,7 @@ This late Renaissance work shows some conspicuous deviations from visible light 
 
 The first step is to superimpose the original image and the X-ray image as accurately as possible so that the subsequent image operations produce as few artefacts as possible. It turned out that the X-ray image was minimally distorted.
 
-In order to better display the differences, a greyscale derivative of the image in the visible light range must be "subtracted" from the X-ray image. The result can then be used to enhance the colours in the bright areas.
+In order to better display the differences, a greyscale derivative of the image in the visible light range must be "subtracted" (also known as blend mode ["Substract"](https://en.wikipedia.org/wiki/Blend_modes#Subtract)) from the X-ray image. The result can then be used to enhance the colours in the bright areas.
 
 The "old" head and foot as well as the reworked shoulder are already clearly recognisable in the gain map itself.
 
