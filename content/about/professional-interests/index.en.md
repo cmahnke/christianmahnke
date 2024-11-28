@@ -43,6 +43,11 @@ My professional focus is on various topics from the spectrum of digital librarie
   * Git / GitHub
   * Docker / Kubernetes / Cloud {{< link link="/tags/Docker/" class="blog" >}}Blog posts{{< /link >}}
 
+## Memberships and networks
+
+* [Deutscher Museumsbund e. V.](https://museumsbund.de/)
+* [europeana pro](https://pro.europeana.eu/)
+
 ## Talks
 (*Selection*)
 * **14.11.2024** - 2024 IIIF Online Meeting - [HDR Images via IIIF Image API](https://iiif.io/event/2024/online-meeting/#:~:text=HDR%20Images%20via%20Image%20API), Online [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14168673.svg)](https://doi.org/10.5281/zenodo.14168673)
