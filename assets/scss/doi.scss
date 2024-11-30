@@ -33,10 +33,14 @@
     ul li {
       a:has(img) {
         margin-left: 1em;
-        
+
         &:before,
         &:after {
           content: '';
+        }
+
+        img {
+          vertical-align: middle;
         }
       }
     }

@@ -1,7 +1,7 @@
 ---
-date: 2024-12-24T12:22:44+02:00
+date: 2024-12-01T12:00:00+02:00
 title: "Zur Vorweihnachtszeit"
-keywords: Kinderbuch, Anaglyphen 
+keywords: Kinderbuch, Anaglyphen
 preview:
   image: front.jpg
   hide: true
