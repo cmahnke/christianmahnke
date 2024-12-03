@@ -22,6 +22,6 @@ Now I took the trouble to remove the glass and was amazed at how professionally 
 
 {{< iiif/iiif src="back/info.json" share=false >}}
 
-The graphic probably dates from around the first half of the 1960s and was used as a Christmas card by Malte Satorius and his wife Elisabeth.
+The graphic probably dates from 1964, depicting lamps, and was used as a Christmas card by Malte Satorius and his wife Elisabeth.
 
 My [this year's Christmas cards](http://localhost:1313/post/christmas-2024/) was published earlier this year.
