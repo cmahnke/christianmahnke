@@ -22,7 +22,11 @@ Schon fast eine Tradition: Die [Bastelanleitung I](./instructions-2023-1.pdf) un
 
 {{< figure src="card-2024-2.jpg" alt="Weihnachtskarte II" caption="Fertige Weihnachtskarte 2" class="christmas-card" >}}
 
-Die benutzten Tapeten ist von [Zeitzeug](http://zeitzeug.de/) in Göttingen und auch bei [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/tapete-18/) ([zweite Tapete](https://vorsatzpapier.projektemacher.org/post/tapete-19/)) hochauflösend abgebildet.
+Die benutzten Tapeten ist von [Zeitzeug](http://zeitzeug.de/) in Göttingen und auch bei [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/) hochauflösend abgebildet:
+* [Karte 1 - Tapete 1](https://vorsatzpapier.projektemacher.org/post/tapete-26/)
+* [Karte 1 - Tapete 2](https://vorsatzpapier.projektemacher.org/post/tapete-38/)
+* [Karte 2 - Tapete 1](https://vorsatzpapier.projektemacher.org/post/tapete-36/)
+* [Karte 2 - Tapete 2](https://vorsatzpapier.projektemacher.org/post/tapete-37/)
 
 # Vorschau
 
