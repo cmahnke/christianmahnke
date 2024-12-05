@@ -29,14 +29,14 @@
   <div id="{{ printf `%s-download` $id | safeHTML }}" class="{{ printf `%s-download` $class }}"></div>
   <script>
     {{/* See https://pdfobject.com/api/ */}}
-    let options = {
+    let options_{{ replace $id "-" "" | safeJS }} = {
       page: {{ $page }},
       pdfOpenParams: {
         zoom: '100%'
       },
       fallbackLink: "<p class='{{ printf `%s-download-fallback` $class }}'><a href='{{ $pdflink }}'>{{ i18n "InlinePDFNotSupported" }}: PDF Download</a></p>"
     };
-    PDFObject.embed("{{ $pdf }}", "#{{ $id }}", options);
+    PDFObject.embed("{{ $pdf }}", "#{{ $id }}", options_{{ replace $id "-" "" | safeJS }});
   </script>
 {{- end -}}
 
