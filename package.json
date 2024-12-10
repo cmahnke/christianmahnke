@@ -11,7 +11,7 @@
     "img-comparison-slider": "^8.0.6",
     "chroma-js": "^3.1.2",
     "pdfobject": "2.3.0",
-    "openseadragon": "^5.0.0",
+    "openseadragon": "^5.0.1",
     "@annotorious/openseadragon": "^3.0.19"
   },
   "devDependencies": {
