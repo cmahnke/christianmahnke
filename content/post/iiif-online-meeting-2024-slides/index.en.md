@@ -31,3 +31,9 @@ These posts are part of the demo:
 * [3D model of a milk pourer made of uranium glas](https://christianmahnke.de/en/post/uv-photogrammetry/)
 * [Image analysis color enhancement example](https://christianmahnke.de/en/post/hdr-image-analysis/)
 * [HDR images for the visualisation of X-ray examinations of old paintings](https://christianmahnke.de/en/post/hdr-radiography-visualisation/)
+
+# Recording
+
+{{< html/iframe-consent preview="<img class='video-preview' src='preview.jpg' alt='Vorschau'>" >}}
+    {{< youtube id="YhFME0WGkww" start="401" title="HDR Images via Image API - 2024 IIIF Online Meeting: Lightning Talks, Day 3" >}}
+{{< /html/iframe-consent >}}

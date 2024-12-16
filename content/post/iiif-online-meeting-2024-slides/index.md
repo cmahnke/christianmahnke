@@ -31,3 +31,9 @@ Diese Beiträge sind Teil der Demonstration:
 * [3D-Modell eines Milchgießers aus Uranglas (UV-Photogrammetrie)](https://christianmahnke.de/post/uv-photogrammetry/)
 * [Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung](https://christianmahnke.de/post/hdr-image-analysis/)
 * [HDR Bilder zur Visualisierung von Röntgenuntersuchungen alter Gemälde](https://christianmahnke.de/post/hdr-radiography-visualisation/)
+
+# Aufzeichnung
+
+{{< html/iframe-consent preview="<img class='video-preview' src='preview.jpg' alt='Vorschau'>" >}}
+    {{< youtube id="YhFME0WGkww" start="401" title="HDR Images via Image API - 2024 IIIF Online Meeting: Lightning Talks, Day 3" >}}
+{{< /html/iframe-consent >}}
