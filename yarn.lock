@@ -713,10 +713,10 @@ object-inspect@^1.13.1:
   resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.13.3.tgz#f14c183de51130243d6d18ae149375ff50ea488a"
   integrity sha512-kDCGIbxkDSXE3euJZZXzc6to7fCrKHNI/hSRQnRuQ+BWjFNzZwiFF8fj/6o2t2G9/jTj8PSIYTfCLelLZEeRpA==
 
-openseadragon@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/openseadragon/-/openseadragon-5.0.0.tgz#3b0192c2dd8ba1f6b73166f0785975c8b4343584"
-  integrity sha512-S9aabSjmJg7Jfow1UItR5aXiKQLtkDWyRR5fxLeqT4vSYMvfscXUDfVS9snUN3JuIrHaSPJAlR4H2DYSn5DWRg==
+openseadragon@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/openseadragon/-/openseadragon-5.0.1.tgz#ad3aaccc6c0f733c3153131e9af05bc2e17a1952"
+  integrity sha512-a/hjouW9i3UfWxRADVYN2MyRhXMGnE7x9VVL7/4jXCcDLFyO4UM5o4RStYtqa5BfaHw/wMNAaD2WbxQF8f1pJg==
 
 package-json-from-dist@^1.0.0:
   version "1.0.0"
