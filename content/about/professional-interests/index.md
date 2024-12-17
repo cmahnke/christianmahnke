@@ -15,6 +15,7 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
   * Suchtechnologien (Solr / ElasticSearch)
   * XML Technologien
   * IIIF {{< link link="/tags/IIIF" class="blog" >}}Blog Beiträge{{< /link >}}
+  * Bibliographische Metadaten (METS / MODS / DC)
 
 * (Massen-) Digitalisierung
   * Workflowsteuerung

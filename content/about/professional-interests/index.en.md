@@ -15,6 +15,7 @@ My professional focus is on various topics from the spectrum of digital librarie
   * Search technologies (Solr / ElasticSearch)
   * XML technologies
   * IIIF {{< link link="/tags/IIIF" class="blog" >}}Blog posts{{< /link >}}
+  * Bibliographic metadata (METS / MODS / DC)
 
 * (Mass-) Digitisation
   * Workflow automatisation
