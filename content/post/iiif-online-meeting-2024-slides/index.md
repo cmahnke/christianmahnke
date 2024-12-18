@@ -32,6 +32,10 @@ Diese Beiträge sind Teil der Demonstration:
 * [Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung](https://christianmahnke.de/post/hdr-image-analysis/)
 * [HDR Bilder zur Visualisierung von Röntgenuntersuchungen alter Gemälde](https://christianmahnke.de/post/hdr-radiography-visualisation/)
 
+# GitHub Issue
+
+Das erwähnte GitHub Issue ist [IIIF/api#2312](https://github.com/IIIF/api/issues/2312)
+
 # Aufzeichnung
 
 {{< html/iframe-consent preview="<img class='video-preview' src='preview.jpg' alt='Vorschau'>" >}}

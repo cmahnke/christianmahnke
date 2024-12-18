@@ -32,6 +32,10 @@ These posts are part of the demo:
 * [Image analysis color enhancement example](https://christianmahnke.de/en/post/hdr-image-analysis/)
 * [HDR images for the visualisation of X-ray examinations of old paintings](https://christianmahnke.de/en/post/hdr-radiography-visualisation/)
 
+# GitHub Issue
+
+The mentioned GitHub issue is [IIIF/api#2312](https://github.com/IIIF/api/issues/2312)
+
 # Recording
 
 {{< html/iframe-consent preview="<img class='video-preview' src='preview.jpg' alt='Vorschau'>" >}}
