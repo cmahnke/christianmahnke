@@ -17,6 +17,7 @@ The following JavaScript and CSS libraries and frameworks  are used:
     <li><a href="https://github.com/js-cookie/js-cookie">js-cookie</a></li>
     <li><a href="https://necolas.github.io/normalize.css/">Normalize.css</a></li>
     <li><a href="https://russellgoldenberg.github.io/enter-view/">Enter-view.js</a></li>
+    <li><a href="https://openlayers.org/">OpenLayers</a></li>
     <li><a href="https://wordcloud2-js.timdream.org/#love">wordcloud2.js</a></li>
     <!--
     <li><a href="https://michalsnik.github.io/aos/">AOS (Animate On Scroll Library)</a></li>
@@ -29,5 +30,7 @@ Entries with 3D contents use:
     <li><a href="https://aframe.io/">A-FRAME</a></li>
     <li><a href="https://threejs.org/">Three.js</a></li>
 </ul>
+
+Individual contributions may use other libraries, which are then noted there.
 
 The site is hosted by [GitHub](https://github.com/).
