@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Schenkungen / Spenden on Christian Mahnke</title>
+    <link>https://christianmahnke.de/collections/donations/</link>
+    <description>Recent content in Schenkungen / Spenden on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/collections/donations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Film über Marburg</title>
+      <link>https://christianmahnke.de/collections/donations/marburg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/collections/donations/marburg/</guid>
+      <description>&lt;p&gt;Ein &lt;a href=&#34;https://arcinsys.hessen.de/arcinsys/detailAction?detailid=v7729942&#34; target=&#34;_blank&#34;&gt;Film über Marburg&lt;/a&gt; aus den 1940er Jahren.&lt;/p&gt;&#xA;&lt;video controls preload=&#34;auto&#34; width=&#34;100%&#34;  playsinline class=&#34;html-video&#34;&gt;&#xA;    &lt;source src=&#34;https://christianmahnke.de/collections/donations/marburg/marburg.mp4&#34; type=&#34;video/mp4&#34;&gt;&#xA;  &lt;span&gt;Ihr Browser unterstützt keine integrierten Videos, aber keine Sorge, Sie können &lt;a href=&#34;https://christianmahnke.de/collections/donations/marburg/marburg.mp4&#34;&gt;es herunterladen&lt;/a&gt; und mit Ihrem Lieblings-Videoplayer ansehen!&lt;/span&gt;&#xA;&lt;/video&gt;</description>
+    </item>
+    <item>
+      <title>Grafik eines Spandauer Künstlers</title>
+      <link>https://christianmahnke.de/collections/donations/spandau/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/collections/donations/spandau/</guid>
+      <description>&lt;p&gt;Eine Grafik des Spandauer Künstlers Fritz Neumann&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Postkarten aus Halle/Saale</title>
+      <link>https://christianmahnke.de/collections/donations/halle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/collections/donations/halle/</guid>
+      <description>&lt;p&gt;Postkarten der Verkaufstellen des Landgutes Gimritz.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Film über München</title>
+      <link>https://christianmahnke.de/collections/donations/munich/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/collections/donations/munich/</guid>
+      <description>&lt;p&gt;Der &lt;a href=&#34;https://stadtarchiv.muenchen.de/scopeQuery/detail.aspx?ID=617667&#34; target=&#34;_blank&#34;&gt;Film über München&lt;/a&gt; ist leider noch nicht online verfügbar.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

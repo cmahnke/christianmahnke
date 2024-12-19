@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About me on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/about/</link>
+    <description>Recent content in About me on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Life and work</title>
+      <link>https://christianmahnke.de/en/about/life_and_work/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/en/about/life_and_work/</guid>
+      <description>&lt;h2 id=&#34;places&#34;&gt;Places&lt;/h2&gt;&#xA;&lt;p&gt;I live and work mainly in Göttingen.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Professional focus</title>
+      <link>https://christianmahnke.de/en/about/professional-interests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/en/about/professional-interests/</guid>
+      <description>&lt;h2 id=&#34;skills&#34;&gt;Skills&lt;/h2&gt;&#xA;&lt;p&gt;My professional focus is on various topics from the spectrum of digital libraries and museums:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Full texts and metadata &lt;a href=&#34;https://christianmahnke.de/tags/Data&#34; class=&#34;blog&#34; &gt;Blog posts&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;TEI / Digital editions&lt;/li&gt;&#xA;&lt;li&gt;OCR&lt;/li&gt;&#xA;&lt;li&gt;Search technologies (Solr / ElasticSearch)&lt;/li&gt;&#xA;&lt;li&gt;XML technologies&lt;/li&gt;&#xA;&lt;li&gt;IIIF &lt;a href=&#34;https://christianmahnke.de/tags/IIIF&#34; class=&#34;blog&#34; &gt;Blog posts&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Bibliographic metadata (METS / MODS / DC)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;(Mass-) Digitisation&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Workflow automatisation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Digital images&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Computer vision for the enhancement of cultural heritage &lt;a href=&#34;https://christianmahnke.de/tags/OpenCV&#34; class=&#34;blog&#34; &gt;Blog posts&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Image processing and formats &lt;a href=&#34;https://christianmahnke.de/tags/DigitalImages&#34; class=&#34;blog&#34; &gt;Blog posts&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;3D &lt;a href=&#34;https://christianmahnke.de/tags/3D/&#34; class=&#34;blog&#34; &gt;Blog posts&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Geodata &lt;a href=&#34;https://christianmahnke.de/tags/Geodata/&#34; class=&#34;blog&#34; &gt;Blog posts&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Videos</title>
+      <link>https://christianmahnke.de/en/about/videos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/en/about/videos/</guid>
+      <description>&lt;p&gt;In the last few years I had the opportunity to be an extra in short films:&lt;/p&gt;&#xA;&lt;h2 id=&#34;evelyns-geschichte&#34;&gt;Evelyns Geschichte&lt;/h2&gt;&#xA;&#xA;&lt;div class=&#34;iframe-wrapper&#34; id=&#34;_iframe-eea89499b656013ce9c5209bbdb6ff43&#34;&gt;&#xA;  &lt;div class=&#34;iframe&#34;&gt;&#xA;    &lt;div class=&#34;opt-in&#34;&gt;&#xA;      &lt;div class=&#34;opt-in-overlay&#34;&gt;&lt;img class=&#39;video-preview&#39; src=&#39;./videos/unverzichtbar-boxed.jpg&#39; alt=&#39;Preview&#39;&gt;&lt;div class=&#34;opt-in-overlay-content&#34;&gt;&#xA;          &lt;h3 class=&#34;opt-in-header&#34;&gt;External Content&lt;/h3&gt;&#xA;          &lt;p class=&#34;opt-in-text&#34;&gt;External content is included at this point. Personal data might be transmitted to third-party platforms.&lt;/p&gt;&#xA;        &lt;/div&gt;&#xA;      &lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;iframe-content&#34; id=&#34;_iframe-eea89499b656013ce9c5209bbdb6ff43-content&#34;&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;div class=&#34;switch-wrapper&#34;&gt;&#xA;      &lt;label class=&#34;opt-in-switch&#34;&gt;&#xA;        &lt;input type=&#34;checkbox&#34;&gt;&#xA;        &lt;span class=&#34;opt-in-slider&#34;&gt;&lt;/span&gt;&#xA;      &lt;/label&gt;&#xA;      &lt;span class=&#34;opt-in-confirm&#34;&gt;Allow external content&lt;/span&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;  &lt;script&gt;&#xA;    document.addEventListener(&#34;DOMContentLoaded&#34;, function() {&#xA;      var expire = 30 * 24 * 60 * 60;&#xA;      var overlay = document.querySelector(&#39;#_iframe-eea89499b656013ce9c5209bbdb6ff43&#39;).querySelector(&#39;.opt-in&#39;);&#xA;      var toggle = document.querySelector(&#39;#_iframe-eea89499b656013ce9c5209bbdb6ff43&#39;).querySelector(&#39;.opt-in-switch input&#39;);&#xA;      addConsent(toggle, overlay, &#39;eea89499b656013ce9c5209bbdb6ff43&#39;, &#39;\n    \n        \u003cdiv style=\u0022position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;\u0022\u003e\n          \u003ciframe allow=\u0022accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\u0022 allowfullscreen=\u0022allowfullscreen\u0022 loading=\u0022eager\u0022 referrerpolicy=\u0022strict-origin-when-cross-origin\u0022 src=\u0022https:\/\/www.youtube.com\/embed\/97_vjxuY1pM?autoplay=0\u0026amp;controls=1\u0026amp;end=0\u0026amp;loop=0\u0026amp;mute=0\u0026amp;start=0\u0022 style=\u0022position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;\u0022 title=\u0022Evelyns Geschichte\u0022\u003e\u003c\/iframe\u003e\n        \u003c\/div\u003e\n\n&#39;);&#xA;    });&#xA;  &lt;/script&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&lt;p&gt;Here I play myself and accompany a very good friend with a serious illness to the flea market.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Blogs</title>
+      <link>https://christianmahnke.de/en/about/blogs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/en/about/blogs/</guid>
+      <description>&lt;p&gt;A list of my blogs on specific topics can be found on &lt;a href=&#34;https://projektemacher.org/en/blogs/&#34; target=&#34;_blank&#34;&gt;Projektemacher.org&lt;/a&gt;. I am also involved in &lt;a href=&#34;https://nebeleule.de/&#34; target=&#34;_blank&#34;&gt;Nebeleule.de&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Colophon</title>
+      <link>https://christianmahnke.de/en/about/colophon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/en/about/colophon/</guid>
+      <description>&lt;p&gt;This page was generated with &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The theme &lt;a href=&#34;https://github.com/martignoni/hugo-video&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;hugo-video&lt;/code&gt;&lt;/a&gt; is used to integrate videos. &lt;a href=&#34;https://github.com/googlefonts/josefinsans&#34; target=&#34;_blank&#34;&gt;Josefin Sans&lt;/a&gt;, &lt;a href=&#34;https://www.theleagueofmoveabletype.com/league-spartan&#34; target=&#34;_blank&#34;&gt;League Spartan&lt;/a&gt; and &lt;a href=&#34;https://github.com/googlefonts/inconsolata&#34; target=&#34;_blank&#34;&gt;Inconsolata&lt;/a&gt; are used as fonts.&lt;/p&gt;&#xA;&lt;p&gt;The following JavaScript and CSS libraries and frameworks  are used:&lt;/p&gt;&#xA;&lt;ul class=&#34;inline-list&#34;&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;https://github.com/gka/chroma.js&#34;&gt;chroma.js&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;https://jquery.com/&#34;&gt;jQuery&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;https://github.com/js-cookie/js-cookie&#34;&gt;js-cookie&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;https://necolas.github.io/normalize.css/&#34;&gt;Normalize.css&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;https://russellgoldenberg.github.io/enter-view/&#34;&gt;Enter-view.js&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;https://openlayers.org/&#34;&gt;OpenLayers&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;https://wordcloud2-js.timdream.org/#love&#34;&gt;wordcloud2.js&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;!--&#xA;    &lt;li&gt;&lt;a href=&#34;https://michalsnik.github.io/aos/&#34;&gt;AOS (Animate On Scroll Library)&lt;/a&gt;&lt;/li&gt;&#xA;    --&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Entries with 3D contents use:&lt;/p&gt;&#xA;&lt;ul class=&#34;inline-list&#34;&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;https://aframe.io/&#34;&gt;A-FRAME&lt;/a&gt;&lt;/li&gt;&#xA;    &lt;li&gt;&lt;a href=&#34;https://threejs.org/&#34;&gt;Three.js&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Individual contributions may use other libraries, which are then noted there.&lt;/p&gt;&#xA;&lt;p&gt;The site is hosted by &lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>https://christianmahnke.de/en/about/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://christianmahnke.de/en/about/contact/</guid>
+      <description>&lt;p&gt;This page is a project by &lt;strong&gt;Christian Mahnke&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Contact is possible via &lt;a href=&#34;mailto:mail@christianmahnke.de&#34;&gt;E-Mail&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
