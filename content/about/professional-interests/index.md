@@ -87,3 +87,23 @@ Siehe auch <a id="grolink" href="//publications.goettingen-research-online.de/cr
 
 ## Ausstellungen
 * **6.12. - 17.12.2022**: "Spurensuche im Sylter Archiv - Zum Leben und Werk von **Wilma Bräuner** (1891 – 1985)" - Stadtgalerie "Alte Post", Sylt / OT Westerland mit Evelyn Kraßmann.
+
+## Projekte und -beteiligungen
+
+* NPM
+  * [`hdr-canvas`](https://www.npmjs.com/package/hdr-canvas)
+* [Forum Wissen](https://www.forum-wissen.de/)
+* [Projekte bei der SUB Göttingen](https://www.sub.uni-goettingen.de/kontakt/personen-a-z/personendetails/person/christian-mahnke/)
+
+
+<details>
+<summary><h3>Alte Projekte</h3></summary>
+<div class="summary-content">
+
+* [`ous-print`](https://github.com/subugoe/ous-print)
+* [Europeana.Connect 4D](https://web.archive.org/web/20120325113101/http://www.europeanaconnect.eu/results-and-resources.php?page=4)
+* [IMPACT](https://www.digitisation.eu/)
+* [Goobi](https://de.wikipedia.org/wiki/Goobi)
+
+</div>
+</details>
