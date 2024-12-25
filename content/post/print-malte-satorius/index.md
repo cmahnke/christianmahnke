@@ -22,6 +22,6 @@ Nun habe ich mir mal die Mühe gemacht das Glas zu entfernen und war verwundert 
 
 {{< iiif/iiif src="back/info.json" share=false >}}
 
-Die Grafik stammt vermutlich aus dem Jahr 1964, Lampen darstellen und ist als Weihnachtskarte von Malte Satorius und seiner Frau Elisabeth verwendet worden.
+Die Grafik stammt vermutlich aus dem Jahr 1964, stellt Lampen dar und ist als Weihnachtskarte von Malte Satorius und seiner Frau Elisabeth verwendet worden.
 
 Meine [diesjährigen Weihnachtskarten](http://localhost:1313/post/christmas-2024/) wurde dieses Jahr früher veröffentlicht.
