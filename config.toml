@@ -177,6 +177,16 @@ enableRobotsTXT = true
     baseName = "outbox"
     notAlternative = true
 
+  [outputFormats.print]
+    mediaType = "text/html"
+    isPlainText = false
+    isHTML = true
+    baseName = "print"
+    notAlternative = true
+
+[outputs]
+#  page = ['html', 'print']
+
 [privacy]
   [privacy.instagram]
     disable = false
