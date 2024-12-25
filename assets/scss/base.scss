@@ -1059,6 +1059,10 @@ a:visited {
             justify-content: flex-end;
             position: relative;
 
+            .tags-heading {
+              display: none;
+            }
+
             .tags {
               position: unset;
                 /*
@@ -1121,7 +1125,12 @@ a:visited {
         }
     }
 
-    .meta .tags {
+    .meta {
+      .tags-heading {
+        display: none;
+      }
+
+      .tags {
         max-height: 7em;
         justify-content: space-between;
         display: flex;
@@ -1132,6 +1141,7 @@ a:visited {
         @media (max-width : 35em) {
           width: 100%;
         }
+      }
     }
 
     .odd {
@@ -1241,6 +1251,10 @@ a:visited {
 
         @media (max-width : 35em) {
             flex-direction: column;
+        }
+
+        .tags-heading {
+          display: none;
         }
 
         a {
