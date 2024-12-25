@@ -57,13 +57,28 @@
     {{- if .Params.metaPage -}}
       {{- $class = printf "%s %s" $class "meta" -}}
     {{- end -}}
-     <body class="{{ $class }} {{ if .IsHome }}home{{ end }}">
-         <a name="top"></a>
-         <div class="page-wrapper">
-             <div class="main">
-                 {{ block "content" . }}{{ end }}
-             </div>
-         {{- partial "footer.html" . -}}
-         </div>
-     </body>
+
+    {{- $outputFormat := partial "functions/output/current-format.html" . -}}
+    {{- if and (ne $outputFormat "") (ne $outputFormat "html")  -}}
+      {{- $class = printf "%s %s" $class $outputFormat -}}
+    {{- end -}}
+
+    <body class="{{ $class }} {{ if .IsHome }}home{{ end }} ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          {{ block "content" . }}{{ end }}
+        </div>
+        {{- $footer := "footer.html" -}}
+        {{- if and (ne $outputFormat "") (ne $outputFormat "html")  -}}
+          {{- $footerTemplate := printf "partials/%s-footer.html" $outputFormat -}}
+          {{- if templates.Exists $footerTemplate -}}
+            {{- $footer = $footerTemplate -}}
+          {{- else -}}
+            {{- warnf "Can't find output specific template '%s'" $footerTemplate -}}
+          {{- end -}}
+        {{- end -}}
+        {{- partial $footer . -}}
+      </div>
+    </body>
  </html>

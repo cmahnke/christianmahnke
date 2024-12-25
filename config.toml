@@ -183,6 +183,7 @@ enableRobotsTXT = true
     isHTML = true
     baseName = "print"
     notAlternative = true
+    permalinkable = true
 
 [outputs]
 #  page = ['html', 'print']

@@ -1,0 +1,8 @@
+{{- warnf "Make sure the current output format is marked as permalinkable, to make this work. See https://gohugo.io/templates/output-formats/#link-to-output-formats " -}}
+{{- $outputFormat := "" -}}
+{{ range .Page.OutputFormats }}
+  {{- if eq .Permalink $.Permalink -}}
+    {{- $outputFormat = .Name -}}
+  {{- end -}}
+{{- end -}}
+{{- return $outputFormat -}}
