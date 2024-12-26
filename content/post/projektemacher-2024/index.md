@@ -7,7 +7,7 @@ tags:
 draft: true
 ---
 
-Zu Abschluss von 2024 hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 270 Beiträge (das aktivste Jahr bisher) veröffentlicht.
+Zu Abschluss von 2024, hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 270 Beiträge (das aktivste Jahr bisher) veröffentlicht.
 <!--more-->
 Einige der Highlight sind:
 * [70er Jahre Tapete](https://vorsatzpapier.projektemacher.org/post/tapete-20/) - die dann auch als [erstes HDR IIIF Bild veröffentlicht wurde](https://christianmahnke.de/post/hdr-iiif/).
@@ -29,5 +29,6 @@ Einige der Highlight sind:
 * [Kleiderbügel](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/map/) werden nun auf einer Karte angezeigt
 * [Kinderbücher](https://xn--kinderbcher-zhb.projektemacher.org/) können nun als PDFs exportiert werden
 * [Ric - An unknown artist](https://ric-unknownartist.projektemacher.org/) ist nun in einer deutschen Übersetzung verfügbar
-* Web-Archivierung - Einige Blogs senden ihre Links nun an das Internet Archiv
+* Web-Archivierung - Einige Blogs senden ihre Links nun an das Internet Archiv, eine Archivierung der Blogs selbst bei der DNB ist in Arbeit.
 * IIIF Kollektionen für Inhalte der Blogs ([Ansicht in Theseus](https://theseusviewer.org/?iiif-content=https://projektemacher.org/collection.json))
+* [911TV](https://911tv.projektemacher.org/) ist nun als Desktop Anwendung, z.B. für eine physische Installation, [verfügbar](https://christianmahnke.de/post/911tv-desktop/).

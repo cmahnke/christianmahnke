@@ -29,5 +29,6 @@ Some of the highlights are
 * [Clothes hangers](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/map/) are now displayed on a map
 * [Children's books](https://xn--kinderbcher-zhb.projektemacher.org/) can now be exported as PDFs
 * [Ric - An unknown artist](https://ric-unknownartist.projektemacher.org/) is now available in a German translation
-* Web archiving - Some blogs now send their links to the Internet Archive
+* Web archiving - Some blogs now send their links to the Internet Archive. The blogs themselves will be archived at the DNB in the future.
 * IIIF collections for blog content ([View in Theseus](https://theseusviewer.org/?iiif-content=https://projektemacher.org/collection.json))
+* [911TV](https://911tv.projektemacher.org/) is now [available](https://christianmahnke.de/post/911tv-desktop/) as a desktop application, e.g. for a physical installation.
