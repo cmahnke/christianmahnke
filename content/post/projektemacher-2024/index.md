@@ -4,6 +4,7 @@ title: "Projektemacher 2024"
 tags:
   - Blog
   - Projektemacher.org
+draft: true
 ---
 
 Zu Abschluss von 2024 hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 270 Beiträge (das aktivste Jahr bisher) veröffentlicht.
