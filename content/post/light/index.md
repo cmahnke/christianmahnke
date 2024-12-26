@@ -8,7 +8,7 @@ tags:
   - Project
 ---
 
-Ein Schwerpunkt des letzten Jahres (2024) ist das Thema "Licht". Angefangen mit den historischen 3D Bildern in [Vintage Reality](https://vintagereality.projektemacher.org/) über erste Versuche mit [Photogrammetrie](/post/3d-models/) zu [HDR](/post/ultrahdr/).
+Passend zur beginnenden dunklen Jahreszeit: Ein Schwerpunkt des letzten Jahres (2024) war das Thema "Licht". Angefangen mit den historischen 3D Bildern in [Vintage Reality](https://vintagereality.projektemacher.org/) über erste Versuche mit [Photogrammetrie](/post/3d-models/) zu [HDR](/post/ultrahdr/).
 <!--more-->
 Hier die komplette Liste:
 
