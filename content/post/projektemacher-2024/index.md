@@ -32,3 +32,7 @@ Einige der Highlight sind:
 * Web-Archivierung - Einige Blogs senden ihre Links nun an das Internet Archiv, eine Archivierung der Blogs selbst bei der DNB ist in Arbeit.
 * IIIF Kollektionen für Inhalte der Blogs ([Ansicht in Theseus](https://theseusviewer.org/?iiif-content=https://projektemacher.org/collection.json))
 * [911TV](https://911tv.projektemacher.org/) ist nun als Desktop Anwendung, z.B. für eine physische Installation, [verfügbar](https://christianmahnke.de/post/911tv-desktop/).
+
+## Veranstaltungen
+
+* Nachdem meine Weihnachtskarten in den letzten Jahren viel Zuspruch erhielten, [gab es diese Jahr einen Bastelworkshop](https://christianmahnke.de/post/christmas-2024-workshop/).

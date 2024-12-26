@@ -32,3 +32,7 @@ Some of the highlights are
 * Web archiving - Some blogs now send their links to the Internet Archive. The blogs themselves will be archived at the DNB in the future.
 * IIIF collections for blog content ([View in Theseus](https://theseusviewer.org/?iiif-content=https://projektemacher.org/collection.json))
 * [911TV](https://911tv.projektemacher.org/) is now [available](https://christianmahnke.de/post/911tv-desktop/) as a desktop application, e.g. for a physical installation.
+
+## Events
+
+* After my Christmas cards have been very popular in recent years, [there was a craft workshop](https://christianmahnke.de/post/christmas-2024-workshop/) this year.

@@ -3,4 +3,4 @@ title: 'JavaScript'
 description: ''
 ---
 
-Articles including JavaScript implementations.
+Articles with shares of JavaScript or TypeScript implementations.

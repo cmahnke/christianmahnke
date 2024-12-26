@@ -3,4 +3,4 @@ title: 'JavaScript'
 description: ''
 ---
 
-Beiträge mit Anteilen an JavaScript Implementierungen.
+Beiträge mit Anteilen an JavaScript bzw. TypeScript Implementierungen.
