@@ -9,7 +9,7 @@ tags:
 - Website
 - Electron
 - HybridMedia
-- Archives
+- Archive
 - JavaScript
 - MediaInstallation
 ---

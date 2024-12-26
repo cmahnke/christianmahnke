@@ -9,7 +9,7 @@ preview:
 tags:
 - Website
 - HybridMedia
-- Archives
+- Archive
 - JavaScript
 ---
 
