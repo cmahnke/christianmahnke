@@ -4,6 +4,7 @@ title: "Projektemacher 2024"
 tags:
   - Blog
   - Projektemacher.org
+draft: true
 ---
 
 At the end of 2024, here is the annual retrospect for Projektemacher.org. Over 270 articles were published over the course of the year (the most active year to date).
