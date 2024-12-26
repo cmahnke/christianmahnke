@@ -13,6 +13,8 @@ Die dabei zu erfüllenden Bedingungen sind hier aufgeführt:
     <li><div class="li-heading">Namensnennung</div>
         <div class="li-body type-text">Das Objekt wird unter Namensnennung des Leihgebers und mit dessen Monogrammsymbol präsentiert.
         </div>
+        <div class="li-body type-text">Die Namensnennung erfolgt auch in Print-Publikationen (wie z.B. Katalogen und Werbematerialien).
+        </div>
         <div class="li-body type-text para">Falls in der Ausstellung Verlinkungen (z.B. QR-Codes oder via App) eingesetzt werden, sollte eine Verlinkung zu dieser Seite realisiert werden.
         </div>
     </li>

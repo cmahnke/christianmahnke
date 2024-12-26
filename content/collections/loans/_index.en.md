@@ -13,6 +13,7 @@ The conditions to be fulfilled are listed here:
     <li><div class="li-heading">Mention of the lender</div>
         <div class="li-body type-text">The object is presented with mentioning my name as lender and the monogram symbol.
         </div>
+        <div class="li-body type-text">The lender is also mentioned in print publications (e.g. catalogues and advertising materials)..
         <div class="li-body type-text para">If links are used in the exhibition (e.g. QR codes or via app), this page should be linked.
         </div>
     </li>
