@@ -3,4 +3,4 @@ title: 'DIY'
 description: ''
 ---
 
-Heimwerk und Bastelprojekt, meist mit Papier.
+Heimwerk- und Bastelprojekte, meist mit Papier.
