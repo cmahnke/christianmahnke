@@ -179,3 +179,7 @@ Other potential browsers are listed by [Can I Use](https://caniuse.com/vibration
   * [OpenSeadragon](https://openseadragon.github.io/)
   * [Annotorious](https://annotorious.dev/)
   * [Manifesto](https://github.com/IIIF-Commons/manifesto)
+
+# And why?
+
+As my interests lie both in innovative digital transport and in the use of low-cost (and open) technologies, this can also be seen as a demonstrator for interesting applications, e.g. for (Android) smartphones in a museum. In other words, without the use of expensive, specialised hardware.
