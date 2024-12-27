@@ -9,24 +9,24 @@ weight: 4
 
 My professional focus is on various topics from the spectrum of digital libraries and museums:
 
-* Full texts and metadata {{< link link="/tags/Data" class="blog" >}}Blog posts{{< /link >}}
+* Full texts and metadata {{< link link="/en/tags/Data" class="blog" >}}Blog posts{{< /link >}}
   * TEI / Digital editions
   * OCR
   * Search technologies (Solr / ElasticSearch)
   * XML technologies
-  * IIIF {{< link link="/tags/IIIF" class="blog" >}}Blog posts{{< /link >}}
+  * IIIF {{< link link="/en/tags/IIIF" class="blog" >}}Blog posts{{< /link >}}
   * Bibliographic metadata (METS / MODS / DC)
 
 * (Mass-) Digitisation
   * Workflow automatisation
 
 * Digital images
-  * Computer vision for the enhancement of cultural heritage {{< link link="/tags/OpenCV" class="blog" >}}Blog posts{{< /link >}}
-  * Image processing and formats {{< link link="/tags/DigitalImages" class="blog" >}}Blog posts{{< /link >}}
+  * Computer vision for the enhancement of cultural heritage {{< link link="/en/tags/OpenCV" class="blog" >}}Blog posts{{< /link >}}
+  * Image processing and formats {{< link link="/en/tags/DigitalImages" class="blog" >}}Blog posts{{< /link >}}
 
-* 3D {{< link link="/tags/3D/" class="blog" >}}Blog posts{{< /link >}}
+* 3D {{< link link="/en/tags/3D/" class="blog" >}}Blog posts{{< /link >}}
 
-* Geodata {{< link link="/tags/Geodata/" class="blog" >}}Blog posts{{< /link >}}
+* Geodata {{< link link="/en/tags/Geodata/" class="blog" >}}Blog posts{{< /link >}}
 
 * Programming
   * Java
@@ -38,11 +38,11 @@ My professional focus is on various topics from the spectrum of digital librarie
 * Web development
   * HTML
   * CSS
-  * JavaSript / TypeScript
+  * JavaSript / TypeScript {{< link link="/en/tags/JavaScript/" class="blog" >}}Blog posts{{< /link >}}
 
 * DevOps
   * Git / GitHub
-  * Docker / Kubernetes / Cloud {{< link link="/tags/Docker/" class="blog" >}}Blog posts{{< /link >}}
+  * Docker / Kubernetes / Cloud {{< link link="/en/tags/Docker/" class="blog" >}}Blog posts{{< /link >}}
 
 ## Memberships and networks
 

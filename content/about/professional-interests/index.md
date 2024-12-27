@@ -38,7 +38,7 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 * Webentwicklung
   * HTML
   * CSS
-  * JavaSript / TypeScript
+  * JavaSript / TypeScript {{< link link="/tags/JavaScript/" class="blog" >}}Blog Beiträge{{< /link >}}
 
 * Betriebs- und Entwicklungsinfrastrukturen
   * Git / GitHub

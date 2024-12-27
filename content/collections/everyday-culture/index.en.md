@@ -43,7 +43,7 @@ The main focus of my collection is on different everyday culture related artifac
   * Technology
 
 ## Art
-* Graphic arts and prints {{< link link="/tags/Art/" class="blog" >}}Blog posts{{< /link >}}
+* Graphic arts and prints {{< link link="/en/tags/Art/" class="blog" >}}Blog posts{{< /link >}}
 
 ## Media
 * Tapes
