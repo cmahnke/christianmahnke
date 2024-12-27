@@ -9,18 +9,20 @@ The main focus of my collection is on different everyday culture related artifac
 
 ## Artifacts
 * Optical devices and toys
+  * Cameras {{< link link="https://yaapb.projektemacher.org/cameras/" class="blog" >}}Page of the collection{{< /link >}}
 * Consumer electronics
   * Tape recorders
   * Projectors
-* Hangers
+* Hangers {{< link link="https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/" class="blog" >}}Page of the collection{{< /link >}}
 * Glasses
 * Airplane cutlery
 * Ceramic, glass and porcelain objects
+* Wallpapers {{< link link="https://vorsatzpapier.projektemacher.org/tags/wallpaper/" class="blog" >}}Page of the collection{{< /link >}}
 
 ## Books and printed matter
  (*mainly between 1890 and 1945*)
 * Advisory literature (*especially with regard to transported role models*)
-  * Letter-writer's guides
+  * Letter-writer's guides {{< link link="https://briefsteller.de/" class="blog" >}}Page of the collection{{< /link >}}
   * Entertainment
   * Health / Medicine
     * Personal hygiene
@@ -36,18 +38,18 @@ The main focus of my collection is on different everyday culture related artifac
   * Typography
 * Magazines
   * Entertainment
-  * Fashion
+  * Fashion {{< link link="https://xn--blaufusstlpel-qmb.de/" class="blog" >}}Page of the collection{{< /link >}}
   * Architecture
   * Technology
 
 ## Art
-* Graphic arts and prints
+* Graphic arts and prints {{< link link="/tags/Art/" class="blog" >}}Blog posts{{< /link >}}
 
 ## Media
 * Tapes
 * Films (*e.g. Super 8*)
 * Slides / Photos / Postcards
-* 3D images / Viewmaster
+* 3D images / Viewmaster {{< link link="https://vintagereality.projektemacher.org/" class="blog" >}}Page of the collection{{< /link >}}
 
 My goal is not to cover any these topics even halfway complete, but to depict a (not necessarily representative) cross-section.
 

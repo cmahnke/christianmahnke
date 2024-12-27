@@ -9,24 +9,26 @@ Meine Sammelschwerpunkte liegen im Bereich der Alltagskultur des 20. Jahrhundert
 
 ## Dinge / Artefakte
 * Optische Geräte und Spielzeuge
+  * Kameras {{< link link="https://yaapb.projektemacher.org/cameras/" class="blog" >}}Seite der Sammlung{{< /link >}}
 * Unterhaltungselektronik
   * Tonbandgeräte
   * Projektoren
-* Kleiderbügel
+* Kleiderbügel {{< link link="https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/" class="blog" >}}Seite der Sammlung{{< /link >}}
 * Brillen
 * Flugzeugbestecke
 * Keramik, Glas und Porzellan Objekte
+* Tapeten {{< link link="https://vorsatzpapier.projektemacher.org/tags/wallpaper/" class="blog" >}}Seite der Sammlung{{< /link >}}
 
 ## Bücher und Gedrucktes
 (*hauptsächlich zwischen 1890 und 1945*)
 * Ratgeberliteratur (*besonders mit Hinblick auf transportierte Rollenbilder*)
-  * Briefsteller
+  * Briefsteller {{< link link="https://briefsteller.de/" class="blog" >}}Seite der Sammlung{{< /link >}}
   * Unterhaltung
   * Gesundheit / Medizin
     * Schönheits- und Körperpflege
     * Aufklärung (*Ehehygiene*)
     * Gedächnistraining
-* Schöne Kinderbücher
+* Schöne Kinderbücher {{< link link="https://xn--kinderbcher-zhb.projektemacher.org/" class="blog" >}}Seite der Sammlung{{< /link >}}
   * Sammelalben
 * Fotobücher (*besonders im Kupfertiefdruck*)
 * Inneneinrichtung
@@ -36,19 +38,19 @@ Meine Sammelschwerpunkte liegen im Bereich der Alltagskultur des 20. Jahrhundert
   * Typografie
 * Zeitschriften und Illustrierte
   * Unterhaltung
-  * Mode
+  * Mode {{< link link="https://xn--blaufusstlpel-qmb.de/" class="blog" >}}Seite der Sammlung{{< /link >}}
   * Architektur
   * Technik
 
 Ein (unvollständiger) Katalog meiner Bücher ist bei [Librarything](https://www.librarything.com/profile/cmahnke) einsehbar.
 
 ## Kunst
-* Druckgrafik
+* Druckgrafik {{< link link="/tags/Art/" class="blog" >}}Blog Beiträge{{< /link >}}
 
 ## Medien
 * Tonbänder
 * Filme (*z.B. Super 8*)
 * Dias / Fotos / Postkarten
-* 3D Bilder / Viewmaster
+* 3D Bilder / Viewmaster {{< link link="https://vintagereality.projektemacher.org/" class="blog" >}}Seite der Sammlung{{< /link >}}
 
 Mein Ziel ist dabei nicht, eines dieser Themen auch nur halbwegs vollständig abzudecken, sondern einen (nicht notwendigerweise repräsentativen) Querschnitt abzubilden.
