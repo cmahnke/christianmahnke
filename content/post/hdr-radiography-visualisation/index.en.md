@@ -58,3 +58,7 @@ Warning: The result is approx. 14 megabytes in size, HDR view after clicking on 
   {"src": "img/Mars and Venus United by Love.jpeg", "alt": "HDR image with highlighting"}
 ]
 {{</ gallery >}}
+
+# And why?
+
+One application of this HDR enhancement is the improved visualisation of radiographic methods.

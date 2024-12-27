@@ -59,3 +59,7 @@ Achtung: Das Ergebnis ist ca. 14 Megabyte groß, HDR Ansicht nach dem Klick auf 
   {"src": "img/Mars and Venus United by Love.jpeg", "alt": "HDR Aufnahme mit Hervorhebungen"}
 ]
 {{</ gallery >}}
+
+# Und warum?
+
+Ein Anwendungsfall dieser HDR Anreicherung ist die bessere visuelle Vermittelbarkeit von radiographischen Methoden.
