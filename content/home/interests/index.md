@@ -9,4 +9,6 @@ Meine Interessen liegen in verschiedenen Aspekten der Alltagskultur des 20. Jahr
 
 Im Idealfall unterstützt der zeitgemäße (also digitale) Transport dabei die Immersion in die Vergangenheit, die unser heutiges Leben am nachhaltigsten prägt, das 20. Jahrhundert...
 
+Da meine Mittel für meine Projekte begrenzt sind, liegt ein Schwerpunkt auch auf der ressourcenschonenden bzw. Nachhaltigen Umsetzung. 
+
 Zusätzlich interessiere ich mich für alte Medien bzw. Medienformate, das zeigt sich sowohl in den [Sammlungsschwerpunkten](https://christianmahnke.de/collections/#medien), als auch bei angewandten Projekten, wie [YAAPB](https://yaapb.projektemacher.org/), meinem Photo-Blog oder dem älteren ["Diapräsentation"](https://diapraesentation.projektemacher.org/). {{< link link="/tags/HybridMedia" class="blog inline" >}}Blog Beiträge{{< /link >}}
