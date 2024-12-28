@@ -35,7 +35,7 @@ Meine Sammelschwerpunkte liegen im Bereich der Alltagskultur des 20. Jahrhundert
 * Atlanten und Landkarten
 * Werbung
 * Gebrauchsgrafik
-  * Typografie
+  * Typografie {{< link link="https://schriftmuster.projektemacher.org/" class="blog" >}}Seite der Sammlung{{< /link >}}
 * Zeitschriften und Illustrierte
   * Unterhaltung
   * Mode {{< link link="https://xn--blaufusstlpel-qmb.de/" class="blog" >}}Seite der Sammlung{{< /link >}}

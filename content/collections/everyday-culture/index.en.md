@@ -35,7 +35,7 @@ The main focus of my collection is on different everyday culture related artifac
 * Atlases and maps
 * Advertising
 * Commercial art
-  * Typography
+  * Typography {{< link link="https://schriftmuster.projektemacher.org/" class="blog" >}}Page of the collection{{< /link >}}
 * Magazines
   * Entertainment
   * Fashion {{< link link="https://xn--blaufusstlpel-qmb.de/" class="blog" >}}Page of the collection{{< /link >}}
