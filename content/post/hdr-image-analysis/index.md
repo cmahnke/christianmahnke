@@ -11,6 +11,7 @@ tags:
   - Licht2024
   - DigitalImages
   - Object
+  - HDR
 ---
 
 In diesem Beispiel geht es um einen praktischen Anwendungsfall für die [HDR](https://de.wikipedia.org/wiki/High_Dynamic_Range_Image) Darstellung im Browser...

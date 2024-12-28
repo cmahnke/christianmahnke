@@ -11,6 +11,7 @@ tags:
   - Licht2024
   - DigitalImages
   - Object
+  - HDR
 ---
 
 This example is about a practical use case for [HDR](https://en.wikipedia.org/wiki/High_dynamic_range) visualisation in the browser...
