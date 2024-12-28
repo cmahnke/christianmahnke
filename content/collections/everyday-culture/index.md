@@ -13,6 +13,7 @@ Meine Sammelschwerpunkte liegen im Bereich der Alltagskultur des 20. Jahrhundert
 * Unterhaltungselektronik
   * Tonbandgeräte
   * Projektoren
+  * Spielkonsolen (bis 2000)
 * Kleiderbügel {{< link link="https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/" class="blog" >}}Seite der Sammlung{{< /link >}}
 * Brillen
 * Flugzeugbestecke

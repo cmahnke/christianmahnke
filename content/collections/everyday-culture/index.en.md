@@ -13,6 +13,7 @@ The main focus of my collection is on different everyday culture related artifac
 * Consumer electronics
   * Tape recorders
   * Projectors
+  * Video game consoles (until 2000)
 * Hangers {{< link link="https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/" class="blog" >}}Page of the collection{{< /link >}}
 * Glasses
 * Airplane cutlery
