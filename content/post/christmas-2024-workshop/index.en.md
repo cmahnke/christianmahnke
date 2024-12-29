@@ -8,7 +8,7 @@ tags:
 - Workshop
 ---
 
-As my Christmas cards made from old wallpaper and paper have found a few fans in the meantime, I will be doing a workshop this year...
+As my Christmas cards made from old wallpaper and paper have found a few fans in the meantime, I will be doing a workshop at [Forum Wissen](https://www.forum-wissen.de) this year...
 
 <!--more-->
 
