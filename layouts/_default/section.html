@@ -6,17 +6,17 @@
   {{- end -}}
 {{- end }}
 {{ define "content" }}
-    {{- partial "header.html" . -}}
-    {{- $class := "content-container" -}}
-    {{- if and .Parent (eq .Parent.Kind "section") -}}
+  {{- partial "header.html" . -}}
+  {{- $class := "content-container" -}}
+  {{- if and .Parent (eq .Parent.Kind "section") -}}
     {{- $class = printf "%s %s" $class "subsection" -}}
-    {{- end -}}
-    {{- $theme := "section-page.html" -}}
-    {{- if and (ne .Params.theme nil) (ne .Params.theme "") -}}
-      {{- $class = printf "%s %s" $class .Params.theme -}}
-      {{- $theme = printf "themes/%s.html" .Params.theme -}}
-    {{- end -}}
-    <div class="{{ $class | safeCSS }}">
-        {{- partial $theme . -}}
-    </div>
+  {{- end -}}
+  {{- $theme := "section-page.html" -}}
+  {{- if and (ne .Params.theme nil) (ne .Params.theme "") -}}
+    {{- $class = printf "%s %s" $class .Params.theme -}}
+    {{- $theme = printf "themes/%s.html" .Params.theme -}}
+  {{- end -}}
+  <div class="{{ $class | safeCSS }}">
+    {{- partial $theme . -}}
+  </div>
 {{ end }}

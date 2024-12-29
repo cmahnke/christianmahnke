@@ -6,7 +6,7 @@ if (!mql.matches) {
 }
 */
 
-if (document.querySelector('.type-text')) {
+if (document.querySelector('.type-text') && !document.querySelector('.subsection')) {
   enterView({
   	selector: '.type-text',
   	enter: function(el) {
@@ -15,6 +15,8 @@ if (document.querySelector('.type-text')) {
       offset: 0.25,
   	once: true
   });
+} else if (document.querySelector('.type-text')) {
+  document.querySelectorAll('.type-text').forEach(el => el.classList.add('show', 'instant'));
 }
 
 if (document.querySelector('.iframe-wrapper')) {

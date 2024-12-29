@@ -45,6 +45,15 @@ $linkedin-icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" heig
 
 $external-link-icon: "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='#{encodecolor($marker-color)}' d='M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z'/%3E%3C/svg%3E";
 
+@mixin li-marker {
+  content: '☞';
+  color: $marker-color;
+  font-size: 1.4em;
+  display: inline-block;
+  vertical-align: sub;
+  padding-right: .8em
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -532,6 +541,10 @@ a:visited {
         animation-fill-mode: both;
         animation-timing-function: linear;
         /* clip-path: inset(0 100% 0 0); */
+
+        &.instant {
+            animation-duration: 0s;
+        }
     }
 
     &.para {
@@ -607,6 +620,24 @@ a:visited {
       }
     }
 
+    &.subsection {
+      .list-block {
+          text-align: start;
+          text-align: left;
+          list-style: none;
+          padding-inline-start: 0;
+
+          li:before {
+              @include li-marker();
+          }
+
+          .li-heading {
+              font-weight: 600;
+              display: inline-block;
+          }
+      }
+    }
+
     .post-body {
         ul {
             list-style: none;
@@ -618,12 +649,15 @@ a:visited {
             }
 
             li::before {
+              @include li-marker();
+              /*
                 content: '☞';
                 color: $marker-color;
                 font-size: 1.4em;
                 display: inline-block;
                 vertical-align: sub;
                 padding-right: .8em
+              */
             }
 
             /* Doesn't work in Safari
@@ -903,12 +937,15 @@ a:visited {
             padding-inline-start: 0;
 
             li::before {
+              @include li-marker();
+              /*
                 content: '☞';
                 color: $marker-color;
                 font-size: 1.4em;
                 display: inline-block;
                 vertical-align: sub;
                 padding-right: .4em
+              */
             }
         }
 
