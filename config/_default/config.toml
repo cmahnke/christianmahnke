@@ -1,5 +1,4 @@
 [params]
-  author = "Christian Mahnke"
   paginate = 5
   copyrightYears = "MMXXI - MMXXIV"
   enableBlogPost = true
@@ -24,6 +23,10 @@
   description = "Persönliche Homepage von Christian Mahnke"
   debug = true
   pagetheme = "#701611"
+
+[params.author]
+    email = 'mail@christianmahnke.de'
+    name = 'Christian Mahnke'
 
 [params.preview]
     outputPrefix = "ogPreview"
