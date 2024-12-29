@@ -21,7 +21,7 @@ Some of the highlights are
   * [Ultraviolet Photogrammetry](https://christianmahnke.de/en/post/uv-photogrammetry/)
 
 ## New pages
-* [Nocturnal Shadows](https://schatten.yaapb.projektemacher.org/)
+<!-- * [Nocturnal Shadows](https://schatten.yaapb.projektemacher.org/) -->
 * [Vintage Reality](https://vintagereality.projektemacher.org/) - Historical stereo images
 
 ## New functions
