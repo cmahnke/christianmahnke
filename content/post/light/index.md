@@ -6,6 +6,8 @@ tags:
   - Light
   - Licht2024
   - Project
+aliases:
+  - licht2024
 ---
 
 Passend zur beginnenden dunklen Jahreszeit: Ein Schwerpunkt des letzten Jahres (2024) war das Thema "Licht". Angefangen mit den historischen 3D Bildern in [Vintage Reality](https://vintagereality.projektemacher.org/) über erste Versuche mit [Photogrammetrie](/post/3d-models/) zu [HDR](/post/ultrahdr/).
