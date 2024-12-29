@@ -3,7 +3,7 @@ date: 2024-12-28T19:22:44+02:00
 title: "Archive: Bestandsaufbau durch Bürgerbeteiligung fördern"
 tags:
 - CulturalPolicy
-- Archives
+- Archive
 ---
 
 Archive sind Einrichtungen des kulturellen Gedächtnisses – manche mehr, manche weniger...
