@@ -8,6 +8,9 @@
 {{ define "content" }}
     {{- partial "header.html" . -}}
     {{- $class := "content-container" -}}
+    {{- if and .Parent (eq .Parent.Kind "section") -}}
+    {{- $class = printf "%s %s" $class "subsection" -}}
+    {{- end -}}
     {{- $theme := "section-page.html" -}}
     {{- if and (ne .Params.theme nil) (ne .Params.theme "") -}}
       {{- $class = printf "%s %s" $class .Params.theme -}}
