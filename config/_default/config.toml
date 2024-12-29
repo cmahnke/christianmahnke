@@ -1,4 +1,5 @@
 [params]
+  author = "Christian Mahnke"
   paginate = 5
   copyrightYears = "MMXXI - MMXXIV"
   enableBlogPost = true

@@ -48,3 +48,13 @@ other = "PDF is not supported"
 
 [HasSubsections]
 other = "This article has further subsections"
+
+# RSS
+[LatestPosts]
+other = "Latest blog posts"
+
+[By]
+other = "by"
+
+[Feed]
+other = "RSS feed"

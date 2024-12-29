@@ -48,3 +48,13 @@ other = "PDF Vorschau wird nicht unterstützt"
 
 [HasSubsections]
 other = "Dieser Artikel hat weitere Abschnitte"
+
+# RSS
+[LatestPosts]
+other = "Neueste Blog Beiträge"
+
+[By]
+other = "von"
+
+[Feed]
+other = "RSS-Feed"
