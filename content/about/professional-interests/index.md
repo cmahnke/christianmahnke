@@ -42,7 +42,7 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 
 * Betriebs- und Entwicklungsinfrastrukturen
   * Git / GitHub
-  * Docker / Kubernetes / Cloud {{< link link="/tags/Docker/" class="blog" >}}Blog Beiträge{{< /link >}}
+  * Cloud Infrastruktur: Docker / Kubernetes / Rancher {{< link link="/tags/Docker/" class="blog" >}}Blog Beiträge{{< /link >}}
 
 ## Mitgliedschaften und Netzwerke
 

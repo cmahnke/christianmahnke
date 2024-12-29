@@ -42,7 +42,7 @@ My professional focus is on various topics from the spectrum of digital librarie
 
 * DevOps
   * Git / GitHub
-  * Docker / Kubernetes / Cloud {{< link link="/en/tags/Docker/" class="blog" >}}Blog posts{{< /link >}}
+  * Cloud infrastructure: Docker / Kubernetes / Rancher {{< link link="/en/tags/Docker/" class="blog" >}}Blog posts{{< /link >}}
 
 ## Memberships and networks
 
