@@ -28,7 +28,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ .Site.Title }} {{ i18n "Feed" }}</title>
-    <link>{{ .Permalink }}</link>
+    <link>{{ (.Site.GetPage "post").Permalink }}</link>
     <description>{{i18n "LatestPosts"}} {{i18n "By"}} {{ .Site.Title }}</description>
     <generator>Hugo {{ hugo.Version }}</generator>
     <language>{{ site.Language.LanguageCode }}</language>{{ with $authorEmail }}
