@@ -2,7 +2,7 @@
 title: "Andere"
 metaPage: true
 displayinlist: false
-weight: 5
+weight: 6
 ---
 
 Weitere Links und ohne direkte Zusammenarbeit
