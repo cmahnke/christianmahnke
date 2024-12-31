@@ -1,6 +1,7 @@
 ---
 date: 2024-12-30T11:33:44+02:00
 title: "Projektemacher 2024"
+description: "A year in review"
 tags:
   - Blog
   - Projektemacher.org
