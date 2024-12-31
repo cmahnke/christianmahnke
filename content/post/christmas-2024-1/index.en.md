@@ -1,6 +1,7 @@
 ---
 date: 2024-12-01T12:00:00+02:00
 title: "For the pre-Christmas period"
+description: "A children's book with anaglyphs"
 keywords: Children's book, anaglyphs
 preview:
   image: front.jpg

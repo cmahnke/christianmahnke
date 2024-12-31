@@ -2,6 +2,7 @@
 date: 2024-11-19T07:22:44+01:00
 title: "Bastelworkshop Weihnachten 2024"
 keywords: Basteln, Weihnachtskarte, Forum Wissen Göttingen
+description: "Workshop im Forum Wissen"
 tags:
 - DIY
 - Christmas
