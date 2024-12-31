@@ -6,7 +6,6 @@ tags:
   - Art
   - Etching
 preview: img/print.jpg
-draft: true
 ---
 
 Ich habe eine kolorierte Radierung von [Cornelius Rogge](https://de.wikipedia.org/wiki/K%C3%BCnstlerkolonie_D%C3%B6tlingen#Cornelius_Rogge) (1874 - 1936) gefunden...
