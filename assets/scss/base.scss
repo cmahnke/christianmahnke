@@ -574,6 +574,18 @@ a:visited {
         margin: 0 .6rem;
     }
 
+    &.list {
+      @include post-description();
+    }
+
+    &.list .post {
+      &.odd {
+        .post-description {
+          align-self: end;
+        }
+      }
+    }
+
     .posts .post-body .post-preview {
       display: flex;
       justify-content: center;
