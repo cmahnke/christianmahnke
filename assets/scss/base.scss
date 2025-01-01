@@ -563,7 +563,8 @@ a:visited {
 
 .content-container {
     max-width: $content-width;
-    margin: 3em auto;
+    /* margin: 3em auto; */
+    margin: 3em 10em;
     margin-top: calc(3em + 1.4rem);
 
     @media (max-width : 75em) {
