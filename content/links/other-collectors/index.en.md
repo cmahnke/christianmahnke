@@ -5,31 +5,31 @@ displayinlist: false
 weight: 7
 ---
 
-Weitere Sammlungen und Sammler, mit denen ich nicht zusammenarbeite.
+Other collections and collectors with whom I do not work.
 
-## Staubsauger
+## Vacuum cleaner
 * [www.staubsaugermuseum.net](https://www.staubsaugermuseum.net/index.html)
 * [ibaisaic, a channel dedicated to reviews, news and information on vacuum cleaners](https://www.youtube.com/@ibaisaic)
 
-## Verkehrszeichen
+## Traffic signs
 * [Ampelplanet](https://ampelplanet.de/)
 * [Ampel Freund](https://www.ampelfreund.de/)
 * [Ampelseite](https://www.ampelseite.de/)
 
-## Uhren
+## Watches
 * [Watches of the USSR](https://mroatman.wixsite.com/watches-of-the-ussr)
 * [Digital Watch](https://www.digital-watch.com/DWL)
 
-## Keramik
+## Ceramics
 * [KERAMIK-SAMMLER.DE](https://www.keramik-sammler.de/)
 * [Sammlung Keramik der 50er Jahre](https://keramiksammlung.jimdoweb.com/)
 * [keramiksammler.de](http://keramiksammler.de/)
 * [Keramik Manufaktur Kupfermühle](http://kmk.golz.info/kmk.htm)
 
-## Bücher
+## Books
 * [josef chladek on photobooks and books](https://josefchladek.com/)
 
-## Kameras
+## Cameras
 * [Camerapedia](https://camerapedia.fandom.com/wiki/Camerapedia)
 * [Das Lippische Kameramuseum](http://www.lippisches-kameramuseum.de/)
 * [Camera-wiki.org](http://camera-wiki.org/wiki/Main_Page)
