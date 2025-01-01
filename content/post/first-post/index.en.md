@@ -1,6 +1,8 @@
 ---
 date: 2020-12-06T19:22:44+02:00
 title: "Der erste Beitrag"
+tags:
+- Blog
 ---
 After the site [Projektemacher.org](https://projektemacher.org/) went online in the last few months to unite my old Tumblr blogs and the projects of the first Corona Lockdown under a single
 
