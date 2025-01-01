@@ -1381,7 +1381,10 @@ a:visited {
     line-height: unset;
 
     .opt-in {
+        /*
         max-width: min($content-width, calc(100vw - 2 * $menu-margin));
+        */
+        max-width: $content-width;
 
         .video-preview {
             padding: 1rem 1rem 0 1rem;
