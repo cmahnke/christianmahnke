@@ -38,14 +38,14 @@ Sicher kann man dagegen einwenden, dass die Förderung von Spenden geeignet ist,
 
 Ein weiteres Gegenargument mag sein, dass der zusätzliche Aufwand nicht zu leisten sei, aber erstens wird er sicher nicht so groß ausfallen und vielleicht ist es sogar denkbar die Verteilung des Arbeitsaufwandes von der amtlichen zu der nichtamtlichen Überlieferung graduell zu verschieben – die Erstere ist in der Regel geduldiger – und sich so auch ein wenig der "Archiv von unten"-Bewegung zu öffnen.
 
-## Sind alle Archive Kuturerbeeinrichtungen?
+## Sind alle Archive Kulturerbeeinrichtungen?
 
 Am Ende muss Archiven, die sich als Bewahrer von kulturellem Erbe verstehen, klar sein, dass kulturelle Artefakte auch einer wirtschaftlichen Verwertung unterliegen können und dass die Dokumentation dieser Prozesse zu einer quellenkritischen transparenten Objektgeschichte beitragen, inklusive der Information, wie ein Objekt in die Einrichtung gekommen ist. Diese Informationen für die Recherche im Nachweissystem zu verbergen, mag manchmal geboten sein (z.B. zur Wahrung von Persönlichkeitsrechten / Schutzfristen), sollte aber nicht den Eindruck entstehen lassen, eine pauschale Arbeitsvermeidungsstrategie zu sein.
 
 In diesem Zusammenhang ist auch die Namensnennung von Spendern zu sehen: Bürger investieren Ressourcen (Geld, Zeit) um kulturelles Erbe, das, aus welchem Grund auch immer, den amtlichen Abläufen entzogen ist, um es in die dafür bereitstehende öffentliche Infrastruktur (zurück) zu führen. Natürlich wird die Provenienz dabei (zumindest intern) dokumentiert, wenn Geld geflossen ist oder eine Spendenquittung ausgestellt wurde. Doch gerade, wenn solche Objekte keinen hohen finanziellen Wert haben, sich die Spendenquittung als Gratifikation also nicht aufzwingt, ist die öffentliche Namensnennung doch wenigstens ein Ausdruck von Anerkennung.<br/>
 Was man z.B. von den Objektbeschriftungen in einem Kunstmuseum kennt, sollte auch für alle recherchierbaren Nachweise von Archivalien selbstverständlich sein.
 
-Sonst könnte man sonst zu der Frage kommen, ob vielleicht nicht alle Archive der Organisationskultur nach Kultureinrichtungen sind, sondern manche einfach das, was nach der Altregistratur gemacht wird?
+Sonst könnte man zu der Frage kommen, ob vielleicht nicht alle Archive der Organisationskultur nach Kultureinrichtungen sind, sondern manche einfach das, was nach der Altregistratur gemacht wird?
 
 ## Was tun?
 Zwei Faktoren beeinflussen maßgeblich meinen Impuls, Artefakte an Archive zu spenden: Einerseits die sichere Ver- bzw. Bewahrung und andererseits die Erschließung. Selbst wenn die Erschließung zeitlich nicht unmittelbar erfolgt, würde ich nicht sagen, dass sie deshalb nachrangig zu betrachten ist. Eine sinnvolle Richtlinie / Policy sollte schon beim Objekteingang existieren.<br/>
