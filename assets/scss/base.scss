@@ -30,7 +30,6 @@ $text-color: #000;
 @import "./doi";
 @import "./print";
 
-$content-width: 64em;
 $gradient-color-light: #b2444d;
 $gradient-color-mid: #a41416;
 $gradient-color-dark:  #701611;
@@ -40,6 +39,9 @@ $marker-color: #ff073a;
 /* $text-underline-color: lighten(#ff073a, 15%); */
 $text-underline-color: color.adjust(#ff073a, $lightness: 15%);
 $background-important: #cfff04;
+
+$content-width: 64em;
+$menu-margin: 10em;
 
 $linkedin-icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>';
 
@@ -56,6 +58,7 @@ $external-link-icon: "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/20
 
 html {
     scroll-behavior: smooth;
+    --width: min($content-width, calc(100vw - 2 * $menu-margin));
 }
 
 body {
@@ -134,7 +137,7 @@ a:visited {
         justify-content: center;
         height: 3em;
         display: flex;
-        max-width: $content-width;
+        max-width: min($content-width, calc(100vw - 2 * $menu-margin));
         width: calc(100% - 2 * 1rem);
         padding: 0 1rem;
         @media (max-width: 35em) {
@@ -435,7 +438,7 @@ a:visited {
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        max-width: $content-width;
+        max-width: min($content-width, calc(100vw - 2 * $menu-margin));
 
         @media (max-width : 75em) {
             align-items: unset;
@@ -562,9 +565,9 @@ a:visited {
 }
 
 .content-container {
-    max-width: $content-width;
+    max-width: min($content-width, calc(100vw - 2 * $menu-margin));
     /* margin: 3em auto; */
-    margin: 3em 10em;
+    margin: 3em auto;
     margin-top: calc(3em + 1.4rem);
 
     @media (max-width : 75em) {
@@ -1252,7 +1255,7 @@ a:visited {
         margin-block-end: 0;
         margin-inline-start: 0;
         margin-inline-end: 0;
-        max-width: $content-width;
+        max-width: min($content-width, calc(100vw - 2 * $menu-margin));
 
         img {
             width: 100%;
@@ -1362,7 +1365,7 @@ a:visited {
     line-height: unset;
 
     .opt-in {
-        max-width: $content-width;
+        max-width: min($content-width, calc(100vw - 2 * $menu-margin));
 
         .video-preview {
             padding: 1rem 1rem 0 1rem;
@@ -1513,7 +1516,7 @@ a:visited {
         .wrapper {
             display: flex;
             flex-direction: row;
-            max-width: $content-width;
+            max-width: min($content-width, calc(100vw - 2 * $menu-margin));
             margin: auto;
             box-sizing: border-box;
             padding: 2rem 0;
