@@ -15,7 +15,7 @@ Normalerweise vermeide ich es Reproduktionen zu kaufen...
 
 <!--more-->
 
-...aber diese ist wirklich interessant, nicht (nur) wegen der Reproduktionsmethode oder dem Motiv, sondern auch für eine handschriftliche Korrektur.
+...aber diese ist sehr interessant, nicht (nur) wegen der Reproduktionsmethode oder dem Motiv, sondern auch für eine handschriftliche Korrektur.
 
 
 {{< iiif/iiif src="front/info.json" share=false >}}

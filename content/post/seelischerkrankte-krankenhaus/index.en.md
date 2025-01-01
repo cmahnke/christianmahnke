@@ -15,7 +15,7 @@ I usually avoid buying reproductions...
 
 <!--more-->
 
-...but this one is really interesting, not (just) because of the reproduction method or the motif, but also for a handwritten correction.
+...but this one is very interesting, not (just) because of the reproduction method or the motif, but also for a handwritten correction.
 
 
 {{< iiif/iiif src="front/info.json" share=false >}}
