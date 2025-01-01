@@ -7,5 +7,3 @@ draft: true
 ---
 
 Weitere Links und ohne direkte Zusammenarbeit
-
-## Sammlungen
