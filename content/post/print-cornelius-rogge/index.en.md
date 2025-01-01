@@ -1,6 +1,6 @@
 ---
 date: 2024-12-30T14:50:44+01:00
-title: 'Summer evening in Worpswede (Sommerabend in Worpswede) by Cornelius Rogge (1874 - 1936)'
+title: 'Summer evening in Worpswede (Sommerabend in Worpswede) by Cornelius Rogge (1868 – 1949)'
 keywords: Worpswede, Cornelius Rogge, artists' colony Dötlingen
 tags:
   - Art
@@ -8,7 +8,7 @@ tags:
 preview: img/print.jpg
 ---
 
-I found an colourised etching by [Curt Mücke](https://de.wikipedia.org/wiki/Curt_M%C3%BCcke) (1885-1940)...
+I found an colourised etching by [Cornelius Rogge](https://de.wikipedia.org/wiki/K%C3%BCnstlerkolonie_D%C3%B6tlingen#Cornelius_Rogge) (1868 – 1949)...
 <!--more-->
 
 {{< gallery >}}

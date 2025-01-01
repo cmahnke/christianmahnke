@@ -1,6 +1,6 @@
 ---
 date: 2024-12-30T14:50:44+01:00
-title: 'Sommerabend in Worpswede von Cornelius Rogge (1874 - 1936)'
+title: 'Sommerabend in Worpswede von Cornelius Rogge (1868 – 1949)'
 keywords: Worpswede, Cornelius Rogge, Künstlerkolonie Dötlingen
 tags:
   - Art
@@ -8,7 +8,7 @@ tags:
 preview: img/print.jpg
 ---
 
-Ich habe eine kolorierte Radierung von [Cornelius Rogge](https://de.wikipedia.org/wiki/K%C3%BCnstlerkolonie_D%C3%B6tlingen#Cornelius_Rogge) (1874 - 1936) gefunden...
+Ich habe eine kolorierte Radierung von [Cornelius Rogge](https://de.wikipedia.org/wiki/K%C3%BCnstlerkolonie_D%C3%B6tlingen#Cornelius_Rogge) (1868 – 1949) gefunden...
 <!--more-->
 
 {{< gallery >}}
