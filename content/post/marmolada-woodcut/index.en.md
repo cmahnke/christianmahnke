@@ -10,6 +10,7 @@ tags:
   - Geodata
   - Blender
 preview: img/print.jpg
+wikidata: https://www.wikidata.org/wiki/Q203241
 ---
 
 ...is "old news" by now: Neither when it comes to the effects that can be recognised in old works, nor as an object of art itself.

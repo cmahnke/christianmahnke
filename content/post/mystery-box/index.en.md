@@ -9,6 +9,7 @@ preview:
 tags:
   - Object
   - History
+wikidata: https://www.wikidata.org/wiki/Q1793574
 ---
 
 I bought a (more or less) mysterious box:
