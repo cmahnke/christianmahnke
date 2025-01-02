@@ -6,6 +6,7 @@ tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
+wikidata: https://www.wikidata.org/wiki/Q94743711
 ---
 
 I found a woodcut by [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Roemer) (1889-1977)...

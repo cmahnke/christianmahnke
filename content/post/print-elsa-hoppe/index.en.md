@@ -6,6 +6,7 @@ tags:
   - Art
   - Linocut
 preview: img/print.jpg
+wikidata: https://www.wikidata.org/wiki/Q63485369
 ---
 
 I have acquired a linocut by Elsa Hoppe (1901-1992)...

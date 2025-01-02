@@ -9,6 +9,7 @@ tags:
   - Linocut
   - Christmas
 preview: front/full/full/0/default.jpg
+wikidata: https://www.wikidata.org/wiki/Q21014973
 ---
 
 Zufallsfund: Weihnachtskarte von [Malte Satorius](https://de.wikipedia.org/wiki/Malte_Sartorius) (1933-2017).

@@ -5,6 +5,7 @@ tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
+wikidata: https://www.wikidata.org/wiki/Q7109791
 ---
 
 Ich habe einen Holzschnitt von [Otto Richard Bossert](https://de.wikipedia.org/wiki/Otto_Richard_Bossert) (1874-1919) aufgetan...

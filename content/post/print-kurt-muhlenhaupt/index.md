@@ -5,6 +5,7 @@ tags:
   - Art
   - Etching
 preview: img/print.jpg
+wikidata: https://www.wikidata.org/wiki/Q1793892
 ---
 
 Ich habe eine Radierung von [Kurt Mühlenhaupt](https://de.wikipedia.org/wiki/Kurt_M%C3%BChlenhaupt) (1921-2006) gefunden...

@@ -6,6 +6,9 @@ tags:
   - Art
   - Etching
 preview: img/print.jpg
+wikidata:
+  - https://www.wikidata.org/wiki/Q1145251
+  - https://www.wikidata.org/wiki/Q1559234
 ---
 
 I found an colourised etching by [Curt Mücke](https://de.wikipedia.org/wiki/Curt_M%C3%BCcke) (1885-1940)...

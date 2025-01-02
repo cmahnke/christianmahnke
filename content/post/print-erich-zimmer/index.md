@@ -6,6 +6,7 @@ tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
+wikidata: https://www.wikidata.org/wiki/Q95259741
 ---
 
 Ich habe einen Holzschnitt von Erich Zimmer (1908-2001) erstanden...
