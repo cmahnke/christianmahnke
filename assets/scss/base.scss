@@ -448,7 +448,8 @@ a:visited {
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        max-width: min($content-width, calc(100vw - 2 * $menu-margin));
+        /*max-width: min($content-width, calc(100vw - 2 * $menu-margin));*/
+        max-width: $content-width;
 
         @media (max-width : 75em) {
             align-items: unset;
@@ -466,11 +467,11 @@ a:visited {
             padding-left: 5em;
             color: white;
             text-shadow: 10px 10px 0 $gradient-color-light;
+
             @media (max-width : 75em) {
                 flex-basis: 100%;
                 margin-top: 6.6em;
                 padding-left: 0;
-
             }
 
             @media (max-width : 25em) {
@@ -479,6 +480,12 @@ a:visited {
 
             .name {
                 font-size: 5em;
+
+                @media (max-width : 75em) {
+                    margin-top: -.4em;
+                    font-size: 4.4em;
+                    position: relative;
+                }
             }
 
             .title {
