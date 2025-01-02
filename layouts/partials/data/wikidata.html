@@ -1,0 +1,16 @@
+{{- with .Params.wikidata -}}
+  {{- $enties := slice -}}
+  {{- if not reflect.IsSlice . -}}
+    {{- $enties = slice . -}}
+  {{- else  -}}
+    {{- $enties := . -}}
+  {{- end -}}
+  <ul class="wikidata">
+    <div class="wikidata-title">{{ i18n "WikidataEntries" }}</div>
+    {{- range $entries -}}
+      <li class="wikidata-entry">
+        <a href="{{ . }}" title="" rel="wikidata">{{ i18n "WikidataEntry" }}</a>
+      </li>
+    {{- end -}}
+  </ul>
+{{- end -}}

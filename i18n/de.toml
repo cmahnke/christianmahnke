@@ -58,3 +58,9 @@ other = "von"
 
 [Feed]
 other = "RSS-Feed"
+
+[WikidataEntries]
+other = "Verbundene Wikidata Einträge"
+
+[WikidataEntry]
+other = "Wikidata Eintrag"

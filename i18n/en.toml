@@ -58,3 +58,9 @@ other = "by"
 
 [Feed]
 other = "RSS feed"
+
+[WikidataEntries]
+other = "Related Wikidata entries"
+
+[WikidataEntry]
+other = "Wikidata entry"

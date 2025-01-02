@@ -6,6 +6,7 @@ tags:
   - Art
   - Etching
 preview: img/print.jpg
+wikidata: https://www.wikidata.org/wiki/Q131617370
 ---
 
 I found an colourised etching by [Cornelius Rogge](https://de.wikipedia.org/wiki/K%C3%BCnstlerkolonie_D%C3%B6tlingen#Cornelius_Rogge) (1868 – 1949)...
