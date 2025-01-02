@@ -35,12 +35,15 @@
   {{ errorf "Unable to get remote resource %q" $jsonURL }}
 {{- end -}}
 
-{{- $entity := $data.entities.Get $id -}}
+{{- $entity := index $data.entities $id -}}
 
-{{- $label := "" -}}
+
+
+{{- $label := $id -}}
 {{- range $defaultLangs -}}
-  {{- if isset $entity.labels.Get . -}}
-    {{- $label = ($entity.labels.Get .).label -}}
+  {{- if isset $entity.labels . -}}
+  {{ warnf "==> %#v" (index $entity.labels .) }}
+    {{- $label = (index $entity.labels .).value -}}
   {{- end -}}
 {{ end }}
 

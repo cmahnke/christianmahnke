@@ -239,4 +239,4 @@ enableRobotsTXT = true
 
 [security]
   [security.http]
-    mediaTypes = ['^application/json$']
+    mediaTypes = ['^application/json$', '^application/json; charset=[uU][tT][fF]-8$']

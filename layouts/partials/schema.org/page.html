@@ -76,10 +76,7 @@
         {{- range $url, $relation := $entries -}}
           {{- $id := replaceRE `https://www.wikidata.org/wiki/` "" $url -}}
           {{- $uri := printf "%s%s" $entityBase $id -}}
-          {{- $name := $id -}}
-          {{/* Fails due to https://github.com/gohugoio/hugo/issues/11601
           {{- $name := partial "data/functions/wikidata-label.html" (dict "url" $id) -}}
-          */}}
           {{- $thing := dict "@type" "Thing" "@id" $uri "name" $name -}}
           {{- $about = $about | append $thing -}}
         {{- end -}}

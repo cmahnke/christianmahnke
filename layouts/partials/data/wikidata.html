@@ -23,7 +23,8 @@
       {{- $id := replaceRE `https://www.wikidata.org/wiki/` "" $url -}}
       {{- $uri := printf "%s%s" $entityBase $id -}}
       <li class="wikidata-entry">
-        <a href="{{ $uri }}" title="{{ $id }}" rel="{{ $relation }}">{{ i18n "WikidataEntry" }}</a>
+        {{- $name := partial "data/functions/wikidata-label.html" (dict "url" $id) -}}
+        <a href="{{ $uri }}" title="{{ $id }}" rel="{{ $relation }}">{{ printf "%s: " (i18n "WikidataEntry") }}{{ $name }}</a>
       </li>
     {{- end -}}
   </ul>
