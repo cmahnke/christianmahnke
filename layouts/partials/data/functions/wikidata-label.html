@@ -37,8 +37,6 @@
 
 {{- $entity := index $data.entities $id -}}
 
-
-
 {{- $label := $id -}}
 {{- range $defaultLangs -}}
   {{- if isset $entity.labels . -}}

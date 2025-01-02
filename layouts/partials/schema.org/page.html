@@ -18,7 +18,7 @@
       "url": {{ .Permalink }},
       "name": {{ .Title }},
       "datePublished": {{ .Date }}
-      {{- with $.Description -}}
+      {{- with .Description -}}
         ,"description": .
       {{- end -}}
       {{- if ne $authorName "" -}}
