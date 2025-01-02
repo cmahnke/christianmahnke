@@ -1,15 +1,26 @@
+{{- $defaultRelation := "related" -}}
 {{- with .Params.wikidata -}}
-  {{- $entries := slice -}}
-  {{- if not (reflect.IsSlice .) -}}
-    {{- $entries = slice . -}}
-  {{- else  -}}
+  {{- $entries := dict -}}
+  {{- if not (reflect.IsMap .) -}}
+    {{- $list := slice -}}
+    {{- if not (reflect.IsSlice .) -}}
+      {{- $list = slice . -}}
+    {{- else  -}}
+      {{- $list = . -}}
+    {{- end -}}
+    {{- range $list -}}
+      {{- $entries = merge $entries (dict . $defaultRelation) -}}
+    {{- end -}}
+  {{- else -}}
     {{- $entries = . -}}
   {{- end -}}
+
   <ul class="wikidata">
     <div class="wikidata-title">{{ i18n "WikidataEntries" }}</div>
-    {{- range $entries -}}
+    {{- range $url, $relation := $entries -}}
+      {{ $id := replaceRE `https://www.wikidata.org/wiki/` "" $url }}
       <li class="wikidata-entry">
-        <a href="{{ . }}" title="" rel="wikidata">{{ i18n "WikidataEntry" }}</a>
+        <a href="{{ $url }}" title="{{ $id}}" rel="{{ $relation }}">{{ i18n "WikidataEntry" }}</a>
       </li>
     {{- end -}}
   </ul>

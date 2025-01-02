@@ -30,6 +30,8 @@
     </div>
   {{- end -}}
 
+  {{- partial "data/wikidata.html" . -}}
+
   {{- if not .Params.metaPage -}}
     <div class="meta">
       <div class="tags-heading">{{ i18n "Tags" }}</div>
