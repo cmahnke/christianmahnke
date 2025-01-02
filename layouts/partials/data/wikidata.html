@@ -1,4 +1,6 @@
 {{- $defaultRelation := "related" -}}
+{{- $entityBase := "http://www.wikidata.org/entity/" -}}
+
 {{- with .Params.wikidata -}}
   {{- $entries := dict -}}
   {{- if not (reflect.IsMap .) -}}
@@ -18,9 +20,10 @@
   <ul class="wikidata">
     <div class="wikidata-title">{{ i18n "WikidataEntries" }}</div>
     {{- range $url, $relation := $entries -}}
-      {{ $id := replaceRE `https://www.wikidata.org/wiki/` "" $url }}
+      {{- $id := replaceRE `https://www.wikidata.org/wiki/` "" $url -}}
+      {{- $uri := printf "%s%s" $entityBase $id -}}
       <li class="wikidata-entry">
-        <a href="{{ $url }}" title="{{ $id}}" rel="{{ $relation }}">{{ i18n "WikidataEntry" }}</a>
+        <a href="{{ $uri }}" title="{{ $id }}" rel="{{ $relation }}">{{ i18n "WikidataEntry" }}</a>
       </li>
     {{- end -}}
   </ul>

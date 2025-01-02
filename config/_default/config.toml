@@ -23,6 +23,7 @@
   description = "Persönliche Homepage von Christian Mahnke"
   debug = true
   pagetheme = "#701611"
+  keywordAsString = true
 
 [params.author]
     email = 'mail@christianmahnke.de'

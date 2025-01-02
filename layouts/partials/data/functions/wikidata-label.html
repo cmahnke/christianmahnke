@@ -1,0 +1,47 @@
+{{- $entityBase := "http://www.wikidata.org/entity/" -}}
+{{- $defaultLangs := slice "en" "de" -}}
+
+{{- $debug := partialCached "partials/functions/debug/enabled.html" . -}}
+
+{{- $url := .url -}}
+
+{{- $uri := "" -}}
+{{- $id := "" -}}
+{{- if hasPrefix $url "http://www.wikidata.org/entity/" -}}
+  {{- $id = replaceRE `http://www.wikidata.org/entity/` "" $url -}}
+  {{- $uri = $url -}}
+{{- else if hasPrefix "" "https" -}}
+  {{- $id = replaceRE `https://www.wikidata.org/wiki/` "" $url -}}
+  {{- $uri = printf "%s%s" $entityBase $id -}}
+{{- else -}}
+  {{- $id = $url -}}
+  {{- $uri = printf "%s%s" $entityBase $id -}}
+{{- end -}}
+
+{{- $data := dict -}}
+{{- $jsonURL := printf "%s%s" (replace $uri "http://" "https://") ".json" -}}
+
+{{- if $debug -}}
+  {{- warnf "[data/functions/wikidata-label.html] Getting label for %s from %s" $id $jsonURL -}}
+{{- end -}}
+
+{{- with resources.GetRemote $jsonURL (dict "headers" (dict "Accept" "application/json")) -}}
+  {{- with .Err -}}
+    {{ errorf "%s" . -}}
+  {{- else -}}
+    {{ $data = .Content | transform.Unmarshal -}}
+  {{- end -}}
+{{- else -}}
+  {{ errorf "Unable to get remote resource %q" $jsonURL }}
+{{- end -}}
+
+{{- $entity := $data.entities.Get $id -}}
+
+{{- $label := "" -}}
+{{- range $defaultLangs -}}
+  {{- if isset $entity.labels.Get . -}}
+    {{- $label = ($entity.labels.Get .).label -}}
+  {{- end -}}
+{{ end }}
+
+{{- return $label -}}

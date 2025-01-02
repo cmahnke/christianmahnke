@@ -236,3 +236,7 @@ enableRobotsTXT = true
   [segments.manifests]
     [[segments.manifests.includes]]
       output = 'iiif-manifest'
+
+[security]
+  [security.http]
+    mediaTypes = ['^application/json$']
