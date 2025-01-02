@@ -5,6 +5,7 @@ tags:
   - Art
   - Etching
 preview: img/print.jpg
+wikidata: https://www.wikidata.org/wiki/Q1449047
 ---
 
 I have acquired an etching by [Marie Gey-Heinze](https://de.wikipedia.org/wiki/Marie_Gey-Heinze) (1881-1908)...

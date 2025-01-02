@@ -6,6 +6,7 @@ description: "Postkaten von Verkaufsstellen des Stadtgutes Gimritz"
 tags:
 - Donation
 - Archive
+wikidata: https://www.wikidata.org/wiki/Q28720313
 ---
 
 Eine weitere Spende an ein Archiv dürfte inzwischen in Stadtarchiv von [Halle an der Saale](https://de.wikipedia.org/wiki/Halle_(Saale)) eingetroffen sein. Es handelt sich um drei Postkarten, die Verkaufsstellen des [Stadtgutes Gimritz](https://de.wikipedia.org/wiki/Pei%C3%9Fnitzinsel#Das_Gut_Gimritz).

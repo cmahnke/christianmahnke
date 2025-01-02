@@ -5,6 +5,7 @@ tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
+wikidata: https://www.wikidata.org/wiki/Q11376888
 ---
 
 I bought a Japanese colour woodcut by [Imao Keinen (1855-1924)](https://de.wikipedia.org/wiki/Imao_Keinen)...

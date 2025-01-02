@@ -5,6 +5,7 @@ tags:
   - Art
   - Collage
 preview: img/collage.jpg
+wikidata: https://www.wikidata.org/wiki/Q94634912
 ---
 
 I found a collage by Helmut Bönitz (1914-1999)...
