@@ -1,5 +1,9 @@
 {{- $previewEntries := 3 -}}
+{{ $i := 0 }}
 {{- range .Pages -}}
+  {{- if ge $i $previewEntries -}}
+    {{- continue -}}
+  {{- end -}}
   <h3>
     {{- .Title -}}
   </h3>
@@ -7,6 +11,7 @@
   {{- if .Truncated -}}
     <a href="{{ .RelPermalink }}" class="subsection-more-link">{{ i18n "readmore" }}</a>
   {{- end -}}
+  {{ $i = add $i 1 }}
 {{- end -}}
 {{- if lt $previewEntries (len .Pages) -}}
   <a href="{{ .RelPermalink }}" class="subsection-more-link more-posts">{{ i18n "morePosts" }}</a>
