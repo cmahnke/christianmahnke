@@ -1,0 +1,8 @@
+{{- if .IsHome -}}
+  {{- partial "schema.org/home.html" . -}}
+{{- else -}}
+  {{- $schemaTemplate := printf "schema.org/%s.html" .Kind -}}
+  {{- if templates.Exists $schemaTemplate -}}
+    {{ partial $schemaTemplate . }}
+  {{- end -}}
+{{- end -}}

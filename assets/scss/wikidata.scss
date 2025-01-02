@@ -1,9 +1,14 @@
 .wikidata {
+  margin: 0;
+  font-size: x-small;
+  width: max-content;
+  padding-inline-start: 0;
+
   .wikidata-title {
 
   }
 
   .wikidata-entries {
-
+    font-size: small;
   }
 }

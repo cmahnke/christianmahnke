@@ -31,9 +31,7 @@
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
 
-    {{- if .IsHome -}}
-      {{- partial "schema.org/person.html" . -}}
-    {{ end -}}
+    {{- partial "data/schema.org.html" . -}}
 
   </head>
 

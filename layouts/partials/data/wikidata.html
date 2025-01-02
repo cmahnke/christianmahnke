@@ -1,9 +1,9 @@
 {{- with .Params.wikidata -}}
-  {{- $enties := slice -}}
-  {{- if not reflect.IsSlice . -}}
-    {{- $enties = slice . -}}
+  {{- $entries := slice -}}
+  {{- if not (reflect.IsSlice .) -}}
+    {{- $entries = slice . -}}
   {{- else  -}}
-    {{- $enties := . -}}
+    {{- $entries = . -}}
   {{- end -}}
   <ul class="wikidata">
     <div class="wikidata-title">{{ i18n "WikidataEntries" }}</div>
