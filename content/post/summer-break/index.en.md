@@ -1,8 +1,8 @@
 ---
 date: 2021-05-24T19:22:44+02:00
 title: "Summer break"
-draft: true
-
+tags:
+  - Status
 ---
 
 This spring has not yet offered the most spring-like weather, but it should be better next week...

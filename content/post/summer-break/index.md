@@ -1,7 +1,8 @@
 ---
 date: 2021-05-24T19:22:44+02:00
 title: "Sommerpause"
-draft: true
+tags:
+  - Status
 ---
 
 Nachdem dieser Frühling bisher nicht das frühlingshafteste Wetter zu bieten hatte, soll es nächste Woche wohl besser werden.
