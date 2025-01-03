@@ -1,6 +1,6 @@
 {{- $debug := partialCached "partials/functions/debug/enabled.html" . -}}
 
-{{- if .IsHome -}}
+{{- if and .IsHome (templates.Exists "partials/schema.org/home.html") -}}
   {{- partial "schema.org/home.html" . -}}
 {{- else -}}
   {{- $schemaTemplate := printf "schema.org/%s.html" .Kind -}}
