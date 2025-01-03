@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Object on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Object/</link>
+    <description>Recent content in Object on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Object/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>“Seelischerkrankte Krankenhaus” (Mental health hospital)</title>
+      <link>https://christianmahnke.de/en/post/seelischerkrankte-krankenhaus/</link>
+      <pubDate>Wed, 02 Oct 2024 09:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/seelischerkrankte-krankenhaus/</guid>
+      <description>&lt;p&gt;I usually avoid buying reproductions&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contrast enhancement for UV images using HDR</title>
+      <link>https://christianmahnke.de/en/post/hdr-image-analysis/</link>
+      <pubDate>Thu, 06 Jun 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hdr-image-analysis/</guid>
+      <description>&lt;p&gt;This example is about a practical use case for &lt;a href=&#34;https://en.wikipedia.org/wiki/High_dynamic_range&#34; target=&#34;_blank&#34;&gt;HDR&lt;/a&gt; visualisation in the browser&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mystery Box</title>
+      <link>https://christianmahnke.de/en/post/mystery-box/</link>
+      <pubDate>Tue, 23 Jan 2024 19:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/mystery-box/</guid>
+      <description>&lt;p&gt;I bought a (more or less) mysterious box:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
