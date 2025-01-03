@@ -4,6 +4,9 @@
 {{- $debug := partialCached "partials/functions/debug/enabled.html" . -}}
 
 {{- $url := .url -}}
+{{- if isset "langs" . -}}
+  {{- $defaultLangs = .langs -}}
+{{- end -}}
 
 {{- $uri := "" -}}
 {{- $id := "" -}}
@@ -40,7 +43,6 @@
 {{- $label := $id -}}
 {{- range $defaultLangs -}}
   {{- if isset $entity.labels . -}}
-  {{ warnf "==> %#v" (index $entity.labels .) }}
     {{- $label = (index $entity.labels .).value -}}
   {{- end -}}
 {{ end }}
