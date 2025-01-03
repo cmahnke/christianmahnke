@@ -19,7 +19,7 @@
       "name": {{ .Title }},
       "datePublished": {{ .Date }}
       {{- with .Description -}}
-        ,"description": .
+        ,"description": {{ . }}
       {{- end -}}
       {{- if ne $authorName "" -}}
         ,"author": {
