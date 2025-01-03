@@ -60,7 +60,7 @@ other = "by"
 other = "RSS feed"
 
 [WikidataEntries]
-other = "Related Wikidata entries"
+other = "Entites in this post (Wikidata)"
 
 [WikidataEntry]
 other = "Wikidata entry"

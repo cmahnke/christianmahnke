@@ -12,4 +12,8 @@
   .wikidata-entries {
     font-size: small;
   }
+
+  @media (max-width : 35em) {
+    display: none !important;
+  }
 }

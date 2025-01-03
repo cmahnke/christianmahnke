@@ -39,7 +39,7 @@ other = "Ihr Browser unterstützt die Vibrarions-API!"
 [showTagcloud]
 other = "Tagcloud einblenden"
 
-# PDF Preciew
+# PDF Preview
 
 [InlinePDFNotSupported]
 other = "PDF Vorschau wird nicht unterstützt"
@@ -60,7 +60,7 @@ other = "von"
 other = "RSS-Feed"
 
 [WikidataEntries]
-other = "Verbundene Wikidata Einträge"
+other = "Entitäten in diesem Beitrag (Wikidata)"
 
 [WikidataEntry]
 other = "Wikidata Eintrag"

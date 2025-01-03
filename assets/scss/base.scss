@@ -1145,8 +1145,23 @@ a:visited {
     }
 
     &.single .post {
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+
+            .spacer {
+                flex-grow: 1;
+            }
+
+            .meta,
+            .spacer,
+            .wikidata {
+              margin: 1.8rem 0;
+            }
+        }
+
         .meta {
-            margin: 1.6em 0;
             justify-content: flex-end;
             position: relative;
 
