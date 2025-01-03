@@ -4,8 +4,11 @@
 {{- $debug := partialCached "partials/functions/debug/enabled.html" . -}}
 
 {{- $url := .url -}}
-{{- if isset "langs" . -}}
-  {{- $defaultLangs = .langs -}}
+{{- with .langs -}}
+  {{- $defaultLangs = . -}}
+  {{- if $debug -}}
+    {{- warnf "[data/functions/wikidata-label.html] Setting languages to %s for %s" $defaultLangs $url -}}
+  {{- end -}}
 {{- end -}}
 
 {{- $uri := "" -}}
@@ -40,11 +43,15 @@
 
 {{- $entity := index $data.entities $id -}}
 
-{{- $label := $id -}}
+{{- $label := "" -}}
 {{- range $defaultLangs -}}
-  {{- if isset $entity.labels . -}}
+  {{- if and (isset $entity.labels .) (eq $label "") -}}
     {{- $label = (index $entity.labels .).value -}}
   {{- end -}}
 {{ end }}
+
+{{- if eq $label "" -}}
+  {{- $label = $id -}}
+{{- end -}}
 
 {{- return $label -}}
