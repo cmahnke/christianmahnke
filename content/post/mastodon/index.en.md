@@ -5,6 +5,7 @@ description: 'Social Media channel "updated"'
 tags:
 - Projektemacher.org
 - SocialMedia
+wikidata: https://www.wikidata.org/wiki/Q27986619
 ---
 
 Even if nothing has happened yet, I can now also be reached as **[@cmahnke@openbiblio.social](https://openbiblio.social/@cmahnke)** via Mastodon.
