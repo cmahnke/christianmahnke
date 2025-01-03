@@ -3,6 +3,7 @@ date: 2020-12-06T19:22:44+02:00
 title: "Der erste Beitrag"
 tags:
 - Blog
+- Status
 ---
 Nachdem in den letzten Monaten schon die Seite [Projektemacher.org](https://projektemacher.org/) online gegangen ist, um als Dachmarke für meine alten Tumblr Blogs und die Projekte des ersten Corona Lockdowns unter einem Dach zu vereinen, startet nun auch meine persönliche Homepage.
 <!--more-->
