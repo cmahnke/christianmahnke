@@ -13,6 +13,9 @@ tags:
   - 3D
   - DigitalImages
   - OpenCV
+wikidata:
+  - https://www.wikidata.org/wiki/Q35158
+  - https://www.wikidata.org/wiki/Q484031
 ---
 
 The latest blog incubated at the [Projektemacher Labs](https://labs.projektemacher.org/) has been started.

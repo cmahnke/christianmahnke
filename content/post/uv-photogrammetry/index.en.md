@@ -16,6 +16,12 @@ tags:
   - 3D
   - Three.js
   - Photogrammetry
+wikidata:
+  - https://www.wikidata.org/wiki/Q11391
+  - https://www.wikidata.org/wiki/Q9128
+  - https://www.wikidata.org/wiki/Q221163
+  - https://www.wikidata.org/wiki/Q106239881
+  - https://www.wikidata.org/wiki/Q980672
 ---
 
 **This article presents the world's first HDR model of UV photogrammetry in a browser.**
