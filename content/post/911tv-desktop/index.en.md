@@ -12,6 +12,8 @@ tags:
 - Archive
 - JavaScript
 - MediaInstallation
+wikidata:
+  - https://www.wikidata.org/wiki/Q10806
 ---
 
 I had some time, since I was ill:

@@ -10,7 +10,8 @@ tags:
   - Geodata
   - Blender
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q203241
+wikidata:
+  - https://www.wikidata.org/wiki/Q203241
 ---
 
 ...ist kein neues Thema mehr: Weder wenn es um die Auswirkungen geht, die sich in alten Werken erkennen lassen, noch als Gegenstand von Kunst selber.

@@ -7,7 +7,14 @@ tags:
   - Drawing
   - Architecture
 preview: img/sheet1.jpg
-wikidata: https://www.wikidata.org/wiki/Q131611742
+wikidata:
+  - https://www.wikidata.org/wiki/Q131611742
+  - https://www.wikidata.org/wiki/Q917830
+  - https://www.wikidata.org/wiki/Q957441
+  - https://www.wikidata.org/wiki/Q175117
+  - https://www.wikidata.org/wiki/Q4449979
+  - https://www.wikidata.org/wiki/Q220951
+  - https://www.wikidata.org/wiki/Q2060711
 ---
 
 Mir sind zwei Zeichnungen von [Heinrich Sielken](https://glass-portal.hier-im-netz.de/hs/s-z/sielken_heinrich.htm) (1874 - 1942) in die Hände gefallen...

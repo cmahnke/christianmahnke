@@ -11,6 +11,8 @@ tags:
 - HybridMedia
 - Archive
 - JavaScript
+wikidata:
+  - https://www.wikidata.org/wiki/Q10806
 ---
 
 Eine alte Idee von mir ist nun um gesetzt:
