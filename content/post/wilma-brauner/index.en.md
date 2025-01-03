@@ -9,7 +9,7 @@ tags:
 - Exhibition
 ---
 
-From December 6, the exhibition "Spurensuche im Sylter Archiv - Zum Leben und Werk von **Wilma Bräuner** (1891 - 1985)", on which Evelyn Kraßmann and I worked together with a [team](https://xn--wilmabruner-r8a.de/about/#ausstellung), will take place in the city gallery "Alte Post", Stephanstraße 4, Sylt / OT Westerland. The [web page](https://xn--wilmabruner-r8a.de/) is still under construction....
+From December 6, the exhibition "Spurensuche im Sylter Archiv - Zum Leben und Werk von **Wilma Bräuner** (1891 - 1985)", on which Evelyn Kraßmann and I worked together with a [team](https://xn--wilmabruner-r8a.projektemacher.org/about/#ausstellung), will take place in the city gallery "Alte Post", Stephanstraße 4, Sylt / OT Westerland. The [web page](https://xn--wilmabruner-r8a.projektemacher.org/) is still under construction....
 <!--more-->
 
 {{< figure src="Plakat.jpg" title="Exhibition poster" >}}
