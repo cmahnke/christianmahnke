@@ -1317,6 +1317,11 @@ a:visited {
     .post-title {
         box-shadow: inset 0 -15px 0 $text-underline-color;
         width: max-content;
+
+        @media (max-width : $content-width) {
+            width: auto;
+        }
+
         @media (max-width : 35em) {
             max-width: 95vw;
         }
