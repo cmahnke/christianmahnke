@@ -1,6 +1,7 @@
 //window.$ = window.jQuery = require('jquery');
 import { addConsent } from './iframe-consent';
 import { initMap } from './maps/osm-map.js';
+import { checkLinksForQClasses } from './wikidata';
 
 /* See https://github.com/rgalus/sticky-js */
 /* window.Sticky = require('sticky-js'); */
@@ -11,6 +12,7 @@ window.addConsent = addConsent;
 window.initMap = initMap;
 window.chroma = require('chroma-js');
 window.WordCloud = require('wordcloud');
+window.checkLinksForQClasses = checkLinksForQClasses
 
 window.enterView = require('enter-view');
 
