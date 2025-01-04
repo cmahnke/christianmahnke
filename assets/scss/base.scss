@@ -593,9 +593,17 @@ a:visited {
         max-width: $content-width;
     }
 
+    /*
+    @media (max-width : 64em) {
+        margin: 0 1rem;
+        max-width: calc($content-width - 2 * 1rem);
+    }
+
     @media (min-width : $content-width) {
         margin: 3em auto;
     }
+
+    */
 
     @media (max-width : 25em) {
         margin: 0 .6rem;
