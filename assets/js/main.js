@@ -12,7 +12,12 @@ window.addConsent = addConsent;
 window.initMap = initMap;
 window.chroma = require('chroma-js');
 window.WordCloud = require('wordcloud');
-window.checkLinksForQClasses = checkLinksForQClasses
+
+/*
+document.addEventListener("DOMContentLoaded", function() {
+  checkLinksForQClasses();
+});
+*/
 
 window.enterView = require('enter-view');
 

@@ -1,0 +1,6 @@
+{{ errorf "This shorcode is deprecated as of Hugo 0.140.0 use the details shorcode: https://gohugo.io/content-management/shortcodes/#details" }}
+document.body.querySelectorAll('details')
+  .forEach((e) => {(e.hasAttribute('open')) ?
+    e.removeAttribute('open'); : e.setAttribute('open',true);
+    console.log(e.hasAttribute('open'))
+  })
