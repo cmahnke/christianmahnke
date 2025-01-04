@@ -9,6 +9,7 @@ tags:
   - Photo
   - Travel
 preview: img/IMG_4538.hdr.jpeg
+wikidata: https://www.wikidata.org/wiki/Q1618449
 ---
 
 The rest stop "Hildesheimer Börde" on a foggy night.

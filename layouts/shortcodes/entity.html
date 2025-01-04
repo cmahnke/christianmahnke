@@ -25,4 +25,16 @@
   {{- $class = printf "%s %s" $class "external" -}}
   {{- $external = true -}}
 {{- end -}}
-<a data-wikidata="{{ $id }}" {{ if ne $href "" }}href="{{ $href }}"{{ end }} {{ if ne $class "" }}class="{{ $class }}"{{ end }} {{ if ne $title "" }}title="{{ $title }}"{{ end }} {{ if $external }}target="_blank"{{ end }} >{{.Inner | safeHTML}}</a>
+
+{{- $primaryLang := .Language.Lang -}}
+{{- $langs := slice $primaryLang -}}
+{{- range .Translations -}}
+  {{- $langs = $langs | append .Language.Lang -}}
+{{- end -}}
+{{- $name := partial "data/functions/wikidata-label.html" (dict "url" $id "langs" $langs) -}}
+
+{{- if ne $name "" -}}
+  {{- $title = $name -}}
+{{- end -}}
+
+<a data-wikidata="{{ $id }}" data-label="{{ $name }}" {{ if ne $href "" }}href="{{ $href }}"{{ end }} {{ if ne $class "" }}class="{{ $class }}"{{ end }} {{ if ne $title "" }}title="{{ $title }}"{{ end }} {{ if $external }}target="_blank"{{ end }} >{{.Inner | safeHTML}}</a>

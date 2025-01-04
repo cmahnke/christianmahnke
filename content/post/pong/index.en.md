@@ -11,6 +11,7 @@ tags:
 - DigitalImages
 - JavaScript
 preview: pong-heatmap1.png
+wikidata: https://www.wikidata.org/wiki/Q216293
 ---
 
 For some reason I came up with the idea of visualising [Pong](https://de.wikipedia.org/wiki/Pong)...
