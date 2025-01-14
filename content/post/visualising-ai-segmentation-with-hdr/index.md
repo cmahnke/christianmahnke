@@ -1,6 +1,6 @@
 ---
 date: 2025-01-14T21:00:44+02:00
-title: "Visualisierung KI Segmentierung mit HDR"
+title: "Visualisierung von KI Segmentierung mit HDR"
 description: "Buzzword Blendwerk"
 keywords: Segmentatierung
 tags:
