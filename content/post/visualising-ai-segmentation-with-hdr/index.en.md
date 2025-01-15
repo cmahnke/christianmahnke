@@ -75,6 +75,8 @@ The models can either be downloaded and integrated directly, e.g. to work with t
 
 # Result
 
+The image shows the outline of the woman in the centre (class ‘person’) highlighted.
+
 The result so far can certainly be optimised in terms of the accuracy of the segmentation.
 
 Attention: HDR view after clicking on the preview image, approx. 2MB in size.

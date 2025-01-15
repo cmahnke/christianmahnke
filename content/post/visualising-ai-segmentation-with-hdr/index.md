@@ -75,6 +75,8 @@ Die Modelle können entweder direkt heruntergeladen und eingebunden werden, z.B.
 
 # Ergebnis
 
+Das Bild zeigt die Umrisse der Frau in der Mitte (Klasse `person`) hervorgehoben.
+
 Das bisherige Ergebnis kann sicher noch optimiert werden, was die Genauigkeit der Segmentierung angeht.
 
 Achtung: HDR Ansicht nach dem Klick auf das Vorschaubild, ca 2MB groß.
