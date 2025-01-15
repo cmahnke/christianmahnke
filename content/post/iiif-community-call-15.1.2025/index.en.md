@@ -10,6 +10,8 @@ tags:
 - IIIF
 - Talk
 - HDR
+js:
+  - js/pdf-viewer.js
 ---
 
 After the [Lightning Talk](/post/iiif-online-meeting-2024-slides/) last year, now the next step...
