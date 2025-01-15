@@ -17,7 +17,7 @@ pre {
 }
 
 .section-post .content-container.single .post-body {
-  .highlight .chroma code {
+  .highlight .chroma:has(code) {
     background-color: $code-bg-color;
   }
 }
