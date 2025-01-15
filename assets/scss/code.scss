@@ -1,5 +1,7 @@
+$code-bg-color: rgba(0, 0, 0, .1);
+
 code {
-  background-color: rgba(0, 0, 0, .1);
+  background-color: $code-bg-color;
   padding: 0 .2em;
 }
 
@@ -11,5 +13,11 @@ pre {
     border-radius: .4em;
     display: block;
     overflow-x: auto;
+  }
+}
+
+.section-post .content-container.single .post-body {
+  .highlight .chroma code {
+    background-color: $code-bg-color;
   }
 }
