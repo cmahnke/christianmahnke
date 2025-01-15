@@ -41,3 +41,7 @@ Das erwähnte GitHub Issue ist [IIIF/api#2312](https://github.com/IIIF/api/issue
 {{< html/iframe-consent preview="<img class='video-preview' src='preview.jpg' alt='Vorschau'>" >}}
     {{< youtube id="YhFME0WGkww" start="401" title="HDR Images via Image API - 2024 IIIF Online Meeting: Lightning Talks, Day 3" >}}
 {{< /html/iframe-consent >}}
+
+# Update 14.1.2025
+
+Es gibt einen weiteren Artikel zu einem potentiellen Use Case: [Visualisierung von KI Segmentierung mit HDR](/post/visualising-ai-segmentation-with-hdr/)
