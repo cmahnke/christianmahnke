@@ -44,7 +44,7 @@ yarn run svgo
 ./themes/projektemacher-base/scripts/json-lint.sh
 ./themes/projektemacher-base/scripts/3d-models.sh
 
-./scripts/bixtex.sh
+./scripts/bibtex.sh
 
 hugo --renderSegments manifests
 ./scripts/height-map.sh
