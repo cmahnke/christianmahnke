@@ -9,6 +9,7 @@ preview:
 tags:
 - IIIF
 - Conference
+- Recording
 js:
   - js/pdf-viewer.js
 ---

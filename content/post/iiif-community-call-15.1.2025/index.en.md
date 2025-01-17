@@ -10,6 +10,7 @@ tags:
 - IIIF
 - Talk
 - HDR
+- Recording
 js:
   - js/pdf-viewer.js
 ---

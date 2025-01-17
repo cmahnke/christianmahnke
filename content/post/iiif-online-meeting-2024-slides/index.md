@@ -10,6 +10,7 @@ tags:
 - IIIF
 - Conference
 - HDR
+- Recording
 js:
   - js/pdf-viewer.js
 ---
