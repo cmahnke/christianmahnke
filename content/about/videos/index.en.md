@@ -20,3 +20,7 @@ Here I play myself and accompany a very good friend with a serious illness to th
 {{< /html/iframe-consent >}}
 
 Also in this video I play myself - sitting at the computer looking grimly...
+
+## Recorded talks
+
+Recordings of talks can be found in the blog under the keyword ["Recording"](/en/tags/Recording/).

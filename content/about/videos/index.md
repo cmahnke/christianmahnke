@@ -20,3 +20,7 @@ Hier spiele ich mich selbst und begleite eine sehr gute Freundin mit einer schwe
 {{< /html/iframe-consent >}}
 
 Auch in diesem Video spiele ich mich selbst - grimmig dreinschauend am Computer sitzend...
+
+## Vortragsaufzeichnungen
+
+Aufzeichnungen von Vorträgen sind im Blog unter dem Schlagwort ["Aufzeichnung"](/tags/Recording/) zu finden.
