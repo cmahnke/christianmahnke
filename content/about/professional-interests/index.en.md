@@ -61,8 +61,10 @@ My professional focus is on various topics from the spectrum of digital librarie
 * **25.4.2007** - Putting the TEI to the test (MPDL meeting) - "Fulltext processing at the GDZ", Berlin
 
 <details>
-<summary><h3>Old presentations</h3></summary>
+<summary><h3>Old talks</h3></summary>
 <div class="summary-content">
+
+### Old presentations
 
 * [Bestellzetteldruck 2.0](https://subugoe.github.io/ous-print/slides.xhtml)
 * [SUB OCR Implementierung](https://de.slideshare.net/slideshow/goobi-berlin239201103/11869015)
@@ -71,6 +73,14 @@ My professional focus is on various topics from the spectrum of digital librarie
 * [Basisinfrastruktur aus Entwicklersicht](https://de.slideshare.net/slideshow/prsentation-basisinfrastruktur/11868748)
 * [eXist für Editionsprojekte](https://de.slideshare.net/slideshow/e-xist-279/11868742)
 * [Development Toolbox](https://de.slideshare.net/slideshow/development-toolbox/991862)
+
+### Activities of the Research and Development Department of the SUB Göttingen
+See [Research and Development Department](https://www.sub.uni-goettingen.de/projekte-forschung/forschung-entwicklung/fe-kolloquien/)
+* "Visualisation in Europeana Connect - e4D", 19th FE Colloquium, 6.4.2011 with Ralf Stockmann
+* "Dauerhafte Verfügbarkeit durch verteilte interoperable Dienste", 6th FE Colloquium, 25 February 2009 with Mustafa Dogan
+* "XML konkret: TEI-Dokumente im Web", 26 May 2005 with Cornelis Kater
+
+Translated with www.DeepL.com/Translator (free version)
 
 </div>
 </details>

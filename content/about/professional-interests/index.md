@@ -61,8 +61,10 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 * **25.4.2007** - Putting the TEI to the test (MPDL Tagung) - "Fulltext processing at the GDZ", Berlin
 
 <details>
-<summary><h3>Alte Präsentionen</h3></summary>
+<summary><h3>Ältere Vorträge</h3></summary>
 <div class="summary-content">
+
+### Alte Präsentionen
 
 * [Bestellzetteldruck 2.0](https://subugoe.github.io/ous-print/slides.xhtml)
 * [SUB OCR Implementierung](https://de.slideshare.net/slideshow/goobi-berlin239201103/11869015)
@@ -71,6 +73,12 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 * [Basisinfrastruktur aus Entwicklersicht](https://de.slideshare.net/slideshow/prsentation-basisinfrastruktur/11868748)
 * [eXist für Editionsprojekte](https://de.slideshare.net/slideshow/e-xist-279/11868742)
 * [Development Toolbox](https://de.slideshare.net/slideshow/development-toolbox/991862)
+
+### Verstaltungen der Abteilung Forschung und Entwicklung der SUB Göttingen
+Siehe [Abteilung Forschung und Entwicklung](https://www.sub.uni-goettingen.de/projekte-forschung/forschung-entwicklung/fe-kolloquien/)
+* "Visualisierung in Europeana Connect – e4D", 19. FE-Kolloquium, 6.4.2011 mit Ralf Stockmann
+* "Dauerhafte Verfügbarkeit durch verteilte interoperable Dienste", 6. FE-Kolloquium, 25.2.2009 mit Mustafa Dogan
+* "XML konkret: TEI-Dokumente im Web", 26.5.2005 mit Cornelis Kater
 
 </div>
 </details>
