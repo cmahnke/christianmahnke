@@ -30,11 +30,14 @@
         {{- end -}}
       {{- end -}}
     ];
+    const minSize = 12;
+
     let maxCount = 0;
     tags.map((tag) => {
       const i = tag[1];
       maxCount = Math.max(maxCount, i);
     });
+    const maxSize = minSize * 12;
     const template = [ '#ff073a', '#701611']; //Green: '#f1ffb7'
     let colors = chroma.bezier(template);
     colors = chroma.scale(colors).mode('lch').colors(maxCount); //.correctLightness(true);
@@ -51,9 +54,24 @@
         const count = tags.find(x => x[0] === word)[1];
         return colors[count - 1];
       },
-      gridSize: 12,
-      weightFactor: 12,
+      gridSize: minSize + Math.ceil(minSize / 10),
+      //weightFactor: minSize,
+      weightFactor: function(size) {
+        const displaySize = (size / maxCount) * (maxSize - minSize) + minSize
+        // Logarithmic calculation
+        //const displaySize = (Math.log(size) / Math.log(maxCount)) * (maxSize - minSize) + minSize
+        //console.log(`Input ${size} -> ${displaySize}`);
+        return displaySize;
+      },
       fontFamily: '"League Spartan", Futura, sans-serif',
+      /*
+      fontWeight: function(word, weight, fontSize, extraData) {
+        s = maxSize / 8;
+        w = (8 - Math.ceil(fontSize / s)) * 100;
+        //console.log(`Input ${fontSize} ${weight} -> ${w}`);
+        return w;
+      },
+      */
       rotateRatio: 0.5,
       rotationSteps: 2,
       classes: 'tag'
