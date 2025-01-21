@@ -1,0 +1,7 @@
+models
+debug
+*.jpeg
+*.jpg
+*.png
+*.psd
+**/__pycache__

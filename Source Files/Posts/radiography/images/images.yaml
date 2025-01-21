@@ -1,0 +1,30 @@
+- name: MET
+  source: https://www.metmuseum.org/art/collection/search/437891
+  visible: DP167124.jpg
+  xray: DP136513.jpg
+  options:
+    segment_colors: random
+    align_method: sift
+    enhance_contrast: True
+    adjust_histogram: False
+    use_shape_detection: False
+#- name: Gm119
+#  source: https://tafelmalerei.gnm.de/wisski/navigate/58/view
+#  visible: Gm119/visible.jpg
+#  xray: Gm119/xr.jpg
+#  options:
+#    segment_colors: random
+#    align_method: sift
+#    enhance_contrast: True
+#    adjust_histogram: False
+#    use_shape_detection: False
+#- name: Gm1916
+#  source: 
+#  visible: Gm1916/visible.jpg
+#  xray: Gm1916/xr.jpg
+#  options:
+#    segment_colors: random
+#    align_method: sift
+#    enhance_contrast: True
+#    adjust_histogram: False
+#    use_shape_detection: True

@@ -1,0 +1,13 @@
+opencv-python
+opencv-contrib-python
+numpy
+matplotlib
+git+https://github.com/facebookresearch/segment-anything.git
+git+https://github.com/facebookresearch/sam2.git
+pycocotools
+torch>=2.5.1
+torchvision>=0.20.1
+python>=3.10
+huggingface_hub
+PyYAML
+psd-tools

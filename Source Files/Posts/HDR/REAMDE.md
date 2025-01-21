@@ -2,7 +2,7 @@
 
 ## segment.py
 
-Creates a segmented mask from an image. Set `image_path`, `mode` (possible are `mask`, `gainmap` and anything else), and `out_file_name`.
+Creates a segmented mask from an image. Set `image_path`, `mode` (possible are `mask`, `gainmap` and anything else), `highlight_shape` (the shape number to be extracted / highligted) and `out_file_name`.
 
 Run something like:
 ```

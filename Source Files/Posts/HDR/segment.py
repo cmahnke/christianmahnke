@@ -10,6 +10,8 @@ from ultralytics import YOLO
 mode = "mask"
 image_path = "images/page015.jxl"
 out_file_name = 'out.jpg'
+# Shape to be highlighted, this is dependend on the image
+highlight_shape = 4
 
 mask_background = 128
 
@@ -70,19 +72,14 @@ for result in results:
 
 blocks = sorted(blocks, key=lambda b: b['area'])
 
-
-
-#print(blocks)
-
-
 if mode == "gainmap":
-    annotated_image = apply_mask(np_image, blocks[4]["mask"], color=(255,255,255), alpha=.5)
+    annotated_image = apply_mask(np_image, blocks[highlight_shape]["mask"], color=(255,255,255), alpha=.5)
     cv2.imwrite(out_file_name, annotated_image)
 elif mode == "mask":
     np_image = np.zeros([h,w,3],dtype=np.uint8)
     np_image.fill(mask_background)
-    mask = apply_mask(np_image, blocks[4]["mask"], color=(255,255,255), alpha=.8)
+    mask = apply_mask(np_image, blocks[highlight_shape]["mask"], color=(255,255,255), alpha=.8)
     cv2.imwrite(out_file_name, mask)
 else:
-    annotated_image = apply_mask(np_image, blocks[4]["mask"])
+    annotated_image = apply_mask(np_image, blocks[highlight_shape]["mask"])
     cv2.imwrite(out_file_name, annotated_image)
