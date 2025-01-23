@@ -21,7 +21,7 @@ Der Titel ist vermutlich "Schnee auf dem Schilf (Starnberger See)".
 ]
 {{</ gallery >}}
 
-Da ich seit Jahren eine lockere Zusammenarbeit mit Gerbrand Caspers pflege, bietet dieser Beitrag wieder eine gute Gelegenheit auf  seine Arbeiten über Eva Roemer zu verweisen:
+Da ich seit Jahren eine lockere Zusammenarbeit mit Gerbrand Caspers pflege, bietet dieser Beitrag wieder eine gute Gelegenheit auf seine Arbeiten über Eva Roemer zu verweisen:
 
 * [The Linosaurus: Eva Roemer](https://gerrie-thefriendlyghost.blogspot.com/2011/07/eva-roemer.html)
 * [DAS HAUS DER FRAU: Eva Roemer](https://www.dashausderfrau.nl/roemer-eva.html) - hier ist auch der abgebildete Druck zu finden.
