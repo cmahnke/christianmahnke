@@ -15,9 +15,9 @@ I have once again found an interesting object...
 
 {{< gallery >}}
 [
-  {"src": "img/front.jpeg", "alt": "Vorderansicht"},
-  {"src": "img/side.jpeg", "alt": "Seitenansicht"},
-  {"src": "img/labels.jpeg", "alt": "Typenschild"}
+  {"src": "img/front.jpg", "alt": "Vorderansicht"},
+  {"src": "img/side.jpg", "alt": "Seitenansicht"},
+  {"src": "img/labels.jpg", "alt": "Typenschild"}
 ]
 {{</ gallery >}}
 
