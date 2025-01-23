@@ -17,7 +17,7 @@ I have once again found an interesting object...
 [
   {"src": "img/front.jpg", "alt": "Vorderansicht"},
   {"src": "img/side.jpg", "alt": "Seitenansicht"},
-  {"src": "img/labels.jpg", "alt": "Typenschild"}
+  {"src": "img/label.jpg", "alt": "Typenschild"}
 ]
 {{</ gallery >}}
 
