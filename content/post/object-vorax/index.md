@@ -21,7 +21,7 @@ Ich habe mal wieder ein interessantes Objekt gefunden...
 ]
 {{</ gallery >}}
 
-Es handelt sich bei dem Gerät um eine Vorax G4 Bohrmaschine in einem Gehäuse. Geräte aus der Serie sind z.B. in der [Deutschen Digitalen Bibliothek](https://www.deutsche-digitale-bibliothek.de/item/FGPLDSHCDBDEQLSLSC5PGIVCWP4SVZKD) zu finden (Quelle TECHNOSEUM Landesmuseum für Technik und Arbeit in Mannheim, Inventarnummer EVZ:2013/0685-001) oder im [Deutschen Kunststoffmuseum](https://www.deutsches-kunststoff-museum.de/sammlung/virtuelles-museum/k-1993-00534/) (Inventarnummer K-1993-00534) zu finden.
+Es handelt sich bei dem Gerät um eine Vorax G4 Bohrmaschine in einem Gehäuse. In der Seitenansicht ist der Griff erkennbar. Geräte aus der Serie sind z.B. in der [Deutschen Digitalen Bibliothek](https://www.deutsche-digitale-bibliothek.de/item/FGPLDSHCDBDEQLSLSC5PGIVCWP4SVZKD) zu finden (Quelle TECHNOSEUM Landesmuseum für Technik und Arbeit in Mannheim, Inventarnummer EVZ:2013/0685-001) oder im [Deutschen Kunststoffmuseum](https://www.deutsches-kunststoff-museum.de/sammlung/virtuelles-museum/k-1993-00534/) (Inventarnummer K-1993-00534) zu finden.
 
 Die Bohrmaschinen aus dieser Serie dienten damals als Motor für viele Haushaltsgeräte, wie z.B. Mixer.
 

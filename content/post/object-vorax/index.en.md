@@ -23,7 +23,7 @@ I have once again found an interesting object...
 
 *The following links are in German only.*
 
-The device is a Vorax G4 drilling machine in a housing. Devices from the series can be found, for example, in the [German Digital Library](https://www.deutsche-digitale-bibliothek.de/item/FGPLDSHCDBDEQLSLSC5PGIVCWP4SVZKD) (source TECHNOSEUM Landesmuseum für Technik und Arbeit in Mannheim, inventory number EVZ:2013/0685-001) or in the [German Plastics Museum](https://www.deutsches-kunststoff-museum.de/sammlung/virtuelles-museum/k-1993-00534/) (inventory number K-1993-00534).
+The device is a Vorax G4 drilling machine in a housing. The handle is recognisable in the side view. Devices from the series can be found, for example, in the [German Digital Library](https://www.deutsche-digitale-bibliothek.de/item/FGPLDSHCDBDEQLSLSC5PGIVCWP4SVZKD) (source TECHNOSEUM Landesmuseum für Technik und Arbeit in Mannheim, inventory number EVZ:2013/0685-001) or in the [German Plastics Museum](https://www.deutsches-kunststoff-museum.de/sammlung/virtuelles-museum/k-1993-00534/) (inventory number K-1993-00534).
 
 The drills from this series were used as motors for many household appliances at the time, such as blenders.
 
