@@ -1,5 +1,5 @@
 ---
-date: 2020-12-06T19:22:44+02:00
+date: 2020-11-25T19:22:44+02:00
 title: "Der erste Beitrag"
 tags:
 - Blog
