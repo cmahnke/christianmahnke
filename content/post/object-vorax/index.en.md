@@ -8,7 +8,6 @@ preview: img/front.jpg
 ---
 
 I have once again found an interesting object...
-
 <!--more-->
 
 ... and sometimes it's a good idea to buy something you don't even know what it is. Originally it reminded me of a [Dalek](https://en.wikipedia.org/wiki/Dalek) from [Dr Who](https://en.wikipedia.org/wiki/Doctor_Who), but as I found it in the power tools section, it certainly wasn't a toy...

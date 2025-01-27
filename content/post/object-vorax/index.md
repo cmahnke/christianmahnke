@@ -8,7 +8,6 @@ preview: img/front.jpg
 ---
 
 Ich habe mal wieder ein interessantes Objekt gefunden...
-
 <!--more-->
 
 ... und manchmal ist es eine gute Idee etwas zu kaufen, von dem man nicht mal weiß was es ist. Ursprünglich erinnerte es mich an einen [Dalek](https://de.wikipedia.org/wiki/Daleks) aus [Dr. Who](https://de.wikipedia.org/wiki/Doctor_Who), aber da ich es in der Abteilung für elektrische Werkzeuge gefunden habe, handelte es mit Sicherheit nicht um ein Spielzeug...
