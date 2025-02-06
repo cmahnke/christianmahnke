@@ -17,3 +17,7 @@ Nach der [erfolgreichen Suche nach Fritz Neumann AKA Ric](/post/ric-unknownartis
 <!--more-->
 
 [Zu der Grafik](/collections/donations/spandau/).
+
+# Update 6.2.2025
+
+Die Grafik ist nun auch im [Museum Digital Berlin](https://berlin.museum-digital.de/object/223710).
