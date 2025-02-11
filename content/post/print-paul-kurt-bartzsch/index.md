@@ -4,6 +4,7 @@ title: 'Holzschnitt von Paul-Kurt Bartzsch (1917-1994)'
 tags:
   - Art
   - WoodblockPrint
+  - Alps
 preview: img/print.jpg
 #wikidata:
 draft: true
