@@ -1,13 +1,13 @@
 ---
 date: 2025-02-11T18:15:44+02:00
 title: 'Woodcut by Paul-Kurt Bartzsch (1917-1994)'
+keywords: Škrlatica, Julian Alps, Alps
 tags:
   - Art
   - WoodblockPrint
   - Alps
 preview: img/print.jpg
 #wikidata:
-draft: true
 ---
 
 I have found a woodcut by Paul-Kurt Bartzsch (1917-1994)...
