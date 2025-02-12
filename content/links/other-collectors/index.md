@@ -33,3 +33,7 @@ Weitere Sammlungen und Sammler, mit denen ich nicht zusammenarbeite.
 * [Camerapedia](https://camerapedia.fandom.com/wiki/Camerapedia)
 * [Das Lippische Kameramuseum](http://www.lippisches-kameramuseum.de/)
 * [Camera-wiki.org](http://camera-wiki.org/wiki/Main_Page)
+
+## Radios und Audiogeräte
+* [Radiomuseum.org](https://www.radiomuseum.org/)
+* [Hifi-Wiki](https://www.hifi-wiki.de/index.php/Hauptseite)
