@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Donations on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/collections/donations/</link>
+    <description>Recent content in Donations on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/collections/donations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amateur film about Marburg</title>
+      <link>https://christianmahnke.de/en/collections/donations/marburg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/collections/donations/marburg/</guid>
+      <description>&lt;video controls preload=&#34;auto&#34; width=&#34;100%&#34;  playsinline class=&#34;html-video&#34;&gt;&#xA;    &lt;source src=&#34;https://christianmahnke.de/en/collections/donations/marburg/marburg.mp4&#34; type=&#34;video/mp4&#34;&gt;&#xA;  &lt;span&gt;Your browser doesn&#39;t support embedded videos, but don&#39;t worry, you can &lt;a href=&#34;https://christianmahnke.de/en/collections/donations/marburg/marburg.mp4&#34;&gt;download it&lt;/a&gt; and watch it with your favorite video player!&lt;/span&gt;&#xA;&lt;/video&gt;&#xA;&lt;p&gt;A &lt;a href=&#34;https://arcinsys.hessen.de/arcinsys/detailAction?detailid=v7729942&#34; target=&#34;_blank&#34;&gt;Amateur film about Marburg&lt;/a&gt; from the 1940ies.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Graphic by an artist from Spandau</title>
+      <link>https://christianmahnke.de/en/collections/donations/spandau/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/collections/donations/spandau/</guid>
+      <description>&lt;p&gt;A graphic by the Spandau artist Fritz Neumann&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Postcards from Halle/Saale</title>
+      <link>https://christianmahnke.de/en/collections/donations/halle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/collections/donations/halle/</guid>
+      <description>&lt;p&gt;Postcards of the sales outlets of the Gimritz estate.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Amateur film about Munich</title>
+      <link>https://christianmahnke.de/en/collections/donations/munich/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/collections/donations/munich/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://stadtarchiv.muenchen.de/scopeQuery/detail.aspx?ID=617667&#34; target=&#34;_blank&#34;&gt;Amateur film about Munich&lt;/a&gt; is unfortunately not yet available online.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
