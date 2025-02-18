@@ -21,4 +21,8 @@ Wer kennt sie nicht, die drei blauen Türme der Universität Göttingen,...
 
 Mein neues Blog [Never Build Göttingen](https://never-build.goettingen.xyz/) zeigt ein Göttingen, das nie gebaut wurde. Von den 60er bis Ende der 80er Jahren floss viel Geld in die aufstrebende Universitätsstadt im äußersten Osten Westdeutschlands. Das Blog zeigt die kühnsten entwürfe und Planungsstände für Gebäude, die später anders realisiert wurden.
 
+{{< zoom-link link="https://never-build.goettingen.xyz/" title="Never Build Göttingen" >}}
+    {{< figure src="screenshot.png" alt="Screenshot Never Build Göttingen" class="post-image" >}}
+{{< /zoom-link >}}
+
 Für die Umsetzung kam, besonders für die Bildbearbeitung, auch KI zum Einsatz.

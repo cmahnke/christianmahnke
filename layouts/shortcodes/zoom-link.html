@@ -17,7 +17,8 @@
         {{- $image -}}
     </a>
     <script>
-        $(document).ready(function() {
+        document.addEventListener("DOMContentLoaded", function(event) {
+        //$(document).ready(function() {
           const head = document.querySelector('head');
           const prefetch = "<link rel='prefetch' href='{{ $href }}' as='document'>";
           head.insertAdjacentHTML('beforeend', prefetch);

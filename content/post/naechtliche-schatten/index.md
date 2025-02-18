@@ -30,3 +30,7 @@ Dabei wir die Präsentation mit (relativ) modernen Web Technologien unterstützt
 * HDR Darstellung
 * WebGL
 * Variable Schriftarten
+
+{{< zoom-link link="https://schatten.yaapb.projektemacher.org/" title="Nächtliche Schatten" >}}
+    {{< figure src="screenshot.png" alt="Screenshot Nächtliche Schatten" class="post-image" >}}
+{{< /zoom-link >}}

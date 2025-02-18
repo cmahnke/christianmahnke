@@ -30,3 +30,7 @@ The web presentation is done with (fairly) modern web technologies like:
 * HDR images
 * WebGL
 * Variable fonts
+
+{{< zoom-link link="https://schatten.yaapb.projektemacher.org/" title="Nocturnal shadows" >}}
+    {{< figure src="screenshot.png" alt="Screenshot Nocturnal shadows" class="post-image" >}}
+{{< /zoom-link >}}
