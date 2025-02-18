@@ -7,6 +7,7 @@ tags:
   - Architecture
   - Göttingen
   - UrbanPlanning
+  - AI
 preview: screenshot.jpg
 draft: true
 ---
@@ -19,3 +20,5 @@ Who doesn't know them, the three blue towers of the University of Göttingen,...
 
 
 My new blog [Never Build Göttingen](https://never-build.goettingen.xyz/) shows a Göttingen that was never built. From the 1960s to the end of the 1980s, a lot of money flowed into the up-and-coming university town in the far east of Western Germany. The blog shows the boldest designs and planning stages for buildings that were later realised differently.
+
+AI was used for the realisation, especially for image processing.
