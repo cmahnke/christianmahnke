@@ -261,6 +261,10 @@ a:visited {
                 vertical-align: middle;
                 border-top: 2px solid transparent;
 
+                .navigation-link i.link-icon {
+                    display: none;
+                }
+
                 &.current {
                     font-weight: 400;
                     &:before {
