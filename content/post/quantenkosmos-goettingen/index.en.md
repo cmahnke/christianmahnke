@@ -6,7 +6,7 @@ tags:
   - Exhibition
   - Website
 draft: true
-preview: screenshot.jpg
+preview: screenshot.png
 ---
 
 With today's opening of the exhibition [‘Was zum Quant?!’](https://www.forum-wissen.de/event/eroeffnung-was-zum-quant/) in the Forum Wissen, a digital exhibit, in which I was involved, is also on display...

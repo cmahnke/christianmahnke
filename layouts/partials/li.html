@@ -33,6 +33,9 @@
                 <picture>
                   {{- range $previewWidth -}}
                     {{- $imgRes := $.Page.Resources.Get $src -}}
+                    {{- if eq $imgRes nil -}}
+                      {{- errorf "[partials/li.html] Preview image %s missing for %s" $src $.RelPermalink -}}
+                    {{- end -}}
                     <source media="(min-width:{{ . }}px)" srcset="{{ ($imgRes.Resize (printf "%sx" .)).RelPermalink }}">
                   {{- end -}}
                   {{- $imgRes := $.Page.Resources.Get $src -}}

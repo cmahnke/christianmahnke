@@ -1,6 +1,8 @@
 ---
 date: 2025-03-01T20:30:44+02:00
 title: 'Never Build Göttingen'
+class: never
+pagetheme: white
 tags:
   - Blog
   - Projektemacher.org
@@ -8,7 +10,7 @@ tags:
   - Göttingen
   - UrbanPlanning
   - AI
-preview: screenshot.jpg
+preview: screenshot.png
 draft: true
 ---
 
