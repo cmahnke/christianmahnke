@@ -2,12 +2,21 @@ $background-color: white;
 $foreground-color: black;
 $accents-color: #d3d3d3;
 
-body.night {
+@mixin halftone ($radius: 0.25rem, $cirle-color: black, $background-color: transparent, $background-size: 1.3rem) {
+  background-image: radial-gradient(
+      circle at center,
+      $cirle-color $radius,
+      $background-color 0
+    ), radial-gradient(circle at center, $cirle-color $radius, $background-color 0);
+  background-size: $background-size $background-size;
+  background-position: 0 0, calc($background-size / 2) calc($background-size / 2);
+}
+
+body.never {
   .page-wrapper {
     background: $background-color;
 
     .main {
-
 
       .header {
         .header-spacer {
@@ -23,6 +32,16 @@ body.night {
           .post-title {
             box-shadow: inset 0 -15px $accents-color;
             font-size: 3.2em;
+            color: transparent;
+            background-clip: text;
+            @include halftone($radius: 0.1rem, $cirle-color: black, $background-color: transparent, $background-size: 0.35rem);
+
+            &:hover {
+              transition: all 750ms ease-out;
+              background-size: .375rem .375rem;
+              background-position: 0 0, calc(.375rem / 2) calc(.375rem / 2);
+            }
+
           }
 
           .post-body {
