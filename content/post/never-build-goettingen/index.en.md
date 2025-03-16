@@ -13,7 +13,6 @@ tags:
 preview:
   image: img/screenshot.png
   hide: false
-#draft: true
 ---
 
 Who doesn't know them, the three blue towers of the University of Göttingen,...

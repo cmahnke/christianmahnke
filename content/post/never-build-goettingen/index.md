@@ -13,7 +13,6 @@ tags:
 preview:
   image: img/screenshot.png
   hide: false
-#draft: true
 ---
 
 Wer kennt sie nicht, die drei blauen Türme der Universität Göttingen,...
