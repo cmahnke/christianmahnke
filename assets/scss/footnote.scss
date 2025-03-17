@@ -1,0 +1,20 @@
+.footnotes {
+  font-size: small;
+
+  hr {
+    border: 2px solid #ff5477 !important;
+  }
+
+  li p {
+    margin-block-end: unset;
+    margin-bottom: .4rem;
+  }
+}
+
+.footnote-ref,
+.footnotes .footnote-backref {
+  &:before,
+  &:after {
+    content: unset !important;
+  }
+}

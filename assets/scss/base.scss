@@ -31,6 +31,8 @@ $text-color: #000;
 @import "./doi";
 @import "./print";
 @import "./wikidata";
+@import "./footnote";
+@import "./related";
 
 $gradient-color-light: #b2444d;
 $gradient-color-mid: #a41416;
@@ -1317,6 +1319,10 @@ a:visited {
     .post-body,
     .post-date {
         font-family: 'League Spartan', Futura, sans-serif;
+
+        &:has( + .post-body .post-description) {
+            margin-bottom: unset;
+        }
     }
 
     .post-title {

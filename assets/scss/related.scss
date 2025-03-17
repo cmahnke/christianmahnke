@@ -1,0 +1,19 @@
+.post-body {
+  .related-post {
+    padding: 1rem;
+    width: 50%;
+    background-color: #d3d3d3;
+    margin-left: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    @media (max-width : 46em) {
+      width: unset;
+    }
+
+    .related-post-heading {
+      margin-block-start: unset;
+      box-shadow: unset !important
+    }
+  }
+}

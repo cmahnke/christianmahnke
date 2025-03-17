@@ -43,3 +43,7 @@ Auch wenn derzeit noch die Unterstützung meist nicht für die komplette Kette (
 Da die DFG auch weiterhin Digitalisierungsprogramme fördert und mit ihren Praxisregeln oft auch eine Vorbildfunktion hat,Daher sollte die DFGsie in der nächsten Version der Praxisregeln darüber nachdenken, diese Mechanismen zuerst als optional vorzusehen, auch um Innovation in diese Richtung zu forcieren.
 
 Und wenn man eine entsprechende Infrastruktur für Digitalisate aufbaut, kann man auch gleich eh schon dabei ist, kann man sicher auch born-digital Material in Repositorien institutionell signieren...  
+
+{{< related >}}
+Potentielle Ergänzungen zu den DFG-Praxisregeln werden auch in dem  [Artikel über Mirkroformendigitlsierung](/post/end-microfilm-digitisation) thematisiert.
+{{< /related >}}

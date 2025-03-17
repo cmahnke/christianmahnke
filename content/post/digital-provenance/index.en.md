@@ -43,3 +43,7 @@ Even if support is not currently sufficient for the entire chain (i.e. up to the
 As the DFG continues to fund digitisation programmes and often serves as a role model with its rules of practice, the DFG should consider making these mechanisms optional in the next version of the rules of practice, also to encourage innovation in this direction.
 
 And if an appropriate infrastructure for digitised material is set up, you can also sign born-digital material in repositories institutionally anyway...  
+
+{{< related >}}
+Potential additions to the DFG rules of practice are also discussed in the [article on microform digitisation](/post/end-microfilm-digitisation).
+{{< /related >}}
