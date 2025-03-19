@@ -45,5 +45,5 @@ As the DFG continues to fund digitisation programmes and often serves as a role 
 And if an appropriate infrastructure for digitised material is set up, you can also sign born-digital material in repositories institutionally anyway...  
 
 {{< related >}}
-Potential additions to the DFG rules of practice are also discussed in the [article on microform digitisation](/post/end-microfilm-digitisation).
+Potential additions to the DFG rules of practice are also discussed in the [article on microform digitisation](/post/stop-microfilm-digitisation).
 {{< /related >}}
