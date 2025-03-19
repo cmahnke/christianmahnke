@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Digitisation on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Digitisation/</link>
+    <description>Recent content in Digitisation on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Wed, 19 Mar 2025 14:07:25 +0100</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/tags/Digitisation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Digitale Provenienz für digitalisiertes Kulturgut</title>
+      <link>https://christianmahnke.de/post/digital-provenance/</link>
+      <pubDate>Sun, 16 Mar 2025 22:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/digital-provenance/</guid>
+      <description>&lt;p&gt;Wie kann man Authentizität digitalisierten Kulturgutes gewährleisten?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mikrofilmdigitalisierung beenden!</title>
+      <link>https://christianmahnke.de/post/stop-microfilm-digitisation/</link>
+      <pubDate>Mon, 17 Feb 2025 17:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/stop-microfilm-digitisation/</guid>
+      <description>&lt;p&gt;Nachdem ich Ende des letzten Jahres schon einen &lt;a href=&#34;https://christianmahnke.de/post/archives-citizen-participation/&#34;&gt;Erfahrungsbericht&lt;/a&gt; mit einem Archiv veröffentlicht habe, nun etwas zu digitalen Bibliotheken&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
