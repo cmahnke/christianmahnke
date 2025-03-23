@@ -21,11 +21,39 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+
   - package-ecosystem: "npm"
     directory: "/Source*/Mocks/"
     schedule:
       interval: "weekly"
     groups:
       npm-mocks:
+        patterns:
+        - '*'
+
+  - package-ecosystem: "npm"
+    directory: "/Source*/Posts/"
+    schedule:
+      interval: "weekly"
+    groups:
+      npm-mocks:
+        patterns:
+        - '*'
+
+  - package-ecosystem: "pip"
+    directory: "/Source*/Mocks/"
+    schedule:
+      interval: "weekly"
+    groups:
+      pip-mocks:
+        patterns:
+        - '*'
+
+  - package-ecosystem: "pip"
+    directory: "/Source*/Posts/"
+    schedule:
+      interval: "weekly"
+    groups:
+      pip-mocks:
         patterns:
         - '*'
