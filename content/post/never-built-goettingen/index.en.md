@@ -10,8 +10,8 @@ tags:
   - Göttingen
   - UrbanPlanning
   - AI
-  aliases:
-    - /en/post/never-build-goettingen/
+aliases:
+  - /en/post/never-build-goettingen/
 preview:
   image: img/screenshot.png
   hide: false
