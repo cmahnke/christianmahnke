@@ -6,7 +6,6 @@ tags:
   - Exhibition
   - Website
   - Geodata
-draft: true
 preview: screenshot.png
 ---
 
