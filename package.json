@@ -12,7 +12,7 @@
     "chroma-js": "^3.1.2",
     "pdfobject": "2.3.1",
     "openseadragon": "^5.0.1",
-    "@annotorious/openseadragon": "^3.3.2"
+    "@annotorious/openseadragon": "^3.3.3"
   },
   "devDependencies": {
     "replace-in-file": "8.3.0",

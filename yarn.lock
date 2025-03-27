@@ -2,33 +2,33 @@
 # yarn lockfile v1
 
 
-"@annotorious/annotorious@3.3.2":
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.3.2.tgz#136aede001143586ca1c30cdb689d9d8a4aa8875"
-  integrity sha512-TyiW/blQ6VVC8wmWcECc9WjZOI0W5rEB8VT/5yyLfSxo0Cfyb6arvwcZ7SH0xJ2doOJWpWT0H23kkunx09lmag==
+"@annotorious/annotorious@3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.3.3.tgz#de8cae98beea456bebae97d262cea3a430fddcb3"
+  integrity sha512-rmkk546pPlMy9upX7sC8rwRhIUo34z3XxmyEYSLOIC3kFu6wsAd/hEsQhZSwV82e0ikykpEzkXCuo5LmJ8eq1g==
   dependencies:
-    "@annotorious/core" "3.3.2"
+    "@annotorious/core" "3.3.3"
     rbush "^4.0.1"
     svg-pathdata "^7.2.0"
     uuid "^11.1.0"
 
-"@annotorious/core@3.3.2":
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.3.2.tgz#6502d724a1c9dc5e127fcbc089f67e4faf11aade"
-  integrity sha512-gkLeLQuSBQF/oM82OO+jFKOuxwGXBqWRAZJqi3Td0Qc6UONeU6W9ZXJZu9TB8O13a8GnzGAADSFFlNUzToxEzw==
+"@annotorious/core@3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.3.3.tgz#03adbef315fcc196c95e1f8d7f27407124f988f4"
+  integrity sha512-84gXc570J/xzSpmAuGg7qmbI6bscR8LKXUE1HKvdA+xCgHlyYv8SXLqHyRsoFk68QqLwae4YtP1ZDbUY6mrRdw==
   dependencies:
     dequal "^2.0.3"
     nanoevents "^9.1.0"
     nanoid "^5.1.5"
     uuid "^11.1.0"
 
-"@annotorious/openseadragon@^3.3.2":
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.3.2.tgz#7f8a659b732ed59fbbfa147b0dbb9a4b37185647"
-  integrity sha512-nGVO0OqtY8vCJxbVe2GeQywGFHFfOkcMTcsIPIp8DUZgDe/Sp7CSWlJ6gsv/FkT6HS5lTrVZFx/WrkwRpz3o8A==
+"@annotorious/openseadragon@^3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.3.3.tgz#b2230467b4ddd89a57c67d84e6b5ca8bbe092d77"
+  integrity sha512-IUbqvlvn159AmH8ruz+eUrv6AE99cwaUodouCbo1Dn6Jlz7XSU1ne1gbdQKLrHpJJu2Gh5cfm2PYc4TYsbHsJA==
   dependencies:
-    "@annotorious/annotorious" "3.3.2"
-    "@annotorious/core" "3.3.2"
+    "@annotorious/annotorious" "3.3.3"
+    "@annotorious/core" "3.3.3"
     pixi.js "^7.4.3"
     uuid "^11.1.0"
 
