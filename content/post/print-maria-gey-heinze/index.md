@@ -19,4 +19,4 @@ Ich habe eine Radierung von [Marie Gey-Heinze](https://de.wikipedia.org/wiki/Mar
 {{</ gallery >}}
 
 Die Radierung ist handschriftlich mit Bleistift auf 1904 datiert.
-Marie Gey-Heinze war eine Künstlerin, die in Dresden wirkte und hauptsächlich für ihre grafische Arbeiten und Buchschmuck bekannt wurde. Ihr zu ehren gibt es einen [Brunnen in Dresden](https://de.wikipedia.org/wiki/Marie-Gey-Brunnen).
+Marie Gey-Heinze war eine Künstlerin, die in Dresden wirkte und hauptsächlich für ihre grafische Arbeiten und Buchschmuck bekannt wurde. Ihr zu Ehren gibt es einen [Brunnen in Dresden](https://de.wikipedia.org/wiki/Marie-Gey-Brunnen).

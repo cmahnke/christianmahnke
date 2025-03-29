@@ -1,6 +1,6 @@
 ---
 date: 2024-03-27T16:47:44+02:00
-title: 'Etching byKurt Mühlenhaupt (1921-2006)'
+title: 'Etching by Kurt Mühlenhaupt (1921-2006)'
 tags:
   - Art
   - Etching
