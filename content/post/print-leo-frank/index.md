@@ -20,5 +20,5 @@ Ich habe einen Holzschnitt von [Leo Frank](https://www.geschichtewiki.wien.gv.at
 ]
 {{</ gallery >}}
 
-Der Druck ist auch in der [Sammlung des British Museums zu finden](https://www.britishmuseum.org/collection/object/P_1980-U-1254), (Abbildung bei der [Contemporary Art Society](https://contemporaryartsociety.org/objects/buzzard-mist-1904-1927)). Im Netz sind Exemplare bei verschiedenen Auktionshäusern zu finden, der Titel könnte "Greifvögel im Hochland", bzw. "Bussard im Nebel" sein.
+Der Druck ist auch in der [Sammlung des British Museums zu finden](https://www.britishmuseum.org/collection/object/P_1980-U-1254), (Abbildung bei der [Contemporary Art Society](https://contemporaryartsociety.org/objects/buzzard-mist-1904-1927)). Im Netz sind Exemplare bei verschiedenen Auktionshäusern zu finden, der Titel könnte "Greifvögel im Hochland", bzw. "Bussard im Nebel" sein. Auf der [Seite von Wolfgang Barina](https://www.wolfgang-barina.de/kunst/sammlung/farbschnitte/frank-Leo-fhs-Bussarde.html) ist der Titel nur "Bussarde".
 Leo Frank, war ein Wiener Künstler, der auch an der Akademie der bildenden Künste Wien Druck und Zeichnen lehrte.
