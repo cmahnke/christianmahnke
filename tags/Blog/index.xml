@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Blog/</link>
+    <description>Recent content in Blog on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/Blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Never Built Göttingen</title>
+      <link>https://christianmahnke.de/post/never-built-goettingen/</link>
+      <pubDate>Fri, 14 Mar 2025 20:30:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/never-built-goettingen/</guid>
+      <description>&lt;p&gt;Wer kennt sie nicht, die drei blauen Türme der Universität Göttingen,&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Projektemacher 2024</title>
+      <link>https://christianmahnke.de/post/projektemacher-2024/</link>
+      <pubDate>Mon, 30 Dec 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/projektemacher-2024/</guid>
+      <description>&lt;p&gt;Zu Abschluss von 2024, hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 270 Beiträge (das aktivste Jahr bisher) veröffentlicht.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Das Geheimnis um Ric ist gelüftet</title>
+      <link>https://christianmahnke.de/post/ric-unknownartist/</link>
+      <pubDate>Thu, 24 Oct 2024 07:03:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/ric-unknownartist/</guid>
+      <description>&lt;p&gt;Ein altes Rätsel endlich gelöst&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VintageReality gestartet</title>
+      <link>https://christianmahnke.de/post/vintagereality/</link>
+      <pubDate>Tue, 05 Mar 2024 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/vintagereality/</guid>
+      <description>&lt;p&gt;Das neueste Kind der &lt;a href=&#34;https://labs.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt; ist die seit Anfang 2023 ausgebaute Kategorie &amp;ldquo;1900 in 3D&amp;rdquo;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sommerpause</title>
+      <link>https://christianmahnke.de/post/summer-break/</link>
+      <pubDate>Mon, 24 May 2021 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/summer-break/</guid>
+      <description>&lt;p&gt;Nachdem dieser Frühling bisher nicht das frühlingshafteste Wetter zu bieten hatte, soll es nächste Woche wohl besser werden.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Briefsteller.de gestartet</title>
+      <link>https://christianmahnke.de/post/briefsteller/</link>
+      <pubDate>Tue, 27 Apr 2021 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/briefsteller/</guid>
+      <description>&lt;p&gt;Endlich, der letzte der im zweiten Corona Lockdown geplanten Blog ist nun online!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Der erste Beitrag</title>
+      <link>https://christianmahnke.de/post/first-post/</link>
+      <pubDate>Wed, 25 Nov 2020 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/first-post/</guid>
+      <description>&lt;p&gt;Nachdem in den letzten Monaten schon die Seite &lt;a href=&#34;https://projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher.org&lt;/a&gt; online gegangen ist, um als Dachmarke für meine alten Tumblr Blogs und die Projekte des ersten Corona Lockdowns unter einem Dach zu vereinen, startet nun auch meine persönliche Homepage.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
