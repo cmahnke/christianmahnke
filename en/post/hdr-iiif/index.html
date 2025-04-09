@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>HDR IIIF · Christian Mahnke</title>
+    <meta name="author" content="map[email:mail@christianmahnke.de name:Christian Mahnke]">
+
+<meta http-equiv="Content-Language" content="en">
+
+<meta name="description" content="HDR images via the IIIF Image API">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/en/post/hdr-iiif/" /><meta property="og:title" content="HDR IIIF" />
+<meta property="og:image" content="https://christianmahnke.de/en/post/hdr-iiif/ogPreview.en_hu_ed26fae3c98f2669.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content="libultrahdr, ultrahdr, Pillow, XMP, JPEGXL, Light, Licht2024, Digital images, HDR, IIIF">
+<meta name="generator" content="Hugo 0.145.0">
+<meta name="projektemacher.org:build-date" content="2025-04-09 18:46:25.976785921 &#43;0000 UTC m=&#43;71.697661964"><meta name="projektemacher.org:git-commit" content=""><meta name="projektemacher.org:stats" content="{&#34;count&#34;:&#34;377&#34;,&#34;latest&#34;:&#34;2025-12-31T11:33:44&#43;02:00&#34;}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><meta name="projektemacher:notes" content="Add https://iiif.io/api/image/3.0/#57-extra-functionality"><link href="https://christianmahnke.de/css/e23ffc467e93f0f8a525d7d0842e9911.min.4cd22e1f81d0c038049002f666b0ea7b254aacdb91ae71e44e27ae57c359c0e7.css" rel="stylesheet" integrity="sha256-TNIuH4HQwDgEkAL2ZrDqeyVKrNuRrnHkTieuV8NZwOc=">
+<script src="https://christianmahnke.de/js/7e4d9915dd4ab53856b037e4e7db4ed6.min.974eaa1c6fde85d0def87f77a662c08c3beb02ce3224d8d81749acb416a7a09b.js" integrity="sha256-l06qHG/ehdDe+H93pmLAjDvrAs4yJNjYF0mstBanoJs="></script>
+<script src="https://christianmahnke.de/js/fbe3f3f10cadb17ec5ba66038f73a8bb.min.65adc38e7da477e9b8a72b8fd86614d97f07446e223173279c67e1f217d191d6.js" integrity="sha256-Za3Djn2kd+m4pyuP2GYU2X8HRG4iMXMnnGfh8hfRkdY="></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    
+<script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type": "BlogPosting",
+      "@id": "https://christianmahnke.de/en/post/hdr-iiif/",
+      "url": "https://christianmahnke.de/en/post/hdr-iiif/",
+      "name": "HDR IIIF",
+      "datePublished": "2024-08-18T11:33:44+02:00","description": "HDR images via the IIIF Image API","author": {
+          "@type": "Person",
+          "@id": "https://christianmahnke.de/#Person",
+          "name": "Christian Mahnke",
+          "url": "https://christianmahnke.de/"
+        },"isPartOf": {
+        "@type" : "Blog",
+        "@id": "https://christianmahnke.de//post",
+        "name": "Christian Mahnke Blog"
+      }, "about": ["libultrahdr","ultrahdr","Pillow","XMP","JPEGXL","Light","Licht2024","DigitalImages","HDR","IIIF"], "keywords": ["libultrahdr","ultrahdr","Pillow","XMP","JPEGXL","Light","Licht2024","DigitalImages","HDR","IIIF"]}
+</script>
+</head><body class="section-post dir-posthdr-iiif  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-">
+            <a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a>
+          </li><li class="navigation-item navto-collections">
+            <a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a>
+          </li><li class="navigation-item current navto-post">
+            <a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a>
+          </li><li class="navigation-item navto-links">
+            <a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a>
+          </li><li class="navigation-item navto-about">
+            <a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a>
+          </li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/hdr-iiif/" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+        
+<div class="post ">
+  <div class="content">
+      <h1 class="post-title">HDR IIIF</h1><div class="date">
+          <a href="https://christianmahnke.de/en/post/hdr-iiif/">Sunday, August 18, 2024</a>
+        </div><div class="post-body"><p>At <a href="http://www.zeitzeug.de/" target="_blank">Zeitzeug</a> the owner&rsquo;s wallpaper collection is being sold and I have secured a particularly bright example&hellip;</p>
+<p>And since I have a blog, <a href="https://vorsatzpapier.projektemacher.org/" target="_blank">Vorsatzpapier</a>, which also presents old wallpapers, I digitised it. Unfortunately, the luminous character isn&rsquo;t visible in the <a href="https://vorsatzpapier.projektemacher.org/post/tapete-20/" target="_blank">original post</a>.</p>
+<p>This gave me the idea of trying to provide a <a href="https://en.wikipedia.org/wiki/High_dynamic_range" target="_blank">HDR</a> (respectively <a href="https://developer.android.com/media/platform/hdr-image-format" target="_blank">UltraHDR</a>) image in the form of IIIF. The main problem was to split the image into tiles, as common tools only use the SDR representation of the image.</p>
+<h1 id="image-tiler-for-ultrahdr">Image Tiler for UltraHDR</h1>
+<p>Since my blogs initially used <code>iiif_static.py</code> from the Python module <a href="https://github.com/zimeon/iiif" target="_blank"><code>iiif</code></a> (which turned out to be too slow and was also not as easy to marry with <a href="https://github.com/libjxl/libjxl" target="_blank">JPEG XL</a> as <a href="https://github.com/libvips/libvips" target="_blank"><code>vips</code></a>), there was already a candidate for the necessary adaptations. In addition, a Python implementation has the advantage that <a href="https://github.com/python-pillow/Pillow" target="_blank">Pillow</a> can be used: The <a href="https://de.wikipedia.org/wiki/Multi_Picture_Object" target="_blank">MPO</a> (a JPEG derivative that is structurally related to UltraHDR) implementation has already been used for <a href="https://vintagereality.projektemacher.org/" target="_blank">VintageReality</a>.</p>
+<p>It &lsquo;only&rsquo; lacked support for writing <a href="https://de.wikipedia.org/wiki/Extensible_Metadata_Platform" target="_blank">XMP</a> metadata. For normal JPEG files, it was still quite <a href="https://github.com/python-pillow/Pillow/discussions/8269#discussioncomment-10201110" target="_blank">simple</a>&hellip;
+In the end, I simply wrote a backend based on <a href="https://christianmahnke.de/post/ultrahdr/"><code>libultrahdr</code></a>.</p>
+<p>Below is the result.</p>
+<h1 id="next-steps">Next steps</h1>
+<p>There is currently no standardised way for IIIF to indicate UltraHDR content. In principle, there are fields that can be used for this task, but inclusion in the standard is desirable so that viewer implementations can point this out if the monitor does not support the display.</p>
+<h1 id="result">Result</h1>
+<div ></div>
+<details id="_hdr-check-4100be429b421d77a2bf3bec5ff51ad5" class="hdr-check-result">
+  <summary>HDR check</summary>
+  <p></p>
+</details>
+
+<script type="text/javascript">
+  const hdrCheckResult = document.getElementById("_hdr-check-4100be429b421d77a2bf3bec5ff51ad5");
+  if (checkHDRCanvas()) {
+    hdrCheckResult.querySelector('p').innerText = "The canvas element of your browser supports HDR!";
+    hdrCheckResult.classList.add("success");
+  } else {
+    hdrCheckResult.querySelector('p').innerText = "The canvas element of your browser doesn\u0027t support HDR, please retry with a recent Cromium-based browser like Chrome, Edge or Brave!";
+    hdrCheckResult.classList.add("fail");
+  }
+</script>
+<p>If the test fails, the colours are not as bright. <strong>Even if the display of HDR images works, the HDR support for the <code>canvas</code> element needs the browser flag <code>enable-experimental-web-platform-features</code> to be enabled. For example, open &ldquo;chrome://flags#enable-experimental-web-platform-features&rdquo; in Chrome to activate it.</strong></p>
+<p><strong>The worlds first HDR IIIF image is a 70ies wallpaper!</strong></p>
+
+
+<script src="https://christianmahnke.de/js/iiif-ol.min.dc847f2dc30f92453bb0068dad4a0e9a86ac04723812dfeebe0178218ad107ff.js" integrity="sha256-3IR/LcMPkkU7sAaNrUoOmoasBHI4Et/uvgF4IYrRB/8="></script>
+<div class="iiif iiif-image ">
+  <a name="iiif_image_298651374_fronthdr_infojson"></a><div id="iiif_image_298651374_fronthdr_infojson" class="viewer iiif iiif-image "></div>
+
+  <script type="text/javascript">
+    iiif_image_298651374_fronthdr_infojson_Div = document.getElementById("iiif_image_298651374_fronthdr_infojson");
+    iiif_image_298651374_fronthdr_infojson = addMap(iiif_image_298651374_fronthdr_infojson_Div, "front.hdr\/info.json",  0 , "front.hdr",  true );
+    iiif_image_298651374_fronthdr_infojson.updateSize();
+    iiif_image_298651374_fronthdr_infojson_Div.data = iiif_image_298651374_fronthdr_infojson;
+  </script>
+  </div>
+
+
+<h1 id="update-2882024">Update 28.8.2024</h1>
+<p>There is now a corresponding <a href="https://github.com/IIIF/api/issues/2312" target="_blank">GitHub Issue</a> to see if there is interest in creating a specification.</p></div>
+  </div><div class="post-footer"><div class="spacer">
+      </div>
+      <div class="meta">
+        <div class="tags-heading">Tags</div>
+        <div class="tags"><a href="https://christianmahnke.de/en/tags/Light" title="Light">#Light</a><a href="https://christianmahnke.de/en/tags/Licht2024" title="Licht2024">#Licht2024</a><a href="https://christianmahnke.de/en/tags/DigitalImages" title="Digital images">#Digital images</a><a href="https://christianmahnke.de/en/tags/HDR" title="HDR">#HDR</a><a href="https://christianmahnke.de/en/tags/IIIF" title="IIIF">#IIIF</a></div>
+      </div>
+    </div>
+  
+</div>
+
+    </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-">
+            <a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a>
+          </li><li class="navigation-item navto-collections">
+            <a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a>
+          </li><li class="navigation-item current navto-post">
+            <a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a>
+          </li><li class="navigation-item navto-links">
+            <a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a>
+          </li><li class="navigation-item navto-about">
+            <a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a>
+          </li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/hdr-iiif/" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Contact</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="Send eMail">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Privacy policy">Privacy policy</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXXI - MMXXV Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>
