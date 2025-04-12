@@ -19,4 +19,4 @@ Ich habe eine Radierung von [Arnold Leissler (dem Jüngeren)](https://de.wikiped
 ]
 {{</ gallery >}}
 
-Arnold Leissler war ein Maler und Grafiker aus Hannover. Die Grafik selbst ist auf ein gefärbten Bereich des Bildes gedruckt, man erkennt den Plattenrand inner halb der kolorierten Fläche.
+Arnold Leissler war ein Maler und Grafiker aus Hannover. Die Grafik selbst ist auf ein gefärbten Bereich des Bildes gedruckt, man erkennt den Plattenrand inner halb der kolorierten Fläche. Sie ist auf 1969 datiert.

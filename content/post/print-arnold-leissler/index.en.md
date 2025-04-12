@@ -19,4 +19,4 @@ I bought an etching by [Arnold Leissler (the Younger)](https://de.wikipedia.org/
 ]
 {{</ gallery >}}
 
-Arnold Leissler was a painter and graphic artist from Hanover. The graphic itself is printed on a coloured area of the picture, you can see the edge of the plate inside the coloured area.
+Arnold Leissler was a painter and graphic artist from Hanover. The graphic itself is printed on a coloured area of the picture, you can see the edge of the plate inside the coloured area. It is dated 1969.
