@@ -1,5 +1,5 @@
 ---
-ate: 2025-04-12T13:07:44+02:00
+date: 2025-04-12T13:07:44+02:00
 title: '"Landschaft mit Pilaster und Skulptur" von Arnold Leissler dem Jüngeren (1939-2014)'
 keywords: Arnold Leissler der Jüngere
 tags:

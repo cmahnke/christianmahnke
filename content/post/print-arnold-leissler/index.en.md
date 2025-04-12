@@ -1,5 +1,5 @@
 ---
-ate: 2025-04-12T13:07:44+02:00
+date: 2025-04-12T13:07:44+02:00
 title: '"Landscape with pilasters and sculpture" ("Landschaft mit Pilaster und Skulptur") by Arnold Leissler the Younger (1939-2014)'
 keywords: Arnold Leissler der Jüngere
 tags:
@@ -14,8 +14,8 @@ I bought an etching by [Arnold Leissler (the Younger)](https://de.wikipedia.org/
 
 {{< gallery >}}
 [
-  {"src": "img/print.jpg", "alt": "Druck"},
-  {"src": "img/signature.jpg", "alt": "Signatur"}
+  {"src": "img/print.jpg", "alt": "Print"},
+  {"src": "img/signature.jpg", "alt": "Signature"}
 ]
 {{</ gallery >}}
 
