@@ -61,6 +61,14 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 * **25.4.2007** - Putting the TEI to the test (MPDL Tagung) - "Fulltext processing at the GDZ", Berlin
 
 <details>
+<summary><h3>Weitere Vorträge</h3></summary>
+<div class="summary-content">
+* **28.1.2025** - Göttingen Collections Data and Forum Wissen (mit Karsten Heck und Anna-Lena Brunecker), [Ringvorlesung des Instituts für Digital Humanities, Göttingen](https://www.uni-goettingen.de/de/651292.html) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14754992.svg)](https://doi.org/10.5281/zenodo.14754992)
+* **15.1.2025** - [IIIF Community Call: HDR](https://christianmahnke.de/post/iiif-community-call-15.1.2025/), Online [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14652193.svg)](https://doi.org/10.5281/zenodo.14652193)
+</div>
+</details>
+
+<details>
 <summary><h3>Ältere Vorträge</h3></summary>
 <div class="summary-content">
 

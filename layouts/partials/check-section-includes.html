@@ -1,4 +1,4 @@
-{{- $debug := partialCached "partials/functions/debug/enabled.html" . -}}
+{{- $debug := partialCached "functions/debug/enabled.html" . -}}
 {{- if $debug -}}
   {{- if and (ne .Params.js nil) (ne .Params.js "") -}}
     {{- warnf "[partials/check-section-includes.html] File %s includes page specifig JS" .File.Dir  -}}

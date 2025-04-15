@@ -198,37 +198,41 @@ timeout = "120s"
   changeFreq = 'weekly'
 
 [module]
-    [[module.mounts]]
-        source = "assets/scss"
-        target = "assets/scss"
+  [module.hugoVersion]
+    extended = true
+    min = '0.146.3'
 
-    [[module.mounts]]
-        source = "static"
-        target = "static"
+  [[module.mounts]]
+      source = "assets/scss"
+      target = "assets/scss"
 
-    [[module.mounts]]
-        source = "assets/js"
-        target = "assets/js"
+  [[module.mounts]]
+      source = "static"
+      target = "static"
 
-    [[module.mounts]]
-        source = "node_modules/elevator.js/demo/music/"
-        target = "static/sounds"
+  [[module.mounts]]
+      source = "assets/js"
+      target = "assets/js"
 
-    [[module.mounts]]
-        source = "node_modules/photoswipe/dist"
-        target = "assets/css/photoswipe"
+  [[module.mounts]]
+      source = "node_modules/elevator.js/demo/music/"
+      target = "static/sounds"
 
-    [[module.mounts]]
-        source = "node_modules/@annotorious/openseadragon/dist"
-        target = "assets/css/openseadragon"
+  [[module.mounts]]
+      source = "node_modules/photoswipe/dist"
+      target = "assets/css/photoswipe"
 
-    [[module.mounts]]
-        source = "static/images"
-        target = "static/images"
+  [[module.mounts]]
+      source = "node_modules/@annotorious/openseadragon/dist"
+      target = "assets/css/openseadragon"
 
-    [[module.mounts]]
-        source = "node_modules/openseadragon/build/openseadragon/images"
-        target = "static/images"
+  [[module.mounts]]
+      source = "static/images"
+      target = "static/images"
+
+  [[module.mounts]]
+      source = "node_modules/openseadragon/build/openseadragon/images"
+      target = "static/images"
 
 [build]
   writeStats = true

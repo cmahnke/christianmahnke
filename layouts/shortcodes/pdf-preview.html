@@ -40,6 +40,6 @@
   </script>
 {{- end -}}
 
-{{- define "partials/shortcodes/ipdf-preview-metadata.html" -}}
+{{- define "_partials/shortcodes/ipdf-preview-metadata.html" -}}
   {{- (dict "css" slice "js" (slice "js/pdf-preview.js") "scss" (slice "scss/pdf-preview.scss")) | jsonify -}}
 {{- end -}}

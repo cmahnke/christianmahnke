@@ -35,6 +35,6 @@
   window.photoswipe("#{{ $id | safeJS }}", "a.gallery-image")
 </script>
 
-{{- define "partials/shortcodes/gallery-metadata.html" -}}
+{{- define "_partials/shortcodes/gallery-metadata.html" -}}
   {{- (dict "scss" slice "js" (slice "js/gallery.js") "css" (slice "css/photoswipe/photoswipe.css")) | jsonify -}}
 {{- end -}}

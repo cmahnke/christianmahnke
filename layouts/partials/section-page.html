@@ -1,4 +1,4 @@
-{{- $debug := partialCached "partials/functions/debug/enabled.html" . -}}
+{{- $debug := partialCached "functions/debug/enabled.html" . -}}
 
 {{- $head := .CurrentSection -}}
 {{- $pages := slice -}}
@@ -33,7 +33,7 @@
 
       {{- $id := substr (md5 $class) 0 8 -}}
 
-      {{- partial "partials/check-section-includes.html" . -}}
+      {{- partial "check-section-includes.html" . -}}
 
       {{- if ne .Content "" -}}
           <a name="{{ $nav }}" class="anchor" /></a>

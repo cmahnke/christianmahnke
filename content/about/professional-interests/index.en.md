@@ -61,6 +61,14 @@ My professional focus is on various topics from the spectrum of digital librarie
 * **25.4.2007** - Putting the TEI to the test (MPDL meeting) - "Fulltext processing at the GDZ", Berlin
 
 <details>
+<summary><h3>Further laks</h3></summary>
+<div class="summary-content">
+* **28.1.2025** - Göttingen Collections Data and Forum Wissen (with Karsten Heck and Anna-Lena Brunecker), [Lecture series of the Institute for Digital Humanities, Göttingen](https://www.uni-goettingen.de/de/651292.html) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14754992.svg)](https://doi.org/10.5281/zenodo.14754992)
+* **15.1.2025** - [IIIF Community Call: HDR](https://christianmahnke.de/post/iiif-community-call-15.1.2025/), Online [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14652193.svg)](https://doi.org/10.5281/zenodo.14652193)
+</div>
+</details>
+
+<details>
 <summary><h3>Old talks</h3></summary>
 <div class="summary-content">
 

@@ -15,6 +15,6 @@
   initModel(canvas, modelUrl);
 </script>
 
-{{- define "partials/shortcodes/hdr-model-metadata.html" -}}
+{{- define "_partials/shortcodes/hdr-model-metadata.html" -}}
   {{- (dict "css" slice "js" (slice "js/hdr-model.js") "scss" (slice "scss/hdr-model.scss")) | jsonify -}}
 {{- end -}}

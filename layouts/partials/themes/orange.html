@@ -18,7 +18,7 @@
     {{- $class = printf "section-%s %s section-%d" $nav $class $i -}}
 
     {{- $id := substr (md5 $class) 0 8 -}}
-    {{- partial "partials/check-section-includes.html" . -}}
+    {{- partial "check-section-includes.html" . -}}
 
     {{- if ne .Content "" -}}
         <a name="{{ $nav }}" class="anchor" /></a>
@@ -28,7 +28,7 @@
                 {{- .Title -}}
             </h1>
 
-            {{- $content := partial "partials/fix-section-links.html" (dict "content" .Content "prefix" $nav) -}}
+            {{- $content := partial "fix-section-links.html" (dict "content" .Content "prefix" $nav) -}}
 
             <div class="section-content-body">
                 {{- $content | safeHTML -}}

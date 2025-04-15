@@ -10,6 +10,7 @@ tags:
   - Light
   - Licht2024
   - DigitalImages
+  - Digitisation
   - HDR
   - IIIF
 iiifContext: http://iiif.io/api/image/2/context.json

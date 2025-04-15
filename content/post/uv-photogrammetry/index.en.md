@@ -16,6 +16,7 @@ tags:
   - 3D
   - Three.js
   - Photogrammetry
+  - Digitisation
 wikidata:
   - https://www.wikidata.org/wiki/Q11391
   - https://www.wikidata.org/wiki/Q9128

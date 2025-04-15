@@ -34,6 +34,6 @@ Parameters:
     </script>
 </div>
 
-{{- define "partials/shortcodes/iiif/touch-iiif-metadata.html" -}}
+{{- define "_partials/shortcodes/iiif/touch-iiif-metadata.html" -}}
   {{- (dict "css" slice "js" (slice "js/iiif/touch.js") "scss" (slice "scss/iiif/touch.scss")) | jsonify -}}
 {{- end -}}
