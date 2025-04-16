@@ -12,8 +12,9 @@ TODO
 # Posts
 
 ## TODO
-* Otto Richard Bossert
-* Helmut Bönitz
+* Fix Puppeteer test for:
+    * {"url": "https://christianmahnke.de/post/uv-photogrammetry/"},
+    * {"url": "https://christianmahnke.de/post/haptic-feedback/"}
 
 ### Commands
 ```
@@ -23,5 +24,3 @@ convert preview.png -channel a -negate +channel -fill black -colorize 100% previ
 # Tag Pages
 * Blender
 * Göttingen
-* Windows
-* GeoData (check case)
