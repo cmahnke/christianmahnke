@@ -30,6 +30,7 @@ export default async function touchViewer(containerId, manifestUrl, page = 0) {
     visibilityRatio: 1,
     minZoomLevel: 0.5,
     defaultZoomLevel: 0.5,
+    drawer: "canvas",
     crossOriginPolicy: "Anonymous",
     //sequenceMode: true,
     tileSources: [service],
