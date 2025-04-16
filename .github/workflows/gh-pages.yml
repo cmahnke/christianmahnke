@@ -65,7 +65,7 @@ jobs:
         run: hugo --printI18nWarnings --printUnusedTemplates
 
       - name: Puppeteer
-        run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh -g -e
+        run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh -e
 
       - name: Archive links
         run: python ./themes/projektemacher-base/scripts/archive.py -d docs/ -e projektemacher.org -a 14
