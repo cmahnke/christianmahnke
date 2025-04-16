@@ -18,10 +18,10 @@ outputs:
 - html
 - iiif-manifest
 resources:
-- src: "front.hdr.jxl"
+- src: "front-hdr.jxl"
   name: front
   params:
-    iiif: front.hdr/info.json
+    iiif: front-hdr/info.json
 notes: Add https://iiif.io/api/image/3.0/#57-extra-functionality
 ---
 
@@ -53,7 +53,7 @@ Wenn der Test fehlschlägt, sind die Farben nicht so leuchtend. **Selbst wenn di
 
 **Das weltweit erste HDR IIIF Bild ist eine 70er Jahre Tapete!**
 
-{{< iiif/iiif src="front.hdr/info.json" share=false hdr=true >}}
+{{< iiif/iiif src="front-hdr/info.json" share=false hdr=true >}}
 
 # Update 28.8.2024
 
