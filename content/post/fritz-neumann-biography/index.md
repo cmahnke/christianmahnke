@@ -10,6 +10,6 @@ tags:
 
 Nachdem im Oktober die Identität von [Fritz Neumann und damit Ric aufgeklärt werden konnte](https://christianmahnke.de/post/ric-unknownartist/) hat [Mark Strong von Meibohm Fine Arts](https://www.meibohmfinearts.com/) auf Basis der Erkenntnisse aus [meinem Blog](https://ric-unknownartist.projektemacher.org/) zusammengeführt, verdichtet und auf [AskArt veröffentlicht](https://www.askart.com/artist/Fritz_Neumann/11057559/Fritz_Neumann.aspx).
 
-Ohne Bezahlmitgliedschaft, kann die volle Biographie jeden Freitag eingesehen werden.
+Ohne Bezahlmitgliedschaft, kann die volle Biographie jeden Freitag eingesehen werden, ansonsten ist sie auch bei [Meibohm Fine Arts](https://www.meibohmfinearts.com/artists/details/2873) frei verfügbar.
 
 Vielen Dank an Mark für die Arbeit!
