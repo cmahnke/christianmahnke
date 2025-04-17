@@ -7,12 +7,10 @@ sitemap:
   changeFreq: monthly
 cascade:
   - _target:
-      kind: section
-  - _target:
-      kind: page
+      kind: '{page,section}'
     params:
-      sitemap:
-        disable: true
+      Sitemap:
+        Disable: true
 ---
 
 This page provides an overview of my collections and areas of interest of collection...

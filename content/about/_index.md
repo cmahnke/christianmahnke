@@ -11,10 +11,10 @@ cascade:
     params:
       indexRecursive: true
   - _target:
-      kind: page
+      kind: '{page,section}'
     params:
-      sitemap:
-        disable: true
+      Sitemap:
+        Disable: true
 ---
 
 Mehr über mich und diese Seite.

@@ -7,12 +7,10 @@ sitemap:
   changeFreq: monthly
 cascade:
   - _target:
-      kind: section
-  - _target:
-      kind: page
+      kind: '{page,section}'
     params:
-      sitemap:
-        disable: true
+      Sitemap:
+        Disable: true
 ---
 
 Diese Seite bietet einen Überblick über meine Sammlungen und Interessengebiete...
