@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Softwareentwicklung on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/SoftwareDevelopment/</link>
+    <description>Recent content in Softwareentwicklung on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/SoftwareDevelopment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KI und Software-&#34;Entwicklung&#34;</title>
+      <link>https://christianmahnke.de/post/academic-software-publishing/</link>
+      <pubDate>Tue, 25 Feb 2025 15:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/academic-software-publishing/</guid>
+      <description>&lt;p&gt;Im letzten Jahr habe ich mich ab und zu mit KI beschäftigt, um meine Blogs mit zusätzlichen Features anzureichern und auch ihre Weiterentwicklung zu beschleunigen.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
