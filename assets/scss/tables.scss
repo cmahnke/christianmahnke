@@ -1,0 +1,41 @@
+.content .post-body table {
+    margin: 1em 0;
+    border-collapse: collapse;
+
+    &.fitted {
+
+        td {
+            margin: .4em;
+        }
+
+    }
+
+    &.center {
+        margin: auto;
+
+        th, td {
+            padding: 0 1em;
+        }
+    }
+
+    &.inset {
+
+    }
+
+    &.content-left {
+        th, td {
+            text-align: start;
+        }
+    }
+
+    &.header-underline {
+        /* Styling tables sucks */
+        tbody tr:first-child td {
+            padding-top: .4em;
+        }
+        thead tr {
+            border-bottom: .2em solid black;
+        }
+    }
+
+}

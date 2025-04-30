@@ -1,5 +1,5 @@
 ---
-date: 2025-04-20T10:22:44+02:00
+date: 2025-05-01T10:22:44+02:00
 title: "Wallpaper virtual rooms!"
 preview:
   image: screenshot.png
