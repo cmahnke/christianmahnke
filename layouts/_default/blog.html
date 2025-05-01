@@ -22,6 +22,8 @@
 
       {{- $paginator := .Paginate (where $pages "Params.displayinlist" "!=" false) -}}
 
+      {{- $postCount := len $pages -}}
+
       {{- if eq .Paginator.PageNumber 1 -}}
         {{- partial "section-heading.html" . -}}
         {{- partial "tagcloud.html" . -}}
@@ -33,14 +35,25 @@
               <h1 class="{{ printf "%s-section" (path.Base $head.Permalink) }} section-head-title">{{ .Title }} {{ printf "%d / %d" .Paginator.PageNumber .Paginator.TotalPages }}</h1>
             </a>
           </div>
+          {{- $pagerPosition := mul .Paginator.PageNumber .Paginator.PagerSize -}}
+          <div class="paginator-stats">{{ sub $pagerPosition .Paginator.PagerSize }} - {{ $pagerPosition }} / {{ $postCount }}</div>
         </div>
       {{- end -}}
 
       <div class="posts">
-        {{- range $i, $page :=  $paginator.Pages -}}
+        {{- range $i, $page := $paginator.Pages -}}
           {{- .Scratch.Set "class" "odd" -}}
           {{- if modBool $i 2  -}}
             {{- .Scratch.Set "class" "even" -}}
+          {{- end -}}
+
+          {{- $currentYear := .Date.Year -}}
+          {{- if ne $currentYear time.Now.Year -}}
+            {{- $currentYearPosts := (where $pages ".Date.Year" "==" $currentYear).ByDate.Reverse -}}
+            {{- $firstYearPost := index $currentYearPosts 0 -}}
+            {{- if eq . $firstYearPost -}}
+              <h2 class="year-heading">{{ $currentYear }}</h2>
+            {{- end -}}
           {{- end -}}
           {{- partial "li.html" . -}}
         {{- end -}}
