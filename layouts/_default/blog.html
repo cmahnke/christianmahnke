@@ -53,6 +53,7 @@
             {{- $firstYearPost := index $currentYearPosts 0 -}}
             {{- if eq . $firstYearPost -}}
               <h2 class="year-heading">{{ $currentYear }}</h2>
+              <span class="year-count">({{ len $currentYearPosts }})</span>
             {{- end -}}
           {{- end -}}
           {{- partial "li.html" . -}}

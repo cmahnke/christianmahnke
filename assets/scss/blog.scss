@@ -28,7 +28,7 @@
 
       .paginator-stats {
         opacity: 0;
-        transition: 250ms;
+        transition: 500ms;
         text-align: end;
         margin-top: -1em;
         transform: translateY(-1.5em);
@@ -76,6 +76,20 @@
         @media (min-width: 75em) {
           margin: 0 -1em;
         }
+
+        &:hover + .year-count {
+          opacity: .5;
+        }
+      }
+
+      .year-count {
+        max-width: fit-content;
+        opacity: 0;
+        transition: 500ms;
+        text-align: end;
+        transform: translateX(200%);
+        font-weight: 100;
+        font-style: italic;
       }
 
       .post {

@@ -19,4 +19,17 @@ Seit Corona ist es üblich, einander in Videokonferenzen in die Buden zu schauen
 
 Und um beides zusammen zu bringen, gibt es nun eine interaktives Spielzeug für das ["Vorsatzpapier" Blog](https://vorsatzpapier.projektemacher.org/), einen Mustergenerator, der direkt mit den bereitgestellten IIIF Manifesten arbeiten kann.
 
+Der Name der Software soll an die Designerin [Lucienne Day](https://de.wikipedia.org/wiki/Lucienne_Day), die auch für ihre Textil und Tapeten Entwürfe der 50er und 60er Jahre berühmt wurde.
+
 Auf dieser Seite gibt es eine Variante, bei der das Ausgangsmaterial frei gewählt werden kann:
+
+
+# Technische Details
+
+Für die Umsetzung kamen unter anderem die folgenden JavaScript Module zum Einsatz:
+* [OpenSeadragon](https://openseadragon.github.io/)
+* [OpenSeaDragon - FabricJS Plugin](https://github.com/brunoocastro/openseadragon-fabric)
+* [Allmaps iiif-parser](https://allmaps.org/)
+* [Fabric.js](https://fabricjs.com/)
+* [i18next](https://www.i18next.com/)
+* [i18next-browser-languageDetector](https://github.com/i18next/i18next-browser-languageDetector)
