@@ -7,6 +7,7 @@ tags:
 - ProjectIdea
 - CulturalPolicy
 - DigitalLibrary
+- AI
 ---
 
 Over the past year, I have occasionally worked with AI to enrich my blogs with additional features and also to accelerate their further development.

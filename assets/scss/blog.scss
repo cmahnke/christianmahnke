@@ -71,7 +71,11 @@
         font-weight: 200;
         font-style: italic;
         opacity: .75;
-        margin: 0 -1em;
+        max-width: fit-content;
+
+        @media (min-width: 75em) {
+          margin: 0 -1em;
+        }
       }
 
       .post {

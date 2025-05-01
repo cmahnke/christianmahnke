@@ -8,6 +8,7 @@ tags:
 - ProjectIdea
 - CulturalPolicy
 - DigitalLibrary
+- AI
 ---
 
 Im letzten Jahr habe ich mich ab und zu mit KI beschäftigt, um meine Blogs mit zusätzlichen Features anzureichern und auch ihre Weiterentwicklung zu beschleunigen.
