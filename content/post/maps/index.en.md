@@ -38,3 +38,4 @@ Now only the last step is missing, generating your own map material in order to 
 # Follow-ups:
 * **14.11.2023**: [Backsteinexpressionismus: Added Map](https://backsteinexpressionismus.projektemacher.org/lists/#karte)
 * **21.3.2024**: [Kleiderbügel: Added Map](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/map/)
+* **14.3.2025**: [Never Built Göttingen: Map based on self-generated material](https://never-built.goettingen.xyz/map/)

@@ -7,12 +7,14 @@ weight: 3
 
 Examples of immersive or unconventional presentations include these blogs:
 
+* [Never Built Göttingen](https://never-built.goettingen.xyz/) - Topic-specific maps, animations in overviews.
 * [VintageReality](https://vintagereality.projektemacher.org/) (in German) - preparation of stereograms for, among other things, different coloured glasses, Google Cardboard, as a wobble image and extraction of depth information. Details in this [blog post](https://christianmahnke.de/post/vintagereality/) - Use of computer vision methods
 * [Kleiderbügel (Clothes hanger)](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/) (in German). - Listing on a clothes rail, visualisation on a map and [IIIF collection](https://theseusviewer.org/?iiif-content=https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/collection.json).
 * [Blaufusstölpel](https://xn--blaufusstlpel-qmb.de/timeline/#vertical) - Timeline of fashion and needlework magazines and fabric samples.
 
 Several individual experiments can be found in the blog:
 
+* [Visualisation AI segmentation with HDR](/en/post/visualising-ai-segmentation-with-hdr/)
 * [HDR images for the visualisation of X-ray examinations of old paintings](/en/post/hdr-radiography-visualisation/)
 * [Haptic feedback for digitised fabrics](https://christianmahnke.de/post/haptic-feedback/) - IIIF annotations with vibration
 * [Uranium glass in 3D](https://christianmahnke.de/en/post/uv-photogrammetry/) - Ultra violet photogrammetry

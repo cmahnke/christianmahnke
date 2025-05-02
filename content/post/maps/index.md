@@ -38,3 +38,4 @@ Nun fehlt nur noch der letzte Schritt, eigenes Kartenmaterial erzeugen um unabh�
 # Nachträge:
 * **14.11.2023**: [Backsteinexpressionismus: Karte hinzugefügt](https://backsteinexpressionismus.projektemacher.org/lists/#karte)
 * **21.3.2024**: [Kleiderbügel: Karte hinzugefügt](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/map/)
+* **14.3.2025**: [Never Built Göttingen: Karte basierend auf selbst generiertem Material](https://never-built.goettingen.xyz/map/)
