@@ -65,14 +65,22 @@ jobs:
         run: hugo --printI18nWarnings --printUnusedTemplates
 
       - name: Puppeteer
+        if: ${{ !env.ACT }}
         run: |
           ./themes/projektemacher-base/scripts/github/puppeteer-chrome.sh
           ./themes/projektemacher-base/scripts/github/check-js-errors.sh -e
+
+      - name: Puppeteer (local)
+        if: ${{ env.ACT }}
+        run: |
+          ./themes/projektemacher-base/scripts/github/puppeteer-chrome.sh
+          ./themes/projektemacher-base/scripts/github/check-js-errors.sh -e -c test-urls.local.json
 
       - name: Archive links
         run: python ./themes/projektemacher-base/scripts/archive.py -d docs/ -e projektemacher.org -a 14
 
       - name: Deploy site
+        if: ${{ !env.ACT }}
         uses: peaceiris/actions-gh-pages@v4.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
