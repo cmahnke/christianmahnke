@@ -4,6 +4,8 @@ title: "Virtuelle Räume tapezieren!"
 preview:
   image: screenshot.png
   hide: true
+class: lucienne
+pagetheme: white
 tags:
 - Projektemacher.org
 - Blog

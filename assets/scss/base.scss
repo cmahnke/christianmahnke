@@ -22,10 +22,12 @@ $text-color: #000;
 @import "./gallery";
 @import "./blog";
 @import "./tagcloud";
+/* Themes */
 @import "./uranium";
 @import "./night";
 @import "./never";
 @import "./sepia";
+@import "blog-themes/lucienne";
 @import "./iiif-hdr";
 @import "./syntax";
 @import "./doi";

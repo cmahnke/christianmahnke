@@ -1,10 +1,8 @@
-//TODO: Move to 'blog-themes'
+$background-color: #D9CAB0;
+$foreground-color: #013A40;
+$accents-color: #BFA249;
 
-$background-color: #5107b7; /* #3D1673; */
-$foreground-color: #96ff00;
-$accents-color: #ff5477;
-
-body.uranium {
+body.lucienne {
   .page-wrapper {
     background: $background-color;
 
@@ -29,6 +27,10 @@ body.uranium {
 
           .post-body {
             font-size: 1.4em;
+
+            img {
+              background: white;
+            }
 
             .gallery {
               background-color: transparent;
