@@ -17,8 +17,17 @@ Other collections and collectors with whom I do not work.
 * [Ampelseite](https://www.ampelseite.de/)
 
 ## Watches
-* [Watches of the USSR](https://mroatman.wixsite.com/watches-of-the-ussr)
+### Digital
 * [Digital Watch](https://www.digital-watch.com/DWL)
+* [Magic Digitals](https://digitalwatches.de/ENGLISH_INDEX.HTM)
+
+### Soviet watches
+* [Watches of the USSR](https://mroatman.wixsite.com/watches-of-the-ussr)
+* [Vostok Amphibia CCCP](https://vostokamphibiacccp.altervista.org/)
+* [Eduardo's Collection of Soviet and Russian Timepieces](https://cccpwatches.blogspot.com/)
+* [Russian and Soviet Watches](https://sites.google.com/view/russianand-sovietwatches/home)
+* [Soviet-Watches](https://www.soviet-watches.com/)
+* [sovietwatches](https://sovietwatches.eu/language/en/)
 
 ## Ceramics
 * [KERAMIK-SAMMLER.DE](https://www.keramik-sammler.de/)
