@@ -21,6 +21,8 @@ Since Corona, it has been common to look into each other's booths in video confe
 
 And to bring the two together, there is now an interactive toy for the [‘Vorsatzpapier’ blog](https://vorsatzpapier.projektemacher.org/), a pattern generator that can work directly with the IIIF manifests provided.
 
+{{< lucienne src=`{"Vorsatzpapier Collection": "https://vorsatzpapier.projektemacher.org/patterns/collection.json"}` urlInput=true resize=true download=true >}}
+
 The software is named after the designer [Lucienne Day](https://en.wikipedia.org/wiki/Lucienne_Day), who also became famous for her textile and wallpaper designs of the 50s and 60s.
 
 On this page there is a variant where the source material can be freely selected:
