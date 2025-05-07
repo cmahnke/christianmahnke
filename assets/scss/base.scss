@@ -22,12 +22,6 @@ $text-color: #000;
 @import "./gallery";
 @import "./blog";
 @import "./tagcloud";
-/* Themes */
-@import "./uranium";
-@import "./night";
-@import "./never";
-@import "./sepia";
-@import "blog-themes/lucienne";
 @import "./iiif-hdr";
 @import "./syntax";
 @import "./doi";
@@ -36,6 +30,14 @@ $text-color: #000;
 @import "./footnote";
 @import "./related";
 @import "./tables";
+
+/* Themes */
+/* @import "blog-themes/base"; */
+@import "blog-themes/uranium";
+@import "blog-themes/night";
+@import "blog-themes/never";
+@import "blog-themes/sepia";
+@import "blog-themes/lucienne";
 
 $gradient-color-light: #b2444d;
 $gradient-color-mid: #a41416;
@@ -61,6 +63,12 @@ $external-link-icon: "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/20
   display: inline-block;
   vertical-align: sub;
   padding-right: .8em
+}
+
+:root {
+  --background-color: #{$background-color};
+  --foreground-color: #{$foreground-color};
+  --accents-color: #{$accents-color};
 }
 
 html {

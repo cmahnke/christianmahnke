@@ -1,8 +1,10 @@
-$background-color: #D9CAB0;
-$foreground-color: #013A40;
-$accents-color: #BFA249;
+//TODO: Remove redundent declerations covered by variables
 
-body.lucienne {
+$background-color: #5107b7; /* #3D1673; */
+$foreground-color: #96ff00;
+$accents-color: #ff5477;
+
+body.uranium {
   --background-color: #{$background-color};
   --foreground-color: #{$foreground-color};
   --accents-color: #{$accents-color};
@@ -30,10 +32,6 @@ body.lucienne {
           .post-body {
             font-size: 1.4em;
 
-            img {
-              background: white;
-            }
-
             .gallery {
               background-color: transparent;
               box-shadow: 0 0 2px var(--accents-color);
@@ -44,7 +42,6 @@ body.lucienne {
             }
 
             .renderer-canvas canvas {
-              /*background: var(--background-color);*/
               background: black;
               border-radius: .8rem;
             }
