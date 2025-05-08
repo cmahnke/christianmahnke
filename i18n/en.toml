@@ -64,3 +64,6 @@ other = "Entites in this post (Wikidata)"
 
 [WikidataEntry]
 other = "Wikidata entry"
+
+[toc]
+other = "Table of contents"

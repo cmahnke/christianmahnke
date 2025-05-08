@@ -1,8 +1,11 @@
+$box-background: #f1ffb7;
+$box-border: #ff5477;
+
 .hdr-canvas-container {
   display: flex;
   justify-content: center;
   border-radius: 1rem;
-  box-shadow: 0 0px 2px #ff5477;
+  box-shadow: 0 0px 2px $box-border;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
@@ -32,7 +35,7 @@
     width: fit-content;
     justify-content: center;
     border-radius: .6rem;
-    background-color: #f1ffb7;
+    background-color: $box-background;
 
     @media (max-width: 35em) {
       gap: .4rem;

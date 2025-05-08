@@ -30,4 +30,4 @@ My new blog [Never Built Göttingen](https://never-built.goettingen.xyz/) shows 
     {{< figure src="img/screenshot.png" alt="Screenshot Never Build Göttingen" class="post-image" >}}
 {{< /zoom-link >}}
 
-AI was used for the realisation, especially for image processing.
+AI was used for the realisation, especially for image processing. The creation of the map material is described in the post "[Build vector map material with GitHub](/en/post/build-vector-tiles-on-github/)".

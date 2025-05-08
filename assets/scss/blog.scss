@@ -228,8 +228,8 @@
         pre {
 
           border-radius: 1rem;
-          background-color: #f1ffb7;
-          box-shadow: 0 0px 2px #ff5477;
+          background-color: $box-background;
+          box-shadow: 0 0px 2px $box-border;
         }
       }
 

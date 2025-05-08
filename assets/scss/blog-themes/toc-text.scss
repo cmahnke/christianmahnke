@@ -1,0 +1,18 @@
+/* Just include changes against base.scss */
+body.toc-text {
+  .page-wrapper {
+    .main {
+      .content-container.single {
+        .post  {
+          .post-body {
+            display: block;
+
+            code {
+              font-size: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}

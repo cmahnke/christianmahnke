@@ -36,6 +36,7 @@ This example shows the locations of the 3D images on a map:
 Now only the last step is missing, generating your own map material in order to be independent of external services and also to have the possibility to change the appearance...
 
 # Follow-ups:
+* **1.7.2023**: [Build vector maps with GitHub](/en/post/build-vector-tiles-on-github/)
 * **14.11.2023**: [Backsteinexpressionismus: Added Map](https://backsteinexpressionismus.projektemacher.org/lists/#karte)
 * **21.3.2024**: [Kleiderbügel: Added Map](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/map/)
 * **14.3.2025**: [Never Built Göttingen: Map based on self-generated material](https://never-built.goettingen.xyz/map/)

@@ -6,11 +6,11 @@
   /*align-items: flex-start;*/
   justify-content: center;
   gap: 2vw;
-  background-color: #f1ffb7;
+  background-color: $box-background;
   padding: 1.4em 1.4em 1em 1.4em;
   /*padding-left: 2.4em;*/
   border-radius: 1rem;
-  box-shadow: 0 0px 2px #ff5477;
+  box-shadow: 0 0px 2px $box-border;
   flex-wrap: wrap;
 
   @media (max-width: 35em) {
@@ -52,8 +52,8 @@
 }
 
 .pswp__custom-caption {
-  background: #f1ffb7;
-  box-shadow: 0 0px 2px #ff5477;
+  background: $box-background;
+  box-shadow: 0 0px 2px $box-border;
   align-content: center;
   text-align: center;
   width: calc(100% - 32px);

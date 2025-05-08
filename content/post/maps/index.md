@@ -36,6 +36,7 @@ Hier als Beispiel die Darstellung der Orte der 3D Bilder auf einer Karte:
 Nun fehlt nur noch der letzte Schritt, eigenes Kartenmaterial erzeugen um unabhängig von externen Diensten zu sein und auch mehr Gestaltungsspielraum zu haben...
 
 # Nachträge:
+* **1.7.2023**: [Vektor Kartenmaterial mit GitHub bauen](/post/build-vector-tiles-on-github/)
 * **14.11.2023**: [Backsteinexpressionismus: Karte hinzugefügt](https://backsteinexpressionismus.projektemacher.org/lists/#karte)
 * **21.3.2024**: [Kleiderbügel: Karte hinzugefügt](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/map/)
 * **14.3.2025**: [Never Built Göttingen: Karte basierend auf selbst generiertem Material](https://never-built.goettingen.xyz/map/)

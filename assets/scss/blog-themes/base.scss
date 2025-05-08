@@ -1,12 +1,14 @@
 // TODO: Make sure this matches ../base.scss
 body {
+  --background-color: transparent;
+  
   .page-wrapper {
     background: var(--background-color);
 
     .main {
       .header {
         .header-spacer {
-          background-image:linear-gradient($gradient-color-light, transparent);
+          background-image: linear-gradient(#b2444d, var(--background-color));
         }
       }
 

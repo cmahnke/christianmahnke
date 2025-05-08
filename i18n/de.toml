@@ -64,3 +64,6 @@ other = "Entitäten in diesem Beitrag (Wikidata)"
 
 [WikidataEntry]
 other = "Wikidata Eintrag"
+
+[toc]
+other = "Inhaltsverzeichnis"

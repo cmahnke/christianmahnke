@@ -1,0 +1,54 @@
+$toc-background: #f1ffb7;
+$toc-border: #ff5477;
+
+.toc {
+  background-color: $toc-background;
+  padding: 1.4em 1.4em 1em 1.4em;
+  border-radius: 1rem;
+  box-shadow: 0 0px 2px $toc-border;
+  font-size: smaller;
+  width: max-content;
+  display: inline-block;
+  float: right;
+  margin: 1em;
+  text-justify: none;
+
+  .toc-header {
+    margin-top: unset;
+    text-align: right;
+    font-weight: bold;
+    font-size: larger;
+    font-style: italic;
+  }
+
+  @media (max-width: 35em) {
+    margin-left: unset;
+    float: unset;
+    margin: auto;
+    width: unset;
+    display: block;
+    padding: .6em .6em .6em .6em;
+    text-align: unset;
+
+    .toc-header {
+      text-align: unset;
+    }
+  }
+
+  ul {
+    margin-bottom: unset;
+    display: block;
+
+    li {
+      padding-left: .4rem !important;
+
+      &::before {
+        padding-right: .4em;
+      }
+
+      ul li {
+        padding-left: 1.4rem !important;
+      }
+    }
+  }
+}

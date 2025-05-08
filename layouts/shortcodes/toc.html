@@ -1,1 +1,9 @@
-{{- .TableOfContents -}}
+{{/* TODO: Make this work with post split into sub pages */}}
+<div class="toc">
+  <div class="toc-header">{{ i18n "toc" }}</div>
+  {{- .Page.TableOfContents -}}
+</div>
+
+{{- define "_partials/shortcodes/toc-metadata.html" -}}
+  {{- (dict "css" slice "js" slice "scss" (slice "scss/toc.scss")) | jsonify -}}
+{{- end -}}
