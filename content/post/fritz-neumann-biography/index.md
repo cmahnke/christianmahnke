@@ -1,6 +1,6 @@
 ---
 date: 2025-04-18T07:03:44+02:00
-title: "Neue Biographie über Franz Neumann (1897-1984) aka Ric verfügbar"
+title: "Neue Biographie über Franz Robert Fritz Neumann (1897-1984) aka Ric verfügbar"
 keywords: Ric, Fritz Neumann, AskArt, Meibohm Fine Arts, Franz Robert Fritz Neumann
 tags:
   - Art
