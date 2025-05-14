@@ -7,6 +7,7 @@ preview:
 tags:
 - Fun
 - Projektemacher.org
+- Merchandise
 ---
 
 Even though some of the designs are older, the time has finally come:

@@ -3,4 +3,4 @@ title: 'Merchandise'
 description: ''
 ---
 
-for my projects
+Merchandise for my projects

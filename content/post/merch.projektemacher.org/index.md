@@ -7,6 +7,7 @@ preview:
 tags:
 - Fun
 - Projektemacher.org
+- Merchandise
 ---
 
 Auch wenn einige Entwürfe schon älter sind, ist es nun endlich so weit:

@@ -33,7 +33,7 @@ Therefore, I expect the institution to be prepared to meet the following of cond
         </div>
     </li>
     <li><div class="li-heading">Publication in a supra-regional portal</div></li>
-        <div class="li-body type-text">You upload or reference the digitised object including metadata into a research portal with at least a nationwide reach (for archive material, for example <a href="https://www.archivportal-d.de/" title="Archivportal D">Archivportal D</a>, for printed items the <a href="https://www.deutsche-digitale-bibliothek.de/" title="Deutsche Digitale Bibliothek">Deutsche Digitale Bibliothek</a>).
+        <div class="li-body type-text">You upload or reference the digitised object including metadata into a research portal with at least a nationwide reach (for archive material, for example <a href="https://www.archivportal-d.de/" title="Archivportal D">Archivportal D</a>, for printed items the <a href="https://www.deutsche-digitale-bibliothek.de/" title="Deutsche Digitale Bibliothek">Deutsche Digitale Bibliothek</a>, for museum objects <a href="https://www.museum-digital.de/" title="museum-digital">museum-digital</a>).
         </div>
     </li>
     <li><div class="li-heading">Research / Classification / Contextualization</div></li>

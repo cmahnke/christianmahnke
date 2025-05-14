@@ -32,7 +32,7 @@ Im Gegenzug erwarte ich von der bedachten Institution, dass diese bereit ist, ei
         </div>
     </li>
     <li><div class="li-heading">Bereitstellung in einem überregionalen Rechercheportal</div></li>
-        <div class="li-body type-text">Das Objekt (digitalisiert und mit Metadaten ausgestattet) wird in einem Recherche-Portal mit mindestens nationaler Reichweite bereitgestellt (bei Archivgut z.B. <a href="https://www.archivportal-d.de/" title="Archivportal D">Archivportal D</a>, für Gedrucktes z.B. die <a href="https://www.deutsche-digitale-bibliothek.de/" title="Deutsche Digitale Bibliothek">Deutsche Digitale Bibliothek</a>).
+        <div class="li-body type-text">Das Objekt (digitalisiert und mit Metadaten ausgestattet) wird in einem Recherche-Portal mit mindestens nationaler Reichweite bereitgestellt (bei Archivgut z.B. <a href="https://www.archivportal-d.de/" title="Archivportal D">Archivportal D</a>, für Gedrucktes z.B. die <a href="https://www.deutsche-digitale-bibliothek.de/" title="Deutsche Digitale Bibliothek">Deutsche Digitale Bibliothek</a>, für museale Objekte z.B. <a href="https://www.museum-digital.de/" title="museum-digital">museum-digital</a>).
         </div>
     </li>
     <li><div class="li-heading">Recherche / Einordnung / Kontextualisierung</div></li>
