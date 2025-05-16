@@ -5,6 +5,7 @@ keywords: Painting, ships, evening sun
 tags:
   - Art
   - Watercolor
+  - Painting
 preview: img/painting.jpg
 wikidata: https://www.wikidata.org/wiki/Q52150547
 ---
