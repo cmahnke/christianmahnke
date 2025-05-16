@@ -21,6 +21,7 @@ $text-color: #000;
 @import "ol";
 @import "ol-iiif";
 @import "map";
+@import "./site-icons";
 @import "./pagination";
 @import "./code";
 @import "./gallery";
@@ -1537,6 +1538,10 @@ a:visited {
 
 .mastodon {
   content: url($mastodon-light);
+}
+
+.md-term {
+  content: url($md-term-light);
 }
 
 .projektemacher {

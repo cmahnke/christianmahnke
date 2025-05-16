@@ -67,3 +67,5 @@ content/**/manifest-enriched.json
 static/images/apple-touch-icon.png
 XXX-*
 chrome/*
+static/images/mdlogo-term.svg
+static/images/mdterm.svg
