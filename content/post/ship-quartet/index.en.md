@@ -24,14 +24,14 @@ Here's an example of such a quartet with warships, only brought up to date: in o
 
 {{< gallery >}}
 [
-  {"src": "img/group1.jpg", "alt": "U-Boote"},
-  {"src": "img/group2.jpg", "alt": "Kleine Kampfschiffe"},
-  {"src": "img/group3.jpg", "alt": "Zerstörer und Mineleger"},
-  {"src": "img/group4.jpg", "alt": "Schlachtschiff und Kreuzer"},
-  {"src": "img/group5.jpg", "alt": "Fregatten"},
-  {"src": "img/group6.jpg", "alt": "Lenkwaffenzerstörer"},
-  {"src": "img/group7.jpg", "alt": "Lenkwaffenkreuzer"},
-  {"src": "img/group8.jpg", "alt": "Flugzeugträger"}
+  {"src": "img/group1.jpg", "alt": "Submarines"},
+  {"src": "img/group2.jpg", "alt": "Small combat vessels"},
+  {"src": "img/group3.jpg", "alt": "Destroyer and Minelayer"},
+  {"src": "img/group4.jpg", "alt": "Battleship and cruiser"},
+  {"src": "img/group5.jpg", "alt": "Frigates"},
+  {"src": "img/group6.jpg", "alt": "Guided missile destroyers"},
+  {"src": "img/group7.jpg", "alt": "Guided missile cruisers"},
+  {"src": "img/group8.jpg", "alt": "Aircraft carrier"}
 ]
 {{</ gallery >}}
 
@@ -73,3 +73,5 @@ Here's an example of such a quartet with warships, only brought up to date: in o
 | Aircraft carrier | [Wasp](https://en.wikipedia.org/wiki/USS_Wasp_(CV-18)) | 1974 |  |
 
 The links usually lead to the English Wikipedia.
+
+As the cards are printed on paper that is too thick for a typewriter, they were processed using a [Famos](https://de.wikipedia.org/wiki/Famos_(company)) children's printer.

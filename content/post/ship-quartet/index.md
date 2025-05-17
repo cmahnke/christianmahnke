@@ -73,3 +73,5 @@ Hier ein Beispiel für ein solches Quartett mit Kriegsschiffen, nur eben auf den
 | Flugzeugträger | [Wasp](https://en.wikipedia.org/wiki/USS_Wasp_(CV-18)) | 1974 |  |
 
 Die Links führen meist in die englische Wikipedia.
+
+Da die Karten auf ein zu dickes Papier für eine Schreibmaschine gedruckt sind, wurden sie mit einer [Famos](https://de.wikipedia.org/wiki/Famos_(Unternehmen)) Kinderdruckerei bearbeitet.

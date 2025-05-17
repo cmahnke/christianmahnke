@@ -1544,6 +1544,14 @@ a:visited {
   content: url($md-term-light);
 }
 
+.wikidata {
+  content: url($wikidata-light);
+}
+
+.gnd {
+  content: url($gnd-light);
+}
+
 .projektemacher {
     filter: #{"invert()"};
     border-radius: 50%;
