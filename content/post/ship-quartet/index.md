@@ -15,7 +15,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q720832
 ---
 
-Etwas über unerwartet zeitgemäße Spiele...
+Über ein unerwartet zeitgemäßes Spiel...
 <!--more-->
 
 Als Kind der 80er und somit des Kalten Kriegs kennt man noch die Auswirkungen von "Kriegstüchtigkeit" auf das Alltagsleben. Nicht nur wenn man mal wieder im Schulbus auf den Konvoi warten musste, war eine der Dinge, mit denen man die Fahrt durch die halbe Gemeinde überbrückte, ein Quartett-Spiel. Natürlich gab es neben zivilen Dingen wie Autos und Flugzeugen, Feuerwehrfahrzeugen etc, gab es auch immer die militärischen Varianten: Panzer, Kampfflugzeuge oder Kriegsschiffe.

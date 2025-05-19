@@ -15,7 +15,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q720832
 ---
 
-Something about unexpectedly contemporary games...
+About an unexpectedly contemporary game...
 <!--more-->
 
 As a child of the 80s and thus of the Cold War, you still know the effects of ‘war fitness’ on everyday life. It wasn't just when you had to wait for the convoy on the school bus that one of the things you did to pass the journey through half the community was play a game of quartets. Of course, in addition to civilian things like cars and aeroplanes, fire engines etc., there were always military variants: Tanks, fighter planes or warships.
