@@ -1,5 +1,5 @@
 ---
-date: 2025-05-01T10:22:44+02:00
+date: 2025-05-19T10:22:44+02:00
 title: "Virtuelle Räume tapezieren!"
 preview:
   image: screenshot.png
