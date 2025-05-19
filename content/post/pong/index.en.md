@@ -4,12 +4,13 @@ title: "Pong Visualisation"
 keywords: Pong, video game, browser automation, Playwright
 description: "A 70s video game as a heat map"
 tags:
-- Light
-- Licht2024
-- Fun
-- Retrocomputing
-- DigitalImages
-- JavaScript
+  - Light
+  - Licht2024
+  - Fun
+  - Retrocomputing
+  - DigitalImages
+  - JavaScript
+  - Game
 preview: pong-heatmap1.png
 wikidata: https://www.wikidata.org/wiki/Q216293
 ---

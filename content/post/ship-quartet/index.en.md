@@ -9,6 +9,7 @@ tags:
   - History
   - Merchandise
   - DIY
+  - Game
 wikidata:
   - https://www.wikidata.org/wiki/Q16206135
   - https://www.wikidata.org/wiki/Q720832
