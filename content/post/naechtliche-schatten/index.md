@@ -1,5 +1,5 @@
 ---
-date: 2024-11-21T20:33:44+02:00
+date: 2025-06-01T20:33:44+02:00
 title: "Nächtliche Schatten"
 draft: true
 class: night
