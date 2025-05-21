@@ -1,5 +1,5 @@
 ---
-date: 2025-05-19T17:00:00+01:00
+date: 2025-05-21T06:00:00
 title: "Informationen zu Spendern in Kulturerbeaggregatoren"
 keywords: XML, METS, MODS, EAD, museum:digital, LIDO
 description:
@@ -8,7 +8,6 @@ tags:
   - Metadata
   - DigitalLibrary
   - Digitisation
-draft: true
 ---
 
 Ab und zu spende ich Objekte an Kultureinrichtungen...
@@ -20,7 +19,7 @@ Da es hier in der Vergangenheit zu Rückfragen kam, habe ich für die in der Lis
 
 Der folgenden Abschnitt gibt Hinweise zur Bereitstellung der Daten für drei wichtige Verbundportale. Da für die Erstellung von Datensätzen verschiedene Softwarelösungen, Datenkonversionen und andere Prozesse zum Einsatz kommen, können diese hier nicht im einzelnen behandelt werden. Der folgenden Abschnitt beschränkt sich daher hauptsächlich auf die für den Datenaustausch notwendigen Metadatenfelder.
 
-Falls sie für ihre Einrichtung Unterstützung benötigen, können sie sich gerne an mich wenden.
+Falls sie für ihre Einrichtung Unterstützung benötigen, können Sie sich gerne an mich wenden.
 
 ### Deutschen Digitalen Bibliothek (DDB)
 
@@ -62,14 +61,22 @@ Die Dokumentation der Nutzung des `<mods:name>` Elements in der DDB ist [hier](h
 Ein Spender (Donor) kann wie folgt angegeben werden.
 
 ```xml
-<mods:name type="personal" valueURI="http://d-nb.info/gnd/1143543866">
-  <mods:displayForm>Mustermann, Max</mods:displayForm>
-  <mods:role>
-    <mods:roleTerm authority="marcrelator" type="code"
-      valueURI="http://id.loc.gov/vocabulary/relators/dnr">dnr</mods:roleTerm>
-    <mods:roleTerm type="text">Spender</mods:roleTerm>
-  </mods:role>
-</mods:name>
+<mets:dmdSec ID="DMD">
+  ...
+  <mets:mdWrap MDTYPE="MODS">
+    <mets:xmlData>
+      <mods:name type="personal" valueURI="http://d-nb.info/gnd/1143543866">
+        <mods:displayForm>Mustermann, Max</mods:displayForm>
+        <mods:role>
+          <mods:roleTerm authority="marcrelator" type="code"
+            valueURI="http://id.loc.gov/vocabulary/relators/dnr">dnr</mods:roleTerm>
+          <mods:roleTerm type="text">Spender</mods:roleTerm>
+        </mods:role>
+      </mods:name>
+    </mets:xmlData>
+  </mets:mdWrap>
+  ...
+</mets:dmdSec>
 ```
 
 Zusätzlich ist es möglich die [Provenienz](https://wiki.deutsche-digitale-bibliothek.de/spaces/DFD/pages/19006846/note) anzugeben:

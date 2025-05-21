@@ -1,5 +1,5 @@
 ---
-date: 2025-05-19T17:00:00+01:00
+date: 2025-05-21T06:00:00
 title: "Information on donors in cultural heritage aggregators"
 keywords: XML, METS, MODS, EAD, museum:digital, LIDO
 description:
@@ -8,7 +8,6 @@ tags:
   - Metadata
   - DigitalLibrary
   - Digitisation
-draft: true
 ---
 
 From time to time I donate objects to cultural institutions...
@@ -62,14 +61,22 @@ The documentation on the use of the `<mods:name>` element in the DDB can be foun
 A donor can be specified as follows.
 
 ```xml
-<mods:name type="personal" valueURI="http://d-nb.info/gnd/1143543866">
-  <mods:displayForm>Mustermann, Max</mods:displayForm>
-  <mods:role>
-    <mods:roleTerm authority="marcrelator" type="code"
-      valueURI="http://id.loc.gov/vocabulary/relators/dnr">dnr</mods:roleTerm>
-    <mods:roleTerm type="text">Spender</mods:roleTerm>
-  </mods:role>
-</mods:name>
+<mets:dmdSec ID="DMD">
+  ...
+  <mets:mdWrap MDTYPE="MODS">
+    <mets:xmlData>
+      <mods:name type="personal" valueURI="http://d-nb.info/gnd/1143543866">
+        <mods:displayForm>Mustermann, Max</mods:displayForm>
+        <mods:role>
+          <mods:roleTerm authority="marcrelator" type="code"
+            valueURI="http://id.loc.gov/vocabulary/relators/dnr">dnr</mods:roleTerm>
+          <mods:roleTerm type="text">Spender</mods:roleTerm>
+        </mods:role>
+      </mods:name>
+    </mets:xmlData>
+  </mets:mdWrap>
+  ...
+</mets:dmdSec>
 ```
 
 It is also possible to specify the [Provenance](https://wiki.deutsche-digitale-bibliothek.de/spaces/DFD/pages/19006846/note):
