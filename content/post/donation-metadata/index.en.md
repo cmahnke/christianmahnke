@@ -23,9 +23,9 @@ If you need support for your organisation, please feel free to contact me.
 
 ### German Digital Library (DDB)
 
-In the library sector (and thus the [DDB](https://www.deutsche-digitale-bibliothek.de/)), the [METS (Metadata Encoding and Transmission Schema)](https://www.loc.gov/standards/mets/) format is used in conjunction with [MODS (Metadata Object Description Schema)](https://www.loc.gov/standards/mods/). In Germany, the [Schema](https://dfg-viewer.de/fileadmin/groups/dfgviewer/METS-Anwendungsprofil_2.3.1.pdf#page=27) for the [DFG Viewer](https://dfg-viewer.de/) (namespace `dv`) is also used.
+The [DDB](https://www.deutsche-digitale-bibliothek.de/) uses formats that are common in the library sector for metadata provided by libraries. These are either [MARC](https://www.loc.gov/marc/) or [METS (Metadata Encoding and Transmission Schema)](https://www.loc.gov/standards/mets/) used in conjunction with [MODS (Metadata Object Description Schema)](https://www.loc.gov/standards/mods/). In Germany, there is also the [Schema](https://dfg-viewer.de/fileadmin/groups/dfgviewer/METS-Anwendungsprofil_2.3.1.pdf#page=27) for the [DFG Viewer](https://dfg-viewer.de/) (namespace `dv`).
 
-A distinction must be made between two types of sponsorship for the portal:
+A distinction must be made between two types of funding/sponsorship for the portal:
 
 #### Sponsorship for digitisation
 
@@ -52,7 +52,7 @@ The documentation of the use of the `<dv:rights>` element in the DDB can be foun
 
 The representation is as in this [example](http://www.deutsche-digitale-bibliothek.de/item/VOL7G43KNY6TE3ZRJSEBZHKTMM6USWPC).
 
-#### Sponsorship of an object (digitisation template)
+#### Donation of an object (the digitisation template)
 
 The situation is different if it is to be made clear that a book, for example, has been donated to an organisation. In this case, the details are stored in the MODS section (`<mods:name>`).
 

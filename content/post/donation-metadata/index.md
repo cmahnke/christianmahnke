@@ -21,11 +21,11 @@ Der folgenden Abschnitt gibt Hinweise zur Bereitstellung der Daten für drei wic
 
 Falls sie für ihre Einrichtung Unterstützung benötigen, können Sie sich gerne an mich wenden.
 
-### Deutschen Digitalen Bibliothek (DDB)
+### Deutsche Digitalen Bibliothek (DDB)
 
-Im Bibliotheksbereich (und damit der [DDB](https://www.deutsche-digitale-bibliothek.de/)) wir das Format [METS (Metadata Encoding and Transmission Schema)](https://www.loc.gov/standards/mets/) in Verbindung mit [MODS (Metadata Object Description Schema)](https://www.loc.gov/standards/mods/) verwendet. Hinzu kommt in Deutschland das [Schema](https://dfg-viewer.de/fileadmin/groups/dfgviewer/METS-Anwendungsprofil_2.3.1.pdf#page=27) für den [DFG-Viewer](https://dfg-viewer.de/) (Namensraum `dv`).
+Die [DDB](https://www.deutsche-digitale-bibliothek.de/) nutzt für Metadaten, die von Bibliotheken bereitgestellt werden, Formate die im Bibliotheksbereich verbreitet sind. Dies sind entweder [MARC](https://www.loc.gov/marc/) oder [METS (Metadata Encoding and Transmission Schema)](https://www.loc.gov/standards/mets/) in Verbindung mit [MODS (Metadata Object Description Schema)](https://www.loc.gov/standards/mods/) verwendet. Hinzu kommt in Deutschland das [Schema](https://dfg-viewer.de/fileadmin/groups/dfgviewer/METS-Anwendungsprofil_2.3.1.pdf#page=27) für den [DFG-Viewer](https://dfg-viewer.de/) (Namensraum `dv`).
 
-Für das Portal muss zwischen zwei Arten der Förderung unterschieden werden:
+Für das Portal muss zwischen zwei Arten der Förderung / Sponsoring unterschieden werden:
 
 #### Sponsorschaft für die Digitalisierung
 
@@ -52,7 +52,7 @@ Die Dokumentation der Nutzung des `<dv:rights>` Elements in der DDB ist [hier](h
 
 Die Darstellung erfolgt wie in diesem [Beispiel](http://www.deutsche-digitale-bibliothek.de/item/VOL7G43KNY6TE3ZRJSEBZHKTMM6USWPC).
 
-#### Sponsorschaft für eine Objekt (Digitalisierungsvorlage)
+#### Spende eines Objekts (der Digitalisierungsvorlage)
 
 Anders verhält es sich, wenn deutlich gemacht werden soll, dass ein z.B ein Buch an eine Einrichtung gespendet wurde. In diesem Fall werden die Angeben im MODS Abschnitt (`<mods:name>`) hinterlegt.
 
@@ -114,7 +114,7 @@ Die Darstellung erfolgt wie in diesem [Beispiel](http://www.archivportal-d.de/it
 
 ## Potentielle Verbesserungen
 
-### Deutschen Digitalen Bibliothek (DDB) - METS/MODS
+### Deutsche Digitalen Bibliothek (DDB) - METS/MODS
 
 MODS erlaub es auch im Element `<mods:note>`, mit dem Attribut `type="acquisition"` den Erwerb zu hinterlegen, dies kann auch eine Spende / Schenkung / Stiftung sein. Diese Variante ist ggf. etwas genauer, da `type="ownership"` nur _einen_ Vorbesitzer angibt.
 
