@@ -99,9 +99,15 @@ Grundsätzlich bietet museum-digital auch ein Werkzeug zur [Qualitätssicherung]
 
 ### Archivportal-D
 
-Im Archivbereich (und damit dem [Archivportal-D](https://www.archivportal-d.de/)) wird das Format [EAD (Encoded Archival Description)](https://www.loc.gov/ead/) verwendet, dort sind derzeit keine spezifischen Felder zu Spendern oder Förderern vorgesehen, daher wird empfohlen `odd` Element zu verwenden.
+Im Archivbereich (und damit dem [Archivportal-D](https://www.archivportal-d.de/)) wird das Format [EAD (Encoded Archival Description)](https://www.loc.gov/ead/) in der Version 2002 entsprechend des Anwendungsprofils [EAD(DDB) 1.2](https://github.com/Deutsche-Digitale-Bibliothek/ddb-metadata-ead) verwendet. Dort sind derzeit keine expliziten Felder zu Spendern oder Förderern vorgesehen.
 
-Die Dokumentation der Nutzung des `<ead:odd>` Elements im Archivportal-D ist [hier](https://wiki.deutsche-digitale-bibliothek.de/spaces/DFD/pages/25133350/odd) zu finden.
+Auch hier kann zwischen einer Förderung (der Digitalisierung oder Erschließung) und einer Spende unterschieden werden:
+
+#### Sponsorschaft
+
+Für eine Sponsorschaft wird empfohlen das `<odd>` Element zu verwenden.
+
+Die Dokumentation der Nutzung des `<odd>` Elements im Archivportal-D ist [hier](https://wiki.deutsche-digitale-bibliothek.de/spaces/DFD/pages/25133350/odd) zu finden.
 
 ```xml
 <odd>
@@ -111,6 +117,22 @@ Die Dokumentation der Nutzung des `<ead:odd>` Elements im Archivportal-D ist [hi
 ```
 
 Die Darstellung erfolgt wie in diesem [Beispiel](http://www.archivportal-d.de/item/HX25DBKQOI2VOPJ77FGM3FITCBHWJWPS).
+
+#### Spende eines Objekts
+
+Die Spende eines physischen Objektes kann über eine Provenienzangabe abgebildet werden. Dazu dient das Element `<origination>`
+
+Die Dokumentation der Nutzung des `<origination>` Elements im Archivportal-D ist [https://wiki.deutsche-digitale-bibliothek.de/spaces/DFD/pages/25133352/origination) zu finden.
+
+```xml
+<origination label="Provenienz">            
+    <name source="GND" authfilenumber="1143543866">Mustermann, Max</name>        
+</origination>
+```
+
+Dabei ist die Nutzung des `<name>` Elements optional, es dient zur Verbindung der Provenienzstelle mit einem Normdatensatz.
+
+Die Darstellung erfolgt wie in diesem [Beispiel](https://www.archivportal-d.de/item/SJ4W777QFAG3T6UX5PTPGPUKWELI5QH5).
 
 ## Potentielle Verbesserungen
 
@@ -154,3 +176,10 @@ Für EAD lassen sich Informationen statt im [`<odd`>](https://www.loc.gov/ead/EA
 * Joshua Enslin, [museum-digital](https://www.museum-digital.de/)
 * Timo Schleier und Stefanie Rühle, Fachstelle Bibliothek der [Deutschen Digitalen Bibliothek](https://www.deutsche-digitale-bibliothek.de/)
 * Dr. Denise Ruisinger, Fachstelle Archiv der [Deutschen Digitalen Bibliothek](https://www.deutsche-digitale-bibliothek.de/)
+
+## Updates
+
+* Kommentare eingearbeitet
+  * METS/MODS als Metadatenformate für Bibliotheken nicht DDB allgemein
+  * Unterscheidung zwischen Förderung der Digitalisierung (für DDB und Archivportal-D) und Objektspenden verdeutlicht
+  * EAD Version und Anwendungsprofil ergänzt

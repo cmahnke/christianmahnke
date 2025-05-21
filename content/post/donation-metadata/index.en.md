@@ -99,18 +99,40 @@ In principle, museum-digital also offers a tool for [quality assurance](https://
 
 ### Archivportal-D
 
-In the archive area (and thus the [Archivportal-D](https://www.archivportal-d.de/)) the format [EAD (Encoded Archival Description)](https://www.loc.gov/ead/) is used, there are currently no specific fields for donors or sponsors, therefore it is recommended to use the `odd` element.
+In the archive area (and thus the [Archivportal-D](https://www.archivportal-d.de/)), the [EAD (Encoded Archival Description)](https://www.loc.gov/ead/) format is used in the 2002 version in accordance with the [EAD(DDB) 1.2](https://github.com/Deutsche-Digitale-Bibliothek/ddb-metadata-ead) application profile. There are currently no explicit fields for donors or sponsors.
 
-The documentation on the use of the `<ead:odd>` element in Archivportal-D can be found [here](https://wiki.deutsche-digitale-bibliothek.de/spaces/DFD/pages/25133350/odd).
+Here too, a distinction can be made between a grant (for digitisation or indexing) and a donation:
+
+#### Sponsorship
+
+It is recommended to use the `<odd>` element for sponsorship.
+
+The documentation on the use of the `<odd>` element in the Archive Portal-D can be found [here](https://wiki.deutsche-digitale-bibliothek.de/spaces/DFD/pages/25133350/odd).
 
 ```xml
 <odd>
    <head>Förderung</head>
-   <p>Freitext Förderhinweis</p>
+   <p>Free text funding information</p>
 <odd>
 ```
 
-The display is as shown in this [example](http://www.archivportal-d.de/item/HX25DBKQOI2VOPJ77FGM3FITCBHWJWPS).
+The representation is as in this [example](http://www.archivportal-d.de/item/HX25DBKQOI2VOPJ77FGM3FITCBHWJWPS).
+
+#### Donation of an object
+
+The donation of a physical object can be mapped via a provenance specification. The `<origination>` element is used for this purpose
+
+The documentation on the use of the `<origination>` element in the Archive Portal-D can be found at [https://wiki.deutsche-digitale-bibliothek.de/spaces/DFD/pages/25133352/origination).
+
+```xml
+<origination label="Provenienz">            
+    <name source="GND" authfilenumber="1143543866">Mustermann, Max</name>        
+</origination>
+```
+
+The use of the `<name>` element is optional; it is used to link the provenance location with a standard data record.
+
+The representation is as in this [example](https://www.archivportal-d.de/item/SJ4W777QFAG3T6UX5PTPGPUKWELI5QH5).
 
 ## Potential improvements
 
@@ -154,3 +176,10 @@ For EAD, information can also be stored in [`<acqinfo>`](https://www.loc.gov/ead
 * Joshua Enslin, [museum-digital](https://www.museum-digital.de/)
 * Timo Schleier and Stefanie Rühle, Library Centre of the [German Digital Library](https://www.deutsche-digitale-bibliothek.de/)
 * Dr Denise Ruisinger, Archive Department of the [German Digital Library](https://www.deutsche-digitale-bibliothek.de/)
+
+## Updates
+
+* Comments incorporated
+  * METS/MODS as metadata formats for libraries not DDB in general
+  * Distinction between digitisation funding (for DDB and Archivportal-D) and object donations clarified
+  * EAD version and application profile added
