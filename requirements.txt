@@ -2,3 +2,4 @@ iiif-prezi3
 shapely
 scour
 blend-modes
+pagefind[extended]
