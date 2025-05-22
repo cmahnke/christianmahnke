@@ -64,6 +64,9 @@ jobs:
       - name: Build Hugo site
         run: hugo --printI18nWarnings --printUnusedTemplates
 
+      - name: Index site
+        run: npx pagefind --site docs
+
       - name: Puppeteer
         if: ${{ !env.ACT }}
         run: |
