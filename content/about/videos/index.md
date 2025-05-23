@@ -2,7 +2,7 @@
 title: "Videos"
 metaPage: true
 displayinlist: false
-weight: 5
+weight: 6
 ---
 
 In den letzten Jahren habe ich auch kleinere Statistenrollen in kurzen Filmen übernommen:

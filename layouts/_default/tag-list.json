@@ -1,0 +1,16 @@
+{{- $pages := where .Site.RegularPages "Params.displayinlist" "!=" false -}}
+{{- $pageList := slice -}}
+{{- range $page := $pages -}}
+  {{- $pageUrl := .RelPermalink -}}
+  {{- $tags := dict -}}
+  {{- range $tag := .Params.tags -}}
+    {{- if ne $tag "" -}}
+      {{- $tagUrl := printf "%s%s" ("tags/" | relLangURL) ($tag | urlize) -}}
+      {{- $tags = merge $tags (dict $tag $tagUrl) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if and (reflect.IsSlice .Params.tags) (gt (len .Params.tags) 0 ) -}}
+    {{- $pageList = $pageList | append (dict "url" $pageUrl "tags" $tags) -}}
+  {{- end -}}
+{{- end -}}
+{{- $pageList | jsonify -}}
