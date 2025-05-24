@@ -1,10 +1,17 @@
 import * as d3 from "d3";
 import { chord } from "d3-chord";
 
-// --- Type Definitions ---
-/**
- * Input record structure: [sourceName, targetName, urlToOpenOnClick, flowValue]
- */
+import data from '../json/index.json'
+
+type Tags = {
+  [key: string]: {
+    count: string;
+    sameAs: URL;
+    page: string[];
+    url: string;
+  }
+}
+
 type FlowInputRecord = [string, string, string, number];
 
 interface ChordNode {
@@ -21,10 +28,14 @@ interface ChordData {
   nodeNameMap: Map<number, string>; // Key: index, Value: name
 }
 
-// --- Data Preparation Function ---
-/**
- * Transforms the user-provided flat data into the structure needed for D3 Chord diagrams.
- */
+
+function convertTags(tags: Tags) {
+  for (const [key, value] of Object.entries(tags)) {
+
+  }
+
+}
+
 function prepareChordData(inputData: FlowInputRecord[]): ChordData {
   const uniqueNodeNames = Array.from(new Set(inputData.flatMap((d) => [d[0], d[1]])));
   const nodes: ChordNode[] = uniqueNodeNames.map((name, index) => ({ name, index }));
@@ -200,6 +211,8 @@ ${url ? `URL: ${url}` : "(No specific URL for this directed flow)"}`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
+
   // Sample Data: [sourceName, targetName, urlForLink, flowValue]
   const myFlowData = [
     ["Marketing", "Sales", "https://example.com/marketing-sales", 120],

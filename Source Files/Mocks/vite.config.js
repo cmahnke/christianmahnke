@@ -5,7 +5,7 @@ import { viteSingleFile } from "vite-plugin-singlefile";
 import stylelint from "vite-plugin-stylelint";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 import {DynamicPublicDirectory} from "vite-multiple-assets";
-import { checker } from "vite-plugin-checker";
+//import { checker } from "vite-plugin-checker";
 
 const mimeTypes = { ".glb": "model/gltf-binary" };
 
@@ -23,7 +23,7 @@ export default defineConfig({
       ssr: false,
       mimeTypes,
     }),
-    checker({ typescript: false })
+    //checker({ typescript: false })
   ],
   build: {
     //target: 'esnext',

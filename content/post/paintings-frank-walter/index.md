@@ -9,6 +9,7 @@ tags:
 preview: img/fronts.jpg
 wikidata:
   - https://www.wikidata.org/wiki/Q43379500
+  - https://www.wikidata.org/wiki/Q316390
 ---
 
 Ich habe einige Gemälde von [Frank Walter](https://de.wikipedia.org/wiki/Frank_Walter) (1926-2009) gefunden...
@@ -38,11 +39,11 @@ Ich habe einige Gemälde von [Frank Walter](https://de.wikipedia.org/wiki/Frank_
   {"src": "img/wall.jpg", "alt": "Wall"},
   {"src": "img/x.jpg", "alt": "X"},
   {"src": "img/zero.jpg", "alt": "Zero"},
-  {"src": "img/No_name.jpg", "alt": "Ohne Name"}
+  {"src": "img/no_name.jpg", "alt": "Ohne Name"}
 ]
 {{</ gallery >}}
 
-Die Bilder wurden alle am 2. Februar 1991 signiert. Da er auch Rahmen gestaltetet sind diese sicher auch von ihm, hier handelt es sich einfach um zwei zusammen geklebte Glasplatten, mit einer Rückwand für die Aufhängung.
+Die Bilder wurden alle am 2. Februar 1991 signiert. Da er auch Rahmen gestaltete sind diese sicher auch von ihm, hier handelt es sich einfach um zwei zusammen geklebte Glasplatten, mit einer Rückwand für die Aufhängung.
 
 Frank Walter's voller Name war Francis Archibald Wentworth Walter, wie man auch an der Signatur auf der Rückseite erkennen kann. Er lebte auf [Antigua](https://de.wikipedia.org/wiki/Antigua_(Kleine_Antillen)) und war einer der bekannteren Künstler der Karibik.
 

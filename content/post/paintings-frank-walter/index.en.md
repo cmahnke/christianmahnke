@@ -7,6 +7,9 @@ tags:
   - Painting
   - Art Brut
 preview: img/fronts.jpg
+wikidata:
+  - https://www.wikidata.org/wiki/Q43379500
+  - https://www.wikidata.org/wiki/Q316390
 ---
 
 I found some paintings by [Frank Walter](https://de.wikipedia.org/wiki/Frank_Walter) (1926-2009)...
@@ -36,7 +39,7 @@ I found some paintings by [Frank Walter](https://de.wikipedia.org/wiki/Frank_Wal
   {"src": "img/wall.jpg", "alt": "Wall"},
   {"src": "img/x.jpg", "alt": "X"},
   {"src": "img/zero.jpg", "alt": "Zero"},
-  {"src": "img/No_name.jpg", "alt": "No name"}
+  {"src": "img/no_name.jpg", "alt": "No name"}
 ]
 {{</ gallery >}}
 
