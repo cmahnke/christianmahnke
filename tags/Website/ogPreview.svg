@@ -1,0 +1,67 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.inkscape.org/namespaces/inkscape" xmlns:ns2="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns3="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630" version="1.1" id="svg8" ns1:version="1.3.2 (091e20e, 2023-11-25)" ns2:docname="preview-template.svg">
+  <ns2:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" ns1:showpageshadow="2" ns1:pageopacity="0.0" ns1:pagecheckerboard="0" ns1:deskcolor="#d1d1d1" ns1:zoom="0.67589377" ns1:cx="836.66994" ns1:cy="311.43947" ns1:window-width="1512" ns1:window-height="916" ns1:window-x="0" ns1:window-y="38" ns1:window-maximized="1" ns1:current-layer="svg8" showgrid="false" showguides="true">
+    <ns2:guide position="666.41124,376.36587" orientation="-0.70710678,-0.70710678" id="guide1" ns1:locked="false" ns1:label="" ns1:color="rgb(0,134,229)" />
+    <ns2:guide position="596.78619,311.71403" orientation="1,0" id="guide2" ns1:locked="false" />
+    <ns2:guide position="970.59295,325.95883" orientation="1,0" id="guide5" ns1:locked="false" />
+  </ns2:namedview>
+  <ns0:defs id="defs2">
+    <ns0:rect x="0" y="0" width="1093.3304" height="211.50737" id="rect5" />
+    <ns0:rect x="65.079189" y="74.841068" width="1093.3304" height="139.92026" id="rect4" />
+    <ns0:rect x="65.079189" y="71.587108" width="885.07698" height="104.1267" id="rect3" />
+    <ns0:rect x="894.83886" y="68.635015" width="26.031676" height="100.57088" id="rect2" />
+    <ns0:linearGradient ns1:collect="always" id="linearGradient2" x1="198.92873" y1="-213.84837" x2="1110.4225" y2="697.64532" gradientUnits="userSpaceOnUse">
+      <ns0:stop style="stop-color:#701611;stop-opacity:1;" offset="0" id="stop1" />
+      <ns0:stop style="stop-color:#a41416;stop-opacity:1;" offset="0.5" id="stop5" />
+      <ns0:stop style="stop-color:#b2444d;stop-opacity:1;" offset="1" id="stop2" />
+    </ns0:linearGradient>
+    <ns0:rect id="textbox" x="0" y="525" width="1200" height="100" />
+    <ns0:pattern id="bg-pattern" patternUnits="userSpaceOnUse" width="100" height="100">
+      <ns0:image href="../../static/images/raben.jpg" x="0" y="0" width="100" height="100" id="image1" />
+    </ns0:pattern>
+    <ns0:style id="style1570">
+        @font-face {
+          font-family: 'League Spartan';
+          font-style: normal;
+          font-weight: 400;
+          src: local('League Spartan'),
+               url('../../../themes/projektemacher-base/static/fonts/LeagueSpartan-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+               url('../../../themes/projektemacher-base/static/fonts/LeagueSpartan-Regular.woff') format('woff'), /* Modern Browsers */
+               url('../../../themes/projektemacher-base/static/fonts/LeagueSpartan-Regular.ttf') format('truetype');
+        }
+    </ns0:style>
+    <ns0:filter style="color-interpolation-filters:sRGB;" ns1:label="Drop Shadow" id="filter4459" y="-0.384" x="-0.39489923" height="1.768" width="1.7897985">
+      <ns0:feFlood flood-opacity="1" flood-color="rgb(255,255,255)" result="flood" id="feFlood4449" />
+      <ns0:feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" id="feComposite4451" />
+      <ns0:feGaussianBlur in="composite1" stdDeviation="16" result="blur" id="feGaussianBlur4453" />
+      <ns0:feOffset dx="0" dy="0" result="offset" id="feOffset4455" />
+      <ns0:feComposite in="SourceGraphic" in2="offset" operator="over" result="composite2" id="feComposite4457" />
+    </ns0:filter>
+    <ns0:filter style="color-interpolation-filters:sRGB;" id="header-filter" y="-0.28085106" x="-0.023913043" height="1.5617021" width="1.0487319">
+      <ns0:feFlood flood-opacity="0.94999999999999996" flood-color="rgb(253,243,201)" result="flood" id="feFlood407" />
+      <ns0:feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" id="feComposite409" />
+      <ns0:feGaussianBlur in="composite1" stdDeviation="10" result="blur" id="feGaussianBlur411" />
+      <ns0:feOffset dx="0" dy="0" result="offset" id="feOffset413" />
+      <ns0:feComposite in="SourceGraphic" in2="offset" operator="over" result="fbSourceGraphic" id="feComposite415" />
+      <ns0:feColorMatrix result="fbSourceGraphicAlpha" in="fbSourceGraphic" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0" id="feColorMatrix465" />
+      <ns0:feFlood id="feFlood467" flood-opacity="1" flood-color="rgb(0,0,0)" result="flood" in="fbSourceGraphic" />
+      <ns0:feComposite in2="fbSourceGraphic" id="feComposite469" in="flood" operator="in" result="composite1" />
+      <ns0:feGaussianBlur id="feGaussianBlur471" in="composite1" stdDeviation="1" result="blur" />
+      <ns0:feOffset id="feOffset473" dx="1" dy="0" result="offset" />
+      <ns0:feComposite in2="offset" id="feComposite475" in="fbSourceGraphic" operator="over" result="composite2" />
+    </ns0:filter>
+    <ns0:linearGradient ns1:collect="always" ns3:href="../../../Source Files/Other/#linearGradient1-1" id="linearGradient2" x1="198.92873" y1="-213.84837" x2="1110.4225" y2="697.64532" gradientUnits="userSpaceOnUse" />
+    <ns0:rect x="0" y="0" width="1093.3304" height="211.50737" id="rect5-0" />
+  </ns0:defs>
+  
+  <ns0:rect style="fill:url(#linearGradient2);stroke-width:7;stroke-linecap:square;stroke-linejoin:round;paint-order:markers stroke fill" id="rect1" width="1200" height="630" x="0" y="0" ry="3.0299747" ns1:label="background" />
+    <ns0:image id="logo" style="filter:url(#filter4459)" ns3:href="../../../themes/projektemacher-base/static/images/cm.svg" preserveAspectRatio="xMidYMid" width="97.239998" height="100" x="1075.9791" y="506" ns1:label="logo" />
+  <ns0:text id="text-container" xml:space="preserve" style="font-style:normal;font-weight:200;font-size:80px;line-height:1.25;font-family:'League Spartan';text-align:center;white-space:pre;shape-inside:url(#textbox);display:inline;fill:#ffffff;fill-opacity:1;stroke:none" transform="translate(-3.21381,-279.70046)">Webseite</ns0:text>
+  <ns0:g id="g6" ns2:insensitive="true">
+    <ns0:text xml:space="preserve" id="text4-5" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:96px;font-family:'League Spartan';-inkscape-font-specification:'League Spartan Bold';text-align:center;direction:rtl;white-space:pre;shape-inside:url(#rect5-0);display:inline;fill:#b2444d;fill-opacity:1;stroke-width:7;stroke-linecap:square;stroke-linejoin:round;paint-order:markers stroke fill" x="0" y="0" transform="translate(44.8125,54.6921)"><ns0:tspan x="0" y="87.58371" id="tspan9"><ns0:tspan style="text-align:end;text-anchor:end" id="tspan7">Christian Mahnke</ns0:tspan><ns0:tspan dx="-809.76562" style="text-align:end;text-anchor:end" id="tspan8"> </ns0:tspan></ns0:tspan></ns0:text>
+    <ns0:text xml:space="preserve" id="text4" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:96px;font-family:'League Spartan';-inkscape-font-specification:'League Spartan Bold';text-align:center;direction:rtl;white-space:pre;shape-inside:url(#rect5);display:inline;fill:#ffffff;stroke-width:7;stroke-linecap:square;stroke-linejoin:round;paint-order:markers stroke fill" x="0" y="0" transform="translate(32.8125,42.301474)"><ns0:tspan x="0" y="87.58371" id="tspan12"><ns0:tspan style="text-align:end;text-anchor:end" id="tspan10">Christian Mahnke</ns0:tspan><ns0:tspan dx="-809.76562" style="text-align:end;text-anchor:end" id="tspan11"> </ns0:tspan></ns0:tspan></ns0:text>
+  </ns0:g>
+  <ns0:g id="g7" ns2:insensitive="true">
+    <ns0:text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.6667px;font-family:'League Spartan';-inkscape-font-specification:'League Spartan Bold';text-align:end;direction:rtl;text-anchor:end;fill:#b2444d;fill-opacity:1;stroke-width:7;stroke-linecap:square;stroke-linejoin:round;paint-order:markers stroke fill" x="517.01508" y="211.41879" id="text6"><ns0:tspan ns2:role="line" id="tspan6" x="517.01508" y="211.41879" style="font-size:38.6667px">Enthusiast &amp; Sammler</ns0:tspan></ns0:text>
+    <ns0:text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.3333px;font-family:'League Spartan';-inkscape-font-specification:'League Spartan Bold';text-align:end;direction:rtl;text-anchor:end;fill:#ffffff;fill-opacity:1;stroke-width:7;stroke-linecap:square;stroke-linejoin:round;paint-order:markers stroke fill" x="503.38037" y="198.66144" id="text6-6"><ns0:tspan ns2:role="line" id="tspan6-9" x="503.38037" y="198.66144" style="font-size:37.3333px;fill:#ffffff">Enthusiast &amp; Sammler</ns0:tspan></ns0:text>
+  </ns0:g>
+</ns0:svg>
