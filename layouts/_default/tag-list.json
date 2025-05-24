@@ -1,16 +1,33 @@
-{{- $pages := where .Site.RegularPages "Params.displayinlist" "!=" false -}}
+{{- $pages := where .Site.AllPages "Params.displayinlist" "!=" false -}}
+{{- $pages = where $pages "Language.Lang" "==" .Site.Language.Lang -}}
+
 {{- $pageList := slice -}}
+{{- $tagList := dict -}}
 {{- range $page := $pages -}}
   {{- $pageUrl := .RelPermalink -}}
   {{- $tags := dict -}}
   {{- range $tag := .Params.tags -}}
     {{- if ne $tag "" -}}
       {{- $tagUrl := printf "%s%s" ("tags/" | relLangURL) ($tag | urlize) -}}
-      {{- $tags = merge $tags (dict $tag $tagUrl) -}}
+      {{- $sameAs := "" -}}
+      {{- with $.Site.GetPage $tagUrl -}}
+        {{- if .Params.wikidata -}}
+          {{- if not (reflect.IsSlice .Params.wikidata) -}}
+            {{- $sameAs = .Params.wikidata -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- if isset $tagList $tag -}}
+        {{- $tagPages := index (index $tagList $tag) "posts" -}}
+        {{- $tagPages = $tagPages | append $pageUrl -}}
+        {{- $tagMeta := dict "sameAs" $sameAs "url" $tagUrl "posts" $tagPages "count" (len $tagPages) -}}
+        {{- $tagList = merge $tagList (dict $tag $tagMeta) -}}
+      {{- else -}}
+        {{- $tagMeta := dict "sameAs" $sameAs "url" $tagUrl "posts" (slice $pageUrl) "count" 1 -}}
+        {{- $tagList = merge $tagList (dict $tag $tagMeta) -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
-  {{- if and (reflect.IsSlice .Params.tags) (gt (len .Params.tags) 0 ) -}}
-    {{- $pageList = $pageList | append (dict "url" $pageUrl "tags" $tags) -}}
-  {{- end -}}
 {{- end -}}
-{{- $pageList | jsonify -}}
+{{- $tagList | jsonify -}}
