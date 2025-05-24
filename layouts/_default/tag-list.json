@@ -7,6 +7,7 @@
   {{- $pageUrl := .RelPermalink -}}
   {{- $tags := dict -}}
   {{- range $tag := .Params.tags -}}
+    {{- $tagPageMissing := false -}}
     {{- if ne $tag "" -}}
       {{- $tagUrl := printf "%s%s" ("tags/" | relLangURL) ($tag | urlize) -}}
       {{- $sameAs := "" -}}
@@ -16,6 +17,8 @@
             {{- $sameAs = .Params.wikidata -}}
           {{- end -}}
         {{- end -}}
+      {{- else -}}
+        {{- $tagPageMissing = true -}}
       {{- end -}}
 
       {{- if isset $tagList $tag -}}
@@ -25,6 +28,9 @@
         {{- $tagList = merge $tagList (dict $tag $tagMeta) -}}
       {{- else -}}
         {{- $tagMeta := dict "sameAs" $sameAs "url" $tagUrl "posts" (slice $pageUrl) "count" 1 -}}
+        {{- if $tagPageMissing -}}
+          {{- $tagMeta = merge $tagMeta (dict "listHeaderMissing" $tagPageMissing) -}}
+        {{- end -}}
         {{- $tagList = merge $tagList (dict $tag $tagMeta) -}}
       {{- end -}}
     {{- end -}}
