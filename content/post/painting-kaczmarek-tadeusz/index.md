@@ -8,7 +8,7 @@ tags:
 preview: img/painting.jpg
 ---
 
-Ich habe einen Gemälde von [Kaczmarek Tadeusz](https://jbc.jelenia-gora.pl/dlibra/publication/45520/edition/41040/content) ([automatische Übersetzung](https://jbc-jelenia--gora-pl.translate.goog//Content/41040/kaczmarek.html?_x_tr_sl=auto&_x_tr_tl=de&_x_tr_hl=de&_x_tr_pto=wapp)) (1937-2006) gefunden...
+Ich habe ein Gemälde von [Kaczmarek Tadeusz](https://jbc.jelenia-gora.pl/dlibra/publication/45520/edition/41040/content) ([automatische Übersetzung](https://jbc-jelenia--gora-pl.translate.goog//Content/41040/kaczmarek.html?_x_tr_sl=auto&_x_tr_tl=de&_x_tr_hl=de&_x_tr_pto=wapp)) (1937-2006) gefunden...
 <!--more-->
 
 ...und da man sich mitten im Winter ja auch gerne an den sommerlichen Strand wünscht, habe ich es erstanden.
@@ -20,7 +20,7 @@ Ich habe einen Gemälde von [Kaczmarek Tadeusz](https://jbc.jelenia-gora.pl/dlib
 ]
 {{</ gallery >}}
 
-Kaczmarek Tadeusz war ein polnischer Künstler, der u.a. als Maler, Grafiker und Innenarhitekt arbeitete. Er lebte und wirkte hauptsächlich in der [Woiwodschaft Niederschlesien](https://de.wikipedia.org/wiki/Woiwodschaft_Niederschlesien).
+Kaczmarek Tadeusz war ein polnischer Künstler, der u.a. als Maler, Grafiker und Innenarchitekt arbeitete. Er lebte und wirkte hauptsächlich in der [Woiwodschaft Niederschlesien](https://de.wikipedia.org/wiki/Woiwodschaft_Niederschlesien).
 
 Das Gemälde zeigt den Stand von [Boltenhagen](https://de.wikipedia.org/wiki/Boltenhagen), Schleswig-Holstein an der Ostseeküste.
 
