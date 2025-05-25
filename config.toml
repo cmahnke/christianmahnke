@@ -215,6 +215,10 @@ timeout = "120s"
       target = "assets/js"
 
   [[module.mounts]]
+      source = "assets/ts"
+      target = "assets/ts"
+
+  [[module.mounts]]
       source = "node_modules/elevator.js/demo/music/"
       target = "static/sounds"
 
@@ -225,6 +229,14 @@ timeout = "120s"
   [[module.mounts]]
       source = "node_modules/@annotorious/openseadragon/dist"
       target = "assets/css/openseadragon"
+
+  [[module.mounts]]
+      source = "node_modules/@pagefind/default-ui/css"
+      target = "assets/css/pagefind"
+
+  [[module.mounts]]
+      source = "node_modules/@pagefind/default-ui"
+      target = "assets/js/pagefind"
 
   [[module.mounts]]
       source = "static/images"

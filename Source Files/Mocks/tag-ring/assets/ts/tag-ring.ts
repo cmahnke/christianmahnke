@@ -1,16 +1,8 @@
 import * as d3 from "d3";
 import { chord } from "d3-chord";
 
-import data from '../json/index.json'
-
-type Tags = {
-  [key: string]: {
-    count: string;
-    sameAs: URL;
-    page: string[];
-    url: string;
-  }
-}
+import type { Tags } from "./transformations";
+import { convertTags } from "./transformations";
 
 type FlowInputRecord = [string, string, string, number];
 
@@ -26,14 +18,6 @@ interface ChordData {
   nodes: ChordNode[];
   urlMap: Map<string, string>; // Key: "sourceIndex-targetIndex", Value: url
   nodeNameMap: Map<number, string>; // Key: index, Value: name
-}
-
-
-function convertTags(tags: Tags) {
-  for (const [key, value] of Object.entries(tags)) {
-
-  }
-
 }
 
 function prepareChordData(inputData: FlowInputRecord[]): ChordData {
@@ -70,7 +54,7 @@ function prepareChordData(inputData: FlowInputRecord[]): ChordData {
  * Renders a Chord Diagram using D3.js.
  */
 function renderD3ChordDiagram(
-  containerId: string,
+  container: HTMLElement,
   inputData: FlowInputRecord[],
   chartConfig: {
     width?: number;
@@ -79,9 +63,9 @@ function renderD3ChordDiagram(
     innerRadius?: number;
     padAngle?: number;
     labelOffset?: number;
-  } = {}
+  } = {},
+  linkPrefix: string = "/tags/"
 ): void {
-  const container = document.getElementById(containerId);
   if (!container) {
     console.error(`HTML element with ID '${containerId}' not found.`);
     return;
@@ -145,8 +129,12 @@ function renderD3ChordDiagram(
     .append("title") // Basic tooltip for arcs
     .text((d: any) => `${nodeNameMap.get(d.index)}\nTotal Flow: ${d.value.toFixed(2)}`);
 
-  // --- Add Group Labels (Node Names) ---
-  group
+  // Handle links of labels
+  const link = group
+    .append("a")
+    .attr("href", (d: any) => `${linkPrefix}${nodeNameMap.get(d.index) || ""}`);
+
+  link
     .append("text")
     .each((d: any) => {
       d.angle = (d.startAngle + d.endAngle) / 2;
@@ -183,7 +171,7 @@ function renderD3ChordDiagram(
     .on("click", (event: MouseEvent, d: any) => {
       const urlKey = `${d.source.index}-${d.target.index}`; // Key based on the specific directed flow
       const url = urlMap.get(urlKey);
-      if (url) {
+      if (url && url !== "") {
         console.log(`Chord clicked: ${nodeNameMap.get(d.source.index)} -> ${nodeNameMap.get(d.target.index)}, URL: ${url}`);
         window.open(url, "_blank");
       } else {
@@ -204,34 +192,42 @@ function renderD3ChordDiagram(
       const urlKey = `${d.source.index}-${d.target.index}`;
       const url = urlMap.get(urlKey);
       // The value of this specific directed chord is d.source.value
-      return `${nodeNameMap.get(d.source.index)} → ${nodeNameMap.get(d.target.index)}
-Value: ${d.source.value.toFixed(2)}
-${url ? `URL: ${url}` : "(No specific URL for this directed flow)"}`;
+      return `${nodeNameMap.get(d.source.index)} → ${nodeNameMap.get(d.target.index)}\nValue: ${d.source.value.toFixed(2)}\n${url ? `URL: ${url}` : "(No specific URL for this directed flow)"}`;
     });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  fetch('/meta/tags/index.json')
+    .then((response) => response.json())
+    .then((data) => {
+      const processedData = convertTags(data).map((pair) => {
+        let a = Object.values(pair);
+        a.push(1);
+        return a;
+      });
 
+      const containerId = "chordContainer";
+      const container = document.getElementById(containerId);
+      let padding = parseInt(window.getComputedStyle(container, null).getPropertyValue('padding-left')) + parseInt(window.getComputedStyle(container, null).getPropertyValue('padding-right'))
+    console.log(padding)
+      const width = container.getBoundingClientRect().width - padding;
+      const outerRadius = Math.ceil(width / 2.5)
 
-  // Sample Data: [sourceName, targetName, urlForLink, flowValue]
-  const myFlowData = [
-    ["Marketing", "Sales", "https://example.com/marketing-sales", 120],
-    ["Sales", "Support", "https://example.com/sales-support", 90],
-    ["Support", "Development", "https://example.com/support-dev", 70],
-    ["Development", "Marketing", "https://example.com/dev-marketing-feedback", 40], // Cycle
-    ["External Leads", "Marketing", "https://example.com/leads-to-marketing", 150],
-    ["Sales", "Development", "https://example.com/sales-to-dev", 50], // Additional flow
-    ["Development", "Sales", "https://example.com/dev-to-sales-tools", 20] // Another flow
-  ];
+      const chartConfig = {
+        //width: 750,
+        //height: 750,
+        //outerRadius: 300,
+        width: width,
+        height: width,
+        outerRadius: outerRadius,
+        innerRadius: outerRadius - 25,
+        padAngle: 0.04,
+        labelOffset: 10
+      };
+      console.log(chartConfig)
 
-  const chartConfig = {
-    width: 750,
-    height: 750,
-    outerRadius: 300,
-    innerRadius: 280,
-    padAngle: 0.04,
-    labelOffset: 10
-  };
+      renderD3ChordDiagram(container, processedData, chartConfig);
 
-  renderD3ChordDiagram("chordContainer", myFlowData, chartConfig);
+    });
+
 });

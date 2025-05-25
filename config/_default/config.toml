@@ -24,6 +24,12 @@
   debug = true
   pagetheme = "#701611"
   keywordAsString = true
+  subtitles = [
+    {title = { de ="Enthusiast & Sammler", en = "Enthusiast & Collector"}, url = "", chance = 5},
+    {title = "Digital Humanities Communicator", url = "", chance = 1},
+    {title = "Creative Technologist", url = "", chance = 3},
+    {title = "Citizen Art Historian", url = "", chance = 1}
+  ]
 
 [params.author]
     email = 'mail@christianmahnke.de'

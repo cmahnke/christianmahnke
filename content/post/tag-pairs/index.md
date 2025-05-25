@@ -1,0 +1,29 @@
+---
+date: 2025-05-25T11:22:44+02:00
+title: "Schlagwortpaare visualisiert"
+scss: scss/tag-ring/tag-ring.scss
+js:
+  - ts/tag-ring/tag-ring.ts
+tags:
+  - Visualisation
+  - Website
+  - D3.js
+---
+Manchmal bringen Experimente nicht die gewünschten Ergebnisse...
+<!--more-->
+
+...auch in diesem Fall:
+
+Da nach mehr als vier Jahren die Beiträge (inzwischen um die 100) in diesem Blog langsam unübersichtlich werden, denke ich schon seit einiger Zeit darüber nach, wie man sie thematisch besser zugänglich machen kann.
+
+Daher hier ein Versuch Paarungen von Schlagworten zu visualisieren.
+
+<div id="chordContainer" class="tag-ring">
+  <p style="text-align: center; color: #777">Lade Diagramm...</p>
+</div>
+
+Aber da das Ganze visuell nicht so gut funktioniert, wie erhofft, werden einige offensichtliche Schwächen nicht mehr ausgeräumt:
+* Die Dicke der Linien für einzelne Zuordnungen ist zu dünn
+* Die Farben der Linen müssten sich über einen Gradienten ändern, wenn sie in den gegenüberliegenden Block laufen.
+
+Vielleicht wird es auch einfach Zeit für eine klassische Such-Funktion...

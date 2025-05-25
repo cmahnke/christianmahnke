@@ -519,6 +519,11 @@ a:visited {
                 @media (max-width : 75em) {
                     text-align: center;
                 }
+
+                .subtitle-link {
+                    color: unset;
+                    cursor: default;
+                }
             }
         }
     }

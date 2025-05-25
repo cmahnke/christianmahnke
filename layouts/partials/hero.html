@@ -77,13 +77,35 @@
       const locale = new Intl.Locale(document.documentElement.lang);
       lang = locale.language;
   }
-  const titles = { 'de': ["Creative Technologist", "Digital Humanities Communicator"],
-                   'en': ["Creative Technologist", "Digital Humanities Communicator"]};
-  const chance = 3;
-  const index = Math.floor(Math.random() * (chance * titles[lang].length + 1))
-  if (index < titles[lang].length) {
-    const title = document.querySelector("#tag-line");
-    title.innerText = titles[lang][index];
-  }
+
+  {{ if isset .Site.Params "subtitles" }}
+    const subtitles = {{ .Site.Params.subtitles | jsonify | safeJS }};
+    let titles = [];
+    subtitles.forEach((titleInfo) => {
+      let title = {};
+      if (typeof titleInfo.title === 'string') {
+        title = {"de": titleInfo.title, "en": titleInfo.title};
+      } else {
+        title = titleInfo.title
+      }
+      if ("url" in titleInfo && titleInfo["url"] !== "") {
+        title["url"] = titleInfo["url"];
+      }
+      for (i = 0; i < titleInfo.chance; i++) {
+        titles.push(title);
+      }
+    })
+    let index = Math.floor(Math.random() * titles.length + 1)
+    console.log(titles, index)
+
+    if (index < titles.length) {
+      const title = document.querySelector("#tag-line");
+      if ("url" in titles[index]) {
+        title.innerHTML = `<a class="subtitle-link" href="${titles[index]["url"]}" title="${titles[index][lang]}">${titles[index][lang]}</a>`
+      } else {
+        title.innerText = titles[index][lang];
+      }
+    }
+  {{ end }}
 
 </script>
