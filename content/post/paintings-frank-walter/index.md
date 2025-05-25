@@ -5,7 +5,7 @@ keywords: Frank Walter, Antigua, Karibik
 tags:
   - Art
   - Painting
-  - Art Brut
+  - ArtBrut
 preview: img/fronts.jpg
 wikidata:
   - https://www.wikidata.org/wiki/Q43379500
