@@ -23,6 +23,9 @@
   "include": [
     "webgpu/assets/**/*",
     "pong/assets/**/*",
+    "tag-ring/assets/**/*",
+    "search/assets/**/*",
+    "wikidata/assets/**/*",
     "node_modules/ts-pong/src/**/*",
   ],
   "exclude": ["node_modules", "**/*.spec.ts", "dist/**/*"]

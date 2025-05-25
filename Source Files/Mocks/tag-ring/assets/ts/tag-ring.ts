@@ -67,7 +67,7 @@ function renderD3ChordDiagram(
   linkPrefix: string = "/tags/"
 ): void {
   if (!container) {
-    console.error(`HTML element with ID '${containerId}' not found.`);
+    console.error(`HTML element not found!`);
     return;
   }
   container.innerHTML = ""; // Clear previous content
@@ -130,9 +130,7 @@ function renderD3ChordDiagram(
     .text((d: any) => `${nodeNameMap.get(d.index)}\nTotal Flow: ${d.value.toFixed(2)}`);
 
   // Handle links of labels
-  const link = group
-    .append("a")
-    .attr("href", (d: any) => `${linkPrefix}${nodeNameMap.get(d.index) || ""}`);
+  const link = group.append("a").attr("href", (d: any) => `${linkPrefix}${nodeNameMap.get(d.index) || ""}`);
 
   link
     .append("text")
@@ -197,7 +195,7 @@ function renderD3ChordDiagram(
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('/meta/tags/index.json')
+  fetch("/meta/tags/index.json")
     .then((response) => response.json())
     .then((data) => {
       const processedData = convertTags(data).map((pair) => {
@@ -208,10 +206,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const containerId = "chordContainer";
       const container = document.getElementById(containerId);
-      let padding = parseInt(window.getComputedStyle(container, null).getPropertyValue('padding-left')) + parseInt(window.getComputedStyle(container, null).getPropertyValue('padding-right'))
-    console.log(padding)
+      let padding =
+        parseInt(window.getComputedStyle(container, null).getPropertyValue("padding-left")) +
+        parseInt(window.getComputedStyle(container, null).getPropertyValue("padding-right"));
+      console.log(padding);
       const width = container.getBoundingClientRect().width - padding;
-      const outerRadius = Math.ceil(width / 2.5)
+      const outerRadius = Math.ceil(width / 2.5);
 
       const chartConfig = {
         //width: 750,
@@ -224,10 +224,8 @@ document.addEventListener("DOMContentLoaded", () => {
         padAngle: 0.04,
         labelOffset: 10
       };
-      console.log(chartConfig)
+      console.log(chartConfig);
 
       renderD3ChordDiagram(container, processedData, chartConfig);
-
     });
-
 });

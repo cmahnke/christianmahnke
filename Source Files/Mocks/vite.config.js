@@ -19,7 +19,7 @@ export default defineConfig({
       apply: "build",
     },
     stylelint({ build: true, dev: false, lintOnStart: true }),
-    DynamicPublicDirectory(["webgpu/public", "hdr-canvas/public", "touch/public", "imagecompare/public", "node_modules/openseadragon/build/openseadragon", "tag-ring/public/**"], {
+    DynamicPublicDirectory(["webgpu/public", "hdr-canvas/public", "touch/public", "imagecompare/public", "node_modules/openseadragon/build/openseadragon", "tag-ring/public/**", "wikidata/public/**"], {
       ssr: false,
       mimeTypes,
     }),
@@ -37,6 +37,7 @@ export default defineConfig({
         imagecompare: resolve(__dirname, "imagecompare/index.html"),
         //search: resolve(__dirname, "search/index.html"),
         "tag-ring": resolve(__dirname, "tag-ring/index.html"),
+        "wikidata": resolve(__dirname, "wikidata/index.html"),
       },
       output: {
         assetFileNames: `assets/[name].[ext]`,

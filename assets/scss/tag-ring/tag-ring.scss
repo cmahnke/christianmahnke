@@ -1,5 +1,5 @@
 .tag-ring {
-  padding: 1.4em 1.4em 1em;
+  padding: 1.4em 1.4em ;
   max-width: 50em;
   margin: auto;
   /*background-color: #f1ffb7;*/
@@ -7,4 +7,9 @@
   border-radius: 1rem;
   aspect-ratio: 1/1;
   width: 95%;
+  margin-bottom: 1em;
+
+  @media (max-width: 35em) {
+    padding: .4em .4em;
+  }
 }
