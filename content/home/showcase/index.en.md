@@ -16,10 +16,11 @@ Several individual experiments can be found in the blog:
 
 * [Visualisation AI segmentation with HDR](/en/post/visualising-ai-segmentation-with-hdr/)
 * [HDR images for the visualisation of X-ray examinations of old paintings](/en/post/hdr-radiography-visualisation/)
-* [Haptic feedback for digitised fabrics](https://christianmahnke.de/post/haptic-feedback/) - IIIF annotations with vibration
-* [Uranium glass in 3D](https://christianmahnke.de/en/post/uv-photogrammetry/) - Ultra violet photogrammetry
-* [A "glowing" wallpaper](https://christianmahnke.de/en/post/hdr-iiif/) - HDR IIIF
-* [An AI reads out an old letter template](https://christianmahnke.de/en/post/tts/) - The letter [itself](https://briefsteller.de/post/der-haussekretaer/286/) (in German)
-* [Visualisation of a 70s video game - Pong](https://christianmahnke.de/en/post/pong/)
-* [Fat Lava ceramics in 3D](https://christianmahnke.de/en/post/3d-models/) - Photogrammetry
-* [Making digital collection objects exhibition-ready](https://christianmahnke.de/en/post/iiif-proxy/) through the use of computer vision methods
+* [Haptic feedback for digitised fabrics](/en/post/haptic-feedback/) - IIIF annotations with vibration
+* [Geodaten zur Identifikation einer Perspektive eines Holzschnittes](/en/post/marmolada-woodcut/)
+* [Uranium glass in 3D](/en/post/uv-photogrammetry/) - Ultra violet photogrammetry
+* [A "glowing" wallpaper](/en/post/hdr-iiif/) - HDR IIIF
+* [An AI reads out an old letter template](/en/post/tts/) - The letter [itself](https://briefsteller.de/post/der-haussekretaer/286/) (in German)
+* [Visualisation of a 70s video game - Pong](/en/post/pong/)
+* [Fat Lava ceramics in 3D](/en/post/3d-models/) - Photogrammetry
+* [Making digital collection objects exhibition-ready](/en/post/iiif-proxy/) through the use of computer vision methods

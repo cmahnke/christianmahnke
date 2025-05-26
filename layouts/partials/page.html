@@ -21,7 +21,13 @@
 
   {{- if eq .Kind "section" -}}
     <div class="subsection-list-container">
-      <div class="subsection-list-heading">{{ i18n "HasSubsections" }}:</div>
+      {{- $sectionHeading := i18n "HasSubsections" -}}
+      {{- with .Params.sectionListTitle -}}
+        {{- if ne . "" -}}
+          {{- $sectionHeading = . -}}
+        {{- end -}}
+      {{- end -}}
+      <div class="subsection-list-heading">{{ $sectionHeading }}:</div>
       <ul class="subsection-list">
         {{- range .CurrentSection.Pages.Reverse -}}
           <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>

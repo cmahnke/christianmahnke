@@ -13,3 +13,14 @@
   --pagefind-ui-image-box-ratio: 3 / 2;
   --pagefind-ui-font: sans-serif;
 }
+
+.menu {
+  .search-input {
+    line-height: unset;
+  }
+
+  .search-button {
+    line-height: unset;
+  }
+
+}

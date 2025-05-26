@@ -1,0 +1,27 @@
+body.section-tagline {
+  .content-container {
+    .subsection-list-container {
+      font-size: 1.2em;
+
+      .subsection-list-heading {
+        font-weight: bold;;
+      }
+
+      .subsection-list a {
+        font-variant: small-caps;
+      }
+    }
+
+    .section-head-content {
+      margin-top: 2em;
+      text-align: unset;
+    }
+
+    .content .post-body {
+      h2, h3 {
+        margin-block-start: unset;
+        margin-block-end: unset;
+      }
+    }
+  }
+}

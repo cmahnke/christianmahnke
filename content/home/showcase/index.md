@@ -16,10 +16,11 @@ Dazu sind im Blog mehrere Einzelexperimente zu finden:
 
 * [Visualisierung von KI Segmentierung mit HDR](/post/visualising-ai-segmentation-with-hdr/)
 * [HDR Bilder zur Visualisierung von Röntgenuntersuchungen alter Gemälde](/post/hdr-radiography-visualisation/)
-* [Haptisches Feedback für Stoffmuster](https://christianmahnke.de/post/haptic-feedback/) - IIIF Annotationen mit Vibration
-* [Uranglas in 3D](https://christianmahnke.de/post/uv-photogrammetry/) - UV-Photogrammetrie
-* [Eine leuchtende Tapete](https://christianmahnke.de/post/hdr-iiif/) - HDR IIIF
-* [Eine KI ließt eine alte Briefvorlage vor](https://christianmahnke.de/post/tts/) - Der Brief [selbst](https://briefsteller.de/post/der-haussekretaer/286/)
-* [Visualisierung eines 70er-Jahre Videospiels - Pong](https://christianmahnke.de/post/pong/)
-* [Fat Lava Keramik in 3D](https://christianmahnke.de/post/3d-models/) - Photogrammetrie
-* [Digitale Sammlungsobjekte ausstellungsfähig machen](https://christianmahnke.de/post/iiif-proxy/) durch Einsatz von Methoden der Computer Vision
+* [Haptisches Feedback für Stoffmuster](/post/haptic-feedback/) - IIIF Annotationen mit Vibration
+* [Geodaten zur Identifikation einer Perspektive eines Holzschnittes](/post/marmolada-woodcut/)
+* [Uranglas in 3D](/post/uv-photogrammetry/) - UV-Photogrammetrie
+* [Eine leuchtende Tapete](/post/hdr-iiif/) - HDR IIIF
+* [Eine KI ließt eine alte Briefvorlage vor](/post/tts/) - Der Brief [selbst](https://briefsteller.de/post/der-haussekretaer/286/)
+* [Visualisierung eines 70er-Jahre Videospiels - Pong](/post/pong/)
+* [Fat Lava Keramik in 3D](/post/3d-models/) - Photogrammetrie
+* [Digitale Sammlungsobjekte ausstellungsfähig machen](/post/iiif-proxy/) durch Einsatz von Methoden der Computer Vision
