@@ -27,7 +27,7 @@
   subtitles = [
     {title = { de ="Enthusiast & Sammler", en = "Enthusiast & Collector"}, url = "", chance = 5},
     {title = "Digital Humanities Communicator", url = "", chance = 1},
-    {title = "Creative Technologist", url = "", chance = 3},
+    {title = "Creative Technologist", url = "", chance = 5},
     {title = "Citizen Art Historian", url = "", chance = 1}
   ]
 
