@@ -88,7 +88,9 @@
       } else {
         title = titleInfo.title
       }
-      if ("url" in titleInfo && titleInfo["url"] !== "") {
+      if ("url" in titleInfo && typeof titleInfo.url === 'string' && titleInfo.url !== "") {
+        title["url"] =  {"de": titleInfo.url, "en": titleInfo.url};
+      } else if ("url" in titleInfo && typeof titleInfo.url === 'object') {
         title["url"] = titleInfo["url"];
       }
       for (i = 0; i < titleInfo.chance; i++) {
@@ -100,8 +102,8 @@
 
     if (index < titles.length) {
       const title = document.querySelector("#tag-line");
-      if ("url" in titles[index]) {
-        title.innerHTML = `<a class="subtitle-link" href="${titles[index]["url"]}" title="${titles[index][lang]}">${titles[index][lang]}</a>`
+      if ("url" in titles[index] && titles[index]["url"][lang] !== "") {
+        title.innerHTML = `<a class="subtitle-link" href="${titles[index]["url"][lang]}" title="${titles[index][lang]}">${titles[index][lang]}</a>`
       } else {
         title.innerText = titles[index][lang];
       }

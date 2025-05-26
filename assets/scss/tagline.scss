@@ -1,10 +1,15 @@
 body.section-tagline {
   .content-container {
+    .section-head {
+      margin-bottom: 1.8em;
+    }
+
     .subsection-list-container {
-      font-size: 1.2em;
+      font-size: 1.6rem;
 
       .subsection-list-heading {
-        font-weight: bold;;
+        font-weight: bold;
+        font-size: 1.8rem;
       }
 
       .subsection-list a {
@@ -17,10 +22,14 @@ body.section-tagline {
       text-align: unset;
     }
 
-    .content .post-body {
-      h2, h3 {
-        margin-block-start: unset;
-        margin-block-end: unset;
+    .content {
+      .post-body {
+        font-size: 1.6rem;
+
+        h2, h3 {
+          margin-block-start: unset;
+          margin-block-end: unset;
+        }
       }
     }
   }

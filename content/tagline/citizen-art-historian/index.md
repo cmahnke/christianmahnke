@@ -1,6 +1,5 @@
 ---
 title: "Citizen Art Historian"
-layout: tagline
 metaPage: true
 displayinlist: false
 archive: false

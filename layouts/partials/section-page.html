@@ -56,6 +56,8 @@
           {{- $sections.Add "sections" (dict "nav" $nav "title" .Title) -}}
       {{- end -}}
   {{- end -}}
+{{- else if and (not (isset .Params "sectionlist")) (not .Params.sectionlist) -}}
+  {{- partial "section-contents-list.html" . -}}
 {{- else -}}
   {{- if $debug -}}
     {{- warnf "[partials/section-page.html] Excluding sub pages for section %s" .File.Dir -}}

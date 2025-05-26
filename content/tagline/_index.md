@@ -1,6 +1,5 @@
 ---
 title: "Taglines"
-layout: tagline
 metaPage: true
 displayinlist: false
 archive: false

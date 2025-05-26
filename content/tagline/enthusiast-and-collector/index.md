@@ -1,6 +1,5 @@
 ---
 title: "Enthusiast & Sammler"
-layout: tagline
 metaPage: true
 displayinlist: false
 archive: false
