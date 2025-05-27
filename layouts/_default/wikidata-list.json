@@ -3,6 +3,7 @@
 {{- $sameAs := dict -}}
 {{- range $page := $pages -}}
   {{- $pageUrl := .RelPermalink -}}
+  {{- $title := Title -}}
   {{- $urls := slice -}}
   {{- range $tag := .Params.tags -}}
     {{- if ne $tag "" -}}
@@ -30,7 +31,7 @@
   {{- end -}}
 
   {{- if gt (len $urls) 0  -}}
-    {{- $pageList = $pageList | append (dict "url" $pageUrl "wikidata" $urls) -}}
+    {{- $pageList = $pageList | append (dict "url" $pageUrl "title" $title "wikidata" $urls) -}}
   {{- end -}}
 {{- end -}}
 {{- dict "pages" $pageList "tags" $sameAs | jsonify -}}
