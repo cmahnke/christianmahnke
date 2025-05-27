@@ -18,16 +18,7 @@
         <option value="ru">Russian</option>
       </select>
     </div>
-    <div>
-      <label for="wikidata-ids-input">Items (QID,weight[,label1|url1,...] per line):</label><br />
-      <textarea
-        id="wikidata-ids-input"
-        rows="5"
-        cols="70"
-        placeholder="Example:&#10;Q937,25,Nobel Bio|https://nobelprize.org/...&#10;Q76330,15"
-      ></textarea>
-    </div>
-    <button id="wikidata-submit-button">Visualize Relations</button>
+
     <p>Visualizing relationships for: <span id="item-list-display">Loading...</span></p>
     <svg width="960" height="700"></svg>
     <div
@@ -48,7 +39,7 @@
         max-width: 300px;
       "
     ></div>
-
-    <script type="module" src="./assets/ts/wikidata.ts"></script>
+    <script type="module" src="./assets/ts/main.ts"></script>
+    <!-- <script type="module" src="./assets/ts/wikidata.ts"></script> -->
   </body>
 </html>
