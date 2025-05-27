@@ -3,7 +3,7 @@
 {{- $sameAs := dict -}}
 {{- range $page := $pages -}}
   {{- $pageUrl := .RelPermalink -}}
-  {{- $title := Title -}}
+  {{- $title := .Title -}}
   {{- $urls := slice -}}
   {{- range $tag := .Params.tags -}}
     {{- if ne $tag "" -}}
