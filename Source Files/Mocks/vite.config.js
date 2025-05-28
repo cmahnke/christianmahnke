@@ -11,7 +11,28 @@ const mimeTypes = { ".glb": "model/gltf-binary" };
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: {"host": "127.0.0.1"},
+  server: {
+    "host": "127.0.0.1",
+    proxy: {
+        '/meta': {
+          target: 'https://christianmahnke.de',
+          changeOrigin: true,
+          secure: true,
+          ws: false,
+          configure: (proxy, _options) => {
+            proxy.on('error', (err, _req, _res) => {
+              console.log('proxy error', err);
+            });
+            proxy.on('proxyReq', (proxyReq, req, _res) => {
+              console.log('Sending Request to the Target:', req.method, req.url);
+            });
+            proxy.on('proxyRes', (proxyRes, req, _res) => {
+              console.log('Received Response from the Target:', proxyRes.statusCode, req.url);
+            });
+          },
+        }
+      }
+  },
   base: "./",
   plugins: [
     nodePolyfills(),
@@ -19,7 +40,7 @@ export default defineConfig({
       apply: "build",
     },
     stylelint({ build: true, dev: false, lintOnStart: true }),
-    DynamicPublicDirectory(["webgpu/public", "hdr-canvas/public", "touch/public", "imagecompare/public", "node_modules/openseadragon/build/openseadragon", "tag-ring/public/**", "wikidata/public/**"], {
+    DynamicPublicDirectory(["webgpu/public", "hdr-canvas/public", "touch/public", "imagecompare/public", "node_modules/openseadragon/build/openseadragon"], {
       ssr: false,
       mimeTypes,
     }),
