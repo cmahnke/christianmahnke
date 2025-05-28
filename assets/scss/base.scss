@@ -760,8 +760,8 @@ a:visited {
         }
     }
 
-    .post-body a,
-    a {
+    .post-body a:not(.wikidata),
+    a:not(.wikidata) {
         &:before {
             content: '_';
             color: $marker-color;

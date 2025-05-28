@@ -1,4 +1,4 @@
-.wikidata {
+.wikidata-summary {
   display: none !important;
   margin: 0;
   font-size: x-small;
@@ -15,5 +15,17 @@
 
   @media (max-width : 35em) {
     display: none !important;
+  }
+}
+
+a.wikidata {
+  pointer-events: none;
+  display: unset;
+  content: unset;
+  font-size: unset;
+
+  &:before,
+  &:after {
+    content: unset;
   }
 }

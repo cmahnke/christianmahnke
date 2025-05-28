@@ -17,7 +17,7 @@ Ich habe alte Computergrafik rahmen lassen...
 ]
 {{</ gallery >}}
 
-Diese Grafik habe ich vor Jahren gerahmt auf dem Flohmarkt erstanden. Sie ist hinter dem Passepartout ist es mit "Nixdorf Computer AG" unterschrieben. Leider lässt sich relativ wenig darüber herausfinden. Eine Anfrage beim [Heinz Nixdorf MuseumsForum](https://www.hnf.de/home.html) ergab leider keine konkreteren Hinweise.
+Diese Grafik habe ich vor Jahren gerahmt auf dem Flohmarkt erstanden. Sie ist hinter dem Passepartout ist es mit ["Nixdorf Computer AG"](https://www.wikidata.org/wiki/Q539508) unterschrieben. Leider lässt sich relativ wenig darüber herausfinden. Eine Anfrage beim [Heinz Nixdorf MuseumsForum](https://www.hnf.de/home.html) ergab leider keine konkreteren Hinweise.
 
 # Update 25.7.2024
 

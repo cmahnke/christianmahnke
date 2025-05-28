@@ -17,7 +17,7 @@ I had old computer graphics framed...
 ]
 {{</ gallery >}}
 
-I bought this framed graphic at a flea market years ago. It is signed "Nixdorf Computer AG" behind the passe-partout. Unfortunately, relatively little can be found out about it. An enquiry at the [Heinz Nixdorf MuseumsForum](https://www.hnf.de/home.html) did not yield any concrete information.
+I bought this framed graphic at a flea market years ago. It is signed ["Nixdorf Computer AG"](https://www.wikidata.org/wiki/Q539508) behind the passe-partout. Unfortunately, relatively little can be found out about it. An enquiry at the [Heinz Nixdorf MuseumsForum](https://www.hnf.de/home.html) did not yield any concrete information.
 
 # Update 25.7.2024
 
