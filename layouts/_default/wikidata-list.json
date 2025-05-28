@@ -22,6 +22,18 @@
     {{- end -}}
   {{- end -}}
 
+  {{- with .Content -}}
+    {{- $regex := `data-wikidata-entity="(.+?)"` -}}
+    {{- $matches := findRESubmatch $regex . -}}
+    {{- range $matches -}}
+      {{- $entity := (index . 1) -}}
+      {{- if not (hasPrefix $entity "http") -}}
+        {{- $entity = printf "https://www.wikidata.org/wiki/%s" $entity -}}
+      {{- end -}}
+      {{- $urls = $urls | union (slice $entity) -}}
+    {{- end -}}
+  {{- end -}}
+
   {{- if .Params.wikidata -}}
     {{- $links := .Params.wikidata -}}
     {{- if not (reflect.IsSlice .Params.wikidata) -}}

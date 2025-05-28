@@ -10,6 +10,7 @@ Another step towards easier searchability of the site...
 
 The Hugo template below is used when translating Markdown to HTML links. It uses:
 * [Wikipedia](https://www.wikipedia.org/) links are enriched with the corresponding [Wikidata](https://wikidata.org/) entity identifiers via the [Mediawiki API](https://www.mediawiki.org/wiki/API:Pageprops)
+* A shot in the dark: If it is an external URL (i.e. starts with `http`), the [Wikidata SPARQ endpoint](https://query.wikidata.org/sparql) is queried to find out whether the URL has been stored as `officialWebsite` (P856), `officialBlog` (P1581) or `onlineDatabaseURL` (P1316) for an entity, if so, this identifier is used.
 * Wikidata links marked with a CSS class (`wikidata`), and the identifier added
 * External links opened in a new tab
 
@@ -36,6 +37,30 @@ The file `layouts/_default/_markup/render-link.html`:
       {{- errorf "Unable to get remote resource %s" $queryURL -}}
     {{- end -}}
   {{- end -}}
+{{- else if hasPrefix $target "http" -}}
+  {{- $queryURL := "https://query.wikidata.org/sparql" -}}
+  {{- $queryOpts := dict
+    "method" "get"
+    "headers" (dict "Accept" "application/sparql-results+json")
+  -}}
+  {{- $query := printf `SELECT ?item ?itemLabel ?officialWebsite ?officialBlog ?onlineDatabaseURL WHERE {
+      ?item wdt:P856 <%s> . SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" . }
+      OPTIONAL { ?item wdt:P856 ?officialWebsite . } OPTIONAL { ?item wdt:P1581 ?officialBlog . } OPTIONAL { ?item wdt:P1316 ?onlineDatabaseURL . }
+    }` $target -}}
+  {{- $queryURL = printf "%s?query=%s" $queryURL (urlquery $query) -}}
+  {{- with try (resources.GetRemote $queryURL $queryOpts) -}}
+    {{- with .Err -}}
+      {{- errorf "Unable to get remote resource %s: %s"  $queryURL . -}}
+    {{- else with .Value -}}
+      {{- $data := .Content | transform.Unmarshal -}}
+      {{- if and (reflect.IsMap $data.results) (isset $data.results "bindings") (reflect.IsSlice $data.results.bindings) (gt (len $data.results.bindings) 0) -}}
+        {{- $result := index $data.results.bindings 0 -}}
+        {{- $wikidataID = replaceRE `(?m)https://www.wikidata.org/entity/(.*)` "$1" $result.item.value -}}
+      {{- end -}}
+    {{- else -}}
+      {{- errorf "Unable to get remote resource %s" $queryURL -}}
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
 {{- if or (hasPrefix $target "https://www.wikidata.org/wiki/") (hasPrefix $target "https://www.wikidata.org/entity/") -}}
 {{- $wikidataID = replaceRE `(?m)https://www.wikidata.org/wiki/(.*)` "$1" $target -}}
@@ -45,6 +70,15 @@ The file `layouts/_default/_markup/render-link.html`:
 <a {{ if ne $wikidataID "" }}data-wikidata-entity="{{ $wikidataID }}" {{ end }}href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
 {{- "" -}}
 {{- end -}}
+```
+
+For the SPARQL query to work, the media type must be enabled in the Hugo configuration.
+
+The following setting ([`security.http`](https://gohugo.io/configuration/security/#httpmediatypes)) must be adjusted or added in `config.toml` or `hugo.tml`:
+
+```toml
+[security.http]
+  mediaTypes = ['^application/json$', '^application/json;\s?charset=[uU][tT][fF]-8$', '^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$']
 ```
 
 ## And what is it all for?

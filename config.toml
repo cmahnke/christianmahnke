@@ -46,6 +46,15 @@ timeout = "120s"
                 weight = 6
                 url = "about"
 
+            [[languages.de.menu.main]]
+                name = '<input type="text" placeholder="Suche" class="search-input"><button type="submit" class="search-button">Suchen</button>'
+                weight = 7
+                url = "search"
+
+                [[languages.de.menu.main.params]]
+                    html = true
+                    draft = true
+
     [languages.en]
         languagename = "English"
 
@@ -75,6 +84,15 @@ timeout = "120s"
                 name = "About"
                 weight = 6
                 url = "en/about"
+
+            [[languages.en.menu.main]]
+                name = '<input type="text" placeholder="Search" class="search-input"><button type="submit" class="search-button">Search</button>'
+                weight = 7
+                url = "search"
+
+                [[languages.en.menu.main.params]]
+                    html = true
+                    draft = true
 
 [markup]
     defaultMarkdownHandler = 'goldmark'
@@ -256,4 +274,4 @@ timeout = "120s"
 
 [security]
   [security.http]
-    mediaTypes = ['^application/json$', '^application/json; charset=[uU][tT][fF]-8$']
+    mediaTypes = ['^application/json$', '^application/json;\s?charset=[uU][tT][fF]-8$', '^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$']
