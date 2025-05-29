@@ -24,3 +24,33 @@
   }
 
 }
+
+body.section-search {
+  min-height: 100vh;
+
+  .content-container.search .post.search {
+    .search-box-container {
+      display: flex;
+      font-size: 150%;
+      justify-content: center;
+
+      .search-input {
+        border: 1px solid black;
+        border-right-width: 0;
+        line-height: unset;
+        width: 50%;
+      }
+
+      .search-button {
+        border: 1px solid black;
+        display: inline-flex;
+        align-items: center;
+        line-height: unset;
+        height: 2em;
+        padding: 0 1em;
+      }
+
+    }
+
+  }
+}

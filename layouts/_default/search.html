@@ -1,0 +1,22 @@
+{{ define "title" -}}
+  {{- if ne .Title "" -}}
+    {{- .Title }} · {{ .Site.Title -}}
+  {{- else -}}
+    {{- .Site.Title -}}
+  {{- end -}}
+{{- end }}
+{{ define "content" }}
+  {{- partial "header.html" . -}}
+  <div class="content-container single search">
+    <div class="post search">
+      <div class="search-box-container">
+        <input class="search-input" type="text" name="search-bar" value="">
+        {{/* <label for="search-bar"></label> */}}
+        <button class="search-button" type="button" name="search-button">{{ i18n "Search" }}</button>
+      </div>
+      <div class="content">
+        <div id="search"></div>
+      </div>
+    </div>
+  </div>
+{{ end }}

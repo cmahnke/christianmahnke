@@ -1,5 +1,8 @@
 ---
 title: "Suche"
+layout: search
+js:
+  - js/search.js
 metaPage: true
 displayinlist: false
 archive: false

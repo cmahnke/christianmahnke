@@ -3,3 +3,4 @@ shapely
 scour
 blend-modes
 pagefind[bin]
+rdflib

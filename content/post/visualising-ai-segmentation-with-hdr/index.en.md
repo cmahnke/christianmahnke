@@ -7,6 +7,7 @@ tags:
   - DigitalImages
   - HDR
   - AI
+  - Visualisation
 preview:
   image: img/das-herrenjournal-7-1939-page015.jpeg
   hide: true
@@ -50,7 +51,7 @@ w, h = image.size
 for result in results:
     names = result.names
     boxes = result.boxes
-    masks = result.masks 
+    masks = result.masks
     if masks is None:
         continue
     for seg, box in zip(masks.data.cpu().numpy(), boxes):
