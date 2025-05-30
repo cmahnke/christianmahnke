@@ -4,6 +4,8 @@ title: "Compress JSON for application bundles"
 keywords: JSON, Compression, application bundles
 tags:
 - JavaScript
+- Data
+- JSON
 ---
 
 For the video metadata of [911 TV](https://911tv.projektemacher.org/) there was an interesting challenge to solve...

@@ -4,6 +4,8 @@ title: "JSON für Anwendungsbündel komprimieren"
 keywords: JSON, Kompression, Anwendungsbündel, Bundle
 tags:
 - JavaScript
+- Data
+- JSON
 ---
 
 Für die Videometadaten von [911 TV](https://911tv.projektemacher.org/) gab es eine interessante Herausforderung zu lösen...

@@ -4,6 +4,7 @@ title: "Wikidata Links in Hugo"
 tags:
   - Hugo
   - Wikidata
+  - SQARQL
 ---
 Ein weiterer Schritt zur leichteren Durchsuchbarkeit der Seite...
 <!--more-->
