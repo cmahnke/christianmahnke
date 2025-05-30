@@ -1,0 +1,39 @@
+files:
+  output: pagefind
+  source: docs
+  include:
+    - '**/*.htm'
+    - '**/*.html'
+  exclude:
+    - 'tags/**'
+    - 'en/tags/**'
+    - 'post/page/*/**'
+    - 'en/post/page/*/**'
+    - 'search/**'
+    - 'en/search/**'
+index:
+  body:
+    - .content-container
+  title:
+    - h1.post-title
+    - ".section-head h1.section-head-title"
+  meta:
+    author: ".post-author span"
+    date: ".date time[datetime]"
+  filter:
+    category: ".meta .tags a"
+#    status: "span.post-status"
+  image:
+    - ".gallery .gallery-image.caption[href]"
+    - "figure img[src]"
+  ignore:
+    - header.header
+    - footer.footer
+    - script
+  weight:
+    7.0: "h1"
+    6.0: "h2"
+    5.0: "h3"
+    4.0: "h4"
+    3.0: "h5"
+    2.0: "h6"

@@ -4,3 +4,5 @@ scour
 blend-modes
 pagefind[bin]
 rdflib
+beautifulsoup4
+pyyaml
