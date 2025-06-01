@@ -67,3 +67,18 @@ other = "Wikidata Eintrag"
 
 [toc]
 other = "Inhaltsverzeichnis"
+
+[cite_this]
+other = "Diesen Beitrag zitieren"
+
+[cite_in]
+other = "In"
+
+[cite_type_online]
+other = "Online-Publikation"
+
+[cite_type_blog]
+other = "Weblog"
+
+[bibtex_download]
+other = "Als BibTex herunterladen"

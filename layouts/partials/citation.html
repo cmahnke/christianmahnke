@@ -1,0 +1,39 @@
+<details class="cite">
+  <summary class="cite_summary">
+    {{ i18n "cite_this"}}
+  </summary>
+  {{- $url := "" -}}
+  {{- with .OutputFormats.Get "bibtex" -}}
+    {{- $url = .RelPermalink -}}
+  {{- end -}}
+  {{- $authors := "" -}}
+  {{- if .Params.authors -}}
+      {{- $authorList := slice -}}
+      {{- range .Params.authors -}}
+          {{- $authorName := "" -}}
+          {{- with .first }}{{ $authorName = print $authorName . " " }}{{ end -}}
+          {{- with .last }}{{ $authorName = print $authorName . }}{{ end -}}
+          {{- $authorList = $authorList | append $authorName -}}
+      {{- end -}}
+      {{- $authors = delimit $authorList " and " -}}
+  {{- else if .Site.Params.author.name -}}
+      {{- $authors = .Site.Params.author.name -}}
+  {{- end -}}
+
+  {{- $authors = split $authors " " | collections.Reverse -}}
+  {{- $authors = delimit $authors ", " -}}
+
+  {{- $siteTitle := "" -}}
+  {{- if .Site.Params.cite.title -}}
+    {{- $siteTitle = .Site.Params.cite.title -}}
+  {{- else -}}
+    {{- $siteTitle = .Site.Title -}}
+  {{- end -}}
+
+  <div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">{{ $authors }}</span> <span class="cite-year">({{ .Date.Year  }})</span>: <span class="cite-title">{{ .Title }}</span>. {{ i18n "cite_in" }}:  <a class="cite-source-link" href="{{ .Site.BaseURL }}">{{ $siteTitle }}</a> [{{ i18n "cite_type_blog" }}], {{ .Date | time.Format ":date_medium" }}. {{ i18n "cite_type_online" }}: <a class="cite-link" href="{{ .Permalink }}">{{ .Permalink }}</a>.
+    </div>
+    <a class="bibtex-download" href="{{ $url }}" title="{{ i18n "bibtex_download"}}">{{ i18n "bibtex_download"}}</a>
+  </div>
+</details>

@@ -5,7 +5,7 @@ cite: true
 tags:
   - Hugo
   - Wikidata
-  - SQARQL
+  - SPARQL
 ---
 Another step towards easier searchability of the site...
 <!--more-->

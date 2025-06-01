@@ -2,6 +2,7 @@
 <div class="post {{ $class }}">
   <div class="content">
       <h1 class="post-title">{{ .Title }}</h1>
+
       {{- if not .Params.metaPage -}}
         <div class="date">
           <time class="post-data" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
@@ -29,6 +30,11 @@
       <div class="spacer">
       </div>
       <div class="meta">
+        {{- with .Params.cite -}}
+          <div class="cite-container">
+            {{- partial "citation.html" $ -}}
+          </div>
+        {{- end -}}
         <div class="tags-heading">{{ i18n "Tags" }}</div>
         {{ partial "meta/tags.html" . }}
       </div>

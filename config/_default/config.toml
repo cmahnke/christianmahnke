@@ -35,6 +35,9 @@
     email = 'mail@christianmahnke.de'
     name = 'Christian Mahnke'
 
+[params.cite]
+    title = 'ChristianMahnke.de'
+
 [params.preview]
     outputPrefix = "ogPreview"
     outputSuffix = ".png"

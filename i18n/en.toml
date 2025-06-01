@@ -67,3 +67,18 @@ other = "Wikidata entry"
 
 [toc]
 other = "Table of contents"
+
+[cite_this]
+other = "Cite this article"
+
+[cite_in]
+other = "In"
+
+[cite_type_online]
+other = "Online publication"
+
+[cite_type_blog]
+other = "Weblog"
+
+[bibtex_download]
+other = "Download as BibTex"
