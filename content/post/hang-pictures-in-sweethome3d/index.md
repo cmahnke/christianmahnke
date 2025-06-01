@@ -3,6 +3,7 @@ date: 2022-11-27T08:33:44+02:00
 title: "Bilder aufhängen in Sweet Home 3D"
 keywords: Sweet Home 3D, PDF, Inkscape, 3D Model
 description: "Ein Werkzeug um PDF Plakate in Sweet Home 3D aufzuhängen"
+cite: true
 tags:
   - 3D
   - Exhibition

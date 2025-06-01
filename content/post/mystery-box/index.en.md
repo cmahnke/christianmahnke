@@ -3,6 +3,7 @@ date: 2024-01-23T19:33:44+02:00
 title: "Mystery Box"
 keywords: Scientific equipment, furniture, psychological test, dice box, Kurt Gottschaldt
 description: "A psychological experiment"
+cite: true
 preview:
   image: img/front.jpeg
   hide: true

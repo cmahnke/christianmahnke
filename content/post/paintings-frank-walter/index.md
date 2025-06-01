@@ -2,6 +2,7 @@
 date: 2025-05-24T15:38:44+02:00
 title: 'Gemälde von Frank Walter (1926-2009)'
 keywords: Frank Walter, Antigua, Karibik
+cite: true
 tags:
   - Art
   - Painting

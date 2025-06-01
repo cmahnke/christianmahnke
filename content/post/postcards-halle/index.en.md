@@ -3,6 +3,7 @@ date: 2022-12-31T12:00:00+02:00
 title: Donation to the city archive Halle
 keywords: Halle/Saale, postcards, Gimritz
 description: "Postcards from sales outlets on the Gimritz estate"
+cite: true
 tags:
 - Donation
 - Archive

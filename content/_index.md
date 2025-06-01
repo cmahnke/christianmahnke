@@ -9,4 +9,14 @@ outputs:
   - html
   - rss
   - activity-pub-outbox
+  - bibtex
+cascade:
+  - _target:
+      kind: '{page,section}'
+      lang: de
+      path: '**'
+    params:
+      outputs:
+        - bibtex
+        - html
 ---

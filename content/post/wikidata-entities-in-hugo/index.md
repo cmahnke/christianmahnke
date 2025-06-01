@@ -1,6 +1,7 @@
 ---
 date: 2025-05-28T18:22:44+02:00
 title: "Wikidata Links in Hugo"
+cite: true
 tags:
   - Hugo
   - Wikidata

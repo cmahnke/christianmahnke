@@ -3,6 +3,7 @@ date: 2024-04-19T17:33:44+02:00
 title: "Daten Container"
 keywords: GND, Geonames, Datenanreicherung, Datenquellen
 description: "Die GND und Geonames als lokale Datenquellen"
+cite: true
 tags:
   - Data
   - Docker

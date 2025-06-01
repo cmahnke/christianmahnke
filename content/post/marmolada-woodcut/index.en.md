@@ -3,6 +3,7 @@ date: 2024-09-15T18:07:44+02:00
 title: 'Climate change in art...'
 keywords: Marmolada, Dolomites, Alps, Glacier, Elevation profile
 description: "Visually determine camera positions with geodata in Blender"
+cite: true
 tags:
   - Art
   - Alps

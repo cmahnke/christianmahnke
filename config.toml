@@ -152,6 +152,8 @@ timeout = "120s"
     suffixes = ["json"]
   [mediaTypes."image/jxl"]
     suffixes = ["jxl"]
+  [mediaTypes."text/bibtex"]
+    suffixes = ["bib"]
 
 [outputFormats]
   [outputFormats.geojson]
@@ -203,6 +205,11 @@ timeout = "120s"
     baseName = "print"
     notAlternative = true
     permalinkable = true
+
+  [outputFormats.bibtex]
+    mediaType = "text/bibtex"
+    baseName = "citation"
+    isHTML = false
 
 [outputs]
 #  page = ['html', 'print']

@@ -2,6 +2,7 @@
 date: 2023-07-01T20:14:44+02:00
 title: "Build vector maps with GitHub"
 class: toc-text
+cite: true
 tags:
 - Projektemacher.org
 - Geodata

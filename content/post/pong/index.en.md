@@ -3,6 +3,7 @@ date: 2024-04-15T13:58:44+02:00
 title: "Pong Visualisation"
 keywords: Pong, video game, browser automation, Playwright
 description: "A 70s video game as a heat map"
+cite: true
 tags:
   - Light
   - Licht2024

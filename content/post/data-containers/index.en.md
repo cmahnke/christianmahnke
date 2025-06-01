@@ -3,6 +3,7 @@ date: 2024-04-19T17:33:44+02:00
 title: "Data Containers"
 keywords: GND, Geonames, data enrichment, data sources
 description: "The GND and Geonames as local data sources"
+cite: true
 tags:
   - Data
   - Docker

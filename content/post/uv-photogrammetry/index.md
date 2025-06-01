@@ -7,6 +7,7 @@ preview:
   image: preview.png
   hide: true
 class: uranium
+cite: true
 pagetheme: #5107b7
 tags:
   - Light

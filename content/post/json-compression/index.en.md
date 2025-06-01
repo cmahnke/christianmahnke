@@ -2,6 +2,7 @@
 date: 2023-11-16T15:22:44+02:00
 title: "Compress JSON for application bundles"
 keywords: JSON, Compression, application bundles
+cite: true
 tags:
 - JavaScript
 - Data

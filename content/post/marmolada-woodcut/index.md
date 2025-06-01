@@ -3,6 +3,7 @@ date: 2024-09-15T18:07:44+02:00
 title: 'Der Klimawandel in der Kunst...'
 keywords: Marmolata, Dolomiten, Alpen, Gletscher, Höhenprofil
 description: "Kamerapositionen visuell bestimmen mit Geodaten in Blender"
+cite: true
 tags:
   - Art
   - Alps

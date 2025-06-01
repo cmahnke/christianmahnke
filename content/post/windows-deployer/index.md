@@ -1,6 +1,7 @@
 ---
 date: 2023-08-21T19:22:44+02:00
 title: "Windows Deployer"
+cite: true
 tags:
   - Windows
 ---

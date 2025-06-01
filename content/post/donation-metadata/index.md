@@ -2,6 +2,7 @@
 date: 2025-05-21T06:00:00
 title: "Informationen zu Spendern in Kulturerbeaggregatoren"
 keywords: XML, METS, MODS, EAD, museum:digital, LIDO
+cite: true
 description:
 tags:
   - Donation

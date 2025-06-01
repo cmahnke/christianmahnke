@@ -1,10 +1,11 @@
 ---
-date: 2025-06-01T10:22:44+02:00
+date: 2025-06-07T10:22:44+02:00
 title: "Wallpaper virtual rooms!"
 preview:
   image: screenshot.png
   hide: true
 class: lucienne
+cite: true
 pagetheme: white
 tags:
 - Projektemacher.org

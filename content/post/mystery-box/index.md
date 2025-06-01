@@ -3,6 +3,7 @@ date: 2024-01-23T19:33:44+02:00
 title: "Mystery Box"
 keywords: Wissenschaftliches Gerät, Möbel, Psychologischer Test, Würfelkasten, Kurt Gottschaldt
 description: "Ein psychologisches Experiment"
+cite: true
 preview:
   image: img/front.jpeg
   hide: true

@@ -1,0 +1,50 @@
+{{- $bibtexType := default "article" .Site.Params.citation.type -}}
+{{- $authors := "" -}}
+{{- if .Params.authors -}}
+    {{- $authorList := slice -}}
+    {{- range .Params.authors -}}
+        {{- $authorName := "" -}}
+        {{- with .first }}{{ $authorName = print $authorName . " " }}{{ end -}}
+        {{- with .last }}{{ $authorName = print $authorName . }}{{ end -}}
+        {{- $authorList = $authorList | append $authorName -}}
+    {{- end -}}
+    {{- $authors = delimit $authorList " and " -}}
+{{- else if .Site.Params.author.name -}}
+    {{- $authors = .Site.Params.author.name -}}
+{{- end -}}
+{{- $url := "" -}}
+{{- with .OutputFormats.Get "html" -}}
+  {{- $url = .Permalink -}}
+{{- end -}}
+
+{{- if .Params.cite -}}
+@{{ $bibtexType }}{ {{ .Params.bibtex_key }},
+    {{- if $authors }}
+    author = {{ printf "{%s}" $authors | safeHTMLAttr }},
+    {{- end }}
+    {{- with .Title }}
+    title = {{ printf "{%s}" . | safeHTMLAttr }},
+    {{- end }}
+    url = {{ printf "{%s}" $url | safeURL }},
+    {{- with .Params.doi }}
+    doi = {{ printf "{%s}" . | safeURL }},
+    {{- end }}
+    {{- with .Date.Year }}
+    year = {{ printf "{%d}" . | safeHTMLAttr }},
+    {{- end }}
+    {{- with .Date.Month }}
+    month = {{ printf "{%s}" . | safeHTMLAttr }},
+    {{- end }}
+    {{- with .Params.note }}
+    note = {{ printf "{%s}" . | safeHTMLAttr }},
+    {{- end }}
+    {{- with .Description }}
+    abstract = {{ printf "{%s}" . | safeHTMLAttr }},
+    {{- end }}
+    {{- with .Keywords }}
+    keywords = {{ printf "{%s}" (delimit . " ") | safeHTMLAttr }}
+    {{- end }}
+}
+{{- else -}}
+% Error: BibTex export not enabled: Cannot generate BibTeX entry.
+{{- end -}}

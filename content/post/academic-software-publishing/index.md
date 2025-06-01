@@ -3,6 +3,7 @@ date: 2025-02-25T15:52:22+02:00
 title: 'KI und Software-"Entwicklung"'
 description: "Oder: Akademische Software-Verlage"
 #keywords:
+cite: true
 tags:
 - SoftwareDevelopment
 - ProjectIdea

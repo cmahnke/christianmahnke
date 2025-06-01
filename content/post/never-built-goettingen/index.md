@@ -3,6 +3,7 @@ date: 2025-03-14T20:30:44+02:00
 title: 'Never Built Göttingen'
 class: never
 pagetheme: white
+cite: true
 tags:
   - Blog
   - Projektemacher.org

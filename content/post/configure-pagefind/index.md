@@ -3,6 +3,7 @@ date: 2025-05-30T17:33:44+02:00
 title: "Extending Pagefind"
 keywords: Pagefind
 description: ""
+cite: true
 tags:
   - Search
   - Pagefind

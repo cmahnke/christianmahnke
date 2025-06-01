@@ -3,6 +3,7 @@ date: 2023-04-30T16:15:44+02:00
 title: "GeoIP Tool"
 desscription: "A tool to add your own coordinates for IP addresses to an ElasticSearch index, for indoor navigation"
 keywords: IP, Go, Golang, Geolocalisation, ElasticSearch
+cite: true
 tags:
   - Data
 ---

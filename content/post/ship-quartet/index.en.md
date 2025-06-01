@@ -3,6 +3,7 @@ date: 2025-05-18T19:22:44+02:00
 title: "The Cold War in children's hands"
 keywords: Ship quartet, war, ships, card game
 description: "A card game from the 70s brought up to date"
+cite: true
 tags:
   - Object
   - Fun
