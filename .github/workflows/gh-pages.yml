@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  HUGO_VERSION: 0.147.6
+  HUGO_VERSION: 0.147.7
   DEPENDENCY_MANAGER: yarn
 
 jobs:
@@ -65,7 +65,9 @@ jobs:
         run: hugo --printI18nWarnings --printUnusedTemplates
 
       - name: Index site
-        run: npx pagefind --site docs
+        run: |
+          #npx pagefind --site docs
+          python scripts/indexer.py -c pagefind-index.yaml
 
       - name: Puppeteer
         if: ${{ !env.ACT }}
