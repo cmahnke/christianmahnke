@@ -26,7 +26,8 @@
     &[open] {
       .cite-body {
         max-height: 8rem;
-        transition: max-height 300ms;
+        transition: all 300ms;
+        opacity: 1;
 
         @media (max-width: 75em) {
           max-height: 12rem;
@@ -48,7 +49,8 @@
       display: flex;
       flex-direction: column;
       max-height: 0;
-
+      opacity: 0;
+      transition: all 300ms;
 
       @media (max-width: 35em) {
         padding: .6rem;

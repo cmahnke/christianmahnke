@@ -58,6 +58,11 @@ $tag-cloud-height: 24em;
 
     a {
       color:inherit;
+
+      &:after,
+      &:before {
+        content: '' !important;
+      }
     }
 
     a:before,
@@ -68,7 +73,7 @@ $tag-cloud-height: 24em;
     }
 
     a:hover {
-      text-decoration: unset;
+      text-decoration: unset !important;
       text-decoration-color: unset;
     }
 
