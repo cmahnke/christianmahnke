@@ -9,6 +9,7 @@ window.PagefindUI = PagefindUI;
 //}
 
 window.addEventListener('DOMContentLoaded', (event) => {
+  const bundlePath = "/index/"
   const urlParams = new URLSearchParams(window.location.search);
   const query = urlParams.get('q');
 
@@ -19,6 +20,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
   document.querySelector('.search-button').addEventListener("click", (event) => {
 
   })
-
-  new PagefindUI({ element: "#search", showSubResults: true });
+  //await import(`${bundlePath}pagefind-highlight.js`);
+  new PagefindUI({ element: "#search", showSubResults: true, "bundlePath": bundlePath });
 })

@@ -19,6 +19,10 @@ log = logging.getLogger(__name__)
 default_include = ["**/*.htm", "**/*.html"]
 data_attribute_prefix = "data-pagefind-"
 WIKIDATA_ENDPOINT = "https://query.wikidata.org/sparql"
+WIKIDATA_HEADERS = {
+    "Accept": "application/sparql-results+json",
+    "User-Agent": "PagefindExperimentalEnrich/0.0.1 (https://christianmahnke.de/) requests-python"
+}
 
 wikidata_cache = {}
 
@@ -71,7 +75,7 @@ def get_labels (qid, lang):
     """
 
     try:
-        response = requests.get(WIKIDATA_ENDPOINT, params={"query": query}, headers={"Accept": "application/sparql-results+json"})
+        response = requests.get(WIKIDATA_ENDPOINT, params={"query": query}, headers=WIKIDATA_HEADERS)
         response.raise_for_status()
 
         data = response.json()
@@ -94,6 +98,85 @@ def get_labels (qid, lang):
         return ""
 
 
+def get_base_type(qid, lang = 'en'):
+    if qid in wikidata_cache:
+        if lang in wikidata_cache[qid] and "base_type" in wikidata_cache[qid][lang]:
+            return wikidata_cache[qid][lang]["base_type"]
+        else:
+            wikidata_cache[qid][lang] = {}
+    else:
+        wikidata_cache[qid] = {}
+        wikidata_cache[qid][lang] = {}
+
+    predefined_base_qids = [
+        'Q5',          # Human (Person)
+        'Q43229',      # Organization (Company, NGO, Government agency, etc.)
+        'Q16566827',   # Building (Structure, architectural work)
+        'Q7397',       # Software
+        'Q11424',      # Film (Movie)
+        'Q3305213',    # Painting
+        'Q47461344',   # Literary work (Books, poems, etc.)
+        'Q2431196',    # Musical work (Song, symphony, etc.)
+        'Q1107',       # Sculpture
+        'Q4985654',    # Video game
+        'Q12645',      # Photograph
+        'Q838948',     # Work of art (Broader than specific arts like Painting, Sculpture)
+        'Q47154546',   # Creative work (Very broad, encompasses all artistic/literary works)
+
+        'Q56061',      # Geographic location (Place / Location)
+        'Q1190554',    # Event (Historical event, sports event, festival, etc.)
+        'Q712534',     # Natural phenomenon (Earthquake, volcano, weather event)
+        #'Q151885',     # Concept (Abstract ideas - use with caution, can be very broad)
+    ]
+
+    values_clause = " ".join([f"wd:{q}" for q in predefined_base_qids])
+
+    sparql_query = f"""
+    SELECT ?baseClass ?baseClassLabel WHERE {{
+      VALUES ?targetItem {{ wd:{qid} }} 
+
+      ?targetItem wdt:P31/wdt:P279* ?baseClass.
+
+      VALUES ?baseClassInList {{ {values_clause} }}
+      FILTER (?baseClass = ?baseClassInList)
+
+      SERVICE wikibase:label {{
+        bd:serviceParam wikibase:language "{lang},en".
+        ?baseClass rdfs:label ?baseClassLabel.
+      }}
+    }}
+    LIMIT 1
+    """
+
+    try:
+        response = requests.get(WIKIDATA_ENDPOINT, headers=WIKIDATA_HEADERS, params={'query': sparql_query})
+        response.raise_for_status()
+        data = response.json()
+
+        results = data.get('results', {}).get('bindings', [])
+
+        if results:
+            base_class_info = results[0]
+            base_class_qid = base_class_info['baseClass']['value'].split('/')[-1]
+            base_class_label = base_class_info['baseClassLabel']['value']
+
+            wikidata_cache[qid][lang]["base_type"] = {'qid': base_class_qid, 'label': base_class_label}
+            return wikidata_cache[qid][lang]["base_type"]
+
+            return 
+        else:
+            return None # No base class found from the predefined list
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error making request to Wikidata for QID {qid}: {e}")
+        return None
+    except json.JSONDecodeError as e:
+        print(f"Error decoding JSON response from Wikidata for QID {qid}: {e}")
+        return None
+    except Exception as e:
+        print(f"An unexpected error occurred for QID {qid}: {e}")
+        return None
+
 def sed_style_replace(string, pattern):
     if not (pattern.startswith('s') and len(pattern) >= 6 and pattern.endswith('g')):
         raise Exception(f"Malformed {pattern}")
@@ -109,7 +192,7 @@ def sed_style_replace(string, pattern):
 
 # Callable index enrichment functions
 
-def extract(node, attribute = None, pattern = None):
+def extract(node, attribute = None, pattern = None, ignore_unchanged = False):
     if attribute is None:
         text = node.text
     else:
@@ -120,9 +203,24 @@ def extract(node, attribute = None, pattern = None):
         text = " ".join(text)
 
     if pattern is not None:
-        text = sed_style_replace(text, pattern)
+        replaced_text = sed_style_replace(text, pattern)
+        if text == replaced_text and ignore_unchanged:
+            replaced_text = ""
+    else:
+        replaced_text = text
     log.debug(f"Extracting node, attribute {attribute}, pattern {pattern}, result: '{text}'")
-    return text
+    return replaced_text
+
+def type(node, attribute="data-wikidata-entity", lang = "en"):
+    if attribute is None:
+        qid = node.text
+    else:
+        qid = node[attribute]
+    base = get_base_type(qid, lang)
+    if base is not None:
+        return base["label"]
+    log.info(f"Couldn't find base type of {qid}")
+    return ""
 
 def variants(node, attribute="data-wikidata-entity", lang = "en"):
     if attribute is None:

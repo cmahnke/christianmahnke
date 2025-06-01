@@ -11,6 +11,14 @@ files:
     - 'en/post/page/*/**'
     - 'search/**'
     - 'en/search/**'
+    - 'tagline/**'
+    - 'en/tagline/**'
+    - 'cm/**'
+    - 'en/cm/**'
+    - 'applications/**'
+    - 'en/applications/**'
+    - 'meta/**'
+    - 'en/meta/**'
 content:
   ignore:
     - "<meta http-equiv=\"refresh\" content=\"0; url="
@@ -56,6 +64,11 @@ index:
     date:
       - ".date time": "[datetime]"
   filter:
+    type:
+      - "a[data-wikidata-entity]":
+          function: type
+          args:
+            lang: "{lang}"
     tag:
       - ".meta .tags a":
           function: extract
@@ -67,6 +80,7 @@ index:
           args:
             attribute: "class"
             pattern: "s/.*section-(.[^ ]*).*/$1/g"
+            ignore_unchanged: "true"
 
   index-attrs:
     a: "[data-wikidata-entity]"

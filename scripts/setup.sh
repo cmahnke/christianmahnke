@@ -31,7 +31,7 @@ cp themes/projektemacher-base/static/images/cm.svg static/images/
 sed -i -E 's/fill-opacity:0.5/fill-opacity:1.0/g' static/images/cm.svg
 convert -density 2400 static/images/cm.svg -resize '1024x1024!' static/images/logo.png
 
-# Additional NPM dependencies - npm is a crappy piece of software, can't decuple install from cleanup
+# Additional NPM dependencies - npm is a crappy piece of software, can't decouple install from cleanup
 #yarn install --ignore-engines #--ignore-platform
 #npm install --no-package-lock --no-save --force --cpu=arm64 --os=darwin sharp
 #npm install --no-package-lock --no-save --force --cpu=x64 --os=linux --libc=glibc sharp
@@ -48,3 +48,5 @@ yarn run svgo
 
 hugo --renderSegments manifests
 ./scripts/height-map.sh
+
+echo "Make sure './scripts/post-build/index.sh' is executed"
