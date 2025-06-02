@@ -8,7 +8,6 @@ tags:
   - Search
   - Pagefind
   - JSON
-draft: true
 ---
 
 Since this page needs a search, I had a look at [Pagefind](https://pagefind.app/)...
