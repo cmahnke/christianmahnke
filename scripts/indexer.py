@@ -18,6 +18,7 @@ log = logging.getLogger(__name__)
 
 default_include = ["**/*.htm", "**/*.html"]
 data_attribute_prefix = "data-pagefind-"
+DEFAULT_LANG = "de"
 WIKIDATA_ENDPOINT = "https://query.wikidata.org/sparql"
 WIKIDATA_HEADERS = {
     "Accept": "application/sparql-results+json",
@@ -39,7 +40,7 @@ class Page:
         return self.contents[0]
 
 
-## Helper functions for index enrichment 
+## Helper functions for index enrichment
 
 def get_labels (qid, lang):
     if qid in wikidata_cache:
@@ -83,7 +84,7 @@ def get_labels (qid, lang):
         for binding in data["results"]["bindings"]:
             if "altLabel" in binding:
                 alt_labels.append(binding["altLabel"]["value"])
-        
+
         wikidata_cache[qid][lang]["labels"] = ";".join(alt_labels)
         return wikidata_cache[qid][lang]["labels"]
 
@@ -112,7 +113,7 @@ def get_base_type(qid, lang = 'en', default_label = None):
         'Q5',          # Human (Person)
         'Q729',        # Animal
         'Q43229',      # Organization (Company, NGO, Government agency, etc.)
-        'Q14897293',   # Fictional entity 
+        'Q14897293',   # Fictional entity
         'Q16566827',   # Building (Structure, architectural work)
         'Q7397',       # Software
         'Q39670',      # Computer hardware
@@ -398,7 +399,7 @@ def preprocess_html_file(filepath, config):
                         log.debug(f"Called {value_def["function"]} with args {args}")
                     else:
                         function_result = globals()[value_def["function"]](element)
-                    
+
                     if skip_empty and function_result == "":
                         log.debug(f"Skipping empty result for attribute '{attr}' (target '{additional_attr}'), field '{field}', call '{value_def}'")
                     else:
@@ -445,15 +446,16 @@ def preprocess_html_file(filepath, config):
     #if logging.DEBUG >= log.level:
     #    initial_html_content = str(soup)
     lang_tag = soup.select("html[lang]")
-    if lang_tag is not None:
+    if lang_tag is not None or len(lang_tag) < 1:
         lang = lang_tag[0]["lang"]
         log.debug(f"Procesing {filepath}, language {lang}")
     else:
-        log.warning(f"Lang tag not found for {filepath}")
+        log.warning(f"Lang tag not found for {filepath}, setting to {DEFAULT_LANG}")
+        lang = DEFAULT_LANG
 
     for key, selectors_def in config.items():
         data_attribute_key = data_attribute_prefix + key
-        
+
 
         if isinstance(selectors_def, str):
             selectors = [selectors_def]
@@ -462,7 +464,7 @@ def preprocess_html_file(filepath, config):
         elif isinstance(selectors_def, dict):
 
             if key in ["meta", "default-meta", "filter", "sort"]:
-               
+
                 for sub_key, sub_selector in selectors_def.items():
                     log.debug(f"Procesing {sub_key} with {sub_selector}")
                     if isinstance(sub_selector, str):
