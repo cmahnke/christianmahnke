@@ -110,20 +110,30 @@ def get_base_type(qid, lang = 'en', default_label = None):
 
     predefined_base_qids = [
         'Q5',          # Human (Person)
+        'Q729',        # Animal
         'Q43229',      # Organization (Company, NGO, Government agency, etc.)
+        'Q14897293',   # Fictional entity 
         'Q16566827',   # Building (Structure, architectural work)
         'Q7397',       # Software
+        'Q39670',      # Computer hardware
+        'Q11446',      # Ship
+        'Q11439',      # Aircraft (Plane, helicopter, etc.)
+        'Q867018',     # Handicraft
         'Q11424',      # Film (Movie)
         'Q3305213',    # Painting
-        'Q47461344',   # Literary work (Books, poems, etc.)
         'Q2431196',    # Musical work (Song, symphony, etc.)
         'Q1107',       # Sculpture
         'Q4985654',    # Video game
         'Q12645',      # Photograph
+        'Q47461344',   # Literary work (Books, poems, etc.)
         'Q838948',     # Work of art (Broader than specific arts like Painting, Sculpture)
         'Q47154546',   # Creative work (Very broad, encompasses all artistic/literary works)
+        'Q6671777',    # Structure
 
-        'Q56061',      # Geographic location (Place / Location)
+        'Q618123',     # Geographical feature (Mountain, river, lake, etc.)
+        'Q56061',      # Geographic location (Place / Location - broader than geographical feature)
+        'Q2695280',    # Technique (Specific procedure/skill, e.g., surgical technique)
+        'Q1182586',    # Method (Systematic procedure, technique)
         'Q1190554',    # Event (Historical event, sports event, festival, etc.)
         'Q712534',     # Natural phenomenon (Earthquake, volcano, weather event)
         #'Q151885',     # Concept (Abstract ideas - use with caution, can be very broad)
@@ -132,9 +142,10 @@ def get_base_type(qid, lang = 'en', default_label = None):
     values_clause = " ".join([f"wd:{q}" for q in predefined_base_qids])
 
     sparql_query = f"""
-    SELECT ?baseClass ?baseClassLabel WHERE {{
-      VALUES ?targetItem {{ wd:{qid} }} 
+    SELECT ?baseClass ?baseClassLabel ?directClass ?directClassLabel WHERE {{
+      VALUES ?targetItem {{ wd:{qid} }}
 
+      ?targetItem wdt:P31 ?directClass.
       ?targetItem wdt:P31/wdt:P279* ?baseClass.
 
       VALUES ?baseClassInList {{ {values_clause} }}
@@ -143,6 +154,7 @@ def get_base_type(qid, lang = 'en', default_label = None):
       SERVICE wikibase:label {{
         bd:serviceParam wikibase:language "{lang},en".
         ?baseClass rdfs:label ?baseClassLabel.
+        ?directClass rdfs:label ?directClassLabel.
       }}
     }}
     LIMIT 1

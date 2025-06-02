@@ -256,8 +256,8 @@ timeout = "120s"
       target = "assets/css/openseadragon"
 
   [[module.mounts]]
-      source = "node_modules/@pagefind/default-ui/css"
-      target = "assets/css/pagefind"
+      source = "node_modules/@pagefind/modular-ui/css/"
+      target = "assets/scss/pagefind"
 
   [[module.mounts]]
       source = "node_modules/@pagefind/default-ui"

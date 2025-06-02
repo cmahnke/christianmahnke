@@ -19,6 +19,8 @@ files:
     - 'en/applications/**'
     - 'meta/**'
     - 'en/meta/**'
+    - 'privacy/**'
+    - 'en/privacy/**'
     - '404.html'
 content:
   ignore:

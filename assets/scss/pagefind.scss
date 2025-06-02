@@ -1,4 +1,4 @@
-/*@import "pagefind/ui";*/
+@import "pagefind/ui";
 
 :root {
   --pagefind-ui-scale: 1;
@@ -49,8 +49,48 @@ body.section-search {
         height: 2em;
         padding: 0 1em;
       }
-
     }
 
+    .search-filter {
+      .pagefind-modular-filter-pills-wrapper {
+        overflow-x: unset;
+
+        .pagefind-modular-filter-pills {
+          flex-wrap: wrap;
+
+          .pagefind-modular-filter-pill {
+            padding: .4rem;
+            height: 2.4rem;
+            border-radius: .8rem;
+            line-height: unset;
+          }
+        }
+      }
+    }
+
+    .content {
+      .search-result-container {
+        .pagefind-modular-list-result {
+          border-top: unset;
+
+          &:last-of-type {
+            border-bottom: unset;
+          }
+
+          .pagefind-modular-list-thumb {
+            display: none;
+
+          }
+
+          .pagefind-modular-list-title {
+
+          }
+
+          .pagefind-modular-list-excerpt {
+            font-size: unset;
+          }
+        }
+      }
+    }
   }
 }
