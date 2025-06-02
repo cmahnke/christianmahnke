@@ -98,7 +98,7 @@ def get_labels (qid, lang):
         return ""
 
 
-def get_base_type(qid, lang = 'en'):
+def get_base_type(qid, lang = 'en', default_label = None):
     if qid in wikidata_cache:
         if lang in wikidata_cache[qid] and "base_type" in wikidata_cache[qid][lang]:
             return wikidata_cache[qid][lang]["base_type"]
@@ -160,10 +160,12 @@ def get_base_type(qid, lang = 'en'):
             base_class_qid = base_class_info['baseClass']['value'].split('/')[-1]
             base_class_label = base_class_info['baseClassLabel']['value']
 
+            if default_label is not None and base_class_label == "":
+                base_class_label = default_label
+
             wikidata_cache[qid][lang]["base_type"] = {'qid': base_class_qid, 'label': base_class_label}
             return wikidata_cache[qid][lang]["base_type"]
 
-            return 
         else:
             return None # No base class found from the predefined list
 
@@ -177,6 +179,67 @@ def get_base_type(qid, lang = 'en'):
         print(f"An unexpected error occurred for QID {qid}: {e}")
         return None
 
+# See https://searchfox.org/mozilla-central/source/devtools/shared/inspector/css-logic.js arround line 634
+def generate_css_selector(node):
+    def escape(selector):
+        numeric_pattern = r"^(\d+).*$"
+        if re.match(numeric_pattern, selector):
+            selector = re.sub(numeric_pattern, lambda m: "".join(list(map(lambda c: "\\" + str(ord(c)), list(m.group(1))))), selector)
+        for k, v in [(".", "\\."), (":", "\\:")]:
+            selector = selector.replace(k, v)
+        return selector
+
+    if not isinstance(node, Tag):
+        return None
+
+    ancestors = node.find_parents()
+    path_nodes = []
+    for ancestor in reversed(ancestors):
+        if ancestor.name != '[document]':
+            path_nodes.append(ancestor)
+    path_nodes.append(node)
+
+    selector_parts: List[str] = []
+
+    for i, current_node in enumerate(path_nodes):
+        if not isinstance(current_node, Tag):
+            continue
+
+        part = current_node.name
+
+        if current_node.has_attr('id') and current_node['id']:
+            id = escape(current_node['id'])
+            part += f"#{id}"
+        elif current_node.has_attr('class') and current_node['class']:
+            classes = list(map(lambda e: escape(e), current_node['class']))
+            part += '.' + '.'.join(classes)
+
+        if current_node.parent and current_node.name != 'html':
+            siblings_of_same_type = [
+                s for s in current_node.parent.children
+                if isinstance(s, Tag) and s.name == current_node.name
+            ]
+            if len(siblings_of_same_type) > 1:
+                try:
+                    nth_index = siblings_of_same_type.index(current_node) + 1
+                    part += f":nth-of-type({nth_index})"
+                except ValueError:
+                    pass
+        selector_parts.append(part)
+
+    full_selector = " > ".join(selector_parts)
+
+    root_document = node.find_parent(None)
+    if root_document:
+        found_elements = root_document.select(full_selector)
+        if len(found_elements) == 1 and found_elements[0] is node:
+            return full_selector
+        elif len(found_elements) > 1:
+            return None
+        else:
+            return None
+    return None
+
 def sed_style_replace(string, pattern):
     if not (pattern.startswith('s') and len(pattern) >= 6 and pattern.endswith('g')):
         raise Exception(f"Malformed {pattern}")
@@ -188,7 +251,7 @@ def sed_style_replace(string, pattern):
     if not search or rest != 'g':
         raise Exception(f"Not a valid pattern {pattern}")
     replace = replace.replace("$", "\\")
-    return re.sub(search, replace, string, 0, re.MULTILINE)
+    return re.sub(search, replace, string, count=0, flags=re.MULTILINE)
 
 # Callable index enrichment functions
 
@@ -228,57 +291,6 @@ def variants(node, attribute="data-wikidata-entity", lang = "en"):
     else:
         qid = node[attribute]
     return get_labels(qid, lang)
-
-
-# See https://searchfox.org/mozilla-central/source/devtools/shared/inspector/css-logic.js arround line 634
-def generate_css_selector(node):
-    if not isinstance(node, Tag):
-        return None
-
-    current_node = node
-    selector_parts = []
-
-    while current_node and current_node.name != '[document]':
-        if current_node.has_attr('id') and current_node['id']:
-            id = current_node['id']
-            numeric_id_pattern = r"^(\d+).*$"
-            if re.match(numeric_id_pattern, id):
-                id = re.sub(numeric_id_pattern, lambda m: "".join(list(map(lambda c: "\\" + str(ord(c)), list(m.group(1))))), id)
-
-            part = f"#{id}"
-            selector_parts.insert(0, part)
-            break
-
-        part = current_node.name
-        if current_node.has_attr('class') and current_node['class']:
-            part += '.' + '.'.join(current_node['class'])
-
-        if current_node.parent:
-            siblings_of_same_type = [
-                s for s in current_node.parent.children
-                if isinstance(s, Tag) and s.name == current_node.name
-            ]
-
-            if len(siblings_of_same_type) > 1:
-                try:
-                    nth_index = siblings_of_same_type.index(current_node) + 1
-                    part += f":nth-of-type({nth_index})"
-                except ValueError:
-                    pass
-
-        selector_parts.insert(0, part)
-
-        full_selector = " > ".join(selector_parts)
-        if current_node.find_parent().select(full_selector) and len(current_node.find_parent().select(full_selector)) == 1:
-            return full_selector
-        current_node = current_node.parent
-
-    final_selector = " > ".join(selector_parts)
-    if final_selector:
-        root_document = node.find_parent(None) # Get the ultimate parent, which should be the BeautifulSoup object itself
-        if root_document and len(root_document.select(final_selector)) == 1:
-            return final_selector
-    return None
 
 def load_config(config_file):
     _, ext = os.path.splitext(config_file)
@@ -345,13 +357,12 @@ def preprocess_html_file(filepath, config):
     def expand_args(args, ctx):
         if isinstance(args, dict):
             return dict(map(lambda i: (i[0], i[1].format(**ctx)) , args.items()))
-            
         elif isinstance(args, list):
             return list(map(lambda e: e.format(**ctx), args))
         else:
             return args.format(**ctx)
 
-    def add_meta(element, attr = "meta", field = "", field_def = None, ctx=None):
+    def add_meta(element, attr = "meta", field = "", field_def = None, ctx=None, skip_empty = False):
         #if (any(map(content.__contains__, [",", "'", "\""]))):
         #    log.warning(f"Unknown selector definition type for '{key}': {type(selectors_def)}. Skipping.")
         if isinstance(field_def, dict):
@@ -367,13 +378,21 @@ def preprocess_html_file(filepath, config):
                         else:
                             args = value_def["args"]
                         if "args" in value_def and isinstance(args, dict):
-                            element[additional_attr] = globals()[value_def["function"]](element, **args)
+                            function_result = globals()[value_def["function"]](element, **args)
                         elif "args" in value_def and isinstance(args, list):
-                            element[additional_attr] = globals()[value_def["function"]](element, *args)
+                            function_result = globals()[value_def["function"]](element, *args)
+                        else:
+                            function_result = globals()[value_def["function"]](element, args)
                         log.debug(f"Called {value_def["function"]} with args {args}")
                     else:
-                        element[additional_attr] = globals()[value_def["function"]](element)
-                    attr_val = f"{field}[{additional_attr}]"
+                        function_result = globals()[value_def["function"]](element)
+                    
+                    if skip_empty and function_result == "":
+                        log.debug(f"Skipping empty result for attribute '{attr}' (target '{additional_attr}'), field '{field}', call '{value_def}'")
+                    else:
+                        log.debug(f"Got result for attribute '{attr}' (target '{additional_attr}'), field '{field}', call '{value_def}':\n{function_result}")
+                        element[additional_attr] = function_result
+                        attr_val = f"{field}[{additional_attr}]"
                 else:
                     log.warning(f"Unsupported dict value definition {value_def} ")
             else:
@@ -383,7 +402,10 @@ def preprocess_html_file(filepath, config):
         if attr in element:
             element[data_attribute_prefix + attr] = f"{element[data_attribute_prefix + attr]}, {attr_val}"
         else:
-            element[data_attribute_prefix + attr] = attr_val
+            try:
+                element[data_attribute_prefix + attr] = attr_val
+            except NameError:
+                pass
 
     def add_attr(element, attr, field_def):
         if isinstance(field_def, str):
@@ -444,7 +466,10 @@ def preprocess_html_file(filepath, config):
                             sel = list(selector.keys())[0]
                         elements = soup.select(sel)
                         for element in elements:
-                            add_meta(element, key, sub_key, selector, {"lang": lang})
+                            skip_empty = False
+                            if key == "filter":
+                                skip_empty = True
+                            add_meta(element, key, sub_key, selector, {"lang": lang}, skip_empty)
             continue
         else:
             log.warning(f"Unknown selector definition type for '{key} and dict, maybe selectors need to be given as lsit?': {type(selectors_def)}. Skipping.")

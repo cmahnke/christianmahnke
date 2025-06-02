@@ -19,6 +19,7 @@ files:
     - 'en/applications/**'
     - 'meta/**'
     - 'en/meta/**'
+    - '404.html'
 content:
   ignore:
     - "<meta http-equiv=\"refresh\" content=\"0; url="

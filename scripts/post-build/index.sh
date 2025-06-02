@@ -6,4 +6,7 @@ if [ -z "$PYTHON" ] ; then
   PYTHON=`which python`
 fi
 
+LOG_LEVEL=INFO
+export LOG_LEVEL
+
 $PYTHON scripts/indexer.py -c pagefind-index.yaml
