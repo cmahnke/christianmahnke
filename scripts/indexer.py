@@ -271,8 +271,11 @@ def sed_style_replace(string, pattern):
 def extract(node, attribute = None, pattern = None, ignore_unchanged = False):
     if attribute is None:
         text = node.text
-    else:
+    elif attribute in node:
         text = node[attribute]
+    else:
+        log.warning(f"Atribute {attribute} not set on {node.name}")
+        text  = ""
     # BeautifulSoup implements the magic by default antipattern: class attributes are returned as list without providing symetric way to work around this.
     # Like an accesor without parsing. There is a genral setting `multi_valued_attributes=None`
     if isinstance(text, list):
@@ -449,7 +452,7 @@ def preprocess_html_file(filepath, config):
     #if lang_tag is not None or len(lang_tag) >= 1 and "lang" in lang_tag[0]:
     try:
         lang = lang_tag[0]["lang"]
-        log.debug(f"Procesing {filepath}, language {lang}")
+        log.info(f"Procesing {filepath}, language {lang}")
     #else:
     except (IndexError, ValueError):
         log.warning(f"Lang tag not found for {filepath}, setting to {DEFAULT_LANG}")
