@@ -134,6 +134,13 @@ In addition to the general functionality already explained, a few special featur
 
 The example implementation uses the Python API from Pagefind, mainly because I already have experience with the Python library [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/), which is used for selection using CSS selectors.
 
+<details>
+  <summary>Gist</summary>
+  {{< html/iframe-consent >}}
+      {{<gist cmahnke 5049d42cd6dabc19cfd6c85161947fa2 >}}
+  {{< /html/iframe-consent >}}
+<details>
+
 ## Outlook
 
 The separation of content to be indexed and the configuration of the index now allows a few simple extensions that could massively increase the (re-)usability of the software:

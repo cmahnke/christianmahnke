@@ -134,6 +134,13 @@ Neben der schon erläuterten allgemeinen Funktionsweise, werden auch ein paar Be
 
 Die Beispielimplementierung nutzt die Python API von Pagefind, hauptsächlich, da ich schon Erfahrungen mit der Python Bibliothek [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/) habe, die für die Selektion mittels CSS Selektoren verwendet wird.
 
+<details>
+  <summary>Gist</summary>
+  {{< html/iframe-consent >}}
+      {{<gist cmahnke 5049d42cd6dabc19cfd6c85161947fa2 >}}
+  {{< /html/iframe-consent >}}
+<details>
+
 ## Ausblick
 
 Die Trennung von zu indizierenden Inhalten und der Konfiguration des Indexes erlaubt nun ein paar einfache Erweiterungen, die die (Nach-)Nutzbarkeit der Software massive erhöhen könnten:
