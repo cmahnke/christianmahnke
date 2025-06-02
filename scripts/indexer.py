@@ -446,7 +446,7 @@ def preprocess_html_file(filepath, config):
     #if logging.DEBUG >= log.level:
     #    initial_html_content = str(soup)
     lang_tag = soup.select("html[lang]")
-    if lang_tag is not None or len(lang_tag) < 1:
+    if lang_tag is not None or len(lang_tag) >= 1 and "lang" in lang_tag[0]:
         lang = lang_tag[0]["lang"]
         log.debug(f"Procesing {filepath}, language {lang}")
     else:
