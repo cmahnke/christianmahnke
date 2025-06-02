@@ -3,6 +3,7 @@ date: 2024-10-15T18:22:44+02:00
 title: "Haptic Feedback"
 description: 'A page from "Textil-Atlas: ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und die Gewebeverarbeitung: Textilwarenkunde und Gewebemuster" by Wilhelm Spitschka made tangible with IIIF'
 keywords: Touch, Haptic Internet
+cite: true
 tags:
 - IIIF
 - HapticFeedback
