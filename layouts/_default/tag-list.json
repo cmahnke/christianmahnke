@@ -5,6 +5,9 @@
 {{- $tagList := dict -}}
 {{- range $page := $pages -}}
   {{- $pageUrl := .RelPermalink -}}
+  {{- with .OutputFormats.Get "html" -}}
+    {{- $pageUrl = .RelPermalink -}}
+  {{- end -}}
   {{- $tags := dict -}}
   {{- range $tag := .Params.tags -}}
     {{- $tagPageMissing := false -}}

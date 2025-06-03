@@ -3,6 +3,9 @@
 {{- $sameAs := dict -}}
 {{- range $page := $pages -}}
   {{- $pageUrl := .RelPermalink -}}
+  {{- with .OutputFormats.Get "html" -}}
+    {{- $pageUrl = .RelPermalink -}}
+  {{- end -}}
   {{- $title := .Title -}}
   {{- $urls := slice -}}
   {{- range $tag := .Params.tags -}}
