@@ -1371,8 +1371,8 @@ a:visited {
         width: max-content;
 
         .readmore {
-            a:before,
-            a:after {
+            &:before,
+            &:after {
                 content: '';
                 margin-right: 0 !important;
             }
