@@ -7,7 +7,6 @@ cite: true
 tags:
   - Search
   - Pagefind
-  - JSON
 ---
 
 Da diese Seite eine Suche braucht, habe ich mir mal [Pagefind](https://pagefind.app/) angesehen...
