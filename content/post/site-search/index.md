@@ -4,7 +4,7 @@ title: "Seite nun durchsuchbar"
 keywords: Suche
 description: ""
 tags:
-  - Website
+  - Blog
   - Search
   - Status
 ---

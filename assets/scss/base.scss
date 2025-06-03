@@ -1370,6 +1370,15 @@ a:visited {
         box-shadow: inset 0 -15px 0 $text-underline-color;
         width: max-content;
 
+        .readmore {
+            a:before,
+            a:after {
+                content: '';
+                margin-right: 0 !important;
+            }
+
+        }
+
         @media (max-width : $content-width) {
             width: auto;
         }

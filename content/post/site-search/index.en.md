@@ -4,7 +4,7 @@ title: "Site now searchable"
 keywords: Suche
 description: ""
 tags:
-  - Website
+  - Blog
   - Search
   - Status
 ---
