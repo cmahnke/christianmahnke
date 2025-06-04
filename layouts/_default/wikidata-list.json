@@ -23,10 +23,13 @@
   {{- end -}}
 
   {{- with .Content -}}
-    {{- $regex := `data-wikidata-entity="(.+?)"` -}}
+    {{- $regex := `data-wikidata-entity="(.*?)"` -}}
     {{- $matches := findRESubmatch $regex . -}}
-    {{- range $matches -}}
-      {{- $entity := (index . 1) -}}
+    {{- range $match := $matches -}}
+      {{- $entity := (index $match 1) -}}
+      {{- if eq $entity "" -}}
+        {{- continue -}}
+      {{- end -}}
       {{- if not (hasPrefix $entity "http") -}}
         {{- $entity = printf "https://www.wikidata.org/wiki/%s" $entity -}}
       {{- end -}}
