@@ -978,10 +978,11 @@ a:visited {
         }
     }
 
+    a:not([href]),
     .no-link {
         &:before,
         &:after {
-            content: '';
+            content: '' !important;
         }
     }
 
