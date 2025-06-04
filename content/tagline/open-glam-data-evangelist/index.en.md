@@ -16,3 +16,5 @@ Examples of activities in this area are:
 * Keyword ["CulturalPolicy"](/tags/CulturalPolicy/)
 * Keyword ["Wikidata"](/tags/Wikidata/)
 
+### Pages and sections
+*[Donations / Donations](https://christianmahnke.de/collections/#donation-conditions)

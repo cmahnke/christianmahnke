@@ -16,3 +16,5 @@ Beispiel für Aktivitäten auf diesem Gebiet sind:
 * Schlagwort ["Kulturpolitik"](/tags/CulturalPolicy/)
 * Schlagwort ["Wikidata"](/tags/Wikidata/)
 
+### Seiten und Abschnitte
+*[Schenkungen / Spenden](https://christianmahnke.de/collections/#donation-conditions)
