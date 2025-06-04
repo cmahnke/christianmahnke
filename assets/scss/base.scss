@@ -1303,6 +1303,11 @@ a:visited {
         @media (max-width : 35em) {
           width: 100%;
         }
+
+        a[title] {
+            break-inside: avoid;
+            white-space: nowrap;
+        }
       }
     }
 
