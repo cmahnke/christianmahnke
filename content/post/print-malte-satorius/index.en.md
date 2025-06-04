@@ -25,4 +25,16 @@ Now I took the trouble to remove the glass and was amazed at how professionally 
 
 The graphic probably dates from 1964, depicting lamps, and was used as a Christmas card by Malte Satorius and his wife Elisabeth.
 
-My [this year's Christmas cards](http://localhost:1313/post/christmas-2024/) was published earlier this year.
+My [this year's Christmas cards](/post/christmas-2024/) was published earlier this year.
+
+# Update 4.6.2024
+
+Following an inquiry to the Malte Sartorius Artists' Foundation, here is Max M. Bergmann gen. Freisenbruch's assessment:
+
+{{< quote from="Max M. Bergmann gen. Freisenbruch" >}}
+[...]
+Some of these self-printed Christmas cards by Malte Sartorius are in the Foundation's possession. However, the artist kept these Christmas cards as part of his correspondence and only in rare cases as part of his artistic work. The fact that your card was signed by both Malte Sartorius and his wife Liesel indicates private correspondence. It must be said, however, that Malte Sartorius also maintained a friendly relationship with some of his regular buyers.
+[...]
+Your comparison with the lamp motifs is very apt. Your card dates from a very short period of the artist's work in the 1960s, during which Sartorius experimented with abstract forms of representation. This makes your card the earliest Christmas card that I have come across to date. I have also only come across one case so far in which Sartorius used a motif from an existing series of works for a Christmas card. It is therefore very likely that even after a complete review of the estate, no counterpart to your motif will emerge.
+[...]
+{{< /quote >}}

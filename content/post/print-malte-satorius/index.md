@@ -25,4 +25,16 @@ Nun habe ich mir mal die Mühe gemacht das Glas zu entfernen und war verwundert 
 
 Die Grafik stammt vermutlich aus dem Jahr 1964, stellt Lampen dar und ist als Weihnachtskarte von Malte Satorius und seiner Frau Elisabeth verwendet worden.
 
-Meine [diesjährigen Weihnachtskarten](http://localhost:1313/post/christmas-2024/) wurde dieses Jahr früher veröffentlicht.
+Meine [diesjährigen Weihnachtskarten](/post/christmas-2024/) wurde dieses Jahr früher veröffentlicht.
+
+# Update 4.6.2024
+
+Nach einer Anfrage bei der Künstlerstiftung Malte Sartorius, hier die Einschätzung von Max M. Bergmann gen. Freisenbruch:
+
+{{< quote from="Max M. Bergmann gen. Freisenbruch" >}}
+[...]
+Es befinden sich einige dieser selbstgedruckten Weihnachtskarten von Malte Sartorius im Besitz der Stiftung. Allerdings hat der Künstler diese Weihnachtskarten als Teil seiner Korrespondenz und nur in seltenen Fällen als Teil des künstlerischen Werks aufbewahrt. Dass Ihre Karte sowohl von Malte Sartorius, wie auch von dessen Frau Liesel unterschrieben wurde deutet auf private Korrespondenz hin. Wobei man sagen muss, dass Malte Sartorius zu einigen seiner regelmäßigen Käufer*innen auch ein freundschaftliches Verhältnis pflegte.
+[...]
+Ihr vergleich mit den Lampenmotiven ist sehr treffend. Ihre Karte stammt aus einer sehr kurzen Schaffensperiode des Künstlers in den 1960er Jahren, in der Sartorius mit abstrakten Darstellungsformen experimentiert hat. Damit ist Ihre Karte die frühste Weihnachtskarte, die mir bis zum jetzigen Zeitpunkt untergekommen ist. Auch ist mir bis jetzt erst ein Fall untergekommen, in der Sartorius für eine Weihnachtskarte ein Motiv aus einer bestehenden Werkserie benutzt hat. Es ist also sehr wahrscheinlich, dass auch nach einer vollständigen Durchsicht des Nachlasses kein Gegenstück zu Ihrem Motiv auftaucht.
+[...]
+{{< /quote >}}

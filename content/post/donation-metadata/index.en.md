@@ -9,6 +9,7 @@ tags:
   - Metadata
   - DigitalLibrary
   - Digitisation
+  - Archive
 ---
 
 From time to time I donate objects to cultural institutions...

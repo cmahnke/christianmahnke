@@ -4,7 +4,7 @@ metaPage: true
 displayinlist: false
 archive: false
 news: false
-weight: 1
+weight: 2
 ---
 
 "Citizen Art Historian" (Bürger-Kunsthistoriker) ist eine Mischung aus "Citizen Scientist" und "Art Historian" und damit eher ein selbstausgedachter Titel. Die Definition könnte lauten: Ein Nicht-Experte, der sich aktiv an der Erforschung, Dokumentation, Interpretation oder dem Erhalt von Kunst(-geschichte) beteiligt.

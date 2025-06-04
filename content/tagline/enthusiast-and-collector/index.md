@@ -17,5 +17,9 @@ Beispiel für Aktivitäten auf diesem Gebiet sind:
 * [Spenden](/tags/Donation/)
 * [Ungewöhnliche Objekte](/tags/Object/)
 
+### Seiten und Abschnitte
+*[Meine Sammlungen](https://christianmahnke.de/collections/)
+*[Schenkungen / Spenden](https://christianmahnke.de/collections/#donation-conditions)
+
 ### Sonstige Seiten
 * [Projektemacher: Seiten und Blogs](https://projektemacher.org/blogs/)

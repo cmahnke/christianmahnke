@@ -17,5 +17,9 @@ Examples of activities in this area are:
 * [Donations](/en/tags/Donation/)
 * [Unusual objects](/en/tags/Object/)
 
+### Pages and sections
+*[My collections](https://christianmahnke.de/collections/)
+*[Donations / Donations](https://christianmahnke.de/collections/#donation-conditions)
+
 ### Sonstige Seiten
 * [Projektemacher: Pages and Blogs](https://projektemacher.org/en/blogs/)

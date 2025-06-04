@@ -1,14 +1,12 @@
 ---
 date: 2025-05-30T17:33:44+02:00
-title: "Extending Pagefind"
+title: "Pagefind aufbohren"
 keywords: Pagefind
 description: ""
 cite: true
 tags:
   - Search
   - Pagefind
-  - JSON
-draft: true
 ---
 
 Da diese Seite eine Suche braucht, habe ich mir mal [Pagefind](https://pagefind.app/) angesehen...
@@ -133,6 +131,9 @@ Neben der schon erläuterten allgemeinen Funktionsweise, werden auch ein paar Be
 ## Implementierung
 
 Die Beispielimplementierung nutzt die Python API von Pagefind, hauptsächlich, da ich schon Erfahrungen mit der Python Bibliothek [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/) habe, die für die Selektion mittels CSS Selektoren verwendet wird.
+
+### Quellcode
+Der Quellcode ist als [Gist](https://gist.github.com/cmahnke/5049d42cd6dabc19cfd6c85161947fa2) verfügbar.
 
 ## Ausblick
 

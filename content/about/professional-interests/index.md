@@ -15,7 +15,12 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
   * Suchtechnologien (Solr / ElasticSearch)
   * XML Technologien
   * IIIF {{< link link="/tags/IIIF" class="blog" >}}Blog Beiträge{{< /link >}}
-  * Bibliographische Metadaten (METS / MODS / DC)
+  * Bibliographische Metadaten (METS / MODS / DC) {{< link link="/tags/Metadata/" class="blog" >}}Blog Beiträge{{< /link >}}
+  * Objekt-Metadaten (LIDO)
+
+* LinkedOpenData
+  * Wikidata
+  * SPARQL
 
 * (Massen-) Digitalisierung
   * Workflowsteuerung
@@ -41,7 +46,7 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
   * JavaSript / TypeScript {{< link link="/tags/JavaScript/" class="blog" >}}Blog Beiträge{{< /link >}}
 
 * Betriebs- und Entwicklungsinfrastrukturen
-  * Git / GitHub
+  * Git / GitHub {{< link link="/tags/GitHub/" class="blog" >}}Blog Beiträge{{< /link >}}
   * Cloud Infrastruktur: Docker / Kubernetes / Rancher {{< link link="/tags/Docker/" class="blog" >}}Blog Beiträge{{< /link >}}
 
 ## Mitgliedschaften und Netzwerke

@@ -1,14 +1,12 @@
 ---
 date: 2025-05-30T17:33:44+02:00
-title: "Pagefind aufbohren"
+title: "Extending Pagefind"
 keywords: Pagefind
 description: ""
 cite: true
 tags:
   - Search
   - Pagefind
-  - JSON
-draft: true
 ---
 
 Since this page needs a search, I had a look at [Pagefind](https://pagefind.app/)...
@@ -133,6 +131,9 @@ In addition to the general functionality already explained, a few special featur
 ## Implementation
 
 The example implementation uses the Python API from Pagefind, mainly because I already have experience with the Python library [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/), which is used for selection using CSS selectors.
+
+### Source code
+The source code is available as [Gist](https://gist.github.com/cmahnke/5049d42cd6dabc19cfd6c85161947fa2).
 
 ## Outlook
 

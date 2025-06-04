@@ -978,10 +978,11 @@ a:visited {
         }
     }
 
+    a:not([href]),
     .no-link {
         &:before,
         &:after {
-            content: '';
+            content: unset !important;
         }
     }
 
@@ -1303,6 +1304,11 @@ a:visited {
         @media (max-width : 35em) {
           width: 100%;
         }
+
+        a[title] {
+            break-inside: avoid;
+            white-space: nowrap;
+        }
       }
     }
 
@@ -1369,6 +1375,20 @@ a:visited {
     .post-title {
         box-shadow: inset 0 -15px 0 $text-underline-color;
         width: max-content;
+
+        .readmore {
+            &:before,
+            &:after {
+                content: '';
+                margin-right: 0 !important;
+            }
+
+            &:hover {
+                text-decoration: unset;
+                text-decoration-color: unset;
+            }
+
+        }
 
         @media (max-width : $content-width) {
             width: auto;
