@@ -15,7 +15,12 @@ My professional focus is on various topics from the spectrum of digital librarie
   * Search technologies (Solr / ElasticSearch)
   * XML technologies
   * IIIF {{< link link="/en/tags/IIIF" class="blog" >}}Blog posts{{< /link >}}
-  * Bibliographic metadata (METS / MODS / DC)
+  * Bibliographic metadata (METS / MODS / DC) {{< link link="/en/tags/Metadata/" class="blog" >}}Blog posts{{< /link >}}
+  * Museum metadata (LIDO)
+
+* LinkedOpenData
+  * Wikidata
+  * SPARQL
 
 * (Mass-) Digitisation
   * Workflow automatisation
@@ -41,7 +46,7 @@ My professional focus is on various topics from the spectrum of digital librarie
   * JavaSript / TypeScript {{< link link="/en/tags/JavaScript/" class="blog" >}}Blog posts{{< /link >}}
 
 * DevOps
-  * Git / GitHub
+  * Git / GitHub {{< link link="/en/tags/GitHub/" class="blog" >}}Blog posts{{< /link >}}
   * Cloud infrastructure: Docker / Kubernetes / Rancher {{< link link="/en/tags/Docker/" class="blog" >}}Blog posts{{< /link >}}
 
 ## Memberships and networks
