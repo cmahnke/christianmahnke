@@ -30,6 +30,9 @@ export function pagesToWikidata(wikidata: WikidataExport): InitialItemInput[] {
     }
     page.wikidata.forEach((idUrl) => {
       const qId = idUrl.replace("https://www.wikidata.org/wiki/", "");
+      if (qId.includes("href")) {
+        return
+      }
 
       let idReference = ids.find((id) => id.id === qId);
 
@@ -43,5 +46,5 @@ export function pagesToWikidata(wikidata: WikidataExport): InitialItemInput[] {
       }
     });
   });
-  return ids;
+  return [...new Set(ids)];
 }
