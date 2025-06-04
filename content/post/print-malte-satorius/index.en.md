@@ -29,9 +29,9 @@ My [this year's Christmas cards](/post/christmas-2024/) was published earlier th
 
 # Update 4.6.2024
 
-Following an inquiry to the Malte Sartorius Artists' Foundation, here is Max M. Bergmann's assessment:
+Following an inquiry to the Malte Sartorius Artists' Foundation, here is Max M. Bergmann gen. Freisenbruch's assessment:
 
-{{< quote from="Max M. Bergmann" >}}
+{{< quote from="Max M. Bergmann gen. Freisenbruch" >}}
 [...]
 Some of these self-printed Christmas cards by Malte Sartorius are in the Foundation's possession. However, the artist kept these Christmas cards as part of his correspondence and only in rare cases as part of his artistic work. The fact that your card was signed by both Malte Sartorius and his wife Liesel indicates private correspondence. It must be said, however, that Malte Sartorius also maintained a friendly relationship with some of his regular buyers.
 [...]
