@@ -22,7 +22,7 @@ $search-border-color-active: #ff073a;
     display: inline-block;
     line-height: 2em;
     content: url($search-light);
-    vertical-align: sub;
+    vertical-align: middle;
 }
 
 .menu {
@@ -95,7 +95,6 @@ $search-border-color-active: #ff073a;
         width: .8em;
         height: .8em;
         line-height: unset;
-        vertical-align: sub;
         filter: blur(1px);
       }
     }
@@ -111,6 +110,9 @@ body.section-search {
   min-height: 100vh;
 
   .content-container.search .post.search {
+    display: flex;
+    flex-direction: column;
+
     .search-box-container {
       display: flex;
       font-size: 150%;
@@ -142,6 +144,7 @@ body.section-search {
             transition: all 300ms;
             width: 1em;
             height: 1em;
+            vertical-align: sub;
           }
         }
       }
