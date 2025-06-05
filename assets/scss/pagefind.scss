@@ -29,6 +29,11 @@ $search-border-color-active: #ff073a;
   .search-form {
     display: inline-block;
 
+    @media (max-width: 35em) {
+      display: flex;
+      justify-content: center;
+    }
+
     .search-input {
       line-height: unset;
       border: 0;
