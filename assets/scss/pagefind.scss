@@ -131,8 +131,13 @@ body.section-search {
         height: 2em;
         padding: 0 .8em;
 
+        @media (max-width: 35em) {
+          padding: 0 .4em;
+        }
+
         .search-icon {
           margin-right: .6rem;
+
           &:after {
             transition: all 300ms;
             width: 1em;
