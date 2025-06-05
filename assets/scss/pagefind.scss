@@ -26,6 +26,12 @@ $search-border-color-active: #ff073a;
 }
 
 .menu {
+  .navigation-item.current.navto-search {
+    &:before {
+      content: unset !important;
+    }
+  }
+
   .search-form {
     display: inline-block;
 
@@ -42,7 +48,8 @@ $search-border-color-active: #ff073a;
       width: 4rem;
 
       @media (max-width: 35em) {
-        width: 60%;
+        width: 50%;
+        max-width: 50%;
         background-color: rgba(255, 255, 255, 0.6);
         border-bottom: 0;
 
@@ -141,6 +148,7 @@ body.section-search {
         line-height: unset;
         height: 2em;
         padding: 0 .8em;
+        color: inherit;
 
         @media (max-width: 35em) {
           padding: 0 .4em;
@@ -150,6 +158,7 @@ body.section-search {
           margin-right: .6rem;
 
           &:after {
+            content: url($search-dark);
             transition: all 300ms;
             width: 1em;
             height: 1em;
