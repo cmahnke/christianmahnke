@@ -3,6 +3,7 @@ shapely
 scour
 blend-modes
 pagefind[bin]
+requests
 rdflib
 beautifulsoup4
 pyyaml

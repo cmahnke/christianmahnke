@@ -118,6 +118,10 @@ body.section-search {
       font-size: 150%;
       justify-content: center;
 
+      @media (max-width: 35em) {
+        margin-top: 4.2rem;
+      }
+
       .search-input {
         border: 1px solid black;
         border-right-width: 0;
@@ -145,7 +149,7 @@ body.section-search {
             width: 1em;
             height: 1em;
             vertical-align: sub;
-          }
+            }
         }
       }
     }
