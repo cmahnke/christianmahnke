@@ -1,5 +1,9 @@
 @import "pagefind/ui";
 
+$search-button-background-color: transparent;
+$search-border-color-inactive: lightgrey;
+$search-border-color-active: #ff073a;
+
 :root {
   --pagefind-ui-scale: 1;
   --pagefind-ui-primary: #034ad8;
@@ -14,16 +18,94 @@
   --pagefind-ui-font: sans-serif;
 }
 
-.menu {
-  .search-input {
-    line-height: unset;
-  }
-
-  .search-button {
-    line-height: unset;
-  }
-
+.search-icon:after {
+    display: inline-block;
+    line-height: 2em;
+    content: url($search-light);
+    vertical-align: sub;
 }
+
+.menu {
+  .search-form {
+    display: inline-block;
+
+    .search-input {
+      line-height: unset;
+      border: 0;
+      border-bottom: 1px solid $search-border-color-inactive;
+      transition: all 300ms;
+      width: 4rem;
+
+      @media (max-width: 35em) {
+        width: 60%;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-bottom: 0;
+
+        &:focus-visible {
+          outline-offset: 1px;
+          outline-style: solid;
+        }
+      }
+
+      @media (min-width: 35em) {
+        line-height: 1rem;
+
+        &:has(+ .search-button:active), 
+        &:active,
+        &:focus {
+          width: 10rem;
+          border-bottom: 1px solid $search-border-color-active;
+        }
+
+        &:focus-visible {
+          outline-offset: 4px;
+        }
+      }
+
+      &:active + .search-button,
+      &:focus + .search-button {
+        margin-left: .4rem;
+
+        .search-icon:after {
+          filter: blur(0px) brightness(0) saturate(100%) invert(14%) sepia(92%) saturate(5396%) hue-rotate(343deg) brightness(105%) contrast(104%);
+        }
+
+        @media (max-width: 35em) {
+          .search-icon:after {
+            filter: blur(0px);
+          }
+        }
+      }
+    }
+
+    .search-button {
+      transition: all 300ms;
+      line-height: unset;
+      -webkit-appearance: unset;
+      border: unset;
+      border-radius: unset;
+      background: $search-button-background-color;
+
+      @media (max-width: 35em) {
+        margin-left: .4rem;
+      }
+
+      .search-icon:after {
+        transition: all 300ms;
+        width: .8em;
+        height: .8em;
+        line-height: unset;
+        vertical-align: sub;
+        filter: blur(1px);
+      }
+    }
+  }
+}
+
+.footer .content .wrapper .footer-nav .search-form {
+  display: none;
+}
+
 
 body.section-search {
   min-height: 100vh;
@@ -47,7 +129,16 @@ body.section-search {
         align-items: center;
         line-height: unset;
         height: 2em;
-        padding: 0 1em;
+        padding: 0 .8em;
+
+        .search-icon {
+          margin-right: .6rem;
+          &:after {
+            transition: all 300ms;
+            width: 1em;
+            height: 1em;
+          }
+        }
       }
     }
 

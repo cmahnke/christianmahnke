@@ -257,6 +257,7 @@ a:visited {
             justify-content: flex-start;
             gap: 1.4em;
             transition: all 0.5s;
+            align-items: center;
 
             @media (max-width : 46em) {
               gap: .3em;

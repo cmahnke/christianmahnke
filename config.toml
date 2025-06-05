@@ -47,7 +47,7 @@ timeout = "120s"
                 url = "about"
 
             [[languages.de.menu.main]]
-                name = '<input type="text" placeholder="Suche" class="search-input"><button type="submit" class="search-button">Suchen</button>'
+                name = '<form action="/search/" method="get" class="search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form>'
                 weight = 7
                 url = "search"
 
@@ -86,7 +86,7 @@ timeout = "120s"
                 url = "en/about"
 
             [[languages.en.menu.main]]
-                name = '<input type="text" placeholder="Search" class="search-input"><button type="submit" class="search-button">Search</button>'
+                name = '<form action="/en/search/" method="get" class="search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form>'
                 weight = 7
                 url = "search"
 
