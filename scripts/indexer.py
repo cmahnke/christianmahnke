@@ -415,12 +415,17 @@ def preprocess_html_file(filepath, config):
                 attr_val = field + value_def
         else:
             attr_val = field
-        if attr in element:
-            element[data_attribute_prefix + attr] = f"{element[data_attribute_prefix + attr]}, {attr_val}"
+        target_attr = data_attribute_prefix + attr
+        if element.has_attr(target_attr):
+            value = f"{element[target_attr]}, {attr_val}"
+            element[target_attr] = value
+            log.debug(f"Updated attribute '{target_attr}' with value '{value}'")
         else:
             try:
-                element[data_attribute_prefix + attr] = attr_val
+                element[target_attr] = attr_val
+                log.debug(f"Added attribute '{target_attr}' with value '{attr_val}'")
             except NameError:
+                log.debug(f"Ignoring unset value for {attr}")
                 pass
 
     def add_attr(element, attr, field_def):

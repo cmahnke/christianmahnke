@@ -50,7 +50,7 @@ $search-border-color-active: #ff073a;
       @media (min-width: 35em) {
         line-height: 1rem;
 
-        &:has(+ .search-button:active), 
+        &:has(+ .search-button:active),
         &:active,
         &:focus {
           width: 10rem;
@@ -219,7 +219,12 @@ body.section-search {
           }
 
           .pagefind-modular-list-title {
-
+            .pagefind-modular-list-link {
+              &:before,
+              &:after {
+                  content: unset !important;
+              }
+            }
           }
 
           .pagefind-modular-list-excerpt {

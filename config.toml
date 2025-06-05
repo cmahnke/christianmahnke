@@ -47,13 +47,13 @@ timeout = "120s"
                 url = "about"
 
             [[languages.de.menu.main]]
-                name = '<form action="/search/" method="get" class="search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form>'
+                name = '<form action="/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form>'
                 weight = 7
                 url = "search"
 
                 [[languages.de.menu.main.params]]
                     html = true
-                    draft = true
+#                    draft = true
 
     [languages.en]
         languagename = "English"
@@ -86,13 +86,13 @@ timeout = "120s"
                 url = "en/about"
 
             [[languages.en.menu.main]]
-                name = '<form action="/en/search/" method="get" class="search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form>'
+                name = '<form action="/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form>'
                 weight = 7
                 url = "search"
 
                 [[languages.en.menu.main.params]]
                     html = true
-                    draft = true
+#                    draft = true
 
 [markup]
     defaultMarkdownHandler = 'goldmark'
