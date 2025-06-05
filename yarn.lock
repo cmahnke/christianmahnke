@@ -2,36 +2,42 @@
 # yarn lockfile v1
 
 
-"@annotorious/annotorious@3.4.2":
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.4.2.tgz#533240a66e815d335e41a29474202275cba2e007"
-  integrity sha512-Z4YIyn6CGNxgIlfScXfNDmpSDHV9dUNOw8AJY6dwEYua668YA3fxeWRDHkKc4hekBnqe28gogSYEq10YkhOAgA==
+"@annotorious/annotorious@3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.4.3.tgz#db1a209e3ee01860c81726fd0e7ca5d216439394"
+  integrity sha512-DLKuIYH4yI+LYHS1Ws11CV8oHOPjVk7mRMLGiTLTEKGxCl5++KzcNs90RP7NxSobQvfZBXdytz/bXdLEFDRSFQ==
   dependencies:
-    "@annotorious/core" "3.4.2"
+    "@annotorious/core" "3.4.3"
     dequal "^2.0.3"
     rbush "^4.0.1"
+    simplify-js "^1.2.4"
     svg-pathdata "^7.2.0"
     uuid "^11.1.0"
 
-"@annotorious/core@3.4.2":
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.4.2.tgz#d4d694cb907e6447da0e5480c6537bef90011823"
-  integrity sha512-W+4Bm0P3GQXT9t3DDATi6+uF4s2vbV3zRrX6T9wrlM5xJcBeKlZI2rrHzS/eVjZJmH8jrKuO7keW5cQWuSx4GQ==
+"@annotorious/core@3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.4.3.tgz#5253b1aba998271432277c695a14a5f559a03678"
+  integrity sha512-SoZflcYU2wMJr7qjcpR0Q0EPqzJ8q9MzsoqKCcp2Rj76ktAu+g+zMlmeRjuYixTOxpUXEgWDHO+7MEKNWykZWA==
   dependencies:
     dequal "^2.0.3"
     nanoevents "^9.1.0"
     nanoid "^5.1.5"
     uuid "^11.1.0"
 
-"@annotorious/openseadragon@^3.4.2":
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.4.2.tgz#92bd729cea0263dccbb7fd63cde30ed1bf567f7a"
-  integrity sha512-7Drfsz5pRvq/oh42etbwQBkXX6wkNeeleM9bMt17alSjjOdce1K1xlfWmwPkP5c9UOBU1PypQWWyxrS0MsxHhw==
+"@annotorious/openseadragon@^3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.4.3.tgz#18950fd2dbec0a090722d379a467ac2eee440cc8"
+  integrity sha512-mT/Z630iSnuE2KCJeL6znqsSejJYFLB8SXAJxk3KB3CdaTfVp4xHt1A+krzl4tvOUb+MVkzQ+gXhWAhUpCuX8Q==
   dependencies:
-    "@annotorious/annotorious" "3.4.2"
-    "@annotorious/core" "3.4.2"
+    "@annotorious/annotorious" "3.4.3"
+    "@annotorious/core" "3.4.3"
     pixi.js "^7.4.3"
     uuid "^11.1.0"
+
+"@babel/runtime@^7.23.2", "@babel/runtime@^7.27.1":
+  version "7.27.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.27.6.tgz#ec4070a04d76bae8ddbb10770ba55714a417b7c6"
+  integrity sha512-vbavdySgbTTrmFE+EsiqUTzlOr5bzlnJtUv9PynGCAKvfQqjIXbvFdumPM/GxMDfyuGMJaJAU6TO4zc1Jf1i8Q==
 
 "@isaacs/cliui@^8.0.2":
   version "8.0.2"
@@ -55,11 +61,6 @@
   resolved "https://registry.yarnpkg.com/@pagefind/darwin-x64/-/darwin-x64-1.3.0.tgz#10aa3c5988daa464c5c0db5c5aa4bf72e9bbfba1"
   integrity sha512-zlGHA23uuXmS8z3XxEGmbHpWDxXfPZ47QS06tGUq0HDcZjXjXHeLG+cboOy828QIV5FXsm9MjfkP5e4ZNbOkow==
 
-"@pagefind/default-ui@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@pagefind/default-ui/-/default-ui-1.3.0.tgz#e3fb585d2fb08d463a8abc3c8f430420f0310109"
-  integrity sha512-CGKT9ccd3+oRK6STXGgfH+m0DbOKayX6QGlq38TfE1ZfUcPc5+ulTuzDbZUnMo+bubsEOIypm4Pl2iEyzZ1cNg==
-
 "@pagefind/linux-arm64@1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@pagefind/linux-arm64/-/linux-arm64-1.3.0.tgz#cceb0391901736427738ee1232ff326a985eda8a"
@@ -69,6 +70,11 @@
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@pagefind/linux-x64/-/linux-x64-1.3.0.tgz#06ec4c2907780a75d2fb65a22203c5a48abe7a82"
   integrity sha512-hAvqdPJv7A20Ucb6FQGE6jhjqy+vZ6pf+s2tFMNtMBG+fzcdc91uTw7aP/1Vo5plD0dAOHwdxfkyw0ugal4kcQ==
+
+"@pagefind/modular-ui@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@pagefind/modular-ui/-/modular-ui-1.3.0.tgz#c381a931937ea2aacae95951e42c3072fdc8023e"
+  integrity sha512-XJhLZAOrh0n+4nnn96ASogRjBWnZ3Ao0J1OgjU5PnsqFl+YZWrodp3j5Lx8EQ+UxiZgKy9XNeP1vC1GCFphLCg==
 
 "@pagefind/windows-x64@1.3.0":
   version "1.3.0"
@@ -886,6 +892,20 @@ hasown@^2.0.0:
   dependencies:
     function-bind "^1.1.2"
 
+i18next-browser-languagedetector@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/i18next-browser-languagedetector/-/i18next-browser-languagedetector-8.1.0.tgz#e7fcc1084e9ca8fece329c8c05b000a6e25bd82e"
+  integrity sha512-mHZxNx1Lq09xt5kCauZ/4bsXOEA2pfpwSoU11/QTJB+pD94iONFwp+ohqi///PwiFvjFOxe1akYCdHyFo1ng5Q==
+  dependencies:
+    "@babel/runtime" "^7.23.2"
+
+i18next@^25.2.0:
+  version "25.2.1"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-25.2.1.tgz#23cf8794904f551f577558d93c84b0fb6cd489a2"
+  integrity sha512-+UoXK5wh+VlE1Zy5p6MjcvctHXAhRwQKCxiJD8noKZzIXmnAX8gdHX5fLPA3MEVxEN4vbZkQFy8N0LyD9tUqPw==
+  dependencies:
+    "@babel/runtime" "^7.27.1"
+
 iconv-lite@0.6:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.6.3.tgz#a52f80bf38da1952eb5c681790719871a1a72501"
@@ -1184,6 +1204,11 @@ signal-exit@^4.0.1:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-4.1.0.tgz#952188c1cbd546070e2dd20d0f41c0ae0530cb04"
   integrity sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==
+
+simplify-js@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/simplify-js/-/simplify-js-1.2.4.tgz#7aab22d6df547ffd40ef0761ccd82b75287d45c7"
+  integrity sha512-vITfSlwt7h/oyrU42R83mtzFpwYk3+mkH9bOHqq/Qw6n8rtR7aE3NZQ5fbcyCUVVmuMJR6ynsAhOfK2qoah8Jg==
 
 source-map-js@^1.0.1:
   version "1.0.2"
