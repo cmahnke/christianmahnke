@@ -1,5 +1,6 @@
 import * as d3 from "d3";
-import { chord } from "d3-chord";
+import { chord, ribbon, Chord, ChordGroup } from "d3-chord";
+import { arc, Arc } from "d3-shape";
 
 import type { Tags } from "./transformations";
 import { convertTags } from "./transformations";
@@ -9,15 +10,16 @@ type FlowInputRecord = [string, string, string, number];
 interface ChordNode {
   index: number;
   name: string;
-  // D3 Chord layout will add properties like startAngle, endAngle, value
-  [key: string]: any;
+  startAngle?: number;
+  endAngle?: number;
+  value?: number;
 }
 
 interface ChordData {
   matrix: number[][];
   nodes: ChordNode[];
-  urlMap: Map<string, string>; // Key: "sourceIndex-targetIndex", Value: url
-  nodeNameMap: Map<number, string>; // Key: index, Value: name
+  urlMap: Map<string, string>;
+  nodeNameMap: Map<number, string>;
 }
 
 function prepareChordData(inputData: FlowInputRecord[]): ChordData {
@@ -32,7 +34,7 @@ function prepareChordData(inputData: FlowInputRecord[]): ChordData {
     .map(() => Array(nodes.length).fill(0));
 
   const urlMap = new Map<string, string>();
-  const nodeNameMap = new Map<number, string>(); // For easy lookup if needed
+  const nodeNameMap = new Map<number, string>();
   nodes.forEach((node) => nodeNameMap.set(node.index, node.name));
 
   inputData.forEach((record) => {
@@ -42,6 +44,7 @@ function prepareChordData(inputData: FlowInputRecord[]): ChordData {
 
     if (sourceIndex !== undefined && targetIndex !== undefined) {
       matrix[sourceIndex][targetIndex] = value;
+      matrix[targetIndex][sourceIndex] = value;
       urlMap.set(`${sourceIndex}-${targetIndex}`, url);
     }
   });
@@ -49,10 +52,6 @@ function prepareChordData(inputData: FlowInputRecord[]): ChordData {
   return { matrix, nodes, urlMap, nodeNameMap };
 }
 
-// --- Chart Rendering Function ---
-/**
- * Renders a Chord Diagram using D3.js.
- */
 function renderD3ChordDiagram(
   container: HTMLElement,
   inputData: FlowInputRecord[],
@@ -67,18 +66,10 @@ function renderD3ChordDiagram(
   linkPrefix: string = "/tags/"
 ): void {
   if (!container) {
-    console.error(`HTML element with ID '${containerId}' not found.`);
+    console.error(`HTML element not found!`);
     return;
   }
-  container.innerHTML = ""; // Clear previous content
-
-  if (typeof d3 === "undefined" || !d3.chord) {
-    container.innerHTML = `<p style="color: red; font-family: sans-serif;">
-            <strong>Error: D3.js (including d3.chord) not loaded.</strong>
-        </p>`;
-    console.error("D3.js or d3.chord not loaded.");
-    return;
-  }
+  container.innerHTML = "";
 
   const { matrix, nodes, urlMap, nodeNameMap } = prepareChordData(inputData);
   if (nodes.length === 0) {
@@ -90,144 +81,176 @@ function renderD3ChordDiagram(
   const height = chartConfig.height || 700;
   const outerRadius = chartConfig.outerRadius || Math.min(width, height) * 0.5 - 50;
   const innerRadius = chartConfig.innerRadius || outerRadius - 20;
-  const padAngle = chartConfig.padAngle || 0.05; // Padding between arcs
-  const labelOffset = chartConfig.labelOffset || 15; // Distance of labels from arcs
+  const padAngle = chartConfig.padAngle || 0.05;
+  const labelOffset = chartConfig.labelOffset || 15;
 
   const svg = d3
     .select(container)
     .append("svg")
     .attr("width", width)
     .attr("height", height)
-    .attr("viewBox", [-width / 2, -height / 2, width, height]) // Center the diagram
+    .attr("viewBox", [-width / 2, -height / 2, width, height])
     .attr("font-size", "10px")
     .attr("font-family", "sans-serif");
 
   const color = d3.scaleOrdinal(d3.schemeCategory10).domain(nodes.map((d) => d.name));
 
-  const chordLayout = d3
-    .chord()
+  const chordLayout = chord()
     .padAngle(padAngle)
-    .sortSubgroups(d3.descending) // Sort subgroups by value (optional)
-    .sortChords(d3.descending); // Sort chords by value (optional)
+    .sortSubgroups(d3.descending)
+    .sortChords(d3.descending);
 
   const chords = chordLayout(matrix);
 
-  // --- Draw Outer Arcs (Groups) ---
+  const symmetricalChords = chords.map((d) => {
+    const combinedValue = Math.max(d.source.value, d.target.value);
+    return {
+      ...d,
+      source: { ...d.source, value: combinedValue },
+      target: { ...d.target, value: combinedValue },
+    } as Chord; // Type assertion
+  });
+
   const group = svg
     .append("g")
     .selectAll("g")
-    .data(chords.groups) // chords.groups are the nodes/arcs
+    .data(chords.groups) // Use original chords.groups for arc rendering
     .join("g");
 
-  const arc = d3.arc().innerRadius(innerRadius).outerRadius(outerRadius);
+  const arcGenerator: Arc<any, ChordGroup> = arc<ChordGroup>()
+    .innerRadius(innerRadius)
+    .outerRadius(outerRadius);
 
   group
     .append("path")
-    .attr("fill", (d: any) => color(nodeNameMap.get(d.index) || ""))
-    .attr("stroke", (d: any) => d3.rgb(color(nodeNameMap.get(d.index) || "")).darker())
-    .attr("d", arc)
-    .append("title") // Basic tooltip for arcs
-    .text((d: any) => `${nodeNameMap.get(d.index)}\nTotal Flow: ${d.value.toFixed(2)}`);
+    .attr("fill", (d: ChordGroup) => color(nodeNameMap.get(d.index) || ""))
+    .attr("stroke", (d: ChordGroup) => d3.rgb(color(nodeNameMap.get(d.index) || "")).darker().toString())
+    .attr("d", arcGenerator)
+    .append("title")
+    .text((d: ChordGroup) => `${nodeNameMap.get(d.index)}\nTotal Flow: ${d.value.toFixed(2)}`);
 
-  // Handle links of labels
   const link = group
     .append("a")
-    .attr("href", (d: any) => `${linkPrefix}${nodeNameMap.get(d.index) || ""}`);
+    .attr("href", (d: ChordGroup) => `${linkPrefix}${nodeNameMap.get(d.index) || ""}`);
 
   link
     .append("text")
-    .each((d: any) => {
+    .each((d: ChordGroup & { angle?: number }) => {
       d.angle = (d.startAngle + d.endAngle) / 2;
     })
     .attr("dy", "0.35em")
     .attr(
       "transform",
-      (d: any) => `
+      (d: ChordGroup & { angle: number }) => `
             rotate(${(d.angle * 180) / Math.PI - 90})
             translate(${outerRadius + labelOffset})
             ${d.angle > Math.PI ? "rotate(180)" : ""}
         `
     )
-    .attr("text-anchor", (d: any) => (d.angle > Math.PI ? "end" : null))
-    .text((d: any) => nodeNameMap.get(d.index) || "")
+    .attr("text-anchor", (d: ChordGroup & { angle: number }) => (d.angle > Math.PI ? "end" : null))
+    .text((d: ChordGroup) => nodeNameMap.get(d.index) || "")
     .style("fill", "#333");
 
-  // --- Draw Ribbons (Chords/Links) ---
-  const ribbon = d3.ribbon().radius(innerRadius);
+  const ribbonGenerator = ribbon<any, Chord>()
+    .radius(innerRadius);
 
   svg
     .append("g")
     .attr("fill-opacity", 0.75)
     .selectAll("path")
-    .data(chords) // chords are the links/ribbons
+    .data(symmetricalChords) // Use the new symmetricalChords data
     .join("path")
-    .attr("d", ribbon)
-    .attr("fill", (d: any) => color(nodeNameMap.get(d.source.index) || "")) // Color ribbon by source
-    .attr("stroke", (d: any) => d3.rgb(color(nodeNameMap.get(d.source.index) || "")).darker())
-    .style("cursor", (d: any) => {
+    .attr("d", ribbonGenerator)
+    .attr("fill", (d: Chord) => color(nodeNameMap.get(d.source.index) || ""))
+    .attr("stroke", (d: Chord) => d3.rgb(color(nodeNameMap.get(d.source.index) || "")).darker().toString())
+    .style("cursor", (d: Chord) => {
       const urlKey = `${d.source.index}-${d.target.index}`;
       return urlMap.has(urlKey) ? "pointer" : "default";
     })
-    .on("click", (event: MouseEvent, d: any) => {
-      const urlKey = `${d.source.index}-${d.target.index}`; // Key based on the specific directed flow
+    .on("click", (event: MouseEvent, d: Chord) => {
+      const urlKey = `${d.source.index}-${d.target.index}`;
       const url = urlMap.get(urlKey);
       if (url && url !== "") {
         console.log(`Chord clicked: ${nodeNameMap.get(d.source.index)} -> ${nodeNameMap.get(d.target.index)}, URL: ${url}`);
         window.open(url, "_blank");
       } else {
-        // This case might happen if matrix[j][i] is also non-zero and has no URL, but the ribbon represents matrix[i][j]
-        // The `chords` array contains one object per pair (i,j) where matrix[i][j] > 0 or matrix[j][i] > 0.
-        // The `d.source` refers to the flow `matrix[i][j]`.
         console.warn(`No URL found for chord: ${nodeNameMap.get(d.source.index)} -> ${nodeNameMap.get(d.target.index)}`);
       }
     })
-    .on("mouseover", function (event: MouseEvent, d: any) {
+    .on("mouseover", function (event: MouseEvent, d: Chord) {
       d3.select(this).attr("fill-opacity", 0.95);
     })
-    .on("mouseout", function (event: MouseEvent, d: any) {
+    .on("mouseout", function (event: MouseEvent, d: Chord) {
       d3.select(this).attr("fill-opacity", 0.75);
     })
-    .append("title") // Basic tooltip for ribbons
-    .text((d: any) => {
+    .append("title")
+    .text((d: Chord) => {
       const urlKey = `${d.source.index}-${d.target.index}`;
       const url = urlMap.get(urlKey);
-      // The value of this specific directed chord is d.source.value
-      return `${nodeNameMap.get(d.source.index)} → ${nodeNameMap.get(d.target.index)}\nValue: ${d.source.value.toFixed(2)}\n${url ? `URL: ${url}` : "(No specific URL for this directed flow)"}`;
+      // Display the original values in the tooltip for clarity
+      const originalSourceValue = matrix[d.source.index][d.target.index];
+      const originalTargetValue = matrix[d.target.index][d.source.index];
+
+      return `${nodeNameMap.get(d.source.index)} → ${nodeNameMap.get(d.target.index)}\n${url ? `URL: ${url}` : "(No specific URL for this directed flow)"}`;
     });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('/meta/tags/index.json')
+  fetch("/meta/tags/index.json")
     .then((response) => response.json())
-    .then((data) => {
-      const processedData = convertTags(data).map((pair) => {
-        let a = Object.values(pair);
-        a.push(1);
-        return a;
+    .then((data: Tags) => {
+      interface ConvertedTagPair {
+        from: string;
+        to: string;
+        url: string;
+      }
+
+      const tagPairs: ConvertedTagPair[] = convertTags(data);
+      const processedData: FlowInputRecord[] = tagPairs.map((pair) => {
+        const source = pair.from;
+        const target = pair.to;
+        const url = pair.url || '';
+
+        const value = 1;
+        const recordTuple: FlowInputRecord = [source, target, url, value];
+        return recordTuple;
       });
 
       const containerId = "chordContainer";
       const container = document.getElementById(containerId);
-      let padding = parseInt(window.getComputedStyle(container, null).getPropertyValue('padding-left')) + parseInt(window.getComputedStyle(container, null).getPropertyValue('padding-right'))
-    console.log(padding)
+
+      if (!container) {
+        console.error(`Container element with ID "${containerId}" not found.`);
+        return;
+      }
+
+      let padding =
+        parseInt(window.getComputedStyle(container, null).getPropertyValue("padding-left")) +
+        parseInt(window.getComputedStyle(container, null).getPropertyValue("padding-right"));
+      console.log(padding);
       const width = container.getBoundingClientRect().width - padding;
-      const outerRadius = Math.ceil(width / 2.5)
+      const outerRadius = Math.ceil(width / 2.5);
 
       const chartConfig = {
-        //width: 750,
-        //height: 750,
-        //outerRadius: 300,
         width: width,
         height: width,
         outerRadius: outerRadius,
         innerRadius: outerRadius - 25,
         padAngle: 0.04,
-        labelOffset: 10
+        labelOffset: 10,
       };
-      console.log(chartConfig)
+      console.log(chartConfig);
 
       renderD3ChordDiagram(container, processedData, chartConfig);
-
+    })
+    .catch((error) => {
+      console.error("Error fetching or processing tag data:", error);
+      const containerId = "chordContainer";
+      const container = document.getElementById(containerId);
+      if (container) {
+        container.innerHTML = `<p style="color: red; font-family: sans-serif;">
+                    <strong>Error loading chart data. Please try again later.</strong>
+                </p>`;
+      }
     });
-
 });

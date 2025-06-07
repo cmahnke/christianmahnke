@@ -23,7 +23,6 @@ Daher hier ein Versuch Paarungen von Schlagworten zu visualisieren.
 </div>
 
 Aber da das Ganze visuell nicht so gut funktioniert, wie erhofft, werden einige offensichtliche Schwächen nicht mehr ausgeräumt:
-* Die Dicke der Linien für eingehende Zuordnungen ist zu dünn
 * Die Farben der Linen müssten sich über einen Gradienten ändern, wenn sie in den gegenüberliegenden Block laufen.
 * Die Darstellung auf mobilen Endgeräten ist suboptimal
 

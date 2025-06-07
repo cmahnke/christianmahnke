@@ -22,7 +22,7 @@ export function tagsToPages(tags: Tags): { [key: string]: string[] } {
   return posts;
 }
 
-export function convertTags(tags: Tags) {
+export function convertTags(tags: Tags):{ from: string; to: string; url: string }[] {
   let pairs: { from: string; to: string; url: string }[] = [];
   const posts = tagsToPages(tags);
 

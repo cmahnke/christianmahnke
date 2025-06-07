@@ -23,7 +23,6 @@ So here is an attempt to visualise keyword pairings.
 </div>
 
 But since the whole thing does not work as well visually as hoped, some obvious weaknesses are no longer eliminated:
-* The thickness of the lines for incoming assignments is too thin
 * The colours of the lines should change via a gradient when they run into the opposite block.
 * The display on mobile devices is suboptimal
 
