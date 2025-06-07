@@ -4,6 +4,7 @@ title: 'Linoleum cut by Malte Satorius (1933-2017)'
 class: sepia
 keywords: Malte Satorius
 description: "An unsigned graphic turns out to be a Christmas card by Malte Satorius"
+cite: true
 tags:
   - Art
   - Linocut

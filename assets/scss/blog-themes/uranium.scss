@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 //TODO: Remove redundent declerations covered by variables
 
 $background-color: #5107b7; /* #3D1673; */
@@ -62,6 +64,10 @@ body.uranium {
             }
           }
         }
+      }
+
+      .cite-container .cite .cite-body .cite-proposal {
+        background-color: color.adjust($background-color, $lightness: 15%);
       }
     }
 

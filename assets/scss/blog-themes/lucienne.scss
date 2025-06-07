@@ -66,6 +66,10 @@ body.lucienne {
           }
         }
       }
+
+      .cite-container .cite .cite-body .cite-proposal {
+        background-color: color.adjust($background-color, $lightness: 15%);
+      }
     }
 
     .footer {

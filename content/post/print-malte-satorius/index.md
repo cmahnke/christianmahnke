@@ -4,6 +4,7 @@ title: 'Linolschitt von Malte Satorius (1933-2017)'
 class: sepia
 keywords: Malte Satorius
 description: "Eine unsignierte Grafik entpuppt sich als Weihnachtskarte von Malte Satorius"
+cite: true
 tags:
   - Art
   - Linocut
