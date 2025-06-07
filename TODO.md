@@ -12,9 +12,13 @@ TODO
 # Posts
 
 ## TODO
-* Fix Puppeteer test for:
+* Fix Puppeteer test for - test locally:
     * {"url": "https://christianmahnke.de/post/uv-photogrammetry/"},
     * {"url": "https://christianmahnke.de/post/haptic-feedback/"}
+
+* Search
+  * Fix CSS for slim tablets
+  * Maybe pagination
 
 ### Commands
 ```

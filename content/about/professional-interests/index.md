@@ -44,6 +44,7 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
   * HTML
   * CSS
   * JavaSript / TypeScript {{< link link="/tags/JavaScript/" class="blog" >}}Blog Beiträge{{< /link >}}
+  * Hugo ([SSG](https://de.wikipedia.org/wiki/Statische_Webseite#Statische-Website-Generatoren)) {{< link link="/tags/Hugo/" class="blog" >}}Blog Beiträge{{< /link >}}
 
 * Betriebs- und Entwicklungsinfrastrukturen
   * Git / GitHub {{< link link="/tags/GitHub/" class="blog" >}}Blog Beiträge{{< /link >}}
