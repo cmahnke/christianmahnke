@@ -1,6 +1,6 @@
 ---
 date: 2024-01-30T18:22:44+02:00
-title: "Metadaten für Hugo Shortcodes"
+title: "Metadata for Hugo Shortcodes"
 cite: true
 tags:
   - Hugo
