@@ -43,3 +43,7 @@ hugo -D server
 ## Dank
 
 Dank an [***irkode***](https://discourse.gohugo.io/u/irkode/summary) aus dem Hugo Forum, der mich bei der Lösung [unterstützt hat](https://discourse.gohugo.io/t/draft-menu-entries/54622).
+
+## Update 2.6.2025
+
+Nun ist das neue Feature verfügbar: Die [Suche](/post/site-search/).

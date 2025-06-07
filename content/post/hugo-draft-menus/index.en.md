@@ -44,3 +44,7 @@ hugo -D server
 ## Thanks
 
 Thanks to [***irkode***](https://discourse.gohugo.io/u/irkode/summary) from the Hugo forum who [helped me](https://discourse.gohugo.io/t/draft-menu-entries/54622) with the solution.
+
+## Update 2.6.2025
+
+The new feature is now available: The [search](/post/site-search/).
