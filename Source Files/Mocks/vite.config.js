@@ -6,6 +6,8 @@ import stylelint from "vite-plugin-stylelint";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 import {DynamicPublicDirectory} from "vite-multiple-assets";
 //import { checker } from "vite-plugin-checker";
+import { NodePackageImporter } from 'sass';
+
 
 const mimeTypes = { ".glb": "model/gltf-binary" };
 
@@ -98,7 +100,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        api: 'modern-compiler'
+        api: 'modern-compiler',
+        importer: [new NodePackageImporter()]
       }
     }
   }

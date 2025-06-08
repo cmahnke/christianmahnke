@@ -20,6 +20,8 @@
     </div>
 
     <p>Visualizing relationships for: <span id="item-list-display">Loading...</span></p>
+    
+    <!--
     <svg width="960" height="700"></svg>
     <div
       id="tooltip"
@@ -39,6 +41,19 @@
         max-width: 300px;
       "
     ></div>
+  -->
+    <div style="position: relative; width: 100%; height: 800px;">
+  <div id="loader" class="hidden">
+    <div class="spinner"></div>
+    <span>Loading graph data from Wikidata...</span>
+  </div>
+  
+  <svg id="wikidata-graph" width="100%" height="100%"></svg>
+</div>
+
+<div id="tooltip" style="position: absolute; opacity: 0; background: #fff; border: 1px solid #ccc; padding: 10px; border-radius: 5px; pointer-events: none;"></div>
+
+<div><strong>Initial Items:</strong> <span id="item-list-display"></span></div>
     <script type="module" src="./assets/ts/main.ts"></script>
     <!-- <script type="module" src="./assets/ts/wikidata.ts"></script> -->
   </body>
