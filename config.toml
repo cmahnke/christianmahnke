@@ -271,6 +271,11 @@ timeout = "120s"
       source = "node_modules/openseadragon/build/openseadragon/images"
       target = "static/images"
 
+# See https://github.com/gohugoio/hugo/issues/7844#issuecomment-1843854396
+  [[module.mounts]]
+      source = 'i18n'
+      target = 'data'
+
 [build]
   writeStats = true
 
