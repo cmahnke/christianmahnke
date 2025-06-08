@@ -39,6 +39,7 @@
     "ts-pong": "github:adam-s/typescript-pong"
   },
   "devDependencies": {
+    "@fontsource-utils/scss": "^0.2.1",
     "@eslint/js": "^9.28.0",
     "@gltf-transform/cli": "^4.1.4",
     "@gltf-transform/core": "^4.1.4",
