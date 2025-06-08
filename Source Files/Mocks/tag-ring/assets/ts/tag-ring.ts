@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let padding =
         parseInt(window.getComputedStyle(container, null).getPropertyValue("padding-left")) +
         parseInt(window.getComputedStyle(container, null).getPropertyValue("padding-right"));
-      console.log(padding);
+      //console.log(padding);
       const width = container.getBoundingClientRect().width - padding;
       const outerRadius = Math.ceil(width / 2.5);
 
@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
         padAngle: 0.04,
         labelOffset: 10,
       };
-      console.log(chartConfig);
+      //console.log(chartConfig);
 
       renderD3ChordDiagram(container, processedData, chartConfig);
     })

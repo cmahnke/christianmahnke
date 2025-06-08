@@ -25,6 +25,6 @@ So here is an attempt to visualise keyword pairings.
 But since the whole thing does not work as well visually as hoped, some obvious weaknesses are no longer eliminated:
 * The colours of the lines should change via a gradient when they run into the opposite block.
 * The display on mobile devices is suboptimal
-* Tags aren't translated
+* Tags aren't completely translated
 
 Maybe it's time for a classic search function...
