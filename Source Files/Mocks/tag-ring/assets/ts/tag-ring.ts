@@ -95,10 +95,7 @@ function renderD3ChordDiagram(
 
   const color = d3.scaleOrdinal(d3.schemeCategory10).domain(nodes.map((d) => d.name));
 
-  const chordLayout = chord()
-    .padAngle(padAngle)
-    .sortSubgroups(d3.descending)
-    .sortChords(d3.descending);
+  const chordLayout = chord().padAngle(padAngle).sortSubgroups(d3.descending).sortChords(d3.descending);
 
   const chords = chordLayout(matrix);
 
@@ -107,7 +104,7 @@ function renderD3ChordDiagram(
     return {
       ...d,
       source: { ...d.source, value: combinedValue },
-      target: { ...d.target, value: combinedValue },
+      target: { ...d.target, value: combinedValue }
     } as Chord; // Type assertion
   });
 
@@ -117,21 +114,22 @@ function renderD3ChordDiagram(
     .data(chords.groups) // Use original chords.groups for arc rendering
     .join("g");
 
-  const arcGenerator: Arc<any, ChordGroup> = arc<ChordGroup>()
-    .innerRadius(innerRadius)
-    .outerRadius(outerRadius);
+  const arcGenerator: Arc<any, ChordGroup> = arc<ChordGroup>().innerRadius(innerRadius).outerRadius(outerRadius);
 
   group
     .append("path")
     .attr("fill", (d: ChordGroup) => color(nodeNameMap.get(d.index) || ""))
-    .attr("stroke", (d: ChordGroup) => d3.rgb(color(nodeNameMap.get(d.index) || "")).darker().toString())
+    .attr("stroke", (d: ChordGroup) =>
+      d3
+        .rgb(color(nodeNameMap.get(d.index) || ""))
+        .darker()
+        .toString()
+    )
     .attr("d", arcGenerator)
     .append("title")
     .text((d: ChordGroup) => `${nodeNameMap.get(d.index)}\nTotal Flow: ${d.value.toFixed(2)}`);
 
-  const link = group
-    .append("a")
-    .attr("href", (d: ChordGroup) => `${linkPrefix}${nodeNameMap.get(d.index) || ""}`);
+  const link = group.append("a").attr("href", (d: ChordGroup) => `${linkPrefix}${nodeNameMap.get(d.index) || ""}`);
 
   link
     .append("text")
@@ -151,8 +149,7 @@ function renderD3ChordDiagram(
     .text((d: ChordGroup) => nodeNameMap.get(d.index) || "")
     .style("fill", "#333");
 
-  const ribbonGenerator = ribbon<any, Chord>()
-    .radius(innerRadius);
+  const ribbonGenerator = ribbon<any, Chord>().radius(innerRadius);
 
   svg
     .append("g")
@@ -162,7 +159,12 @@ function renderD3ChordDiagram(
     .join("path")
     .attr("d", ribbonGenerator)
     .attr("fill", (d: Chord) => color(nodeNameMap.get(d.source.index) || ""))
-    .attr("stroke", (d: Chord) => d3.rgb(color(nodeNameMap.get(d.source.index) || "")).darker().toString())
+    .attr("stroke", (d: Chord) =>
+      d3
+        .rgb(color(nodeNameMap.get(d.source.index) || ""))
+        .darker()
+        .toString()
+    )
     .style("cursor", (d: Chord) => {
       const urlKey = `${d.source.index}-${d.target.index}`;
       return urlMap.has(urlKey) ? "pointer" : "default";
@@ -209,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const processedData: FlowInputRecord[] = tagPairs.map((pair) => {
         const source = pair.from;
         const target = pair.to;
-        const url = pair.url || '';
+        const url = pair.url || "";
 
         const value = 1;
         const recordTuple: FlowInputRecord = [source, target, url, value];
@@ -237,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
         outerRadius: outerRadius,
         innerRadius: outerRadius - 25,
         padAngle: 0.04,
-        labelOffset: 10,
+        labelOffset: 10
       };
       //console.log(chartConfig);
 
