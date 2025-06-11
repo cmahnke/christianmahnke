@@ -1,6 +1,6 @@
 @import "pagefind/ui";
 
-$search-button-background-color: #d3d3d3;
+$search-button-background-color: transparent;
 $search-border-color-inactive: lightgrey;
 $search-border-color-active: #ff073a;
 
@@ -45,7 +45,7 @@ $search-border-color-active: #ff073a;
       border: 0;
       border-bottom: 1px solid $search-border-color-inactive;
       transition: all 300ms;
-      width: 4rem;
+      width: 4.6rem;
 
       @media (max-width: 35em) {
         width: 50%;
@@ -149,6 +149,7 @@ body.section-search {
         height: 2em;
         padding: 0 .8em;
         color: inherit;
+        background-color: #d3d3d3;
 
         @media (max-width: 35em) {
           padding: 0 .4em;

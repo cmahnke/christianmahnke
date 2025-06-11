@@ -30,9 +30,18 @@
     {{- $siteTitle = .Site.Title -}}
   {{- end -}}
 
+  {{- $citeLink := .Permalink -}}
+  {{- if hugo.IsMultilingual -}}
+    {{- range .Translations -}}
+      {{- if eq .Lang $.Sites.Default.Language.Lang -}}
+        {{- $citeLink = .Permalink -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
   <div class="cite-body">
     <div class="cite-proposal">
-      <span class="cite-author">{{ $authors }}</span> <span class="cite-year">({{ .Date.Year  }})</span>: <span class="cite-title">{{ .Title }}</span>. {{ i18n "cite_in" }}:  <a class="cite-source-link" href="{{ .Site.BaseURL }}">{{ $siteTitle }}</a> [{{ i18n "cite_type_blog" }}], {{ .Date | time.Format ":date_medium" }}. {{ i18n "cite_type_online" }}: <a class="cite-link" href="{{ .Permalink }}">{{ .Permalink }}</a>.
+      <span class="cite-author">{{ $authors }}</span> <span class="cite-year">({{ .Date.Year  }})</span>: <span class="cite-title">{{ .Title }}</span>. {{ i18n "cite_in" }}:  <a class="cite-source-link" href="{{ .Site.BaseURL }}">{{ $siteTitle }}</a> [{{ i18n "cite_type_blog" }}], {{ .Date | time.Format ":date_medium" }}. {{ i18n "cite_type_online" }}: <a class="cite-link" href="{{ $citeLink }}">{{ $citeLink }}</a>.
     </div>
     <a class="bibtex-download" href="{{ $url }}" title="{{ i18n "bibtex_download"}}">{{ i18n "bibtex_download"}}</a>
   </div>
