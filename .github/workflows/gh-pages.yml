@@ -62,7 +62,7 @@ jobs:
           ./themes/projektemacher-base/scripts/stat.sh
 
       - name: Build Hugo site
-        run: hugo --printI18nWarnings --printUnusedTemplates
+        run: hugo --printI18nWarnings --printUnusedTemplates --environment production
 
       - name: Run post build script
         run: |
