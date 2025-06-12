@@ -3702,7 +3702,7 @@ class Renderer {
                 }
                 else {
                     if (combinedWidth === 0) {
-                        throw new Error("Cannot fit to width when combined width is zero.");
+                        console.warn("Cannot fit to width when combined width is zero.");
                     }
                     targetZoom = 1.0 / combinedWidth;
                     combinedCenterX = minX + combinedWidth / 2;
@@ -3713,7 +3713,7 @@ class Renderer {
                         viewer.viewport.panBy(new OpenSeadragon.Point(0, -currentViewportBounds.y), immediately);
                     }
                     if (currentViewportBounds.y > 0 && fitTop) {
-                        viewer.viewport.panBy(new OpenSeadragon.Point(0, -currentViewportBounds.y), immediately);
+                        viewer.viewport.panBy(new OpenSeadragon.Point(0, -currentViewportBounds.y + minY), immediately);
                     }
                 }
                 viewer.raiseEvent("full-width", viewer);
