@@ -49,6 +49,8 @@ yarn run svgo
 hugo --renderSegments manifests
 ./scripts/height-map.sh
 
+cp assets/scss/lucienne/lucienne-0.1.0.css themes/projektemacher-base/assets/scss/lucienne/
+
 echo "Make sure './scripts/post-build/index.sh' is executed"
 if [ -d ./scripts/post-build ] ; then
     echo "Don't forget to run post build scripts after 'hugo'!"

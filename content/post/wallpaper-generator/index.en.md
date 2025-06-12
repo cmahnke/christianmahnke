@@ -4,15 +4,12 @@ title: "Wallpaper virtual rooms!"
 preview:
   image: screenshot.png
   hide: true
-class: lucienne
 cite: true
-pagetheme: white
 tags:
 - Projektemacher.org
 - Blog
 - IIIF
 - DigitalImages
-draft: true
 ---
 
 Since I have an extensive collection of patterned papers, it was time to do something with them...
@@ -22,7 +19,7 @@ Since Corona, it has been common to look into each other's booths in video confe
 
 And to bring the two together, there is now an interactive toy for the [‘Vorsatzpapier’ blog](https://vorsatzpapier.projektemacher.org/), a pattern generator that can work directly with the IIIF manifests provided.
 
-{{< lucienne src=`{"Vorsatzpapier Collection": "https://vorsatzpapier.projektemacher.org/patterns/collection.json"}` urlInput=true resize=true download=true >}}
+{{< lucienne src=`[{"label": "Sammlung Vorsatzpapier", "url": "https://vorsatzpapier.projektemacher.org/patterns/collection.json"}]` urlinput=true resize=true download=true >}}
 
 The software is named after the designer [Lucienne Day](https://en.wikipedia.org/wiki/Lucienne_Day), who also became famous for her textile and wallpaper designs of the 50s and 60s.
 

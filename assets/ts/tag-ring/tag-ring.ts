@@ -399,7 +399,7 @@ function renderD3ChordDiagram(
     })
     .append("title")
     .text((d: IndividualRibbonData) => {
-      return `${nodeNameMap.get(d.originalSourceIndex)} → ${nodeNameMap.get(d.originalTargetIndex)}\nValue: ${d.source.value.toFixed(2)}\nURL: ${d.url || '(N/A)'}`;
+      return `${nodeNameMap.get(d.originalSourceIndex)} → ${nodeNameMap.get(d.originalTargetIndex)}\nURL: ${d.url || '(N/A)'}`;
     });
 
   // Arc hover logic
@@ -453,7 +453,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const recordTuple: FlowInputRecord = [source, target, url, value];
         return recordTuple;
       });
-      console.log(processedData)
 
       const containerId = "chordContainer";
       const container = document.getElementById(containerId);
@@ -477,7 +476,6 @@ document.addEventListener("DOMContentLoaded", () => {
         padAngle: 0.04,
         labelOffset: 10,
       };
-      //console.log(chartConfig);
 
       renderD3ChordDiagram(container, processedData, chartConfig);
     })

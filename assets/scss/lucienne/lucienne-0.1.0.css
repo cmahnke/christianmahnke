@@ -1,0 +1,373 @@
+/* league-spartan-latin-wght-normal */
+@font-face {
+  font-family: "League Spartan Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("/fonts/league-spartan-latin-wght-normal.woff2") format("woff2-variations");
+}
+.lucienne,
+.lucienne dual-range-slider,
+.lucienne rotating-input,
+.lucienne grid-size-selector,
+.lucienne offscreencanvas-download,
+.lucienne image-resolution-select {
+  --btn-bg-color: #d3d3d3;
+  --btn-text-color: rgb(77, 77, 77);
+  --btn-hover-bg-color: color-mix(in srgb, #d3d3d3 85%, black);
+  --btn-hover-tansition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  --btn-disabled-bg-color: color-mix(in srgb, #d3d3d3 55%, white);
+  --btn-disabled-text-color: #666;
+  --btn-padding: 8px 16px;
+  --btn-border-radius: 0;
+  --btn-border: 1px solid #000;
+  --btn-font-size: 1rem;
+  --btn-line-height: unset;
+  --btn-cursor: pointer;
+  --btn-disabled-cursor: not-allowed;
+  --btn-margin: 0 2em;
+  --disabled-opacity: 0.6;
+  --font-family: League Spartan Variable;
+  --control-handle-color: #ff073a;
+  --control-fill-color: #f1ffb7;
+  --control-thumb-color: #ff073a;
+  --control-track-color: #701611;
+  --control-disabled-color: #ddd;
+  --control-thumb-hover-color: var(--control-thumb-color);
+  --control-thumb-active-color: var(--control-thumb-color);
+  --control-circle-color: var(--control-track-color);
+  --input-border: 1px solid #ccc;
+  --rotating-input-container-margin: 20px auto;
+  --link-color: #d1cac8;
+  --link-color-hover: #d1cac8;
+  --grid-width: 15em;
+  --grid-height: 15em;
+  --cell-background-color: #ddd;
+  --cell-selected-background-color: #66afff;
+  --cell-selected-border: 1px solid color-mix(in srgb, var(--cell-selected-background-color) 70%, black);
+  --grid-box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
+}
+
+body {
+  color: rgb(77, 77, 77);
+  font-family: "League Spartan Variable";
+}
+body .lucienne *:focus-visible {
+  outline-offset: 1px;
+  outline-style: solid;
+}
+body .lucienne .output-area,
+body .lucienne .input-area {
+  background-color: rgb(255, 255, 255);
+  border-radius: unset;
+}
+body .lucienne .input-area {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+body .lucienne .output-area {
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+body .lucienne .cutting-table-viewer .controls.button,
+body .lucienne .output-viewer .controls.button {
+  filter: drop-shadow(0 0 2px black) drop-shadow(0 0 2px black);
+}
+
+.lucienne {
+  transition: all 200ms;
+  font-size: var(--btn-font-size);
+  font-family: var(--font-family);
+}
+.lucienne.shifts .slider.offset {
+  display: unset !important;
+}
+.lucienne input {
+  font-family: var(--font-family);
+}
+.lucienne input:focus, .lucienne input:focus-visible, .lucienne input:active {
+  outline: 1px solid var(--btn-hover-bg-color);
+}
+.lucienne .input-area {
+  border-radius: 1em;
+  box-sizing: border-box;
+}
+@media (width >= 720px) {
+  .lucienne .input-area {
+    padding: 1em;
+  }
+}
+.lucienne .input-area.dropzone {
+  box-shadow: inset 0 0 0 0.4em #007bff;
+}
+.lucienne .input-area input:disabled {
+  cursor: not-allowed;
+}
+.lucienne .output-area {
+  padding: 1rem;
+}
+.lucienne a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--link-color);
+}
+.lucienne a::before, .lucienne a::after, .lucienne a:hover {
+  text-decoration: none;
+  color: unset;
+}
+.lucienne a:hover {
+  color: var(--link-color-hover);
+}
+.lucienne .cutting-table-viewer,
+.lucienne .output-viewer {
+  position: relative;
+}
+.lucienne .cutting-table-viewer .controls.button,
+.lucienne .output-viewer .controls.button {
+  transition: all 300ms;
+  display: block;
+  height: 2em;
+  width: 2em;
+  position: absolute !important;
+  top: 1em;
+  z-index: 10;
+  cursor: pointer;
+  font-family: var(--font-family);
+  filter: drop-shadow(0 0 1px black) drop-shadow(0 0 1px black);
+}
+.lucienne .cutting-table-viewer .controls.button:hover,
+.lucienne .output-viewer .controls.button:hover {
+  transform: scale(1.1);
+}
+.lucienne .cutting-table-viewer .controls.button:focus,
+.lucienne .output-viewer .controls.button:focus {
+  transform: scale(0.8);
+}
+.lucienne .cutting-table-viewer .controls.button.disabled,
+.lucienne .output-viewer .controls.button.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+  transition: unset;
+}
+.lucienne .cutting-table-viewer .controls.button.disabled:hover,
+.lucienne .output-viewer .controls.button.disabled:hover {
+  transform: unset;
+}
+.lucienne .cutting-table-viewer .controls.button.fullscreen,
+.lucienne .output-viewer .controls.button.fullscreen {
+  content: url("data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 id%3D%22svg2989%22 width%3D%222337.004%22 height%3D%222337.004%22 version%3D%221.1%22 viewBox%3D%220 -256 2337.004 2337.004%22%3E%3Ccircle id%3D%22path1%22 cx%3D%221168.502%22 cy%3D%22912.502%22 r%3D%221168.002%22 style%3D%22fill%3A%23fff%3Bstroke%3A%23000%3Bstroke-width%3A10%3Bstroke-linecap%3Around%3Bstroke-linejoin%3Around%3Bpaint-order%3Amarkers stroke fill%22%2F%3E%3Cg id%3D%22g2991%22 transform%3D%22matrix(1 0 0 -1 393.994 1542.74)%22%3E%3Cpath id%3D%22path2993%22 d%3D%22M1283 995 928 640l355-355 144 144q29 31 70 14 39-17 39-59V-64q0-26-19-45t-45-19h-448q-42 0-59 40-17 39 14 69l144 144-355 355-355-355L557-19q31-30 14-69-17-40-59-40H64q-26 0-45 19T0-64v448q0 42 40 59 39 17 69-14l144-144 355 355-355 355-144-144q-19-19-45-19-12 0-24 5-40 17-40 59v448q0 26 19 45t45 19h448q42 0 59-40 17-39-14-69l-144-144 355-355 355 355-144 144q-31 30-14 69 17 40 59 40h448q26 0 45-19t19-45V896q0-42-39-59-13-5-25-5-26 0-45 19z%22 style%3D%22fill%3AcurrentColor%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  left: 6.2em;
+}
+.lucienne .cutting-table-viewer .controls.button.fullwidth,
+.lucienne .output-viewer .controls.button.fullwidth {
+  content: url("data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 id%3D%22svg2989%22 width%3D%222337.004%22 height%3D%222337.004%22 version%3D%221.1%22 viewBox%3D%220 -256 2337.004 2337.004%22%3E%3Ccircle id%3D%22path1%22 cx%3D%221168.502%22 cy%3D%22912.502%22 r%3D%221168.002%22 style%3D%22fill%3A%23fff%3Bstroke%3A%23000%3Bstroke-width%3A10%3Bstroke-linecap%3Around%3Bstroke-linejoin%3Around%3Bpaint-order%3Amarkers stroke fill%22%2F%3E%3Cg id%3D%22g2991%22 transform%3D%22scale(1 -1)rotate(-45.893 -856.886 -596.64)%22%3E%3Cpath id%3D%22path2993%22 d%3D%22M1078.341 798.097 928 640 768 480 620.541 324.676l144-144q31-30 14-69-17-40-59-40h-448q-26 0-45 19t-19 45v448q0 42 40 59 39 17 69-14l144-144L608 640l160 160 150.341 158.097-144 144q-31 30-14 69 17 40 59 40h448q26.001 0 45-19 19-19 19-45v-448q0-42-39-59-13-5-25-5-26 0-45 19z%22 style%3D%22fill%3AcurrentColor%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  left: 8.6em;
+}
+.lucienne .cutting-table-viewer .controls.button.zoomin,
+.lucienne .output-viewer .controls.button.zoomin {
+  content: url("data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 id%3D%22svg2989%22 width%3D%222337.004%22 height%3D%222337.004%22 version%3D%221.1%22 viewBox%3D%220 -256 2337.004 2337.004%22%3E%3Ccircle id%3D%22path1%22 cx%3D%221168.502%22 cy%3D%22912.502%22 r%3D%221168.002%22 style%3D%22fill%3A%23fff%3Bstroke%3A%23000%3Bstroke-width%3A10%3Bstroke-linecap%3Around%3Bstroke-linejoin%3Around%3Bpaint-order%3Amarkers stroke fill%22%2F%3E%3Cg id%3D%22g4%22 style%3D%22stroke-width%3A.450712%22 transform%3D%22matrix(2.21872 0 0 -2.21872 -393.473 2474.477)%22%3E%3Cpath id%3D%22path6%22 d%3D%22M1024 736v-64q0-13-9.5-22.5T992 640H768V416q0-13-9.5-22.5T736 384h-64q-13 0-22.5 9.5T640 416v224H416q-13 0-22.5 9.5T384 672v64q0 13 9.5 22.5T416 768h224v224q0 13 9.5 22.5t22.5 9.5h64q13 0 22.5-9.5T768 992V768h224q13 0 22.5-9.5t9.5-22.5%22 style%3D%22fill%3AcurrentColor%3Bstroke-width%3A.450712%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  left: 1em;
+}
+.lucienne .cutting-table-viewer .controls.button.zoomout,
+.lucienne .output-viewer .controls.button.zoomout {
+  content: url("data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 id%3D%22svg2989%22 width%3D%222337.004%22 height%3D%222337.004%22 version%3D%221.1%22 viewBox%3D%220 -256 2337.004 2337.004%22%3E%3Ccircle id%3D%22path1%22 cx%3D%221168.502%22 cy%3D%22912.502%22 r%3D%221168.002%22 style%3D%22fill%3A%23fff%3Bstroke%3A%23000%3Bstroke-width%3A10%3Bstroke-linecap%3Around%3Bstroke-linejoin%3Around%3Bpaint-order%3Amarkers stroke fill%22%2F%3E%3Cg id%3D%22g4%22 style%3D%22stroke-width%3A.450712%22 transform%3D%22matrix(2.21872 0 0 -2.21872 -393.473 2474.477)%22%3E%3Cpath id%3D%22path6%22 d%3D%22M1024 736v-64q0-13-9.5-22.5T992 640H416q-13 0-22.5 9.5T384 672v64q0 13 9.5 22.5T416 768h576q13 0 22.5-9.5t9.5-22.5%22 style%3D%22fill%3AcurrentColor%3Bstroke-width%3A.450712%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  left: 3.6em;
+}
+.lucienne .cutting-table-viewer .controls.button.square,
+.lucienne .output-viewer .controls.button.square {
+  right: 1em;
+  content: url("data:image/svg+xml,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 id%3D%22svg2989%22 width%3D%222337.004%22 height%3D%222337.004%22 version%3D%221.1%22 viewBox%3D%220 -256 2337.004 2337.004%22%3E%3Ccircle id%3D%22path1%22 cx%3D%221168.502%22 cy%3D%22912.502%22 r%3D%221168.002%22 style%3D%22fill%3A%23fff%3Bstroke%3A%23000%3Bstroke-width%3A10%3Bstroke-linecap%3Around%3Bstroke-linejoin%3Around%3Bpaint-order%3Amarkers stroke fill%22%2F%3E%3Cpath id%3D%22path1-7-9%22 d%3D%22M548.322 133.463c-.002.63 0 .653-.002 1.277h-90.326q-26 0-45 19c-7.661 7.661-12.717 16.282-15.744 25.65-.896.006-1.075.002-1.98.007l-.009 6.521a65 65 0 0 0-1.267 12.822v1408q0 26.001 19 45 19 19 45 19c435.939-.851 871.841-.242 1307.803.326v-.326h100.195q26 0 45-19 19-18.999 19-45c-.561-443.58.223-887.141.8-1330.732-.31-.004-.49-.002-.8-.006V198.74q0-26-19-45t-45-19c-439.224.113-878.448-.705-1317.672-1.277zM682.961 357.72c1029.427 0-565.636.595 957.037.595q26 0 45 19t19 45s-.342 622.011-.342 956.989q0 26-19 45-18.999 19-45 19l-956.826.271q-26 0-45-19-19-18.999-19-45c2.394-319.65.13-638.198.13-957.855q0-26.001 19-45 19.002-19 45-19%22 style%3D%22fill%3AcurrentColor%22%2F%3E%3C%2Fsvg%3E");
+}
+.lucienne .source-select {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.lucienne .source-select .url-input {
+  width: 30%;
+  border-radius: var(--btn-border-radius);
+  border: var(--input-border);
+}
+.lucienne .source-select .load-url-button {
+  margin-left: 1em;
+  padding: var(--btn-padding);
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  border: none;
+  border-radius: var(--btn-border-radius);
+  cursor: pointer;
+  transition: var(--btn-hover-tansition);
+  font-size: var(--btn-font-size);
+  font-family: var(--font-family);
+}
+.lucienne .source-select .load-url-button:hover:not(:disabled) {
+  background-color: var(--btn-hover-bg-color);
+}
+.lucienne .source-select .select-container {
+  flex-basis: 100%;
+  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-height: 2.4rem;
+  margin: 0.8rem;
+}
+.lucienne .source-select .select-container .select {
+  vertical-align: middle;
+  z-index: 15;
+}
+.lucienne .source-select .select-container .select.collection {
+  max-width: 50%;
+  min-width: 33%;
+}
+.lucienne .source-select .status-container {
+  flex-basis: 100%;
+  color: red;
+}
+.lucienne .source-select .pattern-selector {
+  flex-basis: 100%;
+}
+.lucienne .cutting-table {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  grid-template-rows: 1fr 1fr auto auto auto;
+  gap: 0;
+  min-height: 60vh;
+  width: 100%;
+}
+.lucienne .cutting-table .cutting-table-viewer {
+  grid-column: span 1/span 3;
+  grid-row: span 1/span 3;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+.lucienne .cutting-table .slider {
+  /* This won't work yet */
+}
+.lucienne .cutting-table .slider input[type=range]:disabled::-moz-range-track, .lucienne .cutting-table .slider input[type=range]:disabled::-moz-range-thumb, .lucienne .cutting-table .slider input[type=range]:disabled::-webkit-slider-thumb {
+  background-color: "#ccc";
+  color: "#ccc";
+}
+.lucienne .cutting-table .slider.offset {
+  display: none;
+}
+.lucienne .cutting-table .slider.horizontal {
+  grid-column: span 3/span 3;
+  grid-column-start: 1;
+  grid-row-start: 4;
+  height: fit-content;
+  width: 100%;
+}
+.lucienne .cutting-table .slider.horizontal.offset {
+  grid-row-start: 5;
+  grid-column: span 2/span 2;
+  width: 90%;
+  height: unset;
+  justify-self: center;
+}
+.lucienne .cutting-table .slider.vertical {
+  writing-mode: vertical-rl;
+  direction: ltr;
+  vertical-align: middle;
+  grid-row: span 3/span 3;
+  grid-column-start: 4;
+  grid-row-start: 1;
+  width: fit-content;
+}
+.lucienne .cutting-table .slider.vertical.offset {
+  grid-column-start: 5;
+  grid-row: span 2/span 2;
+  width: unset;
+  height: 90%;
+  align-self: center;
+}
+.lucienne .cutting-table .box.rulers {
+  grid-column-start: 3;
+  grid-row-start: 3;
+  z-index: 10;
+  height: 1.4rem;
+  align-self: center;
+  color: currentcolor;
+  background-color: var(--btn-bg-color);
+}
+.lucienne .cutting-table .rotation.horizontal {
+  grid-column-start: 3;
+  grid-row-start: 5;
+}
+.lucienne .cutting-table .rotation.vertical {
+  grid-column-start: 5;
+  grid-row-start: 3;
+}
+.lucienne .link.disabled {
+  pointer-events: none;
+  color: gray;
+}
+.lucienne .link.json {
+  max-width: min-content;
+  margin: 0 0.6em;
+  text-align: right;
+  grid-column-start: 2;
+  grid-row-start: 3;
+  z-index: 10;
+  height: 1.4rem;
+  align-self: center;
+  color: var(--link-color);
+}
+.lucienne .link:hover {
+  color: var(--link-color-hover);
+}
+.lucienne .texture-container {
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+.lucienne .texture-container .output-viewer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.lucienne .texture-container .output-viewer .resolution-select {
+  position: absolute;
+  top: 4em;
+  right: 1em;
+  margin-right: 1em;
+}
+@media (width >= 720px) {
+  .lucienne .texture-container .output-viewer .resolution-select {
+    top: 1em;
+    right: 11em;
+  }
+}
+.lucienne .texture-container .output-viewer .download-button {
+  max-width: 9em;
+  position: absolute;
+  top: 7em;
+  right: 1em;
+  color: var(--btn-text-color);
+  font-family: var(--font-family);
+  --btn-margin: 0;
+}
+@media (width >= 720px) {
+  .lucienne .texture-container .output-viewer .download-button {
+    top: 1em;
+    right: 1em;
+  }
+}
+@media (max-width: 35em) {
+  .lucienne .texture-container .output-viewer offscreencanvas-download {
+    display: none;
+  }
+}
+.lucienne .texture-container .output-viewer .grid-select {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}
+@media (width >= 720px) {
+  .lucienne .texture-container .output-viewer .grid-select {
+    top: 4em;
+    right: 1em;
+  }
+}
+/*# sourceMappingURL=lucienne-christianmahnke-0.1.0.css.map */
