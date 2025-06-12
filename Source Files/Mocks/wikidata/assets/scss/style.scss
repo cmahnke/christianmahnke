@@ -1,10 +1,17 @@
-@use "pkg:@fontsource-variable/league-spartan/index.css";
+@use "sass:color";
+
+@use "pkg:@fontsource-utils/scss" as fontsource;
+@use "pkg:@fontsource-variable/league-spartan/scss" as leagueSpartanVariabale;
+
+@include fontsource.faces($metadata: leagueSpartanVariabale.$metadata, $weights: 400, $subsets: latin);
+
 /*
+@forward "pkg:@fontsource-variable/league-spartan/index.css";
 @use "pkg:@fontsource-utils/scss" as fontsource;
 */
 
 .graph-container {
-  font-family: 'League Spartan';
+  font-family: "League Spartan";
 
   #loader {
     position: absolute;
@@ -12,7 +19,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgb(255 255 255 / 85%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,17 +43,22 @@
   }
 
   @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
-  /* Basic styling for the graph elements */
   .link {
     stroke: #999;
     stroke-opacity: 0.6;
   }
 
-  .node-label, .link-label {
+  .node-label,
+  .link-label {
     font-family: sans-serif;
     font-size: 12px; /* Base size, will be adjusted by zoom */
     pointer-events: none; /* Prevent labels from interfering with mouse events on nodes */
@@ -55,6 +67,7 @@
   .node {
     cursor: pointer;
   }
+
   .node circle {
     stroke: #fff;
     stroke-width: 1.5px;
@@ -65,11 +78,6 @@
     pointer-events: none;
   }
 
-  .link {
-    stroke: #999;
-    stroke-opacity: 0.6;
-  }
-
   .link-label {
     font: 8px sans-serif;
     fill: #555;
@@ -77,8 +85,6 @@
   }
 
   .node-label {
-
-
   }
 
   #tooltip {
@@ -89,7 +95,7 @@
     padding: 8px;
     font: 12px sans-serif;
     background: lightsteelblue;
-    border: 0px;
+    border: 0;
     border-radius: 8px;
     pointer-events: none; /* Crucial for mouse events on SVG */
     opacity: 0;

@@ -1,5 +1,4 @@
-Wikidata demonstrator
-=====================
+# Wikidata demonstrator
 
 # Getting required URIs
 

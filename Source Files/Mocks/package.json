@@ -17,7 +17,7 @@
     "npm": ">=8.3.0"
   },
   "dependencies": {
-    "@annotorious/openseadragon": "^3.4.5",
+    "@annotorious/openseadragon": "^3.4.6",
     "@fontsource-variable/josefin-sans": "^5.2.6",
     "@fontsource-variable/league-spartan": "^5.2.6",
     "@monogrid/gainmap-js": "^3.1.0",
@@ -39,15 +39,15 @@
     "ts-pong": "github:adam-s/typescript-pong"
   },
   "devDependencies": {
-    "@fontsource-utils/scss": "^0.2.1",
     "@eslint/js": "^9.28.0",
-    "@gltf-transform/cli": "^4.1.4",
-    "@gltf-transform/core": "^4.1.4",
-    "@gltf-transform/extensions": "^4.1.4",
-    "@gltf-transform/functions": "^4.1.4",
+    "@fontsource-utils/scss": "^0.2.1",
+    "@gltf-transform/cli": "^4.2.0",
+    "@gltf-transform/core": "^4.2.0",
+    "@gltf-transform/extensions": "^4.2.0",
+    "@gltf-transform/functions": "^4.2.0",
     "@playwright/test": "^1.53.0",
     "@types/d3": "^7.4.3",
-    "@types/node": "^24.0.0",
+    "@types/node": "^24.0.1",
     "@types/openseadragon": "^4.1.0",
     "@types/three": "^0.177.0",
     "eslint": "^9.28.0",

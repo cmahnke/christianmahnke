@@ -32,7 +32,6 @@
           {{- if eq .Lang $.Sites.Default.Language.Lang -}}
             {{- $i18nTag = i18n $tag  -}}
           {{- end -}}
-
           {{/* See https://github.com/gohugoio/hugo/issues/7844#issuecomment-1843854396
             {{ $i18nTag := index $.Site.Data .Lang $tag }}
           */}}
@@ -51,7 +50,7 @@
         {{- $tagMeta := dict "sameAs" $sameAs "url" $tagUrl "posts" $tagPages "count" (len $tagPages) "translations" $tagTranslations -}}
         {{- $tagList = merge $tagList (dict $tag $tagMeta) -}}
       {{- else -}}
-        {{- $tagMeta := dict "sameAs" $sameAs "url" $tagUrl "posts" (slice $pageUrl) "count" 1 -}}
+        {{- $tagMeta := dict "sameAs" $sameAs "url" $tagUrl "posts" (slice $pageUrl) "count" 1 "translations" $tagTranslations -}}
         {{- if $tagPageMissing -}}
           {{- $tagMeta = merge $tagMeta (dict "listHeaderMissing" $tagPageMissing) -}}
         {{- end -}}
