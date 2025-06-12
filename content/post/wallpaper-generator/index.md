@@ -17,13 +17,11 @@ Da ich eine umfangreiche Sammlung an gemusterten Papieren habe, war es Zeit dami
 <!--more-->
 Seit Corona ist es üblich, einander in Videokonferenzen in die Buden zu schauen. Während es einige mit interessanten Perspektiven oder dem Schwarz-Weiß-Modus probierten, wurde es während des darauf folgendem KI-Boom üblich mittels Filter Hintergründe weichzuzeichnen, damit man sich keine exzentrische Gitarren-, Fahrrad- oder Kunstsammlung an die Wand schrauben muss.
 
-Und um beides zusammen zu bringen, gibt es nun eine interaktives Spielzeug für das ["Vorsatzpapier" Blog](https://vorsatzpapier.projektemacher.org/), einen Mustergenerator, der direkt mit den bereitgestellten IIIF Manifesten arbeiten kann.
+Und um beides zusammen zu bringen, gibt es nun eine interaktives Spielzeug für das ["Vorsatzpapier" Blog](https://vorsatzpapier.projektemacher.org/generator/), einen Mustergenerator, der direkt mit den bereitgestellten IIIF Manifesten arbeiten kann. Auf dieser Seite gibt es eine Variante, bei der das Ausgangsmaterial frei gewählt werden kann.:
 
 {{< lucienne src=`[{"label": "Sammlung Vorsatzpapier", "url": "https://vorsatzpapier.projektemacher.org/patterns/collection.json"}]` urlinput=true resize=true download=true >}}
 
 Der Name der Software soll an die Designerin [Lucienne Day](https://de.wikipedia.org/wiki/Lucienne_Day), die auch für ihre Textil und Tapeten Entwürfe der 50er und 60er Jahre berühmt wurde.
-
-Auf dieser Seite gibt es eine Variante, bei der das Ausgangsmaterial frei gewählt werden kann:
 
 
 # Technische Details
