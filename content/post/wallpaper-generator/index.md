@@ -10,6 +10,7 @@ tags:
 - Blog
 - IIIF
 - DigitalImages
+- Fun
 ---
 
 Da ich eine umfangreiche Sammlung an gemusterten Papieren habe, war es Zeit damit etwas zu machen...

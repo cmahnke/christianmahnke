@@ -10,6 +10,7 @@ tags:
 - Blog
 - IIIF
 - DigitalImages
+- Fun
 ---
 
 Since I have an extensive collection of patterned papers, it was time to do something with them...
