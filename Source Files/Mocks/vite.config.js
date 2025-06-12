@@ -101,7 +101,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         api: 'modern-compiler',
-        importer: [new NodePackageImporter()]
+        importers: [new NodePackageImporter()]
       }
     }
   }

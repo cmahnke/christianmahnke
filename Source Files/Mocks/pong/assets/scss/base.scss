@@ -33,14 +33,14 @@ canvas {
     justify-content: center;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (width >= 1200px) {
     #game {
       width: 640px !important;
       height: 480px !important;
     }
   }
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (width >= 1000px) {
     #game {
       width: 640px !important;
       height: 480px !important;
@@ -49,7 +49,7 @@ canvas {
   }
 
   canvas {
-    @media screen and (min-width: 1200px) {
+    @media screen and (width >= 1200px) {
       height: unset;
       width: unset;
     }
@@ -71,11 +71,7 @@ canvas {
   margin: auto;
 
   &.cool {
-    background: rgb(0, 255, 255);
-    background: linear-gradient(
-      90deg,
-      rgba(0, 255, 255, 1) 0%,
-      rgba(255, 0, 255, 1) 100%
-    );
+    background: rgb(0 255 255);
+    background: linear-gradient(90deg, rgb(0 255 255 / 100%) 0%, rgb(255 0 255 / 100%) 100%);
   }
 }
