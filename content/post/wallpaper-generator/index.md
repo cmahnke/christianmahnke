@@ -20,7 +20,7 @@ Seit Corona ist es üblich, einander in Videokonferenzen in die Buden zu schauen
 
 Und um beides zusammen zu bringen, gibt es nun eine interaktives Spielzeug für das ["Vorsatzpapier" Blog](https://vorsatzpapier.projektemacher.org/generator/), einen Mustergenerator, der direkt mit den bereitgestellten IIIF Manifesten arbeiten kann. Auf dieser Seite gibt es eine Variante, bei der das Ausgangsmaterial frei gewählt werden kann.:
 
-{{< lucienne src=`[{"label": "Sammlung Vorsatzpapier", "url": "https://vorsatzpapier.projektemacher.org/patterns/collection.json"}]` urlinput=true resize=true download=true >}}
+{{< lucienne uselocation=true src=`[{"label": "Sammlung Vorsatzpapier", "url": "https://vorsatzpapier.projektemacher.org/patterns/collection.json"}]` urlinput=true resize=true download=true >}}
 
 Der Name der Software soll an die Designerin [Lucienne Day](https://de.wikipedia.org/wiki/Lucienne_Day), die auch für ihre Textil und Tapeten Entwürfe der 50er und 60er Jahre berühmt wurde.
 

@@ -20,7 +20,7 @@ Since Corona, it has been common to look into each other's booths in video confe
 
 And to bring the two together, there is now an interactive toy for the [‘Vorsatzpapier’ blog](https://vorsatzpapier.projektemacher.org/generator/) (book end paper), a pattern generator that can work directly with the IIIF manifests provided. On this page there is a variant where the source material can be freely selected:
 
-{{< lucienne src=`[{"label": "Sammlung Vorsatzpapier", "url": "https://vorsatzpapier.projektemacher.org/patterns/collection.json"}]` urlinput=true resize=true download=true >}}
+{{< lucienne uselocation=true src=`[{"label": "Sammlung Vorsatzpapier", "url": "https://vorsatzpapier.projektemacher.org/patterns/collection.json"}]` urlinput=true resize=true download=true >}}
 
 The software is named after the designer [Lucienne Day](https://en.wikipedia.org/wiki/Lucienne_Day), who also became famous for her textile and wallpaper designs of the 50s and 60s.
 
