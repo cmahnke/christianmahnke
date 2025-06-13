@@ -1,5 +1,5 @@
 prezi-iiif3
 shapely
 scour
-numpy<2
+numpy<3
 rdflib
