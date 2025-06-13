@@ -14,6 +14,7 @@ export function gitSymlinkResolverPlugin() {
 
   return {
     name: 'vite-plugin-git-symlink-resolver',
+    enforce: 'pre',
 
     async resolveId(source, importer, options) {
       if (!importer || source.startsWith('\0') || source.includes('node_modules')) {

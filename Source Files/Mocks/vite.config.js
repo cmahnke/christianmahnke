@@ -7,6 +7,7 @@ import { nodePolyfills } from "vite-plugin-node-polyfills";
 import {DynamicPublicDirectory} from "vite-multiple-assets";
 //import { checker } from "vite-plugin-checker";
 import { NodePackageImporter } from 'sass';
+import { gitSymlinkResolverPlugin } from './plugins/git-symlink-plugin.js';
 
 
 const mimeTypes = { ".glb": "model/gltf-binary" };
@@ -46,6 +47,7 @@ export default defineConfig({
       ssr: false,
       mimeTypes,
     }),
+    gitSymlinkResolverPlugin()
     //checker({ typescript: false })
   ],
   build: {
