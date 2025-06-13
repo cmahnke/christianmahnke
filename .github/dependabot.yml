@@ -23,7 +23,7 @@ updates:
       interval: "daily"
 
   - package-ecosystem: "npm"
-    directory: "/Source*/Mocks/"
+    directory: "/Source Files/Mocks/"
     schedule:
       interval: "weekly"
     groups:
@@ -32,7 +32,7 @@ updates:
         - '*'
 
   - package-ecosystem: "npm"
-    directory: "/Source*/Posts/"
+    directory: "/Source Files/Posts/"
     schedule:
       interval: "weekly"
     groups:
@@ -41,7 +41,7 @@ updates:
         - '*'
 
   - package-ecosystem: "pip"
-    directory: "/Source*/Mocks/"
+    directory: "/Source Files/Mocks/"
     schedule:
       interval: "weekly"
     groups:
@@ -50,7 +50,7 @@ updates:
         - '*'
 
   - package-ecosystem: "pip"
-    directory: "/Source*/Posts/"
+    directory: "/Source Files/Posts/"
     schedule:
       interval: "weekly"
     groups:
