@@ -1,5 +1,5 @@
 ---
-date: 2025-06-13T18:02:44+02:00
+date: 2025-06-13T16:02:44+02:00
 title: "Vite und Git Symlink-Dateien"
 tags:
   - JavaScript
