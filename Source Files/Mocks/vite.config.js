@@ -4,49 +4,51 @@ import eslint from "vite-plugin-eslint";
 import { viteSingleFile } from "vite-plugin-singlefile";
 import stylelint from "vite-plugin-stylelint";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
-import {DynamicPublicDirectory} from "vite-multiple-assets";
+import { DynamicPublicDirectory } from "vite-multiple-assets";
 //import { checker } from "vite-plugin-checker";
-import { NodePackageImporter } from 'sass';
-import { gitSymlinkResolverPlugin } from './plugins/git-symlink-plugin.js';
-
+import { NodePackageImporter } from "sass";
+import { gitSymlinkResolverPlugin } from "./plugins/git-symlink-plugin.js";
 
 const mimeTypes = { ".glb": "model/gltf-binary" };
 
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
-    "host": "127.0.0.1",
+    host: "127.0.0.1",
     proxy: {
-        '/meta': {
-          target: 'https://christianmahnke.de',
-          changeOrigin: true,
-          secure: true,
-          ws: false,
-          configure: (proxy, _options) => {
-            proxy.on('error', (err, _req, _res) => {
-              console.log('proxy error', err);
-            });
-            proxy.on('proxyReq', (proxyReq, req, _res) => {
-              console.log('Sending Request to the Target:', req.method, req.url);
-            });
-            proxy.on('proxyRes', (proxyRes, req, _res) => {
-              console.log('Received Response from the Target:', proxyRes.statusCode, req.url);
-            });
-          },
+      "/meta": {
+        target: "https://christianmahnke.de",
+        changeOrigin: true,
+        secure: true,
+        ws: false,
+        configure: (proxy, _options) => {
+          proxy.on("error", (err, _req, _res) => {
+            console.log("proxy error", err);
+          });
+          proxy.on("proxyReq", (proxyReq, req, _res) => {
+            console.log("Sending Request to the Target:", req.method, req.url);
+          });
+          proxy.on("proxyRes", (proxyRes, req, _res) => {
+            console.log("Received Response from the Target:", proxyRes.statusCode, req.url);
+          });
         }
       }
+    }
   },
   base: "./",
   plugins: [
     nodePolyfills(),
     {
-      apply: "build",
+      apply: "build"
     },
     stylelint({ build: true, dev: false, lintOnStart: true }),
-    DynamicPublicDirectory(["webgpu/public", "hdr-canvas/public", "touch/public", "imagecompare/public", "node_modules/openseadragon/build/openseadragon"], {
-      ssr: false,
-      mimeTypes,
-    }),
+    DynamicPublicDirectory(
+      ["webgpu/public", "hdr-canvas/public", "touch/public", "imagecompare/public", "node_modules/openseadragon/build/openseadragon"],
+      {
+        ssr: false,
+        mimeTypes
+      }
+    ),
     gitSymlinkResolverPlugin()
     //checker({ typescript: false })
   ],
@@ -62,21 +64,21 @@ export default defineConfig({
         imagecompare: resolve(__dirname, "imagecompare/index.html"),
         //search: resolve(__dirname, "search/index.html"),
         "tag-ring": resolve(__dirname, "tag-ring/index.html"),
-        "wikidata": resolve(__dirname, "wikidata/index.html"),
+        wikidata: resolve(__dirname, "wikidata/index.html")
       },
       output: {
-        assetFileNames: `assets/[name].[ext]`,
-      },
-    },
+        assetFileNames: `assets/[name].[ext]`
+      }
+    }
   },
   resolve: {
     preserveSymlinks: true,
     alias: [
       {
         find: /~(.+)/,
-        replacement: join(process.cwd(), "node_modules/$1"),
-      },
-/*
+        replacement: join(process.cwd(), "node_modules/$1")
+      }
+      /*
       {
         find:'three/examples/jsm',
         replacement:'three/examples/jsm',
@@ -94,15 +96,15 @@ export default defineConfig({
         replacement: 'three/webgpu',
       }
       */
-    ],
+    ]
   },
   optimizeDeps: {
-    exclude: ["@monogrid/gainmap-js/libultrahdr", "three"],
+    exclude: ["@monogrid/gainmap-js/libultrahdr", "three"]
   },
   css: {
     preprocessorOptions: {
       scss: {
-        api: 'modern-compiler',
+        api: "modern-compiler",
         importers: [new NodePackageImporter()]
       }
     }

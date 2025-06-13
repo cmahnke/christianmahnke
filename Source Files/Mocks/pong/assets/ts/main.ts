@@ -19,7 +19,7 @@ const pong = new MyPong(canvas as HTMLCanvasElement);
 const engine = new MyEngine(pong, {
   fps: fps,
   canvasElementId: canvasID,
-  hz: 250,
+  hz: 250
 });
 
 engine.start(loader).then(() => {

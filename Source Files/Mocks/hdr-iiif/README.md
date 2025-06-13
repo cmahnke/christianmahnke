@@ -1,10 +1,9 @@
-IIIF HDR
-========
+# IIIF HDR
 
 # Converting to a test image
 
-
 Important: make sure, that the dimensions of the image are even, add something like `-gravity center -crop 12544x11944+0+0`
+
 ```
 convert img/front.hdr.jxl -quality 10 img/front-lowq.jpg
 ffmpeg -i front-lowq.jpg -filter:v format=p010 output.yuv
@@ -12,6 +11,7 @@ docker run -i -v "`pwd`":"`pwd`" -w "`pwd`" ghcr.io/cmahnke/hdr-tools:latest /us
 ```
 
 # Dependencies
+
 ```
 python -m pip install -r requirements.txt
 ```
@@ -19,6 +19,7 @@ python -m pip install -r requirements.txt
 # Testing UltraHDR decode
 
 For a working image:
+
 ```
 docker run -i -v "`pwd`":"`pwd`" -w "`pwd`" ghcr.io/cmahnke/hdr-tools:latest /usr/bin/ultrahdr_app -m 1 -j img/white-hdr.jpeg -O 4 -o 0
 ```
@@ -48,7 +49,6 @@ It's possible to try brightness (`-b`), contrast (`-b`) and preprocessing pipeli
 ```
 /opt/homebrew/bin/python3 scripts/hdr_iiif_static.py -d -i img/front.jxl
 ```
-
 
 # Preprocessing Example
 

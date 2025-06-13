@@ -16,7 +16,7 @@ const loader = new Loader();
 const images = {
   press1: new ImageSource(press1),
   press2: new ImageSource(press2),
-  winner: new ImageSource(winner),
+  winner: new ImageSource(winner)
 };
 
 for (const res in images) {
@@ -27,7 +27,7 @@ const sounds = {
   ping: new AudioSource(ping),
   pong: new AudioSource(pong),
   wall: new AudioSource(wall),
-  goal: new AudioSource(goal),
+  goal: new AudioSource(goal)
 };
 
 for (const res in sounds) {

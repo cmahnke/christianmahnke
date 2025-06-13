@@ -28,7 +28,7 @@ export default defineConfig({
     baseURL: "http://localhost:5173/pong/",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "on-first-retry",
+    trace: "on-first-retry"
   },
 
   /* Configure projects for major browsers */
@@ -37,8 +37,8 @@ export default defineConfig({
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
       headless: false,
-      downloadsPath: "./pong/scripts/",
-    },
+      downloadsPath: "./pong/scripts/"
+    }
   ],
 
   /* Run your local dev server before starting the tests */
@@ -46,6 +46,6 @@ export default defineConfig({
     command: "npm run dev",
     url: "http://localhost:5173/pong/",
     timeout: 120 * 1000,
-    reuseExistingServer: !process.env.CI,
-  },
+    reuseExistingServer: !process.env.CI
+  }
 });

@@ -1,3 +1,18 @@
+---
+date: 2025-06-13T18:02:44+02:00
+title: "Vite und Git Symlink-Dateien"
+tags:
+  - JavaScript
+---
+Today, Friday the 13th, I was stuck on the train in the middle of nowhere...
+<!--more-->
+
+... and since I only had a Windows laptop with me, some prototypes that I work on from time to time in such situations didn't work. The background is that I usually add shared files as symlinks in the same Git repository to the respective source code directories.
+
+This works fine under MacOS or Linux, of course, but if you simply check out a tree under Windows, the symlinks simply become normal files that contain the link target as a relative path. Since the network is poor / slow on the train, I have made a small [Vite](https://vite.dev/)/[Rollup](https://rollupjs.org/) plugin that can analyse these files and load the necessary file.
+
+
+```javascript
 import path from "node:path";
 import fs from "node:fs/promises";
 
@@ -62,3 +77,20 @@ export function gitSymlinkResolverPlugin() {
     }
   };
 }
+```
+
+This can then simply be loaded in [`vite.config.js`](https://vite.dev/config/):
+
+```javascript
+import { gitSymlinkResolverPlugin } from "./plugins/git-symlink-plugin.js";
+```
+
+and used:
+
+```javascript
+plugins: [
+  ...
+  gitSymlinkResolverPlugin(),
+  ...
+],
+```

@@ -8,20 +8,14 @@ export default [
   {
     languageOptions: { globals: globals.browser },
     rules: {
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
-        { vars: "all", args: "after-used", ignoreRestSiblings: false },
-      ],
-      "no-unused-vars": [
-        "warn",
-        { vars: "all", args: "after-used", ignoreRestSiblings: false },
-      ],
+      "@typescript-eslint/no-unused-vars": ["warn", { vars: "all", args: "after-used", ignoreRestSiblings: false }],
+      "no-unused-vars": ["warn", { vars: "all", args: "after-used", ignoreRestSiblings: false }],
       "no-warning-comments": ["warn", {}],
       "no-irregular-whitespace": ["warn", {}],
-      "no-console": ["warn", {}],
-    },
+      "no-console": ["warn", {}]
+    }
   },
   {
-    ignores: ["dist/", ".eslintrc.mjs", "vite.config.js", "postcss.config.js"],
-  },
+    ignores: ["dist/", ".eslintrc.mjs", "vite.config.js", "postcss.config.js"]
+  }
 ];

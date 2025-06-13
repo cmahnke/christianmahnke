@@ -11,11 +11,7 @@
     "esModuleInterop": true,
     "strict": false,
     "allowJs": true,
-    "typeRoots": [
-      "./webgpu/assets/ts/@types",
-      "./pong/assets/ts/@types"
-
-    ],
+    "typeRoots": ["./webgpu/assets/ts/@types", "./pong/assets/ts/@types"],
     "target": "es2020",
     "skipLibCheck": true,
     "lib": ["dom", "es2020"]
@@ -26,7 +22,7 @@
     "tag-ring/assets/**/*",
     "search/assets/**/*",
     "wikidata/assets/**/*",
-    "node_modules/ts-pong/src/**/*",
+    "node_modules/ts-pong/src/**/*"
   ],
   "exclude": ["node_modules", "**/*.spec.ts", "dist/**/*"]
 }
