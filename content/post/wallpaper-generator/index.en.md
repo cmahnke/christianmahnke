@@ -15,7 +15,7 @@ wikidata:
 - https://www.wikidata.org/wiki/Q191529
 ---
 
-Since I have an extensive collection of patterned papers, it was time to do something with them...
+Since I have an [extensive collection of patterned papers](https://vorsatzpapier.projektemacher.org/patterns/), it was time to do something with them...
 
 <!--more-->
 Since Corona, it has been common to look into each other's booths in video conferences. While some tried interesting perspectives or the black and white mode, it became common during the subsequent AI boom to use filters to blur backgrounds so that you don't have to screw an eccentric guitar, bicycle or art collection to the wall.
