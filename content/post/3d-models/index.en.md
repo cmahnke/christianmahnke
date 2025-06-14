@@ -18,6 +18,8 @@ tags:
   - Three.js
   - Blender
   - Photogrammetry
+wikidata:
+ - https://www.wikidata.org/wiki/Q3010266
 ---
 
 Maybe it will become a virtual exhibition about orange ceramics...

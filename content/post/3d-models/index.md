@@ -18,6 +18,8 @@ tags:
   - Three.js
   - Blender
   - Photogrammetry
+wikidata:
+ - https://www.wikidata.org/wiki/Q3010266
 ---
 
 Vielleicht wird mal eine virtuelle Ausstellung über orangene Keramik draus...

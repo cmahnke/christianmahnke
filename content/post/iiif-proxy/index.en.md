@@ -11,6 +11,11 @@ tags:
   - IIIF
   - OpenCV
   - DigitalImages
+wikidata:
+  - https://www.wikidata.org/wiki/Q504453
+  - https://www.wikidata.org/wiki/Q152838
+  - https://www.wikidata.org/wiki/Q564783
+  - https://www.wikidata.org/wiki/Q628106
 ---
 
 To improve the 'displayability' of digital objects such as coins and books, I have written a proxy for IIIF resources...

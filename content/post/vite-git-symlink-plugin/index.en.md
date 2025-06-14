@@ -3,6 +3,8 @@ date: 2025-06-13T16:02:44+02:00
 title: "Vite und Git Symlink-Dateien"
 tags:
   - JavaScript
+wikidata:
+  - https://www.wikidata.org/wiki/Q186055
 ---
 Today, Friday the 13th, I was stuck on the train in the middle of nowhere...
 <!--more-->

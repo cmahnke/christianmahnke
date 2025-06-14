@@ -3,6 +3,8 @@ date: 2025-06-13T16:02:44+02:00
 title: "Vite und Git Symlink-Dateien"
 tags:
   - JavaScript
+wikidata:
+  - https://www.wikidata.org/wiki/Q186055
 ---
 Heute, am Freitag dem 13. sass ich länger in der Pampa im Zug fest...
 <!--more-->

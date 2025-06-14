@@ -3,8 +3,9 @@ date: 2023-04-16T19:58:44+02:00
 title: "OAI-PMH Harvester"
 keywords: OAI-PMH, Metadaten, CI, Daten Container
 tags:
-- Data
-- Docker
+  - Data
+  - Docker
+  - Metadata
 ---
 
 Den millionsten [OAI-PMH Harvester](https://de.wikipedia.org/wiki/Open_Archives_Initiative#OAI_Protocol_for_Metadata_Harvesting) wollte ich nicht schreiben,...
