@@ -16,6 +16,8 @@ aliases:
 preview:
   image: img/screenshot.png
   hide: false
+wikidata:
+  - https://www.wikidata.org/wiki/Q8180985
 ---
 
 Who doesn't know them, the three blue towers of the University of Göttingen,...

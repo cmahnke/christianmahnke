@@ -14,6 +14,7 @@ tags:
 wikidata:
   - https://www.wikidata.org/wiki/Q16206135
   - https://www.wikidata.org/wiki/Q720832
+  - https://www.wikidata.org/wiki/Q2031121
 ---
 
 About an unexpectedly contemporary game...

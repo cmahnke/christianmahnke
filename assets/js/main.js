@@ -49,4 +49,34 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }
     })
   }
+
+  const contentSelector = ".content-container";
+  const postBody = document.querySelector(contentSelector);
+
+  /*
+  function scrollProgress() {
+    const barSelector = ".progress-bar";
+    const barContainerSelector = ".progress-container";
+    const bottom = postBody.offset().top + postBody.height();
+    let viewportHeight = window.innerHeight;
+    let progress = 100 - (((bottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (bottom - viewportHeight + viewportHeight / 3)) * 100);
+      document.querySelector(barSelector).style.width = progress + '%';
+    if (progress > 100) {
+      document.querySelector$(barContainerSelector).classList.add('complete')
+    } else {
+      document.querySelector$(barContainerSelector).classList.remove('complete');
+    }
+  }
+
+  scrollProgress();
+  window.addEventListener('scroll', (event) => {
+    scrollProgress();
+  });
+  window.addEventListener('resize', (event) => {
+    scrollProgress();
+  });
+  window.addEventListener('orientationchange', (event) => {
+    scrollProgress();
+  });
+  */
 });

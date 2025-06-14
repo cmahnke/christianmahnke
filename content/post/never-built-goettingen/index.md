@@ -16,6 +16,8 @@ aliases:
 preview:
   image: img/screenshot.png
   hide: false
+wikidata:
+  - https://www.wikidata.org/wiki/Q8180985
 ---
 
 Wer kennt sie nicht, die drei blauen Türme der Universität Göttingen,...

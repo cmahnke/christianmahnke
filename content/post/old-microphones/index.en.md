@@ -6,6 +6,8 @@ tags:
   - Audio
   - DIY
 preview: img/side.jpg
+wikidata:
+  - https://www.wikidata.org/wiki/Q46384
 ---
 
 In order to make podcasts in the future, I purchased some audio equipment in 2024...

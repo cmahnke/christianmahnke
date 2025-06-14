@@ -8,6 +8,9 @@ tags:
   - 3D
   - Exhibition
   - Blender
+wikidata:
+  - https://www.wikidata.org/wiki/Q1685508
+  - https://www.wikidata.org/wiki/Q42332
 ---
 
 For the planning of an [exhibition](/en/post/wilma-brauner/) using a 3D program, I have been looking into how pre-arranged picture frames could be imported into [Sweet Home 3D](https://www.sweethome3d.com/)...
