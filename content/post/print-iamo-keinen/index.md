@@ -5,7 +5,9 @@ tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q11376888
+wikidata:
+  - https://www.wikidata.org/wiki/Q11376888
+  - https://www.wikidata.org/wiki/Q75837421
 ---
 
 Ich habe einen japanischen Farbholzschnitt von [Imao Keinen (1855-1924)](https://de.wikipedia.org/wiki/Imao_Keinen) gekauft...

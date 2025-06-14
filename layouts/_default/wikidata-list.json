@@ -25,18 +25,31 @@
     {{- end -}}
   {{- end -}}
 
-  {{- with .Content -}}
-    {{- $regex := `data-wikidata-entity="(.*?)"` -}}
-    {{- $matches := findRESubmatch $regex . -}}
-    {{- range $match := $matches -}}
-      {{- $entity := (index $match 1) -}}
-      {{- if eq $entity "" -}}
-        {{- continue -}}
+  {{- $contents := slice -}}
+  {{ with .Translations }}
+    {{- range . -}}
+      {{ $contents = $contents | append . }}
+    {{- end -}}
+  {{- else -}}
+    {{- with .Content -}}
+      {{ $contents = $contents | append $ }}
+    {{- end -}}
+  {{- end -}}
+
+  {{- range $contents -}}
+    {{- with .Content -}}
+      {{- $regex := `data-wikidata-entity="(.*?)"` -}}
+      {{- $matches := findRESubmatch $regex . -}}
+      {{- range $match := $matches -}}
+        {{- $entity := (index $match 1) -}}
+        {{- if eq $entity "" -}}
+          {{- continue -}}
+        {{- end -}}
+        {{- if not (hasPrefix $entity "http") -}}
+          {{- $entity = printf "https://www.wikidata.org/wiki/%s" $entity -}}
+        {{- end -}}
+        {{- $urls = $urls | union (slice $entity) -}}
       {{- end -}}
-      {{- if not (hasPrefix $entity "http") -}}
-        {{- $entity = printf "https://www.wikidata.org/wiki/%s" $entity -}}
-      {{- end -}}
-      {{- $urls = $urls | union (slice $entity) -}}
     {{- end -}}
   {{- end -}}
 
