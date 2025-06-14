@@ -8,6 +8,8 @@ preview:
 tags:
 - Projektemacher.org
 - Blog
+wikidata:
+- https://www.wikidata.org/wiki/Q4363806
 ---
 
 Finally, the last of the blogs stared during the second Corona Lockdown is now online!

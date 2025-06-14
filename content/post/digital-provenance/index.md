@@ -10,6 +10,9 @@ tags:
   - CulturalPolicy
   - DigitalLibrary
   - Digitisation
+wikidata:
+  - https://www.wikidata.org/wiki/Q118496507
+  - https://www.wikidata.org/wiki/Q628106
 ---
 
 Wie kann man Authentizität digitalisierten Kulturgutes gewährleisten?

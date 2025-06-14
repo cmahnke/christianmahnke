@@ -6,6 +6,7 @@ keywords: IP, Go, Golang, Geolokalisierung, ElasticSearch
 cite: true
 tags:
   - Data
+  - Geodata
 ---
 
 [Kibana](https://www.elastic.co/de/kibana) Visualisierung mit Raumplänen braucht Daten, z.B. von Geräten in einem Gebäude. Aber irgendwo müssen die Daten herkommen...

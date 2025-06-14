@@ -11,6 +11,8 @@ tags:
 - IIIF
 - DigitalImages
 - Fun
+wikidata:
+- https://www.wikidata.org/wiki/Q191529
 ---
 
 Da ich eine umfangreiche Sammlung an gemusterten Papieren habe, war es Zeit damit etwas zu machen...

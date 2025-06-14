@@ -11,6 +11,8 @@ tags:
 - IIIF
 - DigitalImages
 - Fun
+wikidata:
+- https://www.wikidata.org/wiki/Q191529
 ---
 
 Since I have an extensive collection of patterned papers, it was time to do something with them...
