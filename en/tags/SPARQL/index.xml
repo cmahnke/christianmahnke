@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SPARQL on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/SPARQL/</link>
+    <description>Recent content in SPARQL on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/SPARQL/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wikidata Links in Hugo</title>
+      <link>https://christianmahnke.de/en/post/wikidata-entities-in-hugo/citation.bib</link>
+      <pubDate>Wed, 28 May 2025 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/wikidata-entities-in-hugo/citation.bib</guid>
+      <description>&lt;p&gt;Another step towards easier searchability of the site&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

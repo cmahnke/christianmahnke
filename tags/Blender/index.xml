@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blender on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Blender/</link>
+    <description>Recent content in Blender on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/Blender/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Der Klimawandel in der Kunst...</title>
+      <link>https://christianmahnke.de/post/marmolada-woodcut/citation.bib</link>
+      <pubDate>Sun, 15 Sep 2024 18:07:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/marmolada-woodcut/citation.bib</guid>
+      <description>&lt;p&gt;&amp;hellip;ist kein neues Thema mehr: Weder wenn es um die Auswirkungen geht, die sich in alten Werken erkennen lassen, noch als Gegenstand von Kunst selber.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3D Modelle im Browser</title>
+      <link>https://christianmahnke.de/post/3d-models/citation.bib</link>
+      <pubDate>Sat, 24 Feb 2024 10:16:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/3d-models/citation.bib</guid>
+      <description>&lt;p&gt;Vielleicht wird mal eine virtuelle Ausstellung über orangene Keramik draus&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bilder aufhängen in Sweet Home 3D</title>
+      <link>https://christianmahnke.de/post/hang-pictures-in-sweethome3d/citation.bib</link>
+      <pubDate>Sun, 27 Nov 2022 08:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hang-pictures-in-sweethome3d/citation.bib</guid>
+      <description>&lt;p&gt;Für die Planung einer &lt;a href=&#34;https://christianmahnke.de/post/wilma-brauner/&#34;&gt;Ausstellung&lt;/a&gt; in 3D habe ich mich damit beschäftigt, wie vorarrangierte Bilderrahmen in &lt;a href=&#34;https://www.sweethome3d.com/&#34; target=&#34;_blank&#34;&gt;Sweet Home 3D&lt;/a&gt; importiert werden könnten&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
