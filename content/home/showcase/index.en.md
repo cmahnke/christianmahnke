@@ -14,6 +14,7 @@ Examples of immersive or unconventional presentations include these blogs:
 
 Several individual experiments can be found in the blog:
 
+* [Pattern generator for IIIF manifests](/en/post/wallpaper-generator/)
 * [Visualisation AI segmentation with HDR](/en/post/visualising-ai-segmentation-with-hdr/)
 * [HDR images for the visualisation of X-ray examinations of old paintings](/en/post/hdr-radiography-visualisation/)
 * [Haptic feedback for digitised fabrics](/en/post/haptic-feedback/) - IIIF annotations with vibration
