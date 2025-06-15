@@ -1,5 +1,5 @@
 ---
-title: "Publications ad Projects"
+title: "Publications and Projects"
 metaPage: true
 displayinlist: false
 weight: 5
