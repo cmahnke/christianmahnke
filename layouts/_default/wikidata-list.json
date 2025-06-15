@@ -9,6 +9,7 @@
   {{- end -}}
   {{- $title := .Title -}}
   {{- $urls := slice -}}
+  {{- $contents := slice -}}
   {{- range $tag := .Params.tags -}}
     {{- if ne $tag "" -}}
       {{- $tagUrl := printf "%s%s" ("tags/" | relLangURL) ($tag | urlize) -}}
@@ -23,12 +24,14 @@
         {{- else -}}
           {{- $unmapped = $unmapped | append $tag -}}
         {{- end -}}
+        {{- with .Content -}}
+          {{ $contents = $contents | append $ }}
+        {{- end -}}
       {{- end -}}
       {{- $urls = $urls | union $links -}}
     {{- end -}}
   {{- end -}}
 
-  {{- $contents := slice -}}
   {{ with .Translations }}
     {{- range . -}}
       {{ $contents = $contents | append . }}
