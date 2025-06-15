@@ -1,1 +1,4 @@
 *.jsonld
+*.ttl
+*.rdf
+*.xml

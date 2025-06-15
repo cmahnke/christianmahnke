@@ -11,6 +11,7 @@ tags:
 - HybridMedia
 - Archive
 - JavaScript
+- MediaInstallation
 wikidata:
   - https://www.wikidata.org/wiki/Q10806
 ---
