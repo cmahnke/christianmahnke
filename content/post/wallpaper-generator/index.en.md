@@ -20,7 +20,7 @@ Since I have an [extensive collection of patterned papers](https://vorsatzpapier
 <!--more-->
 Since Corona, it has been common to look into each other's booths in video conferences. While some tried interesting perspectives or the black and white mode, it became common during the subsequent AI boom to use filters to blur backgrounds so that you don't have to screw an eccentric guitar, bicycle or art collection to the wall.
 
-And to bring the two together, there is now an interactive toy for the [‘Vorsatzpapier’ blog](https://vorsatzpapier.projektemacher.org/generator/) (book end paper), a pattern generator that can work directly with the IIIF manifests provided. On this page there is a variant where the source material can be freely selected:
+And to bring the two together, there is now an interactive toy for the [‘Vorsatzpapier’ Blog](https://vorsatzpapier.projektemacher.org/generator/), a pattern generator that can work directly with the IIIF manifests provided. On this page there is a variant where the source material can be freely selected by entering the URL to an IIIF manifest. The crop marks at the edges can be used to select the appropriate section.
 
 {{< lucienne uselocation=true src=`[{"label": "Sammlung Vorsatzpapier", "url": "https://vorsatzpapier.projektemacher.org/patterns/collection.json"}]` urlinput=true resize=true download=true >}}
 
