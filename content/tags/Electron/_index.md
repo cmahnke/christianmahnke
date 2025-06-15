@@ -1,7 +1,7 @@
 ---
-title: 'Spiel'
+title: 'Electron'
 description: ''
-wikidata: https://www.wikidata.org/wiki/Q11410
+wikidata: https://www.wikidata.org/wiki/Q21614124
 ---
 
-Spiele, egal ob analog oder digital
+Beiträge über ein Framework, das plattformübergreifende Desktop-Anwendungen ermöglicht, [Electron](https://www.electronjs.org/)
