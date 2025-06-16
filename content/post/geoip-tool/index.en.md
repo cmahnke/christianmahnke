@@ -7,6 +7,11 @@ cite: true
 tags:
   - Data
   - Geodata
+  - Search
+wikidata:
+  - https://www.wikidata.org/wiki/Q37227
+  - https://www.wikidata.org/wiki/Q11135
+  - https://www.wikidata.org/wiki/Q916335
 ---
 
 [Kibana](https://www.elastic.co/de/kibana) visualisation with room plans needs data, e.g. from devices in a building. But the data has to come from somewhere...

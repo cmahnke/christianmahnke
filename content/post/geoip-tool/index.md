@@ -7,6 +7,11 @@ cite: true
 tags:
   - Data
   - Geodata
+  - Search
+wikidata:
+  - https://www.wikidata.org/wiki/Q37227
+  - https://www.wikidata.org/wiki/Q11135
+  - https://www.wikidata.org/wiki/Q916335
 ---
 
 [Kibana](https://www.elastic.co/de/kibana) Visualisierung mit Raumplänen braucht Daten, z.B. von Geräten in einem Gebäude. Aber irgendwo müssen die Daten herkommen...
