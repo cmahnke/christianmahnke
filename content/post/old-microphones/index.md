@@ -8,6 +8,7 @@ tags:
 preview: img/side.jpg
 wikidata:
   - https://www.wikidata.org/wiki/Q46384
+  - https://www.wikidata.org/wiki/Q264997
 ---
 
 Um perspektivisch auch mal Podcast zu machen, habe ich 2024 einiges an Audio-Equipment beschafft...
