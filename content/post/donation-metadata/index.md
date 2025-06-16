@@ -10,6 +10,10 @@ tags:
   - DigitalLibrary
   - Digitisation
   - Archive
+wikidata:
+  - https://www.wikidata.org/wiki/Q621630
+  - https://www.wikidata.org/wiki/Q24045714
+  - https://www.wikidata.org/wiki/Q1360745
 ---
 
 Ab und zu spende ich Objekte an Kultureinrichtungen...

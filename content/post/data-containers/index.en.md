@@ -10,6 +10,11 @@ tags:
   - DNB
   - Metadata
   - SPARQL
+wikidata:
+  - https://www.wikidata.org/wiki/Q36578
+  - https://www.wikidata.org/wiki/Q830106
+  - https://www.wikidata.org/wiki/Q1686799
+  - https://www.wikidata.org/wiki/Q56655440
 ---
 
 Even if it is not necessarily the intended use case, Docker makes it very easy to package large amounts of data with applications for simplified provisioning (such as APIs). This can be particularly helpful if, for example, standardisation data from different sources is to be merged for data enrichment.

@@ -10,6 +10,7 @@ tags:
 - Etching
 wikidata:
   - https://www.wikidata.org/wiki/Q76632556
+  - https://www.wikidata.org/entity/Q3901583
 ---
 
 Nach der [erfolgreichen Suche nach Fritz Neumann AKA Ric](/post/ric-unknownartist/), war es Zeit seien Arbeiten auch in Spandau etwas bekannter zu machen. Als Startpunkt habe ich dem Archiv des Stadtgeschichtlichen Museums Spandaus eine Grafik gespendet.
