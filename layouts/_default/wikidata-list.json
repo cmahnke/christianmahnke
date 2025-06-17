@@ -3,9 +3,9 @@
 {{- $sameAs := dict -}}
 {{- $unmapped := slice -}}
 {{- range $page := $pages -}}
-  {{- $pageUrl := .RelPermalink -}}
+  {{- $pageUrl := .Permalink -}}
   {{- with .OutputFormats.Get "html" -}}
-    {{- $pageUrl = .RelPermalink -}}
+    {{- $pageUrl = .Permalink -}}
   {{- end -}}
   {{- $title := .Title -}}
   {{- $urls := slice -}}
@@ -19,7 +19,7 @@
           {{- $links = .Params.wikidata -}}
           {{- if not (reflect.IsSlice .Params.wikidata) -}}
             {{- $links = slice .Params.wikidata -}}
-            {{- $sameAs = merge $sameAs (dict .RelPermalink .Params.wikidata) -}}
+            {{- $sameAs = merge $sameAs (dict .Permalink .Params.wikidata) -}}
           {{- end -}}
         {{- else -}}
           {{- $unmapped = $unmapped | append $tag -}}

@@ -4580,7 +4580,10 @@ var translations = {
 i18next.use(LanguageDetector).init({
     debug: false,
     fallbackLng: "en",
-    resources: translations
+    resources: translations,
+    supportedLngs: [
+        'en', 'de'
+    ]
 });
 class CuttingTable {
     constructor(element, urlInput = true, gridSelector = true, download = true, autoLoad = true, urls, shifts = false) {
