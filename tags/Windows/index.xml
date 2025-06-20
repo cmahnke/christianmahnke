@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Windows/</link>
+    <description>Recent content in Windows on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/Windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows Deployer</title>
+      <link>https://christianmahnke.de/post/windows-deployer/citation.bib</link>
+      <pubDate>Mon, 21 Aug 2023 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/windows-deployer/citation.bib</guid>
+      <description>&lt;p&gt;Wie installiert man eine frisch gebaute Software von GitLab / GitHub?&lt;br/&gt;&#xA;Auf einem Windows-Rechner.&lt;br/&gt;&#xA;In einem internen Netz - hinter einem VPN Gateway&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
