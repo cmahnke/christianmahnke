@@ -7,3 +7,7 @@ node_modules/
 *.webm
 
 touch/public/page031/**
+
+wikidata/**/*.nt
+wikidata/**/*.ttl
+__pycache__

@@ -25,11 +25,11 @@
   pagetheme = "#701611"
   keywordAsString = true
   subtitles = [
-    {title = { de ="Enthusiast & Sammler", en = "Enthusiast & Collector"}, url = {de = "/tagline/enthusiast-and-collector/", en = "/en/tagline/enthusiast-and-collector/" }, chance = 5},
+    {title = { de ="Enthusiast & Sammler", en = "Enthusiast & Collector"}, url = {de = "/tagline/enthusiast-and-collector/", en = "/en/tagline/enthusiast-and-collector/" }, chance = 4},
     {title = "Digital Humanities Communicator", url = {de = "/tagline/digital-humanities-communicator/", en = "/en/tagline/digital-humanities-communicator/" }, chance = 1},
     {title = "Creative Technologist", url = {de = "/tagline/creative-technologist/", en = "/en/tagline/creative-technologist/" }, chance = 5},
     {title = "Citizen Art Historian", url = {de = "/tagline/citizen-art-historian/", en = "/en/tagline/citizen-art-historian/" }, chance = 1},
-    {title = "Open GLAM Data Evangelist", url = {de = "/tagline/open-glam-data-evangelist/", en = "/en/tagline/open-glam-data-evangelist/" }, chance = 1}    
+    {title = "Open GLAM Data Evangelist", url = {de = "/tagline/open-glam-data-evangelist/", en = "/en/tagline/open-glam-data-evangelist/" }, chance = 1}
   ]
 
 [params.author]
