@@ -1,0 +1,22 @@
+---
+date: 2025-07-13T15:00:44+02:00
+title: 'Siebdruck von Michael Eisemann (1943-)'
+tags:
+  - Art
+  - Serigraphy
+preview: img/print.jpg
+wikidata:
+notes: https://www.auktionen-in-heidelberg.de/produkt/0392-113-originalgraphiken-kuenstler-der-welt-with-compliments-lufthansa-fuer-selbstbesichtiger/
+---
+
+I bought a screen print by Michael Eisemann (1943-)...
+<!--more-->
+
+{{< gallery >}}
+[
+  {"src": "img/print.jpg", "alt": "Sheet"},
+  {"src": "img/signature.jpg", "alt": "Signature"}
+]
+{{</ gallery >}}
+
+Michael Eisemann is an Israeli artist who was born in Tel Aviv in 1943 and studied art in Wiesbaden. This graphic is part of a series called ‘Artists of the World’, which Lufthansa issued to first class passengers. It dates from 1984 or 1985 and was realised by Meißner Edition Hamburg. Other artists whose prints were published in this way for Lufthansa are Leung Man Li, Kurt Larisch, Cheung Yee, Irene Chou, Cathy Halstead, Jürgen Li Fischer, Harrie Gerritz and many more.
