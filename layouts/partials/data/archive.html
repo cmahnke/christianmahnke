@@ -1,0 +1,11 @@
+{{- with .Params.notes -}}
+  <div class="_hidden-notes" style="display: none;">
+    {{- if reflect.IsSlice . -}}
+      {{- range . -}}
+        {{- if hasPrefix . "http" -}}
+          <a href="{{ . }}">{{ . }}</a>
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  </div>
+{{- end -}}

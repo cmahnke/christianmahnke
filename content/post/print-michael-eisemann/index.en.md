@@ -5,8 +5,9 @@ tags:
   - Art
   - Serigraphy
 preview: img/print.jpg
-wikidata:
-notes: https://www.auktionen-in-heidelberg.de/produkt/0392-113-originalgraphiken-kuenstler-der-welt-with-compliments-lufthansa-fuer-selbstbesichtiger/
+notes:
+  - https://www.ebay.co.uk/itm/203781943061
+  - https://www.auktionen-in-heidelberg.de/produkt/0392-113-originalgraphiken-kuenstler-der-welt-with-compliments-lufthansa-fuer-selbstbesichtiger/
 ---
 
 I bought a screen print by Michael Eisemann (1943-)...

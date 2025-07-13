@@ -265,3 +265,11 @@
     }
   }
 }
+
+._hidden-notes {
+  display: none;
+
+  * {
+    display: none;
+  }
+}
