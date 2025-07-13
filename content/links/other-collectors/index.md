@@ -47,3 +47,22 @@ Weitere Sammlungen und Sammler, mit denen ich nicht zusammenarbeite.
 * [Radiomuseum.org](https://www.radiomuseum.org/)
 * [Hifi-Wiki](https://www.hifi-wiki.de/index.php/Hauptseite)
 * [Bandmaschinenseite](https://bandmaschinenseite.de/)
+
+## Rechner
+
+### Taschenrechner
+
+* [Tony's Taschenrechner-Sammlung](https://www.thimet.de/CalcCollection/)
+* [Museum of Pocket Calculating Devices](https://www.calculators.de/)
+
+### Computer
+
+* [Computer-Retro.de](https://computer-retro.de/index.html)
+* [Informatiksammlung Erlangen](https://iser.wisski.data.fau.de/)
+* [8Bit-Museum.de](https://8bit-museum.de/)
+
+## Kunst
+
+### Computer Kunst
+
+* [compArt database Digital Art (daDA)](http://dada.compart-bremen.de/)
