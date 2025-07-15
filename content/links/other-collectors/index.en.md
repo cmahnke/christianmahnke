@@ -60,6 +60,7 @@ Other collections and collectors with whom I do not work.
 * [Computer-Retro.de](https://computer-retro.de/index.html)
 * [Computer Science Collection Erlangen](https://iser.wisski.data.fau.de/)
 * [8Bit-Museum.de](https://8bit-museum.de/)
+* [Oldcrap.org](https://oldcrap.org/)
 
 ## Art
 
