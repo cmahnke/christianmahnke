@@ -48,6 +48,9 @@ Other collections and collectors with whom I do not work.
 * [Hifi-Wiki](https://www.hifi-wiki.de/index.php/Hauptseite)
 * [Bandmaschinenseite](https://bandmaschinenseite.de/)
 
+## Phones
+* [Ericophone](https://www.ericofon.com/)
+
 ## Calculation devices
 
 ### Calculators

@@ -48,6 +48,9 @@ Weitere Sammlungen und Sammler, mit denen ich nicht zusammenarbeite.
 * [Hifi-Wiki](https://www.hifi-wiki.de/index.php/Hauptseite)
 * [Bandmaschinenseite](https://bandmaschinenseite.de/)
 
+## Telefone
+* [Ericophone](https://www.ericofon.com/)
+
 ## Rechner
 
 ### Taschenrechner
