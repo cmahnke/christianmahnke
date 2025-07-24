@@ -93,6 +93,7 @@ See also <a id="grolink" href="//publications.goettingen-research-online.de/cris
 * [MEIBOHM FINE ARTS on Fritz Neumann (AKA Ric)](https://www.meibohmfinearts.com/artists/details/2873)
 * [Archivalia 2 April 2025](https://archivalia.hypotheses.org/226296): Christian Mahnke urges: End microfilm digitisation!
 * [Archivalia 23 May 2025](https://archivalia.hypotheses.org/229536): Entry of donors in metadata aggregators
+* [Art Collection Schmelzle: Hedwig Klinge](https://kunstsammlung.peterschmelzle.de/klinge)
 
 </div>
 </details>

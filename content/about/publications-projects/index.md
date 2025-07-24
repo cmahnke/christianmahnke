@@ -90,6 +90,7 @@ Siehe auch <a id="grolink" href="//publications.goettingen-research-online.de/cr
 * [MEIBOHM FINE ARTS über Fritz Neumann (AKA Ric)](https://www.meibohmfinearts.com/artists/details/2873)
 * [Archivalia 2. April 2025](https://archivalia.hypotheses.org/226296): Christian Mahnke fordert: Mikrofilmdigitalisierung beenden!
 * [Archivalia 23. Mai 2025](https://archivalia.hypotheses.org/229536): Eintragung von Spendern in Metadatenaggregatoren
+* [Kunstsammlung Schmelzle: Hedwig Klinge](https://kunstsammlung.peterschmelzle.de/klinge)
 
 </div>
 </details>
