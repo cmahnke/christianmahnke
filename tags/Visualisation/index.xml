@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visualisierung on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Visualisation/</link>
+    <description>Recent content in Visualisierung on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/Visualisation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Schlagwortpaare visualisiert</title>
+      <link>https://christianmahnke.de/post/tag-pairs/citation.bib</link>
+      <pubDate>Sun, 25 May 2025 11:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/tag-pairs/citation.bib</guid>
+      <description>&lt;p&gt;Manchmal bringen Experimente nicht die gewünschten Ergebnisse&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Visualisierung von KI Segmentierung mit HDR</title>
+      <link>https://christianmahnke.de/post/visualising-ai-segmentation-with-hdr/citation.bib</link>
+      <pubDate>Tue, 14 Jan 2025 21:00:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/visualising-ai-segmentation-with-hdr/citation.bib</guid>
+      <description>&lt;p&gt;Der erste Schritt zu visuell unterstützter Annotierung mit HDR&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
