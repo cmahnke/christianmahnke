@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Hugo/</link>
+    <description>Recent content in Hugo on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wikidata Links in Hugo</title>
+      <link>https://christianmahnke.de/en/post/wikidata-entities-in-hugo/citation.bib</link>
+      <pubDate>Wed, 28 May 2025 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/wikidata-entities-in-hugo/citation.bib</guid>
+      <description>&lt;p&gt;Another step towards easier searchability of the site&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menus in Hugo draft mode</title>
+      <link>https://christianmahnke.de/en/post/hugo-draft-menus/citation.bib</link>
+      <pubDate>Mon, 05 May 2025 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hugo-draft-menus/citation.bib</guid>
+      <description>&lt;p&gt;Sometimes you want to add new menu items without publishing them&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Metadata for Hugo Shortcodes</title>
+      <link>https://christianmahnke.de/en/post/hugo-shortcode-metadate/citation.bib</link>
+      <pubDate>Tue, 30 Jan 2024 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hugo-shortcode-metadate/citation.bib</guid>
+      <description>&lt;p&gt;For my blogs I use a Hugo theme as a kind of function library&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

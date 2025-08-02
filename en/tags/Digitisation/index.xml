@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Digitisation on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Digitisation/</link>
+    <description>Recent content in Digitisation on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Digitisation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Information on donors in cultural heritage aggregators</title>
+      <link>https://christianmahnke.de/en/post/donation-metadata/citation.bib</link>
+      <pubDate>Wed, 21 May 2025 06:00:00 +0000</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/donation-metadata/citation.bib</guid>
+      <description>&lt;p&gt;From time to time I donate objects to cultural institutions&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Digital provenance for digitised cultural heritage</title>
+      <link>https://christianmahnke.de/en/post/digital-provenance/citation.bib</link>
+      <pubDate>Sun, 16 Mar 2025 22:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/digital-provenance/citation.bib</guid>
+      <description>&lt;p&gt;How can the authenticity of digitised cultural assets be guaranteed?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ultraviolet Photogrammetry</title>
+      <link>https://christianmahnke.de/en/post/uv-photogrammetry/citation.bib</link>
+      <pubDate>Thu, 05 Sep 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/uv-photogrammetry/citation.bib</guid>
+      <description>&lt;p&gt;&lt;strong&gt;This article presents the world&amp;rsquo;s first HDR model of UV photogrammetry in a browser.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDR IIIF</title>
+      <link>https://christianmahnke.de/en/post/hdr-iiif/</link>
+      <pubDate>Sun, 18 Aug 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hdr-iiif/</guid>
+      <description>&lt;p&gt;At &lt;a href=&#34;http://www.zeitzeug.de/&#34; target=&#34;_blank&#34;&gt;Zeitzeug&lt;/a&gt; the owner&amp;rsquo;s wallpaper collection is being sold and I have secured a particularly bright example&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

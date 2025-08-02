@@ -1,0 +1,138 @@
+{
+  "defaults": {
+    "filters": [
+      "FIND_EDGES",
+      "EDGE_ENHANCE",
+      "SMOOTH_MORE",
+      "SMOOTH_MORE",
+      "GRAYSCALE",
+      "EQUALIZE",
+      {
+        "name": "BINARIZE",
+        "params": {
+          "threshold": 108
+        }
+      }
+    ]
+  },
+  "fragments": [
+    {
+      "name": "Baumwollsamt",
+      "coords": {
+        "position": {
+          "x": 616,
+          "y": 572
+        },
+        "size": {
+          "x": 1408,
+          "y": 814
+        }
+      }
+    },
+    {
+      "name": "Cordsamt",
+      "coords": {
+        "position": {
+          "x": 2304,
+          "y": 488
+        },
+        "size": {
+          "x": 1360,
+          "y": 864
+        }
+      },
+      "filters": [
+        "FIND_EDGES",
+        "EDGE_ENHANCE",
+        "SMOOTH_MORE",
+        "SMOOTH_MORE",
+        "GRAYSCALE",
+        "EQUALIZE",
+        {
+          "name": "BINARIZE",
+          "params": {
+            "threshold": 108
+          }
+        }
+      ]
+    },
+    {
+      "name": "Seidensamt",
+      "coords": {
+        "position": {
+          "x": 627,
+          "y": 1914
+        },
+        "size": {
+          "x": 1364,
+          "y": 891
+        }
+      }
+    },
+    {
+      "name": "Spiegelsamt",
+      "coords": {
+        "position": {
+          "x": 2266,
+          "y": 1925
+        },
+        "size": {
+          "x": 1353,
+          "y": 858
+        }
+      }
+    },
+    {
+      "name": "Kunstseidensamt",
+      "coords": {
+        "position": {
+          "x": 594,
+          "y": 3344
+        },
+        "size": {
+          "x": 1375,
+          "y": 847
+        }
+      }
+    },
+    {
+      "name": "Leinenplüsch",
+      "coords": {
+        "position": {
+          "x": 2288,
+          "y": 3322
+        },
+        "size": {
+          "x": 1408,
+          "y": 869
+        }
+      }
+    },
+    {
+      "name": "Wirbelplüsch",
+      "coords": {
+        "position": {
+          "x": 561,
+          "y": 4686
+        },
+        "size": {
+          "x": 1419,
+          "y": 924
+        }
+      }
+    },
+    {
+      "name": "",
+      "coords": {
+        "position": {
+          "x": 2288,
+          "y": 4620
+        },
+        "size": {
+          "x": 1397,
+          "y": 1001
+        }
+      }
+    }
+  ]
+}
