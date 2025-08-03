@@ -1,4 +1,4 @@
-import {checkHDRCanvas, Uint16Image} from 'hdr-canvas';
+import {checkHDRCanvas, initHDRCanvas, Uint16Image} from 'hdr-canvas';
 
 const colorSpace = 'rec2100-hlg';
 const colors = {'red': 0, 'green': 0, 'blue': 0};
@@ -31,7 +31,8 @@ function setupCanvas(canvas, width, height) {
   if (checkHDRCanvas()) {
     canvas.configureHighDynamicRange({mode:'extended'});
     /* See https://github.com/Fyrd/caniuse/issues/6504#issuecomment-1426886762 */
-    ctx = canvas.getContext("2d", {colorSpace: colorSpace, pixelFormat:'float16'});
+    //ctx = canvas.getContext("2d", {colorSpace: colorSpace, pixelFormat:'float16'});
+    ctx = initHDRCanvas();
     ctx.imageSmoothingEnabled = false;
   } else {
     console.log("Canvas ist't HDR enabled");
