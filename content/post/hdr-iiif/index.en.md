@@ -54,7 +54,7 @@ If the test fails, the colours are not as bright. **Even if the display of HDR i
 
 **The worlds first HDR IIIF image is a 70ies wallpaper!**
 
-{{< iiif/iiif src="front.hdr/info-json" share=false hdr=true >}}
+{{< iiif/iiif src="front-hdr/info-json" share=false hdr=true >}}
 
 # Update 28.8.2024
 
