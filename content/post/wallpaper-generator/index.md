@@ -11,6 +11,7 @@ tags:
 - IIIF
 - DigitalImages
 - Fun
+- JavaScript
 wikidata:
 - https://www.wikidata.org/wiki/Q191529
 ---
