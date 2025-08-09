@@ -1,6 +1,6 @@
 ---
 date: 2025-08-08T18:33:44+02:00
-title: "Debian Repository mit GitLab"
+title: "Debian Repository mit GitLab Pages"
 keywords: Debian, GitLab
 cite: true
 tags:
@@ -9,7 +9,6 @@ tags:
 wikidata:
   - https://www.wikidata.org/wiki/Q16639197
   - https://www.wikidata.org/wiki/Q7715973
-#draft: true
 ---
 
 Ein einfaches Debian-Repository selbst gestrickt...
