@@ -14,6 +14,7 @@ The main focus of my collection is on different everyday culture related artifac
   * Tape recorders
   * Projectors
   * Old video game consoles and computers {{< details summary="Examples" class="inline-collection" >}}
+* [Atari 2600](https://de.wikipedia.org/wiki/Atari_2600)
 * [Nitendo Game Boy](https://en.wikipedia.org/wiki/Game_Boy)
 * [Super Nintendo Entertainment System (SNES)](https://en.wikipedia.org/wiki/Super_Nintendo_Entertainment_System)                                                    
 * [Commodore 16](https://en.wikipedia.org/wiki/Commodore_16)

@@ -99,6 +99,7 @@
             display: flex;
             justify-content: flex-end;
             font-weight: 300;
+            font-size: smaller;
 
             @media (min-width : 35em) {
                 flex-direction: row;
@@ -112,7 +113,17 @@
                     min-width: 30%;
 
                     a {
-                        padding-left: 1rem;
+                        margin-left: 1rem;
+                    }
+                }
+
+                a:hover {
+                    padding-left: .4rem;
+                    padding-right: .4rem;
+
+                    &:before,
+                    &:after {
+                        content: '';
                     }
                 }
 

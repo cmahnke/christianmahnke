@@ -1,5 +1,5 @@
 ---
-date: 2025-08-12T15:22:44+02:00
+date: 2025-08-18T15:22:44+02:00
 title: "hdr-canvas 0.1.0 published"
 keywords: NPM, TypeScript
 cite: true

@@ -2,7 +2,7 @@
 title: "Weitere ggf. etwas abseitige Sammlungen"
 metaPage: true
 displayinlist: false
-weight: 7
+weight: 8
 ---
 
 Weitere Sammlungen und Sammler, mit denen ich nicht zusammenarbeite.
@@ -39,19 +39,12 @@ Weitere Sammlungen und Sammler, mit denen ich nicht zusammenarbeite.
 * [josef chladek on photobooks and books](https://josefchladek.com/)
 
 ## Kameras
-* [Camerapedia](https://camerapedia.fandom.com/wiki/Camerapedia)
 * [Das Lippische Kameramuseum](http://www.lippisches-kameramuseum.de/)
-* [Camera-wiki.org](http://camera-wiki.org/wiki/Main_Page)
-
-## Radios und Audiogeräte
-* [Radiomuseum.org](https://www.radiomuseum.org/)
-* [Hifi-Wiki](https://www.hifi-wiki.de/index.php/Hauptseite)
-* [Bandmaschinenseite](https://bandmaschinenseite.de/)
 
 ## Telefone
 * [Ericophone](https://www.ericofon.com/)
 
-## Rechner
+## Retrocomputing
 
 ### Taschenrechner
 
@@ -60,13 +53,13 @@ Weitere Sammlungen und Sammler, mit denen ich nicht zusammenarbeite.
 
 ### Computer
 
-* [Computer-Retro.de](https://computer-retro.de/index.html)
 * [Informatiksammlung Erlangen](https://iser.wisski.data.fau.de/)
 * [8Bit-Museum.de](https://8bit-museum.de/)
 * [Oldcrap.org](https://oldcrap.org/)
 
 ## Kunst
 
-### Computer Kunst
-
-* [compArt database Digital Art (daDA)](http://dada.compart-bremen.de/)
+* [The Linosaurus](https://gerrie-thefriendlyghost.blogspot.com/)
+* [Das Haus der Frau](https://www.dashausderfrau.nl/)
+* [Sammlung Barina](https://www.wolfgang-barina.de/kunst/)
+* [Kunstsammlung Peter Schmelzle](https://kunstsammlung.peterschmelzle.de/)

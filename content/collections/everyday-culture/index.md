@@ -14,6 +14,7 @@ Meine Sammelschwerpunkte liegen im Bereich der Alltagskultur des 20. Jahrhundert
   * Tonbandgeräte
   * Projektoren
   * Alte Spielkonsolen und Computer {{< details summary="Beispiele" class="inline-collection" >}}
+* [Atari 2600](https://de.wikipedia.org/wiki/Atari_2600)
 * [Nitendo Game Boy](https://de.wikipedia.org/wiki/Game_Boy)
 * [Super Nintendo Entertainment System (SNES)](https://de.wikipedia.org/wiki/Super_Nintendo_Entertainment_System)                                                    
 * [Commodore 16](https://de.wikipedia.org/wiki/Commodore_16)

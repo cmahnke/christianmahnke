@@ -1,5 +1,5 @@
 ---
-date: 2025-08-12T15:22:44+02:00
+date: 2025-08-18T15:22:44+02:00
 title: "hdr-canvas 0.1.0 veröffentlicht"
 keywords: NPM, TypeScript
 cite: true
@@ -14,7 +14,7 @@ wikidata:
 draft: true
 ---
 
-`hdt-canvas` Version 0.1.0 veröffentlicht...
+`hdr-canvas` Version 0.1.0 veröffentlicht...
 <!--more-->
 
 Ein Ergebnis meiner Arbeit mit HDR-Inhalten im Browser ist ein NPM-Modul, das auch zur Erstellung der Beiträge in diesem Blog verwendet wurde.
@@ -24,4 +24,4 @@ Da sich Browser schnell weiterentwickeln und der Betrieb älterer Browser aus Si
 
 Neben den notwendigen Anpassungen bietet die neue Version auch Verbesserungen im Bereich der Dokumentation und der Beispiele.
 
-Der Code ist auf [GitHub](https://github.com/cmahnke/hdr-canvas) und [NPM](https://www.npmjs.com/package/hdr-canvas) zu finden. 
+Der Code ist auf [GitHub](https://github.com/cmahnke/hdr-canvas) und [NPM](https://www.npmjs.com/package/hdr-canvas) zu finden.
