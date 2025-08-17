@@ -97,10 +97,8 @@
         ul {
             flex-wrap: wrap;
             display: flex;
-
             justify-content: flex-end;
-            font-style: unset !important;
-            font-weight: unset !important;
+            font-weight: 300;
 
             @media (min-width : 35em) {
                 flex-direction: row;
