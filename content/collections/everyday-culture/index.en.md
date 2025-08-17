@@ -13,7 +13,16 @@ The main focus of my collection is on different everyday culture related artifac
 * Consumer electronics
   * Tape recorders
   * Projectors
-  * Video game consoles (until 2000)
+  * Old video game consoles and computers {{< details summary="Examples" class="inline-collection" >}}
+* [Nitendo Game Boy](https://en.wikipedia.org/wiki/Game_Boy)
+* [Super Nintendo Entertainment System (SNES)](https://en.wikipedia.org/wiki/Super_Nintendo_Entertainment_System)                                                    
+* [Commodore 16](https://en.wikipedia.org/wiki/Commodore_16)
+* [Commodore 64](https://en.wikipedia.org/wiki/Commodore_64)
+* [Dendy Junior](https://en.wikipedia.org/wiki/Dendy)
+* [Sega Mega Drive](https://en.wikipedia.org/wiki/Sega_Genesis)
+* [Sega Game Gear](https://en.wikipedia.org/wiki/Game_Gear)
+* [Playstation](https://en.wikipedia.org/wiki/PlayStation)                                                                                                            
+{{< /details >}}
 * Hangers {{< link link="https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/" class="blog" >}}Page of the collection{{< /link >}}
 * Glasses
 * Airplane cutlery
