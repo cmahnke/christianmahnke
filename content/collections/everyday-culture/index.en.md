@@ -15,6 +15,9 @@ The main focus of my collection is on different everyday culture related artifac
   * Projectors
   * Old video game consoles and computers {{< details summary="Examples" class="inline-collection" >}}
 * [Atari 2600](https://de.wikipedia.org/wiki/Atari_2600)
+* [Sonesta Pong](https://consollection.de/de/model/pong)
+* [Saba Videoplay](http://www.8bit-homecomputermuseum.at/computer/saba_videoplay.html)
+* [Universum Color Multi-Spiel 4106](https://retroconsoles.fandom.com/wiki/Universum_TV_Multispiel#Universum_Color_Multispiel_4106)
 * [Nitendo Game Boy](https://en.wikipedia.org/wiki/Game_Boy)
 * [Super Nintendo Entertainment System (SNES)](https://en.wikipedia.org/wiki/Super_Nintendo_Entertainment_System)                                                    
 * [Commodore 16](https://en.wikipedia.org/wiki/Commodore_16)

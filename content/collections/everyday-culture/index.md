@@ -15,6 +15,9 @@ Meine Sammelschwerpunkte liegen im Bereich der Alltagskultur des 20. Jahrhundert
   * Projektoren
   * Alte Spielkonsolen und Computer {{< details summary="Beispiele" class="inline-collection" >}}
 * [Atari 2600](https://de.wikipedia.org/wiki/Atari_2600)
+* [Sonesta Pong](https://consollection.de/de/model/pong)
+* [Saba Videoplay](http://www.8bit-homecomputermuseum.at/computer/saba_videoplay.html)
+* [Universum Color Multi-Spiel 4106](https://retroconsoles.fandom.com/wiki/Universum_TV_Multispiel#Universum_Color_Multispiel_4106)
 * [Nitendo Game Boy](https://de.wikipedia.org/wiki/Game_Boy)
 * [Super Nintendo Entertainment System (SNES)](https://de.wikipedia.org/wiki/Super_Nintendo_Entertainment_System)                                                    
 * [Commodore 16](https://de.wikipedia.org/wiki/Commodore_16)

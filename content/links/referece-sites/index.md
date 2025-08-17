@@ -19,6 +19,7 @@ weight: 7
 ### Computer
 
 * [Computer-Retro.de](https://computer-retro.de/index.html)
+* [8-Bit-Nirvana](https://www.zock.com/)
 
 ### Spielkonsolen
 

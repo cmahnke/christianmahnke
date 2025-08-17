@@ -57,6 +57,10 @@ Weitere Sammlungen und Sammler, mit denen ich nicht zusammenarbeite.
 * [8Bit-Museum.de](https://8bit-museum.de/)
 * [Oldcrap.org](https://oldcrap.org/)
 
+### Spielkonsolen
+
+* [CONSOLLECTION](https://consollection.de/)
+
 ## Kunst
 
 * [The Linosaurus](https://gerrie-thefriendlyghost.blogspot.com/)
