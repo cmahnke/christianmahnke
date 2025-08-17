@@ -1,0 +1,133 @@
+.content-container ul {
+    .post-body a.blog,
+    a.blog,
+    .post-body a.external-collection,
+    a.external-collection {
+        display: block;
+        font-style: italic;
+        font-weight: 100;
+        margin-left: auto;
+        text-align: end;
+        transition: all 150ms;
+
+        @media (min-width : 35em) {
+            display: inline-block;
+            float: inline-end;
+            margin-right: 4rem;
+        }
+
+    }
+
+    .post-body a.blog,
+    a.blog,
+    .post-body a.external-collection,
+    a.external-collection {
+
+        &.external {
+          &:after {
+              content: url($external-link-icon);
+              height: .8em;
+              width: .8em;
+              line-height: 1;
+              display: inline-block;
+              color: $marker-color;
+              margin-left: 7px;
+              vertical-align: text-top;
+          }
+        }
+
+        &:before {
+            content: '🡒';
+            color: $marker-color;
+            margin: 0 7px;
+
+        }
+
+        &:after {
+            content: '⌘';
+            color: $marker-color;
+            margin-left: 5px;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+            transition: all 150ms;
+            text-decoration: none;
+        }
+
+        &.inline {
+            display: unset;
+            float: unset;
+            margin-right: unset;
+        }
+    }
+
+    details.inline-collection  {
+        padding: unset;
+        display: block;
+        float: unset;
+        margin-top: calc(1.2em * 1.4 * -1);
+        margin-left: auto;
+        text-align: end;
+
+        @media (min-width : 35em) {
+            margin-right: 4rem;
+        }
+
+        &[open] {
+            margin-bottom: .8rem;
+        }
+
+        summary {
+            font-style: italic;
+            font-weight: 100;
+
+
+            &::marker {
+                color: $marker-color;
+            }
+
+            &:after {
+                content: '⌘';
+                color: $marker-color;
+                margin-left: 5px;
+            }
+        }
+
+        ul {
+            flex-wrap: wrap;
+            display: flex;
+
+            justify-content: flex-end;
+            font-style: unset !important;
+            font-weight: unset !important;
+
+            @media (min-width : 35em) {
+                flex-direction: row;
+            }
+
+            li {
+                padding-left: unset;
+                text-align: end;
+
+                @media (min-width : 35em) {
+                    width: 30%;
+                }
+
+                &:before {
+                  content: unset;
+                }
+
+                &:after {
+                  content: "☜";
+                  font-size: 1.4em;
+                  display: inline-block;
+                  vertical-align: sub;
+                  padding-left: .8em;
+                  color: $marker-color;
+                }
+            }
+
+        }
+    }
+}
