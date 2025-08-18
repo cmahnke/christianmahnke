@@ -59,11 +59,4 @@ Weitere Sammlungen und Sammler, mit denen ich nicht zusammenarbeite.
 
 ### Spielkonsolen
 
-* [CONSOLLECTION](https://consollection.de/)
-
-## Kunst
-
-* [The Linosaurus](https://gerrie-thefriendlyghost.blogspot.com/)
-* [Das Haus der Frau](https://www.dashausderfrau.nl/)
-* [Sammlung Barina](https://www.wolfgang-barina.de/kunst/)
-* [Kunstsammlung Peter Schmelzle](https://kunstsammlung.peterschmelzle.de/)
+* [CONSOLLECTION](https://consollection.de/de)

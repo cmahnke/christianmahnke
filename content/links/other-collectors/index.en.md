@@ -60,10 +60,3 @@ Other collections and collectors with whom I do not work.
 ### Game consoles
 
 * [CONSOLLECTION](https://consollection.de/)
-
-## Art
-
-* [The Linosaurus](https://gerrie-thefriendlyghost.blogspot.com/)
-* [Das Haus der Frau](https://www.dashausderfrau.nl/)
-* [Sammlung Barina](https://www.wolfgang-barina.de/kunst/)
-* [Art collection Peter Schmelzle](https://kunstsammlung.peterschmelzle.de/)

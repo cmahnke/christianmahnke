@@ -10,7 +10,6 @@ preview: img/front.jpg
 wikidata:
   - https://www.wikidata.org/wiki/Q2994828
   - https://www.wikidata.org/wiki/Q172742
-draft: true
 ---
 
 I found another interesting old console...

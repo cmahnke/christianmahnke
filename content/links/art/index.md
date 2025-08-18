@@ -11,3 +11,4 @@ Für meine Kunst spezifischen Projekte (hauptsächlich [Ric - an unknown artist]
 * [Das Haus der Frau](https://www.dashausderfrau.nl/) von Gerbrand Caspers
 * Mark Strong von [Meibohm Fine Art](https://www.meibohmfinearts.com/)
 * [The Linosaurus](https://gerrie-thefriendlyghost.blogspot.com/) von Gerbrand Caspers
+* [Kunstsammlung Peter Schmelzle](https://kunstsammlung.peterschmelzle.de/)
