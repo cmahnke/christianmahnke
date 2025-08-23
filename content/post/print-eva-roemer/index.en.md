@@ -16,8 +16,8 @@ The title is probably "Snow on the reeds (Lake Starnberg)" (German: "Schnee auf 
 
 {{< gallery >}}
 [
-  {"src": "img/print.jpg", "alt": "Druck"},
-  {"src": "img/signature.jpg", "alt": "Signatur"}
+  {"src": "img/print.jpg", "alt": "Print"},
+  {"src": "img/signature.jpg", "alt": "Signature"}
 ]
 {{</ gallery >}}
 
