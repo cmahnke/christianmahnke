@@ -1,4 +1,5 @@
-$tag-cloud-height: 24em;
+/*$tag-cloud-height: 24em;*/
+$tag-cloud-height: clamp(24em, 45vh, 48em);
 
 .tag-cloud-container {
   position: relative;
