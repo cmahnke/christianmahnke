@@ -14,18 +14,21 @@ The main focus of my collection is on different everyday culture related artifac
   * Tape recorders
   * Projectors
   * Old video game consoles and computers {{< details summary="Examples" class="inline-collection" >}}
-* [Atari 2600](https://de.wikipedia.org/wiki/Atari_2600)
-* [Sonesta Pong](https://consollection.de/de/model/pong)
-* [Saba Videoplay](http://www.8bit-homecomputermuseum.at/computer/saba_videoplay.html)
-* [Universum Color Multi-Spiel 4106](https://retroconsoles.fandom.com/wiki/Universum_TV_Multispiel#Universum_Color_Multispiel_4106)
-* [Nitendo Game Boy](https://en.wikipedia.org/wiki/Game_Boy)
-* [Super Nintendo Entertainment System (SNES)](https://en.wikipedia.org/wiki/Super_Nintendo_Entertainment_System)                                                    
-* [Commodore 16](https://en.wikipedia.org/wiki/Commodore_16)
-* [Commodore 64](https://en.wikipedia.org/wiki/Commodore_64)
-* [Dendy Junior](https://en.wikipedia.org/wiki/Dendy)
-* [Sega Mega Drive](https://en.wikipedia.org/wiki/Sega_Genesis)
-* [Sega Game Gear](https://en.wikipedia.org/wiki/Game_Gear)
-* [Playstation](https://en.wikipedia.org/wiki/PlayStation)                                                                                                            
+* [Atari 2600](https://de.wikipedia.org/wiki/Atari_2600) (*1977*)
+* [Sonesta Pong](https://consollection.de/de/model/pong) (*1977*)
+* [Saba Videoplay](http://www.8bit-homecomputermuseum.at/computer/saba_videoplay.html) (*1977*)
+* [Universum Color Multi-Spiel 4106](https://retroconsoles.fandom.com/wiki/Universum_TV_Multispiel#Universum_Color_Multispiel_4106) (*1978*)
+* [Commodore 64](https://en.wikipedia.org/wiki/Commodore_64) (*1983*)
+* [Commodore 16](https://en.wikipedia.org/wiki/Commodore_16) (*1985*)
+* [Nintendo Game Boy](https://en.wikipedia.org/wiki/Game_Boy)  (*1990*)
+* [Sega Mega Drive](https://en.wikipedia.org/wiki/Sega_Genesis) (*1990*)
+* [Sega Game Gear](https://en.wikipedia.org/wiki/Game_Gear) (*1991*)
+* [Super Nintendo Entertainment System (SNES)](https://en.wikipedia.org/wiki/Super_Nintendo_Entertainment_System) (*1992*)
+* [Highscreen Colani Blue Note](https://macdat.net/laptops/highscreen/bluenote.html) (*1993*)
+* [Dendy Junior](https://en.wikipedia.org/wiki/Dendy)  (*1993*)
+* [Playstation](https://en.wikipedia.org/wiki/PlayStation) (*1995*)
+* [Apple iBook G3/700 14″](https://en.wikipedia.org/wiki/IBook#iBook_G3_Dual_USB_(%22Snow%22;_2001-2003)) (*2002*)
+* [Apple iMac 24″ -9,1](https://en.wikipedia.org/wiki/IMac_(Intel-based)#2nd_generation:_Aluminum_iMac) (*Anfang 2009*)
 {{< /details >}}
 * Hangers {{< link link="https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/" class="blog" >}}Page of the collection{{< /link >}}
 * Glasses

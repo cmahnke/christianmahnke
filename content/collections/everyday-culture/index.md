@@ -14,21 +14,21 @@ Meine Sammelschwerpunkte liegen im Bereich der Alltagskultur des 20. Jahrhundert
   * Tonbandgeräte
   * Projektoren
   * Alte Spielkonsolen und Computer {{< details summary="Beispiele" class="inline-collection" >}}
-* [Atari 2600](https://de.wikipedia.org/wiki/Atari_2600)
-* [Sonesta Pong](https://consollection.de/de/model/pong)
-* [Saba Videoplay](http://www.8bit-homecomputermuseum.at/computer/saba_videoplay.html)
-* [Universum Color Multi-Spiel 4106](https://retroconsoles.fandom.com/wiki/Universum_TV_Multispiel#Universum_Color_Multispiel_4106)
-* [Nitendo Game Boy](https://de.wikipedia.org/wiki/Game_Boy)
-* [Super Nintendo Entertainment System (SNES)](https://de.wikipedia.org/wiki/Super_Nintendo_Entertainment_System)                                                    
-* [Commodore 16](https://de.wikipedia.org/wiki/Commodore_16)
-* [Commodore 64](https://de.wikipedia.org/wiki/Commodore_64)
-* [Dendy Junior](https://de.wikipedia.org/wiki/Dendy_(Spielkonsole))
-* [Sega Mega Drive](https://de.wikipedia.org/wiki/Sega_Mega_Drive)
-* [Sega Game Gear](https://de.wikipedia.org/wiki/Sega_Game_Gear)
-* [Playstation](https://de.wikipedia.org/wiki/PlayStation)
-* [Apple iMac 24″(Anfang 2009 - 9,1)](https://de.wikipedia.org/wiki/IMac#Anfang_2009)
-* [Apple iBook G3/700 14 Zoll](https://en.wikipedia.org/wiki/IBook#iBook_G3_Dual_USB_(%22Snow%22;_2001-2003))
-* [Highscreen Colani Blue Note](https://macdat.net/laptops/highscreen/bluenote.html)                                                                                                     
+* [Atari 2600](https://de.wikipedia.org/wiki/Atari_2600) (*1977*)
+* [Sonesta Pong](https://consollection.de/de/model/pong) (*1977*)
+* [Saba Videoplay](http://www.8bit-homecomputermuseum.at/computer/saba_videoplay.html) (*1977*)
+* [Universum Color Multi-Spiel 4106](https://retroconsoles.fandom.com/wiki/Universum_TV_Multispiel#Universum_Color_Multispiel_4106) (*1978*)
+* [Commodore 64](https://de.wikipedia.org/wiki/Commodore_64) (*1983*)
+* [Commodore 16](https://de.wikipedia.org/wiki/Commodore_16) (*1985*)
+* [Nintendo Game Boy](https://de.wikipedia.org/wiki/Game_Boy) (*1990*)
+* [Sega Mega Drive](https://de.wikipedia.org/wiki/Sega_Mega_Drive) (*1990*)
+* [Sega Game Gear](https://de.wikipedia.org/wiki/Sega_Game_Gear) (*1991*)
+* [Super Nintendo Entertainment System (SNES)](https://de.wikipedia.org/wiki/Super_Nintendo_Entertainment_System) (*1992*)
+* [Dendy Junior](https://de.wikipedia.org/wiki/Dendy_(Spielkonsole)) (*1993*)
+* [Highscreen Colani Blue Note](https://macdat.net/laptops/highscreen/bluenote.html) (*1993*)
+* [Playstation](https://de.wikipedia.org/wiki/PlayStation) (*1995*)
+* [Apple iBook G3/700 14″](https://de.wikipedia.org/wiki/IBook#iBook_Dual_USB) (2002)
+* [Apple iMac 24″ - 9,1](https://de.wikipedia.org/wiki/IMac#Anfang_2009) (Anfang 2009)
 {{< /details >}}
 
 * Kleiderbügel {{< link link="https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/" class="external-collection" >}}Seite der Sammlung{{< /link >}}
