@@ -25,7 +25,9 @@ Meine Sammelschwerpunkte liegen im Bereich der Alltagskultur des 20. Jahrhundert
 * [Dendy Junior](https://de.wikipedia.org/wiki/Dendy_(Spielkonsole))
 * [Sega Mega Drive](https://de.wikipedia.org/wiki/Sega_Mega_Drive)
 * [Sega Game Gear](https://de.wikipedia.org/wiki/Sega_Game_Gear)
-* [Playstation](https://de.wikipedia.org/wiki/PlayStation)                                                                                                            
+* [Playstation](https://de.wikipedia.org/wiki/PlayStation)
+* [Apple iBook G3/700 14 Zoll](https://en.wikipedia.org/wiki/IBook#iBook_G3_Dual_USB_(%22Snow%22;_2001-2003))
+* [Highscreen Colani Blue Note](https://macdat.net/laptops/highscreen/bluenote.html)                                                                                                           
 {{< /details >}}
 
 * Kleiderbügel {{< link link="https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/" class="external-collection" >}}Seite der Sammlung{{< /link >}}
