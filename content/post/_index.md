@@ -18,5 +18,5 @@ aliases:
   - blog
 ---
 
-Hier gibt es in unregelmäßigen Abständen Beiträge über meine Projekte, über die eingesetzten Technologien und neue Fundstücke.
+Hier gibt es in unregelmäßigen Abständen Beiträge (derzeit {{< post-count section="post" >}}) über meine Projekte, über die eingesetzten Technologien und neue Fundstücke.
 Eine Übersicht über die letzten Beiträge in den jeweiligen Blogs gibt es bei [Projektemacher.org](https://projektemacher.org/posts/).
