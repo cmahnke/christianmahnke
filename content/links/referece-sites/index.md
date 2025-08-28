@@ -20,6 +20,7 @@ weight: 7
 
 * [Computer-Retro.de](https://computer-retro.de/index.html)
 * [8-Bit-Nirvana](https://www.zock.com/)
+* [Virtuelles Dortmunder Computer Museum](http://www.classiccomputer.de/)
 
 ### Spielkonsolen
 
