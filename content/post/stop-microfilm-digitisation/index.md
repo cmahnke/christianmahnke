@@ -52,5 +52,8 @@ Vielleicht kann ja ein*e Leser*in diesen Vorschlag an die Mitglieder des Redakti
 
 Es gibt nun einen [weiteren Artikel](/post/digital-provenance) zu potentiellen Ergänzungen der DFG-Praxisregeln.
 
+# Update 2.4.2025
+Dieser Artikel wurde auch von [Archivalia verlinkt](https://archivalia.hypotheses.org/226296).
+
 [^1]: https://zefys.staatsbibliothek-berlin.de/list/title/zdb/2807323X/
 [^2]: https://gepris.dfg.de/gepris/projekt/225572475)

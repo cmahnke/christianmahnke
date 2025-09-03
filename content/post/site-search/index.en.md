@@ -19,3 +19,6 @@ In order to better utilise the full depth of information, especially the blog po
 As the page only consists of static HTML and JavaScript, the [Pagefind](https://pagefind.app/) software optimised for such scenarios is used. All search options can be found on the new [search page](/search/).
 
 As there are still some minor errors, the site will be improved a little over the next few weeks...
+
+# Update 1.9.2025
+The corresponding change to the Pagefind UI has now become part of Pagefind itself with the [release of version 1.4.0](https://github.com/Pagefind/pagefind/releases/tag/v1.4.0).

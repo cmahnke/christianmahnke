@@ -57,3 +57,7 @@ So if smaller institutions are prepared to provide a record with attribution in 
 
 <p class="cta">Therefore: Support local / municipal archives with your donations!</p>
 <p class="cta">@Archives: Encourage citizen participation by opening up to a minimum level of recognition through transparent documentation of provenance.</p>
+
+# Update 31.12.2024
+
+This article was also linked by [Archivalia](https://archivalia.hypotheses.org/219985).

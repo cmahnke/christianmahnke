@@ -189,3 +189,7 @@ Für EAD lassen sich Informationen statt im [`<odd`>](https://www.loc.gov/ead/EA
   * METS/MODS als Metadatenformate für Bibliotheken nicht DDB allgemein
   * Unterscheidung zwischen Förderung der Digitalisierung (für DDB und Archivportal-D) und Objektspenden verdeutlicht
   * EAD Version und Anwendungsprofil ergänzt
+
+# Update 23.5.2025
+
+Dieser Artikel wurde auch von [Archivalia verlinkt](https://archivalia.hypotheses.org/229536).

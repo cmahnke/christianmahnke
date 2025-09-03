@@ -48,6 +48,10 @@ Da die DFG auch weiterhin Digitalisierungsprogramme fördert und mit ihren Praxi
 
 Und wenn man eine entsprechende Infrastruktur für Digitalisate aufbaut, kann man auch gleich eh schon dabei ist, kann man sicher auch born-digital Material in Repositorien institutionell signieren...  
 
+# Update 2.4.2025
+
+Dieser Artikel wurde auch von [Archivalia verlinkt](https://archivalia.hypotheses.org/226296).
+
 {{< related >}}
 Potentielle Ergänzungen zu den DFG-Praxisregeln werden auch in dem  [Artikel über Mikroformendigitalsierung](/post/stop-microfilm-digitisation) thematisiert.
 {{< /related >}}

@@ -189,3 +189,7 @@ For EAD, information can also be stored in [`<acqinfo>`](https://www.loc.gov/ead
   * METS/MODS as metadata formats for libraries not DDB in general
   * Distinction between digitisation funding (for DDB and Archivportal-D) and object donations clarified
   * EAD version and application profile added
+
+# Update 23.5.2025
+
+This article was also linked by [Archivalia](https://archivalia.hypotheses.org/229536).
