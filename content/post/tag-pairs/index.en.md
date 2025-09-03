@@ -14,7 +14,7 @@ Sometimes experiments don't bring the desired results...
 
 ...also in this case:
 
-After more than four years, the posts on this blog (now totalling around 100) are slowly becoming confusing, so I've been thinking for some time about how to make them more thematically accessible.
+After more than four years, the posts on this blog (now totalling {{< post-count section="post" >}}) are slowly becoming confusing, so I've been thinking for some time about how to make them more thematically accessible.
 
 So here is an attempt to visualise keyword pairings.
 

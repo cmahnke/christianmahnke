@@ -14,7 +14,7 @@ Manchmal bringen Experimente nicht die gewünschten Ergebnisse...
 
 ...auch in diesem Fall:
 
-Da nach mehr als vier Jahren die Beiträge (inzwischen um die 100) in diesem Blog langsam unübersichtlich werden, denke ich schon seit einiger Zeit darüber nach, wie man sie thematisch besser zugänglich machen kann.
+Da nach mehr als vier Jahren die Beiträge (inzwischen {{< post-count section="post" >}}) in diesem Blog langsam unübersichtlich werden, denke ich schon seit einiger Zeit darüber nach, wie man sie thematisch besser zugänglich machen kann.
 
 Daher hier ein Versuch Paarungen von Schlagworten zu visualisieren.
 
