@@ -4,6 +4,7 @@ title: "JPEG XL"
 tags:
 - DigitalImages
 - Projektemacher.org
+- IIIF
 iiifContext: http://iiif.io/api/presentation/2/context.json
 outputs:
 - html
