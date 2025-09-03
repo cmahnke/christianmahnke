@@ -54,5 +54,9 @@ Perhaps a reader can pass this suggestion on to the members of the editorial tea
 
 There is now a [ another article](/post/digital-provenance) on potential additions to the DFG Code of Practice.
 
+# Update 2.4.2025
+
+This article was also linked by [Archivalia](https://archivalia.hypotheses.org/226296).
+
 [^1]: https://zefys.staatsbibliothek-berlin.de/list/title/zdb/2807323X/
 [^2]: https://gepris.dfg.de/gepris/projekt/225572475)

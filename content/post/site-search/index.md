@@ -19,3 +19,6 @@ Um die volle Informationstiefe, besonders der Blog-Beiträge, besser auszunutzen
 Da die Seite nur aus statischem HTML und JavaScript besteht, kommt die für solche Szenarien optimierte Software [Pagefind](https://pagefind.app/) zum Einsatz. Alle Suchmöglichkeiten sind auf der neuen [Suchseite](/search/) zu finden.
 
 Da es noch kleinere Fehler gibt, wird die Seite in den nächsten Wochen noch etwas verbessert...
+
+# Update 1.9.2025
+Die hierfür genachte Änderung an der Pagefind UI ist nun mit der [Veröffendlichung von Version 1.4.0](https://github.com/Pagefind/pagefind/releases/tag/v1.4.0) Teil von Pagefind selbst geworden.

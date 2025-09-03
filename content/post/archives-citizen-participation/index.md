@@ -57,3 +57,7 @@ Wenn also kleinere Institutionen bereit sind, einen Nachweis mit Namensnennung i
 
 <p class="cta">Daher: Fördern sie lokale / kommunale Archive mit ihren Spenden!</p>
 <p class="cta">@Archive: Fördern Sie Bürgerbeteiligung indem Sie sich für ein Mindestmaß an Anerkennungsbereitschaft durch transparente Dokumentation der Provenienz öffnen.</p>
+
+# Update 31.12.2024
+
+Dieser Artikel wurde auch von [Archivalia verlinkt](https://archivalia.hypotheses.org/219985).
