@@ -7,7 +7,7 @@ tags:
   - Projektemacher.org
 ---
 
-At the end of 2025, here is the annual retrospect for Projektemacher.org. Over X posts were published during the year.
+At the end of 2025, here is the annual retrospect for Projektemacher.org. Over 200 posts were published during the year.
 <!--more-->
 Some of the highlights are:
 
@@ -19,7 +19,10 @@ Some of the highlights are:
 * [Wilma Bräuner](https://wilmabräuner.projektemacher.org/) is no longer available at the old address after permission to publish the images was withdrawn.
 
 ## New features
-* [ChristianMahnke.de](https://christianmahnke.de/) now has entities linked to Wikidata
+
+* [ChristianMahnke.de](https://christianmahnke.de/)
+  * Entities linked to Wikidata
+  * Site searchable
 * [Projektemacher](https://projektemacher.org/archive/) now contains statistics
 
 ## Events

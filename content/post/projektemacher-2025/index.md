@@ -7,7 +7,7 @@ tags:
   - Projektemacher.org
 ---
 
-Zu Abschluss von 2025, hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über X Beiträge veröffentlicht.
+Zu Abschluss von 2025, hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 200 Beiträge veröffentlicht.
 <!--more-->
 Einige der Highlight sind:
 
@@ -20,7 +20,9 @@ Einige der Highlight sind:
 
 ## Neue Funktionen
 
-* [ChristianMahnke.de](https://christianmahnke.de/) hat nun Entitäten zu Wikidata verlinkt
+* [ChristianMahnke.de](https://christianmahnke.de/)
+  * Entitäten zu Wikidata verlinkt
+  * Suchfunktion hinzugefügt
 * [Projektemacher](https://projektemacher.org/archive/) enthält nun Statistiken
 
 ## Veranstaltungen
