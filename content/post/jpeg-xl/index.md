@@ -117,4 +117,4 @@ Nachdem man nun ein paar JPEG XL Dateien erzeugt hat, kann man nun IIIF Derivate
 vips dzsave front.jxl front -t 512 --layout iiif
 ```
 
-{{< iiif/mirador manifestUrl="manifest.json" >}}
+{{< iiif/presentation manifestUrl="manifest.json" >}}
