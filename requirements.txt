@@ -1,4 +1,4 @@
-iiif-prezi3
+iiif-prezi3<3
 shapely
 scour
 blend-modes
