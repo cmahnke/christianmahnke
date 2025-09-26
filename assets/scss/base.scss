@@ -52,6 +52,9 @@ $external-link-icon: "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/20
 @import "blog-themes/lucienne";
 @import "blog-themes/toc-text";
 
+@import "tify";
+@import "iiif/tify";
+
 $gradient-color-light: #b2444d;
 $gradient-color-mid: #a41416;
 $gradient-color-dark:  #701611;
@@ -82,6 +85,7 @@ $linkedin-icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" heig
   --background-color: #{$background-color};
   --foreground-color: #{$foreground-color};
   --accents-color: #{$accents-color};
+  --text-marker-color: 255 7 58;
 }
 
 html {
@@ -1826,7 +1830,27 @@ a.anchor {
         display: block;
         margin: auto;
         position: absolute;
-      }
+
+        &.presentation-api {
+          .tify {
+            width: 100%;
+
+            .tify-header {
+              background: unset !important;
+            }
+
+            .tify-header-button {
+              backdrop-filter: blur(8px);
+              background: unset;
+            }
+
+            .tify-icon {
+              fill: unset;
+            }
+          }
+        }
+
+    }
 
     a {
         &:before {
