@@ -1,6 +1,6 @@
 ---
 date: 2025-09-07T14:00:00+02:00
-title: 'lithograph by František Gross (1909-1985)'
+title: 'Lithograph by František Gross (1909-1985)'
 keywords: František Gross
 description: ""
 cite: true

@@ -25,4 +25,8 @@ Some of the highlights are:
   * Site searchable
 * [Projektemacher](https://projektemacher.org/archive/) now contains statistics
 
+## Miscellaneous
+
+* The Projektemacher blogs now use the IIIF viewer "Tify".
+
 ## Events

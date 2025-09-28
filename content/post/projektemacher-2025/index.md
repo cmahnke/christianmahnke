@@ -25,4 +25,8 @@ Einige der Highlight sind:
   * Suchfunktion hinzugefügt
 * [Projektemacher](https://projektemacher.org/archive/) enthält nun Statistiken
 
+## Sonstiges
+
+* Die Projektemacher Blogs nutzen nun den IIIF Viewer "Tify".
+
 ## Veranstaltungen

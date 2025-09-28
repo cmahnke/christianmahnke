@@ -126,6 +126,11 @@
 
       figure {
 
+        &.center {
+          display: flex;
+          justify-content: center;
+        }
+
         img {
           border-radius: .6rem;
           /* box-shadow: 3px 3px 3px lightgray; */
