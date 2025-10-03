@@ -1,0 +1,8 @@
+User-agent: *
+
+Disallow: /privacy/
+
+Sitemap: https://christianmahnke.de/sitemap.xml
+
+
+llms-txt: https://christianmahnke.de/llms.txt
