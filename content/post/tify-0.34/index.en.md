@@ -1,6 +1,7 @@
 ---
 date: 2025-09-27T11:22:44+02:00
 title: "From Mirador to Tify"
+keywords: Tify
 tags:
   - Projektemacher.org
   - Blog

@@ -13,8 +13,8 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  HUGO_VERSION: 0.150.1
-  DEPENDENCY_MANAGER: yarn
+  HUGO_VERSION: 0.151.0
+  DEPENDENCY_MANAGER: npm
   PYTHON_VERSION: '3.13'
 
 jobs:
