@@ -25,7 +25,7 @@ done
 TARGETFORMAT=png ./themes/projektemacher-base/scripts/preview.sh
 
 # Favicons
-SOURCE="themes/projektemacher-base/static/images/cm.svg" OPTIONS="-transparent white static/images/favicon-128.png" ./themes/projektemacher-base/scripts/favicon.sh
+SOURCE="themes/projektemacher-base/static/images/cm.svg" OPTIONS="-transparent white" ./themes/projektemacher-base/scripts/favicon.sh
 
 cp themes/projektemacher-base/static/images/cm.svg static/images/
 sed -i -E 's/fill-opacity:0.5/fill-opacity:1.0/g' static/images/cm.svg
