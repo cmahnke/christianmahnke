@@ -45,7 +45,7 @@
     "@gltf-transform/core": "^4.2.1",
     "@gltf-transform/extensions": "^4.2.1",
     "@gltf-transform/functions": "^4.2.1",
-    "@playwright/test": "^1.55.0",
+    "@playwright/test": "^1.56.1",
     "@types/d3": "^7.4.3",
     "@types/node": "^24.3.0",
     "@types/openseadragon": "^4.1.0",
