@@ -5,7 +5,6 @@ preview:
   image: ../../../static/images/IIIF-logo.png
   hide: true
 tags:
-tags:
 - IIIF
 - Conference
 ---
