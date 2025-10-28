@@ -10,6 +10,8 @@ tags:
 Für eine kommende Ausstellung wurde [Kleiderbügel-Seite](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/) etwas überarbeitet...
 <!--more-->
 
+Die wichtigsten Neuerungen:
+
 * Die Navigation wurde etwas verbessert
 * Der jeweils aktuelle Kleiderbügel wird nun auf der Startseite angezeigt
 * Die Karte ist größer und kontrastreicher
@@ -19,4 +21,4 @@ Für eine kommende Ausstellung wurde [Kleiderbügel-Seite](https://xn--kleiderbg
 * Es gibt eine englische Übersetzung
 * jQuery wurde entfernt, die Visualisierung der Kleiderstange ist nun mit [Swiper JS](https://swiperjs.com/) realisiert.
 
-Zu der Ausstellung gibt es weitere Informationen mehr ab 2026!
+**Zu der Ausstellung gibt es weitere Informationen mehr ab 2026!**
