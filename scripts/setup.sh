@@ -40,7 +40,7 @@ convert -density 2400 static/images/cm.svg -resize '1024x1024!' static/images/lo
 find content/iiif/ -name index.md -exec cp -n {} $(dirname {})/index.en.md \;
 find content/@cmahnke/ -name index.md -exec cp -n {} $(dirname {})/index.en.md \;
 
-yarn run svgo
+npm run svgo
 ./themes/projektemacher-base/scripts/json-lint.sh
 ./themes/projektemacher-base/scripts/3d-models.sh
 

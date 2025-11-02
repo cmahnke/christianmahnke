@@ -1,20 +1,21 @@
 {
   "dependencies": {
+    "@annotorious/openseadragon": "^3.7.8",
     "aos": "^2.3.4",
+    "chroma-js": "^3.1.2",
+    "d3": "^7.9.0",
+    "d3-chord": "^3.0.1",
+    "d3-shape": "^3.2.0",
     "elevator.js": "^1.0.1",
     "enter-view": "^2.0.1",
+    "img-comparison-slider": "^8.0.6",
     "js-cookie": "^3.0.5",
     "lg-fullscreen": "^1.2.1",
     "lightgallery": "^2.9.0",
-    "photoswipe": "^5.4.4",
-    "wordcloud": "^1.2.3",
-    "img-comparison-slider": "^8.0.6",
-    "chroma-js": "^3.1.2",
-    "pdfobject": "2.3.1",
     "openseadragon": "^5.0.1",
-    "@annotorious/openseadragon": "^3.7.8",
-    "d3": "^7.9.0",
-    "d3-chord": "^3.0.1"
+    "pdfobject": "2.3.1",
+    "photoswipe": "^5.4.4",
+    "wordcloud": "^1.2.3"
   },
   "devDependencies": {
     "replace-in-file": "8.3.0",
