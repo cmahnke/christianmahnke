@@ -6,7 +6,7 @@ tags:
   - Hugo
 ---
 
-Gemeinsame Inhalte für mehrere Hugo Seiten...
+Gemeinsame Inhalte für mehrere Hugo Seiten (das "Hugo Geteilte Metadaten Entwurfsmuster")...
 <!--more-->
 
 Für meine Sammlungen (und auch für diese Seite) benutze ich [Hugo](https://gohugo.io/). Bei Sammlungen mit ähnlichen Objekten kommt es häufig vor, dass Informationen zu mehreren Objekten identisch sind. Ein Beispiel aus dem Blog über Backsteinexpressionismus:
@@ -51,6 +51,8 @@ Das folgende Fragment stammt aus dem Template für die Anzeige einer Seite bzw. 
   {{- end -}}
 {{- end -}}
 ```
+
+Es ist natürlich auch möglich andere Parameter (im Beispiel `geojson`) aus der zentralen Datei zu extrahieren, daher nenne ich diesen Ansatz das "Hugo Geteilte Metadaten Entwurfsmuster".
 
 Bei der Überarbeitung der [Kleiderbügel-Seite](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/) wollte ich vermeiden, Informationen, die auf mehr als einer Seite angezeigt werden sollen, mehrfach zu hinterlegen. Der Unterschied zu dem Beispiel oben ist allerdings, dass einige der Bügel vor 1945 hergestellt wurden und der aufgedruckte Ortsname daher nicht mehr dem heutigen entspricht, da manche Orte heute Teil von Polen sind. Nun könnte man das ignorieren und die alten deutschen Ortsnamen verwenden, was jedoch einen politisch fragwürdigen Beigeschmack hätte.
 
