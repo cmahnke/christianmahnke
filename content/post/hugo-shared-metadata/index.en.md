@@ -52,7 +52,7 @@ The following fragment comes from the template for displaying a page or object:
 {{- end -}}
 ```
 
-It is, of course, also possible to extract other parameters (in the example, `geojson`) from the central file, which is why I call this approach the ‘Hugo Shared Metadata Design Pattern’.
+It is, of course, also possible to extract other parameters (in the example, `geojson`) from the central file, which is why I call this approach the "Hugo Shared Metadata Design Pattern". Compared to the classic [`site.Data`](https://gohugo.io/content-management/data-sources/) approach, this has the advantage that Markdown content can also be reused relatively easily.
 
 When revising the [clothes hanger page (Kleiderbügel)](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/), I wanted to avoid storing information that should be displayed on more than one page multiple times. The difference to the example above, however, is that some of the hangers were manufactured before 1945 and the printed place name therefore no longer corresponds to today's name, as some places are now part of Poland. One could ignore this and use the old German place names, but this would have politically questionable implications.
 

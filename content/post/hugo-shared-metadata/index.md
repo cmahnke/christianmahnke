@@ -52,7 +52,7 @@ Das folgende Fragment stammt aus dem Template für die Anzeige einer Seite bzw. 
 {{- end -}}
 ```
 
-Es ist natürlich auch möglich andere Parameter (im Beispiel `geojson`) aus der zentralen Datei zu extrahieren, daher nenne ich diesen Ansatz das "Hugo Geteilte Metadaten Entwurfsmuster".
+Es ist natürlich auch möglich andere Parameter (im Beispiel `geojson`) aus der zentralen Datei zu extrahieren, daher nenne ich diesen Ansatz das "Hugo Geteilte Metadaten Entwurfsmuster". Dies hat gegenüber dem klassischem [`site.Data`](https://gohugo.io/content-management/data-sources/)-Ansatz, den Vorteil, dass relativ einfach auch die Markdown-Inhalte nachgenutzt werden können.
 
 Bei der Überarbeitung der [Kleiderbügel-Seite](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/) wollte ich vermeiden, Informationen, die auf mehr als einer Seite angezeigt werden sollen, mehrfach zu hinterlegen. Der Unterschied zu dem Beispiel oben ist allerdings, dass einige der Bügel vor 1945 hergestellt wurden und der aufgedruckte Ortsname daher nicht mehr dem heutigen entspricht, da manche Orte heute Teil von Polen sind. Nun könnte man das ignorieren und die alten deutschen Ortsnamen verwenden, was jedoch einen politisch fragwürdigen Beigeschmack hätte.
 
