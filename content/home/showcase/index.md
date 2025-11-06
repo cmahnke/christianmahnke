@@ -7,7 +7,7 @@ weight: 3
 
 Beispiele für immersive bzw. unkonventionelle Präsentationen sind unter anderem diese Blogs:
 
-* [Never Built Göttingen](https://never-built.goettingen.xyz/) - Themenspezifisches Kartenmaterial, Animationen in Übersichten.
+* [Never Built Göttingen](https://never-built.goettingen.xyz/) - Themenspezifisches Kartenmaterial, Animationen in Übersichten, Scrollytelling-Elemente.
 * [VintageReality](https://vintagereality.projektemacher.org/) - Aufbereitung von Stereogrammen für u.a. verschieden farbige Brillen, Google Cardboard, als Wackelbild sowie Extraktion von Tiefeninformationen. Einzelheiten in diesem [Blogbeitrag](https://christianmahnke.de/post/vintagereality/) - Einsatz von Methoden der Computer Vision.
 * [Kleiderbügel](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/) - Auflistung auf einer Kleiderstange, Visualisierung auf einer Landkarte und [IIIF Sammlung](https://theseusviewer.org/?iiif-content=https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/collection.json).
 * [Blaufusstölpel](https://xn--blaufusstlpel-qmb.de/timeline/#vertical) - Zeitstrahl zu Mode- und Handarbeitszeitschriften sowie Stoffmuster.

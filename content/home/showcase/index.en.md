@@ -7,7 +7,7 @@ weight: 3
 
 Examples of immersive or unconventional presentations include these blogs:
 
-* [Never Built Göttingen](https://never-built.goettingen.xyz/) - Topic-specific maps, animations in overviews.
+* [Never Built Göttingen](https://never-built.goettingen.xyz/) - Topic-specific maps, animations in overviews, Scrollytelling-elements.
 * [VintageReality](https://vintagereality.projektemacher.org/) (in German) - preparation of stereograms for, among other things, different coloured glasses, Google Cardboard, as a wobble image and extraction of depth information. Details in this [blog post](https://christianmahnke.de/post/vintagereality/) - Use of computer vision methods
 * [Kleiderbügel (Clothes hanger)](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/) (in German). - Listing on a clothes rail, visualisation on a map and [IIIF collection](https://theseusviewer.org/?iiif-content=https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/collection.json).
 * [Blaufusstölpel](https://xn--blaufusstlpel-qmb.de/timeline/#vertical) - Timeline of fashion and needlework magazines and fabric samples.
