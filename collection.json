@@ -1,0 +1,92 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://christianmahnke.de/collection.json",
+    "type": "Collection",
+    "label": {
+        "de": [
+          "Christian Mahnke"
+        ],
+          "en": [
+            "Blog"
+          ]
+        },
+    "items": [{
+          "id": "https://christianmahnke.de/post/haptic-feedback/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://christianmahnke.de/post/haptic-feedback/page031/full/full/0/default_hu_8d7911a7dbbd3da1.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 459,
+    "width": 300
+  },{
+        "id": "https://christianmahnke.de/post/haptic-feedback/page031/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 6138,
+        "width": 4013,
+        "service": [{
+          "id":"https://christianmahnke.de/post/haptic-feedback/page031",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Haptisches Feedback"
+            ],
+                  "en": [
+                    "Haptic Feedback"
+                  ]}
+        },{
+          "id": "https://christianmahnke.de/post/hdr-iiif/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://christianmahnke.de/post/hdr-iiif/front-hdr/full/full/0/default_hu_304762756b1b852d.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 286,
+    "width": 300
+  },{
+        "id": "https://christianmahnke.de/post/hdr-iiif/front-hdr/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 11944,
+        "width": 12544,
+        "service": [{
+          "id":"https://christianmahnke.de/post/hdr-iiif/front-hdr",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "HDR IIIF"
+            ],
+                  "en": [
+                    "HDR IIIF"
+                  ]}
+        },{
+          "id": "https://christianmahnke.de/post/jpeg-xl/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://christianmahnke.de/post/jpeg-xl/front/full/full/0/default_hu_c8e8a7e91bde6e07.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 421,
+    "width": 300
+  },{
+        "id": "https://christianmahnke.de/post/jpeg-xl/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 6933,
+        "width": 4946,
+        "service": [{
+          "id":"https://christianmahnke.de/post/jpeg-xl/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "JPEG XL"
+            ],
+                  "en": [
+                    "JPEG XL"
+                  ]}
+        }]
+  }
