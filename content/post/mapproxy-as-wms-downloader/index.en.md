@@ -65,7 +65,7 @@ caches:
       coverage:
 # This limits the downloaded tiles to a area arround Göttingen
           bbox: [9.7, 51.45, 10.1, 51.6]
-          srs: GLOBAL_WEBMERCATOR
+          srs: EPSG:4326
 # This is the cache for the dowloaded tiles, don't save them
   dgm1_cache_original:
     sources: [dgm1_wms]
@@ -113,7 +113,7 @@ seeds:
 coverages:
   goettingen:
     bbox: [9.7, 51.45, 10.1, 51.6]
-    srs: EPSG:3857
+    srs: EPSG:4326
 ```
 
 To test whether the configuration is correct, simply run `mapproxy-util serve-develop ./mapproxy.yaml`. Then open the address [http://localhost:8080/demo/](http://localhost:8080/demo/) in your browser to test the configuration.

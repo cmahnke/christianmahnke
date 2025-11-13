@@ -6,7 +6,6 @@ tags:
 ---
 
 Manchmal braucht man Kartenkachel aus einem WMS Server...
-
 <!--more-->
 
 Ich brauchte mal wieder topographische (Höhen-)daten, aber anders als beim [Beitrag zum Klimawandel](/post/marmolada-woodcut/) nicht um sie in Blender zu verarbeiten, sondern in einer Form um sie im Browser weiterverarbeiten zu können. Leider sind nur über einen [WMS-Service](https://de.wikipedia.org/wiki/Web_Map_Service) abrufbar...
@@ -65,7 +64,7 @@ caches:
       coverage:
 # Dadurch werden die heruntergeladenen Kacheln auf einen Bereich um Göttingen beschränkt.
           bbox: [9.7, 51.45, 10.1, 51.6]
-          srs: GLOBAL_WEBMERCATOR
+          srs: EPSG:4326
 # Dies ist der Cache für die heruntergeladenen Kacheln, diese werden nicht gespeichert.
   dgm1_cache_original:
     sources: [dgm1_wms]
@@ -113,7 +112,7 @@ seeds:
 coverages:
   goettingen:
     bbox: [9.7, 51.45, 10.1, 51.6]
-    srs: EPSG:3857
+    srs: EPSG:4326
 ```
 
 Um zu testen, ob die Konfiguration korrekt ist, genügt es, `mapproxy-util serve-develop ./mapproxy.yaml` auzuführen. Danach kann die Adresse [http://localhost:8080/demo/](http://localhost:8080/demo/) im Browser geöffnet werden um die Konfiguration zu testen.
