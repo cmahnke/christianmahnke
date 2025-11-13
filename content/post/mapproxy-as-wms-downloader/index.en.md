@@ -125,3 +125,5 @@ mapproxy-seed -s ./seed.yaml -f ./mapproxy.yaml
 ```
 
 Once the process is complete, the desired directories and files will be located in the `cache_data` directory.
+
+The subdirectory `tile-locks` can be deleted.
