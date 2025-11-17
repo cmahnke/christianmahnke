@@ -18,7 +18,7 @@ Schon fast eine Tradition: Die [Bastelanleitung](./instructions-2023.pdf) für d
 
 {{< figure src="card-2023.jpg" alt="Weihnachtskarte" caption="Fertige Weihnachtskarte" class="christmas-card" >}}
 
-Die benutzten Tapeten ist von [Zeitzeug](http://zeitzeug.de/) in Göttingen und auch bei [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/tapete-18/) ([zweite Tapete](https://vorsatzpapier.projektemacher.org/post/tapete-19/)) hochauflösend abgebildet.
+Die benutzten Tapeten sind von [Zeitzeug](http://zeitzeug.de/) in Göttingen und auch bei [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/tapete-18/) ([zweite Tapete](https://vorsatzpapier.projektemacher.org/post/tapete-19/)) hochauflösend abgebildet.
 
 # Vorschau
 

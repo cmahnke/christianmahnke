@@ -8,6 +8,9 @@ tags:
 - Geodata
 - GitHub
 - Docker
+wikidata:
+  - https://www.wikidata.org/wiki/Q116859588
+  - https://www.wikidata.org/wiki/Q110613565
 ---
 Since the use of freely available map services requires [communication with external services](/post/maps/) as well as limited design, it was time for something of my own...
 

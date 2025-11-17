@@ -10,7 +10,11 @@ tags:
   - JavaScript
   - Göttingen
   - History
+  - OpenStreetMap
 preview: screenshot.png
+wikidata:
+  - https://www.wikidata.org/wiki/Q464980
+  - https://www.wikidata.org/wiki/Q1144457
 ---
 
 Today (26 March) is the opening of the exhibition [‘Was zum Quant?!’](https://www.forum-wissen.de/event/eroeffnung-was-zum-quant/) in the Forum Wissen. You can also see a digital exhibit in which I was involved...
@@ -26,3 +30,9 @@ The data was collected by Pia Denkmann, the geodata enrichment, JSON transformat
   {"src": "screenshot.png", "alt": "Screenshot of the prototype"}
 ]
 {{</ gallery >}}
+
+# Technical details
+
+The map was georeferenced using QGIS.
+
+The coordinates of the addresses are determined using [Nominatim](https://nominatim.openstreetmap.org/) from the OpenStreetMap project.

@@ -23,7 +23,11 @@ Einige der Highlight sind:
 * [ChristianMahnke.de](https://christianmahnke.de/)
   * Entitäten zu Wikidata verlinkt
   * Suchfunktion hinzugefügt
+* [Kleiderbügel](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/)
+  * [Viele Verbesserungen](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/post/news-2025/)
 * [Projektemacher](https://projektemacher.org/archive/) enthält nun Statistiken
+* [Backsteinexpressionismus](https://backsteinexpressionismus.projektemacher.org/)
+  * Suchfunktion hinzugefügt
 
 ## Sonstiges
 

@@ -3,6 +3,10 @@ date: 2025-11-13T20:14:44+02:00
 title: "Mapproxy als WMS Downloader"
 tags:
 - Geodata
+wikidata:
+  - https://www.wikidata.org/wiki/Q1403548
+  - https://www.wikidata.org/wiki/Q2788747
+  - https://www.wikidata.org/wiki/Q1802054
 ---
 
 Sometimes you need map tiles from a WMS server...

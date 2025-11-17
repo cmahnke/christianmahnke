@@ -23,7 +23,11 @@ Some of the highlights are:
 * [ChristianMahnke.de](https://christianmahnke.de/)
   * Entities linked to Wikidata
   * Site searchable
+* [Kleiderbügel](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/)
+  * [Many improvements](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/post/news-2025/)
 * [Projektemacher](https://projektemacher.org/archive/) now contains statistics
+* [Backsteinexpressionismus](https://backsteinexpressionismus.projektemacher.org/)
+  * Site searchable
 
 ## Miscellaneous
 

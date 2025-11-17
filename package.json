@@ -30,6 +30,6 @@
     "icons": "yarn run no-emoji && yarn run tagcloud",
     "no-emoji": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Icons/No\\ Emoji.svg -o static/images/no-emoji.svg",
     "tagcloud": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Icons/Tagcloud.svg -o static/images/tagcloud.svg",
-    "svgo": "yarn run background && yarn run icons && yarn run logos"
+    "svgo": "npm run background && npm run icons && npm run logos"
   }
 }
