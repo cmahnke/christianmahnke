@@ -1,6 +1,6 @@
 ---
 date: 2025-11-17T21:14:44+02:00
-title: "Openstreetmap Daten \"patchen\""
+title: "OpenStreetMap Daten \"patchen\""
 tags:
   - Geodata
   - OpenStreetMap
