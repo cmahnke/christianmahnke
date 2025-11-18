@@ -19,7 +19,7 @@ My professional focus is on various topics from the spectrum of digital librarie
   * Museum metadata (LIDO)
 
 * LinkedOpenData
-  * Wikidata
+  * Wikidata {{< link link="/en/tags/Wikidata/" class="blog" >}}Blog posts{{< /link >}}
   * SPARQL
 
 * (Mass-) Digitisation
