@@ -4,6 +4,7 @@ title: "OpenStreetMap Daten \"patchen\""
 tags:
   - Geodata
   - OpenStreetMap
+  - Python
 wikidata:
   - https://www.wikidata.org/wiki/Q12877
   - https://www.wikidata.org/wiki/Q116859588
