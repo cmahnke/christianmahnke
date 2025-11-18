@@ -34,11 +34,12 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 * Geodaten {{< link link="/tags/Geodata/" class="blog" >}}Blog Beiträge{{< /link >}}
 
 * Programmiersprachen
-  * Java
+  * Java {{< link link="/tags/Java/" class="blog" >}}Blog Beiträge{{< /link >}}
   * PHP
-  * Python
+  * Python {{< link link="/tags/Java/" class="blog" >}}Blog Beiträge{{< /link >}}
   * Groovy
   * Go
+  * JavaScript {{< link link="/tags/JavaScript/" class="blog" >}}Blog Beiträge{{< /link >}}
 
 * Webentwicklung
   * HTML

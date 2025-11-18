@@ -10,6 +10,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q116859588
   - https://www.wikidata.org/wiki/Q107385647
   - https://www.wikidata.org/wiki/Q110609581
+  - https://www.wikidata.org/wiki/Q935780
 ---
 
 "Kontrafaktische Architektur" liefert fast keine Treffer bei Google....

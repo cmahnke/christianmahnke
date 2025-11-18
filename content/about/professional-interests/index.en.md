@@ -34,11 +34,12 @@ My professional focus is on various topics from the spectrum of digital librarie
 * Geodata {{< link link="/en/tags/Geodata/" class="blog" >}}Blog posts{{< /link >}}
 
 * Programming
-  * Java
+  * Java {{< link link="/en/tags/Java/" class="blog" >}}Blog posts{{< /link >}}
   * PHP
-  * Python
+  * Python {{< link link="/en/tags/Python/" class="blog" >}}Blog posts{{< /link >}}
   * Groovy
   * Go
+  * JavaScript {{< link link="/en/tags/JavaScript/" class="blog" >}}Blog posts{{< /link >}}
 
 * Web development
   * HTML
