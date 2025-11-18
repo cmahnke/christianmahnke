@@ -32,7 +32,7 @@ Der Code ist auf [GitHub](https://github.com/cmahnke/hdr-canvas) und [NPM](https
 Seit der letzten Veröffentlichung haben sich viele Bereiche der Verarbeitung von HDR-Inhalten im Browser weiterentwickelt.
 Am auffälligsten ist sicherlich die Einführung von „Float16Array” im „ImageData”-Konstruktor:
 
-- Die [WhatWG-Spezifikation](https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#imagedataarray), [MDN](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/ImageData# Syntax) und [BCD]([new ImageData(new Float16Array(4), 1, 1, {pixelFormat:„rgba-float16“})](https://github.com/mdn/browser-compat-data/issues/27547)) wurden entsprechend aktualisiert. Sie können Ihren eigenen Browser mit `new ImageData(new Float16Array(4), 1, 1, {pixelFormat:„rgba-float16“})` testen.
+- Die [WhatWG-Spezifikation](https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#imagedataarray), [MDN](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/ImageData#syntax) und [BCD](https://github.com/mdn/browser-compat-data/issues/27547)) wurden entsprechend aktualisiert. Sie können Ihren eigenen Browser mit `new ImageData(new Float16Array(4), 1, 1, {pixelFormat:„rgba-float16“})` testen.
   - Noch offen in [Firefox](https://bugzil.la/1958830)
   - In [Safari](https://webkit.org/b/291196) hinter einem Flag versteckt
   - Chromium hat es ab [137](https://source.chromium.org/chromium/chromium/src/+/refs/tags/137.0.7104.0:third_party/blink/renderer/core/html/canvas/image_data.idl) implementiert: \*\*Der Konstruktor `ImageData` akzeptiert nur `Float16Array` anstelle von `Uint16Array`. Dadurch werden ältere Versionen dieses Moduls überflüssig, da sie auf die Chromium-spezifische Lösung ausgerichtet waren.
