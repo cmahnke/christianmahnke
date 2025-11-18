@@ -47,7 +47,7 @@ Bei der Bildung der Maske werden auch gleich die OSM IDs der Änderungen angepas
 
 ## Eingabedatei aufräumen
 
-Mit der Maske lässt sich nun ein OSM Datendump aufräumen. Dabei wird der gesamte gewünschte Kartenausschnitt durchlaufen und jeder OSM weg , der die Maske überschneidet verworfen. So lassen sich bestehende Gebäude, Grünflächen  etc entfernen.
+Mit der Maske lässt sich nun ein OSM Datendump aufräumen. Dabei wird der gesamte gewünschte Kartenausschnitt durchlaufen und jeder OSM Weg (`way`), der die Maske überschneidet, verworfen. So lassen sich bestehende Gebäude, Grünflächen etc, entfernen.
 
 ## Zusammenführung
 
