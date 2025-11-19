@@ -20,7 +20,7 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 
 * LinkedOpenData
   * Wikidata {{< link link="/tags/Wikidata/" class="blog" >}}Blog Beiträge{{< /link >}}
-  * SPARQL
+  * SPARQL {{< link link="/tags/SPARQL/" class="blog" >}}Blog Beiträge{{< /link >}}
 
 * (Massen-) Digitalisierung
   * Workflowsteuerung

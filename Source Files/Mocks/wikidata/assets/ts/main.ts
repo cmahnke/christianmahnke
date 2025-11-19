@@ -1,13 +1,16 @@
 import { pagesToWikidata } from "./transformations";
 import { visualizeRelations } from "./wikidata";
 
-const options =  { // Optional renderOptions
-    intermediateItemRadius: 6,
-    intermediateItemColor: "purple",
-    nodeCollisionPadding: 2,
-    linkDistanceOther: 70
-    // defaultInitialRadius, linkDistanceInitialToInitial can also be set
-  }
+const lang = navigator.language.split("-")[0];
+
+const options = {
+  // Optional renderOptions
+  intermediateItemRadius: 6,
+  intermediateItemColor: "purple",
+  nodeCollisionPadding: 2,
+  linkDistanceOther: 70
+  // defaultInitialRadius, linkDistanceInitialToInitial can also be set
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch("/meta/wikidata/index.json")
@@ -22,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return a;
       });
       */
-      const lang = "de";
       visualizeRelations(lang, items, options);
     });
 });

@@ -44,6 +44,10 @@
       {{- end -}}
     {{- end -}}
 
+    {{- if or (hasPrefix .Path "about") (hasPrefix .Path "/post") -}}
+      {{- $class = printf "%s %s" $class "blog" -}}
+    {{- end -}}
+
     {{- if .Params.layout -}}
       {{- $class = printf "%s %s" $class .Params.layout -}}
     {{- end -}}

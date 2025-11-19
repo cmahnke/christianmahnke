@@ -11,7 +11,6 @@ export interface InitialItemInput {
   infoLinks?: InfoLink[];
 }
 
-
 // --- Configuration Constants ---
 const WIKIDATA_SPARQL_ENDPOINT = "https://query.wikidata.org/sparql";
 
@@ -28,7 +27,6 @@ const MAX_RESULTS_DIRECT = 100;
 const MAX_RESULTS_INDIRECT = 50;
 const MAX_P31_P279_RESULTS_PER_CHUNK_LEVEL = 10;
 const P31_P279_CHUNK_SIZE = 30;
-
 
 // --- Interfaces ---
 interface WikidataItemBase {
@@ -74,7 +72,6 @@ export interface VisualizationRenderOptions {
   collisionPadding: number;
 }
 
-
 // --- Main Visualization Function (Single Entry Point) ---
 export async function visualizeRelations(
   language: string,
@@ -98,34 +95,48 @@ export async function visualizeRelations(
 
   loader.classList.remove("hidden");
   itemListDisplay.textContent = initialItemsData.map((item) => `${item.id} (w:${item.weight})`).join(", ");
+  document.getElementById("visualization-container")?.classList.add("loading");
 
   const renderOptions: VisualizationRenderOptions = {
     intermediateItemRadius: options?.intermediateItemRadius ?? DEFAULT_INTERMEDIATE_ITEM_RADIUS,
     nonInitialItemColor: options?.nonInitialItemColor ?? DEFAULT_NON_INITIAL_ITEM_COLOR,
     linkDistanceII: options?.linkDistanceII ?? DEFAULT_LINK_DISTANCE_II,
     linkDistanceIX: options?.linkDistanceIX ?? DEFAULT_LINK_DISTANCE_IX,
-    collisionPadding: options?.collisionPadding ?? DEFAULT_COLLISION_PADDING,
+    collisionPadding: options?.collisionPadding ?? DEFAULT_COLLISION_PADDING
   };
 
   try {
     const { allItems, allRelations } = await fetchData(language, initialItemsData);
-    const { prunedItems, prunedRelations } = pruneGraph(allItems, allRelations);
-    renderGraph(prunedItems, prunedRelations, renderOptions);
+
+    const container = document.getElementById("visualization-container");
+    if (!container) {
+      console.error("Visualization container not found.");
+      return;
+    }
+
+    const redraw = () => {
+      const { prunedItems, prunedRelations } = pruneGraph(allItems, allRelations);
+      renderGraph(prunedItems, prunedRelations, renderOptions);
+    };
+
+    // Initial render
+    redraw();
+
+    // Redraw on resize
+    const resizeObserver = new ResizeObserver(redraw);
+    resizeObserver.observe(container);
   } catch (error) {
     console.error("Error visualizing relations:", error);
-    const svg = d3.select("svg");
-    svg.selectAll("*").remove();
-    svg
-      .append("text")
+    d3.select("#visualization-container").html("").append("div").style("text-align", "center").style("padding-top", "50px")
       .attr("x", "50%")
       .attr("y", "50%")
       .attr("text-anchor", "middle")
       .text("Failed to load data. Check console for details.");
   } finally {
     loader.classList.add("hidden");
+    document.getElementById("visualization-container")?.classList.remove("loading");
   }
 }
-
 
 // --- Data Fetching Logic ---
 async function executeSparqlQuery(query: string): Promise<any> {
@@ -138,7 +149,7 @@ async function executeSparqlQuery(query: string): Promise<any> {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
-      "Accept": "application/sparql-results+json"
+      Accept: "application/sparql-results+json"
     },
     body: params
   });
@@ -158,7 +169,7 @@ async function fetchItemDetails(
   const itemMap = new Map<string, WikidataItem>();
   if (itemInputs.length === 0) return itemMap;
 
-  const validInputInputs = itemInputs.filter(input => {
+  const validInputInputs = itemInputs.filter((input) => {
     const trimmedQid = input.qid.trim();
     const isValidQid = /^Q\d+$/.test(trimmedQid);
     if (!isValidQid) {
@@ -174,7 +185,7 @@ async function fetchItemDetails(
   const chunkSize = 50;
   for (let i = 0; i < qidsToFetch.length; i += chunkSize) {
     const chunkQids = qidsToFetch.slice(i, i + chunkSize);
-    const chunkInputDataMap = new Map(validInputInputs.slice(i, i + chunkSize).map(inp => [inp.qid, inp]));
+    const chunkInputDataMap = new Map(validInputInputs.slice(i, i + chunkSize).map((inp) => [inp.qid, inp]));
     const valuesClause = chunkQids.map((id) => `wd:${id}`).join(" ");
     const query = `
       SELECT ?item ?itemLabel WHERE {
@@ -203,7 +214,14 @@ async function fetchItemDetails(
         if (!itemMap.has(qid)) {
           const inputData = chunkInputDataMap.get(qid);
           if (inputData) {
-            itemMap.set(qid, { id: qid, label: qid, isInitial: inputData.isInitial, weight: inputData.weight, infoLinks: inputData.infoLinks, group: inputData.isInitial ? 1 : 2 });
+            itemMap.set(qid, {
+              id: qid,
+              label: qid,
+              isInitial: inputData.isInitial,
+              weight: inputData.weight,
+              infoLinks: inputData.infoLinks,
+              group: inputData.isInitial ? 1 : 2
+            });
           }
         }
       });
@@ -222,7 +240,7 @@ async function fetchAndProcessP31P279Level(
   levelName: string
 ): Promise<Set<string>> {
   const newTargetsFoundThisLevel = new Set<string>();
-  const qidsToQueryThisIteration = sourceQidsBatch.filter(qid => !processedForP31P279.has(qid));
+  const qidsToQueryThisIteration = sourceQidsBatch.filter((qid) => !processedForP31P279.has(qid));
 
   if (qidsToQueryThisIteration.length === 0) {
     return newTargetsFoundThisLevel;
@@ -232,9 +250,9 @@ async function fetchAndProcessP31P279Level(
 
   for (let i = 0; i < qidsToQueryThisIteration.length; i += P31_P279_CHUNK_SIZE) {
     const chunkOfCurrentLevelQids = qidsToQueryThisIteration.slice(i, i + P31_P279_CHUNK_SIZE);
-    chunkOfCurrentLevelQids.forEach(qid => processedForP31P279.add(qid));
+    chunkOfCurrentLevelQids.forEach((qid) => processedForP31P279.add(qid));
 
-    const valuesClause = chunkOfCurrentLevelQids.map(id => `wd:${id.trim()}`).join(" ");
+    const valuesClause = chunkOfCurrentLevelQids.map((id) => `wd:${id.trim()}`).join(" ");
     const p31p279Query = `
       SELECT ?sourceItem ?property_entity ?propertyID ?propertyLabel ?targetItem ?targetItemLabel WHERE {
         VALUES ?sourceItem { ${valuesClause} }
@@ -265,14 +283,14 @@ async function fetchAndProcessP31P279Level(
           source: sourceQid,
           target: targetQid,
           property: { id: propertyId, label: propertyLabel },
-          isIndirectPart: true,
+          isIndirectPart: true
         });
         if (!itemMasterMap.has(targetQid)) {
           itemMasterMap.set(targetQid, {
             id: targetQid,
             label: targetLabel,
             isInitial: false,
-            group: targetItemGroup,
+            group: targetItemGroup
           });
           newTargetsFoundThisLevel.add(targetQid);
         }
@@ -284,132 +302,216 @@ async function fetchAndProcessP31P279Level(
   return newTargetsFoundThisLevel;
 }
 
-async function fetchData(language: string, initialItemsData: InitialItemInput[]): Promise<{ allItems: WikidataItem[]; allRelations: WikidataRelation[] }> {
-    const initialItemInputsForFetch = initialItemsData.map((item) => ({ qid: item.id.trim(), isInitial: true, weight: item.weight, infoLinks: item.infoLinks }));
-    const itemMasterMap = await fetchItemDetails(language, initialItemInputsForFetch);
-    const allRelations: WikidataRelation[] = [];
-    const uniqueInitialQIds = Array.from(new Set(initialItemsData.map(item => item.id.trim())));
-  
-    if (uniqueInitialQIds.length >= 1) {
-      const initialValuesClause = uniqueInitialQIds.map((id) => `wd:${id}`).join(" ");
-      const directRelationsQuery = `SELECT ?item1 ?prop ?propLabel ?item2 WHERE { VALUES ?item1 { ${initialValuesClause} } VALUES ?item2 { ${initialValuesClause} } FILTER(?item1 != ?item2) ?item1 ?p ?item2 . ?property_entity wikibase:directClaim ?p . BIND(REPLACE(STR(?p), STR(wdt:), "") AS ?prop) SERVICE wikibase:label { bd:serviceParam wikibase:language "${language},en". ?property_entity rdfs:label ?propLabel . } } LIMIT ${MAX_RESULTS_DIRECT}`;
-      try {
-        const directJson = await executeSparqlQuery(directRelationsQuery);
-        directJson.results.bindings.forEach((binding: any) => { allRelations.push({ source: binding.item1.value.split("/").pop(), target: binding.item2.value.split("/").pop(), property: { id: binding.prop.value, label: binding.propLabel?.value || binding.prop.value }, isIndirectPart: false }); });
-      } catch (error) { console.error("Error fetching direct relations:", error); }
-    }
-  
-    if (uniqueInitialQIds.length >= 2) {
-      const initialValuesClause = uniqueInitialQIds.map((id) => `wd:${id}`).join(" ");
-      const indirectRelationsQuery = `SELECT ?initial1 ?prop1_id ?prop1Label ?intermediate ?intermediateLabel ?prop2_id ?prop2Label ?initial2 WHERE { VALUES ?initial1 { ${initialValuesClause} } VALUES ?initial2 { ${initialValuesClause} } FILTER(?initial1 != ?initial2) ?initial1 ?p1 ?intermediate . ?intermediate ?p2 ?initial2 . FILTER NOT EXISTS { VALUES ?item { ${initialValuesClause} } . FILTER (?intermediate = ?item) } ?property1 wikibase:directClaim ?p1 . BIND(REPLACE(STR(?p1), STR(wdt:), "") AS ?prop1_id) ?property2 wikibase:directClaim ?p2 . BIND(REPLACE(STR(?p2), STR(wdt:), "") AS ?prop2_id) SERVICE wikibase:label { bd:serviceParam wikibase:language "${language},en". ?intermediate rdfs:label ?intermediateLabel . ?property1 rdfs:label ?prop1Label . ?property2 rdfs:label ?prop2Label . } } LIMIT ${MAX_RESULTS_INDIRECT}`;
-      try {
-        const indirectJson = await executeSparqlQuery(indirectRelationsQuery);
-        const newIntermediateQInputsForFetch: { qid: string; isInitial: boolean }[] = [];
-        indirectJson.results.bindings.forEach((binding: any) => {
-          const intermediateQid = binding.intermediate.value.split("/").pop();
-          allRelations.push({ source: binding.initial1.value.split("/").pop(), target: intermediateQid, property: { id: binding.prop1_id.value, label: binding.prop1Label?.value || binding.prop1_id.value }, isIndirectPart: true });
-          allRelations.push({ source: intermediateQid, target: binding.initial2.value.split("/").pop(), property: { id: binding.prop2_id.value, label: binding.prop2Label?.value || binding.prop2_id.value }, isIndirectPart: true });
-          if (!itemMasterMap.has(intermediateQid) && !newIntermediateQInputsForFetch.some((item) => item.qid === intermediateQid)) { newIntermediateQInputsForFetch.push({ qid: intermediateQid, isInitial: false }); }
-        });
-        if (newIntermediateQInputsForFetch.length > 0) {
-          const intermediateDetails = await fetchItemDetails(language, newIntermediateQInputsForFetch);
-          intermediateDetails.forEach((item, qid) => { if (!itemMasterMap.has(qid)) itemMasterMap.set(qid, item); });
-        }
-      } catch (error) { console.error("Error fetching indirect relations:", error); }
-    }
-  
-    const processedForP31P279 = new Set<string>();
-    const qidsForLevel1 = Array.from(itemMasterMap.keys());
-    const level1Targets = await fetchAndProcessP31P279Level(qidsForLevel1, language, itemMasterMap, allRelations, processedForP31P279, 3, "Level 1");
-    if (level1Targets.size > 0) { await fetchAndProcessP31P279Level(Array.from(level1Targets), language, itemMasterMap, allRelations, processedForP31P279, 4, "Level 2"); }
-  
-    // Corrected the line that caused the error
-    const allQidsInRelations = new Set<string>(allRelations.flatMap(r => [r.source, r.target]));
-    const missingQidInputs = Array.from(allQidsInRelations).filter(qid => qid && !itemMasterMap.has(qid)).map(qid => ({ qid: qid, isInitial: false }));
-    if (missingQidInputs.length > 0) {
-      console.warn(`Fetching details for ${missingQidInputs.length} items found only in relations.`);
-      const missingDetails = await fetchItemDetails(language, missingQidInputs);
-      missingDetails.forEach((item, qid) => { if (!itemMasterMap.has(qid)) itemMasterMap.set(qid, item); });
-    }
-  
-    return { allItems: Array.from(itemMasterMap.values()), allRelations };
-}
+async function fetchData(
+  language: string,
+  initialItemsData: InitialItemInput[]
+): Promise<{ allItems: WikidataItem[]; allRelations: WikidataRelation[] }> {
+  const initialItemInputsForFetch = initialItemsData.map((item) => ({
+    qid: item.id.trim(),
+    isInitial: true,
+    weight: item.weight,
+    infoLinks: item.infoLinks
+  }));
+  const itemMasterMap = await fetchItemDetails(language, initialItemInputsForFetch);
+  const allRelations: WikidataRelation[] = [];
+  const uniqueInitialQIds = Array.from(new Set(initialItemsData.map((item) => item.id.trim())));
 
+  if (uniqueInitialQIds.length >= 1) {
+    const initialValuesClause = uniqueInitialQIds.map((id) => `wd:${id}`).join(" ");
+    const directRelationsQuery = `SELECT ?item1 ?prop ?propLabel ?item2 WHERE { VALUES ?item1 { ${initialValuesClause} } VALUES ?item2 { ${initialValuesClause} } FILTER(?item1 != ?item2) ?item1 ?p ?item2 . ?property_entity wikibase:directClaim ?p . BIND(REPLACE(STR(?p), STR(wdt:), "") AS ?prop) SERVICE wikibase:label { bd:serviceParam wikibase:language "${language},en". ?property_entity rdfs:label ?propLabel . } } LIMIT ${MAX_RESULTS_DIRECT}`;
+    try {
+      const directJson = await executeSparqlQuery(directRelationsQuery);
+      directJson.results.bindings.forEach((binding: any) => {
+        allRelations.push({
+          source: binding.item1.value.split("/").pop(),
+          target: binding.item2.value.split("/").pop(),
+          property: { id: binding.prop.value, label: binding.propLabel?.value || binding.prop.value },
+          isIndirectPart: false
+        });
+      });
+    } catch (error) {
+      console.error("Error fetching direct relations:", error);
+    }
+  }
+
+  if (uniqueInitialQIds.length >= 2) {
+    const initialValuesClause = uniqueInitialQIds.map((id) => `wd:${id}`).join(" ");
+    const indirectRelationsQuery = `SELECT ?initial1 ?prop1_id ?prop1Label ?intermediate ?intermediateLabel ?prop2_id ?prop2Label ?initial2 WHERE { VALUES ?initial1 { ${initialValuesClause} } VALUES ?initial2 { ${initialValuesClause} } FILTER(?initial1 != ?initial2) ?initial1 ?p1 ?intermediate . ?intermediate ?p2 ?initial2 . FILTER NOT EXISTS { VALUES ?item { ${initialValuesClause} } . FILTER (?intermediate = ?item) } ?property1 wikibase:directClaim ?p1 . BIND(REPLACE(STR(?p1), STR(wdt:), "") AS ?prop1_id) ?property2 wikibase:directClaim ?p2 . BIND(REPLACE(STR(?p2), STR(wdt:), "") AS ?prop2_id) SERVICE wikibase:label { bd:serviceParam wikibase:language "${language},en". ?intermediate rdfs:label ?intermediateLabel . ?property1 rdfs:label ?prop1Label . ?property2 rdfs:label ?prop2Label . } } LIMIT ${MAX_RESULTS_INDIRECT}`;
+    try {
+      const indirectJson = await executeSparqlQuery(indirectRelationsQuery);
+      const newIntermediateQInputsForFetch: { qid: string; isInitial: boolean }[] = [];
+      indirectJson.results.bindings.forEach((binding: any) => {
+        const intermediateQid = binding.intermediate.value.split("/").pop();
+        allRelations.push({
+          source: binding.initial1.value.split("/").pop(),
+          target: intermediateQid,
+          property: { id: binding.prop1_id.value, label: binding.prop1Label?.value || binding.prop1_id.value },
+          isIndirectPart: true
+        });
+        allRelations.push({
+          source: intermediateQid,
+          target: binding.initial2.value.split("/").pop(),
+          property: { id: binding.prop2_id.value, label: binding.prop2Label?.value || binding.prop2_id.value },
+          isIndirectPart: true
+        });
+        if (!itemMasterMap.has(intermediateQid) && !newIntermediateQInputsForFetch.some((item) => item.qid === intermediateQid)) {
+          newIntermediateQInputsForFetch.push({ qid: intermediateQid, isInitial: false });
+        }
+      });
+      if (newIntermediateQInputsForFetch.length > 0) {
+        const intermediateDetails = await fetchItemDetails(language, newIntermediateQInputsForFetch);
+        intermediateDetails.forEach((item, qid) => {
+          if (!itemMasterMap.has(qid)) itemMasterMap.set(qid, item);
+        });
+      }
+    } catch (error) {
+      console.error("Error fetching indirect relations:", error);
+    }
+  }
+
+  const processedForP31P279 = new Set<string>();
+  const qidsForLevel1 = Array.from(itemMasterMap.keys());
+  const level1Targets = await fetchAndProcessP31P279Level(
+    qidsForLevel1,
+    language,
+    itemMasterMap,
+    allRelations,
+    processedForP31P279,
+    3,
+    "Level 1"
+  );
+  if (level1Targets.size > 0) {
+    await fetchAndProcessP31P279Level(Array.from(level1Targets), language, itemMasterMap, allRelations, processedForP31P279, 4, "Level 2");
+  }
+
+  // Corrected the line that caused the error
+  const allQidsInRelations = new Set<string>(allRelations.flatMap((r) => [r.source, r.target]));
+  const missingQidInputs = Array.from(allQidsInRelations)
+    .filter((qid) => qid && !itemMasterMap.has(qid))
+    .map((qid) => ({ qid: qid, isInitial: false }));
+  if (missingQidInputs.length > 0) {
+    console.warn(`Fetching details for ${missingQidInputs.length} items found only in relations.`);
+    const missingDetails = await fetchItemDetails(language, missingQidInputs);
+    missingDetails.forEach((item, qid) => {
+      if (!itemMasterMap.has(qid)) itemMasterMap.set(qid, item);
+    });
+  }
+
+  return { allItems: Array.from(itemMasterMap.values()), allRelations };
+}
 
 // --- Graph Pruning Logic ---
 function findConnectedComponents(nodeIds: string[], adjacency: Map<string, string[]>): Set<string>[] {
-    const components: Set<string>[] = [];
-    const visited = new Set<string>();
-    for (const nodeId of nodeIds) {
-      if (!visited.has(nodeId)) {
-        const currentComponent = new Set<string>();
-        const queue = [nodeId];
-        visited.add(nodeId);
-        while (queue.length > 0) {
-          const u = queue.shift()!;
-          currentComponent.add(u);
-          const neighbors = adjacency.get(u) || [];
-          for (const v of neighbors) {
-            if (!visited.has(v)) {
-              visited.add(v);
-              queue.push(v);
-            }
+  const components: Set<string>[] = [];
+  const visited = new Set<string>();
+  for (const nodeId of nodeIds) {
+    if (!visited.has(nodeId)) {
+      const currentComponent = new Set<string>();
+      const queue = [nodeId];
+      visited.add(nodeId);
+      while (queue.length > 0) {
+        const u = queue.shift()!;
+        currentComponent.add(u);
+        const neighbors = adjacency.get(u) || [];
+        for (const v of neighbors) {
+          if (!visited.has(v)) {
+            visited.add(v);
+            queue.push(v);
           }
         }
-        components.push(currentComponent);
       }
+      components.push(currentComponent);
     }
-    return components;
-}
-  
-function pruneGraph(items: WikidataItem[], relations: WikidataRelation[]): { prunedItems: WikidataItem[]; prunedRelations: WikidataRelation[] } {
-    if (items.length === 0) return { prunedItems: [], prunedRelations: [] };
-  
-    const initialItems = items.filter(item => item.isInitial);
-    const initialItemIds = new Set(initialItems.map(item => item.id));
-    const nonInitialItems = items.filter(item => !item.isInitial);
-  
-    if (initialItemIds.size < 2) {
-      const prunedRelations = relations.filter(rel => initialItemIds.has(rel.source) && initialItemIds.has(rel.target));
-      console.log(`Pruning all non-initial nodes as there are fewer than 2 initial nodes.`);
-      return { prunedItems: initialItems, prunedRelations };
-    }
-  
-    const fullAdjacency = new Map<string, string[]>();
-    items.forEach(item => fullAdjacency.set(item.id, []));
-    relations.forEach(rel => { fullAdjacency.get(rel.source)!.push(rel.target); fullAdjacency.get(rel.target)!.push(rel.source); });
-  
-    const graySubgraphAdjacency = new Map<string, string[]>();
-    nonInitialItems.forEach(item => graySubgraphAdjacency.set(item.id, []));
-    relations.forEach(rel => { if (graySubgraphAdjacency.has(rel.source) && graySubgraphAdjacency.has(rel.target)) { graySubgraphAdjacency.get(rel.source)!.push(rel.target); graySubgraphAdjacency.get(rel.target)!.push(rel.source); } });
-  
-    const grayComponents = findConnectedComponents(nonInitialItems.map(item => item.id), graySubgraphAdjacency);
-    const nodesToKeep = new Set<string>(initialItemIds);
-  
-    grayComponents.forEach(component => {
-      const attachmentPoints = new Set<string>();
-      component.forEach(grayNodeId => {
-        const neighborsInFullGraph = fullAdjacency.get(grayNodeId) || [];
-        neighborsInFullGraph.forEach(neighborId => { if (initialItemIds.has(neighborId)) { attachmentPoints.add(neighborId); } });
-      });
-      if (attachmentPoints.size >= 2) { component.forEach(grayNodeId => nodesToKeep.add(grayNodeId)); }
-    });
-  
-    console.log(`Pruning ${items.length - nodesToKeep.size} non-essential non-initial nodes.`);
-    const prunedItems = items.filter(item => nodesToKeep.has(item.id));
-    const prunedRelations = relations.filter(rel => nodesToKeep.has(rel.source) && nodesToKeep.has(rel.target));
-    return { prunedItems, prunedRelations };
+  }
+  return components;
 }
 
+function pruneGraph(
+  items: WikidataItem[],
+  relations: WikidataRelation[]
+): { prunedItems: WikidataItem[]; prunedRelations: WikidataRelation[] } {
+  if (items.length === 0) return { prunedItems: [], prunedRelations: [] };
+
+  const initialItems = items.filter((item) => item.isInitial);
+  const initialItemIds = new Set(initialItems.map((item) => item.id));
+  const nonInitialItems = items.filter((item) => !item.isInitial);
+
+  if (initialItemIds.size < 2) {
+    const prunedRelations = relations.filter((rel) => initialItemIds.has(rel.source) && initialItemIds.has(rel.target));
+    console.log(`Pruning all non-initial nodes as there are fewer than 2 initial nodes.`);
+    return { prunedItems: initialItems, prunedRelations };
+  }
+
+  const fullAdjacency = new Map<string, string[]>();
+  items.forEach((item) => fullAdjacency.set(item.id, []));
+  relations.forEach((rel) => {
+    fullAdjacency.get(rel.source)!.push(rel.target);
+    if (fullAdjacency.get(rel.target)) {
+      fullAdjacency.get(rel.target)!.push(rel.source);
+    }
+  });
+
+
+
+  const graySubgraphAdjacency = new Map<string, string[]>();
+  nonInitialItems.forEach((item) => graySubgraphAdjacency.set(item.id, []));
+  relations.forEach((rel) => {
+    if (graySubgraphAdjacency.has(rel.source) && graySubgraphAdjacency.has(rel.target)) {
+      graySubgraphAdjacency.get(rel.source)!.push(rel.target);
+      graySubgraphAdjacency.get(rel.target)!.push(rel.source);
+    }
+  });
+
+  const grayComponents = findConnectedComponents(
+    nonInitialItems.map((item) => item.id),
+    graySubgraphAdjacency
+  );
+  const nodesToKeep = new Set<string>(initialItemIds);
+
+  grayComponents.forEach((component) => {
+    const attachmentPoints = new Set<string>();
+    component.forEach((grayNodeId) => {
+      const neighborsInFullGraph = fullAdjacency.get(grayNodeId) || [];
+      neighborsInFullGraph.forEach((neighborId) => {
+        if (initialItemIds.has(neighborId)) {
+          attachmentPoints.add(neighborId);
+        }
+      });
+    });
+    if (attachmentPoints.size >= 2) {
+      component.forEach((grayNodeId) => nodesToKeep.add(grayNodeId));
+    }
+  });
+
+  console.log(`Pruning ${items.length - nodesToKeep.size} non-essential non-initial nodes.`);
+  const prunedItems = items.filter((item) => nodesToKeep.has(item.id));
+  const prunedRelations = relations.filter((rel) => nodesToKeep.has(rel.source) && nodesToKeep.has(rel.target));
+  return { prunedItems, prunedRelations };
+}
 
 // --- D3.js Rendering ---
 function renderGraph(items: WikidataItem[], relations: WikidataRelation[], vizOptions: VisualizationRenderOptions): void {
-  const svg = d3.select("svg");
-  const width = +svg.attr("width")!;
-  const height = +svg.attr("height")!;
+  const containerDiv = d3.select<HTMLDivElement, unknown>("#visualization-container");
+  if (containerDiv.empty()) {
+    console.error("Container #visualization-container not found for rendering.");
+    return;
+  }
+  containerDiv.select("svg").remove(); // Clear only the previous SVG, not the loader
+
+  const { width, height } = containerDiv.node()!.getBoundingClientRect();
+  const svg = containerDiv
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .style("display", "block"); // Ensure SVG is a block element to fill the div
+
   const tooltip = d3.select("#tooltip");
 
-  svg.selectAll("*").remove();
+  // Constants for font sizing
+  const BASE_NON_INITIAL_FONT_SIZE = 12; // Base font size for non-initial items at zoom k=1
+  const INITIAL_FONT_SIZE_MIN_MULTIPLIER = 2; // Initial items are at least this many times larger than non-initial
+  const WEIGHT_FONT_SCALE_FACTOR = 0.25; // How much each unit of weight (above 1) adds to the font size multiplier
+  const MAX_GLOBAL_CLAMP_FONT_SIZE = 40; // Increased max to allow for a larger dynamic range
   const container = svg.append("g").attr("class", "graph-container");
 
   if (items.length === 0) {
@@ -417,45 +519,119 @@ function renderGraph(items: WikidataItem[], relations: WikidataRelation[], vizOp
     return;
   }
 
-  const nodes: GraphNode[] = items.map((item) => ({
-    ...item,
-    radius: item.isInitial ? (item.weight || DEFAULT_INITIAL_RADIUS) : vizOptions.intermediateItemRadius,
-  }));
+  // Helper function to calculate font size for radius calculation
+  const calculateNodeBaseFontSize = (node: WikidataItem): number => {
+    if (node.isInitial) {
+      let multiplier = INITIAL_FONT_SIZE_MIN_MULTIPLIER;
+      if (node.weight !== undefined && node.weight > 1) {
+        multiplier += (node.weight - 1) * WEIGHT_FONT_SCALE_FACTOR;
+      }
+      return BASE_NON_INITIAL_FONT_SIZE * multiplier;
+    }
+    return BASE_NON_INITIAL_FONT_SIZE;
+  };
 
+  const nodes: GraphNode[] = items.map((item) => {
+    const baseFontSize = calculateNodeBaseFontSize(item);
+    // Radius is half the font size, ensuring circle size matches font size.
+    const radius = item.isInitial ? baseFontSize / 2 : vizOptions.intermediateItemRadius;
+    return { ...item, radius };
+  });
   const nodeMap = new Map(nodes.map((node) => [node.id, node]));
-  const links: GraphLink[] = relations.map((rel) => ({ source: nodeMap.get(rel.source)!, target: nodeMap.get(rel.target)!, propertyLabel: rel.property.label, propertyId: rel.property.id, isIndirectPart: rel.isIndirectPart })).filter((link) => link.source && link.target);
+  const links: GraphLink[] = relations
+    .map((rel) => ({
+      source: nodeMap.get(rel.source)!,
+      target: nodeMap.get(rel.target)!,
+      propertyLabel: rel.property.label,
+      propertyId: rel.property.id,
+      isIndirectPart: rel.isIndirectPart
+    }))
+    .filter((link) => link.source && link.target);
 
-  const simulation = d3.forceSimulation<GraphNode>(nodes)
-    .force("link", d3.forceLink<GraphNode, GraphLink>(links).id((d: any) => d.id)
-        .distance(d => ((d.source as GraphNode).isInitial && (d.target as GraphNode).isInitial) ? vizOptions.linkDistanceII : vizOptions.linkDistanceIX)
-        .strength(0.7))
+  const simulation = d3
+    .forceSimulation<GraphNode>(nodes)
+    .force(
+      "link",
+      d3
+        .forceLink<GraphNode, GraphLink>(links)
+        .id((d: any) => d.id)
+        .distance((d) =>
+          (d.source as GraphNode).isInitial && (d.target as GraphNode).isInitial ? vizOptions.linkDistanceII : vizOptions.linkDistanceIX,
+        )
+        .strength(0.7)
+    )
     .force("charge", d3.forceManyBody().strength(-400))
     .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("collision", d3.forceCollide<GraphNode>().radius(d => d.radius + vizOptions.collisionPadding).strength(0.8));
+    .force(
+      "collision",
+      d3
+        .forceCollide<GraphNode>()
+        .radius((d) => d.radius + vizOptions.collisionPadding,)
+        .strength(1) // Increased collision strength
+    );
+  simulation.force("centralization", () => {
+    const centerX = width / 2;
+    const centerY = height / 2;
+      const strength = 0.0001; // Reduced centralization strength
+
+    nodes.forEach((node) => {
+      let linkCount = 0;
+      links.forEach((link) => {
+        if (link.source === node || link.target === node) linkCount++;
+      });
+      const attractionStrength = links.length > 0 ? (1 - linkCount / links.length) * strength : strength;
+      node.vx! += (centerX - node.x!) * attractionStrength;
+      node.vy! += (centerY - node.y!) * attractionStrength;
+    });
+  });
 
   const linkGroup = container.append("g").attr("class", "links");
   const nodeGroup = container.append("g").attr("class", "nodes");
   const labelGroup = container.append("g").attr("class", "labels");
   const linkLabelGroup = container.append("g").attr("class", "link-labels");
 
-  const linkElements = linkGroup.selectAll("line").data(links).enter().append("line").attr("class", "link").style("stroke-opacity", d => d.isIndirectPart ? 0.3 : 0.6);
-  const linkLabelElements = linkLabelGroup.selectAll("text").data(links).enter().append("text").attr("class", "link-label").text(d => d.propertyLabel).style("opacity", d => d.isIndirectPart ? 0.5 : 1.0);
-  const nodeElements = nodeGroup.selectAll("g.node").data(nodes, (d: any) => d.id).enter().append("g").attr("class", "node").call(drag(simulation) as any);
+  const linkElements = linkGroup
+    .selectAll("line")
+    .data(links)
+    .enter()
+    .append("line")
+    .attr("class", "link")
+    .style("stroke-opacity", (d) => (d.isIndirectPart ? 0.3 : 0.6));
+  const linkLabelElements = linkLabelGroup
+    .selectAll("text")
+    .data(links)
+    .enter()
+    .append("text")
+    .attr("class", "link-label")
+    .text((d) => d.propertyLabel)
+    .style("opacity", (d) => (d.isIndirectPart ? 0.5 : 1.0));
+  const nodeElements = nodeGroup
+    .selectAll("g.node")
+    .data(nodes, (d: any) => d.id)
+    .enter()
+    .append("g")
+    .attr("class", "node")
+    .call(drag(simulation) as any);
   const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
-  nodeElements.append("circle")
-    .attr("r", d => d.radius)
-    .attr("fill", d => !d.isInitial ? vizOptions.nonInitialItemColor : colorScale(d.group?.toString() ?? d.id))
+  nodeElements
+    .append("circle")
+    .attr("r", (d) => d.radius)
+    .attr("fill", (d) => (!d.isInitial ? vizOptions.nonInitialItemColor : colorScale(d.group?.toString() ?? d.id)))
     .attr("stroke", "#fff")
     .attr("stroke-width", 1.5)
-    .style("opacity", d => d.isInitial ? 1.0 : 0.6);
+    .style("opacity", (d) => (d.isInitial ? 1.0 : 0.6));
 
-  const nodeLabelElements = labelGroup.selectAll("text.node-label").data(nodes, (d: any) => d.id).enter().append("text")
+  const nodeLabelElements = labelGroup
+    .selectAll("text.node-label")
+    .data(nodes, (d: any) => d.id)
+    .enter()
+    .append("text")
     .attr("class", "node-label")
-    .text(d => d.label)
-    .attr("dx", d => d.radius + 5)
+    .text((d) => d.label) // Font size will be set by the zoom handler
+    .attr("dx", (d) => d.radius + 5,)
     .attr("dy", ".35em")
-    .style("opacity", d => d.isInitial ? 1.0 : 0.6);
+    .style("opacity", (d) => (d.isInitial ? 1.0 : 0.6));
 
   nodeElements.sort((a: any, b: any) => (a.isInitial ? 1 : 0) - (b.isInitial ? 1 : 0));
   nodeLabelElements.sort((a: any, b: any) => (a.isInitial ? 1 : 0) - (b.isInitial ? 1 : 0));
@@ -468,64 +644,104 @@ function renderGraph(items: WikidataItem[], relations: WikidataRelation[], vizOp
       htmlContent += `<em>${d_node.isInitial ? "Initial Item" + (d_node.weight !== undefined ? " (Weight: " + d_node.weight + ")" : "") : "Non-Initial Item"}</em>`;
       if (d_node.isInitial && d_node.infoLinks && d_node.infoLinks.length > 0) {
         htmlContent += "<br/><br/><strong>More Info:</strong><ul>";
-        d_node.infoLinks.forEach((link: any) => { htmlContent += `<li><a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label}</a></li>`; });
+        d_node.infoLinks.forEach((link: any) => {
+          htmlContent += `<li><a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.label}</a></li>`;
+        });
         htmlContent += "</ul>";
       }
-      tooltip.html(htmlContent).style("left", event.pageX + 15 + "px").style("top", event.pageY - 28 + "px");
+      tooltip
+        .html(htmlContent)
+        .style("left", event.pageX + 15 + "px")
+        .style("top", event.pageY - 28 + "px");
 
       const connectedNodeIds = new Set([d_node.id]);
-      links.forEach(l => {
+      links.forEach((l) => {
         if ((l.source as GraphNode).id === d_node.id) connectedNodeIds.add((l.target as GraphNode).id);
         if ((l.target as GraphNode).id === d_node.id) connectedNodeIds.add((l.source as GraphNode).id);
       });
-      nodeElements.style("opacity", n => connectedNodeIds.has((n as any).id) ? 1 : 0.1);
-      nodeLabelElements.style("opacity", n => connectedNodeIds.has((n as any).id) ? 1 : 0.1);
-      linkElements.style("stroke-opacity", l => ((l.source as GraphNode).id === d_node.id || (l.target as GraphNode).id === d_node.id) ? 1 : 0.1);
-      linkLabelElements.style("opacity", l => ((l.source as GraphNode).id === d_node.id || (l.target as GraphNode).id === d_node.id) ? 1.0 : (l.isIndirectPart ? 0.2 : 0.3));
+      nodeElements.style("opacity", (n) => (connectedNodeIds.has((n as any).id) ? 1 : 0.1));
+      nodeLabelElements.style("opacity", (n) => (connectedNodeIds.has((n as any).id) ? 1 : 0.1));
+      linkElements.style("stroke-opacity", (l) =>
+        (l.source as GraphNode).id === d_node.id || (l.target as GraphNode).id === d_node.id ? 1 : 0.1
+      );
+      linkLabelElements.style("opacity", (l) =>
+        (l.source as GraphNode).id === d_node.id || (l.target as GraphNode).id === d_node.id ? 1.0 : l.isIndirectPart ? 0.2 : 0.3
+      );
     })
     .on("mouseout", () => {
       tooltip.transition().duration(500).style("opacity", 0);
-      nodeElements.style("opacity", (d: any) => d.isInitial ? 1.0 : 0.6);
-      nodeLabelElements.style("opacity", (d: any) => d.isInitial ? 1.0 : 0.6);
-      linkElements.style("stroke-opacity", (d: any) => d.isIndirectPart ? 0.3 : 0.6);
-      linkLabelElements.style("opacity", (d: any) => d.isIndirectPart ? 0.5 : 1.0);
+      nodeElements.style("opacity", (d: any) => (d.isInitial ? 1.0 : 0.6));
+      nodeLabelElements.style("opacity", (d: any) => (d.isInitial ? 1.0 : 0.6));
+      linkElements.style("stroke-opacity", (d: any) => (d.isIndirectPart ? 0.3 : 0.6));
+      linkLabelElements.style("opacity", (d: any) => (d.isIndirectPart ? 0.5 : 1.0));
     })
-    .on("click", (event, d_node: any) => { window.open(`https://www.wikidata.org/wiki/${d_node.id}`, "_blank"); });
+    .on("click", (event, d_node: any) => {
+      window.open(`https://www.wikidata.org/wiki/${d_node.id}`, "_blank");
+    });
 
   const tick = () => {
-    linkElements.attr("x1", d => (d.source as GraphNode).x!).attr("y1", d => (d.source as GraphNode).y!).attr("x2", d => (d.target as GraphNode).x!).attr("y2", d => (d.target as GraphNode).y!);
-    nodeElements.attr("transform", d => `translate(${(d as any).x},${(d as any).y})`);
-    nodeLabelElements.attr("x", d => (d as any).x! + (d as any).radius + 5).attr("y", d => (d as any).y!);
-    linkLabelElements.attr("x", d => ((d.source as GraphNode).x! + (d.target as GraphNode).x!) / 2).attr("y", d => ((d.source as GraphNode).y! + (d.target as GraphNode).y!) / 2);
+    linkElements
+      .attr("x1", (d) => (d.source as GraphNode).x!)
+      .attr("y1", (d) => (d.source as GraphNode).y!)
+      .attr("x2", (d) => (d.target as GraphNode).x!)
+      .attr("y2", (d) => (d.target as GraphNode).y!);
+    nodeElements.attr("transform", (d) => `translate(${(d as any).x},${(d as any).y})`);
+    nodeLabelElements.attr("x", (d) => (d as any).x! + (d as any).radius + 5).attr("y", (d) => (d as any).y!);
+    linkLabelElements
+      .attr("x", (d) => ((d.source as GraphNode).x! + (d.target as GraphNode).x!) / 2)
+      .attr("y", (d) => ((d.source as GraphNode).y! + (d.target as GraphNode).y!) / 2);
   };
   simulation.on("tick", tick);
 
-  const zoomBehavior = d3.zoom<SVGSVGElement, unknown>()
+  const zoomBehavior = d3
+    .zoom<SVGSVGElement, unknown>()
     .scaleExtent([0.1, 10])
     .on("zoom", (event) => {
       const { transform } = event;
       container.attr("transform", transform);
 
-      const BASE_FONT_SIZE = 12;
-      const MIN_FONT_SIZE = 8;
-      const MAX_FONT_SIZE = 18;
-      
-      const newFontSize = BASE_FONT_SIZE / transform.k;
-      const clampedNodeFontSize = Math.max(MIN_FONT_SIZE, Math.min(newFontSize, MAX_FONT_SIZE));
-      const clampedLinkFontSize = Math.max(MIN_FONT_SIZE - 2, Math.min(newFontSize, MAX_FONT_SIZE - 2));
+      // Define the base font size range at zoom level k=1
+      const BASE_MIN_FONT_SIZE = 8;
+      const BASE_MAX_FONT_SIZE = 40;
 
-      nodeLabelElements.style("font-size", `${clampedNodeFontSize}px`).attr("dx", d => (d as any).radius + (5 / transform.k));
-      linkLabelElements.style("font-size", `${clampedLinkFontSize}px`);
+      nodeLabelElements.style("font-size", (d: any) => {
+        let calculatedBaseSize = BASE_NON_INITIAL_FONT_SIZE;
+
+        if (d.isInitial) {
+          let multiplier = INITIAL_FONT_SIZE_MIN_MULTIPLIER;
+          if (d.weight !== undefined && d.weight > 1) {
+            multiplier += (d.weight - 1) * WEIGHT_FONT_SCALE_FACTOR;
+          }
+          calculatedBaseSize *= multiplier;
+        }
+
+        // First, clamp the calculated base size to a consistent range.
+        const clampedBaseSize = Math.max(BASE_MIN_FONT_SIZE, Math.min(calculatedBaseSize, BASE_MAX_FONT_SIZE));
+
+        // THEN, apply the zoom scaling. This preserves the relative size differences.
+        // Using sqrt(k) for non-linear scaling makes labels grow/shrink with zoom, but slower than the graph.
+        return `${clampedBaseSize / Math.sqrt(transform.k)}px`;
+      }).attr("dx", (d) => (d as any).radius + 5 / Math.sqrt(transform.k));
+
+      const linkLabelBaseFontSize = BASE_NON_INITIAL_FONT_SIZE - 2; // Link labels are slightly smaller
+      const clampedLinkBaseSize = Math.max(BASE_MIN_FONT_SIZE - 2, Math.min(linkLabelBaseFontSize, BASE_MAX_FONT_SIZE - 2));
+      // Apply the same non-linear scaling to link labels
+      linkLabelElements.style("font-size", `${clampedLinkBaseSize / Math.sqrt(transform.k)}px`);
     });
   svg.call(zoomBehavior);
 
   simulation.on("end", () => {
     if (nodes.length === 0) return;
-    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    let minX = Infinity,
+      maxX = -Infinity,
+      minY = Infinity,
+      maxY = -Infinity;
     nodes.forEach((node: any) => {
-        const r = node.radius;
-        if (node.x! - r < minX) minX = node.x! - r; if (node.x! + r > maxX) maxX = node.x! + r;
-        if (node.y! - r < minY) minY = node.y! - r; if (node.y! + r > maxY) maxY = node.y! + r;
+      const r = node.radius;
+      if (node.x! - r < minX) minX = node.x! - r;
+      if (node.x! + r > maxX) maxX = node.x! + r;
+      if (node.y! - r < minY) minY = node.y! - r;
+      if (node.y! + r > maxY) maxY = node.y! + r;
     });
     const PADDING = 50;
     const graphContentWidth = maxX - minX;
@@ -533,8 +749,8 @@ function renderGraph(items: WikidataItem[], relations: WikidataRelation[], vizOp
     if (graphContentWidth <= 0 || graphContentHeight <= 0) return;
 
     const scale = Math.min((width - 2 * PADDING) / graphContentWidth, (height - 2 * PADDING) / graphContentHeight, 1.5);
-    const translateX = (width / 2) - (minX + graphContentWidth / 2) * scale;
-    const translateY = (height / 2) - (minY + graphContentHeight / 2) * scale;
+    const translateX = width / 2 - (minX + graphContentWidth / 2) * scale;
+    const translateY = height / 2 - (minY + graphContentHeight / 2) * scale;
     const transform = d3.zoomIdentity.translate(translateX, translateY).scale(scale);
     svg.transition().duration(750).call(zoomBehavior.transform, transform);
   });
@@ -542,17 +758,17 @@ function renderGraph(items: WikidataItem[], relations: WikidataRelation[], vizOp
 
 // --- D3 Drag Handler ---
 function drag(simulation: d3.Simulation<GraphNode, any>) {
-    function dragstarted(event: d3.D3DragEvent<SVGGElement, GraphNode, any>, d: GraphNode) {
-      if (!event.active) simulation.alphaTarget(0.3).restart();
-      d.fx = d.x;
-      d.fy = d.y;
-    }
-    function dragged(event: d3.D3DragEvent<SVGGElement, GraphNode, any>, d: GraphNode) {
-      d.fx = event.x;
-      d.fy = event.y;
-    }
-    function dragended(event: d3.D3DragEvent<SVGGElement, GraphNode, any>, d: GraphNode) {
-      if (!event.active) simulation.alphaTarget(0);
-    }
-    return d3.drag<SVGGElement, GraphNode>().on("start", dragstarted).on("drag", dragged).on("end", dragended);
+  function dragstarted(event: d3.D3DragEvent<SVGGElement, GraphNode, any>, d: GraphNode) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+  function dragged(event: d3.D3DragEvent<SVGGElement, GraphNode, any>, d: GraphNode) {
+    d.fx = event.x;
+    d.fy = event.y;
+  }
+  function dragended(event: d3.D3DragEvent<SVGGElement, GraphNode, any>, d: GraphNode) {
+    if (!event.active) simulation.alphaTarget(0);
+  }
+  return d3.drag<SVGGElement, GraphNode>().on("start", dragstarted).on("drag", dragged).on("end", dragended);
 }

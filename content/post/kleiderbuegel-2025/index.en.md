@@ -22,3 +22,7 @@ The most important innovations:
 * jQuery has been removed, the visualization of the clothes rail is now implemented with [Swiper JS](https://swiperjs.com/).
 
 **More information about the exhibition will be available in 2026!**
+
+# Screenshot
+
+{{< figure src="screenshot.jpeg" alt="Kleiderbügel blog" class="post-image" caption="New start page" >}}

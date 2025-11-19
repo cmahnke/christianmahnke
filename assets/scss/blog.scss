@@ -19,6 +19,18 @@
   }
 }
 
+.section-post.blog .main .content .post-body {
+  ul {
+    padding-inline-start: 1.4em;
+
+    li:before {
+      padding-right: .4em;
+      margin-left: -1.4em;
+      line-height: 1;
+    }
+  }
+}
+
 .content-container {
   &.blog {
     .section-head.paginator {

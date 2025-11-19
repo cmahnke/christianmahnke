@@ -22,3 +22,7 @@ Die wichtigsten Neuerungen:
 * jQuery wurde entfernt, die Visualisierung der Kleiderstange ist nun mit [Swiper JS](https://swiperjs.com/) realisiert.
 
 **Zu der Ausstellung gibt es weitere Informationen mehr ab 2026!**
+
+# Screenshot
+
+{{< figure src="screenshot.jpeg" alt="Kleiderbügel Blog" class="post-image" caption="Neue Startseite" >}}

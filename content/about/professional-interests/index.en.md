@@ -20,7 +20,7 @@ My professional focus is on various topics from the spectrum of digital librarie
 
 * LinkedOpenData
   * Wikidata {{< link link="/en/tags/Wikidata/" class="blog" >}}Blog posts{{< /link >}}
-  * SPARQL
+  * SPARQL {{< link link="/en/tags/SPARQL/" class="blog" >}}Blog posts{{< /link >}}
 
 * (Mass-) Digitisation
   * Workflow automatisation

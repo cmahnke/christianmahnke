@@ -36,3 +36,7 @@ Die Daten wurden von Pia Denkmann erhoben, die Geodaten-Anreicherung, JSON Trans
 Die Karte wurde mit QGIS georeferenziert.
 
 Die Koordinaten der Adressen werden mit [Nominatim](https://nominatim.openstreetmap.org/) des OpenStreetMap Projektes ermittelt.
+
+# Update
+
+{{< figure src="final.jpeg" alt="Fertige Version" class="post-image" caption="Angepasst auf die Ausstellungsgrafik" >}}

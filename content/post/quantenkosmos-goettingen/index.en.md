@@ -36,3 +36,7 @@ The data was collected by Pia Denkmann, the geodata enrichment, JSON transformat
 The map was georeferenced using QGIS.
 
 The coordinates of the addresses are determined using [Nominatim](https://nominatim.openstreetmap.org/) from the OpenStreetMap project.
+
+# Update
+
+{{< figure src="final.jpeg" alt="Final version" class="post-image" caption="Adapted to the exhibition graphics" >}}
