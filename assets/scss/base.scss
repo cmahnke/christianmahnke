@@ -1321,8 +1321,9 @@ a:visited {
         margin-inline-end: 0;
         max-width: min($content-width, calc(100vw - 2 * $menu-margin));
 
-        @media (max-width: 36em) {
-          max-width: unset;
+        /* @media (max-width: 36em) { */
+        @media screen and (max-width: 1024px){
+          max-width: 100%;
         }
 
         img {
