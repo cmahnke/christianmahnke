@@ -33,7 +33,7 @@ Als Beispiel dient der prominente [Eintrag zu den drei blauen Türmen](https://n
 
 Der erste Schritt ist es die eigenen Änderungen zu isolieren, dazu kann z.B. `osmium` verwendet werden:
 
-```
+```bash
 osmium tags-filter -o filtered.osm.xml w/upload=false input.osm.xml
 ```
 

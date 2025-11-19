@@ -33,7 +33,7 @@ The prominent [entry for the three blue towers](https://never-built.goettingen.x
 
 The first step is to isolate your own changes. You can use `osmium` for this, for example:
 
-```
+```bash
 osmium tags-filter -o filtered.osm.xml w/upload=false input.osm.xml
 ```
 
