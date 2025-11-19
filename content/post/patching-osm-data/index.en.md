@@ -61,7 +61,7 @@ The next step is to convert the OSM PBF file into vector tiles using [Planetiler
 
 And this is what the generated map data looks like in a provisional [Maplibre JS GL](https://maplibre.org/maplibre-gl-js/docs/) renderer:
 
-{{< figure src="render.png" alt="Mapbox JS GL" class="post-image" >}}
+{{< figure src="render.png" alt="Mapbox JS GL" class="post-image" caption="Map data: © OpenStreetMap contributors, elevation information: LGLN (2024)" >}}
 
 # Implementation
 

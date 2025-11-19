@@ -61,7 +61,7 @@ Der nächste Schritt ist dann die Konvertierung der OSM PBF Datei in Vektorkache
 
 Und so sehen die erzeugten Kartendaten in einem provisorischem [Maplibre JS GL](https://maplibre.org/maplibre-gl-js/docs/) Renderer aus:
 
-{{< figure src="render.png" alt="Mapbox JS GL" class="post-image" >}}
+{{< figure src="render.png" alt="Mapbox JS GL" class="post-image" caption="Kartendaten: © OpenStreetMap-Beitragende, Höheninformationen: LGLN (2024)" >}}
 
 # Implementierung
 
