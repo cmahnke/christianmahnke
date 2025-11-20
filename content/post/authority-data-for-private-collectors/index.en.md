@@ -1,5 +1,5 @@
 ---
-date: 2025-11-19T19:22:44+02:00
+date: 2025-11-19T20:22:44+02:00
 title: "Authority data for private collections (and small cultural institutions)"
 cite: true
 tags:
@@ -19,14 +19,14 @@ Admittedly, you can't see much of it yet, as it only involves links (in a few pl
 
 ## What is authority data and what are its advantages?
 
-Authority data ensures that all information about a person, place, organisation, work, topic or, more generally, an entity is consistent and unambiguous. It solves two problems at once: different spellings, name variants and multiple entities with the same name on the one hand, and machine processing and linking on the other.
+[Authority data / files](https://en.wikipedia.org/wiki/Authority_control) ensures that all information about a person, place, organisation, work, topic or, more generally, an entity is consistent and unambiguous. It solves two problems at once: different spellings, name variants and multiple entities with the same name on the one hand, and machine processing and linking on the other.
 A good example is "Fritz Neumann" from the ["Ric - An unknown Artist" blog](https://ric-unknownartist.projektemacher.org/): When searching for his identity, it was clear that there was **one** Fritz Neumann, but it was not clear which one.
 
 # The advantages of Wikidata for collectors and smaller institutions
 
 ## Infrastructure and maintenance costs
 
-The biggest hurdles are usually staffing and budget. In addition, there are institutional restrictions; not everyone can simply contribute to the large standard data vocabularies.
+The biggest hurdles are usually staffing and budget. In addition, there are institutional restrictions; not everyone can simply contribute to the large authority files / data vocabularies.
 * **No additional costs:** Wikidata is a free, open project. There are no licence or hosting fees.
 * **No institutional barriers:** Anyone can contribute, regardless of institutional affiliation.
 * **Collaborative maintenance:** The data is maintained by a global community (and in some cases also by large partners such as the [German National Library](https://gnd.network/Webs/gnd/DE/Projekte/Wikibase/projektGNDmeetsWikibase_node.html) or the [Getty Research Institute](https://www.openartdata.org/2025/10/dataset-getty-gpi-merged-with-wikidata.html)). Collectors or small institutions do not have to recreate or maintain all data themselves.
@@ -41,8 +41,8 @@ By linking the objects or persons in your own collection to the corresponding Wi
 
 ## Interoperability and future-proofing
 
-Wikidata also serves as a bridge between different national and international standard data systems.
-* **Identifiers:** A Wikidata element (e.g. Q21014973 for the artist Malte Sartorius) often contains dozens of external identifiers (GND, VIAF,  LCNAF, etc.). For your collection, this means that you only need to store one Q number and you will automatically be connected to all relevant external databases.
+Wikidata also serves as a bridge between different national and international authority files systems.
+* **Identifiers:** A Wikidata element (e.g. Q21014973 for the artist Malte Sartorius) often contains dozens of external identifiers (GND, VIAF,   LCNAF, etc.). For your collection, this means that you only need to store one Q number and you will automatically be connected to all relevant external databases.
 * **Easy data transfer:** Wikidata can be queried via REST and SPARQL, for example. Using Wikidata facilitates the transfer of machine-readable metadata and can prepare you for participation in aggregated portals (such as Europeana). Provided, of course, that your tools support this.
 * **Sustainability:** As a project of the Wikimedia Foundation (Wikipedia), Wikidata enjoys a high degree of stability and acceptance, making it a safe choice for long-term data strategy.
 

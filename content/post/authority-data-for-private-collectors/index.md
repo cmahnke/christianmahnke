@@ -1,5 +1,5 @@
 ---
-date: 2025-11-19T19:22:44+02:00
+date: 2025-11-19T20:22:44+02:00
 title: "Normdaten für private Sammlungen (und kleine Kultureinrichtungen)"
 cite: true
 tags:
@@ -20,7 +20,7 @@ Zugegeben, bisher sieht man davon nicht viel, da es sich nur um Verlinkungen (an
 
 ## Was sind Normdaten und was sind die Vorteile?
 
-Normdaten stellen sicher, dass alle Informationen über eine Person, einen Ort, einer Körperschaft, ein Werk, ein Thema, oder allgemeiner, einer Entität, konsistent und eindeutig sind. Sie lösen zwei Probleme gleichzeitig: Unterschiedliche Schreibweisen, Namensvarianten, mehrere unterschiedliche Entitäten mit gleichem Namen auf der einen Seite. Die maschinelle Weiterverarbeitung und Verknüpfung auf der anderen.
+[Normdaten](https://de.wikipedia.org/wiki/Normdatei) stellen sicher, dass alle Informationen über eine Person, einen Ort, einer Körperschaft, ein Werk, ein Thema, oder allgemeiner, einer Entität, konsistent und eindeutig sind. Sie lösen zwei Probleme gleichzeitig: Unterschiedliche Schreibweisen, Namensvarianten, mehrere unterschiedliche Entitäten mit gleichem Namen auf der einen Seite. Die maschinelle Weiterverarbeitung und Verknüpfung auf der anderen.
 Als Beispiel bietet sich "Fritz Neumann" aus dem ["Ric - An unknown Artist" Blog](https://ric-unknownartist.projektemacher.org/) an: Auf der Suche nach der Identität war klar, dass es sich um **einen** Fritz Neumann handelt, nur nicht um welchen.
 
 
