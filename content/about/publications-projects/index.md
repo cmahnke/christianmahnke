@@ -91,6 +91,7 @@ Siehe auch <a id="grolink" href="//publications.goettingen-research-online.de/cr
 * [Archivalia 2. April 2025](https://archivalia.hypotheses.org/226296): Christian Mahnke fordert: Mikrofilmdigitalisierung beenden!
 * [Archivalia 23. Mai 2025](https://archivalia.hypotheses.org/229536): Eintragung von Spendern in Metadatenaggregatoren
 * [Kunstsammlung Schmelzle: Hedwig Klinge](https://kunstsammlung.peterschmelzle.de/klinge)
+* [Archivalia 20. November 2025](https://archivalia.hypotheses.org/242502)
 
 </div>
 </details>
