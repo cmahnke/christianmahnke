@@ -56,3 +56,7 @@ The objects are only the starting point, as other entities (persons, organisatio
 For private collections and smaller cultural institutions, Wikidata offers a way to enrich their collections with minimal to moderate effort, link them to other objects, and thus place them in a global context. In addition, it is a cost-effective solution for normalising one's own data and thus promoting visibility and (data) exchange.
 
 However, the specific implementation depends on the respective workflow, and the same applies to the presentation on the web, i.e. the presentation system. But here, the open source community offers additions for a variety of popular systems.
+
+# Update 20 November 2025
+
+This article was also linked by [Archivalia](https://archivalia.hypotheses.org/242502).

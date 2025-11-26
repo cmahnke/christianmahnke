@@ -58,3 +58,7 @@ Dabei sind die Objekte nur der Startpunkt, da damit auch weitere Entitäte (Pers
 Für private Sammlungen und kleinere Kultureinrichtungen bietet Wikidata eine Möglichkeit, ihre Sammlungen mit minimalem bis mittlerem Aufwand anzureichern, mit anderen Objekten zu vernetzen und somit in den globalen Kontext zu stellen. Zusätzlich ist es eine kostengünstigste Lösung, um die eigenen Daten zu normalisieren und damit die Sichtbarkeit und den (Daten-) Austausch zu fördern.
 
 Die konkrete Implementierung hängt allerdings vom jeweiligen Workflow ab, gleiches gilt auch für die Darstellung im Web, also das Präsentationssystem. Aber hier bietet die Open Source Gemeinschaft Ergänzungen für eine Vielzahl an populären Systemen.
+
+# Update 20.11.2025
+
+Dieser Artikel wurde auch von [Archivalia verlinkt](https://archivalia.hypotheses.org/242502).
