@@ -16,4 +16,4 @@ Examples of activities in this area are:
 * Keyword ["Wikidata"](/tags/Wikidata/)
 
 ### Pages and sections
-*[Donations / Donations](https://christianmahnke.de/collections/#donation-conditions)
+* [Donations / Donations](https://christianmahnke.de/collections/#donation-conditions)

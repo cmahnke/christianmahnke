@@ -16,10 +16,11 @@ Beispiel für Aktivitäten auf diesem Gebiet sind:
 ### Blog Beiträge zum Thema:
 * [Spenden](/tags/Donation/)
 * [Ungewöhnliche Objekte](/tags/Object/)
+* [Kunst](/tags/Art/)
 
 ### Seiten und Abschnitte
-*[Meine Sammlungen](https://christianmahnke.de/collections/)
-*[Schenkungen / Spenden](https://christianmahnke.de/collections/#donation-conditions)
+* [Meine Sammlungen](https://christianmahnke.de/collections/)
+* [Schenkungen / Spenden](https://christianmahnke.de/collections/#donation-conditions)
 
 ### Sonstige Seiten
 * [Projektemacher: Seiten und Blogs](https://projektemacher.org/blogs/)

@@ -13,6 +13,8 @@ Beispiel für Aktivitäten auf diesem Gebiet sind:
 
 ### Blog Beiträge aus dem Bereich:
 
+* [OpenStreetMap Daten "patchen"](/post/patching-osm-data/)
+* [Virtuelle Räume tapezieren!](/post/wallpaper-generator/)
 * [Visualisierung von KI Segmentierung mit HDR](/post/visualising-ai-segmentation-with-hdr/)
 * [Haptisches Feedback für Stoffmuster](/post/haptic-feedback/) - IIIF Annotationen mit Vibration
 * [Eine leuchtende Tapete](/post/hdr-iiif/) - HDR IIIF

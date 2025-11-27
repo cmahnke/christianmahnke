@@ -8,9 +8,6 @@ tags:
   - VIPS
   - HDR
   - IIIF
-outputs:
-- html
-- iiif-manifest
 wikidata:
   - https://www.wikidata.org/wiki/Q106239881
   - https://www.wikidata.org/wiki/Q7907037

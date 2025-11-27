@@ -16,10 +16,11 @@ Examples of activities in this area are:
 ### Blog posts on the topic:
 * [Donations](/en/tags/Donation/)
 * [Unusual objects](/en/tags/Object/)
+* [Art](/en/tags/Art/)
 
 ### Pages and sections
-*[My collections](https://christianmahnke.de/collections/)
-*[Donations / Donations](https://christianmahnke.de/collections/#donation-conditions)
+* [My collections](https://christianmahnke.de/collections/)
+* [Donations / Donations](https://christianmahnke.de/collections/#donation-conditions)
 
 ### Sonstige Seiten
 * [Projektemacher: Pages and Blogs](https://projektemacher.org/en/blogs/)

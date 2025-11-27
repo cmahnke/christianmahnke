@@ -10,7 +10,10 @@ tags:
   - Göttingen
   - History
 preview: front/full/full/0/default.jpg
-wikidata: https://www.wikidata.org/wiki/Q105241486
+wikidata:
+  - https://www.wikidata.org/wiki/Q105241486
+  - https://www.wikidata.org/wiki/Q731994
+  - https://www.wikidata.org/wiki/Q594150
 ---
 
 Normalerweise vermeide ich es Reproduktionen zu kaufen...

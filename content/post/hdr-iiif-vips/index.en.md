@@ -8,9 +8,6 @@ tags:
   - VIPS
   - HDR
   - IIIF
-outputs:
-- html
-- iiif-manifest
 wikidata:
   - https://www.wikidata.org/wiki/Q106239881
   - https://www.wikidata.org/wiki/Q7907037
@@ -19,7 +16,7 @@ wikidata:
 ---
 HDR IIIF for everyone...
 <!--more-->
-...will be offered by the next version of VIPS. [John Cupitt](https://github.com/jcupitt) has now [added the functionality](https://github.com/libvips/libvips/pull/4745). This means that you no longer need your [own image tiler for HDR](/post/hdr-iiif/).
+...will be offered by the next version of VIPS. [John Cupitt](https://github.com/jcupitt) has now [added the functionality](https://github.com/libvips/libvips/pull/4745). This means that you no longer need your [own image tiler for HDR](/en/post/hdr-iiif/).
 
 If you want to try it out now, you'll need to build the current development version yourself from the Git repository.
 
@@ -43,6 +40,6 @@ Then you can create IIIF pyramids for HTML with the following command:
 vips dzsave $IMAGE_FILE $TARGET_DIR --keep gainmap --tile-size=512 --layout iiif
 ```
 
-However, there is currently still a metadata entry missing in the `info.json` file to indicate that it is an HDR image. And the major viewers do not yet support the display either, more in the [old post](/post/hdr-iiif/).
+However, there is currently still a metadata entry missing in the `info.json` file to indicate that it is an HDR image. And the major viewers do not yet support the display either, more in the [old post](/en/post/hdr-iiif/).
 
 With the upcoming version (8.18.0 - which should be released in one to two months), the functionality will then also be available via package managers...

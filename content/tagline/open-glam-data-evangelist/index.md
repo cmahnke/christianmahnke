@@ -16,4 +16,4 @@ Beispiel für Aktivitäten auf diesem Gebiet sind:
 * Schlagwort ["Wikidata"](/tags/Wikidata/)
 
 ### Seiten und Abschnitte
-*[Schenkungen / Spenden](https://christianmahnke.de/collections/#donation-conditions)
+* [Schenkungen / Spenden](https://christianmahnke.de/collections/#donation-conditions)

@@ -13,6 +13,8 @@ Examples of activities in this field are
 
 ### Blog posts from the field:
 
+* ["Patching" OpenStreetMap data](/en/post/patching-osm-data/)
+* [Wallpaper virtual rooms!](/en/post/wallpaper-generator/)
 * [Visualisation AI segmentation with HDR](/en/post/visualising-ai-segmentation-with-hdr/)
 * [Haptic feedback for digitised fabrics](/en/post/haptic-feedback/) - IIIF annotations with vibration
 * [A "glowing" wallpaper](/en/post/hdr-iiif/) - HDR IIIF
