@@ -8,7 +8,6 @@ tags:
   - VIPS
   - HDR
   - IIIF
-iiifContext: http://iiif.io/api/image/2/context.json
 outputs:
 - html
 - iiif-manifest
@@ -20,7 +19,7 @@ wikidata:
 ---
 HDR IIIF für alle...
 <!--more-->
-...wird die nächste Version von VIPS bieten. Dort wurde die Funktionalität nun [hinzugefügt](https://github.com/libvips/libvips/pull/4745). Damit braucht man keinen [eigenen Image-Tiler für HDR](/post/hdr-iiif/) mehr.
+...wird die nächste Version von VIPS bieten. [John Cupitt](https://github.com/jcupitt) hat die Funktionalität nun [hinzugefügt](https://github.com/libvips/libvips/pull/4745). Damit braucht man keinen [eigenen Image-Tiler für HDR](/post/hdr-iiif/) mehr.
 
 Wer es jetzt schon ausprobieren will, muss sich die aktuelle Entwicklungsversion aus dem Git Repository selber bauen.
 

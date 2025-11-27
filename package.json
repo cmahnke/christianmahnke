@@ -25,9 +25,9 @@
     "logo-projektemacher": "svgo --config Source\\ Files/svgo.config.js -i themes/projektemacher-base/Source\\ Files/Images/Laborant.svg -o static/images/laborant.svg",
     "logo-monogram": "svgo -i themes/projektemacher-base/static/images/cm.svg -o static/images/cm.svg && cp static/images/cm.svg static/images/cm-black.svg",
     "logo-monogram-black": "yarn run logo-monogram && replace-in-file 'fill-opacity:.5' 'fill-opacity:1.0' static/images/cm-black.svg && replace-in-file 'fill:#d40000' 'fill:#000000' static/images/cm-black.svg",
-    "logos": "yarn run logo-projektemacher && yarn run logo-monogram-black",
+    "logos": "npm run logo-projektemacher && npm run logo-monogram-black",
     "background": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Background/Background.svg -o static/images/bg.svg",
-    "icons": "yarn run no-emoji && yarn run tagcloud",
+    "icons": "npm run no-emoji && npm run tagcloud",
     "no-emoji": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Icons/No\\ Emoji.svg -o static/images/no-emoji.svg",
     "tagcloud": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Icons/Tagcloud.svg -o static/images/tagcloud.svg",
     "svgo": "npm run background && npm run icons && npm run logos"
