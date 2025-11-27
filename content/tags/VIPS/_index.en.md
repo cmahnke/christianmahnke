@@ -1,7 +1,7 @@
 ---
-title: 'Python'
+title: 'VIPS'
 description: ''
-wikidata: https://www.wikidata.org/wiki/Q28865
+wikidata: https://www.wikidata.org/wiki/Q7907037
 ---
 
-Articles with shares of [Python](https://www.python.org/) implementations.
+Articles with shares of [Python](https://www.libvips.org/) implementations.
