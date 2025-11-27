@@ -40,7 +40,7 @@
                   {{- end -}}
                   {{- $imgRes := $.Page.Resources.Get $src -}}
                   <a title="{{ $.Title}}" href="{{ $.RelPermalink }}">
-                    <img src="{{ ($imgRes.Resize (printf "%sx" "1280")).RelPermalink }}" alt="{{ $.Title }}" {{ if ne $class "" }}class="{{ $class }}"{{ end }} />
+                    <img src="{{ ($imgRes.Resize (printf "%sx webp picture" "1280")).RelPermalink }}" alt="{{ $.Title }}" {{ if ne $class "" }}class="{{ $class }}"{{ end }} />
                   </a>
                 </picture>
               </div>
