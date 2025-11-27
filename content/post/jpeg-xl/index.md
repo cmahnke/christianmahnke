@@ -5,6 +5,7 @@ tags:
 - DigitalImages
 - Projektemacher.org
 - IIIF
+- VIPS
 iiifContext: http://iiif.io/api/presentation/2/context.json
 outputs:
 - html
@@ -20,6 +21,9 @@ resources:
     iiif: back/info.json
     hint: non-paged
     label: Rückseite
+wikidata:
+  - https://www.wikidata.org/wiki/Q7907037
+  - https://www.wikidata.org/wiki/Q72885392
 ---
 
 Da meine Blogs auf GitHub verwaltet werden, müssen die Bilder so platzsparend wie möglich gespeichert werden...

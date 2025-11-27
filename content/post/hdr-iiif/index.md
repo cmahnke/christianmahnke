@@ -24,6 +24,10 @@ resources:
   params:
     iiif: front-hdr/info.json
 notes: Add https://iiif.io/api/image/3.0/#57-extra-functionality
+wikidata:
+  - https://www.wikidata.org/wiki/Q106239881
+  - https://www.wikidata.org/wiki/Q22682088
+  - https://www.wikidata.org/wiki/Q2985103
 ---
 
 Beim [Zeitzeug](http://www.zeitzeug.de/) wird die Tapetensammlung des Inhabers veräußert und ich habe mir ein besonders grelles Exemplar gesichert...

@@ -24,6 +24,10 @@ resources:
   params:
     iiif: front-hdr/info.json
 notes: Add https://iiif.io/api/image/3.0/#57-extra-functionality
+wikidata:
+  - https://www.wikidata.org/wiki/Q106239881
+  - https://www.wikidata.org/wiki/Q22682088
+  - https://www.wikidata.org/wiki/Q2985103
 ---
 
 At [Zeitzeug](http://www.zeitzeug.de/) the owner's wallpaper collection is being sold and I have secured a particularly bright example...

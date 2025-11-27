@@ -7,6 +7,8 @@ tags:
 - JavaScript
 - Data
 - JSON
+wikidata:
+  - https://www.wikidata.org/wiki/Q2493
 ---
 
 For the video metadata of [911 TV](https://911tv.projektemacher.org/) there was an interesting challenge to solve...
