@@ -23,7 +23,7 @@ I have a small collection of old game consoles from before 1980, [many](https://
 
 # Research
 
-Now of course you could make countless games, record them, digitise them and then visualise them, but that would take a long time, especially as you would also need two people, as the old systems do not allow a game against the computer. Therefore, a programmable simulation was needed. I came across the following interesting projects and sites during my research:
+Now of course you could make countless games, record them, digitise them and then visualise them, but that would take a long time, especially as you would also need two people, as the old systems do not allow a game against the "computer". Therefore, a programmable simulation was needed. I came across the following interesting projects and sites during my research:
 
 * [PONG story: Great site about Pong and early consoles](https://www.pong-story.com/)
     * [PONG Story: Pong for the PC](https://www.pong-story.com/pcpong.htm)

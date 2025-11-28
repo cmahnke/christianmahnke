@@ -23,7 +23,7 @@ Ich besitze eine kleine Sammlung alter Spielekonsolen von vor 1980. [Viele](http
 
 # Recherche
 
-Nun könnte man natürlich zig Spiele machen, aufzeichnen, digitalisieren und dann visualisieren, aber das würde lange dauern, zumal man auch zwei Personen brauchen würde, das die alten Systeme kein Spiel gegen den Computer erlauben. Daher brauchte es eine automatisierbare Simulation. Folgende interessanten Projekte und Seiten sind mir bei der Recherche begegnet:
+Nun könnte man natürlich zig Spiele machen, aufzeichnen, digitalisieren und dann visualisieren, aber das würde lange dauern, zumal man auch zwei Personen brauchen würde, da die alten Systeme kein Spiel gegen den "Computer" erlauben. Daher brauchte es eine automatisierbare Simulation. Folgende interessanten Projekte und Seiten sind mir bei der Recherche begegnet:
 
 * [PONG-Story: Großartige Seite über Pong und frühe Konsolen](https://www.pong-story.com/)
     * [PONG-Story: Pong für den PC](https://www.pong-story.com/pcpong.htm)
