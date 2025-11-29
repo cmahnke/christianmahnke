@@ -1,0 +1,52 @@
+{{ define "title" -}}
+  {{- if ne .Title "" -}}
+    {{- .Title }} · {{ .Site.Title -}}
+  {{- else -}}
+    {{- .Site.Title -}}
+  {{- end -}}
+{{- end }}
+{{ define "content" }}
+  {{- $postSection := "post" -}}
+  {{- partial "header.html" . -}}
+
+  <div class="content-container list">
+    <div class="section-head">
+      <div class="parallax-bg">
+        <h1 class="post-section section-head-title tag-list-title">{{ i18n "yearsHeading" }}: {{ .Data.Term }}</h1>
+      </div>
+    </div>
+
+    {{- $year := int .Data.Term -}}
+    {{- $pages := where .Site.Pages "Section" $postSection -}}
+    {{- $pages = where $pages "Kind" "page" -}}
+    {{- $yearPages := where $pages ".Date.Year" "==" $year -}}
+
+    <div class="posts">
+      {{- $paginator := .Paginate (where $yearPages "Params.displayinlist" "!=" false) -}}
+      {{- range $i, $page :=  $paginator.Pages -}}
+        {{- .Scratch.Set "class" "odd" -}}
+        {{- if modBool $i 2  -}}
+          {{- .Scratch.Set "class" "even" -}}
+        {{- end -}}
+        {{- partial "li.html" . -}}
+      {{- end -}}
+    </div>
+  </div>
+  {{ if or $paginator.HasPrev $paginator.HasNext -}}
+  {{/* See https://stackoverflow.com/a/39900080 */}}
+    <div class="pagination">
+      <div class="pagination-links">
+        {{- if $paginator.HasPrev -}}
+          <a class="pagination-prev" href="{{ $paginator.Prev.URL }}">&#x25c0;&#xfe0e; {{ i18n "next_page" }}</a>
+        {{- else -}}
+          <div class="pagination-prev"></div>
+        {{- end }}
+        {{- if $paginator.HasNext -}}
+          <a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "previous_page" }} &#x25b6;&#xfe0e;</a>
+        {{- else -}}
+          <div class="pagination-next"></div>
+        {{- end -}}
+      </div>
+    </div>
+  {{- end -}}
+{{ end }}

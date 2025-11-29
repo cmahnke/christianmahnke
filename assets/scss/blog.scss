@@ -290,3 +290,19 @@
     display: none;
   }
 }
+
+.years {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .years-heading {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .year {
+    font-size: 1.6em;
+  }
+
+}

@@ -82,3 +82,10 @@ other = "Weblog"
 
 [bibtex_download]
 other = "Download as BibTex"
+
+[yearsHeading]
+other = "Archive"
+
+[Post]
+one = "post"
+other = "posts"

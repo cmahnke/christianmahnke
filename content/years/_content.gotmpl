@@ -1,0 +1,63 @@
+{{- $years := site.Params.copyrightYears -}}
+{{- $roman := upper (index (split $years " ") 0) -}}
+
+{{- $map := dict
+  "I" 1
+  "V" 5
+  "X" 10
+  "L" 50
+  "C" 100
+  "D" 500
+  "M" 1000
+-}}
+
+{{- $inputSlice := split $roman "" -}}
+{{- $length := len $inputSlice -}}
+{{- $valueList := slice -}}
+{{- $skipNext := false -}}
+
+{{- range $i, $char := $inputSlice -}}
+
+  {{- if $skipNext -}}
+    {{- $skipNext = false -}}
+    {{- continue -}}
+  {{- end -}}
+
+  {{- $currentVal := index $map $char -}}
+  {{- $nextVal := 0 -}}
+
+  {{- if lt $i (sub $length 1) -}}
+    {{- $nextChar := index $inputSlice (add $i 1) -}}
+    {{- $nextVal = index $map $nextChar -}}
+  {{- end -}}
+
+
+  {{- $valueToAdd := 0 -}}
+  {{- if gt $nextVal $currentVal -}}
+    {{- $valueToAdd = sub $nextVal $currentVal -}}
+    {{- $skipNext = true -}}
+
+  {{- else -}}
+    {{- $valueToAdd = $currentVal -}}
+  {{- end -}}
+
+  {{- $valueList = $valueList | append $valueToAdd -}}
+
+{{- end -}}
+
+{{- $finalTotal := 0 -}}
+{{- range $valueList -}}
+  {{- $finalTotal = add $finalTotal . -}}
+{{- end -}}
+{{ warnf "==> %s" $finalTotal }}
+{{- $firstYear := $finalTotal -}}
+{{- $lastYear := time.Now | time.Format "2006" -}}
+{{- range (seq $firstYear $lastYear) -}}
+  {{ $page := dict
+    "kind" "page"
+    "path" .
+    "title" .
+    "params" (dict "year" .)
+  }}
+  {{ $.AddPage $page }}
+{{- end -}}

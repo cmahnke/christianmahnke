@@ -7,17 +7,17 @@
 {{- end }}
 
 {{ define "content" }}
+  {{- $postSection := "post" -}}
   {{- $render := "tag" -}}
   {{- if isset .Params "render" -}}
     {{- $render = printf "tag-%s" (.Params.render) -}}
   {{- end -}}
   {{- partial "header.html" . -}}
-
     <div class="content-container blog">
       {{- $pages := where .Site.Pages "Section" "post" -}}
       {{- $mainSite := .Sites.Default -}}
       {{- if ne $mainSite .Site -}}
-        {{- $pages = ($pages | lang.Merge (where $mainSite.Pages "Section" "post")) -}}
+        {{- $pages = ($pages | lang.Merge (where $mainSite.Pages "Section" $postSection)) -}}
       {{- end -}}
 
       {{- $paginator := .Paginate (where $pages "Params.displayinlist" "!=" false) -}}
@@ -27,6 +27,22 @@
       {{- if eq .Paginator.PageNumber 1 -}}
         {{- partial "section-heading.html" . -}}
         {{- partial "tagcloud.html" . -}}
+        {{/*
+        <!-- <h2 class="years-heading">{{ i18n "yearsHeading" }}</h2> -->
+        <div class="years">
+          {{- $pages := where .Site.Pages "Section" $postSection -}}
+          {{- $pages = where $pages "Kind" "page" -}}
+          {{- $firstYear := (index (first 1 $pages) 0).Date.Year -}}
+          {{- $lastYear := (index (last 1 $pages) 0).Date.Year -}}
+          {{- range ((seq $lastYear $firstYear) | collections.Reverse) -}}
+            {{- $year := . -}}
+            {{- if len (where $pages ".Date.Year" "==" $year) -}}
+              {{- $yearPages := where $pages ".Date.Year" "==" . -}}
+              <div class="year-entry"><a href="/post/{{ $year }}" title="{{ $year }}: {{ len $yearPages }} {{ i18n "Post" }}"><span class="year">{{ $year }}</span>: {{ len $yearPages }} {{ i18n "Post" }}</a></div>
+            {{- end -}}
+          {{- end -}}
+        </div>
+        */}}
       {{- else -}}
         <div class="section-head paginator">
           <div class="parallax-bg">
@@ -76,5 +92,4 @@
         </div>
       </div>
     {{- end }}
-
 {{ end }}

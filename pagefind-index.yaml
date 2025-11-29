@@ -9,6 +9,8 @@ files:
     - 'en/tags/**'
     - 'post/page/*/**'
     - 'en/post/page/*/**'
+    - 'post/202*/*/**'
+    - 'en/post/202*/*/**'
     - 'search/**'
     - 'en/search/**'
     - 'tagline/**'
