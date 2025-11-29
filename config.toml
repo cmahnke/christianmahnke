@@ -280,6 +280,13 @@ timeout = "120s"
     source = "node_modules/tify/dist/"
     target = "static/tify"
 
+[taxonomies]
+  year = "year"
+  tag = "tags"
+
+[permalinks]
+  year = "/post/:slug/"
+
 [build]
   writeStats = true
 
