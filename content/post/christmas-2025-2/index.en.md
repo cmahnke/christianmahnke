@@ -1,7 +1,6 @@
 ---
 date: 2025-12-24T12:22:44+02:00
 title: "Christmas 2025"
-draft: true
 keywords: Craft instructions, Christmas card
 description: "Craft instructions for the 2025 Christmas card"
 preview:
@@ -19,7 +18,7 @@ Almost a tradition: the [crafting instructions](./instructions-2025.pdf) for the
 
 {{< figure src="card-2025.jpg" alt="Christmas card" caption="Finished Christmas card" class="christmas-card" >}}
 
-The wallpaper used is from [Vintage Wonderland](https://www.facebook.com/vintagebythesea/) in Hannover and also shown in high resolution at [Vorsatzpapier]().
+The wallpaper used is from [Vintage Wonderland](https://www.facebook.com/vintagebythesea/) in Hannover and also shown in high resolution at [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/tapete-50/).
 
 # Preview
 
