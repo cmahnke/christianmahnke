@@ -72,3 +72,7 @@ Wenn die HDR Überprüfung fehl geschlagen ist, werden die Farben nicht in volle
 # Update für Three.js R167
 
 Nach dem Update auf Three.js R167 ist eine weitere Anpassung des Models notwendig. Da das Modell nicht beleuchtet werden darf, damit die Textur nicht durch Shading "eingefärbt" werden darf, muss der Typ des Materials auf `MeshBasicMaterial` geändert werden.
+
+# Update für THree.js > R180
+
+Three.js WebGPU unterstützt nun den `toneMapping` parameter für die Initialisierung von `canvas`. Dieser Parameter ersetzt `colorMetadata` us der Beschreibung oben. Es wurde in [`hdr-canvas` 0.1.1](https://github.com/cmahnke/hdr-canvas/) implementiert.

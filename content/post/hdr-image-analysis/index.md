@@ -45,7 +45,7 @@ Dieses Buch enthält auch Kopien von Stempelabdrücken. Teilweise lässt sich di
 
 {{< hdr-canvas-check >}}
 
-Wenn die HDR Überprüfung fehl geschlagen ist, werden die Farben nicht in voller Pracht angezeigt. **Selbst wenn die Darstellung von HDR Bildern funktioniert, mus die HDR Unterstützung für das `canvas` Element noch aktiviert werden: Dazu muss `enable-experimental-web-platform-features` auf `enabled` gesetzt werden. In Chrome kann die Einstellung über die URL "chrome://flags#enable-experimental-web-platform-features" angesteuert werden.**
+Wenn die HDR Überprüfung fehl geschlagen ist, werden die Farben nicht in voller Pracht angezeigt. **Selbst wenn die Darstellung von HDR Bildern funktioniert, muss die HDR Unterstützung für das `canvas` Element noch aktiviert werden: Dazu muss `enable-experimental-web-platform-features` auf `enabled` gesetzt werden. In Chrome kann die Einstellung über die URL "chrome://flags#enable-experimental-web-platform-features" angesteuert werden.**
 
 Derzeit können nur die Intensitäten der einzelnen Kanäle angepasst werden, prinzipiell sind aber deutlich mehr Parametrisierungen denkbar.
 Daher erhöht das Beispiel in den meisten Einstellungen die Lesbarkeit nur marginal, macht aber das Potential sichtbar.
