@@ -29,6 +29,8 @@ Diese Aktualisierungen waren notwendig, um diese Blogbeiträge zu reparieren:
 
 ## 0.1.1
 
+### Änderungen an der Initialisierung eines `WebGPU` Kontexts für `canvas`
+
 Die Änderungen bei der Initialisierung eines `canvas` für einen Renderer werden in der [Erklärung](https://github.com/ccameron-chromium/webgpu-hdr/blob/main/EXPLAINER.md) beschrieben.
 
 Die wichtigste Änderung ist die Umbenennung von „colorMetadata” in:

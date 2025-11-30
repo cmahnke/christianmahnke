@@ -27,6 +27,7 @@ These updates were necessary to fix the following blog posts:
 
 ## 0.1.1
 
+### Changes to the initialisation of a `WebGPU` context for `canvas`
 
 The changes to the initialisation of a `canvas` for a renderer are described in the [explanation](https://github.com/ccameron-chromium/webgpu-hdr/blob/main/EXPLAINER.md).
 
