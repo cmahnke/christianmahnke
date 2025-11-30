@@ -23,12 +23,11 @@ In diesem Beitrag werden die letzten Änderungen zusammengefasst. Bei neuen Vers
 
 # Version 0.1.1 - 0.1.2
 
-Diese Aktualisierungen warn notwendig um diese Blogbeiträge zu reparieren:
+Diese Aktualisierungen waren notwendig, um diese Blogbeiträge zu reparieren:
 * [UV-Photogrammetrie](https://christianmahnke.de/post/uv-photogrammetry/)
 * [Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung](https://christianmahnke.de/post/hdr-image-analysis/)
 
 ## 0.1.1
-
 
 Die Änderungen bei der Initialisierung eines `canvas` für einen Renderer werden in der [Erklärung](https://github.com/ccameron-chromium/webgpu-hdr/blob/main/EXPLAINER.md) beschrieben.
 
