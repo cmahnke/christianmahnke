@@ -1,7 +1,9 @@
 ---
-date: 2025-11-16T20:22:44+02:00
-title: "hdr-canvas 0.1.0 veröffentlicht"
+date: 2025-11-30T11:22:44+02:00
+title: "hdr-canvas aktualisiert"
 keywords: NPM, TypeScript
+aliases:
+  - post/hdr-canvas-0.1.0
 cite: true
 tags:
   - JavaScript
@@ -13,10 +15,34 @@ wikidata:
   - https://www.wikidata.org/wiki/Q978185
 ---
 
-`hdr-canvas` Version 0.1.0 veröffentlicht...
+`hdr-canvas` aktualisiert...
 <!--more-->
 
 Ein Ergebnis meiner Arbeit mit HDR-Inhalten im Browser ist ein NPM-Modul, das auch zur Erstellung der Beiträge in diesem Blog verwendet wurde.
+In diesem Beitrag werden die letzten Änderungen zusammengefasst. Bei neuen Versionen wird er aktualisiert.
+
+# Version 0.1.1 - 0.1.2
+
+Diese Aktualisierungen warn notwendig um diese Blogbeiträge zu reparieren:
+* [UV-Photogrammetrie](https://christianmahnke.de/post/uv-photogrammetry/)
+* [Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung](https://christianmahnke.de/post/hdr-image-analysis/)
+
+## 0.1.1
+
+
+Die Änderungen bei der Initialisierung eines `canvas` für einen Renderer werden in der [Erklärung](https://github.com/ccameron-chromium/webgpu-hdr/blob/main/EXPLAINER.md) beschrieben.
+
+Die wichtigste Änderung ist die Umbenennung von „colorMetadata” in:
+
+```
+toneMapping: { mode: „extended“ }
+```
+
+## 0.1.2
+
+Die Farbskalierung von `Float16Image` war falsch, die Skalierung funktionierte nur für 0% - 1%.
+
+# Version 0.1.0
 Seit den ersten Versionen ist aber ungefähr ein Jahr vergangen und die Browser-API war damals eher als experimentell zu bezeichnen. Seitdem hat sich einiges geändert – eines der Beispiele hatte in der Zwischenzeit sogar aufgehört zu funktionieren: Die wichtigste Änderung betrifft die Änderung von `Uint16` zu `Float16` als 16 Bit Pixeldatentyp für HDR.
 
 Da sich Browser schnell weiterentwickeln und der Betrieb älterer Browser aus Sicherheitsgründen nicht zu empfehlen ist (auch wenn manche das anders sehen), ist **keine Abwärtskompatibilität** zu erwarten.
@@ -25,9 +51,9 @@ Neben den notwendigen Anpassungen bietet die neue Version auch Verbesserungen im
 
 Der Code ist auf [GitHub](https://github.com/cmahnke/hdr-canvas) und [NPM](https://www.npmjs.com/package/hdr-canvas) zu finden.
 
-# Die Release Notes
+## Die Release Notes
 
-## Einleitung
+### Einleitung
 
 Seit der letzten Veröffentlichung haben sich viele Bereiche der Verarbeitung von HDR-Inhalten im Browser weiterentwickelt.
 Am auffälligsten ist sicherlich die Einführung von „Float16Array” im „ImageData”-Konstruktor:
@@ -44,17 +70,17 @@ Parallel dazu gab es Änderungen am UltraHDR-Bildformat, insbesondere bei der Ko
 
 Derzeit weiß der ThreeJS UHDR-Loader nicht, wie er mit dieser Änderung umgehen soll, siehe [mrdoob/three.js#32293](https://github.com/mrdoob/three.js/issues/32293).
 
-## Wichtige Änderungen und neue Funktionen
+### Wichtige Änderungen und neue Funktionen
 
 - Bessere Unterstützung für offizielle Web-APIs
   - Verwendung von `Float16Array` anstelle von `Uint16Array`
   - Verwendung der richtigen Option zur Initialisierung des 2D-Canvas-Kontexts
 
-### Verbesserte Dokumentation
+#### Verbesserte Dokumentation
 
 Die Dokumentation wurde erheblich verbessert. Es gibt jetzt auch eine [Website](https://cmahnke.github.io/hdr-canvas/) mit Beispielen und API-Dokumentationen.
 
-### Beispiele
+#### Beispiele
 
 Die Beispiele aus dem Blog sind nun Teil dieses Repositorys:
 
@@ -64,7 +90,7 @@ Die Beispiele aus dem Blog sind nun Teil dieses Repositorys:
 
 Diese Beispiele sind auch auf der neuen [Dokumentationsseite](https://cmahnke.github.io/hdr-canvas/) verfügbar.
 
-## Einflussnahme
+### Einflussnahme
 
 Da die Änderungen der WhatWG noch nicht übernommen worden waren, mussten einige Probleme in den entsprechenden Repositories angesprochen werden.
 
