@@ -75,4 +75,4 @@ Nach dem Update auf Three.js R167 ist eine weitere Anpassung des Models notwendi
 
 # Update für THree.js > R180
 
-Three.js WebGPU unterstützt nun den `toneMapping` parameter für die Initialisierung von `canvas`. Dieser Parameter ersetzt `colorMetadata` us der Beschreibung oben. Es wurde in [`hdr-canvas` 0.1.1](https://github.com/cmahnke/hdr-canvas/) implementiert.
+Three.js WebGPU unterstützt nun den `toneMapping` parameter für die Initialisierung von `canvas`. Dieser Parameter ersetzt `colorMetadata` aus der Beschreibung oben. Es wurde in [`hdr-canvas` 0.1.1](https://github.com/cmahnke/hdr-canvas/) implementiert.
