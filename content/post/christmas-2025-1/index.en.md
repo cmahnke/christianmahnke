@@ -4,7 +4,6 @@ title: "W2025 Christmas hoodie"
 keywords: Merch, Merchandise, Hoodie, Clothes
 preview:
   image: hoodie.png
-  hide: true
 tags:
 - Christmas
 - Projektemacher.org
