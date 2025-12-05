@@ -13,7 +13,7 @@ Meine Sammelschwerpunkte liegen im Bereich der Alltagskultur des 20. Jahrhundert
 * Unterhaltungselektronik
   * Tonbandgeräte
   * Projektoren
-  * Alte Spielkonsolen und Computer {{< details summary="Beispiele" class="inline-collection" >}}
+  * Alte Spielkonsolen und Computer {{< details summary="Beispiele" class="inline-collection" id="computer" >}}
 * [Atari 2600](https://de.wikipedia.org/wiki/Atari_2600) (*1977*)
 * [Sonesta Pong](https://consollection.de/de/model/pong) (*1977*)
 * [MBO teleball cassette](https://retroconsoles.fandom.com/wiki/MBO#MBO_teleball_cassette_I_&_II) (*1977*)

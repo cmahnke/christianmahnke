@@ -13,7 +13,7 @@ The main focus of my collection is on different everyday culture related artifac
 * Consumer electronics
   * Tape recorders
   * Projectors
-  * Old video game consoles and computers {{< details summary="Examples" class="inline-collection" >}}
+  * Old video game consoles and computers {{< details summary="Examples" class="inline-collection" id="computer" >}}
 * [Atari 2600](https://de.wikipedia.org/wiki/Atari_2600) (*1977*)
 * [Sonesta Pong](https://consollection.de/de/model/pong) (*1977*)
 * [MBO teleball cassette](https://retroconsoles.fandom.com/wiki/MBO#MBO_teleball_cassette_I_&_II) (*1977*)

@@ -21,6 +21,24 @@ window.enterView = require('enter-view');
 
 import Elevator from 'elevator.js';
 
+function expandDetails() {
+  const hash = window.location.hash;
+
+  if (hash) {
+    const id = hash.substring(1);
+    const targetElement = document.getElementById(id);
+
+    if (targetElement && targetElement.tagName === 'DETAILS') {
+      targetElement.open = true;
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        container: 'content-container'
+      });
+    }
+  }
+}
+
 window.addEventListener('DOMContentLoaded', (event) => {
   var elevator = new Elevator({
     mainAudio: '/sounds/elevator.mp3',
@@ -28,6 +46,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     element: document.querySelector('.backToTop'),
     duration: 2000
   });
+
+  //const details = document.querySelectorAll('.inline-collection', 'details');
+  expandDetails()
 
   const searchButton = document.querySelector("#menu-search-button");
   const searchInput = document.querySelector("#menu-search-input");
