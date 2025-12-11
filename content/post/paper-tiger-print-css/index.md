@@ -83,7 +83,7 @@ Ein wichtiges Ziel (also neben der Darstellung) von CSS für den Druck sollte da
 
 Darüber hinaus sind weitere Verbesserungen denkbar:
 * Derzeit sind die Seitenränder in [fixe Zonen unterteilt](https://www.w3.org/TR/css-page-3/#margin-boxes). Das sollte änderbar sein.
-* Besonders Effekte müssen definiert werden, z. B. als Schwarzliste (also das, was nicht funktionieren sollte). Ein Beispiel ist `text-shadow`. Hier kann die Grundregel lauten, dass alles, was in SVG oder modernem PDF möglich ist (machen wir uns nichts vor, meistens gibt es vor dem Druck ein weiteres Zwischenformat), auch druckbar sein sollte. Keine valide Grundregel wäre: "Das sind GPU-Effekte und daher nicht gedruckt", weil dies ein Implementierungsdetail ist. Notfalls erfindet man eine `raster`-Eigenschaft.
+* Besonders Effekte müssen definiert werden, z. B. als Schwarzliste (also das, was nicht funktionieren sollte). Ein Beispiel ist `text-shadow`. Hier kann die Grundregel lauten, dass alles, was in SVG oder modernem PDF möglich ist (machen wir uns nichts vor, meistens gibt es vor dem Druck ein weiteres Zwischenformat), auch druckbar sein sollte. Keine valide Grundregel wäre: "Das sind GPU-Effekte und können daher nicht gedruckt werden", weil dies ein Implementierungsdetail ist. Notfalls erfindet man eine `raster`-Eigenschaft.
 
 Dazu kommen Ergänzungen, von denen auch CSS im Browser profitieren würde, wie z.B. Text, der sich auf die Größe des Containers anpasst.
 

@@ -82,7 +82,7 @@ An important goal (apart from presentation) of CSS for printing should be to red
 
 Further improvements are also conceivable:
 * Currently, the page margins are divided into [fixed zones](https://www.w3.org/TR/css-page-3/#margin-boxes). This should be changeable.
-* Effects in particular need to be defined, e.g. as a blacklist (i.e. what should not work). One example is text-shadow. Here, the basic rule could be that everything that is possible in SVG or modern PDF (let's not kid ourselves, there is usually another intermediate format before printing) should also be printable. A valid basic rule would not be: "These are GPU effects and therefore not printed", because this is an implementation detail. If necessary, a `raster` property could be invented.
+* Effects in particular need to be defined, e.g. as a blacklist (i.e. what should not work). One example is text-shadow. Here, the basic rule could be that everything that is possible in SVG or modern PDF (let's not kid ourselves, there is usually another intermediate format before printing) should also be printable. A valid basic rule would not be: "These are GPU effects and therefore can't be printed", because this is an implementation detail. If necessary, a `raster` property could be invented.
 
 In addition, there are additions that would also benefit CSS in the browser, such as text that adapts to the size of the container.
 
