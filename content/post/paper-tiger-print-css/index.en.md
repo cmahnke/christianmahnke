@@ -71,7 +71,7 @@ Basically, it would be desirable if the creative freedom that CSS offers web des
 
 A feeling that often creeps up on you with CSS also arises here: "ease of implementation" seems to be more important than "ease of use" or even "feature completeness".
 
-Many of the functionalities mentioned under "What's missing?" quickly become apparent when you start creating books (or more complex brochures). Some of them can even be found in the W3C's [list of CSS functions required for paginated media](https://www.w3.org/Style/2013/paged-media-tasks# page-spread), but they have never been included in the specification. This part would certainly have been solved within the framework of the [CSS regions module](https://www.w3.org/TR/css-regions-1/), but this was also [never implemented](https://caniuse.com/css-regions).
+Many of the functionalities mentioned under "What's missing?" quickly become apparent when you start creating books (or more complex brochures). Some of them can even be found in the W3C's [list of CSS functions required for paginated media](https://www.w3.org/Style/2013/paged-media-tasks), but they have never been included in the specification. This part would certainly have been solved within the framework of the [CSS regions module](https://www.w3.org/TR/css-regions-1/), but this was also [never implemented](https://caniuse.com/css-regions).
 
 ## What's missing?
 An important goal (apart from presentation) of CSS for printing should be to reduce the amount of pre-processing required. In my case, these were:

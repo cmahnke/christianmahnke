@@ -71,7 +71,7 @@ Grundsätzlich wäre es wünschenswert, wenn die kreative Freiheit, die CSS Web-
 
 Ein Gefühl das einen bei CSS häufiger beschleicht, stellt sich auch hier ein: "Ease-of-Implementation" scheint wichtiger zu sein als "Ease-of-Use" oder gar "Feature-Completeness".
 
-Viele der unter "Was fehlt?" genannten Funktionalitäten werden schnell offensichtlich, wenn man sich mit der Erzeugung von Büchern (oder komplexeren Broschüren) beschäftigt. Ein Teil davon findet sich sogar bei der W3C in der [Liste der für paginierte Medien erforderlichen CSS-Funktionen](https://www.w3.org/Style/2013/paged-media-tasks#page-spread), trotzdem sind sie nie Teil der Spezifikation geworden. Dieser Teil wäre sicher im Rahmen des [CSS rigions Moduls](https://www.w3.org/TR/css-regions-1/) gelöst worden, aber auch dieses wurde [nie umgesetzt](https://caniuse.com/css-regions).
+Viele der unter "Was fehlt?" genannten Funktionalitäten werden schnell offensichtlich, wenn man sich mit der Erzeugung von Büchern (oder komplexeren Broschüren) beschäftigt. Ein Teil davon findet sich sogar bei der W3C in der [Liste der für paginierte Medien erforderlichen CSS-Funktionen](https://www.w3.org/Style/2013/paged-media-tasks), trotzdem sind sie nie Teil der Spezifikation geworden. Dieser Teil wäre sicher im Rahmen des [CSS rigions Moduls](https://www.w3.org/TR/css-regions-1/) gelöst worden, aber auch dieses wurde [nie umgesetzt](https://caniuse.com/css-regions).
 
 
 ## Was fehlt?
