@@ -1,7 +1,7 @@
 ---
 date: 2025-12-10T18:33:44+02:00
 title: "Paper tiger CSS for printing"
-description: "A polemic about CSS for printing"
+description: "A rant about CSS for printing"
 keywords: PDF, VivlioStyle, CSS, PrinceCSS, XSL-FO
 cite: true
 tags:
