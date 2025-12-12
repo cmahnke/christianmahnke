@@ -82,7 +82,7 @@ An important goal (apart from presentation) of CSS for printing should be to red
 
 Further improvements are also conceivable:
 * Currently, the page margins are divided into [fixed zones](https://www.w3.org/TR/css-page-3/#margin-boxes). This should be changeable.
-* Effects in particular need to be defined, e.g. as a blacklist (i.e. what should not work). One example is text-shadow. Here, the basic rule could be that everything that is possible in SVG or modern PDF (let's not kid ourselves, there is usually another intermediate format before printing) should also be printable. A valid basic rule would not be: "These are GPU effects and therefore can't be printed", because this is an implementation detail. If necessary, a `raster` property could be invented.
+* Effects in particular need to be defined, e.g. as a blacklist (i.e. what should not work). One example is `text-shadow`. Here, the basic rule could be that everything that is possible in SVG or modern PDF (let's not kid ourselves, there is usually another intermediate format before printing) should also be printable. A valid basic rule would not be: "These are GPU effects and therefore can't be printed", because this is an implementation detail. If necessary, a `raster` property could be invented.
 
 In addition, there are additions that would also benefit CSS in the browser, such as text that adapts to the size of the container.
 
@@ -91,15 +91,15 @@ Until then, one should be more cautious when claiming that CSS is truly print-re
 ## A possible way (out)
 
 If we assume that browser vendors do not fully support CSS for printing, there is no need to be overly cautious when defining a standard. On the contrary, this should actually speed up the process, as it reduces restrictions. One could even argue, somewhat polemically, that browser vendors should first implement the existing specifications in order to have a say – as proof, so to speak, that they are stakeholders.
-Against this backdrop, smaller vendors and projects that create processors should not allow themselves to be slowed down.
+Against this backdrop, smaller vendors and projects that create processors should not allow themselves to be slowed down by the process.
 
 And then the scope of the specification to be created should also be clarified, i.e. the types of documents that should be able to be created with its help.
 Incidentally, this also includes explicitly bearing in mind that it is not just about creating PDFs, but about printed information on paper: "printing" is a very broad field. Sometimes you want to create more than just the preliminary stage of waste paper.
 
 If several vendors bring their own CSS extensions that achieve the same result, then something has gone wrong with the specification. Otherwise, the respective use case would have been taken into account.
-It may also help to find an end here. Perhaps starting with a "CSS Paged Media Module Level 4" would solve some of the problems.
+It may also help to find an end with the existing specification(s). Perhaps starting with a "CSS Paged Media Module Level 4" would solve some of the problems.
 
-Ultimately, it is necessary to check whether everything that can be done with XSL-FO 1.1 can be achieved with the existing specification; if not, it is back to the drawing board. Offering a migration path would show that the authors are serious...
+Ultimately, it is necessary to check whether everything that can be done with XSL-FO 1.1 can be achieved with the existing specification; if not, it is back to the drawing board. Offering a migration path would show that the authors are serious about theitr product...
 
 Against this background, it may be worth considering abandoning the existing standardisation path and putting your efforts into your own approach instead. An (inactive) example of such an initiative is [CSS Books](https://books.idea.whatwg.org/).
 
