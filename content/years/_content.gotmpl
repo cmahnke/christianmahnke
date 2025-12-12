@@ -47,9 +47,10 @@
 
 {{- $finalTotal := 0 -}}
 {{- range $valueList -}}
-  {{- $finalTotal = add $finalTotal . -}}
+  {{- if ne . nil -}}
+    {{- $finalTotal = add $finalTotal . -}}
+  {{- end -}}
 {{- end -}}
-{{ warnf "==> %s" $finalTotal }}
 {{- $firstYear := $finalTotal -}}
 {{- $lastYear := time.Now | time.Format "2006" -}}
 {{- range (seq $firstYear $lastYear) -}}
