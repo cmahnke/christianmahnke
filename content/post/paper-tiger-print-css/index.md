@@ -19,10 +19,10 @@ Ich beschäftige mich immer mal wieder "nebenbei" mit Cross-Media-Publishing...
 <!--more-->
 
 Sogar beruflich haben sich da einige Projekte ergeben:
-* 2004-2006: **The Rise of Modern Constitutionalism, 1776-1849**
+* 2004-2006: **The Rise of Modern Constitutionalism, 1776-1849**:
   Im Rahmen des Projektes wurde ein Workflow entwickelt und implementiert, der aus Word Dateien mit einen themespezifischen Dokumwentvorlagen TEI erstellt, dass dann in weitere Präsentationsformate (inklusive einer Buchserie) umgewandelt wurde.
 
-* 2014: **OUS-Print**
+* 2014: **OUS-Print**:
   Aus dem lokalen Bibliotheksystem wurden Bestellzettel / Begleitscheine erstellt: Text wird mittels XSL-FO zu PDF. Vorlagen können in Open Office bearbeitet werden. Dazu gibt es noch eine [alte Präsentation](https://subugoe.github.io/ous-print/slides.xhtml).
 
 Nun habe ich versucht aus dem Kleiderbügel-Blog einen Katalog zu erstellen und war überrascht wie wenig weit aktuelle Technologien im letzten Jahrzent gekommen sind. Sicher, der Bedarf an aufwendig gestaltetn Druckerzeugnissen hat in den letzten Jahren sicher nicht unbedingt zugenommen. Aber ich hatte gehofft, das alte XML Technologien wie XSL-FO zumindest eingermaßen ersetzt wurden.

@@ -19,10 +19,10 @@ II occasionally engage in cross-media publishing...
 <!--more-->
 
 This has even led to a few projects in my professional life:
-* 2004-2006: **The Rise of Modern Constitutionalism, 1776-1849**
+* 2004-2006: **The Rise of Modern Constitutionalism, 1776-1849**:
   A workflow was developed and implemented, that created TEI from Word files with theme-specific document templates. TEI was then converted into other presentation formats (including a book series).
 
-* 2014: **OUS-Print**
+* 2014: **OUS-Print**:
   Order slips/accompanying notes were created from the local library system: text is converted to PDF using XSL-FO. Templates can be edited in Open Office. There is also an [old presentation](https://subugoe.github.io/ous-print/slides.xhtml).
 
 I have now attempted to create a catalogue from the Kleiderbügel blog and was surprised at how little current technologies have advanced in the last decade. Certainly, the demand for elaborately designed printed products has not necessarily increased in recent years. However, I had hoped that old XML technologies such as XSL-FO would have been replaced to some extent.
@@ -54,7 +54,7 @@ The first approach has the charm of enabling JavaScript to be executed without a
 
 Since the market is quite fragmented and resources are therefore limited, not all of them have the same degree of standard compliance. Ultimately, this means that one does not adhere to a standard, but rather to the smallest common subset that is supported by everyone. The alternative is to commit to a specific implementation.
 
-It doesn't help that some of the processors also come with manufacturer-specific CSS extensions.
+It doesn't help that some of the processors also come with vendor-specific CSS extensions.
 
 ## Are the implementations the only problem?
 
@@ -90,13 +90,13 @@ Until then, one should be more cautious when claiming that CSS is truly print-re
 
 ## A possible way (out)
 
-If we assume that browser manufacturers do not fully support CSS for printing, there is no need to be overly cautious when defining a standard. On the contrary, this should actually speed up the process, as it reduces restrictions. One could even argue, somewhat polemically, that browser manufacturers should first implement the existing specifications in order to have a say – as proof, so to speak, that they are stakeholders.
-Against this backdrop, smaller manufacturers and projects that create processors should not allow themselves to be slowed down.
+If we assume that browser vendors do not fully support CSS for printing, there is no need to be overly cautious when defining a standard. On the contrary, this should actually speed up the process, as it reduces restrictions. One could even argue, somewhat polemically, that browser vendors should first implement the existing specifications in order to have a say – as proof, so to speak, that they are stakeholders.
+Against this backdrop, smaller vendors and projects that create processors should not allow themselves to be slowed down.
 
 And then the scope of the specification to be created should also be clarified, i.e. the types of documents that should be able to be created with its help.
 Incidentally, this also includes explicitly bearing in mind that it is not just about creating PDFs, but about printed information on paper: "printing" is a very broad field. Sometimes you want to create more than just the preliminary stage of waste paper.
 
-If several manufacturers bring their own CSS extensions that achieve the same result, then something has gone wrong with the specification. Otherwise, the respective use case would have been taken into account.
+If several vendors bring their own CSS extensions that achieve the same result, then something has gone wrong with the specification. Otherwise, the respective use case would have been taken into account.
 It may also help to find an end here. Perhaps starting with a "CSS Paged Media Module Level 4" would solve some of the problems.
 
 Ultimately, it is necessary to check whether everything that can be done with XSL-FO 1.1 can be achieved with the existing specification; if not, it is back to the drawing board. Offering a migration path would show that the authors are serious...
@@ -105,7 +105,7 @@ Against this background, it may be worth considering abandoning the existing sta
 
 ## Conclusion
 
-CSS for printing is, in part, a paper tiger: it works for simple, unbound documents. However, as the size or scope of a project increases, the amount of pre-processing required increases massively. (Sometimes so much so that you remember that Inkscape can be scripted with Python.) Currently, there is no major breakthrough in sight for the specification, and the major browser manufacturers show no discernible interest in improving the situation.
+CSS for printing is, in part, a paper tiger: it works for simple, unbound documents. However, as the size or scope of a project increases, the amount of pre-processing required increases massively. (Sometimes so much so that you remember that Inkscape can be scripted with Python.) Currently, there is no major breakthrough in sight for the specification, and the major browser vendors show no discernible interest in improving the situation.
 
 If you need ideas on how to do it better, you can (ironically) read about them at the W3C.
 
