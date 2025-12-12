@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@annotorious/openseadragon": "^3.7.18",
+    "@annotorious/openseadragon": "^3.7.19",
     "aos": "^2.3.4",
     "chroma-js": "^3.2.0",
     "d3": "^7.9.0",
@@ -18,8 +18,8 @@
     "wordcloud": "^1.2.3"
   },
   "devDependencies": {
-    "replace-in-file": "8.3.0",
-    "svgo": "^3.3.2"
+    "replace-in-file": "8.4.0",
+    "svgo": "^4.0.0"
   },
   "scripts": {
     "logo-projektemacher": "svgo --config Source\\ Files/svgo.config.js -i themes/projektemacher-base/Source\\ Files/Images/Laborant.svg -o static/images/laborant.svg",
