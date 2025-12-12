@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DNB on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/DNB/</link>
+    <description>Recent content in DNB on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/DNB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Containers</title>
+      <link>https://christianmahnke.de/en/post/data-containers/citation.bib</link>
+      <pubDate>Fri, 19 Apr 2024 17:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/data-containers/citation.bib</guid>
+      <description>&lt;p&gt;Even if it is not necessarily the intended use case, Docker makes it very easy to package large amounts of data with applications for simplified provisioning (such as APIs). This can be particularly helpful if, for example, standardisation data from different sources is to be merged for data enrichment.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
