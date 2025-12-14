@@ -14,6 +14,7 @@ Beispiele für immersive bzw. unkonventionelle Präsentationen sind unter andere
 
 Dazu sind im Blog mehrere Einzelexperimente zu finden:
 
+* ["Kontrafaktische Architektur" mit OpenStreetmap](/post/patching-osm-data/)
 * [Mustergenerator für IIIF Manifeste](/post/wallpaper-generator/)
 * [Visualisierung von KI Segmentierung mit HDR](/post/visualising-ai-segmentation-with-hdr/)
 * [HDR Bilder zur Visualisierung von Röntgenuntersuchungen alter Gemälde](/post/hdr-radiography-visualisation/)
