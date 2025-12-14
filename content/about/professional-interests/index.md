@@ -30,7 +30,7 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
   * Bildverarbeitung und -formate {{< link link="/tags/DigitalImages" class="blog" >}}Blog Beiträge{{< /link >}}
 
 * Digitales drucken
-  * XML / HTML Publikations-Workflows {{< link link="/tags/Printing" class="blog" >}}Blog posts{{< /link >}}
+  * XML / HTML Publikations-Workflows {{< link link="/tags/Printing" class="blog" >}}Blog Beiträge{{< /link >}}
 
 * 3D {{< link link="/tags/3D/" class="blog" >}}Blog Beiträge{{< /link >}}
 
