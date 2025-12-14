@@ -29,6 +29,9 @@ My professional focus is on various topics from the spectrum of digital librarie
   * Computer vision for the enhancement of cultural heritage {{< link link="/en/tags/OpenCV" class="blog" >}}Blog posts{{< /link >}}
   * Image processing and formats {{< link link="/en/tags/DigitalImages" class="blog" >}}Blog posts{{< /link >}}
 
+* Digital printing
+  * XML / HTML publishing workflows {{< link link="/en/tags/Printing" class="blog" >}}Blog posts{{< /link >}}
+
 * 3D {{< link link="/en/tags/3D/" class="blog" >}}Blog posts{{< /link >}}
 
 * Geodata {{< link link="/en/tags/Geodata/" class="blog" >}}Blog posts{{< /link >}}
@@ -43,7 +46,7 @@ My professional focus is on various topics from the spectrum of digital librarie
 
 * Web development
   * HTML
-  * CSS
+  * CSS {< link link="/en/tags/CSS/" class="blog" >}}Blog posts{{< /link >}}
   * JavaSript / TypeScript {{< link link="/en/tags/JavaScript/" class="blog" >}}Blog posts{{< /link >}}
   * Hugo ([SSG](https://en.wikipedia.org/wiki/Static_site_generator)) {{< link link="/tags/Hugo/" class="blog" >}}Blog posts{{< /link >}}
 

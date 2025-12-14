@@ -29,6 +29,9 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
   * Computer Vision für die Aufbereitung von kulturellem Erbe {{< link link="/tags/OpenCV" class="blog" >}}Blog Beiträge{{< /link >}}
   * Bildverarbeitung und -formate {{< link link="/tags/DigitalImages" class="blog" >}}Blog Beiträge{{< /link >}}
 
+* Digitales drucken
+  * XML / HTML Publikations-Workflows {{< link link="/tags/Printing" class="blog" >}}Blog posts{{< /link >}}
+
 * 3D {{< link link="/tags/3D/" class="blog" >}}Blog Beiträge{{< /link >}}
 
 * Geodaten {{< link link="/tags/Geodata/" class="blog" >}}Blog Beiträge{{< /link >}}
@@ -43,7 +46,7 @@ Meine beruflichen Schwerpunkte liegen in verschiedenen Themen aus dem Spektrum d
 
 * Webentwicklung
   * HTML
-  * CSS
+  * CSS {{< link link="/tags/CSS/" class="blog" >}}Blog Beiträge{{< /link >}}
   * JavaSript / TypeScript {{< link link="/tags/JavaScript/" class="blog" >}}Blog Beiträge{{< /link >}}
   * Hugo ([SSG](https://de.wikipedia.org/wiki/Statische_Webseite#Statische-Website-Generatoren)) {{< link link="/tags/Hugo/" class="blog" >}}Blog Beiträge{{< /link >}}
 
