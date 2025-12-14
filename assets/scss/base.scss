@@ -1236,6 +1236,11 @@ a:visited {
         .meta .tags {
             left: 0;
         }
+
+        .post-description {
+            align-self: flex-start;
+        }
+
         .post-date {
             align-self: flex-end;
         }
@@ -1340,7 +1345,19 @@ a:visited {
         font-family: 'League Spartan', Futura, sans-serif;
 
         &:has( + .post-body .post-description) {
-            margin-bottom: unset;
+          margin-bottom: unset;
+
+          @media (max-width : 35em) {
+            margin-bottom: 1.2rem;
+          }
+        }
+    }
+
+    .post-description {
+        margin-top: -2rem;
+
+        @media (max-width : 35em) {
+            margin-top: unset;
         }
     }
 
