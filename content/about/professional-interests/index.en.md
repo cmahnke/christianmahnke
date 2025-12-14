@@ -46,7 +46,7 @@ My professional focus is on various topics from the spectrum of digital librarie
 
 * Web development
   * HTML
-  * CSS {< link link="/en/tags/CSS/" class="blog" >}}Blog posts{{< /link >}}
+  * CSS {{< link link="/en/tags/CSS/" class="blog" >}}Blog posts{{< /link >}}
   * JavaSript / TypeScript {{< link link="/en/tags/JavaScript/" class="blog" >}}Blog posts{{< /link >}}
   * Hugo ([SSG](https://en.wikipedia.org/wiki/Static_site_generator)) {{< link link="/tags/Hugo/" class="blog" >}}Blog posts{{< /link >}}
 
