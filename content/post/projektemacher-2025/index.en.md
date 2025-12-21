@@ -12,7 +12,6 @@ At the end of 2025, here is the annual retrospect for Projektemacher.org. Over 2
 Some of the highlights are:
 
 ## New pages
-* [Nocturnal Shadows](https://schatten.yaapb.projektemacher.org/#1/1)
 * [Never Build Göttingen](https://never-build.goettingen.xyz/)
 
 ## Moved pages

@@ -12,7 +12,6 @@ Zu Abschluss von 2025, hier der Jahresrückblick für Projektemacher.org. Im Lau
 Einige der Highlight sind:
 
 ## Neue Seiten
-* [Nächtliche Schatten](https://schatten.yaapb.projektemacher.org/#1/1)
 * [Never Build Göttingen](https://never-build.goettingen.xyz/)
 
 ## Umgezogene Seiten
