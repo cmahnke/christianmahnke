@@ -25,6 +25,7 @@ TODO
 convert preview.png -channel a -negate +channel -fill black -colorize 100% preview-negative.png
 ```
 
-# Tag Pages
-* Blender
-* Göttingen
+
+# Ideas
+
+https://digitalcollections.nypl.org/items/fc831470-c52e-012f-740a-58d385a7bc34
