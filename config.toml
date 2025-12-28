@@ -107,6 +107,13 @@ timeout = "120s"
         attribute = true
         strikethrough = true
 
+    [markup.goldmark.extensions.passthrough]
+      enable = true
+      
+      [markup.goldmark.extensions.passthrough.delimiters]
+        block = [['\[', '\]'], ['$$', '$$']]
+        inline = [['\(', '\)']]
+
     [markup.goldmark.extensions.extras]
         [markup.goldmark.extensions.extras.insert]
             enable = true

@@ -2,7 +2,6 @@
 date: 2025-12-28T10:22:44+02:00
 title: "KI Segmentierung für Stereoskopie-Karten"
 keywords: "Stereoskopie, Anaglyphen"
-description: "Die Sammlung an alten 3D Bildern hat nun ihr eigenes Blog"
 cite: true
 tags:
   - AI
@@ -13,6 +12,9 @@ tags:
 wikidata:
   - https://www.wikidata.org/wiki/Q35158
   - https://www.wikidata.org/wiki/Q484031
+  - https://www.wikidata.org/wiki/Q2492951
+  - https://www.wikidata.org/wiki/Q112181165
+  - https://www.wikidata.org/wiki/Q56933
 ---
 
 2024 ist meine Stereoskopie-Sammlung online gegangen...
