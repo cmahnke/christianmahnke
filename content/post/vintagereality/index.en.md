@@ -14,6 +14,7 @@ tags:
   - 3D
   - DigitalImages
   - OpenCV
+  - Stereoscoppy
 wikidata:
   - https://www.wikidata.org/wiki/Q35158
   - https://www.wikidata.org/wiki/Q484031
