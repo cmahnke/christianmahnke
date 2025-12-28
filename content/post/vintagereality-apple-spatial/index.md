@@ -22,7 +22,7 @@ Ich habe ein neues Telefon...
 
 ...mit einer neuen, interessanten Funktion, die mehrere meiner Steckenpferde verbindet. Digitale Bildformate und Stereoskopie / 3D.
 
-Für die Mixed-Reality-Brille hat Apple das HEIC-Bildformat etwas erweitert. In einem Container werden nicht ein, sondern zwei leicht versetzt erstellte Bilder zusammen mit einigen Metadaten gespeichert. Diese Kombination sorgt beispielsweise in der Bildergalerie dafür, dass ein zusätzliches Icon erscheint, mit dem sich die räumliche Ansicht aktivieren lässt.
+Für die Mixed-Reality-Brille hat Apple das HEIC-Bildformat etwas erweitert. In einem Container werden nicht ein, sondern zwei leicht versetzt erstellte Bilder zusammen mit einigen Metadaten gespeichert. Diese Kombination sorgt beispielsweise in der Bildergalerie dafür, dass ein zusätzliches Icon erscheint, mit dem sich die räumliche Ansicht aktivieren lässt. Auch die aktuellen iPhones können solche Bilder erstellen.
 
 Bevor es um die langweiligen technischen Details geht, hier ein Beispiel mit einem historischen Stereogramm von der [VintageReality Seite](https://vintagereality.projektemacher.org/post/calcutta/). Oben rechts ist der Button für die räumliche Ansicht zu erkennen.
 

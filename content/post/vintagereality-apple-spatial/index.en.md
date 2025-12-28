@@ -22,7 +22,7 @@ I have a new phone...
 
 ...with a new, interesting feature that combines several of my favourite things: digital image formats and stereoscopy/3D.
 
-Apple has expanded the HEIC image format slightly for mixed reality glasses. Instead of one image, two slightly offset images are stored in a container together with some metadata. In the image gallery, for example, this combination causes an additional icon to appear that can be used to activate the spatial view.
+Apple has expanded the HEIC image format slightly for mixed reality glasses. Instead of one image, two slightly offset images are stored in a container together with some metadata. In the image gallery, for example, this combination causes an additional icon to appear that can be used to activate the spatial view. The latest iPhones can also take such pictures.
 
 Before we get into the boring technical details, here is an example with a historical stereogram from the VintageReality website (https://vintagereality.projektemacher.org/post/calcutta/). The button for the spatial view can be seen at the top right.
 
