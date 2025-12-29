@@ -34,7 +34,7 @@ The result was achieved through the following steps:
 
 ### HEIC images
 
-First, the images are extracted from the scans of the cards. The [model from the last post](/post/vintagereality-ai/) is used for this purpose. They are then superimposed on top of each other with almost pixel-perfect accuracy using OpenCV, the resulting edges are removed where possible, and the brightness is adjusted.
+First, the images are extracted from the scans of the cards. The [model from the last post](/en/post/vintagereality-ai/) is used for this purpose. They are then superimposed on top of each other with almost pixel-perfect accuracy using OpenCV, the resulting edges are removed where possible, and the brightness is adjusted.
 
 The two half-images are then embedded in an HEIC container using the Python module [`pillow_heif`](https://github.com/bigcat88/pillow_heif).
 
