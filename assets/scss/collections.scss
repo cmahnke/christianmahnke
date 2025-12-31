@@ -74,6 +74,10 @@
             margin-right: 4rem;
         }
 
+        @media (max-width : 34em) {
+            margin-top: unset;
+        }
+
         &[open] {
             margin-bottom: .8rem;
         }
