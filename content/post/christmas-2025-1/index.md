@@ -8,6 +8,9 @@ tags:
 - Christmas
 - Projektemacher.org
 - Merchandise
+wikidata:
+  - https://www.wikidata.org/wiki/Q2696691
+  - https://www.wikidata.org/wiki/Q103059
 ---
 
 Zur Einstimmung in die Vorweihnachtszeit...

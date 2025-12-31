@@ -8,6 +8,9 @@ tags:
 - Christmas
 - Projektemacher.org
 - Merchandise
+wikidata:
+  - https://www.wikidata.org/wiki/Q2696691
+  - https://www.wikidata.org/wiki/Q103059
 ---
 
 To get you in the mood for the festive season...
