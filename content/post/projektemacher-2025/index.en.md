@@ -7,7 +7,7 @@ tags:
   - Projektemacher.org
 ---
 
-At the end of 2025, here is the annual retrospect for Projektemacher.org. Over 200 posts were published during the year.
+At the end of 2025, here is the annual retrospect for Projektemacher.org. Around 180 posts were published during the year.
 <!--more-->
 Some of the highlights are:
 
@@ -31,5 +31,4 @@ Some of the highlights are:
 ## Miscellaneous
 
 * The Projektemacher blogs now use the IIIF viewer "Tify".
-
-## Events
+* Finally, there is something new in the shop again (https://merch.projektemacher.org/en/clothing/der-flammende-baum/).

@@ -7,7 +7,7 @@ tags:
   - Projektemacher.org
 ---
 
-Zu Abschluss von 2025, hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden über 200 Beiträge veröffentlicht.
+Zu Abschluss von 2025, hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden um die 180 Beiträge veröffentlicht.
 <!--more-->
 Einige der Highlight sind:
 
@@ -31,5 +31,3 @@ Einige der Highlight sind:
 ## Sonstiges
 
 * Die Projektemacher Blogs nutzen nun den IIIF Viewer "Tify".
-
-## Veranstaltungen
