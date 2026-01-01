@@ -4,7 +4,7 @@ metaPage: true
 displayinlist: false
 archive: false
 news: false
-weight: 5
+weight: 2
 ---
 
 Ein "Digital Humanities Communicator" ist ein Science Communicator (Wissenschaftskommunikator) mit Schwerpunkt Digitale Geisteswissenschaft. Diese Bezeichnung ist nicht ausgedacht, aber trotzdem noch relativ selten zu finden.

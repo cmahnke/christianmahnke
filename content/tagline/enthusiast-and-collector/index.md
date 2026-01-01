@@ -4,7 +4,7 @@ metaPage: true
 displayinlist: false
 archive: false
 news: false
-weight: 10
+weight: 9
 ---
 
 Die ursprüngliche Selbstbezeichnung. Unter letzterer bin ich auch in [museum-digital](https://www.museum-digital.de/) zu [finden](https://term.museum-digital.de/md-de/persinst/322830).

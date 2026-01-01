@@ -4,7 +4,7 @@ metaPage: true
 displayinlist: false
 archive: false
 news: false
-weight: 5
+weight: 2
 ---
 
 A "Digital Humanities Communicator" is a science communicator specialising in digital humanities. This term is not made up, but is still relatively rare.

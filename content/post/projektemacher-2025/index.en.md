@@ -31,4 +31,5 @@ Some of the highlights are:
 ## Miscellaneous
 
 * The Projektemacher blogs now use the IIIF viewer "Tify".
-* Finally, there is something new in the shop again (https://merch.projektemacher.org/en/clothing/der-flammende-baum/).
+* Finally, there is something [new in the shop](https://merch.projektemacher.org/en/clothing/der-flammende-baum/) again.
+* Preparations for the first Projektemacher book are complete.

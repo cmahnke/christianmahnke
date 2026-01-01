@@ -4,7 +4,7 @@ metaPage: true
 displayinlist: false
 archive: false
 news: false
-weight: 9
+weight: 10
 ---
 
 "Creative Technologist" bezeichnet eine Person, die entweder an der Schnittstelle von Technologie und Design arbeitet bzw. allgemein mit dem kreativen Umgang mit Technologie betraut ist. In dieser Rolle entwickelt man kreative (Web-) Anwendungen, Prototypen Experimente und entsprechende Konzepte...
@@ -13,6 +13,7 @@ Beispiel für Aktivitäten auf diesem Gebiet sind:
 
 ### Blog Beiträge aus dem Bereich:
 
+* [Künstliche Intelligenz](/post/vintagereality-ai/) und [virtuelle Realität](/post/vintagereality-apple-spatial/) für historische Photographien
 * [OpenStreetMap Daten "patchen"](/post/patching-osm-data/)
 * [Virtuelle Räume tapezieren!](/post/wallpaper-generator/)
 * [Visualisierung von KI Segmentierung mit HDR](/post/visualising-ai-segmentation-with-hdr/)

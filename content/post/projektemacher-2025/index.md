@@ -31,3 +31,5 @@ Einige der Highlight sind:
 ## Sonstiges
 
 * Die Projektemacher Blogs nutzen nun den IIIF Viewer "Tify".
+* Endlich gibt es etwas [Neues im "Shop"](https://merch.projektemacher.org/en/clothing/der-flammende-baum/).
+* Die Vorbereitungen zum ersten Projektemacher Buch sind abgeschlossen.
