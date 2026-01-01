@@ -34,17 +34,24 @@ function translate(tag, tags = undefined) {
   return tag
 }
 
+function page(tag, tags = undefined) {
+  if (tags !== undefined && tag in tags && "url" in tags[tag]) {
+    return tags[tag]["url"]
+  }
+  return '/tags/' + tag
+}
+
 export function convertTags(tags: Tags):{ from: string; to: string; url: string }[] {
-  let pairs: { from: string; to: string; url: string }[] = [];
+  let pairs: { from: string; to: string; url: string; page: string }[] = [];
   const posts = tagsToPages(tags);
 
   for (const [post, postTags] of Object.entries(posts)) {
-
     var combinations = postTags.flatMap((v, i) =>
       postTags.slice(i + 1).map((w) => {
         const fromTag = translate(v, tags);
         const toTag = translate(w, tags);
-        pairs.push({ from: fromTag, to: toTag, url: post });
+        const url = page(v, tags)
+        pairs.push({ from: fromTag, to: toTag, url: post, page: url });
       })
     );
   }

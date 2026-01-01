@@ -18,4 +18,6 @@ cascade:
         disable: true
 ---
 
-Auf der Startseite gibt es zufällig ausgewählte Selbstbeschreibungen zu bewundern. Manche davon sind "echt", also auch anderswo im Netz zu finden, manche wiederum eher ausgedacht, diese Seite bietet den Überblick:
+Auf der Startseite gibt es zufällig ausgewählte Selbstbeschreibungen zu bewundern. Manche davon sind "echt", also auch anderswo im Netz zu finden, manche wiederum eher ausgedacht. Das Ganze ist auch als Parodie auf die inflationäre Verwendung von Job-Beschreibungen und Selbstzuschreibungen im Internet zu verstehen.
+
+Diese Seite bietet den Überblick:

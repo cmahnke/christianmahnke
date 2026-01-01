@@ -5,11 +5,12 @@ import { arc, Arc } from "d3-shape";
 import type { Tags } from "./transformations";
 import { convertTags } from "./transformations";
 
-type FlowInputRecord = [string, string, string, number]; // [sourceName, targetName, url, value]
+type FlowInputRecord = [string, string, string, number, string]; // [sourceName, targetName, url, value, from_tag_url]
 
 interface ChordNode {
   index: number;
   name: string;
+  url: string
   startAngle?: number;
   endAngle?: number;
   value?: number;
@@ -38,6 +39,7 @@ interface ChordData {
   groupMatrix: number[][]; // Used only for initial span estimation
   nodes: ChordNode[];
   nodeNameMap: Map<number, string>;
+  urls: Map<number, string>,
   individualFlows: FlowInputRecord[]; // Original data for individual ribbons
 }
 
@@ -49,7 +51,15 @@ function prepareChordData(inputData: FlowInputRecord[]): ChordData {
   nodes.forEach((node) => nameToIndexMap.set(node.name, node.index));
 
   const nodeNameMap = new Map<number, string>();
+  const urls = new Map<number, string>();
   nodes.forEach((node) => nodeNameMap.set(node.index, node.name));
+  nodes.forEach((node) => {
+    let tagUrl = inputData.find((source) => source[0] === node.name);
+    if (tagUrl !== undefined) {
+      tagUrl = tagUrl[4];
+    }
+    urls.set(node.index, tagUrl);
+  });
 
   // Create a symmetrical group matrix based on total connections for initial span estimation.
   const groupMatrix: number[][] = Array(nodes.length)
@@ -72,6 +82,7 @@ function prepareChordData(inputData: FlowInputRecord[]): ChordData {
     nodes,
     nodeNameMap,
     individualFlows: inputData,
+    urls
   };
 }
 
@@ -95,7 +106,7 @@ function renderD3ChordDiagram(
   }
   container.innerHTML = "";
 
-  const { groupMatrix, nodes, nodeNameMap, individualFlows } = prepareChordData(inputData);
+  const { groupMatrix, nodes, nodeNameMap, individualFlows, urls } = prepareChordData(inputData);
   if (nodes.length === 0) {
     container.innerHTML = "<p>No data to display.</p>";
     return;
@@ -271,7 +282,7 @@ function renderD3ChordDiagram(
 
   groupElements
     .append("a")
-    .attr("href", (d: ChordGroup) => `${linkPrefix}${nodeNameMap.get(d.index) || ""}`)
+    .attr("href", (d: ChordGroup) => `${urls.get(d.index) || ""}`)
     .append("text")
     .each((d: ChordGroup & { angle?: number }) => {
       d.angle = (d.startAngle + d.endAngle) / 2; // Use the new group angles
@@ -441,6 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
         from: string;
         to: string;
         url: string;
+        from_tag_url: string;
       }
 
       const tagPairs: ConvertedTagPair[] = convertTags(data);
@@ -448,9 +460,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const source = pair.from;
         const target = pair.to;
         const url = pair.url || '';
+        const from_tag_url = pair.page || '';
 
         const value = 1;
-        const recordTuple: FlowInputRecord = [source, target, url, value];
+        const recordTuple: FlowInputRecord = [source, target, url, value, from_tag_url];
         return recordTuple;
       });
 

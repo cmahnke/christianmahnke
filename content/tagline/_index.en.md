@@ -18,4 +18,6 @@ cascade:
         disable: true
 ---
 
-On the homepage you can admire randomly selected self-descriptions. Some of them are "real", i.e. can also be found elsewhere on the Internet, while others are more fictitious; this page provides an overview:
+On the homepage you can admire randomly selected self-descriptions. Some of them are "real", i.e. can also be found elsewhere on the Internet, while others are more fictitious. The whole thing can also be seen as a parody of the excessive use of job descriptions and self-attributions on the internet.
+
+This page provides an overview:

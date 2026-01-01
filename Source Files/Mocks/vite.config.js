@@ -15,6 +15,7 @@ const mimeTypes = { ".glb": "model/gltf-binary" };
 export default defineConfig({
   server: {
     host: "127.0.0.1",
+    appType: 'custom',
     proxy: {
       "/meta": {
         target: "https://christianmahnke.de",
@@ -43,15 +44,16 @@ export default defineConfig({
     },
     stylelint({ build: true, dev: false, lintOnStart: true }),
     DynamicPublicDirectory(
-      ["webgpu/public", "hdr-canvas/public", "touch/public", "imagecompare/public", "node_modules/openseadragon/build/openseadragon"],
+      ["webgpu/public/**", "hdr-canvas/public/**", "game/public/**", "touch/public/**", "imagecompare/public/**", "node_modules/openseadragon/build/openseadragon"],
       {
         ssr: false,
         mimeTypes
       }
     ),
-    gitSymlinkResolverPlugin()
+    process.platform === "win32" ? gitSymlinkResolverPlugin() : null
     //checker({ typescript: false })
   ],
+  publicDir: false,
   build: {
     //target: 'esnext',
     target: "es2020",
@@ -64,7 +66,8 @@ export default defineConfig({
         imagecompare: resolve(__dirname, "imagecompare/index.html"),
         //search: resolve(__dirname, "search/index.html"),
         "tag-ring": resolve(__dirname, "tag-ring/index.html"),
-        wikidata: resolve(__dirname, "wikidata/index.html")
+        wikidata: resolve(__dirname, "wikidata/index.html"),
+        game: resolve(__dirname, "game/index.html")
       },
       output: {
         assetFileNames: `assets/[name].[ext]`

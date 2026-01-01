@@ -1,0 +1,1 @@
+../../../../../assets/ts/image-slider.ts

@@ -9,6 +9,7 @@ preview:
 tags:
 - Projektemacher
 - Printing
+- Book
 wikidata:
   - https://www.wikidata.org/wiki/Q815240
 ---
