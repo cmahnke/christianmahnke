@@ -27,3 +27,7 @@ Da ich seit Jahren eine lockere Zusammenarbeit mit Gerbrand Caspers pflege, biet
 * [DAS HAUS DER FRAU: Eva Roemer](https://www.dashausderfrau.nl/roemer-eva.html) - hier ist auch der abgebildete Druck zu finden.
 
 Eva Roemer war auch mit Göttingen verbunden, daher sind weitere Informationen zu ihr im [Göttinger Künstlerlexikon](https://univerlag.uni-goettingen.de/bitstream/handle/3/isbn-978-3-86395-504-5/Appel_diss.pdf) von Thomas Appel zu finden.
+
+# Update
+
+Das Museum Starnberger See widmete ihr vom 28. März bis 26.Oktober 2025 eine [Ausstellung](https://www.museum-starnberger-see.de/ausstellungen/aktuell/eva-roemer).

@@ -27,3 +27,7 @@ Since I have been working with Gerbrand Caspers for years, this article is anoth
 * DAS HAUS DER FRAU: Eva Roemer](https://www.dashausderfrau.nl/roemer-eva.html) - here you can also find the print above.
 
 Eva Roemer was also associated with Göttingen, further information on her can be found in [Göttinger Künstlerlexikon](https://univerlag.uni-goettingen.de/bitstream/handle/3/isbn-978-3-86395-504-5/Appel_diss.pdf) by Thomas Appel.
+
+# Update
+
+The Museum Starnberger See dedicated an exhibition to her from 28 March to 26 October 2025 (https://www.museum-starnberger-see.de/ausstellungen/aktuell/eva-roemer).
