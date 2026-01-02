@@ -28,7 +28,6 @@ The wallpaper used is from [Zeitzeug](http://zeitzeug.de/) in Göttingen and als
 * [Card 2 - Wallpaper 1](https://vorsatzpapier.projektemacher.org/post/tapete-36/)
 * [Card 2 - Wallpaper 2](https://vorsatzpapier.projektemacher.org/post/tapete-37/)
 
-Translated with www.DeepL.com/Translator (free version)
 
 # Preview
 
