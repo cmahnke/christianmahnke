@@ -1,10 +1,14 @@
 
-{{- $profilelPage := unmarshal `{
+{{- $profilePage := unmarshal `{
     "@context" : "http://schema.org",
     "@type" : "ProfilePage",
+    "url": "https://christianmahnke.de/",
+    "name": "Christian Mahnke – Blog & Projekte",
+    "inLanguage": ["de", "en"],
     "mainEntity" : {
         "@type" : "Person",
         "name" : "Christian Mahnke",
+        "@id": "https://christianmahnke.de/#person",
         "givenName" : "Christian",
         "familyName" : "Mahnke",
         "jobTitle" : "Creative Technologist",
@@ -32,6 +36,18 @@
                 "url": "https://pro.europeana.eu/"
             }
         ],
+        "identifier": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "ORCID",
+            "value": "0009-0003-1361-4159"
+          },
+          {
+            "@type": "PropertyValue",
+            "propertyID": "museum:digital",
+            "value": "322830"
+          }
+        ],
         "sameAs": [
             "https://github.com/cmahnke",
             "https://www.linkedin.com/in/cmahnke/",
@@ -44,9 +60,26 @@
             "https://publications.goettingen-research-online.de/cris/rp/rp115268",
             "http://www.wikidata.org/entity/Q137668638",
             "https://www.openstreetmap.org/user/Christian%20Mahnke"
-        ]
+        ],
     }
 }` -}}
+
+{{- $webPage := unmarshal `{
+      "@type": "WebSite",
+      "@id": "https://christianmahnke.de/#website",
+      "url": "https://christianmahnke.de/",
+      "name": "Christian Mahnke – Blog & Projekte",
+      "inLanguage": ["de", "en"],
+      "publisher": {
+        "@id": "https://christianmahnke.de/#person"
+      }
+    }` -}}
+
 <script type="application/ld+json">
-  {{ jsonify $profilelPage | safeJS }}
+  {{ jsonify $profilePage | safeJS }}
 </script>
+{{/*
+<script type="application/ld+json">
+  {{ jsonify $webPage | safeJS }}
+</script>
+*/}}
