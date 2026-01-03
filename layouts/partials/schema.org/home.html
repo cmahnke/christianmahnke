@@ -1,85 +1,89 @@
 
 {{- $profilePage := unmarshal `{
     "@context" : "http://schema.org",
-    "@type" : "ProfilePage",
-    "url": "https://christianmahnke.de/",
-    "name": "Christian Mahnke – Blog & Projekte",
-    "inLanguage": ["de", "en"],
-    "mainEntity" : {
-        "@type" : "Person",
-        "name" : "Christian Mahnke",
-        "@id": "https://christianmahnke.de/#person",
-        "givenName" : "Christian",
-        "familyName" : "Mahnke",
-        "jobTitle" : "Creative Technologist",
-        "description": [
-          { "@language": "de", "@value": "Sammler und Creative Technologist, spezialisiert auf die Alltagskultur des 20. Jahrhunderts und ihre digitale Präsentation." },
-          { "@language": "en", "@value": "Collector and creative technologist specialising in 20th-century everyday culture and its digital presentation." }
-        ],
-        "url" : "https://christianmahnke.de/",
-        "logo": "https://christianmahnke.de/images/logo.png",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "Projektemacher",
-            "url": "https://projektemacher.org/"
-        },
-        "gender": "male",
-        "memberOf": [
-            {
-                "@type": "Organization",
-                "name": "Deutscher Museumsbund e.V.",
-                "url": "https://www.museumsbund.de/"
-            },
-            {
-                "@type": "Organization",
-                "name": "europeana pro",
-                "url": "https://pro.europeana.eu/"
-            }
-        ],
-        "identifier": [
-          {
-            "@type": "PropertyValue",
-            "propertyID": "ORCID",
-            "value": "0009-0003-1361-4159"
-          },
-          {
-            "@type": "PropertyValue",
-            "propertyID": "museum:digital",
-            "value": "322830"
-          }
-        ],
-        "sameAs": [
-            "https://github.com/cmahnke",
-            "https://www.linkedin.com/in/cmahnke/",
-            "https://www.librarything.com/profile/cmahnke",
-            "https://orcid.org/0009-0003-1361-4159",
-            "https://openbiblio.social/@cmahnke",
-            "https://pro.europeana.eu/person/christian-mahnke",
-            "https://term.museum-digital.de/md-de/persinst/322830",
-            "https://huggingface.co/cmahnke",
-            "https://publications.goettingen-research-online.de/cris/rp/rp115268",
-            "http://www.wikidata.org/entity/Q137668638",
-            "https://www.openstreetmap.org/user/Christian%20Mahnke"
-        ],
-    }
-}` -}}
-
-{{- $webPage := unmarshal `{
-      "@type": "WebSite",
-      "@id": "https://christianmahnke.de/#website",
+    "@graph": [
+    {
+      "@type" : "ProfilePage",
       "url": "https://christianmahnke.de/",
       "name": "Christian Mahnke – Blog & Projekte",
       "inLanguage": ["de", "en"],
-      "publisher": {
-        "@id": "https://christianmahnke.de/#person"
+      "mainEntity" : {
+          "@type" : "Person",
+          "@id": "https://christianmahnke.de/#person",
+          "name" : "Christian Mahnke",
+          "givenName" : "Christian",
+          "familyName" : "Mahnke",
+          "jobTitle" : "Creative Technologist",
+          "description": [
+            { "@language": "de", "@value": "Sammler und Creative Technologist, spezialisiert auf die Alltagskultur des 20. Jahrhunderts und ihre digitale Präsentation." },
+            { "@language": "en", "@value": "Collector and creative technologist specialising in 20th-century everyday culture and its digital presentation." }
+          ],
+          "url" : "https://christianmahnke.de/",
+          "logo": "https://christianmahnke.de/images/logo.png",
+          "worksFor": {
+              "@type": "Organization",
+              "name": "Projektemacher",
+              "url": "https://projektemacher.org/"
+          },
+          "gender": "male",
+          "memberOf": [
+              {
+                  "@type": "Organization",
+                  "name": "Deutscher Museumsbund e.V.",
+                  "url": "https://www.museumsbund.de/"
+              },
+              {
+                  "@type": "Organization",
+                  "name": "europeana pro",
+                  "url": "https://pro.europeana.eu/"
+              }
+          ],
+          "identifier": [
+            {
+              "@type": "PropertyValue",
+              "propertyID": "ORCID",
+              "value": "0009-0003-1361-4159"
+            },
+            {
+              "@type": "PropertyValue",
+              "propertyID": "museum:digital",
+              "value": "322830"
+            }
+          ],
+          "sameAs": [
+              "https://github.com/cmahnke",
+              "https://www.linkedin.com/in/cmahnke/",
+              "https://www.librarything.com/profile/cmahnke",
+              "https://orcid.org/0009-0003-1361-4159",
+              "https://openbiblio.social/@cmahnke",
+              "https://pro.europeana.eu/person/christian-mahnke",
+              "https://term.museum-digital.de/md-de/persinst/322830",
+              "https://huggingface.co/cmahnke",
+              "https://publications.goettingen-research-online.de/cris/rp/rp115268",
+              "http://www.wikidata.org/entity/Q137668638",
+              "https://www.openstreetmap.org/user/Christian%20Mahnke"
+          ]
+        }
+      }, {
+        "@type": "Collection",
+        "name": "Digital Collection",
+        "description": "A collection of IIIF-compliant digital collections.",
+        "url": "https://projektemacher.org/collection.json",
+        "creativeWorkStatus": "Published"
+      }, 
+      {
+        "@type": "WebSite",
+        "@id": "https://christianmahnke.de/#website",
+        "url": "https://christianmahnke.de/",
+        "name": "Christian Mahnke – Blog & Projekte",
+        "inLanguage": ["de", "en"],
+        "author": {
+          "@id": "https://christianmahnke.de/#person"
+        }
       }
-    }` -}}
+    ]
+}` -}}
 
 <script type="application/ld+json">
   {{ jsonify $profilePage | safeJS }}
 </script>
-{{/*
-<script type="application/ld+json">
-  {{ jsonify $webPage | safeJS }}
-</script>
-*/}}
