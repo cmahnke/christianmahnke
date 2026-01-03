@@ -3,22 +3,22 @@
     "@context" : "http://schema.org",
     "@graph": [
     {
-      "@type" : "ProfilePage",
+      "@type": "ProfilePage",
       "url": "https://christianmahnke.de/",
       "name": "Christian Mahnke – Blog & Projekte",
       "inLanguage": ["de", "en"],
-      "mainEntity" : {
-          "@type" : "Person",
+      "mainEntity": {
+          "@type": "Person",
           "@id": "https://christianmahnke.de/#person",
-          "name" : "Christian Mahnke",
-          "givenName" : "Christian",
-          "familyName" : "Mahnke",
-          "jobTitle" : "Creative Technologist",
+          "name": "Christian Mahnke",
+          "givenName": "Christian",
+          "familyName": "Mahnke",
+          "jobTitle": "Creative Technologist",
           "description": [
             { "@language": "de", "@value": "Sammler und Creative Technologist, spezialisiert auf die Alltagskultur des 20. Jahrhunderts und ihre digitale Präsentation." },
             { "@language": "en", "@value": "Collector and creative technologist specialising in 20th-century everyday culture and its digital presentation." }
           ],
-          "url" : "https://christianmahnke.de/",
+          "url": "https://christianmahnke.de/",
           "logo": "https://christianmahnke.de/images/logo.png",
           "worksFor": {
               "@type": "Organization",
@@ -68,8 +68,18 @@
         "@type": "Collection",
         "name": "Digital Collection",
         "description": "A collection of IIIF-compliant digital collections.",
-        "url": "https://projektemacher.org/collection.json",
-        "creativeWorkStatus": "Published"
+        "mainEntityOfPage": "https://projektemacher.org/collection.json"
+        "url": "https://christianmahnke.de/collections/",
+        "isAccessibleForFree": true,
+        "creativeWorkStatus": "Published",
+        "creator": {
+          "@id": "https://christianmahnke.de/#person"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "Projektemacher",
+          "url": "https://projektemacher.org/"
+        }
       }
     ]
 }` -}}
