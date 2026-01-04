@@ -26,6 +26,7 @@
   debug = true
   pagetheme = "#701611"
   keywordAsString = true
+  orcid = "0009-0003-1361-4159"
   subtitles = [
     {title = { de ="Enthusiast & Sammler", en = "Enthusiast & Collector"}, url = {de = "/tagline/enthusiast-and-collector/", en = "/en/tagline/enthusiast-and-collector/" }, chance = 4},
     {title = "Digital Humanities Communicator", url = {de = "/tagline/digital-humanities-communicator/", en = "/en/tagline/digital-humanities-communicator/" }, chance = 1},

@@ -18,6 +18,7 @@ timeout = "120s"
 [languages]
     [languages.de]
         languagename = "Deutsch"
+        description = "Sammler und Creative Technologist, spezialisiert auf die Alltagskultur des 20. Jahrhunderts und ihre digitale Präsentation."
 
         [languages.de.menu]
 
@@ -57,6 +58,7 @@ timeout = "120s"
 
     [languages.en]
         languagename = "English"
+        decription = "Collector and creative technologist specialising in 20th-century everyday culture and its digital presentation."
 
         [languages.en.menu]
 
