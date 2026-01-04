@@ -17,7 +17,7 @@ Bevor Beiträge auf Karten angezeigt werden können, müssen folgende Schritte e
 
 Erst danach kann das auf einer Karte visualisiert werden.
 
-Ein Beispiel für die [alten 3D Bilder](/future/3d/) ist [hier](/future/3d/map.geojson) zu finden.
+Ein Beispiel für die [alten 3D Bilder](https://vintagereality.projektemacher.org/) ist [hier](https://vintagereality.projektemacher.org/map//post/map.geojson) zu finden.
 
 # Anzeige im Browser
 

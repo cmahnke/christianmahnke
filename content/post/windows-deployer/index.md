@@ -24,4 +24,4 @@ Ein weiteres, leicht zu lösendes, Problem war die Bereitstellung der zu install
 
 Um das Zusammenspiel all dieser Faktoren einfacher zu gestalten, wurden die Subsysteme als Docker images verpackt. Dies hat auch den Vorteil, dass die Komponenten relativ einfach im Rahmen eines GitLab / Github Workflows verwendet werden können.
 
-Das Ergebnis und viele weitere Details der Umsetzung sind [https://github.com/cmahnke/windows-deployer](hier) zu finden.
+Das Ergebnis und viele weitere Details der Umsetzung sind [hier](https://github.com/cmahnke/windows-deployer) zu finden.

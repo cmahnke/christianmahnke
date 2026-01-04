@@ -17,7 +17,7 @@ Before posts can be displayed on maps, the following steps must be taken:
 
 After this has been done, the next step can be approached.
 
-An example of the [old 3D images](/future/3d/) can be found [here](/future/3d/map.geojson).
+An example of the [old 3D images](https://vintagereality.projektemacher.org/) can be found [here](https://vintagereality.projektemacher.org/map//post/map.geojson).
 
 # Plotting data on a map in a browser
 
