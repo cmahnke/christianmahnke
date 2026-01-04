@@ -5,6 +5,8 @@ displayinlist: false
 archive: false
 news: false
 sectionContent: false
+sitemap:
+  disable: true
 cascade:
   - _target:
       kind: '{page,section}'

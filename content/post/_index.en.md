@@ -3,6 +3,8 @@ title: "Blog"
 metaPage: true
 displayinlist: false
 layout: blog
+sitemap:
+  changeFreq: daily
 cascade:
   - target:
       kind: section
