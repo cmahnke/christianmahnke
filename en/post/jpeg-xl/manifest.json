@@ -1,0 +1,145 @@
+{"@context": "http://iiif.io/api/presentation/3/context.json",
+"type": "Manifest",
+"id": "https://christianmahnke.de/en/post/jpeg-xl/",
+"viewingDirection": "left-to-right","behavior":["paged"],"requiredStatement": {
+  "label": { "en": [ "Attribution" ],
+    "de": [ "Namensnennung" ]
+  },
+  "value": {"en": ["Provided by Projektemacher"],"de": ["Bereitgestellt von Projektemacher"]}
+}
+,"thumbnail": [{
+    "id": "https://christianmahnke.de/en/post/jpeg-xl/front/full/full/0/default_hu_e838d587be3dfa68.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 421,
+    "width": 300
+  },{
+        "id": "https://christianmahnke.de/en/post/jpeg-xl/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 6933,
+        "width": 4946,
+        "service": [{
+          "id":"https://christianmahnke.de/en/post/jpeg-xl/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"provider": [
+  {
+    "id": "https://projektemacher.org/",
+    "type": "Agent",
+    "label": { "en": [ "Projektemacher" ], "de": [ "Projektemacher" ] },
+    "homepage": [
+      {
+        "id": "https://projektemacher.org/",
+        "type": "Text",
+        "label": { "en": [ "Projektemacher" ], "de": [ "Projektemacher" ] },
+        "format": "text/html"
+    }
+  ],
+  "logo": [
+    {"id": "https://projektemacher.org/images/logo.png",
+        "type": "Image",
+        "format": "image/png",
+        "height": 1024,
+        "width": 1024}
+  ],
+  "seeAlso": [
+    {
+      "id": "https://projektemacher.org/projektemacher.json",
+      "type": "Dataset",
+      "format": "application/ld+json",
+      "profile": "https://schema.org/"
+    }
+  ]
+  }
+]
+,
+
+"homepage": [
+  {
+    "id": "https://christianmahnke.de/en/post/jpeg-xl/",
+    "type": "Text",
+    "format": "text/html",
+
+    "label": {
+        "en": [
+          "Christian Mahnke: JPEG XL"
+        ],
+          "de": [
+            "Christian Mahnke: JPEG XL"
+          ]
+        }
+  }
+],"label": {
+    "en": [
+      "JPEG XL"
+    ],
+      "de": [
+        "JPEG XL"
+      ]
+    }
+,"items": [{
+          "id":"https://christianmahnke.de/post/jpeg-xl/canvas/front",
+          "type": "Canvas","label": {"none":["Front"]},"behavior": ["non-paged"],"height": 6933,
+            "width": 4946,
+            "thumbnail": [{
+                "id": "https://christianmahnke.de/en/post/jpeg-xl/front/full/full/0/default_hu_e838d587be3dfa68.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 421,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://christianmahnke.de/post/jpeg-xl/annotation/front",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://christianmahnke.de/post/jpeg-xl/annotation/front/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://christianmahnke.de/post/jpeg-xl/front/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 6933,
+                  "width": 4946,
+                  "service": [{
+                    "id":"https://christianmahnke.de/post/jpeg-xl/front",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://christianmahnke.de/post/jpeg-xl/canvas/front"
+            }]
+          }]
+       },{
+          "id":"https://christianmahnke.de/post/jpeg-xl/canvas/back",
+          "type": "Canvas","label": {"none":["Back"]},"behavior": ["non-paged"],"height": 6953,
+            "width": 4956,
+            "thumbnail": [{
+                "id": "https://christianmahnke.de/en/post/jpeg-xl/back/full/full/0/default_hu_cc09db086d94c83.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 421,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://christianmahnke.de/post/jpeg-xl/annotation/back",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://christianmahnke.de/post/jpeg-xl/annotation/back/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://christianmahnke.de/post/jpeg-xl/back/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 6953,
+                  "width": 4956,
+                  "service": [{
+                    "id":"https://christianmahnke.de/post/jpeg-xl/back",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://christianmahnke.de/post/jpeg-xl/canvas/back"
+            }]
+          }]
+       }]
+}
