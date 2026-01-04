@@ -4,12 +4,12 @@ metaPage: true
 displayinlist: false
 layout: blog
 cascade:
-  - _target:
+  - target:
       kind: section
     params:
     sitemap:
       priority: 0.8
-  - _target:
+  - target:
       kind: page
     params:
       sitemap:

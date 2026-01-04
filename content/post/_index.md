@@ -3,13 +3,15 @@ title: "Blog"
 metaPage: true
 displayinlist: false
 layout: blog
+sitemap:
+  changeFreq: daily
 cascade:
-  - _target:
+  - target:
       kind: section
     params:
     sitemap:
       priority: 0.8
-  - _target:
+  - target:
       kind: page
     params:
       sitemap:
