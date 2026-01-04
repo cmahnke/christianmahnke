@@ -3,7 +3,7 @@ date: 2025-11-30T11:22:44+02:00
 title: "hdr-canvas aktualisiert"
 keywords: NPM, TypeScript
 aliases:
-  - post/hdr-canvas-0.1.0
+  - /post/hdr-canvas-0.1.0
 cite: true
 tags:
   - JavaScript

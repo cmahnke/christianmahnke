@@ -3,6 +3,8 @@ date: 2025-11-16T20:22:44+02:00
 title: "hdr-canvas 0.1.0 published"
 keywords: NPM, TypeScript
 cite: true
+aliases:
+  - /en/post/hdr-canvas-0.1.0
 tags:
   - JavaScript
   - HDR

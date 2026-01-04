@@ -39,7 +39,7 @@ As uranium glass is a popular collecting area, here is some more information and
 * [J. Grzesina: Radiantly beautiful things](https://www.grzesina.de/radioakt/dinge.htm)
 * And of course you can also find items on eBay etc...
 
-As one of my technical interests is to improve the digital mediation of artefacts, here is an example of such an object under UV radiation. The object was captured using photogrammetry, digitally post-processed slightly and the texture was shifted in the colour space so that it can be displayed by an HDR-capable browser. Basically, the display works in the same way as with the [vase from February](/en/post/3d-model), only the recording method and the rendering of the texture differ. However, the latter (currently) requires a Chrome-based browser.
+As one of my technical interests is to improve the digital mediation of artefacts, here is an example of such an object under UV radiation. The object was captured using photogrammetry, digitally post-processed slightly and the texture was shifted in the colour space so that it can be displayed by an HDR-capable browser. Basically, the display works in the same way as with the [vase from February](/en/post/3d-models/), only the recording method and the rendering of the texture differ. However, the latter (currently) requires a Chrome-based browser.
 
 # Digitisation and post-processing
 The creation and post-processing followed [the tried and tested procedure](/en/post/3d-models/), but considerably more post-processing was necessary, as significantly more shadows were cast when the picture was taken under UV light. Violet reflections from the UV lamp were also removed.
