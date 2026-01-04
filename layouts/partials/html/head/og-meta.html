@@ -1,0 +1,19 @@
+{{- if not $.Site.Params.disableOpenGraph -}}
+  {{- if not .IsHome -}}
+      <meta property="og:type" content="article" />
+  {{- else -}}
+      <meta property="og:type" content="blog" />
+      <meta property="og:title" content="{{- block "title" . }}{{ end -}}" />
+  {{- end -}}
+
+  {{- $title := .Title -}}
+  {{- if ne .Title "" -}}
+    {{- $title = printf "%s · %s" .Title .Site.Title -}}
+  {{- else -}}
+    {{- $title = .Site.Title -}}
+  {{- end -}}
+  
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:title" content="{{ $title }}" />
+  {{- partial "html/head/og-image.html" . -}}
+{{- end -}}
