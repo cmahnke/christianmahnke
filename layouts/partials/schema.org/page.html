@@ -24,7 +24,7 @@
       {{- if ne $authorName "" -}}
         ,"author": {
           "@type": "Person",
-          "@id": {{ printf "%s%s" .Site.BaseURL "#Person" }},
+          "@id": {{ printf "%s%s" .Site.BaseURL "#person" }},
           "name": {{ $authorName }},
           "url": {{ .Site.BaseURL }}
         }
