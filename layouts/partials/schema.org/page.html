@@ -34,6 +34,9 @@
         "@id": {{ printf "%s%s" .Site.BaseURL "post" }},
         "name": {{ printf "%s %s" .Site.Title "Blog" }}
       }
+      {{- with .Title -}}
+        , "headline": {{ . }}
+      {{- end -}}
       {{- $keywords := slice -}}
       {{- with .Keywords -}}
         {{- if not site.Params.keywordAsString -}}
