@@ -31,7 +31,7 @@
       {{- end -}}
       ,"isPartOf": {
         "@type" : "Blog",
-        "@id": {{ printf "%s%s" .Site.BaseURL "/post" }},
+        "@id": {{ printf "%s%s" .Site.BaseURL "post" }},
         "name": {{ printf "%s %s" .Site.Title "Blog" }}
       }
       {{- $keywords := slice -}}
