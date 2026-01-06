@@ -13,6 +13,13 @@ tags:
   - DigitalImages
   - Object
   - HDR
+wikidata:
+  - https://www.wikidata.org/wiki/Q178995
+  - https://www.wikidata.org/wiki/Q241859
+  - https://www.wikidata.org/wiki/Q1576316
+  - https://www.wikidata.org/wiki/Q160225
+  - https://www.wikidata.org/wiki/Q777
+  - https://www.wikidata.org/wiki/Q278151
 ---
 
 This example is about a practical use case for [HDR](https://en.wikipedia.org/wiki/High_dynamic_range) visualisation in the browser...

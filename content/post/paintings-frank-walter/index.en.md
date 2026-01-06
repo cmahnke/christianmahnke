@@ -11,6 +11,9 @@ preview: img/fronts.jpg
 wikidata:
   - https://www.wikidata.org/wiki/Q43379500
   - https://www.wikidata.org/wiki/Q316390
+  - https://www.wikidata.org/wiki/Q386599
+  - https://www.wikidata.org/wiki/Q1721595
+  - https://www.wikidata.org/wiki/Q313695
 ---
 
 I found some paintings by [Frank Walter](https://en.wikipedia.org/wiki/Frank_Walter) (1926-2009)...

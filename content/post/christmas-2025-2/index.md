@@ -9,6 +9,8 @@ preview:
 tags:
 - DIY
 - Christmas
+wikidata: 
+  - https://www.wikidata.org/wiki/Q1715
 ---
 
 Frohe Weihnachten an alle Leser, dieses Jahr wieder gibt es ein Geschenk...

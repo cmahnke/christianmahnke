@@ -10,6 +10,10 @@ preview: img/front.jpg
 wikidata:
   - https://www.wikidata.org/wiki/Q2994828
   - https://www.wikidata.org/wiki/Q172742
+  - https://www.wikidata.org/wiki/Q21635189 
+  - https://www.wikidata.org/wiki/Q122222
+  - https://www.wikidata.org/wiki/Q123018
+  - https://www.wikidata.org/wiki/Q302045
 ---
 
 Ich habe mal wieder ein interessante, alte Konsole gefunden...
