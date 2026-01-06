@@ -6,7 +6,7 @@ description: "Der Katalog zur Sammlung"
 preview:
   image: title-page.jpg
 tags:
-- Projektemacher
+- Projektemacher.org
 - Printing
 - Book
 wikidata:

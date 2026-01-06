@@ -6,7 +6,7 @@ description: "The catalogue of the collection"
 preview:
   image: title-page.jpg
 tags:
-- Projektemacher
+- Projektemacher.org
 - Printing
 - Book
 wikidata:

@@ -158,7 +158,7 @@ def list_available_models(client):
     except Exception as e:
         logger.error(f"Failed to list models: {e}")
 
-def process_batch(client, model_name, batch_items):
+def process_batch(client, model_name, batch_items, verify=False):
     if not batch_items:
         return
 
@@ -235,19 +235,23 @@ def process_batch(client, model_name, batch_items):
         qid = ent.get('qid')
         if qid and qid in wd_data:
             info = wd_data[qid]
-            verification_items.append({
-                'id': idx,
-                'name': ent.get('name'),
-                'qid': qid,
-                'wd_label': info['label'],
-                'wd_desc': info['description']
-            })
             ent['wikidata_label'] = info['label']
+            
+            if verify:
+                verification_items.append({
+                    'id': idx,
+                    'name': ent.get('name'),
+                    'qid': qid,
+                    'wd_label': info['label'],
+                    'wd_desc': info['description']
+                })
+            else:
+                ent['status'] = 'VALID'
         else:
             ent['status'] = 'NOT_FOUND'
 
     # Verify with Gemini
-    if verification_items:
+    if verify and verification_items:
         prompt = "Verify if the extracted entity name matches the Wikidata item details provided.\n" \
                  "Return a JSON object where keys are the IDs and values are 'VALID' or 'MISMATCH'.\n\nItems:"
         
@@ -275,7 +279,7 @@ def process_batch(client, model_name, batch_items):
             for ent in file_ents:
                 print(f"  - {ent.get('name')} ({ent.get('qid')}) [{ent.get('status')}]")
 
-def analyze_directory(directory, client, model_name, target_lang=None, batch_size=10):
+def analyze_directory(directory, client, model_name, target_lang=None, batch_size=10, verify=False):
     batch = []
     try:
         for root, _, files in os.walk(directory):
@@ -311,7 +315,7 @@ def analyze_directory(directory, client, model_name, target_lang=None, batch_siz
                     if len(batch) >= batch_size:
                         file_names = [item['rel_path'] for item in batch]
                         logger.info(f"Processing batch of {len(batch)} files: {', '.join(file_names)}")
-                        process_batch(client, model_name, batch)
+                        process_batch(client, model_name, batch, verify=verify)
                         batch = []
                         time.sleep(1) # Rate limiting
                     
@@ -321,7 +325,7 @@ def analyze_directory(directory, client, model_name, target_lang=None, batch_siz
         if batch:
             file_names = [item['rel_path'] for item in batch]
             logger.info(f"Processing final batch of {len(batch)} files: {', '.join(file_names)}")
-            process_batch(client, model_name, batch)
+            process_batch(client, model_name, batch, verify=verify)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Extract Entities using Gemini.")
@@ -330,6 +334,7 @@ if __name__ == "__main__":
     parser.add_argument("-l", "--lang", help="Specific language to process", default=None)
     parser.add_argument("--model", help="Gemini Model Name", default='gemini-2.5-flash-lite')
     parser.add_argument("--batch-size", type=int, default=10, help="Number of files to process in one API call")
+    parser.add_argument("--verify", help="Enable LLM-based verification of extracted entities", action="store_true")
     
     args = parser.parse_args()
     
@@ -339,4 +344,4 @@ if __name__ == "__main__":
     
     client = genai.Client(api_key=args.api_key)
     
-    analyze_directory(args.directory, client, args.model, args.lang, args.batch_size)
+    analyze_directory(args.directory, client, args.model, args.lang, args.batch_size, verify=args.verify)
