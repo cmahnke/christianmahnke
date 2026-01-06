@@ -24,6 +24,7 @@ resources:
 wikidata:
   - https://www.wikidata.org/wiki/Q7907037
   - https://www.wikidata.org/wiki/Q72885392
+  - https://www.wikidata.org/wiki/Q1047199
 ---
 
 Da meine Blogs auf GitHub verwaltet werden, müssen die Bilder so platzsparend wie möglich gespeichert werden...

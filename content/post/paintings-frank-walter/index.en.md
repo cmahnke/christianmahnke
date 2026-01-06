@@ -16,7 +16,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q313695
 ---
 
-I found some paintings by [Frank Walter](https://en.wikipedia.org/wiki/Frank_Walter) (1926-2009)...
+I found some paintings by [Frank Walter](https://en.wikipedia.org/wiki/Frank_Walter) (1926-2009) ([at artnet](https://www.artnet.com/artists/frank-walter/))...
 <!--more-->
 
 ...18 small ones, to be exact.

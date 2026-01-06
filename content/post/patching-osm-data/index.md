@@ -11,6 +11,8 @@ wikidata:
   - https://www.wikidata.org/wiki/Q107385647
   - https://www.wikidata.org/wiki/Q110609581
   - https://www.wikidata.org/wiki/Q935780
+  - https://www.wikidata.org/wiki/Q25822040
+  - https://www.wikidata.org/wiki/Q133818614
 ---
 
 "Kontrafaktische Architektur" liefert fast keine Treffer bei Google....

@@ -16,7 +16,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q313695
 ---
 
-Ich habe einige Gemälde von [Frank Walter](https://de.wikipedia.org/wiki/Frank_Walter) (1926-2009) gefunden...
+Ich habe einige Gemälde von [Frank Walter](https://de.wikipedia.org/wiki/Frank_Walter) (1926-2009) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/frank-walter/)) gefunden...
 <!--more-->
 
 ...18 kleine, um genau zu sein.
