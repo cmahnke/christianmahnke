@@ -15,6 +15,8 @@ preview: screenshot.png
 wikidata:
   - https://www.wikidata.org/wiki/Q464980
   - https://www.wikidata.org/wiki/Q1144457
+  - https://www.wikidata.org/wiki/Q112061919
+  - https://www.wikidata.org/wiki/Q936
 ---
 
 Heute (26.3.) ist die Eröffnung der Ausstellung ["Was zum Quant?!"](https://www.forum-wissen.de/event/eroeffnung-was-zum-quant/) im Forum Wissen. Zu sehen ist auch ein digitales Exponat, an dem ich beteiligt war...
