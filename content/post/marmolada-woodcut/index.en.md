@@ -14,6 +14,10 @@ tags:
 preview: img/print.jpg
 wikidata:
   - https://www.wikidata.org/wiki/Q203241
+  - https://www.wikidata.org/wiki/Q137668018
+  - https://www.wikidata.org/wiki/Q137661693
+  - https://www.wikidata.org/wiki/Q258031
+  - https://www.wikidata.org/wiki/Q903816
 ---
 
 ...is "old news" by now: Neither when it comes to the effects that can be recognised in old works, nor as an object of art itself.

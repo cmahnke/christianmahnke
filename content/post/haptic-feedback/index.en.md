@@ -19,7 +19,12 @@ resources:
   params:
     iiif: page031/info.json
     label: Tafel 31
-
+wikidata:
+  - https://www.wikidata.org/wiki/Q29405157
+  - https://www.wikidata.org/wiki/Q3030571
+  - https://www.wikidata.org/wiki/Q105134737
+  - https://www.wikidata.org/wiki/Q7907037
+  - https://www.wikidata.org/wiki/Q2985103
 ---
 
 Another contribution from the Projektemacher Labs...

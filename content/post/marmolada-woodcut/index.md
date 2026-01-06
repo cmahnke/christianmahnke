@@ -14,6 +14,10 @@ tags:
 preview: img/print.jpg
 wikidata:
   - https://www.wikidata.org/wiki/Q203241
+  - https://www.wikidata.org/wiki/Q137668018
+  - https://www.wikidata.org/wiki/Q137661693
+  - https://www.wikidata.org/wiki/Q258031
+  - https://www.wikidata.org/wiki/Q903816
 ---
 
 ...ist kein neues Thema mehr: Weder wenn es um die Auswirkungen geht, die sich in alten Werken erkennen lassen, noch als Gegenstand von Kunst selber.

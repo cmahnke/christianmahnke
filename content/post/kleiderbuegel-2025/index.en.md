@@ -5,6 +5,8 @@ keywords: Coat hangers
 tags:
 - Projektemacher.org
 - Blog
+wikidata:
+  - https://www.wikidata.org/wiki/Q815240
 ---
 
 The [clothes hanger page](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/) has been slightly revised for an upcoming exhibition...
