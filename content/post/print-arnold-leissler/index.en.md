@@ -6,7 +6,8 @@ tags:
   - Art
   - Etching
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q695684
+wikidata:
+  - https://www.wikidata.org/wiki/Q695684
 ---
 
 I bought an etching by [Arnold Leissler (the Younger)](https://de.wikipedia.org/wiki/Arnold_Leissler_der_J%C3%BCngere) (1939-2014)...

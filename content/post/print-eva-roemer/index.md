@@ -6,10 +6,13 @@ tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q94743711
+wikidata: 
+  - https://www.wikidata.org/wiki/Q94743711
+  - https://www.wikidata.org/wiki/Q133742956
+  - https://www.wikidata.org/wiki/Q137661693
 ---
 
-Ich habe einen Holzschnitt von [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Roemer) (1889-1977) gefunden...
+Ich habe einen Holzschnitt von [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Roemer) (1889-1977) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/eva-roemer/)) gefunden...
 <!--more-->
 
 Der Titel ist vermutlich "Schnee auf dem Schilf (Starnberger See)".

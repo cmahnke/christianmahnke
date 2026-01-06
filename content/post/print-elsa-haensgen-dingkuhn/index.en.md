@@ -6,10 +6,12 @@ tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q6477113
+wikidata: 
+  - https://www.wikidata.org/wiki/Q6477113
+  - https://www.wikidata.org/wiki/Q107972843
 ---
 
-I found a woodcut by [Elsa Haensgen-Dingkuhn](https://de.wikipedia.org/wiki/Elsa_Haensgen-Dingkuhn) (1898-1991)...
+I found a woodcut by [Elsa Haensgen-Dingkuhn](https://de.wikipedia.org/wiki/Elsa_Haensgen-Dingkuhn) (1898-1991) ([at artnet](https://www.artnet.com/artists/elsa-haensgen-dingkuhn/))...
 <!--more-->
 
 {{< gallery >}}

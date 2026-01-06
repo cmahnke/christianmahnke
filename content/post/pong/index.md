@@ -13,7 +13,11 @@ tags:
   - JavaScript
   - Game
 preview: pong-heatmap1.png
-wikidata: https://www.wikidata.org/wiki/Q216293
+wikidata: 
+  - https://www.wikidata.org/wiki/Q216293
+  - https://www.wikidata.org/wiki/Q614417
+  - https://www.wikidata.org/wiki/Q123162820
+  - https://www.wikidata.org/wiki/Q978185
 ---
 
 Aus irgendeinem Grund bin ich auf die Idee gekommen [Pong](https://de.wikipedia.org/wiki/Pong) zu visualisieren...

@@ -6,10 +6,13 @@ tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q94743711
+wikidata: 
+  - https://www.wikidata.org/wiki/Q94743711
+  - https://www.wikidata.org/wiki/Q133742956
+  - https://www.wikidata.org/wiki/Q137661693
 ---
 
-I found a woodcut by [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Roemer) (1889-1977)...
+I found a woodcut by [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Roemer) (1889-1977) ([at artnet](https://www.artnet.com/artists/eva-roemer/))...
 <!--more-->
 
 The title is probably "Snow on the reeds (Lake Starnberg)" (German: "Schnee auf dem Schilf (Starnberger See)").

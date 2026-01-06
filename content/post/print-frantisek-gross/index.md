@@ -8,10 +8,11 @@ tags:
   - Art
   - Lithography
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q15735037
+wikidata: 
+  - https://www.wikidata.org/wiki/Q15735037
 ---
 
-Euch habe eine Lithographie von [František Gross](https://cs-m-wikipedia-org.translate.goog/wiki/Franti%C5%A1ek_Gross?_x_tr_sl=cs&_x_tr_tl=de&_x_tr_hl=de&_x_tr_pto=wapp) (automatische Übersetzung) (1909–1985) aufgetan...
+Euch habe eine Lithographie von [František Gross](https://cs-m-wikipedia-org.translate.goog/wiki/Franti%C5%A1ek_Gross?_x_tr_sl=cs&_x_tr_tl=de&_x_tr_hl=de&_x_tr_pto=wapp) (automatische Übersetzung) (1909–1985) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/frantisek-gross/)) aufgetan...
 <!--more-->
 
 {{< gallery >}}

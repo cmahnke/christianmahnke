@@ -7,10 +7,12 @@ tags:
 - Website
 - Archive
 - Exhibition
-wikidata: https://www.wikidata.org/wiki/Q115536963
+wikidata: 
+  - https://www.wikidata.org/wiki/Q115536963
+  - https://www.wikidata.org/wiki/Q133272311
 ---
 
-Ab 6. Dezember findet in der Stadtgalerie „Alte Post“, Stephanstraße 4, Sylt / OT Westerland die Ausstellung "Spurensuche im Sylter Archiv -  Zum Leben und Werk von **Wilma Bräuner** (1891 – 1985)" statt, an der Evelyn Kraßmann und ich zusammen mit einem [Team](https://xn--wilmabruner-r8a.projektemacher.org/about/#ausstellung) gearbeitet haben.
+Ab 6. Dezember findet in der Stadtgalerie "Alte Post", Stephanstraße 4, Sylt / OT Westerland die Ausstellung "Spurensuche im Sylter Archiv -  Zum Leben und Werk von **Wilma Bräuner** (1891 – 1985)" statt, an der Evelyn Kraßmann und ich zusammen mit einem [Team](https://xn--wilmabruner-r8a.projektemacher.org/about/#ausstellung) gearbeitet haben.
 Im Rahmen der Ausstellungsvorbereitung haben wir einen [Wikipedia Eintrag](https://de.wikipedia.org/wiki/Wilma_Br%C3%A4uner) angelegt, die [Webseite](https://xn--wilmabruner-r8a.projektemacher.org/) befindet sich noch im Aufbau...
 <!--more-->
 

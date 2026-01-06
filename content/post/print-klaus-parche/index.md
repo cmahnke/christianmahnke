@@ -6,7 +6,8 @@ tags:
   - Art
   - Etching
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q6477113
+wikidata:
+  - https://www.wikidata.org/wiki/Q6477113
 ---
 
 Ich habe eine [Aquatinta](https://de.wikipedia.org/wiki/Aquatinta) (Radierung) von [Klaus Parche](http://www.klausparche.de/) (1939-2024) gefunden...

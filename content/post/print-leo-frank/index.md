@@ -6,11 +6,15 @@ tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q29373725
+wikidata:
+  - https://www.wikidata.org/wiki/Q29373725
+  - https://www.wikidata.org/wiki/Q137668018
+  - https://www.wikidata.org/wiki/Q16951207
+  - https://www.wikidata.org/wiki/Q6373
 gnd: http://d-nb.info/gnd/120740486
 ---
 
-Ich habe einen Holzschnitt von [Leo Frank](https://www.geschichtewiki.wien.gv.at/Leo_Frank) (1884-1959) gefunden...
+Ich habe einen Holzschnitt von [Leo Frank](https://www.geschichtewiki.wien.gv.at/Leo_Frank) (1884-1959) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/leo-frank/)) gefunden...
 <!--more-->
 
 {{< gallery >}}

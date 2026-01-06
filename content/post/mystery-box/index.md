@@ -10,7 +10,10 @@ preview:
 tags:
   - Object
   - History
-wikidata: https://www.wikidata.org/wiki/Q1793574
+wikidata: 
+  - https://www.wikidata.org/wiki/Q1793574
+  - https://www.wikidata.org/wiki/Q24034344
+  - https://www.wikidata.org/wiki/Q15437417
 ---
 
 Ich habe eine (mehr oder weniger) mysteriöse Kiste gekauft:
