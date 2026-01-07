@@ -1,0 +1,41 @@
+name: Backup Mastodon
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '30 3 * * 1,3,6'
+
+env:
+  MASTODON_URL: https://openbiblio.social
+  MASTODON_USER: cmahnke
+  BACKUP_BRANCH: mastodon-backup
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backup:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install mastodon-archive
+        run: pip install mastodon-archive
+
+      - name: Run backup
+        run: mastodon-archive archive --no-interactive --api-base-url ${{ env.MASTODON_URL }} --access-token ${{ secrets.MASTODON_TOKEN }}
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update Mastodon backup
+          branch: ${{ env.BACKUP_BRANCH }}
+          create_branch: true

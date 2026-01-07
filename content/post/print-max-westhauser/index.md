@@ -5,10 +5,12 @@ tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q112821333
+wikidata: 
+  - https://www.wikidata.org/wiki/Q112821333
+  - https://www.wikidata.org/wiki/Q131787286
 ---
 
-Ich habe einen Farbholzschnitt von [Max Westhäuser (1885-1956)](https://de.wikipedia.org/wiki/Max_Westh%C3%A4user) erstanden...
+Ich habe einen Farbholzschnitt von [Max Westhäuser (1885-1956)](https://de.wikipedia.org/wiki/Max_Westh%C3%A4user) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/max-westhauser/)) erstanden...
 <!--more-->
 
 {{< gallery >}}

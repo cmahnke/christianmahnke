@@ -11,6 +11,7 @@ tags:
 wikidata:
   - https://www.wikidata.org/wiki/Q116859588
   - https://www.wikidata.org/wiki/Q110613565
+  - https://www.wikidata.org/wiki/Q133818614
 ---
 Since the use of freely available map services requires [communication with external services](/post/maps/) as well as limited design, it was time for something of my own...
 

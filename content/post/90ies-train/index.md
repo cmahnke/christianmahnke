@@ -7,7 +7,10 @@ tags:
   - Photo
   - Retrocomputing
 preview: ICE.jpg
-wikidata: https://www.wikidata.org/wiki/Q129172
+wikidata:
+  - https://www.wikidata.org/wiki/Q129172
+  - https://www.wikidata.org/wiki/Q294860
+  - https://www.wikidata.org/wiki/Q1608217
 ---
 
 Manchmal wundert man sich wie alt die Systeme in Zügen sind, hier das [Fahrgastinformationssystem](https://de.wikipedia.org/wiki/Fahrgastinformationssystem) eines ICE 1 mit einer [AMD 5x86 P-75 S](https://de.wikipedia.org/wiki/AMD_Am5x86) CPU.

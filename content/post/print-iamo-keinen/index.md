@@ -8,9 +8,10 @@ preview: img/print.jpg
 wikidata:
   - https://www.wikidata.org/wiki/Q11376888
   - https://www.wikidata.org/wiki/Q75837421
+  - https://www.wikidata.org/wiki/Q6373
 ---
 
-Ich habe einen japanischen Farbholzschnitt von [Imao Keinen (1855-1924)](https://de.wikipedia.org/wiki/Imao_Keinen) gekauft...
+Ich habe einen japanischen Farbholzschnitt von [Imao Keinen (1855-1924)](https://de.wikipedia.org/wiki/Imao_Keinen) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/keinen-imao/)) gekauft...
 <!--more-->
 
 {{< gallery >}}

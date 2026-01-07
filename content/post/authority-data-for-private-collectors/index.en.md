@@ -7,6 +7,12 @@ tags:
   - Metadata
   - Data
   - Wikidata
+wikipedia:
+  - https://www.wikidata.org/wiki/Q3243461
+  - https://www.wikidata.org/wiki/Q180
+  - https://www.wikidata.org/wiki/Q11203476
+  - https://www.wikidata.org/wiki/Q77446257
+  - https://www.wikidata.org/wiki/Q27302
 ---
 Since the beginning of the year, I have been adding Wikidata for various functions on my blogs...
 <!--more-->

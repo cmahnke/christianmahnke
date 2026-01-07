@@ -10,10 +10,12 @@ tags:
   - Linocut
   - Christmas
 preview: front/full/full/0/default.jpg
-wikidata: https://www.wikidata.org/wiki/Q21014973
+wikidata: 
+  - https://www.wikidata.org/wiki/Q21014973
+  - https://www.wikidata.org/wiki/Q2349238
 ---
 
-Random find: Christmas card from [Malte Satorius](https://de.wikipedia.org/wiki/Malte_Sartorius) (1933-2017).
+Random find: Christmas card from [Malte Satorius](https://de.wikipedia.org/wiki/Malte_Sartorius) (1933-2017) ([at artnet](https://www.artnet.com/artists/malte-sartorius/)).
 <!--more-->
 
 Sometimes you're lucky for misfortune: a few months ago, a stack of books tipped over and smashed the glass of the frame in which the graphic below was.

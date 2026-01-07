@@ -6,6 +6,10 @@ tags:
   - CulturalPolicy
   - Archive
   - Donation
+wikidata:
+  - https://www.wikidata.org/wiki/Q24045714
+  - https://www.wikidata.org/wiki/Q106394
+  - https://www.wikidata.org/wiki/Q77446257
 ---
 
 Archive sind Einrichtungen des kulturellen Gedächtnisses – manche mehr, manche weniger...

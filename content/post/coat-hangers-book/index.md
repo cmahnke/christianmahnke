@@ -5,9 +5,8 @@ keywords: Buch, Kleiderbügel
 description: "Der Katalog zur Sammlung"
 preview:
   image: title-page.jpg
-  hide: true
 tags:
-- Projektemacher
+- Projektemacher.org
 - Printing
 - Book
 wikidata:

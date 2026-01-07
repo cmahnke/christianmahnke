@@ -5,9 +5,8 @@ keywords: Book, clothes hanger
 description: "The catalogue of the collection"
 preview:
   image: title-page.jpg
-  hide: true
 tags:
-- Projektemacher
+- Projektemacher.org
 - Printing
 - Book
 wikidata:

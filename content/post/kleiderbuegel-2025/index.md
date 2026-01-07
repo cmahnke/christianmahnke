@@ -5,6 +5,8 @@ keywords: Kleiderbügel
 tags:
 - Projektemacher.org
 - Blog
+wikidata:
+  - https://www.wikidata.org/wiki/Q815240
 ---
 
 Für eine kommende Ausstellung wurde [Kleiderbügel-Seite](https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/) etwas überarbeitet...

@@ -15,6 +15,8 @@ wikidata:
   - https://www.wikidata.org/wiki/Q830106
   - https://www.wikidata.org/wiki/Q1686799
   - https://www.wikidata.org/wiki/Q56655440
+  - https://www.wikidata.org/wiki/Q178995
+  - https://www.wikidata.org/wiki/Q2858103
 ---
 
 Auch wenn es nicht notwendigerweise der intendierte Use Case ist, kann man mit Docker sehr einfach auch umfangreiche Datenmengen mit Anwendungen zur vereinfachten Bereitstellungen (wie z.B. APIs) verpacken. Das kann besonders hilfreich sein wenn z.B. Normdaten aus verschiedenen Quellen für Datenanreicherungen zusammenführen will.

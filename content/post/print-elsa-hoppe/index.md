@@ -6,7 +6,10 @@ tags:
   - Art
   - Linocut
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q63485369
+wikidata: 
+  - https://www.wikidata.org/wiki/Q63485369
+  - https://www.wikidata.org/wiki/Q2360104
+  - https://www.wikidata.org/wiki/Q133742956
 ---
 
 Ich habe einen Linolschnitt von Elsa Hoppe (1901-1992) erstanden...

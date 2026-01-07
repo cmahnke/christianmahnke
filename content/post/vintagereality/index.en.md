@@ -14,10 +14,13 @@ tags:
   - 3D
   - DigitalImages
   - OpenCV
-  - Stereoscoppy
+  - Stereoscopy
 wikidata:
   - https://www.wikidata.org/wiki/Q35158
   - https://www.wikidata.org/wiki/Q484031
+  - https://www.wikidata.org/wiki/Q2940499
+  - https://www.wikidata.org/wiki/Q16294951
+  - https://www.wikidata.org/wiki/Q7999615
 ---
 
 The latest blog incubated at the [Projektemacher Labs](https://labs.projektemacher.org/) has been started.

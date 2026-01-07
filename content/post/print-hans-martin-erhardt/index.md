@@ -5,10 +5,11 @@ tags:
   - Art
   - Linocut
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q1581234
+wikidata: 
+  - https://www.wikidata.org/wiki/Q1581234
 ---
 
-Ich habe eine Linolschnitt von [Hans Martin Erhardt](https://de.wikipedia.org/wiki/Hans_Martin_Erhardt) (1935-2015) erworben...
+Ich habe eine Linolschnitt von [Hans Martin Erhardt](https://de.wikipedia.org/wiki/Hans_Martin_Erhardt) (1935-2015) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/hans-martin-erhardt/)) erworben...
 <!--more-->
 
 {{< gallery >}}

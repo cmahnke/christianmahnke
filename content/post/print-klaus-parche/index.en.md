@@ -6,6 +6,8 @@ tags:
   - Art
   - Etching
 preview: img/print.jpg
+wikidata:
+  - https://www.wikidata.org/wiki/Q6477113
 ---
 
 I have found an [aquatint](https://en.wikipedia.org/wiki/Aquatint) (etching) by [Klaus Parche](http://www.klausparche.de/) (1939-2024)...

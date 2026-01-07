@@ -5,7 +5,9 @@ tags:
   - Art
   - Etching
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q1449047
+wikidata: 
+  - https://www.wikidata.org/wiki/Q1449047
+  - https://www.wikidata.org/wiki/Q27557512
 ---
 
 Ich habe eine Radierung von [Marie Gey-Heinze](https://de.wikipedia.org/wiki/Marie_Gey-Heinze) (1881-1908) gekauft...

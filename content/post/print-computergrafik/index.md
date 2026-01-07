@@ -5,6 +5,10 @@ tags:
   - Art
   - Retrocomputing
 preview: img/print.jpg
+wikidata:
+  - https://www.wikidata.org/wiki/Q92703
+  - https://www.wikidata.org/wiki/Q47092600
+  - https://www.wikidata.org/wiki/Q539508
 ---
 
 Ich habe alte Computergrafik rahmen lassen...

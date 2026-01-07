@@ -7,6 +7,7 @@ tags:
   - Python
 wikidata:
   - https://www.wikidata.org/wiki/Q36578
+  - https://www.wikidata.org/wiki/Q105099901
 ---
 
 Beim Aufräumen meiner Browser-Tabs gefunden...

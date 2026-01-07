@@ -24,6 +24,7 @@ resources:
 wikidata:
   - https://www.wikidata.org/wiki/Q7907037
   - https://www.wikidata.org/wiki/Q72885392
+  - https://www.wikidata.org/wiki/Q1047199
 ---
 
 Since my blogs are managed on GitHub, the images have to be stored as storage-saving as possible...

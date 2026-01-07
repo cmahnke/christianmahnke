@@ -7,10 +7,12 @@ tags:
   - Watercolor
   - Painting
 preview: img/painting.jpg
-wikidata: https://www.wikidata.org/wiki/Q52150547
+wikidata:
+  - https://www.wikidata.org/wiki/Q52150547
+  - https://www.wikidata.org/wiki/Q41638331
 ---
 
-I have acquired a watercolour by [Paul Neidhardt](https://de.wikipedia.org/wiki/Paul_Neidhardt) (1874-1951)
+I have acquired a watercolour by [Paul Neidhardt](https://de.wikipedia.org/wiki/Paul_Neidhardt) (1874-1951) ([at artnet](https://www.artnet.com/artists/paul-neidhardt/)).
 <!--more-->
 
 {{< gallery >}}

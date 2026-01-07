@@ -5,7 +5,9 @@ tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q7109791
+wikidata:
+  - https://www.wikidata.org/wiki/Q7109791
+  - https://www.wikidata.org/wiki/Q323270
 ---
 
 I have found a woodcut by [Otto Richard Bossert](https://de.wikipedia.org/wiki/Otto_Richard_Bossert) (1874-1919)...

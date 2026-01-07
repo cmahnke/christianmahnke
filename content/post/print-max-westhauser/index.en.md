@@ -5,10 +5,12 @@ tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
-wikidata: https://www.wikidata.org/wiki/Q112821333
+wikidata:
+  - https://www.wikidata.org/wiki/Q112821333
+  - https://www.wikidata.org/wiki/Q131787286
 ---
 
-I have acquired a colour woodcut by [Max Westhäuser (1885-1956)](https://de.wikipedia.org/wiki/Max_Westh%C3%A4user)...
+I have acquired a colour woodcut by [Max Westhäuser (1885-1956)](https://de.wikipedia.org/wiki/Max_Westh%C3%A4user) ([at artnet](https://www.artnet.com/artists/max-westhauser/))...
 <!--more-->
 
 {{< gallery >}}
