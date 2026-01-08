@@ -108,8 +108,11 @@
     {{- end -}}
     {{- if gt ($classification | len) 0 -}}
       ,"classified_as": [
-        {{- range $classification -}}
-          {{- . | jsonify -}}
+        {{- range $i, $c := $classification -}}
+          {{- $c | jsonify -}}
+          {{- if lt ($classification | len) $i -}}
+            ,
+          {{- end -}}
         {{- end -}}
       ]
     {{- end -}}
