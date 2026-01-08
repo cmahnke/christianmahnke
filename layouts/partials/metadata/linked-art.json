@@ -6,21 +6,24 @@
     "type": "HumanMadeObject"
     {{- if .title -}}
       ,"_label": "{{ .title }}"
+    {{- else -}}
+      ,"_label": "{{ $.Title }}"
     {{- end -}}
     {{- with .artist -}}
       , "produced_by": {
         "type": "Production",
         "carried_out_by": [
           {
+            {{- $wikidataID := "" -}}
             {{- with .wikidata -}}
-              "id": "{{ . }}",
+              {{- $wikidataID = replaceRE `^.*/([^/]+)$` "$1" . -}}
+              "id": "{{ printf "http://www.wikidata.org/entity/%s" $wikidataID }}",
             {{- end -}}
             "type": "Actor"
             {{- if .name -}}
               , "_label": " {{ .name }}"
             {{- else -}}
               {{- with .wikidata -}}
-                {{- $wikidataID := replaceRE `^.*/([^/]+)$` "$1" . -}}
                 {{- $url := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $wikidataID -}}
                 {{ with resources.GetRemote $url }}
                   {{ with .Content | transform.Unmarshal }}
@@ -36,7 +39,7 @@
                         {{ break }}
                       {{ end }}
                     {{ end }}
-                    , "_label": " {{ $name }}"
+                    , "_label": "{{ trim $name " " }}"
                   {{ end }}
                 {{ end }}
               {{- end -}}
