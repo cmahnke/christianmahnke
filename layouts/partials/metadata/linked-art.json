@@ -1,0 +1,117 @@
+{{- $httpOptions := dict "headers" (dict "Accept" "application/ld+json") -}}
+{
+  {{- with .Params.linkedart -}}
+    "@context": "https://linked.art/ns/v1/linked-art.json",
+    "id": "{{ $.Permalink }}",
+    "type": "HumanMadeObject"
+    {{- if .title -}}
+      ,"_label": "{{ .title }}"
+    {{- end -}}
+    {{- with .artist -}}
+      , "produced_by": {
+        "type": "Production",
+        "carried_out_by": [
+          {
+            {{- with .wikidata -}}
+              "id": "{{ . }}",
+            {{- end -}}
+            "type": "Actor"
+            {{- if .name -}}
+              , "_label": " {{ .name }}"
+            {{- else -}}
+              {{- with .wikidata -}}
+                {{- $wikidataID := replaceRE `^.*/([^/]+)$` "$1" . -}}
+                {{- $url := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $wikidataID -}}
+                {{ with resources.GetRemote $url }}
+                  {{ with .Content | transform.Unmarshal }}
+                    {{ $entity := index .entities $wikidataID }}
+                    {{ $name := "" }}
+                    {{ if $entity.labels.de }}
+                      {{ $name = $entity.labels.de.value }}
+                    {{ else if $entity.labels.en }}
+                      {{ $name = $entity.labels.en.value }}
+                    {{ else }}
+                      {{/* Fallback auf das erste verfügbare Label */}}
+                      {{ range $entity.labels }}
+                        {{ $name = .value }}
+                        {{ break }}
+                      {{ end }}
+                    {{ end }}
+                    , "_label": " {{ $name }}"
+                  {{ end }}
+                {{ end }}
+              {{- end -}}
+            {{- end -}}
+          }
+        ]
+      }
+    {{- end -}}
+    {{- $wikidata := slice -}}
+    {{- range $tag := $.Params.tags -}}
+      {{- if and (ne $tag "") (ne $tag "Art") -}}
+        {{- $tagUrl := printf "%s%s" ("tags/" | relLangURL) ($tag | urlize) -}}
+        {{- $links := slice -}}
+        {{- with $.Site.GetPage $tagUrl -}}
+          {{- if .Params.wikidata -}}
+            {{- if not (reflect.IsSlice .Params.wikidata) -}}
+              {{- $wikidata = $wikidata | append (slice .Params.wikidata) -}}
+            {{- else -}}
+              {{- $wikidata = $wikidata | append .Params.wikidata -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+
+      {{- end -}}
+    {{- end -}}
+    {{- $wikidata = $wikidata | uniq -}}
+
+    {{- $classification := slice -}}
+    {{- range $wikidataURL := $wikidata -}}
+      {{- $wikidataID := replaceRE `^.*/([^/]+)$` "$1" $wikidataURL -}}
+      {{- $url := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $wikidataID -}}
+      {{- with resources.GetRemote $url -}}
+        {{- with .Content | transform.Unmarshal -}}
+          {{- $entity := index .entities $wikidataID -}}
+          {{/* P1014 : Getty AAT-ID Property */}}
+          {{- $aatClaims := index $entity.claims "P1014" -}}
+
+          {{- if $aatClaims -}}
+            {{- $aatID := (index $aatClaims 0).mainsnak.datavalue.value -}}
+            {{- $aatURL := printf "https://vocab.getty.edu/aat/%s.json" $aatID -}}
+
+            {{- with resources.GetRemote $aatURL $httpOptions -}}
+              {{- with .Content | transform.Unmarshal -}}
+
+                {{- $label_en := "" -}}
+                {{- $label_de := "" -}}
+                {{- $desc := "" -}}
+
+                {{- if (index . "http://www.w3.org/2004/02/skos/core#prefLabel") -}}
+                  {{- $labels := index . "http://www.w3.org/2004/02/skos/core#prefLabel" -}}
+                  {{- range $labels }}
+                    {{- if eq (index . "@language") "en" -}}
+                      {{- $label_en = index . "@value" -}}
+                    {{- end }}
+                    {{- if eq (index . "@language") "de" -}}
+                        {{- $label_de = index . "@value" -}}
+                    {{- end }}
+                  {{- end -}}
+                {{- end -}}
+
+                {{- $classification = $classification | append (dict "id" (printf "http://vocab.getty.edu/aat/%s" $aatID) "type" "Type" "_label" $label_en) -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+
+      {{- end -}}
+    {{- end -}}
+    {{- if gt ($classification | len) 0 -}}
+      ,"classified_as": [
+        {{- range $classification -}}
+          {{- . | jsonify -}}
+        {{- end -}}
+      ],
+    {{- end -}}
+  {{- end -}}
+}

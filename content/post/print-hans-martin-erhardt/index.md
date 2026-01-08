@@ -5,6 +5,13 @@ tags:
   - Art
   - Linocut
 preview: img/print.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  artist:
+    wikidata: https://www.wikidata.org/wiki/Q1581234
 wikidata: 
   - https://www.wikidata.org/wiki/Q1581234
 ---

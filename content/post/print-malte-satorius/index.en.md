@@ -10,6 +10,13 @@ tags:
   - Linocut
   - Christmas
 preview: front/full/full/0/default.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  artist:
+    wikidata: https://www.wikidata.org/wiki/Q21014973
 wikidata: 
   - https://www.wikidata.org/wiki/Q21014973
   - https://www.wikidata.org/wiki/Q2349238

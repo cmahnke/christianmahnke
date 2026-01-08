@@ -7,6 +7,13 @@ tags:
   - Drawing
   - Architecture
 preview: img/sheet1.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  artist:
+    wikidata: https://www.wikidata.org/wiki/Q131611742
 wikidata:
   - https://www.wikidata.org/wiki/Q131611742
   - https://www.wikidata.org/wiki/Q917830

@@ -8,6 +8,13 @@ tags:
   - Painting
   - ArtBrut
 preview: img/fronts.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  artist:
+    wikidata: https://www.wikidata.org/wiki/Q43379500
 wikidata:
   - https://www.wikidata.org/wiki/Q43379500
   - https://www.wikidata.org/wiki/Q316390

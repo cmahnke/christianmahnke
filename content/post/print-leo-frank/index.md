@@ -6,6 +6,13 @@ tags:
   - Art
   - WoodblockPrint
 preview: img/print.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  artist:
+    wikidata: https://www.wikidata.org/wiki/Q29373725
 wikidata:
   - https://www.wikidata.org/wiki/Q29373725
   - https://www.wikidata.org/wiki/Q137668018

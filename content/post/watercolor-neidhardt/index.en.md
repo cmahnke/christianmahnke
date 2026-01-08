@@ -7,6 +7,13 @@ tags:
   - Watercolor
   - Painting
 preview: img/painting.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  artist:
+    wikidata: https://www.wikidata.org/wiki/Q52150547
 wikidata:
   - https://www.wikidata.org/wiki/Q52150547
   - https://www.wikidata.org/wiki/Q41638331

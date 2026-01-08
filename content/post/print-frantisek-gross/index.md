@@ -8,6 +8,13 @@ tags:
   - Art
   - Lithography
 preview: img/print.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  artist:
+    wikidata: https://www.wikidata.org/wiki/Q15735037
 wikidata: 
   - https://www.wikidata.org/wiki/Q15735037
 ---

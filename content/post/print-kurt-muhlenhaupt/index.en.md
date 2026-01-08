@@ -5,6 +5,13 @@ tags:
   - Art
   - Etching
 preview: img/print.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  artist:
+    wikidata: https://www.wikidata.org/wiki/Q1793892
 wikidata: 
   - https://www.wikidata.org/wiki/Q1793892
 ---

@@ -197,7 +197,7 @@ timeout = "120s"
     mediaType = "application/ld+json"
     isPlainText = true
     isHTML = false
-    baseName = "collection"
+    baseName = "linkedart"
     notAlternative = true
 
   [outputFormats.activity-pub-actor]
