@@ -31,7 +31,6 @@
                     {{ else if $entity.labels.en }}
                       {{ $name = $entity.labels.en.value }}
                     {{ else }}
-                      {{/* Fallback auf das erste verfügbare Label */}}
                       {{ range $entity.labels }}
                         {{ $name = .value }}
                         {{ break }}
@@ -75,32 +74,32 @@
           {{/* P1014 : Getty AAT-ID Property */}}
           {{- $aatClaims := index $entity.claims "P1014" -}}
 
+          {{- $label := "" -}}
+          {{ if $entity.labels.de }}
+            {{ $label = $entity.labels.de.value }}
+          {{ else if $entity.labels.en }}
+            {{ $label = $entity.labels.en.value }}
+          {{ else }}
+            {{ range $entity.labels }}
+              {{ $label = .value }}
+              {{ break }}
+            {{ end }}
+          {{ end }}
+
           {{- if $aatClaims -}}
             {{- $aatID := (index $aatClaims 0).mainsnak.datavalue.value -}}
             {{- $aatURL := printf "https://vocab.getty.edu/aat/%s.json" $aatID -}}
 
+            {{/*
             {{- with resources.GetRemote $aatURL $httpOptions -}}
               {{- with .Content | transform.Unmarshal -}}
+                
 
-                {{- $label_en := "" -}}
-                {{- $label_de := "" -}}
-                {{- $desc := "" -}}
-
-                {{- if (index . "http://www.w3.org/2004/02/skos/core#prefLabel") -}}
-                  {{- $labels := index . "http://www.w3.org/2004/02/skos/core#prefLabel" -}}
-                  {{- range $labels }}
-                    {{- if eq (index . "@language") "en" -}}
-                      {{- $label_en = index . "@value" -}}
-                    {{- end }}
-                    {{- if eq (index . "@language") "de" -}}
-                        {{- $label_de = index . "@value" -}}
-                    {{- end }}
-                  {{- end -}}
-                {{- end -}}
-
-                {{- $classification = $classification | append (dict "id" (printf "http://vocab.getty.edu/aat/%s" $aatID) "type" "Type" "_label" $label_en) -}}
               {{- end -}}
             {{- end -}}
+            */}}
+            {{- $classification = $classification | append (dict "id" (printf "http://vocab.getty.edu/aat/%s" $aatID) "type" "Type" "_label" $label) -}}
+
           {{- end -}}
         {{- end -}}
 
