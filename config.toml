@@ -111,7 +111,7 @@ timeout = "120s"
 
     [markup.goldmark.extensions.passthrough]
       enable = true
-      
+
       [markup.goldmark.extensions.passthrough.delimiters]
         block = [['\[', '\]'], ['$$', '$$']]
         inline = [['\(', '\)']]
@@ -187,6 +187,13 @@ timeout = "120s"
     notAlternative = true
 
   [outputFormats.iiif-collection]
+    mediaType = "application/ld+json"
+    isPlainText = true
+    isHTML = false
+    baseName = "collection"
+    notAlternative = true
+
+  [outputFormats.linkedart]
     mediaType = "application/ld+json"
     isPlainText = true
     isHTML = false

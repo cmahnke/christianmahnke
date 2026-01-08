@@ -33,6 +33,12 @@
     <link rel="canonical" href="{{ .Permalink }}">
     {{- partial "data/schema.org.html" . -}}
 
+    {{- if and .Params.tags (in .Params.tags "Art") -}}
+      {{ with .OutputFormats.Get "linkedart" }}
+        <link rel="describedby" href="{{ .RelPermalink }}" type="application/ld+json;profile='https://linked.art/ns/v1/linked-art.json'"/>
+      {{- end -}}
+    {{- end -}}
+
   </head>
 
     {{- $class := "" }}
