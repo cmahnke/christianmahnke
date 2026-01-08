@@ -2,7 +2,7 @@
 {
   {{- with .Params.linkedart -}}
     "@context": "https://linked.art/ns/v1/linked-art.json",
-    "id": "{{ $.Permalink }}",
+    "id": "{{ ($.OutputFormats.Get "linkedart").Permalink }}",
     "type": "HumanMadeObject"
     {{- if .title -}}
       ,"_label": "{{ .title }}"
