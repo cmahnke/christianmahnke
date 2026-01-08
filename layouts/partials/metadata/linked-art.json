@@ -111,7 +111,7 @@
         {{- range $classification -}}
           {{- . | jsonify -}}
         {{- end -}}
-      ],
+      ]
     {{- end -}}
   {{- end -}}
 }
