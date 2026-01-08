@@ -1,7 +1,7 @@
 ---
 date: 2025-12-31T11:33:44+02:00
 title: "Projektemacher 2025"
-description: "Ein Jahresrückblick"
+description: "A year in review"
 tags:
   - Blog
   - Projektemacher.org
