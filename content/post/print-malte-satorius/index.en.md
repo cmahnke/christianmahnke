@@ -5,6 +5,7 @@ class: sepia
 keywords: Malte Satorius
 description: "An unsigned graphic turns out to be a Christmas card by Malte Satorius"
 cite: true
+iiifContext: http://iiif.io/api/image/2/context.json
 tags:
   - Art
   - Linocut
@@ -17,6 +18,10 @@ outputs:
 linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q21014973
+  iiif:
+    image:
+      - front/info.json
+      - back/info.json
 wikidata: 
   - https://www.wikidata.org/wiki/Q21014973
   - https://www.wikidata.org/wiki/Q2349238

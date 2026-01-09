@@ -17,6 +17,10 @@ outputs:
 linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q21014973
+  iiif:
+    image:
+      - front/info.json
+      - back/info.json
 wikidata: 
   - https://www.wikidata.org/wiki/Q21014973
   - https://www.wikidata.org/wiki/Q2349238

@@ -4,12 +4,22 @@ metaPage: true
 displayinlist: false
 weight: 2
 iiifContext: http://iiif.io/api/image/2/context.json
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  artist:
+    wikidata: https://www.wikidata.org/wiki/Q137662135
 resources:
 - src: "front.jxl"
   params:
-    iiif: page001/info.json
+    iiif: front/info.json
     hint: non-paged
     label: Druck
+wikidata:
+  - https://www.wikidata.org/wiki/Q137662135
+  - https://www.wikidata.org/wiki/Q28737496
 ---
 
 Eine Grafik des Spandauer Künstlers Fritz Neumann

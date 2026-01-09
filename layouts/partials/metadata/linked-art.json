@@ -1,7 +1,9 @@
 {{- $httpOptions := dict "headers" (dict "Accept" "application/ld+json") -}}
+{{- $iiifFullResolution := "/full/full/0/default.jpg" -}}
+{{- $ignoreTags := slice  "Art" "Christmas" -}}
 {{- $tagsWikidata := slice -}}
 {{- range $tag := $.Params.tags -}}
-  {{- if and (ne $tag "") (ne $tag "Art") -}}
+  {{- if and (ne $tag "") (not (in $ignoreTags $tag)) -}}
     {{- $tagUrl := printf "%s%s" ("tags/" | relLangURL) ($tag | urlize) -}}
     {{- $links := slice -}}
     {{- with $.Site.GetPage $tagUrl -}}
@@ -13,10 +15,10 @@
         {{- end -}}
       {{- end -}}
     {{- end -}}
-
   {{- end -}}
 {{- end -}}
 {{- $tagsWikidata = $tagsWikidata | uniq -}}
+{{- $page := . -}}
 
 {{- $classification := slice -}}
 {{- range $wikidataURL := $tagsWikidata -}}
@@ -57,7 +59,7 @@
   {{- end -}}
   {{- with .artist -}}
     {{- $producedBy := dict "type" "Production" -}}
-    {{- $actor := dict "type" "Actor" -}}
+    {{- $actor := dict "type" "Person" -}}
     {{- $wikidataID := "" -}}
     {{- with .wikidata -}}
       {{- $wikidataID = replaceRE `^.*/([^/]+)$` "$1" . -}}
@@ -99,31 +101,93 @@
   {{- end -}}
 
   {{- $representations := slice -}}
-
-  {{- with $.Resources -}}
-    {{- range .ByType "image" -}}
-      {{- if and (eq .MediaType.MainType "image") (not (hasPrefix .Name "og")) -}}
-        {{- $representation := dict "type" "VisualItem" "id" .Permalink "format" .MediaType.Type -}}
-        {{- $representation = $representation | merge (dict "classified_as" (slice (dict "id" "http://vocab.getty.edu/aat/300215302" "type" "Type"
-            "_label" "digital images"))) -}}
-        {{- $representations = $representations | append $representation -}}
+  {{- $useResource := true -}}
+  {{- with .iiif -}}
+    {{- with .image -}}
+      {{- $infoJson := . -}}
+      {{- if not (reflect.IsSlice $infoJson) -}}
+        {{- $infoJson = slice $infoJson -}}
       {{- end -}}
+      {{- $digitallyShownBy := slice -}}
+      {{- range $infoJson -}}
+      {{- $infoJsonURL := . -}}
+        {{- if not (hasPrefix $infoJsonURL "https://") -}}
+          {{- $parsed := urls.Parse $page.Permalink -}}
+          {{- $postBaseUrl := printf "%s://%s%s/" $parsed.Scheme $parsed.Host (path.Dir $parsed.Path) -}}
+          {{- $infoJsonURL = printf "%s%s" $postBaseUrl $infoJsonURL -}}
+        {{- end -}}
+        {{- $digitalObject := dict "type" "DigitalObject" "id" $infoJsonURL "format" "application/ld+json;profile=\"http://iiif.io/api/presentation/3/context.json\"" -}}
+        {{- $digitalObject = $digitalObject | merge (dict "classified_as" (slice (dict "id" "http://vocab.getty.edu/aat/300215302" "type" "Type" "_label" "digital images"))) -}}
+        {{- $digitallyShownBy = $digitallyShownBy | append $digitalObject -}}
+      {{- end -}}
+      {{- $representation := dict "type" "VisualItem" "digitally_shown_by" $digitallyShownBy -}}
+      {{- $representations = $representations | append $representation -}}
+    {{- end -}}
+    {{/* Just use a empty IIIF key to diable Resource processing */}}
+    {{- $useResource = false -}}
+  {{- end -}}
+
+  {{- if and (isset $.Params "iiifcontext") (isset $.Params "resources") -}}
+    {{- $digitallyShownBy := slice -}}
+    {{- range $.Params.resources -}}
+      {{- $infoJson := .params.iiif -}}
+      {{- $path := path.Dir $infoJson -}}
+      {{- $infoJsonURL := .params.iiif -}}
+      {{- if not (hasPrefix $infoJsonURL "https://") -}}
+        {{- $parsed := urls.Parse $page.Permalink -}}
+        {{- $postBaseUrl := printf "%s://%s%s/" $parsed.Scheme $parsed.Host (path.Dir $parsed.Path) -}}
+        {{- $infoJsonURL = printf "%s%s" $postBaseUrl $infoJsonURL -}}
+      {{- end -}}
+      {{- $fullRes := printf "%s%s" $path $iiifFullResolution -}}
+      {{- with $page.Resources.Get $fullRes -}}
+        {{- $digitalObject := dict "type" "DigitalObject" "id" .Permalink "format" .MediaType.Type -}}
+        {{- $digitalObject = $digitalObject | merge (dict "classified_as" (slice (dict "id" "http://vocab.getty.edu/aat/300215302" "type" "Type" "_label" "digital images"))) -}}
+        {{- $digitallyShownBy = $digitallyShownBy | append $digitalObject -}}
+      {{- end -}}
+      {{- $digitalObject := dict "type" "DigitalObject" "id" $infoJsonURL "format" "application/ld+json;profile=\"http://iiif.io/api/presentation/3/context.json\"" -}}
+      {{- $digitalObject = $digitalObject | merge (dict "classified_as" (slice (dict "id" "http://vocab.getty.edu/aat/300215302" "type" "Type" "_label" "digital images"))) -}}
+      {{- $digitallyShownBy = $digitallyShownBy | append $digitalObject -}}
+      {{- $representation := dict "type" "VisualItem" "digitally_shown_by" $digitallyShownBy -}}
+      {{- $representations = $representations | append $representation -}}
+    {{- end -}}
+    {{- $useResource = false -}}
+  {{- end -}}
+  {{- if $useResource -}}
+    {{- with $.Resources -}}
+      {{- $digitallyShownBy := slice -}}
+      {{- range .ByType "image" -}}
+        {{- if and (eq .MediaType.MainType "image") (not (hasPrefix .Name "og")) -}}
+          {{- if eq .MediaType.SubType "jxl" -}}
+            {{- errorf "[metadata/linked-art.json] Image is JXL: %s and iiif context not set!" $.Permalink -}}
+          {{- end -}}
+          {{- $digitalObject := dict "type" "DigitalObject" "id" .Permalink "format" .MediaType.Type -}}
+          {{- $digitalObject = $digitalObject | merge (dict "classified_as" (slice (dict "id" "http://vocab.getty.edu/aat/300215302" "type" "Type" "_label" "digital images"))) -}}
+          {{- $digitallyShownBy = $digitallyShownBy | append $digitalObject -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $representation := dict "type" "VisualItem" "digitally_shown_by" $digitallyShownBy -}}
+      {{- $representations = $representations | append $representation -}}
     {{- end -}}
   {{- end -}}
 
-  {{- with .iiif -}}
+  {{/*
+  {{- with $.iiif -}}
     {{- if .image -}}
+      {{- $digitallyShownBy := slice -}}
       {{- $representation := dict "type" "VisualItem" "id" .image -}}
       {{- $representation = $representation | merge (dict "conforms_to" (slice (dict "id" "http://iiif.io/api/image"))) -}}
       {{- $representation = $representation | merge (dict "classified_as" (slice (dict "id" "http://vocab.getty.edu/aat/300215302" "type" "Type"
           "_label" "digital images"))) -}}
+      
+          {{- $representation := dict "type" "VisualItem" "digitally_shown_by" $digitallyShownBy -}}
       {{- $representations = $representations | append $representation -}}
     {{- end -}}
   {{- end -}}
+  */}}
 
   {{- if gt ($representations | len) 0 -}}
     {{- $linkedArt = $linkedArt | merge (dict "representation" $representations) -}}
   {{- end -}}
 
 {{- end -}}
-{{- $linkedArt | jsonify -}}
+{{- return $linkedArt -}}
