@@ -20,10 +20,10 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.x'
 
@@ -34,7 +34,7 @@ jobs:
         run: mastodon-archive archive --no-interactive --api-base-url ${{ env.MASTODON_URL }} --access-token ${{ secrets.MASTODON_TOKEN }}
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Update Mastodon backup
           branch: ${{ env.BACKUP_BRANCH }}
