@@ -12,6 +12,8 @@ outputs:
 linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q1581234
+  owner:
+    wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata: 
   - https://www.wikidata.org/wiki/Q1581234
 ---

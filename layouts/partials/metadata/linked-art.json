@@ -185,38 +185,40 @@
   {{- end -}}
 
   {{- with .owner -}}
-    {{- $owner := dict "id" . -}}
-    {{- $wikidataID := replaceRE `^.*/([^/]+)$` "$1" . -}}
-    {{- $url := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $wikidataID -}}
-    {{- with resources.GetRemote $url -}}
-      {{- with .Content | transform.Unmarshal -}}
-        {{- $entity := index .entities $wikidataID -}}
-        {{- $label := "" -}}
-        {{- if $entity.labels.de -}}
-          {{- $label = $entity.labels.de.value -}}
-        {{- else if $entity.labels.en -}}
-          {{- $label = $entity.labels.en.value -}}
-        {{- else -}}
-          {{- range $entity.labels -}}
-            {{- $label = .value -}}
-            {{- break -}}
-          {{- end -}}
-        {{- end -}}
-
-        {{- $type := "Group" -}}
-        {{- $claims := $entity.claims -}}
-        {{- if isset $claims "P31" -}}
-          {{- range (index $claims "P31") }}
-            {{- if eq .mainsnak.datavalue.value.id "Q5" -}}
-              {{- $type = "Person" -}}
+    {{- with .wikidata -}}
+      {{- $owner := dict "id" . -}}
+      {{- $wikidataID := replaceRE `^.*/([^/]+)$` "$1" . -}}
+      {{- $url := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $wikidataID -}}
+      {{- with resources.GetRemote $url -}}
+        {{- with .Content | transform.Unmarshal -}}
+          {{- $entity := index .entities $wikidataID -}}
+          {{- $label := "" -}}
+          {{- if $entity.labels.de -}}
+            {{- $label = $entity.labels.de.value -}}
+          {{- else if $entity.labels.en -}}
+            {{- $label = $entity.labels.en.value -}}
+          {{- else -}}
+            {{- range $entity.labels -}}
+              {{- $label = .value -}}
               {{- break -}}
             {{- end -}}
           {{- end -}}
+
+          {{- $type := "Group" -}}
+          {{- $claims := $entity.claims -}}
+          {{- if isset $claims "P31" -}}
+            {{- range (index $claims "P31") }}
+              {{- if eq .mainsnak.datavalue.value.id "Q5" -}}
+                {{- $type = "Person" -}}
+                {{- break -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+          {{- $owner = $owner | merge (dict "_label" $label "type" $type) -}}
         {{- end -}}
-        {{- $owner = $owner | merge (dict "_label" $label "type" $type) -}}
       {{- end -}}
+      {{- $linkedArt = $linkedArt | merge (dict "current_owner" (slice $owner)) -}}
     {{- end -}}
-    {{- $linkedArt = $linkedArt | merge (dict "current_owner" (slice $owner)) -}}
   {{- end -}}
 
 

@@ -13,6 +13,8 @@ outputs:
 linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q94743711
+  owner:
+    wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata: 
   - https://www.wikidata.org/wiki/Q94743711
   - https://www.wikidata.org/wiki/Q133742956

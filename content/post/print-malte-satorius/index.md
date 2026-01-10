@@ -21,6 +21,8 @@ linkedart:
     image:
       - front/info.json
       - back/info.json
+  owner:
+    wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata: 
   - https://www.wikidata.org/wiki/Q21014973
   - https://www.wikidata.org/wiki/Q2349238
