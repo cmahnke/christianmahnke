@@ -36,7 +36,7 @@ Im Gegenzug erwarte ich von der bedachten Institution, dass diese bereit ist, ei
         </div>
     </li>
     <li><div class="li-heading">Recherche / Einordnung / Kontextualisierung</div></li>
-        <div class="li-body type-text">Das Katalogisat wird mit weiteren, ihnen bekannten Informationen angereichert. Dabei werden  Querverweise z.B. über Normdaten gebildet, das Objekt beschrieben und mit (organisationsspezifischen) Schlagworten versehen. Falls notwendige Normdaten (zu Personen oder Organisationen) nicht existieren, legt die bedachte Einrichtung diese an.
+        <div class="li-body type-text">Das Katalogisat wird mit weiteren, ihnen bekannten Informationen angereichert. Dabei werden  Querverweise z.B. über Normdaten gebildet, das Objekt beschrieben und mit (organisationsspezifischen) Schlagworten versehen. Falls notwendige Normdaten (zu Personen oder Organisationen) nicht existieren, legt die bedachte Einrichtung diese an. Idealerweise exitiert zu ihrer Einrichtung ein <a href="https://de.wikipedia.org/wiki/Wikipedia:Hauptseite" title="Wikipedia">Wikipedia</a> Artikel bzw. ein <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" title="Wikidata">Wikidata</a> Eintrag.
         </div>
     </li>
 </ul>

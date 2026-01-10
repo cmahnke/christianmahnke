@@ -1,0 +1,9 @@
+{{/* check art posts */}}
+{{- if in .Params.tags "Art" -}}
+  {{- if not (isset .Params "wikidata") -}}
+    {{- warnf "[check-post.html] Missing Wikidata in %s" .RelPermalink -}}
+  {{- end -}}
+  {{- if not (isset .Params "linkedart") -}}
+    {{- warnf "[check-post.html] Missing LinkedArt in %s" .RelPermalink -}}
+  {{- end -}}
+{{- end -}}

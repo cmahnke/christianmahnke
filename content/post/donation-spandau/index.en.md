@@ -11,6 +11,7 @@ tags:
 wikidata:
   - https://www.wikidata.org/wiki/Q76632556
   - https://www.wikidata.org/wiki/Q3901583
+  - https://www.wikidata.org/wiki/Q76632556
 ---
 
 After the [successful search for Fritz Neumann AKA Ric](/post/ric-unknownartist/), it was time to make his work better known in Spandau. As a starting point, I donated a graphic to the archive of the Spandau City History Museum.
