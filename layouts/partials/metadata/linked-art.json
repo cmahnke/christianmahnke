@@ -219,5 +219,12 @@
     {{- $linkedArt = $linkedArt | merge (dict "current_owner" (slice $owner)) -}}
   {{- end -}}
 
+
+  {{- with site.Params.linkedart -}}
+    {{ range $key, $struct := . }}
+      {{- $linkedArt = $linkedArt | merge (dict $key $struct) -}}
+    {{- end -}}
+  {{- end -}}
+
 {{- end -}}
 {{- return $linkedArt -}}

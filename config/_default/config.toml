@@ -64,6 +64,23 @@
     outbox = "outbox.json"
     links = { "GitHub" = "<a title=\"GitHub\" href=\"https://github.com/cmahnke\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">GitHub</a>", "Blog" = "<a title=\"Blog\" href=\"https://christianmahnke.de/post/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Blog</a>" }
 
+
+[[params.linkedart.referred_to_by]]
+  id = "http://vangoghmuseum.nl/data/artwork/s0416M1990/credit"
+  type = "LinguisticObject"
+  content = "Christian Mahnke, Projektemacher.org"
+
+    [[params.linkedart.referred_to_by.classified_as]]
+    id = "http://vocab.getty.edu/aat/300026687"
+    type = "Type"
+    _label = "Credit Statement"
+
+      [[params.linkedart.referred_to_by.classified_as.classified_as]]
+      id = "http://vocab.getty.edu/aat/300418049"
+      type = "Type"
+      _label = "Brief Text"
+
+
 [params.robots]
   llmsTXT = true
 
