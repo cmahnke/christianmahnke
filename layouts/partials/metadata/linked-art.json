@@ -178,7 +178,7 @@
   {{- $digitallyCarriedBy := dict "type" "DigitalObject" "format" "text/html" -}}
   {{- $digitallyCarriedBy = $digitallyCarriedBy | merge (dict "classified_as" (slice (dict "id" "http://vocab.getty.edu/aat/300264578" "type" "Type" "_label" "Web page"))) -}}
   {{- $digitallyCarriedBy = $digitallyCarriedBy | merge (dict "access_point" (slice (dict "id" ($.OutputFormats.Get "html").Permalink "type" "DigitalObject"))) -}}
-  {{- $subjectOf := dict "type" "LinguisticObject" "digitally_carried_by" $digitallyCarriedBy -}}
+  {{- $subjectOf := dict "type" "LinguisticObject" "digitally_carried_by" (slice $digitallyCarriedBy) -}}
 
   {{- if gt ($subjectOf | len) 0 -}}
     {{- $linkedArt = $linkedArt | merge (dict "subject_of" (slice $subjectOf)) -}}
