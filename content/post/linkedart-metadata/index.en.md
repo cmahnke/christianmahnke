@@ -20,7 +20,7 @@ In preparation for future experiments, linked art metadata is now available for 
 
 For many posts that show [artworks](https://christianmahnke.de/tags/Art/), this blog now has [Linked Art](https://linked.art/) metadata. 
 
-Linked Art is a metadata standard that was developed specifically for describing cultural objects and their provenance (i.e. history). It is based on the [CIDOC-CRM](https://cidoc-crm.org/) data model and uses [JSON-LD](https://de.wikipedia.org/wiki/JSON-LD) to exchange information about artworks, artists and provenances in a web-based and machine-readable format. This makes it similar to [LIDO].
+Linked Art is a metadata standard that was developed specifically for describing cultural objects and their provenance (i.e. history). It is based on the [CIDOC-CRM](https://cidoc-crm.org/) data model and uses [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD) to exchange information about artworks, artists and provenances in a web-based and machine-readable format. This makes it similar to [LIDO](https://en.wikipedia.org/wiki/LIDO).
 
 Examples for individual posts / pages:
 
