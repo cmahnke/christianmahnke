@@ -4,6 +4,8 @@ metaPage: true
 displayinlist: false
 weight: 2
 iiifContext: http://iiif.io/api/image/2/context.json
+tags:
+  - Etching
 outputs:
   - bibtex
   - html

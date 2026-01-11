@@ -18,6 +18,7 @@ outputs:
   - html
   - linkedart
 linkedart:
+  title: Marmolata
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata:
