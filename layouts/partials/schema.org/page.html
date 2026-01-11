@@ -10,10 +10,26 @@
     {{- $authorName  = . }}
   {{- end }}
 {{- end }}
+{{- $type := "BlogPosting" -}}
+
+{{- $linkedArt := dict -}}
+{{- with .Params.linkedart -}}
+  {{- $type = "VisualArtwork" -}}
+  {{- $linkedArtRecord := partial "metadata/linked-art.json" $ -}}
+  {{- $artist := dict -}}
+  {{- with $linkedArtRecord.produced_by.carried_out_by -}}
+    {{- $artist = dict "@type" (index . 0).type "@id" (index . 0).id "name" (index . 0)._label -}}
+  {{- end -}}
+  {{- if gt ($artist | len) 0 -}}
+    {{- $linkedArt = $linkedArt | merge (dict "artist" $artist) -}}
+  {{- end -}}
+  {{- $linkedArt = $linkedArt | merge (dict "mainEntityOfPage" ($.OutputFormats.Get "html").Permalink) -}}
+{{- end -}}
+
 <script type="application/ld+json">
   {
       "@context" : "http://schema.org",
-      "@type": "BlogPosting",
+      "@type": {{ $type }},
       "@id": {{ .Permalink }},
       "url": {{ .Permalink }},
       "name": {{ .Title }},
