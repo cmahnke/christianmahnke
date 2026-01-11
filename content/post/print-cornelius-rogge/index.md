@@ -6,6 +6,9 @@ tags:
   - Art
   - Etching
 preview: img/print.jpg
+linkedart:
+  artist:
+    wikidata: https://www.wikidata.org/wiki/Q131617370
 wikidata: 
   - https://www.wikidata.org/wiki/Q131617370
   - https://www.wikidata.org/wiki/Q479361

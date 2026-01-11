@@ -7,7 +7,17 @@ tags:
   - WoodblockPrint
   - Alps
 preview: img/print.jpg
-#wikidata:
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  artist:
+    wikidata: https://www.wikidata.org/wiki/Q137756185
+  owner:
+    wikidata: https://www.wikidata.org/wiki/Q137668638
+wikidata:
+  - https://www.wikidata.org/wiki/Q137756185
 ---
 
 I have found a woodcut by Paul-Kurt Bartzsch (1917-1994)...
