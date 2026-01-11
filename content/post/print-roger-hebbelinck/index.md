@@ -4,7 +4,7 @@ title: 'Lithographie von Roger Hebbelinck (1912-1987)'
 keywords: Brüssel, Brügge, Peerdenbrug, Peerdenbrücke
 tags:
   - Art
-  - Lithograph
+  - Lithography
 preview: img/print.jpg
 outputs:
   - bibtex
