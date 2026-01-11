@@ -27,3 +27,7 @@ Dazu sind im Blog mehrere Einzelexperimente zu finden:
 * [Visualisierung eines 70er-Jahre Videospiels - Pong](/post/pong/)
 * [Fat Lava Keramik in 3D](/post/3d-models/) - Photogrammetrie
 * [Digitale Sammlungsobjekte ausstellungsfähig machen](/post/iiif-proxy/) durch Einsatz von Methoden der Computer Vision
+
+Zusäzlich dient diese Seite auch als Beispiel für die Integration von verschiedenen Metadaten:
+
+* [Linked Art](/post/linkedart-metadata/)

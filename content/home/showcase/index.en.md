@@ -27,3 +27,7 @@ Several individual experiments can be found in the blog:
 * [Visualisation of a 70s video game - Pong](/en/post/pong/)
 * [Fat Lava ceramics in 3D](/en/post/3d-models/) - Photogrammetry
 * [Making digital collection objects exhibition-ready](/en/post/iiif-proxy/) through the use of computer vision methods
+
+In addition, this page also serves as an example of the integration of various metadata:
+
+* [Linked Art](/en/post/linkedart-metadata/)
