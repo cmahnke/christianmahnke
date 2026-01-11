@@ -9,6 +9,7 @@ outputs:
   - html
   - linkedart
 linkedart:
+  title: Flamingo
   artist:
     wikidata: https://www.wikidata.org/wiki/Q137662135
   owner:

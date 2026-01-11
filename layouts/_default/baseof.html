@@ -34,7 +34,7 @@
     {{- partial "data/schema.org.html" . -}}
 
     {{- if .OutputFormats.Get "linkedart" -}}
-      <link rel="describedby" href="{{ .RelPermalink }}" type="application/ld+json;profile='https://linked.art/ns/v1/linked-art.json'"/>
+      <link rel="describedby" href="{{ (.OutputFormats.Get "linkedart").RelPermalink }}" type="application/ld+json;profile='https://linked.art/ns/v1/linked-art.json'"/>
     {{- end -}}
 
   </head>

@@ -2,11 +2,18 @@
 date: 2025-01-23T17:18:44+02:00
 title: 'Gemälde von Tadeusz Kaczmarek (1937-2006)'
 keywords: Tadeusz Kaczmarek, Boltenhagen
+aliases:
+  - /post/painting-tadeusz-kaczmarek
 tags:
   - Art
   - Painting
 preview: img/painting.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
 linkedart:
+  title: Boltenhagen
   artist:
     wikidata: https://www.wikidata.org/wiki/Q137755682
   owner:

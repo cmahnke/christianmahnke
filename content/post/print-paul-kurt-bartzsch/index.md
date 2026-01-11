@@ -12,6 +12,7 @@ outputs:
   - html
   - linkedart
 linkedart:
+  title: Škrlatica
   artist:
     wikidata: https://www.wikidata.org/wiki/Q137756185
   owner:

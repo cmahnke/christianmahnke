@@ -10,6 +10,7 @@ outputs:
   - html
   - linkedart
 linkedart:
+  title: Hühnervolk
   artist:
     wikidata: https://www.wikidata.org/wiki/Q1793892
   owner:

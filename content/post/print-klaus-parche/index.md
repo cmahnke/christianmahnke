@@ -11,6 +11,7 @@ outputs:
   - html
   - linkedart
 linkedart:
+  title: DROHjanisches Pferd
   artist:
     wikidata: https://www.wikidata.org/wiki/Q6477113
 wikidata:

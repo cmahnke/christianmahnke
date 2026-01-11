@@ -10,6 +10,7 @@ outputs:
   - html
   - linkedart
 linkedart:
+  title: Mädchen vom Lesen aufblickend
   artist:
     wikidata: https://www.wikidata.org/wiki/Q7109791
 wikidata:
