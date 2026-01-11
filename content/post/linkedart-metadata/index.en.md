@@ -7,6 +7,7 @@ tags:
   - Metadata
   - LOD
   - JSON
+  - Art
 wikidata:
   - https://www.wikidata.org/wiki/Q115616582
   - https://www.wikidata.org/wiki/Q6108942

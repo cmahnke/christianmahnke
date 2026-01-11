@@ -32,7 +32,7 @@ I have found a painting by [Tadeusz Kaczmarek](https://jbc.jelenia-gora.pl/dlibr
 
 {{< gallery >}}
 [
-  {"src": "img/painting.jpg", "alt": "GemäldePainting"},
+  {"src": "img/painting.jpg", "alt": "Painting"},
   {"src": "img/signature.jpg", "alt": "Signature"}
 ]
 {{</ gallery >}}
