@@ -11,6 +11,10 @@ outputs:
 linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q137662135
+  owner:
+    - wikidata: https://www.wikidata.org/wiki/Q28737496
+    - wikidata: https://www.wikidata.org/wiki/Q137668638
+      until: 2024-11-15
 resources:
 - src: "front.jxl"
   params:

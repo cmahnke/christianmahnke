@@ -4,7 +4,15 @@ title: 'Computergrafik'
 tags:
   - Art
   - Retrocomputing
+  - UnknownArtist
 preview: img/print.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  owner:
+    wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata:
   - https://www.wikidata.org/wiki/Q92703
   - https://www.wikidata.org/wiki/Q47092600

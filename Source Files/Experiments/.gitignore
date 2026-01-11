@@ -1,3 +1,4 @@
 test.rdf
 entities.ttl
 wikidata_data.db
+__pycache__

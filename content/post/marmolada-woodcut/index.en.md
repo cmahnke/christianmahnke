@@ -11,7 +11,15 @@ tags:
   - WoodblockPrint
   - Geodata
   - Blender
+  - UnknownArtist
 preview: img/print.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  owner:
+    wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata:
   - https://www.wikidata.org/wiki/Q203241
   - https://www.wikidata.org/wiki/Q137668018
