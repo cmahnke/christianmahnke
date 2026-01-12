@@ -3,7 +3,7 @@ date: 2026-01-03T13:22:44+02:00
 title: "Schema.org zu Wikidata QuickStatements"
 keywords: Linked Data, Schema.org. QuickStatements
 cite: true
-draft: traue
+draft: true
 tags:
   - Metadata
   - LOD
