@@ -27,6 +27,19 @@ wikidata:
   - https://www.wikidata.org/wiki/Q137661693
   - https://www.wikidata.org/wiki/Q258031
   - https://www.wikidata.org/wiki/Q903816
+resources:
+  - src: img/preview.jpg
+    params:
+      linkedart:
+        skip: true
+  - src: img/render.jpg
+    params:
+      linkedart:
+        skip: true
+  - src: img/august-2024.jpg
+    params:
+      linkedart:
+        skip: true
 ---
 
 ...is "old news" by now: Neither when it comes to the effects that can be recognised in old works, nor as an object of art itself.

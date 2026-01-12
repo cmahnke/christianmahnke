@@ -15,6 +15,9 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q52148388
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
+  rights:
+    name: Public Domain
+    url: https://creativecommons.org/publicdomain/zero/1.0/
 wikidata:
   - https://www.wikidata.org/wiki/Q52148388
 ---
@@ -30,6 +33,8 @@ I got a painting by [François Poggi](https://www.mahmah.ch/collection/artistes/
   {"src": "img/signature.jpg", "alt": "Signature"}
 ]
 {{</ gallery >}}
+
+According to a later inscription on the reverse, the title is "Alte Steintreppe vor bäuerlichem Gehöft" (Old stone staircase in front of a farmstead).
 
 François Poggi (1838–1900) was a 19th-century Swiss painter who was born in Italy. He moved to Genoa with his parents.
 There he became known primarily as a painter (oil, watercolour), pastel artist, lithographer and decorative painter.

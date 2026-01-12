@@ -27,6 +27,19 @@ wikidata:
   - https://www.wikidata.org/wiki/Q137661693
   - https://www.wikidata.org/wiki/Q258031
   - https://www.wikidata.org/wiki/Q903816
+resources:
+  - src: img/preview.jpg
+    params:
+      linkedart:
+        skip: true
+  - src: img/render.jpg
+    params:
+      linkedart:
+        skip: true
+  - src: img/august-2024.jpg
+    params:
+      linkedart:
+        skip: true
 ---
 
 ...ist kein neues Thema mehr: Weder wenn es um die Auswirkungen geht, die sich in alten Werken erkennen lassen, noch als Gegenstand von Kunst selber.

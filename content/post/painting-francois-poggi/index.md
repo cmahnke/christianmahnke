@@ -11,10 +11,14 @@ outputs:
   - html
   - linkedart
 linkedart:
+  title: Alte Steintreppe vor bäuerlichem Gehöft
   artist:
     wikidata: https://www.wikidata.org/wiki/Q52148388
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
+  rights:
+    name: Public Domain
+    url: https://creativecommons.org/publicdomain/zero/1.0/
 wikidata:
   - https://www.wikidata.org/wiki/Q52148388
 ---
@@ -30,6 +34,8 @@ Ich habe ein Gemälde von [François Poggi](https://www.mahmah.ch/collection/art
   {"src": "img/signature.jpg", "alt": "Signatur"}
 ]
 {{</ gallery >}}
+
+Laut nachträglichher Beschjriftung auf der Rückseite ist der Titel "Alte Steintreppe vor bäuerlichem Gehöft".
 
 François Poggi (1838–1900) war ein schweizer Maler des 19. Jahrhunderts, der in Italien geboren wurde. Er siedelte mit seinen Eltern nach Genua über.
 Dort wurde er vor allem als Maler (Öl, Aquarell), Pastellzeichner, Lithograf und Dekorationsmaler bekannt.
