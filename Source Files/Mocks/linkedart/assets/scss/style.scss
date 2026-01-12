@@ -57,4 +57,10 @@ pre {
     padding: 10px;
     overflow: auto;
     font-size: 12px;
+
+    .string { color: #008000; }
+    .number { color: #ff8c00; }
+    .boolean { color: #0000ff; }
+    .null { color: #ff00ff; }
+    .key { color: #a52a2a; }
 }

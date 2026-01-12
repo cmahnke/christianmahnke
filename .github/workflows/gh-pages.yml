@@ -21,6 +21,10 @@ jobs:
   deploy:
     runs-on: ubuntu-24.04
     steps:
+      - name: Free some disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+
       - uses: actions/checkout@v6
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
