@@ -1,6 +1,6 @@
 ---
 date: 2026-01-12T07:22:44+02:00
-title: "Exhibition &ldquo;Collections Tell Stories&rdquo;"
+title: "Exhibition “Sammlungen erzählen” (Collections Tell Stories)"
 keywords: Coat hangers, Forum Wissen
 tags:
   - Projektemacher.org

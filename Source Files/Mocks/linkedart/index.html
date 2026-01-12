@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked Art Simple Viewer</title>
+    <link rel="stylesheet" href="assets/scss/style.scss">
+</head>
+<body>
+
+    <h2>Linked Art Explorer</h2>
+    <div class="input-group">
+        <input type="text" id="urlInput" placeholder="Enter Linked Art JSON URL (e.g., Getty or Yale Art Gallery)">
+        <button onclick="fetchData()">Load</button>
+    </div>
+
+    <div id="errorDisplay" class="error" style="display:none"></div>
+    <div id="output" class="card" style="display:none"></div>
+
+    <script type="module" src="./assets/ts/main.ts"></script>
+</body>
+</html>

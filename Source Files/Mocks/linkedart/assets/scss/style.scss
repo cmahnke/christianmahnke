@@ -1,0 +1,60 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    background: #f4f4f9;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.attr {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.label {
+    font-weight: bold;
+    color: #555;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+}
+
+.value {
+    color: #222;
+    margin-left: 10px;
+}
+
+.error {
+    color: red;
+    background: #fee;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+pre {
+    background: #eee;
+    padding: 10px;
+    overflow: auto;
+    font-size: 12px;
+}
