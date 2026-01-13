@@ -7,3 +7,6 @@
     {{- warnf "[check-post.html] Missing LinkedArt in %s" .RelPermalink -}}
   {{- end -}}
 {{- end -}}
+{{- if not (isset .Params "wikidata") -}}
+  {{- warnf "[check-post.html] Missing Wikidata in %s" .RelPermalink -}}
+{{- end -}}

@@ -1,3 +1,4 @@
+{{- $page := . -}}
 {{- $defaultRelation := "related" -}}
 {{- $entityBase := "http://www.wikidata.org/entity/" -}}
 {{- $authorName := "" }}
@@ -26,86 +27,81 @@
   {{- $linkedArt = $linkedArt | merge (dict "mainEntityOfPage" ($.OutputFormats.Get "html").Permalink) -}}
 {{- end -}}
 
+{{- $codemeta := dict -}}
+{{- $cffFile := "CITATION.cff" -}}
+{{- with .Resources.Get $cffFile -}}
+  {{- $codemeta = partial "metadata/codemeta.json" $page | transform.Unmarshal -}}
+{{- end -}}
+
 <script type="application/ld+json">
-  {
-      "@context" : "http://schema.org",
-      "@type": {{ $type }},
-      "@id": {{ .Permalink }},
-      "url": {{ .Permalink }},
-      "name": {{ .Title }},
-      "datePublished": {{ .Date }}
-      {{- with .Description -}}
-        ,"description": {{ . }}
-      {{- end -}}
-      {{- if ne $authorName "" -}}
-        ,"author": {
-          "@type": "Person",
-          "@id": {{ printf "%s%s" .Site.BaseURL "#person" }},
-          "name": {{ $authorName }},
-          "url": {{ .Site.BaseURL }}
-        }
-      {{- end -}}
-      ,"isPartOf": {
-        "@type" : "Blog",
-        "@id": {{ printf "%s%s" .Site.BaseURL "post" }},
-        "name": {{ printf "%s %s" .Site.Title "Blog" }}
-      }
-      {{- with .Title -}}
-        , "headline": {{ . }}
-      {{- end -}}
-      {{- $keywords := slice -}}
-      {{- with .Keywords -}}
-        {{- if not site.Params.keywordAsString -}}
-          {{- if not (reflect.IsSlice .) -}}
-            {{- $keywords = split . "," -}}
-          {{- else -}}
-            {{- $keywords = . -}}
-          {{- end -}}
-        {{- else -}}
-          {{- $keywords = split (delimit . " ") ", " -}}
-        {{- end -}}
-      {{- end -}}
-      {{- with .Params.tags -}}
-        {{- range $tag := . -}}
-          {{- if hasPrefix . "hidden_" -}}
-            {{- continue -}}
-          {{- end -}}
-          {{- if ne . "" -}}
-            {{- $keywords = $keywords | append . -}}
-          {{- end -}}
-        {{- end -}}
-      {{- end -}}
-      {{- $about := $keywords -}}
-      {{- with .Params.wikidata -}}
-        {{- $entries := dict -}}
-        {{- if not (reflect.IsMap .) -}}
-          {{- $list := slice -}}
-          {{- if not (reflect.IsSlice .) -}}
-            {{- $list = slice . -}}
-          {{- else  -}}
-            {{- $list = . -}}
-          {{- end -}}
-          {{- range $list -}}
-            {{- $entries = merge $entries (dict . $defaultRelation) -}}
-          {{- end -}}
-        {{- else -}}
-          {{- $entries = . -}}
-        {{- end -}}
+  {{- $schemaOrg := dict "@context" "http://schema.org" "@type" $type "@id" .Permalink "url" .Permalink "name" .Title "datePublished" .Date -}}
+  {{- with .Description -}}
+    {{- $schemaOrg = $schemaOrg | merge (dict "description" .) -}}
+  {{- end -}}
+  {{- with .Title -}}
+    {{- $schemaOrg = $schemaOrg | merge (dict "headline" .) -}}
+  {{- end -}}
+  {{- $schemaOrg = $schemaOrg | merge (dict "isPartOf" (dict "@type" "Blog" "@id" (printf "%s%s" .Site.BaseURL "post") "name" (printf "%s %s" .Site.Title "Blog"))) -}}
+  {{- if ne $authorName "" -}}
+    {{- $schemaOrg = $schemaOrg | merge (dict "author" (dict "@type" "Person" "@id" (printf "%s%s" .Site.BaseURL "#person") "name" $authorName "url" .Site.BaseURL)) -}}
+  {{- end -}}
 
-        {{- range $url, $relation := $entries -}}
-          {{- $id := replaceRE `https://www.wikidata.org/wiki/` "" $url -}}
-          {{- $uri := printf "%s%s" $entityBase $id -}}
-          {{- $name := partial "data/functions/wikidata-label.html" (dict "url" $id) -}}
-          {{- $thing := dict "@type" "Thing" "@id" $uri "name" $name -}}
-          {{- $about = $about | append $thing -}}
-        {{- end -}}
+  {{- $keywords := slice -}}
+  {{- with .Keywords -}}
+    {{- if not site.Params.keywordAsString -}}
+      {{- if not (reflect.IsSlice .) -}}
+        {{- $keywords = split . "," -}}
+      {{- else -}}
+        {{- $keywords = . -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $keywords = split (delimit . " ") ", " -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with .Params.tags -}}
+    {{- range $tag := . -}}
+      {{- if hasPrefix . "hidden_" -}}
+        {{- continue -}}
+      {{- end -}}
+      {{- if ne . "" -}}
+        {{- $keywords = $keywords | append . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $about := $keywords -}}
+  {{- with .Params.wikidata -}}
+    {{- $entries := dict -}}
+    {{- if not (reflect.IsMap .) -}}
+      {{- $list := slice -}}
+      {{- if not (reflect.IsSlice .) -}}
+        {{- $list = slice . -}}
+      {{- else  -}}
+        {{- $list = . -}}
+      {{- end -}}
+      {{- range $list -}}
+        {{- $entries = merge $entries (dict . $defaultRelation) -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $entries = . -}}
+    {{- end -}}
 
-      {{- end -}}
-      {{- with $about -}}
-        , "about": {{ jsonify $about | safeJS }}
-      {{- end -}}
-      {{- with $keywords -}}
-        , "keywords": {{ jsonify $keywords | safeJS }}
-      {{- end -}}
-  }
+    {{- range $url, $relation := $entries -}}
+      {{- $id := replaceRE `https://www.wikidata.org/wiki/` "" $url -}}
+      {{- $uri := printf "%s%s" $entityBase $id -}}
+      {{- $name := partial "data/functions/wikidata-label.html" (dict "url" $id) -}}
+      {{- $thing := dict "@type" "Thing" "@id" $uri "name" $name -}}
+      {{- $about = $about | append $thing -}}
+    {{- end -}}
+
+  {{- end -}}
+  {{- with $about -}}
+    {{- $schemaOrg = $schemaOrg | merge (dict "about" .) -}}
+  {{- end -}}
+  {{- with $keywords -}}
+    {{- $schemaOrg = $schemaOrg | merge (dict "keywords" .) -}}
+  {{- end -}}
+  {{- with $codemeta -}}
+    {{- $schemaOrg = $schemaOrg | merge (dict "mentions" .) -}}
+  {{- end -}}
+  {{ $schemaOrg | jsonify | safeJS }}
 </script>

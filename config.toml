@@ -163,6 +163,8 @@ timeout = "120s"
     suffixes = ["jxl"]
   [mediaTypes."text/bibtex"]
     suffixes = ["bib"]
+#  [mediaTypes."application/yaml"]
+#    suffixes = ["cff"]
 
 [outputFormats]
   [outputFormats.geojson]
