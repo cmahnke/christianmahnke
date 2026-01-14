@@ -1,5 +1,5 @@
 ---
-date: 2026-01-14T13:22:44+02:00
+date: 2026-01-15T13:22:44+02:00
 title: "Mastodon backups with GitHub Actions"
 draft: true
 description: 'Due to recent events'

@@ -1,5 +1,5 @@
 ---
-date: 2025-02-25T19:52:22+02:00
+date: 2026-01-14T19:52:22+02:00
 title: 'Metadaten für Software'
 description: "Software-Metadaten für die (automatische) Nachnutzung von Funktionionalitäten"
 cite: true
