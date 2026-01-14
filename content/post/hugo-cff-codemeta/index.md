@@ -1,7 +1,7 @@
 ---
 date: 2026-01-13T18:52:22+02:00
 title: 'CFF zu CodeMeta in Hugo'
-description: ""
+description: "Teil 1 über Software-Metadaten"
 cite: true
 tags:
 - SoftwareDevelopment
