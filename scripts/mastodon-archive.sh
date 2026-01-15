@@ -17,8 +17,9 @@ git ls-remote --exit-code origin $BACKUP_BRANCH
 EXIT_CODE=$?
 if [ $EXIT_CODE -eq 0 ] ; then
   git fetch origin $BACKUP_BRANCH
-  #git checkout origin/$BACKUP_BRANCH -- "$BACKUP_DIRECTORY/*.json"
-  git show $BACKUP_BRANCH:$BACKUP_DIRECTORY/$BACKUP_FILE > $BACKUP_DIRECTORY/$BACKUP_FILE
+  git checkout origin/$BACKUP_BRANCH -- "$BACKUP_DIRECTORY/*.json"
+  git restore --staged "$BACKUP_DIRECTORY/*.json"
+  #git show $BACKUP_BRANCH:$BACKUP_DIRECTORY/$BACKUP_FILE > $BACKUP_DIRECTORY/$BACKUP_FILE
 else
   echo "No backup branch '$BACKUP_BRANCH' found, skipping checkout."
 fi
