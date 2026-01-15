@@ -72,7 +72,7 @@ jobs:
         id: media-path
         working-directory: ${{ env.BACKUP_DIRECTORY }}
         run: |
-          echo "MEDIA_PATH=$($BACKUP_FILE .json)" >> $GITHUB_OUTPUT
+          echo "MEDIA_PATH=$(basename ${{ env.BACKUP_FILE }} .json)" >> $GITHUB_OUTPUT
 
       - name: Clean secrets
         working-directory: ${{ env.BACKUP_DIRECTORY }}
