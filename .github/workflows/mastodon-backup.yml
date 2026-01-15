@@ -27,6 +27,7 @@ jobs:
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v6
       - name: Create Backup Branch
         run: |
           git checkout ${{ env.BACKUP_BRANCH }} || git checkout -b --orphan ${{ env.BACKUP_BRANCH }}
