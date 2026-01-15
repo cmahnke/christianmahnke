@@ -58,9 +58,19 @@ jobs:
       - name: Clean backup
         working-directory: ${{ env.BACKUP_DIRECTORY }}
         run: |
+          jq '(.mentions, .statuses) |= del(.[] | select(.visibility == "direct"))' ${{ env.BACKUP_FILE }} | sponge ${{ env.BACKUP_FILE }}
+
+      - name: Get media
+        working-directory: ${{ env.BACKUP_DIRECTORY }}
+        run: |
+          mastodon-archive media ${{ env.MASTODON_USER }}
+          mastodon-archive media --collection favourites --collection bookmarks ${{ env.MASTODON_USER }}
+
+      - name: Clean secrets
+        working-directory: ${{ env.BACKUP_DIRECTORY }}
+        run: |
           rm ${{ env.USER_SECRET_FILE }}
           rm ${{ env.SERVER_SECRET_FILE }}
-          jq '(.mentions, .statuses) |= del(.[] | select(.visibility == "direct"))' ${{ env.BACKUP_FILE }} | sponge ${{ env.BACKUP_FILE }}
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v7
