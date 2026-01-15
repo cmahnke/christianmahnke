@@ -1,7 +1,6 @@
 ---
 date: 2026-01-15T06:22:44+02:00
 title: "Mastodon backups with GitHub Actions"
-draft: true
 description: 'Due to recent events'
 tags:
 - Projektemacher.org
@@ -60,6 +59,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - name: Create Backup Branch
         run: |
           git checkout ${{ env.BACKUP_BRANCH }} || git switch --orphan ${{ env.BACKUP_BRANCH }}
@@ -85,22 +86,41 @@ jobs:
 
       - name: Run backup
         working-directory: ${{ env.BACKUP_DIRECTORY }}
-        run: mastodon-archive archive --with-followers --with-following --with-mentions ${{ env.MASTODON_USER }}
+        run: mastodon-archive archive --no-stopping --with-followers --with-following --with-mentions ${{ env.MASTODON_USER }}
 
       - name: Clean backup
         working-directory: ${{ env.BACKUP_DIRECTORY }}
         run: |
-          rm ${{ env.USER_SECRET_FILE }}
-          rm ${{ env.SERVER_SECRET_FILE }}
           jq '(.mentions, .statuses) |= del(.[] | select(.visibility == "direct"))' ${{ env.BACKUP_FILE }} | sponge ${{ env.BACKUP_FILE }}
 
+      - name: Generate path name
+        id: media-path
+        working-directory: ${{ env.BACKUP_DIRECTORY }}
+        run: |
+          echo "MEDIA_PATH=$(basename ${{ env.BACKUP_FILE }} .json)" >> $GITHUB_OUTPUT
+
+      - name: Get media
+        working-directory: ${{ env.BACKUP_DIRECTORY }}
+        run: |
+          mastodon-archive media ${{ env.MASTODON_USER }}
+          mastodon-archive media --collection favourites --collection bookmarks ${{ env.MASTODON_USER }}
+          ls -R ${{ steps.media-path.outputs.MEDIA_PATH }}
+
+      - name: Clean secrets
+        working-directory: ${{ env.BACKUP_DIRECTORY }}
+        run: |
+          rm ${{ env.USER_SECRET_FILE }}
+          rm ${{ env.SERVER_SECRET_FILE }}
+
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: Update Mastodon backup
-          file_pattern: ${{ env.BACKUP_DIRECTORY }}/*.json
-          create_branch: true
-          branch: ${{ env.BACKUP_BRANCH }}
+        working-directory: ${{ env.BACKUP_DIRECTORY }}
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"          
+          git add *.json
+          git add ${{ steps.media-path.outputs.MEDIA_PATH }}/*
+          git commit -m "Update Mastodon backup" || echo "No changes to commit"
+          git push -u origin ${{ env.BACKUP_BRANCH }}
 ```
 
 ## Tidying up
