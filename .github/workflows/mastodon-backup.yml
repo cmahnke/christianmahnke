@@ -28,6 +28,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - name: Create Backup Branch
         run: |
           git checkout ${{ env.BACKUP_BRANCH }} || git switch --orphan ${{ env.BACKUP_BRANCH }}
@@ -66,6 +68,12 @@ jobs:
           mastodon-archive media ${{ env.MASTODON_USER }}
           mastodon-archive media --collection favourites --collection bookmarks ${{ env.MASTODON_USER }}
 
+      - name: Generate path name
+        id: media-path
+        working-directory: ${{ env.BACKUP_DIRECTORY }}
+        run: |
+          echo "MEDIA_PATH=$($BACKUP_FILE .json)" >> $GITHUB_OUTPUT
+
       - name: Clean secrets
         working-directory: ${{ env.BACKUP_DIRECTORY }}
         run: |
@@ -76,6 +84,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Update Mastodon backup
-          file_pattern: ${{ env.BACKUP_DIRECTORY }}/*.json
-          create_branch: true
+          file_pattern: "${{ env.BACKUP_DIRECTORY }}/*.json ${{ steps.media-path.outputs.MEDIA_PATH }}/*"
           branch: ${{ env.BACKUP_BRANCH }}
