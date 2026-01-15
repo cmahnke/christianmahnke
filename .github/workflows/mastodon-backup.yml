@@ -57,4 +57,5 @@ jobs:
         with:
           commit_message: Update Mastodon backup
           file_pattern: ${{ env.BACKUP_DIRECTORY }}/*.json
+          create_branch: true
           branch: ${{ env.BACKUP_BRANCH }}
