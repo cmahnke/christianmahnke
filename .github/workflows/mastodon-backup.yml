@@ -82,10 +82,11 @@ jobs:
           rm ${{ env.SERVER_SECRET_FILE }}
 
       - name: Commit changes
+        working-directory: ${{ env.BACKUP_DIRECTORY }}
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"          
-          git add ${{ env.BACKUP_DIRECTORY }}/*.json
+          git add *.json
           git add ${{ steps.media-path.outputs.MEDIA_PATH }}/*
           git commit -m "Update Mastodon backup" || echo "No changes to commit"
           git push -u origin ${{ env.BACKUP_BRANCH }}
