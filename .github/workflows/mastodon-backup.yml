@@ -34,6 +34,9 @@ jobs:
           mkdir -p ${{ env.BACKUP_DIRECTORY }}
           echo "*.secret" > ${{ env.BACKUP_DIRECTORY }}/.gitignore
 
+      - name: Istall dependencies
+        run: sudo apt-get install -y moreutils jq
+
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
