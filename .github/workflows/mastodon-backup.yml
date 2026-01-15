@@ -62,17 +62,18 @@ jobs:
         run: |
           jq '(.mentions, .statuses) |= del(.[] | select(.visibility == "direct"))' ${{ env.BACKUP_FILE }} | sponge ${{ env.BACKUP_FILE }}
 
-      - name: Get media
-        working-directory: ${{ env.BACKUP_DIRECTORY }}
-        run: |
-          mastodon-archive media ${{ env.MASTODON_USER }}
-          mastodon-archive media --collection favourites --collection bookmarks ${{ env.MASTODON_USER }}
-
       - name: Generate path name
         id: media-path
         working-directory: ${{ env.BACKUP_DIRECTORY }}
         run: |
           echo "MEDIA_PATH=$(basename ${{ env.BACKUP_FILE }} .json)" >> $GITHUB_OUTPUT
+
+      - name: Get media
+        working-directory: ${{ env.BACKUP_DIRECTORY }}
+        run: |
+          mastodon-archive media ${{ env.MASTODON_USER }}
+          mastodon-archive media --collection favourites --collection bookmarks ${{ env.MASTODON_USER }}
+          ls -R ${{ steps.media-path.outputs.MEDIA_PATH }}
 
       - name: Clean secrets
         working-directory: ${{ env.BACKUP_DIRECTORY }}
@@ -84,5 +85,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Update Mastodon backup
-          file_pattern: "${{ env.BACKUP_DIRECTORY }}/*.json ${{ steps.media-path.outputs.MEDIA_PATH }}/*"
+          file_pattern: "${{ env.BACKUP_DIRECTORY }}/*.json ${{ env.BACKUP_DIRECTORY }}/${{ steps.media-path.outputs.MEDIA_PATH }}/*"
           branch: ${{ env.BACKUP_BRANCH }}
