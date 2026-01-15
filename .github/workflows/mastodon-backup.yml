@@ -8,7 +8,8 @@ on:
 env:
   #MASTODON_URL: https://openbiblio.social
   MASTODON_USER: cmahnke@openbiblio.social
-  SECRET_FILE: ./openbiblio.social.user.cmahnke.secret
+  USER_SECRET_FILE: ./openbiblio.social.user.cmahnke.secret
+  SERVER_SECRET_FILE: ./openbiblio.social.server.secret
   BACKUP_BRANCH: mastodon-backup
   BACKUP_DIRECTORY: ./data/mastodon
 
@@ -16,29 +17,39 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  packages: write
+  contents: write
+
 jobs:
   backup:
     runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v6
+      - name: Create Backup Branch
+        run: |
+          git checkout ${{ env.BACKUP_BRANCH }} || git checkout -b --orphan ${{ env.BACKUP_BRANCH }}
+          mkdir -p ${{ env.BACKUP_DIRECTORY }}
+          echo "*.secret" > ${{ env.BACKUP_DIRECTORY }}/.gitignore
 
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: '3.x'
-
+         
       - name: Install mastodon-archive
         run: pip install mastodon-archive
 
-      - name: Setup Secret
+      - name: Setup Secrets
         working-directory: ${{ env.BACKUP_DIRECTORY }}
-        run: echo "${{ secrets.MASTODON_SECRET }}" > ${{ env.SECRET_FILE }}
+        run: |
+          echo "${{ secrets.MASTODON_USER_SECRET }}" > ${{ env.USER_SECRET_FILE }}
+          echo "${{ secrets.MASTODON_SERVER_SECRET }}" > ${{ env.SERVER_SECRET_FILE }}
 
       - name: Run backup
         working-directory: ${{ env.BACKUP_DIRECTORY }}
-        run: mastodon-archive archive ${{ env.MASTODON_USER }}
+        run: mastodon-archive archive --with-followers --with-following --with-mentions ${{ env.MASTODON_USER }}
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v7
@@ -46,4 +57,3 @@ jobs:
           commit_message: Update Mastodon backup
           file_pattern: ${{ env.BACKUP_DIRECTORY }}/*.json
           branch: ${{ env.BACKUP_BRANCH }}
-          create_branch: true
