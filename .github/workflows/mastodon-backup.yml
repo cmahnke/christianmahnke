@@ -30,7 +30,7 @@ jobs:
       - uses: actions/checkout@v6
       - name: Create Backup Branch
         run: |
-          git checkout ${{ env.BACKUP_BRANCH }} || git checkout -b --orphan ${{ env.BACKUP_BRANCH }}
+          git checkout ${{ env.BACKUP_BRANCH }} || git checkout --orphan ${{ env.BACKUP_BRANCH }}
           mkdir -p ${{ env.BACKUP_DIRECTORY }}
           echo "*.secret" > ${{ env.BACKUP_DIRECTORY }}/.gitignore
 
