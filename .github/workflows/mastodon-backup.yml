@@ -55,7 +55,7 @@ jobs:
 
       - name: Run backup
         working-directory: ${{ env.BACKUP_DIRECTORY }}
-        run: mastodon-archive archive --with-followers --with-following --with-mentions ${{ env.MASTODON_USER }}
+        run: mastodon-archive archive --no-stopping --with-followers --with-following --with-mentions ${{ env.MASTODON_USER }}
 
       - name: Clean backup
         working-directory: ${{ env.BACKUP_DIRECTORY }}
@@ -82,8 +82,17 @@ jobs:
           rm ${{ env.SERVER_SECRET_FILE }}
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: Update Mastodon backup
-          file_pattern: "${{ env.BACKUP_DIRECTORY }}/*.json ${{ env.BACKUP_DIRECTORY }}/${{ steps.media-path.outputs.MEDIA_PATH }}/*"
-          branch: ${{ env.BACKUP_BRANCH }}
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"          
+          git add ${{ env.BACKUP_DIRECTORY }}/*.json
+          git add ${{ steps.media-path.outputs.MEDIA_PATH }}/*
+          git commit -m "Update Mastodon backup" || echo "No changes to commit"
+          git push -u origin ${{ env.BACKUP_BRANCH }}
+
+#      - name: Commit changes
+#        uses: stefanzweifel/git-auto-commit-action@v7
+#        with:
+#          commit_message: Update Mastodon backup
+#          file_pattern: "${{ env.BACKUP_DIRECTORY }}/*.json ${{ env.BACKUP_DIRECTORY }}/${{ steps.media-path.outputs.MEDIA_PATH }}/*"
+#          branch: ${{ env.BACKUP_BRANCH }}
