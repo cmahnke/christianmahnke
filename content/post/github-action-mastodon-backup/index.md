@@ -8,10 +8,13 @@ tags:
 wikidata: 
   - https://www.wikidata.org/wiki/Q27986619
   - https://www.wikidata.org/wiki/Q115232190
+  - https://www.wikidata.org/wiki/Q364
+  - https://www.wikidata.org/wiki/Q97185096
+  - https://www.wikidata.org/wiki/Q28865
 ---
 
 Aus aktuellem Anlass...
-<!-more-->
+<!--more-->
 
 ...auch wenn ich schon lange nichts mehr bei Mastodon gepostet habe, wollte ich meine Aktivitäten zwischen den Jahren dort mal wieder veröffentlichen.
 

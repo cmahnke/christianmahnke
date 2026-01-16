@@ -8,10 +8,13 @@ tags:
 wikidata: 
   - https://www.wikidata.org/wiki/Q27986619
   - https://www.wikidata.org/wiki/Q115232190
+  - https://www.wikidata.org/wiki/Q364
+  - https://www.wikidata.org/wiki/Q97185096
+  - https://www.wikidata.org/wiki/Q28865
 ---
 
 Due to recent events...
-<!-more-->
+<!--more-->
 
 ...even though I haven't posted anything on Mastodon for a long time, I wanted to publish my activities there again between Christmas and New Year.
 
