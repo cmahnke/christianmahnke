@@ -11,7 +11,7 @@ wikidata:
 ---
 
 Due to recent events...
-<!-more-->
+<!--more-->
 
 ...even though I haven't posted anything on Mastodon for a long time, I wanted to publish my activities there again between Christmas and New Year.
 

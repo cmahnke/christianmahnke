@@ -11,7 +11,7 @@ wikidata:
 ---
 
 Aus aktuellem Anlass...
-<!-more-->
+<!--more-->
 
 ...auch wenn ich schon lange nichts mehr bei Mastodon gepostet habe, wollte ich meine Aktivitäten zwischen den Jahren dort mal wieder veröffentlichen.
 
