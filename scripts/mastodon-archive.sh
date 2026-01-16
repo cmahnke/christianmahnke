@@ -16,7 +16,7 @@ fi
 IMAGE_DIRECTORY=$(basename $BACKUP_FILE .json)
 ASSET_DIRECTORY=./assets/mastodon/media
 rm -rf "$ASSET_DIRECTORY"
-#mkdir -p "$ASSET_DIRECTORY"
+mkdir -p `dirname "$ASSET_DIRECTORY"`
 
 git config --global remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 git ls-remote --exit-code origin $BACKUP_BRANCH
