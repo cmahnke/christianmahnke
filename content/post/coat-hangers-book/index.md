@@ -18,7 +18,7 @@ Das erste Buch zu einem meiner Blogs ist nun fertig...
 
 Nachdem das [Kleiderbügel-Blog im Herbst überarbeitet](/post/kleiderbuegel-2025/) wurde, ist nun auch ein Sammlungskatalog verfügbar.
 
-{{< pdf-preview pdf="kleiderbügel-2025.pdf" >}}
+{{< pdf-preview pdf="kleiderbuegel-2025.pdf" download=true >}}
 
 Für die Umsetzung kam wieder [Hugo](https://gohugo.io/) zum Einsatz, zum Setzen und für die PDF-Generierung wurde [Vivliostyle](https://vivliostyle.org/) verwendet. Es ist das erste Projekt, dass ich mit CSS für den Druck realisiert habe. Meine Erfahrungen habe ich bereits in dem Beitrag ["Papiertiger CSS für den Druck"](/post/paper-tiger-print-css/) geschildert.
 

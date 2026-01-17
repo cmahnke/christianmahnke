@@ -346,4 +346,17 @@ $down-image-marker:"data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000
     margin-top: -1rem;
     font-style: italic;
   }
+
+
+  .pdf-preview-download {
+    text-align: end;
+    font-size: smaller;
+    margin-bottom: 1rem;
+    font-style: italic;
+
+    &:after,
+    &:before {
+      content: '';
+    }
+  }
 }
