@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stereoscopy on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Stereoscopy/</link>
+    <description>Recent content in Stereoscopy on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/Stereoscopy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Historische Stereogramme auf moderner Hardware</title>
+      <link>https://christianmahnke.de/post/vintagereality-apple-spatial/citation.bib</link>
+      <pubDate>Sun, 28 Dec 2025 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/vintagereality-apple-spatial/citation.bib</guid>
+      <description>&lt;p&gt;Ich habe ein neues Telefon&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>KI Segmentierung für Stereoskopie-Karten</title>
+      <link>https://christianmahnke.de/post/vintagereality-ai/citation.bib</link>
+      <pubDate>Sun, 28 Dec 2025 10:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/vintagereality-ai/citation.bib</guid>
+      <description>&lt;p&gt;2024 ist meine Stereoskopie-Sammlung online gegangen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VintageReality gestartet</title>
+      <link>https://christianmahnke.de/post/vintagereality/citation.bib</link>
+      <pubDate>Tue, 05 Mar 2024 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/vintagereality/citation.bib</guid>
+      <description>&lt;p&gt;Das neueste Kind der &lt;a href=&#34;https://labs.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt; ist die seit Anfang 2023 ausgebaute Kategorie &amp;ldquo;1900 in 3D&amp;rdquo;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

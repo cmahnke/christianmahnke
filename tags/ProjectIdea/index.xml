@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projektideen on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/ProjectIdea/</link>
+    <description>Recent content in Projektideen on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/ProjectIdea/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Metadaten für Software</title>
+      <link>https://christianmahnke.de/post/software-metadata/citation.bib</link>
+      <pubDate>Wed, 14 Jan 2026 19:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/software-metadata/citation.bib</guid>
+      <description>&lt;p&gt;Teil 2 über Software-Metadaten.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Digitale Provenienz für digitalisiertes Kulturgut</title>
+      <link>https://christianmahnke.de/post/digital-provenance/citation.bib</link>
+      <pubDate>Sun, 16 Mar 2025 22:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/digital-provenance/citation.bib</guid>
+      <description>&lt;p&gt;Wie kann man Authentizität digitalisierten Kulturgutes gewährleisten?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>KI und Software-&#34;Entwicklung&#34;</title>
+      <link>https://christianmahnke.de/post/academic-software-publishing/citation.bib</link>
+      <pubDate>Tue, 25 Feb 2025 15:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/academic-software-publishing/citation.bib</guid>
+      <description>&lt;p&gt;Im letzten Jahr habe ich mich ab und zu mit KI beschäftigt, um meine Blogs mit zusätzlichen Features anzureichern und auch ihre Weiterentwicklung zu beschleunigen.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
