@@ -1,5 +1,5 @@
 ---
-date: 2026-01-17T13:07:44+02:00
+date: 2026-01-16T13:07:44+02:00
 title: 'Farbradierung von Alois Janák'
 keywords: Alois Janák
 tags:
