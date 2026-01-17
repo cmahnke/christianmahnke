@@ -19,7 +19,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q695684
 ---
 
-I bought an etching by [Arnold Leissler (the Younger)](https://de.wikipedia.org/wiki/Arnold_Leissler_der_J%C3%BCngere) (1939-2014)...
+I bought an etching by [Arnold Leissler (the Younger)](https://de.wikipedia.org/wiki/Arnold_Leissler_der_J%C3%BCngere) (1939-2014) ([at artnet](https://www.artnet.com/artists/arnold-leissler/))...
 <!--more-->
 
 {{< gallery >}}
@@ -30,3 +30,5 @@ I bought an etching by [Arnold Leissler (the Younger)](https://de.wikipedia.org/
 {{</ gallery >}}
 
 Arnold Leissler was a painter and graphic artist from Hanover. The graphic itself is printed on a coloured area of the picture, you can see the edge of the plate inside the coloured area. It is dated 1969.
+
+The title of the print is "Landschaft mit Pilaster und Skulptur" ("Landscape with Pilaster and Sculpture").

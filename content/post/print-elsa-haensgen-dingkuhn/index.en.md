@@ -32,7 +32,8 @@ I found a woodcut by [Elsa Haensgen-Dingkuhn](https://de.wikipedia.org/wiki/Elsa
 
 Elsa Haensgen-Dingkuhn was a graphic artist and painter from Hamburg. The depiction of children became one of her central themes from the mid-1920s onwards with the birth of her own children. Her descendants run their own [website](http://www.dingkuhn.de/) with a selection of her works.
 
-
 In the "Handbuch des Kunstmarktes: Kunstadressbuch für das Deutsche Reich, Danzig und Deutsch-Österreich", published in 1926 by Antiqua Verlags-Gesellschaft Kalkoff, Berlin, she is mentioned on the same page ([195](https://doi.org/10.11588/diglit.52375#0195)) as [Wilma Bräuner](/post/wilma-brauner/).
 
 The signature is a good opportunity to point out the dangers of [paper silverfish](https://en.wikipedia.org/wiki/Ctenolepisma_longicaudatum), which have presumably nibbled away parts of the signature here...
+
+The picture shows three children dancing in front of a picket fence, with oak trees in the background.

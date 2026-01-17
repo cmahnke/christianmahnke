@@ -32,7 +32,8 @@ Ich habe einen Holzschnitt von [Elsa Haensgen-Dingkuhn](https://de.wikipedia.org
 
 Elsa Haensgen-Dingkuhn war eine Hamburger Grafikerin und Malerin. Die Darstellung von Kindern wurde ab Mitte der 1920er Jahre mit der Geburt eigner Kinder eines ihrer zentralen Themen. Ihre Nachkommen betreiben eine eigene [Webseite](http://www.dingkuhn.de/) mit einer Auswahl ihrer Werke.
 
-
 Im "Handbuch des Kunstmarktes: Kunstadressbuch für das Deutsche Reich, Danzig und Deutsch-Österreich", erschienen 1926 bei der Antiqua Verlags-Gesellschaft Kalkoff, Berlin, wird sie auf der gleichen Seite ([195](https://doi.org/10.11588/diglit.52375#0195)) genannt wie [Wilma Bräuner](/post/wilma-brauner/).
 
 Die Signatur ist ein guter Anlass auf die Gefahren von [Papierfischen](https://de.wikipedia.org/wiki/Papierfischchen) hinzuweisen, die hier vermutlich Teile der Signatur weggeknabbert haben...
+
+Das Bild zeigt drei tanzende Kinder vor einem Lattenzaun, im Hintergrund Kopfeichen.

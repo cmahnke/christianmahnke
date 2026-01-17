@@ -19,7 +19,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q695684
 ---
 
-Ich habe eine Radierung von [Arnold Leissler (dem Jüngeren)](https://de.wikipedia.org/wiki/Arnold_Leissler_der_J%C3%BCngere) (1939-2014) gekauft...
+Ich habe eine Radierung von [Arnold Leissler (dem Jüngeren)](https://de.wikipedia.org/wiki/Arnold_Leissler_der_J%C3%BCngere) (1939-2014) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/arnold-leissler/)) gekauft...
 <!--more-->
 
 {{< gallery >}}
@@ -30,3 +30,5 @@ Ich habe eine Radierung von [Arnold Leissler (dem Jüngeren)](https://de.wikiped
 {{</ gallery >}}
 
 Arnold Leissler war ein Maler und Grafiker aus Hannover. Die Grafik selbst ist auf ein gefärbten Bereich des Bildes gedruckt, man erkennt den Plattenrand innerhalb der kolorierten Fläche. Sie ist auf 1969 datiert.
+
+Der Titel des Bildes ist "Landschaft mit Pilaster und Skulptur".
