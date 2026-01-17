@@ -25,6 +25,7 @@ Zur Vorbereitung zukünftiger Experimente gibt es nun für einige Einträge Link
 Beispiele für einzelne Posts / Seiten:
 
 * [Flamingo von Fritz Neumann](/collections/donations/spandau/linkedart.json)
+  * [Auch im IIIF Manifest referenziert](/collections/donations/spandau/manifest.json)
 * [Kinder von Elsa Haensgen-Dingkuhn](/post/print-elsa-haensgen-dingkuhn/linkedart.json)
 * [Boltenhagen von Tadeusz Kaczmarek](/post/painting-kaczmarek-tadeusz/linkedart.json)
 * ["Alte Steintreppe vor bäuerlichem Gehöft" von François Poggi](https://christianmahnke.de/post/painting-francois-poggi/linkedart.json)

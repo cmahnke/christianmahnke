@@ -10,6 +10,7 @@ outputs:
   - bibtex
   - html
   - linkedart
+  - iiif-manifest
 linkedart:
   title: Flamingo
   artist:

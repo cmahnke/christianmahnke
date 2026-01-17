@@ -75,3 +75,4 @@ assets/scss/flags/flags.scss
 assets/scss/npm-fonts/
 *.secret
 assets/mastodon/media
+openbiblio.social.*
