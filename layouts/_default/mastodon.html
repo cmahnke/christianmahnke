@@ -1,0 +1,40 @@
+{{ define "title" -}}
+  {{- if ne .Title "" -}}
+    {{- .Title }} · {{ .Site.Title -}}
+  {{- else -}}
+    {{- .Site.Title -}}
+  {{- end -}}
+{{- end }}
+
+{{ define "content" }}
+
+  {{- $postSection := "mastodon" -}}
+  {{- $render := "tag" -}}
+  {{- if isset .Params "render" -}}
+    {{- $render = printf "tag-%s" (.Params.render) -}}
+  {{- end -}}
+  {{- partial "header.html" . -}}
+    <div class="content-container mastodon">
+      {{- $posts := where .Site.Pages "Section" "mastodon" -}}
+      {{- $mainSite := .Sites.Default -}}
+      {{- if ne $mainSite .Site -}}
+        {{- $posts = ($posts | lang.Merge (where $mainSite.Pages "Section" $postSection)) -}}
+      {{- end -}}
+      {{- $pages := $posts.ByDate.Reverse -}}
+
+      <div class="section-head paginator">
+        <div class="parallax-bg">
+          <a href="{{ .RelPermalink }}" title="{{ .Title }}">
+            {{- $head := .CurrentSection -}}
+            <h1 class="{{ printf "%s-section" (path.Base $head.Permalink) }} section-head-title">{{ .Title }}</h1>
+          </a>
+        </div>
+      </div>
+
+      <div class="posts">
+        {{- range $pages -}}
+          {{- partial "mastodon/post.html" . -}}
+        {{- end -}}
+      </div>
+    </div>
+{{- end }}

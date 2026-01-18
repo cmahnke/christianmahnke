@@ -1,5 +1,5 @@
 ---
-title: "Mastodon"
+title: "Mastodon Archive"
 metaPage: true
 displayinlist: false
 archive: false

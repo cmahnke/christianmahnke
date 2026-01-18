@@ -1,3 +1,6 @@
+{{ if in .Section "mastodon" -}}
+  {{- return -}}
+{{- end -}}
 {{/* check art posts */}}
 {{- if in .Params.tags "Art" -}}
   {{- if not (isset .Params "wikidata") -}}

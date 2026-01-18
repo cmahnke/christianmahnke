@@ -42,6 +42,7 @@ $external-link-icon: "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/20
 @import "./pagefind";
 @import "./cite";
 @import "./collections";
+@import "./mastodon";
 
 /* Themes */
 /* @import "blog-themes/base"; */
@@ -1534,51 +1535,51 @@ a:visited {
     height: 1.2em;
     width: 1.2em;
     display: inline-block;
-}
 
-.github {
-    content: url($github-light);
-}
+  &.github {
+      content: url($github-light);
+  }
 
-.librarything {
-    content: url($librarything-light);
-}
+  &.librarything {
+      content: url($librarything-light);
+  }
 
-.instagram {
-    content: url($insta-light);
-}
+  &.instagram {
+      content: url($insta-light);
+  }
 
-.linkedin {
-    content: url($linkedin-light);
-}
+  &.linkedin {
+      content: url($linkedin-light);
+  }
 
-.orcid {
-    content: url($orcid-light);
-}
+  &.orcid {
+      content: url($orcid-light);
+  }
 
-.mastodon {
-  content: url($mastodon-light);
-}
+  &.mastodon {
+    content: url($mastodon-light);
+  }
 
-.md-term {
-  content: url($md-term-light);
-}
+  &.md-term {
+    content: url($md-term-light);
+  }
 
-.wikidata {
-  content: url($wikidata-light);
-}
+  &.wikidata {
+    content: url($wikidata-light);
+  }
 
-.gnd {
-  content: url($gnd-light);
-}
+  &.gnd {
+    content: url($gnd-light);
+  }
 
-.hf {
-  content: url($hf-light);
-}
+  &.hf {
+    content: url($hf-light);
+  }
 
-.projektemacher {
-    filter: #{"invert()"};
-    border-radius: 50%;
+  &.projektemacher {
+      filter: #{"invert()"};
+      border-radius: 50%;
+  }
 }
 
 /* This is a .section-container only used on the start page */

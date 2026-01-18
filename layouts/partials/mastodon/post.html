@@ -1,0 +1,113 @@
+<article class="mastodon-post {{.Params.type | safeCSS}}">
+  <header>
+    <h2><a href="{{ .Params.url }}">@{{ .Params.account }}</a></h2>
+    <time datetime="{{ .Params.created_at }}">{{ .Params.created_at | time.Format ":date_full" }} {{ .Params.created_at | time.Format ":time_short" }}</time>
+    {{/* TODO: Move this */}}
+    <div class="meta">
+      <div class="reblogs">{{ .Params.reblogs }}</div>
+      <div class="favourites">{{ .Params.favourites }}</div>
+      {{- with .Params.reply -}}
+        <div class="replies">{{ len . }}</div>
+      {{- end -}}
+    </div>
+  </header>
+  <div class="content">
+    {{- if .Params.spoiler_text -}}
+      <details>
+        <summary>{{ .Params.spoiler_text }}</summary>
+        {{- with .Params.card -}}
+          <a href="{{ .url }}" class="card" target="_blank" rel="noopener">
+            {{- with .image -}}<img src="{{ . }}" alt="">{{- end -}}
+            <div class="card-text">
+              <h3>{{ .title }}</h3>
+              <p>{{ .description }}</p>
+            </div>
+          </a>
+        {{- end -}}
+        {{ .Content | safeHTML }}
+      </details>
+    {{- else -}}
+      {{ .Content | safeHTML }}
+      {{- with .Params.card -}}
+        <a href="{{ .url }}" class="card" target="_blank" rel="noopener">
+          {{- with .image -}}<img src="{{ . }}" alt="">{{- end -}}
+          <div class="card-text">
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+          </div>
+        </a>
+      {{- end -}}
+    {{- end -}}
+  </div>
+  {{ with .Params.media_attachments }}
+    <div class="media-attachments">
+      {{ range . }}
+        {{- $image := (urls.Parse .url).Path -}}
+        <figure>
+          <img src="{{ .preview_url }}" alt="{{ .description }}">
+          {{ if .description }}
+            <figcaption>{{ .description }}</figcaption>
+          {{ end }}
+        </figure>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{- with .Params.mentions -}}
+    <div class="mentions">
+      {{- range . -}}
+        {{- $name := . -}}
+        {{- $url := "" -}}
+        {{- if reflect.IsMap . -}}
+          {{- $name = .username -}}
+          {{- $url = .url -}}
+        {{- end -}}
+        {{- if $url -}}
+          <a href="{{ $url }}" title="{{ $name }}">@{{ $name }}</a>
+        {{- else -}}
+          <span>@{{ $name }}</span>
+        {{- end -}}
+      {{- end -}}
+    </div>
+  {{- end -}}
+
+  {{- with (or .Params.tags .Params._tags) -}}
+    <div class="tags">
+      {{- range . -}}
+        {{- $tag := . -}}
+        {{- if reflect.IsMap . -}}
+          {{- $tag = .name -}}
+        {{- end -}}
+        {{- $url := printf "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=%s&language=en&format=json" ($tag | urlquery) -}}
+        {{- $data := dict -}}
+        {{ with try (resources.GetRemote $url) }}
+          {{ with .Err }}
+            {{- warnf "%s" . -}}
+          {{- else with .Value -}}
+            {{- $data = . | transform.Unmarshal (dict "format" "json") -}}
+          {{- else -}}
+            {{- errorf "Unable to get remote resource %q" $url -}}
+          {{- end }}
+        {{- end -}}
+        {{- $item := "" -}}
+        {{- if $data.search -}}
+          {{- range $data.search -}}
+            {{- if eq $item "" -}}
+              {{- if or (eq (lower .label) (lower $tag)) (eq (lower .match.text) (lower $tag)) -}}
+                {{- $item = . -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+          {{- if eq $item "" -}}
+            {{- $item = index $data.search 0 -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $item -}}
+          <a href="https://www.wikidata.org/wiki/{{ $item.id }}" title="{{ $item.label }}{{ with $item.description }} - {{ . }}{{ end }}" data-wikidata-qid="{{ $item.id }}">#{{ $tag }}</a>
+        {{- else -}}
+          <span>#{{ $tag }}</span>
+        {{- end -}}
+      {{- end -}}
+    </div>
+  {{- end -}}
+</article>

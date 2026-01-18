@@ -5,6 +5,9 @@ displayinlist: false
 archive: false
 news: false
 weight: 5
+wikidata:
+  - https://www.wikidata.org/wiki/Q1792450
+  - https://www.wikidata.org/wiki/Q1093434
 ---
 
 "Citizen Art Historian" is a mixture of "Citizen Scientist" and "Art Historian" and therefore more of a self-defined title. The definition could be: A non-expert who actively participates in the research, documentation, interpretation or preservation of art (history).

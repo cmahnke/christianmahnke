@@ -5,6 +5,9 @@ displayinlist: false
 archive: false
 news: false
 weight: 2
+wikidata:
+  - https://www.wikidata.org/wiki/Q1026962
+  - https://www.wikidata.org/wiki/Q15143191
 ---
 
 A "Digital Humanities Communicator" is a science communicator specialising in digital humanities. This term is not made up, but is still relatively rare.

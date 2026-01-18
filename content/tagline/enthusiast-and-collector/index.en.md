@@ -5,6 +5,8 @@ displayinlist: false
 archive: false
 news: false
 weight: 9
+wikidata:
+  - https://www.wikidata.org/wiki/Q3243461
 ---
 
 The original self-designation. I can also be found under the latter in [museum-digital](https://www.museum-digital.de/)(https://term.museum-digital.de/md-de/persinst/322830).
