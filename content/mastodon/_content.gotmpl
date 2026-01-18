@@ -1,0 +1,77 @@
+{{- $mastodonFile := "mastodon/mastodon-archive.json" -}}
+{{- $data := dict -}}
+{{- $adapter := . -}}
+{{- warnf "[mastodon/_content.gotmpl] Generating content from %s" $mastodonFile -}}
+{{- with resources.Get $mastodonFile -}}
+  {{ $data = . | transform.Unmarshal }}
+{{- else -}}
+  {{- errorf "mastodon/_content.gotmpl] Failed to load %s" $mastodonFile -}}
+{{- end -}}
+{{- .EnableAllLanguages -}}
+
+{{- range $data.statuses -}}
+
+  {{- $account := .account.username -}}
+  {{- $content := .content -}}
+  {{- $createdAt := .created_at -}}
+  {{- $id := .id -}}
+  {{- $media_attachments := .media_attachments -}}
+  {{- $language := .language -}}
+  {{- $reblogsCount := .reblogs_count -}}
+  {{- $favouritesCount := .favourites_count -}}
+  {{- $card := .card -}}
+  {{- $url := .url -}}
+  {{- $repliesCount := .replies_count -}}
+
+  {{ $content := dict
+    "mediaType" "text/html"
+    "value" $content
+  }}
+  {{ $page := dict
+    "content" $content
+    "kind" "page"
+    "date" $createdAt
+    "params" (dict
+      "account" $account
+      "created_at" $createdAt
+      "id" $id
+      "media_attachments" $media_attachments 
+      "language" $language
+      "reblogs_count" $reblogsCount
+      "favourites_count" $favouritesCount
+      "card" $card
+      "url" $url
+      "replies_count" $repliesCount
+    )
+    "path" $id
+  }}
+  {{ $adapter.AddPage $page }}
+{{- end -}}
+
+{{/*
+{{ define "_partials/mastodon/post.html" }}
+
+
+  <article class="mastodon-post">
+    <header>
+      <h2><a href="{{ $url }}">@{{ $account }}</a></h2>
+      <time datetime="{{ $createdAt }}">{{ $createdAt }}</time>
+    </header>
+    <div class="content">
+      {{ $content | safeHTML }}
+    </div>
+    {{ if gt (len $media_attachments) 0 }}
+      <div class="media-attachments">
+        {{ range $media_attachments }}
+          <figure>
+            <img src="{{ .preview_url }}" alt="{{ .description }}">
+            {{ if .description }}
+              <figcaption>{{ .description }}</figcaption>
+            {{ end }}
+          </figure>
+        {{ end }}
+      </div>
+    {{ end }}
+
+{{ end }}
+*/}}

@@ -76,3 +76,4 @@ assets/scss/npm-fonts/
 *.secret
 assets/mastodon/media
 openbiblio.social.*
+content/mastodon/*.json

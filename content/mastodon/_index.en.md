@@ -1,14 +1,15 @@
 ---
-title: "Meta"
+title: "Mastodon"
 metaPage: true
 displayinlist: false
 archive: false
 news: false
 sectionContent: false
+layout: mastodon
 cascade:
   - target:
       kind: '{page,section}'
-      lang: de
+      lang: en
       path: '**'
     params:
       archive: false
@@ -16,8 +17,3 @@ cascade:
       sitemap:
         disable: true
 ---
-
-This page provides some statistical analyses and data about the posts as JSON files
-
-* [Tags](./tags/index.json) of the blog
-* [Wikidata URIs](./wikidata/index.json) for posts in the blog

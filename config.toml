@@ -298,6 +298,10 @@ timeout = "120s"
     source = "node_modules/tify/dist/"
     target = "static/tify"
 
+  [[module.mounts]]
+      source = "assets/mastodon"
+      target = "assets/mastodon"
+
 [taxonomies]
   year = "year"
   tag = "tags"
