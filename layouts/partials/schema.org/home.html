@@ -1,3 +1,5 @@
+{{- $personURI := printf "%s%s" .Site.BaseURL "#person" -}}
+
 {{- $profilePage := unmarshal `{
     "@context" : "http://schema.org",
     "@graph": [
@@ -80,7 +82,7 @@
               "@type": "Specialty",
               "name": "Web Development",
               "description": "JavaScript, TypeScript, HTML, CSS and static site generatores like Hugo"
-            },            
+            },
             {
               "@type": "Specialty",
               "name": "Citizen Participation in institutional collections",

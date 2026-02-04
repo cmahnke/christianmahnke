@@ -1,0 +1,47 @@
+{{- $personURI := printf "%s%s" .Site.BaseURL "#person" -}}
+{{- with site.Params.author.uri -}}
+  {{- $personURI = . -}}
+{{- end -}}
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Christian Mahnke",
+    "url": "https://christianmahnke.de",
+    "email": "mail@christianmahnke.de",
+    "jobTitle": "Experte für digitale Bibliotheken und Museen",
+    "description": "Spezialist für Volltexte, Metadaten, OCR und Linked Open Data im kulturellen Erbe.",
+    "knowsAbout": [
+      "TEI / Digitale Editionen",
+      "OCR (Optical Character Recognition)",
+      "Linked Open Data (Wikidata, SPARQL)",
+      "IIIF (International Image Interoperability Framework)",
+      "Digitalisierungsworkflows (Goobi)",
+      "Computer Vision",
+      "Softwareentwicklung (Java, Python, Go, JavaScript)"
+    ],
+    "memberOf": [
+      {
+        "@type": "Organization",
+        "name": "Deutscher Museumsbund e. V."
+      },
+      {
+        "@type": "Organization",
+        "name": "europeana pro"
+      }
+    ],
+    "sameAs": [
+      "https://orcid.org/0009-0003-1361-4159",
+      "https://github.com/cmahnke",
+      "https://www.linkedin.com/in/christianmahnke",
+      "https://openbiblio.social/@cmahnke"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Christian Mahnke"
+    "@id": "{{ $personURI }}"
+  },
+  "copyrightYear": "2025"
+}

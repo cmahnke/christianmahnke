@@ -1,5 +1,5 @@
 ---
-date: 2026-02-07T15:00:00+02:00
+date: 2026-02-07T15:30:00+02:00
 title: Exhibition opening "Sammlungen erzählen"
 preview: Plakat.jpg
 tags:

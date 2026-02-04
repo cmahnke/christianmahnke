@@ -1,0 +1,49 @@
+{{- $personURI := printf "%s%s" .Site.BaseURL "#person" -}}
+{{- with site.Params.author.uri -}}
+  {{- $personURI = . -}}
+{{- end -}}
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Sammlungen zur Alltagskultur - Christian Mahnke",
+  "description": "Überblick über Sammlungen und Interessengebiete im Bereich der Alltagskultur des 20. Jahrhunderts, einschließlich Leihgaben und Schenkungen.",
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Sammelschwerpunkte",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Optische Geräte und Spielzeuge (Kameras, Projektoren)"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Unterhaltungselektronik (Atari, C64, Amiga)"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Bücher und Gedrucktes (Ratgeber, Kinderbücher, Typografie)"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Alltagsgegenstände (Kleiderbügel, Brillen, Tapeten)"
+      }
+    ]
+  },
+  "mentions": [
+    {
+      "@type": "SpecialAnnouncement",
+      "name": "Schenkungen und Leihgaben",
+      "description": "Bedingungen für die Übernahme von Objekten durch Institutionen (Digitalisierung, Nachweis, Open Access)."
+    }
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Christian Mahnke",
+    "url": "https://christianmahnke.de",
+    "@id": "{{ $personURI }}"
+  }
+}
