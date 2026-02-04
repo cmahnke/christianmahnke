@@ -1,145 +1,89 @@
 {{- $personURI := printf "%s%s" .Site.BaseURL "#person" -}}
+{{- with site.Params.author.uri -}}
+  {{- $personURI = . -}}
+{{- end -}}
 
-{{- $profilePage := unmarshal `{
-    "@context" : "http://schema.org",
-    "@graph": [
-    {
-      "@type": "ProfilePage",
-      "url": "https://christianmahnke.de/",
-      "name": "Christian Mahnke – Blog & Projekte",
-      "inLanguage": ["de", "en"],
-      "mainEntity": {
-          "@type": "Person",
-          "@id": "https://christianmahnke.de/#person",
-          "name": "Christian Mahnke",
-          "givenName": "Christian",
-          "familyName": "Mahnke",
-          "jobTitle": "Creative Technologist",
-          "description": [
-            { "@language": "de", "@value": "Sammler und Creative Technologist, spezialisiert auf die Alltagskultur des 20. Jahrhunderts und ihre digitale Präsentation." },
-            { "@language": "en", "@value": "Collector and creative technologist specialising in 20th-century everyday culture and its digital presentation." }
-          ],
-          "url": "https://christianmahnke.de/",
-          "logo": "https://christianmahnke.de/images/logo.png",
-          "worksFor": {
-              "@type": "Organization",
-              "name": "Projektemacher",
-              "url": "https://projektemacher.org/"
-          },
-          "gender": "male",
-          "memberOf": [
-              {
-                  "@type": "Organization",
-                  "name": "Deutscher Museumsbund e.V.",
-                  "url": "https://www.museumsbund.de/"
-              },
-              {
-                  "@type": "Organization",
-                  "name": "europeana pro",
-                  "url": "https://pro.europeana.eu/"
-              }
-          ],
-          "knowsLanguage": ["de", "en"],
-          "identifier": [
-            {
-              "@type": "PropertyValue",
-              "propertyID": "ORCID",
-              "value": "0009-0003-1361-4159"
-            },
-            {
-              "@type": "PropertyValue",
-              "propertyID": "museum:digital",
-              "value": "322830"
-            }
-          ],
-          "knowsAbout": [
-            {
-              "@type": "Specialty",
-              "name": "Digital Libraries & Museums",
-              "description": "Expertise in modeling, transformation, and searching of METS, MODS, LIDO, Linked Art and IIIF metadata for cultural heritage."
-            },
-            {
-              "@type": "Specialty",
-              "name": "Semantic Web & Linked Data",
-              "description": "Practical application of Wikidata, SPARQL, and RDF technologies for Linked Open Data (LOD)."
-            },
-            {
-              "@type": "Specialty",
-              "name": "Digital Imaging & 3D",
-              "description": "HDR Imaging, Photogrammetry, Stereoscopy, and Computer Vision using OpenCV."
-            },
-            {
-              "@type": "Specialty",
-              "name": "Software Engineering",
-              "description": "Development in Python, Java, Groovy and sometimes Go"
-            },
-            {
-              "@type": "Specialty",
-              "name": "DevOps",
-              "description": "Cloud-Infrastructures with Docker and Kubernetes."
-            },
-            {
-              "@type": "Specialty",
-              "name": "Web Development",
-              "description": "JavaScript, TypeScript, HTML, CSS and static site generatores like Hugo"
-            },
-            {
-              "@type": "Specialty",
-              "name": "Citizen Participation in institutional collections",
-              "description": "Strategies for community-driven collection building and transparent provenance documentation."
-            },
-            {
-              "@type": "Specialty",
-              "name": "Sustainable Cultural Technology",
-              "description": "Resource efficient and low cost presentation of cultural data and artifacts."
-            },
-            {
-              "@type": "Specialty",
-              "name": "Innovative Cultural Presentation",
-              "description": "Innovative presentation of cultural data and artifacts."
-            },
-            "XML", "LIDO", "METS/MODS", "TEI",
-            "Linked Open Data", "Wikidata", "OpenStreetMap",
-            "International Image Interoperability Framework",
-            "Java", "Python",
-            "HTML", "CSS", "JavaScript", "TypeScript", "Hugo",
-            "Solr", "OpenCV",
-            "Docker", "Kubernetes"
-          ],
-          "sameAs": [
-              "https://github.com/cmahnke",
-              "https://www.linkedin.com/in/cmahnke/",
-              "https://www.librarything.com/profile/cmahnke",
-              "https://orcid.org/0009-0003-1361-4159",
-              "https://openbiblio.social/@cmahnke",
-              "https://pro.europeana.eu/person/christian-mahnke",
-              "https://term.museum-digital.de/md-de/persinst/322830",
-              "https://huggingface.co/cmahnke",
-              "https://publications.goettingen-research-online.de/cris/rp/rp115268",
-              "http://www.wikidata.org/entity/Q137668638",
-              "https://www.openstreetmap.org/user/Christian%20Mahnke",
-              "https://de.wikipedia.org/wiki/Benutzer:CMahnke"
-          ]
-        }
-      }, {
-        "@type": "Collection",
-        "name": "Digital Collection",
-        "description": "A collection of IIIF-compliant digital collections.",
-        "mainEntityOfPage": "https://projektemacher.org/collection.json",
-        "url": "https://christianmahnke.de/collections/",
-        "isAccessibleForFree": true,
-        "creativeWorkStatus": "Published",
-        "creator": {
-          "@id": "https://christianmahnke.de/#person"
-        },
-        "provider": {
-          "@type": "Organization",
-          "name": "Projektemacher",
-          "url": "https://projektemacher.org/"
-        }
-      }
-    ]
-}` -}}
+{{- $profilePage := dict
+  "@context" "http://schema.org"
+  "@graph" (slice
+    (dict
+      "@type" "ProfilePage"
+      "url" "https://christianmahnke.de/"
+      "name" "Christian Mahnke – Blog & Projekte"
+      "inLanguage" (slice "de" "en")
+      "mainEntity" (dict
+        "@type" "Person"
+        "@id" $personURI
+        "name" "Christian Mahnke"
+        "givenName" "Christian"
+        "familyName" "Mahnke"
+        "jobTitle" "Creative Technologist"
+        "description" (slice
+          (dict "@language" "de" "@value" "Sammler und Creative Technologist, spezialisiert auf die Alltagskultur des 20. Jahrhunderts und ihre digitale Präsentation.")
+          (dict "@language" "en" "@value" "Collector and creative technologist specialising in 20th-century everyday culture and its digital presentation.")
+        )
+        "url" "https://christianmahnke.de/"
+        "logo" "https://christianmahnke.de/images/logo.png"
+        "worksFor" (dict
+          "@type" "Organization"
+          "name" "Projektemacher"
+          "url" "https://projektemacher.org/"
+        )
+        "gender" "male"
+        "memberOf" (slice
+          (dict "@type" "Organization" "name" "Deutscher Museumsbund e.V." "url" "https://www.museumsbund.de/")
+          (dict "@type" "Organization" "name" "europeana pro" "url" "https://pro.europeana.eu/")
+        )
+        "knowsLanguage" (slice "de" "en")
+        "identifier" (slice
+          (dict "@type" "PropertyValue" "propertyID" "ORCID" "value" "0009-0003-1361-4159")
+          (dict "@type" "PropertyValue" "propertyID" "museum:digital" "value" "322830")
+        )
+        "knowsAbout" (slice
+          (dict "@type" "Specialty" "name" "Digital Libraries & Museums" "description" "Expertise in modeling, transformation, and searching of METS, MODS, LIDO, Linked Art and IIIF metadata for cultural heritage.")
+          (dict "@type" "Specialty" "name" "Semantic Web & Linked Data" "description" "Practical application of Wikidata, SPARQL, and RDF technologies for Linked Open Data (LOD).")
+          (dict "@type" "Specialty" "name" "Digital Imaging & 3D" "description" "HDR Imaging, Photogrammetry, Stereoscopy, and Computer Vision using OpenCV.")
+          (dict "@type" "Specialty" "name" "Software Engineering" "description" "Development in Python, Java, Groovy and sometimes Go")
+          (dict "@type" "Specialty" "name" "DevOps" "description" "Cloud-Infrastructures with Docker and Kubernetes.")
+          (dict "@type" "Specialty" "name" "Web Development" "description" "JavaScript, TypeScript, HTML, CSS and static site generatores like Hugo")
+          (dict "@type" "Specialty" "name" "Citizen Participation in institutional collections" "description" "Strategies for community-driven collection building and transparent provenance documentation.")
+          (dict "@type" "Specialty" "name" "Sustainable Cultural Technology" "description" "Resource efficient and low cost presentation of cultural data and artifacts.")
+          (dict "@type" "Specialty" "name" "Innovative Cultural Presentation" "description" "Innovative presentation of cultural data and artifacts.")
+          "XML" "LIDO" "METS/MODS" "TEI" "Linked Open Data" "Wikidata" "OpenStreetMap" "International Image Interoperability Framework" "Java" "Python" "HTML" "CSS" "JavaScript" "TypeScript" "Hugo" "Solr" "OpenCV" "Docker" "Kubernetes"
+        )
+        "sameAs" (slice
+          "https://github.com/cmahnke"
+          "https://www.linkedin.com/in/cmahnke/"
+          "https://www.librarything.com/profile/cmahnke"
+          "https://orcid.org/0009-0003-1361-4159"
+          "https://openbiblio.social/@cmahnke"
+          "https://pro.europeana.eu/person/christian-mahnke"
+          "https://term.museum-digital.de/md-de/persinst/322830"
+          "https://huggingface.co/cmahnke"
+          "https://publications.goettingen-research-online.de/cris/rp/rp115268"
+          "http://www.wikidata.org/entity/Q137668638"
+          "https://www.openstreetmap.org/user/Christian%20Mahnke"
+          "https://de.wikipedia.org/wiki/Benutzer:CMahnke"
+        )
+      )
+    )
+    (dict
+      "@type" "Collection"
+      "name" "Digital Collection"
+      "description" "A collection of IIIF-compliant digital collections."
+      "mainEntityOfPage" "https://projektemacher.org/collection.json"
+      "url" "https://christianmahnke.de/collections/"
+      "isAccessibleForFree" true
+      "creativeWorkStatus" "Published"
+      "creator" (dict "@id" "https://christianmahnke.de/#person")
+      "provider" (dict
+        "@type" "Organization"
+        "name" "Projektemacher"
+        "url" "https://projektemacher.org/"
+      )
+    )
+  )
+-}}
 
 <script type="application/ld+json">
   {{ jsonify $profilePage | safeJS }}
