@@ -13,7 +13,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q989963
 ---
 
-Heute (7.2.) um 17:00 findet die Eröffnung der Freiflächen-Ausstellung "Sammlungen erzählen" statt, wie chon angekündigt bin ich mit meiner Kleiderbügelsammlung vertreten.
+Heute (7.2.) um 17:30 findet die Eröffnung der Freiflächen-Ausstellung "Sammlungen erzählen" statt, wie chon angekündigt bin ich mit meiner Kleiderbügelsammlung vertreten.
 <!--more-->
 
 Im Rahmen der Ausstellung wurde auch eine [Webseite erstellt](https://sammlungen-erzaehlen.gbv.de/), um die einzelnen präsentierten Sammlungen genauer vorzustellen, auch zu [meiner Sammlung](https://sammlungen-erzaehlen.gbv.de/kleiderbuegel/).

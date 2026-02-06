@@ -13,7 +13,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q989963
 ---
 
-Today (7 February) at 5 p.m., the open-air exhibition ‘Collections Tell Stories’ will open. As previously announced, I will be represented with my coat hanger collection.
+Today (7 February) at 5:30 p.m., the open-air exhibition ‘Collections Tell Stories’ will open. As previously announced, I will be represented with my coat hanger collection.
 <!--more-->
 
 As part of the exhibition, a [website has been created](https://sammlungen-erzaehlen.gbv.de/) to present the individual collections in more detail, including [my collection](https://sammlungen-erzaehlen.gbv.de/kleiderbuegel/).
