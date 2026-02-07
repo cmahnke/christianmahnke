@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Media installation on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/MediaInstallation/</link>
+    <description>Recent content in Media installation on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/MediaInstallation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>911TV as desktop application</title>
+      <link>https://christianmahnke.de/en/post/911tv-desktop/citation.bib</link>
+      <pubDate>Wed, 09 Oct 2024 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/911tv-desktop/citation.bib</guid>
+      <description>&lt;p&gt;I had some time, since I was ill:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>911TV started</title>
+      <link>https://christianmahnke.de/en/post/911tv/citation.bib</link>
+      <pubDate>Thu, 09 Nov 2023 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/911tv/citation.bib</guid>
+      <description>&lt;p&gt;An old idea of mine has now been realised:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

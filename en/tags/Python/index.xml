@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Python/</link>
+    <description>Recent content in Python on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simple data enrichment with Wikidata</title>
+      <link>https://christianmahnke.de/en/post/simple-wikidata-queries/citation.bib</link>
+      <pubDate>Tue, 18 Nov 2025 20:14:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/simple-wikidata-queries/citation.bib</guid>
+      <description>&lt;p&gt;Found while tidying up the browser tabs&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>&#34;Patching&#34; OpenStreetMap data</title>
+      <link>https://christianmahnke.de/en/post/patching-osm-data/citation.bib</link>
+      <pubDate>Mon, 17 Nov 2025 21:14:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/patching-osm-data/citation.bib</guid>
+      <description>&lt;p&gt;&amp;ldquo;Counterfactual architecture&amp;rdquo; yields almost no results on Google (at least in German)&amp;hellip;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Extending Pagefind</title>
+      <link>https://christianmahnke.de/en/post/configure-pagefind/citation.bib</link>
+      <pubDate>Fri, 30 May 2025 17:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/configure-pagefind/citation.bib</guid>
+      <description>&lt;p&gt;Since this page needs a search, I had a look at &lt;a href=&#34;https://pagefind.app/&#34; target=&#34;_blank&#34;&gt;Pagefind&lt;/a&gt;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

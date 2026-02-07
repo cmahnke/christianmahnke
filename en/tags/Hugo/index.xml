@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Hugo/</link>
+    <description>Recent content in Hugo on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CFF zu CodeMeta in Hugo</title>
+      <link>https://christianmahnke.de/en/post/hugo-cff-codemeta/citation.bib</link>
+      <pubDate>Tue, 13 Jan 2026 18:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hugo-cff-codemeta/citation.bib</guid>
+      <description>&lt;p&gt;For an upcoming release of software for visualising a collection, I have been looking into &lt;a data-wikidata-entity=&#34;Q108218387&#34; href=&#34;https://citation-file-format.github.io/&#34; target=&#34;_blank&#34;&gt;Citation File Format&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Embed resources as data URLs in Hugo</title>
+      <link>https://christianmahnke.de/en/post/hugo-datauris/citation.bib</link>
+      <pubDate>Thu, 11 Dec 2025 11:22:44 +0100</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hugo-datauris/citation.bib</guid>
+      <description>&lt;p&gt;Sometimes it is easier to embed external resources in HTML&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Shared metadata for Hugo pages</title>
+      <link>https://christianmahnke.de/en/post/hugo-shared-metadata/citation.bib</link>
+      <pubDate>Sun, 02 Nov 2025 15:22:44 +0100</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hugo-shared-metadata/citation.bib</guid>
+      <description>&lt;p&gt;Shared content for multiple Hugo pages (the &amp;ldquo;Hugo Shared Metadata Design Pattern&amp;rdquo;)&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wikidata Links in Hugo</title>
+      <link>https://christianmahnke.de/en/post/wikidata-entities-in-hugo/citation.bib</link>
+      <pubDate>Wed, 28 May 2025 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/wikidata-entities-in-hugo/citation.bib</guid>
+      <description>&lt;p&gt;Another step towards easier searchability of the site&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menus in Hugo draft mode</title>
+      <link>https://christianmahnke.de/en/post/hugo-draft-menus/citation.bib</link>
+      <pubDate>Mon, 05 May 2025 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hugo-draft-menus/citation.bib</guid>
+      <description>&lt;p&gt;Sometimes you want to add new menu items without publishing them&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Metadata for Hugo Shortcodes</title>
+      <link>https://christianmahnke.de/en/post/hugo-shortcode-metadate/citation.bib</link>
+      <pubDate>Tue, 30 Jan 2024 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hugo-shortcode-metadate/citation.bib</guid>
+      <description>&lt;p&gt;For my blogs I use a Hugo theme as a kind of function library&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

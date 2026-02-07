@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spiel on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Game/</link>
+    <description>Recent content in Spiel on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/Game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dendy Junior II</title>
+      <link>https://christianmahnke.de/post/dendy-junior/citation.bib</link>
+      <pubDate>Sun, 17 Aug 2025 12:30:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/dendy-junior/citation.bib</guid>
+      <description>&lt;p&gt;Ich habe mal wieder ein interessante, alte Konsole gefunden&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Der Kalte Krieg in Kinderhand</title>
+      <link>https://christianmahnke.de/post/ship-quartet/citation.bib</link>
+      <pubDate>Sun, 18 May 2025 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/ship-quartet/citation.bib</guid>
+      <description>&lt;p&gt;Über ein unerwartet zeitgemäßes Spiel&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pong Visualisierung</title>
+      <link>https://christianmahnke.de/post/pong/citation.bib</link>
+      <pubDate>Mon, 15 Apr 2024 13:58:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/pong/citation.bib</guid>
+      <description>&lt;p&gt;Aus irgendeinem Grund bin ich auf die Idee gekommen &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q216293&#34; href=&#34;https://de.wikipedia.org/wiki/Pong&#34; target=&#34;_blank&#34;&gt;Pong&lt;/a&gt; zu visualisieren&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
