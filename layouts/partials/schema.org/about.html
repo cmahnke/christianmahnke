@@ -2,6 +2,7 @@
 {{- with site.Params.author.uri -}}
   {{- $personURI = . -}}
 {{- end -}}
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "AboutPage",
@@ -45,3 +46,4 @@
   },
   "copyrightYear": "2025"
 }
+</script>
