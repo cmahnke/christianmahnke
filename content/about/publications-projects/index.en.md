@@ -52,8 +52,9 @@ Translated with www.DeepL.com/Translator (free version)
 </details>
 
 ## Publications
-* Fieseler C., **Mahnke C.** (2013): CERL Thesaurus used in an electronic edition of 18th-century university lectures, CERL Newsletter 27, Juni 2013
+* **Mahnke C.** (2026): Die Kleiderbügelsammlung Christian Mahnke, Göttingen, 2026. [URN: urn:nbn:de:101:1-2602070032395.167388219268](https://nbn-resolving.org/urn:nbn:de:101:1-2602070032395.167388219268)
 * Voigt K., **Mahnke C.**, Dr. Tech M., Dogan M. (2014): Heyne Digital - Exploring the origins of Classical Archaeology through a digital edition, [Conference proceedings QQML 2014](http://www.isast.org/images/FINAL_BOOK_OF_ABSTRACTS_e-book_version.pdf)
+* Fieseler C., **Mahnke C.** (2013): CERL Thesaurus used in an electronic edition of 18th-century university lectures, CERL Newsletter 27, Juni 2013
 
 See also <a id="grolink" href="//publications.goettingen-research-online.de/cris/rp/rp115268?open=all1&rppall=1000&etalall=-1&startall=0&" target="_blank">Göttingen Research online</a>
 
@@ -62,6 +63,7 @@ See also <a id="grolink" href="//publications.goettingen-research-online.de/cris
 -->
 
 ## Exhibitions
+* **7.2. - 31.6.2026**: "Sammlungen erzählen" - Forum Wissen, Göttingen. Participation with the [clothes hanger collection](https://sammlungen-erzaehlen.gbv.de/kleiderbuegel/)
 * **6.12. - 17.12.2022**: "Spurensuche im Sylter Archiv - Zum Leben und Werk von **Wilma Bräuner** (1891 – 1985)" - Stadtgalerie "Alte Post", Sylt / OT Westerland with Evelyn Kraßmann.
 
 ## Projects and participations
