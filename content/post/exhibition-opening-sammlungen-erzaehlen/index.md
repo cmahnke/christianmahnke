@@ -20,6 +20,10 @@ Im Rahmen der Ausstellung wurde auch eine [Webseite erstellt](https://sammlungen
 
 {{< figure src="Plakat.jpg" title="Ausstellungsplakat" >}}
 
-## Update 8.2.
+## Update 8.2.26
 
 Das Göttinger Tageblatt [berichtet auch über die Eröffnung](https://www.goettinger-tageblatt.de/beruf-und-bildung/regional/was-steckt-hinter-unserer-sammelleidenschaft-wie-das-forum-wissen-in-goettingen-neue-einblicke-7CD2HD6XRFE65EFGDS7W2NAG6Q.html) und erwähnt den [Katalog](https://christianmahnke.de/post/coat-hangers-book/).
+
+## Update 12.2.26
+
+{{< instagram DUoVhBbiS4V >}}

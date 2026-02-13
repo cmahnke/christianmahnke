@@ -12,6 +12,7 @@ tags:
   - History
   - OpenStreetMap
 preview: screenshot.png
+doi: 10.5281/zenodo.18618940
 wikidata:
   - https://www.wikidata.org/wiki/Q464980
   - https://www.wikidata.org/wiki/Q1144457
@@ -45,3 +46,5 @@ The coordinates of the addresses are determined using [Nominatim](https://nomina
 # Update
 
 {{< figure src="final.jpeg" alt="Final version" class="post-image" caption="Adapted to the exhibition graphics" >}}
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18618940.svg)](https://doi.org/10.5281/zenodo.18618940)
