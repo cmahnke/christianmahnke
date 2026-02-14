@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: Quantenkosmos Göttingen
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Chrisitian
+    family-names: Mahnke
+    orcid: 'https://orcid.org/0009-0003-1361-4159'
+    affiliation: Universität Göttingen
+    email: mahnke@kustodie.uni-goettingen.de
+repository-code: 'https://gitlab.gwdg.de/forumwissengoe/quantenkosmos'
+abstract: >-
+  Digitales Exponat zur Ausstellung "Was zum Quant?!", 27. März bis 5. Oktober 2025 im Forum Wissen
+  Göttingen
+license: CC-BY-NC-4.0

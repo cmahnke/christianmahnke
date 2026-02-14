@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Social Media on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/SocialMedia/</link>
+    <description>Recent content in Social Media on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/SocialMedia/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastodon backups with GitHub Actions</title>
+      <link>https://christianmahnke.de/en/post/github-action-mastodon-backup/citation.bib</link>
+      <pubDate>Thu, 15 Jan 2026 06:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/github-action-mastodon-backup/citation.bib</guid>
+      <description>&lt;p&gt;Due to recent events&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastodon</title>
+      <link>https://christianmahnke.de/en/post/mastodon/citation.bib</link>
+      <pubDate>Wed, 16 Oct 2024 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/mastodon/citation.bib</guid>
+      <description>&lt;p&gt;Even if nothing has happened yet, I can now also be reached as &lt;strong&gt;&lt;a href=&#34;https://openbiblio.social/@cmahnke&#34; target=&#34;_blank&#34;&gt;@cmahnke@openbiblio.social&lt;/a&gt;&lt;/strong&gt; via Mastodon.&lt;/p&gt;&#xA;&lt;p&gt;And since nothing has happened on the &lt;a href=&#34;https://www.instagram.com/projektemacher/&#34; target=&#34;_blank&#34;&gt;Projektemacher Instagram channel&lt;/a&gt; for ages, I&amp;rsquo;ve replaced the link in the footer.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Instagram</title>
+      <link>https://christianmahnke.de/en/post/instagram/citation.bib</link>
+      <pubDate>Mon, 31 May 2021 15:23:46 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/instagram/citation.bib</guid>
+      <description>&lt;p&gt;As of today there is an additional &lt;i class=&#34;insta-inline&#34;&gt;&lt;/i&gt; &lt;a href=&#34;https://www.instagram.com/projektemacher/&#34; target=&#34;_blank&#34;&gt;Instagram channel&lt;/a&gt;. This is just an experiment for now. But what has already annoys me me: There doesn&amp;rsquo;t seem to be an official and stable API for creating posts / uploading images - very disappointing!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

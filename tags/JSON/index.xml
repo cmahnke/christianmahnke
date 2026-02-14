@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JSON on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/JSON/</link>
+    <description>Recent content in JSON on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/JSON/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CFF zu CodeMeta in Hugo</title>
+      <link>https://christianmahnke.de/post/hugo-cff-codemeta/citation.bib</link>
+      <pubDate>Tue, 13 Jan 2026 18:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hugo-cff-codemeta/citation.bib</guid>
+      <description>&lt;p&gt;Für eine anstehende Veröffenlichung einer Software zur Voisualisierung einer Sammlung habe ich mich etwas mit &lt;a data-wikidata-entity=&#34;Q108218387&#34; href=&#34;https://citation-file-format.github.io/&#34; target=&#34;_blank&#34;&gt;Citation File Format&lt;/a&gt; beschäftigt.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linked Art Metadaten</title>
+      <link>https://christianmahnke.de/post/linkedart-metadata/citation.bib</link>
+      <pubDate>Sun, 11 Jan 2026 13:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/linkedart-metadata/citation.bib</guid>
+      <description>&lt;p&gt;Zur Vorbereitung zukünftiger Experimente gibt es nun für einige Einträge Linked-Art-Metadaten&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JSON für Anwendungsbündel komprimieren</title>
+      <link>https://christianmahnke.de/post/json-compression/citation.bib</link>
+      <pubDate>Thu, 16 Nov 2023 15:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/json-compression/citation.bib</guid>
+      <description>&lt;p&gt;Für die Videometadaten von &lt;a href=&#34;https://911tv.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;911 TV&lt;/a&gt; gab es eine interessante Herausforderung zu lösen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

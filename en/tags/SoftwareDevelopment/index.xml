@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software development on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/SoftwareDevelopment/</link>
+    <description>Recent content in Software development on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/SoftwareDevelopment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Metadaten für Software</title>
+      <link>https://christianmahnke.de/en/post/software-metadata/citation.bib</link>
+      <pubDate>Wed, 14 Jan 2026 19:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/software-metadata/citation.bib</guid>
+      <description>&lt;p&gt;Part 2 on software metadata.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CFF zu CodeMeta in Hugo</title>
+      <link>https://christianmahnke.de/en/post/hugo-cff-codemeta/citation.bib</link>
+      <pubDate>Tue, 13 Jan 2026 18:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hugo-cff-codemeta/citation.bib</guid>
+      <description>&lt;p&gt;For an upcoming release of software for visualising a collection, I have been looking into &lt;a data-wikidata-entity=&#34;Q108218387&#34; href=&#34;https://citation-file-format.github.io/&#34; target=&#34;_blank&#34;&gt;Citation File Format&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Debian Repository with GitLab Pages</title>
+      <link>https://christianmahnke.de/en/post/gitlab-debian-repository/citation.bib</link>
+      <pubDate>Fri, 08 Aug 2025 18:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/gitlab-debian-repository/citation.bib</guid>
+      <description>&lt;p&gt;A simple Debian repository knitted by yourself&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vite und Git Symlink-Dateien</title>
+      <link>https://christianmahnke.de/en/post/vite-git-symlink-plugin/citation.bib</link>
+      <pubDate>Fri, 13 Jun 2025 16:02:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/vite-git-symlink-plugin/citation.bib</guid>
+      <description>&lt;p&gt;Today, Friday the 13th, I was stuck on the train in the middle of nowhere&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI and software &#34;development&#34;</title>
+      <link>https://christianmahnke.de/en/post/academic-software-publishing/citation.bib</link>
+      <pubDate>Tue, 25 Feb 2025 15:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/academic-software-publishing/citation.bib</guid>
+      <description>&lt;p&gt;Over the past year, I have occasionally worked with AI to enrich my blogs with additional features and also to accelerate their further development.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
