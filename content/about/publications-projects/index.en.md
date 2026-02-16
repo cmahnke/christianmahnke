@@ -11,7 +11,7 @@ weight: 5
 * **24.6.2021** - 2021 IIIF Annual Conference - [Scaling Down: IIIF at Small Scale](https://whova.com/embedded/session/EJt2h6EsBemAPdBLSvToVJA%403Er8F48foN7yx-cZscQ%3D/1646975/?widget=primary), Online [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14169349.svg)](https://doi.org/10.5281/zenodo.14169349)
 * **08.6.2011** - 100. Deutscher Bibliothekartag - "IMProving ACcess to Text - Entwicklung eines Interoperabilitätsframeworks in einem Bibliotheksprojekt" (with Mustafa Dogan), Berlin
 * **10.5.2011** - ​​Europeana4D – Exploring data in space and time​ (with Ralf Stockmann and Stefan Jänicke), Vienna
-* **16.3.2010** - 4. Leipziger Kongress für Information und Bibliothek ["OCR Renderfarmen und TEI"](https://de.slideshare.net/slideshow/bibtag2010-mahnke/3453550), Leipzig
+* **16.3.2010** - 4. Leipziger Kongress für Information und Bibliothek ["OCR Renderfarmen und TEI"](https://de.slideshare.net/slideshow/bibtag2010-mahnke/3453550) [urn:nbn:de:0290-opus-8638](https://nbn-resolving.org/urn:nbn:de:0290-opus-8638), Leipzig
 * **13.10.2008** - Sino-German Symposium on Development of Library and Information 2008 - ["Goobi - web based digitisation lifecycle software"](https://de.slideshare.net/slideshow/goobi/985215), Hannover
 * **04.6.2008** - 97. Deutscher Bibliothekartag -["BibForge - developing Libraries"](https://de.slideshare.net/slideshow/bibforge-447644/447644), Mannheim
 * **25.4.2007** - Putting the TEI to the test (MPDL meeting) - "Fulltext processing at the GDZ", Berlin
