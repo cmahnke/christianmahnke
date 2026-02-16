@@ -94,6 +94,7 @@ Siehe auch <a id="grolink" href="//publications.goettingen-research-online.de/cr
 * [Archivalia 23. Mai 2025](https://archivalia.hypotheses.org/229536): Eintragung von Spendern in Metadatenaggregatoren
 * [Kunstsammlung Schmelzle: Hedwig Klinge](https://kunstsammlung.peterschmelzle.de/klinge)
 * [Archivalia 20. November 2025](https://archivalia.hypotheses.org/242502)
+* [Saxorum 20. November 2025](https://saxorum.hypotheses.org/14418)
 
 </div>
 </details>
