@@ -17,3 +17,55 @@
     }
   }
 }
+
+.section-post {
+  .content-container.single {
+    position: relative;
+
+    .related-posts {
+      position: absolute;
+      right: -16rem;
+      top: 10rem;
+      max-width: 12rem;
+
+      /*
+      @media screen and (min-width: 100em) {
+        display: block;
+      }
+      */
+
+      .related-header {
+        margin-block-start: .4em;
+        margin-block-end: .4em;
+        font-size: larger;
+      }
+
+      ul {
+        text-align: left;
+        list-style: none;
+        padding-inline-start: 0;
+        margin-block-start: 0;
+        margin-block-end: .4em;
+
+        li {
+          display: list-item;
+          text-align: match-parent;
+          unicode-bidi: isolate;
+
+          &:before {
+            content: "☞";
+            color: #ff073a;
+            font-size: 1.4em;
+            display: inline-block;
+            vertical-align: sub;
+            padding-right: .4em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.related-posts {
+  display: none;
+}

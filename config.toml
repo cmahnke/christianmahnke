@@ -224,6 +224,14 @@ timeout = "120s"
     notAlternative = true
     permalinkable = true
 
+  [outputFormats.pdf]
+    mediaType = "text/html"
+    isPlainText = false
+    isHTML = true
+    baseName = "article"
+    notAlternative = true
+    permalinkable = true
+
   [outputFormats.bibtex]
     mediaType = "text/bibtex"
     baseName = "citation"
@@ -320,3 +328,29 @@ timeout = "120s"
 [security]
   [security.http]
     mediaTypes = ['^application/json$', '^application/json;\s?charset=[uU][tT][fF]-8$', '^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$']
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = true
+  [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'keywords'
+    pattern = ''
+    type = 'basic'
+    weight = 10
+  [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'date'
+    pattern = ''
+    type = 'basic'
+    weight = 10
+  [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'tags'
+    pattern = ''
+    type = 'basic'
+    weight = 80

@@ -16,6 +16,10 @@ cascade:
     params:
       sitemap:
         priority: 0.6
+      outputs:
+        - bibtex
+        - html
+        - pdf
 aliases:
   - blog
 ---
