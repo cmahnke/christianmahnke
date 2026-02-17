@@ -2,6 +2,12 @@ import argparse
 import requests
 import tomllib
 from pathlib import Path
+import sys, os, logging
+
+sys.path.append("../../themes/projektemacher-base/scripts/PyHugo")
+from content import Config
+from Util import ArchiveOrg
+
 
 def get_snapshot(url, timestamp):
     api_url = "http://archive.org/wayback/available"
@@ -17,30 +23,14 @@ def get_snapshot(url, timestamp):
         pass
     return None
 
-
-def get_hugo_url_list(config_path, sub_dir="post", pattern="*.html"):
-    conf_file = Path(config_path).resolve()
-    if not conf_file.exists():
-        print(f"Error: Config {config_path} not found.")
-        return []
-
-    project_root = conf_file.parent
-
-    try:
-        with open(conf_file, "rb") as f:
-            config = tomllib.load(f)
-            base_url = config.get("baseURL", "").rstrip("/")
-            raw_publish_dir = config.get("publishDir", "public")
-            publish_dir = (project_root / raw_publish_dir).resolve()
-    except Exception as e:
-        print(f"Error parsing TOML: {e}")
-        return []
-
-    if not base_url:
-        print("Error: baseURL not found in config.")
-        return []
-
-    search_path = publish_dir / sub_dir
+def get_hugo_url_list(project_root, sub_dir="post", pattern="*.html"):
+    project_root = Path(project_root).resolve()
+    logging.info(f"Trying to load config from {project_root}")
+    conf = Config(project_root)
+    base_url = conf.baseURL()
+    publish_dir = os.path.join(project_root, conf.publishDir())
+    logging.debug(f"Publish directory {conf.publishDir()} ({publish_dir})")
+    search_path = Path(os.path.join(project_root, publish_dir, sub_dir)).resolve()
     if not search_path.exists():
         print(f"Warning: Subdirectory '{search_path}' not found.")
         return []
@@ -60,8 +50,9 @@ def get_hugo_url_list(config_path, sub_dir="post", pattern="*.html"):
 
 def process_url(url):
     print(f"\n--- Results for: {url} ---")
-    earliest = get_snapshot(url, "19000101")
-    latest = get_snapshot(url, "21001231")
+
+    earliest = ArchiveOrg.earliest(url)
+    latest = ArchiveOrg.latest(url)
 
     if earliest:
         print(f"EARLIEST: {earliest['timestamp']} | {earliest['url']}")
@@ -80,7 +71,14 @@ if __name__ == "__main__":
     parser.add_argument("--pattern", default="*.html", help="File pattern to search")
 
     args = parser.parse_args()
-    urls = get_hugo_url_list(args.config, args.sub, args.pattern)
+
+    logging.basicConfig(level=logging.DEBUG)
+
+    site_root = Path(args.config).parent
+    if not site_root.exists():
+        raise Exception(f"Site root {site_root} doesn't exists!")
+
+    urls = get_hugo_url_list(site_root, args.sub, args.pattern)
 
     if "url" in args and args.url:
         urls = [args.url]
