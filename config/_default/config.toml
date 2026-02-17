@@ -66,6 +66,17 @@
     outbox = "outbox.json"
     links = { "GitHub" = "<a title=\"GitHub\" href=\"https://github.com/cmahnke\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">GitHub</a>", "Blog" = "<a title=\"Blog\" href=\"https://christianmahnke.de/post/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">Blog</a>" }
 
+[params.social.linkedin]
+  username = "cmahnke"
+  profilelink = "https://www.linkedin.com/in/cmahnke"
+
+[params.social.orcid]
+  username = "0009-0003-1361-4159"
+  profilelink = "https://orcid.org/0009-0003-1361-4159"
+
+[params.social.mastodon]
+  username = "@cmahnke@openbiblio.social"
+  profilelink = "https://openbiblio.social/@cmahnke"
 
 [[params.linkedart.referred_to_by]]
   type = "LinguisticObject"
