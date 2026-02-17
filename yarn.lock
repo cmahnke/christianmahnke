@@ -2,35 +2,35 @@
 # yarn lockfile v1
 
 
-"@annotorious/annotorious@3.7.19":
-  version "3.7.19"
-  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.7.19.tgz#829e88b0dae8926c02648b90926da98129c38e85"
-  integrity sha512-AzteOiFZNi3BLggQf2BO35eDIMYOfXFebnote823/BW6e02nfWTw08LKh+RGQj+CaQRlVwZXiRM2VvUNSBP5kA==
+"@annotorious/annotorious@3.7.20":
+  version "3.7.20"
+  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.7.20.tgz#8d8dae43d113cd6bf573748b3938aeffc4ce7f49"
+  integrity sha512-eTscN1W0Th7EjcTYCL0xfUwRuIdbfleEzdLlGOLStWukFI5qtwm1u2ihxBCLK04R7Ze7C+IOVvzJBIw/mgEs6g==
   dependencies:
-    "@annotorious/core" "3.7.19"
+    "@annotorious/core" "3.7.20"
     dequal "^2.0.3"
     rbush "^4.0.1"
     simplify-js "^1.2.4"
     uuid "^13.0.0"
 
-"@annotorious/core@3.7.19":
-  version "3.7.19"
-  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.7.19.tgz#c4366fed19552dd86424609c2fa2869700381de3"
-  integrity sha512-0nS8Zo5ndtkD5W6xesg7tJmhKIJktoL4me01VRGZPr961GH4tH39kSg6iednfyyFAt6Z+2UFOt6s/yb0/lNcYA==
+"@annotorious/core@3.7.20":
+  version "3.7.20"
+  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.7.20.tgz#e5a755e4f748943562c19ced1c01cdfe76401932"
+  integrity sha512-YdG0idnLr6PgO2es6U0rNszlJX/Ur1JjlY0p9lVBmA3bf8Osxm+2YF4abBpw6pcCUYmaUDL5tcNwuI/Mct5lBw==
   dependencies:
     dequal "^2.0.3"
     nanoevents "^9.1.0"
     nanoid "^5.1.6"
-    nanostores "^1.0.1"
+    nanostores "^1.1.0"
     uuid "^13.0.0"
 
-"@annotorious/openseadragon@^3.7.19":
-  version "3.7.19"
-  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.7.19.tgz#6fc50280ae6e635b686e5ab30ac4a0bba15effd1"
-  integrity sha512-IJxHRyHmcxk7lJO/fsXYbKTj8HJlfbL8PDlXik20qeQhlz6BAf0Ccp50Kr4faONtKkX6QfssF5sESu26GuqAxA==
+"@annotorious/openseadragon@^3.7.20":
+  version "3.7.20"
+  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.7.20.tgz#8e7db0c2ee379491e407b62d3c9ce38fc218045e"
+  integrity sha512-5AEHvmUIOA1ggod3R6R3GkyxxC5lbqcXPNa2S1aNe1rVd+ax7cN5xz+zmuKkknXWZOk0lOiXwlYAa9ieEmMCfg==
   dependencies:
-    "@annotorious/annotorious" "3.7.19"
-    "@annotorious/core" "3.7.19"
+    "@annotorious/annotorious" "3.7.20"
+    "@annotorious/core" "3.7.20"
     pixi.js "^7.4.3"
     uuid "^13.0.0"
 
@@ -896,7 +896,7 @@ nanoid@^5.1.6:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-5.1.6.tgz#30363f664797e7d40429f6c16946d6bd7a3f26c9"
   integrity sha512-c7+7RQ+dMB5dPwwCp4ee1/iV/q2P6aK1mTZcfr1BTuVlyW9hJYiMPybJCcnBlQtuSmTIWNeazm/zqNoZSSElBg==
 
-nanostores@^1.0.1:
+nanostores@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-1.1.0.tgz#29eb39795042682a24dc85eeb24f92618ad6066b"
   integrity sha512-yJBmDJr18xy47dbNVlHcgdPrulSn1nhSE6Ns9vTG+Nx9VPT6iV1MD6aQFp/t52zpf82FhLLTXAXr30NuCnxvwA==
@@ -983,9 +983,9 @@ punycode@^1.4.1:
   integrity sha512-jmYNElW7yvO7TV33CjSmvSiE2yco3bV2czu/OzDKdMNVZQWfxCblURLhf+47syQRBntjfLdd/H0egrzIG+oaFQ==
 
 qs@^6.12.3:
-  version "6.14.1"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.14.1.tgz#a41d85b9d3902f31d27861790506294881871159"
-  integrity sha512-4EK3+xJl8Ts67nLYNwqw/dsFVnCf+qR7RgXSK9jEEm9unao3njwMDdmsdvoKBKHzxd7tCYz5e5M+SnMjdtXGQQ==
+  version "6.14.2"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.14.2.tgz#b5634cf9d9ad9898e31fba3504e866e8efb6798c"
+  integrity sha512-V/yCWTTF7VJ9hIh18Ugr2zhJMP01MY7c5kh4J870L7imm6/DIzBsNLTXzMwUA3yZ5b/KBqLx8Kp3uRvd7xSe3Q==
   dependencies:
     side-channel "^1.1.0"
 
