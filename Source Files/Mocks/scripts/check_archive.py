@@ -1,6 +1,4 @@
 import argparse
-import requests
-import tomllib
 from pathlib import Path
 import sys, os, logging
 
@@ -8,6 +6,7 @@ sys.path.append("../../themes/projektemacher-base/scripts/PyHugo")
 from content import Config
 from Util import ArchiveOrg
 
+# TODO: Use PyHugo to list contents
 def get_hugo_url_list(project_root, sub_dir="post", pattern="*.html"):
     project_root = Path(project_root).resolve()
     logging.info(f"Trying to load config from {project_root}")
@@ -33,7 +32,11 @@ def get_hugo_url_list(project_root, sub_dir="post", pattern="*.html"):
 
     return url_list
 
-def process_url(url):
+def process_url(url, update=False):
+    if update:
+        print("Update mode is not implemented yet.")
+        sys.exit(1)
+
     print(f"\n--- Results for: {url} ---")
 
     earliest = ArchiveOrg.earliest(url)
@@ -54,10 +57,16 @@ if __name__ == "__main__":
     parser.add_argument("--config", default="config.toml", help="Hugo config (config.toml or hugo.toml)")
     parser.add_argument("--sub", default="post", help="Subdirectory inside publishDir to scan")
     parser.add_argument("--pattern", default="*.html", help="File pattern to search")
+    parser.add_argument("--update", "-u", action="store_true", help="Updated post front matter with archive URLs")
 
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.DEBUG)
+
+    if args.update:
+        print("Update mode is not implemented yet.")
+        sys.exit(1)
+
 
     site_root = Path(args.config).parent
     if not site_root.exists():
