@@ -26,6 +26,8 @@ Das Göttinger Tageblatt [berichtet auch über die Eröffnung](https://www.goett
 
 ## Update 12.2.26
 
+Hier der Instagram Beitrag von [@forumwissengoe](https://www.instagram.com/forumwissengoe/) zur Eröffnung: 
+
 {{< instagram DUoVhBbiS4V >}}
 
 {{< related >}}
