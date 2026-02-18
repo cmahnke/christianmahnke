@@ -45,7 +45,7 @@
     </div>
   {{- end -}}
 </div>
-{{- if and (not .Params.metaPage) (ne .Kind "section") (not .HasShortcode "related") -}}
+{{- if and (not .Params.metaPage) (ne .Kind "section") (not (.HasShortcode "related")) -}}
   <div class="related-posts">
     {{ with site.RegularPages.Related . | first 5 }}
       <div class="related-header">{{ i18n "relatedContent" }}:</div>

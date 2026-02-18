@@ -1,0 +1,12 @@
+{{- $doi := "" -}}
+
+{{- with .Get "doi" -}}
+    {{- $doi = . -}}
+{{- end -}}
+{{- with $doi -}}
+  <div class="zenodo-badge">
+    <a href="https://doi.org/{{ . }}" target="_blank">
+      <img src="https://zenodo.org/badge/DOI/{{ . }}.svg" alt="DOI">
+    </a>
+  </div>
+{{- end -}}

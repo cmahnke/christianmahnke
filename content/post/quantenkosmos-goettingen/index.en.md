@@ -47,4 +47,4 @@ The coordinates of the addresses are determined using [Nominatim](https://nomina
 
 {{< figure src="final.jpeg" alt="Final version" class="post-image" caption="Adapted to the exhibition graphics" >}}
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18618940.svg)](https://doi.org/10.5281/zenodo.18618940)
+{{< zenodo doi="10.5281/zenodo.18618940" >}}
