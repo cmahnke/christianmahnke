@@ -27,3 +27,7 @@ Das Göttinger Tageblatt [berichtet auch über die Eröffnung](https://www.goett
 ## Update 12.2.26
 
 {{< instagram DUoVhBbiS4V >}}
+
+{{< related >}}
+Der Katalog meiner Sammlung ist auch [online verfügbar](/post/coat-hangers-book/).
+{{< /related >}}

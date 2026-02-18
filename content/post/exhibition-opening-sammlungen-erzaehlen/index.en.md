@@ -27,3 +27,7 @@ The Göttinger Tageblatt [also reports on the opening](https://www.goettinger-ta
 ## Update 12.2.26
 
 {{< instagram DUoVhBbiS4V >}}
+
+{{< related >}}
+The catalogue of my collection is also [available online.](/en/post/coat-hangers-book/).
+{{< /related >}}

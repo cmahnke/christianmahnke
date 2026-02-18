@@ -53,5 +53,5 @@ Und wenn man eine entsprechende Infrastruktur für Digitalisate aufbaut, kann ma
 Dieser Artikel wurde auch von [Archivalia verlinkt](https://archivalia.hypotheses.org/226296).
 
 {{< related >}}
-Potentielle Ergänzungen zu den DFG-Praxisregeln werden auch in dem  [Artikel über Mikroformendigitalsierung](/post/stop-microfilm-digitisation) thematisiert.
+Potentielle Ergänzungen zu den DFG-Praxisregeln werden auch in dem [Artikel über Mikroformendigitalsierung](/post/stop-microfilm-digitisation) thematisiert.
 {{< /related >}}
