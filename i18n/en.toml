@@ -35,7 +35,6 @@ other = "Your browser does not support the Vibrarion API, please try it in a cur
 [vibrateSupported]
 other = "Your browser supports the Vibrarion API!"
 
-
 [showTagcloud]
 other = "Show tag cloud"
 
@@ -82,6 +81,9 @@ other = "Weblog"
 
 [bibtex_download]
 other = "Download as BibTex"
+
+[doiPrefix]
+other = "DOI of the digital object"
 
 [yearsHeading]
 other = "Archive"
