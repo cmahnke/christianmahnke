@@ -8,21 +8,6 @@ sys.path.append("../../themes/projektemacher-base/scripts/PyHugo")
 from content import Config
 from Util import ArchiveOrg
 
-
-def get_snapshot(url, timestamp):
-    api_url = "http://archive.org/wayback/available"
-    params = {"url": url, "timestamp": timestamp}
-    try:
-        response = requests.get(api_url, params=params, timeout=10)
-        response.raise_for_status()
-        data = response.json()
-        snapshot = data.get("archived_snapshots", {}).get("closest")
-        if snapshot and snapshot.get("available"):
-            return {"url": snapshot['url'], "timestamp": snapshot['timestamp']}
-    except requests.exceptions.RequestException:
-        pass
-    return None
-
 def get_hugo_url_list(project_root, sub_dir="post", pattern="*.html"):
     project_root = Path(project_root).resolve()
     logging.info(f"Trying to load config from {project_root}")
