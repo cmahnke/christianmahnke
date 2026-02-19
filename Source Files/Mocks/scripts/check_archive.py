@@ -2,35 +2,38 @@ import argparse
 from pathlib import Path
 import sys, os, logging
 
-sys.path.append("../../themes/projektemacher-base/scripts/PyHugo")
-from content import Config
-from Util import ArchiveOrg
+sys.path.append("../../themes/projektemacher-base/scripts/")
+from PyHugo import Content, Config, ArchiveOrg
+
+def get_posts(site_root, sub_dir="post", pattern="index.html"):
+    conf = Config(site_root)
+    content = Content(os.path.join(site_root, Content.DEFAULT_CONTENT_DIR), sub_path=sub_dir, config=conf, sections=False)
+    base_url = conf.baseURL()
+    content_root = os.path.join(site_root, conf.publishDir())
+
+    post_files = []
+    for post in content:
+        if not post.path or not post.getURL():
+            logging.warning(f"Post {post} has no path or URL, skipping.")
+            continue
+        logging.debug(f"Processig post: {post.path} | Output Dirs: {post.getOutputDirs()} | URL: {post.getURL()}")
+        for lang, search_path in post.getOutputDirs().items():
+            search_path = os.path.join(site_root, search_path)
+            
+            #files = Path(os.path.join(site_root, search_path)).rglob(pattern)
+            files = list(Path(search_path).rglob(pattern))
+            logging.info(f"Checking for files in {search_path} for language '{lang}', found {len(files)} files")
+            for file in files:
+                relative_path = file.relative_to(content_root)
+                full_url = f"{base_url.rstrip("/")}/{os.path.dirname(relative_path)}".rstrip("/") + "/"
+                logging.debug(f"Found file: {file} | URL: {full_url}")
+                post_files.append(full_url)
+    return post_files
 
 # TODO: Use PyHugo to list contents
 def get_hugo_url_list(project_root, sub_dir="post", pattern="*.html"):
-    project_root = Path(project_root).resolve()
-    logging.info(f"Trying to load config from {project_root}")
-    conf = Config(project_root)
-    base_url = conf.baseURL()
-    publish_dir = os.path.join(project_root, conf.publishDir())
-    logging.debug(f"Publish directory {conf.publishDir()} ({publish_dir})")
-    search_path = Path(os.path.join(project_root, publish_dir, sub_dir)).resolve()
-    if not search_path.exists():
-        print(f"Warning: Subdirectory '{search_path}' not found.")
-        return []
-
-    url_list = []
-    for file_path in search_path.rglob(pattern):
-        relative_path = file_path.relative_to(publish_dir)
-        url_path = relative_path.as_posix()
-
-        if url_path.endswith("index.html"):
-            url_path = url_path[:-10]
-
-        full_url = f"{base_url}/{url_path}".rstrip("/") + "/"
-        url_list.append(full_url)
-
-    return url_list
+    urls = get_posts(project_root, sub_dir, pattern)
+    return urls
 
 def process_url(url, update=False):
     if update:
@@ -54,7 +57,7 @@ if __name__ == "__main__":
 #    group = parser.add_mutually_exclusive_group(required=True)
 #    group.add_argument("--url", help="A single target URL")
 #    group.add_argument("--file", help="Path to a text file containing URLs (one per line)")
-    parser.add_argument("--config", default="config.toml", help="Hugo config (config.toml or hugo.toml)")
+    parser.add_argument("--config", "-c", default="config.toml", help="Hugo config (config.toml or hugo.toml)")
     parser.add_argument("--sub", default="post", help="Subdirectory inside publishDir to scan")
     parser.add_argument("--pattern", default="*.html", help="File pattern to search")
     parser.add_argument("--update", "-u", action="store_true", help="Updated post front matter with archive URLs")
