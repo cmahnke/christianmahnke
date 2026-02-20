@@ -83,6 +83,7 @@ if __name__ == "__main__":
 
     check_hugo_posts(site_root, args.sub, args.pattern, update=args.update)
 
+    urls = []
     if "url" in args and args.url:
         urls = [args.url]
     elif "file" in args and args.file:
