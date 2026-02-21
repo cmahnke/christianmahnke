@@ -864,6 +864,14 @@ a:visited {
             p {
                 margin: unset;
             }
+
+            ul {
+              direction: rtl;
+              text-align: start;
+              a {
+                direction: ltr;
+              }
+            }
         }
 
     }
