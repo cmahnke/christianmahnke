@@ -125,9 +125,14 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
     entries = []
     base_url = conf.baseURL()
     content_root = os.path.join(site_root, conf.publishDir())
+    post_root = os.path.join(site_root, conf.contentDir(), subdir)
     
     post_files = {}
     for post in content:
+        if post.draft:
+            logging.info(f"Skipping draft post: {post.path}")
+            continue
+        upload = {}
         entry = prepare_entry(conf)
         if not post.path or not post.getURL():
             logging.warning(f"Post {post} has no path or URL, skipping.")
@@ -143,12 +148,16 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
             logging.info(f"Checking for files in {search_path} for language '{lang}'")
             files = list(Path(search_path).rglob(pattern))
             for file in files:
-                relative_path = file.relative_to(content_root)
-                full_url = f"{base_url.rstrip("/")}/{os.path.dirname(relative_path)}".rstrip("/") + "/"
-                entry.urls[lang] = full_url
+                #relative_path = file.relative_to(content_root)
                 entry.upload_files[lang] = str(file)
                 entry.posts[lang] = post
-                entry.related_identifiers.append({"identifier": full_url, "relation": "isIdenticalTo", "resource_type": "publication-section"})
+            post_relative_path = Path(post.getFile(lang)).relative_to(post_root)
+            if lang == conf.defaultLanguage:
+                full_url = f"{base_url.rstrip("/")}/{os.path.dirname(post_relative_path)}".rstrip("/") + "/"
+            else:
+                full_url = f"{base_url.rstrip("/")}/{lang}/{os.path.dirname(post_relative_path)}".rstrip("/") + "/"
+            entry.urls[lang] = full_url
+            entry.related_identifiers.append({"identifier": full_url, "relation": "isIdenticalTo", "resource_type": "publication-section"})
         
             keywords = post.getKeywords()
             # TODO: This isn't working yet
@@ -157,6 +166,10 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
             description = post.getMetadata(lang).get("description", "")
             title = post.getMetadata(lang).get("title", "")
             zenodo = post.getMetadata(lang).get("zenodo", {})
+            if "publish" in zenodo and zenodo["publish"] is True:
+                upload[lang] = True
+            else:
+                upload[lang] = False
             if "description" in zenodo:
                 description = zenodo["description"]
             if "keywords" in zenodo:
@@ -177,6 +190,12 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
                 entry.title = f"{entry.title} / {title}"
             elif title != "":
                 entry.title = title
+        for lang in conf.langs:
+            if lang not in upload or upload[lang] is not True:
+                logging.warning(f"Post {post.path} in language '{lang}' with pattern '{pattern}' not marked for upload, skipping!")
+                break
+        else:
+            continue
 
         entry.keywords = list(set(entry.keywords))
         logging.info(f"Entry for {post.path} - {entry.to_json()}")

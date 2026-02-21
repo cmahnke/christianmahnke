@@ -25,6 +25,7 @@ def check_hugo_posts(site_root, sub_dir="post", pattern="index.html", update=Fal
             logging.info(f"Checking for files in {search_path} for language '{lang}', found {len(files)} files")
             for file in files:
                 relative_path = file.relative_to(content_root)
+                #TODO: Check if lang is needed her as well
                 full_url = f"{base_url.rstrip("/")}/{os.path.dirname(relative_path)}".rstrip("/") + "/"
                 logging.debug(f"Found file: {file} | URL: {full_url}")
                 post_files.append(full_url)
