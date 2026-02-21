@@ -20,6 +20,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-24.04
+    environment: github-pages
     steps:
       - name: Free some disk space
         run: |
