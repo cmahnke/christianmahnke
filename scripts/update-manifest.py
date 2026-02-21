@@ -5,7 +5,7 @@ import sys
 from termcolor import cprint
 from typing import Any, Dict, List, Optional
 from iiif_prezi3.loader import monkeypatch_schema
-from iiif_prezi3 import Manifest, Annotation, ResourceItem, Base
+from iiif_prezi3 import Manifest, Annotation, Resource, Base
 from shapely import Polygon, MultiPolygon, LineString, box, union_all, to_geojson
 import scour
 
@@ -235,7 +235,7 @@ def compact_heightmapRLE(heightmap, filter=False):
     return fragments
 
 def create_annotation(selector, target, id_prefix, id_suffix, type="InteractiveResource", value={"haptics": {"vibrate": True}}, motivation="sensing"):
-    body = ResourceItem(id=id_prefix + id_suffix + "/body", type=type, **value)
+    body = Resource(id=id_prefix + id_suffix + "/body", type=type, **value)
     anno = Annotation(id=id_prefix + id_suffix, target=target, motivation=motivation, body=body)
     return anno
 
@@ -274,7 +274,7 @@ def convert_heightmap(heightmap, id, canvas, compact=True):
         target_suffix = f"#xywh={heightmap["meta"]["x"]},{heightmap["meta"]["y"]},{heightmap["meta"]["width"]},{heightmap["meta"]["height"]}"
         annos = []
         if "name" in heightmap:
-            name_body = ResourceItem(id= id + "/name",type = "TextualBody", value = heightmap["name"])
+            name_body = Resource(id= id + "/name",type = "TextualBody", value = heightmap["name"])
             target = {"source": canvas, "selector": gen_selector("media-frag",( heightmap["meta"]["x"], heightmap["meta"]["y"], heightmap["meta"]["width"], heightmap["meta"]["height"]))}
 
             name_anno = Annotation(id=id + "/name", target=target, motivation="sensing", body=name_body)
@@ -298,12 +298,11 @@ def convert_heightmap(heightmap, id, canvas, compact=True):
 
 # Hack the model during runtime
 def update_model():
-    from pydantic.fields import ModelField
-    ResourceItem.__annotations__["value"] = "Optional[Any]"
-    ResourceItem.__fields__["value"] = ModelField(name='value', type_=Optional[Any], required=False, class_validators={}, default=None, model_config=Base.__config__)
-    ResourceItem.__annotations__["haptics"] = "Optional[Any]"
-    ResourceItem.__fields__["haptics"] = ModelField(name='haptics', type_=Optional[Any], required=False, class_validators={}, default=None, model_config=Base.__config__)
-    monkeypatch_schema(ResourceItem, ValueBody)
+    Resource.__annotations__["value"] = Optional[Any]
+    Resource.__annotations__["haptics"] = Optional[Any]
+    if hasattr(Resource, "model_rebuild"):
+        Resource.model_rebuild(force=True)
+    monkeypatch_schema(Resource, ValueBody)
 
 update_model()
 
