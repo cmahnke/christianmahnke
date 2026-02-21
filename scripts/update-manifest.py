@@ -7,7 +7,7 @@ from typing import Any, Dict, List, Optional
 from iiif_prezi3.loader import monkeypatch_schema
 from iiif_prezi3 import Manifest, Annotation, Resource, Base
 from shapely import Polygon, MultiPolygon, LineString, box, union_all, to_geojson
-import scour
+#import scour
 
 TOUCH_CONTEXT = "https://christianmahnke.de/iiif/touch/context.json"
 
