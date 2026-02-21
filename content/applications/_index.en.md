@@ -5,6 +5,7 @@ displayinlist: false
 archive: false
 news: false
 sectionContent: false
+sectionlist: false
 sitemap:
   disable: true
 cascade:
@@ -15,6 +16,8 @@ cascade:
     params:
       archive: false
       news: false
+      metaPage: true
+      displayinlist: false
       sitemap:
         disable: true
 ---
