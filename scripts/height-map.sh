@@ -23,7 +23,7 @@ do
     python3 $HEIGHTMAP_SCRIPT -r 600 --image $DIR/$IMAGE.jxl --metadata $META --output json png --debug -j
     OUT_DIR=`echo $DIR |sed -e "s/content/$DOCS_DIR/"`
     BASE=`echo "$META" |sed -E 's/.*\\/(.*)-map.json/\1/g'`.json
-
+    echo "Updating manifest for $BASE"
     python $MANIFEST_SCRIPT -i $OUT_DIR/manifest.json -a "$DIR/$BASE" -o $DIR/manifest-enriched.json
 
 

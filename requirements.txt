@@ -1,4 +1,6 @@
-iiif-prezi3<3
+#iiif-prezi3<3
+#pydantic<2
+iiif-prezi3>3.1.0
 shapely
 scour
 blend-modes
