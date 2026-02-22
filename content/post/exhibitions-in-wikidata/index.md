@@ -59,8 +59,6 @@ Mit diesem Eintrag kann beispielsweise in Zenodo gearbeitet werden. Für die Aus
 
 {{< figure src="zenodo.png" title="Ansicht der Metadaten bei Zenodo" link="https://zenodo.org/records/18618940" target="_blank" >}}
 
-
-
 ## Dank
 
 Vielen Dank an Alexander Winkler für die Inspiration!
