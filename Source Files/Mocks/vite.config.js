@@ -71,6 +71,7 @@ export default defineConfig({
         touch: resolve(__dirname, "touch/index.html"),
         imagecompare: resolve(__dirname, "imagecompare/index.html"),
         //search: resolve(__dirname, "search/index.html"),
+        "tag-timeline": resolve(__dirname, "tag-timeline/index.html"),
         "tag-ring": resolve(__dirname, "tag-ring/index.html"),
         wikidata: resolve(__dirname, "wikidata/index.html"),
         game: resolve(__dirname, "game/index.html"),
