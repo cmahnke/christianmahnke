@@ -1,0 +1,13 @@
+{{ define "title" -}}
+  {{- if ne .Title "" -}}
+    {{- .Title }} · {{ .Site.Title -}}
+  {{- else -}}
+    {{- .Site.Title -}}
+  {{- end -}}
+{{- end }}
+{{ define "content" }}
+  {{- partial "article/header.html" . -}}
+  <div class="content-container single">
+    {{ partial "page.html" . }}
+  </div>
+{{ end }}

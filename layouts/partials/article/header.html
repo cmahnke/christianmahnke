@@ -1,0 +1,16 @@
+<header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <div class="home-link">
+            <a href="/"><h1 class="header-title">{{ $.Site.Title }}</h1></a>
+        </div>
+
+        {{- $subtitle := .Params.subtitle | default "" -}}
+        {{- if ne $subtitle "" -}}
+              <h2 class="header-subtitle">{{ $subtitle }}</h2>
+        {{- end -}}
+    </div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>

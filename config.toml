@@ -224,7 +224,7 @@ timeout = "120s"
     notAlternative = true
     permalinkable = true
 
-  [outputFormats.pdf]
+  [outputFormats.pdf-article]
     mediaType = "text/html"
     isPlainText = false
     isHTML = true
