@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>JPEG XL · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Da meine Blogs auf GitHub verwaltet werden, müssen die Bilder so platzsparend wie möglich gespeichert werden&hellip;">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/jpeg-xl/" />
+  <meta property="og:title" content="JPEG XL · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/jpeg-xl/ogPreview_hu_ea4e080a9089f270.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", Digitale Bilder, Projektemacher.org, IIIF, VIPS"><meta name="dc.subject" content="Digitale Bilder"><meta name="dc.subject" content="Projektemacher.org"><meta name="dc.subject" content="IIIF"><meta name="dc.subject" content="VIPS">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:03:07.169677513 &#43;0000 UTC m=&#43;0.792186012">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/b6784f3604da5279445eddee5a9c2760.min.4a423668fa96ed1dcb4c6c6ae758bd04bed847f0fc92d656a4aaeb7002b76abb.js" integrity="sha256-SkI2aPqW7R3LTGxq51i9BL7YR/D8ktZWpKrrcAK3ars="></script>
+<link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="canonical" href="https://christianmahnke.de/post/jpeg-xl/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/jpeg-xl/","@type":"BlogPosting","about":["DigitalImages","Projektemacher.org","IIIF","VIPS",{"@id":"http://www.wikidata.org/entity/Q1047199","@type":"Thing","name":"Q1047199"},{"@id":"http://www.wikidata.org/entity/Q72885392","@type":"Thing","name":"JPEG XL"},{"@id":"http://www.wikidata.org/entity/Q7907037","@type":"Thing","name":"VIPS"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2021-04-17T11:22:44+02:00","headline":"JPEG XL","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["DigitalImages","Projektemacher.org","IIIF","VIPS"],"name":"JPEG XL","url":"https://christianmahnke.de/post/jpeg-xl/"}
+</script>
+</head><body class="section-post dir-postjpeg-xl blog  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/jpeg-xl/" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">JPEG XL</h1><div class="date">
+          <time class="post-data" datetime="2021-04-17T11:22:44&#43;02:00">Samstag, 17. April 2021</time>
+        </div><div class="post-body"><p>Da meine Blogs auf GitHub verwaltet werden, müssen die Bilder so platzsparend wie möglich gespeichert werden&hellip;</p>
+<h1 id="warum-jpeg-xl">Warum JPEG XL?</h1>
+<p>
+      
+        
+      <a data-wikidata-entity="Q72885392" href="https://en.wikipedia.org/wiki/JPEG_XL" target="_blank">JPEG XL</a> ist ein neues Format für Rasterbilder, so neu, das zur Zeit als dieser Text geschrieben wurde, es als Lemma noch nicht in der deutschen Wikipedia geführt wurde. Was genau JPEG XL anders bzw. besser macht als das allseits bekannte JPEG kann man dort nachlesen. Wir beschränken uns hier auf den Mehrwert für die Projektmacher Blogs:</p>
+<ul>
+<li>Weniger Speicherplatz benötigt</li>
+<li>Verlustfreie Kompression möglich</li>
+</ul>
+<p>Nachteile sind derzeit noch:</p>
+<ul>
+<li>Wenig Programme können damit bisher umgehen</li>
+<li>Die bestehenden Algorithmen sind noch nicht optimiert - es ist also langsamer</li>
+</ul>
+<p>Die Referenz-Implementierung ist auf <a href="https://gitlab.com/wg1/jpeg-xl" target="_blank">GitLab</a> zu finden.</p>
+<h1 id="wie">Wie?</h1>
+<p>Da die Konvertierung in IIIF Derivate auf GitHub durch ein <a href="https://github.com/cmahnke/iiif-action" target="_blank">Docker Image</a> erledigt wird, liegt es nahe dieses einfach um eine JPEG XL Unterstützung zu ergänzen. Für die eingesetzte <a href="https://github.com/libvips/libvips" target="_blank">LibVIPS</a> gibt es ein <a href="https://github.com/libvips/libvips/pull/2181" target="_blank">Pull Request</a>, der die Unterstützung für die JPEG XL Referenz-Implementierung nachrüstet. Diese ist nun in einer Variante des Images zur Konvertierung eingebaut:</p>
+<pre tabindex="0"><code>docker pull ghcr.io/cmahnke/iiif-action:latest-jxl
+</code></pre><p>Es gibt auch ein  Image, dass nur die JPEG XL Referenz-Implementierung beinhaltet:</p>
+<pre tabindex="0"><code>docker pull ghcr.io/cmahnke/jpeg-xl-action:latest
+</code></pre><h1 id="vorbereitung">Vorbereitung</h1>
+<h2 id="starten-eines-interaktiven-containers">Starten eines interaktiven Containers</h2>
+<p>Das Image kann auch verwendet werden, um die Ausgangsdateien zu erstellen.</p>
+<pre tabindex="0"><code>docker run -it -v ${PWD}:${PWD} &#39;ghcr.io/cmahnke/iiif-action:latest-jxl&#39; /bin/bash -c &#34;cd ${PWD}; $SHELL&#34;
+</code></pre><h2 id="dateien-konvertieren">Dateien konvertieren</h2>
+<p>Direkt <code>vips</code> zu benutzen hat den Vorteil, dass man jedes unterstützte Dateiformat benutzen kann.</p>
+<pre tabindex="0"><code>vips copy front.tif front.jxl[Q=100]
+</code></pre><p>Folgende Probleme sind bisher aufgetreten:</p>
+<ul>
+<li><code>vips jxlsave</code> unterstützt keine Parameter</li>
+<li>Der Parameter <code>effort</code> kann zum Absturz führen, wenn er größer als <code>7</code> ist.</li>
+</ul>
+<p><code>cjxl</code> kann auch verwendet werden, allerdings sollte man dann eine verlustfrei komprimierte (z.B. PNG) Eingangsdatei verwenden:</p>
+<pre tabindex="0"><code>cjxl front.png front.jxl
+</code></pre><p>Die möglichen Parameter sind hier verlinkt:</p>
+<ul>
+<li>Für <a href="https://github.com/libvips/libvips/blob/add-jxl/libvips/foreign/jxlsave.c" target="_blank"><code>vips jxlsave</code></a></li>
+<li>Für <a href="https://gitlab.com/wg1/jpeg-xl/-/blob/master/doc/man/cjxl.txt" target="_blank"><code>cjxl</code></a></li>
+</ul>
+<h2 id="optionen">Optionen</h2>
+<p>Da JPEG XL hier primär dazu dienen soll den Speicherbedarf zu senken und das bei gleicher oder höherer Qualität kommt es darauf an dies bei der Konvertierung zu berücksichtigen. Wenn möglich sollten die bearbeitet Master (also verlustfreie Bilddaten) direkt für die Erstellung der Derivate genutzt werden. Derzeit sind JPEG Dateien (ImageMagick Qualitätsstufe 95) das Ausgangsmaterial.</p>
+<p>Für die Beurteilung der Qualität wird das Tool <a href="https://github.com/google/butteraugli" target="_blank"><code>butteraugli</code></a> zum Einsatz.</p>
+<h3 id="vergleichsdatei-erzeugen">Vergleichsdatei erzeugen</h3>
+<pre tabindex="0"><code>convert front.tif -quality 95 front.jpg
+</code></pre><p><code>butteraugli</code> kann JPEG bzw. PNG lesen.</p>
+<pre tabindex="0"><code>vips jxlsave front.tif front.jxl --distance 1
+</code></pre><h2 id="ergebnisse">Ergebnisse</h2>
+<p>Dieser Beitrag erhebt nicht den Anspruch, die optimalsten - wenn es das Wort den gäbe - Ergebnisse zu erzielen. Zusätzlich ist der Speicherbedarf des JPEG XL Encoder sehr intensiv und kann daher nicht in vollem Umfang in der Docker Umgebung ausprobiert werden. Aus diesen Gründen gibt es an dieser Stelle keine Benchmarks, Vergleiche von Dateigrößen usw.</p>
+<p>Grundsätzlich bleibt was eingangs bekannt war: Dateien sind bei ähnlicher Qualität kleiner.</p>
+<h1 id="iiif">IIIF</h1>
+<p>Nachdem man nun ein paar JPEG XL Dateien erzeugt hat, kann man nun IIIF Derivate generieren:</p>
+<pre tabindex="0"><code>vips dzsave front.jxl front -t 512 --layout iiif
+</code></pre><div class="iiif">
+  <div id="_iiif-presentation-f646b804ea23b826c71706aca722a9a3" class="viewer presentation-api portrait"></div>
+  <script type="text/javascript">
+    var viewer = iiifPresentationViewer('#_iiif-presentation-f646b804ea23b826c71706aca722a9a3', 'https:\/\/christianmahnke.de\/post\/jpeg-xl\/manifest.json');
+  </script>
+</div></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1047199" title="Q1047199" rel="related">Wikidata Eintrag: Q1047199</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q72885392" title="JPEG XL" rel="related">Wikidata Eintrag: JPEG XL</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q7907037" title="VIPS" rel="related">Wikidata Eintrag: VIPS</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/DigitalImages" title="Digitale Bilder">#Digitale Bilder</a><a href="https://christianmahnke.de/tags/Projektemacher.org" title="Projektemacher.org">#Projektemacher.org</a><a href="https://christianmahnke.de/tags/IIIF" title="IIIF">#IIIF</a><a href="https://christianmahnke.de/tags/VIPS" title="VIPS">#VIPS</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-iiif-vips/">HDR IIIF für alle mit VIPS</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/wallpaper-generator/">Virtuelle Räume tapezieren!</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/tify-0.34/">Von Mirador zu Tify</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/fliiifenleger/">Fliiifenleger - eine IIIF Experimentierplattform</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/haptic-feedback/">Haptisches Feedback</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/jpeg-xl/" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

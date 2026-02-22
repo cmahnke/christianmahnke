@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Talk on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Talk/</link>
+    <description>Recent content in Talk on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <lastBuildDate>Sun, 22 Feb 2026 12:50:19 +0100</lastBuildDate>
+    <atom:link href="https://christianmahnke.de/tags/Talk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IIIF Community Call 15.1.2025: HDR</title>
+      <link>https://christianmahnke.de/post/iiif-community-call-15.1.2025/citation.bib</link>
+      <pubDate>Wed, 15 Jan 2025 14:30:00 +0100</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/iiif-community-call-15.1.2025/citation.bib</guid>
+      <description>&lt;p&gt;Nach dem &lt;a href=&#34;https://christianmahnke.de/post/iiif-online-meeting-2024-slides/&#34;&gt;Lightning Talk&lt;/a&gt; letztes Jahr, nun der nächste Schritt&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

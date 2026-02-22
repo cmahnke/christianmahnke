@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Digitale Bibliothek on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/DigitalLibrary/</link>
+    <description>Recent content in Digitale Bibliothek on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/DigitalLibrary/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Informationen zu Spendern in Kulturerbeaggregatoren</title>
+      <link>https://christianmahnke.de/post/donation-metadata/citation.bib</link>
+      <pubDate>Wed, 21 May 2025 06:00:00 +0000</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/donation-metadata/citation.bib</guid>
+      <description>&lt;p&gt;Ab und zu spende ich Objekte an Kultureinrichtungen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Digitale Provenienz für digitalisiertes Kulturgut</title>
+      <link>https://christianmahnke.de/post/digital-provenance/citation.bib</link>
+      <pubDate>Sun, 16 Mar 2025 22:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/digital-provenance/citation.bib</guid>
+      <description>&lt;p&gt;Wie kann man Authentizität digitalisierten Kulturgutes gewährleisten?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>KI und Software-&#34;Entwicklung&#34;</title>
+      <link>https://christianmahnke.de/post/academic-software-publishing/citation.bib</link>
+      <pubDate>Tue, 25 Feb 2025 15:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/academic-software-publishing/citation.bib</guid>
+      <description>&lt;p&gt;Im letzten Jahr habe ich mich ab und zu mit KI beschäftigt, um meine Blogs mit zusätzlichen Features anzureichern und auch ihre Weiterentwicklung zu beschleunigen.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mikrofilmdigitalisierung beenden!</title>
+      <link>https://christianmahnke.de/post/stop-microfilm-digitisation/citation.bib</link>
+      <pubDate>Mon, 17 Feb 2025 17:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/stop-microfilm-digitisation/citation.bib</guid>
+      <description>&lt;p&gt;Nachdem ich Ende des letzten Jahres schon einen &lt;a href=&#34;https://christianmahnke.de/post/archives-citizen-participation/&#34;&gt;Erfahrungsbericht&lt;/a&gt; mit einem Archiv veröffentlicht habe, nun etwas zu digitalen Bibliotheken&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

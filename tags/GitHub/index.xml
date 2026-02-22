@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitHub on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/GitHub/</link>
+    <description>Recent content in GitHub on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/GitHub/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vektor Kartenmaterial mit GitHub bauen</title>
+      <link>https://christianmahnke.de/post/build-vector-tiles-on-github/citation.bib</link>
+      <pubDate>Sat, 01 Jul 2023 20:14:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/build-vector-tiles-on-github/citation.bib</guid>
+      <description>&lt;p&gt;Da die Nutzung von frei verfügbaren Kartendiensten sowohl eine &lt;a href=&#34;https://christianmahnke.de/post/maps/&#34;&gt;Kommunikation mit externen Diensten&lt;/a&gt; erfordert, als auch die Gestaltung eingeschränkt, war es Zeit für etwas eigenes&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

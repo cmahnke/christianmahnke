@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HDR on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/HDR/</link>
+    <description>Recent content in HDR on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/HDR/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hdr-canvas aktualisiert</title>
+      <link>https://christianmahnke.de/post/hdr-canvas-updated/citation.bib</link>
+      <pubDate>Sun, 30 Nov 2025 11:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hdr-canvas-updated/citation.bib</guid>
+      <description>&lt;p&gt;&lt;code&gt;hdr-canvas&lt;/code&gt; aktualisiert&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDR IIIF für alle mit VIPS</title>
+      <link>https://christianmahnke.de/post/hdr-iiif-vips/citation.bib</link>
+      <pubDate>Thu, 27 Nov 2025 18:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hdr-iiif-vips/citation.bib</guid>
+      <description>&lt;p&gt;HDR IIIF für alle&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Community Call 15.1.2025: HDR</title>
+      <link>https://christianmahnke.de/post/iiif-community-call-15.1.2025/citation.bib</link>
+      <pubDate>Wed, 15 Jan 2025 14:30:00 +0100</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/iiif-community-call-15.1.2025/citation.bib</guid>
+      <description>&lt;p&gt;Nach dem &lt;a href=&#34;https://christianmahnke.de/post/iiif-online-meeting-2024-slides/&#34;&gt;Lightning Talk&lt;/a&gt; letztes Jahr, nun der nächste Schritt&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Visualisierung von KI Segmentierung mit HDR</title>
+      <link>https://christianmahnke.de/post/visualising-ai-segmentation-with-hdr/citation.bib</link>
+      <pubDate>Tue, 14 Jan 2025 21:00:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/visualising-ai-segmentation-with-hdr/citation.bib</guid>
+      <description>&lt;p&gt;Der erste Schritt zu visuell unterstützter Annotierung mit HDR&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Online Meeting 2024: HDR Images via IIIF Image API</title>
+      <link>https://christianmahnke.de/post/iiif-online-meeting-2024-slides/citation.bib</link>
+      <pubDate>Thu, 14 Nov 2024 15:30:00 +0100</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/iiif-online-meeting-2024-slides/citation.bib</guid>
+      <description>&lt;p&gt;Die Folien meiner Präsentation zu HDR Inhalten über IIIF sind nun verfügbar&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDR Bilder zur Visualisierung von Röntgenuntersuchungen</title>
+      <link>https://christianmahnke.de/post/hdr-radiography-visualisation/citation.bib</link>
+      <pubDate>Wed, 13 Nov 2024 12:00:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hdr-radiography-visualisation/citation.bib</guid>
+      <description>&lt;p&gt;Ein weiterer Anwendungsfall für HDR-Bilder&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>UV-Photogrammetrie</title>
+      <link>https://christianmahnke.de/post/uv-photogrammetry/citation.bib</link>
+      <pubDate>Thu, 05 Sep 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/uv-photogrammetry/citation.bib</guid>
+      <description>&lt;p&gt;&lt;strong&gt;In diesem Beitrag wird die weltweit erste HDR Darstellung einer UV-Photogrammetrie im Browser präsentiert.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDR IIIF</title>
+      <link>https://christianmahnke.de/post/hdr-iiif/</link>
+      <pubDate>Sun, 18 Aug 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hdr-iiif/</guid>
+      <description>&lt;p&gt;Beim &lt;a href=&#34;http://www.zeitzeug.de/&#34; target=&#34;_blank&#34;&gt;Zeitzeug&lt;/a&gt; wird die Tapetensammlung des Inhabers veräußert und ich habe mir ein besonders grelles Exemplar gesichert&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript Bibliothek für HDR</title>
+      <link>https://christianmahnke.de/post/hdr-canvas-js/citation.bib</link>
+      <pubDate>Sat, 06 Jul 2024 12:00:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hdr-canvas-js/citation.bib</guid>
+      <description>&lt;p&gt;Die JavaScript Unterstützung für die letzten Beiträge ist nun auch einzeln als NPM Modul verfügbar.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung</title>
+      <link>https://christianmahnke.de/post/hdr-image-analysis/citation.bib</link>
+      <pubDate>Thu, 06 Jun 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hdr-image-analysis/citation.bib</guid>
+      <description>&lt;p&gt;In diesem Beispiel geht es um einen praktischen Anwendungsfall für die &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q309254&#34; href=&#34;https://de.wikipedia.org/wiki/High_Dynamic_Range_Image&#34; target=&#34;_blank&#34;&gt;HDR&lt;/a&gt; Darstellung im Browser&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LibUltraHDR</title>
+      <link>https://christianmahnke.de/post/ultrahdr/citation.bib</link>
+      <pubDate>Thu, 23 May 2024 11:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/ultrahdr/citation.bib</guid>
+      <description>&lt;p&gt;Für ein in Vorbereitung befindliches Projekt war es nach der &lt;a href=&#34;https://christianmahnke.de/post/hdr-awesome-list/&#34;&gt;Recherche&lt;/a&gt; notwendig einige Wege zu erkunden und Werkzeuge zu schaffen. Ausgehend von den Vorarbeiten von &lt;a href=&#34;https://gregbenzphotography.com/hdr/&#34; target=&#34;_blank&#34;&gt;Greg Benz&lt;/a&gt;, zur HDR-Unterstützung, war LibUltraHDR der sinnvollste Kandidat für weitere Experimente.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDR Bilder im Browser</title>
+      <link>https://christianmahnke.de/post/hdr-awesome-list/citation.bib</link>
+      <pubDate>Wed, 01 May 2024 11:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hdr-awesome-list/citation.bib</guid>
+      <description>&lt;p&gt;Für ein in Vorbereitung befindliches Projekt habe ich eine &lt;a href=&#34;https://github.com/cmahnke/awesome-browser-hdr/blob/main/README.md&#34; target=&#34;_blank&#34;&gt;Liste von Links&lt;/a&gt; zu HDR im Web bzw. im Browser zusammengestellt.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hildesheimer Börde</title>
+      <link>https://christianmahnke.de/post/image-hildesheimer-boerde/citation.bib</link>
+      <pubDate>Thu, 02 Mar 2023 22:39:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/image-hildesheimer-boerde/citation.bib</guid>
+      <description>&lt;p&gt;Eine nächtliche Aufnahme der Raststätte &amp;ldquo;Hildesheimer Börde&amp;rdquo; im Nebel.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

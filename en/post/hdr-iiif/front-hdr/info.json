@@ -1,0 +1,34 @@
+{
+  "@context": "http://iiif.io/api/image/2/context.json",
+  "@id": "./front-hdr",
+  "height": 11944,
+  "profile": [
+    "http://iiif.io/api/image/2/level0.json",
+    {
+      "formats": [
+        "jpg"
+      ],
+      "qualities": [
+        "default"
+      ],
+      "supports": [
+        "https://christianmahnke.de/iiif/hdr/"
+      ]
+    }
+  ],
+  "protocol": "http://iiif.io/api/image",
+  "tiles": [
+    {
+      "height": 512,
+      "scaleFactors": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "width": 512
+    }
+  ],
+  "width": 12544
+}

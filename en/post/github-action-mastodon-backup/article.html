@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Mastodon backups with GitHub Actions · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="en">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Due to recent events">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/en/post/github-action-mastodon-backup/article.html" />
+  <meta property="og:title" content="Mastodon backups with GitHub Actions · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/en/post/github-action-mastodon-backup/ogPreview.en_hu_916b1b736d83875b.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", Projektemacher.org, Social media"><meta name="dc.subject" content="Projektemacher.org"><meta name="dc.subject" content="Social media">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:09:36.869379149 &#43;0000 UTC m=&#43;390.491887641"><meta name="projektemacher.org:git-commit" content="6cd1f53">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/en/post/github-action-mastodon-backup/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" type="text/html" href="https://christianmahnke.de/en/post/github-action-mastodon-backup/" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/en/post/github-action-mastodon-backup/article.html"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/en/post/github-action-mastodon-backup/article.html","@type":"BlogPosting","about":["Projektemacher.org","SocialMedia",{"@id":"http://www.wikidata.org/entity/Q115232190","@type":"Thing","name":"openbiblio.social"},{"@id":"http://www.wikidata.org/entity/Q27986619","@type":"Thing","name":"Mastodon"},{"@id":"http://www.wikidata.org/entity/Q28865","@type":"Thing","name":"Python"},{"@id":"http://www.wikidata.org/entity/Q364","@type":"Thing","name":"Q364"},{"@id":"http://www.wikidata.org/entity/Q97185096","@type":"Thing","name":"GitHub Actions"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2026-01-15T06:22:44+02:00","description":"Due to recent events","headline":"Mastodon backups with GitHub Actions","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Projektemacher.org","SocialMedia"],"name":"Mastodon backups with GitHub Actions","url":"https://christianmahnke.de/en/post/github-action-mastodon-backup/article.html"}
+</script>
+</head><body class="section-post dir-postgithub-action-mastodon-backup blog pdf  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/github-action-mastodon-backup/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Mastodon backups with GitHub Actions</h1><div class="post-description">Due to recent events</div><div class="date">
+          <time class="post-data" datetime="2026-01-15T06:22:44&#43;02:00">Thursday, January 15, 2026</time>
+        </div><div class="post-body"><p>Due to recent events&hellip;</p>
+<p>&hellip;even though I haven&rsquo;t posted anything on Mastodon for a long time, I wanted to publish my activities there again between Christmas and New Year.</p>
+<p>Unfortunately, <a href="https://openbiblio.social/home" target="_blank">openbiblio.social</a> was <a href="https://bibcourse.eu/t/https-openbiblio-social-down/284/19" target="_blank">down</a>. Even though I don&rsquo;t plan to do so at the moment, here&rsquo;s an example of how you can use <a data-wikidata-entity="Q97185096" href="https://github.com/features/actions" target="_blank">GitHub Actions</a> to make a backup – just in case you ever want to move. In principle, you can also use it to create a static presentation for the site.</p>
+<p><a href="https://github.com/kensanata/mastodon-archive" target="_blank"><code>mastodon-archive</code></a> is used for backup purposes. Since the Mastodon API of the home server is tapped, access to it must be configured. Please note that authentication must be renewed from time to time. Finally, direct messages are removed from the backup using <a data-wikidata-entity="Q28801607" href="https://jqlang.org/" target="_blank"><code>jq</code></a> (<code>jq “.mentions |= del(.[] | select(.visibility == ‘direct’))”</code>).</p>
+<h2 id="configuration">Configuration</h2>
+<p>Two configuration variables are required to use <code>mastodon-archive</code>:</p>
+<ul>
+<li><code>MASTODON_USER_SECRET</code></li>
+<li><code>MASTODON_SERVER_SECRET</code></li>
+</ul>
+<p>The two required files can be generated locally with <code>mastodon-archive</code>. They are created when the programme is started for the first time.</p>
+<h2 id="githubworkflowsmastodon-archiveyml"><code>.github/workflows/mastodon-archive.yml</code></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Backup Mastodon</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">schedule</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">cron</span><span class="p">:</span><span class="w">  </span><span class="s1">&#39;30 3 * * 1,3,6&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">env</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">MASTODON_USER</span><span class="p">:</span><span class="w"> </span><span class="l">cmahnke@openbiblio.social</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">USER_SECRET_FILE</span><span class="p">:</span><span class="w"> </span><span class="l">./openbiblio.social.user.cmahnke.secret</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">SERVER_SECRET_FILE</span><span class="p">:</span><span class="w"> </span><span class="l">./openbiblio.social.server.secret</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">BACKUP_BRANCH</span><span class="p">:</span><span class="w"> </span><span class="l">mastodon-backup</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">BACKUP_FILE</span><span class="p">:</span><span class="w"> </span><span class="l">./openbiblio.social.user.cmahnke.json</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">BACKUP_DIRECTORY</span><span class="p">:</span><span class="w"> </span><span class="l">./data/mastodon</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">concurrency</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">${{ github.workflow }}-${{ github.ref }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">cancel-in-progress</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">permissions</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">packages</span><span class="p">:</span><span class="w"> </span><span class="l">write</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l">write</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">backup</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-24.04</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">permissions</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l">write</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v6</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Create Backup Branch</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          git checkout ${{ env.BACKUP_BRANCH }} || git switch --orphan ${{ env.BACKUP_BRANCH }}
+</span></span></span><span class="line"><span class="cl"><span class="sd">          mkdir -p ${{ env.BACKUP_DIRECTORY }}
+</span></span></span><span class="line"><span class="cl"><span class="sd">          echo &#34;*.secret&#34; &gt; ${{ env.BACKUP_DIRECTORY }}/.gitignore</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install dependencies</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">sudo apt-get install -y moreutils jq</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Set up Python</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/setup-python@v6</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.x&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install mastodon-archive</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">pip install mastodon-archive</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Setup Secrets</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">working-directory</span><span class="p">:</span><span class="w"> </span><span class="l">${{ env.BACKUP_DIRECTORY }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          echo &#34;${{ secrets.MASTODON_USER_SECRET }}&#34; &gt; ${{ env.USER_SECRET_FILE }}
+</span></span></span><span class="line"><span class="cl"><span class="sd">          echo &#34;${{ secrets.MASTODON_SERVER_SECRET }}&#34; &gt; ${{ env.SERVER_SECRET_FILE }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Run backup</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">working-directory</span><span class="p">:</span><span class="w"> </span><span class="l">${{ env.BACKUP_DIRECTORY }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">mastodon-archive archive --no-stopping --with-followers --with-following --with-mentions ${{ env.MASTODON_USER }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Clean backup</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">working-directory</span><span class="p">:</span><span class="w"> </span><span class="l">${{ env.BACKUP_DIRECTORY }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          jq &#39;(.mentions, .statuses) |= del(.[] | select(.visibility == &#34;direct&#34;))&#39; ${{ env.BACKUP_FILE }} | sponge ${{ env.BACKUP_FILE }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Generate path name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">media-path</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">working-directory</span><span class="p">:</span><span class="w"> </span><span class="l">${{ env.BACKUP_DIRECTORY }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          echo &#34;MEDIA_PATH=$(basename ${{ env.BACKUP_FILE }} .json)&#34; &gt;&gt; $GITHUB_OUTPUT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Get media</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">working-directory</span><span class="p">:</span><span class="w"> </span><span class="l">${{ env.BACKUP_DIRECTORY }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          mastodon-archive media ${{ env.MASTODON_USER }}
+</span></span></span><span class="line"><span class="cl"><span class="sd">          mastodon-archive media --collection favourites --collection bookmarks ${{ env.MASTODON_USER }}
+</span></span></span><span class="line"><span class="cl"><span class="sd">          ls -R ${{ steps.media-path.outputs.MEDIA_PATH }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Clean secrets</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">working-directory</span><span class="p">:</span><span class="w"> </span><span class="l">${{ env.BACKUP_DIRECTORY }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          rm ${{ env.USER_SECRET_FILE }}
+</span></span></span><span class="line"><span class="cl"><span class="sd">          rm ${{ env.SERVER_SECRET_FILE }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Commit changes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">working-directory</span><span class="p">:</span><span class="w"> </span><span class="l">${{ env.BACKUP_DIRECTORY }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          git config user.name &#34;GitHub Actions Bot&#34;
+</span></span></span><span class="line"><span class="cl"><span class="sd">          git config user.email &#34;&lt;&gt;&#34;          
+</span></span></span><span class="line"><span class="cl"><span class="sd">          git add *.json
+</span></span></span><span class="line"><span class="cl"><span class="sd">          git add ${{ steps.media-path.outputs.MEDIA_PATH }}/*
+</span></span></span><span class="line"><span class="cl"><span class="sd">          git commit -m &#34;Update Mastodon backup&#34; || echo &#34;No changes to commit&#34;
+</span></span></span><span class="line"><span class="cl"><span class="sd">          git push -u origin ${{ env.BACKUP_BRANCH }}</span><span class="w">
+</span></span></span></code></pre></div><h2 id="tidying-up">Tidying up</h2>
+<p>If the repository where the backup is stored is publicly accessible, you may want to remove additional information. To do this, you can either adjust the options in <code>mastodon-archive</code> or, if more precision is required, use <code>jq</code> again.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q115232190" title="openbiblio.social" rel="related">Wikidata entry: openbiblio.social</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q27986619" title="Mastodon" rel="related">Wikidata entry: Mastodon</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q28865" title="Python" rel="related">Wikidata entry: Python</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q364" title="Q364" rel="related">Wikidata entry: Q364</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q97185096" title="GitHub Actions" rel="related">Wikidata entry: GitHub Actions</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="tags-heading">Tags</div>
+        <div class="tags"><a href="https://christianmahnke.de/en/tags/Projektemacher.org" title="Projektemacher.org">#Projektemacher.org</a><a href="https://christianmahnke.de/en/tags/SocialMedia" title="Social media">#Social media</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/mastodon/article.html">Mastodon</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/instagram/article.html">Instagram</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/sammlungen-erzaehlen/article.html">Exhibition “Sammlungen erzählen” (Collections Tell Stories)</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/coat-hangers-book/article.html">The Kleiderbügel Blog as a book</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/projektemacher-2025/article.html">Projektemacher 2025</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/github-action-mastodon-backup/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Contact</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="Send eMail">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Privacy policy">Privacy policy</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

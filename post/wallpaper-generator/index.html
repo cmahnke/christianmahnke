@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Virtuelle Räume tapezieren! · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Da ich eine umfangreiche Sammlung an gemusterten Papieren habe, war es Zeit damit etwas zu machen&hellip;">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/wallpaper-generator/" />
+  <meta property="og:title" content="Virtuelle Räume tapezieren! · Christian Mahnke" />
+
+  
+  
+    
+  
+
+
+
+<meta name="keywords" content=", Projektemacher.org, Blog, IIIF, Digitale Bilder, Spaß, JavaScript"><meta name="dc.subject" content="Projektemacher.org"><meta name="dc.subject" content="Blog"><meta name="dc.subject" content="IIIF"><meta name="dc.subject" content="Digitale Bilder"><meta name="dc.subject" content="Spaß"><meta name="dc.subject" content="JavaScript">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:03:07.169677513 &#43;0000 UTC m=&#43;0.792186012">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/190a858648821490512168b1461dd3ab.min.80ceff0190987699c3955b3eacf74ab6b17fac8073414ff8a4890cc08754abd6.css" rel="stylesheet" integrity="sha256-gM7/AZCYdpnDlVs&#43;rPdKtrF/rIBzQU/4pIkMwIdUq9Y=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<script src="https://christianmahnke.de/js/c2669a0d5a327bb98f55a313ea2d2390.min.6560bb092908ae6e428c07b36100e3777ff9f92213a8780f41a42a4157a6bca3.js" integrity="sha256-ZWC7CSkIrm5CjAezYQDjd3/5+SITqHgPQaQqQVemvKM="></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/wallpaper-generator/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/wallpaper-generator/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/wallpaper-generator/","@type":"BlogPosting","about":["Projektemacher.org","Blog","IIIF","DigitalImages","Fun","JavaScript",{"@id":"http://www.wikidata.org/entity/Q191529","@type":"Thing","name":"wallpaper"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2025-06-09T23:22:44+02:00","headline":"Virtuelle Räume tapezieren!","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Projektemacher.org","Blog","IIIF","DigitalImages","Fun","JavaScript"],"name":"Virtuelle Räume tapezieren!","url":"https://christianmahnke.de/post/wallpaper-generator/"}
+</script>
+</head><body class="section-post dir-postwallpaper-generator blog  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/wallpaper-generator/" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Virtuelle Räume tapezieren!</h1><div class="date">
+          <time class="post-data" datetime="2025-06-09T23:22:44&#43;02:00">Montag, 9. Juni 2025</time>
+        </div><div class="post-body"><p>Da ich eine <a href="https://vorsatzpapier.projektemacher.org/patterns/" target="_blank">umfangreiche Sammlung an gemusterten Papieren</a> habe, war es Zeit damit etwas zu machen&hellip;</p>
+<p>Seit Corona ist es üblich, einander in Videokonferenzen in die Buden zu schauen. Während es einige mit interessanten Perspektiven oder dem Schwarz-Weiß-Modus probierten, wurde es während des darauf folgendem KI-Boom üblich mittels Filter Hintergründe weichzuzeichnen, damit man sich keine exzentrische Gitarren-, Fahrrad- oder Kunstsammlung an die Wand schrauben muss.</p>
+<p>Und um beides zusammen zu bringen, gibt es nun eine interaktives Spielzeug für das <a href="https://vorsatzpapier.projektemacher.org/generator/" target="_blank">&ldquo;Vorsatzpapier&rdquo; Blog</a>, einen Mustergenerator, der direkt mit den bereitgestellten IIIF Manifesten arbeiten kann. Auf dieser Seite gibt es eine Variante, bei der das Ausgangsmaterial frei gewählt werden kann, indem man die URL zu einem IIIF-Manifest einträgt.</p>
+
+  <div class="lucienne-container">
+      <div class="lucienne" id="_lucienne-5ff8bad7a046aa24e4de8a7a61c24cc9">
+      </div>
+      <script type="text/javascript">
+          var url = [{"label":"Sammlung Vorsatzpapier","url":"https://vorsatzpapier.projektemacher.org/patterns/collection.json"}];
+          
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has("url")) {
+              const u = urlParams.get("url");
+              if (u !== null) {
+                url = new URL(u);
+              }
+            }
+          
+          var elem = document.getElementById('_lucienne-5ff8bad7a046aa24e4de8a7a61c24cc9');
+          lucienne(elem, true, true, true, true, url, false)
+      </script>
+  </div>
+<h1 id="bedienungsanleitung">Bedienungsanleitung</h1>
+<p><strong>Wichtig</strong>: Die Darstellung in mobilen Browsern kann gestaucht oder fehlerhaft sein.</p>
+<p>In das obere Feld kann entweder eine URL zu einem IIIF-Manifest eingetragen werden, oder die <a href="https://vorsatzpapier.projektemacher.org/patterns/" target="_blank">Sammlung an Tapeten und Vorsatzpapieren</a> genutzt werden. Je nach Art des Manifests erscheint daraufhin die Möglichkeit ein Objekt bzw. eine Seite eines Objektes auszuwwählen. Falls z.B. nur eine einzelne Seite vorhanden ist, wird dies automatisch ausgewählt.</p>
+<p>Daraufhin erscheint das gewünschte Digitalisat in der Mitte.</p>
+<p>Im nächsten Schritt können nun die Schnittmarken an den Rändern genutzt werden, um den passenden Ausschnitt zu wählen. Das Icon mit dem Qudrat erzeugt einen quadratischen Zuschnitt. Die Räder unten rechts können genutzt werden um eine alternierende Rotation um den eingestellten winkel entweder horizontal oder vertikal einzustellen.</p>
+<p>Im unteren Fenster erhält man eine Vorschau auf das Ergebnis. Zusätzlich ist es möglich die Anzahl der Zeilen und Spalten einzustellen. Nach einer Änderung muss auf &ldquo;Größe aktualisieren&rdquo; geklickt werden. Auch ist es hier möglich das Ergebnis herunterzuladen. Dabei wird der Inhalt immer auf die Breite der gewälten Auflösung skaliert. Das Symbol mit den zwei Pfeilen auf der linken Seite kann genutzt werden, um den Inhalt so breit wie das Vorschaufenster zu machen.</p>
+<h1 id="lucienne-day">Lucienne Day</h1>
+<p>Der Name der Software soll an die Designerin 
+      
+        
+      <a data-wikidata-entity="Q1551026" href="https://de.wikipedia.org/wiki/Lucienne_Day" target="_blank">Lucienne Day</a>, die auch für ihre Textil und Tapeten Entwürfe der 50er und 60er Jahre berühmt wurde.</p>
+<h1 id="technische-details">Technische Details</h1>
+<p>Für die Umsetzung kamen unter anderem die folgenden JavaScript Module zum Einsatz:</p>
+<ul>
+<li><a data-wikidata-entity="Q105134737" href="https://openseadragon.github.io/" target="_blank">OpenSeadragon</a></li>
+<li><a href="https://github.com/brunoocastro/openseadragon-fabric" target="_blank">OpenSeaDragon - FabricJS Plugin</a></li>
+<li><a href="https://allmaps.org/" target="_blank">Allmaps iiif-parser</a></li>
+<li><a href="https://fabricjs.com/" target="_blank">Fabric.js</a></li>
+<li><a href="https://www.i18next.com/" target="_blank">i18next</a></li>
+<li><a href="https://github.com/i18next/i18next-browser-languageDetector" target="_blank">i18next-browser-languageDetector</a></li>
+</ul>
+<h1 id="update-170625">Update 17.06.25</h1>
+<ul>
+<li>Bedienungsanleitung hinzugefügt</li>
+</ul></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q191529" title="Tapete" rel="related">Wikidata Eintrag: Tapete</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Diesen Beitrag zitieren
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2025)</span>: <span class="cite-title">Virtuelle Räume tapezieren!</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], 09.06.2025. Online-Publikation: <a class="cite-link" href="https://christianmahnke.de/post/wallpaper-generator/">https://christianmahnke.de/post/wallpaper-generator/</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/post/wallpaper-generator/citation.bib" title="Als BibTex herunterladen">Als BibTex herunterladen</a>
+  </div>
+</details>
+</div><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/Projektemacher.org" title="Projektemacher.org">#Projektemacher.org</a><a href="https://christianmahnke.de/tags/Blog" title="Blog">#Blog</a><a href="https://christianmahnke.de/tags/IIIF" title="IIIF">#IIIF</a><a href="https://christianmahnke.de/tags/DigitalImages" title="Digitale Bilder">#Digitale Bilder</a><a href="https://christianmahnke.de/tags/Fun" title="Spaß">#Spaß</a><a href="https://christianmahnke.de/tags/JavaScript" title="JavaScript">#JavaScript</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/tify-0.34/">Von Mirador zu Tify</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/haptic-feedback/">Haptisches Feedback</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/pong/">Pong Visualisierung</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/vintagereality/">VintageReality gestartet</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/jpeg-xl/">JPEG XL</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/wallpaper-generator/" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

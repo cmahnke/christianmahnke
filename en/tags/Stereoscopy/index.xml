@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stereoscopy on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Stereoscopy/</link>
+    <description>Recent content in Stereoscopy on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Stereoscopy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Historical stereograms on modern hardware</title>
+      <link>https://christianmahnke.de/en/post/vintagereality-apple-spatial/citation.bib</link>
+      <pubDate>Sun, 28 Dec 2025 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/vintagereality-apple-spatial/citation.bib</guid>
+      <description>&lt;p&gt;I have a new phone&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI segmentation for stereoscopic cards</title>
+      <link>https://christianmahnke.de/en/post/vintagereality-ai/citation.bib</link>
+      <pubDate>Sun, 28 Dec 2025 10:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/vintagereality-ai/citation.bib</guid>
+      <description>&lt;p&gt;In 2024, my stereoscopy collection went online&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VintageReality launched</title>
+      <link>https://christianmahnke.de/en/post/vintagereality/citation.bib</link>
+      <pubDate>Tue, 05 Mar 2024 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/vintagereality/citation.bib</guid>
+      <description>&lt;p&gt;The latest blog incubated at the &lt;a href=&#34;https://labs.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt; has been started.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

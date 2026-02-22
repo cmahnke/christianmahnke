@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Contrast enhancement for UV images using HDR · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="en">
+<meta name="dc.type" content="Text">
+<meta name="description" content="An old copy book from Northeim as an example of HDR visualisation of UV images">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/en/post/hdr-image-analysis/article.html" />
+  <meta property="og:title" content="Contrast enhancement for UV images using HDR · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/en/post/hdr-image-analysis/ogPreview.en_hu_df9f632660eba59f.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content="UV, ultraviolet, image analysis, Northeim, copy book, letters, Light, Licht2024, Digital images, Object, HDR"><meta name="dc.subject" content="UV"><meta name="dc.subject" content="ultraviolet"><meta name="dc.subject" content="image analysis"><meta name="dc.subject" content="Northeim"><meta name="dc.subject" content="copy book"><meta name="dc.subject" content="letters"><meta name="dc.subject" content="Light"><meta name="dc.subject" content="Licht2024"><meta name="dc.subject" content="Digital images"><meta name="dc.subject" content="Object"><meta name="dc.subject" content="HDR">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:09:36.869379149 &#43;0000 UTC m=&#43;390.491887641"><meta name="projektemacher.org:git-commit" content="6cd1f53">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/803829516737cf44979003eb57611a97.min.74e8064600e19610cf1ae3f64c9216c1ad51bcbb96042ca0e966306dfd1d204b.css" rel="stylesheet" integrity="sha256-dOgGRgDhlhDPGuP2TJIWwa1RvLuWBCyg6WYwbf0dIEs=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<script src="https://christianmahnke.de/js/54d70e66532e367508bc3e85124329d0.min.801aae1a00fe04edf943ff4b19951a1dc0bd1d0268e0c0386d3e7f295a9421ac.js" integrity="sha256-gBquGgD+BO35Q/9LGZUaHcC9HQJo4MA4bT5/KVqUIaw="></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/en/post/hdr-image-analysis/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" type="text/html" href="https://christianmahnke.de/en/post/hdr-image-analysis/" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/en/post/hdr-image-analysis/article.html"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/en/post/hdr-image-analysis/article.html","@type":"BlogPosting","about":["UV","ultraviolet","image analysis","Northeim","copy book","letters","Light","Licht2024","DigitalImages","Object","HDR",{"@id":"http://www.wikidata.org/entity/Q1576316","@type":"Thing","name":"Hannoverscher Kurier"},{"@id":"http://www.wikidata.org/entity/Q160225","@type":"Thing","name":"Nuremberg Rally"},{"@id":"http://www.wikidata.org/entity/Q178995","@type":"Thing","name":"HTTP cookie"},{"@id":"http://www.wikidata.org/entity/Q241859","@type":"Thing","name":"Richenza of Northeim"},{"@id":"http://www.wikidata.org/entity/Q278151","@type":"Thing","name":"Der Spiegel"},{"@id":"http://www.wikidata.org/entity/Q777","@type":"Thing","name":"Google Chrome"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2024-06-06T11:33:44+02:00","description":"An old copy book from Northeim as an example of HDR visualisation of UV images","headline":"Contrast enhancement for UV images using HDR","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["UV","ultraviolet","image analysis","Northeim","copy book","letters","Light","Licht2024","DigitalImages","Object","HDR"],"name":"Contrast enhancement for UV images using HDR","url":"https://christianmahnke.de/en/post/hdr-image-analysis/article.html"}
+</script>
+</head><body class="section-post dir-posthdr-image-analysis blog pdf  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/hdr-image-analysis/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Contrast enhancement for UV images using HDR</h1><div class="post-description">An old copy book from Northeim as an example of HDR visualisation of UV images</div><div class="date">
+          <time class="post-data" datetime="2024-06-06T11:33:44&#43;02:00">Thursday, June 6, 2024</time>
+        </div><div class="post-body"><p>This example is about a practical use case for 
+      
+        
+      <a data-wikidata-entity="Q106239881" href="https://en.wikipedia.org/wiki/High_dynamic_range" target="_blank">HDR</a> visualisation in the browser&hellip;</p>
+<p>The example below currently only works with Chrome-based browsers (such as Edge or Brave), as these already support HDR with the HTML canvas element. There are two reasons for this:</p>
+<ul>
+<li>Standardisation is still ongoing</li>
+<li>Not all browsers implement new functions immediately</li>
+</ul>
+<p>The piece shown is an excerpt from a copybook from the first half of the 1920s.</p>
+<p>A copybook is a collection of copied letters in a book. These copies were not made using a photocopier, but were handwritten using a copying pen, then placed on one of the tissue paper pages, with the front and back wrapped in a kind of oilcloth to protect the other pages and pressed in this way. There were either corresponding presses or, as in this case, a cast-iron &ldquo;protective cover&rdquo;, which was also the press.</p>
+<p>This copy book belonged to Carl Spannaus, who in the course of the book also worked as a correspondent for the 
+      
+        
+      <a data-wikidata-entity="Q1576316" href="https://de.wikipedia.org/wiki/Hannoverscher_Kurier" target="_blank">Hannoverscher Kurier (German)</a>.</p>
+<p>In the issue of Sunday 14 September 1902 (page 5) of the Hannoverscher Kurier, he is <a href="https://digitale-sammlungen.gwlb.de/content/73496076X_HannoverscherKurier_19020914_01/pdf/00000005.pdf" target="_blank">listed (German)</a> as an agent of the newspaper and owner of a bookshop in Northeim. He also published <a href="https://ansichtskarten-lexikon.de/verlag-carl-spannaus-northeim-i-hann-14621.html" target="_blank">postcards (German)</a>. You can also read in <a href="https://www.spiegel.de/geschichte/ortstermin-a-946572.html" target="_blank">Spiegel (German)</a> that he was the first citizen of Northeim who became member of the NSDAP&hellip;
+And there are also some entries in the &ldquo;Börsenblatt des deutschen Buchhandels&rdquo;.</p>
+<p>This book also contains copies of stamp impressions. Some of the stamp colours used can be excited by UV radiation&hellip;</p>
+<div id="_gallery-ad329002a41c7fd3cd32a9218b3abdcf" class="gallery "><a class="gallery-image caption" href="img/presse.jpg" data-pswp-width="2884" data-pswp-height="2859" target="_blank"><img src="https://christianmahnke.de/en/post/hdr-image-analysis/img/presse_hu_f3b2293b21f62cb1.webp" alt="Press" class="gallery-preview" /><div class="hidden-caption-content">Press</div></a><a class="gallery-image caption" href="img/front.jpg" data-pswp-width="2784" data-pswp-height="3196" target="_blank"><img src="https://christianmahnke.de/en/post/hdr-image-analysis/img/front_hu_3f0624e77d165bd6.webp" alt="Book cover" class="gallery-preview" /><div class="hidden-caption-content">Book cover</div></a><a class="gallery-image caption" href="img/page.jpg" data-pswp-width="2362" data-pswp-height="3028" target="_blank"><img src="https://christianmahnke.de/en/post/hdr-image-analysis/img/page_hu_4514f7d829785ea1.webp" alt="Page" class="gallery-preview" /><div class="hidden-caption-content">Page</div></a></div>
+
+<script type="text/javascript">
+  window.photoswipe("#_gallery-ad329002a41c7fd3cd32a9218b3abdcf", "a.gallery-image")
+</script>
+<h1 id="example">Example</h1>
+<div ></div>
+<details id="_hdr-check-efa9915363d95a03853024c9213c3fd3" class="hdr-check-result">
+  <summary>HDR check</summary>
+  <p></p>
+</details>
+
+<script type="text/javascript">
+  const hdrCheckResult = document.getElementById("_hdr-check-efa9915363d95a03853024c9213c3fd3");
+  if (checkHDRCanvas()) {
+    hdrCheckResult.querySelector('p').innerText = "The canvas element of your browser supports HDR!";
+    hdrCheckResult.classList.add("success");
+  } else {
+    hdrCheckResult.querySelector('p').innerText = "The canvas element of your browser doesn\u0027t support HDR, please retry with a recent Cromium-based browser like Chrome, Edge or Brave!";
+    hdrCheckResult.classList.add("fail");
+  }
+</script>
+<p>If the HDR check fails, the colours are not displayed in their full luminance. <strong>Even if the display of HDR images works, the HDR support for the <code>canvas</code> element needs the browser flag <code>enable-experimental-web-platform-features</code> to be enabled. For example, open &ldquo;chrome://flags#enable-experimental-web-platform-features&rdquo; in Chrome to activate it.</strong></p>
+<p>Currently, only the intensities of the individual channels can be adjusted, but in principle significantly more parameters are conceivable.
+Therefore, the example only marginally increases readability in most settings, but makes the potential visible.</p>
+<div class="hdr-canvas-container">
+  <div class="canvas-container">
+    <canvas id="_hdr-canvas-a0886cbc4d993e08cf00ef1f8f4f1a06"></canvas>
+  </div>
+
+  <div class="slider-container">
+    <div class="channel-container">
+      <input type="range" min="1" max="100" value="50" class="slider" id="redSlider">
+      <label for="redSlider">Red <span class="value"></span></label>
+    </div>
+    <div class="channel-container">
+      <input type="range" min="1" max="100" value="50" class="slider" id="greenSlider">
+      <label for="greenSlider">Green <span class="value"></span></label>
+    </div>
+    <div class="channel-container">
+      <input type="range" min="1" max="100" value="50" class="slider" id="blueSlider">
+      <label for="blueSlider">Blue <span class="value"></span></label>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    const imageUrl = 'img\/sample.jpeg';
+    const canvas = document.querySelector('#_hdr-canvas-a0886cbc4d993e08cf00ef1f8f4f1a06');
+
+    initCanvas(canvas, imageUrl);
+  </script>
+</div></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1576316" title="Hannoverscher Kurier" rel="related">Wikidata entry: Hannoverscher Kurier</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q160225" title="Nuremberg Rally" rel="related">Wikidata entry: Nuremberg Rally</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q178995" title="HTTP cookie" rel="related">Wikidata entry: HTTP cookie</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q241859" title="Richenza of Northeim" rel="related">Wikidata entry: Richenza of Northeim</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q278151" title="Der Spiegel" rel="related">Wikidata entry: Der Spiegel</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q777" title="Google Chrome" rel="related">Wikidata entry: Google Chrome</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Cite this article
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2024)</span>: <span class="cite-title">Contrast enhancement for UV images using HDR</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], Jun 6, 2024. Online publication: <a class="cite-link" href="https://christianmahnke.de/post/hdr-image-analysis/article.html">https://christianmahnke.de/post/hdr-image-analysis/article.html</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/en/post/hdr-image-analysis/citation.bib" title="Download as BibTex">Download as BibTex</a>
+  </div>
+</details>
+</div><div class="tags-heading">Tags</div>
+        <div class="tags"><a href="https://christianmahnke.de/en/tags/Light" title="Light">#Light</a><a href="https://christianmahnke.de/en/tags/Licht2024" title="Licht2024">#Licht2024</a><a href="https://christianmahnke.de/en/tags/DigitalImages" title="Digital images">#Digital images</a><a href="https://christianmahnke.de/en/tags/Object" title="Object">#Object</a><a href="https://christianmahnke.de/en/tags/HDR" title="HDR">#HDR</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/uv-photogrammetry/article.html">Ultraviolet Photogrammetry</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hdr-iiif/">HDR IIIF</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/ultrahdr/article.html">LibUltraHDR</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hdr-canvas-js/article.html">JavaScript library for HDR</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/pong/article.html">Pong Visualisation</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/hdr-image-analysis/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Contact</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="Send eMail">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Privacy policy">Privacy policy</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

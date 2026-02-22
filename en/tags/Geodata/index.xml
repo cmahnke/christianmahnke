@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Geodata on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Geodata/</link>
+    <description>Recent content in Geodata on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Geodata/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>&#34;Patching&#34; OpenStreetMap data</title>
+      <link>https://christianmahnke.de/en/post/patching-osm-data/citation.bib</link>
+      <pubDate>Mon, 17 Nov 2025 21:14:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/patching-osm-data/citation.bib</guid>
+      <description>&lt;p&gt;&amp;ldquo;Counterfactual architecture&amp;rdquo; yields almost no results on Google (at least in German)&amp;hellip;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mapproxy als WMS Downloader</title>
+      <link>https://christianmahnke.de/en/post/mapproxy-as-wms-downloader/citation.bib</link>
+      <pubDate>Thu, 13 Nov 2025 20:14:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/mapproxy-as-wms-downloader/citation.bib</guid>
+      <description>&lt;p&gt;Sometimes you need map tiles from a WMS server&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quantum cosmos Göttingen</title>
+      <link>https://christianmahnke.de/en/post/quantenkosmos-goettingen/citation.bib</link>
+      <pubDate>Wed, 26 Mar 2025 07:00:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/quantenkosmos-goettingen/citation.bib</guid>
+      <description>&lt;p&gt;Today (26 March) is the opening of the exhibition &lt;a href=&#34;https://www.forum-wissen.de/event/eroeffnung-was-zum-quant/&#34; target=&#34;_blank&#34;&gt;‘Was zum Quant?!’&lt;/a&gt; in the Forum Wissen. You can also see a digital exhibit in which I was involved&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Climate change in art...</title>
+      <link>https://christianmahnke.de/en/post/marmolada-woodcut/citation.bib</link>
+      <pubDate>Sun, 15 Sep 2024 18:07:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/marmolada-woodcut/citation.bib</guid>
+      <description>&lt;p&gt;&amp;hellip;is &amp;ldquo;old news&amp;rdquo; by now: Neither when it comes to the effects that can be recognised in old works, nor as an object of art itself.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Build vector maps with GitHub</title>
+      <link>https://christianmahnke.de/en/post/build-vector-tiles-on-github/citation.bib</link>
+      <pubDate>Sat, 01 Jul 2023 20:14:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/build-vector-tiles-on-github/citation.bib</guid>
+      <description>&lt;p&gt;Since the use of freely available map services requires &lt;a href=&#34;https://christianmahnke.de/post/maps/&#34;&gt;communication with external services&lt;/a&gt; as well as limited design, it was time for something of my own&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GeoIP Tool</title>
+      <link>https://christianmahnke.de/en/post/geoip-tool/citation.bib</link>
+      <pubDate>Sun, 30 Apr 2023 16:15:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/geoip-tool/citation.bib</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.elastic.co/de/kibana&#34; target=&#34;_blank&#34;&gt;Kibana&lt;/a&gt; visualisation with room plans needs data, e.g. from devices in a building. But the data has to come from somewhere&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Maps for my Projektemacher blogs</title>
+      <link>https://christianmahnke.de/en/post/maps/citation.bib</link>
+      <pubDate>Sun, 01 Jan 2023 20:14:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/maps/citation.bib</guid>
+      <description>&lt;p&gt;Another addition from &lt;a href=&#34;https://labs.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt;:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,211 @@
+# Christian Mahnke
+
+> Persönliche Homepage von Christian Mahnke- [2020](https://christianmahnke.de/years/2020/): 
+- [2021](https://christianmahnke.de/years/2021/): 
+- [2022](https://christianmahnke.de/years/2022/): 
+- [2023](https://christianmahnke.de/years/2023/): 
+- [2024](https://christianmahnke.de/years/2024/): 
+- [2025](https://christianmahnke.de/years/2025/): 
+- [2026](https://christianmahnke.de/years/2026/): 
+- [Blog](https://christianmahnke.de/post/): 
+- [Links](https://christianmahnke.de/links/): 
+- [Sammlungen](https://christianmahnke.de/collections/): 
+- [Start](https://christianmahnke.de/home/): 
+- [Über mich](https://christianmahnke.de/about/): 
+
+## Blog
+
+
+
+- [Ein Rant über die Bahn](https://christianmahnke.de/post/bahn-dark-patterns/)
+- [Ausstellungen in Wikidata](https://christianmahnke.de/post/exhibitions-in-wikidata/)
+- [Ausstellungseröffnung "Sammlungen erzählen"](https://christianmahnke.de/post/exhibition-opening-sammlungen-erzaehlen/)
+- [Farbradierung von Alois Janák](https://christianmahnke.de/post/print-alois-janak/)
+- [Mastodon Backups mit GitHub Actions](https://christianmahnke.de/post/github-action-mastodon-backup/): Aus aktuellem Anlass
+- [Metadaten für Software](https://christianmahnke.de/post/software-metadata/): Software-Metadaten für die (automatische) Nachnutzung von Funktionionalitäten
+- [CFF zu CodeMeta in Hugo](https://christianmahnke.de/post/hugo-cff-codemeta/): Teil 1 über Software-Metadaten
+- [Ausstellung “Sammlungen erzählen”](https://christianmahnke.de/post/sammlungen-erzaehlen/)
+- [Linked Art Metadaten](https://christianmahnke.de/post/linkedart-metadata/)
+- [Das Kleiderbügel-Blog als Buch](https://christianmahnke.de/post/coat-hangers-book/): Der Katalog zur Sammlung
+- [Projektemacher 2025](https://christianmahnke.de/post/projektemacher-2025/): Ein Jahresrückblick
+- [Historische Stereogramme auf moderner Hardware](https://christianmahnke.de/post/vintagereality-apple-spatial/): Das Apple Spatial Image Format
+- [KI Segmentierung für Stereoskopie-Karten](https://christianmahnke.de/post/vintagereality-ai/)
+- [Weihnachten 2025](https://christianmahnke.de/post/christmas-2025-2/): Bastelanleitung für die Weihnachtskarte 2025
+- [Ressourcen als Data-URL in Hugo einbetten](https://christianmahnke.de/post/hugo-datauris/)
+- [Papiertiger CSS für den Druck](https://christianmahnke.de/post/paper-tiger-print-css/): Eine Polemik über CSS für den Druck
+- [Weihnachts-Hoodie 2025](https://christianmahnke.de/post/christmas-2025-1/)
+- [hdr-canvas aktualisiert](https://christianmahnke.de/post/hdr-canvas-updated/)
+- [HDR IIIF für alle mit VIPS](https://christianmahnke.de/post/hdr-iiif-vips/)
+- [Streetart mit Schatten](https://christianmahnke.de/post/streetart-shadow/)
+- [Normdaten für private Sammlungen (und kleine Kultureinrichtungen)](https://christianmahnke.de/post/authority-data-for-private-collectors/)
+- [Einfache Datenanreicherung mit Wikidata](https://christianmahnke.de/post/simple-wikidata-queries/)
+- [OpenStreetMap Daten "patchen"](https://christianmahnke.de/post/patching-osm-data/)
+- [Mapproxy als WMS Downloader](https://christianmahnke.de/post/mapproxy-as-wms-downloader/)
+- [Geteilte Metadaten für Hugo Seiten](https://christianmahnke.de/post/hugo-shared-metadata/)
+- ["Kleiderbügel" überarbeitet](https://christianmahnke.de/post/kleiderbuegel-2025/)
+- [Von Mirador zu Tify](https://christianmahnke.de/post/tify-0.34/)
+- [Lithographie von František Gross (1909-1985)](https://christianmahnke.de/post/print-frantisek-gross/)
+- [Holzschnitt von Emma Mayer (1874-nach 1930)](https://christianmahnke.de/post/print-emma-mayer/)
+- [Dendy Junior II](https://christianmahnke.de/post/dendy-junior/)
+- [Debian Repository mit GitLab Pages](https://christianmahnke.de/post/gitlab-debian-repository/)
+- [Fliiifenleger - eine IIIF Experimentierplattform](https://christianmahnke.de/post/fliiifenleger/)
+- [Siebdruck von Michael Eisemann (1943-)](https://christianmahnke.de/post/print-michael-eisemann/)
+- [Vite und Git Symlink-Dateien](https://christianmahnke.de/post/vite-git-symlink-plugin/)
+- [Virtuelle Räume tapezieren!](https://christianmahnke.de/post/wallpaper-generator/)
+- [Seite nun durchsuchbar](https://christianmahnke.de/post/site-search/)
+- [Pagefind aufbohren](https://christianmahnke.de/post/configure-pagefind/)
+- [Wikidata Links in Hugo](https://christianmahnke.de/post/wikidata-entities-in-hugo/)
+- [Schlagwortpaare visualisiert](https://christianmahnke.de/post/tag-pairs/)
+- [Gemälde von Frank Walter (1926-2009)](https://christianmahnke.de/post/paintings-frank-walter/)
+- [Informationen zu Spendern in Kulturerbeaggregatoren](https://christianmahnke.de/post/donation-metadata/)
+- [Der Kalte Krieg in Kinderhand](https://christianmahnke.de/post/ship-quartet/): Ein Kartenspiel aus den 70ern auf Stand gebracht
+- [Aquarell von Paul Neidhardt (1874-1951)](https://christianmahnke.de/post/watercolor-neidhardt/)
+- [Menüs im Hugo Entwurfsmodus](https://christianmahnke.de/post/hugo-draft-menus/)
+- [Neue Biographie über Franz Robert Fritz Neumann (1897-1984) aka Ric verfügbar](https://christianmahnke.de/post/fritz-neumann-biography/)
+- ["Landschaft mit Pilaster und Skulptur" von Arnold Leissler dem Jüngeren (1939-2014)](https://christianmahnke.de/post/print-arnold-leissler/)
+- [DROHjanisches Pferd von Klaus Parche (1939-2024)](https://christianmahnke.de/post/print-klaus-parche/)
+- [Kinder von Elsa Haensgen-Dingkuhn (1898-1991)](https://christianmahnke.de/post/print-elsa-haensgen-dingkuhn/)
+- [Holzschnitt von Leo Frank (1884-1959)](https://christianmahnke.de/post/print-leo-frank/)
+- [Quantenkosmos Göttingen](https://christianmahnke.de/post/quantenkosmos-goettingen/): Ein digitales Exponat
+- [Digitale Provenienz für digitalisiertes Kulturgut](https://christianmahnke.de/post/digital-provenance/): Digital signierte Digitalisate
+- [Never Built Göttingen](https://christianmahnke.de/post/never-built-goettingen/)
+- [KI und Software-"Entwicklung"](https://christianmahnke.de/post/academic-software-publishing/): Oder: Akademische Software-Verlage
+- [Mikrofilmdigitalisierung beenden!](https://christianmahnke.de/post/stop-microfilm-digitisation/)
+- [Holzschnitt von Paul-Kurt Bartzsch (1917-1994)](https://christianmahnke.de/post/print-paul-kurt-bartzsch/)
+- [Alte Mikrofone an neuer Hardware](https://christianmahnke.de/post/old-microphones/)
+- [Gemälde von Tadeusz Kaczmarek (1937-2006)](https://christianmahnke.de/post/painting-kaczmarek-tadeusz/)
+- [Ein ungewöhliches Objekt](https://christianmahnke.de/post/object-vorax/)
+- [IIIF Community Call 15.1.2025: HDR](https://christianmahnke.de/post/iiif-community-call-15.1.2025/): Folien zum IIIF Community Call 15.1.2025
+- [Visualisierung von KI Segmentierung mit HDR](https://christianmahnke.de/post/visualising-ai-segmentation-with-hdr/): Buzzword Blendwerk
+- [Moskauer Zeichnungen von Heinrich Sielken (1874 - 1942)](https://christianmahnke.de/post/drawing-heinrich-sielken/)
+- [Sommerabend in Worpswede von Cornelius Rogge (1868 – 1949)](https://christianmahnke.de/post/print-cornelius-rogge/)
+- [Projektemacher 2024](https://christianmahnke.de/post/projektemacher-2024/): Ein Jahresrückblick
+- [Archive: Bestandsaufbau durch Bürgerbeteiligung fördern](https://christianmahnke.de/post/archives-citizen-participation/)
+- [Linolschitt von Malte Satorius (1933-2017)](https://christianmahnke.de/post/print-malte-satorius/): Eine unsignierte Grafik entpuppt sich als Weihnachtskarte von Malte Satorius
+- [Lithographie von Roger Hebbelinck (1912-1987)](https://christianmahnke.de/post/print-roger-hebbelinck/)
+- [Weihnachten 2024](https://christianmahnke.de/post/christmas-2024-2/): Bastelanleitung für die Weihnachtskarte 2024
+- [Zur Vorweihnachtszeit](https://christianmahnke.de/post/christmas-2024-1/): Ein Kinderbuch mit Anaglyphen
+- [Blogserie zum Thema "Licht"](https://christianmahnke.de/post/light/)
+- [Bastelworkshop Weihnachten 2024](https://christianmahnke.de/post/christmas-2024-workshop/): Workshop im Forum Wissen
+- [IIIF Online Meeting 2024: HDR Images via IIIF Image API](https://christianmahnke.de/post/iiif-online-meeting-2024-slides/): Folien und Aufzeichnung meines Lightning Talks über HDR Bilder und IIIF
+- [Spende ans Archiv des Stadtgeschichtlichen Museums Spandau](https://christianmahnke.de/post/donation-spandau/): Kolorierte Radierung eines Flamingos von Fritz Neumann an das Archiv Spandau gespendet
+- [HDR Bilder zur Visualisierung von Röntgenuntersuchungen](https://christianmahnke.de/post/hdr-radiography-visualisation/): Eine neue Art, geröntgte Gemälde zu präsentieren
+- [Art Brut Zeichnung von 1965](https://christianmahnke.de/post/drawing-art-brut/)
+- [Das Geheimnis um Ric ist gelüftet](https://christianmahnke.de/post/ric-unknownartist/): Fritz Neumann (1897-1984) war Ric
+- [Mastodon](https://christianmahnke.de/post/mastodon/): Social Media Kanal "aktualisiert"
+- [Haptisches Feedback](https://christianmahnke.de/post/haptic-feedback/): Eine Einzelseite aus "Textil-Atlas: ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und die Gewebeverarbeitung: Textilwarenkunde und Gewebemuster" von Wilhelm Spitschka fühlbar gemacht mit IIIF
+- [911TV als Desktop Anwendung](https://christianmahnke.de/post/911tv-desktop/): Eine Webseite als Medieninstallation am Beispiel von 911TV
+- [“Seelischerkrankte Krankenhaus”](https://christianmahnke.de/post/seelischerkrankte-krankenhaus/): Ein Beispiel für den Begriffswandel für psychiatrische Einrichtungen
+- [IIIF Online Meeting 2024](https://christianmahnke.de/post/iiif-online-meeting-2024/)
+- [Der Klimawandel in der Kunst...](https://christianmahnke.de/post/marmolada-woodcut/): Kamerapositionen visuell bestimmen mit Geodaten in Blender
+- [UV-Photogrammetrie](https://christianmahnke.de/post/uv-photogrammetry/): 3D Modell eines UV-Licht bestrahlten Uranglasobjekts
+- [HDR IIIF](https://christianmahnke.de/post/hdr-iiif/): HDR Bilder über die IIIF Image API
+- ["Liebespaar" von Max Westhäuser (1885-1956)](https://christianmahnke.de/post/print-max-westhauser/)
+- [JavaScript Bibliothek für HDR](https://christianmahnke.de/post/hdr-canvas-js/)
+- [TTS für Briefsteller](https://christianmahnke.de/post/tts/)
+- [Siedelhof Jena von Curt Mücke (1885-1940)](https://christianmahnke.de/post/print-curt-mucke/)
+- [Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung](https://christianmahnke.de/post/hdr-image-analysis/): Ein altes Kopierbuch aus Northeim als Beispiel für HDR Visualisierung von UV Aufnahmen
+- [LibUltraHDR](https://christianmahnke.de/post/ultrahdr/)
+- [Blatt von Imao Keinen (1855-1924)](https://christianmahnke.de/post/print-iamo-keinen/)
+- [HDR Bilder im Browser](https://christianmahnke.de/post/hdr-awesome-list/)
+- [Daten Container](https://christianmahnke.de/post/data-containers/): Die GND und Geonames als lokale Datenquellen
+- [Pong Visualisierung](https://christianmahnke.de/post/pong/): Ein 70er Jahre Videospiel als Heatmap
+- [Radierung von Kurt Mühlenhaupt (1921-2006)](https://christianmahnke.de/post/print-kurt-muhlenhaupt/)
+- [VintageReality gestartet](https://christianmahnke.de/post/vintagereality/): Die Sammlung an alten 3D Bildern hat nun ihr eigenes Blog
+- [3D Modelle im Browser](https://christianmahnke.de/post/3d-models/): 3D Darstellung einer 60er Jahre Vase im Browser
+- [Radierung von Marie Gey-Heinze (1881-1908)](https://christianmahnke.de/post/print-maria-gey-heinze/)
+- [Metadaten für Hugo Shortcodes](https://christianmahnke.de/post/hugo-shortcode-metadate/)
+- [Mystery Box](https://christianmahnke.de/post/mystery-box/): Ein psychologisches Experiment
+- [Weihnachten 2023](https://christianmahnke.de/post/christmas-2023/): Bastelanleitung für die Weihnachtskarte 2023
+- [Abstrakte Grafik von Hans Martin Erhardt (1935-2015)](https://christianmahnke.de/post/print-hans-martin-erhardt/)
+- [JSON für Anwendungsbündel komprimieren](https://christianmahnke.de/post/json-compression/)
+- [Collage von Helmut Bönitz (1914-1999)](https://christianmahnke.de/post/collage-helmut-boenitz/)
+- [911TV gestartet](https://christianmahnke.de/post/911tv/): Eine Webanwendung, die den Verlauf der Nachrichten des 11. Septembers 2001 in Echtzeit erfahrbar macht
+- [Reisen wie 1996](https://christianmahnke.de/post/90ies-train/)
+- [Farbholzschnitt von Oscar Droege (1898-1983)](https://christianmahnke.de/post/print-oscar-droege/)
+- [Windows Deployer](https://christianmahnke.de/post/windows-deployer/)
+- [Holzschnitt von Erich Zimmer (1908-2001)](https://christianmahnke.de/post/print-erich-zimmer/)
+- [Puppen von Elsa Hoppe (1901-1992)](https://christianmahnke.de/post/print-elsa-hoppe/)
+- [Holzschnitt von Otto Richard Bossert (1874-1919)](https://christianmahnke.de/post/print-otto-richard-bossert/)
+- [Vektor Kartenmaterial mit GitHub bauen](https://christianmahnke.de/post/build-vector-tiles-on-github/)
+- [GeoIP Tool](https://christianmahnke.de/post/geoip-tool/)
+- [OAI-PMH Harvester](https://christianmahnke.de/post/oai-harvester/)
+- [Holzschnitt von Eva Roemer (1889-1977)](https://christianmahnke.de/post/print-eva-roemer/)
+- [Hildesheimer Börde](https://christianmahnke.de/post/image-hildesheimer-boerde/): Nächtlicher Schnappschuss
+- [Kartenmaterial für Projektemacher Blogs](https://christianmahnke.de/post/maps/)
+- [Spende ans Stadtarchiv Halle](https://christianmahnke.de/post/postcards-halle/): Postkaten von Verkaufsstellen des Stadtgutes Gimritz
+- [Weihnachten 2022](https://christianmahnke.de/post/christmas-2022/): Bastelanleitung für die Weihnachtskarte 2022
+- [Ausstellung "Wilma Bräuner"](https://christianmahnke.de/post/wilma-brauner/)
+- [Bilder aufhängen in Sweet Home 3D](https://christianmahnke.de/post/hang-pictures-in-sweethome3d/): Ein Werkzeug um PDF Plakate in Sweet Home 3D aufzuhängen
+- [Gemälde von François Poggi (1838-1900)](https://christianmahnke.de/post/painting-francois-poggi/)
+- [Projektemacher Merch gestartet](https://christianmahnke.de/post/merch.projektemacher.org/)
+- [Computergrafik](https://christianmahnke.de/post/print-computergrafik/)
+- [IIIF Proxy](https://christianmahnke.de/post/iiif-proxy/): On-the-fly Bildbearbeitung für IIIF Ressourcen
+- [Weihnachten 2021](https://christianmahnke.de/post/christmas-2021/): Bastelanleitung für die Weihnachtskarte 2021
+- [IIIF Konferenz 2021: Scaling down...](https://christianmahnke.de/post/iiif-conf-2021-scaling-down/): Statisches IIIF hosting
+- [Instagram](https://christianmahnke.de/post/instagram/): Projektemacher für unterwegs
+- [DIY Projekt: Telefonhülle](https://christianmahnke.de/post/phone-case/)
+- [Sommerpause](https://christianmahnke.de/post/summer-break/)
+- [Briefsteller.de gestartet](https://christianmahnke.de/post/briefsteller/)
+- [JPEG XL](https://christianmahnke.de/post/jpeg-xl/)
+- [IIIF Konferenz 2021](https://christianmahnke.de/post/iiif-conference-2021/)
+- [Labs.projektemache.org gestartet](https://christianmahnke.de/post/labs/)
+- [Wohnzimmer renoviert](https://christianmahnke.de/post/living-room/)
+- [Weihnachten 2020](https://christianmahnke.de/post/christmas-2020/): "Die Weihnachtsgeschichte" von Rudolf Koch
+- [Der erste Beitrag](https://christianmahnke.de/post/first-post/)
+
+## Links
+
+
+
+- [Allgemein](https://christianmahnke.de/links/general/)
+- [Kunst](https://christianmahnke.de/links/art/)
+- [Alltagskultur](https://christianmahnke.de/links/everyday-culture/)
+- [Digitale Bilder und HDR](https://christianmahnke.de/links/hdr/)
+- [Blogs](https://christianmahnke.de/links/blogs/)
+- [Verzeichnisse, Wikis und Foren](https://christianmahnke.de/links/referece-sites/)
+- [Weitere ggf. etwas abseitige Sammlungen](https://christianmahnke.de/links/other-collectors/)
+
+## Sammlungen
+
+
+
+- [Alltagskultur](https://christianmahnke.de/collections/everyday-culture/)
+- [Schenkungen / Spenden](https://christianmahnke.de/collections/donations/)
+- [Leihgaben](https://christianmahnke.de/collections/loans/)
+- [Bestände nutzen / Förderung](https://christianmahnke.de/collections/patronage/)
+
+### Schenkungen / Spenden
+
+
+
+- [Film über Marburg](https://christianmahnke.de/collections/donations/marburg/)
+- [Grafik eines Spandauer Künstlers](https://christianmahnke.de/collections/donations/spandau/)
+- [Postkarten aus Halle/Saale](https://christianmahnke.de/collections/donations/halle/)
+- [Film über München](https://christianmahnke.de/collections/donations/munich/)
+
+### Leihgaben
+
+
+
+
+## Start
+
+
+
+- [Interessen](https://christianmahnke.de/home/interests/)
+- [Projektemacher.org](https://christianmahnke.de/home/projektemacher.org/)
+- [Showcase](https://christianmahnke.de/home/showcase/)
+- [Beratung](https://christianmahnke.de/home/consulting/)
+
+## Über mich
+
+
+
+- [Berufliche Schwerpunkte](https://christianmahnke.de/about/professional-interests/)
+- [Publikationen und Projekte](https://christianmahnke.de/about/publications-projects/)
+- [Videos](https://christianmahnke.de/about/videos/)
+- [Blogs](https://christianmahnke.de/about/blogs/)
+- [Kolophon](https://christianmahnke.de/about/colophon/)
+- [Kontakt](https://christianmahnke.de/about/contact/)
+

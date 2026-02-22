@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TTS on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/TTS/</link>
+    <description>Recent content in TTS on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/TTS/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TTS for &#34;Briefsteller&#34;</title>
+      <link>https://christianmahnke.de/en/post/tts/citation.bib</link>
+      <pubDate>Tue, 25 Jun 2024 11:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/tts/citation.bib</guid>
+      <description>&lt;p&gt;After the &lt;a href=&#34;https://briefsteller.de/&#34; target=&#34;_blank&#34;&gt;Briefsteller blog&lt;/a&gt; had existed as a skeleton since the beginning of 2021, I used my summer holiday to bring the sample letter, which brought me to the topic &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q4363806&#34; href=&#34;https://en.wikipedia.org/wiki/Victorian_letter_writing_guides&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;letter writing guides&amp;rdquo;&lt;/a&gt; in the first place, &lt;a href=&#34;https://briefsteller.de/post/der-haussekretaer/286/&#34; target=&#34;_blank&#34;&gt;online&lt;/a&gt;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

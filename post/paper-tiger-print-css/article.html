@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Papiertiger CSS für den Druck · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Eine Polemik über CSS für den Druck">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/paper-tiger-print-css/article.html" />
+  <meta property="og:title" content="Papiertiger CSS für den Druck · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/paper-tiger-print-css/ogPreview_hu_1ddd09252a196723.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content="PDF, VivlioStyle, CSS, PrinceCSS, XSL-FO, CSS, Drucken, JavaScript"><meta name="dc.subject" content="PDF"><meta name="dc.subject" content="VivlioStyle"><meta name="dc.subject" content="CSS"><meta name="dc.subject" content="PrinceCSS"><meta name="dc.subject" content="XSL-FO"><meta name="dc.subject" content="CSS"><meta name="dc.subject" content="Drucken"><meta name="dc.subject" content="JavaScript">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:03:07.169677513 &#43;0000 UTC m=&#43;0.792186012">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/paper-tiger-print-css/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" type="text/html" href="https://christianmahnke.de/post/paper-tiger-print-css/" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/paper-tiger-print-css/article.html"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/paper-tiger-print-css/article.html","@type":"BlogPosting","about":["PDF","VivlioStyle","CSS","PrinceCSS","XSL-FO","CSS","Printing","JavaScript",{"@id":"http://www.wikidata.org/entity/Q24415127","@type":"Thing","name":"Hugo"},{"@id":"http://www.wikidata.org/entity/Q32087","@type":"Thing","name":"XSL Formatting Objects"},{"@id":"http://www.wikidata.org/entity/Q42332","@type":"Thing","name":"PDF"},{"@id":"http://www.wikidata.org/entity/Q46441","@type":"Thing","name":"Cascading Style Sheets"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2025-12-10T18:33:44+02:00","description":"Eine Polemik über CSS für den Druck","headline":"Papiertiger CSS für den Druck","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["PDF","VivlioStyle","CSS","PrinceCSS","XSL-FO","CSS","Printing","JavaScript"],"name":"Papiertiger CSS für den Druck","url":"https://christianmahnke.de/post/paper-tiger-print-css/article.html"}
+</script>
+</head><body class="section-post dir-postpaper-tiger-print-css blog pdf  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/paper-tiger-print-css/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Papiertiger CSS für den Druck</h1><div class="post-description">Eine Polemik über CSS für den Druck</div><div class="date">
+          <time class="post-data" datetime="2025-12-10T18:33:44&#43;02:00">Mittwoch, 10. Dezember 2025</time>
+        </div><div class="post-body"><p>Ich beschäftige mich immer mal wieder &ldquo;nebenbei&rdquo; mit Cross-Media-Publishing&hellip;</p>
+<p>Sogar beruflich haben sich da einige Projekte ergeben:</p>
+<ul>
+<li>
+<p>2004-2006: <strong>The Rise of Modern Constitutionalism, 1776-1849</strong>:
+Im Rahmen des Projektes wurde ein Workflow entwickelt und implementiert, der aus Word Dateien mit einen themespezifischen Dokumwentvorlagen TEI erstellt, dass dann in weitere Präsentationsformate (inklusive einer Buchserie) umgewandelt wurde.</p>
+</li>
+<li>
+<p>2014: <strong>OUS-Print</strong>:
+Aus dem lokalen Bibliotheksystem wurden Bestellzettel / Begleitscheine erstellt: Text wird mittels XSL-FO zu PDF. Vorlagen können in Open Office bearbeitet werden. Dazu gibt es noch eine <a href="https://subugoe.github.io/ous-print/slides.xhtml" target="_blank">alte Präsentation</a>.</p>
+</li>
+</ul>
+<p>Nun habe ich versucht aus dem Kleiderbügel-Blog einen Katalog zu erstellen und war überrascht wie wenig weit aktuelle Technologien im letzten Jahrzent gekommen sind. Sicher, der Bedarf an aufwendig gestaltetn Druckerzeugnissen hat in den letzten Jahren sicher nicht unbedingt zugenommen. Aber ich hatte gehofft, das alte XML Technologien wie XSL-FO zumindest eingermaßen ersetzt wurden.</p>
+<h2 id="css-für-den-druck">CSS für den Druck</h2>
+<p>Daher lag es nahe, zu untersuchen, was heutige Webtechnologien in diesem Bereich bieten. Im Netz gibt es eine kleine Gruppe von Enthusiasten und Anbietern, die CSS für den Druck propagieren.</p>
+<p>Sie werben mit ansprechend gestalteten Ergebnissen ihrer Arbeit. Grundsätzlich ist die Idee sehr gut, denn die Möglichkeiten von CSS müssen sich heutzutage nicht hinter denen einer DTP-Software verstecken. Dafür existieren auch eigene CSS-Module:</p>
+<ul>
+<li>hauptsächlich das <a href="https://www.w3.org/TR/css-page-3/" target="_blank">CSS Paged Media Module Level 3</a>:
+<ul>
+<li><a href="https://drafts.csswg.org/css-page/" target="_blank">aktuelle Variante</a> mit dem Status &ldquo;Editor’s Draft&rdquo;</li>
+</ul>
+</li>
+<li>ergänzt durch das <a href="https://drafts.csswg.org/css-content-3/" target="_blank">CSS Generated Content Module Level 3</a></li>
+</ul>
+<p>Nach der anfänglichen Euphorie fällt jedoch schnell die erste große Lücke auf:
+Die (restlichen) großen Browser unterstützen die möglichen Features nur bedingt. Besonders der Mangel an den folgenden Funktionalitäten fällt auf:</p>
+<ul>
+<li>Querverweise, z. B. für die Erstellung von Inhaltsverzeichnissen</li>
+<li>Fußnoten</li>
+<li>druckspezifische Gestaltungselemente wie Füllzeichen (<code>leader</code>)</li>
+</ul>
+<p><strong>Würden die Browser diese Funktionen unterstützen, wäre dieser Artikel vermutlich nun vorbei&hellip;</strong></p>
+<p>Aber sie tun es nicht. Trotzdem gibt es keinen Grund zu verzagen, denn es gibt eigene Implementierungen, sowohl Open-Source als auch kommerzielle. Eine Übersicht bietet <a href="https://print-css.rocks/" target="_blank">print-css.rocks</a>. Die Seite bietet umfangreiche Komptibilitätstests, sowie Bewertungen und Einordnungen.</p>
+<p>Grundsätzlich lassen sich die Implementierungen nach zwei Funktionsweisen unterscheiden:</p>
+<ul>
+<li>Browserbasiert: Steuern eine existierende Browser-Implementierung (meist Chromium) fern und implementieren die fehlenden CSS-Features als Polyfills. Sie sind sozusagen die Enkel von <a href="https://wkhtmltopdf.org/" target="_blank">wkhtmltopdf</a>.</li>
+<li>Eigene CSS-Implementierung: Hierbei wird ein (meist selbstgeschriebener) HTML/CSS-Renderer verwendet.</li>
+</ul>
+<p>Der erste Ansatz hat den Charme, dass er die Ausführung von JavaScript ohne größere Probleme ermöglicht. Dadurch ist auch die Nachnutzung von dynamisch erzeugten Abbildungen, wie beispielsweise Diagrammen oder Karten, möglich.</p>
+<p>Da der Markt recht fragmentiert ist und die begrenzten Ressourcen somit verteilt sind, haben nicht alle den gleichen Grad an Standardkonformität. Das heißt im Endeffekt, dass man sich nicht an einem Standard orientiert, sondern an der kleinsten gemeinsamen Untermenge, die von jedem unterstützt wird. Die Alternative ist, sich an eine konkrete Implementierung zu binden.</p>
+<p>Dabei hilft es auch nicht, dass einige der Prozessoren gleich noch herstellerspezifische CSS-Erweiterungen mitbringen.</p>
+<h2 id="sind-die-implementierungen-das-einzige-problem">Sind die Implementierungen das einzige Problem?</h2>
+<p>Die tatsächlichen Probleme scheinen jedoch woanders zu liegen:
+Das, was derzeit als CSS für den Druck bezeichnet wird, ist in weiten Teilen unterambitioniert, zumindest wenn es um gebundene Meterialien geht: Das Ziel scheint primär das Layout einzelner (Form-)Blätter, wie beispielsweise Rechnungen oder Werbebriefe zu sein. Es existieren auch komplexere Beispiele, wie (wissenschaftliche) Paper oder auch technische Dokumentationen als Buch, aber auch hier muss man sich die Frage stellen, ob diese dann nicht eher für das Lesen als PDF am Bildschirm gedacht sind.</p>
+<p>Sicher, das wird den größten Teil der Anwendungsfälle ausmachen. Wer mehr will, kann ja eine DTP Software, wie beispielsweise InDesign, verwenden.</p>
+<p><strong>Aber ist das wirklich ein Anspruch, mit dem sich eine Community für offene Standards zufriedengeben sollte?</strong></p>
+<p>Grundsätzlich wäre es wünschenswert, wenn die kreative Freiheit, die CSS Web-Designern und -Entwicklern bietet, auch im Druckbereich verfügbar wäre. Und zwar nicht nur für Loseblattsammlungen.</p>
+<h3 id="oder-ist-es-die-spezifikation">Oder ist es die Spezifikation?</h3>
+<p>Ein Gefühl das einen bei CSS häufiger beschleicht, stellt sich auch hier ein: &ldquo;Ease-of-Implementation&rdquo; scheint wichtiger zu sein als &ldquo;Ease-of-Use&rdquo; oder gar &ldquo;Feature-Completeness&rdquo;.</p>
+<p>Viele der unter &ldquo;Was fehlt?&rdquo; genannten Funktionalitäten werden schnell offensichtlich, wenn man sich mit der Erzeugung von Büchern (oder komplexeren Broschüren) beschäftigt. Ein Teil davon findet sich sogar bei der W3C in der <a href="https://www.w3.org/Style/2013/paged-media-tasks" target="_blank">Liste der für paginierte Medien erforderlichen CSS-Funktionen</a>, trotzdem sind sie nie Teil der Spezifikation geworden. Dieser Teil wäre sicher im Rahmen des <a href="https://www.w3.org/TR/css-regions-1/" target="_blank">CSS rigions Moduls</a> gelöst worden, aber auch dieses wurde <a href="https://caniuse.com/css-regions" target="_blank">nie umgesetzt</a>.</p>
+<h2 id="was-fehlt">Was fehlt?</h2>
+<p>Ein wichtiges Ziel (also neben der Darstellung) von CSS für den Druck sollte darin bestehen, die benötigte Vorverarbeitung zu reduzieren. In meinem Fall waren dies:</p>
+<ul>
+<li>Fußnoten: Es ist etwas begrenzt, einfach nur fixe Bereiche für einen Seitentyp anzugeben. Wünschenswert wäre auch die Möglichkeit, einen bestehenden Container zu spezifizieren. Hierfür könnte auch das Modul für generierte Inhalte genutzt werden.</li>
+<li>Bindungskante: Die Bindungskante ist für Druckwerke ab einem gewissen Umfang unerlässlich. Daher sollte sie analog zu Media Queries für Quer- und Hochformat unterstützt werden. Also inklusive darin enthaltener Selektoren.</li>
+<li>Überlauf in andere Container: Das Modul für generierte Inhalte sollte in der Lage sein, den Überlauf (<code>overflow</code>) eines anderen Containers zu &ldquo;fangen&rdquo;.</li>
+</ul>
+<p>Darüber hinaus sind weitere Verbesserungen denkbar:</p>
+<ul>
+<li>Derzeit sind die Seitenränder in <a href="https://www.w3.org/TR/css-page-3/#margin-boxes" target="_blank">fixe Zonen unterteilt</a>. Das sollte änderbar sein.</li>
+<li>Besonders Effekte müssen definiert werden, z. B. als Schwarzliste (also das, was nicht funktionieren sollte). Ein Beispiel ist <code>text-shadow</code>. Hier kann die Grundregel lauten, dass alles, was in SVG oder modernem PDF möglich ist (machen wir uns nichts vor, meistens gibt es vor dem Druck ein weiteres Zwischenformat), auch druckbar sein sollte. Keine valide Grundregel wäre: &ldquo;Das sind GPU-Effekte und können daher nicht gedruckt werden&rdquo;, weil dies ein Implementierungsdetail ist. Notfalls erfindet man eine <code>raster</code>-Eigenschaft.</li>
+</ul>
+<p>Dazu kommen Ergänzungen, von denen auch CSS im Browser profitieren würde, wie z.B. Text, der sich auf die Größe des Containers anpasst.</p>
+<p>Bis dahin sollte man vorsichtiger sein, wenn man behauptet, dass CSS wirklich druckreif ist, da man sonst den Eindruck erweckt, es sei so einfach wie die Darstellung im Browser, unabhängig vom gewünschten Druckprodukt.</p>
+<h2 id="ein-möglicher-aus-weg">Ein möglicher (Aus-)Weg</h2>
+<p>Wenn davon auszugehen ist, dass Browserhersteller CSS für den Druck nicht voll unterstützen, muss man bei der Definition eines Standards auch keine große Rücksicht nehmen. Im Gegenteil: Das sollte den Prozess eher beflügeln, da es die Beschränkungen reduziert. Man könnte sogar leicht polemisch verlangen, dass Browserhersteller erst einmal die bestehenden Spezifikationen umsetzen müssten, um ein Mitspracherecht zu erhalten – sozusagen als Beweis dafür, dass sie Stakeholder sind.
+Gerade vor diesem Hintergrund sollten auch die eher kleineren Hersteller und Projekte, die Prozessoren erstellen, sich nicht ausbremsen lassen.</p>
+<p>Und dann sollte auch der Umfang der zu erstellenden Spezifikation klar gemacht werden, also die Arten von Dokumenten, die mit ihrer Hilfe erstellt werden können sollten.
+Dazu gehört übrigens auch sich explizit zu Vergegenwärtigen, dass es nicht nur um die Erstellung von PDF geht, sondern um gedruckte Informationen auf Papier: &ldquo;Druck&rdquo; ist ein sehr weites Feld. Manchmal möchte man mehr als nur die Vorstufe von Altpapier erstellen.</p>
+<p>Wenn mehrere Hersteller eigene CSS-Erweiterungen mitbringen, die das gleiche Ergebnis erzielen, dann ist bei der Spezifikation etwas schiefgelaufen. Sonst wäre der jeweilige Anwendungsfall berücksichtigt worden.
+Hier kann es ggf. auch helfen, ein Ende zu finden. Vielleicht würde es schon einige Probleme lösen, wenn man mit einem &ldquo;CSS Paged Media Module Level 4&rdquo; beginnt.</p>
+<p>Letzendlich ist zu prüfen, ob mit der bestehenden Spezifikation alles erreicht werden kann, dass sich mit XSL-FO 1.1 erledigen ließe, falls nicht, zurück ans Zeichenbrett. Ein Migrationspfad zu offerieren würde zeigen, dass die Autoren es Ernst meinen&hellip;</p>
+<p>Und vor diesem Hintergrund sollte man ggf. darüber nachdenken den bestehenden Standartierungspfad verlassen und eher seine Mühen in einen eigenen Weg stecken, ein (inaktives) Beispiel für eine solche Initiative ist <a href="https://books.idea.whatwg.org/" target="_blank">CSS Books</a>.</p>
+<h2 id="fazit">Fazit</h2>
+<p>CSS für den Druck ist in Teilen ein Papiertiger: Es funktioniert für einfache, ungebundene Dokumente. Mit der Größe bzw. dem Umfang eines Projekts steigt jedoch der Aufwand in der Vorverarbeitung massiv an. (Teilweise so sehr, dass man sich daran erinnert, dass sich Inkscape mit Python scripten lässt.) Derzeit ist bei der Spezifikation kein großer Wurf erkennbar und die großen Browserhersteller zeigen kein erkennbares Interesse, die Situation zu verbessern.</p>
+<p>Wer Ideen braucht, wie man es besser machen könnte, kann diese (ironischerweise) bei der W3C nachlesen.</p>
+<h2 id="dank">Dank</h2>
+<ul>
+<li>An Andreas Jung, der die Seite <a href="https://print-css.rocks/" target="_blank">print-css.rocks</a> aufgebaut hat, die eine wertvolle Informationsquelle war.</li>
+<li>Dem Team von <a data-wikidata-entity="Q96473517" href="https://vivliostyle.org/" target="_blank">Vivliostyle</a>, das meinen Anforderungen am nächsten gekommen ist und ich deshalb nutze.</li>
+</ul></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q24415127" title="Hugo" rel="related">Wikidata Eintrag: Hugo</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q32087" title="Extensible Stylesheet Language – Formatting Objects" rel="related">Wikidata Eintrag: Extensible Stylesheet Language – Formatting Objects</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q42332" title="PDF" rel="related">Wikidata Eintrag: PDF</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q46441" title="Cascading Style Sheets" rel="related">Wikidata Eintrag: Cascading Style Sheets</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Diesen Beitrag zitieren
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2025)</span>: <span class="cite-title">Papiertiger CSS für den Druck</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], 10.12.2025. Online-Publikation: <a class="cite-link" href="https://christianmahnke.de/post/paper-tiger-print-css/article.html">https://christianmahnke.de/post/paper-tiger-print-css/article.html</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/post/paper-tiger-print-css/citation.bib" title="Als BibTex herunterladen">Als BibTex herunterladen</a>
+  </div>
+</details>
+</div><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/CSS" title="CSS">#CSS</a><a href="https://christianmahnke.de/tags/Printing" title="Drucken">#Drucken</a><a href="https://christianmahnke.de/tags/JavaScript" title="JavaScript">#JavaScript</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-canvas-updated/article.html">hdr-canvas aktualisiert</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/vite-git-symlink-plugin/article.html">Vite und Git Symlink-Dateien</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/wallpaper-generator/article.html">Virtuelle Räume tapezieren!</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/quantenkosmos-goettingen/article.html">Quantenkosmos Göttingen</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/coat-hangers-book/article.html">Das Kleiderbügel-Blog als Buch</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/paper-tiger-print-css/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

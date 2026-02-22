@@ -1,0 +1,1502 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "name": "Christian Mahnke","summary": "Persönliche Homepage von Christian Mahnke","type": "OrderedCollection","outbox": "https://christianmahnke.de/outbox.json","totalItems": 136,
+    "orderedItems": [
+      
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/bahn-dark-patterns/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/bahn-dark-patterns/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/bahn-dark-patterns/citation.bib\"\u003eEin Rant über die Bahn\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/bahn-dark-patterns/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2026-02-22T10:39:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/exhibitions-in-wikidata/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/exhibitions-in-wikidata/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/exhibitions-in-wikidata/citation.bib\"\u003eAusstellungen in Wikidata\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/exhibitions-in-wikidata/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2026-02-21T07:30:00+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/exhibition-opening-sammlungen-erzaehlen/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/exhibition-opening-sammlungen-erzaehlen/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/exhibition-opening-sammlungen-erzaehlen/citation.bib\"\u003eAusstellungseröffnung \"Sammlungen erzählen\"\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/exhibition-opening-sammlungen-erzaehlen/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2026-02-07T15:30:00+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-alois-janak/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-alois-janak/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-alois-janak/citation.bib\"\u003eFarbradierung von Alois Janák\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-alois-janak/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2026-01-16T13:07:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/github-action-mastodon-backup/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/github-action-mastodon-backup/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/github-action-mastodon-backup/citation.bib\"\u003eMastodon Backups mit GitHub Actions\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/github-action-mastodon-backup/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2026-01-15T06:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/software-metadata/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/software-metadata/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/software-metadata/citation.bib\"\u003eMetadaten für Software\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/software-metadata/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2026-01-14T19:52:22+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/hugo-cff-codemeta/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/hugo-cff-codemeta/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/hugo-cff-codemeta/citation.bib\"\u003eCFF zu CodeMeta in Hugo\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/hugo-cff-codemeta/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2026-01-13T18:52:22+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/sammlungen-erzaehlen/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/sammlungen-erzaehlen/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/sammlungen-erzaehlen/citation.bib\"\u003eAusstellung “Sammlungen erzählen”\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/sammlungen-erzaehlen/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2026-01-12T07:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/linkedart-metadata/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/linkedart-metadata/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/linkedart-metadata/citation.bib\"\u003eLinked Art Metadaten\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/linkedart-metadata/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2026-01-11T13:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/coat-hangers-book/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/coat-hangers-book/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/coat-hangers-book/citation.bib\"\u003eDas Kleiderbügel-Blog als Buch\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/coat-hangers-book/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2026-01-01T10:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/projektemacher-2025/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/projektemacher-2025/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/projektemacher-2025/citation.bib\"\u003eProjektemacher 2025\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/projektemacher-2025/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-12-31T11:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/vintagereality-apple-spatial/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/vintagereality-apple-spatial/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/vintagereality-apple-spatial/citation.bib\"\u003eHistorische Stereogramme auf moderner Hardware\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/vintagereality-apple-spatial/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-12-28T18:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/vintagereality-ai/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/vintagereality-ai/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/vintagereality-ai/citation.bib\"\u003eKI Segmentierung für Stereoskopie-Karten\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/vintagereality-ai/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-12-28T10:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/christmas-2025-2/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/christmas-2025-2/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/christmas-2025-2/citation.bib\"\u003eWeihnachten 2025\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/christmas-2025-2/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-12-24T12:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/hugo-datauris/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/hugo-datauris/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/hugo-datauris/citation.bib\"\u003eRessourcen als Data-URL in Hugo einbetten\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/hugo-datauris/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-12-11T11:22:44+01:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/paper-tiger-print-css/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/paper-tiger-print-css/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/paper-tiger-print-css/citation.bib\"\u003ePapiertiger CSS für den Druck\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/paper-tiger-print-css/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-12-10T18:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/christmas-2025-1/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/christmas-2025-1/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/christmas-2025-1/citation.bib\"\u003eWeihnachts-Hoodie 2025\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/christmas-2025-1/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-12-01T12:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/hdr-canvas-updated/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/hdr-canvas-updated/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/hdr-canvas-updated/citation.bib\"\u003ehdr-canvas aktualisiert\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/hdr-canvas-updated/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-11-30T11:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/hdr-iiif-vips/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/hdr-iiif-vips/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/hdr-iiif-vips/citation.bib\"\u003eHDR IIIF für alle mit VIPS\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/hdr-iiif-vips/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-11-27T18:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/streetart-shadow/",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/streetart-shadow/",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/streetart-shadow/\"\u003eStreetart mit Schatten\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/streetart-shadow/","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-11-27T15:45:44+01:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/authority-data-for-private-collectors/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/authority-data-for-private-collectors/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/authority-data-for-private-collectors/citation.bib\"\u003eNormdaten für private Sammlungen (und kleine Kultureinrichtungen)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/authority-data-for-private-collectors/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-11-19T20:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/simple-wikidata-queries/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/simple-wikidata-queries/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/simple-wikidata-queries/citation.bib\"\u003eEinfache Datenanreicherung mit Wikidata\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/simple-wikidata-queries/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-11-18T20:14:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/patching-osm-data/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/patching-osm-data/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/patching-osm-data/citation.bib\"\u003eOpenStreetMap Daten \"patchen\"\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/patching-osm-data/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-11-17T21:14:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/mapproxy-as-wms-downloader/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/mapproxy-as-wms-downloader/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/mapproxy-as-wms-downloader/citation.bib\"\u003eMapproxy als WMS Downloader\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/mapproxy-as-wms-downloader/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-11-13T20:14:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/hugo-shared-metadata/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/hugo-shared-metadata/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/hugo-shared-metadata/citation.bib\"\u003eGeteilte Metadaten für Hugo Seiten\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/hugo-shared-metadata/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-11-02T15:22:44+01:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/kleiderbuegel-2025/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/kleiderbuegel-2025/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/kleiderbuegel-2025/citation.bib\"\u003e\"Kleiderbügel\" überarbeitet\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/kleiderbuegel-2025/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-10-19T07:30:07+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/tify-0.34/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/tify-0.34/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/tify-0.34/citation.bib\"\u003eVon Mirador zu Tify\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/tify-0.34/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-09-27T11:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-frantisek-gross/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-frantisek-gross/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-frantisek-gross/citation.bib\"\u003eLithographie von František Gross (1909-1985)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-frantisek-gross/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-09-07T14:00:00+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-emma-mayer/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-emma-mayer/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-emma-mayer/citation.bib\"\u003eHolzschnitt von Emma Mayer (1874-nach 1930)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-emma-mayer/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-08-23T13:18:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/dendy-junior/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/dendy-junior/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/dendy-junior/citation.bib\"\u003eDendy Junior II\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/dendy-junior/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-08-17T12:30:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/gitlab-debian-repository/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/gitlab-debian-repository/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/gitlab-debian-repository/citation.bib\"\u003eDebian Repository mit GitLab Pages\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/gitlab-debian-repository/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-08-08T18:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/fliiifenleger/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/fliiifenleger/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/fliiifenleger/citation.bib\"\u003eFliiifenleger - eine IIIF Experimentierplattform\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/fliiifenleger/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-07-27T18:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-michael-eisemann/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-michael-eisemann/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-michael-eisemann/citation.bib\"\u003eSiebdruck von Michael Eisemann (1943-)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-michael-eisemann/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-07-13T15:00:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/vite-git-symlink-plugin/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/vite-git-symlink-plugin/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/vite-git-symlink-plugin/citation.bib\"\u003eVite und Git Symlink-Dateien\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/vite-git-symlink-plugin/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-06-13T16:02:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/wallpaper-generator/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/wallpaper-generator/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/wallpaper-generator/citation.bib\"\u003eVirtuelle Räume tapezieren!\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/wallpaper-generator/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-06-09T23:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/site-search/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/site-search/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/site-search/citation.bib\"\u003eSeite nun durchsuchbar\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/site-search/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-06-02T17:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/configure-pagefind/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/configure-pagefind/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/configure-pagefind/citation.bib\"\u003ePagefind aufbohren\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/configure-pagefind/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-05-30T17:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/wikidata-entities-in-hugo/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/wikidata-entities-in-hugo/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/wikidata-entities-in-hugo/citation.bib\"\u003eWikidata Links in Hugo\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/wikidata-entities-in-hugo/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-05-28T18:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/tag-pairs/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/tag-pairs/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/tag-pairs/citation.bib\"\u003eSchlagwortpaare visualisiert\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/tag-pairs/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-05-25T11:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/paintings-frank-walter/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/paintings-frank-walter/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/paintings-frank-walter/citation.bib\"\u003eGemälde von Frank Walter (1926-2009)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/paintings-frank-walter/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-05-24T15:38:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/donation-metadata/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/donation-metadata/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/donation-metadata/citation.bib\"\u003eInformationen zu Spendern in Kulturerbeaggregatoren\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/donation-metadata/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-05-21T06:00:00+00:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/ship-quartet/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/ship-quartet/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/ship-quartet/citation.bib\"\u003eDer Kalte Krieg in Kinderhand\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/ship-quartet/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-05-18T19:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/watercolor-neidhardt/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/watercolor-neidhardt/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/watercolor-neidhardt/citation.bib\"\u003eAquarell von Paul Neidhardt (1874-1951)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/watercolor-neidhardt/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-05-15T17:45:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/hugo-draft-menus/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/hugo-draft-menus/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/hugo-draft-menus/citation.bib\"\u003eMenüs im Hugo Entwurfsmodus\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/hugo-draft-menus/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-05-05T18:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/fritz-neumann-biography/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/fritz-neumann-biography/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/fritz-neumann-biography/citation.bib\"\u003eNeue Biographie über Franz Robert Fritz Neumann (1897-1984) aka Ric verfügbar\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/fritz-neumann-biography/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-04-18T07:03:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-arnold-leissler/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-arnold-leissler/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-arnold-leissler/citation.bib\"\u003e\"Landschaft mit Pilaster und Skulptur\" von Arnold Leissler dem Jüngeren (1939-2014)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-arnold-leissler/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-04-12T13:07:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-klaus-parche/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-klaus-parche/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-klaus-parche/citation.bib\"\u003eDROHjanisches Pferd von Klaus Parche (1939-2024)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-klaus-parche/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-04-06T13:07:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-elsa-haensgen-dingkuhn/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-elsa-haensgen-dingkuhn/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-elsa-haensgen-dingkuhn/citation.bib\"\u003eKinder von Elsa Haensgen-Dingkuhn (1898-1991)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-elsa-haensgen-dingkuhn/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-04-06T13:07:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-leo-frank/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-leo-frank/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-leo-frank/citation.bib\"\u003eHolzschnitt von Leo Frank (1884-1959)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-leo-frank/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-03-29T13:18:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/quantenkosmos-goettingen/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/quantenkosmos-goettingen/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/quantenkosmos-goettingen/citation.bib\"\u003eQuantenkosmos Göttingen\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/quantenkosmos-goettingen/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-03-26T07:00:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/digital-provenance/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/digital-provenance/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/digital-provenance/citation.bib\"\u003eDigitale Provenienz für digitalisiertes Kulturgut\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/digital-provenance/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-03-16T22:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/never-built-goettingen/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/never-built-goettingen/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/never-built-goettingen/citation.bib\"\u003eNever Built Göttingen\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/never-built-goettingen/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-03-14T20:30:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/academic-software-publishing/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/academic-software-publishing/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/academic-software-publishing/citation.bib\"\u003eKI und Software-\"Entwicklung\"\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/academic-software-publishing/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-02-25T15:52:22+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/stop-microfilm-digitisation/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/stop-microfilm-digitisation/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/stop-microfilm-digitisation/citation.bib\"\u003eMikrofilmdigitalisierung beenden!\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/stop-microfilm-digitisation/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-02-17T17:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-paul-kurt-bartzsch/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-paul-kurt-bartzsch/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-paul-kurt-bartzsch/citation.bib\"\u003eHolzschnitt von Paul-Kurt Bartzsch (1917-1994)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-paul-kurt-bartzsch/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-02-11T18:15:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/old-microphones/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/old-microphones/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/old-microphones/citation.bib\"\u003eAlte Mikrofone an neuer Hardware\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/old-microphones/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-01-26T19:15:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/painting-kaczmarek-tadeusz/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/painting-kaczmarek-tadeusz/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/painting-kaczmarek-tadeusz/citation.bib\"\u003eGemälde von Tadeusz Kaczmarek (1937-2006)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/painting-kaczmarek-tadeusz/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-01-23T17:18:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/object-vorax/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/object-vorax/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/object-vorax/citation.bib\"\u003eEin ungewöhliches Objekt\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/object-vorax/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-01-22T20:30:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/iiif-community-call-15.1.2025/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/iiif-community-call-15.1.2025/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/iiif-community-call-15.1.2025/citation.bib\"\u003eIIIF Community Call 15.1.2025: HDR\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/iiif-community-call-15.1.2025/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-01-15T14:30:00+01:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/visualising-ai-segmentation-with-hdr/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/visualising-ai-segmentation-with-hdr/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/visualising-ai-segmentation-with-hdr/citation.bib\"\u003eVisualisierung von KI Segmentierung mit HDR\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/visualising-ai-segmentation-with-hdr/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2025-01-14T21:00:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/drawing-heinrich-sielken/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/drawing-heinrich-sielken/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/drawing-heinrich-sielken/citation.bib\"\u003eMoskauer Zeichnungen von Heinrich Sielken (1874 - 1942)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/drawing-heinrich-sielken/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-12-30T14:50:44+01:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-cornelius-rogge/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-cornelius-rogge/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-cornelius-rogge/citation.bib\"\u003eSommerabend in Worpswede von Cornelius Rogge (1868 – 1949)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-cornelius-rogge/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-12-30T14:50:44+01:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/projektemacher-2024/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/projektemacher-2024/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/projektemacher-2024/citation.bib\"\u003eProjektemacher 2024\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/projektemacher-2024/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-12-30T11:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/archives-citizen-participation/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/archives-citizen-participation/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/archives-citizen-participation/citation.bib\"\u003eArchive: Bestandsaufbau durch Bürgerbeteiligung fördern\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/archives-citizen-participation/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-12-28T19:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-malte-satorius/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-malte-satorius/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-malte-satorius/citation.bib\"\u003eLinolschitt von Malte Satorius (1933-2017)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-malte-satorius/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-12-24T12:00:00+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-roger-hebbelinck/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-roger-hebbelinck/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-roger-hebbelinck/citation.bib\"\u003eLithographie von Roger Hebbelinck (1912-1987)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-roger-hebbelinck/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-12-19T15:15:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/christmas-2024-2/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/christmas-2024-2/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/christmas-2024-2/citation.bib\"\u003eWeihnachten 2024\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/christmas-2024-2/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-12-05T10:00:00+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/christmas-2024-1/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/christmas-2024-1/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/christmas-2024-1/citation.bib\"\u003eZur Vorweihnachtszeit\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/christmas-2024-1/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-12-01T12:00:00+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/light/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/light/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/light/citation.bib\"\u003eBlogserie zum Thema \"Licht\"\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/light/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-11-28T18:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/christmas-2024-workshop/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/christmas-2024-workshop/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/christmas-2024-workshop/citation.bib\"\u003eBastelworkshop Weihnachten 2024\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/christmas-2024-workshop/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-11-19T07:22:44+01:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/iiif-online-meeting-2024-slides/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/iiif-online-meeting-2024-slides/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/iiif-online-meeting-2024-slides/citation.bib\"\u003eIIIF Online Meeting 2024: HDR Images via IIIF Image API\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/iiif-online-meeting-2024-slides/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-11-14T15:30:00+01:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/donation-spandau/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/donation-spandau/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/donation-spandau/citation.bib\"\u003eSpende ans Archiv des Stadtgeschichtlichen Museums Spandau\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/donation-spandau/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-11-14T13:00:00+01:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/hdr-radiography-visualisation/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/hdr-radiography-visualisation/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/hdr-radiography-visualisation/citation.bib\"\u003eHDR Bilder zur Visualisierung von Röntgenuntersuchungen\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/hdr-radiography-visualisation/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-11-13T12:00:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/drawing-art-brut/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/drawing-art-brut/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/drawing-art-brut/citation.bib\"\u003eArt Brut Zeichnung von 1965\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/drawing-art-brut/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-11-02T11:55:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/ric-unknownartist/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/ric-unknownartist/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/ric-unknownartist/citation.bib\"\u003eDas Geheimnis um Ric ist gelüftet\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/ric-unknownartist/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-10-24T07:03:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/mastodon/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/mastodon/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/mastodon/citation.bib\"\u003eMastodon\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/mastodon/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-10-16T19:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/haptic-feedback/",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/haptic-feedback/",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/haptic-feedback/\"\u003eHaptisches Feedback\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/haptic-feedback/","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-10-15T18:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/911tv-desktop/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/911tv-desktop/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/911tv-desktop/citation.bib\"\u003e911TV als Desktop Anwendung\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/911tv-desktop/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-10-09T19:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/seelischerkrankte-krankenhaus/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/seelischerkrankte-krankenhaus/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/seelischerkrankte-krankenhaus/citation.bib\"\u003e“Seelischerkrankte Krankenhaus”\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/seelischerkrankte-krankenhaus/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-10-02T09:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/iiif-online-meeting-2024/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/iiif-online-meeting-2024/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/iiif-online-meeting-2024/citation.bib\"\u003eIIIF Online Meeting 2024\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/iiif-online-meeting-2024/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-09-19T19:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/marmolada-woodcut/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/marmolada-woodcut/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/marmolada-woodcut/citation.bib\"\u003eDer Klimawandel in der Kunst...\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/marmolada-woodcut/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-09-15T18:07:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/uv-photogrammetry/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/uv-photogrammetry/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/uv-photogrammetry/citation.bib\"\u003eUV-Photogrammetrie\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/uv-photogrammetry/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-09-05T11:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/hdr-iiif/",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/hdr-iiif/",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/hdr-iiif/\"\u003eHDR IIIF\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/hdr-iiif/","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-08-18T11:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-max-westhauser/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-max-westhauser/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-max-westhauser/citation.bib\"\u003e\"Liebespaar\" von Max Westhäuser (1885-1956)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-max-westhauser/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-07-16T15:00:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/hdr-canvas-js/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/hdr-canvas-js/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/hdr-canvas-js/citation.bib\"\u003eJavaScript Bibliothek für HDR\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/hdr-canvas-js/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-07-06T12:00:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/tts/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/tts/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/tts/citation.bib\"\u003eTTS für Briefsteller\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/tts/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-06-25T11:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-curt-mucke/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-curt-mucke/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-curt-mucke/citation.bib\"\u003eSiedelhof Jena von Curt Mücke (1885-1940)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-curt-mucke/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-06-21T14:07:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/hdr-image-analysis/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/hdr-image-analysis/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/hdr-image-analysis/citation.bib\"\u003eKontrasterhöhung für UV Aufnahmen mittels HDR Darstellung\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/hdr-image-analysis/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-06-06T11:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/ultrahdr/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/ultrahdr/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/ultrahdr/citation.bib\"\u003eLibUltraHDR\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/ultrahdr/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-05-23T11:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-iamo-keinen/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-iamo-keinen/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-iamo-keinen/citation.bib\"\u003eBlatt von Imao Keinen (1855-1924)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-iamo-keinen/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-05-14T19:55:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/hdr-awesome-list/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/hdr-awesome-list/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/hdr-awesome-list/citation.bib\"\u003eHDR Bilder im Browser\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/hdr-awesome-list/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-05-01T11:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/data-containers/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/data-containers/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/data-containers/citation.bib\"\u003eDaten Container\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/data-containers/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-04-19T17:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/pong/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/pong/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/pong/citation.bib\"\u003ePong Visualisierung\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/pong/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-04-15T13:58:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-kurt-muhlenhaupt/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-kurt-muhlenhaupt/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-kurt-muhlenhaupt/citation.bib\"\u003eRadierung von Kurt Mühlenhaupt (1921-2006)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-kurt-muhlenhaupt/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-03-27T16:47:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/vintagereality/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/vintagereality/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/vintagereality/citation.bib\"\u003eVintageReality gestartet\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/vintagereality/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-03-05T19:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/3d-models/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/3d-models/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/3d-models/citation.bib\"\u003e3D Modelle im Browser\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/3d-models/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-02-24T10:16:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-maria-gey-heinze/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-maria-gey-heinze/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-maria-gey-heinze/citation.bib\"\u003eRadierung von Marie Gey-Heinze (1881-1908)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-maria-gey-heinze/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-02-02T14:07:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/hugo-shortcode-metadate/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/hugo-shortcode-metadate/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/hugo-shortcode-metadate/citation.bib\"\u003eMetadaten für Hugo Shortcodes\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/hugo-shortcode-metadate/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-01-30T18:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/mystery-box/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/mystery-box/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/mystery-box/citation.bib\"\u003eMystery Box\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/mystery-box/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2024-01-23T19:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/christmas-2023/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/christmas-2023/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/christmas-2023/citation.bib\"\u003eWeihnachten 2023\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/christmas-2023/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-12-24T12:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-hans-martin-erhardt/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-hans-martin-erhardt/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-hans-martin-erhardt/citation.bib\"\u003eAbstrakte Grafik von Hans Martin Erhardt (1935-2015)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-hans-martin-erhardt/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-12-15T16:07:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/json-compression/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/json-compression/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/json-compression/citation.bib\"\u003eJSON für Anwendungsbündel komprimieren\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/json-compression/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-11-16T15:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/collage-helmut-boenitz/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/collage-helmut-boenitz/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/collage-helmut-boenitz/citation.bib\"\u003eCollage von Helmut Bönitz (1914-1999)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/collage-helmut-boenitz/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-11-10T17:27:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/911tv/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/911tv/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/911tv/citation.bib\"\u003e911TV gestartet\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/911tv/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-11-09T19:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/90ies-train/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/90ies-train/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/90ies-train/citation.bib\"\u003eReisen wie 1996\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/90ies-train/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-11-03T19:39:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-oscar-droege/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-oscar-droege/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-oscar-droege/citation.bib\"\u003eFarbholzschnitt von Oscar Droege (1898-1983)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-oscar-droege/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-09-09T15:15:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/windows-deployer/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/windows-deployer/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/windows-deployer/citation.bib\"\u003eWindows Deployer\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/windows-deployer/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-08-21T19:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-erich-zimmer/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-erich-zimmer/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-erich-zimmer/citation.bib\"\u003eHolzschnitt von Erich Zimmer (1908-2001)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-erich-zimmer/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-07-31T19:07:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-elsa-hoppe/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-elsa-hoppe/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-elsa-hoppe/citation.bib\"\u003ePuppen von Elsa Hoppe (1901-1992)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-elsa-hoppe/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-07-27T09:07:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-otto-richard-bossert/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-otto-richard-bossert/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-otto-richard-bossert/citation.bib\"\u003eHolzschnitt von Otto Richard Bossert (1874-1919)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-otto-richard-bossert/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-07-08T15:15:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/build-vector-tiles-on-github/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/build-vector-tiles-on-github/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/build-vector-tiles-on-github/citation.bib\"\u003eVektor Kartenmaterial mit GitHub bauen\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/build-vector-tiles-on-github/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-07-01T20:14:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/geoip-tool/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/geoip-tool/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/geoip-tool/citation.bib\"\u003eGeoIP Tool\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/geoip-tool/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-04-30T16:15:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/oai-harvester/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/oai-harvester/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/oai-harvester/citation.bib\"\u003eOAI-PMH Harvester\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/oai-harvester/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-04-16T19:58:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-eva-roemer/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-eva-roemer/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-eva-roemer/citation.bib\"\u003eHolzschnitt von Eva Roemer (1889-1977)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-eva-roemer/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-03-19T15:18:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/image-hildesheimer-boerde/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/image-hildesheimer-boerde/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/image-hildesheimer-boerde/citation.bib\"\u003eHildesheimer Börde\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/image-hildesheimer-boerde/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-03-02T22:39:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/maps/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/maps/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/maps/citation.bib\"\u003eKartenmaterial für Projektemacher Blogs\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/maps/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2023-01-01T20:14:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/postcards-halle/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/postcards-halle/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/postcards-halle/citation.bib\"\u003eSpende ans Stadtarchiv Halle\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/postcards-halle/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2022-12-31T12:00:00+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/christmas-2022/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/christmas-2022/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/christmas-2022/citation.bib\"\u003eWeihnachten 2022\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/christmas-2022/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2022-12-24T12:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/wilma-brauner/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/wilma-brauner/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/wilma-brauner/citation.bib\"\u003eAusstellung \"Wilma Bräuner\"\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/wilma-brauner/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2022-12-03T12:00:00+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/hang-pictures-in-sweethome3d/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/hang-pictures-in-sweethome3d/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/hang-pictures-in-sweethome3d/citation.bib\"\u003eBilder aufhängen in Sweet Home 3D\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/hang-pictures-in-sweethome3d/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2022-11-27T08:33:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/painting-francois-poggi/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/painting-francois-poggi/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/painting-francois-poggi/citation.bib\"\u003eGemälde von François Poggi (1838-1900)\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/painting-francois-poggi/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2022-11-23T17:18:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/merch.projektemacher.org/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/merch.projektemacher.org/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/merch.projektemacher.org/citation.bib\"\u003eProjektemacher Merch gestartet\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/merch.projektemacher.org/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2022-10-26T19:58:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/print-computergrafik/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/print-computergrafik/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/print-computergrafik/citation.bib\"\u003eComputergrafik\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/print-computergrafik/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2022-04-27T08:07:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/iiif-proxy/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/iiif-proxy/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/iiif-proxy/citation.bib\"\u003eIIIF Proxy\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/iiif-proxy/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2022-01-26T11:44:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/christmas-2021/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/christmas-2021/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/christmas-2021/citation.bib\"\u003eWeihnachten 2021\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/christmas-2021/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2021-12-24T12:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/iiif-conf-2021-scaling-down/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/iiif-conf-2021-scaling-down/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/iiif-conf-2021-scaling-down/citation.bib\"\u003eIIIF Konferenz 2021: Scaling down...\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/iiif-conf-2021-scaling-down/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2021-06-24T16:30:00+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/instagram/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/instagram/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/instagram/citation.bib\"\u003eInstagram\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/instagram/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2021-05-31T15:23:46+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/phone-case/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/phone-case/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/phone-case/citation.bib\"\u003eDIY Projekt: Telefonhülle\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/phone-case/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2021-05-31T13:58:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/summer-break/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/summer-break/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/summer-break/citation.bib\"\u003eSommerpause\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/summer-break/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2021-05-24T19:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/briefsteller/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/briefsteller/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/briefsteller/citation.bib\"\u003eBriefsteller.de gestartet\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/briefsteller/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2021-04-27T19:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/jpeg-xl/",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/jpeg-xl/",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/jpeg-xl/\"\u003eJPEG XL\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/jpeg-xl/","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2021-04-17T11:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/iiif-conference-2021/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/iiif-conference-2021/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/iiif-conference-2021/citation.bib\"\u003eIIIF Konferenz 2021\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/iiif-conference-2021/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2021-03-13T19:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/labs/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/labs/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/labs/citation.bib\"\u003eLabs.projektemache.org gestartet\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/labs/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2021-03-13T19:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/living-room/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/living-room/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/living-room/citation.bib\"\u003eWohnzimmer renoviert\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/living-room/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2021-01-13T19:22:44+02:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/christmas-2020/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/christmas-2020/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/christmas-2020/citation.bib\"\u003eWeihnachten 2020\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/christmas-2020/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2020-11-29T07:15:43+01:00"
+          }
+        },
+        {
+          "@context": "https://www.w3.org/ns/activitystreams",
+          "id": "https://christianmahnke.de/post/first-post/citation.bib",
+          "type": "Create","actor": "https://christianmahnke.de/cmahnke","object": {
+            "id": "https://christianmahnke.de/post/first-post/citation.bib",
+            "type": "Note",
+            "content": "\u003ca href=\"https://christianmahnke.de/post/first-post/citation.bib\"\u003eDer erste Beitrag\u003c/a\u003e",
+            "url": "https://christianmahnke.de/post/first-post/citation.bib","attributedTo": "https://christianmahnke.de/cmahnke","to": "https://www.w3.org/ns/activitystreams#Public",
+            "published": "2020-11-25T19:22:44+02:00"
+          }
+        }
+    ]}

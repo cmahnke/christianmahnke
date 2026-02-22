@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Status/</link>
+    <description>Recent content in Blog on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Status/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Site now searchable</title>
+      <link>https://christianmahnke.de/en/post/site-search/citation.bib</link>
+      <pubDate>Mon, 02 Jun 2025 17:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/site-search/citation.bib</guid>
+      <description>&lt;p&gt;You can now search this page&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Summer break</title>
+      <link>https://christianmahnke.de/en/post/summer-break/citation.bib</link>
+      <pubDate>Mon, 24 May 2021 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/summer-break/citation.bib</guid>
+      <description>&lt;p&gt;This spring has not yet offered the most spring-like weather, but it should be better next week&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Der erste Beitrag</title>
+      <link>https://christianmahnke.de/en/post/first-post/citation.bib</link>
+      <pubDate>Wed, 25 Nov 2020 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/first-post/citation.bib</guid>
+      <description>&lt;p&gt;After the site &lt;a href=&#34;https://projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher.org&lt;/a&gt; went online in the last few months to unite my old Tumblr blogs and the projects of the first Corona Lockdown under a single&lt;/p&gt;&#xA;&lt;p&gt;one roof as an umbrella brand, mine is now starting personal homepage.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

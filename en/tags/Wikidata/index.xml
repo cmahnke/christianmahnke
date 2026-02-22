@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wikidata on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Wikidata/</link>
+    <description>Recent content in Wikidata on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Wikidata/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exhibitions in Wikidata</title>
+      <link>https://christianmahnke.de/en/post/exhibitions-in-wikidata/citation.bib</link>
+      <pubDate>Sat, 21 Feb 2026 07:30:00 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/exhibitions-in-wikidata/citation.bib</guid>
+      <description>&lt;p&gt;How can digital objects be linked to exhibitions?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authority data for private collections (and small cultural institutions)</title>
+      <link>https://christianmahnke.de/en/post/authority-data-for-private-collectors/citation.bib</link>
+      <pubDate>Wed, 19 Nov 2025 20:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/authority-data-for-private-collectors/citation.bib</guid>
+      <description>&lt;p&gt;Since the beginning of the year, I have been adding Wikidata for various functions on my blogs&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Simple data enrichment with Wikidata</title>
+      <link>https://christianmahnke.de/en/post/simple-wikidata-queries/citation.bib</link>
+      <pubDate>Tue, 18 Nov 2025 20:14:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/simple-wikidata-queries/citation.bib</guid>
+      <description>&lt;p&gt;Found while tidying up the browser tabs&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wikidata Links in Hugo</title>
+      <link>https://christianmahnke.de/en/post/wikidata-entities-in-hugo/citation.bib</link>
+      <pubDate>Wed, 28 May 2025 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/wikidata-entities-in-hugo/citation.bib</guid>
+      <description>&lt;p&gt;Another step towards easier searchability of the site&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

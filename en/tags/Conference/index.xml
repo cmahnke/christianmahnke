@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conference on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Conference/</link>
+    <description>Recent content in Conference on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Conference/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IIIF Online Meeting 2024: HDR Images via IIIF Image API</title>
+      <link>https://christianmahnke.de/en/post/iiif-online-meeting-2024-slides/citation.bib</link>
+      <pubDate>Thu, 14 Nov 2024 15:30:00 +0100</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/iiif-online-meeting-2024-slides/citation.bib</guid>
+      <description>&lt;p&gt;The slides of my presentation on HDR content via IIIF are now available&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Online Meeting 2024</title>
+      <link>https://christianmahnke.de/en/post/iiif-online-meeting-2024/citation.bib</link>
+      <pubDate>Thu, 19 Sep 2024 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/iiif-online-meeting-2024/citation.bib</guid>
+      <description>&lt;p&gt;I will present my &lt;a href=&#34;https://christianmahnke.de/post/&#34;&gt;IIIF HDR&lt;/a&gt; project at this year&amp;rsquo;s &lt;a href=&#34;https://iiif.io/event/2024/online-meeting/&#34; target=&#34;_blank&#34;&gt;IIIF Online Meeting&lt;/a&gt;!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Conference 2021: Scaling down...</title>
+      <link>https://christianmahnke.de/en/post/iiif-conf-2021-scaling-down/citation.bib</link>
+      <pubDate>Thu, 24 Jun 2021 16:30:00 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/iiif-conf-2021-scaling-down/citation.bib</guid>
+      <description>&lt;p&gt;Today I gave my talk about the infrastructure of my blogs at this year&amp;rsquo;s IIIF conference.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Konferenz 2021</title>
+      <link>https://christianmahnke.de/en/post/iiif-conference-2021/citation.bib</link>
+      <pubDate>Sat, 13 Mar 2021 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/iiif-conference-2021/citation.bib</guid>
+      <description>&lt;p&gt;I will present my &lt;a href=&#34;https://projektemacher.org/blogs/&#34; target=&#34;_blank&#34;&gt;Corona projects&lt;/a&gt; at this year&amp;rsquo;s &lt;a data-wikidata-entity=&#34;Q116233196&#34; href=&#34;https://iiif.io/event/2021/annual_conference/&#34; target=&#34;_blank&#34;&gt;IIIF conference&lt;/a&gt;!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

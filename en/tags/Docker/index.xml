@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Docker/</link>
+    <description>Recent content in Docker on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Containers</title>
+      <link>https://christianmahnke.de/en/post/data-containers/citation.bib</link>
+      <pubDate>Fri, 19 Apr 2024 17:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/data-containers/citation.bib</guid>
+      <description>&lt;p&gt;Even if it is not necessarily the intended use case, Docker makes it very easy to package large amounts of data with applications for simplified provisioning (such as APIs). This can be particularly helpful if, for example, standardisation data from different sources is to be merged for data enrichment.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Build vector maps with GitHub</title>
+      <link>https://christianmahnke.de/en/post/build-vector-tiles-on-github/citation.bib</link>
+      <pubDate>Sat, 01 Jul 2023 20:14:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/build-vector-tiles-on-github/citation.bib</guid>
+      <description>&lt;p&gt;Since the use of freely available map services requires &lt;a href=&#34;https://christianmahnke.de/post/maps/&#34;&gt;communication with external services&lt;/a&gt; as well as limited design, it was time for something of my own&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OAI-PMH Harvester</title>
+      <link>https://christianmahnke.de/en/post/oai-harvester/citation.bib</link>
+      <pubDate>Sun, 16 Apr 2023 19:58:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/oai-harvester/citation.bib</guid>
+      <description>&lt;p&gt;I didn&amp;rsquo;t want to write the millionth [OAI-PMH harvester](&#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q2430433&#34; href=&#34;https://en.wikipedia.org/wiki/Open_Archives_Initiative_Protocol_for_Metadata_Harvesting&#34; target=&#34;_blank&#34;&gt;OAI-PMH Harvester&lt;/a&gt;)&amp;hellip;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

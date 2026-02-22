@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="22 Feb 2026"/>
+    <link rel="stylesheet" href="https://christianmahnke.de/css/print.3fdda9b5c5f73002a47a284c8c3f1b5e564d7995c30d17c14c4bc3ca7c0a4ea2.css" type="text/css" integrity="sha256-P92ptcX3MAKkeihMjD8bXlZNeZXDDRfBTEvDynwKTqI=">
+  </head>
+  <body>
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/paper-tiger-print-css/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Paper tiger CSS for printing</h1><div class="post-description">A rant about CSS for printing</div><div class="date">
+          <time class="post-data" datetime="2025-12-10T18:33:44&#43;02:00">Wednesday, December 10, 2025</time>
+        </div><div class="post-body"><p>II occasionally engage in cross-media publishing&hellip;</p>
+<p>This has even led to a few projects in my professional life:</p>
+<ul>
+<li>
+<p>2004-2006: <strong>The Rise of Modern Constitutionalism, 1776-1849</strong>:
+A workflow was developed and implemented, that created TEI from Word files with theme-specific document templates. TEI was then converted into other presentation formats (including a book series).</p>
+</li>
+<li>
+<p>2014: <strong>OUS-Print</strong>:
+Order slips/accompanying notes were created from the local library system: text is converted to PDF using XSL-FO. Templates can be edited in Open Office. There is also an <a href="https://subugoe.github.io/ous-print/slides.xhtml" target="_blank">old presentation</a>.</p>
+</li>
+</ul>
+<p>I have now attempted to create a catalogue from the Kleiderbügel blog and was surprised at how little current technologies have advanced in the last decade. Certainly, the demand for elaborately designed printed products has not necessarily increased in recent years. However, I had hoped that old XML technologies such as XSL-FO would have been replaced to some extent.</p>
+<h2 id="css-for-printing">CSS for printing</h2>
+<p>It therefore made sense to investigate what today&rsquo;s web technologies have to offer in this area. There is a small group of enthusiasts and providers on the internet who promote CSS for printing.</p>
+<p>They advertise the appealing results of their work. The idea is fundamentally a very good one, because the possibilities offered by CSS today are in no way inferior to those of DTP software. There are also dedicated CSS modules for this purpose:</p>
+<ul>
+<li>primarily the <a href="https://www.w3.org/TR/css-page-3/" target="_blank">CSS Paged Media Module Level 3</a>:
+<ul>
+<li><a href="https://drafts.csswg.org/css-page/" target="_blank">current version</a> with the status &ldquo;Editor&rsquo;s Draft&rdquo;</li>
+</ul>
+</li>
+<li>supplemented by the <a href="https://drafts.csswg.org/css-content-3/" target="_blank">CSS Generated Content Module Level 3</a></li>
+</ul>
+<p>However, after the initial euphoria, the first major gap quickly becomes apparent:
+The (remaining) major browsers only support the possible features to a limited extent. The lack of the following functionalities is particularly noticeable:</p>
+<ul>
+<li>Cross-references, e.g. for creating tables of contents</li>
+<li>Footnotes</li>
+<li>Print-specific design elements such as fill characters (<code>leader</code>)</li>
+</ul>
+<p><strong>If browsers supported these features, this article would probably be over by now&hellip;</strong></p>
+<p>But they don&rsquo;t. Still, there&rsquo;s no reason to despair, because there are other implementations, both open source and commercial. An overview is provided by <a href="https://print-css.rocks/" target="_blank">print-css.rocks</a>. The site offers extensive compatibility tests, as well as ratings and classifications.</p>
+<p>Basically, the implementations can be divided into two types according to how they work:</p>
+<ul>
+<li>Browser-based: Remotely control an existing browser implementation (usually Chromium) and implement the missing CSS features as polyfills. They are, so to speak, the grandchildren of <a href="https://wkhtmltopdf.org/" target="_blank">wkhtmltpdf</a>.</li>
+<li>Own CSS implementation: This uses an (usually self-written) HTML/CSS renderer.</li>
+</ul>
+<p>The first approach has the charm of enabling JavaScript to be executed without any major problems. This also allows the reuse of dynamically generated images, such as diagrams or maps.</p>
+<p>Since the market is quite fragmented and resources are therefore limited, not all of them have the same degree of standard compliance. Ultimately, this means that one does not adhere to a standard, but rather to the smallest common subset that is supported by everyone. The alternative is to commit to a specific implementation.</p>
+<p>It doesn&rsquo;t help that some of the processors also come with vendor-specific CSS extensions.</p>
+<h2 id="are-the-implementations-the-only-problem">Are the implementations the only problem?</h2>
+<p>However, the real problems seem to lie elsewhere:
+What is currently referred to as CSS for printing is largely underambitious, at least when it comes to bound materials: The primary goal seems to be the layout of individual (form) sheets, such as invoices or advertising letters. There are also more complex examples, such as (scientific) papers or technical documentation in book form, but here too, one has to ask whether these are not intended more for reading as PDFs on screen.</p>
+<p>Sure, that will account for the majority of use cases. Those who want more can use DTP software such as InDesign.</p>
+<p><strong>But is this really a claim that a community for open standards should be satisfied with?</strong></p>
+<p>Basically, it would be desirable if the creative freedom that CSS offers web designers and developers were also available in the printing sector. And not just for loose-leaf collections.</p>
+<h3 id="or-is-it-the-specification">Or is it the specification?</h3>
+<p>A feeling that often creeps up on you with CSS also arises here: &ldquo;ease of implementation&rdquo; seems to be more important than &ldquo;ease of use&rdquo; or even &ldquo;feature completeness&rdquo;.</p>
+<p>Many of the functionalities mentioned under &ldquo;What&rsquo;s missing?&rdquo; quickly become apparent when you start creating books (or more complex brochures). Some of them can even be found in the W3C&rsquo;s <a href="https://www.w3.org/Style/2013/paged-media-tasks" target="_blank">list of CSS functions required for paginated media</a>, but they have never been included in the specification. This part would certainly have been solved within the framework of the <a href="https://www.w3.org/TR/css-regions-1/" target="_blank">CSS regions module</a>, but this was also <a href="https://caniuse.com/css-regions" target="_blank">never implemented</a>.</p>
+<h2 id="whats-missing">What&rsquo;s missing?</h2>
+<p>An important goal (apart from presentation) of CSS for printing should be to reduce the amount of pre-processing required. In my case, these were:</p>
+<ul>
+<li>Footnotes: It is somewhat limited to simply specify fixed areas for a page type. It would also be desirable to be able to specify an existing container. The module for generated content could also be used for this.</li>
+<li>Binding edge: The binding edge is essential for printed works of a certain size. Therefore, it should be supported in the same way as media queries for landscape and portrait formats. This includes the selectors contained therein.</li>
+<li>Overflow into other containers: The module for generated content should be able to &ldquo;catch&rdquo; the overflow of another container.</li>
+</ul>
+<p>Further improvements are also conceivable:</p>
+<ul>
+<li>Currently, the page margins are divided into <a href="https://www.w3.org/TR/css-page-3/#margin-boxes" target="_blank">fixed zones</a>. This should be changeable.</li>
+<li>Effects in particular need to be defined, e.g. as a blacklist (i.e. what should not work). One example is <code>text-shadow</code>. Here, the basic rule could be that everything that is possible in SVG or modern PDF (let&rsquo;s not kid ourselves, there is usually another intermediate format before printing) should also be printable. A valid basic rule would not be: &ldquo;These are GPU effects and therefore can&rsquo;t be printed&rdquo;, because this is an implementation detail. If necessary, a <code>raster</code> property could be invented.</li>
+</ul>
+<p>In addition, there are additions that would also benefit CSS in the browser, such as text that adapts to the size of the container.</p>
+<p>Until then, one should be more cautious when claiming that CSS is truly print-ready, as this otherwise gives the impression that it is as simple as the display in the browser, regardless of the desired print product.</p>
+<h2 id="a-possible-way-out">A possible way (out)</h2>
+<p>If we assume that browser vendors do not fully support CSS for printing, there is no need to be overly cautious when defining a standard. On the contrary, this should actually speed up the process, as it reduces restrictions. One could even argue, somewhat polemically, that browser vendors should first implement the existing specifications in order to have a say – as proof, so to speak, that they are stakeholders.
+Against this backdrop, smaller vendors and projects that create processors should not allow themselves to be slowed down by the process.</p>
+<p>And then the scope of the specification to be created should also be clarified, i.e. the types of documents that should be able to be created with its help.
+Incidentally, this also includes explicitly bearing in mind that it is not just about creating PDFs, but about printed information on paper: &ldquo;printing&rdquo; is a very broad field. Sometimes you want to create more than just the preliminary stage of waste paper.</p>
+<p>If several vendors bring their own CSS extensions that achieve the same result, then something has gone wrong with the specification. Otherwise, the respective use case would have been taken into account.
+It may also help to find an end with the existing specification(s). Perhaps starting with a &ldquo;CSS Paged Media Module Level 4&rdquo; would solve some of the problems.</p>
+<p>Ultimately, it is necessary to check whether everything that can be done with XSL-FO 1.1 can be achieved with the existing specification; if not, it is back to the drawing board. Offering a migration path would show that the authors are serious about theitr product&hellip;</p>
+<p>Against this background, it may be worth considering abandoning the existing standardisation path and putting your efforts into your own approach instead. An (inactive) example of such an initiative is <a href="https://books.idea.whatwg.org/" target="_blank">CSS Books</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>CSS for printing is, in part, a paper tiger: it works for simple, unbound documents. However, as the size or scope of a project increases, the amount of pre-processing required increases massively. (Sometimes so much so that you remember that Inkscape can be scripted with Python.) Currently, there is no major breakthrough in sight for the specification, and the major browser vendors show no discernible interest in improving the situation.</p>
+<p>If you need ideas on how to do it better, you can (ironically) read about them at the W3C.</p>
+<h2 id="thanks">Thanks</h2>
+<ul>
+<li>To Andreas Jung, who created the website <a href="https://print-css.rocks/" target="_blank">print-css.rocks</a>, which was a valuable source of information.</li>
+<li>The team at <a data-wikidata-entity="Q96473517" href="https://vivliostyle.org/" target="_blank">Vivliostyle</a>, which came closest to meeting my requirements and is therefore the one I use.</li>
+</ul></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q24415127" title="Hugo" rel="related">Wikidata entry: Hugo</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q32087" title="XSL Formatting Objects" rel="related">Wikidata entry: XSL Formatting Objects</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q42332" title="PDF" rel="related">Wikidata entry: PDF</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q46441" title="Cascading Style Sheets" rel="related">Wikidata entry: Cascading Style Sheets</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Cite this article
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2025)</span>: <span class="cite-title">Paper tiger CSS for printing</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], Dec 10, 2025. Online publication: <a class="cite-link" href="https://christianmahnke.de/post/paper-tiger-print-css/article.html">https://christianmahnke.de/post/paper-tiger-print-css/article.html</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/en/post/paper-tiger-print-css/citation.bib" title="Download as BibTex">Download as BibTex</a>
+  </div>
+</details>
+</div><div class="tags-heading">Tags</div>
+        <div class="tags"><a href="https://christianmahnke.de/en/tags/CSS" title="CSS">#CSS</a><a href="https://christianmahnke.de/en/tags/Printing" title="Printing">#Printing</a><a href="https://christianmahnke.de/en/tags/JavaScript" title="JavaScript">#JavaScript</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/hdr-canvas-updated/article.html">hdr-canvas 0.1.0 published</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/vite-git-symlink-plugin/article.html">Vite und Git Symlink-Dateien</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/wallpaper-generator/article.html">Wallpaper virtual rooms!</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/quantenkosmos-goettingen/article.html">Quantum cosmos Göttingen</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/coat-hangers-book/article.html">The Kleiderbügel Blog as a book</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "http://www.w3.org/ns/anno.jsonld",
+    {
+      "@version": 1.1,
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "dctypes": "http://purl.org/dc/dcmitype",
+      "InteractiveResource": "dctypes:InteractiveResource",
+      "iiif_touch": "https://christianmahnke.de/iiif/touch/#",
+      "sensing": "iiif_touch:sensing",
+      "id": "@id",
+      "type": "@type",
+      "haptics": {
+        "@id": "iiif_touch:haptics",
+        "@context": {
+          "vibrate": {
+            "@id": "iiif_touch:vibrate",
+            "@type": "xsd:boolean"
+          }
+        }
+      }
+    }
+  ]
+}

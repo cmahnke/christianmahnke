@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="22 Feb 2026"/>
+    <link rel="stylesheet" href="https://christianmahnke.de/css/print.3fdda9b5c5f73002a47a284c8c3f1b5e564d7995c30d17c14c4bc3ca7c0a4ea2.css" type="text/css" integrity="sha256-P92ptcX3MAKkeihMjD8bXlZNeZXDDRfBTEvDynwKTqI=">
+  </head>
+  <body>
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/data-containers/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Data Containers</h1><div class="post-description">The GND and Geonames as local data sources</div><div class="date">
+          <time class="post-data" datetime="2024-04-19T17:33:44&#43;02:00">Friday, April 19, 2024</time>
+        </div><div class="post-body"><p>Even if it is not necessarily the intended use case, Docker makes it very easy to package large amounts of data with applications for simplified provisioning (such as APIs). This can be particularly helpful if, for example, standardisation data from different sources is to be merged for data enrichment.</p>
+<h1 id="gnd">GND</h1>
+<p>The <a href="https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html" target="_blank">Gemeinsame NormDatei (GND)</a> contains information on persons, corporate bodies etc. that are deposited with the National Library.</p>
+<p>The image is based on <a data-wikidata-entity="Q1686799" href="https://jena.apache.org/" target="_blank">Apache Jena</a> and utilises the <a href="https://www.rdfhdt.org/" target="_blank">HDT</a> dump. However, the necessary <a href="https://github.com/rdfhdt/hdt-java" target="_blank">module</a> does not yet support Jena / Fuseki 5.0.</p>
+<p>The container can be started easily:</p>
+<pre tabindex="0"><code>docker run -it -p3030:3030 ghcr.io/cmahnke/data-containers/gnd:latest /bin/sh
+</code></pre><p>After starting, the database can be conveniently searched in the browser: <a href="http://localhost:3030/#/dataset/gnd/query" target="_blank">http://localhost:3030/#/dataset/gnd/query</a></p>
+<h1 id="geonames">GeoNames</h1>
+<p><a data-wikidata-entity="Q830106" href="https://www.geonames.org/" target="_blank">GeoNames</a> contains a lot of information on many geographical entities, including coordinates, spelling variants and hierarchisation by area.</p>
+<p>However, the container only contains the coordinates and spelling variants, e.g. to be able to retrieve the coordinates for a location. The data is uploaded to an <a data-wikidata-entity="Q2858103" href="https://solr.apache.org/" target="_blank">Apache Solr</a> instance for this purpose and can be accessed after starting</p>
+<pre tabindex="0"><code>docker run -p 8983:8983 -it ghcr.io/cmahnke/data-containers/geonames
+</code></pre><p>Simply query with <code>curl</code> and the result is returned as JSON:</p>
+<pre tabindex="0"><code>curl http://localhost:8983/solr/geonames/query?debug=query&amp;q=n:G%C3%B6ttingen
+</code></pre><h1 id="further-use">Further use</h1>
+<p>The commands for starting can also be combined / automated using <code>docker-compose</code>, e.g. together with tools for further analysis or enrichment.</p>
+<p>The code is available on <a href="https://github.com/cmahnke/data-containers" target="_blank">GitHub</a>, the containers <a href="https://github.com/cmahnke?tab=packages&amp;repo_name=data-containers" target="_blank">here</a>.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1686799" title="Apache Jena" rel="related">Wikidata entry: Apache Jena</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q178995" title="HTTP cookie" rel="related">Wikidata entry: HTTP cookie</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q2858103" title="Apache Solr" rel="related">Wikidata entry: Apache Solr</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q36578" title="Integrated Authority File" rel="related">Wikidata entry: Integrated Authority File</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q56655440" title="HDT" rel="related">Wikidata entry: HDT</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q830106" title="GeoNames" rel="related">Wikidata entry: GeoNames</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Cite this article
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2024)</span>: <span class="cite-title">Data Containers</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], Apr 19, 2024. Online publication: <a class="cite-link" href="https://christianmahnke.de/post/data-containers/article.html">https://christianmahnke.de/post/data-containers/article.html</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/en/post/data-containers/citation.bib" title="Download as BibTex">Download as BibTex</a>
+  </div>
+</details>
+</div><div class="tags-heading">Tags</div>
+        <div class="tags"><a href="https://christianmahnke.de/en/tags/Data" title="Data">#Data</a><a href="https://christianmahnke.de/en/tags/Docker" title="Docker">#Docker</a><a href="https://christianmahnke.de/en/tags/DNB" title="DNB">#DNB</a><a href="https://christianmahnke.de/en/tags/Metadata" title="Metadata">#Metadata</a><a href="https://christianmahnke.de/en/tags/SPARQL" title="SPARQL">#SPARQL</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/oai-harvester/article.html">OAI-PMH Harvester</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/authority-data-for-private-collectors/article.html">Authority data for private collections (and small cultural institutions)</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/exhibitions-in-wikidata/article.html">Exhibitions in Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/software-metadata/article.html">Metadaten für Software</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hugo-cff-codemeta/article.html">CFF zu CodeMeta in Hugo</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+  </body>
+</html>

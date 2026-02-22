@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Debian Repository mit GitLab Pages · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Ein einfaches Debian-Repository selbst gestrickt&hellip;">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/gitlab-debian-repository/article.html" />
+  <meta property="og:title" content="Debian Repository mit GitLab Pages · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/gitlab-debian-repository/ogPreview_hu_83070f010b4554.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content="Debian, GitLab, Git, Software Entwicklung"><meta name="dc.subject" content="Debian"><meta name="dc.subject" content="GitLab"><meta name="dc.subject" content="Git"><meta name="dc.subject" content="Software Entwicklung">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:03:07.169677513 &#43;0000 UTC m=&#43;0.792186012">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/gitlab-debian-repository/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" type="text/html" href="https://christianmahnke.de/post/gitlab-debian-repository/" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/gitlab-debian-repository/article.html"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/gitlab-debian-repository/article.html","@type":"BlogPosting","about":["Debian","GitLab","Git","SoftwareDevelopment",{"@id":"http://www.wikidata.org/entity/Q16639197","@type":"Thing","name":"Q16639197"},{"@id":"http://www.wikidata.org/entity/Q7715973","@type":"Thing","name":"Q7715973"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2025-08-08T18:33:44+02:00","headline":"Debian Repository mit GitLab Pages","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Debian","GitLab","Git","SoftwareDevelopment"],"name":"Debian Repository mit GitLab Pages","url":"https://christianmahnke.de/post/gitlab-debian-repository/article.html"}
+</script>
+</head><body class="section-post dir-postgitlab-debian-repository blog pdf  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/gitlab-debian-repository/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Debian Repository mit GitLab Pages</h1><div class="date">
+          <time class="post-data" datetime="2025-08-08T18:33:44&#43;02:00">Freitag, 8. August 2025</time>
+        </div><div class="post-body"><p>Ein einfaches Debian-Repository selbst gestrickt&hellip;</p>
+<p>Manchmal braucht man ein eigenes Debian-Repository, z.B. um <a href="https://www.electronjs.org/" target="_blank">Electron</a>-Anwendungen mit <a href="https://github.com/raspberrypi/rpi-image-gen" target="_blank"><code>rpi-image-gen</code></a> zu installieren.</p>
+<p>Auch wenn GitLab ein <a href="https://docs.gitlab.com/user/packages/debian_repository/" target="_blank">experimentelles Feature</a> dafür hat, ist es nicht auf jeder Instanz aktiviert.</p>
+<h1 id="repository-erstellen">Repository erstellen</h1>
+<p>Grundsätzlich gibt es zwei Wege bzw. Werkzeuge um statische Debian-Paketquellen zu erzeugen, <code>dpkg-scanpackages</code> und <code>reprepro</code>. Die folgenden Beispiele gehen davon aus, dass es unterhalb des Arbeitsverzeichnisses ein weiteres mit dem Namen <code>debian</code> gibt. Darin befinden sich eine oder mehrere &ldquo;<code>.deb</code>&quot;-Dateien.</p>
+<h2 id="dpkg-scanpackages"><code>dpkg-scanpackages</code></h2>
+<p>Dies ist die einfachere Variante. Zunächst muss das Paket <code>dpkg-dev</code> installiert werden (<code>apt install -y dpkg-dev</code>). Anschließend kann das Programm mit dem folgenden Befehl ausgeführt werden:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dpkg-scanpackages -m debian /dev/null <span class="p">|</span> gzip -9c &gt; debian/Packages.gz
+</span></span></code></pre></div><p>Danach kann dann das Verzeichnis <code>debian</code> auf einem Web Speicherbereich zur Verfügung gestellt werden.</p>
+<h2 id="reprepro"><code>reprepro</code></h2>
+<p>Dies ist die Variante, die mehr Möglichkeiten bietet, zuerst muss das Paket <code>reprepro</code> installiert werden (<code>apt install -y reprepro</code>). Diese Variante hat den Vorteil, dass man auch GPG Schlüssel bereitstellen kann&hellip;</p>
+<p>Da hier auch Konfigurationsdateien erzeugt werden müssen, empfielt es sich ein zusätzliches Shellscript im Repository anzulegen:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">REPO_DIR</span><span class="o">=</span><span class="nv">$1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mkdir -p <span class="nv">$REPO_DIR</span>/<span class="o">{</span>conf,incoming,debian<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">RELEASE_NAME</span><span class="o">=</span>bookworm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Using </span><span class="nv">$REPO_DIR</span><span class="s2"> as local repository&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat <span class="s">&lt;&lt;EOF &gt;&gt; $REPO_DIR/conf/distributions
+</span></span></span><span class="line"><span class="cl"><span class="s">Origin: My Electron App
+</span></span></span><span class="line"><span class="cl"><span class="s">Label: My Electron App
+</span></span></span><span class="line"><span class="cl"><span class="s">Suite: stable
+</span></span></span><span class="line"><span class="cl"><span class="s">Codename: $RELEASE_NAME
+</span></span></span><span class="line"><span class="cl"><span class="s">Architectures: arm64 armhf
+</span></span></span><span class="line"><span class="cl"><span class="s">Components: main
+</span></span></span><span class="line"><span class="cl"><span class="s">Description: Personal Electron App software repository
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$REPO_DIR</span>
+</span></span><span class="line"><span class="cl">reprepro createsymlinks
+</span></span><span class="line"><span class="cl">reprepro <span class="nb">export</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> DEB in <span class="sb">`</span>find <span class="nv">$REPO_DIR</span>/debian/ -name <span class="s2">&#34;*.deb&#34;</span> -type f<span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Adding </span><span class="nv">$DEB</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    reprepro -b <span class="nv">$REPO_DIR</span> includedeb <span class="s2">&#34;</span><span class="nv">$RELEASE_NAME</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$DEB</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></div><p><code>reprepro</code> bietet auch noch <a href="https://wiki.debian.org/DebianRepository/SetupWithReprepro" target="_blank">weitere Parameter und Optionen</a>.</p>
+<h1 id="verzeichnis-index-erzeugen">Verzeichnis-Index erzeugen</h1>
+<p>Dieser Schritt ist optional und erfordert die Programme <code>tree</code>und <code>find</code> (<code>apt install -y tree findutils</code>). <code>tree</code> kann Verzeichnislisten im HTML Format erstellen, <code>find</code> wird genutzt um <code>tree</code> rekursiv auszuführen:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find . -type d -print -exec sh -c <span class="s1">&#39;tree &#34;$0&#34; -H &#34;.&#34; -L 1 --noreport --houtro &#34;&#34; --dirsfirst --charset utf-8 -I &#34;index.html&#34; --timefmt &#34;%d-%b-%Y %H:%M&#34; -s -D -o &#34;$0/index.html&#34;&#39;</span> <span class="o">{}</span> <span class="se">\;</span>
+</span></span></code></pre></div><h1 id="bereitstellung-im-web---beispiel-für-gitlab">Bereitstellung im Web - Beispiel für GitLab</h1>
+<p>Dieses einfache Beispiel erzeugt ein Debian-Repository auf GitLab Pages.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># This collects all *.deb files from the workdir and creates the package index</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">packages</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">deploy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">debian:bookworm</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">paths</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">repo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">before_script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">apt-get update</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">apt-get install -y dpkg-dev tree findutils</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">mkdir -p repo/debian</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">find . -name &#39;*.deb&#39; -print -exec cp {} repo/debian/ \;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">cd repo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">find . -type d -print -exec sh -c &#39;tree &#34;$0&#34; -H &#34;.&#34; -L 1 --noreport --houtro &#34;&#34; --dirsfirst --charset utf-8 -I &#34;index.html&#34; --timefmt &#34;%d-%b-%Y %H:%M&#34; -s -D -o &#34;$0/index.html&#34;&#39; {} \;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">dpkg-scanpackages -m debian /dev/null | gzip -9c &gt; debian/Packages.gz</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># This depends on the artifacts of the `packages` step and deploys them on GitLab pages</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">pages</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">deploy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">needs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">packages</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">mkdir -p public</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">cp -r repo/debian public/</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">paths</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">public</span><span class="w">
+</span></span></span></code></pre></div></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q16639197" title="Q16639197" rel="related">Wikidata Eintrag: Q16639197</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q7715973" title="Q7715973" rel="related">Wikidata Eintrag: Q7715973</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Diesen Beitrag zitieren
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2025)</span>: <span class="cite-title">Debian Repository mit GitLab Pages</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], 08.08.2025. Online-Publikation: <a class="cite-link" href="https://christianmahnke.de/post/gitlab-debian-repository/article.html">https://christianmahnke.de/post/gitlab-debian-repository/article.html</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/post/gitlab-debian-repository/citation.bib" title="Als BibTex herunterladen">Als BibTex herunterladen</a>
+  </div>
+</details>
+</div><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/Git" title="Git">#Git</a><a href="https://christianmahnke.de/tags/SoftwareDevelopment" title="Software Entwicklung">#Software Entwicklung</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/vite-git-symlink-plugin/article.html">Vite und Git Symlink-Dateien</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/academic-software-publishing/article.html">KI und Software-&#34;Entwicklung&#34;</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/software-metadata/article.html">Metadaten für Software</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hugo-cff-codemeta/article.html">CFF zu CodeMeta in Hugo</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/gitlab-debian-repository/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

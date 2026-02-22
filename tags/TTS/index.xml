@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TTS on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/TTS/</link>
+    <description>Recent content in TTS on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/TTS/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TTS für Briefsteller</title>
+      <link>https://christianmahnke.de/post/tts/citation.bib</link>
+      <pubDate>Tue, 25 Jun 2024 11:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/tts/citation.bib</guid>
+      <description>&lt;p&gt;Nachdem das &lt;a href=&#34;https://briefsteller.de/&#34; target=&#34;_blank&#34;&gt;Briefsteller Blog&lt;/a&gt; seit Anfang 2021 als Gerüst existierte, habe ich meinen Sommerurlaub genutzt, um den Musterbrief, der mich überhaupt erst zu dem Thema &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q4363806&#34; href=&#34;https://de.wikipedia.org/wiki/Briefsteller&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Briefsteller&amp;rdquo;&lt;/a&gt; gebracht hat, &lt;a href=&#34;https://briefsteller.de/post/der-haussekretaer/286/&#34; target=&#34;_blank&#34;&gt;online&lt;/a&gt; zu bringen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

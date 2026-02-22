@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Daten on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Data/</link>
+    <description>Recent content in Daten on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/Data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Normdaten für private Sammlungen (und kleine Kultureinrichtungen)</title>
+      <link>https://christianmahnke.de/post/authority-data-for-private-collectors/citation.bib</link>
+      <pubDate>Wed, 19 Nov 2025 20:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/authority-data-for-private-collectors/citation.bib</guid>
+      <description>&lt;p&gt;Seit Anfang des Jahres habe ich Wikidata für verschiedene Funktionen meiner Blogs hinzugefügt&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Daten Container</title>
+      <link>https://christianmahnke.de/post/data-containers/citation.bib</link>
+      <pubDate>Fri, 19 Apr 2024 17:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/data-containers/citation.bib</guid>
+      <description>&lt;p&gt;Auch wenn es nicht notwendigerweise der intendierte Use Case ist, kann man mit Docker sehr einfach auch umfangreiche Datenmengen mit Anwendungen zur vereinfachten Bereitstellungen (wie z.B. APIs) verpacken. Das kann besonders hilfreich sein wenn z.B. Normdaten aus verschiedenen Quellen für Datenanreicherungen zusammenführen will.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JSON für Anwendungsbündel komprimieren</title>
+      <link>https://christianmahnke.de/post/json-compression/citation.bib</link>
+      <pubDate>Thu, 16 Nov 2023 15:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/json-compression/citation.bib</guid>
+      <description>&lt;p&gt;Für die Videometadaten von &lt;a href=&#34;https://911tv.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;911 TV&lt;/a&gt; gab es eine interessante Herausforderung zu lösen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GeoIP Tool</title>
+      <link>https://christianmahnke.de/post/geoip-tool/citation.bib</link>
+      <pubDate>Sun, 30 Apr 2023 16:15:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/geoip-tool/citation.bib</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.elastic.co/de/kibana&#34; target=&#34;_blank&#34;&gt;Kibana&lt;/a&gt; Visualisierung mit Raumplänen braucht Daten, z.B. von Geräten in einem Gebäude. Aber irgendwo müssen die Daten herkommen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OAI-PMH Harvester</title>
+      <link>https://christianmahnke.de/post/oai-harvester/citation.bib</link>
+      <pubDate>Sun, 16 Apr 2023 19:58:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/oai-harvester/citation.bib</guid>
+      <description>&lt;p&gt;Den millionsten &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q1640343&#34; href=&#34;https://de.wikipedia.org/wiki/Open_Archives_Initiative#OAI_Protocol_for_Metadata_Harvesting&#34; target=&#34;_blank&#34;&gt;OAI-PMH Harvester&lt;/a&gt; wollte ich nicht schreiben,&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

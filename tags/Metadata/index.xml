@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Metadaten on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Metadata/</link>
+    <description>Recent content in Metadaten on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/Metadata/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ausstellungen in Wikidata</title>
+      <link>https://christianmahnke.de/post/exhibitions-in-wikidata/citation.bib</link>
+      <pubDate>Sat, 21 Feb 2026 07:30:00 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/exhibitions-in-wikidata/citation.bib</guid>
+      <description>&lt;p&gt;Wie lassen sich digitale Objekte mit Ausstellungen verknüpfen?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Metadaten für Software</title>
+      <link>https://christianmahnke.de/post/software-metadata/citation.bib</link>
+      <pubDate>Wed, 14 Jan 2026 19:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/software-metadata/citation.bib</guid>
+      <description>&lt;p&gt;Teil 2 über Software-Metadaten.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CFF zu CodeMeta in Hugo</title>
+      <link>https://christianmahnke.de/post/hugo-cff-codemeta/citation.bib</link>
+      <pubDate>Tue, 13 Jan 2026 18:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hugo-cff-codemeta/citation.bib</guid>
+      <description>&lt;p&gt;Für eine anstehende Veröffenlichung einer Software zur Voisualisierung einer Sammlung habe ich mich etwas mit &lt;a data-wikidata-entity=&#34;Q108218387&#34; href=&#34;https://citation-file-format.github.io/&#34; target=&#34;_blank&#34;&gt;Citation File Format&lt;/a&gt; beschäftigt.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linked Art Metadaten</title>
+      <link>https://christianmahnke.de/post/linkedart-metadata/citation.bib</link>
+      <pubDate>Sun, 11 Jan 2026 13:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/linkedart-metadata/citation.bib</guid>
+      <description>&lt;p&gt;Zur Vorbereitung zukünftiger Experimente gibt es nun für einige Einträge Linked-Art-Metadaten&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Normdaten für private Sammlungen (und kleine Kultureinrichtungen)</title>
+      <link>https://christianmahnke.de/post/authority-data-for-private-collectors/citation.bib</link>
+      <pubDate>Wed, 19 Nov 2025 20:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/authority-data-for-private-collectors/citation.bib</guid>
+      <description>&lt;p&gt;Seit Anfang des Jahres habe ich Wikidata für verschiedene Funktionen meiner Blogs hinzugefügt&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Informationen zu Spendern in Kulturerbeaggregatoren</title>
+      <link>https://christianmahnke.de/post/donation-metadata/citation.bib</link>
+      <pubDate>Wed, 21 May 2025 06:00:00 +0000</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/donation-metadata/citation.bib</guid>
+      <description>&lt;p&gt;Ab und zu spende ich Objekte an Kultureinrichtungen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Daten Container</title>
+      <link>https://christianmahnke.de/post/data-containers/citation.bib</link>
+      <pubDate>Fri, 19 Apr 2024 17:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/data-containers/citation.bib</guid>
+      <description>&lt;p&gt;Auch wenn es nicht notwendigerweise der intendierte Use Case ist, kann man mit Docker sehr einfach auch umfangreiche Datenmengen mit Anwendungen zur vereinfachten Bereitstellungen (wie z.B. APIs) verpacken. Das kann besonders hilfreich sein wenn z.B. Normdaten aus verschiedenen Quellen für Datenanreicherungen zusammenführen will.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OAI-PMH Harvester</title>
+      <link>https://christianmahnke.de/post/oai-harvester/citation.bib</link>
+      <pubDate>Sun, 16 Apr 2023 19:58:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/oai-harvester/citation.bib</guid>
+      <description>&lt;p&gt;Den millionsten &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q1640343&#34; href=&#34;https://de.wikipedia.org/wiki/Open_Archives_Initiative#OAI_Protocol_for_Metadata_Harvesting&#34; target=&#34;_blank&#34;&gt;OAI-PMH Harvester&lt;/a&gt; wollte ich nicht schreiben,&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

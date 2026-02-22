@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VIPS on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/VIPS/</link>
+    <description>Recent content in VIPS on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/VIPS/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDR IIIF für alle mit VIPS</title>
+      <link>https://christianmahnke.de/post/hdr-iiif-vips/citation.bib</link>
+      <pubDate>Thu, 27 Nov 2025 18:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hdr-iiif-vips/citation.bib</guid>
+      <description>&lt;p&gt;HDR IIIF für alle&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JPEG XL</title>
+      <link>https://christianmahnke.de/post/jpeg-xl/</link>
+      <pubDate>Sat, 17 Apr 2021 11:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/jpeg-xl/</guid>
+      <description>&lt;p&gt;Da meine Blogs auf GitHub verwaltet werden, müssen die Bilder so platzsparend wie möglich gespeichert werden&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Three.js on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Three.js/</link>
+    <description>Recent content in Three.js on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/Three.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UV-Photogrammetrie</title>
+      <link>https://christianmahnke.de/post/uv-photogrammetry/citation.bib</link>
+      <pubDate>Thu, 05 Sep 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/uv-photogrammetry/citation.bib</guid>
+      <description>&lt;p&gt;&lt;strong&gt;In diesem Beitrag wird die weltweit erste HDR Darstellung einer UV-Photogrammetrie im Browser präsentiert.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3D Modelle im Browser</title>
+      <link>https://christianmahnke.de/post/3d-models/citation.bib</link>
+      <pubDate>Sat, 24 Feb 2024 10:16:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/3d-models/citation.bib</guid>
+      <description>&lt;p&gt;Vielleicht wird mal eine virtuelle Ausstellung über orangene Keramik draus&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

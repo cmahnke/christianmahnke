@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Licht 2024 on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Licht2024/</link>
+    <description>Recent content in Licht 2024 on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Licht2024/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog series on the topic of &#34;light&#34;</title>
+      <link>https://christianmahnke.de/en/post/light/citation.bib</link>
+      <pubDate>Thu, 28 Nov 2024 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/light/citation.bib</guid>
+      <description>&lt;p&gt;Just right for the beginning of the dark season: One focus of the last year (2024) has been the topic of &amp;ldquo;light&amp;rdquo;. Starting with the historical 3D images in &lt;a href=&#34;https://vintagereality.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Vintage Reality&lt;/a&gt; to first attempts with &lt;a href=&#34;https://christianmahnke.de/post/3d-models/&#34;&gt;Photogrammetry&lt;/a&gt; to &lt;a href=&#34;https://christianmahnke.de/post/ultrahdr/&#34;&gt;HDR&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ultraviolet Photogrammetry</title>
+      <link>https://christianmahnke.de/en/post/uv-photogrammetry/citation.bib</link>
+      <pubDate>Thu, 05 Sep 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/uv-photogrammetry/citation.bib</guid>
+      <description>&lt;p&gt;&lt;strong&gt;This article presents the world&amp;rsquo;s first HDR model of UV photogrammetry in a browser.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDR IIIF</title>
+      <link>https://christianmahnke.de/en/post/hdr-iiif/</link>
+      <pubDate>Sun, 18 Aug 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hdr-iiif/</guid>
+      <description>&lt;p&gt;At &lt;a href=&#34;http://www.zeitzeug.de/&#34; target=&#34;_blank&#34;&gt;Zeitzeug&lt;/a&gt; the owner&amp;rsquo;s wallpaper collection is being sold and I have secured a particularly bright example&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript library for HDR</title>
+      <link>https://christianmahnke.de/en/post/hdr-canvas-js/citation.bib</link>
+      <pubDate>Sat, 06 Jul 2024 12:00:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hdr-canvas-js/citation.bib</guid>
+      <description>&lt;p&gt;The JavaScript implementation for the last posts is now also available as NPM module.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contrast enhancement for UV images using HDR</title>
+      <link>https://christianmahnke.de/en/post/hdr-image-analysis/citation.bib</link>
+      <pubDate>Thu, 06 Jun 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hdr-image-analysis/citation.bib</guid>
+      <description>&lt;p&gt;This example is about a practical use case for &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q106239881&#34; href=&#34;https://en.wikipedia.org/wiki/High_dynamic_range&#34; target=&#34;_blank&#34;&gt;HDR&lt;/a&gt; visualisation in the browser&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LibUltraHDR</title>
+      <link>https://christianmahnke.de/en/post/ultrahdr/citation.bib</link>
+      <pubDate>Thu, 23 May 2024 11:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/ultrahdr/citation.bib</guid>
+      <description>&lt;p&gt;After &lt;a href=&#34;https://christianmahnke.de/en/post/hdr-awesome-list/&#34;&gt;research&lt;/a&gt;, it was necessary to explore some possible workflows and to create tools for a project in preparation. Based on &lt;a href=&#34;https://gregbenzphotography.com/hdr/&#34; target=&#34;_blank&#34;&gt;Greg Benz&lt;/a&gt;&amp;rsquo;s preliminary work on HDR support, LibUltraHDR was the most sensible candidate for further experimentation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDR images in the browser</title>
+      <link>https://christianmahnke.de/en/post/hdr-awesome-list/citation.bib</link>
+      <pubDate>Wed, 01 May 2024 11:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hdr-awesome-list/citation.bib</guid>
+      <description>&lt;p&gt;For a project in preparation I have compiled a &lt;a href=&#34;https://github.com/cmahnke/awesome-browser-hdr/blob/main/README.md&#34; target=&#34;_blank&#34;&gt;list of links&lt;/a&gt; to HDR on the web or in the browser.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pong Visualisation</title>
+      <link>https://christianmahnke.de/en/post/pong/citation.bib</link>
+      <pubDate>Mon, 15 Apr 2024 13:58:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/pong/citation.bib</guid>
+      <description>&lt;p&gt;For some reason I came up with the idea of visualising &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q216293&#34; href=&#34;https://de.wikipedia.org/wiki/Pong&#34; target=&#34;_blank&#34;&gt;Pong&lt;/a&gt;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3D Models in the browser</title>
+      <link>https://christianmahnke.de/en/post/3d-models/citation.bib</link>
+      <pubDate>Sat, 24 Feb 2024 10:16:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/3d-models/citation.bib</guid>
+      <description>&lt;p&gt;Maybe it will become a virtual exhibition about orange ceramics&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

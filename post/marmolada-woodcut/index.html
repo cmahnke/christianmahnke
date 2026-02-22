@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Der Klimawandel in der Kunst... · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Kamerapositionen visuell bestimmen mit Geodaten in Blender">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/marmolada-woodcut/" />
+  <meta property="og:title" content="Der Klimawandel in der Kunst... · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/marmolada-woodcut/ogPreview_hu_abd9fb91da952d0e.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content="Marmolata, Dolomiten, Alpen, Gletscher, Höhenprofil, Kunst, Alpen, Klimawandel, Holzschnitt, Geodaten, Blender, Unbekannter Künstler"><meta name="dc.subject" content="Marmolata"><meta name="dc.subject" content="Dolomiten"><meta name="dc.subject" content="Alpen"><meta name="dc.subject" content="Gletscher"><meta name="dc.subject" content="Höhenprofil"><meta name="dc.subject" content="Kunst"><meta name="dc.subject" content="Alpen"><meta name="dc.subject" content="Klimawandel"><meta name="dc.subject" content="Holzschnitt"><meta name="dc.subject" content="Geodaten"><meta name="dc.subject" content="Blender"><meta name="dc.subject" content="Unbekannter Künstler">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:03:07.169677513 &#43;0000 UTC m=&#43;0.792186012">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/b0af5dca92b406975be5302595696a1f.min.c56461610ee2b24db3254e1d64cb350219a2deca701bf0efd892ba01200f5d01.css" rel="stylesheet" integrity="sha256-xWRhYQ7isk2zJU4dZMs1Ahmi3spwG/Dv2JK6ASAPXQE=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<script src="https://christianmahnke.de/js/2e5a489a5e4337a3d11747da6f65a60d.min.025e86253ca7aeb389bc81bf3ac9b765328d593aa8cc695af26d8550af180576.js" integrity="sha256-Al6GJTynrrOJvIG/Osm3ZTKNWTqozGla8m2FUK8YBXY="></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/marmolada-woodcut/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/marmolada-woodcut/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/marmolada-woodcut/","@type":"VisualArtwork","about":["Marmolata","Dolomiten","Alpen","Gletscher","Höhenprofil","Art","Alps","ClimateChange","WoodblockPrint","Geodata","Blender","UnknownArtist",{"@id":"http://www.wikidata.org/entity/Q137661693","@type":"Thing","name":"Gerbrand Caspers"},{"@id":"http://www.wikidata.org/entity/Q137668018","@type":"Thing","name":"Wolfgang Barina"},{"@id":"http://www.wikidata.org/entity/Q203241","@type":"Thing","name":"Marmolada"},{"@id":"http://www.wikidata.org/entity/Q258031","@type":"Thing","name":"Canazei"},{"@id":"http://www.wikidata.org/entity/Q903816","@type":"Thing","name":"retreat of glaciers since 1850"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2024-09-15T18:07:44+02:00","description":"Kamerapositionen visuell bestimmen mit Geodaten in Blender","headline":"Der Klimawandel in der Kunst...","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Marmolata","Dolomiten","Alpen","Gletscher","Höhenprofil","Art","Alps","ClimateChange","WoodblockPrint","Geodata","Blender","UnknownArtist"],"name":"Der Klimawandel in der Kunst...","url":"https://christianmahnke.de/post/marmolada-woodcut/"}
+</script>
+<link rel="describedby" href="https://christianmahnke.de/post/marmolada-woodcut/linkedart.json" type="application/ld+json;profile='https://linked.art/ns/v1/linked-art.json'"/></head><body class="section-post dir-postmarmolada-woodcut blog  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/marmolada-woodcut/" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Der Klimawandel in der Kunst...</h1><div class="post-description">Kamerapositionen visuell bestimmen mit Geodaten in Blender</div><div class="date">
+          <time class="post-data" datetime="2024-09-15T18:07:44&#43;02:00">Sonntag, 15. September 2024</time>
+        </div><div class="post-body"><p>&hellip;ist kein neues Thema mehr: Weder wenn es um die Auswirkungen geht, die sich in alten Werken erkennen lassen, noch als Gegenstand von Kunst selber.</p>
+<p>Während letzter Ansatz vielleicht schon mit 
+      
+        
+      <a data-wikidata-entity="Q426196" href="https://de.wikipedia.org/wiki/%E2%80%A6_Jahr_2022_%E2%80%A6_die_%C3%BCberleben_wollen" target="_blank">&quot;… Jahr 2022 … die überleben wollen&quot;</a> seinen Höhepunkt erreicht hatte, bietet sich mir heute die Möglichkeit auf die Gletscherschmelze in den 
+      
+        
+      <a data-wikidata-entity="Q1283" href="https://de.wikipedia.org/wiki/Dolomiten" target="_blank">Dolomiten</a> hinzuweisen.</p>
+<div id="_gallery-56e86b4f51a52e8b93e006f7a8e9e700" class="gallery "><a class="gallery-image caption" href="img/print.jpg" data-pswp-width="3718" data-pswp-height="2696" target="_blank"><img src="https://christianmahnke.de/post/marmolada-woodcut/img/print_hu_ea428fccb08ee21c.webp" alt="Druck" class="gallery-preview" /><div class="hidden-caption-content">Druck</div></a><a class="gallery-image caption" href="img/monogram.jpg" data-pswp-width="2541" data-pswp-height="2478" target="_blank"><img src="https://christianmahnke.de/post/marmolada-woodcut/img/monogram_hu_58a71add28b87894.webp" alt="Monogramm" class="gallery-preview" /><div class="hidden-caption-content">Monogramm</div></a></div>
+
+<script type="text/javascript">
+  window.photoswipe("#_gallery-56e86b4f51a52e8b93e006f7a8e9e700", "a.gallery-image")
+</script>
+<p>Diesen Holzschnitt habe ich vor einigen Wochen erworben und es lies sich nichts über das Monogramm und damit den Künstler herausfinden. Auch die geschätzten Experten Gerbrand Caspers (Betreiber von <a data-wikidata-entity="Q137661693" href="https://www.dashausderfrau.nl/" target="_blank">Das Haus der Frau</a> und <a href="https://gerrie-thefriendlyghost.blogspot.com/" target="_blank">The Linosaurus</a>) und <a href="http://www.wolfgang-barina.de/kunst/" target="_blank">Wolfgang Barina</a> konnten es nicht zuordnen. Aber Wolfgang konnte das Motiv, also den Berg bestimmen, vielen Dank an dieser Stelle dafür!</p>
+<h1 id="perspektive">Perspektive</h1>
+<img-comparison-slider class="compare" id="_hdr-model-8d0b695851969c604bcf9e9b223c8743">
+  <figure slot="first" class="first">
+    <img width="100%" src="https://christianmahnke.de/post/marmolada-woodcut/img/print_hu_cdeac3240b36341c.jpg"><figcaption>Holzschnitt</figcaption></figure>
+  <figure slot="second" class="second">
+    <img width="100%" src="https://christianmahnke.de/post/marmolada-woodcut/img/render_hu_a5f9fdfc6e7bfeda.jpg"><figcaption>3D Bild aus Höhenprofil</figcaption></figure>
+</img-comparison-slider>
+<p>Das Bild zeigt den Berg 
+      
+        
+      <a data-wikidata-entity="Q203241" href="https://de.wikipedia.org/wiki/Marmolata" target="_blank">Marmolata</a>, der z.B. im Ersten Weltkrieg eine bewegte Geschichte hatte, aus nördlicher Richtung, sehr wahrscheinlich aus der Nähe von &ldquo;falesia Col Rodella&rdquo; bei 
+      
+        
+      <a data-wikidata-entity="Q258031" href="https://de.wikipedia.org/wiki/Canazei" target="_blank">Canazei</a>. Zur genaueren Bestimmung der Perspektive half ein mit Hilfe von <a href="https://www.blender.org/" target="_blank">Blender</a> in eine 3D Ansicht umgewandeltes Höhenprofil. Kleinere Ungereimtheiten fallen sicher unter künstlerische Freiheit. Zum Vergleich hier eine aktuelle Rundumansicht aus der bestimmten Position:</p>
+
+<div class="iframe-wrapper" id="_iframe-4dc53ef9b0df4cb2ac1f550b03b34d94">
+  <div class="iframe">
+    <div class="opt-in">
+      <div class="opt-in-overlay"><img class='video-preview' src='img/preview.jpg' alt='Vorschau'><div class="opt-in-overlay-content">
+          <h3 class="opt-in-header">Externer Inhalt</h3>
+          <p class="opt-in-text">An dieser Stelle wird ein externer Inhalt eingebunden. Damit können personenbezogene Daten an Drittplattformen übermittelt werden.</p>
+        </div>
+      </div>
+    </div>
+    <div class="iframe-content" id="_iframe-4dc53ef9b0df4cb2ac1f550b03b34d94-content">
+    </div>
+    <div class="switch-wrapper">
+      <label class="opt-in-switch">
+        <input type="checkbox">
+        <span class="opt-in-slider"></span>
+      </label>
+      <span class="opt-in-confirm">Externe Inhalte zulassen</span>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var expire = 30 * 24 * 60 * 60;
+      var overlay = document.querySelector('#_iframe-4dc53ef9b0df4cb2ac1f550b03b34d94').querySelector('.opt-in');
+      var toggle = document.querySelector('#_iframe-4dc53ef9b0df4cb2ac1f550b03b34d94').querySelector('.opt-in-switch input');
+      addConsent(toggle, overlay, '4dc53ef9b0df4cb2ac1f550b03b34d94', '\n  \u003ciframe src=\u0022https:\/\/www.google.com\/maps\/embed?pb=!4v1726427311620!6m8!1m7!1sCAoSLEFGMVFpcE1hWDRoN0Z5NExFdlpaSFFQUXh4NV9MZ3g0aHRYY1d0d0NKMWVS!2m2!1d46.495287!2d11.7513511!3f98.78276099443083!4f4.4556945190209944!5f1.4219312166764295\u0022 width=\u0022100%\u0022 height=\u0022450\u0022 style=\u0022border:0;\u0022 allowfullscreen=\u0022\u0022 loading=\u0022lazy\u0022 referrerpolicy=\u0022no-referrer-when-downgrade\u0022\u003e\u003c\/iframe\u003e\n');
+    });
+  </script>
+</div>
+
+
+<h1 id="der-gletscher">Der Gletscher</h1>
+<p>Anders dramatisch als der Krieg ist der Rückgang des Gletschers in der Bildmitte. Dieser wirkt hier so präsent, weil der einzige Teil des Bildes ist, für das keine Farbe verwendet wurde. Etwas, das durch eine Auslassung dargestellt wurde, ist bald wirklich weg:</p>
+<p>Dieser Gletscher ist, wie die meisten in den Alpen, vom 
+      
+        
+      <a data-wikidata-entity="Q903816" href="https://de.wikipedia.org/wiki/Gletscherschwund_seit_1850" target="_blank">&ldquo;Gletscherschwund&rdquo;</a> betroffen. Derzeit geht man davon aus, dass er um 2040 - in ca. 15 Jahren - verschwunden sein wird!</p>
+<p>Da Abbildungen eingängiger sind als Statistiken, hier der Vergleich mit einer Aufnahme aus dem August 2024:</p>
+<img-comparison-slider class="compare" id="_hdr-model-74232559e69b5ede973d316ba8ef6b1d">
+  <figure slot="first" class="first">
+    <img width="100%" src="https://christianmahnke.de/post/marmolada-woodcut/img/print_hu_cdeac3240b36341c.jpg"><figcaption>Holzschnitt</figcaption></figure>
+  <figure slot="second" class="second">
+    <img width="100%" src="https://christianmahnke.de/post/marmolada-woodcut/img/august-2024_hu_6f8c1a7af87a9844.jpg"><figcaption>Aufnahme August 2024 von <a href="https://maps.app.goo.gl/vFW7pE6TXFaHUbgp7">Marco Beretta</a><br>(Himmel beschnitten)</figcaption></figure>
+</img-comparison-slider>
+<h1 id="anmerkungen-und-danksagungen">Anmerkungen und Danksagungen</h1>
+<ul>
+<li>Für den Bildvergleich kommt <a href="https://img-comparison-slider.sneas.io/examples.html" target="_blank">&lt;img-comparison-slider&gt;</a> zum Einsatz.</li>
+<li>Das <a href="https://somethingaboutmaps.wordpress.com/blender-relief-tutorial-getting-set-up/" target="_blank">Blender Relief Tutorial</a> von Daniel Huffman war die Grundlage für die Ortsbestimmung.</li>
+<li>Die Höheninformationen stammen aus <a href="https://tinitaly.pi.ingv.it/" target="_blank">Tinitaly</a>:</li>
+</ul>
+<p class="citation"><strong>Tarquini S., I. Isola, M. Favalli, A. Battistini, G. Dotta</strong> (2023). <em>TINITALY, a digital elevation model of Italy with a 10 meters cell size (Version 1.1).</em> Istituto Nazionale di Geofisica e Vulcanologia (INGV). <a href="https://doi.org/10.13127/tinitaly/1.1" target="_blank">https://doi.org/10.13127/tinitaly/1.1</a>.</p>
+<p class="citation"><strong>Tarquini S., I. Isola, M. Favalli, F. Mazzarini, M. Bisson, M.T. Pareschi, E. Boschi</strong> (2007). <em>TINITALY/01: a new triangular irregular network of Italy.</em> Annals of Geophysics. <a href="https://doi.org/10.4401/ag-4424" target="_blank">https://doi.org/10.4401/ag-4424</a></p>
+<p><strong>P.S.:</strong> Fall jemand das Monogramm wieder erkennt, bin ich für einen Hinweis dankbar.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q137661693" title="Gerbrand Caspers" rel="related">Wikidata Eintrag: Gerbrand Caspers</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q137668018" title="Wolfgang Barina" rel="related">Wikidata Eintrag: Wolfgang Barina</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q203241" title="Marmolata" rel="related">Wikidata Eintrag: Marmolata</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q258031" title="Canazei" rel="related">Wikidata Eintrag: Canazei</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q903816" title="Gletscherschwund seit 1850" rel="related">Wikidata Eintrag: Gletscherschwund seit 1850</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Diesen Beitrag zitieren
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2024)</span>: <span class="cite-title">Der Klimawandel in der Kunst...</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], 15.09.2024. Online-Publikation: <a class="cite-link" href="https://christianmahnke.de/post/marmolada-woodcut/">https://christianmahnke.de/post/marmolada-woodcut/</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/post/marmolada-woodcut/citation.bib" title="Als BibTex herunterladen">Als BibTex herunterladen</a>
+  </div>
+</details>
+</div><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/Art" title="Kunst">#Kunst</a><a href="https://christianmahnke.de/tags/Alps" title="Alpen">#Alpen</a><a href="https://christianmahnke.de/tags/ClimateChange" title="Klimawandel">#Klimawandel</a><a href="https://christianmahnke.de/tags/WoodblockPrint" title="Holzschnitt">#Holzschnitt</a><a href="https://christianmahnke.de/tags/Geodata" title="Geodaten">#Geodaten</a><a href="https://christianmahnke.de/tags/Blender" title="Blender">#Blender</a><a href="https://christianmahnke.de/tags/UnknownArtist" title="Unbekannter Künstler">#Unbekannter Künstler</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/print-paul-kurt-bartzsch/">Holzschnitt von Paul-Kurt Bartzsch (1917-1994)</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/print-max-westhauser/">&#34;Liebespaar&#34; von Max Westhäuser (1885-1956)</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/print-iamo-keinen/">Blatt von Imao Keinen (1855-1924)</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/print-emma-mayer/">Holzschnitt von Emma Mayer (1874-nach 1930)</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/print-elsa-haensgen-dingkuhn/">Kinder von Elsa Haensgen-Dingkuhn (1898-1991)</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/marmolada-woodcut/" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

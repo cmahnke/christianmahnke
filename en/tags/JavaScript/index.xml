@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/JavaScript/</link>
+    <description>Recent content in JavaScript on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/JavaScript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Paper tiger CSS for printing</title>
+      <link>https://christianmahnke.de/en/post/paper-tiger-print-css/citation.bib</link>
+      <pubDate>Wed, 10 Dec 2025 18:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/paper-tiger-print-css/citation.bib</guid>
+      <description>&lt;p&gt;II occasionally engage in cross-media publishing&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>hdr-canvas 0.1.0 published</title>
+      <link>https://christianmahnke.de/en/post/hdr-canvas-updated/citation.bib</link>
+      <pubDate>Sun, 16 Nov 2025 20:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hdr-canvas-updated/citation.bib</guid>
+      <description>&lt;p&gt;&lt;code&gt;hdr-canvas&lt;/code&gt; has been updated&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vite und Git Symlink-Dateien</title>
+      <link>https://christianmahnke.de/en/post/vite-git-symlink-plugin/citation.bib</link>
+      <pubDate>Fri, 13 Jun 2025 16:02:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/vite-git-symlink-plugin/citation.bib</guid>
+      <description>&lt;p&gt;Today, Friday the 13th, I was stuck on the train in the middle of nowhere&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Wallpaper virtual rooms!</title>
+      <link>https://christianmahnke.de/en/post/wallpaper-generator/citation.bib</link>
+      <pubDate>Mon, 09 Jun 2025 23:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/wallpaper-generator/citation.bib</guid>
+      <description>&lt;p&gt;Since I have an &lt;a href=&#34;https://vorsatzpapier.projektemacher.org/patterns/&#34; target=&#34;_blank&#34;&gt;extensive collection of patterned papers&lt;/a&gt;, it was time to do something with them&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quantum cosmos Göttingen</title>
+      <link>https://christianmahnke.de/en/post/quantenkosmos-goettingen/citation.bib</link>
+      <pubDate>Wed, 26 Mar 2025 07:00:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/quantenkosmos-goettingen/citation.bib</guid>
+      <description>&lt;p&gt;Today (26 March) is the opening of the exhibition &lt;a href=&#34;https://www.forum-wissen.de/event/eroeffnung-was-zum-quant/&#34; target=&#34;_blank&#34;&gt;‘Was zum Quant?!’&lt;/a&gt; in the Forum Wissen. You can also see a digital exhibit in which I was involved&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Haptic Feedback</title>
+      <link>https://christianmahnke.de/en/post/haptic-feedback/</link>
+      <pubDate>Tue, 15 Oct 2024 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/haptic-feedback/</guid>
+      <description>&lt;p&gt;Another contribution from the Projektemacher Labs&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>911TV as desktop application</title>
+      <link>https://christianmahnke.de/en/post/911tv-desktop/citation.bib</link>
+      <pubDate>Wed, 09 Oct 2024 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/911tv-desktop/citation.bib</guid>
+      <description>&lt;p&gt;I had some time, since I was ill:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript library for HDR</title>
+      <link>https://christianmahnke.de/en/post/hdr-canvas-js/citation.bib</link>
+      <pubDate>Sat, 06 Jul 2024 12:00:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hdr-canvas-js/citation.bib</guid>
+      <description>&lt;p&gt;The JavaScript implementation for the last posts is now also available as NPM module.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pong Visualisation</title>
+      <link>https://christianmahnke.de/en/post/pong/citation.bib</link>
+      <pubDate>Mon, 15 Apr 2024 13:58:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/pong/citation.bib</guid>
+      <description>&lt;p&gt;For some reason I came up with the idea of visualising &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q216293&#34; href=&#34;https://de.wikipedia.org/wiki/Pong&#34; target=&#34;_blank&#34;&gt;Pong&lt;/a&gt;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Compress JSON for application bundles</title>
+      <link>https://christianmahnke.de/en/post/json-compression/citation.bib</link>
+      <pubDate>Thu, 16 Nov 2023 15:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/json-compression/citation.bib</guid>
+      <description>&lt;p&gt;For the video metadata of &lt;a href=&#34;https://911tv.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;911 TV&lt;/a&gt; there was an interesting challenge to solve&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>911TV started</title>
+      <link>https://christianmahnke.de/en/post/911tv/citation.bib</link>
+      <pubDate>Thu, 09 Nov 2023 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/911tv/citation.bib</guid>
+      <description>&lt;p&gt;An old idea of mine has now been realised:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

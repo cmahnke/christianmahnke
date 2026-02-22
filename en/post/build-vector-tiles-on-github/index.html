@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Build vector maps with GitHub · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="en">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Since the use of freely available map services requires communication with external services as well as limited design, it was time for something of my own&hellip;">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/en/post/build-vector-tiles-on-github/" />
+  <meta property="og:title" content="Build vector maps with GitHub · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/en/post/build-vector-tiles-on-github/ogPreview.en_hu_ff7237d0502cb5cd.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", Projektemacher.org, Geodata, GitHub, Docker"><meta name="dc.subject" content="Projektemacher.org"><meta name="dc.subject" content="Geodata"><meta name="dc.subject" content="GitHub"><meta name="dc.subject" content="Docker">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:09:36.869379149 &#43;0000 UTC m=&#43;390.491887641"><meta name="projektemacher.org:git-commit" content="6cd1f53">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/2aa1497f729baea1893838d51776adb8.min.a11c5ec28c6acf7a58cf99c8c6d1e27c259619363c145da62cf7d13d12d2cba2.css" rel="stylesheet" integrity="sha256-oRxewoxqz3pYz5nIxtHifCWWGTY8FF2mLPfRPRLSy6I=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/en/post/build-vector-tiles-on-github/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/en/post/build-vector-tiles-on-github/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/en/post/build-vector-tiles-on-github/","@type":"BlogPosting","about":["Projektemacher.org","Geodata","GitHub","Docker",{"@id":"http://www.wikidata.org/entity/Q110613565","@type":"Thing","name":"Mapbox Vector Tiles"},{"@id":"http://www.wikidata.org/entity/Q116859588","@type":"Thing","name":"Planetiler"},{"@id":"http://www.wikidata.org/entity/Q133818614","@type":"Thing","name":"MapLibre Style Specification"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2023-07-01T20:14:44+02:00","headline":"Build vector maps with GitHub","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Projektemacher.org","Geodata","GitHub","Docker"],"name":"Build vector maps with GitHub","url":"https://christianmahnke.de/en/post/build-vector-tiles-on-github/"}
+</script>
+</head><body class="section-post dir-postbuild-vector-tiles-on-github blog toc-text  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/build-vector-tiles-on-github/" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Build vector maps with GitHub</h1><div class="date">
+          <time class="post-data" datetime="2023-07-01T20:14:44&#43;02:00">Saturday, July 1, 2023</time>
+        </div><div class="post-body"><p>Since the use of freely available map services requires <a href="https://christianmahnke.de/post/maps/">communication with external services</a> as well as limited design, it was time for something of my own&hellip;</p>
+
+<div class="toc">
+  <div class="toc-header">Table of contents</div><nav id="TableOfContents">
+  <ul>
+    <li><a href="#vector-tiles">Vector tiles</a></li>
+    <li><a href="#planetiler">Planetiler</a></li>
+    <li><a href="#prepare-github-runner">Prepare GitHub Runner</a>
+      <ul>
+        <li><a href="#limitations">Limitations</a></li>
+        <li><a href="#creating-resources">Creating resources</a></li>
+      </ul>
+    </li>
+    <li><a href="#generate-your-own-map-sections">Generate your own map sections</a>
+      <ul>
+        <li><a href="#clean-up-data">Clean up data</a></li>
+      </ul>
+    </li>
+    <li><a href="#creating-the-tiles">Creating the tiles</a></li>
+    <li><a href="#extraction-of-the-generated-data">Extraction of the generated data</a></li>
+    <li><a href="#next-steps">Next steps</a></li>
+    <li><a href="#can-you-see-anything-yet">Can you see anything yet?</a></li>
+    <li><a href="#update">Update</a></li>
+  </ul>
+</nav></div>
+<h2 id="vector-tiles">Vector tiles</h2>
+<p>Map materials on the web are usually organised in tiles according to zoom level and coordinates to enable access via a URL scheme. The format (pixels or vectors) is initially irrelevant. Viewers such as OpenLayers or Leaflet can work with both formats.<br>
+The <a href="https://github.com/mapbox/vector-tile-spec/tree/master/2.1" target="_blank">vector format</a> has the advantage that the display can be customised at runtime in the client. Examples include the thickness of roads, the colour of land areas, etc. It is also possible to simply switch off entire layers. And the whole thing can also be customised according to different zoom levels.<br>
+There are two common conventions for styling vector tiles:</p>
+<ul>
+<li><a href="https://docs.mapbox.com/style-spec/guides/" target="_blank">Mapbox Styles</a></li>
+<li><a data-wikidata-entity="Q133818614" href="https://maplibre.org/maplibre-style-spec/" target="_blank">MapLibre Styles</a></li>
+</ul>
+<p>These allow the creation of the map material to be decoupled from the planned display. And this is a great advantage if you potentially have several blogs, each of which has its own design and should also be reflected in the map material.<br>
+To apply the styles to vector tiles, there is a plugin, e.g. for <a href="https://github.com/openlayers/ol-mapbox-style" target="_blank">OpenLayers</a>.</p>
+<h2 id="planetiler">Planetiler</h2>
+<p><a href="https://github.com/onthegomap/planetiler" target="_blank">Planetiler</a> is a tool for generating vector tiles from OpenStreetMap data. Compared to other tools of this kind, it has the advantage of being able to work directly with the data dumps and not having to take the diversions via a database import. This not only means fewer transformation processes, but also greater efficiency in the utilisation of the available resources. At the same time, the configuration options are very extensive. For example, various layers can simply be ignored, such as house numbers, landmarks or air traffic routes.</p>
+<h2 id="prepare-github-runner">Prepare GitHub Runner</h2>
+<h3 id="limitations">Limitations</h3>
+<p>Since the OpenstreetMap raw data is very extensive and the process also requires a lot of additional temporary data, a (relatively) large contiguous memory area is required. Although the standard GitHub runners are relatively well equipped, a large number of runtime environments and libraries are pre-installed in order to be able to serve many use cases without additional effort. In addition, the distribution between virtual ‘hard disks’ (mount points) is rather suboptimal for our purposes&hellip;</p>
+<p><strong>In addition, the runtime of a runner is limited: It is terminated after 6 hours at the latest</strong>.</p>
+<h3 id="creating-resources">Creating resources</h3>
+<p>The problems with the available memory can be solved during the runtime of the runner with actions and, if necessary, your own scripts: So delete / uninstall software and repartition the runner a little. There is a GitHub action for this, <a href="https://github.com/easimon/maximize-build-space" target="_blank"><code>maximise-build-space</code></a>.</p>
+<p>However, you may have to customise the repartitioning according to your own requirements. However, the procedure is always similar: deactivate the swap area (<a href="https://linux.die.net/man/8/swapoff" target="_blank"><code>swapoff</code></a>), unmount the areas to be edited (<a href="https://linux.die.net/man/8/umount" target="_blank"><code>umount</code></a>), delete the corresponding logical volumes (including the volume group if necessary), delete any loopback devices and create new ones if necessary. Then create a new logical volume (possibly a volume group beforehand)&hellip;<br>
+It is also possible to create files on different volumes, include them as loopback devices and then combine them into a logical storage area using <a href="https://sourceware.org/lvm2/" target="_blank">LVM</a>.</p>
+<p>Regardless of the desired memory layout, a new swap area must be created and activated at the end, as Planetiler requires more memory than the runner offers. The use of <code>fallocate</code> is recommended for the area, as this allocates the maximum available space in advance and thus prevents the area from having to grow. The expected memory requirement can be determined with local experiments: If you need 4G for Planetiler (start with <code>java -Xmx4g</code>), the swap area should also be correspondingly large.</p>
+<p>However, it is important to ensure that not too much is deleted: If, for example, you need a runtime environment up to a certain stage in the process, it can of course not be deleted immediately. It is also a good idea to delete docker images specifically. And, if possible, you should not simply delete programme files or directories, but uninstall them using package management, as this is then able to remove dependencies that are no longer required.</p>
+<p>In order to make the best possible use of the available runtime, it is also possible to outsource various preparation steps or carry them out in a different context. This can be achieved by creating a Docker image that not only contains Planetiler, but also the <a href="https://github.com/onthegomap/planetiler/blob/main/NOTICE.md#data" target="_blank">data</a> required independently of the map to be created, such as boundaries, coastlines / waterlines and any additional tools (see below).</p>
+<h2 id="generate-your-own-map-sections">Generate your own map sections</h2>
+<p>Since Planetiler (as well as other services based on OpenStreetMap) uses the <a href="https://download.geofabrik.de/" target="_blank">GeoFabrik</a> map sections, you are initially limited to the corresponding sections (countries, larger administrative units such as federal states or provinces). This may be somewhat less than would be desirable (examples could be maps of Central Europe or historical regional authorities).<br>
+In this case, you must first prepare the input material before creating vector tiles. Of course, this can also be done on a Runner, but it takes up a lot of time: both the download and the merging take time.<br>
+Roughly speaking, the workflow is as follows:</p>
+<ol>
+<li>download the desired sections, ideally overlapping<br>
+Osmium is able to deduce points, but paths remain cut off.</li>
+<li>merge<br>
+It may be advisable to merge the sections incrementally, as this allows you to delete the original data after each merge.</li>
+<li>cropping (optional)<br>
+To guarantee continuous quality in a rectangle, it is advisable to crop the input material.</li>
+</ol>
+<h3 id="clean-up-data">Clean up data</h3>
+<p>In addition, data can also be cleaned up before processing, e.g. the buildings can be removed from the dumps, which saves a lot of time and storage space.<br>
+It is also possible to remove individual or classes of OSM tags before processing. As a rule of thumb, the smaller the source material, the faster the process. However, the time required for filtering is also proportional to the size of the data dump, so it is not worthwhile for tags with few occurrences. Here you can either experiment or use <a data-wikidata-entity="Q114785326" href="https://taginfo.openstreetmap.org/" target="_blank">OSM-Taginfo</a> for an estimation. However, as the building data make up by far the largest part of a dump, it is always worth removing them (unless, of course, they are to be shown, in which case a further restriction is recommended, e.g. to listed buildings).</p>
+<p>The following tools are suitable for pre-processing (merging and filtering):</p>
+<ul>
+<li><a href="https://osmcode.org/osmium-tool/" target="_blank">Osmium</a></li>
+<li><a href="https://wiki.openstreetmap.org/wiki/Osmfilter" target="_blank">Osmfilter</a></li>
+</ul>
+<p>Merging and cleansing can also be combined; <code>osmium</code> can also filter data, but is somewhat slower.</p>
+<h2 id="creating-the-tiles">Creating the tiles</h2>
+<p>Once you have prepared the data for the desired map section, you can transfer it to Planetiler.<br>
+As Planetiler saves the tiles in a single file in <a href="https://wiki.openstreetmap.org/wiki/MBTiles" target="_blank"><code>mbtiles</code></a> format, this can be extracted again immediately before further processing if you still have some runtime as a buffer. This can be done using the Python script <a href="https://github.com/mapbox/mbutil" target="_blank"><code>mbutil</code></a>, for example.</p>
+<h2 id="extraction-of-the-generated-data">Extraction of the generated data</h2>
+<p>Once you have generated the tiles, you are faced with another problem: How do you get them out of the runner again? What sounds trivial at first is actually quite limited by the maximum size for GitHub artefacts. This is only 2 GB.<br>
+But GitHub allows a loophole: the limit does not apply to Docker images. Packaging therefore simply takes place as an image, which also offers advantages for further processing. However, this immediately leads to the next problem: Docker itself first copies the entire context in order to build an image from it, which means that you need three times the storage space at the end (source files, cache and the final image). This is remedied by the alternative implementation <a href="https://buildah.io/" target="_blank">Buildah</a> (Redhat offers a corresponding <a href="https://github.com/redhat-actions/buildah-build" target="_blank">GitHub Action</a>), which now requires the space for the input material and the final image. The generated image can then be pushed into the container registry using the <a href="https://github.com/redhat-actions/push-to-registry" target="_blank"><code>push-to-registry</code> GitHub Action</a>.</p>
+<p>Combinations are also possible here, so in order to be able to work on a very empty runner, the above steps can also be carried out in a build with a specialised base image that contains not only the necessary data but also programs.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>There is still some potential for optimisation: it is conceivable to compile Planetiler natively using <a href="https://www.graalvm.org/" target="_blank">GraalVM</a>, which would have the advantage that the runtime would be reduced by a maximum of 30% and the memory space for the Java runtime environment could be eliminated. However, there are still a few small hurdles to overcome, as the current way of using the native functionality of the operating system is not compatible with GraalVM.</p>
+<p>It is also conceivable to provide some of the always necessary steps as a separate GitHub action, but so far it is not worth the effort for me.</p>
+<h2 id="can-you-see-anything-yet">Can you see anything yet?</h2>
+<p>This article intentionally does not contain any configuration and code examples, as the actual execution must be strongly tailored to the desired map material due to the limited resources.</p>
+<p>Roughly speaking, you can create the dump for Europe without buildings up to zoom level 13 in just under 6 hours using all the tricks.</p>
+<h2 id="update">Update</h2>
+<ul>
+<li><strong>14.3.2025</strong>: <a href="https://never-built.goettingen.xyz/map/" target="_blank">Never Built Göttingen: Map based on self-generated material</a></li>
+</ul></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q110613565" title="Mapbox Vector Tiles" rel="related">Wikidata entry: Mapbox Vector Tiles</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q116859588" title="Planetiler" rel="related">Wikidata entry: Planetiler</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q133818614" title="MapLibre Style Specification" rel="related">Wikidata entry: MapLibre Style Specification</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Cite this article
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2023)</span>: <span class="cite-title">Build vector maps with GitHub</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], Jul 1, 2023. Online publication: <a class="cite-link" href="https://christianmahnke.de/post/build-vector-tiles-on-github/">https://christianmahnke.de/post/build-vector-tiles-on-github/</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/en/post/build-vector-tiles-on-github/citation.bib" title="Download as BibTex">Download as BibTex</a>
+  </div>
+</details>
+</div><div class="tags-heading">Tags</div>
+        <div class="tags"><a href="https://christianmahnke.de/en/tags/Projektemacher.org" title="Projektemacher.org">#Projektemacher.org</a><a href="https://christianmahnke.de/en/tags/Geodata" title="Geodata">#Geodata</a><a href="https://christianmahnke.de/en/tags/GitHub" title="GitHub">#GitHub</a><a href="https://christianmahnke.de/en/tags/Docker" title="Docker">#Docker</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/maps/">Maps for my Projektemacher blogs</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/geoip-tool/">GeoIP Tool</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/oai-harvester/">OAI-PMH Harvester</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/github-action-mastodon-backup/">Mastodon backups with GitHub Actions</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/sammlungen-erzaehlen/">Exhibition “Sammlungen erzählen” (Collections Tell Stories)</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/build-vector-tiles-on-github/" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Contact</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="Send eMail">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Privacy policy">Privacy policy</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

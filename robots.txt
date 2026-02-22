@@ -1,0 +1,8 @@
+User-agent: *
+
+Disallow: /privacy/
+
+Sitemap: https://christianmahnke.de/sitemap.xml
+
+
+<nil>

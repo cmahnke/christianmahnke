@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="22 Feb 2026"/>
+    <link rel="stylesheet" href="https://christianmahnke.de/css/print.3fdda9b5c5f73002a47a284c8c3f1b5e564d7995c30d17c14c4bc3ca7c0a4ea2.css" type="text/css" integrity="sha256-P92ptcX3MAKkeihMjD8bXlZNeZXDDRfBTEvDynwKTqI=">
+  </head>
+  <body>
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/ultrahdr/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">LibUltraHDR</h1><div class="date">
+          <time class="post-data" datetime="2024-05-23T11:22:44&#43;02:00">Donnerstag, 23. Mai 2024</time>
+        </div><div class="post-body"><p>Für ein in Vorbereitung befindliches Projekt war es nach der <a href="https://christianmahnke.de/post/hdr-awesome-list/">Recherche</a> notwendig einige Wege zu erkunden und Werkzeuge zu schaffen. Ausgehend von den Vorarbeiten von <a href="https://gregbenzphotography.com/hdr/" target="_blank">Greg Benz</a>, zur HDR-Unterstützung, war LibUltraHDR der sinnvollste Kandidat für weitere Experimente.</p>
+<h1 id="libultrahdr">LibUltraHDR</h1>
+<p><a href="https://github.com/google/libultrahdr" target="_blank">LibUltraHDR</a> ist primär eine Bibliothek für UltraHDR Inhalte. Das Format selber ist mit 
+      
+        
+      <a data-wikidata-entity="Q2195" href="https://en.wikipedia.org/wiki/JPEG#JPEG_Multi-Picture_Format" target="_blank">MPO</a> vergleichbar. Es existiert ein primäres Bild, hier ein SDR, dass auch als Fallback für Software ohne UltraHDR Unterstützung fungiert und in den Metadaten ein weiteres Bild, die sogenannte Gain Map. Diese bildet die auf das SDR anzuwendende Verstärkung ab. Mehr Informationen zur Funktionsweise von Gain Maps bietet <a href="https://helpx.adobe.com/camera-raw/using/gain-map.html" target="_blank">Adobe</a>.</p>
+<p>Eine technische Dokumentation bietet <a href="https://developer.android.com/media/platform/hdr-image-format?hl=de" target="_blank">Android Developers</a> (automatische Übersetzung von mäßiger Qualität).</p>
+<h2 id="status">Status</h2>
+<p>Derzeit arbeiten Greg Benz und weitere daran bei relevanten Open Source Projekten um eine Unterstützung des Formats zu werben:</p>
+<ul>
+<li><a href="https://github.com/libvips/libvips/issues/3799" target="_blank">LibVips #3799</a></li>
+<li><a href="https://github.com/ImageMagick/ImageMagick/issues/6377" target="_blank">ImageMagick #6377</a></li>
+<li><a href="https://github.com/Tom94/tev/issues/226" target="_blank"><strong>Tev</strong> #226</a></li>
+<li><a href="https://github.com/13thsymphony/HDRImageViewer/issues/66" target="_blank">HDRImageViewer #66</a></li>
+<li><a href="https://trac.ffmpeg.org/ticket/10974" target="_blank"><code>ffmpeg</code> #10974</a></li>
+<li><a href="https://github.com/python-pillow/Pillow/issues/8036" target="_blank">Pillow #8036</a></li>
+<li><a href="https://github.com/Fyrd/caniuse/issues/6759" target="_blank">CanIUse #6759</a></li>
+<li><a href="https://github.com/libjxl/libjxl/issues/2685" target="_blank"><code>libjxl</code> #2685</a></li>
+<li><a href="https://github.com/pulsejet/memories/issues/1110" target="_blank">Memories #1110</a></li>
+</ul>
+<p>Es existieren auch einige erste Webseiten mit Unterstützung:</p>
+<ul>
+<li><a href="https://gainmap-creator.monogrid.com/" target="_blank">Gainmap Creator</a></li>
+<li><a href="https://github.com/albertz/playground/wiki/HDR-demo" target="_blank">Demo für Konvertierung mittels <code>ffmpeg</code> und <code>libultrahdr</code></a> von <a href="https://github.com/albertz" target="_blank">Albert Zeyer</a></li>
+<li><a href="https://github.com/albertz/playground/blob/master/ultrahdr.py" target="_blank"><code>libultrahdr</code> and Python</a>, ebenfalls von Albert Zeyer</li>
+</ul>
+<h2 id="manuelle-konvertierung-mit-ffmpeg">Manuelle Konvertierung mit <code>ffmpeg</code></h2>
+<p>Seit dem Release von Version 0.8 von <code>libultrahdr</code> haben sich die Kommandozeilenoptionen geändert, hier die aktuelle (Mai 2024) Fassung. Wichtig ist, dass:</p>
+<ul>
+<li>Die Abmessungen des Eingangsbildes bekannt sind (X, Y)</li>
+<li>Die Abmessung durch zwei teilbar (gerade) sind</li>
+</ul>
+<p>Im ersten Schritt muss eine YUV Repäsentation des Eingangsbildes erzeugt werden, diese wird als Gain Map genutzt, also als Definition der Verstärkung.</p>
+<pre tabindex="0"><code>ffmpeg -i input.jpg -filter:v format=p010 output.yuv
+</code></pre><p>Im nächsten Schritt kann dann die erstellte Gain Map genutzt werden um das gewünschte Bild zu erzeugen:</p>
+<pre tabindex="0"><code>ultrahdr_app -m 0 -p output.yuv -i input.jpg -w X -h Y -a 0
+</code></pre><p>In den nächsten Monaten kann damit gerechnet werden, dass das etwas esoterische YUV Format entweder leichter erzeugt werden kann oder gänzlich drauf verzichtet werden kann.</p>
+<h2 id="docker-image">Docker Image</h2>
+<p>Es existiert nun auch ein Docker Image, dass die jeweils aktuellste Version von <code>libultrahdr</code> zusammen mit ImageMagick mit UltraHDR Unterstützung bereitstellt.</p>
+<pre tabindex="0"><code>docker pull ghcr.io/cmahnke/hdr-tools:latest
+</code></pre><h1 id="nächste-schritte">Nächste Schritte</h1>
+<p>Derzeit ist die HDR Unterstützung von HDR-Bildern und -Inhalten auf Chrome und davon abgeleitete Browser beschränkt, diese habe allerdings einen Marktanteil von 75%. Die <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=hdr" target="_blank">HDR Unterstützung von Firefox</a>, oder besser der Weg dahin, ist eher peinlich - so werden nicht mal HDR Video-Formate voll unterstützt.</p>
+<p>Für die Chrome-basierten Browsern allerdings soll es auch möglich sein, HTML Canvas Elemente mit HDR Inhalten zu bespielen.</p>
+<h1 id="update-6724">Update 6.7.24</h1>
+<p>Hier zwei Beispiele aus meinem Urlaub:</p>
+<div ></div>
+<details id="_hdr-check-3c8ed1ba69d8757c151edc467649ce70" class="hdr-check-result">
+  <summary>HDR Überprüfung</summary>
+  <p></p>
+</details>
+
+<script type="text/javascript">
+  const hdrCheckResult = document.getElementById("_hdr-check-3c8ed1ba69d8757c151edc467649ce70");
+  if (checkHDR()) {
+    hdrCheckResult.querySelector('p').innerText = "Ihr Browser unterstützt HDR!";
+    hdrCheckResult.classList.add("success");
+  } else {
+    hdrCheckResult.querySelector('p').innerText = "Ihr Browser unterstützt kein HDR, bitte probieren sie es in einem aktuellen Chromium basiertem Browser, wie Chrome, Edge oder Brave!";
+    hdrCheckResult.classList.add("fail");
+  }
+</script>
+<div id="_gallery-7968259bb554fb57a655ecfd1151246e" class="gallery "><a class="gallery-image caption" href="img/IMG_5255.hdr.jpeg" data-pswp-width="4032" data-pswp-height="3024" target="_blank"><img src="https://christianmahnke.de/post/ultrahdr/img/IMG_5255.hdr_hu_7eb3ef5e61005cec.webp" alt="Sonnenuntergang über Hörnum" class="gallery-preview" /><div class="hidden-caption-content">Sonnenuntergang über Hörnum</div></a><a class="gallery-image caption" href="img/IMG_5256.hdr.jpeg" data-pswp-width="8188" data-pswp-height="2340" target="_blank"><img src="https://christianmahnke.de/post/ultrahdr/img/IMG_5256.hdr_hu_106b3e1321ff0ee5.webp" alt="Sonnenuntergang auf Föhr" class="gallery-preview" /><div class="hidden-caption-content">Sonnenuntergang auf Föhr</div></a></div>
+
+<script type="text/javascript">
+  window.photoswipe("#_gallery-7968259bb554fb57a655ecfd1151246e", "a.gallery-image")
+</script>
+<p>HDR wird in der Vollbildansicht aktiviert.</p></div>
+  </div><div class="post-footer"><div class="spacer">
+      </div>
+      <div class="meta"><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/Light" title="Licht">#Licht</a><a href="https://christianmahnke.de/tags/Licht2024" title="Licht2024">#Licht2024</a><a href="https://christianmahnke.de/tags/DigitalImages" title="Digitale Bilder">#Digitale Bilder</a><a href="https://christianmahnke.de/tags/HDR" title="HDR">#HDR</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-iiif/">HDR IIIF</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/uv-photogrammetry/article.html">UV-Photogrammetrie</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-image-analysis/article.html">Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-canvas-js/article.html">JavaScript Bibliothek für HDR</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/pong/article.html">Pong Visualisierung</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+  </body>
+</html>

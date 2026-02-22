@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>VintageReality launched · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="en">
+<meta name="dc.type" content="Text">
+<meta name="description" content="The collection of old 3D images now has its own blog">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/en/post/vintagereality/" />
+  <meta property="og:title" content="VintageReality launched · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/en/post/vintagereality/ogPreview.en_hu_d7ec32503b0ae54d.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content="stereoscopy, anaglyphs, Projektemacher.org, Blog, Light, 3D, Digital images, OpenCV, Stereoscopy"><meta name="dc.subject" content="stereoscopy"><meta name="dc.subject" content="anaglyphs"><meta name="dc.subject" content="Projektemacher.org"><meta name="dc.subject" content="Blog"><meta name="dc.subject" content="Light"><meta name="dc.subject" content="3D"><meta name="dc.subject" content="Digital images"><meta name="dc.subject" content="OpenCV"><meta name="dc.subject" content="Stereoscopy">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:09:36.869379149 &#43;0000 UTC m=&#43;390.491887641"><meta name="projektemacher.org:git-commit" content="6cd1f53">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/47ab77ae893ed8ba730219016f312670.min.57d401165ae34e4f8b4c544875a950c509306a12c5696d1167ac1706a3cfef44.css" rel="stylesheet" integrity="sha256-V9QBFlrjTk&#43;LTFRIdalQxQkwahLFaW0RZ6wXBqPP70Q=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<script src="https://christianmahnke.de/js/721c4fdccbf9e7c9a389daf09b558bfc.min.59250deb5ddac5846d3f7e42dc2a850d3e926d811915974ac82d6e035defcad5.js" integrity="sha256-WSUN613axYRtP35C3CqFDT6SbYEZFZdKyC1uA13vytU="></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/en/post/vintagereality/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/en/post/vintagereality/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/en/post/vintagereality/","@type":"BlogPosting","about":["stereoscopy","anaglyphs","Projektemacher.org","Blog","Light","3D","DigitalImages","OpenCV","Stereoscopy",{"@id":"http://www.wikidata.org/entity/Q16294951","@type":"Thing","name":"Lenticular lens"},{"@id":"http://www.wikidata.org/entity/Q2940499","@type":"Thing","name":"depth map"},{"@id":"http://www.wikidata.org/entity/Q35158","@type":"Thing","name":"stereoscopy"},{"@id":"http://www.wikidata.org/entity/Q484031","@type":"Thing","name":"anaglyph imaging"},{"@id":"http://www.wikidata.org/entity/Q7999615","@type":"Thing","name":"wiggle stereoscopy"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2024-03-05T19:22:44+02:00","description":"The collection of old 3D images now has its own blog","headline":"VintageReality launched","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["stereoscopy","anaglyphs","Projektemacher.org","Blog","Light","3D","DigitalImages","OpenCV","Stereoscopy"],"name":"VintageReality launched","url":"https://christianmahnke.de/en/post/vintagereality/"}
+</script>
+</head><body class="section-post dir-postvintagereality blog  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/vintagereality/" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">VintageReality launched</h1><div class="post-description">The collection of old 3D images now has its own blog</div><div class="date">
+          <time class="post-data" datetime="2024-03-05T19:22:44&#43;02:00">Tuesday, March 5, 2024</time>
+        </div><div class="post-body"><p>The latest blog incubated at the <a href="https://labs.projektemacher.org/" target="_blank">Projektemacher Labs</a> has been started.</p>
+<p><a href="https://vintagereality.projektemacher.org/" target="_blank">VintageReality</a> will present old stereoscopic images in various display modes in the future.</p>
+<div class="zoom-link-wrapper" id="_link-59194b48a46d8f21678500d4e17cc93c">
+    <a href="https://vintagereality.projektemacher.org/" title="VintageReality">
+    
+    
+    
+    
+    <figure class="post-image">
+        
+            <img src="https://christianmahnke.de/en/post/vintagereality/screenshot.png" alt="Screenshot VintageReality"/> </figure>
+
+</a>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+        
+          const head = document.querySelector('head');
+          const prefetch = "<link rel='prefetch' href='https:\/\/vintagereality.projektemacher.org\/' as='document'>";
+          head.insertAdjacentHTML('beforeend', prefetch);
+
+          const wrapper = document.getElementById('_link-59194b48a46d8f21678500d4e17cc93c');
+          const img = wrapper.querySelector('a figure img');
+          const parent = img.parentNode;
+          parent.style.position = 'relative';
+
+          
+
+          const clone = img.cloneNode(true);
+          parent.appendChild(clone);
+          clone.style.display = 'none';
+          clone.style.position = 'absolute';
+          clone.style.top = 0;
+          clone.style.bottom = img.offsetTop + img.offsetHeight;
+          clone.style.left = 0;
+          clone.style.right = img.offsetLeft + img.offsetWidth;
+
+          wrapper.querySelector('a').addEventListener('click', (e) => {
+            clone.style.display = 'block';
+            clone.classList.add('zoom-link');
+            
+            setTimeout(() => {
+              
+            }, 400);
+          });
+
+        });
+    </script>
+</div>
+
+<h1 id="presentation">Presentation</h1>
+<p>To enable presentations with different glasses and techniques, additional formats and representations are available in addition to the IIIF presentation:</p>
+
+
+
+
+<figure class="post-image">
+    
+        <img src="https://christianmahnke.de/en/post/vintagereality/img/image-tabs.jpg" alt="Derivatives"/> </figure>
+
+<h2 id="examples">Examples</h2>
+<div id="_gallery-16806d177a4822054712ce5aa4e313d2" class="gallery "><a class="gallery-image caption" href="img/front-anaglyph.jpg" data-pswp-width="1804" data-pswp-height="1956" target="_blank"><img src="https://christianmahnke.de/en/post/vintagereality/img/front-anaglyph_hu_cbf611dad43e2bf9.webp" alt="Anaglyph" class="gallery-preview" /><div class="hidden-caption-content">Anaglyph</div></a><a class="gallery-image caption" href="img/front-depthmap.jpg" data-pswp-width="1788" data-pswp-height="1956" target="_blank"><img src="https://christianmahnke.de/en/post/vintagereality/img/front-depthmap_hu_42c1549f6e0f74b2.webp" alt="Depth map" class="gallery-preview" /><div class="hidden-caption-content">Depth map</div></a><a class="gallery-image caption" href="img/front.gif" data-pswp-width="1804" data-pswp-height="1956" target="_blank"><img src="https://christianmahnke.de/en/post/vintagereality/img/front_hu_e0236349ec470e41.webp" alt="Wigglegram" class="gallery-preview" /><div class="hidden-caption-content">Wigglegram</div></a></div>
+
+<script type="text/javascript">
+  window.photoswipe("#_gallery-16806d177a4822054712ce5aa4e313d2", "a.gallery-image")
+</script>
+<ul>
+<li>
+      
+        
+      <a data-wikidata-entity="Q484031" href="https://en.wikipedia.org/wiki/Anaglyph_3D" target="_blank">Anaglyph</a></li>
+<li>
+      
+        
+      <a data-wikidata-entity="Q2940499" href="https://en.wikipedia.org/wiki/Depth_map" target="_blank">Depth map</a></li>
+<li>Wiggle image, eng. 
+      
+        
+      <a data-wikidata-entity="Q7999615" href="https://en.wikipedia.org/wiki/Wiggle_stereoscopy" target="_blank">Wigglegram</a> (Both images as animated gif with quick change)</li>
+</ul>
+<p>The site also offers additional derivatives:</p>
+<ul>
+<li>
+      
+        
+      <a data-wikidata-entity="Q2195" href="https://en.wikipedia.org/wiki/JPEG#JPEG_Multi-Picture_Format" target="_blank">MPO</a>.</li>
+<li>Full screen - for viewing with a 
+      
+        
+      <a data-wikidata-entity="Q17558104" href="https://en.wikipedia.org/wiki/Google_Cardboard" target="_blank">Cardboard VR</a> (or similar) viewer.</li>
+</ul>
+<h1 id="implementation">Implementation</h1>
+<p>The various derivatives were partly created with the help of <a href="https://github.com/2sh/StereoscoPy" target="_blank">StereoscoPy</a>, <a data-wikidata-entity="Q165277" href="https://opencv.org/" target="_blank">OpenCV</a> was used to calculate depth information.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q16294951" title="Lenticular lens" rel="related">Wikidata entry: Lenticular lens</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q2940499" title="depth map" rel="related">Wikidata entry: depth map</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q35158" title="stereoscopy" rel="related">Wikidata entry: stereoscopy</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q484031" title="anaglyph imaging" rel="related">Wikidata entry: anaglyph imaging</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q7999615" title="wiggle stereoscopy" rel="related">Wikidata entry: wiggle stereoscopy</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Cite this article
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2024)</span>: <span class="cite-title">VintageReality launched</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], Mar 5, 2024. Online publication: <a class="cite-link" href="https://christianmahnke.de/post/vintagereality/">https://christianmahnke.de/post/vintagereality/</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/en/post/vintagereality/citation.bib" title="Download as BibTex">Download as BibTex</a>
+  </div>
+</details>
+</div><div class="tags-heading">Tags</div>
+        <div class="tags"><a href="https://christianmahnke.de/en/tags/Projektemacher.org" title="Projektemacher.org">#Projektemacher.org</a><a href="https://christianmahnke.de/en/tags/Blog" title="Blog">#Blog</a><a href="https://christianmahnke.de/en/tags/Light" title="Light">#Light</a><a href="https://christianmahnke.de/en/tags/3D" title="3D">#3D</a><a href="https://christianmahnke.de/en/tags/DigitalImages" title="Digital images">#Digital images</a><a href="https://christianmahnke.de/en/tags/OpenCV" title="OpenCV">#OpenCV</a><a href="https://christianmahnke.de/en/tags/Stereoscopy" title="Stereoscopy">#Stereoscopy</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/vintagereality-ai/">AI segmentation for stereoscopic cards</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/vintagereality-apple-spatial/">Historical stereograms on modern hardware</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/uv-photogrammetry/">Ultraviolet Photogrammetry</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/wallpaper-generator/">Wallpaper virtual rooms!</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/projektemacher-2024/">Projektemacher 2024</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/vintagereality/" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Contact</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="Send eMail">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Privacy policy">Privacy policy</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

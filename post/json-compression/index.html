@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>JSON für Anwendungsbündel komprimieren · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Für die Videometadaten von 911 TV gab es eine interessante Herausforderung zu lösen&hellip;">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/json-compression/" />
+  <meta property="og:title" content="JSON für Anwendungsbündel komprimieren · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/json-compression/ogPreview_hu_7b5239882265fe46.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content="JSON, Kompression, Anwendungsbündel, Bundle, JavaScript, Daten, JSON"><meta name="dc.subject" content="JSON"><meta name="dc.subject" content="Kompression"><meta name="dc.subject" content="Anwendungsbündel"><meta name="dc.subject" content="Bundle"><meta name="dc.subject" content="JavaScript"><meta name="dc.subject" content="Daten"><meta name="dc.subject" content="JSON">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:03:07.169677513 &#43;0000 UTC m=&#43;0.792186012">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/json-compression/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/json-compression/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/json-compression/","@type":"BlogPosting","about":["JSON","Kompression","Anwendungsbündel","Bundle","JavaScript","Data","JSON",{"@id":"http://www.wikidata.org/entity/Q2493","@type":"Thing","name":"data compression"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2023-11-16T15:22:44+02:00","headline":"JSON für Anwendungsbündel komprimieren","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["JSON","Kompression","Anwendungsbündel","Bundle","JavaScript","Data","JSON"],"name":"JSON für Anwendungsbündel komprimieren","url":"https://christianmahnke.de/post/json-compression/"}
+</script>
+</head><body class="section-post dir-postjson-compression blog  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/json-compression/" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">JSON für Anwendungsbündel komprimieren</h1><div class="date">
+          <time class="post-data" datetime="2023-11-16T15:22:44&#43;02:00">Donnerstag, 16. November 2023</time>
+        </div><div class="post-body"><p>Für die Videometadaten von <a href="https://911tv.projektemacher.org/" target="_blank">911 TV</a> gab es eine interessante Herausforderung zu lösen&hellip;</p>
+<p>In der Regel versuche ich, Anwendungen so statisch wie möglich zu konzipieren: Weniger bewegliche Teile / Abhängigkeiten reduzieren die potentiellen Probleme stark.</p>
+<p>Dazu zählen auch Nutz- und Metadaten, die sich nicht so häufig ändern. Im Fall von 911TV sind das die Zuordnungen von Sender und Zeitcode zur Videodatei, allerdings kommen bei der Beschreibung von 3.000 Stunden internationale TV-Nachrichten von 20 Sendern aus 7 Tagen<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> (meist aufgespalten in Blöcken von 30 min) einige Daten an.</p>
+<p>Für die Anwendung werden diese Daten aus der Webseite des Internet Archivs extrahiert und zusätzlich die Header der Videos ausgelesen, da das Material viele kleine Lücken hat. Am Ende existiert eine 1.62MB große JSON Datei, die wiederum im nächsten Schritt Teil des Anwendungsbündels wird…</p>
+<p>Das ist eine Menge, und jeder Bündler wird einige Warnungen dazu auswerfen. Natürlich kann man noch ein paar Leerzeichen und Zeilenumbrüche entfernen, aber der Unterschied ist nicht sehr groß. Der Versuch <a href="https://github.com/KilledByAPixel/JSONCrush" target="_blank">JSON Crush</a> zu versuchen schlug fehl: Der Algorithmus skaliert sehr schlecht und war in einer realistischen Zeit nicht in der Lage, das JSON zu komprimieren, dazu scheint er nicht auf mehreren CPUs arbeiten zu können.</p>
+<p>Die zweite Idee war ein eher klassisches Kompressionsformat zu verwenden und dann das Ergebnis wiederum in einem JSON Schnipsel zu verpacken, damit man weiterhin mit den klassischen Werkzeugen eines Bundlers arbeiten kann.</p>
+<h2 id="verfahren">Verfahren</h2>
+<ul>
+<li><a href="https://github.com/pieroxy/lz-string" target="_blank"><code>lz-string</code></a> ist die JavaScript Variante des LZ Algorithmus Da die Komprimierten Daten Binär vorliegen, müssen sie für die Speicherung als Zeichenkette mittels BASE64 kodiert werden.</li>
+<li><a href="https://github.com/kyr0/brotli-unicode" target="_blank"><code>brotli-unicode</code></a> ist eine JavaScript Variante des Brotli Algorithmus mit einer sehr cleveren Ergänzung, es nutzt den kompletten Unicode Zeichensatz um Binärdaten zu kodieren.</li>
+</ul>
+<h2 id="ergebnisse">Ergebnisse</h2>
+<table class="fitted center header-underline content-left">
+  <thead>
+      <tr>
+          <th>Verfahren</th>
+          <th>Größe</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Unkomprimiert</td>
+          <td>1.62 MB</td>
+      </tr>
+      <tr>
+          <td><code>lz-string</code></td>
+          <td>216 KB</td>
+      </tr>
+      <tr>
+          <td><code>brotli-unicode</code></td>
+          <td>87.9 KB</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="einbindung">Einbindung</h2>
+<h3 id="vorbereitung">Vorbereitung</h3>
+<p>Da es einen Vorbereitungsschritt gibt, um die Daten überhaupt zu erheben, können die Daten in diesem Schritt mit erstellt werden. Hier ein einfaches Script zur Ausführung mit <a href="https://nodejs.org/en" target="_blank">NodeJS</a>, die notwendigen Module müssen natürlich installiert sein:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">fs</span> <span class="nx">from</span> <span class="s1">&#39;fs&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Needed to import legacy code
+</span></span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createRequire</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;module&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">parseArgs</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;node:util&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">require</span> <span class="o">=</span> <span class="nx">createRequire</span><span class="p">(</span><span class="kr">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">LZString</span> <span class="o">=</span> <span class="kr">await</span> <span class="kr">import</span><span class="p">(</span><span class="nx">require</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">&#34;../site/node_modules/lz-string&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">lzCompress</span> <span class="o">=</span> <span class="nx">LZString</span><span class="p">.</span><span class="k">default</span><span class="p">.</span><span class="nx">compressToBase64</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Brotli</span> <span class="o">=</span> <span class="kr">await</span> <span class="kr">import</span><span class="p">(</span><span class="nx">require</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s2">&#34;../site/node_modules/brotli-unicode&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">brotliCompress</span> <span class="o">=</span> <span class="nx">Brotli</span><span class="p">.</span><span class="k">default</span><span class="p">.</span><span class="nx">compress</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">defaultMethod</span> <span class="o">=</span> <span class="s2">&#34;lz-string&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">values</span><span class="o">:</span> <span class="p">{</span> <span class="nx">input</span><span class="p">,</span> <span class="nx">output</span><span class="p">,</span> <span class="nx">type</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="o">=</span> <span class="nx">parseArgs</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">input</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;string&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">short</span><span class="o">:</span> <span class="s2">&#34;i&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;string&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">short</span><span class="o">:</span> <span class="s2">&#34;o&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">type</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;string&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">short</span><span class="o">:</span> <span class="s2">&#34;t&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">method</span> <span class="o">=</span> <span class="nx">type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">type</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">method</span> <span class="o">=</span> <span class="nx">defaultMethod</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">input</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`Reading file </span><span class="si">${</span><span class="nx">input</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">fileContents</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">input</span><span class="p">).</span><span class="nx">toString</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">compressed</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">method</span> <span class="o">==</span> <span class="s2">&#34;jsoncrush&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`Crushing JSON`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">compressed</span> <span class="o">=</span> <span class="nx">crush</span><span class="p">(</span><span class="nx">fileContents</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">method</span> <span class="o">==</span> <span class="s2">&#34;lz-string&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`Compressing JSON`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">compressed</span> <span class="o">=</span> <span class="nx">lzCompress</span><span class="p">(</span><span class="nx">fileContents</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">method</span> <span class="o">==</span> <span class="s2">&#34;brotli&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`Compressing JSON`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">compressed</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">brotliCompress</span><span class="p">(</span><span class="nx">Buffer</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">fileContents</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`unknown compression type </span><span class="si">${</span><span class="nx">method</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">process</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">out</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="o">:</span> <span class="nx">method</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span><span class="o">:</span> <span class="nx">compressed</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">output</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`Writing file </span><span class="si">${</span><span class="nx">output</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFileSync</span><span class="p">(</span><span class="nx">output</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">out</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">out</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Prinzipiell ist es aber auch denkbar, das Ganze als <a data-wikidata-entity="Q111590996" href="https://vite.dev/" target="_blank">Vite</a>- oder <a data-wikidata-entity="Q114900810" href="https://rollupjs.org/" target="_blank">Rollup</a> Plugin zu realisieren&hellip;</p>
+<h3 id="in-der-anwendung">In der Anwendung</h3>
+<p>Das JSON für die Einbindung enthält einen sehr einfachen Header und den komprimierten Inhalt:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span><span class="nt">&#34;type&#34;</span><span class="p">:</span><span class="s2">&#34;brotli&#34;</span><span class="p">,</span><span class="nt">&#34;content&#34;</span><span class="p">:</span><span class="s2">&#34;[COMPRESSED DATA]&#34;</span><span class="p">}</span>
+</span></span></code></pre></div><p>In der Anwendungsdatei, die das JSON dann braucht:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">decompress</span><span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;brotli-unicode/js&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">decompressFromBase64</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;lz-string&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">jsonImport</span> <span class="nx">from</span> <span class="s2">&#34;./assets/json/json-compressed.json&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">parseJson</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">json</span> <span class="o">==</span> <span class="s2">&#34;object&#34;</span> <span class="o">&amp;&amp;</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">json</span><span class="p">).</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="s2">&#34;type&#34;</span> <span class="k">in</span> <span class="nx">json</span> <span class="o">&amp;&amp;</span> <span class="nx">json</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="s2">&#34;lz-string&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">decompressFromBase64</span><span class="p">(</span><span class="nx">json</span><span class="p">[</span><span class="s2">&#34;content&#34;</span><span class="p">]));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="s2">&#34;type&#34;</span> <span class="k">in</span> <span class="nx">json</span> <span class="o">&amp;&amp;</span> <span class="nx">json</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="s2">&#34;brotli&#34;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;&#39;brotli&#39; isn&#39;t supported yet!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="kr">import</span><span class="p">(</span><span class="s2">&#34;brotli-unicode/js&#34;</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">Brotli</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">decompressed</span> <span class="o">=</span> <span class="nx">Brotli</span><span class="p">.</span><span class="nx">decompress</span><span class="p">(</span><span class="nx">json</span><span class="p">[</span><span class="s2">&#34;content&#34;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">TextDecoder</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">decompressed</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">      <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">json</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">parseJson</span><span class="p">(</span><span class="nx">jsonImport</span><span class="p">);</span>
+</span></span></code></pre></div><h2 id="zusammenfassung">Zusammenfassung</h2>
+<p>JSON Dateien können mittels <code>unicode-brotli</code> sehr effizient komprimiert und gebündelt werden. Wichtig ist allerdings zu erwähnen, dass die Daten zur Laufzeit dekomprimiert werden und somit im Arbeitsspeicher den Clients den kompletten Platz belegen. Das ist aber bis zu einer gewissen Größe der Ausgangsdatei im Vergleich zu den anderen Vorteil zu verkraften.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://archive.org/details/911" target="_blank">Understanding 9/11 - A Television News Archive</a>, Internet Archive.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q2493" title="Datenkompression" rel="related">Wikidata Eintrag: Datenkompression</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Diesen Beitrag zitieren
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2023)</span>: <span class="cite-title">JSON für Anwendungsbündel komprimieren</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], 16.11.2023. Online-Publikation: <a class="cite-link" href="https://christianmahnke.de/post/json-compression/">https://christianmahnke.de/post/json-compression/</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/post/json-compression/citation.bib" title="Als BibTex herunterladen">Als BibTex herunterladen</a>
+  </div>
+</details>
+</div><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/JavaScript" title="JavaScript">#JavaScript</a><a href="https://christianmahnke.de/tags/Data" title="Daten">#Daten</a><a href="https://christianmahnke.de/tags/JSON" title="JSON">#JSON</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/911tv/">911TV gestartet</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/geoip-tool/">GeoIP Tool</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/oai-harvester/">OAI-PMH Harvester</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hugo-cff-codemeta/">CFF zu CodeMeta in Hugo</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/linkedart-metadata/">Linked Art Metadaten</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/json-compression/" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

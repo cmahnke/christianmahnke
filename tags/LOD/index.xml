@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linked Open Data on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/LOD/</link>
+    <description>Recent content in Linked Open Data on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/LOD/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ausstellungen in Wikidata</title>
+      <link>https://christianmahnke.de/post/exhibitions-in-wikidata/citation.bib</link>
+      <pubDate>Sat, 21 Feb 2026 07:30:00 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/exhibitions-in-wikidata/citation.bib</guid>
+      <description>&lt;p&gt;Wie lassen sich digitale Objekte mit Ausstellungen verknüpfen?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linked Art Metadaten</title>
+      <link>https://christianmahnke.de/post/linkedart-metadata/citation.bib</link>
+      <pubDate>Sun, 11 Jan 2026 13:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/linkedart-metadata/citation.bib</guid>
+      <description>&lt;p&gt;Zur Vorbereitung zukünftiger Experimente gibt es nun für einige Einträge Linked-Art-Metadaten&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

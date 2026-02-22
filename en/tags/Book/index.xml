@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Book on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Book/</link>
+    <description>Recent content in Book on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Kleiderbügel Blog as a book</title>
+      <link>https://christianmahnke.de/en/post/coat-hangers-book/citation.bib</link>
+      <pubDate>Thu, 01 Jan 2026 10:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/coat-hangers-book/citation.bib</guid>
+      <description>&lt;p&gt;The first book based on one of my blogs is now complete&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Christmas 2020</title>
+      <link>https://christianmahnke.de/en/post/christmas-2020/citation.bib</link>
+      <pubDate>Sun, 29 Nov 2020 07:15:43 +0100</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/christmas-2020/citation.bib</guid>
+      <description>&lt;p&gt;As the Advent season begins&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

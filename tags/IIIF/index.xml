@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IIIF on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/IIIF/</link>
+    <description>Recent content in IIIF on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/IIIF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HDR IIIF für alle mit VIPS</title>
+      <link>https://christianmahnke.de/post/hdr-iiif-vips/citation.bib</link>
+      <pubDate>Thu, 27 Nov 2025 18:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hdr-iiif-vips/citation.bib</guid>
+      <description>&lt;p&gt;HDR IIIF für alle&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Von Mirador zu Tify</title>
+      <link>https://christianmahnke.de/post/tify-0.34/citation.bib</link>
+      <pubDate>Sat, 27 Sep 2025 11:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/tify-0.34/citation.bib</guid>
+      <description>&lt;p&gt;Projektemacher.org nutzt nun Tify&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fliiifenleger - eine IIIF Experimentierplattform</title>
+      <link>https://christianmahnke.de/post/fliiifenleger/citation.bib</link>
+      <pubDate>Sun, 27 Jul 2025 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/fliiifenleger/citation.bib</guid>
+      <description>&lt;figure class=&#34;center&#34;&gt;&#xA;    &#xA;        &lt;img src=&#34;https://christianmahnke.de/post/fliiifenleger/Fliiifenleger.svg&#34; alt=&#34;Fliiifenleger Logo&#34;/&gt; &lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Es wurde Zeit für einen experimentellen IIIF Tiler&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Virtuelle Räume tapezieren!</title>
+      <link>https://christianmahnke.de/post/wallpaper-generator/citation.bib</link>
+      <pubDate>Mon, 09 Jun 2025 23:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/wallpaper-generator/citation.bib</guid>
+      <description>&lt;p&gt;Da ich eine &lt;a href=&#34;https://vorsatzpapier.projektemacher.org/patterns/&#34; target=&#34;_blank&#34;&gt;umfangreiche Sammlung an gemusterten Papieren&lt;/a&gt; habe, war es Zeit damit etwas zu machen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Community Call 15.1.2025: HDR</title>
+      <link>https://christianmahnke.de/post/iiif-community-call-15.1.2025/citation.bib</link>
+      <pubDate>Wed, 15 Jan 2025 14:30:00 +0100</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/iiif-community-call-15.1.2025/citation.bib</guid>
+      <description>&lt;p&gt;Nach dem &lt;a href=&#34;https://christianmahnke.de/post/iiif-online-meeting-2024-slides/&#34;&gt;Lightning Talk&lt;/a&gt; letztes Jahr, nun der nächste Schritt&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Online Meeting 2024: HDR Images via IIIF Image API</title>
+      <link>https://christianmahnke.de/post/iiif-online-meeting-2024-slides/citation.bib</link>
+      <pubDate>Thu, 14 Nov 2024 15:30:00 +0100</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/iiif-online-meeting-2024-slides/citation.bib</guid>
+      <description>&lt;p&gt;Die Folien meiner Präsentation zu HDR Inhalten über IIIF sind nun verfügbar&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Haptisches Feedback</title>
+      <link>https://christianmahnke.de/post/haptic-feedback/</link>
+      <pubDate>Tue, 15 Oct 2024 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/haptic-feedback/</guid>
+      <description>&lt;p&gt;Wieder ein Beitrag aus den Projektemacher Labs&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Online Meeting 2024</title>
+      <link>https://christianmahnke.de/post/iiif-online-meeting-2024/citation.bib</link>
+      <pubDate>Thu, 19 Sep 2024 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/iiif-online-meeting-2024/citation.bib</guid>
+      <description>&lt;p&gt;Ich werde mein &lt;a href=&#34;https://christianmahnke.de/post/&#34;&gt;IIIF HDR&lt;/a&gt; Projekt auf dem diesjährigen &lt;a href=&#34;https://iiif.io/event/2024/online-meeting/&#34; target=&#34;_blank&#34;&gt;IIIF Online Meeting&lt;/a&gt; vorstellen!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDR IIIF</title>
+      <link>https://christianmahnke.de/post/hdr-iiif/</link>
+      <pubDate>Sun, 18 Aug 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hdr-iiif/</guid>
+      <description>&lt;p&gt;Beim &lt;a href=&#34;http://www.zeitzeug.de/&#34; target=&#34;_blank&#34;&gt;Zeitzeug&lt;/a&gt; wird die Tapetensammlung des Inhabers veräußert und ich habe mir ein besonders grelles Exemplar gesichert&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Proxy</title>
+      <link>https://christianmahnke.de/post/iiif-proxy/citation.bib</link>
+      <pubDate>Wed, 26 Jan 2022 11:44:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/iiif-proxy/citation.bib</guid>
+      <description>&lt;p&gt;Zur Verbesserung der &amp;ldquo;Ausstellbarkeit&amp;rdquo; digitaler Objekte, wie Münzen und Büchern habe ich einen Proxy für IIIF-Ressourcen geschrieben&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Konferenz 2021: Scaling down...</title>
+      <link>https://christianmahnke.de/post/iiif-conf-2021-scaling-down/citation.bib</link>
+      <pubDate>Thu, 24 Jun 2021 16:30:00 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/iiif-conf-2021-scaling-down/citation.bib</guid>
+      <description>&lt;p&gt;Heute war es soweit, ich habe meinen Vortrag zu der Infrastruktur meiner Blogs auf der diesjährigen IIIF Konferenz gehalten.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JPEG XL</title>
+      <link>https://christianmahnke.de/post/jpeg-xl/</link>
+      <pubDate>Sat, 17 Apr 2021 11:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/jpeg-xl/</guid>
+      <description>&lt;p&gt;Da meine Blogs auf GitHub verwaltet werden, müssen die Bilder so platzsparend wie möglich gespeichert werden&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIIF Konferenz 2021</title>
+      <link>https://christianmahnke.de/post/iiif-conference-2021/citation.bib</link>
+      <pubDate>Sat, 13 Mar 2021 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/iiif-conference-2021/citation.bib</guid>
+      <description>&lt;p&gt;Ich werde meine &lt;a href=&#34;https://projektemacher.org/blogs/&#34; target=&#34;_blank&#34;&gt;Corona-Projekte&lt;/a&gt; auf der diesjährigen &lt;a data-wikidata-entity=&#34;Q116233196&#34; href=&#34;https://iiif.io/event/2021/annual_conference/&#34; target=&#34;_blank&#34;&gt;IIIF Konferenz&lt;/a&gt; vorstellen!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

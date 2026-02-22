@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Historische Stereogramme auf moderner Hardware · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Das Apple Spatial Image Format">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/vintagereality-apple-spatial/article.html" />
+  <meta property="og:title" content="Historische Stereogramme auf moderner Hardware · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/vintagereality-apple-spatial/ogPreview_hu_2faf52d90f09e459.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content="Stereoskopie, Anaglyphen, KI, 3D, Digitale Bilder, OpenCV, Stereoskopie"><meta name="dc.subject" content="Stereoskopie"><meta name="dc.subject" content="Anaglyphen"><meta name="dc.subject" content="KI"><meta name="dc.subject" content="3D"><meta name="dc.subject" content="Digitale Bilder"><meta name="dc.subject" content="OpenCV"><meta name="dc.subject" content="Stereoskopie">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:03:07.169677513 &#43;0000 UTC m=&#43;0.792186012">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/vintagereality-apple-spatial/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" type="text/html" href="https://christianmahnke.de/post/vintagereality-apple-spatial/" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/vintagereality-apple-spatial/article.html"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/vintagereality-apple-spatial/article.html","@type":"BlogPosting","about":["Stereoskopie","Anaglyphen","AI","3D","DigitalImages","OpenCV","Stereoscopy",{"@id":"http://www.wikidata.org/entity/Q117715451","@type":"Thing","name":"Apple Vision Pro"},{"@id":"http://www.wikidata.org/entity/Q24907733","@type":"Thing","name":"High Efficiency Image File Format"},{"@id":"http://www.wikidata.org/entity/Q35158","@type":"Thing","name":"stereoscopy"},{"@id":"http://www.wikidata.org/entity/Q484031","@type":"Thing","name":"anaglyph imaging"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2025-12-28T18:22:44+02:00","description":"Das Apple Spatial Image Format","headline":"Historische Stereogramme auf moderner Hardware","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Stereoskopie","Anaglyphen","AI","3D","DigitalImages","OpenCV","Stereoscopy"],"name":"Historische Stereogramme auf moderner Hardware","url":"https://christianmahnke.de/post/vintagereality-apple-spatial/article.html"}
+</script>
+</head><body class="section-post dir-postvintagereality-apple-spatial blog pdf  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/vintagereality-apple-spatial/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Historische Stereogramme auf moderner Hardware</h1><div class="post-description">Das Apple Spatial Image Format</div><div class="date">
+          <time class="post-data" datetime="2025-12-28T18:22:44&#43;02:00">Sonntag, 28. Dezember 2025</time>
+        </div><div class="post-body"><p>Ich habe ein neues Telefon&hellip;</p>
+<p>&hellip;mit einer neuen, interessanten Funktion, die mehrere meiner Steckenpferde verbindet. Digitale Bildformate und Stereoskopie / 3D.</p>
+<p>Für die Mixed-Reality-Brille hat Apple das HEIC-Bildformat etwas erweitert. In einem Container werden nicht ein, sondern zwei leicht versetzt erstellte Bilder zusammen mit einigen Metadaten gespeichert. Diese Kombination sorgt beispielsweise in der Bildergalerie dafür, dass ein zusätzliches Icon erscheint, mit dem sich die räumliche Ansicht aktivieren lässt. Auch die aktuellen iPhones können solche Bilder erstellen.</p>
+<p>Bevor es um die langweiligen technischen Details geht, hier ein Beispiel mit einem historischen Stereogramm von der <a href="https://vintagereality.projektemacher.org/post/calcutta/" target="_blank">VintageReality Seite</a>. Oben rechts ist der Button für die räumliche Ansicht zu erkennen.</p>
+<video controls preload="auto" width="100%"  playsinline class="html-video">
+    <source src="https://christianmahnke.de/post/vintagereality-apple-spatial/img/calcutta.mp4" type="video/mp4">
+  <span>Ihr Browser unterstützt keine integrierten Videos, aber keine Sorge, Sie können <a href="https://christianmahnke.de/post/vintagereality-apple-spatial/img/calcutta.mp4">es herunterladen</a> und mit Ihrem Lieblings-Videoplayer ansehen!</span>
+</video>
+<h2 id="realisierung">Realisierung</h2>
+<p>Das Ergebnis wurde durch die folgenden Schritte erzielt:</p>
+<h3 id="heic-bilder">HEIC-Bilder</h3>
+<p>Zunächst werden die Bilder aus den Scans der Karten extrahiert. Dazu wird das <a href="https://christianmahnke.de/post/vintagereality-ai/">Modell aus dem letzten Beitrag</a> verwendet. Anschließend werden sie mittels OpenCV fast pixelgenau übereinandergelegt, die entstandenen Ränder werden wo möglich entfernt und die Helligkeit wird angeglichen.</p>
+<p>Anschließend werden die beiden Halbbilder in einen HEIC-Container eingebettet, wofür das Python-Modul <a href="https://github.com/bigcat88/pillow_heif" target="_blank"><code>pillow_heif</code></a> verwendet wird.</p>
+<h3 id="xmp-metadaten">XMP-Metadaten</h3>
+<p>Die notwendigen Metadaten werden in XMP kodiert, vergleichbar mit alten (2024) UltraHDR-Implementierungen.</p>
+<p>Die Elemente ligen im Namensraum <code>http://ns.apple.com/image/1.0/</code> (Bevorzugtes Präfix <code>apple</code>)</p>
+<table class="even-table">
+  <thead>
+      <tr>
+          <th style="text-align: left">Element</th>
+          <th style="text-align: left">Typ</th>
+          <th style="text-align: left">Beschreibung</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>HorizontalFOV</code></td>
+          <td style="text-align: left">Real</td>
+          <td style="text-align: left">Horizontales Sichtfeld in Grad.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>Baseline</code></td>
+          <td style="text-align: left">Real</td>
+          <td style="text-align: left">Stereo-Basisabstand (Augenabstand) in Millimetern.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>HorizontalDisparityAdjustment</code></td>
+          <td style="text-align: left">Real</td>
+          <td style="text-align: left">Faktor zur Anpassung der horizontalen Disparität (in der Regel ein Prozentsatz, z. B. 0,02).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CameraModelType</code></td>
+          <td style="text-align: left">String</td>
+          <td style="text-align: left">Der Projektionsmodelltyp. Verwendeter Wert: <code>SimplifiedPinhole</code>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CameraIntrinsics</code></td>
+          <td style="text-align: left">String</td>
+          <td style="text-align: left">Intrinsische Kameraparameter als durch Leerzeichen getrennte Zeichenfolge: <code>f_pix 0 ppx 0 f_pix ppy 0 0 1</code>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CameraExtrinsicsRotation</code></td>
+          <td style="text-align: left">String</td>
+          <td style="text-align: left">Rotationsmatrix als durch Leerzeichen getrennte Zeichenfolge (zeilenorientiert). Wert: <code>1 0 0 0 1 0 0 0 1</code> (Identität).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>CameraExtrinsicsPosition</code></td>
+          <td style="text-align: left">String</td>
+          <td style="text-align: left">Positionsvektor in Metern als durch Leerzeichen getrennte Zeichenfolge <code>x y z</code>. Wert: <code>0 0 0</code>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>StereoGroupIndex</code></td>
+          <td style="text-align: left">Integer</td>
+          <td style="text-align: left">Index zur Identifizierung der Stereogruppe. Wert: <code>1</code>.</td>
+      </tr>
+  </tbody>
+</table>
+<p>Viele dieser Werte sind (hier) geraten bzw. geschätzt, da sich exakte Werte für die alten verwendeten Kameras nicht ermitteln lassen:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Parameter</th>
+          <th style="text-align: left">Wert</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Horizontales Sichtfeld</td>
+          <td style="text-align: left">45°</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Augenabstand</td>
+          <td style="text-align: left"> 65mm</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Disparität</td>
+          <td style="text-align: left">2%</td>
+      </tr>
+  </tbody>
+</table>
+<p>Die Disparität könnte sich theoretisch auch mit OpenCV über das Alignment ermitteln lassen, aber kleine Abweichungen fallen nicht ins Gewicht. Die restlichen Werte lassen sich aus den Schätzwerten und der Größe der Eingabebilder berechnen:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>f</mi><mi mathvariant="normal">_</mi><mi>p</mi><mi>i</mi><mi>x</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mfrac><mrow><mi>w</mi><mi>i</mi><mi>d</mi><mi>t</mi><mi>h</mi><mo>⋅</mo><mn>0.5</mn></mrow><mrow><mi>tan</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>h</mi><mi>f</mi><mi>o</mi><msub><mi>v</mi><mrow><mi>r</mi><mi>a</mi><mi>d</mi></mrow></msub><mo>⋅</mo><mn>0.5</mn><mo stretchy="false">)</mo></mrow></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>p</mi><mi>p</mi><mi>x</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mfrac><mrow><mi>w</mi><mi>i</mi><mi>d</mi><mi>t</mi><mi>h</mi></mrow><mn>2.0</mn></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>p</mi><mi>p</mi><mi>y</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mfrac><mrow><mi>h</mi><mi>e</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi></mrow><mn>2.0</mn></mfrac></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+f\_pix &amp;= \frac{width \cdot 0.5}{\tan(hfov_{rad} \cdot 0.5)} \\
+ppx &amp;= \frac{width}{2.0} \\
+ppy &amp;= \frac{height}{2.0} \\
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:7.3223em;vertical-align:-3.4112em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.9112em;"><span style="top:-5.9112em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal">x</span></span></span><span style="top:-3.3037em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord mathnormal">pp</span><span class="mord mathnormal">x</span></span></span><span style="top:-0.9463em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord mathnormal">pp</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.4112em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.9112em;"><span style="top:-5.9112em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">tan</span><span class="mopen">(</span><span class="mord mathnormal">h</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">0.5</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord mathnormal">i</span><span class="mord mathnormal">d</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">0.5</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.3037em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2.0</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="mord mathnormal">i</span><span class="mord mathnormal">d</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-0.9463em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2.0</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal">i</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">h</span><span class="mord mathnormal">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.4112em;"><span></span></span></span></span></span></span></span></span></span></span></span><h4 id="weitere-informationen-bei-apple-developer">Weitere Informationen bei Apple Developer</h4>
+<ul>
+<li><a href="https://developer.apple.com/documentation/ImageIO/Creating-spatial-photos-and-videos-with-spatial-metadata" target="_blank">Creating spatial photos and videos with spatial metadata</a></li>
+<li><a href="https://developer.apple.com/documentation/imageio/writing-spatial-photos" target="_blank">Writing spatial photos</a></li>
+</ul>
+<h3 id="metadaten-injizieren">Metadaten injizieren</h3>
+<p>Am Schluss müssen noch die Metadaten in die Bilddatei injiziert werden. Das lässt sich nach etwas Konfiguration (für den Namespace und die Elemente) mit <a data-wikidata-entity="Q5420254" href="https://exiftool.org/" target="_blank"><code>exiftool</code></a> von Phil Harvey erledigen.</p>
+<h2 id="ergebnisse">Ergebnisse</h2>
+<p>Prinzipiell funktioniert das Verfahren, wobei die Ergebnisse für Innenräume deutlich besser sind als für Außenaufnahmen. Für Außenaufnahmen kann es jedoch hilfreich sein, die räumliche Staffelung der Bildebenen etwas zu stauchen.</p>
+<p>Zum Ausprobieren können diese Dateien auf dem iPhone in der App &ldquo;Fotos&rdquo; gesichert werden.</p>
+<ul>
+<li><a href="./img/calcutta.heic" title="Bilddatei" class="download-icon">Bilddatei</a>,  <strong>Beitrag</strong>: <a href="https://vintagereality.projektemacher.org/post/calcutta/" target="_blank">Empfangssaal des Maharajah von Tangore in Calcutta, Indien</a></li>
+<li><a href="./img/neues-museum.heic" title="Bilddatei" class="download-icon">Bilddatei</a>, <strong>Beitrag</strong>: <a href="https://vintagereality.projektemacher.org/post/neues-museum/" target="_blank">Neues Museum - Gruppe des farnesischen Stiers</a></li>
+<li><a href="./img/damascus.heic" title="Bilddatei" class="download-icon">Bilddatei</a>,  <strong>Beitrag</strong>: <a href="https://vintagereality.projektemacher.org/post/damascus/" target="_blank">Salon in the harem of a Mohammedan Pasha, Damascus</a></li>
+</ul></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q117715451" title="Apple Vision Pro" rel="related">Wikidata Eintrag: Apple Vision Pro</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q24907733" title="High Efficiency Image File Format" rel="related">Wikidata Eintrag: High Efficiency Image File Format</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q35158" title="Stereoskopie" rel="related">Wikidata Eintrag: Stereoskopie</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q484031" title="Anaglyph 3D" rel="related">Wikidata Eintrag: Anaglyph 3D</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Diesen Beitrag zitieren
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2025)</span>: <span class="cite-title">Historische Stereogramme auf moderner Hardware</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], 28.12.2025. Online-Publikation: <a class="cite-link" href="https://christianmahnke.de/post/vintagereality-apple-spatial/article.html">https://christianmahnke.de/post/vintagereality-apple-spatial/article.html</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/post/vintagereality-apple-spatial/citation.bib" title="Als BibTex herunterladen">Als BibTex herunterladen</a>
+  </div>
+</details>
+</div><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/AI" title="KI">#KI</a><a href="https://christianmahnke.de/tags/3D" title="3D">#3D</a><a href="https://christianmahnke.de/tags/DigitalImages" title="Digitale Bilder">#Digitale Bilder</a><a href="https://christianmahnke.de/tags/OpenCV" title="OpenCV">#OpenCV</a><a href="https://christianmahnke.de/tags/Stereoscopy" title="Stereoskopie">#Stereoskopie</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/vintagereality-ai/article.html">KI Segmentierung für Stereoskopie-Karten</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/vintagereality/article.html">VintageReality gestartet</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/visualising-ai-segmentation-with-hdr/article.html">Visualisierung von KI Segmentierung mit HDR</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/uv-photogrammetry/article.html">UV-Photogrammetrie</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/iiif-proxy/article.html">IIIF Proxy</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/vintagereality-apple-spatial/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

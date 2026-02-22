@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>OpenStreetMap Daten &#34;patchen&#34; · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="&ldquo;Kontrafaktische Architektur&rdquo; liefert fast keine Treffer bei Google&hellip;.">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/patching-osm-data/article.html" />
+  <meta property="og:title" content="OpenStreetMap Daten &#34;patchen&#34; · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/patching-osm-data/ogPreview_hu_60eea0f73019340f.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", Geodaten, OpenStreetMap, Python"><meta name="dc.subject" content="Geodaten"><meta name="dc.subject" content="OpenStreetMap"><meta name="dc.subject" content="Python">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:03:07.169677513 &#43;0000 UTC m=&#43;0.792186012">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/patching-osm-data/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" type="text/html" href="https://christianmahnke.de/post/patching-osm-data/" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/patching-osm-data/article.html"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/patching-osm-data/article.html","@type":"BlogPosting","about":["Geodata","OpenStreetMap","Python",{"@id":"http://www.wikidata.org/entity/Q107385647","@type":"Thing","name":"pyosmium"},{"@id":"http://www.wikidata.org/entity/Q110609581","@type":"Thing","name":"MapLibre GL JS"},{"@id":"http://www.wikidata.org/entity/Q116859588","@type":"Thing","name":"Planetiler"},{"@id":"http://www.wikidata.org/entity/Q12877","@type":"Thing","name":"JOSM"},{"@id":"http://www.wikidata.org/entity/Q133818614","@type":"Thing","name":"MapLibre Style Specification"},{"@id":"http://www.wikidata.org/entity/Q14946528","@type":"Thing","name":"conflation"},{"@id":"http://www.wikidata.org/entity/Q25822040","@type":"Thing","name":"OSM XML"},{"@id":"http://www.wikidata.org/entity/Q935780","@type":"Thing","name":"counterfactual history"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2025-11-17T21:14:44+02:00","headline":"OpenStreetMap Daten \"patchen\"","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Geodata","OpenStreetMap","Python"],"name":"OpenStreetMap Daten \"patchen\"","url":"https://christianmahnke.de/post/patching-osm-data/article.html"}
+</script>
+</head><body class="section-post dir-postpatching-osm-data blog pdf  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/patching-osm-data/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">OpenStreetMap Daten &#34;patchen&#34;</h1><div class="date">
+          <time class="post-data" datetime="2025-11-17T21:14:44&#43;02:00">Montag, 17. November 2025</time>
+        </div><div class="post-body"><p>&ldquo;Kontrafaktische Architektur&rdquo; liefert fast keine Treffer bei Google&hellip;.</p>
+<p>&hellip; deshalb dieser Beitrag, um das zu ändern:
+Für das <a href="https://never-built.goettingen.xyz/" target="_blank">Never Built Göttingen</a> Blog, indem es um nicht realisierte Gebäude geht, habe ich versucht dieses Was-wäre-wenn-Szenario mit Kartenmaterial zu bereichern.</p>
+<p>Auf Basis von <a data-wikidata-entity="Q936" href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> (OSM) ist das grundsätzlich nicht so schwer, mit <a href="https://josm.openstreetmap.de/" target="_blank">JOSM</a> kann man sich einfach den gewünschten Kartenausschnitt herunterladen und dann anfangen zu zeichnen. wichtig ist, dass man die eigenen Gebäude zur Sicherheit mit &ldquo;upload=false&rdquo; auszeichnet, um versehentliche Uploads zu verhindern.</p>
+<p>Allerdings hat man dann bestenfalls einen Fork der Daten im OSM XML Format erzeugt. Wenn man lieber nur mit der Differenz zu echten Karte weiterarbeiten will, um auch zukünftige Änderungen im anzeigten Kartenmaterial zu haben, wird die Sache etwas komplizierter. Eine Möglichkeit sind spezielle Werkzeuge zur <a href="https://wiki.openstreetmap.org/wiki/Conflation" target="_blank">Verschmelzung / Zusammenführung</a> (englisch &ldquo;Conflation&rdquo;).</p>
+<p>Eine andere, die sich nur auf die Erfüllung der konkreten Anforderungen konzentriert, ist hier skizziert:</p>
+<h1 id="ablauf">Ablauf</h1>
+<p>Als Beispiel dient der prominente <a href="https://never-built.goettingen.xyz/post/staedte-forum-1-71-goettingen/gwz/" target="_blank">Eintrag zu den drei blauen Türmen</a>, er ließ sich recht einfach in JOSM modellieren.</p>
+<h2 id="extraktion-der-änderungen">Extraktion der Änderungen</h2>
+<p>Der erste Schritt ist es die eigenen Änderungen zu isolieren, dazu kann z.B. <code>osmium</code> verwendet werden:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">osmium tags-filter -o filtered.osm.xml w/upload<span class="o">=</span><span class="nb">false</span> input.osm.xml
+</span></span></code></pre></div><p>Da das Ergebnis als XML gespeichert wurde, kann es wieder in JOSM geöffnet werden:</p>
+
+
+
+
+<figure class="post-image">
+    
+        <img src="https://christianmahnke.de/post/patching-osm-data/josm.png" alt="JOSM"/> </figure>
+
+<h2 id="bildung-einer-maske">Bildung einer Maske</h2>
+<p>Der nächste Schritt ist es aus den isolierten Änderungen eine Art Maske zu erzeugen, die dann wieder zur Filterung eines größeren Gebietes verwendet werden kann. Dieser und die folgenden Schritte wurden mit <a href="https://docs.osmcode.org/pyosmium/latest/" target="_blank">PyOsmium</a> gemacht, zur Implementierung, siehe unten.</p>
+<p>Bei der Bildung der Maske werden auch gleich die OSM IDs der Änderungen angepasst: Diese sind bis hier hin negativ, da sie nicht &ldquo;echt&rdquo; also Teil des zentralen OSM Datenbestandes sind. Allerdings mögen verschiedne Bibliotheken oder auch <a href="https://github.com/onthegomap/planetiler" target="_blank">Planetiler</a> es nicht wenn sie negativ sind, daher werden sie einfach mit -1 multipliziert.</p>
+<h2 id="eingabedatei-aufräumen">Eingabedatei aufräumen</h2>
+<p>Mit der Maske lässt sich nun ein OSM Datendump aufräumen. Dabei wird der gesamte gewünschte Kartenausschnitt durchlaufen und jeder OSM Weg (<code>way</code>), der die Maske überschneidet, verworfen. So lassen sich bestehende Gebäude, Grünflächen etc, entfernen.</p>
+<h2 id="zusammenführung">Zusammenführung</h2>
+<p>Der letzte Schritt ist die Zusammenführung des bereinigten Gebietes mit den eigenen Änderungen.</p>
+<h1 id="ergebnis">Ergebnis</h1>
+<p>Der nächste Schritt ist dann die Konvertierung der OSM PBF Datei in Vektorkacheln mit <a href="https://github.com/onthegomap/planetiler" target="_blank">Planetiler</a>.</p>
+<p>Und so sehen die erzeugten Kartendaten in einem provisorischem <a href="https://maplibre.org/maplibre-gl-js/docs/" target="_blank">Maplibre JS GL</a> Renderer aus:</p>
+
+
+
+
+<figure class="post-image">
+    
+        <img src="https://christianmahnke.de/post/patching-osm-data/render.png" alt="Mapbox JS GL"/> <figcaption>
+                
+                <p>
+                    Kartendaten: © OpenStreetMap-Beitragende, Höheninformationen: LGLN (2024)
+                    
+                        
+                        </p>
+                
+            </figcaption></figure>
+
+<h1 id="implementierung">Implementierung</h1>
+<p>Diese Python Funktion erledigt die Schritte oben, die einzelnen Parameter:</p>
+<ul>
+<li><strong><code>base_file</code></strong> - Der Datendump des Gesamtgebietes</li>
+<li><strong><code>patch</code></strong> - Die bereinigten mit JOSM erstellten Änderungen</li>
+<li><strong><code>output_file</code></strong> - die Zieldatei</li>
+<li><strong><code>overwrite</code></strong> - Bestehende Dateien überschreiben (<code>True</code> | <code>False</code>)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">merge</span> <span class="p">(</span><span class="n">base_file</span><span class="p">,</span> <span class="n">patch</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">IntersectionHandler</span><span class="p">(</span><span class="n">osmium</span><span class="o">.</span><span class="n">SimpleHandler</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Handler to identify ways in an OSM file that intersect with a given set of polygons.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_polygons</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">super</span><span class="p">(</span><span class="n">IntersectionHandler</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">target_polygons</span> <span class="o">=</span> <span class="n">target_polygons</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">wkbfactory</span> <span class="o">=</span> <span class="n">osmium</span><span class="o">.</span><span class="n">geom</span><span class="o">.</span><span class="n">WKBFactory</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">intersecting_ways</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">#TODO: Check if we also need to remove nodes</span>
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">way</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">w</span><span class="o">.</span><span class="n">is_closed</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">                <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">wkb_line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wkbfactory</span><span class="o">.</span><span class="n">create_linestring</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">shapely_line</span> <span class="o">=</span> <span class="n">shapely</span><span class="o">.</span><span class="n">from_wkb</span><span class="p">(</span><span class="n">wkb_line</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">shapely_line</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">closed_way_polygon</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">shapely_line</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                        <span class="k">for</span> <span class="n">target_poly</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_polygons</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                            <span class="k">if</span> <span class="n">closed_way_polygon</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">target_poly</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                                <span class="bp">self</span><span class="o">.</span><span class="n">intersecting_ways</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">                                    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                    <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">tags</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                    <span class="s1">&#39;geometry&#39;</span><span class="p">:</span> <span class="n">closed_way_polygon</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">})</span>
+</span></span><span class="line"><span class="cl">                                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="k">except</span> <span class="n">osmium</span><span class="o">.</span><span class="n">geom</span><span class="o">.</span><span class="n">GeometryError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Could not create geometry for Way </span><span class="si">{</span><span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">IDChanger</span><span class="p">(</span><span class="n">osmium</span><span class="o">.</span><span class="n">SimpleHandler</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Handler to write OSM objects to a new file, changing their IDs to positive values.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writer</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">super</span><span class="p">(</span><span class="n">IDChanger</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">writer</span> <span class="o">=</span> <span class="n">writer</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_node</span> <span class="o">=</span> <span class="n">create_mutable_node</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_node</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">id</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Changing node ID from </span><span class="si">{</span><span class="n">n</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">new_node</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">new_node</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">way</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_way</span> <span class="o">=</span> <span class="n">create_mutable_way</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_way</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_way</span><span class="o">.</span><span class="n">nodes</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">            <span class="n">refs</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">r</span><span class="o">.</span><span class="n">ref</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">ref</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                <span class="n">refs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_way</span><span class="o">.</span><span class="n">nodes</span> <span class="o">=</span> <span class="n">refs</span>
+</span></span><span class="line"><span class="cl">            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Changing way ID from </span><span class="si">{</span><span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">new_way</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">add_way</span><span class="p">(</span><span class="n">new_way</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">relation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_relation</span> <span class="o">=</span> <span class="n">create_mutable_relation</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_relation</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">id</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Changing relation ID from </span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">new_relation</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="o">.</span><span class="n">add_relation</span><span class="p">(</span><span class="n">new_relation</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">ExcludingIdFilter</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        A filter class for osmium.FileProcessor to exclude objects based on their IDs, see https://github.com/osmcode/pyosmium/issues/310
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">ids</span> <span class="o">=</span> <span class="n">ids</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">way</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">relation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ids</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&#34;Generating mask and appying it to the input file.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Step 1: Process the patch file to change IDs to positive and extract polygons.</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># This temporary file will hold the patch with inverted IDs.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w+t&#39;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&#34;.pbf&#34;</span><span class="p">,)</span> <span class="k">as</span> <span class="n">temp</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">with</span> <span class="n">osmium</span><span class="o">.</span><span class="n">SimpleWriter</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">handler</span> <span class="o">=</span> <span class="n">IDChanger</span><span class="p">(</span><span class="n">writer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">osmium</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">wkbfab</span> <span class="o">=</span> <span class="n">osmium</span><span class="o">.</span><span class="n">geom</span><span class="o">.</span><span class="n">WKBFactory</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">polygons</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Read the transformed patch file to extract geometries for exclusion.</span>
+</span></span><span class="line"><span class="cl">        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">patch_buffer</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">patch_pbf</span> <span class="o">=</span> <span class="n">osmium</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">FileBuffer</span><span class="p">(</span><span class="n">patch_buffer</span><span class="p">,</span> <span class="s2">&#34;pbf&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">osmium</span><span class="o">.</span><span class="n">FileProcessor</span><span class="p">(</span><span class="n">patch_pbf</span><span class="p">)</span><span class="o">.</span><span class="n">with_areas</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Generating </span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">type_str</span><span class="p">()</span><span class="si">}</span><span class="s2"> filter primitive for </span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">type_str</span><span class="p">()</span><span class="si">}</span><span class="s2">, id: </span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">o</span><span class="o">.</span><span class="n">is_way</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">o</span><span class="o">.</span><span class="n">is_closed</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">wkb</span> <span class="o">=</span> <span class="n">shapely</span><span class="o">.</span><span class="n">from_wkb</span><span class="p">(</span><span class="n">wkbfab</span><span class="o">.</span><span class="n">create_linestring</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">nodes</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="k">elif</span> <span class="n">o</span><span class="o">.</span><span class="n">is_area</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Area: </span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="vm">__dict__</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">wkb</span> <span class="o">=</span> <span class="n">shapely</span><span class="o">.</span><span class="n">from_wkb</span><span class="p">(</span><span class="n">wkbfab</span><span class="o">.</span><span class="n">create_multipolygon</span><span class="p">(</span><span class="n">o</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">wkb</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">                <span class="n">polygons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wkb</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Filter out any None values from the polygons list (e.g., non-closed ways, nodes, relations)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">polygons</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">polygons</span> <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Extracted </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">polygons</span><span class="p">)</span><span class="si">}</span><span class="s2"> polygons to use as filter.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Step 2: Identify ways in the base file that intersect with the extracted polygons.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">handler</span> <span class="o">=</span> <span class="n">IntersectionHandler</span><span class="p">(</span><span class="n">polygons</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">handler</span><span class="o">.</span><span class="n">apply_file</span><span class="p">(</span><span class="n">base_file</span><span class="p">,</span> <span class="n">locations</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="s1">&#39;flex_mem&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">results</span> <span class="o">=</span> <span class="n">handler</span><span class="o">.</span><span class="n">intersecting_ways</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Collect IDs of ways to be excluded from the base file.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ids</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Step 3: Create a temporary base file with intersecting ways removed.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w+t&#39;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s2">&#34;.pbf&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">temp</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">with</span> <span class="n">osmium</span><span class="o">.</span><span class="n">BackReferenceWriter</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">base_file</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">osmium</span><span class="o">.</span><span class="n">FileProcessor</span><span class="p">(</span><span class="n">base_file</span><span class="p">)</span>\
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="n">with_filter</span><span class="p">(</span><span class="n">osmium</span><span class="o">.</span><span class="n">filter</span><span class="o">.</span><span class="n">EntityFilter</span><span class="p">(</span><span class="n">osmium</span><span class="o">.</span><span class="n">osm</span><span class="o">.</span><span class="n">WAY</span><span class="p">))</span>\
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="n">with_filter</span><span class="p">(</span><span class="n">ExcludingIdFilter</span><span class="p">(</span><span class="n">ids</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">writer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Generated masked file. Applying patch. Overwrite: </span><span class="si">{</span><span class="n">overwrite</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Step 4: Merge the filtered base file with the transformed patch file.</span>
+</span></span><span class="line"><span class="cl">        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">with</span> <span class="n">osmium</span><span class="o">.</span><span class="n">SimpleWriter</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">reader</span> <span class="o">=</span>  <span class="n">osmium</span><span class="o">.</span><span class="n">MergeInputReader</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="n">reader</span><span class="o">.</span><span class="n">add_buffer</span><span class="p">(</span><span class="n">patch_buffer</span><span class="p">,</span> <span class="s2">&#34;pbf&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">reader</span><span class="o">.</span><span class="n">add_buffer</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="s2">&#34;pbf&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">reader</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">writer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Done, </span><span class="si">{</span><span class="n">output_file</span><span class="si">}</span><span class="s2"> written&#34;</span><span class="p">)</span>
+</span></span></code></pre></div></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q107385647" title="pyosmium" rel="related">Wikidata Eintrag: pyosmium</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q110609581" title="MapLibre GL JS" rel="related">Wikidata Eintrag: MapLibre GL JS</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q116859588" title="Planetiler" rel="related">Wikidata Eintrag: Planetiler</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q12877" title="JOSM" rel="related">Wikidata Eintrag: JOSM</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q133818614" title="MapLibre Style Specification" rel="related">Wikidata Eintrag: MapLibre Style Specification</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q14946528" title="Vermischung" rel="related">Wikidata Eintrag: Vermischung</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q25822040" title="OSM XML" rel="related">Wikidata Eintrag: OSM XML</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q935780" title="kontrafaktische Geschichte" rel="related">Wikidata Eintrag: kontrafaktische Geschichte</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/Geodata" title="Geodaten">#Geodaten</a><a href="https://christianmahnke.de/tags/OpenStreetMap" title="OpenStreetMap">#OpenStreetMap</a><a href="https://christianmahnke.de/tags/Python" title="Python">#Python</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/quantenkosmos-goettingen/article.html">Quantenkosmos Göttingen</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/simple-wikidata-queries/article.html">Einfache Datenanreicherung mit Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/mapproxy-as-wms-downloader/article.html">Mapproxy als WMS Downloader</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/configure-pagefind/article.html">Pagefind aufbohren</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/marmolada-woodcut/citation.bib">Der Klimawandel in der Kunst...</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/patching-osm-data/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

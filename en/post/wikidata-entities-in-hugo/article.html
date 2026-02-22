@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Wikidata Links in Hugo · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="en">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Another step towards easier searchability of the site&hellip;">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/en/post/wikidata-entities-in-hugo/article.html" />
+  <meta property="og:title" content="Wikidata Links in Hugo · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/en/post/wikidata-entities-in-hugo/ogPreview.en_hu_8546671cdb444766.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", Hugo, Wikidata, SPARQL"><meta name="dc.subject" content="Hugo"><meta name="dc.subject" content="Wikidata"><meta name="dc.subject" content="SPARQL">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:09:36.869379149 &#43;0000 UTC m=&#43;390.491887641"><meta name="projektemacher.org:git-commit" content="6cd1f53">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/en/post/wikidata-entities-in-hugo/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" type="text/html" href="https://christianmahnke.de/en/post/wikidata-entities-in-hugo/" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/en/post/wikidata-entities-in-hugo/article.html"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/en/post/wikidata-entities-in-hugo/article.html","@type":"BlogPosting","about":["Hugo","Wikidata","SPARQL"],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2025-05-28T18:22:44+02:00","headline":"Wikidata Links in Hugo","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Hugo","Wikidata","SPARQL"],"name":"Wikidata Links in Hugo","url":"https://christianmahnke.de/en/post/wikidata-entities-in-hugo/article.html"}
+</script>
+</head><body class="section-post dir-postwikidata-entities-in-hugo blog pdf  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/wikidata-entities-in-hugo/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Wikidata Links in Hugo</h1><div class="date">
+          <time class="post-data" datetime="2025-05-28T18:22:44&#43;02:00">Wednesday, May 28, 2025</time>
+        </div><div class="post-body"><p>Another step towards easier searchability of the site&hellip;</p>
+<p>The Hugo template below is used when translating Markdown to HTML links. It uses:</p>
+<ul>
+<li><a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a> links are enriched with the corresponding <a data-wikidata-entity="Q2013" href="https://wikidata.org/" target="_blank">Wikidata</a> entity identifiers via the <a href="https://www.mediawiki.org/wiki/API:Pageprops" target="_blank">Mediawiki API</a></li>
+<li>A shot in the dark: If it is an external URL (i.e. starts with <code>http</code>), the <a href="https://query.wikidata.org/sparql" target="_blank">Wikidata SPARQ endpoint</a> is queried to find out whether the URL has been stored as <code>officialWebsite</code> (P856), <code>officialBlog</code> (P1581) or <code>onlineDatabaseURL</code> (P1316) for an entity, if so, this identifier is used.</li>
+<li>Wikidata links marked with a CSS class (<code>wikidata</code>), and the identifier added</li>
+<li>External links opened in a new tab</li>
+</ul>
+<p>The file <code>layouts/_default/_markup/render-link.html</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="nx">$target</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.Destination</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="nx">$wikidataID</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">findRE</span><span class="w"> </span><span class="s">`(?m)https://(.{2}).wikipedia.org/wiki/(.[^#]*)`</span><span class="w"> </span><span class="nx">$target</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$queryURL</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">replaceRE</span><span class="w"> </span><span class="s">`(?m)https://(.{2}).wikipedia.org/wiki/(.[^#]*)`</span><span class="w"> </span><span class="s">&#34;https://$1.wikipedia.org/w/api.php?action=query&amp;prop=pageprops&amp;titles=$2&amp;format=json&#34;</span><span class="w"> </span><span class="nx">$target</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="nx">try</span><span class="w"> </span><span class="o">(</span><span class="nx">resources</span><span class="na">.GetRemote</span><span class="w"> </span><span class="nx">$queryURL</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="na">.Err</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">errorf</span><span class="w"> </span><span class="s">&#34;Unable to get remote resource %s: %s&#34;</span><span class="w">  </span><span class="nx">$queryURL</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="na">.Value</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$data</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.Content</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">transform</span><span class="na">.Unmarshal</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="w"> </span><span class="nx">$keys</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">slice</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$k</span><span class="o">,</span><span class="w"> </span><span class="nx">$_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">$data</span><span class="na">.query.pages</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">        <span class="cp">{{</span><span class="w"> </span><span class="nx">$keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$keys</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">append</span><span class="w"> </span><span class="nx">$k</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$pageMeta</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="nx">$data</span><span class="na">.query.pages</span><span class="w"> </span><span class="o">(</span><span class="nx">first</span><span class="w"> </span><span class="nx">1</span><span class="w"> </span><span class="nx">$keys</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$wikidataID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$pageMeta</span><span class="na">.pageprops.wikibase_item</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">errorf</span><span class="w"> </span><span class="s">&#34;Unable to get remote resource %s&#34;</span><span class="w"> </span><span class="nx">$queryURL</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">hasPrefix</span><span class="w"> </span><span class="nx">$target</span><span class="w"> </span><span class="s">&#34;http&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$queryURL</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;https://query.wikidata.org/sparql&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$queryOpts</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">dict</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;method&#34;</span><span class="w"> </span><span class="s">&#34;get&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="s">&#34;headers&#34;</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;Accept&#34;</span><span class="w"> </span><span class="s">&#34;application/sparql-results+json&#34;</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$query</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">printf</span><span class="w"> </span><span class="s">`SELECT ?item ?itemLabel ?officialWebsite ?officialBlog ?onlineDatabaseURL WHERE {
+</span></span></span><span class="line"><span class="cl"><span class="s">      ?item wdt:P856 &lt;%s&gt; . SERVICE wikibase:label { bd:serviceParam wikibase:language &#34;[AUTO_LANGUAGE],en&#34; . }
+</span></span></span><span class="line"><span class="cl"><span class="s">      OPTIONAL { ?item wdt:P856 ?officialWebsite . } OPTIONAL { ?item wdt:P1581 ?officialBlog . } OPTIONAL { ?item wdt:P1316 ?onlineDatabaseURL . }
+</span></span></span><span class="line"><span class="cl"><span class="s">    }`</span><span class="w"> </span><span class="nx">$target</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$queryURL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">printf</span><span class="w"> </span><span class="s">&#34;%s?query=%s&#34;</span><span class="w"> </span><span class="nx">$queryURL</span><span class="w"> </span><span class="o">(</span><span class="k">urlquery</span><span class="w"> </span><span class="nx">$query</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="nx">try</span><span class="w"> </span><span class="o">(</span><span class="nx">resources</span><span class="na">.GetRemote</span><span class="w"> </span><span class="nx">$queryURL</span><span class="w"> </span><span class="nx">$queryOpts</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="na">.Err</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">errorf</span><span class="w"> </span><span class="s">&#34;Unable to get remote resource %s: %s&#34;</span><span class="w">  </span><span class="nx">$queryURL</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="na">.Value</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$data</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.Content</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">transform</span><span class="na">.Unmarshal</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="o">(</span><span class="nx">reflect</span><span class="na">.IsMap</span><span class="w"> </span><span class="nx">$data</span><span class="na">.results</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="nx">isset</span><span class="w"> </span><span class="nx">$data</span><span class="na">.results</span><span class="w"> </span><span class="s">&#34;bindings&#34;</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="nx">reflect</span><span class="na">.IsSlice</span><span class="w"> </span><span class="nx">$data</span><span class="na">.results.bindings</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="k">gt</span><span class="w"> </span><span class="o">(</span><span class="k">len</span><span class="w"> </span><span class="nx">$data</span><span class="na">.results.bindings</span><span class="o">)</span><span class="w"> </span><span class="nx">0</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">        <span class="cp">{{-</span><span class="w"> </span><span class="nx">$result</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="nx">$data</span><span class="na">.results.bindings</span><span class="w"> </span><span class="nx">0</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">        <span class="cp">{{-</span><span class="w"> </span><span class="nx">$wikidataID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">replaceRE</span><span class="w"> </span><span class="s">`(?m)https://www.wikidata.org/entity/(.*)`</span><span class="w"> </span><span class="s">&#34;$1&#34;</span><span class="w"> </span><span class="nx">$result</span><span class="na">.item.value</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">errorf</span><span class="w"> </span><span class="s">&#34;Unable to get remote resource %s&#34;</span><span class="w"> </span><span class="nx">$queryURL</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="o">(</span><span class="nx">hasPrefix</span><span class="w"> </span><span class="nx">$target</span><span class="w"> </span><span class="s">&#34;https://www.wikidata.org/wiki/Q&#34;</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="nx">hasPrefix</span><span class="w"> </span><span class="nx">$target</span><span class="w"> </span><span class="s">&#34;https://www.wikidata.org/entity/&#34;</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$wikidataID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">replaceRE</span><span class="w"> </span><span class="s">`(?m)https://www.wikidata.org/wiki/(.*)`</span><span class="w"> </span><span class="s">&#34;$1&#34;</span><span class="w"> </span><span class="nx">$target</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;wikidata&#34;</span> <span class="cp">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$wikidataID</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">}}</span><span class="na">data-wikidata-entity</span><span class="o">=</span><span class="s">&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="nx">$wikidataID</span><span class="w"> </span><span class="cp">}}</span><span class="s">&#34;</span> <span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span><span class="na">href</span><span class="o">=</span><span class="s">&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Destination</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">safeURL</span><span class="w"> </span><span class="cp">}}</span><span class="s">&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="na">.Title</span><span class="cp">}}</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span><span class="s">&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">strings</span><span class="na">.HasPrefix</span><span class="w"> </span><span class="na">.Destination</span><span class="w"> </span><span class="s">&#34;http&#34;</span><span class="w"> </span><span class="cp">}}</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span><span class="p">&gt;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Text</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">safeHTML</span><span class="w"> </span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">a</span> <span class="cp">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">ne</span><span class="w"> </span><span class="nx">$wikidataID</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">}}</span><span class="na">data-wikidata-entity</span><span class="o">=</span><span class="s">&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="nx">$wikidataID</span><span class="w"> </span><span class="cp">}}</span><span class="s">&#34;</span> <span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span><span class="na">href</span><span class="o">=</span><span class="s">&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Destination</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">safeURL</span><span class="w"> </span><span class="cp">}}</span><span class="s">&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="na">.Title</span><span class="cp">}}</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">}}</span><span class="s">&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">strings</span><span class="na">.HasPrefix</span><span class="w"> </span><span class="na">.Destination</span><span class="w"> </span><span class="s">&#34;http&#34;</span><span class="w"> </span><span class="cp">}}</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span><span class="p">&gt;</span><span class="cp">{{</span><span class="w"> </span><span class="na">.Text</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">safeHTML</span><span class="w"> </span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span></code></pre></div><p>For the SPARQL query to work, the media type must be enabled in the Hugo configuration.</p>
+<p>The following setting (<a href="https://gohugo.io/configuration/security/#httpmediatypes" target="_blank"><code>security.http</code></a>) must be adjusted or added in <code>config.toml</code> or <code>hugo.tml</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">security</span><span class="p">.</span><span class="nx">http</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">mediaTypes</span> <span class="p">=</span> <span class="p">[</span><span class="s1">&#39;^application/json$&#39;</span><span class="p">,</span> <span class="s1">&#39;^application/json;\s?charset=[uU][tT][fF]-8$&#39;</span><span class="p">,</span> <span class="s1">&#39;^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$&#39;</span><span class="p">]</span>
+</span></span></code></pre></div><h2 id="and-what-is-it-all-for">And what is it all for?</h2>
+<p>In this way, entities in the source text can simply be labelled as (markdown) links in order to then be evaluated via JavaScript during display in the browser, for example. The entities can also be helpful for indexing, e.g. to give them a higher relevance in the search.</p>
+<p>This CSS can be used to deactivate the links:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">a</span><span class="p">.</span><span class="nc">wikidata</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">pointer-events</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">colour</span><span class="p">:</span> <span class="kc">unset</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Of course, the variants for <code>:link</code> <code>:visited</code>, <code>:hover</code> and <code>:active</code> also need to be adapted.</p>
+<h2 id="can-you-see-anything-yet">Can you see anything yet?</h2>
+<p>No (or only in the source code of the page)</p></div>
+  </div><div class="post-footer"><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Cite this article
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2025)</span>: <span class="cite-title">Wikidata Links in Hugo</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], May 28, 2025. Online publication: <a class="cite-link" href="https://christianmahnke.de/post/wikidata-entities-in-hugo/article.html">https://christianmahnke.de/post/wikidata-entities-in-hugo/article.html</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/en/post/wikidata-entities-in-hugo/citation.bib" title="Download as BibTex">Download as BibTex</a>
+  </div>
+</details>
+</div><div class="tags-heading">Tags</div>
+        <div class="tags"><a href="https://christianmahnke.de/en/tags/Hugo" title="Hugo">#Hugo</a><a href="https://christianmahnke.de/en/tags/Wikidata" title="Wikidata">#Wikidata</a><a href="https://christianmahnke.de/en/tags/SPARQL" title="SPARQL">#SPARQL</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/simple-wikidata-queries/article.html">Simple data enrichment with Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hugo-datauris/article.html">Embed resources as data URLs in Hugo</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/authority-data-for-private-collectors/article.html">Authority data for private collections (and small cultural institutions)</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hugo-shared-metadata/article.html">Shared metadata for Hugo pages</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hugo-draft-menus/article.html">Menus in Hugo draft mode</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/wikidata-entities-in-hugo/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Contact</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="Send eMail">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Privacy policy">Privacy policy</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

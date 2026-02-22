@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Suchen on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Search/</link>
+    <description>Recent content in Suchen on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/Search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seite nun durchsuchbar</title>
+      <link>https://christianmahnke.de/post/site-search/citation.bib</link>
+      <pubDate>Mon, 02 Jun 2025 17:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/site-search/citation.bib</guid>
+      <description>&lt;p&gt;Man kann nun diese Seite durchsuchen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pagefind aufbohren</title>
+      <link>https://christianmahnke.de/post/configure-pagefind/citation.bib</link>
+      <pubDate>Fri, 30 May 2025 17:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/configure-pagefind/citation.bib</guid>
+      <description>&lt;p&gt;Da diese Seite eine Suche braucht, habe ich mir mal &lt;a href=&#34;https://pagefind.app/&#34; target=&#34;_blank&#34;&gt;Pagefind&lt;/a&gt; angesehen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GeoIP Tool</title>
+      <link>https://christianmahnke.de/post/geoip-tool/citation.bib</link>
+      <pubDate>Sun, 30 Apr 2023 16:15:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/geoip-tool/citation.bib</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.elastic.co/de/kibana&#34; target=&#34;_blank&#34;&gt;Kibana&lt;/a&gt; Visualisierung mit Raumplänen braucht Daten, z.B. von Geräten in einem Gebäude. Aber irgendwo müssen die Daten herkommen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

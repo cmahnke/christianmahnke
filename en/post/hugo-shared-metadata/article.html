@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Shared metadata for Hugo pages · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="en">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Shared content for multiple Hugo pages (the &ldquo;Hugo Shared Metadata Design Pattern&rdquo;)&hellip;">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/en/post/hugo-shared-metadata/article.html" />
+  <meta property="og:title" content="Shared metadata for Hugo pages · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/en/post/hugo-shared-metadata/ogPreview.en_hu_952319fc249fb35a.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", Hugo"><meta name="dc.subject" content="Hugo">
+<meta name="generator" content="Hugo 0.156.0">
+<meta name="projektemacher.org:build-date" content="2026-02-22 12:09:36.869379149 &#43;0000 UTC m=&#43;390.491887641"><meta name="projektemacher.org:git-commit" content="6cd1f53">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/en/post/hugo-shared-metadata/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" type="text/html" href="https://christianmahnke.de/en/post/hugo-shared-metadata/" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/en/post/hugo-shared-metadata/article.html"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/en/post/hugo-shared-metadata/article.html","@type":"BlogPosting","about":["Hugo"],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"datePublished":"2025-11-02T15:22:44+01:00","headline":"Shared metadata for Hugo pages","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Hugo"],"name":"Shared metadata for Hugo pages","url":"https://christianmahnke.de/en/post/hugo-shared-metadata/article.html"}
+</script>
+</head><body class="section-post dir-posthugo-shared-metadata blog pdf  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/hugo-shared-metadata/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Shared metadata for Hugo pages</h1><div class="date">
+          <time class="post-data" datetime="2025-11-02T15:22:44&#43;01:00">Sunday, November 2, 2025</time>
+        </div><div class="post-body"><p>Shared content for multiple Hugo pages (the &ldquo;Hugo Shared Metadata Design Pattern&rdquo;)&hellip;</p>
+<p>For my collections (and also for this site), I use <a href="https://gohugo.io/" target="_blank">Hugo</a>. In collections with similar objects, it often happens that information about several objects is identical. An example from the blog about brick expressionism:</p>
+<ul>
+<li><a href="https://backsteinexpressionismus.projektemacher.org/post/kalender-1934-hannoverscher-anzeiger/" target="_blank">Calendar 1934 – Hannoverscher Anzeiger</a></li>
+<li><a href="https://backsteinexpressionismus.projektemacher.org/post/die-deutsche-zeitung/anzeiger-hochhaus/" target="_blank">Die deutsche Zeitung – Its Development, Nature and Impact: Anzeiger Hochhaus Hannover</a></li>
+</ul>
+<p>In the examples, the architect and links to Wikipedia and other directories are listed under &ldquo;Additional information&rdquo; (&ldquo;Zusätzliche Informationen&rdquo;). In addition, the geocoordinates for the map display are also stored centrally. This also applies to <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" target="_blank">Wikidata links</a>.</p>
+<p>In this case, <strong>centrally</strong> means that the respective data is not part of the respective pages, but is stored in the pages for the tags (in Hugo Term Pages). The template responsible for creating the respective page pulls the information from there:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c">#content/tags/Anzeiger-Hochhaus/_index.md</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Anzeiger Hochhaus&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">building</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">archinformID</span><span class="p">:</span><span class="w"> </span><span class="l">projekte/7497</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="l">Hannover</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">yearBuild</span><span class="p">:</span><span class="w"> </span><span class="m">1927-1928</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">geojson</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">coordinates</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="m">9.7293844</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="m">52.3770514</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl">*<span class="w"> </span><span class="l">Entworfen von [Fritz Höger](/tags/Fritz-Höger)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># Das Anzeiger Hochhaus in der...</span><span class="w">
+</span></span></span><span class="line"><span class="cl">*<span class="w"> </span><span class="p">[</span><span class="l">Wikipedia](https://de.wikipedia.org/wiki/Anzeiger-Hochhaus)</span><span class="w">
+</span></span></span><span class="line"><span class="cl">*<span class="w"> </span><span class="p">[</span><span class="l">Internationalen Architektur-Datenbank](https://deu.archinform.net/projekte/7497.htm)</span><span class="w">
+</span></span></span><span class="line"><span class="cl">*<span class="w"> </span><span class="p">[</span><span class="l">Internationalen Datenbank und Galerie für Ingenieurbauwerke (Structurae)](https://structurae.net/de/bauwerke/anzeigerhochhaus)</span><span class="w">
+</span></span></span></code></pre></div><p>The following fragment comes from the template for displaying a page or object:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$tag</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.Params.tags</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$tagUrl</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">printf</span><span class="w"> </span><span class="s">&#34;%s%s&#34;</span><span class="w"> </span><span class="s">&#34;tags/&#34;</span><span class="w"> </span><span class="o">(</span><span class="nx">$tag</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">urlize</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$tagPath</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">(</span><span class="nx">urls</span><span class="na">.Parse</span><span class="w"> </span><span class="nx">$tagUrl</span><span class="o">)</span><span class="na">.Path</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="nx">site</span><span class="na">.GetPage</span><span class="w"> </span><span class="nx">$tagPath</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="na">.Content</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span></code></pre></div><p>It is, of course, also possible to extract other parameters (in the example, <code>geojson</code>) from the central file, which is why I call this approach the &ldquo;Hugo Shared Metadata Design Pattern&rdquo;. Compared to the classic <a href="https://gohugo.io/content-management/data-sources/" target="_blank"><code>site.Data</code></a> approach, this has the advantage that Markdown content can also be reused relatively easily.</p>
+<p>When revising the <a href="https://xn--kleiderbgel-0hb.xn--blaufusstlpel-qmb.de/" target="_blank">clothes hanger page (Kleiderbügel)</a>, I wanted to avoid storing information that should be displayed on more than one page multiple times. The difference to the example above, however, is that some of the hangers were manufactured before 1945 and the printed place name therefore no longer corresponds to today&rsquo;s name, as some places are now part of Poland. One could ignore this and use the old German place names, but this would have politically questionable implications.</p>
+<p>Therefore, an additional requirement was that some tags (those of the old German place name) should be displayed, but always as a redirect to the tag of the current name. While this is fairly easy to do for the list view by implementing the old name as an alias, it is a problem when you need the linked information in a post.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c">#content/tags/szczecin/_index.md</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">Szczecin / Stettin</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">aliases</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">/tags/stettin</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">place</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">wikidata</span><span class="p">:</span><span class="w"> </span><span class="l">Q393</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span></code></pre></div><p>In the end, the solution was quite simple: if the page for the tag cannot be retrieved, simply search for the alias and include the page that contains it:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$tag</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.Params.tags</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$tagUrl</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">printf</span><span class="w"> </span><span class="s">&#34;%s%s&#34;</span><span class="w"> </span><span class="s">&#34;tags/&#34;</span><span class="w"> </span><span class="o">(</span><span class="nx">$tag</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">urlize</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$tagPath</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">(</span><span class="nx">urls</span><span class="na">.Parse</span><span class="w"> </span><span class="nx">$tagUrl</span><span class="o">)</span><span class="na">.Path</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="nx">site</span><span class="na">.GetPage</span><span class="w"> </span><span class="nx">$tagPath</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="na">.Content</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="nx">$termPages</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">where</span><span class="w"> </span><span class="nx">site</span><span class="na">.AllPages</span><span class="w"> </span><span class="s">&#34;.Kind&#34;</span><span class="w"> </span><span class="s">&#34;eq&#34;</span><span class="w"> </span><span class="s">&#34;term&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="nx">$alias</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">printf</span><span class="w"> </span><span class="s">&#34;/%s&#34;</span><span class="w"> </span><span class="nx">$termPath</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="nx">$termPages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">where</span><span class="w"> </span><span class="nx">$termPages</span><span class="w"> </span><span class="s">&#34;.Aliases&#34;</span><span class="w"> </span><span class="s">&#34;intersect&#34;</span><span class="w"> </span><span class="o">(</span><span class="k">slice</span><span class="w"> </span><span class="nx">$alias</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="nx">$termPages</span><span class="w"> </span><span class="nx">0</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="na">.Content</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span></code></pre></div><h2 id="thanks">Thanks</h2>
+<p>Thanks to <a href="https://discourse.gohugo.io/u/irkode/summary" target="_blank"><em><strong>irkode</strong></em></a> from the Hugo Forum, who <a href="https://discourse.gohugo.io/t/assign-multiple-slugs-to-one-file-page/56175/4" target="_blank">helped me find the solution</a>.</p></div>
+  </div><div class="post-footer"><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Cite this article
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2025)</span>: <span class="cite-title">Shared metadata for Hugo pages</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], Nov 2, 2025. Online publication: <a class="cite-link" href="https://christianmahnke.de/post/hugo-shared-metadata/article.html">https://christianmahnke.de/post/hugo-shared-metadata/article.html</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/en/post/hugo-shared-metadata/citation.bib" title="Download as BibTex">Download as BibTex</a>
+  </div>
+</details>
+</div><div class="tags-heading">Tags</div>
+        <div class="tags"><a href="https://christianmahnke.de/en/tags/Hugo" title="Hugo">#Hugo</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/hugo-datauris/article.html">Embed resources as data URLs in Hugo</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/wikidata-entities-in-hugo/article.html">Wikidata Links in Hugo</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hugo-draft-menus/article.html">Menus in Hugo draft mode</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hugo-cff-codemeta/article.html">CFF zu CodeMeta in Hugo</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hugo-shortcode-metadate/article.html">Metadata for Hugo Shortcodes</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/hugo-shared-metadata/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Contact</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="Send eMail">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Privacy policy">Privacy policy</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3D on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/3D/</link>
+    <description>Recent content in 3D on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/3D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Historical stereograms on modern hardware</title>
+      <link>https://christianmahnke.de/en/post/vintagereality-apple-spatial/citation.bib</link>
+      <pubDate>Sun, 28 Dec 2025 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/vintagereality-apple-spatial/citation.bib</guid>
+      <description>&lt;p&gt;I have a new phone&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI segmentation for stereoscopic cards</title>
+      <link>https://christianmahnke.de/en/post/vintagereality-ai/citation.bib</link>
+      <pubDate>Sun, 28 Dec 2025 10:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/vintagereality-ai/citation.bib</guid>
+      <description>&lt;p&gt;In 2024, my stereoscopy collection went online&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ultraviolet Photogrammetry</title>
+      <link>https://christianmahnke.de/en/post/uv-photogrammetry/citation.bib</link>
+      <pubDate>Thu, 05 Sep 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/uv-photogrammetry/citation.bib</guid>
+      <description>&lt;p&gt;&lt;strong&gt;This article presents the world&amp;rsquo;s first HDR model of UV photogrammetry in a browser.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>VintageReality launched</title>
+      <link>https://christianmahnke.de/en/post/vintagereality/citation.bib</link>
+      <pubDate>Tue, 05 Mar 2024 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/vintagereality/citation.bib</guid>
+      <description>&lt;p&gt;The latest blog incubated at the &lt;a href=&#34;https://labs.projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher Labs&lt;/a&gt; has been started.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3D Models in the browser</title>
+      <link>https://christianmahnke.de/en/post/3d-models/citation.bib</link>
+      <pubDate>Sat, 24 Feb 2024 10:16:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/3d-models/citation.bib</guid>
+      <description>&lt;p&gt;Maybe it will become a virtual exhibition about orange ceramics&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hang pictures in Sweet Home 3D</title>
+      <link>https://christianmahnke.de/en/post/hang-pictures-in-sweethome3d/citation.bib</link>
+      <pubDate>Sun, 27 Nov 2022 08:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/hang-pictures-in-sweethome3d/citation.bib</guid>
+      <description>&lt;p&gt;For the planning of an &lt;a href=&#34;https://christianmahnke.de/en/post/wilma-brauner/&#34;&gt;exhibition&lt;/a&gt; using a 3D program, I have been looking into how pre-arranged picture frames could be imported into &lt;a href=&#34;https://www.sweethome3d.com/&#34; target=&#34;_blank&#34;&gt;Sweet Home 3D&lt;/a&gt;&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

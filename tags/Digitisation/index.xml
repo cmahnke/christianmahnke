@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Digitalisierung on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Digitisation/</link>
+    <description>Recent content in Digitalisierung on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/Digitisation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Informationen zu Spendern in Kulturerbeaggregatoren</title>
+      <link>https://christianmahnke.de/post/donation-metadata/citation.bib</link>
+      <pubDate>Wed, 21 May 2025 06:00:00 +0000</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/donation-metadata/citation.bib</guid>
+      <description>&lt;p&gt;Ab und zu spende ich Objekte an Kultureinrichtungen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Digitale Provenienz für digitalisiertes Kulturgut</title>
+      <link>https://christianmahnke.de/post/digital-provenance/citation.bib</link>
+      <pubDate>Sun, 16 Mar 2025 22:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/digital-provenance/citation.bib</guid>
+      <description>&lt;p&gt;Wie kann man Authentizität digitalisierten Kulturgutes gewährleisten?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mikrofilmdigitalisierung beenden!</title>
+      <link>https://christianmahnke.de/post/stop-microfilm-digitisation/citation.bib</link>
+      <pubDate>Mon, 17 Feb 2025 17:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/stop-microfilm-digitisation/citation.bib</guid>
+      <description>&lt;p&gt;Nachdem ich Ende des letzten Jahres schon einen &lt;a href=&#34;https://christianmahnke.de/post/archives-citizen-participation/&#34;&gt;Erfahrungsbericht&lt;/a&gt; mit einem Archiv veröffentlicht habe, nun etwas zu digitalen Bibliotheken&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>UV-Photogrammetrie</title>
+      <link>https://christianmahnke.de/post/uv-photogrammetry/citation.bib</link>
+      <pubDate>Thu, 05 Sep 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/uv-photogrammetry/citation.bib</guid>
+      <description>&lt;p&gt;&lt;strong&gt;In diesem Beitrag wird die weltweit erste HDR Darstellung einer UV-Photogrammetrie im Browser präsentiert.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HDR IIIF</title>
+      <link>https://christianmahnke.de/post/hdr-iiif/</link>
+      <pubDate>Sun, 18 Aug 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/hdr-iiif/</guid>
+      <description>&lt;p&gt;Beim &lt;a href=&#34;http://www.zeitzeug.de/&#34; target=&#34;_blank&#34;&gt;Zeitzeug&lt;/a&gt; wird die Tapetensammlung des Inhabers veräußert und ich habe mir ein besonders grelles Exemplar gesichert&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
