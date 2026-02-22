@@ -91,3 +91,11 @@ other = "Archiv"
 [Post]
 one = "Beitrag"
 other = "Beiträge"
+
+# PDF articles
+
+[keywords]
+other = "Schlagworte"
+
+[references]
+other = "Verweise"

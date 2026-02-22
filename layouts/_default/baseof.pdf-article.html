@@ -21,8 +21,14 @@
     {{ $t := time.Now }}
     {{ $format := "2 Jan 2006" }}
     <meta name="date" content="{{ $t.Format $format }}"/>
+    {{- partial "html/head/style.html" (dict "context" . "css" "css/style.css") -}}
+    {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
+    {{- partial "html/head/page-scripts.html" . -}}
     {{- $cssOptions := dict "outputStyle" "compressed" "transpiler" "dartsass" "targetPath" "css/article.css" "includePaths" (slice "assets/css") -}}
     {{- $css := resources.Get "scss/article-pdf.scss" | toCSS $cssOptions | fingerprint -}}
+    <link rel="stylesheet" href="{{ substr $css.RelPermalink $relative }}" type="text/css" integrity="{{ $css.Data.Integrity }}">
+    {{/*
+    
     {{ with resources.Get "js/print.js" }}
       {{$opts := dict
         "minify" (not hugo.IsDevelopment)
@@ -41,6 +47,7 @@
       {{ end }}
     {{ end }}
     <link rel="stylesheet" href="{{ substr $css.RelPermalink $relative }}" type="text/css" integrity="{{ $css.Data.Integrity }}">
+    */}}
   </head>
   <body class="article">
     {{ block "content" . }}{{ end }}

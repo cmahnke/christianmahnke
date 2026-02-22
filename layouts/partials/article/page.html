@@ -1,0 +1,65 @@
+{{ $class := .Params.type }}
+{{- partial "check-post.html" . -}}
+<div class="post {{ $class }}">
+  <div class="content">
+      <h1 class="post-title">{{ .Title }}</h1>
+      {{- with .Params.description -}}
+        <div class="post-description">{{ . }}</div>
+      {{- end -}}
+      {{- if not .Params.metaPage -}}
+        <div class="date">
+          <time class="post-data" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+            {{- .Date | time.Format ":date_full" -}}
+          </time>
+        </div>
+      {{- end -}}
+      <div class="post-author">
+        {{- with site.Params.author -}}
+          {{- .name -}}
+          {{- .orcid -}}
+        {{- end -}}
+
+      </div>
+      <div class="post-url">URL: {{ (.OutputFormats.Get "html").Permalink }}</div>
+
+      <div class="tags-heading">{{ i18n "keywords" }}:
+        {{ partial "article/meta/tags.html" . }}
+      </div>
+
+      {{- with .Params.doi -}}
+        <div class="doi-reference">
+          {{- partial "doi.html" . -}}
+        </div>
+      {{- end -}}
+      <div class="post-body">
+        {{- .Content -}}
+      </div>
+  </div>
+
+  {{- if eq .Kind "section" -}}
+    {{- partial "section-contents-list.html" . -}}
+  {{- end -}}
+
+  {{- if not .Params.metaPage -}}
+    <div class="post-footer">
+      {{- partial "data/wikidata.html" . -}}
+      {{- partial "data/archive.html" . -}}
+      <div class="spacer">
+      </div>
+    </div>
+  {{- end -}}
+</div>
+{{- if and (not .Params.metaPage) (ne .Kind "section") (not (.HasShortcode "related")) -}}
+  <div class="related-posts">
+    {{ with site.RegularPages.Related . | first 5 }}
+      <div class="related-header">{{ i18n "relatedContent" }}:</div>
+      <ul>
+        {{ range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </div>
+{{- end -}}
+<div class="references-heading">{{ i18n "references" }}</div>
+{{- partial "article/footnotes.html" . -}}
