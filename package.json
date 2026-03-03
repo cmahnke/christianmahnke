@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@annotorious/openseadragon": "^3.7.20",
+    "@annotorious/openseadragon": "^3.7.22",
     "aos": "^2.3.4",
     "chroma-js": "^3.2.0",
     "d3": "^7.9.0",
@@ -12,7 +12,7 @@
     "js-cookie": "^3.0.5",
     "lg-fullscreen": "^1.2.1",
     "lightgallery": "^2.9.0",
-    "openseadragon": "^5.0.1",
+    "openseadragon": "^6.0.1",
     "pdfobject": "2.3.1",
     "photoswipe": "^5.4.4",
     "wordcloud": "^1.2.3",
