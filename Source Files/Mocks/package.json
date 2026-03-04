@@ -35,7 +35,7 @@
     "motion": "^12.34.3",
     "openseadragon": "^5.0.1",
     "playcanvas": "^2.16.1",
-    "svgo": "4.0.0",
+    "svgo": "4.0.1",
     "three": "^0.183.1",
     "ts-pong": "git+https://git@github.com/cmahnke/typescript-pong"
   },
