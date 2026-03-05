@@ -54,7 +54,7 @@ This entry can be used, for example, in Zenodo. The digital exhibit "Quantenkosm
 * **Scheme**: `URL`
 * **Resource type**: `Event`
 
-{{< figure src="zenodo.png" title="Ansicht der Metadaten bei Zenodo" >}}
+{{< figure src="zenodo.png" title="Viewing metadata at Zenodo" >}}
 
 [View metadata on Zenodo](https://zenodo.org/records/18618940)
 
