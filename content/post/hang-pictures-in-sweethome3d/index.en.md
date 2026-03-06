@@ -45,5 +45,13 @@ options:
   -k, --keep            Keep generated files
   -p PATTERN, --pattern PATTERN
                         File pattern for directories, default is '**/*.jpg,**/*.pdf'
-
 ```
+
+# Result
+
+With the help of this tool, a simple plan is transformed into a 3D view (here the work preview).
+
+{{< figure src="img/Gallerie-Alte-Post-plan.svg" alt="Plan of the gallery" class="center" >}}
+
+A 3D view (here the work preview)
+{{< figure src="img/Gallerie-Alte-Post-interior.png" alt="Screenshot Sweet Home 3D" class="center" >}}

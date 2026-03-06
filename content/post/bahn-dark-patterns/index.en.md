@@ -30,9 +30,9 @@ As a result, an ecosystem of external services has emerged to compensate for thi
 * [verspaetung.net](https://verspaetung.net/)
 * [Zugfinder](https://www.zugfinder.net/de/start)
 
-This list is certainly not exhaustive. 
+This list is certainly not exhaustive.
 
-In my view, this is a clear indication that there is a need for transparency that the "DB Navigator" app or the Deutsche Bahn's website cannot meet. 
+In my view, this is a clear indication that there is a need for transparency that the "DB Navigator" app or the Deutsche Bahn's website cannot meet.
 
 There is a lot to criticise about the app in particular. I don't even want to get started on issues such as privacy ([through third-party cookies](https://www.kuketz-blog.de/db-navigator-datenschutz-faellt-heute-aus-app-check-teil1/)) when using the Deutsche Bahn app; others have already written extensively on this topic.
 
@@ -42,12 +42,12 @@ This article is more about reimbursement via the DB Navigator app...
 
 To be honest, I also find it annoying that users have to "apply" for reimbursement. It would be better to use wording that better reflects the fact that Deutsche Bahn is in breach of contract. The button doesn't have to be called "Grant absolution", but I think it would be better to talk about compensation rather than reimbursement.
 
-Which brings us to the "Antrag". It is so poorly integrated into "DB Navigator" that one has to wonder whether this is a case of dark patterns or "merely" a reflection of incompetence in media design. 
+Which brings us to the "Antrag". It is so poorly integrated into "DB Navigator" that one has to wonder whether this is a case of dark patterns or "merely" a reflection of incompetence in media design.
 
 To cut a long story short: there is the [paper form](https://www.bahn.de/wmedia/view/mdb/media/intern/fahrgastrechteformular.pdf) and an electronic version of it, which Deutsche Bahn expects users of the app to fill out. And here you can see what I would call incompetent media design: the form is simply replicated without using the existing data in the default settings. In my case, all the information required for a refund is stored in the app: my bank details (and even if these were not stored, they would still be linked to the BahnCard data record) and the connection I am currently on. In principle, it would be possible to implement the refund via a button next to the "Comfort Check-in". Again: **A button, not a form**, for simple cases (single journey without changing trains).
 The consequences of the implemented approach can be seen here: The screenshot shows my attempt to request a refund before the train arrived – it doesn't work.
 
-{{< figure src="erstattung.jpeg" title="Erstattung beantragen bevor der Zug ankommt" >}}
+{{< figure src="erstattung.jpeg" title="Erstattung beantragen bevor der Zug ankommt" class="center" >}}
 
 And at this point, at the latest, the question arises as to whether this is a case of incompetence or whether [dark patterns](https://de.wikipedia.org/wiki/Dark_Pattern) are at work here:
 * If the form had been optimised efficiently, the train number would suffice. Instead, it asks what the planned times were (at least these are pre-filled).

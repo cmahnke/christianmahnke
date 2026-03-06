@@ -30,9 +30,9 @@ Daher ist ein Ökosystem externer Dienste entstanden, um dies zu kompensieren:
 * [verspaetung.net](https://verspaetung.net/)
 * [Zugfinder](https://www.zugfinder.net/de/start)
 
-Wobei diese Liste sicher nicht vollständig ist. 
+Wobei diese Liste sicher nicht vollständig ist.
 
-Dies ist aus meiner Sicht ein klares Indiz dafür, dass es einen Transparenzbedarf gibt, den die "DB Navigator"-App oder die Website der Bahn nicht erfüllen kann. 
+Dies ist aus meiner Sicht ein klares Indiz dafür, dass es einen Transparenzbedarf gibt, den die "DB Navigator"-App oder die Website der Bahn nicht erfüllen kann.
 
 Gerade an der App gibt es viel zu kritisieren. Von Problemen wie der Privatsphäre ([durch Drittabieter-Cookies](https://www.kuketz-blog.de/db-navigator-datenschutz-faellt-heute-aus-app-check-teil1/)) der Nutzung der Bahn App will ich hier gar nicht anfangen, dazu haben andere schon viel geschrieben.
 
@@ -42,12 +42,12 @@ Hier soll es eher um die Erstattung über den "DB Navigator" gehen...
 
 Um ehrlich zu sein, stört mich auch, dass der Nutzer die Erstattung "beantragen" muss. Hier wäre eine Formulierung wünschenswert, die besser reflektiert, dass die Bahn vertragsbrüchig ist. Der Button muss ja nicht gleich "Absolution erteilen" heißen. Aber ich denke, man sollte eher von Entschädigung als von Erstattung sprechen.
 
-Womit wir bei dem "Antrag" wären. Dieser ist so schlecht in die "DB Navigator" integriert, dass man sich fragen muss, ob man von Dark Patterns sprechen sollte, oder ob er "nur" Ausdruck von Inkompetenz in der Mediengestaltung darstellt. 
+Womit wir bei dem "Antrag" wären. Dieser ist so schlecht in die "DB Navigator" integriert, dass man sich fragen muss, ob man von Dark Patterns sprechen sollte, oder ob er "nur" Ausdruck von Inkompetenz in der Mediengestaltung darstellt.
 
 Um es kurz zu machen: Es gibt das [Papierformular](https://www.bahn.de/wmedia/view/mdb/media/intern/fahrgastrechteformular.pdf) und eine elektronische Form davon, die die Bahn den Nutzern der App zumutet. Und hier sieht man, was ich als inkompetente Mediengestaltung bezeichnen würde: Das Formular wird einfach nachgebaut, ohne dass die vorhandenen Daten in der Standardeinstellung genutzt werden. Bei mir sind alle für eine Erstattung erforderlichen Angaben in der App hinterlegt: die Bankverbindung (und selbst wenn diese nicht hinterlegt wäre, wäre sie noch am Datensatz zur BahnCard verknüpft)  und die Verbindung, in der ich gerade sitze. Grundsätzlich wäre es möglich, die Erstattung über einen Button neben dem "Komfort-Check-in" zu implementieren. Noch mal: **Ein Button, kein Formular**, für die einfachen Fälle (einfache Fahrt ohne umsteigen).
 Die Folgen des implementierten Ansatzes kann man hier sehen: Der Screenshot zeigt meinen Versuch, eine Erstattung zu beantragen, bevor der Zug ankam – es funktioniert nicht.
 
-{{< figure src="erstattung.jpeg" title="Erstattung beantragen bevor der Zug ankommt" >}}
+{{< figure src="erstattung.jpeg" title="Erstattung beantragen bevor der Zug ankommt" class="center" >}}
 
 Und spätestens hier drängt sich die Frage auf, ob es sich um Inkompetenz handelt oder ob hier nicht eher [Dark Patterns](https://de.wikipedia.org/wiki/Dark_Pattern) wirken:
 * Wenn das Formular effizient optimiert worden wäre, würde die Zugnummer reichen. Stattdessen wird gefragt, welche geplanten Zeiten es gab (immerhin sind diese vorausgefüllt).
