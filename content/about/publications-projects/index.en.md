@@ -98,6 +98,7 @@ See also <a id="grolink" href="//publications.goettingen-research-online.de/cris
 * [Art Collection Schmelzle: Hedwig Klinge](https://kunstsammlung.peterschmelzle.de/klinge)
 * [Archivalia 20th November 2025](https://archivalia.hypotheses.org/242502)
 * [Saxorum 20th November 2025](https://saxorum.hypotheses.org/14418)
+* [Exhibition page "SAMMLUNGEN ERZÄHLEN"](https://sammlungen-erzaehlen.gbv.de/kleiderbuegel/): Clothes hangers – "Local economic history – Ready for the wardrobe"
 
 </div>
 </details>
