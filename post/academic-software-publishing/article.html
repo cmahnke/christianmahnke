@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="12 Mar 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/academic-software-publishing/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">KI und Software-&#34;Entwicklung&#34;</h1><div class="post-description">Oder: Akademische Software-Verlage</div><div class="date">
+          <time class="post-data" datetime="2025-02-25T15:52:22&#43;02:00">Dienstag, 25. Februar 2025</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/academic-software-publishing/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>Software Entwicklung</li><li>Projekt Idee</li><li>Kulturpolitik</li><li>Digitale Bibliothek</li><li>KI</li></ul>
+      </div><div class="post-body"><p>Im letzten Jahr habe ich mich ab und zu mit KI beschäftigt, um meine Blogs mit zusätzlichen Features anzureichern und auch ihre Weiterentwicklung zu beschleunigen.</p>
+<p>Die meisten Beispiele liegen im Hintergrund, in den Scripten, die Dinge wie Bildnachbearbeitung, -optimierung und -transformation erledigen. Durch KI lassen sich Methoden relativ simpel in Python übersetzen und in den Workflow einbetten.</p>
+<p>Das Alles erinnerte mich an eine Phase vor ca. 15 Jahren, während der ich beruflich an einem großen Forschungsprojekt zur optischen Zeichenerkennung involviert war. Damals war es für viele der direkt aus der Forschung stammenden Funktionalitäten neu diese miteinander &ldquo;sprechen&rdquo; zu lassen und das in einer Art, die dem Know-how der Anwenderzielgruppe entsprach.</p>
+<p>Die Probleme waren vielfältig:</p>
+<ul>
+<li>Kode, der &ldquo;überoptimiert&rdquo; war, z. B. C mit Inline Assembler</li>
+<li>Kode, der gar nicht optimiert war, also z. B. performance-kritisch ist, aber in einer interpretierten Sprache geschrieben</li>
+<li>Kode, der nicht skalierte, z. B. über mehr als eine CPU / Kern, nicht Thread-sicher ist usw.</li>
+</ul>
+<p>Da es damals auch darum ging, die verschiedenen Implementierungen für die Massendigitalisierung zum Einsatz zu bringen, bestand aber eine Möglichkeit die verschiedenen State-of-the-art-Werkzeuge skalieren zu können und auch mit einheitlichen Schnittstellen auszustatten.</p>
+<p>Die Lösung damals: Ein Generator der aus einer maschinenlesbaren Beschreibung der Kommandozeilenschnittstelle des entsprechenden Werkzeugs einen Webservice zaubert. Also einen zusätzlichen Overhead erzeugt, ohne strukturelle Probleme zu lösen&hellip;</p>
+<p>Nach meinen jetzigen Erfahrungen (siehe oben) könnte eine elegantere Lösung darin bestehen, solche Algorithmen / Funktionsblöcke direkt aus der Forschung mittels KI in eine Form zu überführen, die einen Betrieb in einem Anwendungskontext vereinfacht bzw. optimiert.</p>
+<p>Letztlich werden die Rahmenbedingungen Zusehens komplexer und diese von den Wissenschaftler*innen (mit-)erledigen zu lassen ist eher als Ressourcenverschwendung  zu sehen, da sich diese besser um die Implementierung der für sie konkreten Problemlösung kümmen sollten:</p>
+<ul>
+<li>Betriebsumgebungen wie Docker / Kubernetes / Cloud</li>
+<li>Anforderungen an Logging und Monitoring der Anwendung</li>
+<li>Qualitätssicherung und Wartbarkeit (der Software selbst)</li>
+<li>Metriken</li>
+<li>Datenmanagement</li>
+</ul>
+<p>Und das sind nur die mehr oder weniger technischen Anforderungen, dazu kommen noch viele weitere aus den Bereichen:</p>
+<ul>
+<li>Sicherheit / Datenschutz</li>
+<li>EU-Produkthaftungsrichtlinie</li>
+<li>Usability</li>
+<li>Dokumentation</li>
+</ul>
+<p>Beide Listen sind nicht mal vollständig.</p>
+<h1 id="akademische-software-verlage">Akademische Software-Verlage</h1>
+<p>Hier kann man sich ein (Geschäfts-)Modell vorstellen, dass analog zu den Uni-Verlagen für Publikationen ein Uni-Softwarepublisher institutionalisiert wird: Eine Einrichtung bzw. ein Kompetenzzentrum, das Problemlösungen aus der Forschung zu echten Produkten macht. Und auch wenn sich inzwischen viele dieser Anforderungen von KI-gestützten Methoden lösen lassen, ist dafür ein gewisses Know-how notwendig. Denn die Anforderungen sind nicht statisch, sie werden sich verändern und vor allem im Umfang erhöhen. Es wird also notwendig werden, Modelle zu trainieren, Standards, Vorschriften und Best-Practices zu verfolgen usw.</p>
+<p>Und hier würde die Kompetenz des Uni-Softwarepublishers liegen!
+Gleichzeitig wäre es auch denkbar, dass die Integration / Bereitstellung über eine Art Publikationspauschale mitfinanziert werden könnte und somit auch ein wirtschaftlicher Anreiz für einheitlichere Plattformen (technisch und organisatorisch) geschaffen wird.</p></div>
+  </div><div class="post-footer"><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/digital-provenance/article.html">Digitale Provenienz für digitalisiertes Kulturgut</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/stop-microfilm-digitisation/article.html">Mikrofilmdigitalisierung beenden!</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/software-metadata/article.html">Metadaten für Software</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/vintagereality-apple-spatial/article.html">Historische Stereogramme auf moderner Hardware</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/vintagereality-ai/article.html">KI Segmentierung für Stereoskopie-Karten</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div>
+  </div>
+
+  </body>
+</html>

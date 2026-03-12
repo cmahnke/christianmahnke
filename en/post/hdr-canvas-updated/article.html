@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="12 Mar 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/hdr-canvas-updated/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">hdr-canvas 0.1.0 published</h1><div class="date">
+          <time class="post-data" datetime="2025-11-16T20:22:44&#43;02:00">Sunday, November 16, 2025</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/en/post/hdr-canvas-updated/</div>
+
+      <div class="tags-heading">Keywords:
+        <ul class="tags"><li>JavaScript</li><li>HDR</li></ul>
+      </div><div class="post-body"><p><code>hdr-canvas</code> has been updated&hellip;</p>
+<p>One result of my work with HDR content in the browser is an NPM module, which was also used to create the posts in this blog.
+This article summarises the latest changes. It will be updated when new versions are released.</p>
+<h1 id="version-011---012">Version 0.1.1 - 0.1.2</h1>
+<p>These updates were necessary to fix the following blog posts:</p>
+<ul>
+<li>
+
+
+<a href="https://christianmahnke.de/en/post/uv-photogrammetry/" title="UV photogrammetry" target="_blank">UV photogrammetry<span class="footnote-number">1</span></a></li>
+<li>
+
+
+<a href="https://christianmahnke.de/en/post/hdr-image-analysis/" title="Contrast enhancement for UV images using HDR rendering" target="_blank">Contrast enhancement for UV images using HDR rendering<span class="footnote-number">2</span></a></li>
+</ul>
+<h2 id="011">0.1.1</h2>
+<h3 id="changes-to-the-initialisation-of-a-webgpu-context-for-canvas">Changes to the initialisation of a <code>WebGPU</code> context for <code>canvas</code></h3>
+<p>The changes to the initialisation of a <code>canvas</code> for a renderer are described in the 
+
+
+<a href="https://github.com/ccameron-chromium/webgpu-hdr/blob/main/EXPLAINER.md" title="explanation" target="_blank">explanation<span class="footnote-number">3</span></a>.</p>
+<p>The most important change is the renaming of ‘colourMetadata’ to:</p>
+<pre tabindex="0"><code>toneMapping: { mode: ‘extended’ }
+</code></pre><h2 id="012">0.1.2</h2>
+<p>The colour scaling of <code>Float16Image</code> was incorrect; the scaling only worked for 0% - 1%.</p>
+<h1 id="version-010">Version 0.1.0</h1>
+<p>A year has passed since the first versions and the browser API was rather experimental at that time. A lot has changed since then - one of the examples had even stopped working in the meantime: The most important change concerns the change from <code>Uint16</code> to <code>Float16</code> as 16 bit pixel data type for HDR.</p>
+<p>Since browsers are developing rapidly and the use of older browsers is not recommended for security reasons (even if some people see it differently), <strong>no downward compatibility</strong> is to be expected.</p>
+<p>In addition to the necessary adjustments, the new version also offers improvements in the area of documentation and examples.</p>
+<p>The code can be found on 
+
+
+<a href="https://github.com/cmahnke/hdr-canvas" title="GitHub" target="_blank">GitHub<span class="footnote-number">4</span></a> and 
+
+
+<a href="https://www.npmjs.com/package/hdr-canvas" title="NPM" target="_blank">NPM<span class="footnote-number">5</span></a>.</p>
+<h2 id="the-release-notes">The release notes</h2>
+<h3 id="introduction">Introduction</h3>
+<p>Since the last release many areas of handling HDR contet in the browser have evolved.
+Most notably is certainly the introduction of the <code>Float16Array</code> in the <code>ImageData</code> construtor:</p>
+<ul>
+<li>The 
+
+
+<a href="https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#imagedataarray" title="WhatWG spec" target="_blank">WhatWG spec<span class="footnote-number">6</span></a>, 
+
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageData/ImageData#syntax" title="MDN" target="_blank">MDN<span class="footnote-number">7</span></a> and 
+
+
+<a href="https://github.com/mdn/browser-compat-data/issues/27547" title="BCD" target="_blank">BCD<span class="footnote-number">8</span></a>) have been updated accordingly. You can test your own browser using <code>new ImageData(new Float16Array(4), 1, 1, {pixelFormat:&quot;rgba-float16&quot;})</code>.
+<ul>
+<li>Still open in 
+
+
+<a href="https://bugzil.la/1958830" title="Firefox" target="_blank">Firefox<span class="footnote-number">9</span></a></li>
+<li>Hidden behind flag in 
+
+
+<a href="https://webkit.org/b/291196" title="Safari" target="_blank">Safari<span class="footnote-number">10</span></a></li>
+<li>Chromium has implemented it starting with 
+
+
+<a href="https://source.chromium.org/chromium/chromium/src/&#43;/refs/tags/137.0.7104.0:third_party/blink/renderer/core/html/canvas/image_data.idl" title="137" target="_blank">137<span class="footnote-number">11</span></a>: **The <code>ImageData</code> constructor only acceppts <code>Float16Array</code> instead of <code>Uint16Array</code>. This makes older versions of this modue obsolute, since they targeted the chromium specific solution.</li>
+<li>If Safari enables it by default it will be also in the 
+
+
+<a href="https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2107" title="Typescript DOM types" target="_blank">Typescript DOM types<span class="footnote-number">12</span></a></li>
+</ul>
+</li>
+</ul>
+<p>As 
+
+
+<a href="https://github.com/reitowo" title="@reitowo" target="_blank">@reitowo<span class="footnote-number">13</span></a> pointed out, there has been a change to the <code>getContext(&quot;2d&quot;)</code> method. The key <code>pixelFormat</code> has been replaced by <code>colorType</code>.</p>
+<p>In parallel there have been changes to the UltraHDR image format, especially the encoding of gain map metadata. While this used to be don in XMP it&rsquo;s now done according to ISO 21496-1. This has been adopted by Google and Apple in newer OS versions like Android 15 and iOS 18 to avoid cross-platform fragmentation. The 
+
+
+<a href="https://github.com/google/libultrahdr" title="UltraHDR Library" target="_blank">UltraHDR Library<span class="footnote-number">14</span></a> has already changed to using the 
+
+
+<a href="https://github.com/google/libultrahdr/blob/main/docs/building.md" title="ISO format as default" target="_blank">ISO format as default<span class="footnote-number">15</span></a>.</p>
+<p>Currently the ThreeJS UHDR loader doesn&rsquo;t know how to handle this change, see 
+
+
+<a href="https://github.com/mrdoob/three.js/issues/32293" title="mrdoob/three.js#32293" target="_blank">mrdoob/three.js#32293<span class="footnote-number">16</span></a>.</p>
+<h3 id="key-changes--new-features">Key Changes &amp; New Features</h3>
+<ul>
+<li>Better support for official Web-APIs
+<ul>
+<li>Use <code>Float16Array</code> instead of <code>Uint16Array</code></li>
+<li>Use the correct option for initializing 2D canvas context</li>
+</ul>
+</li>
+</ul>
+<h4 id="improved-documentation">Improved Documentation</h4>
+<p>The documentation have been greatly improved, there is now also a 
+
+
+<a href="https://cmahnke.github.io/hdr-canvas/" title="site" target="_blank">site<span class="footnote-number">17</span></a> including the examples and API docs.</p>
+<h4 id="examples">Examples</h4>
+<p>The examples from this blog are now part of this repository:</p>
+<ul>
+<li>
+
+
+<a href="tests/site/assets/ts/hdr-three.js.ts" title="tests/site/assets/ts/hdr-three.js.ts"><code>tests/site/assets/ts/hdr-three.js.ts</code><span class="footnote-number">18</span></a> - Three JS with HDR texture</li>
+<li>
+
+
+<a href="tests/site/assets/ts/image-slider.ts" title="tests/site/assets/ts/image-slider.ts"><code>tests/site/assets/ts/image-slider.ts</code><span class="footnote-number">19</span></a> - Generated HDR content</li>
+<li>
+
+
+<a href="tests/site/assets/ts/main.ts" title="tests/site/assets/ts/main.ts"><code>tests/site/assets/ts/main.ts</code><span class="footnote-number">20</span></a> - feature detection</li>
+</ul>
+<p>These example are also avalable on the new 
+
+
+<a href="https://cmahnke.github.io/hdr-canvas/" title="documentation site" target="_blank">documentation site<span class="footnote-number">21</span></a></p>
+<h3 id="advocacy">Advocacy</h3>
+<p>Since the changes by the WhatWG weren&rsquo;t picked up already there had to be some Issues in the relevant repos to be raised.</p>
+<ul>
+<li>
+
+
+<a href="https://github.com/mdn/content/issues/40639" title="mdn/content#40639" target="_blank">mdn/content#40639<span class="footnote-number">22</span></a></li>
+<li>
+
+
+<a href="https://github.com/mdn/browser-compat-data/issues/27547" title="mdn/browser-compat-data#27547" target="_blank">mdn/browser-compat-data#27547<span class="footnote-number">23</span></a></li>
+<li>
+
+
+<a href="https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2107" title="microsoft/TypeScript-DOM-lib-generator#2107" target="_blank">microsoft/TypeScript-DOM-lib-generator#2107<span class="footnote-number">24</span></a></li>
+<li>
+
+
+<a href="https://github.com/mrdoob/three.js/issues/32293" title="mrdoob/three.js#32293" target="_blank">mrdoob/three.js#32293<span class="footnote-number">25</span></a>.</li>
+</ul></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q106239881" title="high dynamic range" rel="related">Wikidata entry: high dynamic range</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q2005" title="Q2005" rel="related">Wikidata entry: Q2005</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q7067518" title="npm" rel="related">Wikidata entry: npm</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q978185" title="TypeScript" rel="related">Wikidata entry: TypeScript</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/hdr-canvas-js/article.html">JavaScript library for HDR</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/paper-tiger-print-css/article.html">Paper tiger CSS for printing</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hdr-iiif-vips/article.html">HDR IIIF for everyone with VIPS</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/vite-git-symlink-plugin/article.html">Vite und Git Symlink-Dateien</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/wallpaper-generator/article.html">Wallpaper virtual rooms!</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">References</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">UV photogrammetry</span>: <a href="https://christianmahnke.de/en/post/uv-photogrammetry/" target="_blank">https://christianmahnke.de/en/post/uv-photogrammetry/</a></span><br/><span class="footnote-number">10</span>: <span class="footnote-content"><span class="footnote-title">Safari</span>: <a href="https://webkit.org/b/291196" target="_blank">https://webkit.org/b/291196</a></span><br/><span class="footnote-number">11</span>: <span class="footnote-content"><span class="footnote-title">137</span>: <a href="https://source.chromium.org/chromium/chromium/src/+/refs/tags/137.0.7104.0:third_party/blink/renderer/core/html/canvas/image_data.idl" target="_blank">https://source.chromium.org/chromium/chromium/src/+/refs/tags/137.0.7104.0:third_party/blink/renderer/core/html/canvas/image_data.idl</a></span><br/><span class="footnote-number">12</span>: <span class="footnote-content"><span class="footnote-title">Typescript DOM types</span>: <a href="https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2107" target="_blank">https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2107</a></span><br/><span class="footnote-number">13</span>: <span class="footnote-content"><span class="footnote-title">@reitowo</span>: <a href="https://github.com/reitowo" target="_blank">https://github.com/reitowo</a></span><br/><span class="footnote-number">14</span>: <span class="footnote-content"><span class="footnote-title">UltraHDR Library</span>: <a href="https://github.com/google/libultrahdr" target="_blank">https://github.com/google/libultrahdr</a></span><br/><span class="footnote-number">15</span>: <span class="footnote-content"><span class="footnote-title">ISO format as default</span>: <a href="https://github.com/google/libultrahdr/blob/main/docs/building.md" target="_blank">https://github.com/google/libultrahdr/blob/main/docs/building.md</a></span><br/><span class="footnote-number">16</span>: <span class="footnote-content"><span class="footnote-title">mrdoob/three.js#32293</span>: <a href="https://github.com/mrdoob/three.js/issues/32293" target="_blank">https://github.com/mrdoob/three.js/issues/32293</a></span><br/><span class="footnote-number">17</span>: <span class="footnote-content"><span class="footnote-title">site</span>: <a href="https://cmahnke.github.io/hdr-canvas/" target="_blank">https://cmahnke.github.io/hdr-canvas/</a></span><br/><span class="footnote-number">18</span>: <span class="footnote-content"><span class="footnote-title"><code>tests/site/assets/ts/hdr-three.js.ts</code></span>: <a href="tests/site/assets/ts/hdr-three.js.ts">tests/site/assets/ts/hdr-three.js.ts</a></span><br/><span class="footnote-number">19</span>: <span class="footnote-content"><span class="footnote-title"><code>tests/site/assets/ts/image-slider.ts</code></span>: <a href="tests/site/assets/ts/image-slider.ts">tests/site/assets/ts/image-slider.ts</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">Contrast enhancement for UV images using HDR rendering</span>: <a href="https://christianmahnke.de/en/post/hdr-image-analysis/" target="_blank">https://christianmahnke.de/en/post/hdr-image-analysis/</a></span><br/><span class="footnote-number">20</span>: <span class="footnote-content"><span class="footnote-title"><code>tests/site/assets/ts/main.ts</code></span>: <a href="tests/site/assets/ts/main.ts">tests/site/assets/ts/main.ts</a></span><br/><span class="footnote-number">21</span>: <span class="footnote-content"><span class="footnote-title">documentation site</span>: <a href="https://cmahnke.github.io/hdr-canvas/" target="_blank">https://cmahnke.github.io/hdr-canvas/</a></span><br/><span class="footnote-number">22</span>: <span class="footnote-content"><span class="footnote-title">mdn/content#40639</span>: <a href="https://github.com/mdn/content/issues/40639" target="_blank">https://github.com/mdn/content/issues/40639</a></span><br/><span class="footnote-number">23</span>: <span class="footnote-content"><span class="footnote-title">mdn/browser-compat-data#27547</span>: <a href="https://github.com/mdn/browser-compat-data/issues/27547" target="_blank">https://github.com/mdn/browser-compat-data/issues/27547</a></span><br/><span class="footnote-number">24</span>: <span class="footnote-content"><span class="footnote-title">microsoft/TypeScript-DOM-lib-generator#2107</span>: <a href="https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2107" target="_blank">https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2107</a></span><br/><span class="footnote-number">25</span>: <span class="footnote-content"><span class="footnote-title">mrdoob/three.js#32293</span>: <a href="https://github.com/mrdoob/three.js/issues/32293" target="_blank">https://github.com/mrdoob/three.js/issues/32293</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">explanation</span>: <a href="https://github.com/ccameron-chromium/webgpu-hdr/blob/main/EXPLAINER.md" target="_blank">https://github.com/ccameron-chromium/webgpu-hdr/blob/main/EXPLAINER.md</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">GitHub</span>: <a href="https://github.com/cmahnke/hdr-canvas" target="_blank">https://github.com/cmahnke/hdr-canvas</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">NPM</span>: <a href="https://www.npmjs.com/package/hdr-canvas" target="_blank">https://www.npmjs.com/package/hdr-canvas</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title">WhatWG spec</span>: <a href="https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#imagedataarray" target="_blank">https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#imagedataarray</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title">MDN</span>: <a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageData/ImageData#syntax" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/ImageData/ImageData#syntax</a></span><br/><span class="footnote-number">8</span>: <span class="footnote-content"><span class="footnote-title">BCD</span>: <a href="https://github.com/mdn/browser-compat-data/issues/27547" target="_blank">https://github.com/mdn/browser-compat-data/issues/27547</a></span><br/><span class="footnote-number">9</span>: <span class="footnote-content"><span class="footnote-title">Firefox</span>: <a href="https://bugzil.la/1958830" target="_blank">https://bugzil.la/1958830</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

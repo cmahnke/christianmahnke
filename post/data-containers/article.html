@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="12 Mar 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/data-containers/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Daten Container</h1><div class="post-description">Die GND und Geonames als lokale Datenquellen</div><div class="date">
+          <time class="post-data" datetime="2024-04-19T17:33:44&#43;02:00">Freitag, 19. April 2024</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/data-containers/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>Daten</li><li>Docker</li><li>DNB</li><li>Metadaten</li><li>SPARQL</li></ul>
+      </div><div class="post-body"><p>Auch wenn es nicht notwendigerweise der intendierte Use Case ist, kann man mit Docker sehr einfach auch umfangreiche Datenmengen mit Anwendungen zur vereinfachten Bereitstellungen (wie z.B. APIs) verpacken. Das kann besonders hilfreich sein wenn z.B. Normdaten aus verschiedenen Quellen für Datenanreicherungen zusammenführen will.</p>
+<h1 id="gnd">GND</h1>
+<p>Die 
+
+
+<a href="https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html" title="Gemeinsame NormDatei (GND)" target="_blank">Gemeinsame NormDatei (GND)<span class="footnote-number">1</span></a> beinhaltet Informationen zu Personen, Körperschaften usw., die bei der Nationalbibliothek hinterlegt sind.</p>
+<p>Das Image basiert auf 
+
+
+<a href="https://jena.apache.org/" title="Apache Jena" target="_blank">Apache Jena<span class="footnote-number">2</span></a> und nutzt den 
+
+
+<a href="https://www.rdfhdt.org/" title="HDT" target="_blank">HDT<span class="footnote-number">3</span></a> Abzug. Derzeit unterstützt das notwendige 
+
+
+<a href="https://github.com/rdfhdt/hdt-java" title="Modul" target="_blank">Modul<span class="footnote-number">4</span></a> aber noch nicht Jena / Fuseki 5.0.</p>
+<p>Der Container kann recht einfach gestartet werden:</p>
+<pre tabindex="0"><code>docker run -it -p3030:3030  ghcr.io/cmahnke/data-containers/gnd:latest /bin/sh
+</code></pre><p>Nach dem Starten kann der Datenbestand komfortabel im Browser recherchiert werden: 
+
+
+<a href="http://localhost:3030/#/dataset/gnd/query" title="http://localhost:3030/#/dataset/gnd/query" target="_blank">http://localhost:3030/#/dataset/gnd/query<span class="footnote-number">5</span></a></p>
+<h1 id="geonames">GeoNames</h1>
+<p>
+
+
+<a href="https://www.geonames.org/" title="GeoNames" target="_blank">GeoNames<span class="footnote-number">6</span></a> beinhaltet viele Informationen zu geographischen vielen Entitäten, dazu zählen Koordinaten, Schreibungsvarianten, sowie Hierarchisierung nach Gebieten.</p>
+<p>Der Container beinhaltet aber nur die Koordinaten und Schreibungsvarianten, z.B. um für einen Ort die Koordinaten abrufen zu können. Die Daten werfen dafür in eine 
+
+
+<a href="https://solr.apache.org/" title="Apache Solr" target="_blank">Apache Solr<span class="footnote-number">7</span></a> Instanz eingespielt und können nach dem Starten</p>
+<pre tabindex="0"><code>docker run -p 8983:8983 -it ghcr.io/cmahnke/data-containers/geonames
+</code></pre><p>Einfach mit <code>curl</code> abgefragt werden, dabei wird das Ergebnis als JSON zurückgeben:</p>
+<pre tabindex="0"><code>curl http://localhost:8983/solr/geonames/query?debug=query&amp;q=n:G%C3%B6ttingen
+</code></pre><h1 id="weitere-nutzung">Weitere Nutzung</h1>
+<p>Die Kommandos zum Starten können auch mittels <code>docker-compose</code> z.B. zusammen mit Werkzeugen zur weiteren Analyse oder Zusammenführung zusammengefasst bzw. automatisiert werden.</p>
+<p>Der Code ist auf 
+
+
+<a href="https://github.com/cmahnke/data-containers" title="GitHub" target="_blank">GitHub<span class="footnote-number">8</span></a>, die Container 
+
+
+<a href="https://github.com/cmahnke?tab=packages&amp;repo_name=data-containers" title="hier" target="_blank">hier<span class="footnote-number">9</span></a> verfügbar.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1686799" title="Apache Jena" rel="related">Wikidata Eintrag: Apache Jena</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q178995" title="HTTP-Cookie" rel="related">Wikidata Eintrag: HTTP-Cookie</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q2858103" title="Apache Solr" rel="related">Wikidata Eintrag: Apache Solr</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q36578" title="Gemeinsame Normdatei" rel="related">Wikidata Eintrag: Gemeinsame Normdatei</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q56655440" title="HDT" rel="related">Wikidata Eintrag: HDT</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q830106" title="GeoNames" rel="related">Wikidata Eintrag: GeoNames</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/oai-harvester/article.html">OAI-PMH Harvester</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/authority-data-for-private-collectors/article.html">Normdaten für private Sammlungen (und kleine Kultureinrichtungen)</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/exhibitions-in-wikidata/article.html">Ausstellungen in Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/software-metadata/article.html">Metadaten für Software</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hugo-cff-codemeta/article.html">CFF zu CodeMeta in Hugo</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">Gemeinsame NormDatei (GND)</span>: <a href="https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html" target="_blank">https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">Apache Jena</span>: <a href="https://jena.apache.org/" target="_blank">https://jena.apache.org/</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">HDT</span>: <a href="https://www.rdfhdt.org/" target="_blank">https://www.rdfhdt.org/</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">Modul</span>: <a href="https://github.com/rdfhdt/hdt-java" target="_blank">https://github.com/rdfhdt/hdt-java</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">http://localhost:3030/#/dataset/gnd/query</span>: <a href="http://localhost:3030/#/dataset/gnd/query" target="_blank">http://localhost:3030/#/dataset/gnd/query</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title">GeoNames</span>: <a href="https://www.geonames.org/" target="_blank">https://www.geonames.org/</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title">Apache Solr</span>: <a href="https://solr.apache.org/" target="_blank">https://solr.apache.org/</a></span><br/><span class="footnote-number">8</span>: <span class="footnote-content"><span class="footnote-title">GitHub</span>: <a href="https://github.com/cmahnke/data-containers" target="_blank">https://github.com/cmahnke/data-containers</a></span><br/><span class="footnote-number">9</span>: <span class="footnote-content"><span class="footnote-title">hier</span>: <a href="https://github.com/cmahnke?tab=packages&repo_name=data-containers" target="_blank">https://github.com/cmahnke?tab=packages&repo_name=data-containers</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

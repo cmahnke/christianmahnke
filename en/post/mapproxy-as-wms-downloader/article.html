@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="12 Mar 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/mapproxy-as-wms-downloader/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Mapproxy als WMS Downloader</h1><div class="date">
+          <time class="post-data" datetime="2025-11-13T20:14:44&#43;02:00">Thursday, November 13, 2025</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/en/post/mapproxy-as-wms-downloader/</div>
+
+      <div class="tags-heading">Keywords:
+        <ul class="tags"><li>Geodata</li></ul>
+      </div><div class="post-body"><p>Sometimes you need map tiles from a WMS server&hellip;</p>
+<p>Once again, I needed topographical (elevation) data, but unlike in the 
+
+
+<a href="https://christianmahnke.de/en/post/marmolada-woodcut/" title="post on climate change">post on climate change<span class="footnote-number">1</span></a>, not to process it in Blender, but in a form that could be further processed in a browser. Unfortunately, they are only available via a 
+
+
+<a href="https://en.wikipedia.org/wiki/Web_Map_Service" title="WMS service" target="_blank">WMS service<span class="footnote-number">2</span></a>&hellip;</p>
+<p>There are various programmes available, such as 
+
+
+<a href="https://github.com/lmikolajczak/wms-tiles-downloader" title="wms-tiles-downloader" target="_blank"><code>wms-tiles-downloader</code><span class="footnote-number">3</span></a> or 
+
+
+<a href="https://github.com/easz/wms-tile-get" title="wms-tile-get" target="_blank"><code>wms-tile-get</code><span class="footnote-number">4</span></a>, but these have problems if the data is not delivered in the Web Mercator projection (EPSG:3857).</p>
+<p>Fortunately, there is 
+
+
+<a href="https://mapproxy.org/" title="Mapproxy" target="_blank">Mapproxy<span class="footnote-number">5</span></a>. Even though it is not actually intended for this purpose, it does the job quickly and also offers advanced features such as reprojecting the tiles into different 
+
+
+<a href="https://en.wikipedia.org/wiki/Spatial_reference_system" title="coordinate reference systems" target="_blank">coordinate reference systems<span class="footnote-number">6</span></a>.</p>
+<p>One example is the 
+
+
+<a href="https://geoportal.geodaten.niedersachsen.de/harvest/srv/api/records/740e33da-3310-4173-bae1-d30c31124b3a" title="Digital Terrain Model (DGM1) for Lower Saxony" target="_blank">Digital Terrain Model (DGM1) for Lower Saxony<span class="footnote-number">7</span></a>. This is provided online as a WMS endpoint by the 
+
+
+<a href="https://www.lgln.niedersachsen.de/" title="State Office for Geoinformation and Land Surveying of Lower Saxony (LGLN)" target="_blank">State Office for Geoinformation and Land Surveying of Lower Saxony (LGLN)<span class="footnote-number">8</span></a>.</p>
+<p>Mapproxy can use this endpoint and translate it directly into an access scheme other than WMS. For this example, we will use the 
+
+
+<a href="https://wiki.openstreetmap.org/wiki/Slippy_map" title="Slippy Map URL scheme" target="_blank">Slippy Map URL scheme<span class="footnote-number">9</span></a>, which is also used by OpenStreetMap.</p>
+<p>Mapproxy can either be installed easily via package management (<code>pip</code>, <code>brew</code>, <code>apk</code>, <code>apt-get</code>, <code>dnf</code>, etc.) or using a Docker image. For more information, see the 
+
+
+<a href="https://mapproxy.github.io/mapproxy/latest/install.html" title="documentation" target="_blank">documentation<span class="footnote-number">10</span></a>.</p>
+<p>Then, simply create an empty directory and place the following files in it.</p>
+<p>The configuration for the service itself:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># mapproxy.yaml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># -----------------------</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># MapProxy configuration.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># -----------------------</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># This is the webservice useful during setting up the configuration</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># See http://localhost:8080/demo/</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">demo</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># The service to serve the tiles</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tms</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">use_grid_names</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">origin</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;nw&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">sources</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">dgm1_wms</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">wms</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">supported_srs</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">req</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">https://opendata.lgln.niedersachsen.de/doorman/noauth/dgm_wms?</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">layers</span><span class="p">:</span><span class="w"> </span><span class="l">ni_dgm1_farbe</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">transparent</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">layers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">dgm1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">DGM1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">sources</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">dgm1_cache]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">caches</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># This is the cache for the reprojected tiles, save them</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">dgm1_cache</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">grids</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">webmercator]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">sources</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">dgm1_cache_original]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># This defines the location and directory structure of the downloaded tiles</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">cache</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">file</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">directory</span><span class="p">:</span><span class="w"> </span><span class="l">./cache_data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">directory_layout</span><span class="p">:</span><span class="w"> </span><span class="l">tms</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">coverage</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># This limits the downloaded tiles to a area arround Göttingen</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">bbox</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">9.7</span><span class="p">,</span><span class="w"> </span><span class="m">51.45</span><span class="p">,</span><span class="w"> </span><span class="m">10.1</span><span class="p">,</span><span class="w"> </span><span class="m">51.6</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">srs</span><span class="p">:</span><span class="w"> </span><span class="l">EPSG:4326</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># This is the cache for the dowloaded tiles, don&#39;t save them</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">dgm1_cache_original</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">sources</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">dgm1_wms]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">grids</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">dgm1_grid]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">disable_storage</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">grids</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># The SRS for the source, needed to mal Mapproxy reproject the tiles</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">dgm1_grid</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">srs</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;EPSG:4326&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">webmercator</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">base</span><span class="p">:</span><span class="w"> </span><span class="l">GLOBAL_WEBMERCATOR</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">globals</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">mapserver</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="l">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">resampling_method</span><span class="p">:</span><span class="w"> </span><span class="l">bicubic</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">formats</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">image/png</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">encoding_options</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># This is important for the topographic tiles, to make sure that the colors</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># match between tiles. Otherwise you&#39;ll see jups in height between tiles.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">quantizer</span><span class="p">:</span><span class="w"> </span><span class="l">mediancut</span><span class="w">
+</span></span></span></code></pre></div><p>The configuration for the &ldquo;seeder&rdquo; (actually intended to fill the service&rsquo;s cache, but we use it as a downloader):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c">#seed.yml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># -------------------------------</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># MapProxy seeding configuration.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># -------------------------------</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">seeds</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">dgm1_seed</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">caches</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">dgm1_cache]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">coverages</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">goettingen]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># It&#39;s possible to configure the (zoom) levels to be fetched</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">levels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">from</span><span class="p">:</span><span class="w"> </span><span class="m">11</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="m">15</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">coverages</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">goettingen</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">bbox</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">9.7</span><span class="p">,</span><span class="w"> </span><span class="m">51.45</span><span class="p">,</span><span class="w"> </span><span class="m">10.1</span><span class="p">,</span><span class="w"> </span><span class="m">51.6</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">srs</span><span class="p">:</span><span class="w"> </span><span class="l">EPSG:4326</span><span class="w">
+</span></span></span></code></pre></div><p>To test whether the configuration is correct, simply run <code>mapproxy-util serve-develop ./mapproxy.yaml</code>. Then open the address 
+
+
+<a href="http://localhost:8080/demo/" title="http://localhost:8080/demo/" target="_blank">http://localhost:8080/demo/<span class="footnote-number">11</span></a> in your browser to test the configuration.</p>
+<p>If everything (output service, projections, image and directory formats) is configured correctly, the download can be started with the command <code>mapproxy-seed</code>:</p>
+<pre tabindex="0"><code>mapproxy-seed -s ./seed.yaml -f ./mapproxy.yaml
+</code></pre><p>Once the process is complete, the desired directories and files will be located in the <code>cache_data</code> directory.</p>
+<p>The subdirectory <code>tile-locks</code> can be deleted.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1403548" title="MapProxy" rel="related">Wikidata entry: MapProxy</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1802054" title="Landesamt für Geoinformation und Landesvermessung Niedersachsen" rel="related">Wikidata entry: Landesamt für Geoinformation und Landesvermessung Niedersachsen</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q2788747" title="digital terrain model" rel="related">Wikidata entry: digital terrain model</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/patching-osm-data/article.html">&#34;Patching&#34; OpenStreetMap data</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/quantenkosmos-goettingen/article.html">Quantum cosmos Göttingen</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/marmolada-woodcut/citation.bib">Climate change in art...</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/build-vector-tiles-on-github/article.html">Build vector maps with GitHub</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/geoip-tool/article.html">GeoIP Tool</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">References</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">post on climate change</span>: <a href="https://christianmahnke.de/en/post/marmolada-woodcut/">/en/post/marmolada-woodcut/</a></span><br/><span class="footnote-number">10</span>: <span class="footnote-content"><span class="footnote-title">documentation</span>: <a href="https://mapproxy.github.io/mapproxy/latest/install.html" target="_blank">https://mapproxy.github.io/mapproxy/latest/install.html</a></span><br/><span class="footnote-number">11</span>: <span class="footnote-content"><span class="footnote-title">http://localhost:8080/demo/</span>: <a href="http://localhost:8080/demo/" target="_blank">http://localhost:8080/demo/</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">WMS service</span>: <a href="https://en.wikipedia.org/wiki/Web_Map_Service" target="_blank">https://en.wikipedia.org/wiki/Web_Map_Service</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title"><code>wms-tiles-downloader</code></span>: <a href="https://github.com/lmikolajczak/wms-tiles-downloader" target="_blank">https://github.com/lmikolajczak/wms-tiles-downloader</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title"><code>wms-tile-get</code></span>: <a href="https://github.com/easz/wms-tile-get" target="_blank">https://github.com/easz/wms-tile-get</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">Mapproxy</span>: <a href="https://mapproxy.org/" target="_blank">https://mapproxy.org/</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title">coordinate reference systems</span>: <a href="https://en.wikipedia.org/wiki/Spatial_reference_system" target="_blank">https://en.wikipedia.org/wiki/Spatial_reference_system</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title">Digital Terrain Model (DGM1) for Lower Saxony</span>: <a href="https://geoportal.geodaten.niedersachsen.de/harvest/srv/api/records/740e33da-3310-4173-bae1-d30c31124b3a" target="_blank">https://geoportal.geodaten.niedersachsen.de/harvest/srv/api/records/740e33da-3310-4173-bae1-d30c31124b3a</a></span><br/><span class="footnote-number">8</span>: <span class="footnote-content"><span class="footnote-title">State Office for Geoinformation and Land Surveying of Lower Saxony (LGLN)</span>: <a href="https://www.lgln.niedersachsen.de/" target="_blank">https://www.lgln.niedersachsen.de/</a></span><br/><span class="footnote-number">9</span>: <span class="footnote-content"><span class="footnote-title">Slippy Map URL scheme</span>: <a href="https://wiki.openstreetmap.org/wiki/Slippy_map" target="_blank">https://wiki.openstreetmap.org/wiki/Slippy_map</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

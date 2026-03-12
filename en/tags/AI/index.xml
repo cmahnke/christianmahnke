@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/AI/</link>
+    <description>Recent content in AI on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/AI/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Historical stereograms on modern hardware</title>
+      <link>https://christianmahnke.de/en/post/vintagereality-apple-spatial/citation.bib</link>
+      <pubDate>Sun, 28 Dec 2025 18:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/vintagereality-apple-spatial/citation.bib</guid>
+      <description>&lt;p&gt;I have a new phone&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI segmentation for stereoscopic cards</title>
+      <link>https://christianmahnke.de/en/post/vintagereality-ai/citation.bib</link>
+      <pubDate>Sun, 28 Dec 2025 10:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/vintagereality-ai/citation.bib</guid>
+      <description>&lt;p&gt;In 2024, my stereoscopy collection went online&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Never Built Göttingen</title>
+      <link>https://christianmahnke.de/en/post/never-built-goettingen/citation.bib</link>
+      <pubDate>Fri, 14 Mar 2025 20:30:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/never-built-goettingen/citation.bib</guid>
+      <description>&lt;p&gt;Who doesn&amp;rsquo;t know them, the three blue towers of the University of Göttingen,&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI and software &#34;development&#34;</title>
+      <link>https://christianmahnke.de/en/post/academic-software-publishing/citation.bib</link>
+      <pubDate>Tue, 25 Feb 2025 15:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/academic-software-publishing/citation.bib</guid>
+      <description>&lt;p&gt;Over the past year, I have occasionally worked with AI to enrich my blogs with additional features and also to accelerate their further development.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Visualisation AI segmentation with HDR</title>
+      <link>https://christianmahnke.de/en/post/visualising-ai-segmentation-with-hdr/citation.bib</link>
+      <pubDate>Tue, 14 Jan 2025 21:00:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/visualising-ai-segmentation-with-hdr/citation.bib</guid>
+      <description>&lt;p&gt;The first step towards visually supported annotation with HDR&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

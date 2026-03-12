@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project Ideas on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/ProjectIdea/</link>
+    <description>Recent content in Project Ideas on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/ProjectIdea/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Metadaten für Software</title>
+      <link>https://christianmahnke.de/en/post/software-metadata/citation.bib</link>
+      <pubDate>Wed, 14 Jan 2026 19:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/software-metadata/citation.bib</guid>
+      <description>&lt;p&gt;Part 2 on software metadata.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Digital provenance for digitised cultural heritage</title>
+      <link>https://christianmahnke.de/en/post/digital-provenance/citation.bib</link>
+      <pubDate>Sun, 16 Mar 2025 22:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/digital-provenance/citation.bib</guid>
+      <description>&lt;p&gt;How can the authenticity of digitised cultural assets be guaranteed?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI and software &#34;development&#34;</title>
+      <link>https://christianmahnke.de/en/post/academic-software-publishing/citation.bib</link>
+      <pubDate>Tue, 25 Feb 2025 15:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/academic-software-publishing/citation.bib</guid>
+      <description>&lt;p&gt;Over the past year, I have occasionally worked with AI to enrich my blogs with additional features and also to accelerate their further development.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

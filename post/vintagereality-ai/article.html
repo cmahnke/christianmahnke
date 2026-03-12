@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="12 Mar 2026"/><link href="https://christianmahnke.de/css/47ab77ae893ed8ba730219016f312670.min.57d401165ae34e4f8b4c544875a950c509306a12c5696d1167ac1706a3cfef44.css" rel="stylesheet" integrity="sha256-V9QBFlrjTk&#43;LTFRIdalQxQkwahLFaW0RZ6wXBqPP70Q=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<script src="https://christianmahnke.de/js/721c4fdccbf9e7c9a389daf09b558bfc.min.59250deb5ddac5846d3f7e42dc2a850d3e926d811915974ac82d6e035defcad5.js" integrity="sha256-WSUN613axYRtP35C3CqFDT6SbYEZFZdKyC1uA13vytU="></script><link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/vintagereality-ai/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">KI Segmentierung für Stereoskopie-Karten</h1><div class="date">
+          <time class="post-data" datetime="2025-12-28T10:22:44&#43;02:00">Sonntag, 28. Dezember 2025</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/vintagereality-ai/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>KI</li><li>3D</li><li>Digitale Bilder</li><li>OpenCV</li><li>Stereoskopie</li></ul>
+      </div><div class="post-body"><p>2024 ist meine Stereoskopie-Sammlung online gegangen&hellip;</p>
+<p>&hellip;zumindest 
+
+
+<a href="https://vintagereality.projektemacher.org/" title="teilweise" target="_blank">teilweise<span class="footnote-number">1</span></a>. Einige Teile der Sammlung warten immer noch darauf digitalisiert zu werden. Während die Derivate damals noch mittels &ldquo;klassischer&rdquo; Computer-Vision-Algorithmen 
+
+
+<a href="https://christianmahnke.de/post/vintagereality/" title="erzeugt" target="_blank">erzeugt<span class="footnote-number">2</span></a> wurden, habe ich mich aus aktuellem Anlass (dazu demnächst mehr) mich nun noch einmal mit KI dem Problem genähert.</p>
+<p>Im ersten Schritt wurden Trainingsdaten benötigt. Die eigenen Bestände waren dafür nicht ausreichend, aber zum Glück sind die Karten in der Regel über hundert Jahre alt und daher nicht mehr dem Urheberrecht unterworfen. Verschiedene Institutionen haben entsprechende Sammlungen digitalisiert:</p>
+<ul>
+<li>
+
+
+<a href="https://teva.contentdm.oclc.org/customizations/global/pages/index.html" title="Tennessee Virtual Archive" target="_blank">Tennessee Virtual Archive<span class="footnote-number">3</span></a></li>
+<li>
+
+
+<a href="https://digitalcollections.nypl.org/" title="New York Public Library Digital Collections" target="_blank">New York Public Library Digital Collections<span class="footnote-number">4</span></a></li>
+<li>
+
+
+<a href="https://hdl.huntington.org/" title="The Huntington Library" target="_blank">The Huntington Library<span class="footnote-number">5</span></a></li>
+</ul>
+<p>Die Trainingsdaten wurden mit 
+
+
+<a href="https://labelstud.io/" title="Labels Studio" target="_blank">Labels Studio<span class="footnote-number">6</span></a> ausgezeichnet und sind ebenfalls frei 
+
+
+<a href="https://github.com/cmahnke/vintagereality-tools/tree/main/data" title="verfügbar" target="_blank">verfügbar<span class="footnote-number">7</span></a>.</p>
+<p>Danach wurde ein 
+
+
+<a href="https://docs.ultralytics.com/tasks/segment/" title="YOLO11-Bildsegmentierungsmodell" target="_blank">YOLO11-Bildsegmentierungsmodell<span class="footnote-number">8</span></a> damit trainiert.</p>
+<h2 id="beispiel">Beispiel</h2>
+<p>Die Ergebnisse für den Beitrag 
+
+
+<a href="https://vintagereality.projektemacher.org/post/calcutta/" title="Empfangssaal des Maharajah von Tangore in Calcutta, Indien" target="_blank">Empfangssaal des Maharajah von Tangore in Calcutta, Indien<span class="footnote-number">9</span></a>:</p>
+<div id="_gallery-e492a6e6d3666f9878f9ce4cfee73f6f" class="gallery "><a class="gallery-image caption" href="img/calcutta.jpg" data-pswp-width="4205" data-pswp-height="2110" target="_blank"><img src="https://christianmahnke.de/post/vintagereality-ai/img/calcutta_hu_70cf2b9873d7b782.webp" alt="Digitalisat der Karte" class="gallery-preview" /><div class="hidden-caption-content">Digitalisat der Karte</div></a><a class="gallery-image caption" href="img/seperated.png" data-pswp-width="1612" data-pswp-height="876" target="_blank"><img src="https://christianmahnke.de/post/vintagereality-ai/img/seperated_hu_6900a5e064127343.webp" alt="Segmentierung" class="gallery-preview" /><div class="hidden-caption-content">Segmentierung</div></a><a class="gallery-image caption" href="img/segmented.png" data-pswp-width="1612" data-pswp-height="876" target="_blank"><img src="https://christianmahnke.de/post/vintagereality-ai/img/segmented_hu_e822fe464f8cb1b8.webp" alt="Ausgeschnittene Halbbilder" class="gallery-preview" /><div class="hidden-caption-content">Ausgeschnittene Halbbilder</div></a></div>
+<h2 id="download">Download</h2>
+<p>Das Modell selbst ist auf 
+
+
+<a href="https://huggingface.co/cmahnke/vintagereality" title="Hugging Face" target="_blank">Hugging Face<span class="footnote-number">10</span></a> zum Download verfügbar.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q112181165" title="YOLO" rel="related">Wikidata Eintrag: YOLO</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q2492951" title="Underwood &amp; Underwood" rel="related">Wikidata Eintrag: Underwood &amp; Underwood</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q35158" title="Stereoskopie" rel="related">Wikidata Eintrag: Stereoskopie</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q484031" title="Anaglyph 3D" rel="related">Wikidata Eintrag: Anaglyph 3D</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q56933" title="Segmentierung" rel="related">Wikidata Eintrag: Segmentierung</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/vintagereality-apple-spatial/article.html">Historische Stereogramme auf moderner Hardware</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/vintagereality/article.html">VintageReality gestartet</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/visualising-ai-segmentation-with-hdr/article.html">Visualisierung von KI Segmentierung mit HDR</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/uv-photogrammetry/article.html">UV-Photogrammetrie</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/iiif-proxy/article.html">IIIF Proxy</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">teilweise</span>: <a href="https://vintagereality.projektemacher.org/" target="_blank">https://vintagereality.projektemacher.org/</a></span><br/><span class="footnote-number">10</span>: <span class="footnote-content"><span class="footnote-title">Hugging Face</span>: <a href="https://huggingface.co/cmahnke/vintagereality" target="_blank">https://huggingface.co/cmahnke/vintagereality</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">erzeugt</span>: <a href="https://christianmahnke.de/post/vintagereality/" target="_blank">https://christianmahnke.de/post/vintagereality/</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">Tennessee Virtual Archive</span>: <a href="https://teva.contentdm.oclc.org/customizations/global/pages/index.html" target="_blank">https://teva.contentdm.oclc.org/customizations/global/pages/index.html</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">New York Public Library Digital Collections</span>: <a href="https://digitalcollections.nypl.org/" target="_blank">https://digitalcollections.nypl.org/</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">The Huntington Library</span>: <a href="https://hdl.huntington.org/" target="_blank">https://hdl.huntington.org/</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title">Labels Studio</span>: <a href="https://labelstud.io/" target="_blank">https://labelstud.io/</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title">verfügbar</span>: <a href="https://github.com/cmahnke/vintagereality-tools/tree/main/data" target="_blank">https://github.com/cmahnke/vintagereality-tools/tree/main/data</a></span><br/><span class="footnote-number">8</span>: <span class="footnote-content"><span class="footnote-title">YOLO11-Bildsegmentierungsmodell</span>: <a href="https://docs.ultralytics.com/tasks/segment/" target="_blank">https://docs.ultralytics.com/tasks/segment/</a></span><br/><span class="footnote-number">9</span>: <span class="footnote-content"><span class="footnote-title">Empfangssaal des Maharajah von Tangore in Calcutta, Indien</span>: <a href="https://vintagereality.projektemacher.org/post/calcutta/" target="_blank">https://vintagereality.projektemacher.org/post/calcutta/</a></span><br/></div>
+  </div>
+
+  </body>
+</html>
