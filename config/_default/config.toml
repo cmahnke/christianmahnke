@@ -41,6 +41,7 @@
     email = 'mail@christianmahnke.de'
     name = 'Christian Mahnke'
     uri = 'http://www.wikidata.org/entity/Q137668638'
+    orcid = "0009-0003-1361-4159"
 
 [params.cite]
     title = 'ChristianMahnke.de'

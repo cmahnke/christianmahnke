@@ -16,3 +16,7 @@ One of my collections is participating in a group exhibition....
 ...as already [announced](https://christianmahnke.de/post/kleiderbuegel-2025/), I will be exhibiting a small part of my clothes hanger collection at the [Forum Wissen](https://www.forum-wissen.de/). If you would like to see the entire collection, you can also take a look at the [collection catalogue](/en/post/coat-hangers-book/) (only available in German).
 
 The opening will take place on 7 February 2026 at 5:30 p.m. in the Forum Wissen.
+
+{{< related >}}
+The catalogue of my collection is also [available online.](/en/post/coat-hangers-book/).
+{{< /related >}}

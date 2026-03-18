@@ -1,0 +1,12 @@
+.post {
+  .zenodo-badge {
+    text-align: end;
+
+    a {
+      &:before,
+      &:after {
+        content: '' !important;
+      }
+    }
+  }
+}

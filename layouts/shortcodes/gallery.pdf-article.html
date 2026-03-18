@@ -1,0 +1,38 @@
+{{- $src := .Page.File -}}
+{{- $id := printf "_gallery-%s" (md5 (printf "%s-%s" $src now.UnixNano)) -}}
+{{- $json := .Inner -}}
+{{- $image := unmarshal $json -}}
+{{- $previewWidth := "1024" -}}
+
+<div id="{{ $id }}" class="gallery {{ with .Get "class" }}{{ . }}{{ end }}">
+  {{- range $image := $image -}}
+    {{- $imgRes := $.Page.Resources.Get $image.src -}}
+    {{- $alt := "" -}}
+    {{- $alt = $image.alt -}}
+    {{- $scalePreview := true -}}
+    {{- if isset $image "scalePreview" -}}
+      {{- $scalePreview = $image.scalePreview -}}
+    {{- end -}}
+    {{- with $imgRes -}}
+      <a class="gallery-image {{ if ne $alt "" }}caption{{ end }}" href="{{ $image.src }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank">
+        {{- $preview := $imgRes.Resize (printf "%sx webp picture" $previewWidth) -}}
+        {{- if (not $scalePreview) -}}
+          {{- $preview = $imgRes -}}
+        {{- end -}}
+
+        <img src="{{ $preview.RelPermalink }}" alt="{{ $alt }}" class="gallery-preview" />
+        {{- if ne $alt "" -}}
+          <div class="hidden-caption-content">{{ $alt }}</div>
+        {{- end -}}
+      </a>
+      {{- else -}}
+      {{ warnf "[shortcodes/gallery.html] Not found %s for %s" $image.src $.Page.File.Path }}
+    {{- end -}}
+  {{- end -}}
+</div>
+
+
+
+{{- define "_partials/shortcodes/gallery-metadata.html" -}}
+  {{- (dict "scss" slice "js" (slice "js/gallery.js") "css" (slice "css/photoswipe/photoswipe.css")) | jsonify -}}
+{{- end -}}

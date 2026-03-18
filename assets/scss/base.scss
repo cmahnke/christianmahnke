@@ -33,10 +33,12 @@ $external-link-icon: "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/20
 @import "./iiif-hdr";
 @import "./syntax";
 @import "./doi";
+@import "./zenodo";
 @import "./print";
 @import "./wikidata";
 @import "./footnote";
 @import "./related";
+@import "./featured";
 @import "./tables";
 @import "./tagline";
 @import "./pagefind";
@@ -861,6 +863,14 @@ a:visited {
 
             p {
                 margin: unset;
+            }
+
+            ul {
+              direction: rtl;
+              text-align: start;
+              a {
+                direction: ltr;
+              }
             }
         }
 

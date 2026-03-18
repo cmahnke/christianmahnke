@@ -13,13 +13,14 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  HUGO_VERSION: 0.155.3
+  HUGO_VERSION: 0.157.0
   DEPENDENCY_MANAGER: npm
   PYTHON_VERSION: '3.13'
 
 jobs:
   deploy:
     runs-on: ubuntu-24.04
+    environment: github-pages
     steps:
       - name: Free some disk space
         run: |
@@ -30,7 +31,7 @@ jobs:
           submodules: true  # Fetch Hugo themes (true OR recursive)
 
       - name: Setup Node.js
-        uses: actions/setup-node@v6.2.0
+        uses: actions/setup-node@v6.3.0
         with:
           node-version-file: '.nvmrc'
 
@@ -86,6 +87,9 @@ jobs:
           ./themes/projektemacher-base/scripts/github/check-js-errors.sh -e -c test-urls.local.json
 
       - name: Archive links
+        env:
+          INTERNET_ARCHIVE_ACCESS_KEY: ${{ secrets.INTERNET_ARCHIVE_ACCESS_KEY }}
+          INTERNET_ARCHIVE_SECRET_KEY: ${{ secrets.INTERNET_ARCHIVE_SECRET_KEY }}
         run: python ./themes/projektemacher-base/scripts/archive.py -d docs/ -e projektemacher.org -a 14 -o archived-urls.txt
 
       - name: Save URL list

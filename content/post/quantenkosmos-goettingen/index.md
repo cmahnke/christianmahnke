@@ -47,4 +47,4 @@ Die Koordinaten der Adressen werden mit [Nominatim](https://nominatim.openstreet
 
 {{< figure src="final.jpeg" alt="Fertige Version" class="post-image" caption="Angepasst auf die Ausstellungsgrafik" >}}
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18618940.svg)](https://doi.org/10.5281/zenodo.18618940)
+{{< zenodo doi="10.5281/zenodo.18618940" >}}

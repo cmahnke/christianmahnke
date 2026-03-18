@@ -26,4 +26,10 @@ The Göttinger Tageblatt [also reports on the opening](https://www.goettinger-ta
 
 ## Update 12.2.26
 
+Here is the Instagram post from [@forumwissengoe](https://www.instagram.com/forumwissengoe/) about the opening: 
+
 {{< instagram DUoVhBbiS4V >}}
+
+{{< related >}}
+The catalogue of my collection is also [available online.](/en/post/coat-hangers-book/).
+{{< /related >}}
