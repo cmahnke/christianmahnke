@@ -18,11 +18,11 @@ wikidata:
 ---
 
 Ab und zu fotografiere ich Fehlermeldungen, besonders, wenn sie interessante Informationen über das System preisgeben...
-Heute: Ein Fehlgeschlagener [Netzwerkboot](https://de.wikipedia.org/wiki/Bootstrap_Protocol) einer Medienstation im [Technischen Nationalmuseum](https://de.wikipedia.org/wiki/Technisches_Nationalmuseum_in_Prag) in [Prag](https://de.wikipedia.org/wiki/Prag).
+Heute: Ein fehlgeschlagener [Netzwerkboot](https://de.wikipedia.org/wiki/Bootstrap_Protocol) einer Medienstation im [Technischen Nationalmuseum](https://de.wikipedia.org/wiki/Technisches_Nationalmuseum_in_Prag) in [Prag](https://de.wikipedia.org/wiki/Prag).
 <!--more-->
 
 {{< gallery >}}
 [
-  {"src": "tftp.jepg"}
+  {"src": "tftp.jpeg"}
 ]
 {{</ gallery >}}

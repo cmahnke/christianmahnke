@@ -23,6 +23,6 @@ Today: A failed [network boot](https://en.wikipedia.org/wiki/Bootstrap_Protocol)
 
 {{< gallery >}}
 [
-  {"src": "tftp.jepg"}
+  {"src": "tftp.jpeg"}
 ]
 {{</ gallery >}}
