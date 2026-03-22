@@ -99,6 +99,7 @@ See also <a id="grolink" href="//publications.goettingen-research-online.de/cris
 * [Archivalia 20th November 2025](https://archivalia.hypotheses.org/242502)
 * [Saxorum 20th November 2025](https://saxorum.hypotheses.org/14418)
 * [Exhibition page "SAMMLUNGEN ERZÄHLEN"](https://sammlungen-erzaehlen.gbv.de/kleiderbuegel/): Clothes hangers – "Local economic history – Ready for the wardrobe"
+* [YouTube: Hugo Build-Time News (20 March 2026)](https://youtu.be/cD_sFi77hk4?si=sQidKyHjGzkozKEd&t=189)
 
 </div>
 </details>
