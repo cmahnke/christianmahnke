@@ -6,6 +6,8 @@ schema: about.html
 sitemap:
   priority: 1.0
   changeFreq: monthly
+js:
+  - ts/portrait.ts
 cascade:
   - _target:
       kind: section
