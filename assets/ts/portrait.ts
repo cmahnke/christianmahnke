@@ -37,6 +37,7 @@ export function showFullscreenImage(imageUrl: string) {
 
   const handleKeydown = (event: KeyboardEvent) => {
     if (event.key === "Escape") {
+      event.stopPropagation();
       overlay.click();
     }
   };
@@ -71,7 +72,7 @@ const image = '/about/contact/self-portrait.jpg';
 window.addEventListener('DOMContentLoaded', (event) => {
   setupFullscreenImage('.section-contact .section-content-body strong', image);
   window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' || event.key === 'Esc') {
       showFullscreenImage(image);
     }
   });
