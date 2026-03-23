@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Museum on Christian Mahnke</title>
+    <link>https://christianmahnke.de/en/tags/Museum/</link>
+    <description>Recent content in Museum on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/en/tags/Museum/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Museum piece TFTP</title>
+      <link>https://christianmahnke.de/en/post/museum-piece-tftp/citation.bib</link>
+      <pubDate>Tue, 17 Mar 2026 14:58:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/en/post/museum-piece-tftp/citation.bib</guid>
+      <description>&lt;p&gt;Every now and then I take photos of error messages, especially when they reveal interesting information about the system&amp;hellip;&#xA;Today: A failed &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q753479&#34; href=&#34;https://en.wikipedia.org/wiki/Bootstrap_Protocol&#34; target=&#34;_blank&#34;&gt;network boot&lt;/a&gt; of a media station at the &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q96482839&#34; href=&#34;https://en.wikipedia.org/wiki/National_Technical_Museum&#34; target=&#34;_blank&#34;&gt;National Technical Museum&lt;/a&gt; in &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q1085&#34; href=&#34;https://en.wikipedia.org/wiki/Prague&#34; target=&#34;_blank&#34;&gt;Prague&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

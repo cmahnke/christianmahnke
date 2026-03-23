@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="23 Mar 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/software-metadata/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Metadaten für Software</h1><div class="post-description">Software-Metadaten für die (automatische) Nachnutzung von Funktionionalitäten</div><div class="date">
+          <time class="post-data" datetime="2026-01-14T19:52:22&#43;02:00">Wednesday, January 14, 2026</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/en/post/software-metadata/</div>
+
+      <div class="tags-heading">Keywords:
+        <ul class="tags"><li>Software development</li><li>Metadata</li><li>Projekt idea</li><li>KI</li></ul>
+      </div><div class="post-body"><p>Part 2 on software metadata.</p>
+<p>While the 
+
+
+<a href="https://christianmahnke.de/post/hugo-cff-codemeta/" title="first part">first part<span class="footnote-number">1</span></a> dealt with the integration of metadata into software projects, this part will now highlight possible advantages and perspectives. This time, the focus will not be on the visibility of the authors (through citation), but on the visibility of the respective product or code and its reuse.</p>
+<p>About a year ago, I published a post about my 
+
+
+<a href="https://christianmahnke.de/post/academic-software-publishing" title="experiences">experiences<span class="footnote-number">2</span></a> with integrating software artefacts into my own environment. While I limited myself to technical challenges such as scalability, portability, etc. at the time, that was not all. At the time described, it was also about machine-readable metadata. At that time, 
+
+
+<a href="https://en.wikipedia.org/wiki/DOAP" title="DAOP" target="_blank">DAOP<span class="footnote-number">3</span></a> was &ldquo;modern&rdquo; (and still is in some communities today).</p>
+<p>To date, however, there is no search engine that aggregates projects from code platforms of different sizes, for example, and enables a faceted search via the respective metadata in order to find a targeted implementation for a specialised problem.</p>
+<h2 id="but-what-could-you-do-with-it-if-it-were-different">But what could you do with it if it were different?</h2>
+<p>And if you have such metadata, you can of course index it and search for it. The latter can be thought of as similar to the keyword search on GitHub. It would be a great advantage if GitLab (both centralised and separate instances), Codeberg, Gitea and other comparable platforms and tools provided corresponding data for indexing.</p>
+<p>It gets even more exciting when you can get agents to assemble components based on metadata.
+A constructed example, based on a previous 
+
+
+<a href="https://christianmahnke.de/post/vintagereality-ai/" title="post">post<span class="footnote-number">4</span></a>, would be the following:</p>
+<ul>
+<li>You instruct an agent to search for stereograms from a museum&rsquo;s digital collection. These would, of course, need to be identifiable as such, and metadata such as in this 
+
+
+<a href="https://christianmahnke.de/post/linkedart-metadata/" title="post">post<span class="footnote-number">5</span></a> can help (for example, by searching for: 
+
+
+<a href="http://vocab.getty.edu/aat/300127197.json" title="http://vocab.getty.edu/aat/300127197" target="_blank">http://vocab.getty.edu/aat/300127197<span class="footnote-number">6</span></a>).</li>
+<li>A segmentation method is to be found for this purpose. Ideally, the agent compares the metadata of the input set for the media type with that of possible implementations. These could be marked with 
+
+
+<a href="https://www.wikidata.org/wiki/Q35158" title="https://www.wikidata.org/wiki/Q35158" target="_blank">https://www.wikidata.org/wiki/Q35158<span class="footnote-number">7</span></a> and [https://www.wikidata.org/wiki/Q56933] (
+
+
+<a href="https://www.wikidata.org/wiki/Q56933" title="https://www.wikidata.org/wiki/Q56933" target="_blank">https://www.wikidata.org/wiki/Q56933<span class="footnote-number">8</span></a>) to roughly compare the functionality (without relation to each other) with the requirements.</li>
+<li>The implementations found are applied to the material and the results are returned to the client.</li>
+</ul>
+<p>In this case, &ldquo;putting together&rdquo; is more of a long-term goal; in the first step, agents would probably be used to compile training data.</p>
+<p>However, standardised keywords and specific controlled vocabulary are still lacking. As the field is very dynamic, it will certainly end up being a mixture of both in order to be able to map more niche usage scenarios.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1142726" title="intelligent agent" rel="related">Wikidata entry: intelligent agent</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q5205836" title="DOAP" rel="related">Wikidata entry: DOAP</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/hugo-cff-codemeta/article.html">CFF zu CodeMeta in Hugo</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/academic-software-publishing/article.html">AI and software &#34;development&#34;</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/exhibitions-in-wikidata/article.html">Exhibitions in Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/linkedart-metadata/article.html">Linked Art Metadaten</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/authority-data-for-private-collectors/article.html">Authority data for private collections (and small cultural institutions)</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">References</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">first part</span>: <a href="https://christianmahnke.de/post/hugo-cff-codemeta/">/post/hugo-cff-codemeta/</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">experiences</span>: <a href="https://christianmahnke.de/post/academic-software-publishing">/post/academic-software-publishing</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">DAOP</span>: <a href="https://en.wikipedia.org/wiki/DOAP" target="_blank">https://en.wikipedia.org/wiki/DOAP</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">post</span>: <a href="https://christianmahnke.de/post/vintagereality-ai/">/post/vintagereality-ai/</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">post</span>: <a href="https://christianmahnke.de/post/linkedart-metadata/">/post/linkedart-metadata/</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title">http://vocab.getty.edu/aat/300127197</span>: <a href="http://vocab.getty.edu/aat/300127197.json" target="_blank">http://vocab.getty.edu/aat/300127197.json</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title">https://www.wikidata.org/wiki/Q35158</span>: <a href="https://www.wikidata.org/wiki/Q35158" target="_blank">https://www.wikidata.org/wiki/Q35158</a></span><br/><span class="footnote-number">8</span>: <span class="footnote-content"><span class="footnote-title">https://www.wikidata.org/wiki/Q56933</span>: <a href="https://www.wikidata.org/wiki/Q56933" target="_blank">https://www.wikidata.org/wiki/Q56933</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

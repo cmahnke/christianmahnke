@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="23 Mar 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/hang-pictures-in-sweethome3d/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Bilder aufhängen in Sweet Home 3D</h1><div class="post-description">Ein Werkzeug um PDF Plakate in Sweet Home 3D aufzuhängen</div><div class="date">
+          <time class="post-data" datetime="2022-11-27T08:33:44&#43;02:00">Sonntag, 27. November 2022</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/hang-pictures-in-sweethome3d/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>3D</li><li>Ausstellung</li><li>Blender</li></ul>
+      </div><div class="post-body"><p>Für die Planung einer 
+
+
+<a href="https://christianmahnke.de/post/wilma-brauner/" title="Ausstellung">Ausstellung<span class="footnote-number">1</span></a> in 3D habe ich mich damit beschäftigt, wie vorarrangierte Bilderrahmen in 
+
+
+<a href="https://www.sweethome3d.com/" title="Sweet Home 3D" target="_blank">Sweet Home 3D<span class="footnote-number">2</span></a> importiert werden könnten&hellip;</p>
+<p>Man sollte meinen, das es ziemlich einfach sein sollte, eine Datei, die Abmessungen enthält, in genau der Größe zu importieren. Leider kann Sweet Home 3D das nicht. Daher habe ich ein Python Script, dass Blender dafür fernsteuert, gebastelt. Es erzeugt aus JPEG oder PDF Dateien 
+
+
+<a href="https://en.wikipedia.org/wiki/COLLADA" title="COLLADA" target="_blank">COLLADA<span class="footnote-number">3</span></a> Dateien, die in Sweet Home 3D importiert werden können.</p>
+<p>Das Ganze ist auch als 
+
+
+<a href="https://github.com/cmahnke/oss-exhibition-tools" title="Docker Image" target="_blank">Docker Image<span class="footnote-number">4</span></a> verfügbar:</p>
+<pre tabindex="0"><code>docker run -it -v `pwd`:`pwd` ghcr.io/cmahnke/oss-exhibition-tools/image2model:latest --help
+</code></pre><p>Die folgenden Parameter werden dabei unterstützt:</p>
+<pre tabindex="0"><code>usage: generate-models.py [-h] (-i [file] | -d [directory] | -s) [-o [directory]] [-z] [-t] [-k] [-p PATTERN]
+
+Generate Collada files from images
+
+options:
+  -h, --help            show this help message and exit
+  -i [file], --input [file]
+                        File to convert
+  -d [directory], --directory [directory]
+                        Path to collect images from
+  -s, --setup           Ensure all required modules are present
+  -o [directory], --output [directory]
+                        Path to write converted files to
+  -z, --zip             Compress results to zip file
+  -t, --thumbs          Use thumbnails as textures
+  -k, --keep            Keep generated files
+  -p PATTERN, --pattern PATTERN
+                        File pattern for directories, default is &#39;**/*.jpg,**/*.pdf&#39;
+</code></pre><h1 id="ergebnis">Ergebnis</h1>
+<p>Mit Hilfe dieses Werkzeugs wird aus einem einfachen Plan.</p>
+
+
+
+
+<figure class="center">
+    
+        <img src="https://christianmahnke.de/post/hang-pictures-in-sweethome3d/article/img/Gallerie-Alte-Post-plan.svg" alt="Plan der Gallerie"/> </figure>
+
+<p>Eine 3D Ansicht (hier die Arbeitsvorschau)
+
+
+
+
+<figure class="center">
+    
+        <img src="https://christianmahnke.de/post/hang-pictures-in-sweethome3d/article/img/Gallerie-Alte-Post-interior.png" alt="Screenshot Sweet Home 3D"/> </figure>
+</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1685508" title="Q1685508" rel="related">Wikidata Eintrag: Q1685508</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q42332" title="PDF" rel="related">Wikidata Eintrag: PDF</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/3d-models/article.html">3D Modelle im Browser</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/wilma-brauner/article.html">Ausstellung &#34;Wilma Bräuner&#34;</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/exhibitions-in-wikidata/article.html">Ausstellungen in Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/exhibition-opening-sammlungen-erzaehlen/article.html">Ausstellungseröffnung &#34;Sammlungen erzählen&#34;</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/sammlungen-erzaehlen/article.html">Ausstellung “Sammlungen erzählen”</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">Ausstellung</span>: <a href="https://christianmahnke.de/post/wilma-brauner/">/post/wilma-brauner/</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">Sweet Home 3D</span>: <a href="https://www.sweethome3d.com/" target="_blank">https://www.sweethome3d.com/</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">COLLADA</span>: <a href="https://en.wikipedia.org/wiki/COLLADA" target="_blank">https://en.wikipedia.org/wiki/COLLADA</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">Docker Image</span>: <a href="https://github.com/cmahnke/oss-exhibition-tools" target="_blank">https://github.com/cmahnke/oss-exhibition-tools</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

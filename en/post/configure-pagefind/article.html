@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="23 Mar 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/configure-pagefind/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Extending Pagefind</h1><div class="date">
+          <time class="post-data" datetime="2025-05-30T17:33:44&#43;02:00">Friday, May 30, 2025</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/en/post/configure-pagefind/</div>
+
+      <div class="tags-heading">Keywords:
+        <ul class="tags"><li>Search</li><li>Pagefind</li><li>Python</li></ul>
+      </div><div class="post-body"><p>Since this page needs a search, I had a look at 
+
+
+<a href="https://pagefind.app/" title="Pagefind" target="_blank">Pagefind<span class="footnote-number">1</span></a>&hellip;</p>
+<p>&hellip;and even though I originally had reservations about the integrability and flexibility, a very good friend (and the advantages) persuaded me to give it a try.</p>
+<p>The advantages are quite simple:<br>
+My pages are basically static HTML, dynamic content is realised exclusively in the client in JavaScript (or TypeScript). Therefore, a search must also manage without a classic search server such as 
+
+
+<a href="https://solr.apache.org/" title="Solr" target="_blank">Solr<span class="footnote-number">2</span></a> or 
+
+
+<a href="https://www.elastic.co/elasticsearch" title="ElasticSearch" target="_blank">ElasticSearch<span class="footnote-number">3</span></a>.<br>
+So far, I have been using 
+
+
+<a href="https://www.fusejs.io/" title="Fuse.js" target="_blank">Fuse.js<span class="footnote-number">4</span></a> for the 
+
+
+<a href="https://projektemacher.org/search/" title="Project Maker Search" target="_blank">Project Maker Search<span class="footnote-number">5</span></a>, for which the entire index is saved in a JSON file and always transferred in full to the searching client. Another JavaScript search that also works in this way is 
+
+
+<a href="https://lunrjs.com/" title="Lunr.js" target="_blank">Lunr.js<span class="footnote-number">6</span></a>.<br>
+This makes indexing itself quite fast, but does not scale properly if you want to index many pages, as the size of the data to be transferred scales linearly with the number of pages. There is also a solution here to reduce the amount of data to be transferred, see 
+
+
+<a href="https://christianmahnke.de/en/post/json-compression/" title="article on JSON compression">article on JSON compression<span class="footnote-number">7</span></a>, but in the end the (possibly mobile) client still needs all the data in memory.</p>
+<p>Pagefind works differently at this point, only the required fragments of the index are transferred. A more detailed description can be found on the homepage.<br>
+In addition, there are the relatively extensive options for enriching the index, which should also be used for this page.</p>
+<p>From my point of view, the biggest disadvantage is a rather questionable design decision regarding configurability: what is classically known as index fields is realised in Pagefind via HTML data attributes (i.e. about as flexible or cool as inline CSS) or the use of the API. A simple external configuration file is not (yet) provided.</p>
+<h2 id="pagefind-configuration">Pagefind configuration</h2>
+<p>The following settings can be made via the data attributes; a rough distinction can be made between markers and playable fields. All begin with <code>data-pagefind-</code>, omitted here for clarity:</p>
+<ul>
+<li>Marker
+<ul>
+<li><code>body</code> - The content to be indexed</li>
+<li><code>ignore</code> - Elements that can be ignored, e.g. headers, footers and menus, can optionally also be given a parameter</li>
+</ul>
+</li>
+<li>Field configuration
+<ul>
+<li><code>index-attrs</code> - attributes that are to be indexed</li>
+<li><code>weight</code> - Weighting of an element</li>
+<li><code>meta</code> - Additional metadata for a document, can include authors
+<ul>
+<li><code>image</code> - metadata about images</li>
+<li><code>title</code> - The element for the title</li>
+</ul>
+</li>
+<li><code>filter</code> - Filter, can be used e.g. for tags</li>
+</ul>
+</li>
+</ul>
+<h2 id="external-configuration">External configuration</h2>
+<p>As the configuration is element-specific, it can be separated quite easily from the input document. The comparison to inline CSS above is not accidental, as CSS selectors are the means of choice for cleanly separating content and indexing (instructions) here too. All that is needed is a data structure that combines the two. And therein lies the novelty of the approach presented.</p>
+<p>The basic structure is relatively simple: a list of CSS selectors can be assigned for each option above and parameters can then be specified depending on the type (see above).</p>
+<p>This example illustrates the assignment:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">files</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">output</span><span class="p">:</span><span class="w"> </span><span class="l">docs/index</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l">docs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">include</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="s1">&#39;**/*.htm&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="s1">&#39;**/*.html&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">exclude</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="s1">&#39;tags/**&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="s1">&#39;en/tags/**&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="s1">&#39;post/page/*/**&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="s1">&#39;en/post/page/*/**&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="s1">&#39;search/**&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="s1">&#39;en/search/**&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">content</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">ignore</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="s2">&#34;&lt;meta http-equiv=\&#34;refresh\&#34; content=\&#34;0; url=&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">index</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># Tagging attributes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">body</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">.content-container</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">ignore</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">header.header</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">footer.footer</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="l">all</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">&#34;div.menu&#34;: </span><span class="l">all</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">weight</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">&#34;h1&#34;: </span><span class="m">7.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">&#34;h2&#34;: </span><span class="m">6.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">&#34;h3&#34;: </span><span class="m">5.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">&#34;a[data-wikidata-entity]&#34;: </span><span class="m">5.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">&#34;h4&#34;: </span><span class="m">4.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">&#34;h5&#34;: </span><span class="m">3.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">&#34;h6&#34;: </span><span class="m">2.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># Index fields</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">meta</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;meta[name=&#34;author&#34;]&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">wikidata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">&#34;a[data-wikidata-entity]&#34;: </span><span class="s2">&#34;[data-wikidata-entity]&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">variants</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;a[data-wikidata-entity]&#34;</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">function</span><span class="p">:</span><span class="w"> </span><span class="l">variants</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">args</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">lang</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{lang}&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">title</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">h1.post-title</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;.section-head h1.section-head-title&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">date</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">&#34;.date time&#34;: </span><span class="s2">&#34;[datetime]&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">selector</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;p, h1, h2&#34;</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">function</span><span class="p">:</span><span class="w"> </span><span class="l">generate_css_selector</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">&#34;.gallery .gallery-image.caption&#34;: </span><span class="s2">&#34;[href]&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">&#34;figure img&#34;: </span><span class="s2">&#34;[src]&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">sort</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">date</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">&#34;.date time&#34;: </span><span class="s2">&#34;[datetime]&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">filter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;.meta .tags a&#34;</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">function</span><span class="p">:</span><span class="w"> </span><span class="l">extract</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">args</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;s/#(.*)/$1/g&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">section</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">body</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">function</span><span class="p">:</span><span class="w"> </span><span class="l">extract</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">args</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">attribute</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;class&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">pattern</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;s/.*section-(.[^ ]*).*/$1/g&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">index-attrs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;[data-wikidata-entity]&#34;</span><span class="w">
+</span></span></span></code></pre></div><p>In addition to the general functionality already explained, a few special features also become clear:</p>
+<ul>
+<li>General configuration of directories and patterns for including and excluding the files to be indexed</li>
+<li>Content-based filters for content, used here to exclude redirects</li>
+<li>Weightings are also assigned to elements with certain attributes</li>
+<li>Additional functions - these enable documents to be enriched with additional data. Examples can be a generated CSS selector that only addresses the input element, or typing of entities</li>
+</ul>
+<h2 id="implementation">Implementation</h2>
+<p>The example implementation uses the Python API from Pagefind, mainly because I already have experience with the Python library 
+
+
+<a href="https://www.crummy.com/software/BeautifulSoup/" title="BeautifulSoup4" target="_blank">BeautifulSoup4<span class="footnote-number">8</span></a>, which is used for selection using CSS selectors.</p>
+<h3 id="source-code">Source code</h3>
+<p>The source code is available as 
+
+
+<a href="https://gist.github.com/cmahnke/5049d42cd6dabc19cfd6c85161947fa2" title="Gist" target="_blank">Gist<span class="footnote-number">9</span></a>.</p>
+<h2 id="outlook">Outlook</h2>
+<p>The separation of content to be indexed and the configuration of the index now allows a few simple extensions that could massively increase the (re-)usability of the software:</p>
+<ul>
+<li><strong>Inline callbacks for CSS selectors</strong>
+If it is possible to execute functions or callbacks for elements found via CSS selectors, these could also further enrich the index. These callbacks could of course be exchanged, so simple preprocessing pipelines could be realised, as known from 
+
+
+<a href="https://www.elastic.co/docs/reference/enrich-processor/pipeline-processor" title="ElasticSearch" target="_blank">ElasticSearch<span class="footnote-number">10</span></a>, for example
+<strong>Multiple output documents for one input document</strong>
+It is also conceivable to create several indexing documents for one input document. This has the advantage that individual document fragments can also be searched and addressed.</li>
+</ul>
+<p>If the configuration were realised in JavaScript (instead of YAML or JSON), the callbacks / plugins could also be defined or imported directly inline.</p></div>
+  </div><div class="post-footer"><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/simple-wikidata-queries/article.html">Simple data enrichment with Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/patching-osm-data/article.html">&#34;Patching&#34; OpenStreetMap data</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/site-search/article.html">Site now searchable</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/geoip-tool/article.html">GeoIP Tool</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">References</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">Pagefind</span>: <a href="https://pagefind.app/" target="_blank">https://pagefind.app/</a></span><br/><span class="footnote-number">10</span>: <span class="footnote-content"><span class="footnote-title">ElasticSearch</span>: <a href="https://www.elastic.co/docs/reference/enrich-processor/pipeline-processor" target="_blank">https://www.elastic.co/docs/reference/enrich-processor/pipeline-processor</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">Solr</span>: <a href="https://solr.apache.org/" target="_blank">https://solr.apache.org/</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">ElasticSearch</span>: <a href="https://www.elastic.co/elasticsearch" target="_blank">https://www.elastic.co/elasticsearch</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">Fuse.js</span>: <a href="https://www.fusejs.io/" target="_blank">https://www.fusejs.io/</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">Project Maker Search</span>: <a href="https://projektemacher.org/search/" target="_blank">https://projektemacher.org/search/</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title">Lunr.js</span>: <a href="https://lunrjs.com/" target="_blank">https://lunrjs.com/</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title">article on JSON compression</span>: <a href="https://christianmahnke.de/en/post/json-compression/">/en/post/json-compression/</a></span><br/><span class="footnote-number">8</span>: <span class="footnote-content"><span class="footnote-title">BeautifulSoup4</span>: <a href="https://www.crummy.com/software/BeautifulSoup/" target="_blank">https://www.crummy.com/software/BeautifulSoup/</a></span><br/><span class="footnote-number">9</span>: <span class="footnote-content"><span class="footnote-title">Gist</span>: <a href="https://gist.github.com/cmahnke/5049d42cd6dabc19cfd6c85161947fa2" target="_blank">https://gist.github.com/cmahnke/5049d42cd6dabc19cfd6c85161947fa2</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

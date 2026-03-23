@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="23 Mar 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/windows-remote/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Windows Remote Management</h1><div class="date">
+          <time class="post-data" datetime="2026-03-04T19:22:44&#43;02:00">Wednesday, March 4, 2026</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/en/post/windows-remote/</div>
+
+      <div class="tags-heading">Keywords:
+        <ul class="tags"><li>Windows</li></ul>
+      </div><div class="post-body"><p>Many systems for remote control of Windows-based computers require their own client on the respective system&hellip;.</p>
+<p>&hellip;Examples of this include changing the volume of a media station or shutting down the computer. This is usually implemented via 
+
+
+<a href="https://de.wikipedia.org/wiki/MQTT" title="MQTT" target="_blank">MQTT<span class="footnote-number">1</span></a> or proprietary protocols. However, this makes the setup unnecessarily complicated, especially if you are trying to customise the respective systems as little as possible.</p>
+<p>As with the 
+
+
+<a href="https://christianmahnke.de/post/windows-deployer/" title="last project on Windows remote installation">last project on Windows remote installation<span class="footnote-number">2</span></a>, the following applies: for cases where there are no tools available, you have to build your own:</p>
+<p>An alternative built into Windows is: 
+
+
+<a href="https://de.wikipedia.org/wiki/Windows_Management_Instrumentation" title="WMI (Windows Management Instrumentation)" target="_blank">WMI (Windows Management Instrumentation)<span class="footnote-number">3</span></a>. This can be used to start processes, for example. At the same time, a (
+
+
+<a href="https://de.wikipedia.org/wiki/PowerShell" title="PowerShell" target="_blank">PowerShell<span class="footnote-number">4</span></a>) script can also be transferred.</p>
+<p>This combination offers many possibilities for manipulating a Windows client, especially since it is also possible to load additional components via 
+
+
+<a href="https://de.wikipedia.org/wiki/NuGet" title="NuGet" target="_blank">NuGet<span class="footnote-number">5</span></a>).</p>
+<p>The Python library 
+
+
+<a href="https://github.com/fortra/impacket/" title="impacket" target="_blank">impacket<span class="footnote-number">6</span></a> is used for implementation, which makes it possible to address WMI without (Windows) native dependencies (e.g. from Linux systems). To do this, the WMI service only needs to be configured for external access on the client.</p>
+<p>Das Skript (inklusive Docker-Image und REST-Service) ist auf 
+
+
+<a href="https://github.com/cmahnke/mediastation-remote" title="GitHub" target="_blank">GitHub<span class="footnote-number">7</span></a> verfügbar.</p></div>
+  </div><div class="post-footer"><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/windows-deployer/article.html">Windows Deployer</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">References</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">MQTT</span>: <a href="https://de.wikipedia.org/wiki/MQTT" target="_blank">https://de.wikipedia.org/wiki/MQTT</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">last project on Windows remote installation</span>: <a href="https://christianmahnke.de/post/windows-deployer/">/post/windows-deployer/</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">WMI (Windows Management Instrumentation)</span>: <a href="https://de.wikipedia.org/wiki/Windows_Management_Instrumentation" target="_blank">https://de.wikipedia.org/wiki/Windows_Management_Instrumentation</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">PowerShell</span>: <a href="https://de.wikipedia.org/wiki/PowerShell" target="_blank">https://de.wikipedia.org/wiki/PowerShell</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">NuGet</span>: <a href="https://de.wikipedia.org/wiki/NuGet" target="_blank">https://de.wikipedia.org/wiki/NuGet</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title">impacket</span>: <a href="https://github.com/fortra/impacket/" target="_blank">https://github.com/fortra/impacket/</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title">GitHub</span>: <a href="https://github.com/cmahnke/mediastation-remote" target="_blank">https://github.com/cmahnke/mediastation-remote</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

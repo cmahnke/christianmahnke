@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="23 Mar 2026"/><link href="https://christianmahnke.de/css/47ab77ae893ed8ba730219016f312670.min.57d401165ae34e4f8b4c544875a950c509306a12c5696d1167ac1706a3cfef44.css" rel="stylesheet" integrity="sha256-V9QBFlrjTk&#43;LTFRIdalQxQkwahLFaW0RZ6wXBqPP70Q=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<script src="https://christianmahnke.de/js/721c4fdccbf9e7c9a389daf09b558bfc.min.59250deb5ddac5846d3f7e42dc2a850d3e926d811915974ac82d6e035defcad5.js" integrity="sha256-WSUN613axYRtP35C3CqFDT6SbYEZFZdKyC1uA13vytU="></script><link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/iiif-proxy/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">IIIF Proxy</h1><div class="post-description">On-the-fly Bildbearbeitung für IIIF Ressourcen</div><div class="date">
+          <time class="post-data" datetime="2022-01-26T11:44:44&#43;02:00">Mittwoch, 26. Januar 2022</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/iiif-proxy/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>IIIF</li><li>OpenCV</li><li>Digitale Bilder</li></ul>
+      </div><div class="post-body"><p>Zur Verbesserung der &ldquo;Ausstellbarkeit&rdquo; digitaler Objekte, wie Münzen und Büchern habe ich einen Proxy für IIIF-Ressourcen geschrieben&hellip;</p>
+<p>Die digitalen Sammlungen der Uni Göttingen speisen sich hauptsächlich aus zwei Portalen:</p>
+<ul>
+<li>
+
+
+<a href="https://sammlungen.uni-goettingen.de/index/" title="Wissenschaftliche Sammlungen der Georg-August-Universität Göttingen" target="_blank">Wissenschaftliche Sammlungen der Georg-August-Universität Göttingen<span class="footnote-number">1</span></a></li>
+<li>
+
+
+<a href="https://gdz.sub.uni-goettingen.de/" title="Göttinger Digitialisierungszentrum" target="_blank">Göttinger Digitialisierungszentrum<span class="footnote-number">2</span></a></li>
+</ul>
+<p>Beide stellen ihre Digitalisate über 
+
+
+<a href="https://iiif.io/" title="IIIF" target="_blank">IIIF<span class="footnote-number">3</span></a> bereit. Leider sind die bereit gestellten Bilder aber nicht für eine ästhetisch ansprechende Zweitverwendung optimiert.</p>
+<p>Um nun eine manuelle Nachbearbeitung und den daraus folgenden Speicheraufwand gering zu halten, habe ich einen bestehenden IIIF Server - 
+
+
+<a href="https://github.com/dbmdz/iiif-server-hymir/" title="Hymir vom MDZ" target="_blank">Hymir vom MDZ<span class="footnote-number">4</span></a> - etwas erweitert, so dass er in der Lage ist sich auf einen institutionellen Server zu setzen und die von diesem ausgelieferten Bilder umzugestalten.</p>
+<p>Um die Bildverarbeitung konfigurierbar zu halten, wird ein Feld der IIIF Image API genutzt um die Operation zu spezifizieren. Dafür bot sich das Feld 
+
+
+<a href="https://iiif.io/api/image/2.1/#quality" title="quality" target="_blank"><code>quality</code><span class="footnote-number">5</span></a> an, der Proxy erlaubt:</p>
+<ul>
+<li><code>nofold</code> - Seitenfalz entfernen</li>
+<li><code>transparent-background</code> - Transparenter Hintergund</li>
+<li><code>nofold+transparentbg</code> - beide zusammen</li>
+</ul>
+<p>Für die Bildoperationen selbst kommt 
+
+
+<a href="https://opencv.org/" title="OpenCV" target="_blank">OpenCV<span class="footnote-number">6</span></a> zum Einsatz, dabei wird der Hintergrund einfach mit einem Schwellwert und nur an den Rändern entfernt - also transparent gemacht. Die Erkennung der Falzist etwas komplizierter, aber auch kein Hexenwerk:</p>
+<ul>
+<li>Erkennung von Linien (
+
+
+<a href="https://de.wikipedia.org/wiki/Hough-Transformation" title="Probabilistic Hough Line Transform" target="_blank">Probabilistic Hough Line Transform<span class="footnote-number">7</span></a>) im Falzbereich je nach Links- oder Rechtsseitigkeit</li>
+<li>Sortierung der erkannten Linien nach Winkel und Länge um den wahrscheinlichsten Kandidaten für die Falz zu finden</li>
+<li>Rotation um die erkannte Falz vertikal auszurichten</li>
+</ul>
+<p>Aber hier könnte die Zuverlässigkeit noch etwas erhöht werden.</p>
+<h1 id="beispiele">Beispiele</h1>
+<p>Die folgende Beispiele zeigen Digitalisate im jeweiligen Portal und im Viewer des Proxies. Der Viewer des Proxies erlaubt das Ändern der Hintergrundfarbe, um den Kontrast erhöhen zu können. In den Beispielen ist ein blauer Hintergrund voreingestellt.</p>
+<h2 id="transparenter-hintergrund">Transparenter Hintergrund</h2>
+<div id="_gallery-bb74865c7202187c57caa87a93cff317" class="gallery "><a class="gallery-image caption" href="img/Sammlungsportal-record_DE-MUS-062622_kenom_127703.png" data-pswp-width="2980" data-pswp-height="1664" target="_blank"><img src="https://christianmahnke.de/post/iiif-proxy/img/Sammlungsportal-record_DE-MUS-062622_kenom_127703_hu_f5232174854433cc.webp" alt="Vorher" class="gallery-preview" /><div class="hidden-caption-content">Vorher</div></a><a class="gallery-image caption" href="img/Proxy-record_DE-MUS-062622_kenom_127703.png" data-pswp-width="2980" data-pswp-height="1664" target="_blank"><img src="https://christianmahnke.de/post/iiif-proxy/img/Proxy-record_DE-MUS-062622_kenom_127703_hu_97d72cc18d5bf405.webp" alt="Nachher" class="gallery-preview" /><div class="hidden-caption-content">Nachher</div></a></div>
+<p>
+
+
+<a href="https://sammlungen.uni-goettingen.de/objekt/record_DE-MUS-062622_kenom_127703/" title="Original Eintrag im Portal" target="_blank">Original Eintrag im Portal<span class="footnote-number">8</span></a></p>
+<div class="small-font-right">
+Abbildung: Münzkabinett der Universität Göttingen, Stephan Eckardt, Archäologisches Institut Göttingen, 2014 / Lizenz: Namensnennung - Nicht kommerziell 4.0 (CC BY-NC 4.0)
+</div>
+<h2 id="ohne-falz">Ohne Falz</h2>
+<p>Und mit transparentem Hintergrund&hellip;</p>
+<div id="_gallery-5b9800a0aa6dc4c1cdb3749a79fd95a3" class="gallery "><a class="gallery-image caption" href="img/GDZ-DE-611-HS-3461927_00000016.png" data-pswp-width="2980" data-pswp-height="1664" target="_blank"><img src="https://christianmahnke.de/post/iiif-proxy/img/GDZ-DE-611-HS-3461927_00000016_hu_a061eef3d10c67e9.webp" alt="Vorher" class="gallery-preview" /><div class="hidden-caption-content">Vorher</div></a><a class="gallery-image caption" href="img/Proxy-DE-611-HS-3461927_00000016.png" data-pswp-width="2980" data-pswp-height="1664" target="_blank"><img src="https://christianmahnke.de/post/iiif-proxy/img/Proxy-DE-611-HS-3461927_00000016_hu_920e6d6732971d4b.webp" alt="Nachher" class="gallery-preview" /><div class="hidden-caption-content">Nachher</div></a></div>
+<p>
+
+
+<a href="https://gdz.sub.uni-goettingen.de/id/DE-611-HS-3461927?tify=%7B%22pages%22%3A%5B16%5D%2C%22view%22%3A%22info%22%7D" title="Original Eintrag im Portal" target="_blank">Original Eintrag im Portal<span class="footnote-number">9</span></a></p>
+<div class="small-font-right">
+Abbildung: Niedersächsische Staats- und Universitätsbibliothek Göttingen / Lizenz: Public Domain Mark 1.0 (PDM)
+</div>
+<br>
+<p>Das Projekt ist auf 
+
+
+<a href="https://github.com/cmahnke/iiif-proxy" title="GitHub" target="_blank">GitHub<span class="footnote-number">10</span></a> verfügbar.</p>
+<h1 id="update-11422">Update 11.4.22</h1>
+<p>Aus zeitlichen Gründen wird das Projekt wird erstmal nicht fortgeführt, zumal das Upstream Projekt gerade nichts sehr aktiv ist&hellip;</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q152838" title="Georg-August-Universität Göttingen" rel="related">Wikidata Eintrag: Georg-August-Universität Göttingen</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q504453" title="Groovy" rel="related">Wikidata Eintrag: Groovy</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q564783" title="Niedersächsische Staats- und Universitätsbibliothek Göttingen" rel="related">Wikidata Eintrag: Niedersächsische Staats- und Universitätsbibliothek Göttingen</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q628106" title="Göttinger Digitalisierungszentrum" rel="related">Wikidata Eintrag: Göttinger Digitalisierungszentrum</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/vintagereality-apple-spatial/article.html">Historische Stereogramme auf moderner Hardware</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/vintagereality-ai/article.html">KI Segmentierung für Stereoskopie-Karten</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-iiif-vips/article.html">HDR IIIF für alle mit VIPS</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/fliiifenleger/article.html">Fliiifenleger - eine IIIF Experimentierplattform</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/wallpaper-generator/article.html">Virtuelle Räume tapezieren!</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">Wissenschaftliche Sammlungen der Georg-August-Universität Göttingen</span>: <a href="https://sammlungen.uni-goettingen.de/index/" target="_blank">https://sammlungen.uni-goettingen.de/index/</a></span><br/><span class="footnote-number">10</span>: <span class="footnote-content"><span class="footnote-title">GitHub</span>: <a href="https://github.com/cmahnke/iiif-proxy" target="_blank">https://github.com/cmahnke/iiif-proxy</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">Göttinger Digitialisierungszentrum</span>: <a href="https://gdz.sub.uni-goettingen.de/" target="_blank">https://gdz.sub.uni-goettingen.de/</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">IIIF</span>: <a href="https://iiif.io/" target="_blank">https://iiif.io/</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">Hymir vom MDZ</span>: <a href="https://github.com/dbmdz/iiif-server-hymir/" target="_blank">https://github.com/dbmdz/iiif-server-hymir/</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title"><code>quality</code></span>: <a href="https://iiif.io/api/image/2.1/#quality" target="_blank">https://iiif.io/api/image/2.1/#quality</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title">OpenCV</span>: <a href="https://opencv.org/" target="_blank">https://opencv.org/</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title">Probabilistic Hough Line Transform</span>: <a href="https://de.wikipedia.org/wiki/Hough-Transformation" target="_blank">https://de.wikipedia.org/wiki/Hough-Transformation</a></span><br/><span class="footnote-number">8</span>: <span class="footnote-content"><span class="footnote-title">Original Eintrag im Portal</span>: <a href="https://sammlungen.uni-goettingen.de/objekt/record_DE-MUS-062622_kenom_127703/" target="_blank">https://sammlungen.uni-goettingen.de/objekt/record_DE-MUS-062622_kenom_127703/</a></span><br/><span class="footnote-number">9</span>: <span class="footnote-content"><span class="footnote-title">Original Eintrag im Portal</span>: <a href="https://gdz.sub.uni-goettingen.de/id/DE-611-HS-3461927?tify=%7B%22pages%22%3A%5B16%5D%2C%22view%22%3A%22info%22%7D" target="_blank">https://gdz.sub.uni-goettingen.de/id/DE-611-HS-3461927?tify=%7B%22pages%22%3A%5B16%5D%2C%22view%22%3A%22info%22%7D</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

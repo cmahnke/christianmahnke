@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="23 Mar 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/geoip-tool/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">GeoIP Tool</h1><div class="date">
+          <time class="post-data" datetime="2023-04-30T16:15:44&#43;02:00">Sonntag, 30. April 2023</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/geoip-tool/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>Daten</li><li>Geodaten</li><li>Suchen</li></ul>
+      </div><div class="post-body"><p>
+
+
+<a href="https://www.elastic.co/de/kibana" title="Kibana" target="_blank">Kibana<span class="footnote-number">1</span></a> Visualisierung mit Raumplänen braucht Daten, z.B. von Geräten in einem Gebäude. Aber irgendwo müssen die Daten herkommen&hellip;</p>
+<p>Eine Möglichkeit das zu tun ist einfach den 
+
+
+<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/geoip-processor.html" title="GeoIP Prozessor" target="_blank">GeoIP Prozessor<span class="footnote-number">2</span></a> von Elastic Search dafür zu benutzen. Leider ist es mit mitgelieferten Bordmittel nicht möglich eine eigene entsprechende Datenbank anzulegen. Daher habe ich dafür ein 
+
+
+<a href="https://github.com/cmahnke/geoip-tool" title="kleines Werkzeug" target="_blank">kleines Werkzeug<span class="footnote-number">3</span></a> geschrieben.</p>
+<p>Mit dem Tool kann man eine Datenbank anlegen, die die Koordinaten von Geräten innerhalb eines Gebäudes schon bei der Indexierung z.B. einem Log Eintrag zuweist. Beispiele zur Nutzung finden sich bei 
+
+
+<a href="https://github.com/cmahnke/geoip-tool" title="GitHub" target="_blank">GitHub<span class="footnote-number">4</span></a>.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q11135" title="IP-Adresse" rel="related">Wikidata Eintrag: IP-Adresse</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q37227" title="Go" rel="related">Wikidata Eintrag: Go</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q916335" title="Geolokationssoftware" rel="related">Wikidata Eintrag: Geolokationssoftware</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/json-compression/article.html">JSON für Anwendungsbündel komprimieren</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/build-vector-tiles-on-github/article.html">Vektor Kartenmaterial mit GitHub bauen</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/oai-harvester/article.html">OAI-PMH Harvester</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/maps/article.html">Kartenmaterial für Projektemacher Blogs</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/authority-data-for-private-collectors/article.html">Normdaten für private Sammlungen (und kleine Kultureinrichtungen)</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">Kibana</span>: <a href="https://www.elastic.co/de/kibana" target="_blank">https://www.elastic.co/de/kibana</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">GeoIP Prozessor</span>: <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/geoip-processor.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/geoip-processor.html</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">kleines Werkzeug</span>: <a href="https://github.com/cmahnke/geoip-tool" target="_blank">https://github.com/cmahnke/geoip-tool</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">GitHub</span>: <a href="https://github.com/cmahnke/geoip-tool" target="_blank">https://github.com/cmahnke/geoip-tool</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

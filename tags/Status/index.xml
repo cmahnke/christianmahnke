@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Status on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Status/</link>
+    <description>Recent content in Status on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/Status/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seite nun durchsuchbar</title>
+      <link>https://christianmahnke.de/post/site-search/citation.bib</link>
+      <pubDate>Mon, 02 Jun 2025 17:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/site-search/citation.bib</guid>
+      <description>&lt;p&gt;Man kann nun diese Seite durchsuchen&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sommerpause</title>
+      <link>https://christianmahnke.de/post/summer-break/citation.bib</link>
+      <pubDate>Mon, 24 May 2021 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/summer-break/citation.bib</guid>
+      <description>&lt;p&gt;Nachdem dieser Frühling bisher nicht das frühlingshafteste Wetter zu bieten hatte, soll es nächste Woche wohl besser werden.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Der erste Beitrag</title>
+      <link>https://christianmahnke.de/post/first-post/citation.bib</link>
+      <pubDate>Wed, 25 Nov 2020 19:22:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/first-post/citation.bib</guid>
+      <description>&lt;p&gt;Nachdem in den letzten Monaten schon die Seite &lt;a href=&#34;https://projektemacher.org/&#34; target=&#34;_blank&#34;&gt;Projektemacher.org&lt;/a&gt; online gegangen ist, um als Dachmarke für meine alten Tumblr Blogs und die Projekte des ersten Corona Lockdowns unter einem Dach zu vereinen, startet nun auch meine persönliche Homepage.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

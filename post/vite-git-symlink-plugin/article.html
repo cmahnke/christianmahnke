@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="23 Mar 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/vite-git-symlink-plugin/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Vite und Git Symlink-Dateien</h1><div class="date">
+          <time class="post-data" datetime="2025-06-13T16:02:44&#43;02:00">Freitag, 13. Juni 2025</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/vite-git-symlink-plugin/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>JavaScript</li><li>Software Entwicklung</li></ul>
+      </div><div class="post-body"><p>Heute, am Freitag dem 13. sass ich länger in der Pampa im Zug fest&hellip;</p>
+<p>&hellip; und da ich nur ein Windows Laptop dabei hatte, gingen einige Prototypen, an denen ich ab und zu in solchen Situationen arbeite, nicht. Hintergrund, ist, dass ich gemeinsam genutzte Dateien in der Regel als Symlink im selben Git Repository zu den jeweiligen Quellcode-Verzeichnissen hinzufüge.</p>
+<p>Das funktioniert unter MacOS oder Linux natürlich problemlos, aber wenn man einen Baum einfach unter Windows auscheckt, werden aus den Symlinks einfach normale Dateien, die das Linkziel als relativen Pfad enthalten. Da im Zug das Netz schlecht / langsam ist, habe ich ein kleines 
+
+
+<a href="https://vite.dev/" title="Vite" target="_blank">Vite<span class="footnote-number">1</span></a>/
+
+
+<a href="https://rollupjs.org/" title="Rollup" target="_blank">Rollup<span class="footnote-number">2</span></a> Plugin gebastelt, dass diese Dateien auswerten kann und die notwendige Datei lädt.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">path</span> <span class="nx">from</span> <span class="s2">&#34;node:path&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">fs</span> <span class="nx">from</span> <span class="s2">&#34;node:fs/promises&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * A Vite plugin that resolves file content based on the first line.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * This is a common case in repositories created on MacOS or Linux using symlinks.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * When those get checked out under Windows, these symlinks are checked out as regular
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * files, just containig the target path of the original symlink. This plugin checks each import
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * if it contains a valid path on the first line load that instead transparently.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Otherwise, it loads the content of the original file.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kd">function</span> <span class="nx">gitSymlinkResolverPlugin</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">supportedExtensions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;.js&#34;</span><span class="p">,</span> <span class="s2">&#34;.jsx&#34;</span><span class="p">,</span> <span class="s2">&#34;.ts&#34;</span><span class="p">,</span> <span class="s2">&#34;.tsx&#34;</span><span class="p">,</span> <span class="s2">&#34;.css&#34;</span><span class="p">,</span> <span class="s2">&#34;.scss&#34;</span><span class="p">,</span> <span class="s2">&#34;.less&#34;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span> <span class="s2">&#34;vite-plugin-git-symlink-resolver&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">enforce</span><span class="o">:</span> <span class="s2">&#34;pre&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">async</span> <span class="nx">resolveId</span><span class="p">(</span><span class="nx">source</span><span class="p">,</span> <span class="nx">importer</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">importer</span> <span class="o">||</span> <span class="nx">source</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&#34;\0&#34;</span><span class="p">)</span> <span class="o">||</span> <span class="nx">source</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&#34;node_modules&#34;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">importedFilePath</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">dirname</span><span class="p">(</span><span class="nx">importer</span><span class="p">),</span> <span class="nx">source</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">ext</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">extname</span><span class="p">(</span><span class="nx">importedFilePath</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">supportedExtensions</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">ext</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="sb">`\0git-symlink-resolver:</span><span class="si">${</span><span class="nx">importedFilePath</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kr">async</span> <span class="nx">load</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="nx">id</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&#34;\0git-symlink-resolver:&#34;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">originalFilePath</span> <span class="o">=</span> <span class="nx">id</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&#34;\0git-symlink-resolver:&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">const</span> <span class="nx">originalFileContent</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">originalFilePath</span><span class="p">,</span> <span class="s2">&#34;utf-8&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">          <span class="kr">const</span> <span class="nx">firstLine</span> <span class="o">=</span> <span class="nx">originalFileContent</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;\n&#34;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">?</span><span class="p">.</span><span class="nx">trim</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">          <span class="k">if</span> <span class="p">(</span><span class="nx">firstLine</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kr">const</span> <span class="nx">potentialRedirectPath</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">dirname</span><span class="p">(</span><span class="nx">originalFilePath</span><span class="p">),</span> <span class="nx">firstLine</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="kr">const</span> <span class="nx">stats</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">stat</span><span class="p">(</span><span class="nx">potentialRedirectPath</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">              <span class="k">if</span> <span class="p">(</span><span class="nx">stats</span><span class="p">.</span><span class="nx">isFile</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                  <span class="sb">`[GitSymlinkResolver] Redirecting </span><span class="si">${</span><span class="nx">path</span><span class="p">.</span><span class="nx">relative</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">(),</span> <span class="nx">originalFilePath</span><span class="p">)</span><span class="si">}</span><span class="sb"> to </span><span class="si">${</span><span class="nx">path</span><span class="p">.</span><span class="nx">relative</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">(),</span> <span class="nx">potentialRedirectPath</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span>
+</span></span><span class="line"><span class="cl">                <span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="kr">await</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">potentialRedirectPath</span><span class="p">,</span> <span class="s2">&#34;utf-8&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">              <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`[GitSymlinkResolver] File </span><span class="si">${</span><span class="nx">originalFilePath</span><span class="si">}</span><span class="sb"> isn&#39;t a redirect`</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span> <span class="nx">originalFileContent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`[GitSymlinkResolver] Error reading original file </span><span class="si">${</span><span class="nx">path</span><span class="p">.</span><span class="nx">relative</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">(),</span> <span class="nx">originalFilePath</span><span class="p">)</span><span class="si">}</span><span class="sb">:`</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Dies kann dan einfach in 
+
+
+<a href="https://vite.dev/config/" title="vite.config.js" target="_blank"><code>vite.config.js</code><span class="footnote-number">3</span></a> geladen:</p>
+<pre tabindex="0"><code>import { gitSymlinkResolverPlugin } from &#34;./plugins/git-symlink-plugin.js&#34;;
+</code></pre><p>und genutzt werden:</p>
+<pre tabindex="0"><code>plugins: [
+  ...
+  gitSymlinkResolverPlugin(),
+  ...
+],
+</code></pre></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q186055" title="Q186055" rel="related">Wikidata Eintrag: Q186055</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/paper-tiger-print-css/article.html">Papiertiger CSS für den Druck</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-canvas-updated/article.html">hdr-canvas aktualisiert</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/gitlab-debian-repository/article.html">Debian Repository mit GitLab Pages</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/wallpaper-generator/article.html">Virtuelle Räume tapezieren!</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/quantenkosmos-goettingen/article.html">Quantenkosmos Göttingen</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">Vite</span>: <a href="https://vite.dev/" target="_blank">https://vite.dev/</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">Rollup</span>: <a href="https://rollupjs.org/" target="_blank">https://rollupjs.org/</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title"><code>vite.config.js</code></span>: <a href="https://vite.dev/config/" target="_blank">https://vite.dev/config/</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

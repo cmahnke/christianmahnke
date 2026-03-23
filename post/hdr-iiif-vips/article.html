@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="23 Mar 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/hdr-iiif-vips/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">HDR IIIF für alle mit VIPS</h1><div class="date">
+          <time class="post-data" datetime="2025-11-27T18:33:44&#43;02:00">Donnerstag, 27. November 2025</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/hdr-iiif-vips/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>Digitale Bilder</li><li>VIPS</li><li>HDR</li><li>IIIF</li></ul>
+      </div><div class="post-body"><p>HDR IIIF für alle&hellip;</p>
+<p>&hellip;wird die nächste Version von VIPS bieten. 
+
+
+<a href="https://github.com/jcupitt" title="John Cupitt" target="_blank">John Cupitt<span class="footnote-number">1</span></a> hat die Funktionalität nun 
+
+
+<a href="https://github.com/libvips/libvips/pull/4745" title="hinzugefügt" target="_blank">hinzugefügt<span class="footnote-number">2</span></a>. Damit braucht man keinen 
+
+
+<a href="https://christianmahnke.de/post/hdr-iiif/" title="eigenen Image-Tiler für HDR">eigenen Image-Tiler für HDR<span class="footnote-number">3</span></a> mehr.</p>
+<p>Wer es jetzt schon ausprobieren will, muss sich die aktuelle Entwicklungsversion aus dem Git Repository selber bauen.</p>
+<p>
+
+
+<a href="https://github.com/google/libultrahdr" title="libultrahdr" target="_blank"><code>libultrahdr</code><span class="footnote-number">4</span></a>, ein C-Compiler und <code>meson</code> müssen installiert sein. Unter MacOS mit 
+
+
+<a href="https://brew.sh/" title="brew" target="_blank"><code>brew</code><span class="footnote-number">5</span></a>: <code>brew install meson libultrahdr</code></p>
+<p>Falls man Unterstützung für mehr Bildformate braucht, bietet 
+
+
+<a href="https://github.com/libvips/libvips/blob/master/meson_options.txt" title="diese Datei" target="_blank">diese Datei<span class="footnote-number">6</span></a> eine Übersicht über die verfügbaren Optionen.  Bereits installierte Bibliotheken in der Regel werden automatisch gefunden, ansonsten müssen weitere Bibliotheken installiert werden.</p>
+<pre tabindex="0"><code>git clone --depth 1 https://github.com/libvips/libvips.git
+cd libvips
+meson setup build --prefix /usr/local -Duhdr=enabled
+cd build
+meson compile
+meson test
+sudo meson install
+</code></pre><p>Dann kann man mit dem folgenden Kommando IIIF-Pyramiden für HTML erstellen:</p>
+<pre tabindex="0"><code>vips dzsave $IMAGE_FILE $TARGET_DIR --keep gainmap --tile-size=512 --layout iiif
+</code></pre><p>Derzeit fehlt aber noch ein Metadatum in der <code>info.json</code>-Datei um anzuzeigen das es sich um ein HDR-Bild handelt. Und die großen Viewer unterstützen die Anzeige auch noch nicht, mehr in dem 
+
+
+<a href="https://christianmahnke.de/post/hdr-iiif/" title="alten Beitrag">alten Beitrag<span class="footnote-number">7</span></a>.</p>
+<p>Mit der kommenden Version (8.18.0 - die in ein bis zwei Monaten erscheinen sollte) wird die Funktionalität dann auch über Paketmanager verfügbar sein&hellip;</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q106239881" title="High Dynamic Range" rel="related">Wikidata Eintrag: High Dynamic Range</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q11223506" title="Homebrew" rel="related">Wikidata Eintrag: Homebrew</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q22682088" title="IIIF" rel="related">Wikidata Eintrag: IIIF</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q7907037" title="VIPS" rel="related">Wikidata Eintrag: VIPS</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-iiif/">HDR IIIF</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/jpeg-xl/">JPEG XL</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/ultrahdr/article.html">LibUltraHDR</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/fliiifenleger/article.html">Fliiifenleger - eine IIIF Experimentierplattform</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/wallpaper-generator/article.html">Virtuelle Räume tapezieren!</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">John Cupitt</span>: <a href="https://github.com/jcupitt" target="_blank">https://github.com/jcupitt</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">hinzugefügt</span>: <a href="https://github.com/libvips/libvips/pull/4745" target="_blank">https://github.com/libvips/libvips/pull/4745</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">eigenen Image-Tiler für HDR</span>: <a href="https://christianmahnke.de/post/hdr-iiif/">/post/hdr-iiif/</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title"><code>libultrahdr</code></span>: <a href="https://github.com/google/libultrahdr" target="_blank">https://github.com/google/libultrahdr</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title"><code>brew</code></span>: <a href="https://brew.sh/" target="_blank">https://brew.sh/</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title">diese Datei</span>: <a href="https://github.com/libvips/libvips/blob/master/meson_options.txt" target="_blank">https://github.com/libvips/libvips/blob/master/meson_options.txt</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title">alten Beitrag</span>: <a href="https://christianmahnke.de/post/hdr-iiif/">/post/hdr-iiif/</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

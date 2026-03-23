@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="23 Mar 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.61d563eb7d5d62da64ca0639b5437c84519b9f622599d0fca913b9c82e0d5448.css" rel="stylesheet" integrity="sha256-YdVj631dYtpkygY5tUN8hFGbn2IlmdD8qRO5yC4NVEg=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.11d8f9f7fd6e5b69d7aea15c1168e83bfc85ea5e785b7d9a068e7479ca14edaf.js" integrity="sha256-Edj59/1uW2nXrqFcEWjoO/yF6l54W32aBo50ecoU7a8="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/fliiifenleger/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Fliiifenleger - eine IIIF Experimentierplattform</h1><div class="date">
+          <time class="post-data" datetime="2025-07-27T18:22:44&#43;02:00">Sonntag, 27. Juli 2025</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/fliiifenleger/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>IIIF</li><li>Digitale Bilder</li><li>Java</li></ul>
+      </div><div class="post-body"><figure class="center">
+    
+        <img src="https://christianmahnke.de/post/fliiifenleger/article/Fliiifenleger.svg" alt="Fliiifenleger Logo"/> </figure>
+
+<p>Es wurde Zeit für einen experimentellen IIIF Tiler&hellip;</p>
+<p>In der Vergangenheit ich einige Experimente mit der IIIF Image API gemacht, Beispiele sind:</p>
+<ul>
+<li>
+
+
+<a href="https://christianmahnke.de/post/jpeg-xl/" title="JPEG XL" target="_blank">JPEG XL<span class="footnote-number">1</span></a>,</li>
+<li>
+
+
+<a href="https://christianmahnke.de/post/iiif-proxy/" title="IIIF Proxy" target="_blank">IIIF Proxy<span class="footnote-number">2</span></a>,</li>
+<li>
+
+
+<a href="https://christianmahnke.de/post/hdr-iiif/" title="HDR IIIF" target="_blank">HDR IIIF<span class="footnote-number">3</span></a></li>
+</ul>
+<p>Dafür habe ich teilweise bestehende Implementierungen erweitert. Da das aber entweder recht langsam wurde oder nicht wirklich intuitiv, habe ich mich entschieden eine eigene &ldquo;Plattform&rdquo; zu bauen:</p>
+<h1 id="fliiifenleger">Fliiifenleger</h1>
+<p><code>fliiifenleger</code> ist ein Java-basiertes Kommandozeilen-Tool zur Erzeugung und Validierung von statischen IIIF-Bildern (International Image Interoperability Framework).</p>
+<p>Es verarbeitet lokale Bilddateien, um IIIF-konforme Kachelstrukturen und die zugehörige <code>info.json</code>-Datei zu erstellen.</p>
+<p>Das Tool bietet Befehle wie <code>generate</code> zum Erstellen von Kacheln, <code>validate</code> zur Überprüfung von IIIF-Endpunkten und <code>info</code> zur Anzeige von Systeminformationen.</p>
+<p>Eine besondere Funktion ist die Möglichkeit, Bildprozessoren zu verketten, um beispielsweise Filter vor der Kachelung anzuwenden. Zusätzlich ist die Serialisierung (also das speichern der erstellen kacheln) erweiter- und austauschbar</p>
+<p><em>Der Name ist übrigens ein Spiel mir der visuellen Ähnlichkeit von kleinem 
+
+
+<a href="https://de.wikipedia.org/wiki/Langes_s" title="langem S" target="_blank">langem S<span class="footnote-number">4</span></a> und F in Frakturschriften.</em></p>
+<p><strong>Der Code ist auf 
+
+
+<a href="https://github.com/cmahnke/fliiifenleger" title="GitHub" target="_blank">GitHub<span class="footnote-number">5</span></a> verfügbar.</strong></p></div>
+  </div><div class="post-footer"><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-iiif-vips/article.html">HDR IIIF für alle mit VIPS</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/wallpaper-generator/article.html">Virtuelle Räume tapezieren!</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/haptic-feedback/">Haptisches Feedback</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-iiif/">HDR IIIF</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/iiif-proxy/article.html">IIIF Proxy</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">JPEG XL</span>: <a href="https://christianmahnke.de/post/jpeg-xl/" target="_blank">https://christianmahnke.de/post/jpeg-xl/</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">IIIF Proxy</span>: <a href="https://christianmahnke.de/post/iiif-proxy/" target="_blank">https://christianmahnke.de/post/iiif-proxy/</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">HDR IIIF</span>: <a href="https://christianmahnke.de/post/hdr-iiif/" target="_blank">https://christianmahnke.de/post/hdr-iiif/</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">langem S</span>: <a href="https://de.wikipedia.org/wiki/Langes_s" target="_blank">https://de.wikipedia.org/wiki/Langes_s</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">GitHub</span>: <a href="https://github.com/cmahnke/fliiifenleger" target="_blank">https://github.com/cmahnke/fliiifenleger</a></span><br/></div>
+  </div>
+
+  </body>
+</html>
