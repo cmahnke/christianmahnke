@@ -6,6 +6,10 @@ schema: about.html
 sitemap:
   priority: 1.0
   changeFreq: monthly
+js:
+  - ts/portrait.ts
+preload:
+  - /about/contact/self-potrait.jpg
 cascade:
   - _target:
       kind: section

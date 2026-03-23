@@ -8,6 +8,8 @@ sitemap:
   changeFreq: monthly
 js:
   - ts/portrait.ts
+preload:
+  - /about/contact/self-potrait.jpg
 cascade:
   - _target:
       kind: section
