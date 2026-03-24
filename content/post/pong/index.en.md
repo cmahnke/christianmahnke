@@ -12,8 +12,9 @@ tags:
   - DigitalImages
   - JavaScript
   - Game
+  - Visualisation
 preview: pong-heatmap1.png
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q216293
   - https://www.wikidata.org/wiki/Q614417
   - https://www.wikidata.org/wiki/Q123162820
