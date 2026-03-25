@@ -5,6 +5,8 @@ tags:
   - Geodata
   - OpenStreetMap
   - Python
+  - Architecture
+  - Visualisation
 wikidata:
   - https://www.wikidata.org/wiki/Q12877
   - https://www.wikidata.org/wiki/Q116859588
