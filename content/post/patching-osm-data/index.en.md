@@ -22,7 +22,7 @@ wikidata:
 ...which is why I'm writing this post to change that:
 For the [Never Built Göttingen](https://never-built.goettingen.xyz/) blog, which focuses on unrealised buildings, I tried to enrich this what-if scenario with map material.
 
-Based on [OpenStreetMap](https://www.openstreetmap.org/) (OSM), this is not that difficult in principle. With [JOSM](https://josm.openstreetmap.de/), you can simply download the desired map section and then start drawing. It is important to mark your own buildings with ‘upload=false’ for safety reasons to prevent accidental uploads.
+Based on [OpenStreetMap](https://www.openstreetmap.org/) (OSM), this is not that difficult in principle. With [JOSM](https://josm.openstreetmap.de/), you can simply download the desired map section and then start drawing. It is important to mark your own buildings with `upload=false` for safety reasons to prevent accidental uploads.
 
 However, at best, you will then have created a fork of the data in OSM XML format. If you prefer to continue working only with the difference to the real map in order to have future changes in the displayed map material, things get a little more complicated. One option is to use special tools for [merging/conflating](https://wiki.openstreetmap.org/wiki/Conflation).
 
@@ -48,7 +48,7 @@ Since the result was saved as XML, it can be opened again in JOSM:
 
 The next step is to create a kind of mask from the isolated changes, which can then be used to filter a larger area. This and the following steps were done with [PyOsmium](https://docs.osmcode.org/pyosmium/latest/); for implementation, see below.
 
-When creating the mask, the OSM IDs of the changes are also adjusted: These are negative up to this point, as they are not ‘real’, i.e. part of the central OSM database. However, various libraries or even [Planetiler](https://github.com/onthegomap/planetiler) do not like it when they are negative, so they are simply multiplied by -1.
+When creating the mask, the OSM IDs of the changes are also adjusted: These are negative up to this point, as they are not "real", i.e. part of the central OSM database. However, various libraries or even [Planetiler](https://github.com/onthegomap/planetiler) do not like it when they are negative, so they are simply multiplied by -1.
 
 ## Cleaning up the input file
 

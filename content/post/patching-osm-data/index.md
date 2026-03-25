@@ -22,7 +22,7 @@ wikidata:
 ... deshalb dieser Beitrag, um das zu ändern:
 Für das [Never Built Göttingen](https://never-built.goettingen.xyz/) Blog, indem es um nicht realisierte Gebäude geht, habe ich versucht dieses Was-wäre-wenn-Szenario mit Kartenmaterial zu bereichern.
 
-Auf Basis von [OpenStreetMap](https://www.openstreetmap.org/) (OSM) ist das grundsätzlich nicht so schwer, mit [JOSM](https://josm.openstreetmap.de/) kann man sich einfach den gewünschten Kartenausschnitt herunterladen und dann anfangen zu zeichnen. wichtig ist, dass man die eigenen Gebäude zur Sicherheit mit "upload=false" auszeichnet, um versehentliche Uploads zu verhindern.
+Auf Basis von [OpenStreetMap](https://www.openstreetmap.org/) (OSM) ist das grundsätzlich nicht so schwer, mit [JOSM](https://josm.openstreetmap.de/) kann man sich einfach den gewünschten Kartenausschnitt herunterladen und dann anfangen zu zeichnen. wichtig ist, dass man die eigenen Gebäude zur Sicherheit mit `upload=false` auszeichnet, um versehentliche Uploads zu verhindern.
 
 Allerdings hat man dann bestenfalls einen Fork der Daten im OSM XML Format erzeugt. Wenn man lieber nur mit der Differenz zu echten Karte weiterarbeiten will, um auch zukünftige Änderungen im anzeigten Kartenmaterial zu haben, wird die Sache etwas komplizierter. Eine Möglichkeit sind spezielle Werkzeuge zur [Verschmelzung / Zusammenführung](https://wiki.openstreetmap.org/wiki/Conflation) (englisch "Conflation").
 
