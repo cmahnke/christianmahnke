@@ -12,6 +12,7 @@ tags:
   - Geodata
   - Blender
   - UnknownArtist
+  - Visualisation
 preview: img/print.jpg
 outputs:
   - bibtex
