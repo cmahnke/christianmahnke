@@ -10,7 +10,9 @@ tags:
   - Projektemacher.org
 ---
 
-AI is on everyone’s lips, and the potential for it to produce nonsense is nothing to be sniffed at. That’s why I’ve decided to set up a separate blog for the highlights. To start with, there are a few generated recipes and images.
+AI is on everyone’s lips, and the potential for it to produce nonsense is nothing to be sniffed at. That’s why I’ve decided to set up a separate blog for the highlights.
+<!--more-->
+[Klaus-Ingo's Plastic Goods Factory](https://plastikwarenfabrik.projektemacher.org/) is launching with a few generated recipes and images.
 
 The site itself is largely coded using AI, though some manual tweaks were necessary as the prompts proved too time-consuming. Especially when it came to finer details such as layout, responsiveness and minor UX improvements, it was ultimately quicker to do it myself rather than running through further iterations via prompts.
 
