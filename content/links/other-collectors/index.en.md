@@ -16,6 +16,9 @@ Other collections and collectors with whom I do not work.
 * [Ampel Freund](https://www.ampelfreund.de/)
 * [Ampelseite](https://www.ampelseite.de/)
 
+## Phones
+* [Telefonzelle, Münzfernsprecher & Kartentelefon in Deutschland](https://telefonzelle.de.tl/)
+
 ## Watches
 ### Digital
 * [Digital Watch](https://www.digital-watch.com/DWL)
