@@ -15,7 +15,7 @@
   {{- partial "header.html" . -}}
     <div class="content-container blog">
       {{- $pages := where .Site.Pages "Section" "post" -}}
-      {{- $mainSite := .Sites.Default -}}
+      {{- $mainSite := hugo.Sites.Default -}}
       {{- if ne $mainSite .Site -}}
         {{- $pages = ($pages | lang.Merge (where $mainSite.Pages "Section" $postSection)) -}}
       {{- end -}}

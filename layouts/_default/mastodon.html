@@ -16,7 +16,7 @@
   {{- partial "header.html" . -}}
     <div class="content-container mastodon">
       {{- $posts := where .Site.Pages "Section" "mastodon" -}}
-      {{- $mainSite := .Sites.Default -}}
+      {{- $mainSite := hugo.Sites.Default -}}
       {{- if ne $mainSite .Site -}}
         {{- $posts = ($posts | lang.Merge (where $mainSite.Pages "Section" $postSection)) -}}
       {{- end -}}
