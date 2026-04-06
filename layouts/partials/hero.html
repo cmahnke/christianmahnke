@@ -2,7 +2,9 @@
     <div class="wrapper">
         <div class="img-background">
             <div class="img-wrapper">
-                <img class="me" alt="Christian Mahnke" src="{{ .Site.Params.me }}">
+              {{- $img := resources.Get .Site.Params.me -}}
+              {{- $img = $img | (images.EncodeTo "webp") -}}
+              <img class="me" alt="Christian Mahnke" src="{{ $img.RelPermalink }}">
             </div>
         </div>
         <div class="hero-caption">
