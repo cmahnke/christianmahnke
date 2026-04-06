@@ -24,7 +24,7 @@ I have bought an etching by [Max Liebermann](https://en.wikipedia.org/wiki/Max_L
 
 {{< gallery >}}
 [
-  {"src": "img/print.jpg", "alt": Print"},
+  {"src": "img/print.jpg", "alt": Print"}
 ]
 {{</ gallery >}}
 

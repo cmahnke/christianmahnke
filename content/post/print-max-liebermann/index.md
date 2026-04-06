@@ -24,7 +24,7 @@ Ich habe eine Radierung von [Max Liebermann](https://de.wikipedia.org/wiki/Max_L
 
 {{< gallery >}}
 [
-  {"src": "img/print.jpg", "alt": "Druck"},
+  {"src": "img/print.jpg", "alt": "Druck"}
 ]
 {{</ gallery >}}
 
