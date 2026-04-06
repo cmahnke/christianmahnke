@@ -7,7 +7,7 @@ tags:
 - SoftwareDevelopment
 - Metadata
 - ProjectIdea
-- KI
+- AI
 wikidata:
   - https://www.wikidata.org/wiki/Q5205836
   - https://www.wikidata.org/wiki/Q1142726
@@ -27,7 +27,7 @@ Bis heute gibt es jedoch keine Suchmaschine, die beispielsweise Projekte von unt
 
 Und wenn man solche Metadaten hat, kann man diese natürlich indexieren und danach suchen. Letzteres kann man sich ungefähr wie die Schlagwortsuche bei GitHub vorstellen. Es wäre ein großer Gewinn, wenn GitLab (sowohl zentral als auch eigene Instanzen), Codeberg, Gitea und andere vergleichbare Plattformen und Tools entsprechende Daten zur Indexierung bereitstellen würden.
 
-Noch spannender wird es, wenn man Agenten dazu bringen kann, auf Basis von Metadaten Komponenten zusammenzustecken. 
+Noch spannender wird es, wenn man Agenten dazu bringen kann, auf Basis von Metadaten Komponenten zusammenzustecken.
 Ein konstruiertes Beispiel, das sich an einem vergangenen [Beitrag](/post/vintagereality-ai/) orientiert, wäre das folgende:
 * Man instruiert einen Agenten, aus einer digitalen Sammlung eines Museums Stereogramme herauszusuchen. Diese müssten dafür natürlich als solche identifizierbar sein, dabei können auch Metadaten wie in diesem [Beitrag](/post/linkedart-metadata/) helfen (beisielsweise durch Suche nach [http://vocab.getty.edu/aat/300127197](http://vocab.getty.edu/aat/300127197.json)).
 * Dafür soll eine Segmentierungsmethode gesucht werden. Idealerweise vergleicht der Agent dazu die Metadaten der Eingangsmenge zum Medientyp mit denen von möglichen Implementierungen. Diese könnten mit [https://www.wikidata.org/wiki/Q35158](https://www.wikidata.org/wiki/Q35158) und [https://www.wikidata.org/wiki/Q56933](https://www.wikidata.org/wiki/Q56933) markiert sein, um die Funktionalität grob (ohne Verhältnis zueinander) mit den Anforderungen zu vergleichen.

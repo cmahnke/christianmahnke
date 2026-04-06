@@ -7,7 +7,7 @@ tags:
 - SoftwareDevelopment
 - Metadata
 - ProjectIdea
-- KI
+- AI
 wikidata:
   - https://www.wikidata.org/wiki/Q5205836
   - https://www.wikidata.org/wiki/Q1142726
@@ -27,7 +27,7 @@ To date, however, there is no search engine that aggregates projects from code p
 
 And if you have such metadata, you can of course index it and search for it. The latter can be thought of as similar to the keyword search on GitHub. It would be a great advantage if GitLab (both centralised and separate instances), Codeberg, Gitea and other comparable platforms and tools provided corresponding data for indexing.
 
-It gets even more exciting when you can get agents to assemble components based on metadata. 
+It gets even more exciting when you can get agents to assemble components based on metadata.
 A constructed example, based on a previous [post](/post/vintagereality-ai/), would be the following:
 * You instruct an agent to search for stereograms from a museum's digital collection. These would, of course, need to be identifiable as such, and metadata such as in this [post](/post/linkedart-metadata/) can help (for example, by searching for: [http://vocab.getty.edu/aat/300127197](http://vocab.getty.edu/aat/300127197.json)).
 * A segmentation method is to be found for this purpose. Ideally, the agent compares the metadata of the input set for the media type with that of possible implementations. These could be marked with [https://www.wikidata.org/wiki/Q35158](https://www.wikidata.org/wiki/Q35158) and [https://www.wikidata.org/wiki/Q56933] (https://www.wikidata.org/wiki/Q56933) to roughly compare the functionality (without relation to each other) with the requirements.

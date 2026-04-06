@@ -3,8 +3,12 @@
         <div class="img-background">
             <div class="img-wrapper">
               {{- $img := resources.Get .Site.Params.me -}}
-              {{- $img = $img | (images.EncodeTo "webp") -}}
-              <img class="me" alt="Christian Mahnke" src="{{ $img.RelPermalink }}">
+              {{- if ne $img nil -}}
+                {{- $img = $img.Process "webp" -}}
+                <img class="me" alt="Christian Mahnke" src="{{ $img.RelPermalink }}">
+              {{- else -}}
+                {{- errorf "[hero.html] Can't find Home page image %s" .Site.Params.me -}}
+              {{- end -}}
             </div>
         </div>
         <div class="hero-caption">
