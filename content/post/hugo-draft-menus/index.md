@@ -47,3 +47,7 @@ Dank an [***irkode***](https://discourse.gohugo.io/u/irkode/summary) aus dem Hug
 ## Update 2.6.2025
 
 Nun ist das neue Feature verfügbar: Die [Suche](/post/site-search/).
+
+## Update 7.4.2026
+
+Die Eigenschaft `.Site.BuildDrafts` wird ab Hugo 0.156.0 als veraltet markiert, die Möglichkeiten sie zu ersetzen werden im [Hugo Forum](https://discourse.gohugo.io/t/deprecations-in-v0-156-0/56732/11) beschrieben.
