@@ -10,6 +10,7 @@ outputs:
   - rss
   - activity-pub-outbox
   - bibtex
+  - llms
 cascade:
   - _target:
       kind: '{page,section}'

@@ -6,12 +6,12 @@ layout: blog
 sitemap:
   changeFreq: daily
 cascade:
-  - target:
+  - _target:
       kind: section
     params:
     sitemap:
       priority: 0.8
-  - target:
+  - _target:
       kind: page
     params:
       sitemap:

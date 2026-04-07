@@ -7,7 +7,7 @@ news: false
 sectionContent: false
 layout: mastodon
 cascade:
-  - target:
+  - _target:
       kind: '{page,section}'
       lang: de
       path: '**'
