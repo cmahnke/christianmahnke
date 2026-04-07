@@ -10,6 +10,7 @@ outputs:
   - html
   - linkedart
 linkedart:
+  title: Am Strande (Nordwijk)
   artist:
     wikidata: https://www.wikidata.org/wiki/Q158062
   owner:
