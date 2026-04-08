@@ -1,5 +1,5 @@
 ---
-date: 2026-04-08T13:30:44+01:00
+date: 2026-04-07T19:30:44+01:00
 title: 'Digitale "Lost Places"'
 tags:
   - Göttingen
