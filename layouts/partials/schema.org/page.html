@@ -1,16 +1,6 @@
 {{- $page := . -}}
 {{- $defaultRelation := "related" -}}
 {{- $entityBase := "http://www.wikidata.org/entity/" -}}
-{{- $authorName := "" }}
-{{- with site.Params.author }}
-  {{- if reflect.IsMap . }}
-    {{- with .name }}
-      {{- $authorName = . }}
-    {{- end }}
-  {{- else }}
-    {{- $authorName  = . }}
-  {{- end }}
-{{- end }}
 {{- $type := "BlogPosting" -}}
 
 {{- $linkedArt := dict -}}
@@ -33,17 +23,15 @@
   {{- $codemeta = partial "metadata/codemeta.json" $page | transform.Unmarshal -}}
 {{- end -}}
 
+{{- $author := transform.Unmarshal (partialCached "metadata/schema.org/util/author.html" .) -}}
+{{- $author = $author | merge (dict "url" site.BaseURL) -}}
+
 <script type="application/ld+json">
-  {{- $schemaOrg := dict "@context" "http://schema.org" "@type" $type "@id" .Permalink "url" .Permalink "name" .Title "datePublished" .Date -}}
-  {{- with .Description -}}
-    {{- $schemaOrg = $schemaOrg | merge (dict "description" .) -}}
-  {{- end -}}
-  {{- with .Title -}}
-    {{- $schemaOrg = $schemaOrg | merge (dict "headline" .) -}}
-  {{- end -}}
+  {{- $schemaOrg := transform.Unmarshal (partial "metadata/schema.org/util/post.html" $page) -}}
+  {{- $schemaOrg = $schemaOrg | merge (dict "@context" "http://schema.org" "@type" $type) -}}
   {{- $schemaOrg = $schemaOrg | merge (dict "isPartOf" (dict "@type" "Blog" "@id" (printf "%s%s" .Site.BaseURL "post") "name" (printf "%s %s" .Site.Title "Blog"))) -}}
-  {{- if ne $authorName "" -}}
-    {{- $schemaOrg = $schemaOrg | merge (dict "author" (dict "@type" "Person" "@id" (printf "%s%s" .Site.BaseURL "#person") "name" $authorName "url" .Site.BaseURL)) -}}
+  {{- if ne $author nil -}}
+    {{- $schemaOrg = $schemaOrg | merge (dict "author" $author) -}}
   {{- end -}}
 
   {{- $keywords := slice -}}
@@ -68,32 +56,8 @@
       {{- end -}}
     {{- end -}}
   {{- end -}}
-  {{- $about := $keywords -}}
-  {{- with .Params.wikidata -}}
-    {{- $entries := dict -}}
-    {{- if not (reflect.IsMap .) -}}
-      {{- $list := slice -}}
-      {{- if not (reflect.IsSlice .) -}}
-        {{- $list = slice . -}}
-      {{- else  -}}
-        {{- $list = . -}}
-      {{- end -}}
-      {{- range $list -}}
-        {{- $entries = merge $entries (dict . $defaultRelation) -}}
-      {{- end -}}
-    {{- else -}}
-      {{- $entries = . -}}
-    {{- end -}}
 
-    {{- range $url, $relation := $entries -}}
-      {{- $id := replaceRE `https://www.wikidata.org/wiki/` "" $url -}}
-      {{- $uri := printf "%s%s" $entityBase $id -}}
-      {{- $name := partial "data/functions/wikidata-label.html" (dict "url" $id) -}}
-      {{- $thing := dict "@type" "Thing" "@id" $uri "name" $name -}}
-      {{- $about = $about | append $thing -}}
-    {{- end -}}
-
-  {{- end -}}
+  {{- $about := partial "metadata/schema.org/util/about.html" $page | transform.Unmarshal (dict "format" "json") -}}
   {{- with $about -}}
     {{- $schemaOrg = $schemaOrg | merge (dict "about" .) -}}
   {{- end -}}

@@ -19,7 +19,7 @@ A chance find online that gets you thinking...
 Here it is: the [Saturn branch](https://www.saturn.de/) in Göttingen, which closed in 2021. Google Maps shows images from 2017 – almost ten years ago now.
 
 {{< html/iframe-consent >}}
-  <iframe src="https://www.google.com/maps/embed?pb=!4v1775645022514!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRDRvOTdrVHc.!2m2!1d51.53664820863535!2d9.933949864245097!3f178.73895025970097!4f-19.22467550177673!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!4v1775645022514!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRDRvOTdrVHc.!2m2!1d51.53664820863535!2d9.933949864245097!3f178.73895025970097!4f-19.22467550177673!5f0.7820865974627469" width="100%" height="450" style="border:0; margin: 1rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 {{< /html/iframe-consent >}}
 
 This image, for example, shows the department for recordable optical media – a type of media that has now almost disappeared.
