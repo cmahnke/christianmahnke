@@ -21,6 +21,33 @@ wikidata:
 Ein Ergebnis meiner Arbeit mit HDR-Inhalten im Browser ist ein NPM-Modul, das auch zur Erstellung der Beiträge in diesem Blog verwendet wurde.
 In diesem Beitrag werden die letzten Änderungen zusammengefasst. Bei neuen Versionen wird er aktualisiert.
 
+# Version 0.2.0
+
+## Einleitung
+
+Folgende Elemente wurden entfernt:
+
+- die Unterstützung für Chrom(e|ium) < 140
+- `Uint16Image`
+- Hilfsfunktionen zur Überprüfung der Browserversion
+- gebündelte UMD- und IIFE-Builds
+- `colorjs.io` ist keine direkte Abhängigkeit mehr
+
+Unterstützung für Safari wurde eingeführt (aktuelles Ziel ist Safari Technology Preview R232 und höher): Dies erfordert das Feature-Flag "Canvas Color Types and ImageData Pixel Formats". Der Farbraum `rec2100-hlg` wird derzeit jedoch nicht unterstützt.
+
+## Wichtige Änderungen & neue Funktionen
+
+- Check-Funktion für `Float16Array`
+- Die Unterstützung für `Float16Array` wird nun von [`@petamoriken/float16`](https://www.npmjs.com/package/@petamoriken/float16) übernommen
+
+## Entfernung von [`colorjs.io`](https://colorjs.io/)
+
+Obwohl `colorjs.io` für Farbraumkonvertierungen sehr hilfreich ist, vergrößert es das Paket erheblich. Da es andere Pakete für die Verarbeitung von `Float16` gibt, wurde das Paket entfernt. Wenn Sie eigene Konvertierungen benötigen, fügen Sie es Ihrem Projekt hinzu:
+
+```
+npm install colorjs.io
+```
+
 # Version 0.1.1 - 0.1.2
 
 Diese Aktualisierungen waren notwendig, um diese Blogbeiträge zu reparieren:
