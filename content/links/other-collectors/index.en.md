@@ -53,6 +53,7 @@ Other collections and collectors with whom I do not work.
 
 * [Tony's Pocket Calculator Collection](https://www.thimet.de/CalcCollection/)
 * [Museum of Pocket Calculating Devices](https://www.calculators.de/)
+* [YouTube: Chris Staecker](https://www.youtube.com/@ChrisStaecker)
 
 ### Computers
 

@@ -53,6 +53,7 @@ Weitere Sammlungen und Sammler, mit denen ich nicht zusammenarbeite.
 
 * [Tony's Taschenrechner-Sammlung](https://www.thimet.de/CalcCollection/)
 * [Museum of Pocket Calculating Devices](https://www.calculators.de/)
+* [YouTube: Chris Staecker](https://www.youtube.com/@ChrisStaecker)
 
 ### Computer
 
