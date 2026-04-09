@@ -10,7 +10,7 @@ tags:
   - Projektemacher.org
 ---
 
-AI is on everyone’s lips, and the potential for it to produce nonsense is nothing to be sniffed at. That’s why I’ve decided to set up a separate blog for the highlights.
+AI is on everyone’s lips, and the potential for it to produce nonsense is nothing to be sniffed at. That’s why I’ve decided to set up a separate blog for my "highlights".
 <!--more-->
 [Klaus-Ingo's Plastic Goods Factory](https://plastikwarenfabrik.projektemacher.org/) is launching with a few generated recipes and images.
 

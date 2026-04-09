@@ -84,7 +84,7 @@ The code can be found on [GitHub](https://github.com/cmahnke/hdr-canvas) and [NP
 
 ### Introduction
 
-Since the last release many areas of handling HDR contet in the browser have evolved.
+Since the last release many areas of handling HDR content in the browser have evolved.
 Most notably is certainly the introduction of the `Float16Array` in the `ImageData` construtor:
 
 - The [WhatWG spec](https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#imagedataarray), [MDN](https://developer.mozilla.org/en-US/docs/Web/API/ImageData/ImageData#syntax) and [BCD](https://github.com/mdn/browser-compat-data/issues/27547)) have been updated accordingly. You can test your own browser using `new ImageData(new Float16Array(4), 1, 1, {pixelFormat:"rgba-float16"})`.

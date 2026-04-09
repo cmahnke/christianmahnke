@@ -10,11 +10,11 @@ tags:
   - Projektemacher.org
 ---
 
-KI ist in aller Munde und die Möglichkeiten, damit Unsinn zu machen, sind nicht zu verachten. Daher habe ich mich entschlossen, für die Highlights einen eigenen Blog anzulegen.
+KI ist in aller Munde und die Möglichkeiten, damit Unsinn zu machen, sind nicht zu verachten. Daher habe ich mich entschlossen, für meine "Highlights" einen eigenen Blog anzulegen.
 <!--more-->
 [Klaus-Ingo's Plastikwarenfabrik](https://plastikwarenfabrik.projektemacher.org/) bietet zum Start ein paar generierte Kochrezepte und Bilder.
 
-Die Seite selbst ist auch zu einem guten Teil gecodet, allerdings waren einige manuelle Anpassungen notwendig, da das Prompten sich als zu zeitaufwendig erwies. Gerade bei feineren Details wie Layout, Responsiveness und kleinen UX-Verbesserungen war es am Ende schneller, selbst Hand anzulegen, statt weitere Iterationen durch Prompts zu drehen.
+Die Seite selbst ist auch zu einem guten Teil vibe-gecodet, allerdings waren einige manuelle Anpassungen notwendig, da das Prompten sich als zu zeitaufwendig erwies. Gerade bei feineren Details wie Layout, Responsiveness und kleinen UX-Verbesserungen war es am Ende schneller, selbst Hand anzulegen, statt weitere Iterationen durch Prompts zu drehen.
 
 Ich werde die Seite nach und nach erweitern, neue Inhalte ergänzen und vielleicht auch das eine oder andere Feature ausprobieren. Mal sehen, wohin die Reise geht.
 
