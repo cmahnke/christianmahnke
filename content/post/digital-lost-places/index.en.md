@@ -36,4 +36,6 @@ Images such as the one shown above are therefore like a time capsule, or rather:
 
 As stated in the [Terms of Service](https://support.google.com/contributionpolicy/answer/7422880), Google generally reserves the right to delete outdated data from Google Maps, Google Earth and Google Street View. The same applies to the person who uploaded the data. The time capsule could therefore disappear at any time. It would therefore be advisable to back up the data/images before this happens.
 
+And even though the ‘official’ street views from Google Street View (and similar services) are likely to remain available in the long term, it would certainly be a good idea to back these up as well.
+
 **Do city archives actually already carry out web archiving? If not, it is high time they did!**
