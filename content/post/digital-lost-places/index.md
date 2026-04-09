@@ -36,4 +36,6 @@ Abbildungen wie die oben gezeigte sind daher wie eine Zeitkapsel oder besser: ei
 
 Wie den [Nutzungsbedingungen](https://support.google.com/contributionpolicy/answer/7422880) zu entnehmen ist, behält sich Google grundsätzlich vor, veraltete Daten aus Google Maps, Google Earth und Google Street View zu löschen. Gleiches gilt auch für die Person, die die Daten eingestellt hat. Die Zeitkapsel kann also jederzeit verschwinden. Daher wäre es wünschenswert, die Daten/Bilder zu sichern, bevor dies geschieht.
 
+Und auch wenn die "offiziellen" Straßenansichten von Google Street View (und vergleichbaren Diensten) langfristig verfügbar sein dürften, wäre es sicher nicht verkehrt, auch diese zu sichern.
+
 **Machen Stadtarchive eigentlich schon Webarchivierung? Wenn nicht, wird es höchste Zeit!**
