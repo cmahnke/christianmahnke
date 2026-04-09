@@ -14,8 +14,9 @@ wikidata:
 Examples of activities in this area are:
 
 ### Blog posts on the topic:
-* Keyword ["CulturalPolicy"](/tags/CulturalPolicy/)
-* Keyword ["Wikidata"](/tags/Wikidata/)
+* [Linked Art Metadata](/en/post/linkedart-metadata/)
+* Keyword ["CulturalPolicy"](/en/tags/CulturalPolicy/)
+* Keyword ["Wikidata"](/en/tags/Wikidata/)
 
 ### Pages and sections
 * [Donations / Donations](https://christianmahnke.de/collections/#donation-conditions)

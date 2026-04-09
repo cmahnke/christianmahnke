@@ -14,6 +14,7 @@ wikidata:
 Beispiel für Aktivitäten auf diesem Gebiet sind:
 
 ### Blog Beiträge aus dem Bereich:
+* [Linked Art Metadaten](/post/linkedart-metadata/)
 * Schlagwort ["Kulturpolitik"](/tags/CulturalPolicy/)
 * Schlagwort ["Wikidata"](/tags/Wikidata/)
 

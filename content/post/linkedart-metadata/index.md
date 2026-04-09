@@ -1,7 +1,7 @@
 ---
 date: 2026-01-11T13:22:44+02:00
 title: "Linked Art Metadaten"
-keywords: Linked Art, Linked Data, Kunst, 
+keywords: Linked Art, Linked Data, Kunst,
 cite: true
 tags:
   - Metadata
@@ -18,7 +18,7 @@ wikidata:
 Zur Vorbereitung zukünftiger Experimente gibt es nun für einige Einträge Linked-Art-Metadaten...
 <!--more-->
 
-...zumindest zu Beiträgen in denen es um [Kunstwerke](https://christianmahnke.de/tags/Art/) geht. 
+...zumindest zu Beiträgen in denen es um [Kunstwerke](https://christianmahnke.de/tags/Art/) geht.
 
 [Linked Art](https://linked.art/) ist ein Metadaten-Standard, der speziell für die Beschreibung von kulturellen Objekten und deren Provenienz (also Geschichte) entwickelt wurde. Er basiert auf dem [CIDOC-CRM](https://cidoc-crm.org/) Datenmodell und nutzt [JSON-LD](https://de.wikipedia.org/wiki/JSON-LD), um Informationen über Kunstwerke, Künstler und Provenienzen web-basiert und maschinenlesbar austausche zu können. Damit ist es z.B. mit [LIDO](https://de.wikipedia.org/wiki/Lightweight_Information_Describing_Objects) verwandt.
 
@@ -37,4 +37,4 @@ Die jeweiligen JSON-LD Datein sind jeweils im HTML Header referenziert:
 
 ## Kann man schon was sehen?
 
-Auf Anwendngen für Endnutzer muss man derzeit leider noch warten, bis es z.B. eine Browsererweiterung zur Anzeige gibt. Allerdings wird der Haupnutzen sicher im Hintergrund sein, also z.B. Vernatzung von sammlungen und Sammlungsobjeten oder die Dartellung von zusätzlichen Informationen auf einer Webseite...
+Auf Anwendungen für Endnutzer muss man derzeit leider noch warten, bis es z.B. eine Browsererweiterung zur Anzeige gibt. Allerdings wird der Hauptnutzen sicher im Hintergrund sein, also z.B. Vernetzung von Sammlungen und Sammlungsobjekten oder die Darstellung von zusätzlichen Informationen auf einer Webseite...
