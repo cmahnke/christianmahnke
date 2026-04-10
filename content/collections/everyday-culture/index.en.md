@@ -18,6 +18,7 @@ The main focus of my collection is on different everyday culture related artifac
 * [Sonesta Pong](https://consollection.de/de/model/pong) (*1977*)
 * [MBO teleball cassette](https://retroconsoles.fandom.com/wiki/MBO#MBO_teleball_cassette_I_&_II) (*1977*)
 * [Saba Videoplay](http://www.8bit-homecomputermuseum.at/computer/saba_videoplay.html) (*1977*)
+* [Universum TV-Multi-Spiel 2006](https://retroconsoles.fandom.com/wiki/Universum_TV_Multispiel#Universum_TV_Multispiel_2004) (*1977*)
 * [Universum Color Multi-Spiel 4106](https://retroconsoles.fandom.com/wiki/Universum_TV_Multispiel#Universum_Color_Multispiel_4106) (*1978*)
 * [Commodore 64](https://en.wikipedia.org/wiki/Commodore_64) (*1983*)
 * [Commodore 16](https://en.wikipedia.org/wiki/Commodore_16) (*1985*)
