@@ -9,26 +9,67 @@ import logging
 import time
 from datetime import datetime
 from rdflib import Graph, URIRef, Namespace, Literal, XSD
-from rdflib.namespace import RDF, RDFS
+from rdflib.namespace import RDF, RDFS, OWL, SKOS, XSD as XSD_NS
 
 # Logging Setup
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
 
-# Namespaces
+# ── Namespaces mit üblichen Prefixen ──
 SCHEMA_HTTP = Namespace("http://schema.org/")
 SCHEMA_HTTPS = Namespace("https://schema.org/")
 WD = Namespace("http://www.wikidata.org/entity/")
 WDT = Namespace("http://www.wikidata.org/prop/direct/")
+WDTN = Namespace("http://www.wikidata.org/prop/direct-normalized/")
 P = Namespace("http://www.wikidata.org/prop/")
 PS = Namespace("http://www.wikidata.org/prop/statement/")
+PSV = Namespace("http://www.wikidata.org/prop/statement/value/")
+PSN = Namespace("http://www.wikidata.org/prop/statement/value-normalized/")
 PQ = Namespace("http://www.wikidata.org/prop/qualifier/")
+PQV = Namespace("http://www.wikidata.org/prop/qualifier/value/")
+PQN = Namespace("http://www.wikidata.org/prop/qualifier/value-normalized/")
 PR = Namespace("http://www.wikidata.org/prop/reference/")
-PROV = Namespace("http://www.w3.org/ns/prov#")
+PRV = Namespace("http://www.wikidata.org/prop/reference/value/")
+PRN = Namespace("http://www.wikidata.org/prop/reference/value-normalized/")
+WDREF = Namespace("http://www.wikidata.org/reference/")
+WDVALUE = Namespace("http://www.wikidata.org/value/")
 WIKIBASE = Namespace("http://wikiba.se/ontology#")
+WDQS = Namespace("http://wikiba.se/queryService#")
+PROV = Namespace("http://www.w3.org/ns/prov#")
+WDNO = Namespace("http://www.wikidata.org/prop/novalue/")
 
-# Eigener Namespace für Metadaten zum Tracking
 ENRICHMENT = Namespace("urn:enrichment:")
+
+# Prefix-Map
+NAMESPACE_PREFIXES = {
+    'schema': SCHEMA_HTTP,
+    'schemas': SCHEMA_HTTPS,
+    'wd': WD,
+    'wdt': WDT,
+    'wdtn': WDTN,
+    'p': P,
+    'ps': PS,
+    'psv': PSV,
+    'psn': PSN,
+    'pq': PQ,
+    'pqv': PQV,
+    'pqn': PQN,
+    'pr': PR,
+    'prv': PRV,
+    'prn': PRN,
+    'wdref': WDREF,
+    'wdv': WDVALUE,
+    'wikibase': WIKIBASE,
+    'wdqs': WDQS,
+    'prov': PROV,
+    'wdno': WDNO,
+    'skos': SKOS,
+    'owl': OWL,
+    'rdfs': RDFS,
+    'rdf': RDF,
+    'xsd': XSD_NS,
+    'enrichment': ENRICHMENT,
+}
 
 # Wikidata SPARQL Configuration
 SPARQL_URL = "https://query.wikidata.org/sparql"
@@ -42,11 +83,9 @@ REQUEST_TIMEOUT = 30
 INTER_QUERY_DELAY = 0.5
 INCOMING_LIMIT = 1000
 
-# Standard-Sprachen
 DEFAULT_LANGUAGES = ['en', 'de']
 ALWAYS_INCLUDE_LANG = 'mul'
 
-# Mapping: Dateiendung → RDF-Serialisierungsformat
 FORMAT_MAP = {
     '.ttl': 'turtle',
     '.jsonld': 'json-ld',
@@ -105,23 +144,30 @@ WIKIDATA_PROPERTY_PREFIXES = (
     'http://www.wikidata.org/entity/P',
 )
 
-# Pattern für Statement-Node-URIs
+# Patterns für Statement-Nodes und p: Prädikate
 STATEMENT_NODE_RE = re.compile(
     r'^http://www\.wikidata\.org/entity/statement/'
 )
+# p:P* Prädikate die auf Statement-Nodes zeigen
+# z.B. http://www.wikidata.org/prop/P31 (aber NICHT prop/direct/P31)
+PROP_STATEMENT_LINK_RE = re.compile(
+    r'^http://www\.wikidata\.org/prop/P\d+$'
+)
 
-# Marker-Prädikate
 FETCHED_MARKER = ENRICHMENT['fetchedFrom']
 FETCHED_VALUE = Literal("wikidata")
 
-# Logger für rdflib-Warnungen
 RDFLIB_TERM_LOGGER = logging.getLogger('rdflib.term')
 
-# Regex für Property-ID-Extraktion
 PROPERTY_ID_RE = re.compile(r'(P\d+)$')
 
-# Batch-Größe für Property-Label-Abfragen
 LABEL_BATCH_SIZE = 50
+
+
+def bind_standard_prefixes(graph: Graph) -> None:
+    """Bindet alle bekannten Namespace-Prefixe an den Graph."""
+    for prefix, namespace in NAMESPACE_PREFIXES.items():
+        graph.bind(prefix, namespace, override=True)
 
 
 def is_valid_python_date(lexical_value: str, datatype: str) -> bool:
@@ -143,7 +189,7 @@ def safe_literal(
     datatype: str | None = None,
     lang: str | None = None
 ) -> Literal:
-    """Erzeugt sicheres rdflib Literal, unterdrückt Warnings bei extremen Daten."""
+    """Erzeugt sicheres Literal, unterdrückt Warnings bei extremen Daten."""
     if datatype and not is_valid_python_date(value, datatype):
         logger.debug(f"Datumswert außerhalb Python-Grenzen: '{value}'")
         previous_level = RDFLIB_TERM_LOGGER.level
@@ -165,7 +211,7 @@ def safe_literal(
 
 
 def extract_property_id(uri_str: str) -> str | None:
-    """Extrahiert Property-ID (z.B. 'P31') aus Wikidata-Property-URIs."""
+    """Extrahiert Property-ID aus Wikidata-Property-URIs."""
     match = PROPERTY_ID_RE.search(uri_str)
     if match:
         return match.group(1)
@@ -175,6 +221,15 @@ def extract_property_id(uri_str: str) -> str | None:
 def is_statement_node(uri_str: str) -> bool:
     """Prüft ob eine URI ein Wikidata Statement-Node ist."""
     return bool(STATEMENT_NODE_RE.match(uri_str))
+
+
+def is_statement_link_predicate(predicate_str: str) -> bool:
+    """
+    Prüft ob ein Prädikat ein p:P* Link auf einen Statement-Node ist.
+    z.B. http://www.wikidata.org/prop/P31 → True
+         http://www.wikidata.org/prop/direct/P31 → False
+    """
+    return bool(PROP_STATEMENT_LINK_RE.match(predicate_str))
 
 
 def extract_cached_property_ids(graph: Graph) -> set[str]:
@@ -198,12 +253,7 @@ def parse_sparql_binding_to_rdf(
     languages: list[str] | None = None,
     predicate_str: str | None = None
 ) -> URIRef | Literal | None:
-    """
-    Konvertiert ein einzelnes SPARQL-Ergebnis-Binding in ein
-    rdflib-Objekt (URIRef oder Literal).
-    Gibt None zurück wenn das Literal aufgrund von Sprachfilter
-    übersprungen werden soll.
-    """
+    """Konvertiert SPARQL-Binding in rdflib-Objekt."""
     if binding['type'] == 'uri':
         return URIRef(binding['value'])
     elif binding['type'] in ('literal', 'typed-literal'):
@@ -221,12 +271,7 @@ def parse_sparql_binding_to_rdf(
             ):
                 return None
 
-        return safe_literal(
-            value=o_value,
-            datatype=o_datatype,
-            lang=o_lang
-        )
-    # bnode etc. → überspringen
+        return safe_literal(value=o_value, datatype=o_datatype, lang=o_lang)
     return None
 
 
@@ -274,7 +319,7 @@ def fetch_property_labels(
 
         data = sparql_query_with_retry(query)
         if data is None:
-            logger.error(f"  Property-Label-Batch fehlgeschlagen")
+            logger.error("  Property-Label-Batch fehlgeschlagen")
             continue
 
         bindings = data.get('results', {}).get('bindings', [])
@@ -293,16 +338,24 @@ def fetch_property_labels(
                 target_graph.add(triple)
                 added += 1
 
-        # Labels auf prop/direct/ URIs propagieren
+        # Labels auf alle Property-URI-Formen propagieren
         for pid in batch:
             entity_uri = URIRef(f"http://www.wikidata.org/entity/{pid}")
-            direct_uri = URIRef(f"http://www.wikidata.org/prop/direct/{pid}")
-            stmt_uri = URIRef(f"http://www.wikidata.org/prop/statement/{pid}")
-            qual_uri = URIRef(f"http://www.wikidata.org/prop/qualifier/{pid}")
-            prop_uri = URIRef(f"http://www.wikidata.org/prop/{pid}")
+            propagate_uris = [
+                URIRef(f"http://www.wikidata.org/prop/direct/{pid}"),
+                URIRef(f"http://www.wikidata.org/prop/direct-normalized/{pid}"),
+                URIRef(f"http://www.wikidata.org/prop/statement/{pid}"),
+                URIRef(f"http://www.wikidata.org/prop/statement/value/{pid}"),
+                URIRef(f"http://www.wikidata.org/prop/qualifier/{pid}"),
+                URIRef(f"http://www.wikidata.org/prop/qualifier/value/{pid}"),
+                URIRef(f"http://www.wikidata.org/prop/reference/{pid}"),
+                URIRef(f"http://www.wikidata.org/prop/reference/value/{pid}"),
+                URIRef(f"http://www.wikidata.org/prop/{pid}"),
+                URIRef(f"http://www.wikidata.org/prop/novalue/{pid}"),
+            ]
 
             for label in target_graph.objects(entity_uri, RDFS.label):
-                for target_uri in (direct_uri, stmt_uri, qual_uri, prop_uri):
+                for target_uri in propagate_uris:
                     triple = (target_uri, RDFS.label, label)
                     if triple not in target_graph:
                         target_graph.add(triple)
@@ -327,19 +380,7 @@ def fetch_statement_details(
     languages: list[str],
     label_cache: set[str]
 ) -> int:
-    """
-    Ruft Details (Qualifiers, Values, References) für
-    Wikidata Statement-Nodes ab.
-
-    Statement-Nodes haben die Form:
-    http://www.wikidata.org/entity/statement/Q735-D2C4DD3E-...
-
-    Sie enthalten:
-    - ps:P* (Property Statement Value)
-    - pq:P* (Qualifier)
-    - prov:wasDerivedFrom → Reference-Nodes
-    - wikibase:rank
-    """
+    """Ruft Details für Wikidata Statement-Nodes ab."""
     if not statement_uris:
         return 0
 
@@ -351,13 +392,11 @@ def fetch_statement_details(
     total_added = 0
     collected_property_ids = set()
 
-    # Batch-Verarbeitung der Statement-URIs
     STMT_BATCH_SIZE = 20
     all_stmts = sorted(statement_uris)
 
     for batch_start in range(0, len(all_stmts), STMT_BATCH_SIZE):
         batch = all_stmts[batch_start:batch_start + STMT_BATCH_SIZE]
-
         values_clause = " ".join(f"<{uri}>" for uri in batch)
 
         query = f"""
@@ -370,10 +409,7 @@ def fetch_statement_details(
 
         data = sparql_query_with_retry(query)
         if data is None:
-            logger.error(
-                f"  Statement-Detail-Batch fehlgeschlagen "
-                f"(Batch ab #{batch_start + 1})"
-            )
+            logger.error("  Statement-Detail-Batch fehlgeschlagen")
             continue
 
         bindings = data.get('results', {}).get('bindings', [])
@@ -389,9 +425,7 @@ def fetch_statement_details(
                 collected_property_ids.add(pid)
 
             o = parse_sparql_binding_to_rdf(
-                result['o'],
-                languages=languages,
-                predicate_str=p_str
+                result['o'], languages=languages, predicate_str=p_str
             )
             if o is None:
                 continue
@@ -404,11 +438,9 @@ def fetch_statement_details(
         total_added += added
         time.sleep(INTER_QUERY_DELAY)
 
-    # Property-Labels für Qualifier- und Statement-Properties
     if collected_property_ids:
         label_added = fetch_property_labels(
-            collected_property_ids, target_graph,
-            languages, label_cache
+            collected_property_ids, target_graph, languages, label_cache
         )
         total_added += label_added
 
@@ -541,6 +573,35 @@ def sparql_query_with_retry(query: str) -> dict | None:
     return None
 
 
+def should_include_triple(
+    predicate_str: str,
+    object_str: str | None,
+    include_statements: bool
+) -> bool:
+    """
+    Entscheidet ob ein Triple gespeichert werden soll.
+
+    Ohne -s werden gefiltert:
+    - p:P* Prädikate (Zeiger auf Statement-Nodes)
+    - Objekte die Statement-Node-URIs sind
+
+    Diese Triples sind ohne aufgelöste Statement-Details
+    nutzloser Ballast ("tote" URIs).
+    """
+    if include_statements:
+        return True  # Alles behalten
+
+    # p:P31 etc. filtern (Zeiger auf Statement-Nodes)
+    if is_statement_link_predicate(predicate_str):
+        return False
+
+    # Statement-Node-URIs als Objekte filtern
+    if object_str and is_statement_node(object_str):
+        return False
+
+    return True
+
+
 def fetch_wikidata_statements(
     uri: str,
     target_graph: Graph,
@@ -551,10 +612,7 @@ def fetch_wikidata_statements(
     include_statements: bool = False,
     force_update: bool = False
 ) -> bool:
-    """
-    Holt Statements + Property-Labels für eine Wikidata-URI.
-    Optional auch Statement-Node-Details (Qualifiers, References).
-    """
+    """Holt Statements + Property-Labels für eine Wikidata-URI."""
     if "wikidata.org/entity/" not in str(uri):
         logger.debug(f"Überspringe Nicht-Wikidata-URI: {uri}")
         return False
@@ -577,10 +635,10 @@ def fetch_wikidata_statements(
         f"SELECT ?s ?p WHERE {{ ?s ?p <{uri}> }} LIMIT {INCOMING_LIMIT}"
     ]
 
-    # Phase 1: Temp-Graph befüllen, Property-IDs und Statement-Nodes sammeln
     wikidata_graph = Graph()
     collected_property_ids = set()
     collected_statement_uris = set()
+    skipped_statement_triples = 0
 
     for query_index, query in enumerate(queries):
         data = sparql_query_with_retry(query)
@@ -598,7 +656,7 @@ def fetch_wikidata_statements(
         )
 
         for result in bindings:
-            if query_index == 0:
+            if query_index == 0:  # Ausgehend
                 p_str = result['p']['value']
                 p = URIRef(p_str)
 
@@ -607,21 +665,27 @@ def fetch_wikidata_statements(
                     collected_property_ids.add(pid)
 
                 o = parse_sparql_binding_to_rdf(
-                    result['o'],
-                    languages=languages,
-                    predicate_str=p_str
+                    result['o'], languages=languages, predicate_str=p_str
                 )
                 if o is None:
                     continue
 
-                # Statement-Node-URIs sammeln
+                o_str = str(o) if isinstance(o, URIRef) else None
+
+                # Filtern: Statement-Triples nur mit -s
+                if not should_include_triple(p_str, o_str, include_statements):
+                    skipped_statement_triples += 1
+                    # Trotzdem Statement-URIs sammeln wenn -s aktiv
+                    continue
+
+                # Statement-Node-URIs sammeln für spätere Auflösung
                 if (include_statements
                         and isinstance(o, URIRef)
                         and is_statement_node(str(o))):
                     collected_statement_uris.add(str(o))
 
                 wikidata_graph.add((uri_ref, p, o))
-            else:
+            else:  # Eingehend
                 s = URIRef(result['s']['value'])
                 p_str = result['p']['value']
                 p = URIRef(p_str)
@@ -634,7 +698,13 @@ def fetch_wikidata_statements(
 
         time.sleep(INTER_QUERY_DELAY)
 
-    # Phase 2: Override-Bereinigung
+    if skipped_statement_triples > 0:
+        logger.debug(
+            f"  {skipped_statement_triples} Statement-Triples "
+            f"übersprungen (ohne -s)"
+        )
+
+    # Override-Bereinigung
     wikidata_predicates = set(wikidata_graph.predicates(subject=uri_ref))
     override_preds = wikidata_predicates & WIKIDATA_OVERRIDES_PROPERTIES
 
@@ -648,30 +718,27 @@ def fetch_wikidata_statements(
         if removed_count > 0:
             logger.info(f"  → {removed_count} Override-Triples entfernt")
 
-    # Phase 3: Wikidata-Daten einfügen
+    # Wikidata-Daten einfügen
     added_count = 0
     for triple in wikidata_graph:
         if triple not in target_graph:
             target_graph.add(triple)
             added_count += 1
 
-    # Phase 4: Statement-Node-Details abrufen (optional)
+    # Statement-Details (nur mit -s)
     stmt_count = 0
     if include_statements and collected_statement_uris:
         stmt_count = fetch_statement_details(
-            collected_statement_uris, target_graph,
-            languages, label_cache
+            collected_statement_uris, target_graph, languages, label_cache
         )
 
-    # Phase 5: Property-Labels (mit Cache)
+    # Property-Labels
     label_count = 0
     if collected_property_ids:
         label_count = fetch_property_labels(
-            collected_property_ids, target_graph,
-            languages, label_cache
+            collected_property_ids, target_graph, languages, label_cache
         )
 
-    # Marker setzen
     mark_as_fetched(uri_ref, target_graph)
 
     graph_changed = (removed_count + added_count + label_count + stmt_count) > 0
@@ -682,6 +749,8 @@ def fetch_wikidata_statements(
     ]
     if include_statements:
         parts.append(f"{stmt_count} Statement-Details")
+    if skipped_statement_triples > 0:
+        parts.append(f"{skipped_statement_triples} Statement-Triples gefiltert")
     logger.info(f"  → {', '.join(parts)} für {uri}")
 
     return graph_changed
@@ -775,8 +844,9 @@ def merge_graphs(target: Graph, source: Graph) -> int:
 
 
 def save_graph(graph: Graph, output_path: str, output_format: str) -> bool:
-    """Speichert den Graph."""
+    """Speichert den Graph mit korrekt gebundenen Prefixen."""
     try:
+        bind_standard_prefixes(graph)
         graph.serialize(destination=output_path, format=output_format)
         logger.info(
             f"Graph gespeichert: {output_path} "
@@ -815,7 +885,8 @@ def main():
         action="store_true",
         help=(
             "Statement-Node-Details (Qualifiers, References, Ranks) "
-            "mit abrufen. Erzeugt deutlich mehr Daten."
+            "mit abrufen. Ohne diese Option werden nur Direct Properties "
+            "(wdt:) gespeichert. Erzeugt deutlich mehr Daten."
         )
     )
     parser.add_argument(
@@ -828,19 +899,26 @@ def main():
     languages = parse_languages(args.languages)
     logger.info(f"Sprach-Filter: {', '.join(languages)}")
     if args.statements:
-        logger.info("Statement-Details: AKTIVIERT (mehr Daten & Abfragen)")
+        logger.info(
+            "Statement-Details: AKTIVIERT "
+            "(p:, ps:, pq:, prov: werden mit abgerufen)"
+        )
+    else:
+        logger.info(
+            "Statement-Details: DEAKTIVIERT "
+            "(nur wdt: Direct Properties, -s zum Aktivieren)"
+        )
 
     output_format = detect_rdf_format(args.output)
 
-    # ── Schritt 1: Schema.org-Daten laden ──
     schema_graph = load_schema_graph(args.input)
 
-    # ── Schritt 2: About-URIs extrahieren ──
     about_uris = extract_about_uris(schema_graph)
     logger.info(f"{len(about_uris)} eindeutige 'about'-URIs extrahiert.")
 
-    # ── Schritt 3: Ausgabe-Graph initialisieren ──
     result_graph = Graph()
+    bind_standard_prefixes(result_graph)
+
     initial_triple_count = 0
 
     if os.path.exists(args.output):
@@ -849,13 +927,12 @@ def main():
             result_graph.parse(source=args.output, format=output_format)
             initial_triple_count = len(result_graph)
             logger.info(f"{initial_triple_count} Triples geladen.")
+            bind_standard_prefixes(result_graph)
         except Exception as e:
             logger.warning(f"Konnte {args.output} nicht laden: {e}")
 
-    # ── Schritt 4: Label-Cache initialisieren ──
     label_cache = extract_cached_property_ids(result_graph)
 
-    # ── Schritt 5: Schema.org-Triples mergen ──
     schema_added = merge_graphs(result_graph, schema_graph)
     logger.info(
         f"{schema_added} neue Schema.org-Triples "
@@ -869,7 +946,6 @@ def main():
             save_graph(result_graph, args.output, output_format)
         return
 
-    # ── Schritt 6: Wikidata-Anreicherung ──
     try:
         for i, uri in enumerate(about_uris, 1):
             if fetch_wikidata_statements(
@@ -893,7 +969,9 @@ def main():
         else:
             logger.info("Keine Änderungen. Speichern übersprungen.")
 
-    logger.info(f"Label-Cache: {len(label_cache)} Property-IDs nach Abschluss")
+    logger.info(
+        f"Label-Cache: {len(label_cache)} Property-IDs nach Abschluss"
+    )
 
 
 if __name__ == "__main__":
