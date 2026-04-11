@@ -38,6 +38,5 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: enriched-entities
-          archive: false
           path: |
             enriched_entities.hdt
