@@ -37,6 +37,6 @@ jobs:
       - name: Upload enriched HDT artifact
         uses: actions/upload-artifact@v7
         with:
-          name: enriched-entities
+          name: enriched_entities
           path: |
             enriched_entities.hdt
