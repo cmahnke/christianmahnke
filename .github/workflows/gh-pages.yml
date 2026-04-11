@@ -78,6 +78,15 @@ jobs:
         run: |
           ./scripts/post-build/index.sh
 
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v5
+        name: enriched-entities
+
+      - name: Copy enriched HDT to docs
+        run: |
+          mkdir -p docs/wikidata
+          cp enriched-entities.hdt docs/wikidata/
+
       - name: Puppeteer
         if: ${{ !env.ACT }}
         run: |

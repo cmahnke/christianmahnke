@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
-          
+
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
@@ -35,8 +35,9 @@ jobs:
           docker run --rm -v "${{ github.workspace }}:/data" -w /data ghcr.io/cmahnke/lod-tools/rdf2hdt:latest enriched_entities.ttl enriched_entities.hdt
 
       - name: Upload enriched HDT artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: enriched-entities
+          archive: false
           path: |
             enriched_entities.hdt
