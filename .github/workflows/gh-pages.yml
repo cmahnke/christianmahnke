@@ -92,8 +92,7 @@ jobs:
 
       - name: Copy enriched HDT to docs
         run: |
-          mkdir -p docs/wikidata
-          cp enriched_entities.hdt docs/wikidata/
+          cp enriched_entities.hdt docs/meta/wikidata/
 
       - name: Puppeteer
         if: ${{ !env.ACT }}
