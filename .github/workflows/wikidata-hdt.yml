@@ -1,0 +1,37 @@
+name: Generate Wikidata HDT
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: 3.13
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install requests rdflib
+
+      - name: Run Wikidata enrichment script
+        run: |
+          python themes/projektemacher-base/scripts/wikidata/get_entities.py https://christianmahnke.de/meta/schema.org/index.json
+
+      - name: Convert TTL to HDT
+        run: |
+          docker run --rm -v "${{ github.workspace }}:/data" -w /data ghcr.io/cmahnke/lod-tools/rdf2hdt:latest enriched_entities.ttl enriched_entities.hdt
+
+      - name: Upload enriched HDT artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: enriched-entities
+          path: |
+            enriched_entities.hdt
