@@ -14,7 +14,9 @@ concurrency:
 
 permissions:
   actions: read
-  contents: read
+  contents: write
+  pages: write
+  id-token: write
 
 env:
   HUGO_VERSION: 0.160.1
