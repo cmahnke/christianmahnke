@@ -7,6 +7,10 @@ tags:
   - Art
   - Projektemacher.org
   - Blog
+wikidata:
+  - https://www.wikidata.org/wiki/Q137662135
+  - https://www.wikidata.org/wiki/Q36279
+  - https://www.wikidata.org/wiki/Q59775114
 ---
 
 After the identity of [Fritz Neumann and thus Ric could be clarified in October](https://christianmahnke.de/post/ric-unknownartist/), [Mark Strong from Meibohm Fine Arts](https://www.meibohmfinearts.com/) compiled, condensed and published on [AskArt](https://www.askart.com/artist/Fritz_Neumann/11057559/Fritz_Neumann.aspx) on the basis of the findings from [my blog](https://ric-unknownartist.projektemacher.org/).
