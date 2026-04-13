@@ -13,6 +13,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q108218387
   - https://www.wikidata.org/wiki/Q364
   - https://www.wikidata.org/wiki/Q22661177
+  - https://www.wikidata.org/wiki/Q281876
 ---
 
 For an upcoming release of software for visualising a collection, I have been looking into [Citation File Format](https://citation-file-format.github.io/).

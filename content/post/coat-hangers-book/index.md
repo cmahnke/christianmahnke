@@ -11,6 +11,7 @@ tags:
 - Book
 wikidata:
   - https://www.wikidata.org/wiki/Q815240
+  - https://www.wikidata.org/wiki/Q96473517
 ---
 
 Das erste Buch zu einem meiner Blogs ist nun fertig...

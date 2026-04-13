@@ -4,6 +4,8 @@ title: "Metadata for Hugo Shortcodes"
 cite: true
 tags:
   - Hugo
+wikidata:
+  - https://www.wikidata.org/wiki/Q110961986
 ---
 
 For my blogs I use a Hugo theme as a kind of function library...

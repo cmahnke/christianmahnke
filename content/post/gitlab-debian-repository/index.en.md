@@ -9,6 +9,7 @@ tags:
 wikidata:
   - https://www.wikidata.org/wiki/Q16639197
   - https://www.wikidata.org/wiki/Q7715973
+  - https://www.wikidata.org/wiki/Q305892
 ---
 
 A simple Debian repository knitted by yourself...

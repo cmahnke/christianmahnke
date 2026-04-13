@@ -18,6 +18,7 @@ linkedart:
 wikidata:
   - https://www.wikidata.org/wiki/Q1145251
   - https://www.wikidata.org/wiki/Q1559234
+  - https://www.wikidata.org/wiki/Q517407
 ---
 
 I found an colourised etching by [Curt Mücke](https://de.wikipedia.org/wiki/Curt_M%C3%BCcke) (1885-1940)...

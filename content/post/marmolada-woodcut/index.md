@@ -28,6 +28,9 @@ wikidata:
   - https://www.wikidata.org/wiki/Q137661693
   - https://www.wikidata.org/wiki/Q258031
   - https://www.wikidata.org/wiki/Q903816
+  - https://www.wikidata.org/wiki/Q3682472
+  - https://www.wikidata.org/wiki/Q1674866
+  - https://www.wikidata.org/wiki/Q124719690
 resources:
   - src: img/preview.jpg
     params:

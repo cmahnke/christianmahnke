@@ -21,6 +21,7 @@ linkedart:
     url: https://creativecommons.org/publicdomain/zero/1.0/
 wikidata:
   - https://www.wikidata.org/wiki/Q52148388
+  - https://www.wikidata.org/wiki/Q1449
 ---
 
 Ich habe ein Gemälde von [François Poggi](https://www.mahmah.ch/collection/artistes/poggi-francois) (1838-1900) ([bei artnet](https://www.artnet.com/artists/fran%C3%A7ois-poggi/)) bekommen, dass auf dem Sperrmüll gefunden wurde...

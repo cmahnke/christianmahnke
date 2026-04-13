@@ -15,6 +15,10 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q67313882
 wikidata:
   - https://www.wikidata.org/wiki/Q67313882
+  - https://www.wikidata.org/wiki/Q213
+  - https://www.wikidata.org/wiki/Q853348
+  - https://www.wikidata.org/wiki/Q197
+  - https://www.wikidata.org/wiki/Q23499
 ---
 
 I bought a colour etching by [Alois Janák](https://www.alois-janak.de/) (born 1924)...

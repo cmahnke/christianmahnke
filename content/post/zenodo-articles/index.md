@@ -6,6 +6,9 @@ draft: true
 tags:
   - Blog
   - Archive
+  - Zenodo
+wikidata:
+  - https://www.wikidata.org/wiki/Q96473517
 ---
 
 Aufwendigere Blogbeiträge werden nun auch auf Zenodo veröffentlicht...

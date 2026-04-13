@@ -9,6 +9,10 @@ tags:
 - JSON
 wikidata:
   - https://www.wikidata.org/wiki/Q2493
+  - https://www.wikidata.org/wiki/Q135997204
+  - https://www.wikidata.org/wiki/Q2675
+  - https://www.wikidata.org/wiki/Q8819
+  - https://www.wikidata.org/wiki/Q726780
 ---
 
 Für die Videometadaten von [911 TV](https://911tv.projektemacher.org/) gab es eine interessante Herausforderung zu lösen...
