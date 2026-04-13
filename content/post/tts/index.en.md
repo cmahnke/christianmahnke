@@ -4,6 +4,9 @@ title: 'TTS for "Briefsteller"'
 tags:
   - TTS
   - Projektemacher.org
+wikidata:
+  - https://www.wikidata.org/wiki/Q106525522
+  - https://www.wikidata.org/wiki/Q4363806
 ---
 
 After the [Briefsteller blog](https://briefsteller.de/) had existed as a skeleton since the beginning of 2021, I used my summer holiday to bring the sample letter, which brought me to the topic ["letter writing guides"](https://en.wikipedia.org/wiki/Victorian_letter_writing_guides) in the first place, [online](https://briefsteller.de/post/der-haussekretaer/286/)...

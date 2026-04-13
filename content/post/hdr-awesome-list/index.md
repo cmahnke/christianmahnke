@@ -4,6 +4,9 @@ title: "HDR Bilder im Browser"
 tags:
   - Licht2024
   - HDR
+wikidata:
+  - https://www.wikidata.org/wiki/Q117823197
+  - https://www.wikidata.org/wiki/Q6368
 ---
 
 Für ein in Vorbereitung befindliches Projekt habe ich eine [Liste von Links](https://github.com/cmahnke/awesome-browser-hdr/blob/main/README.md) zu HDR im Web bzw. im Browser zusammengestellt.

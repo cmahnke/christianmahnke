@@ -4,6 +4,9 @@ title: "TTS für Briefsteller"
 tags:
   - TTS
   - Projektemacher.org
+wikidata:
+  - https://www.wikidata.org/wiki/Q106525522
+  - https://www.wikidata.org/wiki/Q4363806
 ---
 
 Nachdem das [Briefsteller Blog](https://briefsteller.de/) seit Anfang 2021 als Gerüst existierte, habe ich meinen Sommerurlaub genutzt, um den Musterbrief, der mich überhaupt erst zu dem Thema ["Briefsteller"](https://de.wikipedia.org/wiki/Briefsteller) gebracht hat, [online](https://briefsteller.de/post/der-haussekretaer/286/) zu bringen...
