@@ -19,6 +19,11 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata: 
   - https://www.wikidata.org/wiki/Q15735037
+  - https://www.wikidata.org/wiki/Q1550936
+  - https://www.wikidata.org/wiki/Q213
+  - https://www.wikidata.org/wiki/Q853348
+  - https://www.wikidata.org/wiki/Q197
+  - https://www.wikidata.org/wiki/Q23499
 ---
 
 Euch habe eine Lithographie von [František Gross](https://cs-m-wikipedia-org.translate.goog/wiki/Franti%C5%A1ek_Gross?_x_tr_sl=cs&_x_tr_tl=de&_x_tr_hl=de&_x_tr_pto=wapp) (automatische Übersetzung) (1909–1985) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/frantisek-gross/)) aufgetan...

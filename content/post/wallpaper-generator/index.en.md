@@ -15,6 +15,9 @@ tags:
 wikidata:
   - https://www.wikidata.org/wiki/Q191529
   - https://www.wikidata.org/wiki/Q105134737
+  - https://www.wikidata.org/wiki/Q238354
+  - https://www.wikidata.org/wiki/Q117336820
+  - https://www.wikidata.org/wiki/Q1551026
 ---
 
 Since I have an [extensive collection of patterned papers](https://vorsatzpapier.projektemacher.org/patterns/), it was time to do something with them...

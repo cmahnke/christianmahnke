@@ -20,6 +20,7 @@ notes:
 wikidata:
   - https://www.wikidata.org/wiki/Q137755842
   - https://www.wikidata.org/wiki/Q9325
+  - https://www.wikidata.org/wiki/Q33935
 ---
 
 I bought a screen print by Michael Eisemann (1943-)...

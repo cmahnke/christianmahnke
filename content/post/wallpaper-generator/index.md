@@ -15,6 +15,9 @@ tags:
 wikidata:
   - https://www.wikidata.org/wiki/Q191529
   - https://www.wikidata.org/wiki/Q105134737
+  - https://www.wikidata.org/wiki/Q238354
+  - https://www.wikidata.org/wiki/Q117336820
+  - https://www.wikidata.org/wiki/Q1551026
 ---
 
 Da ich eine [umfangreiche Sammlung an gemusterten Papieren](https://vorsatzpapier.projektemacher.org/patterns/) habe, war es Zeit damit etwas zu machen...

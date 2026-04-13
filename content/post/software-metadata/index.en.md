@@ -12,6 +12,8 @@ wikidata:
   - https://www.wikidata.org/wiki/Q5205836
   - https://www.wikidata.org/wiki/Q1142726
   - https://www.wikidata.org/wiki/Q95001953
+  - https://www.wikidata.org/wiki/Q106102182
+  - https://www.wikidata.org/wiki/Q16639197
 ---
 
 Part 2 on software metadata.

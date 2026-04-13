@@ -8,6 +8,10 @@ tags:
   - Search
   - Pagefind
   - Python
+wikidata:
+  - https://www.wikidata.org/wiki/Q978185
+  - https://www.wikidata.org/wiki/Q281876
+  - https://www.wikidata.org/wiki/Q8811
 ---
 
 Da diese Seite eine Suche braucht, habe ich mir mal [Pagefind](https://pagefind.app/) angesehen...

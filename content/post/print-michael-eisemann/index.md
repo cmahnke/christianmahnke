@@ -20,6 +20,7 @@ notes:
 wikidata:
   - https://www.wikidata.org/wiki/Q137755842
   - https://www.wikidata.org/wiki/Q9325
+  - https://www.wikidata.org/wiki/Q33935
 ---
 
 Ich habe eines Siebdruck von Michael Eisemann (1943-) erstanden...
@@ -32,4 +33,4 @@ Ich habe eines Siebdruck von Michael Eisemann (1943-) erstanden...
 ]
 {{</ gallery >}}
 
-Michael Eisemann ist ein israelischer Künstler, der 1943 in Tel Aviv geboren wurde und in Wiesbaden Kunst studierte. Diese Grafik ist Teil einer Serie, namens "Künstler der Welt", die die Lufthansa für Passagiere der ersten Klasse herausgegeben hat. Diese stammt aus dem Jahr 1984 oder 1985. Die Realisierung lag bei Meißner Edition Hamburg. Adere Künstler deren Grafiken, deren Werke so für die Lufthansa herausgegeben wurden sind: Leung Man Li, Kurt Larisch, Cheung Yee, Irene Chou, Cathy Halstead, Jürgen Li Fischer, Harrie Gerritz uva.
+Michael Eisemann ist ein israelischer Künstler, der 1943 in Tel Aviv geboren wurde und in Wiesbaden Kunst studierte. Diese Grafik ist Teil einer Serie, namens "Künstler der Welt", die die Lufthansa für Passagiere der ersten Klasse herausgegeben hat. Diese stammt aus dem Jahr 1984 oder 1985. Die Realisierung lag bei Meißner Edition Hamburg. Andere Künstler deren Grafiken so für die Lufthansa herausgegeben wurden sind: Leung Man Li, Kurt Larisch, Cheung Yee, Irene Chou, Cathy Halstead, Jürgen Li Fischer, Harrie Gerritz uva.

@@ -6,6 +6,9 @@ tags:
   - Data
   - Docker
   - Metadata
+wikidata:
+  - https://www.wikidata.org/wiki/Q2115
+  - https://www.wikidata.org/wiki/Q2430433
 ---
 
 Den millionsten [OAI-PMH Harvester](https://de.wikipedia.org/wiki/Open_Archives_Initiative#OAI_Protocol_for_Metadata_Harvesting) wollte ich nicht schreiben,...

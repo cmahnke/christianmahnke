@@ -18,6 +18,7 @@ linkedart:
 wikidata: 
   - https://www.wikidata.org/wiki/Q6477113
   - https://www.wikidata.org/wiki/Q107972843
+  - https://www.wikidata.org/wiki/Q1055
 ---
 
 Ich habe einen Holzschnitt von [Elsa Haensgen-Dingkuhn](https://de.wikipedia.org/wiki/Elsa_Haensgen-Dingkuhn) (1898-1991) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/elsa-haensgen-dingkuhn/)) gefunden...

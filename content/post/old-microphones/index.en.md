@@ -9,6 +9,7 @@ preview: img/side.jpg
 wikidata:
   - https://www.wikidata.org/wiki/Q46384
   - https://www.wikidata.org/wiki/Q264997
+  - https://www.wikidata.org/wiki/Q4819862
 ---
 
 In order to make podcasts in the future, I purchased some audio equipment in 2024...
