@@ -15,7 +15,7 @@ tags:
   - HDR
 wikidata:
   - https://www.wikidata.org/wiki/Q178995
-  - https://www.wikidata.org/wiki/Q241859
+  - https://www.wikidata.org/wiki/Q498575
   - https://www.wikidata.org/wiki/Q1576316
   - https://www.wikidata.org/wiki/Q160225
   - https://www.wikidata.org/wiki/Q777
