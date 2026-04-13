@@ -10,6 +10,10 @@ tags:
 wikidata:
   - https://www.wikidata.org/wiki/Q138337449
   - https://www.wikidata.org/wiki/Q112061919
+  - https://www.wikidata.org/wiki/Q944
+  - https://www.wikidata.org/wiki/Q20084080
+  - https://www.wikidata.org/wiki/Q27986619
+  - https://www.wikidata.org/wiki/Q132398295
 ---
 
 Wie lassen sich digitale Objekte mit Ausstellungen verknüpfen?

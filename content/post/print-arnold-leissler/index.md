@@ -17,6 +17,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata:
   - https://www.wikidata.org/wiki/Q695684
+  - https://www.wikidata.org/wiki/Q1715
 ---
 
 Ich habe eine Radierung von [Arnold Leissler (dem Jüngeren)](https://de.wikipedia.org/wiki/Arnold_Leissler_der_J%C3%BCngere) (1939-2014) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/arnold-leissler/)) gekauft...

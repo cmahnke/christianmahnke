@@ -17,6 +17,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata: 
   - https://www.wikidata.org/wiki/Q1793892
+  - https://www.wikidata.org/wiki/Q780
 ---
 
 I found an etching by [Kurt Mühlenhaupt](https://de.wikipedia.org/wiki/Kurt_M%C3%BChlenhaupt) (1921-2006) ([at artnet](https://www.artnet.com/artists/kurt-muhlenhaupt/))...

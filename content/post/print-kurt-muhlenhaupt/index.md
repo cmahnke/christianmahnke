@@ -17,6 +17,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata:
   - https://www.wikidata.org/wiki/Q1793892
+  - https://www.wikidata.org/wiki/Q780
 ---
 
 Ich habe eine Radierung von [Kurt Mühlenhaupt](https://de.wikipedia.org/wiki/Kurt_M%C3%BChlenhaupt) (1921-2006) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/kurt-muhlenhaupt/)) gefunden...

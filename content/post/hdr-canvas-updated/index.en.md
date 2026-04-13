@@ -13,6 +13,15 @@ wikidata:
   - https://www.wikidata.org/wiki/Q2005
   - https://www.wikidata.org/wiki/Q106239881
   - https://www.wikidata.org/wiki/Q978185
+  - https://www.wikidata.org/wiki/Q116963687
+  - https://www.wikidata.org/wiki/Q28957081
+  - https://www.wikidata.org/wiki/Q136933249
+  - https://www.wikidata.org/wiki/Q3525922
+  - https://www.wikidata.org/wiki/Q615940
+  - https://www.wikidata.org/wiki/Q110650833
+  - https://www.wikidata.org/wiki/Q5439690
+  - https://www.wikidata.org/wiki/Q6368
+  - https://www.wikidata.org/wiki/Q79534
 ---
 
 `hdr-canvas` has been updated...

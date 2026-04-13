@@ -14,6 +14,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q105241486
   - https://www.wikidata.org/wiki/Q731994
   - https://www.wikidata.org/wiki/Q594150
+  - https://www.wikidata.org/wiki/Q1516931
 ---
 
 I usually avoid buying reproductions...

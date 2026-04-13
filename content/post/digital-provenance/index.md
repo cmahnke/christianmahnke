@@ -14,6 +14,8 @@ wikidata:
   - https://www.wikidata.org/wiki/Q118496507
   - https://www.wikidata.org/wiki/Q628106
   - https://www.wikidata.org/wiki/Q1773840
+  - https://www.wikidata.org/wiki/Q121923035
+  - https://www.wikidata.org/wiki/Q6368
 ---
 
 Wie kann man Authentizität digitalisierten Kulturgutes gewährleisten?

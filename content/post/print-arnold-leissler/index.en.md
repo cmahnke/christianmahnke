@@ -17,6 +17,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata:
   - https://www.wikidata.org/wiki/Q695684
+  - https://www.wikidata.org/wiki/Q1715
 ---
 
 I bought an etching by [Arnold Leissler (the Younger)](https://de.wikipedia.org/wiki/Arnold_Leissler_der_J%C3%BCngere) (1939-2014) ([at artnet](https://www.artnet.com/artists/arnold-leissler/))...

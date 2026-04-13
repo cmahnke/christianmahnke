@@ -11,6 +11,8 @@ wikidata:
   - https://www.wikidata.org/wiki/Q815240
   - https://www.wikidata.org/wiki/Q2668072
   - https://www.wikidata.org/wiki/Q989963
+  - https://www.wikidata.org/wiki/Q1559832
+  - https://www.wikidata.org/wiki/Q209330
 ---
 
 Today (7 February) at 5:30 p.m., the open-air exhibition ‘Collections Tell Stories’ will open. As previously announced, I will be represented with my coat hanger collection.

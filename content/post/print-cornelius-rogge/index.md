@@ -13,6 +13,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q131617370
   - https://www.wikidata.org/wiki/Q479361
   - https://www.wikidata.org/wiki/Q1797167
+  - https://www.wikidata.org/wiki/Q1339814
 ---
 
 Ich habe eine kolorierte Radierung von [Cornelius Rogge](https://de.wikipedia.org/wiki/K%C3%BCnstlerkolonie_D%C3%B6tlingen#Cornelius_Rogge) (1868 – 1949) gefunden...

@@ -13,9 +13,10 @@ outputs:
 linkedart:
   title: DROHjanisches Pferd
   artist:
-    wikidata: https://www.wikidata.org/wiki/Q6477113
+    wikidata: https://www.wikidata.org/wiki/Q136641660
 wikidata:
-  - https://www.wikidata.org/wiki/Q6477113
+  - https://www.wikidata.org/wiki/Q136641660
+  - https://www.wikidata.org/wiki/Q545449
 ---
 
 Ich habe eine [Aquatinta](https://de.wikipedia.org/wiki/Aquatinta) (Radierung) von [Klaus Parche](http://www.klausparche.de/) (1939-2024) gefunden...
