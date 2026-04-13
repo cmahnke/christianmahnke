@@ -9,6 +9,12 @@ preview:
 tags:
 - Projektemacher.org
 - Christmas
+- Stereoscopy
+- Book
+wikipedia:
+  - https://www.wikidata.org/wiki/Q484031
+  - https://www.wikidata.org/wiki/Q486269
+  - https://www.wikidata.org/wiki/Q8275050
 ---
 
 Zur Einstimmung in die Vorweihnachtszeit...
