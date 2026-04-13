@@ -15,6 +15,7 @@ linkedart:
 wikidata: 
   - https://www.wikidata.org/wiki/Q112821333
   - https://www.wikidata.org/wiki/Q131787286
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Farbholzschnitt von [Max Westhäuser (1885-1956)](https://de.wikipedia.org/wiki/Max_Westh%C3%A4user) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/max-westhauser/)) erstanden...

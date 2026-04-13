@@ -23,6 +23,8 @@ wikidata:
   - https://www.wikidata.org/wiki/Q386599
   - https://www.wikidata.org/wiki/Q1721595
   - https://www.wikidata.org/wiki/Q313695
+  - https://www.wikidata.org/wiki/Q166343
+  - https://www.wikidata.org/wiki/Q57207952
 ---
 
 Ich habe einige Gemälde von [Frank Walter](https://de.wikipedia.org/wiki/Frank_Walter) (1926-2009) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/frank-walter/)) gefunden...

@@ -21,6 +21,9 @@ wikidata:
   - https://www.wikidata.org/wiki/Q2940499
   - https://www.wikidata.org/wiki/Q16294951
   - https://www.wikidata.org/wiki/Q7999615
+  - https://www.wikidata.org/wiki/Q1952321
+  - https://www.wikidata.org/wiki/Q17558104
+  - https://www.wikidata.org/wiki/Q484031
 ---
 
 The latest blog incubated at the [Projektemacher Labs](https://labs.projektemacher.org/) has been started.

@@ -21,6 +21,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q136992263
   - https://www.wikidata.org/wiki/Q1329181
   - https://www.wikidata.org/wiki/Q67078785
+  - https://www.wikidata.org/wiki/Q126084987
 ---
 
 Today (26 March) is the opening of the exhibition [‘Was zum Quant?!’](https://www.forum-wissen.de/event/eroeffnung-was-zum-quant/) in the Forum Wissen. You can also see a digital exhibit in which I was involved...

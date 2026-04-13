@@ -17,6 +17,7 @@ linkedart:
 wikidata:
   - https://www.wikidata.org/wiki/Q136641660
   - https://www.wikidata.org/wiki/Q545449
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I have found an [aquatint](https://en.wikipedia.org/wiki/Aquatint) (etching) by [Klaus Parche](http://www.klausparche.de/) (1939-2024)...

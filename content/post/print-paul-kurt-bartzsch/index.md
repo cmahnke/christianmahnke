@@ -21,6 +21,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q137756185
   - https://www.wikidata.org/wiki/Q392142
   - https://www.wikidata.org/wiki/Q3014
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Holzschnitt von Paul-Kurt Bartzsch (1917-1994) aufgetan...

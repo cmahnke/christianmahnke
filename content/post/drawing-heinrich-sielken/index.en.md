@@ -27,6 +27,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q2588167
   - https://www.wikidata.org/wiki/Q133274
   - https://www.wikidata.org/wiki/Q1202202
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I came across two drawings by [Heinrich Sielken](https://glass-portal.hier-im-netz.de/hs/s-z/sielken_heinrich.htm) (1874 - 1942)...

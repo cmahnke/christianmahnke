@@ -14,6 +14,8 @@ wikidata:
   - https://www.wikidata.org/wiki/Q122222
   - https://www.wikidata.org/wiki/Q123018
   - https://www.wikidata.org/wiki/Q302045
+  - https://www.wikidata.org/wiki/Q159
+  - https://www.wikidata.org/wiki/Q4044197
 ---
 
 I found another interesting old console...

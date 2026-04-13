@@ -19,6 +19,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q853348
   - https://www.wikidata.org/wiki/Q197
   - https://www.wikidata.org/wiki/Q23499
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe eine Farbradierung von [Alois Janák](https://www.alois-janak.de/) (geb. 1924) gekauft...

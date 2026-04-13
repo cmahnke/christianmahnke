@@ -7,6 +7,13 @@ tags:
   - Licht2024
   - DigitalImages
   - HDR
+wikidata:
+  - https://www.wikidata.org/wiki/Q99738405 
+  - https://www.wikidata.org/wiki/Q94
+  - https://www.wikidata.org/wiki/Q1047199
+  - https://www.wikidata.org/wiki/Q2985103
+  - https://www.wikidata.org/wiki/Q136933249
+  - https://www.wikidata.org/wiki/Q6368
 ---
 
 Für ein in Vorbereitung befindliches Projekt war es nach der [Recherche](/post/hdr-awesome-list/) notwendig einige Wege zu erkunden und Werkzeuge zu schaffen. Ausgehend von den Vorarbeiten von [Greg Benz](https://gregbenzphotography.com/hdr/), zur HDR-Unterstützung, war LibUltraHDR der sinnvollste Kandidat für weitere Experimente.

@@ -8,6 +8,8 @@ tags:
 - DIY
 - Blog
 draft: true
+wikipedia:
+  - https://www.wikidata.org/wiki/Q40463886
 ---
 
 Diese Seite unterstützt nun eine Untermenge von ActivityPub...

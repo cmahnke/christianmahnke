@@ -21,6 +21,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q137755842
   - https://www.wikidata.org/wiki/Q9325
   - https://www.wikidata.org/wiki/Q33935
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe eines Siebdruck von Michael Eisemann (1943-) erstanden...

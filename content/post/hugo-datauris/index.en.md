@@ -4,6 +4,8 @@ title: "Embed resources as data URLs in Hugo"
 cite: true
 tags:
   - Hugo
+wikidata:
+  - https://www.wikidata.org/wiki/Q976554
 ---
 
 Sometimes it is easier to embed external resources in HTML...

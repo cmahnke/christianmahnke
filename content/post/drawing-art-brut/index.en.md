@@ -9,6 +9,7 @@ preview: img/image.jpg
 wikidata:
   - https://www.wikidata.org/wiki/Q1247856
   - https://www.wikidata.org/wiki/Q1122756
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I bought an interesting [Art Brut](https://en.wikipedia.org/wiki/Outsider_art) drawing from 1965...

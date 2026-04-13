@@ -13,6 +13,13 @@ wikidata:
   - https://www.wikidata.org/wiki/Q42332
   - https://www.wikidata.org/wiki/Q24415127
   - https://www.wikidata.org/wiki/Q32087
+  - https://www.wikidata.org/wiki/Q6368
+  - https://www.wikidata.org/wiki/Q8811
+  - https://www.wikidata.org/wiki/Q815240
+  - https://www.wikidata.org/wiki/Q3085953
+  - https://www.wikidata.org/wiki/Q2115
+  - https://www.wikidata.org/wiki/Q32061
+  - https://www.wikidata.org/wiki/Q96473517
 ---
 
 II occasionally engage in cross-media publishing...

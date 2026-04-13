@@ -11,6 +11,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q1622237
   - https://www.wikidata.org/wiki/Q137661693
   - https://www.wikidata.org/wiki/Q1187930
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Holzschnitt von [Emma Mayer](https://www.dashausderfrau.nl/mayer-emma.html) (1874-nach 1930) gefunden...

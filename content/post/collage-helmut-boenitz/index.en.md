@@ -15,6 +15,8 @@ linkedart:
 wikidata:
   - https://www.wikidata.org/wiki/Q94634912
   - https://www.wikidata.org/wiki/Q133742956
+  - https://www.wikidata.org/wiki/Q130763950
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I found a collage by Helmut Bönitz (1914-1999)...

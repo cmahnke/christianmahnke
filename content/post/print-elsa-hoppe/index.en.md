@@ -20,6 +20,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q2360104
   - https://www.wikidata.org/wiki/Q133742956
   - https://www.wikidata.org/wiki/Q130763950
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I have acquired a linocut by Elsa Hoppe (1901-1992)...

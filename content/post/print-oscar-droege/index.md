@@ -16,6 +16,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata: 
   - https://www.wikidata.org/wiki/Q15447320
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Farbholzschnitt von [Oscar Droege](https://de.wikipedia.org/wiki/Oscar_Droege) (1898-1983) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/oscar-droege/)) aufgetan...

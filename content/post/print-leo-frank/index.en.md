@@ -22,6 +22,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q6373
   - https://www.wikidata.org/wiki/Q414219
   - https://www.wikidata.org/wiki/Q235152
+  - https://www.wikidata.org/wiki/Q188675
 gnd: http://d-nb.info/gnd/120740486
 ---
 

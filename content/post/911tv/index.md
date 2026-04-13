@@ -14,6 +14,15 @@ tags:
 - MediaInstallation
 wikidata:
   - https://www.wikidata.org/wiki/Q10806
+  - https://www.wikidata.org/wiki/Q191472
+  - https://www.wikidata.org/wiki/Q954394
+  - https://www.wikidata.org/wiki/Q2264545
+  - https://www.wikidata.org/wiki/Q860605
+  - https://www.wikidata.org/wiki/Q289
+  - https://www.wikidata.org/wiki/Q48340
+  - https://www.wikidata.org/wiki/Q7951257
+  - https://www.wikidata.org/wiki/Q212128
+  - https://www.wikidata.org/wiki/Q279925
 ---
 
 Eine alte Idee von mir ist nun um gesetzt:

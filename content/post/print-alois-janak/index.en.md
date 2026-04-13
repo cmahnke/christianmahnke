@@ -19,6 +19,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q853348
   - https://www.wikidata.org/wiki/Q197
   - https://www.wikidata.org/wiki/Q23499
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I bought a colour etching by [Alois Janák](https://www.alois-janak.de/) (born 1924)...

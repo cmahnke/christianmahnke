@@ -22,6 +22,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q131615
   - https://www.wikidata.org/wiki/Q130763950
   - https://www.wikidata.org/wiki/Q1670280
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Holzschnitt von [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Roemer) (1889-1977) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/eva-roemer/)) gefunden...

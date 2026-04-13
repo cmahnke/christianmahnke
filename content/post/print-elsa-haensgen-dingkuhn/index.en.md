@@ -19,6 +19,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q6477113
   - https://www.wikidata.org/wiki/Q107972843
   - https://www.wikidata.org/wiki/Q1055
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I found a woodcut by [Elsa Haensgen-Dingkuhn](https://de.wikipedia.org/wiki/Elsa_Haensgen-Dingkuhn) (1898-1991) ([at artnet](https://www.artnet.com/artists/elsa-haensgen-dingkuhn/))...

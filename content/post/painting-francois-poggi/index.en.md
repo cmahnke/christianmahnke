@@ -21,6 +21,7 @@ linkedart:
 wikidata:
   - https://www.wikidata.org/wiki/Q52148388
   - https://www.wikidata.org/wiki/Q1449
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I got a painting by [François Poggi](https://www.mahmah.ch/collection/artistes/poggi-francois) (1838-1900) ([at artnet](https://www.artnet.com/artists/fran%C3%A7ois-poggi/)) that was found in the rubbish....

@@ -16,6 +16,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata: 
   - https://www.wikidata.org/wiki/Q1581234
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I have acquired a linocut by [Hans Martin Erhardt](https://de.wikipedia.org/wiki/Hans_Martin_Erhardt) (1935-2015) ([at artnet](https://www.artnet.com/artists/hans-martin-erhardt/))...

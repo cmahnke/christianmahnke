@@ -22,6 +22,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q1550936
   - https://www.wikidata.org/wiki/Q213
   - https://www.wikidata.org/wiki/Q853348
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 You have found a lithograph by [František Gross](https://cs-m-wikipedia-org.translate.goog/wiki/Franti%C5%A1ek_Gross?_x_tr_sl=cs&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp) (automatic translation) (1909-1985) ([at artnet](https://www.artnet.com/artists/frantisek-gross/)) ...

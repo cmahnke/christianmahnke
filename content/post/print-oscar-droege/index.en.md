@@ -16,6 +16,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata: 
   - https://www.wikidata.org/wiki/Q15447320
+  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I have found another colour woodcut by [Oscar Droege](https://de.wikipedia.org/wiki/Oscar_Droege) (1898-1983) ([at artnet](https://www.artnet.com/artists/oscar-droege/))...
