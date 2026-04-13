@@ -23,6 +23,8 @@ wikidata:
   - https://www.wikidata.org/wiki/Q147934
   - https://www.wikidata.org/wiki/Q631074
   - https://www.wikidata.org/wiki/Q54150
+  - https://www.wikidata.org/wiki/Q36
+  - https://www.wikidata.org/wiki/Q545
 ---
 
 I have found a painting by [Tadeusz Kaczmarek](https://jbc.jelenia-gora.pl/dlibra/publication/45520/edition/41040/content) ([automatic translation](https://jbc-jelenia--gora-pl.translate.goog//Content/41040/kaczmarek.html?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=de&_x_tr_pto=wapp)) (1937-2006)...

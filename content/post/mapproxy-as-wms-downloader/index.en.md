@@ -7,6 +7,9 @@ wikidata:
   - https://www.wikidata.org/wiki/Q1403548
   - https://www.wikidata.org/wiki/Q2788747
   - https://www.wikidata.org/wiki/Q1802054
+  - https://www.wikidata.org/wiki/Q6368
+  - https://www.wikidata.org/wiki/Q125165836
+  - https://www.wikidata.org/wiki/Q974922 
 ---
 
 Sometimes you need map tiles from a WMS server...

@@ -12,6 +12,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q37227
   - https://www.wikidata.org/wiki/Q11135
   - https://www.wikidata.org/wiki/Q916335
+  - https://www.wikidata.org/wiki/Q3050461
 ---
 
 [Kibana](https://www.elastic.co/de/kibana) visualisation with room plans needs data, e.g. from devices in a building. But the data has to come from somewhere...

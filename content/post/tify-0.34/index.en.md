@@ -6,6 +6,8 @@ tags:
   - Projektemacher.org
   - Blog
   - IIIF
+wikidata:
+  - https://www.wikidata.org/wiki/Q37155469
 ---
 Projektemacher.org now uses Tify...
 <!--more-->

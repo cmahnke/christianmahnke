@@ -14,6 +14,8 @@ tags:
 - MediaInstallation
 wikidata:
   - https://www.wikidata.org/wiki/Q10806
+  - https://www.wikidata.org/wiki/Q11320567
+  - https://www.wikidata.org/wiki/Q6368
 ---
 
 Ich hatte Zeit, da ich krank war:

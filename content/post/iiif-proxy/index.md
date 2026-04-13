@@ -16,6 +16,10 @@ wikidata:
   - https://www.wikidata.org/wiki/Q152838
   - https://www.wikidata.org/wiki/Q564783
   - https://www.wikidata.org/wiki/Q628106
+  - https://www.wikidata.org/wiki/Q195076
+  - https://www.wikidata.org/wiki/Q62087795
+  - https://www.wikidata.org/wiki/Q11189
+  - https://www.wikidata.org/wiki/Q21040628 
 ---
 
 Zur Verbesserung der "Ausstellbarkeit" digitaler Objekte, wie Münzen und Büchern habe ich einen Proxy für IIIF-Ressourcen geschrieben...

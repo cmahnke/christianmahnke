@@ -16,6 +16,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q11376888
   - https://www.wikidata.org/wiki/Q75837421
   - https://www.wikidata.org/wiki/Q6373
+  - https://www.wikidata.org/wiki/Q103302070
 ---
 
 I bought a Japanese colour woodcut by [Imao Keinen (1855-1924)](https://de.wikipedia.org/wiki/Imao_Keinen) ([at artnet](https://www.artnet.com/artists/keinen-imao/))...

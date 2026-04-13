@@ -20,6 +20,8 @@ wikidata:
   - https://www.wikidata.org/wiki/Q137668018
   - https://www.wikidata.org/wiki/Q16951207
   - https://www.wikidata.org/wiki/Q6373
+  - https://www.wikidata.org/wiki/Q414219
+  - https://www.wikidata.org/wiki/Q235152
 gnd: http://d-nb.info/gnd/120740486
 ---
 

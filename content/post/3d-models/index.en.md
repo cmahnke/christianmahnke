@@ -19,7 +19,9 @@ tags:
   - Blender
   - Photogrammetry
 wikidata:
- - https://www.wikidata.org/wiki/Q3010266
+  - https://www.wikidata.org/wiki/Q3010266
+  - https://www.wikidata.org/wiki/Q28135989
+  - https://www.wikidata.org/wiki/Q3525922
 ---
 
 Maybe it will become a virtual exhibition about orange ceramics...

@@ -6,6 +6,10 @@ tags:
   - Hugo
   - Wikidata
   - SPARQL
+wikidata:
+  - https://www.wikidata.org/wiki/Q6368
+  - https://www.wikidata.org/wiki/Q1193600
+  - https://www.wikidata.org/wiki/Q20950365
 ---
 Ein weiterer Schritt zur leichteren Durchsuchbarkeit der Seite...
 <!--more-->

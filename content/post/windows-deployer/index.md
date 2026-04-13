@@ -11,6 +11,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q1830735
   - https://www.wikidata.org/wiki/Q181233
   - https://www.wikidata.org/wiki/Q15978834
+  - https://www.wikidata.org/wiki/Q18168774
 ---
 
 Wie installiert man eine frisch gebaute Software von GitLab / GitHub?<br/>

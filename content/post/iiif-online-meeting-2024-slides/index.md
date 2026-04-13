@@ -13,6 +13,9 @@ tags:
 - Recording
 js:
   - js/pdf-viewer.js
+wikidata:
+  - https://www.wikidata.org/wiki/Q1543677
+  - https://www.wikidata.org/wiki/Q110611535
 ---
 
 Die Folien meiner Präsentation zu HDR Inhalten über IIIF sind nun verfügbar...

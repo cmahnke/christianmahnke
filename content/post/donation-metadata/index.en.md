@@ -14,6 +14,10 @@ wikidata:
   - https://www.wikidata.org/wiki/Q621630
   - https://www.wikidata.org/wiki/Q24045714
   - https://www.wikidata.org/wiki/Q1360745
+  - https://www.wikidata.org/wiki/Q1340077
+  - https://www.wikidata.org/wiki/Q751808
+  - https://www.wikidata.org/wiki/Q1640667
+  - https://www.wikidata.org/wiki/Q102116674
 ---
 
 From time to time I donate objects to cultural institutions...

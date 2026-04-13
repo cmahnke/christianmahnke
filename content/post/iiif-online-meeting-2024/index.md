@@ -9,6 +9,8 @@ alias:
 tags:
 - IIIF
 - Conference
+wikidata:
+  - https://www.wikidata.org/wiki/Q1543677
 ---
 
 Ich werde mein [IIIF HDR](/post/) Projekt auf dem diesjährigen [IIIF Online Meeting](https://iiif.io/event/2024/online-meeting/) vorstellen!
