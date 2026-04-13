@@ -6,6 +6,9 @@ description: '"Die Weihnachtsgeschichte" von Rudolf Koch'
 tags:
 - Christmas
 - Book
+wikidata:
+  - https://www.wikidata.org/wiki/Q66137
+  - https://www.wikidata.org/wiki/Q159964
 ---
 
 Da die Adventszeit beginnt...

@@ -8,6 +8,9 @@ wikidata:
   - https://www.wikidata.org/wiki/Q9322
   - https://www.wikidata.org/wiki/Q110087903
   - https://www.wikidata.org/wiki/Q1392385
+  - https://www.wikidata.org/wiki/Q800271
+  - https://www.wikidata.org/wiki/Q62084783
+  - https://www.wikidata.org/wiki/Q76464606
 ---
 
 This article was written partly on the train, which arrived at its destination 80 minutes later than planned.

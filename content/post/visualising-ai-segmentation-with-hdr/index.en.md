@@ -11,6 +11,10 @@ tags:
 preview:
   image: img/das-herrenjournal-7-1939-page015.jpeg
   hide: true
+wikidata:
+  - https://www.wikidata.org/wiki/Q131738293
+  - https://www.wikidata.org/wiki/Q56933
+  - https://www.wikidata.org/wiki/Q197520
 ---
 
 The first step towards visually supported annotation with HDR...
