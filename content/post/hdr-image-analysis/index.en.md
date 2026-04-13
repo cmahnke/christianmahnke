@@ -17,7 +17,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q178995
   - https://www.wikidata.org/wiki/Q498575
   - https://www.wikidata.org/wiki/Q1576316
-  - https://www.wikidata.org/wiki/Q160225
+  - https://www.wikidata.org/wiki/Q7320
   - https://www.wikidata.org/wiki/Q777
   - https://www.wikidata.org/wiki/Q278151
 ---
