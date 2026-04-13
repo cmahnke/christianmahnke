@@ -7,5 +7,6 @@ spacy
 python-frontmatter
 wikibaseintegrator
 rdflib
-rdflib-sqlalchemy
+#rdflib-sqlalchemy
+rdflib-sqlite3
 rdflib-hdt

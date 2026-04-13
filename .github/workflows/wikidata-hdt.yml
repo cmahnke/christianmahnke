@@ -28,7 +28,7 @@ jobs:
 
       - name: Run Wikidata enrichment script
         run: |
-          python themes/projektemacher-base/scripts/wikidata/get_entities.py https://christianmahnke.de/meta/schema.org/index.json
+          python themes/projektemacher-base/scripts/wikidata/get_entities.py https://christianmahnke.de/meta/schema.org/index.json -t
 
       - name: Convert TTL to HDT
         run: |

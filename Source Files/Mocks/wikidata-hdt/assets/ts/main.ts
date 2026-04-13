@@ -17,6 +17,7 @@ SELECT ?s ?p ?o ?isTagged WHERE {
   BIND(?post AS ?s)
   FILTER(?p NOT IN (
     schema:author,
+    schema:url,
     <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
   ))
   FILTER(?o NOT IN (
@@ -42,7 +43,7 @@ async function runQuery(): Promise<void> {
 
   try {
     if (!getCy()) {
-      await initGraph(graphContainer, store, query);
+      await initGraph(graphContainer, store, query, ['mul', 'de', 'en']);
     } else {
       await updateGraph(store, query);
     }
