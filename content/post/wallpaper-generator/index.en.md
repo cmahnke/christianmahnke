@@ -13,7 +13,8 @@ tags:
 - Fun
 - JavaScript
 wikidata:
-- https://www.wikidata.org/wiki/Q191529
+  - https://www.wikidata.org/wiki/Q191529
+  - https://www.wikidata.org/wiki/Q105134737
 ---
 
 Since I have an [extensive collection of patterned papers](https://vorsatzpapier.projektemacher.org/patterns/), it was time to do something with them...
