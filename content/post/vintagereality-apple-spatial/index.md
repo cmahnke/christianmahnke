@@ -15,6 +15,9 @@ wikidata:
   - https://www.wikidata.org/wiki/Q484031
   - https://www.wikidata.org/wiki/Q24907733
   - https://www.wikidata.org/wiki/Q117715451
+  - https://www.wikidata.org/wiki/Q1348
+  - https://www.wikidata.org/wiki/Q6164591
+  - https://www.wikidata.org/wiki/Q6755210
 ---
 
 Ich habe ein neues Telefon...
