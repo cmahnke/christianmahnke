@@ -5,6 +5,8 @@ keywords: Vorax, drilling machine, kitchen appliance
 tags:
   - Object
 preview: img/front.jpg
+wikidata:
+  - https://www.wikidata.org/wiki/Q58964
 ---
 
 I have once again found an interesting object...

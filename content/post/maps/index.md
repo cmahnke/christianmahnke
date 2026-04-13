@@ -4,6 +4,9 @@ title: "Kartenmaterial für Projektemacher Blogs"
 tags:
 - Projektemacher.org
 - Geodata
+wikidata:
+  - https://www.wikidata.org/wiki/Q116859588
+  - https://www.wikidata.org/wiki/Q936
 ---
 
 Ein weiterer Beitrag aus [Projektemacher Labs](https://labs.projektemacher.org/):

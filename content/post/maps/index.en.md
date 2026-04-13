@@ -4,6 +4,9 @@ title: "Maps for my Projektemacher blogs"
 tags:
 - Projektemacher.org
 - Geodata
+wikidata:
+  - https://www.wikidata.org/wiki/Q116859588
+  - https://www.wikidata.org/wiki/Q936
 ---
 
 Another addition from [Projektemacher Labs](https://labs.projektemacher.org/):

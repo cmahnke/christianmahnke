@@ -5,6 +5,8 @@ keywords: Vorax, Bohrmachine, Küchenmaschine
 tags:
   - Object
 preview: img/front.jpg
+wikidata:
+  - https://www.wikidata.org/wiki/Q58964
 ---
 
 Ich habe mal wieder ein interessantes Objekt gefunden...
