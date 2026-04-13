@@ -4,6 +4,7 @@ title: "Vite und Git Symlink-Dateien"
 tags:
   - JavaScript
   - SoftwareDevelopment
+  - Windows
 wikidata:
   - https://www.wikidata.org/wiki/Q186055
 ---

@@ -18,6 +18,8 @@ linkedart:
 wikidata:
   - https://www.wikidata.org/wiki/Q158062
   - https://www.wikidata.org/wiki/Q84957520
+  - https://www.wikidata.org/wiki/Q455464
+  - https://www.wikidata.org/wiki/Q700347
 ---
 
 I have bought an etching by [Max Liebermann](https://en.wikipedia.org/wiki/Max_Liebermann) (1847–1935) ([at artnet](https://www.artnet.com/artists/max-liebermann/))...

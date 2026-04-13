@@ -19,6 +19,9 @@ wikidata:
   - https://www.wikidata.org/wiki/Q94743711
   - https://www.wikidata.org/wiki/Q133742956
   - https://www.wikidata.org/wiki/Q137661693
+  - https://www.wikidata.org/wiki/Q131615
+  - https://www.wikidata.org/wiki/Q130763950
+  - https://www.wikidata.org/wiki/Q1670280
 ---
 
 I found a woodcut by [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Roemer) (1889-1977) ([at artnet](https://www.artnet.com/artists/eva-roemer/))...

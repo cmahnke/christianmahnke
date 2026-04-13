@@ -7,6 +7,11 @@ tags:
 - IIIF
 - DigitalImages
 - Java
+wikidata:
+  - https://www.wikidata.org/wiki/Q72885392
+  - https://www.wikidata.org/wiki/Q214856
+  - https://www.wikidata.org/wiki/Q484140
+  - https://www.wikidata.org/wiki/Q148443
 ---
 
 {{< figure src="Fliiifenleger.svg" alt="Fliiifenleger Logo" class="center" >}}

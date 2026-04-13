@@ -11,6 +11,8 @@ outputs:
   - html
 wikidata:
   - https://www.wikidata.org/wiki/Q2543504
+  - https://www.wikidata.org/wiki/Q213602
+  - https://www.wikidata.org/wiki/Q577697
 ---
 
 A chance find online that gets you thinking...

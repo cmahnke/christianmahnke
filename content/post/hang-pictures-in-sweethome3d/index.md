@@ -11,6 +11,7 @@ tags:
 wikidata:
   - https://www.wikidata.org/wiki/Q1685508
   - https://www.wikidata.org/wiki/Q42332
+  - https://www.wikidata.org/wiki/Q603967
 ---
 
 Für die Planung einer [Ausstellung](/post/wilma-brauner/) in 3D habe ich mich damit beschäftigt, wie vorarrangierte Bilderrahmen in [Sweet Home 3D](https://www.sweethome3d.com/) importiert werden könnten...

@@ -28,6 +28,9 @@ wikidata:
   - https://www.wikidata.org/wiki/Q106239881
   - https://www.wikidata.org/wiki/Q22682088
   - https://www.wikidata.org/wiki/Q2985103
+  - https://www.wikidata.org/wiki/Q777
+  - https://www.wikidata.org/wiki/Q1952321
+  - https://www.wikidata.org/wiki/Q99738405
 ---
 
 At [Zeitzeug](http://www.zeitzeug.de/) the owner's wallpaper collection is being sold and I have secured a particularly bright example...

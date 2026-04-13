@@ -19,6 +19,8 @@ wikidata:
   - https://www.wikidata.org/wiki/Q614417
   - https://www.wikidata.org/wiki/Q123162820
   - https://www.wikidata.org/wiki/Q978185
+  - https://www.wikidata.org/wiki/Q6368
+  - https://www.wikidata.org/wiki/Q175957
 ---
 
 For some reason I came up with the idea of visualising [Pong](https://de.wikipedia.org/wiki/Pong)...

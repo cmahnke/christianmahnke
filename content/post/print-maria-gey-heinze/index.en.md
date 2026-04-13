@@ -17,6 +17,7 @@ linkedart:
 wikidata: 
   - https://www.wikidata.org/wiki/Q1449047
   - https://www.wikidata.org/wiki/Q27557512
+  - https://www.wikidata.org/wiki/Q157229
 ---
 
 I have acquired an etching by [Marie Gey-Heinze](https://de.wikipedia.org/wiki/Marie_Gey-Heinze) (1881-1908)...

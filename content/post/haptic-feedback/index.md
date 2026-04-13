@@ -25,6 +25,11 @@ wikidata:
   - https://www.wikidata.org/wiki/Q105134737
   - https://www.wikidata.org/wiki/Q7907037
   - https://www.wikidata.org/wiki/Q2985103
+  - https://www.wikidata.org/wiki/Q1134256
+  - https://www.wikidata.org/wiki/Q777
+  - https://www.wikidata.org/wiki/Q105607376
+  - https://www.wikidata.org/wiki/Q6368
+  - https://www.wikidata.org/wiki/Q881194
 ---
 
 Wieder ein Beitrag aus den Projektemacher Labs...

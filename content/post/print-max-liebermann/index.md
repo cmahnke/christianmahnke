@@ -18,6 +18,8 @@ linkedart:
 wikidata:
   - https://www.wikidata.org/wiki/Q158062
   - https://www.wikidata.org/wiki/Q84957520
+  - https://www.wikidata.org/wiki/Q455464
+  - https://www.wikidata.org/wiki/Q700347
 ---
 
 Ich habe eine Radierung von [Max Liebermann](https://de.wikipedia.org/wiki/Max_Liebermann) (1847-1935) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/max-liebermann/)) gekauft...

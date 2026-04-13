@@ -18,6 +18,8 @@ wikidata:
   - https://www.wikidata.org/wiki/Q1348
   - https://www.wikidata.org/wiki/Q6164591
   - https://www.wikidata.org/wiki/Q6755210
+  - https://www.wikidata.org/wiki/Q27153
+  - https://www.wikidata.org/wiki/Q2766
 ---
 
 Ich habe ein neues Telefon...

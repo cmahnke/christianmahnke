@@ -16,6 +16,7 @@ linkedart:
 wikidata: 
   - https://www.wikidata.org/wiki/Q95259741
   - https://www.wikidata.org/wiki/Q133742956
+  - https://www.wikidata.org/wiki/Q130763950
 ---
 
 Ich habe einen Holzschnitt von Erich Zimmer (1908-2001) erstanden...

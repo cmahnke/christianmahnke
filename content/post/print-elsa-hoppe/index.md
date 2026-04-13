@@ -19,6 +19,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q63485369
   - https://www.wikidata.org/wiki/Q2360104
   - https://www.wikidata.org/wiki/Q133742956
+  - https://www.wikidata.org/wiki/Q130763950
 ---
 
 Ich habe einen Linolschnitt von Elsa Hoppe (1901-1992) erstanden...

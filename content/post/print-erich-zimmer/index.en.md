@@ -16,6 +16,7 @@ linkedart:
 wikidata: 
   - https://www.wikidata.org/wiki/Q95259741
   - https://www.wikidata.org/wiki/Q133742956
+  - https://www.wikidata.org/wiki/Q130763950
 ---
 
 I have purchased a woodcut by Erich Zimmer (1908-2001)...

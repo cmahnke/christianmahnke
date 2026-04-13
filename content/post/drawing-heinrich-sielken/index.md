@@ -24,6 +24,9 @@ wikidata:
   - https://www.wikidata.org/wiki/Q4449979
   - https://www.wikidata.org/wiki/Q220951
   - https://www.wikidata.org/wiki/Q2060711
+  - https://www.wikidata.org/wiki/Q2588167
+  - https://www.wikidata.org/wiki/Q133274
+  - https://www.wikidata.org/wiki/Q1202202
 ---
 
 Mir sind zwei Zeichnungen von [Heinrich Sielken](https://glass-portal.hier-im-netz.de/hs/s-z/sielken_heinrich.htm) (1874 - 1942) in die Hände gefallen...

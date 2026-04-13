@@ -4,6 +4,11 @@ title: "Windows Remote Management"
 tags:
   - Windows
   - Python
+wikidata:
+  - https://www.wikidata.org/wiki/Q975870
+  - https://www.wikidata.org/wiki/Q840410
+  - https://www.wikidata.org/wiki/Q107386415
+  - https://www.wikidata.org/wiki/Q1423114
 ---
 
 Viele Systeme zur Fernsteuerung von Windows-basierten Rechnern benötigen einen eigenen Client auf dem jeweiligen System....

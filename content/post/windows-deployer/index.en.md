@@ -5,6 +5,12 @@ cite: true
 tags:
   - Windows
   - Python
+wikidata:
+  - https://www.wikidata.org/wiki/Q107386415
+  - https://www.wikidata.org/wiki/Q1423114
+  - https://www.wikidata.org/wiki/Q1830735
+  - https://www.wikidata.org/wiki/Q181233
+  - https://www.wikidata.org/wiki/Q15978834
 ---
 
 How to install a freshly built software from GitLab / GitHub?<br/>
