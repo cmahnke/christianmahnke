@@ -6,6 +6,7 @@ preview:
   hide: true
 tags:
 - Projektemacher.org
+- Blog
 ---
 
 Um in Zukunft eine Seite zu haben, die auch ruhig mal für ein paar Tage kaputt gehen kann und um auch mal einige Dinge halbfertig präsentieren zu können, gibt es nun die [Projektemacher Labs](https://labs.projektemacher.org).

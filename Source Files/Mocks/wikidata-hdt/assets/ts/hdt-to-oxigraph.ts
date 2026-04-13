@@ -1,4 +1,3 @@
-//import oxigraph from 'oxigraph';
 import init, * as oxigraph from "oxigraph/web.js";
 import type { Hdt } from "hdt";
 

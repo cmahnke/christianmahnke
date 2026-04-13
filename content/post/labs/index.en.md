@@ -6,6 +6,7 @@ preview:
   hide: true
 tags:
 - Projektemacher.org
+- Blog
 ---
 
 In order to have a page in the future that can easily break for a few days and to be able to present some things half-finished, there is now the [Projektemacher Labs](https://labs.projektemacher.org).
