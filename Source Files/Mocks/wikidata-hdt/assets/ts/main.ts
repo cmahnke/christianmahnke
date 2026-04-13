@@ -9,18 +9,42 @@ const sparqlRun = document.getElementById("sparql-run") as HTMLButtonElement;
 
 const HDT_URL = "/meta/wikidata/enriched_entities.hdt";
 
+const DEFAULT_QUERY = `PREFIX schema: <http://schema.org/>
+
+SELECT ?s ?p ?o ?isTagged WHERE {
+  <https://christianmahnke.de/post/> schema:blogPost ?post .
+  ?post ?p ?o .
+  BIND(?post AS ?s)
+  FILTER(?p NOT IN (
+    schema:author,
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+  ))
+  FILTER(?o NOT IN (
+    schema:BlogPosting
+  ))
+  OPTIONAL {
+    ?post schema:identifier ?ident .
+    ?ident a schema:PropertyValue ;
+           schema:propertyID "projektemacher" ;
+           schema:value "tag" .
+    BIND(true AS ?isTagged)
+  }
+} `;
+
+sparqlInput.value = DEFAULT_QUERY;
+
 let store;
 
-function runQuery(): void {
+async function runQuery(): Promise<void> {
   const query = sparqlInput.value.trim();
   if (!query) return;
   console.log("Running SPARQL query:", query);
 
   try {
     if (!getCy()) {
-      initGraph(graphContainer, store, query);
+      await initGraph(graphContainer, store, query);
     } else {
-      updateGraph(store, query);
+      await updateGraph(store, query);
     }
     status.textContent = `${store.size} Quads im Store`;
   } catch (e) {
