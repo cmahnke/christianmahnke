@@ -15,6 +15,10 @@ wikidata:
   - https://www.wikidata.org/wiki/Q2492951
   - https://www.wikidata.org/wiki/Q112181165
   - https://www.wikidata.org/wiki/Q56933
+  - https://www.wikidata.org/wiki/Q133503578
+  - https://www.wikidata.org/wiki/Q1348
+  - https://www.wikidata.org/wiki/Q6164591
+  - https://www.wikidata.org/wiki/Q6755210
 ---
 
 2024 ist meine Stereoskopie-Sammlung online gegangen...

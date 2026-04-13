@@ -7,6 +7,7 @@ tags:
 wikidata:
   - https://www.wikidata.org/wiki/Q116859588
   - https://www.wikidata.org/wiki/Q936
+  - https://www.wikidata.org/wiki/Q6368
 ---
 
 Another addition from [Projektemacher Labs](https://labs.projektemacher.org/):

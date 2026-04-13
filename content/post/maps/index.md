@@ -7,6 +7,7 @@ tags:
 wikidata:
   - https://www.wikidata.org/wiki/Q116859588
   - https://www.wikidata.org/wiki/Q936
+  - https://www.wikidata.org/wiki/Q6368
 ---
 
 Ein weiterer Beitrag aus [Projektemacher Labs](https://labs.projektemacher.org/):
@@ -14,7 +15,7 @@ Ein weiterer Beitrag aus [Projektemacher Labs](https://labs.projektemacher.org/)
 
 # Vorbereitungen
 
-Bevor Beiträge auf Karten angezeigt werden können, müssen folgende Schritte erlegdigt sein:
+Bevor Beiträge auf Karten angezeigt werden können, müssen folgende Schritte erledigt sein:
 * Geokodierung von Beiträgen und / oder Tags
 * Generierung einer anwendungsspezifischen Repräsentation (GeoJSON, KML)
 

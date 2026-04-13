@@ -6,6 +6,9 @@ tags:
   - ArtBrut
   - Drawing
 preview: img/image.jpg
+wikidata:
+  - https://www.wikidata.org/wiki/Q1247856
+  - https://www.wikidata.org/wiki/Q1122756
 ---
 
 Ich habe einen interessante [Art Brut](https://de.wikipedia.org/wiki/Art_brut) Zeichnung von 1965 gekauft...

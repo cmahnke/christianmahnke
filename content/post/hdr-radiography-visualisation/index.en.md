@@ -11,6 +11,11 @@ tags:
 preview:
   image: img/step1-xray.jpg
   hide: true
+wikidata:
+  - https://www.wikidata.org/wiki/Q160236
+  - https://www.wikidata.org/wiki/Q9440
+  - https://www.wikidata.org/wiki/Q9372005
+  - https://www.wikidata.org/wiki/Q34777
 ---
 
 Another use case for HDR images...

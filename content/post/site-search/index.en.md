@@ -7,6 +7,9 @@ tags:
   - Blog
   - Search
   - Status
+wikidata:
+  - https://www.wikidata.org/wiki/Q52
+  - https://www.wikidata.org/wiki/Q8811
 ---
 
 You can now search this page...
