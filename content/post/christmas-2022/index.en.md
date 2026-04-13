@@ -9,6 +9,9 @@ preview:
 tags:
 - DIY
 - Christmas
+wikidata:
+  - https://www.wikidata.org/wiki/Q191529
+  - https://www.wikidata.org/wiki/Q622508
 ---
 
 Merry Christmas to all readers, this year there is another present...

@@ -10,6 +10,11 @@ tags:
 - CulturalPolicy
 - DigitalLibrary
 - AI
+wikidata:
+  - https://www.wikidata.org/wiki/Q48972887
+  - https://www.wikidata.org/wiki/Q95001953
+  - https://www.wikidata.org/wiki/Q29584754
+  - https://www.wikidata.org/wiki/Q5246046
 ---
 
 Im letzten Jahr habe ich mich ab und zu mit KI beschäftigt, um meine Blogs mit zusätzlichen Features anzureichern und auch ihre Weiterentwicklung zu beschleunigen.

@@ -7,7 +7,10 @@ tags:
   - CulturalPolicy
   - DigitalLibrary
   - Digitisation
-draft: true
+wikidata:
+  - https://www.wikidata.org/wiki/Q12498524
+  - https://www.wikidata.org/wiki/Q137662135
+  - https://www.wikidata.org/wiki/Q127524766
 ---
 
 After I published an [experience report](/post/archives-citizen-participation/) with an archive at the end of last year, now something about digital libraries...

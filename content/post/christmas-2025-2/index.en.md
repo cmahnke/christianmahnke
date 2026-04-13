@@ -11,6 +11,8 @@ tags:
 - Christmas
 wikidata: 
   - https://www.wikidata.org/wiki/Q1715
+  - https://www.wikidata.org/wiki/Q191529
+  - https://www.wikidata.org/wiki/Q622508
 ---
 
 Merry Christmas to all readers, this year again there is a present...

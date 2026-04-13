@@ -7,6 +7,8 @@ tags:
   - Art
   - Projektemacher.org
   - Blog
+wikidata:
+  - https://www.wikidata.org/wiki/Q137662135
 ---
 
 Ein altes Rätsel endlich gelöst...
