@@ -24,6 +24,9 @@ wikidata:
   - https://www.wikidata.org/wiki/Q221163
   - https://www.wikidata.org/wiki/Q106239881
   - https://www.wikidata.org/wiki/Q980672
+  - https://www.wikidata.org/wiki/Q777
+  - https://www.wikidata.org/wiki/Q2471924
+  - https://www.wikidata.org/wiki/Q1030958
 ---
 
 **This article presents the world's first HDR model of UV photogrammetry in a browser.**
