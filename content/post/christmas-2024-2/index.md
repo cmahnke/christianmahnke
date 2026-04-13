@@ -9,6 +9,9 @@ description: "Bastelanleitung für die Weihnachtskarte 2024"
 tags:
 - DIY
 - Christmas
+wikidata:
+  - https://www.wikidata.org/wiki/Q191529
+  - https://www.wikidata.org/wiki/Q622508
 ---
 
 Frohe Weihnachten an alle Leser, dieses Jahr gibt es das traditionell Geschenk etwas früher...

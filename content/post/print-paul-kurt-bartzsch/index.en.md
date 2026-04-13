@@ -19,6 +19,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata:
   - https://www.wikidata.org/wiki/Q137756185
+  - https://www.wikidata.org/wiki/Q392142
 ---
 
 I have found a woodcut by Paul-Kurt Bartzsch (1917-1994)...

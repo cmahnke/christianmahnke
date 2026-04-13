@@ -9,6 +9,9 @@ description: "Craft instructions for the 2024 Christmas card"
 tags:
 - DIY
 - Christmas
+wikidata:
+  - https://www.wikidata.org/wiki/Q191529
+  - https://www.wikidata.org/wiki/Q622508
 ---
 
 Merry Christmas to all readers, this year the traditional present comes a little earlier...
