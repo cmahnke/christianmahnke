@@ -1,5 +1,6 @@
 import { resolve, join } from "path";
 import { defineConfig } from "vite";
+import wasm from 'vite-plugin-wasm';
 import eslint from "vite-plugin-eslint";
 import { viteSingleFile } from "vite-plugin-singlefile";
 import stylelint from "vite-plugin-stylelint";
@@ -44,13 +45,14 @@ export default defineConfig({
   },
   base: "./",
   plugins: [
+    wasm(),
     nodePolyfills(),
     {
       apply: "build"
     },
     stylelint({ build: true, dev: false, lintOnStart: true }),
     DynamicPublicDirectory(
-      ["webgpu/public/**", "hdr-canvas/public/**", "game/public/**", "touch/public/**", "imagecompare/public/**", "node_modules/openseadragon/build/openseadragon"],
+      ["webgpu/public/**", "hdr-canvas/public/**", "game/public/**", "touch/public/**", "imagecompare/public/**", "node_modules/openseadragon/build/openseadragon", "wikidata-hdt/public/**"],
       {
         ssr: false,
         mimeTypes
@@ -110,7 +112,7 @@ export default defineConfig({
     ]
   },
   optimizeDeps: {
-    exclude: ["@monogrid/gainmap-js/libultrahdr", "three"]
+    exclude: ["@monogrid/gainmap-js/libultrahdr", "three", 'hdt']
   },
   css: {
     preprocessorOptions: {

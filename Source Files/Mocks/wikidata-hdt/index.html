@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HDT Test</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #1a1a2e;
+        color: #e0e0e0;
+        font-family: system-ui;
+      }
+      #controls {
+        padding: 0.5rem 1rem;
+        display: flex;
+        gap: 0.5rem;
+        align-items: flex-start;
+      }
+      #sparql-input {
+        flex: 1;
+        font-family: monospace;
+        font-size: 0.8rem;
+        background: #16213e;
+        color: #e0e0e0;
+        border: 1px solid #333;
+        padding: 0.5rem;
+        resize: vertical;
+      }
+      #sparql-run {
+        padding: 0.5rem 1rem;
+        background: #e94560;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+        font-size: 0.85rem;
+      }
+      #sparql-run:hover {
+        background: #c73e54;
+      }
+      #sparql-run:disabled {
+        background: #555;
+        cursor: not-allowed;
+      }
+      #status {
+        padding: 0 1rem 0.5rem;
+        font-size: 0.8rem;
+        color: #888;
+      }
+      #graph {
+        width: 100vw;
+        height: calc(100vh - 8rem);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HDT Test</h1>
+    <div id="controls">
+      <textarea id="sparql-input" rows="3">SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 200</textarea>
+      <button id="sparql-run" disabled>Ausführen</button>
+    </div>
+    <div id="status" class="status loading">Loading...</div>
+    <div id="graph"></div>
+    <script type="module" src="./assets/ts/main.ts"></script>
+  </body>
+</html>

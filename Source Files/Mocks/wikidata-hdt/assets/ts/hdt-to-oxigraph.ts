@@ -1,0 +1,60 @@
+//import oxigraph from 'oxigraph';
+import init, * as oxigraph from "oxigraph/web.js";
+import type { Hdt } from "hdt";
+
+(async function () {
+  await init();
+})();
+
+function parseTerm(value: string, position: "subject" | "predicate" | "object") {
+  if (value.startsWith("_:")) {
+    return oxigraph.blankNode(value.slice(2));
+  }
+
+  if (position === "object" && value.startsWith('"')) {
+    const lastQuote = value.lastIndexOf('"');
+    if (lastQuote <= 0) return oxigraph.literal(value.slice(1));
+
+    const text = value.substring(1, lastQuote);
+    const suffix = value.substring(lastQuote + 1);
+
+    if (suffix.startsWith("@")) {
+      return oxigraph.literal(text, suffix.slice(1));
+    }
+
+    if (suffix.startsWith("^^")) {
+      const dt = suffix.slice(2);
+      const clean = dt.startsWith("<") && dt.endsWith(">") ? dt.slice(1, -1) : dt;
+      return oxigraph.literal(text, oxigraph.namedNode(clean));
+    }
+
+    return oxigraph.literal(text);
+  }
+
+  const clean = value.startsWith("<") && value.endsWith(">") ? value.slice(1, -1) : value;
+  return oxigraph.namedNode(clean);
+}
+
+export function hdtToOxigraph(hdt: Hdt): oxigraph.Store {
+  const store = new oxigraph.Store();
+
+  const ids = hdt.triple_ids_with_pattern(null, null, null);
+  const strings = hdt.ids_to_strings(ids);
+
+  for (let i = 0; i < strings.length; i += 3) {
+    try {
+      store.add(
+        oxigraph.quad(
+          parseTerm(strings[i], "subject") as any,
+          parseTerm(strings[i + 1], "predicate") as any,
+          parseTerm(strings[i + 2], "object") as any,
+          oxigraph.defaultGraph()
+        )
+      );
+    } catch (e) {
+      console.warn("Skip:", strings[i], strings[i + 1], strings[i + 2], e);
+    }
+  }
+
+  return store;
+}
