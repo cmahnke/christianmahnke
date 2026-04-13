@@ -82,7 +82,12 @@
     "mute_expires_at": null,
     "indexable": false,
     "hide_collections": null,
-    "memorial": null
+    "memorial": null,
+    "avatar_description": null,
+    "header_description": null,
+    "show_media": null,
+    "show_media_replies": null,
+    "show_featured": null
   },
   "statuses": [
     {
@@ -9971,9 +9976,9 @@
       "group": false,
       "locked": false,
       "created_at": "2019-03-18T00:00:00+00:00",
-      "following_count": 1533,
+      "following_count": 1535,
       "followers_count": 1020,
-      "statuses_count": 4519,
+      "statuses_count": 4523,
       "note": "<p>web librarian working on <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@lobid\" class=\"u-url mention\">@<span>lobid</span></a></span>, <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@skohub\" class=\"u-url mention\">@<span>skohub</span></a></span>, <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@metafacture\" class=\"u-url mention\">@<span>metafacture</span></a></span>, <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@oersi\" class=\"u-url mention\">@<span>oersi</span></a></span> &amp; other things, <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@swib\" class=\"u-url mention\">@<span>swib</span></a></span> co-organizer, living in Cologne, Germany<br /><a href=\"https://openbiblio.social/tags/librarian\" class=\"mention hashtag\" rel=\"tag\">#<span>librarian</span></a> <a href=\"https://openbiblio.social/tags/lod\" class=\"mention hashtag\" rel=\"tag\">#<span>lod</span></a> <a href=\"https://openbiblio.social/tags/foss\" class=\"mention hashtag\" rel=\"tag\">#<span>foss</span></a> <a href=\"https://openbiblio.social/tags/metadata\" class=\"mention hashtag\" rel=\"tag\">#<span>metadata</span></a> <a href=\"https://openbiblio.social/tags/k%C3%B6ln\" class=\"mention hashtag\" rel=\"tag\">#<span>köln</span></a> <a href=\"https://openbiblio.social/tags/hbz\" class=\"mention hashtag\" rel=\"tag\">#<span>hbz</span></a> <a href=\"https://openbiblio.social/tags/libraries\" class=\"mention hashtag\" rel=\"tag\">#<span>libraries</span></a> <a href=\"https://openbiblio.social/tags/fedi22\" class=\"mention hashtag\" rel=\"tag\">#<span>fedi22</span></a> <a href=\"https://openbiblio.social/tags/openness\" class=\"mention hashtag\" rel=\"tag\">#<span>openness</span></a> searchable<br /><a href=\"https://justmytoots.com/@acka47@openbiblio.social\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">justmytoots.com/@acka47@openbi</span><span class=\"invisible\">blio.social</span></a></p>",
       "url": "https://openbiblio.social/@acka47",
       "uri": "https://openbiblio.social/users/acka47",
@@ -10003,7 +10008,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-04-10T00:00:00",
+      "last_status_at": "2026-04-12T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -10011,7 +10016,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "55987",
@@ -10022,9 +10032,9 @@
       "group": false,
       "locked": false,
       "created_at": "2020-12-30T00:00:00+00:00",
-      "following_count": 2183,
-      "followers_count": 1150,
-      "statuses_count": 7052,
+      "following_count": 2185,
+      "followers_count": 1148,
+      "statuses_count": 7064,
       "note": "<p>Neo-Latin, DH, librarianship, <a href=\"https://openbiblio.social/tags/openGLAM\" class=\"mention hashtag\" rel=\"tag\">#<span>openGLAM</span></a>, and digital cultural heritage <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@digiSberlin\" class=\"u-url mention\">@<span>digiSberlin</span></a></span></p><p><a href=\"https://openbiblio.social/tags/tootfinder\" class=\"mention hashtag\" rel=\"tag\">#<span>tootfinder</span></a></p>",
       "url": "https://openbiblio.social/@awinkler",
       "uri": "https://openbiblio.social/users/awinkler",
@@ -10054,7 +10064,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-04-09T00:00:00",
+      "last_status_at": "2026-04-12T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -10062,7 +10072,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "914",
@@ -10075,7 +10090,7 @@
       "created_at": "2019-03-18T00:00:00+00:00",
       "following_count": 554,
       "followers_count": 409,
-      "statuses_count": 1783,
+      "statuses_count": 1784,
       "note": "<p>IT-Consultant for GLAM-institutions: <a href=\"https://librerli.eu\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">librerli.eu</span><span class=\"invisible\"></span></a> </p><p>Current projects e.g. supporting  ZentralGut (<a href=\"https://zentralgut.ch\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">zentralgut.ch</span><span class=\"invisible\"></span></a>) for <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@zhbluzern\" class=\"u-url mention\">@<span>zhbluzern</span></a></span> (<a href=\"https://zhbluzern.ch\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">zhbluzern.ch</span><span class=\"invisible\"></span></a>) </p><p><a href=\"https://openbiblio.social/tags/wikidata\" class=\"mention hashtag\" rel=\"tag\">#<span>wikidata</span></a> <a href=\"https://openbiblio.social/tags/semanticweb\" class=\"mention hashtag\" rel=\"tag\">#<span>semanticweb</span></a> <a href=\"https://openbiblio.social/tags/linkedopendata\" class=\"mention hashtag\" rel=\"tag\">#<span>linkedopendata</span></a> <a href=\"https://openbiblio.social/tags/openscience\" class=\"mention hashtag\" rel=\"tag\">#<span>openscience</span></a> <a href=\"https://openbiblio.social/tags/bibliothek\" class=\"mention hashtag\" rel=\"tag\">#<span>bibliothek</span></a> <a href=\"https://openbiblio.social/tags/library\" class=\"mention hashtag\" rel=\"tag\">#<span>library</span></a> <a href=\"https://openbiblio.social/tags/openGLAM\" class=\"mention hashtag\" rel=\"tag\">#<span>openGLAM</span></a> <a href=\"https://openbiblio.social/tags/wiki\" class=\"mention hashtag\" rel=\"tag\">#<span>wiki</span></a> <a href=\"https://openbiblio.social/tags/wikisource\" class=\"mention hashtag\" rel=\"tag\">#<span>wikisource</span></a></p>",
       "url": "https://openbiblio.social/@librerli",
       "uri": "https://openbiblio.social/users/librerli",
@@ -10110,7 +10125,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-04-10T00:00:00",
+      "last_status_at": "2026-04-11T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -10118,7 +10133,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "109558465949241560",
@@ -10153,7 +10173,12 @@
       "mute_expires_at": null,
       "indexable": false,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "39269",
@@ -10194,7 +10219,12 @@
       "mute_expires_at": null,
       "indexable": false,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "111242286159217944",
@@ -10235,7 +10265,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "109280705680306706",
@@ -10270,7 +10305,12 @@
       "mute_expires_at": null,
       "indexable": false,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "112879773779477271",
@@ -10305,7 +10345,12 @@
       "mute_expires_at": null,
       "indexable": false,
       "hide_collections": true,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "108219960083875544",
@@ -10316,9 +10361,9 @@
       "group": false,
       "locked": true,
       "created_at": "2022-04-30T00:00:00+00:00",
-      "following_count": 2758,
-      "followers_count": 765,
-      "statuses_count": 231,
+      "following_count": 2765,
+      "followers_count": 768,
+      "statuses_count": 224,
       "note": "<p><a href=\"https://nrw.social/tags/Architekt\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Architekt</span></a> und <a href=\"https://nrw.social/tags/Stadtplaner\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Stadtplaner</span></a>, großer Fan von lebenswerten öffentlichen Räumen, schönen Häusern und guten Planungsprozessen, die dorthin führen. Und sonst? <a href=\"https://nrw.social/tags/Aikido\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Aikido</span></a> <a href=\"https://nrw.social/tags/Schwimmen\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Schwimmen</span></a> <a href=\"https://nrw.social/tags/Fahrrad\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Fahrrad</span></a> <a href=\"https://nrw.social/tags/Velomobil\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Velomobil</span></a> <a href=\"https://nrw.social/tags/St%C3%A4dtegucken\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Städtegucken</span></a></p><p>Toots evaporieren nach 6 Tagen.</p><p><a href=\"https://nrw.social/tags/architect\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>architect</span></a> and <a href=\"https://nrw.social/tags/urbanist\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>urbanist</span></a>, big fan of livable public spaces, beautiful houses and good planning processes that lead to that. What else? <a href=\"https://nrw.social/tags/aikido\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>aikido</span></a> <a href=\"https://nrw.social/tags/swimming\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>swimming</span></a> <a href=\"https://nrw.social/tags/cycling\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>cycling</span></a> <a href=\"https://nrw.social/tags/velomobile\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>velomobile</span></a> <a href=\"https://nrw.social/tags/city\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>city</span></a>-touring</p><p>Toots evaporate after 6 days.</p>",
       "url": "https://nrw.social/@publixpace",
       "uri": "https://nrw.social/users/publixpace",
@@ -10332,7 +10377,7 @@
       "bot": false,
       "fields": [],
       "emojis": [],
-      "last_status_at": "2026-04-10T00:00:00",
+      "last_status_at": "2026-04-13T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -10340,7 +10385,12 @@
       "mute_expires_at": null,
       "indexable": false,
       "hide_collections": true,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "158",
@@ -10352,7 +10402,7 @@
       "locked": false,
       "created_at": "2019-03-15T00:00:00+00:00",
       "following_count": 217,
-      "followers_count": 393,
+      "followers_count": 394,
       "statuses_count": 542,
       "note": "<p>Head of Library Services at European University <a href=\"https://openbiblio.social/tags/Viadrina\" class=\"mention hashtag\" rel=\"tag\">#<span>Viadrina</span></a> Frankfurt (Oder); Editor-in-Chief of <a href=\"https://openbiblio.social/tags/OA\" class=\"mention hashtag\" rel=\"tag\">#<span>OA</span></a> journal Bibliothek – Forschung und Praxis; <a href=\"https://openbiblio.social/tags/openness\" class=\"mention hashtag\" rel=\"tag\">#<span>openness</span></a> advocate; 3D aficionado; bicycle owner.</p>",
       "url": "https://openbiblio.social/@jmiba",
@@ -10396,7 +10446,12 @@
       "mute_expires_at": null,
       "indexable": false,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "108698868512064691",
@@ -10409,7 +10464,7 @@
       "created_at": "2022-05-05T00:00:00+00:00",
       "following_count": 409,
       "followers_count": 550,
-      "statuses_count": 1292,
+      "statuses_count": 1305,
       "note": "<p>Redakteurin bei <span class=\"h-card\" translate=\"no\"><a href=\"https://social.heise.de/@techreview_de\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>techreview_de</span></a></span>. Homebase: <a href=\"https://mstdn.social/tags/G%C3%B6ttingen\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Göttingen</span></a>. Meine Themen: <a href=\"https://mstdn.social/tags/Science\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Science</span></a> / <a href=\"https://mstdn.social/tags/Tech\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Tech</span></a> / <a href=\"https://mstdn.social/tags/Musik\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Musik</span></a> (Wirt. + Tech) / <a href=\"https://mstdn.social/tags/KI\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>KI</span></a></p>",
       "url": "https://mstdn.social/@Kultanaamio",
       "uri": "https://mstdn.social/users/Kultanaamio",
@@ -10439,7 +10494,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-04-09T00:00:00",
+      "last_status_at": "2026-04-12T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -10447,7 +10502,12 @@
       "mute_expires_at": null,
       "indexable": false,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "70513",
@@ -10493,7 +10553,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "109313513255971314",
@@ -10528,7 +10593,12 @@
       "mute_expires_at": null,
       "indexable": false,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "36882",
@@ -10541,7 +10611,7 @@
       "created_at": "2018-01-16T00:00:00+00:00",
       "following_count": 785,
       "followers_count": 426,
-      "statuses_count": 2117,
+      "statuses_count": 2120,
       "note": "<p>— what I do: digital libraries, metadata, web archiving, digital preservation, IIIF, Readium LCP <br>— what I love: mountains, bikes, JG Ballard, Colin Wilson</p>",
       "url": "https://digipres.club/@raffaele",
       "uri": "https://digipres.club/users/raffaele",
@@ -10566,7 +10636,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-04-10T00:00:00",
+      "last_status_at": "2026-04-12T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -10574,7 +10644,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "109383376051798181",
@@ -10585,7 +10660,7 @@
       "group": false,
       "locked": false,
       "created_at": "2022-11-21T00:00:00+00:00",
-      "following_count": 519,
+      "following_count": 520,
       "followers_count": 686,
       "statuses_count": 537,
       "note": "<p>👩‍🔬 OSL supports universities and research organizations with Wikibase, VIVO, Open Access etc.</p><p>🦄 OSL helps universities, archives &amp; memory institutions to become more open, by means of data stewardship, hackathons, book sprints etc.</p><p>📚 OSL is part of <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@tibhannover\" class=\"u-url mention\">@<span>tibhannover</span></a></span>. We aim for being a friendly environment for learning and developing, close to TIB&#39;s collections, colleagues &amp; users.</p><p>🤝 OSL is part of <span class=\"h-card\" translate=\"no\"><a href=\"https://nfdi.social/@nfdi4culture\" class=\"u-url mention\">@<span>nfdi4culture</span></a></span> and <span class=\"h-card\" translate=\"no\"><a href=\"https://mastodon.social/@leibnizopenscience\" class=\"u-url mention\">@<span>leibnizopenscience</span></a></span></p>",
@@ -10630,7 +10705,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "109301595462102949",
@@ -10642,7 +10722,7 @@
       "locked": false,
       "created_at": "2022-11-07T00:00:00+00:00",
       "following_count": 450,
-      "followers_count": 519,
+      "followers_count": 520,
       "statuses_count": 320,
       "note": "<p>digital library developer at GWDG, editor of Code4Lib Journal. Java, metadata quality, cultural heritage metadata, data science, big data, History</p>",
       "url": "https://openbiblio.social/@kiru",
@@ -10686,7 +10766,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "109369312535322709",
@@ -10737,7 +10822,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "109722349398195013",
@@ -10793,7 +10883,12 @@
       "mute_expires_at": null,
       "indexable": false,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "41196",
@@ -10849,7 +10944,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "195",
@@ -10890,7 +10990,12 @@
       "mute_expires_at": null,
       "indexable": false,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "26933",
@@ -10903,7 +11008,7 @@
       "created_at": "2019-11-28T00:00:00+00:00",
       "following_count": 187,
       "followers_count": 704,
-      "statuses_count": 3444,
+      "statuses_count": 3451,
       "note": "<p>Göttingen</p>",
       "url": "https://openbiblio.social/@nichtich",
       "uri": "https://openbiblio.social/users/nichtich",
@@ -10923,7 +11028,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-04-10T00:00:00",
+      "last_status_at": "2026-04-12T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -10931,7 +11036,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "109841808159257639",
@@ -10944,7 +11054,7 @@
       "created_at": "2023-02-09T00:00:00+00:00",
       "following_count": 2126,
       "followers_count": 3016,
-      "statuses_count": 20519,
+      "statuses_count": 20515,
       "note": "<p>Initiated <span class=\"h-card\" translate=\"no\"><a href=\"https://fedihum.org/@SafeguardingResearch\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>SafeguardingResearch</span></a></span> on Jan 15th, 2025.<br>\"No Musk can shut us down.\"</p><p>Pronouns: he/him<br>🏳️‍🌈 🩷💜💙 <a href=\"https://fedihum.org/tags/SmashFascism\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>SmashFascism</span></a> <a href=\"https://fedihum.org/tags/Histodon\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Histodon</span></a><br><a href=\"https://fedihum.org/tags/BijiRojava\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>BijiRojava</span></a></p><p>(Digital) Historian based in Berlin (Humboldt-University);<br>just doing <a href=\"https://fedihum.org/tags/DigitalHumanities\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>DigitalHumanities</span></a> / <a href=\"https://fedihum.org/tags/DigitalHistory\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>DigitalHistory</span></a> things.<br>Toots in German/English.</p><p>\"Sharing isn’t immoral — it’s a moral imperative.\"<br>Aaron Swartz, Guerrilla Open Access Manifesto, 2008.<br><a href=\"https://openbehavioralscience.org/manifesto/\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">openbehavioralscience.org/mani</span><span class=\"invisible\">festo/</span></a></p>",
       "url": "https://fedihum.org/@lavaeolus",
       "uri": "https://fedihum.org/users/lavaeolus",
@@ -10987,7 +11097,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": true,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "109364804907861096",
@@ -11022,7 +11137,12 @@
       "mute_expires_at": null,
       "indexable": false,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "109269203373692348",
@@ -11033,10 +11153,10 @@
       "group": false,
       "locked": false,
       "created_at": "2022-11-01T00:00:00+00:00",
-      "following_count": 2448,
-      "followers_count": 3236,
-      "statuses_count": 4273,
-      "note": "<p>🤓 Hey there, I&#39;m a <a href=\"https://openbiblio.social/tags/librarian\" class=\"mention hashtag\" rel=\"tag\">#<span>librarian</span></a>! </p><p>📚 team <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@tibosl\" class=\"u-url mention\">@<span>tibosl</span></a></span></p><p>🤔 exploring futures of knowledge infrastructure and cultural memory</p><p>📺 watch recent talks &amp; interviews of mine: <a href=\"https://www.biblionik.org/category/video/\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://www.</span><span class=\"\">biblionik.org/category/video/</span><span class=\"invisible\"></span></a> </p><p>📍 Hannover, Germany </p><p>✊🏽 Antifascist since 1990, ver.di (trade union) since 2000</p>",
+      "following_count": 2453,
+      "followers_count": 3238,
+      "statuses_count": 4285,
+      "note": "<p>🤓 Hey there, I&#39;m a <a href=\"https://openbiblio.social/tags/librarian\" class=\"mention hashtag\" rel=\"tag\">#<span>librarian</span></a>! </p><p>📚 team <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@tibosl\" class=\"u-url mention\">@<span>tibosl</span></a></span></p><p>🤔 exploring futures of knowledge infrastructure and cultural memory</p><p>📺 watch recent talks &amp; interviews of mine: <a href=\"https://www.biblionik.org/category/video/\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://www.</span><span class=\"\">biblionik.org/category/video/</span><span class=\"invisible\"></span></a> </p><p>📍 Hannover, Germany </p><p>✊🏽 Antifascist since 1990, ver.di (workers union) since 2000</p>",
       "url": "https://openbiblio.social/@Lambo",
       "uri": "https://openbiblio.social/users/Lambo",
       "avatar": "https://openbiblio.social/system/accounts/avatars/109/269/203/373/692/348/original/b1584e07ff5313ca.jpg",
@@ -11070,7 +11190,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-04-09T00:00:00",
+      "last_status_at": "2026-04-13T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -11078,7 +11198,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "108198015388475665",
@@ -11113,7 +11238,12 @@
       "mute_expires_at": null,
       "indexable": false,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "112847969849364700",
@@ -11124,9 +11254,9 @@
       "group": false,
       "locked": false,
       "created_at": "2024-07-25T00:00:00+00:00",
-      "following_count": 374,
-      "followers_count": 142,
-      "statuses_count": 2312,
+      "following_count": 377,
+      "followers_count": 141,
+      "statuses_count": 2334,
       "note": "<p>🌐 Vermessungs- und kartographiehistorisch interessierter <a href=\"https://openbiblio.social/tags/Geod%C3%A4t\" class=\"mention hashtag\" rel=\"tag\">#<span>Geodät</span></a>,<br />📚 unfreiwilliger &quot;Sachwalter&quot; der ehemaligen DVW-<a href=\"https://openbiblio.social/tags/Bibliothek\" class=\"mention hashtag\" rel=\"tag\">#<span>Bibliothek</span></a>,<br />📜 regelmäßiger <a href=\"https://openbiblio.social/tags/Archivnutzer\" class=\"mention hashtag\" rel=\"tag\">#<span>Archivnutzer</span></a>,<br />🗺️ <a href=\"https://openbiblio.social/tags/maps\" class=\"mention hashtag\" rel=\"tag\">#<span>maps</span></a> &amp; <a href=\"https://openbiblio.social/tags/oldmaps\" class=\"mention hashtag\" rel=\"tag\">#<span>oldmaps</span></a>,<br />🧑‍🧑‍🧒 <a href=\"https://openbiblio.social/tags/Genealogie\" class=\"mention hashtag\" rel=\"tag\">#<span>Genealogie</span></a>,<br />💻 <a href=\"https://openbiblio.social/tags/Wikidata\" class=\"mention hashtag\" rel=\"tag\">#<span>Wikidata</span></a>,<br />🤓 <a href=\"https://openbiblio.social/tags/citizenscience\" class=\"mention hashtag\" rel=\"tag\">#<span>citizenscience</span></a>,<br />🏃OL</p>",
       "url": "https://openbiblio.social/@vermessungsbibliothek",
       "uri": "https://openbiblio.social/users/vermessungsbibliothek",
@@ -11156,7 +11286,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-04-10T00:00:00",
+      "last_status_at": "2026-04-12T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -11164,7 +11294,12 @@
       "mute_expires_at": null,
       "indexable": true,
       "hide_collections": false,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     },
     {
       "id": "1030",
@@ -11199,7 +11334,12 @@
       "mute_expires_at": null,
       "indexable": false,
       "hide_collections": null,
-      "memorial": null
+      "memorial": null,
+      "avatar_description": null,
+      "header_description": null,
+      "show_media": null,
+      "show_media_replies": null,
+      "show_featured": null
     }
   ],
   "mutes": [],
