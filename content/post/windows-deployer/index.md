@@ -4,6 +4,7 @@ title: "Windows Deployer"
 cite: true
 tags:
   - Windows
+  - Python
 ---
 
 Wie installiert man eine frisch gebaute Software von GitLab / GitHub?<br/>

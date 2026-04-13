@@ -3,6 +3,7 @@ date: 2026-03-04T19:22:44+02:00
 title: "Windows Remote Management"
 tags:
   - Windows
+  - Python
 ---
 
 Viele Systeme zur Fernsteuerung von Windows-basierten Rechnern benötigen einen eigenen Client auf dem jeweiligen System....

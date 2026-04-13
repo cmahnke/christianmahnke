@@ -3,6 +3,7 @@ date: 2026-03-04T19:22:44+02:00
 title: "Windows Remote Management"
 tags:
   - Windows
+  - Python
 ---
 
 Many systems for remote control of Windows-based computers require their own client on the respective system....
