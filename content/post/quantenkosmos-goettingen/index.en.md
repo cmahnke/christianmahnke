@@ -3,6 +3,10 @@ date: 2025-03-26T07:00:44+02:00
 title: "Quantum cosmos Göttingen"
 description: "A digital exhibit"
 cite: true
+outputs:
+  - bibtex
+  - html
+  - codemeta
 tags:
   - Exhibition
   - Website

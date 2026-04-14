@@ -1,5 +1,7 @@
-import { Hdt } from "hdt/hdt.js";
-import { hdtToOxigraph } from "./hdt-to-oxigraph";
+//import { Hdt } from "hdt/hdt.js";
+//import { hdtToOxigraph } from "./hdt-to-oxigraph";
+import * as oxigraph from "oxigraph/web.js";
+import { loadHdtFromUrl } from "./loader";
 import { initGraph, updateGraph, getCy } from "./graph-viz";
 
 const status = document.getElementById("status") as HTMLDivElement;
@@ -34,7 +36,7 @@ SELECT ?s ?p ?o ?isTagged WHERE {
 
 sparqlInput.value = DEFAULT_QUERY;
 
-let store;
+let store: oxigraph.Store;
 
 async function runQuery(): Promise<void> {
   const query = sparqlInput.value.trim();
@@ -54,46 +56,12 @@ async function runQuery(): Promise<void> {
   }
 }
 
-export async function loadHdtFromUrl(url: string): Promise<Hdt> {
-  let response: Response;
-  try {
-    response = await fetch(url);
-  } catch (networkError) {
-    const message = networkError instanceof Error ? networkError.message : String(networkError);
-    throw new Error(`Network error while fetching HDT file from "${url}": ${message}`);
-  }
-
-  if (!response.ok) {
-    throw new Error(`Failed to fetch HDT file from "${url}": HTTP ${response.status} ${response.statusText}`);
-  }
-
-  let buffer: ArrayBuffer;
-  try {
-    buffer = await response.arrayBuffer();
-  } catch (readError) {
-    const message = readError instanceof Error ? readError.message : String(readError);
-    throw new Error(`Error reading response body from "${url}": ${message}`);
-  }
-
-  if (buffer.byteLength === 0) {
-    throw new Error(`HDT file from "${url}" is empty (0 bytes)`);
-  }
-
-  try {
-    return new Hdt(new Uint8Array(buffer));
-  } catch (parseError) {
-    const message = parseError instanceof Error ? parseError.message : String(parseError);
-    throw new Error(`Error parsing HDT data from "${url}" (${buffer.byteLength} bytes): ${message}`);
-  }
-}
-
 async function run() {
   console.log("Loading WASM...");
   console.log(`Loading HDT file... ${HDT_URL}`);
 
-  let hdt: Hdt;
   try {
-    hdt = await loadHdtFromUrl(HDT_URL);
+    store = await loadHdtFromUrl(HDT_URL);
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     console.log(`Error loading HDT file: ${message}`, "error");
@@ -103,8 +71,6 @@ async function run() {
 
   console.log("HDT file loaded successfully. Converting triples to store...");
 
-  store = hdtToOxigraph(hdt);
-  hdt.free();
 
   console.log(`Dataset conversion complete. Store: ${store.size} Quads. Ready for visualization.`);
 

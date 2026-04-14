@@ -202,6 +202,13 @@ timeout = "120s"
     baseName = "linkedart"
     notAlternative = true
 
+  [outputFormats.codemeta]
+    mediaType = "application/ld+json"
+    isPlainText = true
+    isHTML = false
+    baseName = "codemeta"
+    notAlternative = true
+
   [outputFormats.activity-pub-actor]
     mediaType = "application/activity+json"
     isPlainText = true

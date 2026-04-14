@@ -1,5 +1,5 @@
+import { Hdt } from "hdt/hdt.js";
 import init, * as oxigraph from "oxigraph/web.js";
-import type { Hdt } from "hdt";
 
 (async function () {
   await init();
@@ -55,5 +55,44 @@ export function hdtToOxigraph(hdt: Hdt): oxigraph.Store {
     }
   }
 
+  return store;
+}
+
+export async function loadHdtFromUrl(url: string): Promise<oxigraph.Store> {
+  let response: Response;
+  try {
+    response = await fetch(url);
+  } catch (networkError) {
+    const message = networkError instanceof Error ? networkError.message : String(networkError);
+    throw new Error(`Network error while fetching HDT file from "${url}": ${message}`);
+  }
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch HDT file from "${url}": HTTP ${response.status} ${response.statusText}`);
+  }
+
+  let buffer: ArrayBuffer;
+  try {
+    buffer = await response.arrayBuffer();
+  } catch (readError) {
+    const message = readError instanceof Error ? readError.message : String(readError);
+    throw new Error(`Error reading response body from "${url}": ${message}`);
+  }
+
+  if (buffer.byteLength === 0) {
+    throw new Error(`HDT file from "${url}" is empty (0 bytes)`);
+  }
+  let hdt: Hdt;
+  try {
+    hdt = await new Hdt(new Uint8Array(buffer));
+  } catch (parseError) {
+    const message = parseError instanceof Error ? parseError.message : String(parseError);
+    throw new Error(`Error parsing HDT data from "${url}" (${buffer.byteLength} bytes): ${message}`);
+  }
+
+  let store;
+  store = hdtToOxigraph(hdt);
+  
+  hdt.free();
   return store;
 }

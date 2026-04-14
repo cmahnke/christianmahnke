@@ -3,6 +3,10 @@ date: 2025-03-26T07:00:44+02:00
 title: "Quantenkosmos Göttingen"
 description: "Ein digitales Exponat"
 cite: true
+outputs:
+  - bibtex
+  - html
+  - codemeta
 tags:
   - Exhibition
   - Website

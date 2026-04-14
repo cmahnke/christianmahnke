@@ -6,7 +6,7 @@
 {{- $linkedArt := dict -}}
 {{- with .Params.linkedart -}}
   {{- $type = "VisualArtwork" -}}
-  {{- $linkedArtRecord := partial "metadata/linked-art.json" $ -}}
+  {{- $linkedArtRecord := partial "metadata/linked-art/linked-art.json" $ -}}
   {{- $artist := dict -}}
   {{- with $linkedArtRecord.produced_by.carried_out_by -}}
     {{- $artist = dict "@type" (index . 0).type "@id" (index . 0).id "name" (index . 0)._label -}}
@@ -20,7 +20,7 @@
 {{- $codemeta := dict -}}
 {{- $cffFile := "CITATION.cff" -}}
 {{- with .Resources.Get $cffFile -}}
-  {{- $codemeta = partial "metadata/codemeta.json" $page | transform.Unmarshal -}}
+  {{- $codemeta = partial "metadata/codemeta/codemeta.json" $page | transform.Unmarshal -}}
 {{- end -}}
 
 {{- $author := transform.Unmarshal (partialCached "metadata/schema.org/util/author.html" .) -}}
@@ -58,6 +58,7 @@
   {{- end -}}
 
   {{- $about := partial "metadata/schema.org/util/about.html" $page | transform.Unmarshal (dict "format" "json") -}}
+
   {{- with $about -}}
     {{- $schemaOrg = $schemaOrg | merge (dict "about" .) -}}
   {{- end -}}
