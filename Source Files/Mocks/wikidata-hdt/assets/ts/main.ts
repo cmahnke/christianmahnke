@@ -20,6 +20,7 @@ SELECT ?s ?p ?o ?isTagged WHERE {
   FILTER(?p NOT IN (
     schema:author,
     schema:url,
+    schema:workTranslation,
     <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
   ))
   FILTER(?o NOT IN (
@@ -70,7 +71,6 @@ async function run() {
   }
 
   console.log("HDT file loaded successfully. Converting triples to store...");
-
 
   console.log(`Dataset conversion complete. Store: ${store.size} Quads. Ready for visualization.`);
 

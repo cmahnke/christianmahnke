@@ -2,6 +2,7 @@
   "compilerOptions": {
     "module": "esnext",
     "strictPropertyInitialization": false,
+    "useDefineForClassFields": false,
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
@@ -12,9 +13,9 @@
     "strict": false,
     "allowJs": true,
     "typeRoots": ["./webgpu/assets/ts/@types", "./pong/assets/ts/@types"],
-    "target": "es2020",
+    "target": "es2021",
     "skipLibCheck": true,
-    "lib": ["dom", "es2020"]
+    "lib": ["dom", "es2021"]
   },
   "include": [
     "webgpu/assets/**/*",

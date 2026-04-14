@@ -3,10 +3,10 @@ Wikidata Mock
 
 # TODO
 
-* Provide a LIT based web component
+* Provide a text based SPARQL query done
+* Provide a LIT based web component, done for query
 * Bundle as a JS artifact
-* Provide a text based SPARQL query
 * Check federated SPARQL
 * Visualisation
-  * Use sifferent borders for entity types
+  * Use slifferent borders for entity types
   * Check if 
