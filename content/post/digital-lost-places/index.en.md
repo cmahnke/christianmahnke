@@ -6,6 +6,7 @@ tags:
   - Archive
   - Fun
   - ProjectIdea
+  - Geodata
 outputs:
   - bibtex
   - html
