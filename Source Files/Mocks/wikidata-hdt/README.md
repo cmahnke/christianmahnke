@@ -7,11 +7,11 @@ This directory contains triple store based approaches, no need to query wikidata
 
 * Query builder
   * Create - done
-  * Bundle as a JS artifact
-* Graph visualisation, draft done
-  * As web component
-  * Bundle as a JS artifact
+  * Bundle as a JS artifact, draft done
+* Graph visualisation
+  * As web component, draft done
+  * Bundle as a JS artifact, draft done
 * Check federated SPARQL
 * Visualisation
   * Use different borders for entity types
-  * Check if resizing works
+  * Check if resizing works, done

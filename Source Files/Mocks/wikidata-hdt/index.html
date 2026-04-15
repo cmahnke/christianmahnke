@@ -55,16 +55,61 @@
         width: 100vw;
         height: calc(100vh - 8rem);
       }
+
+      rdf-graph {
+        width: 100%;
+        height: calc(100vh - 8rem);
+        display: block;
+      }
     </style>
   </head>
   <body>
     <h1>HDT Test</h1>
+    <!--
     <div id="controls">
       <textarea id="sparql-input" rows="3">SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 200</textarea>
       <button id="sparql-run" disabled>Ausführen</button>
     </div>
     <div id="status" class="status loading">Loading...</div>
     <div id="graph"></div>
+    <script type="module" src="./assets/ts/main.ts"></script>
+  -->
+    <div id="controls">
+      <textarea id="sparql-input"></textarea>
+      <button id="sparql-run" disabled>Query ausführen</button>
+    </div>
+    <div id="status">Lade…</div>
+
+    <rdf-graph
+    src="/meta/wikidata/enriched_entities.hdt"
+    languages="mul,de,en"
+    node-scaling="log"
+    sparql-query="
+      PREFIX schema: <http://schema.org/>
+      SELECT ?s ?p ?o ?isTagged WHERE {
+        <https://christianmahnke.de/post/> schema:blogPost ?post .
+        ?post ?p ?o .
+        BIND(?post AS ?s)
+        FILTER(?p NOT IN (
+          schema:author,
+          schema:url,
+          schema:workTranslation,
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        ))
+        FILTER(?o NOT IN (
+          schema:BlogPosting
+        ))
+        OPTIONAL {
+          ?post schema:identifier ?ident .
+          ?ident a schema:PropertyValue ;
+                 schema:propertyID &quot;projektemacher&quot; ;
+                 schema:value &quot;tag&quot; .
+          BIND(true AS ?isTagged)
+        }
+      }
+    "
+  ></rdf-graph>
+
     <script type="module" src="./assets/ts/main.ts"></script>
   </body>
 </html>
