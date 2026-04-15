@@ -5,16 +5,19 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron:  '00 22 * * 1'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
+      - name: Checkout projektemacher-base repository
+        uses: actions/checkout@v4
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
+          repository: cmahnke/projektemacher-base
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -28,7 +31,7 @@ jobs:
 
       - name: Run Wikidata enrichment script
         run: |
-          python themes/projektemacher-base/scripts/wikidata/get_entities.py https://christianmahnke.de/meta/schema.org/index.json -t
+          python scripts/wikidata/get_entities.py https://christianmahnke.de/meta/schema.org/index.json -t
 
       - name: Convert TTL to HDT
         run: |
@@ -40,3 +43,9 @@ jobs:
           name: enriched_entities
           path: |
             enriched_entities.hdt
+
+
+  deploy:
+    needs: build
+    uses: ./.github/workflows/deploy-hdt.yml
+    secrets: inherit

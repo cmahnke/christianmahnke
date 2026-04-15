@@ -1,0 +1,48 @@
+name: Deploy Artifact to gh-pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+
+      - name: Download all workflow run artifacts
+        uses: dawidd6/action-download-artifact@v20
+        id: download-artifact
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          workflow: wikidata-hdt.yml
+          name: enriched_entities
+
+      - name: Copy enriched HDT to docs
+        run: |
+          mv enriched_entities.hdt docs/meta/wikidata/
+
+      - name: Commit and push to gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add docs/meta/wikidata/enriched_entities.hdt
+
+          MSG="Deploy artifact 'enriched_entities.hdt' to docs/meta/wikidata/"
+
+          # Only commit if there are changes
+          if git diff --cached --quiet; then
+            echo "ℹ️  No changes detected — skipping commit."
+          else
+            git commit -m "$MSG"
+            git push origin gh-pages
+            echo "✅ Changes pushed to gh-pages."
+          fi
