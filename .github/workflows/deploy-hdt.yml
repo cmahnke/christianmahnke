@@ -28,7 +28,7 @@ jobs:
 
       - name: Copy enriched HDT to docs
         run: |
-          mv enriched_entities.hdt docs/meta/wikidata/
+          mv enriched_entities.hdt meta/wikidata/
 
       - name: Commit and push to gh-pages
         run: |
