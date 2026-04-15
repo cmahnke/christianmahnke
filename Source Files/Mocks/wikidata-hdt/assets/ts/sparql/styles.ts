@@ -1,11 +1,6 @@
 import { css } from 'lit';
 
 export const componentStyles = css`
-  /* ========================================
-     HOST
-     Angelehnt an christianmahnke.de/post/
-     Minimalistisch, viel Weißraum, feine Linien
-     ======================================== */
   :host {
     --sparql-font-family: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
     --sparql-font-size: 0.9rem;

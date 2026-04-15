@@ -196,6 +196,14 @@ export class OxigraphSparql extends LitElement {
     return true;
   }
 
+  /**
+   * Prüft ob der Header-Bereich (heading + source-notice) angezeigt werden soll.
+   * Wird nur angezeigt wenn heading gesetzt ist.
+   */
+  private _shouldShowHeader(): boolean {
+    return !!this.heading;
+  }
+
   // =====================
   // LIFECYCLE
   // =====================
@@ -298,20 +306,14 @@ export class OxigraphSparql extends LitElement {
     }
   }
 
-  /**
-   * Universelle URL-Ladefunktion.
-   * Entscheidet anhand von Dateiendung und Content-Type ob HDT oder RDF.
-   */
   private async _loadFromUrl(url: string): Promise<void> {
     if (!url.trim()) return;
 
-    // Vorab-Check: Ist die Endung eindeutig HDT?
     if (isHdt(url, '')) {
       await this._loadHdt(url);
       return;
     }
 
-    // Fetch und anhand der Response entscheiden
     try {
       this._loadingData = true;
       this._setStatus('Lade…', 'loading');
@@ -323,14 +325,11 @@ export class OxigraphSparql extends LitElement {
 
       const contentType = response.headers.get('content-type') || '';
 
-      // Nach Fetch nochmal HDT prüfen (Content-Type könnte es verraten)
       if (isHdt(url, contentType)) {
-        // Response verwerfen, HDT-Loader braucht eigenen Fetch (ArrayBuffer)
         await this._loadHdt(url);
         return;
       }
 
-      // RDF-Text laden
       if (!this._store) return;
       const text = await response.text();
       const format = detectRdfFormat(url, contentType, this.rdfFormat);
@@ -569,44 +568,46 @@ export class OxigraphSparql extends LitElement {
   override render(): TemplateResult {
     return html`
       <div class="wrapper">
-        ${this.heading ? this._renderHeader() : nothing}
+        ${this._shouldShowHeader() ? this._renderHeader() : nothing}
         ${this._shouldShowDataInput() ? this._renderDataSection() : nothing}
-        ${this._storeLocked ? this._renderLockedNotice() : nothing}
-        ${this._renderEditor()}
-        ${this._renderActions()}
+        ${!this.hideDataInput ? this._renderEditor() : nothing}
+        ${!this.hideDataInput ? this._renderActions() : nothing}
         ${this._renderResults()}
       </div>
     `;
   }
 
   private _renderHeader(): TemplateResult {
-    return html`
-      <div class="header">
-        <h2>${this.heading}</h2>
-        <div class="header-meta">
-          ${this._storeLocked
-            ? html`<span class="meta-badge locked">Feste Quelle</span>`
-            : nothing}
-          ${this._tripleCount > 0
-            ? html`<span class="meta-badge">${this._tripleCount} Tripel</span>`
-            : nothing}
-        </div>
-      </div>
-    `;
-  }
-
-  private _renderLockedNotice(): TemplateResult {
     let src = '';
-    if (this.rdfData.trim()) {
-      src = 'Inline RDF';
-    } else if (this.dataUrl.trim()) {
-      src = this.dataUrl;
+    if (this._storeLocked) {
+      if (this.rdfData.trim()) {
+        src = 'Inline RDF';
+      } else if (this.dataUrl.trim()) {
+        src = this.dataUrl;
+      }
     }
 
     return html`
-      <div class="source-notice">
-        <span class="source-label">Quelle</span>
-        <span class="source-value">${src}</span>
+      <div class="header">
+        <div class="header-top">
+          <h2>${this.heading}</h2>
+          <div class="header-meta">
+            ${this._storeLocked
+              ? html`<span class="meta-badge locked">Feste Quelle</span>`
+              : nothing}
+            ${this._tripleCount > 0
+              ? html`<span class="meta-badge">${this._tripleCount} Tripel</span>`
+              : nothing}
+          </div>
+        </div>
+        ${src
+          ? html`
+            <div class="source-notice">
+              <span class="source-label">Quelle</span>
+              <span class="source-value">${src}</span>
+            </div>
+          `
+          : nothing}
       </div>
     `;
   }

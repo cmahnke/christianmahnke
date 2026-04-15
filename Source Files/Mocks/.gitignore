@@ -12,3 +12,4 @@ wikidata-hdt/public/**
 wikidata/**/*.nt
 wikidata/**/*.ttl
 __pycache__
+dist
