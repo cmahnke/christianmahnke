@@ -2,6 +2,7 @@ name: Deploy Artifact to gh-pages
 
 on:
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: write
