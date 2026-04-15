@@ -13,9 +13,9 @@
     "strict": false,
     "allowJs": true,
     "typeRoots": ["./webgpu/assets/ts/@types", "./pong/assets/ts/@types"],
-    "target": "es2021",
+    "target": "es2022",
     "skipLibCheck": true,
-    "lib": ["dom", "es2021"]
+    "lib": ["dom", "es2022"]
   },
   "include": [
     "webgpu/assets/**/*",

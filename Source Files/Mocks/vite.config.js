@@ -1,6 +1,7 @@
 import { resolve, join } from "path";
 import { defineConfig } from "vite";
 import wasm from 'vite-plugin-wasm';
+//import topLevelAwait from "vite-plugin-top-level-await";
 import eslint from "vite-plugin-eslint";
 import { viteSingleFile } from "vite-plugin-singlefile";
 import stylelint from "vite-plugin-stylelint";
@@ -46,6 +47,7 @@ export default defineConfig({
   base: "./",
   plugins: [
     wasm(),
+    //topLevelAwait(),
     nodePolyfills(),
     {
       apply: "build"
@@ -64,7 +66,7 @@ export default defineConfig({
   publicDir: false,
   build: {
     //target: 'esnext',
-    target: "es2020",
+    target: "esnext",
     commonjsOptions: { transformMixedEsModules: true },
     rollupOptions: {
       input: {

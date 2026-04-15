@@ -1,0 +1,20 @@
+{{- $src := "" -}}
+{{- with .Get "src" -}}
+    {{- $src = . -}}
+{{- end -}}
+{{- $id := printf "_sparql-%s" (md5 (printf "%s-%s" $src now.UnixNano)) -}}
+{{- with .Get "id" -}}
+    {{- $id = . -}}
+{{- end -}}
+{{- if eq $id "" -}}
+  {{- errorf "[shortcodes/client-sparql.html] Entity ID missing" -}}
+{{- end -}}
+
+    <oxigraph-sparql
+      id="{{ $id }}"
+      data-url="{{ $src }}"
+      auto-execute></oxigraph-sparql>
+
+{{- define "_partials/shortcodes/client-sparql-metadata.html" -}}
+  {{- (dict "css" slice "js" (slice "js/shortcodes/client-sparql.js") "scss" (slice "scss/shortcodes/client-sparql.scss")) | jsonify -}}
+{{- end -}}

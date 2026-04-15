@@ -6,15 +6,15 @@ import { loadHdtFromUrl } from '../loader';
 
 // --- Layout constants ---
 
-const NODE_REPULSION = 8000;
-const IDEAL_EDGE_LENGTH = 150;
+const NODE_REPULSION_BASE = 8000;
+const IDEAL_EDGE_LENGTH_BASE = 150;
 const EDGE_ELASTICITY = 100;
 const GRAVITY = 0.1;
 const FIT_PADDING = 50;
 const EXPAND_EDGE_LENGTH = 150;
 const EXPAND_REPULSION = 8000;
 
-const OVERLAP_PADDING = 8;
+const OVERLAP_PADDING = 14;
 const OVERLAP_ITERATIONS = 100;
 
 const NODE_BASE_SIZE = 15;
@@ -349,7 +349,6 @@ async function resultsToCytoscape(
 ): Promise<cytoscape.ElementDefinition[]> {
   const taggedPosts = findTaggedPosts(store);
   const { nodeMap, edges } = collectNodes(results, store, taggedPosts, languages);
-  // Only fetch Wikidata labels during build if mode is 'labels' or 'expand'
   if (wikidataMode !== 'off') {
     await resolveWikidataLabels(nodeMap, languages);
   }
@@ -431,6 +430,51 @@ function removeOverlaps(cy: cytoscape.Core): void {
     if (maxOverlap < 1) break;
   }
   cy.fit(undefined, FIT_PADDING);
+}
+
+// --- Sizing-aware layout helpers ---
+
+/**
+ * Build a lookup from node-id → nodeSize so the layout functions
+ * can adapt repulsion and edge length to the actual visual size of each node.
+ */
+function buildNodeSizeMap(elements: cytoscape.ElementDefinition[]): Map<string, number> {
+  const map = new Map<string, number>();
+  for (const el of elements) {
+    if (el.data?.id && !el.data?.source) {
+      // It's a node element (edges have 'source')
+      const size = typeof el.data.nodeSize === 'number' ? el.data.nodeSize : NODE_BASE_SIZE;
+      map.set(el.data.id, size);
+    }
+  }
+  return map;
+}
+
+/**
+ * Compute per-node repulsion that scales with the node's visual area.
+ * Larger nodes push neighbours further away.
+ */
+function nodeRepulsionFn(sizeMap: Map<string, number>): (node: any) => number {
+  return (node: any) => {
+    const size = sizeMap.get(node.data('id')) ?? NODE_BASE_SIZE;
+    // Scale repulsion quadratically with size ratio so large hubs get much more space
+    const ratio = size / NODE_BASE_SIZE;
+    return NODE_REPULSION_BASE * ratio * ratio;
+  };
+}
+
+/**
+ * Compute per-edge ideal length that accounts for the sizes of both endpoints.
+ * The edge should be long enough so that the gap between the node borders
+ * equals IDEAL_EDGE_LENGTH_BASE.
+ */
+function idealEdgeLengthFn(sizeMap: Map<string, number>): (edge: any) => number {
+  return (edge: any) => {
+    const srcSize = sizeMap.get(edge.data('source')) ?? NODE_BASE_SIZE;
+    const tgtSize = sizeMap.get(edge.data('target')) ?? NODE_BASE_SIZE;
+    // Half of each node's size = their radii; add desired gap
+    return (srcSize + tgtSize) / 2 + IDEAL_EDGE_LENGTH_BASE;
+  };
 }
 
 // --- Web Component ---
@@ -596,16 +640,30 @@ export class RdfGraph extends LitElement {
     this.requestUpdate();
   }
 
-  private _layoutOptions(): any {
+  /**
+   * Build layout options with size-aware repulsion and edge lengths.
+   * The sizeMap is used to scale spacing proportional to each node's
+   * visual diameter, so large hubs don't overlap their neighbours.
+   */
+  private _layoutOptions(sizeMap?: Map<string, number>): any {
     const container = this.renderRoot.querySelector('#cy-container') as HTMLDivElement | null;
     const w = container?.clientWidth ?? 800;
     const h = container?.clientHeight ?? 600;
+
+    const repulsion = sizeMap
+      ? nodeRepulsionFn(sizeMap)
+      : () => NODE_REPULSION_BASE;
+
+    const edgeLength = sizeMap
+      ? idealEdgeLengthFn(sizeMap)
+      : () => IDEAL_EDGE_LENGTH_BASE;
+
     return {
       name: 'cose',
       animate: false,
       nodeDimensionsIncludeLabels: true,
-      nodeRepulsion: () => NODE_REPULSION,
-      idealEdgeLength: () => IDEAL_EDGE_LENGTH,
+      nodeRepulsion: repulsion,
+      idealEdgeLength: edgeLength,
       edgeElasticity: () => EDGE_ELASTICITY,
       gravity: GRAVITY,
       fit: true,
@@ -663,18 +721,21 @@ export class RdfGraph extends LitElement {
       );
       if (this._workVersion !== version) return;
 
+      // Build the size lookup from elements so layout knows each node's diameter
+      const sizeMap = buildNodeSizeMap(elements);
+
       if (!this._cy) {
         this._cy = cytoscape({
           container,
           elements,
           style: CYTOSCAPE_STYLES as any,
-          layout: this._layoutOptions(),
+          layout: this._layoutOptions(sizeMap),
         });
         this._setupInteractions();
       } else {
         this._cy.elements().remove();
         this._cy.add(elements);
-        this._cy.layout(this._layoutOptions()).run();
+        this._cy.layout(this._layoutOptions(sizeMap)).run();
       }
 
       await waitFrames(5);
@@ -723,7 +784,6 @@ export class RdfGraph extends LitElement {
         detail: node.data(), bubbles: true, composed: true
       }));
 
-      // Wikidata interaction depends on mode
       if (this.wikidata === 'expand') {
         const qid = node.data('qid');
         if (qid && !node.hasClass('expanded')) {
@@ -801,15 +861,23 @@ export class RdfGraph extends LitElement {
 
         if (newElements.length > 0) {
           this._cy.add(newElements);
+
+          // Build size map for the local re-layout from live node data
           const neighborhood = node.neighborhood().add(node);
+          const localSizeMap = new Map<string, number>();
+          neighborhood.nodes().forEach((n: cytoscape.NodeSingular) => {
+            const s = n.data('nodeSize');
+            localSizeMap.set(n.id(), typeof s === 'number' ? s : NODE_BASE_SIZE);
+          });
+
           neighborhood.layout({
             name: 'cose',
             animate: true,
             animationDuration: 300,
             fit: false,
             nodeDimensionsIncludeLabels: true,
-            nodeRepulsion: () => EXPAND_REPULSION,
-            idealEdgeLength: () => EXPAND_EDGE_LENGTH,
+            nodeRepulsion: nodeRepulsionFn(localSizeMap),
+            idealEdgeLength: idealEdgeLengthFn(localSizeMap),
             edgeElasticity: () => EDGE_ELASTICITY,
             gravity: GRAVITY,
           } as any).run();
