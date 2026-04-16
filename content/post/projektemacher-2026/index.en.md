@@ -12,17 +12,18 @@ As 2026 draws to a close, here is the annual review for Projektemacher.org. Arou
 <!--more-->
 Some of the highlights are:
 
-
 ## New pages
-* [Noctual Shadows](https://schatten.yaapb.projektemacher.org/)
+* [Plastikwarenfabrik](https://plastikwarenfabrik.projektemacher.org/)
+* [Night Shadows](https://schatten.yaapb.projektemacher.org/)
 
 ## New features
 
 * [ChristianMahnke.de](https://christianmahnke.de/)
   * Art articles now contain [LinkedArt](https://linked.art/) metadata
+  * [SPARQL Query](/post/blog-sparql/)
 
 ## Miscellaneous
 * The first [book](https://christianmahnke.de/post/coat-hangers-book/) has been published.
   * It can also be found in the ‘Shop’ [here](https://merch.projektemacher.org/print/kleiderbuegel/). 
 
-Translated with DeepL.com (free version)
+

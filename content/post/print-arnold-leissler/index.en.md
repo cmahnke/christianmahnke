@@ -15,6 +15,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q695684
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
+  date: 1969
 wikidata:
   - https://www.wikidata.org/wiki/Q695684
   - https://www.wikidata.org/wiki/Q1715

@@ -14,7 +14,12 @@
       {{- $scalePreview = $image.scalePreview -}}
     {{- end -}}
     {{- with $imgRes -}}
-      <a class="gallery-image {{ if ne $alt "" }}caption{{ end }}" href="{{ $image.src }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank">
+      {{- $full := . -}}
+      {{- if lt .Width 6144 -}}
+        {{- $full = .Process "webp" -}}
+      {{- end -}}
+
+      <a class="gallery-image {{ if ne $alt "" }}caption{{ end }}" href="{{ $full.RelPermalink }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank">
         {{- $preview := $imgRes.Resize (printf "%sx webp picture" $previewWidth) -}}
         {{- if (not $scalePreview) -}}
           {{- $preview = $imgRes -}}

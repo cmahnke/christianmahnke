@@ -18,6 +18,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137755682
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
+  date: 1989
 wikidata:
   - https://www.wikidata.org/wiki/Q137755682
   - https://www.wikidata.org/wiki/Q147934
@@ -42,6 +43,6 @@ Ich habe ein Gemälde von [Tadeusz Kaczmarek](https://jbc.jelenia-gora.pl/dlibra
 
 Tadeusz Kaczmarek war ein polnischer Künstler, der u.a. als Maler, Grafiker und Innenarchitekt arbeitete. Er lebte und wirkte hauptsächlich in der [Woiwodschaft Niederschlesien](https://de.wikipedia.org/wiki/Woiwodschaft_Niederschlesien).
 
-Das Gemälde zeigt den Stand von [Boltenhagen](https://de.wikipedia.org/wiki/Boltenhagen), Schleswig-Holstein an der Ostseeküste.
+Das Gemälde zeigt den Stand von [Boltenhagen](https://de.wikipedia.org/wiki/Boltenhagen), Schleswig-Holstein an der Ostseeküste, es ist auf 1989 datiert.
 
 Es existiert auch ein [Blog](https://kaczmarek-art.blogspot.com/2021/01/kaczmarek-tadeusz-1937-2006-malarstwo.html) mit einigen seiner Werke. Dort ist auch ein sehr ähnliches Gemälde aufgeführt.

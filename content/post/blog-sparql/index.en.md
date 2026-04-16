@@ -67,7 +67,7 @@ WHERE {
   }
   OPTIONAL {
     ?directOccupation rdfs:label ?occLabel .
-    FILTER(LANG(?occLabel) = "de")
+    FILTER(LANG(?occLabel) = "en")
   }
 
   ?artist wdt:P569 ?birthDate .
@@ -96,7 +96,7 @@ WHERE {
 
   OPTIONAL {
     ?place rdfs:label ?placeLabel .
-    FILTER(LANG(?placeLabel) = "de")
+    FILTER(LANG(?placeLabel) = "en")
   }
 }
 ```

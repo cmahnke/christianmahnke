@@ -17,6 +17,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137756185
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
+  date: 1954
 wikidata:
   - https://www.wikidata.org/wiki/Q137756185
   - https://www.wikidata.org/wiki/Q392142
@@ -37,3 +38,5 @@ Ich habe einen Holzschnitt von Paul-Kurt Bartzsch (1917-1994) aufgetan...
 Paul Kurt Bartzsch war hauptsächlich Maler und Grafiker, der in Dresden geboren wurde und in Wolfsburg wirkte.
 
 Der Name des Motivs ist ["Škrlatica"](https://de.wikipedia.org/wiki/%C5%A0krlatica), ein Berg in den Julischen Alpen, es ist in der Platte mit "PKB" monogrammiert und von 1954.
+
+Ein Nachfahre von Bartzsch betreibt in dessen Erinnerung den Instagram-Account [@paul_kurt_bartzsch](https://www.instagram.com/paul_kurt_bartzsch/).

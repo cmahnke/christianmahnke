@@ -43,8 +43,6 @@ From today's perspective, it is striking that only Western countries and the Sov
 
 And I would like to take this opportunity to remind you of the installation ["All the Submarines of the United States of America"](https://www.sartle.com/artwork/all-the-submarines-of-the-united-states-of-america-chris-burden), 1987 by [Chris Burden](https://en.wikipedia.org/wiki/Chris_Burden).
 
-Translated with www.DeepL.com/Translator (free version)
-
 ## The individual cards
 
 | Group | Card | Decommissioning | Special features |

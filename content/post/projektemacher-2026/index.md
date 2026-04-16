@@ -8,21 +8,20 @@ tags:
   - Projektemacher.org
 ---
 
-As 2026 draws to a close, here is the annual review for Projektemacher.org. Around XXX articles were published over the course of the year.
+Da sich das Jahr 2026 dem Ende zuneigt, folgt hier der Jahresrückblick für Projektemacher.org. Im Laufe des Jahres wurden rund XXX Artikel veröffentlicht.
 <!--more-->
-Some of the highlights are:
+Einige der Höhepunkte sind:
 
+## Neue Seiten
+* [Plastikwarenfabrik](https://plastikwarenfabrik.projektemacher.org/)
+* [Noctual Shadows](https://schatten.yaapb.projektemacher.org/)
 
-## New pages
-* [Night Shadows](https://schatten.yaapb.projektemacher.org/)
-
-## New features
+## Neue Funktionen
 
 * [ChristianMahnke.de](https://christianmahnke.de/)
-  * Art articles now contain [LinkedArt](https://linked.art/) metadata
+  * Kunstartikel enthalten nun [LinkedArt](https://linked.art/)-Metadaten
+  * [SPARQL Abfragen](/post/blog-sparql/)
 
-## Miscellaneous
-* The first [book](https://christianmahnke.de/post/coat-hangers-book/) has been published.
-  * It can also be found in the ‘Shop’ [here](https://merch.projektemacher.org/print/kleiderbuegel/). 
-
-Translated with DeepL.com (free version)
+## Verschiedenes
+* Das erste [Buch](https://christianmahnke.de/post/coat-hangers-book/) ist erschienen.
+  * Es ist auch im "Shop" [hier](https://merch.projektemacher.org/print/kleiderbuegel/) erhältlich. 

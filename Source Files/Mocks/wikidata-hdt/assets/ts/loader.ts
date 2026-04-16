@@ -1,8 +1,19 @@
-import { Hdt } from "hdt/hdt.js";
-import init, * as oxigraph from "oxigraph/web.js";
+import init_hdt, { Hdt } from 'hdt/hdt.js';
+import init_oxigraph, * as oxigraph from "oxigraph/web.js";
+
+/*
+import wasm_hdt from "hdt/hdt_bg.wasm?url";
+import wasm_oxigraph from "oxigraph/web_bg.wasm?url";
 
 (async function () {
-  await init();
+  await init_hdt({ wasm: wasm_hdt });
+  await init_oxigraph({ wasm: wasm_oxigraph });
+})();
+*/
+
+(async function () {
+  await init_hdt();
+  await init_oxigraph();
 })();
 
 function parseTerm(value: string, position: "subject" | "predicate" | "object") {

@@ -18,6 +18,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137755682
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
+  date: 1989
 wikidata:
   - https://www.wikidata.org/wiki/Q137755682
   - https://www.wikidata.org/wiki/Q147934
@@ -42,8 +43,6 @@ I have found a painting by [Tadeusz Kaczmarek](https://jbc.jelenia-gora.pl/dlibr
 
 Tadeusz Kaczmarek was a Polish artist who worked as a painter, graphic artist and interior designer. He lived and worked mainly in the [Lower Silesian Voivodeship](https://en.wikipedia.org/wiki/Lower_Silesian_Voivodeship).
 
-The painting shows the beach of [Boltenhagen](https://en.wikipedia.org/wiki/Boltenhagen), Schleswig-Holstein on the Baltic Sea coast.
+The painting shows the beach of [Boltenhagen](https://en.wikipedia.org/wiki/Boltenhagen), Schleswig-Holstein on the Baltic Sea coast. It's dated 1989.
 
 There is also a [blog](https://kaczmarek-art.blogspot.com/2021/01/kaczmarek-tadeusz-1937-2006-malarstwo.html) with some of his works. A very similar painting is also listed there.
-
-Translated with www.DeepL.com/Translator (free version)

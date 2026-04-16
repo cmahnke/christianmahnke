@@ -1,6 +1,6 @@
 import { resolve, join } from "path";
 import { defineConfig } from "vite";
-import wasm from 'vite-plugin-wasm';
+//import wasm from 'vite-plugin-wasm';
 //import topLevelAwait from "vite-plugin-top-level-await";
 import eslint from "vite-plugin-eslint";
 import { viteSingleFile } from "vite-plugin-singlefile";
@@ -45,8 +45,9 @@ export default defineConfig({
     }
   },
   base: "./",
+  assetsInclude: ['**/*.wasm'],
   plugins: [
-    wasm(),
+    // wasm(),
     //topLevelAwait(),
     nodePolyfills(),
     {
@@ -67,6 +68,7 @@ export default defineConfig({
   build: {
     //target: 'esnext',
     target: "esnext",
+    assetsInlineLimit: 0,
     commonjsOptions: { transformMixedEsModules: true },
     rollupOptions: {
       input: {
@@ -79,7 +81,9 @@ export default defineConfig({
         "tag-ring": resolve(__dirname, "tag-ring/index.html"),
         wikidata: resolve(__dirname, "wikidata/index.html"),
         game: resolve(__dirname, "game/index.html"),
-        linkedart: resolve(__dirname, "linkedart/index.html")
+        linkedart: resolve(__dirname, "linkedart/index.html"),
+        "sparql-client": resolve(__dirname, "wikidata-hdt/query.html"),
+        "sparql-viz": resolve(__dirname, "wikidata-hdt/index.html")
       },
       output: {
         assetFileNames: `assets/[name].[ext]`
@@ -114,7 +118,7 @@ export default defineConfig({
     ]
   },
   optimizeDeps: {
-    exclude: ["@monogrid/gainmap-js/libultrahdr", "three", 'hdt']
+    exclude: ["@monogrid/gainmap-js/libultrahdr", "three", 'hdt', "oxigraph"]
   },
   css: {
     preprocessorOptions: {

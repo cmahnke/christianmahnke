@@ -5,9 +5,21 @@ tags:
   - Art
   - ArtBrut
   - Drawing
+  - UnknownArtist
 preview: img/image.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  owner:
+    wikidata: https://www.wikidata.org/wiki/Q137668638
+  date: 1965
+  description: "Eine Art Brut Zeichnung von 1965"
+  style: 
+    - http://vocab.getty.edu/aat/300056472
 wikidata:
-  - https://www.wikidata.org/wiki/Q1247856
+  - https://www.wikidata.org/wiki/Q44007
   - https://www.wikidata.org/wiki/Q1122756
   - https://www.wikidata.org/wiki/Q188675
 ---
@@ -26,5 +38,4 @@ Diese, ein wenig an Paul Klee erinnernde Zeichnung zeigt eine Gruppe, die auf ei
 
 Nicht nur das Motiv ist interessant, auch die Machart: Die Zeichnung ist auf einer grundierten Leinwand, and der man unten noch die Löcher für die Befestigung auf dem Rahmen sehen kann angefertigt. Da es keine Verzerrungen gibt, wurde die Zeichnung wohl direkt auf der abmontierten Leinwand angefertigt. Sie selbst ist auf einem nicht ganz rechtwinkligem Blatt fixiert, dass dann auch signiert wurde.
 
-
-Bisher habe ich noch nichts über den Künstler herausfinden können...
+Die Zeichnung ist auf 1965 datiert. Bisher habe ich noch nichts über den Künstler herausfinden können...

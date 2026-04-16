@@ -35,3 +35,5 @@ Klaus Parche was a graphic artist from Leipzig and moved to Mecklemburg-Vorpomme
 The title is a wordplay on the German words "Drohung" (Threat) and "Trojanische Pferd" (Trojan horse).
 
 The motif from 2003 refers directly to [UN Resolution 1441](https://en.wikipedia.org/wiki/United_Nations_Security_Council_Resolution_1441) and the resulting (2nd) [Iraq War](https://en.wikipedia.org/wiki/Iraq_War). The [oil derricks](https://en.wikipedia.org/wiki/Drilling_rig) on the left emphasise the slogan of the time "No blood for oil".
+
+The graphic is dated 2003.

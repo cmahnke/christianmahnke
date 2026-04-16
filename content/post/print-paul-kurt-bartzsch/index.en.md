@@ -17,6 +17,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137756185
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
+  date: 1954
 wikidata:
   - https://www.wikidata.org/wiki/Q137756185
   - https://www.wikidata.org/wiki/Q392142
@@ -37,3 +38,5 @@ I have found a woodcut by Paul-Kurt Bartzsch (1917-1994)...
 Paul Kurt Bartzsch was mainly a painter and graphic artist who was born in Dresden and worked in Wolfsburg.
 
 The name of the motif is [‘Škrlatica’](https://en.wikipedia.org/wiki/%C5%A0krlatica), a mountain in the Julian Alps, it is monogrammed in the plate with ‘PKB’ and dated 1954.
+
+A descendant of Bartzsch runs the Instagram account [@paul_kurt_bartzsch](https://www.instagram.com/paul_kurt_bartzsch/) in his memory.

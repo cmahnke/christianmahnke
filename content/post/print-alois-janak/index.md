@@ -13,6 +13,7 @@ outputs:
 linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q67313882
+  date: 1997
 wikidata:
   - https://www.wikidata.org/wiki/Q67313882
   - https://www.wikidata.org/wiki/Q213
@@ -34,4 +35,4 @@ Ich habe eine Farbradierung von [Alois Janák](https://www.alois-janak.de/) (geb
 
 Alois Janák wurde 1924 in der Tschechoslowakei geboren, studierte in PRag und floh nach dem 2. Weltkrieg nach München, 1982 zog er in deie Schweiz um.
 
-Das Bild zeigt eine "Buddelflugzeug" (also ein Flugzeug, das wie ein Buddelschiff ein eine Flasche eingesperrt ist).
+Das Bild zeigt eine "Buddelflugzeug" (also ein Flugzeug, das wie ein Buddelschiff ein eine Flasche eingesperrt ist), sie ist auf 1997 datiert.

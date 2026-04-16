@@ -20,6 +20,7 @@ outputs:
   - linkedart
 linkedart:
   title: Marmolada
+  description: "A colour woodcut of Mount Marmolada in the Dolomites"
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata:

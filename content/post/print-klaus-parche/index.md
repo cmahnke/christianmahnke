@@ -14,6 +14,7 @@ linkedart:
   title: DROHjanisches Pferd
   artist:
     wikidata: https://www.wikidata.org/wiki/Q136641660
+  date: 2003
 wikidata:
   - https://www.wikidata.org/wiki/Q136641660
   - https://www.wikidata.org/wiki/Q545449
@@ -33,3 +34,5 @@ Ich habe eine [Aquatinta](https://de.wikipedia.org/wiki/Aquatinta) (Radierung) v
 Klaus Parche war ein Grafiker aus Leipzig, 1981 zog er nach Mecklemburg-Vorpommern. Seit 2003 veröffentliche in der Zeitschrift ["Rotfuchs"](https://www.rotfuchs.net/) politische Grafiken. Nach seinem Tod widmet ihm das Haffmuseum Ueckermünde eine[Ausstellung](https://www.ueckermuende.de/portal/seiten/sonderausstellung-im-haffmuseum-900000184-34850.html) (läuft noch ein paar Tage, bis Ostern 2025).
 
 Das Motiv aus dem Jahr 2003 nimmt direkt Bezug auf die [UN-Resolution 1441](https://de.wikipedia.org/wiki/UN-Resolution_1441) und dem daraus resultierenden (2.) [Irakkrieg](https://de.wikipedia.org/wiki/Irakkrieg). Die [Ölbohrtürme](https://de.wikipedia.org/wiki/Bohrturm) auf der linken Seite verdeutlichen die damalige Parole "Kein Blut für Öl".
+
+Die Grafik ist auf 2003 datiert.

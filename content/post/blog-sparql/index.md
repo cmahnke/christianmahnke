@@ -33,6 +33,8 @@ Für die Erstellung werden die Schema.org-Daten des Blogs als Ausgangsbasis geno
 Dieser Weg ist notwendig, da die Anzahl der Entitäten, besonders seit Anfang dieses Jahres, massiv gestiegen ist: Ursprünglich wurden nur die Tags auf die jeweiligen Wikidata-Entitäten abgebildet, nun existiert jedoch ein Script, das sie semiautomatisch aus den jeweiligen Texten extrapoliiert. Dafür kommt ein Python-Skript auf Basis von SpaCy zum Einsatz.
 Aufgrund des Rate-Limits kommt es bei der Ausführung via SPARQL aus Wikidata recht schnell zu Fehlermeldungen. Andererseits resultiert das Serialisieren der Daten in einem JSON-LD-Graph in einer umfangreichen Datei.
 
+{{< client-sparql src="/meta/wikidata/enriched_entities.hdt" >}}
+
 ## Beispiele:
 
 * Blog-Posts, in denen es um Künstler geht, die im 19. Jahrhundert geboren wurden, diese Abfrage macht nochmehr, aber die Daten sind noch nicht vorhanden.

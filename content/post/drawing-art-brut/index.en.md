@@ -5,10 +5,21 @@ tags:
   - Art
   - ArtBrut
   - Drawing
+  - UnknownArtist
 preview: img/image.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
+linkedart:
+  owner:
+    wikidata: https://www.wikidata.org/wiki/Q137668638
+  date: 1965
+  description: "A Art Brut drawing from 1965"
+  style: 
+    - http://vocab.getty.edu/aat/300056472
 wikidata:
-  - https://www.wikidata.org/wiki/Q1247856
-  - https://www.wikidata.org/wiki/Q1122756
+  - https://www.wikidata.org/wiki/Q44007
   - https://www.wikidata.org/wiki/Q188675
 ---
 
@@ -26,5 +37,4 @@ This drawing, somewhat reminiscent of Paul Klee, shows a group riding on a six-l
 
 Not only the motif is interesting, but also the way it is made: the drawing is done on a primed canvas, on which you can still see the holes for mounting on the frame at the bottom. As there are no distortions, the drawing was probably made directly on the dismantled canvas. It is itself fixed on a sheet that is not quite rectangular, which was then also signed.
 
-
-So far I have not been able to find out anything about the artist...
+The drawing is dated 1965. So far I have not been able to find out anything about the artist...

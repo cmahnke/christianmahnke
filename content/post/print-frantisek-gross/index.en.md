@@ -17,6 +17,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q15735037
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
+  date: 1965
 wikidata: 
   - https://www.wikidata.org/wiki/Q15735037
   - https://www.wikidata.org/wiki/Q1550936

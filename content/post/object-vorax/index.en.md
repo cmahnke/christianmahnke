@@ -33,7 +33,6 @@ The virtual museum has an [article on the manufacturing company Bresges & Co. G.
 
 The [50s Museum Datteln](https://50erjahremuseumdatteln.de/) has also dedicated a video to the "Vielfachgerät" ("multiple appliance"):
 
-Translated with www.DeepL.com/Translator (free version)
 {{< html/iframe-consent preview="<img class='video-preview' src='video-preview.jpg' alt='Vorschau'>" >}}
     {{< youtube id="AMD8BeNsWoU" start="401" title="Vorstellung: Das VORAX- Vielfachgerät" >}}
 {{< /html/iframe-consent >}}
