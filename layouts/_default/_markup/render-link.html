@@ -1,3 +1,5 @@
+{{- $wikidataSPARQLEndpoint := "https://qlever.dev/wikidata" -}}
+
 {{- $target := .Destination -}}
 {{- $wikidataID := "" -}}
 {{- if findRE `(?m)https://(.{2})\.wikipedia.org/wiki/(.[^#]*)` $target -}}
@@ -18,7 +20,7 @@
     {{- end -}}
   {{- end -}}
 {{- else if hasPrefix $target "http" -}}
-  {{- $queryURL := "https://query.wikidata.org/sparql" -}}
+  {{- $queryURL := $wikidataSPARQLEndpoint -}}
   {{- $queryOpts := dict
     "method" "get"
     "headers" (dict "Accept" "application/sparql-results+json")
