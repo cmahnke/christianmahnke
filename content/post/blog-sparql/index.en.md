@@ -1,5 +1,5 @@
 ---
-date: 2026-04-15T10:39:44+02:00
+date: 2026-04-18T22:39:44+02:00
 title: "Querying blog metadata via SPARQL"
 tags:
   - Wikidata

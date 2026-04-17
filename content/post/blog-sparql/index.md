@@ -1,5 +1,5 @@
 ---
-date: 2026-04-15T10:39:44+02:00
+date: 2026-04-18T22:39:44+02:00
 title: "Blog Metadaten über SPARQL abfragen"
 tags:
   - Wikidata
@@ -126,4 +126,6 @@ WHERE {
 }
 ```
 
+# Potential issues
 
+During implementation, I noticed a few minor issues with Chrome: after reloading the page several times, memory errors occurred – presumably the browser is not clearing a tab’s memory properly or is caching more than necessary. In this case, an error message (e.g. `memory access out of bounds`) appears in the status bar and the browser needs to be restarted.
