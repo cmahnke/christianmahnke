@@ -12,6 +12,7 @@
     "record": "playwright test",
     "clean": "rimraf dist/*",
     "shortcodes": "npm run sparql-client && npm run graph-viz",
+    "shortcode-base": "npx rollup -c rollup.config.mjs && cp wikidata-hdt/dist/*.wasm ../../static/", 
     "sparql-client": "npx rollup -c rollup.config.mjs && cp wikidata-hdt/dist/client-sparql.js ../../assets/js/shortcodes/ && cp wikidata-hdt/dist/client-sparql.scss ../../assets/scss/shortcodes/",
     "graph-viz": "npx rollup -c rollup.config.mjs && cp wikidata-hdt/dist/graph-viz.js ../../assets/js/shortcodes/ && cp wikidata-hdt/dist/graph-viz.scss ../../assets/scss/shortcodes/"
   },
@@ -68,6 +69,7 @@
     "@types/rdfjs__data-model": "^2.0.9",
     "@types/rdfjs__dataset": "^2.0.7",
     "@types/three": "^0.183.1",
+    "@web/rollup-plugin-import-meta-assets": "^2.3.3",
     "eslint": "^10.2.0",
     "eslint-plugin-markdownlint": "^0.9.0",
     "globals": "^17.5.0",

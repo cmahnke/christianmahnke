@@ -79,3 +79,4 @@ openbiblio.social.*
 content/mastodon/*.json
 assets/mastodon
 .vivliostyle
+static/*.wasm

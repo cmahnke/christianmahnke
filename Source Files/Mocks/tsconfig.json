@@ -12,7 +12,7 @@
     "esModuleInterop": true,
     "strict": false,
     "allowJs": true,
-    "typeRoots": ["./webgpu/assets/ts/@types", "./pong/assets/ts/@types"],
+    "typeRoots": ["./webgpu/assets/ts/@types", "./pong/assets/ts/@types", "./assets/ts/@types"],
     "target": "es2022",
     "skipLibCheck": true,
     "lib": ["dom", "es2022"]
