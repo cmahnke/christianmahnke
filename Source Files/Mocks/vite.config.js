@@ -79,7 +79,6 @@ export default defineConfig({
         //search: resolve(__dirname, "search/index.html"),
         "tag-timeline": resolve(__dirname, "tag-timeline/index.html"),
         "tag-ring": resolve(__dirname, "tag-ring/index.html"),
-        wikidata: resolve(__dirname, "wikidata/index.html"),
         game: resolve(__dirname, "game/index.html"),
         linkedart: resolve(__dirname, "linkedart/index.html"),
         "sparql-client": resolve(__dirname, "wikidata-hdt/query.html"),

@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import cytoscape from 'cytoscape';
-import cytoscapeSvg from 'cytoscape-svg';
+import { cytoscapeSvg } from 'cytoscape-svg';
 import type { Store } from 'oxigraph';
 import { isWikidataUri, extractQid, fetchWikidataLabels, fetchWikidataDetails } from '../wikidata';
 import { loadHdtFromUrl } from '../loader';

@@ -17,7 +17,7 @@
     {{- partial "html/head/style.html" (dict "context" . "css" "css/style.css") -}}
     {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
     {{- partial "html/head/page-scripts.html" . -}}
-    
+
     {{- partial "html/head/preload.html" . -}}
 
     <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_32 | default "/images/favicon-32.png" | absURL }}" sizes="32x32">
@@ -33,7 +33,7 @@
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
     <link rel="canonical" href="{{ .Permalink }}">
-    {{- partial "data/schema.org.html" . -}}
+    {{- partial "metadata/schema.org/schema.org.html" . -}}
 
     {{- if .OutputFormats.Get "linkedart" -}}
       <link rel="describedby" href="{{ (.OutputFormats.Get "linkedart").RelPermalink }}" type="application/ld+json;profile='https://linked.art/ns/v1/linked-art.json'"/>

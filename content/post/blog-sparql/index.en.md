@@ -1,7 +1,6 @@
 ---
 date: 2026-04-15T10:39:44+02:00
 title: "Querying blog metadata via SPARQL"
-draft: true
 tags:
   - Wikidata
   - LOD
@@ -126,4 +125,6 @@ WHERE {
 }
 ```
 
+## Potentielle Probleme
 
+Während der Umsetzung sind mir mit Chrome ein paar kleine Probleme aufgefallen: Nach mehrmaligem Neuladen der Seite traten Speicherfehler auf – vermutlich räumt der Browser den Arbeitsspeicher eines Tabs nicht richtig auf bzw. cacht mehr als notwendig. In diesem Fall erscheint eine Fehlermeldung (z.B. `memory access out of bounds`) in der Statusleiste und der Browser muss neu gestartet werden.

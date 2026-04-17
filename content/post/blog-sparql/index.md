@@ -1,7 +1,6 @@
 ---
 date: 2026-04-15T10:39:44+02:00
 title: "Blog Metadaten über SPARQL abfragen"
-draft: true
 tags:
   - Wikidata
   - LOD
