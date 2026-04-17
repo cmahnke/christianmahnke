@@ -4,6 +4,8 @@ import type { Store } from 'oxigraph';
 import { isWikidataUri, extractQid, fetchWikidataLabels, fetchWikidataDetails } from '../wikidata';
 import { loadHdtFromUrl } from '../loader';
 
+import "../../scss/viz/viz.scss";
+
 // --- Layout constants ---
 
 const NODE_REPULSION_BASE = 8000;

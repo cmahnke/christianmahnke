@@ -2,9 +2,9 @@ import { css } from 'lit';
 
 export const componentStyles = css`
   :host {
-    --sparql-font-family: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
-    --sparql-font-size: 0.9rem;
-    --sparql-line-height: 1.65;
+    --sparql-font-family: inherit;
+    --sparql-font-size: 1rem;
+    --sparql-line-height: 1.2;
 
     --sparql-bg: #fff;
     --sparql-color: #222;
@@ -38,6 +38,11 @@ export const componentStyles = css`
 
     --sparql-padding: 0;
     --sparql-section-gap: 1px solid var(--sparql-border-color);
+
+    --actions-hint-display: block;
+    --actions-fontsize: 0.78rem;
+
+    --result-font-size: 0.85rem;
 
     display: block;
     font-family: var(--sparql-font-family);
@@ -219,13 +224,14 @@ export const componentStyles = css`
     padding: 7px 20px;
     background: var(--sparql-accent);
     color: var(--sparql-accent-text);
-    border: 1px solid var(--sparql-accent);
-    border-radius: 2px;
     font-family: var(--sparql-font-family);
-    font-size: 0.8rem;
+    font-size: var(--actions-fontsize);
     letter-spacing: 0.03em;
     cursor: pointer;
     transition: background 0.15s;
+    vertical-align: middle;
+    border-radius: .2rem;
+    border: 0;
   }
 
   .btn-primary:hover:not(:disabled) {
@@ -241,12 +247,13 @@ export const componentStyles = css`
     padding: 7px 14px;
     background: none;
     color: var(--sparql-accent);
-    border: 1px solid var(--sparql-border-color);
-    border-radius: 2px;
     font-family: var(--sparql-font-family);
-    font-size: 0.78rem;
+    font-size: var(--actions-fontsize);
     cursor: pointer;
     transition: border-color 0.15s;
+    vertical-align: middle;
+    border-radius: .2rem;
+    border: 0;
   }
 
   .btn-secondary:hover:not(:disabled) {
@@ -295,12 +302,17 @@ export const componentStyles = css`
     gap: 12px;
     padding: 12px 0;
     border-bottom: var(--sparql-section-gap);
+    font-size: var(--actions-fontsize);
   }
 
   .hint {
     font-size: 0.72rem;
     color: var(--sparql-color-muted);
     letter-spacing: 0.02em;
+  }
+
+  .actions .hint {
+    display: var(--actions-hint-display);
   }
 
   .status {
@@ -330,7 +342,7 @@ export const componentStyles = css`
 
   .placeholder-text {
     color: var(--sparql-color-muted);
-    font-size: 0.85rem;
+    font-size: var(--result-font-size, 0.85rem);
     font-style: italic;
     padding: 20px 0;
   }
@@ -352,7 +364,6 @@ export const componentStyles = css`
     text-align: left;
     padding: var(--sparql-table-cell-padding);
     font-weight: 400;
-    font-size: 0.76rem;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--sparql-table-header-color);
@@ -364,7 +375,6 @@ export const componentStyles = css`
   tbody td {
     padding: var(--sparql-table-cell-padding);
     border-bottom: 1px solid var(--sparql-table-border);
-    font-size: 0.84rem;
     max-width: 420px;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -2,6 +2,8 @@ import { LitElement, html, nothing, PropertyValues, TemplateResult } from 'lit';
 import { loadHdtFromUrl } from '../loader.js';
 import { componentStyles } from './styles.js';
 
+import "../../scss/sparql/sparql.scss";
+
 // =====================
 // TYPES
 // =====================
