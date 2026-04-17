@@ -73,7 +73,7 @@ export const componentStyles = css`
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    padding: 16px 0;
+    padding: 1em 0;
     border-bottom: var(--sparql-section-gap);
   }
 
@@ -81,7 +81,6 @@ export const componentStyles = css`
     margin: 0;
     font-size: 1rem;
     font-weight: 400;
-    letter-spacing: 0.02em;
     text-transform: uppercase;
     color: var(--sparql-color-muted);
   }
@@ -89,13 +88,12 @@ export const componentStyles = css`
   .header-meta {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: .5em;
   }
 
   .meta-badge {
     font-size: 0.72rem;
     color: var(--sparql-color-muted);
-    letter-spacing: 0.03em;
   }
 
   .meta-badge.locked::before {
@@ -109,15 +107,14 @@ export const componentStyles = css`
   .source-notice {
     display: flex;
     align-items: baseline;
-    gap: 8px;
-    padding: 10px 0;
+    gap: .5em;
+    padding: .625em 0;
     border-bottom: var(--sparql-section-gap);
     font-size: 0.78rem;
   }
 
   .source-label {
     text-transform: uppercase;
-    letter-spacing: 0.05em;
     color: var(--sparql-color-muted);
     flex-shrink: 0;
   }
@@ -143,12 +140,12 @@ export const componentStyles = css`
   .tab-bar {
     display: flex;
     gap: 0;
-    margin-bottom: 12px;
+    margin-bottom: .6em;
     border-bottom: 1px solid var(--sparql-border-color);
   }
 
   .tab-bar button {
-    padding: 6px 16px;
+    padding: .4em 1em;
     border: none;
     border-bottom: 2px solid transparent;
     background: none;
@@ -156,8 +153,6 @@ export const componentStyles = css`
     font-family: var(--sparql-font-family);
     font-size: 0.78rem;
     color: var(--sparql-color-muted);
-    letter-spacing: 0.02em;
-    transition: color 0.15s, border-color 0.15s;
   }
 
   .tab-bar button:hover {
@@ -221,17 +216,17 @@ export const componentStyles = css`
      BUTTONS
      ======================================== */
   .btn-primary {
-    padding: 7px 20px;
+    padding: .45em .6em .6em .6em;
     background: var(--sparql-accent);
     color: var(--sparql-accent-text);
     font-family: var(--sparql-font-family);
     font-size: var(--actions-fontsize);
-    letter-spacing: 0.03em;
     cursor: pointer;
-    transition: background 0.15s;
     vertical-align: middle;
     border-radius: .2rem;
     border: 0;
+    font-size: 100%;
+    line-height: 1.15;
   }
 
   .btn-primary:hover:not(:disabled) {
@@ -244,16 +239,17 @@ export const componentStyles = css`
   }
 
   .btn-secondary {
-    padding: 7px 14px;
+    padding: .45em .6em .6em .6em;
     background: none;
     color: var(--sparql-accent);
     font-family: var(--sparql-font-family);
     font-size: var(--actions-fontsize);
     cursor: pointer;
-    transition: border-color 0.15s;
     vertical-align: middle;
     border-radius: .2rem;
     border: 0;
+    font-size: 100%;
+    line-height: 1.15;
   }
 
   .btn-secondary:hover:not(:disabled) {
@@ -288,6 +284,10 @@ export const componentStyles = css`
     tab-size: 2;
   }
 
+  textarea.query-editor:disabled {
+    opacity: 0.4;
+  }
+
   textarea.query-editor:focus {
     outline: none;
     border-color: var(--sparql-accent);
@@ -299,16 +299,14 @@ export const componentStyles = css`
   .actions {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 0;
+    gap: .6em;
+    padding: .6em 0;
     border-bottom: var(--sparql-section-gap);
-    font-size: var(--actions-fontsize);
   }
 
   .hint {
     font-size: 0.72rem;
     color: var(--sparql-color-muted);
-    letter-spacing: 0.02em;
   }
 
   .actions .hint {
@@ -317,8 +315,7 @@ export const componentStyles = css`
 
   .status {
     margin-left: auto;
-    font-size: 0.76rem;
-    letter-spacing: 0.01em;
+    font-size: 1rem;
   }
 
   .status.success {
@@ -337,14 +334,14 @@ export const componentStyles = css`
      RESULTS
      ======================================== */
   .results-section {
-    padding: 14px 0;
+    padding: .8em 0;
   }
 
   .placeholder-text {
     color: var(--sparql-color-muted);
     font-size: var(--result-font-size, 0.85rem);
     font-style: italic;
-    padding: 20px 0;
+    padding: 1.2em 0;
   }
 
   /* ========================================
@@ -364,8 +361,6 @@ export const componentStyles = css`
     text-align: left;
     padding: var(--sparql-table-cell-padding);
     font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
     color: var(--sparql-table-header-color);
     border-bottom: 2px solid var(--sparql-table-border);
     background: var(--sparql-table-header-bg);
@@ -415,7 +410,7 @@ export const componentStyles = css`
 
   .lang {
     color: var(--sparql-color-muted);
-    font-size: 0.74rem;
+    font-size: 1rem;
     margin-left: 2px;
   }
 
@@ -434,10 +429,9 @@ export const componentStyles = css`
      BOOLEAN
      ======================================== */
   .boolean-result {
-    padding: 16px 0;
+    padding: 1em 0;
     font-family: var(--sparql-editor-font);
     font-size: 1rem;
-    letter-spacing: 0.05em;
   }
 
   .boolean-result.is-true {
@@ -453,7 +447,7 @@ export const componentStyles = css`
      ======================================== */
   pre.graph-result {
     margin: 0;
-    padding: 12px;
+    padding: .8em;
     background: var(--sparql-editor-bg);
     border: 1px solid var(--sparql-editor-border);
     border-radius: 2px;
@@ -474,7 +468,7 @@ export const componentStyles = css`
     background: var(--sparql-error-bg);
     border: 1px solid var(--sparql-error-border);
     border-radius: 2px;
-    padding: 12px;
+    padding: .8em;
   }
 
   .error-box pre {
@@ -493,7 +487,7 @@ export const componentStyles = css`
   .loading {
     display: flex;
     justify-content: center;
-    padding: 24px 0;
+    padding: 1.5em 0;
   }
 
   @keyframes sparql-spin {
@@ -501,8 +495,8 @@ export const componentStyles = css`
   }
 
   .spinner {
-    width: 18px;
-    height: 18px;
+    width: 1.25em;
+    height: 1.25em;
     border: 1.5px solid var(--sparql-border-color);
     border-top-color: var(--sparql-accent);
     border-radius: 50%;

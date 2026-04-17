@@ -2,18 +2,14 @@
 
 
 oxigraph-sparql {
+  --sparql-font-family: "Josefin Sans", Futura, sans-serif;
   --sparql-section-gap: 0;
   --actions-hint-display: none;
-  --sparql-editor-font-size: 1em;
+  --sparql-editor-font-size: 1rem;
   --sparql-font-size: 1.2em;
   --sparql-editor-min-height: 16em;
-  --actions-fontsize: 1.2em;
+  --actions-font-size: 1.2rem;
   --result-font-size: 1rem;
   --sparql-accent-text: #fff;
   --sparql-accent: linear-gradient(100deg, #b2444d, #701611);
-}
-
-
-p{
-  font-size: 1.2em;
 }

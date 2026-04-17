@@ -16,6 +16,8 @@ wikidata:
 
 Since the start of 2025, I have been recording additional metadata for the posts on this blog.
 <!--more-->
+The suggestion came from [Frank Reichert](https://www.vermessungs-bibliothek.de/) via Mastodon as a comment on the post [Archives: Fostering collection development through citizen participation](/en/post/archives-citizen-participation/).
+
 To this end, at the start of the year I added further [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD)-based metadata formats such as [Codemeta](https://codemeta.github.io/) and [Linked Art](https://linked.art/) for some posts and improved the [Schema.org] (https://schema.org/).
 
 {{< details summary="Source data" >}}

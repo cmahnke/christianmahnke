@@ -135,5 +135,5 @@ jobs:
 
   lod-data:
     needs: deploy
-    uses: ./.github/workflows/deploy-hdt.yml
+    uses: ./.github/workflows/wikidata-hdt.yml
     secrets: inherit

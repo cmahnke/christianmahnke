@@ -16,6 +16,8 @@ wikidata:
 
 Seit Anfang 2025 erfasse ich zusätzliche Metadaten für die Beiträge in diesem Blog.
 <!--more-->
+Die Anregung dazu kam von [Frank Reichert](https://www.vermessungs-bibliothek.de/) via Mastodon als Kommentar zu dem Beitrag [Archive: Bestandsaufbau durch Bürgerbeteiligung fördern](/post/archives-citizen-participation/).
+
 Dazu habe ich zu Beginn des Jahres weitere [JSON-LD](https://de.wikipedia.org/wiki/JSON-LD)-basierte Metadatenformate wie [Codemeta](https://codemeta.github.io/) und [Linked Art](https://linked.art/) für einige Beiträge hinzugefügt und die [Schema.org](https://schema.org/) verbessert.
 
 {{< details summary="Ausgangsdaten" >}}
@@ -24,7 +26,6 @@ Für die Erfassung der notwendigen Triplets wird nur diese Schema.org [Ausgangsd
 * **Linked Art**, siehe [Linked Art Metadaten](/post/linkedart-metadata/)
 * **CodeMeta**, siehe [Metadaten für Software](/post/software-metadata/)
 {{< /details >}}
-
 
 Auch wenn es weiterhin keine "tollen" Anwendungen gibt, können nun über diese Daten [SPARQL](https://de.wikipedia.org/wiki/SPARQL)-Abfragen ausgeführt werden. Damit es nicht langweilig wird, sind dabei einige Daten aus Wikidata Teil des Corpus.
 

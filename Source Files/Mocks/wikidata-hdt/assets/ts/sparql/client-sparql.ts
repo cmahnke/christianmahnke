@@ -670,6 +670,7 @@ export class OxigraphSparql extends LitElement {
           spellcheck="false"
           autocomplete="off"
           autocapitalize="off"
+          ?disabled=${!this._oxigraphReady || this._loadingData}
         ></textarea>
       </div>
     `;
