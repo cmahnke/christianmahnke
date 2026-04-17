@@ -49,7 +49,7 @@ export default defineConfig({
   plugins: [
     // wasm(),
     //topLevelAwait(),
-    nodePolyfills(),
+    //nodePolyfills(),
     {
       apply: "build"
     },

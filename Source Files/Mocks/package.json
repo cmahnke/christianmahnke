@@ -10,7 +10,10 @@
     "format": "prettier . --check",
     "tsc": "tsc",
     "record": "playwright test",
-    "clean": "rimraf dist/*"
+    "clean": "rimraf dist/*",
+    "shortcodes": "npm run sparql-client && npm run graph-viz",
+    "sparql-client": "npx rollup -c rollup.config.mjs && cp wikidata-hdt/dist/client-sparql.js ../../assets/js/shortcodes/ && cp wikidata-hdt/dist/client-sparql.scss ../../assets/scss/shortcodes/",
+    "graph-viz": "npx rollup -c rollup.config.mjs && cp wikidata-hdt/dist/graph-viz.js ../../assets/js/shortcodes/ && cp wikidata-hdt/dist/graph-viz.scss ../../assets/scss/shortcodes/"
   },
   "engines": {
     "node": ">=20",
@@ -69,6 +72,7 @@
     "eslint-plugin-markdownlint": "^0.9.0",
     "globals": "^17.5.0",
     "gltf-pipeline": "^4.3.1",
+    "knip": "^6.4.1",
     "mime-types": "2.1.35",
     "node-gyp": "^12.2.0",
     "obj2gltf": "^3.2.0",

@@ -1,5 +1,4 @@
 import nodeResolve from '@rollup/plugin-node-resolve';
-//import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import wasm from '@rollup/plugin-wasm';
 import scss from 'rollup-plugin-scss';
@@ -19,13 +18,14 @@ const configs = [
         include: ['**/hdt_bg.wasm', '**/web_bg.wasm'],
         fileName: '[name][extname]',
         publicPath: './',
-        maxFileSize: 10000000
+        maxFileSize: 0
       }),
       nodeResolve({
         browser: true,
         preferBuiltins: false,
         extensions: ['.ts', '.js', '.wasm']
       }),
+      
       scss({ fileName: 'client-sparql.scss' }),
       //commonjs(),
       typescript({
@@ -51,13 +51,14 @@ const configs = [
         include: ['**/hdt_bg.wasm', '**/web_bg.wasm'],
         fileName: '[name][extname]',
         publicPath: './',
-        maxFileSize: 10000000
+        maxFileSize: 0
       }),
       nodeResolve({
         browser: true,
         preferBuiltins: false,
         extensions: ['.ts', '.js', '.wasm']
       }),
+      
       scss({ fileName: 'graph-viz.scss' }),
       //commonjs(),
       typescript({
