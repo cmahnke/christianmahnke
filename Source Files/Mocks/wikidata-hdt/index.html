@@ -15,21 +15,9 @@
         font-family: system-ui;
       }
     </style>
-    <!--
-    <link rel="stylesheet" href="./assets/scss/viz/viz.scss" />
-    -->
   </head>
   <body>
     <h1>HDT Test</h1>
-    <!--
-    <div id="controls">
-      <textarea id="sparql-input" rows="3">SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 200</textarea>
-      <button id="sparql-run" disabled>Ausführen</button>
-    </div>
-    <div id="status" class="status loading">Loading...</div>
-    <div id="graph"></div>
-    <script type="module" src="./assets/ts/main.ts"></script>
-  -->
     <div id="controls">
       <textarea id="sparql-input"></textarea>
       <button id="sparql-run" disabled>Query ausführen</button>
@@ -37,6 +25,7 @@
     <div id="status">Lade…</div>
 
     <rdf-graph
+    export-svg
     src="/meta/wikidata/enriched_entities.hdt"
     languages="mul,de,en"
     node-scaling="log"

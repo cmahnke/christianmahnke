@@ -1,10 +1,14 @@
 import { LitElement, html, css } from 'lit';
 import cytoscape from 'cytoscape';
+import cytoscapeSvg from 'cytoscape-svg';
 import type { Store } from 'oxigraph';
 import { isWikidataUri, extractQid, fetchWikidataLabels, fetchWikidataDetails } from '../wikidata';
 import { loadHdtFromUrl } from '../loader';
 
 import "../../scss/viz/viz.scss";
+
+// Register the cytoscape-svg plugin once
+cytoscape.use(cytoscapeSvg);
 
 // --- Layout constants ---
 
@@ -13,8 +17,6 @@ const IDEAL_EDGE_LENGTH_BASE = 150;
 const EDGE_ELASTICITY = 100;
 const GRAVITY = 0.1;
 const FIT_PADDING = 50;
-const EXPAND_EDGE_LENGTH = 150;
-const EXPAND_REPULSION = 8000;
 
 const OVERLAP_PADDING = 14;
 const OVERLAP_ITERATIONS = 100;
@@ -434,17 +436,10 @@ function removeOverlaps(cy: cytoscape.Core): void {
   cy.fit(undefined, FIT_PADDING);
 }
 
-// --- Sizing-aware layout helpers ---
-
-/**
- * Build a lookup from node-id → nodeSize so the layout functions
- * can adapt repulsion and edge length to the actual visual size of each node.
- */
 function buildNodeSizeMap(elements: cytoscape.ElementDefinition[]): Map<string, number> {
   const map = new Map<string, number>();
   for (const el of elements) {
     if (el.data?.id && !el.data?.source) {
-      // It's a node element (edges have 'source')
       const size = typeof el.data.nodeSize === 'number' ? el.data.nodeSize : NODE_BASE_SIZE;
       map.set(el.data.id, size);
     }
@@ -452,29 +447,18 @@ function buildNodeSizeMap(elements: cytoscape.ElementDefinition[]): Map<string, 
   return map;
 }
 
-/**
- * Compute per-node repulsion that scales with the node's visual area.
- * Larger nodes push neighbours further away.
- */
 function nodeRepulsionFn(sizeMap: Map<string, number>): (node: any) => number {
   return (node: any) => {
     const size = sizeMap.get(node.data('id')) ?? NODE_BASE_SIZE;
-    // Scale repulsion quadratically with size ratio so large hubs get much more space
     const ratio = size / NODE_BASE_SIZE;
     return NODE_REPULSION_BASE * ratio * ratio;
   };
 }
 
-/**
- * Compute per-edge ideal length that accounts for the sizes of both endpoints.
- * The edge should be long enough so that the gap between the node borders
- * equals IDEAL_EDGE_LENGTH_BASE.
- */
 function idealEdgeLengthFn(sizeMap: Map<string, number>): (edge: any) => number {
   return (edge: any) => {
     const srcSize = sizeMap.get(edge.data('source')) ?? NODE_BASE_SIZE;
     const tgtSize = sizeMap.get(edge.data('target')) ?? NODE_BASE_SIZE;
-    // Half of each node's size = their radii; add desired gap
     return (srcSize + tgtSize) / 2 + IDEAL_EDGE_LENGTH_BASE;
   };
 }
@@ -514,6 +498,40 @@ export class RdfGraph extends LitElement {
       margin-right: 0.5em; vertical-align: middle;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
+
+    #export-btn {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      z-index: 150;
+      display: flex;
+      align-items: center;
+      gap: 0.35em;
+      padding: 0.4em 0.75em;
+      background: #16213e;
+      color: #e0e0e0;
+      border: 1px solid #444;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-family: monospace;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+      user-select: none;
+    }
+    #export-btn:hover {
+      background: #1a2d52;
+      border-color: #53d8fb;
+      color: #53d8fb;
+    }
+    #export-btn:active {
+      background: #0f3460;
+    }
+    #export-btn svg {
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
   `;
 
   static override properties = {
@@ -543,6 +561,11 @@ export class RdfGraph extends LitElement {
         toAttribute(value: WikidataMode): string { return value; }
       }
     },
+    exportSvg: {
+      type: Boolean,
+      attribute: 'export-svg',
+      reflect: true,
+    },
   };
 
   src: string = '';
@@ -550,6 +573,7 @@ export class RdfGraph extends LitElement {
   languages: string[] = ['de', 'en'];
   nodeScaling: NodeScaling = 'off';
   wikidata: WikidataMode = 'off';
+  exportSvg: boolean = false;
 
   private _nodeInfo: NodeInfoData | null = null;
   private _loadingState: LoadingState = { status: 'idle' };
@@ -642,11 +666,6 @@ export class RdfGraph extends LitElement {
     this.requestUpdate();
   }
 
-  /**
-   * Build layout options with size-aware repulsion and edge lengths.
-   * The sizeMap is used to scale spacing proportional to each node's
-   * visual diameter, so large hubs don't overlap their neighbours.
-   */
   private _layoutOptions(sizeMap?: Map<string, number>): any {
     const container = this.renderRoot.querySelector('#cy-container') as HTMLDivElement | null;
     const w = container?.clientWidth ?? 800;
@@ -723,7 +742,6 @@ export class RdfGraph extends LitElement {
       );
       if (this._workVersion !== version) return;
 
-      // Build the size lookup from elements so layout knows each node's diameter
       const sizeMap = buildNodeSizeMap(elements);
 
       if (!this._cy) {
@@ -864,7 +882,6 @@ export class RdfGraph extends LitElement {
         if (newElements.length > 0) {
           this._cy.add(newElements);
 
-          // Build size map for the local re-layout from live node data
           const neighborhood = node.neighborhood().add(node);
           const localSizeMap = new Map<string, number>();
           neighborhood.nodes().forEach((n: cytoscape.NodeSingular) => {
@@ -899,15 +916,70 @@ export class RdfGraph extends LitElement {
     }
   }
 
+  // ── Public SVG export API ──────────────────────────────────────────
+
+  exportAsSvg(): void {
+    if (!this._cy) return;
+
+    // cytoscape-svg adds the svgExporter method to the cy instance
+    const svgContent = (this._cy as any).svg({
+      full: true,
+      scale: 1
+    });
+
+    const blob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+
+    const baseName = this.src
+      ? this.src.split('/').pop()?.replace(/\.[^.]+$/, '') ?? 'graph'
+      : 'graph';
+
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = `${baseName}.svg`;
+    anchor.click();
+
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+
+    this.dispatchEvent(new CustomEvent('svg-exported', {
+      detail: { filename: anchor.download }, bubbles: true, composed: true
+    }));
+  }
+
+  // ── Accessors ─────────────────────────────────────────────────────
+
   getCy(): cytoscape.Core | null { return this._cy; }
   getStore(): Store | null { return this._store; }
   get quadCount(): number { return this._store?.size ?? 0; }
 
+  // ── Rendering ─────────────────────────────────────────────────────
+
   protected override render() {
+    const showExport =
+      this.exportSvg &&
+      this._loadingState.status === 'ready' &&
+      this._cy !== null;
+
     return html`
       <div id="cy-container"></div>
       ${this._renderOverlay()}
+      ${showExport ? this._renderExportButton() : null}
       ${this._nodeInfo ? html`<div id="node-info">${this._formatNodeInfo(this._nodeInfo)}</div>` : null}
+    `;
+  }
+
+  private _renderExportButton() {
+    return html`
+      <button
+        id="export-btn"
+        title="Graph als SVG exportieren"
+        @click=${() => this.exportAsSvg()}
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4h14v-2H5v2z"/>
+        </svg>
+        SVG
+      </button>
     `;
   }
 
