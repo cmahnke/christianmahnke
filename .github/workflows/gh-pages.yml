@@ -125,3 +125,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
           force_orphan: true
+
+  lod-data:
+    needs: deploy
+    uses: ./.github/workflows/deploy-hdt.yml
+    secrets: inherit

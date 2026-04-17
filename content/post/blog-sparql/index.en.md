@@ -105,7 +105,7 @@ WHERE {
 ```sparql
 PREFIX schema: <http://schema.org/>
 PREFIX aat: <http://vocab.getty.edu/aat/>
-PREFIX cidoc: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?article ?object ?technique ?techniqueLabel
@@ -113,10 +113,10 @@ WHERE {
   ?article a schema:BlogPosting ; 
            schema:about ?object .
 
-  ?object a cidoc:E22_Human-Made_Object ;
-          cidoc:P108i_was_produced_by ?production .
+  ?object a crm:E22_Human-Made_Object ;
+          crm:P108i_was_produced_by ?production .
 
-  ?production cidoc:P32_used_general_technique ?technique .
+  ?production crm:P32_used_general_technique ?technique .
 
   VALUES ?technique { aat:300041405 }
 
