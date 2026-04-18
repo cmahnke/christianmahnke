@@ -11,15 +11,17 @@ wikidata:
   - https://www.wikidata.org/wiki/Q115232190
 ---
 
-Nachdem ich letztents ein [Archiv meiner Mastodon Posts](/post/github-action-mastodon-backup/) erstellt habe...
+Having recently created an [archive of my Mastodon posts](/post/github-action-mastodon-backup/)...
 
 <!--more-->
 
-...sind diese nun auch Teil dieser Website. Das Archiv ist bisher noch nicht im Menü verkinkt, es ist unter [`/mastodon`](/mastodon) erreichbar.
+...these are now also part of this website. The archive isn’t yet linked in the menu; it can be accessed at [`/mastodon`](/mastodon).
 
-## Umsetzung
+## Implementation
 
-Die Umsetzung ist als [Hugo Content Adapter](https://gohugo.io/content-management/content-adapters/) recht einfach realisiert. Dieser liest das im letzten Vorgänger-Post erstellte Archiv (als JSON) ein und erstellt daraus Repräsentationen im Hugo-internen Seitenformat. Dazu muss im Hugo `content` Verzeichnis ein leeres Unterverzeichnis mit einer Datei namens `_content.gotmpl` angelegt werden. Das Beispiel nimmt dafür den Namen `mastodon/_content.gotmpl` an.
+The implementation is quite straightforward using a [Hugo Content Adapter](https://gohugo.io/content-management/content-adapters/). This reads the archive created in the previous post (as JSON) and generates representations in Hugo’s internal page format. To do this, an empty subdirectory with a file named `_content.gotmpl` must be created in the Hugo `content` directory. The example uses the name `mastodon/_content.gotmpl` for this.
+
+At the start of the file, you simply need to specify the source file (`$mastodonFile`) and the folder where the media is stored (`$mastodonMediaPath`).
 
 ```gotemplate
 {{- $mastodonFile := "mastodon/mastodon-archive.json" -}}

@@ -21,6 +21,8 @@ Nachdem ich letztents ein [Archiv meiner Mastodon Posts](/post/github-action-mas
 
 Die Umsetzung ist als [Hugo Content Adapter](https://gohugo.io/content-management/content-adapters/) recht einfach realisiert. Dieser liest das im letzten Vorgänger-Post erstellte Archiv (als JSON) ein und erstellt daraus Repräsentationen im Hugo-internen Seitenformat. Dazu muss im Hugo `content` Verzeichnis ein leeres Unterverzeichnis mit einer Datei namens `_content.gotmpl` angelegt werden. Das Beispiel nimmt dafür den Namen `mastodon/_content.gotmpl` an.
 
+Am Anfang der Datei müssen lediglich die Quellldatei (`$mastodonFile`) und der Ordner, in dem die Medien abgelegt sind (`$mastodonMediaPath`), angegeben werden.
+
 ```gotemplate
 {{- $mastodonFile := "mastodon/mastodon-archive.json" -}}
 {{- $mastodonMediaPath := "mastodon/media/" -}}
