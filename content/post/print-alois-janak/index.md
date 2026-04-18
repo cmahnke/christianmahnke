@@ -33,6 +33,6 @@ Ich habe eine Farbradierung von [Alois Janák](https://www.alois-janak.de/) (geb
 ]
 {{</ gallery >}}
 
-Alois Janák wurde 1924 in der Tschechoslowakei geboren, studierte in PRag und floh nach dem 2. Weltkrieg nach München, 1982 zog er in deie Schweiz um.
+Alois Janák wurde 1924 in der Tschechoslowakei geboren, studierte in Prag und floh nach dem 2. Weltkrieg nach München, 1982 zog er in die Schweiz um.
 
 Das Bild zeigt eine "Buddelflugzeug" (also ein Flugzeug, das wie ein Buddelschiff ein eine Flasche eingesperrt ist), sie ist auf 1997 datiert.
