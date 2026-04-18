@@ -144,4 +144,4 @@ During implementation, I noticed a few minor issues with Chrome: after reloading
 
 The HDT file created in the first step is loaded using the [WASM](https://en.wikipedia.org/wiki/WebAssembly) variant of the [Rust](https://en.wikipedia.org/wiki/Rust_(programming_language)) library [HDT](https://github.com/KonradHoeffner/hdt). The contents are then converted in memory so that they can be used in [OxiGraph](https://github.com/oxigraph/oxigraph) (also compiled from Rust to Wasm). Strictly speaking, OxiGraph is not actually necessary at this stage, as HDT can also execute SPARQL queries. However, OxiGraph has the advantage of being able to execute distributed SPARQL queries as well.
 
-Translated with DeepL.com (free version)
+**The entire application therefore runs directly in the browser, without any dynamic server components.**
