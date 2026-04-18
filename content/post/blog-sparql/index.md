@@ -1,5 +1,5 @@
 ---
-date: 2026-04-18T22:39:44+02:00
+date: 2026-04-17T22:39:44+02:00
 title: "Blog Metadaten über SPARQL abfragen"
 tags:
   - Wikidata
@@ -33,9 +33,11 @@ Für die Erstellung werden die Schema.org-Daten des Blogs als Ausgangsbasis geno
 Dieser Weg ist notwendig, da die Anzahl der Entitäten, besonders seit Anfang dieses Jahres, massiv gestiegen ist: Ursprünglich wurden nur die Tags auf die jeweiligen Wikidata-Entitäten abgebildet, nun existiert jedoch ein Script, das sie semiautomatisch aus den jeweiligen Texten extrapoliiert. Dafür kommt ein Python-Skript auf Basis von SpaCy zum Einsatz.
 Aufgrund des Rate-Limits kommt es bei der Ausführung via SPARQL aus Wikidata recht schnell zu Fehlermeldungen. Andererseits resultiert das Serialisieren der Daten in einem JSON-LD-Graph in einer umfangreichen Datei.
 
+## Abfrage 
+
 {{< client-sparql src="/meta/wikidata/enriched_entities.hdt" >}}
 
-## Beispiele:
+## Beispiele
 
 * Blog-Posts, in denen es um Künstler geht, die im 19. Jahrhundert geboren wurden, diese Abfrage macht nochmehr, aber die Daten sind noch nicht vorhanden.
 ```sparql
@@ -126,6 +128,10 @@ WHERE {
 }
 ```
 
-# Potential issues
+## Potentielle Probleme
 
-During implementation, I noticed a few minor issues with Chrome: after reloading the page several times, memory errors occurred – presumably the browser is not clearing a tab’s memory properly or is caching more than necessary. In this case, an error message (e.g. `memory access out of bounds`) appears in the status bar and the browser needs to be restarted.
+Während der Umsetzung sind mir mit Chrome ein paar kleine Probleme aufgefallen: Nach mehrmaligem Neuladen der Seite traten Speicherfehler auf – vermutlich räumt der Browser den Arbeitsspeicher eines Tabs nicht richtig auf bzw. cacht mehr als notwendig. In diesem Fall erscheint eine Fehlermeldung (z.B. `memory access out of bounds`) in der Statusleiste und der Browser muss neu gestartet werden.
+
+## Umsetzung
+
+Die im ersten Schritt erstellte HDT-Datei wird mit der [WASM](https://en.wikipedia.org/wiki/WebAssembly)-Variante der [Rust](https://en.wikipedia.org/wiki/Rust_(programming_language)) Bibliothek [HDT](https://github.com/KonradHoeffner/hdt) geladen. Die Inhalte werden dann im Arbeitsspeicher konvertiert, damit sie in [OxiGraph](https://github.com/oxigraph/oxigraph) (ebenfalls Rust zu Wasm kompiliert) verwendet werden können. Streng genommen ist OxiGraph an dieser Stelle gar nicht notwendig, da HDT auch SPARQL-Abfragen ausführen kann. OxiGraph hat jedoch den Vorteil, auch verteilte SPARQL-Abfragen ausführen zu können.

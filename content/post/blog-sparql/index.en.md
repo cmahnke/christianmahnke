@@ -1,5 +1,5 @@
 ---
-date: 2026-04-18T22:39:44+02:00
+date: 2026-04-17T22:39:44+02:00
 title: "Querying blog metadata via SPARQL"
 tags:
   - Wikidata
@@ -26,7 +26,6 @@ Only this Schema.org [source file](/meta/schema.org/index.json) is used to captu
 * **CodeMeta**, see [Metadata for software](/en/post/software-metadata/)
 {{< /details >}}
 
-
 Even though there are still no "great" applications, [SPARQL](https://de.wikipedia.org/wiki/SPARQL) queries can now be run on this data. To keep things interesting, some data from Wikidata has been included in the corpus.
 
 To create this, the blog's Schema.org data is used as a starting point, with LinkedArt and CodeMeta entries incorporated. The resulting graph is then enriched with data from Wikidata and converted into the [HDT format](https://en.wikipedia.org/wiki/HDT_(data_format)).
@@ -34,7 +33,11 @@ To create this, the blog's Schema.org data is used as a starting point, with Lin
 This approach is necessary because the number of entities has risen massively, particularly since the start of this year: originally, only the tags were mapped to the respective Wikidata entities, but now there is a script that extracts them semi-automatically from the respective texts. A Python script based on SpaCy is used for this purpose.
 Due to the rate limit, executing queries via SPARQL from Wikidata very quickly results in error messages. On the other hand, serialising the data into a JSON-LD graph results in a large file.
 
-## Beispiele:
+## Query
+
+{{< client-sparql src="/meta/wikidata/enriched_entities.hdt" >}}
+
+## Examples
 
 * Blog posts about artists born in the 19th century; this query returns even more results, but the data isn"t available yet.
 ```sparql
@@ -125,6 +128,13 @@ WHERE {
 }
 ```
 
-## Potentielle Probleme
 
-Während der Umsetzung sind mir mit Chrome ein paar kleine Probleme aufgefallen: Nach mehrmaligem Neuladen der Seite traten Speicherfehler auf – vermutlich räumt der Browser den Arbeitsspeicher eines Tabs nicht richtig auf bzw. cacht mehr als notwendig. In diesem Fall erscheint eine Fehlermeldung (z.B. `memory access out of bounds`) in der Statusleiste und der Browser muss neu gestartet werden.
+## Potential issues
+
+During implementation, I noticed a few minor issues with Chrome: after reloading the page several times, memory errors occurred – presumably the browser is not clearing a tab’s memory properly or is caching more than necessary. In this case, an error message (e.g. `memory access out of bounds`) appears in the status bar and the browser needs to be restarted.
+
+## Implementation
+
+The HDT file created in the first step is loaded using the [WASM](https://en.wikipedia.org/wiki/WebAssembly) variant of the [Rust](https://en.wikipedia.org/wiki/Rust_(programming_language)) library [HDT](https://github.com/KonradHoeffner/hdt). The contents are then converted in memory so that they can be used in [OxiGraph](https://github.com/oxigraph/oxigraph) (also compiled from Rust to Wasm). Strictly speaking, OxiGraph is not actually necessary at this stage, as HDT can also execute SPARQL queries. However, OxiGraph has the advantage of being able to execute distributed SPARQL queries as well.
+
+Translated with DeepL.com (free version)
