@@ -128,6 +128,13 @@ WHERE {
 }
 ```
 
+* Number of triplets
+```sparql
+SELECT (COUNT(*) AS ?count)
+WHERE {
+  ?s ?p ?o .
+}
+```
 
 ## Potential issues
 

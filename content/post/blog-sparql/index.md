@@ -105,6 +105,14 @@ WHERE {
 }
 ```
 
+* Anzahl der Triplets
+```sparql
+SELECT (COUNT(*) AS ?count)
+WHERE {
+  ?s ?p ?o .
+}
+```
+
 * Abfrage nach Artikeln, die dem Term (Schlagwort) "Holzschnitt" aus dem [Getty ATT Thesaurus](https://de.wikipedia.org/wiki/Art_and_Architecture_Thesaurus) (`http://vocab.getty.edu/aat/300041405`) entsprechen.
 ```sparql
 PREFIX schema: <http://schema.org/>
