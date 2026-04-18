@@ -14,5 +14,6 @@ This directory contains triple store based approaches, no need to query wikidata
   * Bundle as a JS artifact, draft done
 * Check federated SPARQL: https://github.com/oxigraph/oxigraph/issues/1631
 * Visualisation
+  * 'mul' entries not alway working
   * Use different borders for entity types
   * Check if resizing works, done

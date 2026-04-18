@@ -13,6 +13,7 @@ if (window) {
 (async function () {
   await init_hdt({ wasm_hdt });
   await init_oxigraph({ wasm_oxigraph });
+  //await init_oxigraph();
 })();
 
 function parseTerm(value: string, position: "subject" | "predicate" | "object") {

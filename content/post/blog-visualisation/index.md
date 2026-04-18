@@ -1,0 +1,78 @@
+---
+date: 2026-04-19T19:39:44+02:00
+title: "Blog Metadaten visualisiert"
+tags:
+  - Wikidata
+  - LOD
+  - SPARQL
+  - Visualisation
+  - Website
+draft: true
+wikidata:
+  - https://www.wikidata.org/wiki/Q3539533
+  - https://www.wikidata.org/wiki/Q115616582
+  - https://www.wikidata.org/wiki/Q3475322
+  - https://www.wikidata.org/wiki/Q118980507
+  - https://www.wikidata.org/wiki/Q116963652
+---
+Vor etwa einem Jahr habe ich schon einmal versucht, die [Bloginhalte in einer Visualisierung darzustellen](/post/tag-pairs/)...
+<!--more-->
+
+...aber das war eher ein Fehlschlag.
+
+Nun habe ich einen neuen Versuch gewagt. Diesmal habe ich den [Triple Store aus dem letzten Beitrag verwendet](/post/blog-sparql/) verwendet und das Ergebnis kann sich durchaus sehen lassen:
+
+{{< graph-viz src="/meta/wikidata/enriched_entities.hdt" languages="mul,de,en" >}}
+
+Für Mobilgeräte als [PDF-Download](./graph.pdf), die Datei wird nicht aktualisiert, wenn neu Beiträge hinzukommen.
+
+## Erläuterungen
+
+Die roten Rechtecke repräsentieren die einzelnen Blogbeiträge.
+Die gelben Rauten repräsentieren Schlagworte des Blogs.
+* Blaue Kreise sind Entitäten von Wikidata (die auch als Schlagworte dienen).
+Grüne Kreise stellen Entitäten der Seite dar (z. B. Linked Art oder andere Metadateneinträge).
+
+### Vorauswahl
+
+Die folgende Abfrage wird genutzt um die Daten für den Grpahen oben zu visualisieren:
+
+```sparql
+PREFIX schema: <http://schema.org/>
+SELECT ?s ?p ?o ?isTagged WHERE {
+  <https://christianmahnke.de/post/> schema:blogPost ?post .
+  ?post ?p ?o .
+  BIND(?post AS ?s)
+  FILTER(?p NOT IN (
+    schema:author,
+    schema:url,
+    schema:workTranslation,
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+  ))
+  FILTER(?o NOT IN (
+    schema:BlogPosting
+  ))
+  OPTIONAL {
+    ?post schema:identifier ?ident .
+    ?ident a schema:PropertyValue ;
+            schema:propertyID "projektemacher" ;
+            schema:value "tag" .
+    BIND(true AS ?isTagged)
+  }
+}
+```
+
+## Umsetzung
+
+Neben der Kombination aus HDT und OxiGtaph aus dem letzten Post 
+
+[Cytoscape](https://js.cytoscape.org/)
+
+https://github.com/kinimesi/cytoscape-svg
+
+## Ausblick
+
+Einige Verbesserungen sind noch denkbar:
+* Die Basisklassen (z.B. Personen, Orte, Organisationen, Software) könnten noch vereinfacht visualisiert werden.
+* Die thematische Nähe der Knoten könnte noch für das Layout des Graphen genutzt werden.
+* Cytoscape bietet ästhetisch sehr ansprechende Darstellungen, die schöner sind als die oben gezeigte.

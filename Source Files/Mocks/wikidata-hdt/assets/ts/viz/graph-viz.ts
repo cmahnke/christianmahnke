@@ -1,9 +1,10 @@
 import { LitElement, html, css } from 'lit';
 import cytoscape from 'cytoscape';
-import { cytoscapeSvg } from 'cytoscape-svg';
+import cytoscapeSvg from 'cytoscape-svg';
 import type { Store } from 'oxigraph';
 import { isWikidataUri, extractQid, fetchWikidataLabels, fetchWikidataDetails } from '../wikidata';
 import { loadHdtFromUrl } from '../loader';
+import { componentStyles } from './styles.js';
 
 import "../../scss/viz/viz.scss";
 
@@ -467,72 +468,9 @@ function idealEdgeLengthFn(sizeMap: Map<string, number>): (edge: any) => number 
 
 export class RdfGraph extends LitElement {
 
-  static override styles = css`
-    :host {
-      display: block;
-      position: relative;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    #cy-container { position: absolute; inset: 0; }
-    #node-info {
-      position: absolute; bottom: 1rem; right: 1rem;
-      background: #16213e; border: 1px solid #333;
-      padding: 1rem; border-radius: 5px;
-      font-size: 0.8rem; max-width: 400px; max-height: 300px;
-      overflow-y: auto; white-space: pre-wrap;
-      font-family: monospace; color: #e0e0e0; z-index: 100;
-    }
-    #loading-overlay {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(0, 0, 0, 0.7);
-      color: #e0e0e0; font-family: monospace; font-size: 1rem; z-index: 200;
-    }
-    #loading-overlay .error { color: #e94560; }
-    .spinner {
-      display: inline-block; width: 1.2em; height: 1.2em;
-      border: 2px solid #555; border-top-color: #53d8fb;
-      border-radius: 50%; animation: spin 0.8s linear infinite;
-      margin-right: 0.5em; vertical-align: middle;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    #export-btn {
-      position: absolute;
-      top: 0.75rem;
-      right: 0.75rem;
-      z-index: 150;
-      display: flex;
-      align-items: center;
-      gap: 0.35em;
-      padding: 0.4em 0.75em;
-      background: #16213e;
-      color: #e0e0e0;
-      border: 1px solid #444;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      font-family: monospace;
-      cursor: pointer;
-      transition: background 0.15s, border-color 0.15s;
-      user-select: none;
-    }
-    #export-btn:hover {
-      background: #1a2d52;
-      border-color: #53d8fb;
-      color: #53d8fb;
-    }
-    #export-btn:active {
-      background: #0f3460;
-    }
-    #export-btn svg {
-      width: 1em;
-      height: 1em;
-      fill: currentColor;
-      flex-shrink: 0;
-    }
-  `;
+  static override get styles() {
+    return componentStyles;
+  }
 
   static override properties = {
     src: { type: String },

@@ -2,7 +2,7 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import wasm from '@rollup/plugin-wasm';
 import scss from 'rollup-plugin-scss';
-//import { importMetaAssets } from '@web/rollup-plugin-import-meta-assets';
+import commonjs from '@rollup/plugin-commonjs';
 
 const configs = [ 
   {
@@ -26,7 +26,6 @@ const configs = [
         preferBuiltins: false,
         extensions: ['.ts', '.js', '.wasm']
       }),
-      //importMetaAssets(),
       scss({ fileName: 'client-sparql.scss' }),
       //commonjs(),
       typescript({
@@ -61,7 +60,7 @@ const configs = [
       }),
       //importMetaAssets(),
       scss({ fileName: 'graph-viz.scss' }),
-      //commonjs(),
+      commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
         compilerOptions: {

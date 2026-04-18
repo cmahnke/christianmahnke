@@ -12,6 +12,7 @@ outputs:
 linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q112821333
+  title: Liebespaar
 wikidata:
   - https://www.wikidata.org/wiki/Q112821333
   - https://www.wikidata.org/wiki/Q131787286

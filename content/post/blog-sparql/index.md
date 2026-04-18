@@ -6,6 +6,7 @@ tags:
   - LOD
   - SPARQL
   - Python
+  - Website
 wikidata:
   - https://www.wikidata.org/wiki/Q3539533
   - https://www.wikidata.org/wiki/Q115616582

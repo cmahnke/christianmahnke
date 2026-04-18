@@ -1,0 +1,50 @@
+{{- $src := "" -}}
+{{- with .Get "src" -}}
+    {{- $src = . -}}
+{{- end -}}
+{{- $id := printf "_sparql-%s" (md5 (printf "%s-%s" $src now.UnixNano)) -}}
+{{- with .Get "id" -}}
+    {{- $id = . -}}
+{{- end -}}
+{{- if eq $id "" -}}
+  {{- errorf "[shortcodes/client-sparql.html] Entity ID missing" -}}
+{{- end -}}
+
+{{- $scaling := "log" -}}
+{{- with .Get "scaling" -}}
+    {{- $scaling = . -}}
+{{- end -}}
+{{- $languages := "mul,de,en" -}}
+{{- with .Get "languages" -}}
+    {{- $languages = . -}}
+{{- end -}}
+{{- $query := `PREFIX schema: <http://schema.org/>
+      SELECT ?s ?p ?o ?isTagged WHERE {
+        <https://christianmahnke.de/post/> schema:blogPost ?post .
+        ?post ?p ?o .
+        BIND(?post AS ?s)
+        FILTER(?p NOT IN (
+          schema:author,
+          schema:url,
+          schema:workTranslation,
+          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        ))
+        FILTER(?o NOT IN (
+          schema:BlogPosting
+        ))
+        OPTIONAL {
+          ?post schema:identifier ?ident .
+          ?ident a schema:PropertyValue ;
+                 schema:propertyID &quot;projektemacher&quot; ;
+                 schema:value &quot;tag&quot; .
+          BIND(true AS ?isTagged)
+        }
+      }` -}}
+{{- with .Get "query" -}}
+    {{- $query = . -}}
+{{- end -}}
+<graph-viz id="{{ $id }}" src="{{ $src }}" languages="{{ $languages }}" node-scaling="{{ $scaling }}" sparql-query="{{ $query }}" ></graph-viz>
+
+{{- define "_partials/shortcodes/graph-viz-metadata.html" -}}
+  {{- (dict "css" slice "js" (slice "js/shortcodes/graph-viz.js") "scss" (slice "scss/shortcodes/graph-viz.scss")) | jsonify -}}
+{{- end -}}
