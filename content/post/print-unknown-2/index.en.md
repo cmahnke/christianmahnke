@@ -24,8 +24,7 @@ I bought an unsigned linocut; I liked the contrast...
 
 {{< gallery >}}
 [
-  {"src": "img/print.jpg", "alt": "Print"},
-  {"src": "img/signature.jpg", "alt": "Signature"}
+  {"src": "img/print.jpg", "alt": "Print"}
 ]
 {{</ gallery >}}
 

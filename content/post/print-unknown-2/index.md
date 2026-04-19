@@ -24,8 +24,7 @@ Ich habe einen nicht signierten Linoschnitt erstanden, mir gefiel der Kontrast..
 
 {{< gallery >}}
 [
-  {"src": "img/print.jpg", "alt": "Druck"},
-  {"src": "img/signature.jpg", "alt": "Signatur"}
+  {"src": "img/print.jpg", "alt": "Druck"}
 ]
 {{</ gallery >}}
 
