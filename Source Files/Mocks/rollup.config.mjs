@@ -27,7 +27,7 @@ const configs = [
         extensions: ['.ts', '.js', '.wasm']
       }),
       scss({ fileName: 'client-sparql.scss' }),
-      //commonjs(),
+      commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
         compilerOptions: {
