@@ -10,7 +10,7 @@ export const componentStyles = css`
     --sparql-color: #222;
     --sparql-color-muted: #888;
     --sparql-border-color: #e5e5e5;
-    --sparql-border-radius: 0;
+    --sparql-border-radius: var(--border-radius);
     --sparql-shadow: none;
 
     --sparql-accent: #555;
@@ -46,6 +46,7 @@ export const componentStyles = css`
 
     --outline-color: #ff5477;
     --outline: 1px solid var(--outline-color);
+    --border-radius: .2rem;
 
     display: block;
     font-family: var(--sparql-font-family);
@@ -179,7 +180,7 @@ export const componentStyles = css`
     flex: 1;
     padding: 7px 10px;
     border: 1px solid var(--sparql-border-color);
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     font-family: var(--sparql-editor-font);
     font-size: 0.8rem;
     background: var(--sparql-bg);
@@ -197,26 +198,6 @@ export const componentStyles = css`
     gap: 8px;
   }
 
-  /*
-  .input-col textarea {
-    width: 100%;
-    min-height: 70px;
-    padding: 8px 10px;
-    border: 1px solid var(--sparql-border-color);
-    font-family: var(--sparql-editor-font);
-    font-size: 0.8rem;
-    background: var(--sparql-bg);
-    color: var(--sparql-color);
-    resize: vertical;
-    border-radius: .2rem;
-  }
-
-  .input-col textarea:focus {
-    outline: none;
-    border-color: var(--sparql-accent);
-  }
-  */
-
   /* ========================================
      BUTTONS
      ======================================== */
@@ -228,7 +209,7 @@ export const componentStyles = css`
     font-size: var(--actions-fontsize);
     cursor: pointer;
     vertical-align: middle;
-    border-radius: .2rem;
+    border-radius: var(--border-radius);
     border: 0;
     font-size: 100%;
     line-height: 1.15;
@@ -251,7 +232,7 @@ export const componentStyles = css`
     font-size: var(--actions-fontsize);
     cursor: pointer;
     vertical-align: middle;
-    border-radius: .2rem;
+    border-radius: var(--border-radius);
     border: 0;
     font-size: 100%;
     line-height: 1.15;
@@ -285,7 +266,7 @@ export const componentStyles = css`
     background: var(--sparql-editor-bg);
     color: var(--sparql-editor-color);
     border: 1px solid var(--sparql-editor-border);
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     font-family: var(--sparql-editor-font);
     font-size: var(--sparql-editor-font-size);
     line-height: 1.55;
@@ -454,7 +435,7 @@ export const componentStyles = css`
     padding: .8em;
     background: var(--sparql-editor-bg);
     border: 1px solid var(--sparql-editor-border);
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     font-family: var(--sparql-editor-font);
     font-size: 0.8rem;
     line-height: 1.55;
@@ -471,7 +452,7 @@ export const componentStyles = css`
   .error-box {
     background: var(--sparql-error-bg);
     border: 1px solid var(--sparql-error-border);
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     padding: .8em;
   }
 
@@ -524,7 +505,7 @@ export const componentStyles = css`
   .table-wrap::-webkit-scrollbar-thumb,
   pre.graph-result::-webkit-scrollbar-thumb {
     background: var(--sparql-border-color);
-    border-radius: 3px;
+    border-radius: var(--border-radius);
   }
 
   /* ========================================
@@ -585,5 +566,55 @@ export const componentStyles = css`
     * {
       transition: none !important;
     }
+  }
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.75rem 0 0.25rem;
+    font-size: 0.875rem;
+  }
+
+  .pagination-info {
+    color: var(--color-muted, #666);
+    margin-right: auto;
+  }
+
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .pagination-btn {
+    min-width: 2rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--color-border, #ccc);
+    border-radius: var(--border-radius);
+    background: var(--color-bg, #fff);
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background: var(--color-hover, #f0f0f0);
+    }
+
+    &.active {
+      background: var(--color-primary, #2563eb);
+      color: #fff;
+      border-color: var(--color-primary, #2563eb);
+      font-weight: 600;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  .pagination-ellipsis {
+    padding: 0 0.25rem;
+    color: var(--color-muted, #666);
   }
 `;

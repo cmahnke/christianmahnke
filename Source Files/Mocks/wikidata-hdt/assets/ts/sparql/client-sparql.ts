@@ -46,6 +46,9 @@ interface FormattedTerm {
 // CONSTANTS
 // =====================
 
+/** Anzahl der Tabellenzeilen pro Seite – hier zentral änderbar */
+const ROWS_PER_PAGE = 25;
+
 const PREFIX_MAP: Record<string, string> = {
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#': 'rdf:',
   'http://www.w3.org/2000/01/rdf-schema#': 'rdfs:',
@@ -128,6 +131,7 @@ export class OxigraphSparql extends LitElement {
       _urlInput:       { state: true },
       _textInput:      { state: true },
       _storeLocked:    { state: true },
+      _currentPage:    { state: true },
     };
   }
 
@@ -157,10 +161,10 @@ export class OxigraphSparql extends LitElement {
   private _oxigraphModule: any;
   private _storeLocked: boolean;
 
-  // sparql-editor gibt eine CodeMirror EditorView-Instanz zurück
-  private _editor: any = null;
+  /** Aktuelle Seite der Ergebnistabelle (0-basiert) */
+  private _currentPage: number;
 
-  // Aktuellen Query-Text cachen – kein Lit-State, damit kein Re-Render ausgelöst wird
+  private _editor: any = null;
   private _currentQueryText: string;
 
   constructor() {
@@ -189,6 +193,7 @@ export class OxigraphSparql extends LitElement {
     this._textInput = '';
     this._oxigraphModule = null;
     this._storeLocked = false;
+    this._currentPage = 0;
 
     this._currentQueryText = this.query;
   }
@@ -211,23 +216,34 @@ export class OxigraphSparql extends LitElement {
     return !!this.heading;
   }
 
-  /**
-   * Gibt true zurück wenn der Editor gesperrt sein soll.
-   * Wird als [inert]-Attribut am Container gesetzt und
-   * als CSS-Selektor für die Grau-Färbung verwendet:
-   *
-   *   CSS-Selektor für disabled-Zustand (grau):
-   *   #query-editor-container[inert]
-   *
-   * Beispiel in sparql.scss:
-   *   #query-editor-container[inert] {
-   *     opacity: 0.4;
-   *     cursor: not-allowed;
-   *   }
-   */
   private _isEditorDisabled(): boolean {
     return !this._oxigraphReady || this._loadingData;
   }
+
+  // =====================
+  // PAGINATION HELPERS
+  // =====================
+
+  private _totalPages(): number {
+    const rows = this._result?.rows?.length ?? 0;
+    return Math.max(1, Math.ceil(rows / ROWS_PER_PAGE));
+  }
+
+  private _pagedRows(): ResultRow[] {
+    const rows = this._result?.rows ?? [];
+    const start = this._currentPage * ROWS_PER_PAGE;
+    return rows.slice(start, start + ROWS_PER_PAGE);
+  }
+
+  private _goToPage(page: number): void {
+    const total = this._totalPages();
+    this._currentPage = Math.max(0, Math.min(page, total - 1));
+  }
+
+  private _goFirst(): void { this._goToPage(0); }
+  private _goPrev(): void  { this._goToPage(this._currentPage - 1); }
+  private _goNext(): void  { this._goToPage(this._currentPage + 1); }
+  private _goLast(): void  { this._goToPage(this._totalPages() - 1); }
 
   // =====================
   // LIFECYCLE
@@ -246,7 +262,6 @@ export class OxigraphSparql extends LitElement {
   override updated(changedProperties: PropertyValues): void {
     super.updated(changedProperties);
 
-    // Wenn query von außen geändert wird, Editor-Inhalt synchronisieren
     if (changedProperties.has('query') && this._editor) {
       const current = this._editor.state.doc.toString();
       if (current !== this.query) {
@@ -269,7 +284,6 @@ export class OxigraphSparql extends LitElement {
 
   override disconnectedCallback(): void {
     super.disconnectedCallback();
-    // EditorView aufräumen wenn das Element aus dem DOM entfernt wird
     if (this._editor && typeof this._editor.destroy === 'function') {
       this._editor.destroy();
     }
@@ -289,18 +303,15 @@ export class OxigraphSparql extends LitElement {
   // =====================
 
   private _mountEditor(): void {
-    // Nicht mounten wenn der Editor-Bereich gar nicht gerendert wird
     if (this.hideDataInput) return;
 
     const container = this.renderRoot.querySelector<HTMLElement>('#query-editor-container');
     if (!container) return;
 
-    // createSparqlEditor gibt eine CodeMirror EditorView-Instanz zurück
     this._editor = createSparqlEditor({
       parent: container,
       value: this.query,
       onChange: (value: string) => {
-        // Nur cachen – kein Lit-State, kein Re-Render
         this._currentQueryText = value;
       },
     });
@@ -451,6 +462,7 @@ export class OxigraphSparql extends LitElement {
     this._loading = true;
     this._error = null;
     this._result = null;
+    this._currentPage = 0;
     this._setStatus('Abfrage…', 'loading');
 
     try {
@@ -572,13 +584,6 @@ export class OxigraphSparql extends LitElement {
     return uri;
   }
 
-  /**
-   * Setzt den Query-Text programmatisch (öffentliche API).
-   *
-   * Schreibt den neuen Wert direkt in die CodeMirror EditorView
-   * via dispatch({ changes }) – die einzig korrekte Methode um
-   * den Inhalt einer EditorView von außen zu ersetzen.
-   */
   public setQuery(sparqlQuery: string): void {
     this.query = sparqlQuery;
     this._currentQueryText = sparqlQuery;
@@ -598,7 +603,6 @@ export class OxigraphSparql extends LitElement {
   // EVENT HANDLERS
   // =====================
 
-  // Wird nur noch für die Turtle-Daten-Textarea verwendet
   private _handleKeydown(e: KeyboardEvent): void {
     if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
       e.preventDefault();
@@ -740,19 +744,6 @@ export class OxigraphSparql extends LitElement {
     `;
   }
 
-  /**
-   * Rendert den Mount-Container für sparql-editor.
-   *
-   * Das [inert]-Attribut sperrt den Editor nativ (Klick, Tastatur, Focus)
-   * wenn Oxigraph noch nicht bereit ist oder Daten geladen werden.
-   *
-   * CSS-Selektor für den disabled/grau-Zustand in sparql.scss:
-   *
-   *   .editor-section #query-editor-container[inert] {
-   *     opacity: 0.4;
-   *     cursor: not-allowed;
-   *   }
-   */
   private _renderEditor(): TemplateResult {
     return html`
       <div class="editor-section">
@@ -808,15 +799,19 @@ export class OxigraphSparql extends LitElement {
     if (!this._result) return nothing;
     switch (this._result.type) {
       case 'boolean': return this._renderBooleanResult();
-      case 'graph': return this._renderGraphResult();
+      case 'graph':   return this._renderGraphResult();
       case 'bindings':
-      default: return this._renderBindingsResult();
+      default:        return this._renderBindingsResult();
     }
   }
 
   private _renderBooleanResult(): TemplateResult {
     const val = this._result!.boolean;
-    return html`<div class="boolean-result ${val ? 'is-true' : 'is-false'}">${val ? 'True' : 'False'}</div>`;
+    return html`
+      <div class="boolean-result ${val ? 'is-true' : 'is-false'}">
+        ${val ? 'True' : 'False'}
+      </div>
+    `;
   }
 
   private _renderGraphResult(): TemplateResult {
@@ -838,13 +833,22 @@ export class OxigraphSparql extends LitElement {
 
   private _renderBindingsResult(): TemplateResult {
     const columns = this._result!.columns || [];
-    const rows = this._result!.rows || [];
+    const allRows = this._result!.rows || [];
 
-    if (columns.length === 0 || rows.length === 0) {
+    if (columns.length === 0 || allRows.length === 0) {
       return html`<p class="placeholder-text">Keine Ergebnisse.</p>`;
     }
 
-    return html`
+    const totalPages  = this._totalPages();
+    const currentPage = this._currentPage;
+    const pagedRows   = this._pagedRows();
+
+    const rangeStart = currentPage * ROWS_PER_PAGE + 1;
+    const rangeEnd   = Math.min(rangeStart + ROWS_PER_PAGE - 1, allRows.length);
+
+    // Tabelle und Pagination als separate Variablen –
+    // pagination landet dadurch NICHT innerhalb von table-wrap
+    const tableMarkup = html`
       <div class="table-wrap">
         <table>
           <thead>
@@ -853,23 +857,143 @@ export class OxigraphSparql extends LitElement {
             </tr>
           </thead>
           <tbody>
-            ${rows.map((row: ResultRow) => html`
+            ${pagedRows.map((row: ResultRow) => html`
               <tr>
-                ${columns.map((col: ResultColumn) => html`<td>${this._renderCell(row[col.name])}</td>`)}
+                ${columns.map((col: ResultColumn) =>
+                  html`<td>${this._renderCell(row[col.name])}</td>`
+                )}
               </tr>
             `)}
           </tbody>
         </table>
       </div>
     `;
+
+    const paginationMarkup = totalPages > 1
+      ? this._renderPagination(currentPage, totalPages, rangeStart, rangeEnd, allRows.length)
+      : nothing;
+
+    // bindings-result ist der gemeinsame Wrapper;
+    // table-wrap und pagination sind direkte Geschwister darin
+    return html`
+      <div class="bindings-result">
+        ${tableMarkup}
+        ${paginationMarkup}
+      </div>
+    `;
   }
+
+  private _renderPagination(
+    current: number,
+    total: number,
+    rangeStart: number,
+    rangeEnd: number,
+    totalRows: number,
+  ): TemplateResult {
+
+    const pageNumbers = this._buildPageWindow(current, total);
+
+    return html`
+      <nav class="pagination" aria-label="Seitennavigation">
+
+        <span class="pagination-info">
+          Zeige ${rangeStart}–${rangeEnd} von ${totalRows}
+          &nbsp;|&nbsp;
+          Seite ${current + 1} von ${total}
+        </span>
+
+        <div class="pagination-controls">
+
+          <button
+            class="pagination-btn"
+            title="Erste Seite"
+            ?disabled=${current === 0}
+            @click=${this._goFirst}
+          >«</button>
+
+          <button
+            class="pagination-btn"
+            title="Vorherige Seite"
+            ?disabled=${current === 0}
+            @click=${this._goPrev}
+          >‹</button>
+
+          ${pageNumbers.map(entry =>
+            entry === -1
+              ? html`<span class="pagination-ellipsis">…</span>`
+              : html`
+                  <button
+                    class="pagination-btn ${entry === current ? 'active' : ''}"
+                    ?disabled=${entry === current}
+                    @click=${() => this._goToPage(entry)}
+                  >${entry + 1}</button>
+                `
+          )}
+
+          <button
+            class="pagination-btn"
+            title="Nächste Seite"
+            ?disabled=${current === total - 1}
+            @click=${this._goNext}
+          >›</button>
+
+          <button
+            class="pagination-btn"
+            title="Letzte Seite"
+            ?disabled=${current === total - 1}
+            @click=${this._goLast}
+          >»</button>
+
+        </div>
+      </nav>
+    `;
+  }
+
+  private _buildPageWindow(current: number, total: number): number[] {
+    const WINDOW = 2;
+    const pages: number[] = [];
+    const seen = new Set<number>();
+
+    const add = (n: number) => {
+      if (n >= 0 && n < total && !seen.has(n)) {
+        seen.add(n);
+        pages.push(n);
+      }
+    };
+
+    add(0);
+    add(total - 1);
+
+    for (let i = current - WINDOW; i <= current + WINDOW; i++) {
+      add(i);
+    }
+
+    pages.sort((a, b) => a - b);
+
+    const result: number[] = [];
+    for (let i = 0; i < pages.length; i++) {
+      if (i > 0 && pages[i] - pages[i - 1] > 1) {
+        result.push(-1);
+      }
+      result.push(pages[i]);
+    }
+
+    return result;
+  }
+
+  // =====================
+  // CELL RENDER
+  // =====================
 
   private _renderCell(term: any): TemplateResult {
     const f: FormattedTerm = this._formatTerm(term);
 
     switch (f.type) {
       case 'uri':
-        return html`<a class="uri" href=${f.value} target="_blank" rel="noopener">${this._shortenUri(f.value)}</a>`;
+        return html`
+          <a class="uri" href=${f.value} target="_blank" rel="noopener">
+            ${this._shortenUri(f.value)}
+          </a>`;
       case 'bnode':
         return html`<span class="bnode">${f.value}</span>`;
       case 'literal': {
