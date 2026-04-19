@@ -4,11 +4,13 @@ export const componentStyles = css`
     :host {
       --sparql-font-family: inherit;
       --sparql-font-size: 1rem;
-      --sparql-line-height: 1.2;
+      /*--sparql-line-height: 1.2; */
 
       --sparql-accent: #555;
       --sparql-accent-hover: #333;
       --sparql-accent-text: #fff;
+
+      --sparql-line-height: 1.2;
 
       display: block;
       position: relative;

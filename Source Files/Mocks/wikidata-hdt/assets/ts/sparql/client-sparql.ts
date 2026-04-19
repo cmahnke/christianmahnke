@@ -1,6 +1,7 @@
 import { LitElement, html, nothing, PropertyValues, TemplateResult } from 'lit';
 import { loadHdtFromUrl } from '../loader.js';
 import { componentStyles } from './styles.js';
+import { createSparqlEditor } from 'sparql-editor';
 
 import "../../scss/sparql/sparql.scss";
 
@@ -156,6 +157,12 @@ export class OxigraphSparql extends LitElement {
   private _oxigraphModule: any;
   private _storeLocked: boolean;
 
+  // sparql-editor gibt eine CodeMirror EditorView-Instanz zurück
+  private _editor: any = null;
+
+  // Aktuellen Query-Text cachen – kein Lit-State, damit kein Re-Render ausgelöst wird
+  private _currentQueryText: string;
+
   constructor() {
     super();
 
@@ -182,6 +189,8 @@ export class OxigraphSparql extends LitElement {
     this._textInput = '';
     this._oxigraphModule = null;
     this._storeLocked = false;
+
+    this._currentQueryText = this.query;
   }
 
   // =====================
@@ -198,12 +207,26 @@ export class OxigraphSparql extends LitElement {
     return true;
   }
 
-  /**
-   * Prüft ob der Header-Bereich (heading + source-notice) angezeigt werden soll.
-   * Wird nur angezeigt wenn heading gesetzt ist.
-   */
   private _shouldShowHeader(): boolean {
     return !!this.heading;
+  }
+
+  /**
+   * Gibt true zurück wenn der Editor gesperrt sein soll.
+   * Wird als [inert]-Attribut am Container gesetzt und
+   * als CSS-Selektor für die Grau-Färbung verwendet:
+   *
+   *   CSS-Selektor für disabled-Zustand (grau):
+   *   #query-editor-container[inert]
+   *
+   * Beispiel in sparql.scss:
+   *   #query-editor-container[inert] {
+   *     opacity: 0.4;
+   *     cursor: not-allowed;
+   *   }
+   */
+  private _isEditorDisabled(): boolean {
+    return !this._oxigraphReady || this._loadingData;
   }
 
   // =====================
@@ -215,8 +238,24 @@ export class OxigraphSparql extends LitElement {
     this._initOxigraph();
   }
 
+  override firstUpdated(changedProperties: PropertyValues): void {
+    super.firstUpdated(changedProperties);
+    this._mountEditor();
+  }
+
   override updated(changedProperties: PropertyValues): void {
     super.updated(changedProperties);
+
+    // Wenn query von außen geändert wird, Editor-Inhalt synchronisieren
+    if (changedProperties.has('query') && this._editor) {
+      const current = this._editor.state.doc.toString();
+      if (current !== this.query) {
+        this._editor.dispatch({
+          changes: { from: 0, to: current.length, insert: this.query },
+        });
+      }
+      this._currentQueryText = this.query;
+    }
 
     if (changedProperties.has('rdfData') && this.rdfData && this._oxigraphReady) {
       this._lockAndLoad(() => this._loadRdfString(this.rdfData, this.rdfFormat));
@@ -228,12 +267,43 @@ export class OxigraphSparql extends LitElement {
     }
   }
 
+  override disconnectedCallback(): void {
+    super.disconnectedCallback();
+    // EditorView aufräumen wenn das Element aus dem DOM entfernt wird
+    if (this._editor && typeof this._editor.destroy === 'function') {
+      this._editor.destroy();
+    }
+    this._editor = null;
+  }
+
   private async _lockAndLoad(loadFn: () => Promise<void>): Promise<void> {
     this._storeLocked = true;
     await loadFn();
     if (this.autoExecute) {
       await this._executeQuery();
     }
+  }
+
+  // =====================
+  // EDITOR SETUP
+  // =====================
+
+  private _mountEditor(): void {
+    // Nicht mounten wenn der Editor-Bereich gar nicht gerendert wird
+    if (this.hideDataInput) return;
+
+    const container = this.renderRoot.querySelector<HTMLElement>('#query-editor-container');
+    if (!container) return;
+
+    // createSparqlEditor gibt eine CodeMirror EditorView-Instanz zurück
+    this._editor = createSparqlEditor({
+      parent: container,
+      value: this.query,
+      onChange: (value: string) => {
+        // Nur cachen – kein Lit-State, kein Re-Render
+        this._currentQueryText = value;
+      },
+    });
   }
 
   // =====================
@@ -375,9 +445,8 @@ export class OxigraphSparql extends LitElement {
   private async _executeQuery(): Promise<void> {
     if (!this._store) return;
 
-    const editorEl = this.renderRoot.querySelector<HTMLTextAreaElement>('textarea.query-editor');
-    const queryText = editorEl ? editorEl.value : this.query;
-    if (!queryText.trim()) return;
+    const queryText = this._currentQueryText.trim();
+    if (!queryText) return;
 
     this._loading = true;
     this._error = null;
@@ -503,11 +572,21 @@ export class OxigraphSparql extends LitElement {
     return uri;
   }
 
-  public setQuery(sparql: string): void {
-    this.query = sparql;
-    const editorEl = this.renderRoot.querySelector<HTMLTextAreaElement>('textarea.query-editor');
-    if (editorEl) {
-      editorEl.value = sparql;
+  /**
+   * Setzt den Query-Text programmatisch (öffentliche API).
+   *
+   * Schreibt den neuen Wert direkt in die CodeMirror EditorView
+   * via dispatch({ changes }) – die einzig korrekte Methode um
+   * den Inhalt einer EditorView von außen zu ersetzen.
+   */
+  public setQuery(sparqlQuery: string): void {
+    this.query = sparqlQuery;
+    this._currentQueryText = sparqlQuery;
+    if (this._editor) {
+      const current = this._editor.state.doc.toString();
+      this._editor.dispatch({
+        changes: { from: 0, to: current.length, insert: sparqlQuery },
+      });
     }
   }
 
@@ -519,6 +598,7 @@ export class OxigraphSparql extends LitElement {
   // EVENT HANDLERS
   // =====================
 
+  // Wird nur noch für die Turtle-Daten-Textarea verwendet
   private _handleKeydown(e: KeyboardEvent): void {
     if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
       e.preventDefault();
@@ -660,18 +740,26 @@ export class OxigraphSparql extends LitElement {
     `;
   }
 
+  /**
+   * Rendert den Mount-Container für sparql-editor.
+   *
+   * Das [inert]-Attribut sperrt den Editor nativ (Klick, Tastatur, Focus)
+   * wenn Oxigraph noch nicht bereit ist oder Daten geladen werden.
+   *
+   * CSS-Selektor für den disabled/grau-Zustand in sparql.scss:
+   *
+   *   .editor-section #query-editor-container[inert] {
+   *     opacity: 0.4;
+   *     cursor: not-allowed;
+   *   }
+   */
   private _renderEditor(): TemplateResult {
     return html`
       <div class="editor-section">
-        <textarea
-          class="query-editor"
-          .value=${this.query}
-          @keydown=${this._handleKeydown}
-          spellcheck="false"
-          autocomplete="off"
-          autocapitalize="off"
-          ?disabled=${!this._oxigraphReady || this._loadingData}
-        ></textarea>
+        <div
+          id="query-editor-container"
+          ?inert=${this._isEditorDisabled()}
+        ></div>
       </div>
     `;
   }

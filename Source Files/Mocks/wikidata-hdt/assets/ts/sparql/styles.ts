@@ -44,6 +44,9 @@ export const componentStyles = css`
 
     --result-font-size: 0.85rem;
 
+    --outline-color: #ff5477;
+    --outline: 1px solid var(--outline-color);
+
     display: block;
     font-family: var(--sparql-font-family);
     font-size: var(--sparql-font-size);
@@ -194,23 +197,25 @@ export const componentStyles = css`
     gap: 8px;
   }
 
+  /*
   .input-col textarea {
     width: 100%;
     min-height: 70px;
     padding: 8px 10px;
     border: 1px solid var(--sparql-border-color);
-    border-radius: 2px;
     font-family: var(--sparql-editor-font);
     font-size: 0.8rem;
     background: var(--sparql-bg);
     color: var(--sparql-color);
     resize: vertical;
+    border-radius: .2rem;
   }
 
   .input-col textarea:focus {
     outline: none;
     border-color: var(--sparql-accent);
   }
+  */
 
   /* ========================================
      BUTTONS
@@ -269,10 +274,14 @@ export const componentStyles = css`
     border-bottom: var(--sparql-section-gap);
   }
 
-  textarea.query-editor {
+  .editor-section #query-editor-container[inert] {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .cm-editor {
     width: 100%;
     min-height: var(--sparql-editor-min-height);
-    padding: 12px;
     background: var(--sparql-editor-bg);
     color: var(--sparql-editor-color);
     border: 1px solid var(--sparql-editor-border);
@@ -284,13 +293,8 @@ export const componentStyles = css`
     tab-size: 2;
   }
 
-  textarea.query-editor:disabled {
-    opacity: 0.4;
-  }
-
-  textarea.query-editor:focus {
-    outline: none;
-    border-color: var(--sparql-accent);
+  .cm-editor.cm-focused {
+    outline: var(--outline) !important;
   }
 
   /* ========================================
