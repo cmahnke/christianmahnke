@@ -47,7 +47,7 @@ interface FormattedTerm {
 // =====================
 
 // Rows per page in the results table 
-const ROWS_PER_PAGE = 100;
+const ROWS_PER_PAGE = 50;
 
 const PREFIX_MAP: Record<string, string> = {
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#': 'rdf:',

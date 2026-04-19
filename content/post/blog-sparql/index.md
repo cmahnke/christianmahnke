@@ -38,6 +38,9 @@ Aufgrund des Rate-Limits kommt es bei der Ausführung via SPARQL aus Wikidata re
 
 {{< client-sparql src="/meta/wikidata/enriched_entities.hdt" >}}
 
+Enhält Daten von [Wikidata](https://www.wikidata.org/)., lizensiert unter [CC0](https://www.wikidata.org/wiki/Wikidata:Text_of_the_Creative_Commons_Public_Domain_Dedication).
+{.wikidata-attribution}
+
 ## Beispiele
 
 * Blog-Posts, in denen es um Künstler geht, die im 19. Jahrhundert geboren wurden, diese Abfrage macht nochmehr, aber die Daten sind noch nicht vorhanden.
@@ -144,5 +147,7 @@ Während der Umsetzung sind mir mit Chrome ein paar kleine Probleme aufgefallen:
 ## Umsetzung
 
 Die im ersten Schritt erstellte HDT-Datei wird mit der [WASM](https://en.wikipedia.org/wiki/WebAssembly)-Variante der [Rust](https://en.wikipedia.org/wiki/Rust_(programming_language)) Bibliothek [HDT](https://github.com/KonradHoeffner/hdt) geladen. Die Inhalte werden dann im Arbeitsspeicher konvertiert, damit sie in [OxiGraph](https://github.com/oxigraph/oxigraph) (ebenfalls Rust zu Wasm kompiliert) verwendet werden können. Streng genommen ist OxiGraph an dieser Stelle gar nicht notwendig, da HDT auch SPARQL-Abfragen ausführen kann. OxiGraph hat jedoch den Vorteil, auch verteilte SPARQL-Abfragen ausführen zu können.
+
+Für die Darstellung als Code Editor kommt [`sparql-editor`](https://github.com/aatauil/sparql-editor) zum Einsatz.
 
 **Die gesamte Anwendung läuft also direkt im Browser, ohne dynamische Serverkomponente.**

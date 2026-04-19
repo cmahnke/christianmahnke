@@ -38,6 +38,9 @@ Due to the rate limit, executing queries via SPARQL from Wikidata very quickly r
 
 {{< client-sparql src="/meta/wikidata/enriched_entities.hdt" >}}
 
+Contains data from [Wikidata](https://www.wikidata.org/), licensed under [CC0](https://www.wikidata.org/wiki/Wikidata:Text_of_the_Creative_Commons_Public_Domain_Dedication).
+{.wikidata-attribution}
+
 ## Examples
 
 * Blog posts about artists born in the 19th century; this query returns even more results, but the data isn"t available yet.
@@ -144,5 +147,7 @@ During implementation, I noticed a few minor issues with Chrome: after reloading
 ## Implementation
 
 The HDT file created in the first step is loaded using the [WASM](https://en.wikipedia.org/wiki/WebAssembly) variant of the [Rust](https://en.wikipedia.org/wiki/Rust_(programming_language)) library [HDT](https://github.com/KonradHoeffner/hdt). The contents are then converted in memory so that they can be used in [OxiGraph](https://github.com/oxigraph/oxigraph) (also compiled from Rust to Wasm). Strictly speaking, OxiGraph is not actually necessary at this stage, as HDT can also execute SPARQL queries. However, OxiGraph has the advantage of being able to execute distributed SPARQL queries as well.
+
+Für die Darstellung als Code Editor kommt [`sparql-editor`](https://github.com/aatauil/sparql-editor) zum Einsatz.
 
 **The entire application therefore runs directly in the browser, without any dynamic server components.**

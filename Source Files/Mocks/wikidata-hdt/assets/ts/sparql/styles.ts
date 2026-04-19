@@ -40,7 +40,7 @@ export const componentStyles = css`
     --sparql-section-gap: 1px solid var(--sparql-border-color);
 
     --actions-hint-display: block;
-    --actions-fontsize: 0.78rem;
+    --actions-font-size: 0.78rem;
 
     --result-font-size: 0.85rem;
 
@@ -206,12 +206,11 @@ export const componentStyles = css`
     background: var(--sparql-accent);
     color: var(--sparql-accent-text);
     font-family: var(--sparql-font-family);
-    font-size: var(--actions-fontsize);
+    font-size: var(--actions-font-size);
     cursor: pointer;
     vertical-align: middle;
     border-radius: var(--border-radius);
     border: 0;
-    font-size: 100%;
     line-height: 1.15;
   }
 
@@ -229,7 +228,7 @@ export const componentStyles = css`
     background: none;
     color: var(--sparql-accent);
     font-family: var(--sparql-font-family);
-    font-size: var(--actions-fontsize);
+    font-size: var(--actions-font-size);
     cursor: pointer;
     vertical-align: middle;
     border-radius: var(--border-radius);
