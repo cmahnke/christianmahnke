@@ -59,5 +59,12 @@ if [ -d ./scripts/post-build ] ; then
     echo "Don't forget to run post build scripts after 'hugo'!"
 fi
 
+mkdir -p docs/meta/wikidata/
+
+if [`uname` = "Darwin"]; then
+    echo "Downloading Wikidata HDT file"
+    wget -O docs/meta/wikidata/enriched_entities.hdt https://christianmahnke.de/meta/wikidata/enriched_entities.hdt
+fi
+
 mkdir -p static/pdfjs
 cp -r node_modules/pdfjs-dist/web static/pdfjs/

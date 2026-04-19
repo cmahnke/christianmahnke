@@ -80,3 +80,4 @@ content/mastodon/*.json
 assets/mastodon
 .vivliostyle
 static/*.wasm
+static/meta/wikidata/enriched_entities.hdt
