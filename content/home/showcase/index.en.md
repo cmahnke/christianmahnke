@@ -14,6 +14,7 @@ Examples of immersive or unconventional presentations include these blogs:
 
 Several individual experiments can be found in the blog:
 
+* [Querying blog metadata via SPARQL](/en/post/blog-sparql/) Triple Store in a Browser
 * [Artificial intelligence](/en/post/vintagereality-ai/) and [virtual reality](/en/post/vintagereality-apple-spatial/) for historical photographs
 * ["Counterfactual architecture" with OpenStreetmap](/en/post/patching-osm-data/)
 * [Pattern generator for IIIF manifests](/en/post/wallpaper-generator/)

@@ -20,6 +20,7 @@ export const componentStyles = css`
       position: absolute; 
       inset: 0; 
     }
+
     #node-info {
       position: absolute; 
       bottom: 1rem; 
@@ -37,6 +38,7 @@ export const componentStyles = css`
       color: #e0e0e0; 
       z-index: 100;
     }
+
     #loading-overlay {
       position: absolute; 
       inset: 0;
@@ -49,9 +51,11 @@ export const componentStyles = css`
       font-size: 1rem; 
       z-index: 200;
     }
+
     #loading-overlay .error { 
       color: #e94560; 
     }
+
     .spinner {
       display: inline-block; 
       width: 1.2em; 
@@ -63,7 +67,12 @@ export const componentStyles = css`
       margin-right: 0.5em;
       vertical-align: middle;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @keyframes spin { 
+      to { 
+        transform: rotate(360deg); 
+      } 
+    }
 
     #export-btn {
       padding: .45em .6em .6em .6em;
@@ -77,15 +86,21 @@ export const componentStyles = css`
       border: 0;
       font-size: 100%;
       line-height: 1.15;
+      right: 2rem;
+      top: 2rem;
+      position: absolute;
     }
+
     #export-btn:hover {
       background: #1a2d52;
       border-color: #53d8fb;
       color: #53d8fb;
     }
+
     #export-btn:active {
       background: #0f3460;
     }
+
     #export-btn svg {
       width: 1em;
       height: 1em;

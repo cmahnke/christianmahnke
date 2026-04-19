@@ -22,8 +22,10 @@
   },
   "dependencies": {
     "@annotorious/openseadragon": "^3.8.0",
+    "@fontsource-variable/geist-mono": "^5.2.7",
     "@fontsource-variable/josefin-sans": "^5.2.8",
     "@fontsource-variable/league-spartan": "^5.2.8",
+    "@fontsource/josefin-sans": "^5.2.8",
     "@monogrid/gainmap-js": "^3.4.0",
     "@rdfjs/data-model": "^2.1.1",
     "@rdfjs/dataset": "^2.0.2",

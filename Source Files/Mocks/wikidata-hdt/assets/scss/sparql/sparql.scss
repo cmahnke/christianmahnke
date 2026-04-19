@@ -2,10 +2,11 @@
 
 
 oxigraph-sparql {
-  --sparql-font-family: "Josefin Sans", Futura, sans-serif;
+  --sparql-editor-font: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
   --sparql-section-gap: 0;
   --actions-hint-display: none;
   --sparql-editor-font-size: 1rem;
+  --sparql-editor-font: #{ $monospace-font };
   --sparql-font-size: 1.2em;
   --sparql-editor-min-height: 16em;
   --actions-font-size: 1.2rem;

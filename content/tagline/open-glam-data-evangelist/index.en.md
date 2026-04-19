@@ -14,6 +14,7 @@ wikidata:
 Examples of activities in this area are:
 
 ### Blog posts on the topic:
+* [Querying blog metadata via SPARQL](/en/post/blog-sparql/)
 * [Linked Art Metadata](/en/post/linkedart-metadata/)
 * Keyword ["CulturalPolicy"](/en/tags/CulturalPolicy/)
 * Keyword ["Wikidata"](/en/tags/Wikidata/)

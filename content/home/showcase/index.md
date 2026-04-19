@@ -14,6 +14,7 @@ Beispiele für immersive bzw. unkonventionelle Präsentationen sind unter andere
 
 Dazu sind im Blog mehrere Einzelexperimente zu finden:
 
+* [Blog Metadaten über SPARQL abfragen](/post/blog-sparql/) Triple Store im Browser
 * [Künstliche Intelligenz](/post/vintagereality-ai/) und [virtuelle Realität](/post/vintagereality-apple-spatial/) für historische Photographien
 * ["Kontrafaktische Architektur" mit OpenStreetmap](/post/patching-osm-data/)
 * [Mustergenerator für IIIF Manifeste](/post/wallpaper-generator/)

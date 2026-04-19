@@ -1,5 +1,13 @@
 @use '../common' as *;
 
+rdf-graph {
+
+  width: 100%;
+  height: calc(100vh - 8rem);
+  display: block;
+
+}
+
 #controls {
   padding: 0.5rem 1rem;
   display: flex;
@@ -40,10 +48,4 @@
 #graph {
   width: 100vw;
   height: calc(100vh - 8rem);
-}
-
-rdf-graph {
-  width: 100%;
-  height: calc(100vh - 8rem);
-  display: block;
 }

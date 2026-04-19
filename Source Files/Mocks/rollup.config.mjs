@@ -58,7 +58,6 @@ const configs = [
         preferBuiltins: false,
         extensions: ['.ts', '.js', '.wasm']
       }),
-      //importMetaAssets(),
       scss({ fileName: 'graph-viz.scss' }),
       commonjs(),
       typescript({

@@ -1,6 +1,26 @@
+@use "pkg:@fontsource-utils/scss" as fontsource;
+@use "pkg:@fontsource-variable/josefin-sans/scss" as ralewayVariabale;
+@use "pkg:@fontsource-variable/league-spartan/scss" as leagueSpartanVariable;
+@use "pkg:@fontsource-variable/geist-mono/scss" as geistMonoVariabale;
+
+@include fontsource.faces($metadata: ralewayVariabale.$metadata, $weights: 400, $subsets: latin);
+@include fontsource.faces($metadata: leagueSpartanVariable.$metadata, $weights: 400, $subsets: latin);
+@include fontsource.faces($metadata: geistMonoVariabale.$metadata, $weights: 400, $subsets: latin);
+
+$monospace-font: 'Geist Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+$headings-font: "League Spartan", Futura, sans-serif;
+
 oxigraph-sparql, rdf-graph {
-  --sparql-font-family: "";
+  --sparql-font-family: "Josefin Sans", Futura, sans-serif;;
   --sparql-font-size: 1.2em;
   --sparql-line-height: 1.2;
   --sparql-section-gap: 0;
+}
+
+h1, h2, h3 {
+  font-family: $headings-font;
+}
+
+.monospaced {
+  font-family: $monospace-font;
 }
