@@ -12,6 +12,8 @@ wikidata:
   - https://www.wikidata.org/wiki/Q115616582
   - https://www.wikidata.org/wiki/Q3475322
   - https://www.wikidata.org/wiki/Q118980507
+  - https://www.wikidata.org/wiki/Q403574
+  - https://www.wikidata.org/wiki/Q28406945
 ---
 
 Seit Anfang 2025 erfasse ich zusätzliche Metadaten für die Beiträge in diesem Blog.
@@ -22,7 +24,7 @@ Dazu habe ich zu Beginn des Jahres weitere [JSON-LD](https://de.wikipedia.org/wi
 
 {{< details summary="Ausgangsdaten" >}}
 Für die Erfassung der notwendigen Triplets wird nur diese Schema.org [Ausgangsdatei](/meta/schema.org/index.json) genutzt. Daraus werden alle notwendigen Daten und ihre -quellen gezogen:
-* Wikidata Q-IDs
+* **Wikidata Q-IDs**
 * **Linked Art**, siehe [Linked Art Metadaten](/post/linkedart-metadata/)
 * **CodeMeta**, siehe [Metadaten für Software](/post/software-metadata/)
 {{< /details >}}

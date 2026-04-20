@@ -12,6 +12,8 @@ wikidata:
   - https://www.wikidata.org/wiki/Q115616582
   - https://www.wikidata.org/wiki/Q3475322
   - https://www.wikidata.org/wiki/Q118980507
+  - https://www.wikidata.org/wiki/Q403574
+  - https://www.wikidata.org/wiki/Q28406945
 ---
 
 Since the start of 2025, I have been recording additional metadata for the posts on this blog.
@@ -22,7 +24,7 @@ To this end, at the start of the year I added further [JSON-LD](https://en.wikip
 
 {{< details summary="Source data" >}}
 Only this Schema.org [source file](/meta/schema.org/index.json) is used to capture the necessary triplets. All necessary data and their sources are extracted from this:
-* Wikidata Q-IDs
+* **Wikidata Q-IDs**
 * **Linked Art**, see [Linked Art metadata](/en/post/linkedart-metadata/)
 * **CodeMeta**, see [Metadata for software](/en/post/software-metadata/)
 {{< /details >}}
@@ -148,6 +150,6 @@ During implementation, I noticed a few minor issues with Chrome: after reloading
 
 The HDT file created in the first step is loaded using the [WASM](https://en.wikipedia.org/wiki/WebAssembly) variant of the [Rust](https://en.wikipedia.org/wiki/Rust_(programming_language)) library [HDT](https://github.com/KonradHoeffner/hdt). The contents are then converted in memory so that they can be used in [OxiGraph](https://github.com/oxigraph/oxigraph) (also compiled from Rust to Wasm). Strictly speaking, OxiGraph is not actually necessary at this stage, as HDT can also execute SPARQL queries. However, OxiGraph has the advantage of being able to execute distributed SPARQL queries as well.
 
-Für die Darstellung als Code Editor kommt [`sparql-editor`](https://github.com/aatauil/sparql-editor) zum Einsatz.
+[`sparql-editor`](https://github.com/aatauil/sparql-editor) is used to display the code.
 
 **The entire application therefore runs directly in the browser, without any dynamic server components.**
