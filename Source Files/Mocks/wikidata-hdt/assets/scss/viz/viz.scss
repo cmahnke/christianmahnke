@@ -3,6 +3,7 @@
 rdf-graph {
   --graph-width: 100%;
   --graph-height: calc(100vh);
+  --sparql-export-btn-display: none;
 
   width: var(--graph-width);
   height: var(--graph-height);

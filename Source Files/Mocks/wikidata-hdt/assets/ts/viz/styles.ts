@@ -9,6 +9,12 @@ export const componentStyles = css`
       --sparql-font-size: 1rem;
       --sparql-line-height: 1.2;
 
+      --node-info-font-size: 1rem;
+      --node-info-color: white;
+      --node-info-bg: #000000aa;
+      --node-info-link-color: #53d8fb;
+      --node-info-link-decoration: none;
+
       /* Farben */
       --sparql-accent: #555;
       --sparql-accent-hover: #1a2d52;
@@ -16,40 +22,27 @@ export const componentStyles = css`
       --sparql-accent-text: #fff;
       --sparql-accent-highlight: #53d8fb;
 
-      --sparql-bg: #16213e;
+
       --sparql-border: #333;
       --sparql-text: #e0e0e0;
       --sparql-error: #e94560;
+
+      --legend-bg: #ffffffaa;
+
+      --border-radius: .2rem;
 
       display: block;
       position: relative;
       width: 100%;
       height: var(--graph-height);
       overflow: hidden;
+      position: relative;
     }
 
     #cy-container { 
       position: absolute; 
       inset: 0; 
       height: var(--graph-height);
-    }
-
-    #node-info {
-      position: absolute; 
-      bottom: 1rem; 
-      right: 1rem;
-      background: var(--sparql-bg); 
-      border: 1px solid var(--sparql-border);
-      padding: 1rem; 
-      border-radius: 5px;
-      font-family: monospace;
-      font-size: 0.8rem; 
-      max-width: 400px; 
-      max-height: 300px;
-      overflow-y: auto; 
-      white-space: pre-wrap;
-      color: var(--sparql-text); 
-      z-index: 50;
     }
 
     #loading-overlay {
@@ -102,6 +95,7 @@ export const componentStyles = css`
       right: 2rem;
       top: 2rem;
       position: absolute;
+      pointer-events: auto;
     }
 
     #export-btn:hover {
@@ -114,10 +108,130 @@ export const componentStyles = css`
       background: var(--sparql-accent-active);
     }
 
-    #export-btn svg {
-      width: 1em;
-      height: 1em;
-      fill: currentColor;
+    /* ── Node Info Panel ── */
+
+    #node-info {
+      position: absolute; 
+      bottom: 1rem; 
+      right: 1rem;
+      background: var(--node-info-bg); 
+      border: 1px solid var(--sparql-border);
+      padding: .4rem; 
+      border-radius: var(--border-radius);
+      font-size: var(--node-info-font-size); 
+      max-width: 25em; 
+      max-height: 20em;
+      z-index: 50;
+      font-family: var(--sparql-font-family);
+      color: var(--node-info-color);
+      display: flex;
+      flex-direction: column;
+    }
+
+    #node-info > .node-info-label {
+      margin-top: 1em;
+    }
+
+    #node-info a:link {
+      color: var(--node-info-link-color);
+      text-decoration: var(--node-info-link-decoration);
+    }
+
+    #node-info a:visited {
+      color: var(--node-info-link-color);
+      text-decoration: var(--node-info-link-decoration);
+    }
+
+    #node-info a:hover {
+      color: var(--node-info-link-color);
+    }
+
+    #node-info a:active {
+      color: var(--node-info-link-color);
+      text-decoration: var(--node-info-link-decoration);
+    }
+
+    #node-info-close {
+      right: 1em;
+      top: 1em;
+      position: absolute;
+    }
+
+    .node-info-label {
+      font-weight: bold;
+      font-size: xx-large;
+    }
+
+    .node-info-id {
+      text-align: right;
+      font-style: italic;
+    }
+
+    .node-info-row {
+      /* zeile mit key + wert nebeneinander */
+    }
+
+    .node-info-key {
+      /* label der zeile, z.b. "Wikipedia", "Wikidata" */
+    }
+
+    .node-info-properties {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem 0.5rem;
+      align-items: start;
+      justify-items: start;
+      overflow-y: auto;
+    }
+
+    .node-info-properties .node-info-row {
+      display: contents;
+    }
+
+    .node-info-properties .node-info-row .node-info-key {
+      font-weight: bold;
+      word-break: break-word;
+      max-width: 8em;
+    }
+
+    .node-info-properties .node-info-row .node-info-values {
+      word-break: break-word;
+    }
+
+    /* -- Color info panel-- */
+    #legend {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      max-width: 10em; 
+      max-height: fit-content;
+      border: 1px solid var(--sparql-border);
+      background: var(--legend-bg);
+      padding: .4rem; 
+      border-radius: var(--border-radius);
+      font-size: var(--node-info-font-size);
+      font-family: var(--sparql-font-family);
+    }
+    
+    .legend-swatch {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 3px solid currentColor;
+      background: transparent;
       flex-shrink: 0;
     }
+
+    .legend-entry {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .legend-label {
+      line-height: 1.3;
+      flex: 1;
+      min-width: 0;
+    }
+
 `;

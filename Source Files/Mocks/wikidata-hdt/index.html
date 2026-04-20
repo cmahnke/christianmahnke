@@ -5,8 +5,6 @@
     <title>HDT Test</title>
     <style>
       * {
-        margin: 0;
-        padding: 0;
         box-sizing: border-box;
       }
       body {
@@ -14,6 +12,16 @@
         color: #1a1a2e;
         font-family: system-ui;
       }
+
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.1rem; margin-top: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
+      code { font-family: monospace; background: #f4f4f4; padding: 0.1em 0.3em; border-radius: 3px; }
+      pre  { background: #f4f4f4; padding: 1rem; border-radius: 4px; overflow-x: auto; }
+      pre code { background: none; padding: 0; }
+      table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+      th, td { text-align: left; padding: 0.4rem 0.75rem; border: 1px solid #ddd; }
+      th { background: #f4f4f4; }
+      td:first-child { white-space: nowrap; }
     </style>
   </head>
   <link rel="stylesheet" href="./assets/scss/viz/style.scss" />
@@ -30,6 +38,7 @@
     src="/meta/wikidata/enriched_entities.hdt"
     languages="mul,de,en"
     node-scaling="log"
+    wikidata="incoming"
     sparql-query="
       PREFIX schema: <http://schema.org/>
       SELECT ?s ?p ?o ?isTagged WHERE {
@@ -57,5 +66,235 @@
   ></rdf-graph>
 
     <script type="module" src="./assets/ts/main.ts"></script>
+
+    <h1>&lt;rdf-graph&gt;</h1>
+    <p>Visualisiert RDF-Daten aus einer HDT-Datei als interaktiven Graphen.</p>
+
+    <pre><code>&lt;rdf-graph
+      src="daten.hdt"
+      sparql-query="SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 100"
+      languages="de,en"
+      node-scaling="log"
+      wikidata="labels"
+      auto-execute
+      export-svg
+    &gt;&lt;/rdf-graph&gt;</code></pre>
+
+    <h2>Attribute</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Attribut</th>
+          <th>Typ</th>
+          <th>Standard</th>
+          <th>Beschreibung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>src</code></td>
+          <td>String</td>
+          <td>—</td>
+          <td>URL der HDT-Datei die geladen werden soll.</td>
+        </tr>
+        <tr>
+          <td><code>sparql-query</code></td>
+          <td>String</td>
+          <td>—</td>
+          <td>
+            SPARQL-SELECT-Query die auf dem geladenen Store ausgeführt wird.
+            Muss die Variablen <code>?s</code>, <code>?p</code>, <code>?o</code> binden.
+          </td>
+        </tr>
+        <tr>
+          <td><code>languages</code></td>
+          <td>String</td>
+          <td><code>de,en</code></td>
+          <td>
+            Kommagetrennte Sprachpräferenz für Labels, z.B. <code>de,en,fr</code>.
+            Wird für Store-Abfragen, Wikidata-Labels und Wikipedia-Links verwendet.
+            <code>en</code> wird immer als letzter Fallback angehängt.
+          </td>
+        </tr>
+        <tr>
+          <td><code>node-scaling</code></td>
+          <td><code>off</code> | <code>linear</code> | <code>log</code></td>
+          <td><code>off</code></td>
+          <td>
+            Skaliert Knotengröße anhand der eingehenden Verbindungen (Indegree).
+            <ul>
+              <li><code>off</code> – alle Knoten gleich groß</li>
+              <li><code>linear</code> – Größe proportional zum Indegree</li>
+              <li><code>log</code> – Größe logarithmisch skaliert (empfohlen bei großen Graphen)</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><code>wikidata</code></td>
+          <td><code>off</code> | <code>labels</code> | <code>incoming</code></td>
+          <td><code>off</code></td>
+          <td>
+            Steuert das Verhalten bei Wikidata-Knoten.
+            <ul>
+              <li><code>off</code> – keine Wikidata-Anreicherung</li>
+              <li><code>labels</code> – Labels und Beschreibungen werden beim Aufbau des Graphen von der Wikidata-API nachgeladen</li>
+              <li><code>incoming</code> – Klick auf einen Wikidata-Knoten lädt alle Entitäten die auf diesen Knoten verlinken und fügt sie dem Graphen hinzu</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><code>auto-execute</code></td>
+          <td>Boolean</td>
+          <td><code>false</code></td>
+          <td>
+            Führt die SPARQL-Query automatisch aus sobald die HDT-Datei geladen ist,
+            ohne dass eine weitere Eigenschaftsänderung nötig ist.
+          </td>
+        </tr>
+        <tr>
+          <td><code>export-svg</code></td>
+          <td>Boolean</td>
+          <td><code>false</code></td>
+          <td>
+            Blendet einen SVG-Export-Button ein. Der Button ist deaktiviert solange
+            der Graph noch nicht bereit ist. Sichtbarkeit kann alternativ über
+            <code>:host(:not([export-svg])) #export-btn { display: none }</code>
+            im eigenen CSS gesteuert werden.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Events</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Detail</th>
+          <th>Beschreibung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>store-loaded</code></td>
+          <td><code>{ quadCount: number }</code></td>
+          <td>HDT-Datei wurde erfolgreich geladen und in den Store überführt.</td>
+        </tr>
+        <tr>
+          <td><code>load-error</code></td>
+          <td><code>{ error: string }</code></td>
+          <td>Fehler beim Laden der HDT-Datei.</td>
+        </tr>
+        <tr>
+          <td><code>graph-ready</code></td>
+          <td><code>{ cy, quadCount }</code></td>
+          <td>Graph wurde zum ersten Mal aufgebaut.</td>
+        </tr>
+        <tr>
+          <td><code>graph-updated</code></td>
+          <td><code>{ cy, quadCount }</code></td>
+          <td>Graph wurde nach einer Einstellungsänderung neu aufgebaut.</td>
+        </tr>
+        <tr>
+          <td><code>query-error</code></td>
+          <td><code>{ error: string }</code></td>
+          <td>Fehler beim Ausführen der SPARQL-Query.</td>
+        </tr>
+        <tr>
+          <td><code>node-selected</code></td>
+          <td>Cytoscape Node-Daten</td>
+          <td>Ein Knoten wurde angeklickt.</td>
+        </tr>
+        <tr>
+          <td><code>node-deselected</code></td>
+          <td>—</td>
+          <td>Klick auf den Hintergrund, Auswahl aufgehoben.</td>
+        </tr>
+        <tr>
+          <td><code>node-incoming-loaded</code></td>
+          <td><code>{ nodeId, qid, count }</code></td>
+          <td>Eingehende Wikidata-Verlinkungen wurden geladen und dem Graph hinzugefügt.</td>
+        </tr>
+        <tr>
+          <td><code>svg-exported</code></td>
+          <td><code>{ filename: string }</code></td>
+          <td>SVG wurde exportiert und der Download gestartet.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>JavaScript API</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Methode / Getter</th>
+          <th>Rückgabe</th>
+          <th>Beschreibung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>exportAsSvg()</code></td>
+          <td><code>void</code></td>
+          <td>Exportiert den aktuellen Graphen als SVG-Datei und startet den Download.</td>
+        </tr>
+        <tr>
+          <td><code>getCy()</code></td>
+          <td><code>cytoscape.Core | null</code></td>
+          <td>Gibt die interne Cytoscape-Instanz zurück für direkten Zugriff.</td>
+        </tr>
+        <tr>
+          <td><code>getStore()</code></td>
+          <td><code>WikidataStore | null</code></td>
+          <td>Gibt den internen <code>WikidataStore</code> zurück für SPARQL-Queries und Wikidata-Anreicherung.</td>
+        </tr>
+        <tr>
+          <td><code>quadCount</code></td>
+          <td><code>number</code></td>
+          <td>Anzahl der Triples im geladenen Store.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Knotentypen</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>CSS-Klasse</th>
+          <th>Farbe</th>
+          <th>Beschreibung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>post</code></td>
+          <td>Rot, abgerundetes Rechteck</td>
+          <td>Nicht-getaggte Subjekt-Ressourcen, typischerweise Blog-Posts oder Dokumente.</td>
+        </tr>
+        <tr>
+          <td><code>tagged</code></td>
+          <td>Gelb, Raute</td>
+          <td>
+            Ressourcen mit einem <code>projektemacher</code>-Tag
+            (<code>schema:PropertyValue</code> mit <code>propertyID = "projektemacher"</code> und <code>value = "tag"</code>).
+          </td>
+        </tr>
+        <tr>
+          <td><code>wikidata</code></td>
+          <td>Blau, Ellipse</td>
+          <td>Knoten deren URI auf <code>wikidata.org/entity/Q…</code> zeigt.</td>
+        </tr>
+        <tr>
+          <td><code>blank</code></td>
+          <td>Grau, Raute</td>
+          <td>RDF Blank Nodes.</td>
+        </tr>
+        <tr>
+          <td><code>uri</code></td>
+          <td>Grün, Kreis</td>
+          <td>Alle anderen benannten Ressourcen.</td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>

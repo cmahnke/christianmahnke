@@ -40,6 +40,7 @@
     "echarts": "^6.0.0",
     "hdr-canvas": "^0.2.0",
     "hdt": "https://github.com/cmahnke/lod-tools/releases/download/latest/hdt-web.tar.gz",
+    "i18next": "^26.0.6",
     "img-comparison-slider": "^8.0.7",
     "js-cookie": "^3.0.5",
     "lit": "^3.3.2",

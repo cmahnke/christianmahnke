@@ -1,3 +1,14 @@
+import type { Store } from 'oxigraph';
+import * as oxigraph from 'oxigraph/web.js';
+
+// ── Namespaces ────────────────────────────────────────────────────────────────
+
+const WD          = 'http://www.wikidata.org/entity/';
+const RDFS_LABEL  = 'http://www.w3.org/2000/01/rdf-schema#label';
+const SCHEMA_DESC = 'http://schema.org/description';
+
+// ── Public types ──────────────────────────────────────────────────────────────
+
 export interface WikidataEntity {
   id: string;
   uri: string;
@@ -5,6 +16,8 @@ export interface WikidataEntity {
   description: string;
   properties: Map<string, string[]>;
 }
+
+// ── Plain helpers ─────────────────────────────────────────────────────────────
 
 export function isWikidataUri(uri: string): boolean {
   return uri.startsWith('http://www.wikidata.org/entity/Q')
@@ -16,24 +29,88 @@ export function extractQid(uri: string): string | null {
   return match ? match[1] : null;
 }
 
+// ── Internal store helpers ────────────────────────────────────────────────────
+
+function addSafe(store: Store, quad: oxigraph.Quad): void {
+  try {
+    store.add(quad);
+  } catch (e) {
+    console.warn('[wikidata] Could not add quad:', quad.toString(), e);
+  }
+}
+
+function writeLabelsToStore(
+  store: Store,
+  qid: string,
+  info: { label: string; description: string }
+): void {
+  const subject = oxigraph.namedNode(`${WD}${qid}`);
+
+  if (info.label) {
+    addSafe(store, oxigraph.quad(
+      subject,
+      oxigraph.namedNode(RDFS_LABEL),
+      oxigraph.literal(info.label),
+      oxigraph.defaultGraph()
+    ));
+  }
+
+  if (info.description) {
+    addSafe(store, oxigraph.quad(
+      subject,
+      oxigraph.namedNode(SCHEMA_DESC),
+      oxigraph.literal(info.description),
+      oxigraph.defaultGraph()
+    ));
+  }
+}
+
+// ── Exported fetch helpers ────────────────────────────────────────────────────
+
+/**
+ * Fetches labels and descriptions for the given QIDs from the Wikidata API.
+ *
+ * If a `WikidataStore` is passed as the optional last argument the results are
+ * also written into the underlying OxiGraph store as `rdfs:label` /
+ * `schema:description` triples so subsequent SPARQL queries see them.
+ * Already-fetched QIDs are skipped automatically.
+ *
+ * Without a store the function behaves exactly as before.
+ */
 export async function fetchWikidataLabels(
   qids: string[],
-  languages: string[] = ['de', 'en']
+  languages?: string[],
+  wikidataStore?: WikidataStore
+): Promise<Map<string, { label: string; description: string }>>;
+
+export async function fetchWikidataLabels(
+  qids: string[],
+  languages: string[] = ['de', 'en'],
+  wikidataStore?: WikidataStore
 ): Promise<Map<string, { label: string; description: string }>> {
-  console.log(`Fetching Wikidata labels for QIDs: ${qids.join(', ')} with languages: ${languages.join(', ')}`);
   const result = new Map<string, { label: string; description: string }>();
   if (qids.length === 0) return result;
 
-  // Immer mul und en als Fallback anhängen
-  const langChain = [...new Set([...languages, 'mul', 'en'])];
-  const langParam = langChain.join('|');
-
-  const chunks = [];
-  for (let i = 0; i < qids.length; i += 50) {
-    chunks.push(qids.slice(i, i + 50));
+  // For already-fetched QIDs reconstruct the result from the store
+  if (wikidataStore) {
+    for (const qid of qids) {
+      if (wikidataStore.isFetchedLabels(qid)) {
+        result.set(qid, wikidataStore.getLabelsFromStore(qid));
+      }
+    }
   }
 
-  for (const chunk of chunks) {
+  const pending = wikidataStore
+    ? qids.filter(q => !wikidataStore.isFetchedLabels(q))
+    : qids;
+
+  if (pending.length === 0) return result;
+
+  const langChain = [...new Set([...languages, 'mul', 'en'])];
+  const langParam  = langChain.join('|');
+
+  for (let i = 0; i < pending.length; i += 50) {
+    const chunk = pending.slice(i, i + 50);
     const url = `https://www.wikidata.org/w/api.php?` + new URLSearchParams({
       action: 'wbgetentities',
       ids: chunk.join('|'),
@@ -45,79 +122,293 @@ export async function fetchWikidataLabels(
 
     try {
       const response = await fetch(url);
-      const json = await response.json();
+      const json     = await response.json();
 
       for (const [qid, entity] of Object.entries(json.entities ?? {}) as any[]) {
-        let label: string | null = null;
+        let label:       string | null = null;
         let description: string | null = null;
 
-        // Label: erste gefundene Sprache in der Kette
         for (const lang of langChain) {
-          if (!label && entity.labels?.[lang]?.value) {
-            label = entity.labels[lang].value;
-          }
-          if (!description && entity.descriptions?.[lang]?.value) {
-            description = entity.descriptions[lang].value;
-          }
+          if (!label       && entity.labels?.[lang]?.value)       label       = entity.labels[lang].value;
+          if (!description && entity.descriptions?.[lang]?.value) description = entity.descriptions[lang].value;
           if (label && description) break;
         }
 
-        result.set(qid, {
-          label: label ?? qid,
-          description: description ?? ''
-        });
+        const info = { label: label ?? qid, description: description ?? '' };
+        result.set(qid, info);
+
+        if (wikidataStore) {
+          writeLabelsToStore(wikidataStore.store, qid, info);
+          wikidataStore._markLabelsFetched(qid);
+        }
       }
     } catch (e) {
-      console.warn('Wikidata API error:', e);
+      console.warn('[wikidata] fetchWikidataLabels API error:', e);
     }
   }
 
   return result;
 }
 
+/**
+ * Fetches the full set of statements for a single Wikidata entity.
+ *
+ * If a `WikidataStore` is passed the JSON-LD response is loaded directly into
+ * the store via `store.load()` — no manual triple construction needed.
+ * Calling this a second time for the same QID returns the cached entity from
+ * the store without a network request.
+ *
+ * Without a store the JSON-LD is parsed manually into a `WikidataEntity`.
+ */
 export async function fetchWikidataDetails(
   qid: string,
-  languages: string[] = ['de', 'en']
+  languages?: string[],
+  wikidataStore?: WikidataStore
+): Promise<WikidataEntity>;
+
+export async function fetchWikidataDetails(
+  qid: string,
+  languages: string[] = ['de', 'en'],
+  wikidataStore?: WikidataStore
 ): Promise<WikidataEntity> {
-  const langFilter = languages.map(l => `"${l}"`).join(',');
-
-  const query = `
-    SELECT ?prop ?propLabel ?value ?valueLabel WHERE {
-      wd:${qid} ?p ?statement .
-      ?statement ?ps ?value .
-      ?prop wikibase:statementProperty ?ps .
-      SERVICE wikibase:label {
-        bd:serviceParam wikibase:language "${languages.join(',')},mul,en" .
-      }
-    } LIMIT 50
-  `;
-
-  const url = 'https://query.wikidata.org/sparql';
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/sparql-results+json',
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'User-Agent': 'HDT-Browser-Viewer/1.0'
-    },
-    body: new URLSearchParams({ query })
-  });
-
-  const json = await response.json();
-  const properties = new Map<string, string[]>();
-
-  for (const b of json.results.bindings) {
-    const key = b.propLabel?.value ?? b.prop?.value ?? '';
-    const val = b.valueLabel?.value ?? b.value?.value ?? '';
-    if (!properties.has(key)) properties.set(key, []);
-    properties.get(key)!.push(val);
+  if (wikidataStore?.isFetchedEntity(qid)) {
+    return wikidataStore.getEntityFromStore(qid);
   }
 
-  return {
-    id: qid,
-    uri: `http://www.wikidata.org/entity/${qid}`,
-    label: qid,
-    description: '',
-    properties
-  };
+  const url = `https://www.wikidata.org/wiki/Special:EntityData/${qid}.jsonld`;
+
+  let text: string;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+    text = await res.text();
+  } catch (e) {
+    console.error(`[wikidata] fetchWikidataDetails fetch failed for ${qid}:`, e);
+    throw e;
+  }
+
+  // ── With store: let OxiGraph parse the JSON-LD directly ──────────────────
+  if (wikidataStore) {
+    try {
+      wikidataStore.store.load(text, {
+        format: 'application/ld+json',
+        base_iri: url
+      });
+    } catch (e) {
+      console.error(`[wikidata] fetchWikidataDetails store.load failed for ${qid}:`, e);
+      throw e;
+    }
+    wikidataStore._markEntityFetched(qid);
+    wikidataStore._markLabelsFetched(qid);
+    return wikidataStore.getEntityFromStore(qid);
+  }
+
+  // ── Without store: parse JSON-LD manually into WikidataEntity ────────────
+  const json       = JSON.parse(text);
+  const graph      = json['@graph'] ?? [json];
+  const entityNode = graph.find((n: any) =>
+    n['@id'] === `${WD}${qid}`
+  ) ?? {};
+
+  const properties = new Map<string, string[]>();
+  for (const [key, val] of Object.entries(entityNode)) {
+    if (key.startsWith('@')) continue;
+    const values       = Array.isArray(val) ? val : [val];
+    const stringValues = values
+      .map((v: any) => (typeof v === 'object' ? v['@value'] ?? v['@id'] ?? '' : String(v)))
+      .filter(Boolean);
+    if (stringValues.length > 0) properties.set(key, stringValues);
+  }
+
+  const labelEntry  = properties.get(RDFS_LABEL);
+  const label       = labelEntry
+    ? (labelEntry.find(l => languages.some(lang => l.startsWith(lang))) ?? labelEntry[0] ?? qid)
+    : qid;
+
+  const descEntry   = properties.get(SCHEMA_DESC);
+  const description = descEntry?.[0] ?? '';
+
+  return { id: qid, uri: `${WD}${qid}`, label, description, properties };
+}
+
+// ── WikidataStore ─────────────────────────────────────────────────────────────
+
+export class WikidataStore {
+  private readonly _store: Store;
+  private readonly _fetchedLabels   = new Set<string>();
+  private readonly _fetchedEntities = new Set<string>();
+
+  constructor(store: Store) {
+    this._store = store;
+  }
+
+  get store(): Store  { return this._store; }
+  get size():  number { return this._store.size; }
+
+  query(sparql: string): unknown {
+    return this._store.query(sparql);
+  }
+
+  // ── Cache state ────────────────────────────────────────────────────────────
+
+  isFetchedLabels(qid: string):  boolean { return this._fetchedLabels.has(qid); }
+  isFetchedEntity(qid: string):  boolean { return this._fetchedEntities.has(qid); }
+
+  /** @internal */
+  _markLabelsFetched(qid: string): void { this._fetchedLabels.add(qid); }
+  /** @internal */
+  _markEntityFetched(qid: string): void { this._fetchedEntities.add(qid); }
+
+  // ── Convenience methods ────────────────────────────────────────────────────
+
+  /**
+   * Delegates to `fetchWikidataLabels` with `this` as the store argument.
+   */
+  async enrichLabels(
+    qids: string[],
+    languages: string[] = ['de', 'en']
+  ): Promise<Map<string, { label: string; description: string }>> {
+    return fetchWikidataLabels(qids, languages, this);
+  }
+
+  /**
+   * Delegates to `fetchWikidataDetails` with `this` as the store argument.
+   */
+  async enrichEntity(
+    qid: string,
+    languages: string[] = ['de', 'en']
+  ): Promise<WikidataEntity> {
+    return fetchWikidataDetails(qid, languages, this);
+  }
+
+  async enrichEntities(
+    qids: string[],
+    languages: string[] = ['de', 'en']
+  ): Promise<Map<string, WikidataEntity>> {
+    const result = new Map<string, WikidataEntity>();
+    for (const qid of qids) {
+      try {
+        result.set(qid, await this.enrichEntity(qid, languages));
+      } catch {
+        // logged inside fetchWikidataDetails
+      }
+    }
+    return result;
+  }
+
+  /**
+   * Fetches all Wikidata entities that link TO the given URI and loads them
+   * into the store.  Useful for finding e.g. all works by an author,
+   * all people born in a city, etc.
+   *
+   * Step 1: SPARQL query against the Wikidata endpoint finds all subject QIDs
+   *         that have any direct claim pointing at the target entity.
+   * Step 2: Each linking entity is fetched as JSON-LD and loaded into the
+   *         store via `enrichEntity` (already-fetched QIDs are skipped).
+   *
+   * @param uri       Target URI, e.g. 'http://www.wikidata.org/entity/Q64'
+   * @param languages Language preference order for label resolution
+   * @param limit     Maximum number of incoming links to fetch (default 50)
+   */
+  async enrichIncomingLinks(
+    uri: string,
+    languages: string[] = ['de', 'en'],
+    limit = 50
+  ): Promise<WikidataEntity[]> {
+    const qid = extractQid(uri);
+    if (!qid) {
+      console.warn(`[WikidataStore] enrichIncomingLinks: not a Wikidata URI: ${uri}`);
+      return [];
+    }
+
+    // Step 1: find QIDs of all entities that directly link to this one
+    const sparql = `
+      SELECT DISTINCT ?subject WHERE {
+        ?subject ?p wd:${qid} .
+        ?subject a wikibase:Item .
+      } LIMIT ${limit}
+    `;
+
+    let incomingQids: string[];
+    try {
+      const res = await fetch('https://query.wikidata.org/sparql', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/sparql-results+json',
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'User-Agent': 'HDT-Browser-Viewer/1.0'
+        },
+        body: new URLSearchParams({ query: sparql })
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+      const json = await res.json();
+
+      incomingQids = (json.results.bindings as any[])
+        .map(b => extractQid(b.subject?.value ?? ''))
+        .filter((q): q is string => q !== null);
+    } catch (e) {
+      console.error(`[WikidataStore] enrichIncomingLinks SPARQL failed for ${uri}:`, e);
+      throw e;
+    }
+
+    if (incomingQids.length === 0) return [];
+
+    // Step 2: load each linking entity into the store
+    const results: WikidataEntity[] = [];
+    for (const incomingQid of incomingQids) {
+      try {
+        results.push(await this.enrichEntity(incomingQid, languages));
+      } catch {
+        // logged inside enrichEntity / fetchWikidataDetails
+      }
+    }
+
+    return results;
+  }
+
+  // ── Store reconstruction ───────────────────────────────────────────────────
+
+  getLabelsFromStore(qid: string): { label: string; description: string } {
+    const uri = `${WD}${qid}`;
+    let   label       = qid;
+    let   description = '';
+
+    try {
+      const lr = this._store.query(
+        `SELECT ?l WHERE { <${uri}> <${RDFS_LABEL}> ?l } LIMIT 1`
+      ) as any[];
+      if (lr.length > 0) label = lr[0].get('l').value;
+
+      const dr = this._store.query(
+        `SELECT ?d WHERE { <${uri}> <${SCHEMA_DESC}> ?d } LIMIT 1`
+      ) as any[];
+      if (dr.length > 0) description = dr[0].get('d').value;
+    } catch (e) {
+      console.warn(`[WikidataStore] getLabelsFromStore failed for ${qid}:`, e);
+    }
+
+    return { label, description };
+  }
+
+  getEntityFromStore(qid: string): WikidataEntity {
+    const uri                    = `${WD}${qid}`;
+    const properties             = new Map<string, string[]>();
+    const { label, description } = this.getLabelsFromStore(qid);
+
+    try {
+      const rows = this._store.query(
+        `SELECT ?p ?o WHERE { <${uri}> ?p ?o }`
+      ) as any[];
+      for (const row of rows) {
+        const key = row.get('p').value;
+        const val = row.get('o').value;
+        if (!properties.has(key)) properties.set(key, []);
+        properties.get(key)!.push(val);
+      }
+    } catch (e) {
+      console.warn(`[WikidataStore] getEntityFromStore failed for ${qid}:`, e);
+    }
+
+    return { id: qid, uri, label, description, properties };
+  }
 }
