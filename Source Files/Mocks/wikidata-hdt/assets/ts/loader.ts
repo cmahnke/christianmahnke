@@ -10,10 +10,11 @@ if (window) {
   import.meta.url = window.location.origin;
 }
 
-(async function () {
+// Einmalig gecachte Promise – sequenziell weil beide denselben
+// _loadWasmModule-Mechanismus des Bundlers verwenden.
+const wasmReady: Promise<void> = (async () => {
   await init_hdt({ wasm_hdt });
   await init_oxigraph({ wasm_oxigraph });
-  //await init_oxigraph();
 })();
 
 function parseTerm(value: string, position: "subject" | "predicate" | "object") {
@@ -70,6 +71,10 @@ export function hdtToOxigraph(hdt: Hdt): oxigraph.Store {
 }
 
 export async function loadHdtFromUrl(url: string): Promise<oxigraph.Store> {
+  // Sicherstellen dass beide WASM-Module vollständig initialisiert sind
+  // bevor Hdt oder oxigraph.Store instantiiert werden.
+  await wasmReady;
+
   let response: Response;
   try {
     response = await fetch(url);
@@ -93,6 +98,7 @@ export async function loadHdtFromUrl(url: string): Promise<oxigraph.Store> {
   if (buffer.byteLength === 0) {
     throw new Error(`HDT file from "${url}" is empty (0 bytes)`);
   }
+
   let hdt: Hdt;
   try {
     hdt = await new Hdt(new Uint8Array(buffer));
@@ -101,9 +107,7 @@ export async function loadHdtFromUrl(url: string): Promise<oxigraph.Store> {
     throw new Error(`Error parsing HDT data from "${url}" (${buffer.byteLength} bytes): ${message}`);
   }
 
-  let store;
-  store = hdtToOxigraph(hdt);
-  
+  const store = hdtToOxigraph(hdt);
   hdt.free();
   return store;
 }

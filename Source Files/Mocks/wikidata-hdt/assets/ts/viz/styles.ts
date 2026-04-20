@@ -49,7 +49,7 @@ export const componentStyles = css`
       overflow-y: auto; 
       white-space: pre-wrap;
       color: var(--sparql-text); 
-      z-index: 100;
+      z-index: 50;
     }
 
     #loading-overlay {
@@ -62,7 +62,7 @@ export const componentStyles = css`
       color: var(--sparql-text); 
       font-family: monospace;
       font-size: var(--sparql-font-size); 
-      z-index: 200;
+      z-index: 90;
     }
 
     #loading-overlay .error { 

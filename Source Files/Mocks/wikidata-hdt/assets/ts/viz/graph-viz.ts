@@ -546,6 +546,11 @@ export class RdfGraph extends LitElement {
         toAttribute(value: WikidataMode): string { return value; }
       }
     },
+    autoExecute: {
+      type: Boolean,
+      attribute: 'auto-execute',
+      reflect: false,
+    },
   };
 
   src: string = '';
@@ -553,6 +558,16 @@ export class RdfGraph extends LitElement {
   languages: string[] = ['de', 'en'];
   nodeScaling: NodeScaling = 'off';
   wikidata: WikidataMode = 'off';
+
+  /**
+   * When present, the component runs `sparqlQuery` automatically as soon
+   * as the HDT store has finished loading, without requiring any further
+   * property change.  Mirrors the HTML boolean-attribute convention:
+   * presence = true, absence = false.
+   *
+   *   <rdf-graph src="data.hdt" sparql-query="SELECT …" auto-execute></rdf-graph>
+   */
+  autoExecute: boolean = false;
 
   private _nodeInfo: NodeInfoData | null = null;
   private _loadingState: LoadingState = { status: 'idle' };
@@ -630,12 +645,17 @@ export class RdfGraph extends LitElement {
       await this._loadData(version);
       if (this._workVersion !== version) return;
     }
+
     const queryToRun = this.sparqlQuery?.trim();
-    if (this._store && queryToRun &&
-      (queryToRun !== this._executedQuery ||
-       !this._arraysEqual(this.languages, this._executedLanguages) ||
-       this.nodeScaling !== this._executedScaling ||
-       this.wikidata !== this._executedWikidata)) {
+    const settingsChanged =
+      queryToRun !== this._executedQuery ||
+      !this._arraysEqual(this.languages, this._executedLanguages) ||
+      this.nodeScaling !== this._executedScaling ||
+      this.wikidata !== this._executedWikidata;
+
+    const autoTrigger = this.autoExecute && this._executedQuery === null;
+
+    if (this._store && queryToRun && (settingsChanged || autoTrigger)) {
       await this._buildGraph(queryToRun, version);
     }
   }
@@ -703,6 +723,9 @@ export class RdfGraph extends LitElement {
     } catch (error) {
       if (this._workVersion !== version || this.src !== loadingSrc) return;
       const message = error instanceof Error ? error.message : String(error);
+      // ── neu ──────────────────────────────────────────────────────────
+      console.error('[rdf-graph] Fehler beim Laden der HDT-Datei:', error);
+      // ─────────────────────────────────────────────────────────────────
       this._updateOverlay({ status: 'error', message });
       this.dispatchEvent(new CustomEvent('load-error', {
         detail: { error: message }, bubbles: true, composed: true
@@ -765,10 +788,11 @@ export class RdfGraph extends LitElement {
       }));
     } catch (error) {
       if (this._workVersion !== version) return;
-      this._updateOverlay({
-        status: 'error',
-        message: `Query-Fehler: ${error instanceof Error ? error.message : String(error)}`
-      });
+      const message = `Query-Fehler: ${error instanceof Error ? error.message : String(error)}`;
+      // ── neu ──────────────────────────────────────────────────────────
+      console.error('[rdf-graph] Fehler beim Ausführen der SPARQL-Query:', error);
+      // ─────────────────────────────────────────────────────────────────
+      this._updateOverlay({ status: 'error', message });
       this.dispatchEvent(new CustomEvent('query-error', {
         detail: { error: error instanceof Error ? error.message : String(error) }, bubbles: true, composed: true
       }));
@@ -816,7 +840,6 @@ export class RdfGraph extends LitElement {
     const node = this._cy.getElementById(nodeId);
     if (node.hasClass('expanded')) return;
 
-    // Zustand signalisieren ohne Label zu mutieren
     node.addClass('wikidata-loading');
 
     try {
@@ -904,7 +927,9 @@ export class RdfGraph extends LitElement {
     } catch (e) {
       node.removeClass('wikidata-loading');
       node.addClass('wikidata-error');
-      console.error('Wikidata expand error:', e);
+      // ── bereits vorhanden, Präfix ergänzt ────────────────────────────
+      console.error('[rdf-graph] Fehler beim Expandieren des Wikidata-Knotens:', e);
+      // ─────────────────────────────────────────────────────────────────
     }
   }
 
@@ -953,12 +978,7 @@ export class RdfGraph extends LitElement {
         title="Graph als SVG exportieren"
         ?disabled=${!ready}
         @click=${() => this.exportAsSvg()}
-      >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4h14v-2H5v2z"/>
-        </svg>
-        SVG
-      </button>
+      >SVG</button>
       ${this._nodeInfo
         ? html`<div id="node-info">${this._formatNodeInfo(this._nodeInfo)}</div>`
         : null}
