@@ -38,6 +38,8 @@ Due to the rate limit, executing queries via SPARQL from Wikidata very quickly r
 
 ## Query
 
+**Please note: The queries may take a while...**
+
 {{< client-sparql src="/meta/wikidata/enriched_entities.hdt" >}}
 
 Contains data from [Wikidata](https://www.wikidata.org/), licensed under [CC0](https://www.wikidata.org/wiki/Wikidata:Text_of_the_Creative_Commons_Public_Domain_Dedication).
@@ -153,3 +155,7 @@ The HDT file created in the first step is loaded using the [WASM](https://en.wik
 [`sparql-editor`](https://github.com/aatauil/sparql-editor) is used to display the code.
 
 **The entire application therefore runs directly in the browser, without any dynamic server components.**
+
+# Next steps
+
+At present, only the blog content is being retrieved and included in the dataset. The next step will be to integrate the [collection page](https://christianmahnke.de/collections/) and other metadata formats (such as IIIF manifests).

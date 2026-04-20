@@ -38,6 +38,8 @@ Aufgrund des Rate-Limits kommt es bei der Ausführung via SPARQL aus Wikidata re
 
 ## Abfrage 
 
+**Achtung: Die Abfragen können etwas dauern...**
+
 {{< client-sparql src="/meta/wikidata/enriched_entities.hdt" >}}
 
 Enhält Daten von [Wikidata](https://www.wikidata.org/)., lizensiert unter [CC0](https://www.wikidata.org/wiki/Wikidata:Text_of_the_Creative_Commons_Public_Domain_Dedication).
@@ -153,3 +155,7 @@ Die im ersten Schritt erstellte HDT-Datei wird mit der [WASM](https://en.wikiped
 Für die Darstellung als Code Editor kommt [`sparql-editor`](https://github.com/aatauil/sparql-editor) zum Einsatz.
 
 **Die gesamte Anwendung läuft also direkt im Browser, ohne dynamische Serverkomponente.**
+
+# Nächste Schritte
+
+Derzeit werden nur die Inhalte des Blogs abgefragt und Teil der Datengrundlage. Im nächsten Schritt sollen auch die [Sammlungsseite](https://christianmahnke.de/collections/) und weitere Metadatenformate (wie IIIF-Manifeste) integriert werden.
