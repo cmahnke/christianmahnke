@@ -1,0 +1,60 @@
+oxigraph-sparql, rdf-graph {
+  --sparql-font-family: "";
+  --sparql-font-size: 1.2em;
+  --sparql-line-height: 1.2;
+  --sparql-section-gap: 0;
+}
+
+#controls {
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+#sparql-input {
+  flex: 1;
+  font-family: monospace;
+  font-size: 0.8rem;
+  background: #16213e;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  padding: 0.5rem;
+  resize: vertical;
+}
+
+#sparql-run {
+  padding: 0.5rem 1rem;
+  background: #e94560;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+
+#sparql-run:hover {
+  background: #c73e54;
+}
+
+#sparql-run:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+#status {
+  padding: 0 1rem 0.5rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+#graph {
+  width: 100vw;
+  height: calc(100vh - 8rem);
+}
+
+rdf-graph {
+  width: 100%;
+  height: calc(100vh - 8rem);
+  display: block;
+}

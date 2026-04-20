@@ -6,6 +6,83 @@ import { createSparqlEditor } from 'sparql-editor';
 import "../../scss/sparql/sparql.scss";
 
 // =====================
+// I18N
+// =====================
+
+const TRANSLATIONS = {
+  de: {
+    init:          'Initialisiere…',
+    ready:         'Bereit',
+    initError:     'Initialisierungsfehler',
+    loadingData:   'Lade Daten…',
+    triples:       (n: number) => `${n} Tripel`,
+    parseError:    'Parse-Fehler',
+    loading:       'Lade…',
+    loadError:     'Ladefehler',
+    loadingHdt:    'Lade HDT…',
+    hdtError:      'HDT-Fehler',
+    querying:      'Abfrage…',
+    results:       (n: number) => `${n} Ergebnisse`,
+    queryError:    'Fehler',
+    fixedSource:   'Feste Quelle',
+    source:        'Quelle',
+    load:          'Laden',
+    loadIntoStore: 'In Store laden',
+    running:       'Läuft…',
+    execute:       'Ausführen',
+    noResults:     'Keine Ergebnisse.',
+    pageNav:       'Seitennavigation',
+    firstPage:     'Erste Seite',
+    prevPage:      'Vorherige Seite',
+    nextPage:      'Nächste Seite',
+    lastPage:      'Letzte Seite',
+    showing:       (from: number, to: number, total: number) =>
+                     `Zeige ${from}–${to} von ${total}`,
+    page:          (current: number, total: number) =>
+                     `Seite ${current} von ${total}`,
+  },
+  en: {
+    init:          'Initialising…',
+    ready:         'Ready',
+    initError:     'Initialisation error',
+    loadingData:   'Loading data…',
+    triples:       (n: number) => `${n} triples`,
+    parseError:    'Parse error',
+    loading:       'Loading…',
+    loadError:     'Load error',
+    loadingHdt:    'Loading HDT…',
+    hdtError:      'HDT error',
+    querying:      'Running query…',
+    results:       (n: number) => `${n} results`,
+    queryError:    'Error',
+    fixedSource:   'Fixed source',
+    source:        'Source',
+    load:          'Load',
+    loadIntoStore: 'Load into store',
+    running:       'Running…',
+    execute:       'Execute',
+    noResults:     'No results.',
+    pageNav:       'Page navigation',
+    firstPage:     'First page',
+    prevPage:      'Previous page',
+    nextPage:      'Next page',
+    lastPage:      'Last page',
+    showing:       (from: number, to: number, total: number) =>
+                     `Showing ${from}–${to} of ${total}`,
+    page:          (current: number, total: number) =>
+                     `Page ${current} of ${total}`,
+  },
+} as const;
+
+type Lang = keyof typeof TRANSLATIONS;
+type I18n = typeof TRANSLATIONS[Lang];
+
+function detectLang(): Lang {
+  const browserLang = (navigator.language || 'en').toLowerCase();
+  return browserLang.startsWith('de') ? 'de' : 'en';
+}
+
+// =====================
 // TYPES
 // =====================
 
@@ -46,31 +123,30 @@ interface FormattedTerm {
 // CONSTANTS
 // =====================
 
-// Rows per page in the results table 
 const ROWS_PER_PAGE = 50;
 
 const PREFIX_MAP: Record<string, string> = {
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#': 'rdf:',
-  'http://www.w3.org/2000/01/rdf-schema#': 'rdfs:',
-  'http://www.w3.org/2002/07/owl#': 'owl:',
-  'http://www.w3.org/2001/XMLSchema#': 'xsd:',
-  'http://xmlns.com/foaf/0.1/': 'foaf:',
-  'http://purl.org/dc/elements/1.1/': 'dc:',
-  'http://purl.org/dc/terms/': 'dct:',
-  'http://schema.org/': 'schema:',
-  'http://www.w3.org/2004/02/skos/core#': 'skos:',
+  'http://www.w3.org/2000/01/rdf-schema#':        'rdfs:',
+  'http://www.w3.org/2002/07/owl#':               'owl:',
+  'http://www.w3.org/2001/XMLSchema#':            'xsd:',
+  'http://xmlns.com/foaf/0.1/':                   'foaf:',
+  'http://purl.org/dc/elements/1.1/':             'dc:',
+  'http://purl.org/dc/terms/':                    'dct:',
+  'http://schema.org/':                           'schema:',
+  'http://www.w3.org/2004/02/skos/core#':         'skos:',
 };
 
 const MIME_MAP: Record<string, string> = {
-  turtle: 'text/turtle',
+  turtle:   'text/turtle',
   ntriples: 'application/n-triples',
-  rdfxml: 'application/rdf+xml',
-  nquads: 'application/n-quads',
-  trig: 'application/trig',
+  rdfxml:   'application/rdf+xml',
+  nquads:   'application/n-quads',
+  trig:     'application/trig',
 };
 
 const HDT_EXTENSIONS = ['.hdt'];
-const HDT_MIMETYPES = ['application/x-hdt', 'application/hdt'];
+const HDT_MIMETYPES  = ['application/x-hdt', 'application/hdt'];
 
 function isHdt(url: string, contentType: string): boolean {
   const lowerUrl = url.toLowerCase();
@@ -86,13 +162,14 @@ function isHdt(url: string, contentType: string): boolean {
 
 function detectRdfFormat(url: string, contentType: string, fallback: string): string {
   const lowerUrl = url.toLowerCase();
-  const lowerCt = contentType.toLowerCase();
+  const lowerCt  = contentType.toLowerCase();
 
-  if (lowerCt.includes('turtle') || lowerUrl.endsWith('.ttl')) return 'turtle';
-  if (lowerCt.includes('n-triples') || lowerUrl.endsWith('.nt')) return 'ntriples';
-  if (lowerCt.includes('rdf+xml') || lowerUrl.endsWith('.rdf') || lowerUrl.endsWith('.owl')) return 'rdfxml';
-  if (lowerCt.includes('n-quads') || lowerUrl.endsWith('.nq')) return 'nquads';
-  if (lowerCt.includes('trig') || lowerUrl.endsWith('.trig')) return 'trig';
+  if (lowerCt.includes('turtle')    || lowerUrl.endsWith('.ttl'))              return 'turtle';
+  if (lowerCt.includes('n-triples') || lowerUrl.endsWith('.nt'))               return 'ntriples';
+  if (lowerCt.includes('rdf+xml')   || lowerUrl.endsWith('.rdf')
+                                     || lowerUrl.endsWith('.owl'))              return 'rdfxml';
+  if (lowerCt.includes('n-quads')   || lowerUrl.endsWith('.nq'))               return 'nquads';
+  if (lowerCt.includes('trig')      || lowerUrl.endsWith('.trig'))             return 'trig';
 
   return fallback;
 }
@@ -136,64 +213,65 @@ export class OxigraphSparql extends LitElement {
   }
 
   // Public
-  query: string;
-  dataUrl: string;
-  rdfData: string;
-  rdfFormat: string;
-  heading: string;
+  query:         string;
+  dataUrl:       string;
+  rdfData:       string;
+  rdfFormat:     string;
+  heading:       string;
   hideDataInput: boolean;
-  autoExecute: boolean;
+  autoExecute:   boolean;
 
   // Internal
-  private _store: OxigraphStore | null;
-  private _loading: boolean;
-  private _loadingData: boolean;
-  private _result: QueryResult | null;
-  private _error: string | null;
-  private _statusMessage: string;
-  private _statusType: StatusType;
-  private _tripleCount: number;
-  private _executionTime: number;
-  private _oxigraphReady: boolean;
+  private _t:              I18n;
+  private _store:          OxigraphStore | null;
+  private _loading:        boolean;
+  private _loadingData:    boolean;
+  private _result:         QueryResult | null;
+  private _error:          string | null;
+  private _statusMessage:  string;
+  private _statusType:     StatusType;
+  private _tripleCount:    number;
+  private _executionTime:  number;
+  private _oxigraphReady:  boolean;
   private _activeInputTab: InputTab;
-  private _urlInput: string;
-  private _textInput: string;
+  private _urlInput:       string;
+  private _textInput:      string;
   private _oxigraphModule: any;
-  private _storeLocked: boolean;
-
-  /** Aktuelle Seite der Ergebnistabelle (0-basiert) */
-  private _currentPage: number;
-
-  private _editor: any = null;
+  private _storeLocked:    boolean;
+  private _currentPage:    number;
+  private _editor:         any;
   private _currentQueryText: string;
 
   constructor() {
     super();
 
-    this.query = 'SELECT ?s ?p ?o\nWHERE {\n  ?s ?p ?o .\n}\nLIMIT 25';
-    this.dataUrl = '';
-    this.rdfData = '';
-    this.rdfFormat = 'turtle';
-    this.heading = '';
-    this.hideDataInput = false;
-    this.autoExecute = false;
+    this._t = TRANSLATIONS[detectLang()];
 
-    this._store = null;
-    this._loading = false;
-    this._loadingData = false;
-    this._result = null;
-    this._error = null;
-    this._statusMessage = '';
-    this._statusType = '';
-    this._tripleCount = 0;
-    this._executionTime = 0;
-    this._oxigraphReady = false;
+    this.query         = 'SELECT ?s ?p ?o\nWHERE {\n  ?s ?p ?o .\n}\nLIMIT 25';
+    this.dataUrl       = '';
+    this.rdfData       = '';
+    this.rdfFormat     = 'turtle';
+    this.heading       = '';
+    this.hideDataInput = false;
+    this.autoExecute   = false;
+
+    this._store          = null;
+    this._loading        = false;
+    this._loadingData    = false;
+    this._result         = null;
+    this._error          = null;
+    this._statusMessage  = '';
+    this._statusType     = '';
+    this._tripleCount    = 0;
+    this._executionTime  = 0;
+    this._oxigraphReady  = false;
     this._activeInputTab = 'text';
-    this._urlInput = '';
-    this._textInput = '';
+    this._urlInput       = '';
+    this._textInput      = '';
     this._oxigraphModule = null;
-    this._storeLocked = false;
-    this._currentPage = 0;
+    this._storeLocked    = false;
+    this._currentPage    = 0;
+    this._editor         = null;
 
     this._currentQueryText = this.query;
   }
@@ -207,8 +285,8 @@ export class OxigraphSparql extends LitElement {
   }
 
   private _shouldShowDataInput(): boolean {
-    if (this.hideDataInput) return false;
-    if (this._storeLocked) return false;
+    if (this.hideDataInput)  return false;
+    if (this._storeLocked)   return false;
     return true;
   }
 
@@ -230,7 +308,7 @@ export class OxigraphSparql extends LitElement {
   }
 
   private _pagedRows(): ResultRow[] {
-    const rows = this._result?.rows ?? [];
+    const rows  = this._result?.rows ?? [];
     const start = this._currentPage * ROWS_PER_PAGE;
     return rows.slice(start, start + ROWS_PER_PAGE);
   }
@@ -241,9 +319,9 @@ export class OxigraphSparql extends LitElement {
   }
 
   private _goFirst(): void { this._goToPage(0); }
-  private _goPrev(): void  { this._goToPage(this._currentPage - 1); }
-  private _goNext(): void  { this._goToPage(this._currentPage + 1); }
-  private _goLast(): void  { this._goToPage(this._totalPages() - 1); }
+  private _goPrev():  void { this._goToPage(this._currentPage - 1); }
+  private _goNext():  void { this._goToPage(this._currentPage + 1); }
+  private _goLast():  void { this._goToPage(this._totalPages() - 1); }
 
   // =====================
   // LIFECYCLE
@@ -309,8 +387,8 @@ export class OxigraphSparql extends LitElement {
     if (!container) return;
 
     this._editor = createSparqlEditor({
-      parent: container,
-      value: this.query,
+      parent:   container,
+      value:    this.query,
       onChange: (value: string) => {
         this._currentQueryText = value;
       },
@@ -323,7 +401,7 @@ export class OxigraphSparql extends LitElement {
 
   private async _initOxigraph(): Promise<void> {
     if (this._oxigraphReady) return;
-    this._setStatus('Initialisiere…', 'loading');
+    this._setStatus(this._t.init, 'loading');
 
     try {
       this._oxigraphModule = await import('oxigraph/web.js');
@@ -332,10 +410,10 @@ export class OxigraphSparql extends LitElement {
         await this._oxigraphModule.default();
       }
 
-      this._store = new this._oxigraphModule.Store();
+      this._store         = new this._oxigraphModule.Store();
       this._oxigraphReady = true;
-      this._tripleCount = 0;
-      this._setStatus('Bereit', 'success');
+      this._tripleCount   = 0;
+      this._setStatus(this._t.ready, 'success');
 
       if (this._hasAttributeData()) {
         this._storeLocked = true;
@@ -352,7 +430,7 @@ export class OxigraphSparql extends LitElement {
         }
       }
     } catch (err: any) {
-      this._setStatus('Initialisierungsfehler', 'error');
+      this._setStatus(this._t.initError, 'error');
       this._error = err.message;
       console.error('OxiGraph init error:', err);
     }
@@ -367,22 +445,22 @@ export class OxigraphSparql extends LitElement {
 
     try {
       this._loadingData = true;
-      this._setStatus('Lade Daten…', 'loading');
+      this._setStatus(this._t.loadingData, 'loading');
 
       const mimeType = MIME_MAP[format] || 'text/turtle';
       this._store.load(data, { format: mimeType });
 
       this._tripleCount = this._store.size;
-      this._setStatus(this._tripleCount + ' Tripel', 'success');
+      this._setStatus(this._t.triples(this._tripleCount), 'success');
       this._error = null;
 
       this.dispatchEvent(new CustomEvent('data-loaded', {
-        detail: { tripleCount: this._tripleCount },
-        bubbles: true,
+        detail:   { tripleCount: this._tripleCount },
+        bubbles:  true,
         composed: true,
       }));
     } catch (err: any) {
-      this._setStatus('Parse-Fehler', 'error');
+      this._setStatus(this._t.parseError, 'error');
       this._error = err.message;
     } finally {
       this._loadingData = false;
@@ -399,7 +477,7 @@ export class OxigraphSparql extends LitElement {
 
     try {
       this._loadingData = true;
-      this._setStatus('Lade…', 'loading');
+      this._setStatus(this._t.loading, 'loading');
 
       const response = await fetch(url);
       if (!response.ok) {
@@ -414,11 +492,11 @@ export class OxigraphSparql extends LitElement {
       }
 
       if (!this._store) return;
-      const text = await response.text();
+      const text   = await response.text();
       const format = detectRdfFormat(url, contentType, this.rdfFormat);
       await this._loadRdfString(text, format);
     } catch (err: any) {
-      this._setStatus('Ladefehler', 'error');
+      this._setStatus(this._t.loadError, 'error');
       this._error = err.message;
     } finally {
       this._loadingData = false;
@@ -430,19 +508,19 @@ export class OxigraphSparql extends LitElement {
 
     try {
       this._loadingData = true;
-      this._setStatus('Lade HDT…', 'loading');
+      this._setStatus(this._t.loadingHdt, 'loading');
 
-      const store = await loadHdtFromUrl(url);
-      this._store = store as unknown as OxigraphStore;
+      const store     = await loadHdtFromUrl(url);
+      this._store     = store as unknown as OxigraphStore;
       this._tripleCount = this._store.size;
-      this._setStatus(this._tripleCount + ' Tripel', 'success');
+      this._setStatus(this._t.triples(this._tripleCount), 'success');
       this._error = null;
 
       if (this.autoExecute) {
         await this._executeQuery();
       }
     } catch (err: any) {
-      this._setStatus('HDT-Fehler', 'error');
+      this._setStatus(this._t.hdtError, 'error');
       this._error = err.message;
     } finally {
       this._loadingData = false;
@@ -459,42 +537,41 @@ export class OxigraphSparql extends LitElement {
     const queryText = this._currentQueryText.trim();
     if (!queryText) return;
 
-    this._loading = true;
-    this._error = null;
-    this._result = null;
+    this._loading     = true;
+    this._error       = null;
+    this._result      = null;
     this._currentPage = 0;
-    this._setStatus('Abfrage…', 'loading');
+    this._setStatus(this._t.querying, 'loading');
 
     try {
-      const t0 = performance.now();
-      const result = this._store.query(queryText);
-      this._executionTime = Math.round((performance.now() - t0) * 100) / 100;
-
-      this._result = this._processResult(result);
+      const t0             = performance.now();
+      const result         = this._store.query(queryText);
+      this._executionTime  = Math.round((performance.now() - t0) * 100) / 100;
+      this._result         = this._processResult(result);
 
       let count: string;
       if (this._result.type === 'bindings') {
-        count = (this._result.rows?.length ?? 0) + ' Ergebnisse';
+        count = this._t.results(this._result.rows?.length ?? 0);
       } else if (this._result.type === 'boolean') {
         count = 'ASK: ' + this._result.boolean;
       } else {
-        count = (this._result.quads?.length ?? 0) + ' Tripel';
+        count = this._t.triples(this._result.quads?.length ?? 0);
       }
 
       this._setStatus(count + ' · ' + this._executionTime + ' ms', 'success');
 
       this.dispatchEvent(new CustomEvent('query-executed', {
-        detail: { result: this._result, executionTime: this._executionTime },
-        bubbles: true,
+        detail:   { result: this._result, executionTime: this._executionTime },
+        bubbles:  true,
         composed: true,
       }));
     } catch (err: any) {
       this._error = err.message;
-      this._setStatus('Fehler', 'error');
+      this._setStatus(this._t.queryError, 'error');
 
       this.dispatchEvent(new CustomEvent('query-error', {
-        detail: { error: err.message },
-        bubbles: true,
+        detail:   { error: err.message },
+        bubbles:  true,
         composed: true,
       }));
     } finally {
@@ -556,18 +633,18 @@ export class OxigraphSparql extends LitElement {
 
   private _setStatus(msg: string, type: StatusType): void {
     this._statusMessage = msg;
-    this._statusType = type;
+    this._statusType    = type;
   }
 
   private _formatTerm(term: any): FormattedTerm {
     if (!term) return { type: 'empty', value: '' };
-    if (term.termType === 'NamedNode') return { type: 'uri', value: term.value };
-    if (term.termType === 'BlankNode') return { type: 'bnode', value: '_:' + term.value };
+    if (term.termType === 'NamedNode')  return { type: 'uri',   value: term.value };
+    if (term.termType === 'BlankNode')  return { type: 'bnode', value: '_:' + term.value };
     if (term.termType === 'Literal') {
       return {
-        type: 'literal',
-        value: term.value,
-        lang: term.language || undefined,
+        type:     'literal',
+        value:    term.value,
+        lang:     term.language || undefined,
         datatype: term.datatype?.value || undefined,
       };
     }
@@ -585,7 +662,7 @@ export class OxigraphSparql extends LitElement {
   }
 
   public setQuery(sparqlQuery: string): void {
-    this.query = sparqlQuery;
+    this.query             = sparqlQuery;
     this._currentQueryText = sparqlQuery;
     if (this._editor) {
       const current = this._editor.state.doc.toString();
@@ -612,13 +689,13 @@ export class OxigraphSparql extends LitElement {
 
     if (e.key === 'Tab') {
       e.preventDefault();
-      const textarea = e.target as HTMLTextAreaElement;
-      const start = textarea.selectionStart;
-      const end = textarea.selectionEnd;
-      textarea.value =
+      const textarea        = e.target as HTMLTextAreaElement;
+      const start           = textarea.selectionStart;
+      const end             = textarea.selectionEnd;
+      textarea.value        =
         textarea.value.substring(0, start) + '  ' + textarea.value.substring(end);
       textarea.selectionStart = start + 2;
-      textarea.selectionEnd = start + 2;
+      textarea.selectionEnd   = start + 2;
     }
   }
 
@@ -654,10 +731,10 @@ export class OxigraphSparql extends LitElement {
   override render(): TemplateResult {
     return html`
       <div class="wrapper">
-        ${this._shouldShowHeader() ? this._renderHeader() : nothing}
+        ${this._shouldShowHeader()    ? this._renderHeader()      : nothing}
         ${this._shouldShowDataInput() ? this._renderDataSection() : nothing}
-        ${!this.hideDataInput ? this._renderEditor() : nothing}
-        ${!this.hideDataInput ? this._renderActions() : nothing}
+        ${!this.hideDataInput         ? this._renderEditor()      : nothing}
+        ${!this.hideDataInput         ? this._renderActions()     : nothing}
         ${this._renderResults()}
       </div>
     `;
@@ -666,11 +743,8 @@ export class OxigraphSparql extends LitElement {
   private _renderHeader(): TemplateResult {
     let src = '';
     if (this._storeLocked) {
-      if (this.rdfData.trim()) {
-        src = 'Inline RDF';
-      } else if (this.dataUrl.trim()) {
-        src = this.dataUrl;
-      }
+      if (this.rdfData.trim())  src = 'Inline RDF';
+      else if (this.dataUrl.trim()) src = this.dataUrl;
     }
 
     return html`
@@ -679,21 +753,19 @@ export class OxigraphSparql extends LitElement {
           <h2>${this.heading}</h2>
           <div class="header-meta">
             ${this._storeLocked
-              ? html`<span class="meta-badge locked">Feste Quelle</span>`
+              ? html`<span class="meta-badge locked">${this._t.fixedSource}</span>`
               : nothing}
             ${this._tripleCount > 0
-              ? html`<span class="meta-badge">${this._tripleCount} Tripel</span>`
+              ? html`<span class="meta-badge">${this._t.triples(this._tripleCount)}</span>`
               : nothing}
           </div>
         </div>
-        ${src
-          ? html`
-            <div class="source-notice">
-              <span class="source-label">Quelle</span>
-              <span class="source-value">${src}</span>
-            </div>
-          `
-          : nothing}
+        ${src ? html`
+          <div class="source-notice">
+            <span class="source-label">${this._t.source}</span>
+            <span class="source-value">${src}</span>
+          </div>
+        ` : nothing}
       </div>
     `;
   }
@@ -726,7 +798,7 @@ export class OxigraphSparql extends LitElement {
             @input=${this._handleUrlInput} />
           <button class="btn-secondary"
             ?disabled=${!this._oxigraphReady || this._loadingData}
-            @click=${this._handleLoadData}>Laden</button>
+            @click=${this._handleLoadData}>${this._t.load}</button>
         </div>
       `;
     }
@@ -739,7 +811,7 @@ export class OxigraphSparql extends LitElement {
           @input=${this._handleTextInput}></textarea>
         <button class="btn-secondary"
           ?disabled=${!this._oxigraphReady || this._loadingData}
-          @click=${this._handleLoadData}>In Store laden</button>
+          @click=${this._handleLoadData}>${this._t.loadIntoStore}</button>
       </div>
     `;
   }
@@ -761,7 +833,7 @@ export class OxigraphSparql extends LitElement {
         <button class="btn-primary"
           ?disabled=${!this._oxigraphReady || this._loading}
           @click=${this._executeQuery}>
-          ${this._loading ? 'Läuft…' : 'Ausführen'}
+          ${this._loading ? this._t.running : this._t.execute}
         </button>
         <span class="hint">Ctrl + Enter</span>
         ${this._statusMessage
@@ -781,7 +853,7 @@ export class OxigraphSparql extends LitElement {
     } else if (this._result) {
       content = this._renderResultContent();
     } else {
-      content = html`<p class="placeholder-text">Keine Ergebnisse.</p>`;
+      content = html`<p class="placeholder-text">${this._t.noResults}</p>`;
     }
 
     return html`<div class="results-section">${content}</div>`;
@@ -798,10 +870,10 @@ export class OxigraphSparql extends LitElement {
   private _renderResultContent(): TemplateResult | symbol {
     if (!this._result) return nothing;
     switch (this._result.type) {
-      case 'boolean': return this._renderBooleanResult();
-      case 'graph':   return this._renderGraphResult();
+      case 'boolean':  return this._renderBooleanResult();
+      case 'graph':    return this._renderGraphResult();
       case 'bindings':
-      default:        return this._renderBindingsResult();
+      default:         return this._renderBindingsResult();
     }
   }
 
@@ -817,7 +889,7 @@ export class OxigraphSparql extends LitElement {
   private _renderGraphResult(): TemplateResult {
     const quads = this._result!.quads || [];
     const lines = quads.map((q: any) => {
-      const s = this._shortenUri(q.subject?.value ?? String(q.subject));
+      const s = this._shortenUri(q.subject?.value   ?? String(q.subject));
       const p = this._shortenUri(q.predicate?.value ?? String(q.predicate));
       let o: string;
       if (q.object?.termType === 'Literal') {
@@ -833,10 +905,10 @@ export class OxigraphSparql extends LitElement {
 
   private _renderBindingsResult(): TemplateResult {
     const columns = this._result!.columns || [];
-    const allRows = this._result!.rows || [];
+    const allRows = this._result!.rows    || [];
 
     if (columns.length === 0 || allRows.length === 0) {
-      return html`<p class="placeholder-text">Keine Ergebnisse.</p>`;
+      return html`<p class="placeholder-text">${this._t.noResults}</p>`;
     }
 
     const totalPages  = this._totalPages();
@@ -846,8 +918,6 @@ export class OxigraphSparql extends LitElement {
     const rangeStart = currentPage * ROWS_PER_PAGE + 1;
     const rangeEnd   = Math.min(rangeStart + ROWS_PER_PAGE - 1, allRows.length);
 
-    // Tabelle und Pagination als separate Variablen –
-    // pagination landet dadurch NICHT innerhalb von table-wrap
     const tableMarkup = html`
       <div class="table-wrap">
         <table>
@@ -873,8 +943,6 @@ export class OxigraphSparql extends LitElement {
       ? this._renderPagination(currentPage, totalPages, rangeStart, rangeEnd, allRows.length)
       : nothing;
 
-    // bindings-result ist der gemeinsame Wrapper;
-    // table-wrap und pagination sind direkte Geschwister darin
     return html`
       <div class="bindings-result">
         ${tableMarkup}
@@ -884,36 +952,36 @@ export class OxigraphSparql extends LitElement {
   }
 
   private _renderPagination(
-    current: number,
-    total: number,
+    current:   number,
+    total:     number,
     rangeStart: number,
-    rangeEnd: number,
+    rangeEnd:  number,
     totalRows: number,
   ): TemplateResult {
 
     const pageNumbers = this._buildPageWindow(current, total);
 
     return html`
-      <nav class="pagination" aria-label="Seitennavigation">
+      <nav class="pagination" aria-label=${this._t.pageNav}>
 
         <span class="pagination-info">
-          Zeige ${rangeStart}–${rangeEnd} von ${totalRows}
+          ${this._t.showing(rangeStart, rangeEnd, totalRows)}
           &nbsp;|&nbsp;
-          Seite ${current + 1} von ${total}
+          ${this._t.page(current + 1, total)}
         </span>
 
         <div class="pagination-controls">
 
           <button
             class="pagination-btn"
-            title="Erste Seite"
+            title=${this._t.firstPage}
             ?disabled=${current === 0}
             @click=${this._goFirst}
           >«</button>
 
           <button
             class="pagination-btn"
-            title="Vorherige Seite"
+            title=${this._t.prevPage}
             ?disabled=${current === 0}
             @click=${this._goPrev}
           >‹</button>
@@ -932,14 +1000,14 @@ export class OxigraphSparql extends LitElement {
 
           <button
             class="pagination-btn"
-            title="Nächste Seite"
+            title=${this._t.nextPage}
             ?disabled=${current === total - 1}
             @click=${this._goNext}
           >›</button>
 
           <button
             class="pagination-btn"
-            title="Letzte Seite"
+            title=${this._t.lastPage}
             ?disabled=${current === total - 1}
             @click=${this._goLast}
           >»</button>
@@ -963,18 +1031,13 @@ export class OxigraphSparql extends LitElement {
 
     add(0);
     add(total - 1);
-
-    for (let i = current - WINDOW; i <= current + WINDOW; i++) {
-      add(i);
-    }
+    for (let i = current - WINDOW; i <= current + WINDOW; i++) add(i);
 
     pages.sort((a, b) => a - b);
 
     const result: number[] = [];
     for (let i = 0; i < pages.length; i++) {
-      if (i > 0 && pages[i] - pages[i - 1] > 1) {
-        result.push(-1);
-      }
+      if (i > 0 && pages[i] - pages[i - 1] > 1) result.push(-1);
       result.push(pages[i]);
     }
 
