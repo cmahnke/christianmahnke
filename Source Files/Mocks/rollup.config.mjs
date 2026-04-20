@@ -1,7 +1,8 @@
 import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import wasm from '@rollup/plugin-wasm';
-import scss from 'rollup-plugin-scss';
+import sassPlugin from 'rollup-plugin-sass';
+import * as sass from 'sass';
 import commonjs from '@rollup/plugin-commonjs';
 
 const configs = [ 
@@ -26,7 +27,13 @@ const configs = [
         preferBuiltins: false,
         extensions: ['.ts', '.js', '.wasm']
       }),
-      scss({ fileName: 'client-sparql.scss' }),
+      sassPlugin({ 
+        output: 'wikidata-hdt/dist/client-sparql.scss',
+        api: 'modern',
+        options: {
+          importers: [new sass.NodePackageImporter()],
+        },
+       }),
       commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
@@ -58,7 +65,13 @@ const configs = [
         preferBuiltins: false,
         extensions: ['.ts', '.js', '.wasm']
       }),
-      scss({ fileName: 'graph-viz.scss' }),
+      sassPlugin({ 
+        output: 'wikidata-hdt/dist/graph-viz.scss',
+        api: 'modern',
+        options: {
+          importers: [new sass.NodePackageImporter()],
+        },
+       }),
       commonjs(),
       typescript({
         tsconfig: './tsconfig.json',

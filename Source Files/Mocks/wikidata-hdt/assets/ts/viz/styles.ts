@@ -218,7 +218,7 @@ export const componentStyles = css`
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      border: 3px solid currentColor;
+      border: 5px solid var(--swatch-color);;
       background: transparent;
       flex-shrink: 0;
     }
@@ -228,6 +228,7 @@ export const componentStyles = css`
       align-items: flex-start;
       gap: 6px;
     }
+
     .legend-label {
       line-height: 1.3;
       flex: 1;

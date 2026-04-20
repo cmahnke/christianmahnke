@@ -1,15 +1,58 @@
+/* josefin-sans-latin-wght-normal */
+@font-face {
+  font-family: "Josefin Sans Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 700;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("@fontsource-variable/josefin-sans/files/josefin-sans-latin-wght-normal.woff2") format("woff2-variations");
+}
+/* league-spartan-latin-wght-normal */
+@font-face {
+  font-family: "League Spartan Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("@fontsource-variable/league-spartan/files/league-spartan-latin-wght-normal.woff2") format("woff2-variations");
+}
+/* geist-mono-latin-wght-normal */
+@font-face {
+  font-family: "Geist Mono Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2") format("woff2-variations");
+}
 oxigraph-sparql, rdf-graph {
-  --sparql-font-family: "";
+  --sparql-font-family: "Josefin Sans", Futura, sans-serif;
   --sparql-font-size: 1.2em;
   --sparql-line-height: 1.2;
   --sparql-section-gap: 0;
+  --sparql-accent-text: #fff;
+  --sparql-accent: linear-gradient(100deg, #b2444d, #701611);
+}
+
+h1, h2, h3 {
+  font-family: "League Spartan", Futura, sans-serif;
+}
+
+body, p, div {
+  font-family: "Josefin Sans", Futura, sans-serif;
+}
+
+.monospaced {
+  font-family: "Geist Mono", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 oxigraph-sparql {
-  --sparql-font-family: "Josefin Sans", Futura, sans-serif;
+  --sparql-editor-font: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
   --sparql-section-gap: 0;
   --actions-hint-display: none;
+  --actions-font-size: 100%;
   --sparql-editor-font-size: 1rem;
+  --sparql-editor-font: Geist Mono, Consolas, Liberation Mono, Menlo, monospace;
   --sparql-font-size: 1.2em;
   --sparql-editor-min-height: 16em;
   --actions-font-size: 1.2rem;

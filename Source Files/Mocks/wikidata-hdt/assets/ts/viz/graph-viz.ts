@@ -39,14 +39,14 @@ const WIKIBASE_PROPERTY_TYPE = 'http://wikiba.se/ontology#propertyType';
 const WIKIBASE_DIRECT_CLAIM  = 'http://wikiba.se/ontology#directClaim';
 
 export const INSTANCE_OF_COLORS: Record<string, string> = {
-  'Q5':        '#e74c3c', // Mensch
-  'Q17334923': '#3498db', // Ort
-  'Q15642541': '#3498db', // räumliche Einheit
-  'Q8502':     '#3498db', // geographical feature
-  'Q16334295': '#e67e22', // Gruppe
-  'Q43229':    '#e67e22', // Organisation
-  'Q838948':   '#2ecc71', // Werk
-  'Q7397':     '#f1c40f', // Software
+  'Q5':        '#e74c3c',
+  'Q17334923': '#3498db',
+  'Q15642541': '#3498db',
+  'Q8502':     '#3498db',
+  'Q16334295': '#e67e22',
+  'Q43229':    '#e67e22',
+  'Q838948':   '#2ecc71',
+  'Q7397':     '#f1c40f',
 };
 
 // --- i18n ---
@@ -326,7 +326,6 @@ function findLabelInStore(
         if (results.length > 0) return results[0].get('label').value;
       } catch { /* ignore */ }
     }
-    // Fallback: kein Sprachfilter
     try {
       const results = wikidataStore.query(
         `SELECT ?label WHERE { <${uri}> <${predicate}> ?label . FILTER(LANG(?label) = "") } LIMIT 1`
@@ -751,7 +750,6 @@ export class RdfGraph extends LitElement {
 
   static override properties = {
     src: { type: String },
-    sparqlQuery: { type: String, attribute: 'sparql-query' },
     languages: {
       type: Array,
       converter: {
@@ -787,12 +785,25 @@ export class RdfGraph extends LitElement {
   };
 
   src: string = '';
-  sparqlQuery: string = '';
   languages: string[] = ['de', 'en'];
   nodeScaling: NodeScaling = 'off';
   wikidata: WikidataMode = 'off';
   autoExecute: boolean = false;
   language: string | null = null;
+
+  private _sparqlQuery: string = '';
+
+  get sparqlQuery(): string {
+    return this._sparqlQuery;
+  }
+
+  set sparqlQuery(value: string) {
+    const old = this._sparqlQuery;
+    this._sparqlQuery = value;
+    if (old !== value) {
+      this._scheduleWork(false);
+    }
+  }
 
   private get _t() {
     return UI_STRINGS[resolveUiLang(this.language)];
@@ -809,19 +820,35 @@ export class RdfGraph extends LitElement {
   private _executedScaling: NodeScaling | null = null;
   private _executedWikidata: WikidataMode | null = null;
   private _resizeObserver: ResizeObserver | null = null;
+  private _scriptObserver: MutationObserver | null = null;
   private _working = false;
   private _workVersion = 0;
   private _pendingSrcChanged = false;
 
   override connectedCallback(): void {
     super.connectedCallback();
+
     this._resizeObserver = new ResizeObserver(() => this._handleResize());
     this._resizeObserver.observe(this);
+
+    const script = this.querySelector('script[type="application/sparql-query"]');
+    if (script?.textContent) {
+      this.sparqlQuery = script.textContent.trim();
+    }
+
+    this._scriptObserver = new MutationObserver(() => {
+      const s = this.querySelector('script[type="application/sparql-query"]');
+      if (s?.textContent) {
+        this.sparqlQuery = s.textContent.trim();
+      }
+    });
+    this._scriptObserver.observe(this, { childList: true, subtree: true });
   }
 
   override disconnectedCallback(): void {
     super.disconnectedCallback();
     if (this._resizeObserver) { this._resizeObserver.disconnect(); this._resizeObserver = null; }
+    if (this._scriptObserver) { this._scriptObserver.disconnect(); this._scriptObserver = null; }
     if (this._cy) { this._cy.destroy(); this._cy = null; }
     this._wikidataStore = null;
     this._loadedSrc = null;
@@ -842,11 +869,10 @@ export class RdfGraph extends LitElement {
 
   protected override updated(changed: Map<string, unknown>): void {
     const srcChanged      = changed.has('src');
-    const queryChanged    = changed.has('sparqlQuery');
     const langChanged     = changed.has('languages');
     const scalingChanged  = changed.has('nodeScaling');
     const wikidataChanged = changed.has('wikidata');
-    if (srcChanged || queryChanged || langChanged || scalingChanged || wikidataChanged) {
+    if (srcChanged || langChanged || scalingChanged || wikidataChanged) {
       this._scheduleWork(srcChanged);
     }
   }
@@ -879,7 +905,7 @@ export class RdfGraph extends LitElement {
       await this._loadData(version);
       if (this._workVersion !== version) return;
     }
-    const queryToRun = this.sparqlQuery?.trim();
+    const queryToRun = this._sparqlQuery.trim();
     const settingsChanged =
       queryToRun !== this._executedQuery ||
       !this._arraysEqual(this.languages, this._executedLanguages) ||
