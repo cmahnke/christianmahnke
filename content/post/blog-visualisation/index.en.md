@@ -23,14 +23,17 @@ Now I’ve given it another go. This time I’ve used the [Triple Store from the
 
 {{< graph-viz src="/meta/wikidata/enriched_entities.hdt" languages="mul,en,de" >}}
 
+Contains data from [Wikidata](https://www.wikidata.org/), licensed under [CC0](https://www.wikidata.org/wiki/Wikidata:Text_of_the_Creative_Commons_Public_Domain_Dedication).
+{.wikidata-attribution}
+
 For mobile devices, available as a [PDF download](./graph.pdf); the file is not updated when new posts are added.
 
 ## Explanations
 
-The red rectangles represent the individual blog posts.
-The yellow diamonds represent blog tags.
+* The red rectangles represent the individual blog posts.
+* The yellow diamonds represent blog tags.
 * Blue circles are Wikidata entities (which also serve as tags).
-Green circles represent entities on the page (e.g. linked articles or other metadata entries).
+* Green circles represent entities on the page (e.g. linked articles or other metadata entries).
 
 ### Pre-selection
 
@@ -61,9 +64,14 @@ SELECT ?s ?p ?o ?isTagged WHERE {
 }
 ```
 
-## Outlook
+# Implementation
+
+In addition to the combination of HDT and OxiGraph mentioned in the last post, [Cytoscape](https://js.cytoscape.org/) is used for visualisation. The PDF export was created using [`cytoscape-svg`](https://github.com/kinimesi/cytoscape-svg).
+
+## Further improvements
 
 A few improvements are still possible:
 * The base classes (e.g. people, places, organisations, software) could be visualised in a simpler way.
 * The thematic proximity of the nodes could be utilised in the layout of the graph.
+* Generally speaking, the layout could still be improved.
 * Cytoscape offers visually appealing visualisations that are more attractive than the one shown above.

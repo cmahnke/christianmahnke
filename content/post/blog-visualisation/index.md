@@ -24,14 +24,17 @@ Nun habe ich einen neuen Versuch gewagt. Diesmal habe ich den [Triple Store aus 
 
 {{< graph-viz src="/meta/wikidata/enriched_entities.hdt" languages="mul,de,en" >}}
 
+Enhält Daten von [Wikidata](https://www.wikidata.org/)., lizensiert unter [CC0](https://www.wikidata.org/wiki/Wikidata:Text_of_the_Creative_Commons_Public_Domain_Dedication).
+{.wikidata-attribution}
+
 Für Mobilgeräte als [PDF-Download](./graph.pdf), die Datei wird nicht aktualisiert, wenn neu Beiträge hinzukommen.
 
 ## Erläuterungen
 
-Die roten Rechtecke repräsentieren die einzelnen Blogbeiträge.
-Die gelben Rauten repräsentieren Schlagworte des Blogs.
+* Die roten Rechtecke repräsentieren die einzelnen Blogbeiträge.
+* Die gelben Rauten repräsentieren Schlagworte des Blogs.
 * Blaue Kreise sind Entitäten von Wikidata (die auch als Schlagworte dienen).
-Grüne Kreise stellen Entitäten der Seite dar (z. B. Linked Art oder andere Metadateneinträge).
+* Grüne Kreise stellen Entitäten der Seite dar (z. B. Linked Art oder andere Metadateneinträge).
 
 ### Vorauswahl
 
@@ -64,15 +67,12 @@ SELECT ?s ?p ?o ?isTagged WHERE {
 
 ## Umsetzung
 
-Neben der Kombination aus HDT und OxiGtaph aus dem letzten Post 
-
-[Cytoscape](https://js.cytoscape.org/)
-
-https://github.com/kinimesi/cytoscape-svg
+Neben der Kombination aus HDT und OxiGraph aus dem letzten Post, kommt für die Visualisierung [Cytoscape](https://js.cytoscape.org/) zum Einsatz. Der PDF Export wurde mit [`cytoscape-svg`](https://github.com/kinimesi/cytoscape-svg) erstellt.
 
 ## Ausblick
 
 Einige Verbesserungen sind noch denkbar:
 * Die Basisklassen (z.B. Personen, Orte, Organisationen, Software) könnten noch vereinfacht visualisiert werden.
 * Die thematische Nähe der Knoten könnte noch für das Layout des Graphen genutzt werden.
+* Grundsätzlich kann das Layout noch verbessert werden.
 * Cytoscape bietet ästhetisch sehr ansprechende Darstellungen, die schöner sind als die oben gezeigte.

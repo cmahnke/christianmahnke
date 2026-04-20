@@ -22,8 +22,26 @@ const FIT_PADDING = 50;
 const OVERLAP_PADDING = 14;
 const OVERLAP_ITERATIONS = 100;
 
+/** Minimaler Overlap in Pixeln unter dem der Algorithmus als konvergiert gilt */
+const OVERLAP_CONVERGENCE_THRESHOLD = 1;
+
 const NODE_BASE_SIZE = 15;
 const NODE_SCALE_FACTOR = 16;
+
+/** Millisekunden bis eine temporäre Object-URL freigegeben wird */
+const SVG_REVOKE_DELAY_MS = 5000;
+
+/**
+ * Frames die nach dem Layout gewartet wird, damit Cytoscape
+ * Knotengrößen inkl. Labels berechnet hat, bevor removeOverlaps läuft.
+ */
+const FRAMES_AFTER_LAYOUT = 5;
+
+/**
+ * Frames die gewartet wird wenn der Container beim ersten
+ * Render noch keine Größe hat (z.B. display:none Eltern).
+ */
+const FRAMES_CONTAINER_RETRY = 2;
 
 // --- Helper types ---
 
@@ -142,6 +160,22 @@ const CYTOSCAPE_STYLES: cytoscape.Stylesheet[] = [
       'border-width': 2,
       'border-color': '#2ecc71',
       'border-style': 'double'
+    }
+  },
+  {
+    selector: 'node.wikidata-loading',
+    style: {
+      'border-width': 2,
+      'border-color': '#ffbd39',
+      'border-style': 'dashed',
+    }
+  },
+  {
+    selector: 'node.wikidata-error',
+    style: {
+      'border-width': 2,
+      'border-color': '#e94560',
+      'border-style': 'solid',
     }
   },
   {
@@ -399,6 +433,10 @@ function removeOverlaps(cy: cytoscape.Core): void {
   const rects = computeNodeRects(nodes);
 
   for (let iter = 0; iter < OVERLAP_ITERATIONS; iter++) {
+    // maxOverlap wird über den gesamten Pass gesammelt und erst danach
+    // geprüft – ein früherer Abbruch innerhalb des Passes würde dazu führen
+    // dass manche Knotenpaare in dieser Iteration gar nicht mehr betrachtet
+    // werden und dadurch neue Überlappungen entstehen können.
     let maxOverlap = 0;
 
     for (let i = 0; i < n; i++) {
@@ -408,8 +446,12 @@ function removeOverlaps(cy: cytoscape.Core): void {
         const rA = rects.get(nodes[i].id())!;
         const rB = rects.get(nodes[j].id())!;
 
-        const overlapX = Math.min(posA.x + rA.right, posB.x + rB.right) - Math.max(posA.x - rA.left, posB.x - rB.left);
-        const overlapY = Math.min(posA.y + rA.bottom, posB.y + rB.bottom) - Math.max(posA.y - rA.top, posB.y - rB.top);
+        const overlapX =
+          Math.min(posA.x + rA.right,  posB.x + rB.right) -
+          Math.max(posA.x - rA.left,   posB.x - rB.left);
+        const overlapY =
+          Math.min(posA.y + rA.bottom, posB.y + rB.bottom) -
+          Math.max(posA.y - rA.top,    posB.y - rB.top);
 
         if (overlapX > 0 && overlapY > 0) {
           const overlap = Math.min(overlapX, overlapY);
@@ -432,8 +474,13 @@ function removeOverlaps(cy: cytoscape.Core): void {
         }
       }
     }
-    if (maxOverlap < 1) break;
+
+    // Konvergenzprüfung nach vollständigem Pass: Wenn kein Knotenpaar
+    // mehr als OVERLAP_CONVERGENCE_THRESHOLD Pixel überlappt, ist das
+    // Layout stabil genug.
+    if (maxOverlap < OVERLAP_CONVERGENCE_THRESHOLD) break;
   }
+
   cy.fit(undefined, FIT_PADDING);
 }
 
@@ -499,11 +546,6 @@ export class RdfGraph extends LitElement {
         toAttribute(value: WikidataMode): string { return value; }
       }
     },
-    exportSvg: {
-      type: Boolean,
-      attribute: 'export-svg',
-      reflect: true,
-    },
   };
 
   src: string = '';
@@ -511,7 +553,6 @@ export class RdfGraph extends LitElement {
   languages: string[] = ['de', 'en'];
   nodeScaling: NodeScaling = 'off';
   wikidata: WikidataMode = 'off';
-  exportSvg: boolean = false;
 
   private _nodeInfo: NodeInfoData | null = null;
   private _loadingState: LoadingState = { status: 'idle' };
@@ -525,6 +566,7 @@ export class RdfGraph extends LitElement {
   private _resizeObserver: ResizeObserver | null = null;
   private _working = false;
   private _workVersion = 0;
+  private _pendingSrcChanged = false;
 
   override connectedCallback(): void {
     super.connectedCallback();
@@ -556,35 +598,45 @@ export class RdfGraph extends LitElement {
   }
 
   private _scheduleWork(srcChanged: boolean): void {
-    const version = ++this._workVersion;
+    ++this._workVersion;
+    this._pendingSrcChanged ||= srcChanged;
     if (this._working) return;
-    queueMicrotask(() => {
-      if (version === this._workVersion) this._doWork(srcChanged);
-    });
+    queueMicrotask(() => this._drainWork());
   }
 
-  private async _doWork(srcChanged: boolean): Promise<void> {
+  private async _drainWork(): Promise<void> {
     if (this._working) return;
-    this._working = true;
-    const startVersion = this._workVersion;
-    try {
-      if (srcChanged && this.src && this.src !== this._loadedSrc) {
-        await this._loadData(startVersion);
-        if (this._workVersion !== startVersion) return;
+
+    while (true) {
+      const version = this._workVersion;
+      const srcChanged = this._pendingSrcChanged;
+      this._pendingSrcChanged = false;
+      this._working = true;
+
+      try {
+        await this._doWork(srcChanged, version);
+      } finally {
+        this._working = false;
       }
-      const queryToRun = this.sparqlQuery?.trim();
-      if (this._store && queryToRun &&
-        (queryToRun !== this._executedQuery ||
-         !this._arraysEqual(this.languages, this._executedLanguages) ||
-         this.nodeScaling !== this._executedScaling ||
-         this.wikidata !== this._executedWikidata)) {
-        await this._buildGraph(queryToRun, startVersion);
-      }
-    } finally {
-      this._working = false;
-      if (this._workVersion !== startVersion) {
-        queueMicrotask(() => this._doWork(this.src !== this._loadedSrc));
-      }
+
+      // Während _doWork lief: neue Arbeit aufgelaufen?
+      if (this._workVersion === version) break;
+      // Sonst: nächste Runde mit aktualisierten Flags
+    }
+  }
+
+  private async _doWork(srcChanged: boolean, version: number): Promise<void> {
+    if (srcChanged && this.src && this.src !== this._loadedSrc) {
+      await this._loadData(version);
+      if (this._workVersion !== version) return;
+    }
+    const queryToRun = this.sparqlQuery?.trim();
+    if (this._store && queryToRun &&
+      (queryToRun !== this._executedQuery ||
+       !this._arraysEqual(this.languages, this._executedLanguages) ||
+       this.nodeScaling !== this._executedScaling ||
+       this.wikidata !== this._executedWikidata)) {
+      await this._buildGraph(queryToRun, version);
     }
   }
 
@@ -669,7 +721,7 @@ export class RdfGraph extends LitElement {
     const container = this.renderRoot.querySelector('#cy-container') as HTMLDivElement;
     if (!container) return;
     if (container.clientWidth === 0 || container.clientHeight === 0) {
-      await waitFrames(2);
+      await waitFrames(FRAMES_CONTAINER_RETRY);
       if (container.clientWidth === 0 || container.clientHeight === 0) return;
     }
 
@@ -696,7 +748,7 @@ export class RdfGraph extends LitElement {
         this._cy.layout(this._layoutOptions(sizeMap)).run();
       }
 
-      await waitFrames(5);
+      await waitFrames(FRAMES_AFTER_LAYOUT);
 
       if (this._cy && this._workVersion === version) {
         removeOverlaps(this._cy);
@@ -764,7 +816,8 @@ export class RdfGraph extends LitElement {
     const node = this._cy.getElementById(nodeId);
     if (node.hasClass('expanded')) return;
 
-    node.data('label', node.data('label') + ' ⏳');
+    // Zustand signalisieren ohne Label zu mutieren
+    node.addClass('wikidata-loading');
 
     try {
       const details = await fetchWikidataDetails(qid, this.languages);
@@ -841,15 +894,16 @@ export class RdfGraph extends LitElement {
         }
       }
 
-      node.data('label', node.data('label').replace(' ⏳', ''));
       node.data('properties', propLines.join('\n'));
+      node.removeClass('wikidata-loading');
       node.addClass('expanded');
       this._updateNodeInfo(node.data());
       this.dispatchEvent(new CustomEvent('node-expanded', {
         detail: { nodeId, qid }, bubbles: true, composed: true
       }));
     } catch (e) {
-      node.data('label', node.data('label').replace(' ⏳', ' ❌'));
+      node.removeClass('wikidata-loading');
+      node.addClass('wikidata-error');
       console.error('Wikidata expand error:', e);
     }
   }
@@ -859,11 +913,7 @@ export class RdfGraph extends LitElement {
   exportAsSvg(): void {
     if (!this._cy) return;
 
-    // cytoscape-svg adds the svgExporter method to the cy instance
-    const svgContent = (this._cy as any).svg({
-      full: true,
-      scale: 1
-    });
+    const svgContent = (this._cy as any).svg({ full: true, scale: 1 });
 
     const blob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
     const url = URL.createObjectURL(blob);
@@ -877,7 +927,7 @@ export class RdfGraph extends LitElement {
     anchor.download = `${baseName}.svg`;
     anchor.click();
 
-    setTimeout(() => URL.revokeObjectURL(url), 5000);
+    setTimeout(() => URL.revokeObjectURL(url), SVG_REVOKE_DELAY_MS);
 
     this.dispatchEvent(new CustomEvent('svg-exported', {
       detail: { filename: anchor.download }, bubbles: true, composed: true
@@ -893,24 +943,15 @@ export class RdfGraph extends LitElement {
   // ── Rendering ─────────────────────────────────────────────────────
 
   protected override render() {
-    const showExport =
-      this.exportSvg &&
-      this._loadingState.status === 'ready' &&
-      this._cy !== null;
+    const ready = this._loadingState.status === 'ready' && this._cy !== null;
 
     return html`
       <div id="cy-container"></div>
       ${this._renderOverlay()}
-      ${showExport ? this._renderExportButton() : null}
-      ${this._nodeInfo ? html`<div id="node-info">${this._formatNodeInfo(this._nodeInfo)}</div>` : null}
-    `;
-  }
-
-  private _renderExportButton() {
-    return html`
       <button
         id="export-btn"
         title="Graph als SVG exportieren"
+        ?disabled=${!ready}
         @click=${() => this.exportAsSvg()}
       >
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -918,6 +959,9 @@ export class RdfGraph extends LitElement {
         </svg>
         SVG
       </button>
+      ${this._nodeInfo
+        ? html`<div id="node-info">${this._formatNodeInfo(this._nodeInfo)}</div>`
+        : null}
     `;
   }
 
