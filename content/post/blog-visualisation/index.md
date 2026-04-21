@@ -1,5 +1,5 @@
 ---
-date: 2026-04-19T19:39:44+02:00
+date: 2026-04-21T15:49:44+02:00
 title: "Blog Metadaten visualisiert"
 tags:
   - Wikidata
@@ -7,7 +7,6 @@ tags:
   - SPARQL
   - Visualisation
   - Website
-draft: true
 wikidata:
   - https://www.wikidata.org/wiki/Q3539533
   - https://www.wikidata.org/wiki/Q115616582
@@ -20,7 +19,9 @@ Vor etwa einem Jahr habe ich schon einmal versucht, die [Bloginhalte in einer Vi
 
 ...aber das war eher ein Fehlschlag.
 
-Nun habe ich einen neuen Versuch gewagt. Diesmal habe ich den [Triple Store aus dem letzten Beitrag verwendet](/post/blog-sparql/) verwendet und das Ergebnis kann sich durchaus sehen lassen:
+Nun habe ich einen neuen Versuch gewagt. Diesmal habe ich den [Triple Store aus dem letzten Beitrag verwendet](/post/blog-sparql/) verwendet und das Ergebnis kann sich durchaus sehen lassen.
+
+**Es kann etwas dauern, bis der Graph geladen und berechnet wurde.**
 
 {{< graph-viz src="/meta/wikidata/enriched_entities.hdt" languages="mul,de,en" >}}
 
@@ -75,6 +76,7 @@ Neben der Kombination aus HDT und OxiGraph aus dem letzten Post, kommt für die 
 
 Sicher, der Graph ist schön anzusehen, aber er hat auch noch andere Vorteile:
 * Er erlaub die Navigation aus dem Silo dieses Blogs heraus.
+* Die äußeren Ringe zur Klassifikation erlauben einbicke in die Hierachie der Objektbeziehungen ("ist ein"). So ist die [Künstlerkolonie Dötlingen (Q1797167)](http://www.wikidata.org/entity/Q1797167) weder ein Ort, noch eine Gruppe, noch eine Organisation.
 * Er kann der Qualitätskontrolle der Verschlagwortung dienen, so fällt z.B. auf, dass [`libjxl` (Q99738405)](https://www.wikidata.org/wiki/Q99738405),also die Implementierung, und [JPEG XL (Q72885392)](https://www.wikidata.org/wiki/Q72885392), also dsa Dateiformat, bisher inkonsistent vergeben sind.
 
 

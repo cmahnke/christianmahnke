@@ -67,16 +67,6 @@ function writeLabelsToStore(
 
 // ── Exported fetch helpers ────────────────────────────────────────────────────
 
-/**
- * Fetches labels and descriptions for the given QIDs from the Wikidata API.
- *
- * If a `WikidataStore` is passed as the optional last argument the results are
- * also written into the underlying OxiGraph store as `rdfs:label` /
- * `schema:description` triples so subsequent SPARQL queries see them.
- * Already-fetched QIDs are skipped automatically.
- *
- * Without a store the function behaves exactly as before.
- */
 export async function fetchWikidataLabels(
   qids: string[],
   languages?: string[],
@@ -91,7 +81,6 @@ export async function fetchWikidataLabels(
   const result = new Map<string, { label: string; description: string }>();
   if (qids.length === 0) return result;
 
-  // For already-fetched QIDs reconstruct the result from the store
   if (wikidataStore) {
     for (const qid of qids) {
       if (wikidataStore.isFetchedLabels(qid)) {
@@ -150,16 +139,6 @@ export async function fetchWikidataLabels(
   return result;
 }
 
-/**
- * Fetches the full set of statements for a single Wikidata entity.
- *
- * If a `WikidataStore` is passed the JSON-LD response is loaded directly into
- * the store via `store.load()` — no manual triple construction needed.
- * Calling this a second time for the same QID returns the cached entity from
- * the store without a network request.
- *
- * Without a store the JSON-LD is parsed manually into a `WikidataEntity`.
- */
 export async function fetchWikidataDetails(
   qid: string,
   languages?: string[],
@@ -187,7 +166,6 @@ export async function fetchWikidataDetails(
     throw e;
   }
 
-  // ── With store: let OxiGraph parse the JSON-LD directly ──────────────────
   if (wikidataStore) {
     try {
       wikidataStore.store.load(text, {
@@ -203,7 +181,6 @@ export async function fetchWikidataDetails(
     return wikidataStore.getEntityFromStore(qid);
   }
 
-  // ── Without store: parse JSON-LD manually into WikidataEntity ────────────
   const json       = JSON.parse(text);
   const graph      = json['@graph'] ?? [json];
   const entityNode = graph.find((n: any) =>
@@ -261,9 +238,6 @@ export class WikidataStore {
 
   // ── Convenience methods ────────────────────────────────────────────────────
 
-  /**
-   * Delegates to `fetchWikidataLabels` with `this` as the store argument.
-   */
   async enrichLabels(
     qids: string[],
     languages: string[] = ['de', 'en']
@@ -271,9 +245,6 @@ export class WikidataStore {
     return fetchWikidataLabels(qids, languages, this);
   }
 
-  /**
-   * Delegates to `fetchWikidataDetails` with `this` as the store argument.
-   */
   async enrichEntity(
     qid: string,
     languages: string[] = ['de', 'en']
@@ -296,20 +267,6 @@ export class WikidataStore {
     return result;
   }
 
-  /**
-   * Fetches all Wikidata entities that link TO the given URI and loads them
-   * into the store.  Useful for finding e.g. all works by an author,
-   * all people born in a city, etc.
-   *
-   * Step 1: SPARQL query against the Wikidata endpoint finds all subject QIDs
-   *         that have any direct claim pointing at the target entity.
-   * Step 2: Each linking entity is fetched as JSON-LD and loaded into the
-   *         store via `enrichEntity` (already-fetched QIDs are skipped).
-   *
-   * @param uri       Target URI, e.g. 'http://www.wikidata.org/entity/Q64'
-   * @param languages Language preference order for label resolution
-   * @param limit     Maximum number of incoming links to fetch (default 50)
-   */
   async enrichIncomingLinks(
     uri: string,
     languages: string[] = ['de', 'en'],
@@ -321,11 +278,14 @@ export class WikidataStore {
       return [];
     }
 
-    // Step 1: find QIDs of all entities that directly link to this one
+    // Only real Wikidata Items (Q-entities) are returned — Properties,
+    // Statements and other nodes are excluded via the FILTER.
     const sparql = `
+      PREFIX wd: <http://www.wikidata.org/entity/>
+
       SELECT DISTINCT ?subject WHERE {
         ?subject ?p wd:${qid} .
-        ?subject a wikibase:Item .
+        FILTER(STRSTARTS(STR(?subject), "http://www.wikidata.org/entity/Q"))
       } LIMIT ${limit}
     `;
 
@@ -353,7 +313,6 @@ export class WikidataStore {
 
     if (incomingQids.length === 0) return [];
 
-    // Step 2: load each linking entity into the store
     const results: WikidataEntity[] = [];
     for (const incomingQid of incomingQids) {
       try {

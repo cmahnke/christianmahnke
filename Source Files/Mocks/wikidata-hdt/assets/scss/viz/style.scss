@@ -57,3 +57,7 @@ td:first-child { white-space: nowrap; }
   font-size: 0.8rem;
   color: #888;
 }
+
+rdf-graph {
+  --sparql-export-btn-display: block;
+}

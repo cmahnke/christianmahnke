@@ -1996,6 +1996,7 @@ import.meta.url = '';
 if (window) {
     import.meta.url = window.location.origin;
 }
+const DOWNLOAD_TIMEOUT_MS = 30_000;
 const wasmReady = (async () => {
     await __wbg_init$1({ wasm_hdt });
     await __wbg_init({ wasm_oxigraph });
@@ -2039,13 +2040,21 @@ function hdtToOxigraph(hdt) {
 }
 async function loadHdtFromUrl(url) {
     await wasmReady;
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(new DOMException(`Download timed out after ${DOWNLOAD_TIMEOUT_MS} ms`, "TimeoutError")), DOWNLOAD_TIMEOUT_MS);
     let response;
     try {
-        response = await fetch(url);
+        response = await fetch(url, { signal: controller.signal });
     }
     catch (networkError) {
         const message = networkError instanceof Error ? networkError.message : String(networkError);
-        throw new Error(`Network error while fetching HDT file from "${url}": ${message}`);
+        const isTimeout = networkError instanceof DOMException && networkError.name === "AbortError";
+        throw new Error(isTimeout
+            ? `Download of "${url}" timed out after ${DOWNLOAD_TIMEOUT_MS} ms`
+            : `Network error while fetching HDT file from "${url}": ${message}`);
+    }
+    finally {
+        clearTimeout(timeoutId);
     }
     if (!response.ok) {
         throw new Error(`Failed to fetch HDT file from "${url}": HTTP ${response.status} ${response.statusText}`);
@@ -2070,6 +2079,7 @@ async function loadHdtFromUrl(url) {
         throw new Error(`Error parsing HDT data from "${url}" (${buffer.byteLength} bytes): ${message}`);
     }
     const store = hdtToOxigraph(hdt);
+    console.info(`Successfully loaded HDT file from "${url}" with ${store.size} quads`);
     hdt.free();
     return store;
 }

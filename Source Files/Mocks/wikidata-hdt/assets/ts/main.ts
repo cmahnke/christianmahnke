@@ -30,6 +30,7 @@ SELECT ?s ?p ?o ?isTagged WHERE {
   }
 } `;
 
+
 sparqlInput.value = DEFAULT_QUERY;
 
 function runQuery(): void {

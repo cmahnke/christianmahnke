@@ -1,4 +1,5 @@
 import { LitElement, html } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import cytoscape from 'cytoscape';
 import cytoscapeSvg from 'cytoscape-svg';
 import { isWikidataUri, extractQid, WikidataStore } from '../wikidata';
@@ -47,6 +48,8 @@ export const INSTANCE_OF_COLORS: Record<string, string> = {
   'Q43229':    '#e67e22',
   'Q838948':   '#2ecc71',
   'Q7397':     '#f1c40f',
+  'Q235557':   '#dfd1e1',
+  'Q1924747':  '#dfd1e1'
 };
 
 // --- i18n ---
@@ -55,24 +58,28 @@ type UiLang = 'de' | 'en';
 
 const UI_STRINGS = {
   de: {
-    noSrc:         'Kein <code>src</code>-Attribut gesetzt',
-    buildingGraph: 'Graph wird aufgebaut…',
-    loading:       (src: string) => `Lade ${src}…`,
-    queryError:    (msg: string) => `Query-Fehler: ${msg}`,
+    noSrc:      'Kein <code>src</code>-Attribut gesetzt',
+    loading:    (src: string) => `Lade ${src}…`,
+    querying:   'Query wird ausgeführt…',
+    processing: 'Knoten und Labels werden verarbeitet…',
+    layouting:  'Graph-Layout wird berechnet…',
+    queryError: (msg: string) => `Query-Fehler: ${msg}`,
     incomingLinks: 'Eingehende Verbindungen',
-    close:         'Schließen',
-    wikidata:      'Wikidata',
-    wikipedia:     'Wikipedia',
+    close:      'Schließen',
+    wikidata:   'Wikidata',
+    wikipedia:  'Wikipedia',
   },
   en: {
-    noSrc:         'No <code>src</code> attribute set',
-    buildingGraph: 'Building graph…',
-    loading:       (src: string) => `Loading ${src}…`,
-    queryError:    (msg: string) => `Query error: ${msg}`,
+    noSrc:      'No <code>src</code> attribute set',
+    loading:    (src: string) => `Loading ${src}…`,
+    querying:   'Running query…',
+    processing: 'Processing nodes and labels…',
+    layouting:  'Computing graph layout…',
+    queryError: (msg: string) => `Query error: ${msg}`,
     incomingLinks: 'Incoming connections',
-    close:         'Close',
-    wikidata:      'Wikidata',
-    wikipedia:     'Wikipedia',
+    close:      'Close',
+    wikidata:   'Wikidata',
+    wikipedia:  'Wikipedia',
   },
 } as const;
 
@@ -125,10 +132,12 @@ interface LegendEntry {
 
 type LoadingState =
   | { status: 'idle' }
-  | { status: 'loading-data'; message: string }
-  | { status: 'building-graph'; message: string }
+  | { status: 'loading-data';  message: string }
+  | { status: 'querying';      message: string }
+  | { status: 'processing';    message: string }
+  | { status: 'layouting';     message: string }
   | { status: 'ready' }
-  | { status: 'error'; message: string };
+  | { status: 'error';         message: string };
 
 export type NodeScaling = 'off' | 'linear' | 'log';
 export type WikidataMode = 'off' | 'incoming';
@@ -311,6 +320,36 @@ function shorten(uri: string): string {
   return cut >= 0 ? uri.substring(cut + 1) : uri;
 }
 
+// --- Label Cache ---
+
+const LABEL_CACHE_MISS = Symbol('miss');
+type CacheValue = string | typeof LABEL_CACHE_MISS;
+
+class LabelCache {
+  private readonly _cache = new Map<string, CacheValue>();
+  private readonly _store: WikidataStore;
+  private readonly _languages: string[];
+
+  constructor(store: WikidataStore, languages: string[]) {
+    this._store     = store;
+    this._languages = languages;
+  }
+
+  get(uri: string): string | null {
+    if (this._cache.has(uri)) {
+      const cached = this._cache.get(uri)!;
+      return cached === LABEL_CACHE_MISS ? null : (cached as string);
+    }
+    const label = findLabelInStore(this._store, uri, this._languages);
+    this._cache.set(uri, label ?? LABEL_CACHE_MISS);
+    return label;
+  }
+
+  get size(): number {
+    return this._cache.size;
+  }
+}
+
 function findLabelInStore(
   wikidataStore: WikidataStore,
   uri: string,
@@ -325,8 +364,6 @@ function findLabelInStore(
         ) as any[];
         if (results.length > 0) return results[0].get('label').value;
       } catch (e) {
-        // ✅ Query-Fehler bei Label-Suche sind erwartet (URI existiert nicht etc.)
-        // Nur bei unerwartetem Fehlertyp loggen
         if (!(e instanceof Error && e.message.includes('No results'))) {
           console.warn('[rdf-graph] findLabelInStore query failed', { uri, predicate, lang }, e);
         }
@@ -401,7 +438,8 @@ function findExternalIdPredicates(wikidataStore: WikidataStore): Set<string> {
 function getPropertiesFromStore(
   wikidataStore: WikidataStore,
   uri: string,
-  languages: string[]
+  languages: string[],
+  labelCache?: LabelCache,
 ): { properties: Map<string, string[]>; externalIdKeys: Set<string> } {
   const externalIdPredicates = findExternalIdPredicates(wikidataStore);
   const predLabelCache = new Map<string, string>();
@@ -421,10 +459,11 @@ function getPropertiesFromStore(
       const val = row.get('o').value as string;
 
       if (!predLabelCache.has(predUri)) {
-        predLabelCache.set(
-          predUri,
-          findLabelInStore(wikidataStore, predUri, languages) ?? shorten(predUri)
-        );
+        const predLabel = labelCache?.get(predUri)
+          ?? findLabelInStore(wikidataStore, predUri, languages)
+          ?? shorten(predUri);
+
+        predLabelCache.set(predUri, predLabel);
         predIsExternal.set(predUri, externalIdPredicates.has(predUri));
       }
 
@@ -468,7 +507,8 @@ function findInstanceOfColor(
 function buildLegend(
   cy: cytoscape.Core,
   wikidataStore: WikidataStore,
-  languages: string[]
+  languages: string[],
+  labelCache?: LabelCache,
 ): LegendEntry[] {
   const usedColors = new Set<string>();
   cy.nodes().forEach((node: cytoscape.NodeSingular) => {
@@ -490,7 +530,7 @@ function buildLegend(
     const labels: string[] = [];
     for (const qid of qids) {
       const uri   = `http://www.wikidata.org/entity/${qid}`;
-      const label = findLabelInStore(wikidataStore, uri, languages) ?? qid;
+      const label = (labelCache?.get(uri) ?? findLabelInStore(wikidataStore, uri, languages)) ?? qid;
       labels.push(label);
     }
     entries.push({ color, label: labels.join(', ') });
@@ -512,7 +552,6 @@ function findTaggedPosts(wikidataStore: WikidataStore): Set<string> {
     `) as any[];
     return new Set(results.map((b: any) => b.get('post').value));
   } catch (e) {
-    // ✅ War vorher stumm – jetzt geloggt
     console.warn('[rdf-graph] findTaggedPosts failed', e);
     return new Set();
   }
@@ -522,7 +561,8 @@ function collectNodes(
   results: any[],
   wikidataStore: WikidataStore,
   taggedPosts: Set<string>,
-  languages: string[]
+  languages: string[],
+  labelCache: LabelCache,
 ): {
   nodeMap: Map<string, NodeData>;
   edges: cytoscape.ElementDefinition[];
@@ -537,7 +577,7 @@ function collectNodes(
     const sId = s.value;
 
     if (!nodeMap.has(sId)) {
-      const storeLabel = findLabelInStore(wikidataStore, sId, languages);
+      const storeLabel = labelCache.get(sId);
       const isTagged   = taggedPosts.has(sId);
       const isWd       = isWikidataUri(sId);
       let classes      = s.termType === 'BlankNode' ? 'blank' : 'uri';
@@ -560,7 +600,7 @@ function collectNodes(
     } else {
       const oId = o.value;
       if (!nodeMap.has(oId)) {
-        const storeLabel = findLabelInStore(wikidataStore, oId, languages);
+        const storeLabel = labelCache.get(oId);
         const isTagged   = taggedPosts.has(oId);
         const isWd       = isWikidataUri(oId);
         let classes      = o.termType === 'BlankNode' ? 'blank' : 'uri';
@@ -581,7 +621,8 @@ function buildElements(
   nodeMap: Map<string, NodeData>,
   edges: cytoscape.ElementDefinition[],
   scaling: NodeScaling,
-  wikidataStore: WikidataStore
+  wikidataStore: WikidataStore,
+  labelCache: LabelCache,
 ): cytoscape.ElementDefinition[] {
   const indegree = new Map<string, number>();
   for (const edge of edges) {
@@ -621,11 +662,14 @@ async function resultsToCytoscape(
   wikidataStore: WikidataStore,
   languages: string[],
   scaling: NodeScaling,
-  _wikidataMode: WikidataMode
+  _wikidataMode: WikidataMode,
+  labelCache: LabelCache,
 ): Promise<cytoscape.ElementDefinition[]> {
   const taggedPosts = findTaggedPosts(wikidataStore);
-  const { nodeMap, edges } = collectNodes(results, wikidataStore, taggedPosts, languages);
-  return buildElements(nodeMap, edges, scaling, wikidataStore);
+  const { nodeMap, edges } = collectNodes(
+    results, wikidataStore, taggedPosts, languages, labelCache
+  );
+  return buildElements(nodeMap, edges, scaling, wikidataStore, labelCache);
 }
 
 function waitFrames(n: number): Promise<void> {
@@ -637,6 +681,10 @@ function waitFrames(n: number): Promise<void> {
     }
     requestAnimationFrame(next);
   });
+}
+
+function yieldToBrowser(): Promise<void> {
+  return new Promise(resolve => requestAnimationFrame(() => resolve()));
 }
 
 interface NodeRect {
@@ -794,11 +842,6 @@ export class RdfGraph extends LitElement {
         toAttribute(value: WikidataMode): string { return value; }
       }
     },
-    autoExecute: {
-      type: Boolean,
-      attribute: 'auto-execute',
-      reflect: false,
-    },
     language: {
       type: String,
     },
@@ -808,7 +851,6 @@ export class RdfGraph extends LitElement {
   languages: string[] = ['de', 'en'];
   nodeScaling: NodeScaling = 'off';
   wikidata: WikidataMode = 'off';
-  autoExecute: boolean = false;
   language: string | null = null;
 
   private _sparqlQuery: string = '';
@@ -834,6 +876,7 @@ export class RdfGraph extends LitElement {
   private _legend: LegendEntry[] = [];
   private _cy: cytoscape.Core | null = null;
   private _wikidataStore: WikidataStore | null = null;
+  private _labelCache: LabelCache | null = null;
   private _loadedSrc: string | null = null;
   private _executedQuery: string | null = null;
   private _executedLanguages: string[] | null = null;
@@ -867,11 +910,13 @@ export class RdfGraph extends LitElement {
 
   override disconnectedCallback(): void {
     super.disconnectedCallback();
+    ++this._workVersion;
     if (this._resizeObserver) { this._resizeObserver.disconnect(); this._resizeObserver = null; }
     if (this._scriptObserver) { this._scriptObserver.disconnect(); this._scriptObserver = null; }
     if (this._cy) { this._cy.destroy(); this._cy = null; }
     this._wikidataStore = null;
-    this._loadedSrc = null;
+    this._labelCache    = null;
+    this._loadedSrc     = null;
   }
 
   private _handleResize(): void {
@@ -921,18 +966,28 @@ export class RdfGraph extends LitElement {
   }
 
   private async _doWork(srcChanged: boolean, version: number): Promise<void> {
-    if (srcChanged && this.src && this.src !== this._loadedSrc) {
-      await this._loadData(version);
+    const needsLoad = srcChanged
+      || (this.src !== '' && this.src !== this._loadedSrc)
+      || (this._wikidataStore === null && this.src !== '');
+
+    if (needsLoad && this.src) {
+      const loaded = await this._loadData(version);
       if (this._workVersion !== version) return;
+      if (!loaded) return;
     }
+
+    if (this._wikidataStore === null) {
+      throw new Error('Data source is null');
+    }
+
     const queryToRun = this._sparqlQuery.trim();
     const settingsChanged =
       queryToRun !== this._executedQuery ||
       !this._arraysEqual(this.languages, this._executedLanguages) ||
       this.nodeScaling !== this._executedScaling ||
       this.wikidata !== this._executedWikidata;
-    const autoTrigger = this.autoExecute && this._executedQuery === null;
-    if (this._wikidataStore && queryToRun && (settingsChanged || autoTrigger)) {
+
+    if (queryToRun && settingsChanged) {
       await this._buildGraph(queryToRun, version);
     }
   }
@@ -943,9 +998,12 @@ export class RdfGraph extends LitElement {
     return a.every((v, i) => v === b[i]);
   }
 
-  private _updateOverlay(state: LoadingState): void {
+  private async _showOverlay(state: LoadingState, version: number): Promise<boolean> {
     this._loadingState = state;
     this.requestUpdate();
+    await this.updateComplete;
+    await yieldToBrowser();
+    return this._workVersion === version;
   }
 
   private _updateNodeInfo(info: NodeInfoData | null): void {
@@ -979,52 +1037,78 @@ export class RdfGraph extends LitElement {
     };
   }
 
-  private async _loadData(version: number): Promise<void> {
-    this._updateOverlay({ status: 'loading-data', message: this._t.loading(this.src) });
+  // Returns true if the store was successfully set, false if the load was
+  // superseded (src changed or version bumped mid-flight) or failed.
+  private async _loadData(version: number): Promise<boolean> {
+    this._loadingState = { status: 'loading-data', message: this._t.loading(this.src) };
+    this.requestUpdate();
+
     if (this._cy) { this._cy.destroy(); this._cy = null; }
     this._wikidataStore     = null;
+    this._labelCache        = null;
     this._legend            = [];
     this._executedQuery     = null;
     this._executedLanguages = null;
     this._executedScaling   = null;
     this._executedWikidata  = null;
+
     const loadingSrc = this.src;
+
+    // Mark optimistically so that a version bump caused by other property
+    // changes (languages, nodeScaling, …) during the await does not trigger
+    // a second load of the same src.
+    this._loadedSrc = loadingSrc;
+
     try {
       const rawStore = await loadHdtFromUrl(this.src);
-      if (this._workVersion !== version || this.src !== loadingSrc) return;
+
+      // Version changed: a newer _doWork iteration will handle the result.
+      if (this._workVersion !== version) return false;
+
+      // src changed while awaiting: reset optimistic mark and let the next
+      // iteration load the new src.
+      if (this.src !== loadingSrc) {
+        this._loadedSrc = null;
+        return false;
+      }
+
       this._wikidataStore = new WikidataStore(rawStore);
-      this._loadedSrc = loadingSrc;
+      this._labelCache    = new LabelCache(this._wikidataStore, this.languages);
+
       this.dispatchEvent(new CustomEvent('store-loaded', {
         detail: { quadCount: rawStore.size }, bubbles: true, composed: true
       }));
+
+      return true;
     } catch (error) {
-      if (this._workVersion !== version || this.src !== loadingSrc) return;
+      if (this._workVersion !== version || this.src !== loadingSrc) return false;
+      // Load failed — clear the optimistic mark so a retry is possible.
+      this._loadedSrc = null;
       const message = error instanceof Error ? error.message : String(error);
       console.error('[rdf-graph] Fehler beim Laden der HDT-Datei:', error);
-      this._updateOverlay({ status: 'error', message });
+      this._loadingState = { status: 'error', message };
+      this.requestUpdate();
       this.dispatchEvent(new CustomEvent('load-error', {
         detail: { error: message }, bubbles: true, composed: true
       }));
+      return false;
     }
   }
 
   private async _buildGraph(query: string, version: number): Promise<void> {
     if (!this._wikidataStore) return;
-    const isFirstBuild = !this._cy;
-    if (isFirstBuild) {
-      this._updateOverlay({ status: 'building-graph', message: this._t.buildingGraph });
-    }
-    await this.updateComplete;
+
+    if (!await this._showOverlay({ status: 'querying', message: this._t.querying }, version)) return;
+
     const container = this.renderRoot.querySelector('#cy-container') as HTMLDivElement;
     if (!container) {
-      // ✅ War vorher stumm
       console.error('[rdf-graph] _buildGraph: #cy-container nicht gefunden');
       return;
     }
     if (container.clientWidth === 0 || container.clientHeight === 0) {
       await waitFrames(FRAMES_CONTAINER_RETRY);
+      if (this._workVersion !== version) return;
       if (container.clientWidth === 0 || container.clientHeight === 0) {
-        // ✅ War vorher stumm
         console.warn(
           '[rdf-graph] _buildGraph: Container hat keine Größe nach Retry – abgebrochen',
           { width: container.clientWidth, height: container.clientHeight }
@@ -1032,12 +1116,27 @@ export class RdfGraph extends LitElement {
         return;
       }
     }
+
+    if (!this._labelCache) {
+      this._labelCache = new LabelCache(this._wikidataStore, this.languages);
+    }
+
+    const isFirstBuild = !this._cy;
+
     try {
-      const results  = this._wikidataStore.query(query) as any[];
+      const results = this._wikidataStore.query(query) as any[];
+      if (this._workVersion !== version) return;
+
+      if (!await this._showOverlay({ status: 'processing', message: this._t.processing }, version)) return;
+
+      const labelCache = this._labelCache;
       const elements = await resultsToCytoscape(
-        results, this._wikidataStore, this.languages, this.nodeScaling, this.wikidata
+        results, this._wikidataStore, this.languages, this.nodeScaling, this.wikidata, labelCache
       );
       if (this._workVersion !== version) return;
+
+      if (!await this._showOverlay({ status: 'layouting', message: this._t.layouting }, version)) return;
+
       const sizeMap = buildNodeSizeMap(elements);
       if (!this._cy) {
         this._cy = cytoscape({
@@ -1046,6 +1145,7 @@ export class RdfGraph extends LitElement {
           layout: this._layoutOptions(sizeMap),
         });
         await waitFrames(2);
+        if (this._workVersion !== version) return;
         this._cy.resize();
         this._setupInteractions();
         this._observeContainer();
@@ -1054,18 +1154,22 @@ export class RdfGraph extends LitElement {
         this._cy.add(elements);
         this._cy.layout(this._layoutOptions(sizeMap)).run();
       }
+
       await waitFrames(FRAMES_AFTER_LAYOUT);
       if (this._cy && this._workVersion === version) removeOverlaps(this._cy);
 
       if (this._cy && this._wikidataStore) {
-        this._legend = buildLegend(this._cy, this._wikidataStore, this.languages);
+        this._legend = buildLegend(this._cy, this._wikidataStore, this.languages, labelCache);
       }
 
       this._executedQuery     = query;
       this._executedLanguages = [...this.languages];
       this._executedScaling   = this.nodeScaling;
       this._executedWikidata  = this.wikidata;
-      this._updateOverlay({ status: 'ready' });
+
+      this._loadingState = { status: 'ready' };
+      this.requestUpdate();
+
       this.dispatchEvent(new CustomEvent(isFirstBuild ? 'graph-ready' : 'graph-updated', {
         detail: { cy: this._cy, quadCount: this._wikidataStore.size }, bubbles: true, composed: true
       }));
@@ -1075,9 +1179,11 @@ export class RdfGraph extends LitElement {
         error instanceof Error ? error.message : String(error)
       );
       console.error('[rdf-graph] Fehler beim Ausführen der SPARQL-Query:', error);
-      this._updateOverlay({ status: 'error', message });
+      this._loadingState = { status: 'error', message };
+      this.requestUpdate();
       this.dispatchEvent(new CustomEvent('query-error', {
-        detail: { error: error instanceof Error ? error.message : String(error) }, bubbles: true, composed: true
+        detail: { error: error instanceof Error ? error.message : String(error) },
+        bubbles: true, composed: true
       }));
     }
   }
@@ -1107,7 +1213,9 @@ export class RdfGraph extends LitElement {
         : undefined;
 
       const { properties, externalIdKeys } = this._wikidataStore
-        ? getPropertiesFromStore(this._wikidataStore, nodeId, this.languages)
+        ? getPropertiesFromStore(
+            this._wikidataStore, nodeId, this.languages, this._labelCache ?? undefined
+          )
         : { properties: new Map<string, string[]>(), externalIdKeys: new Set<string>() };
 
       this._updateNodeInfo({
@@ -1139,32 +1247,49 @@ export class RdfGraph extends LitElement {
 
   private async _loadIncomingLinks(nodeId: string, qid: string): Promise<void> {
     if (!this._cy || !this._wikidataStore) return;
-    const node = this._cy.getElementById(nodeId);
+
+    const version    = this._workVersion;
+    const cy         = this._cy;
+    const store      = this._wikidataStore;
+    const labelCache = this._labelCache;
+
+    const node = cy.getElementById(nodeId);
     if (node.hasClass('incoming-loaded')) return;
     node.addClass('wikidata-loading');
+
     try {
       const uri      = `http://www.wikidata.org/entity/${qid}`;
-      const entities = await this._wikidataStore.enrichIncomingLinks(uri, this.languages);
+      const entities = await store.enrichIncomingLinks(uri, this.languages);
+
+      if (this._workVersion !== version || this._cy !== cy) {
+        console.warn('[rdf-graph] _loadIncomingLinks: Graph wurde ersetzt, Ergebnis verworfen');
+        return;
+      }
+
       const newElements: cytoscape.ElementDefinition[] = [];
       for (const entity of entities) {
-        newElements.push(...wikidataEntityToElements(entity, this._cy, this._wikidataStore));
+        newElements.push(...wikidataEntityToElements(entity, cy, store));
         const edgeId = `${entity.uri}__incoming__${nodeId}`;
-        if (!this._cy.getElementById(edgeId).length) {
+        if (!cy.getElementById(edgeId).length) {
           newElements.push({
             data: { id: edgeId, source: entity.uri, target: nodeId, label: '→' }
           });
         }
       }
-      this._applyNewElements(newElements, node);
+
+      if (this._workVersion !== version || this._cy !== cy) return;
+
+      this._applyNewElements(newElements, cy.getElementById(nodeId), cy);
+
       node.removeClass('wikidata-loading');
       node.addClass('incoming-loaded');
 
-      if (this._wikidataStore) {
-        this._legend = buildLegend(this._cy, this._wikidataStore, this.languages);
+      if (this._wikidataStore === store) {
+        this._legend = buildLegend(cy, store, this.languages, labelCache ?? undefined);
       }
 
       const { properties, externalIdKeys } = getPropertiesFromStore(
-        this._wikidataStore, nodeId, this.languages
+        store, nodeId, this.languages, labelCache ?? undefined
       );
       this._updateNodeInfo({
         label:        node.data('label'),
@@ -1180,40 +1305,57 @@ export class RdfGraph extends LitElement {
         detail: { nodeId, qid, count: entities.length }, bubbles: true, composed: true
       }));
     } catch (e) {
-      node.removeClass('wikidata-loading');
-      node.addClass('wikidata-error');
+      if (this._cy === cy) {
+        node.removeClass('wikidata-loading');
+        node.addClass('wikidata-error');
+      }
       console.error('[rdf-graph] Fehler beim Laden eingehender Verbindungen:', e);
     }
   }
 
   private _applyNewElements(
     newElements: cytoscape.ElementDefinition[],
-    anchorNode: cytoscape.NodeSingular
+    anchorNode: cytoscape.NodeSingular,
+    cy: cytoscape.Core,
   ): void {
-    if (!this._cy || newElements.length === 0) return;
-    this._cy.add(newElements);
-    const neighborhood = anchorNode.neighborhood().add(anchorNode);
-    const localSizeMap = new Map<string, number>();
-    neighborhood.nodes().forEach((n: cytoscape.NodeSingular) => {
-      const s = n.data('nodeSize');
-      localSizeMap.set(n.id(), typeof s === 'number' ? s : NODE_BASE_SIZE);
+    if (newElements.length === 0) return;
+
+    const graphBb  = cy.elements().boundingBox({});
+    const graphCx  = (graphBb.x1 + graphBb.x2) / 2;
+    const graphCy  = (graphBb.y1 + graphBb.y2) / 2;
+    const graphR   = Math.max(graphBb.x2 - graphBb.x1, graphBb.y2 - graphBb.y1) / 2;
+
+    const newNodeIds = new Set(
+      newElements
+        .filter(el => !el.data?.source)
+        .map(el => el.data.id as string)
+    );
+
+    cy.add(newElements);
+
+    if (newNodeIds.size === 0) return;
+
+    const anchorPos   = { ...anchorNode.position() };
+    const radius      = graphR + 150;
+    const newNodes    = cy.nodes().filter(n => newNodeIds.has(n.id()));
+    const count       = newNodes.length;
+    const anchorAngle = Math.atan2(anchorPos.y - graphCy, anchorPos.x - graphCx);
+    const spread      = Math.min(Math.PI, (count - 1) * 0.4);
+    const startAngle  = anchorAngle - spread / 2;
+
+    newNodes.forEach((node: cytoscape.NodeSingular, i: number) => {
+      const angle = count === 1
+        ? anchorAngle
+        : startAngle + (spread / (count - 1)) * i;
+      node.position({
+        x: graphCx + radius * Math.cos(angle),
+        y: graphCy + radius * Math.sin(angle),
+      });
     });
-    neighborhood.layout({
-      name: 'cose',
-      animate: true,
-      animationDuration: 300,
-      fit: false,
-      nodeDimensionsIncludeLabels: true,
-      nodeRepulsion: nodeRepulsionFn(localSizeMap),
-      idealEdgeLength: idealEdgeLengthFn(localSizeMap),
-      edgeElasticity: () => EDGE_ELASTICITY,
-      gravity: GRAVITY,
-    } as any).run();
   }
 
   exportAsSvg(): void {
     if (!this._cy) return;
-    // ✅ War vorher ohne try/catch
     try {
       const svgContent = (this._cy as any).svg({ full: true, scale: 1 });
       const blob       = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
@@ -1256,12 +1398,23 @@ export class RdfGraph extends LitElement {
 
   private _renderOverlay() {
     const s = this._loadingState;
+
     if (s.status === 'idle' && !this.src)
-      return html`<div id="loading-overlay"><span>Kein <code>src</code> Attribut gesetzt</span></div>`;
-    if (s.status === 'loading-data' || s.status === 'building-graph')
-      return html`<div id="loading-overlay"><span><span class="spinner"></span>${s.message}</span></div>`;
+      return html`<div id="loading-overlay"><span>${unsafeHTML(this._t.noSrc)}</span></div>`;
+
+    if (
+      s.status === 'loading-data' ||
+      s.status === 'querying'     ||
+      s.status === 'processing'   ||
+      s.status === 'layouting'
+    ) return html`
+      <div id="loading-overlay">
+        <span><span class="spinner"></span>${s.message}</span>
+      </div>`;
+
     if (s.status === 'error')
       return html`<div id="loading-overlay"><span class="error">❌ ${s.message}</span></div>`;
+
     return null;
   }
 
@@ -1310,7 +1463,9 @@ export class RdfGraph extends LitElement {
 
         <div class="node-info-label">${data.label}</div>
         <div class="node-info-id">
-          <a href=${data.id} target="_blank" rel="noopener noreferrer">${data.id}</a>
+          ${data.id.startsWith('http')
+            ? html`<a href=${data.id} target="_blank" rel="noopener noreferrer">${data.id}</a>`
+            : data.id}
         </div>
 
         ${data.qid ? html`

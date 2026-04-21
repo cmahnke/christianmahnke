@@ -203,7 +203,7 @@ export const componentStyles = css`
       position: absolute;
       top: 1rem;
       left: 1rem;
-      max-width: 10em; 
+      max-width: 12em; 
       max-height: fit-content;
       border: 1px solid var(--sparql-border);
       background: var(--legend-bg);

@@ -3,26 +3,39 @@
  * Copyright 2019 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const t$1=globalThis,e$2=t$1.ShadowRoot&&(void 0===t$1.ShadyCSS||t$1.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,s$2=Symbol(),o$3=new WeakMap;let n$2 = class n{constructor(t,e,o){if(this._$cssResult$=true,o!==s$2)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t,this.t=e;}get styleSheet(){let t=this.o;const s=this.t;if(e$2&&void 0===t){const e=void 0!==s&&1===s.length;e&&(t=o$3.get(s)),void 0===t&&((this.o=t=new CSSStyleSheet).replaceSync(this.cssText),e&&o$3.set(s,t));}return t}toString(){return this.cssText}};const r$2=t=>new n$2("string"==typeof t?t:t+"",void 0,s$2),i$4=(t,...e)=>{const o=1===t.length?t[0]:e.reduce((e,s,o)=>e+(t=>{if(true===t._$cssResult$)return t.cssText;if("number"==typeof t)return t;throw Error("Value passed to 'css' function must be a 'css' function result: "+t+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(s)+t[o+1],t[0]);return new n$2(o,t,s$2)},S$1=(s,o)=>{if(e$2)s.adoptedStyleSheets=o.map(t=>t instanceof CSSStyleSheet?t:t.styleSheet);else for(const e of o){const o=document.createElement("style"),n=t$1.litNonce;void 0!==n&&o.setAttribute("nonce",n),o.textContent=e.cssText,s.appendChild(o);}},c$2=e$2?t=>t:t=>t instanceof CSSStyleSheet?(t=>{let e="";for(const s of t.cssRules)e+=s.cssText;return r$2(e)})(t):t;
+const t$2=globalThis,e$4=t$2.ShadowRoot&&(void 0===t$2.ShadyCSS||t$2.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,s$2=Symbol(),o$4=new WeakMap;let n$2 = class n{constructor(t,e,o){if(this._$cssResult$=true,o!==s$2)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t,this.t=e;}get styleSheet(){let t=this.o;const s=this.t;if(e$4&&void 0===t){const e=void 0!==s&&1===s.length;e&&(t=o$4.get(s)),void 0===t&&((this.o=t=new CSSStyleSheet).replaceSync(this.cssText),e&&o$4.set(s,t));}return t}toString(){return this.cssText}};const r$2=t=>new n$2("string"==typeof t?t:t+"",void 0,s$2),i$5=(t,...e)=>{const o=1===t.length?t[0]:e.reduce((e,s,o)=>e+(t=>{if(true===t._$cssResult$)return t.cssText;if("number"==typeof t)return t;throw Error("Value passed to 'css' function must be a 'css' function result: "+t+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(s)+t[o+1],t[0]);return new n$2(o,t,s$2)},S$1=(s,o)=>{if(e$4)s.adoptedStyleSheets=o.map(t=>t instanceof CSSStyleSheet?t:t.styleSheet);else for(const e of o){const o=document.createElement("style"),n=t$2.litNonce;void 0!==n&&o.setAttribute("nonce",n),o.textContent=e.cssText,s.appendChild(o);}},c$2=e$4?t=>t:t=>t instanceof CSSStyleSheet?(t=>{let e="";for(const s of t.cssRules)e+=s.cssText;return r$2(e)})(t):t;
 
 /**
  * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */const{is:i$3,defineProperty:e$1,getOwnPropertyDescriptor:h$1,getOwnPropertyNames:r$1,getOwnPropertySymbols:o$2,getPrototypeOf:n$1}=Object,a$1=globalThis,c$1=a$1.trustedTypes,l$1=c$1?c$1.emptyScript:"",p$2=a$1.reactiveElementPolyfillSupport,d$1=(t,s)=>t,u$1={toAttribute(t,s){switch(s){case Boolean:t=t?l$1:null;break;case Object:case Array:t=null==t?t:JSON.stringify(t);}return t},fromAttribute(t,s){let i=t;switch(s){case Boolean:i=null!==t;break;case Number:i=null===t?null:Number(t);break;case Object:case Array:try{i=JSON.parse(t);}catch(t){i=null;}}return i}},f$1=(t,s)=>!i$3(t,s),b$1={attribute:true,type:String,converter:u$1,reflect:false,useDefault:false,hasChanged:f$1};Symbol.metadata??=Symbol("metadata"),a$1.litPropertyMetadata??=new WeakMap;let y$2 = class y extends HTMLElement{static addInitializer(t){this._$Ei(),(this.l??=[]).push(t);}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(t,s=b$1){if(s.state&&(s.attribute=false),this._$Ei(),this.prototype.hasOwnProperty(t)&&((s=Object.create(s)).wrapped=true),this.elementProperties.set(t,s),!s.noAccessor){const i=Symbol(),h=this.getPropertyDescriptor(t,i,s);void 0!==h&&e$1(this.prototype,t,h);}}static getPropertyDescriptor(t,s,i){const{get:e,set:r}=h$1(this.prototype,t)??{get(){return this[s]},set(t){this[s]=t;}};return {get:e,set(s){const h=e?.call(this);r?.call(this,s),this.requestUpdate(t,h,i);},configurable:true,enumerable:true}}static getPropertyOptions(t){return this.elementProperties.get(t)??b$1}static _$Ei(){if(this.hasOwnProperty(d$1("elementProperties")))return;const t=n$1(this);t.finalize(),void 0!==t.l&&(this.l=[...t.l]),this.elementProperties=new Map(t.elementProperties);}static finalize(){if(this.hasOwnProperty(d$1("finalized")))return;if(this.finalized=true,this._$Ei(),this.hasOwnProperty(d$1("properties"))){const t=this.properties,s=[...r$1(t),...o$2(t)];for(const i of s)this.createProperty(i,t[i]);}const t=this[Symbol.metadata];if(null!==t){const s=litPropertyMetadata.get(t);if(void 0!==s)for(const[t,i]of s)this.elementProperties.set(t,i);}this._$Eh=new Map;for(const[t,s]of this.elementProperties){const i=this._$Eu(t,s);void 0!==i&&this._$Eh.set(i,t);}this.elementStyles=this.finalizeStyles(this.styles);}static finalizeStyles(s){const i=[];if(Array.isArray(s)){const e=new Set(s.flat(1/0).reverse());for(const s of e)i.unshift(c$2(s));}else void 0!==s&&i.push(c$2(s));return i}static _$Eu(t,s){const i=s.attribute;return  false===i?void 0:"string"==typeof i?i:"string"==typeof t?t.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=false,this.hasUpdated=false,this._$Em=null,this._$Ev();}_$Ev(){this._$ES=new Promise(t=>this.enableUpdating=t),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(t=>t(this));}addController(t){(this._$EO??=new Set).add(t),void 0!==this.renderRoot&&this.isConnected&&t.hostConnected?.();}removeController(t){this._$EO?.delete(t);}_$E_(){const t=new Map,s=this.constructor.elementProperties;for(const i of s.keys())this.hasOwnProperty(i)&&(t.set(i,this[i]),delete this[i]);t.size>0&&(this._$Ep=t);}createRenderRoot(){const t=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return S$1(t,this.constructor.elementStyles),t}connectedCallback(){this.renderRoot??=this.createRenderRoot(),this.enableUpdating(true),this._$EO?.forEach(t=>t.hostConnected?.());}enableUpdating(t){}disconnectedCallback(){this._$EO?.forEach(t=>t.hostDisconnected?.());}attributeChangedCallback(t,s,i){this._$AK(t,i);}_$ET(t,s){const i=this.constructor.elementProperties.get(t),e=this.constructor._$Eu(t,i);if(void 0!==e&&true===i.reflect){const h=(void 0!==i.converter?.toAttribute?i.converter:u$1).toAttribute(s,i.type);this._$Em=t,null==h?this.removeAttribute(e):this.setAttribute(e,h),this._$Em=null;}}_$AK(t,s){const i=this.constructor,e=i._$Eh.get(t);if(void 0!==e&&this._$Em!==e){const t=i.getPropertyOptions(e),h="function"==typeof t.converter?{fromAttribute:t.converter}:void 0!==t.converter?.fromAttribute?t.converter:u$1;this._$Em=e;const r=h.fromAttribute(s,t.type);this[e]=r??this._$Ej?.get(e)??r,this._$Em=null;}}requestUpdate(t,s,i,e=false,h){if(void 0!==t){const r=this.constructor;if(false===e&&(h=this[t]),i??=r.getPropertyOptions(t),!((i.hasChanged??f$1)(h,s)||i.useDefault&&i.reflect&&h===this._$Ej?.get(t)&&!this.hasAttribute(r._$Eu(t,i))))return;this.C(t,s,i);} false===this.isUpdatePending&&(this._$ES=this._$EP());}C(t,s,{useDefault:i,reflect:e,wrapped:h},r){i&&!(this._$Ej??=new Map).has(t)&&(this._$Ej.set(t,r??s??this[t]),true!==h||void 0!==r)||(this._$AL.has(t)||(this.hasUpdated||i||(s=void 0),this._$AL.set(t,s)),true===e&&this._$Em!==t&&(this._$Eq??=new Set).add(t));}async _$EP(){this.isUpdatePending=true;try{await this._$ES;}catch(t){Promise.reject(t);}const t=this.scheduleUpdate();return null!=t&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??=this.createRenderRoot(),this._$Ep){for(const[t,s]of this._$Ep)this[t]=s;this._$Ep=void 0;}const t=this.constructor.elementProperties;if(t.size>0)for(const[s,i]of t){const{wrapped:t}=i,e=this[s];true!==t||this._$AL.has(s)||void 0===e||this.C(s,void 0,i,e);}}let t=false;const s=this._$AL;try{t=this.shouldUpdate(s),t?(this.willUpdate(s),this._$EO?.forEach(t=>t.hostUpdate?.()),this.update(s)):this._$EM();}catch(s){throw t=false,this._$EM(),s}t&&this._$AE(s);}willUpdate(t){}_$AE(t){this._$EO?.forEach(t=>t.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=true,this.firstUpdated(t)),this.updated(t);}_$EM(){this._$AL=new Map,this.isUpdatePending=false;}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(t){return  true}update(t){this._$Eq&&=this._$Eq.forEach(t=>this._$ET(t,this[t])),this._$EM();}updated(t){}firstUpdated(t){}};y$2.elementStyles=[],y$2.shadowRootOptions={mode:"open"},y$2[d$1("elementProperties")]=new Map,y$2[d$1("finalized")]=new Map,p$2?.({ReactiveElement:y$2}),(a$1.reactiveElementVersions??=[]).push("2.1.2");
+ */const{is:i$4,defineProperty:e$3,getOwnPropertyDescriptor:h$1,getOwnPropertyNames:r$1,getOwnPropertySymbols:o$3,getPrototypeOf:n$1}=Object,a$1=globalThis,c$1=a$1.trustedTypes,l$1=c$1?c$1.emptyScript:"",p$2=a$1.reactiveElementPolyfillSupport,d$1=(t,s)=>t,u$1={toAttribute(t,s){switch(s){case Boolean:t=t?l$1:null;break;case Object:case Array:t=null==t?t:JSON.stringify(t);}return t},fromAttribute(t,s){let i=t;switch(s){case Boolean:i=null!==t;break;case Number:i=null===t?null:Number(t);break;case Object:case Array:try{i=JSON.parse(t);}catch(t){i=null;}}return i}},f$1=(t,s)=>!i$4(t,s),b$1={attribute:true,type:String,converter:u$1,reflect:false,useDefault:false,hasChanged:f$1};Symbol.metadata??=Symbol("metadata"),a$1.litPropertyMetadata??=new WeakMap;let y$2 = class y extends HTMLElement{static addInitializer(t){this._$Ei(),(this.l??=[]).push(t);}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(t,s=b$1){if(s.state&&(s.attribute=false),this._$Ei(),this.prototype.hasOwnProperty(t)&&((s=Object.create(s)).wrapped=true),this.elementProperties.set(t,s),!s.noAccessor){const i=Symbol(),h=this.getPropertyDescriptor(t,i,s);void 0!==h&&e$3(this.prototype,t,h);}}static getPropertyDescriptor(t,s,i){const{get:e,set:r}=h$1(this.prototype,t)??{get(){return this[s]},set(t){this[s]=t;}};return {get:e,set(s){const h=e?.call(this);r?.call(this,s),this.requestUpdate(t,h,i);},configurable:true,enumerable:true}}static getPropertyOptions(t){return this.elementProperties.get(t)??b$1}static _$Ei(){if(this.hasOwnProperty(d$1("elementProperties")))return;const t=n$1(this);t.finalize(),void 0!==t.l&&(this.l=[...t.l]),this.elementProperties=new Map(t.elementProperties);}static finalize(){if(this.hasOwnProperty(d$1("finalized")))return;if(this.finalized=true,this._$Ei(),this.hasOwnProperty(d$1("properties"))){const t=this.properties,s=[...r$1(t),...o$3(t)];for(const i of s)this.createProperty(i,t[i]);}const t=this[Symbol.metadata];if(null!==t){const s=litPropertyMetadata.get(t);if(void 0!==s)for(const[t,i]of s)this.elementProperties.set(t,i);}this._$Eh=new Map;for(const[t,s]of this.elementProperties){const i=this._$Eu(t,s);void 0!==i&&this._$Eh.set(i,t);}this.elementStyles=this.finalizeStyles(this.styles);}static finalizeStyles(s){const i=[];if(Array.isArray(s)){const e=new Set(s.flat(1/0).reverse());for(const s of e)i.unshift(c$2(s));}else void 0!==s&&i.push(c$2(s));return i}static _$Eu(t,s){const i=s.attribute;return  false===i?void 0:"string"==typeof i?i:"string"==typeof t?t.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=false,this.hasUpdated=false,this._$Em=null,this._$Ev();}_$Ev(){this._$ES=new Promise(t=>this.enableUpdating=t),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(t=>t(this));}addController(t){(this._$EO??=new Set).add(t),void 0!==this.renderRoot&&this.isConnected&&t.hostConnected?.();}removeController(t){this._$EO?.delete(t);}_$E_(){const t=new Map,s=this.constructor.elementProperties;for(const i of s.keys())this.hasOwnProperty(i)&&(t.set(i,this[i]),delete this[i]);t.size>0&&(this._$Ep=t);}createRenderRoot(){const t=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return S$1(t,this.constructor.elementStyles),t}connectedCallback(){this.renderRoot??=this.createRenderRoot(),this.enableUpdating(true),this._$EO?.forEach(t=>t.hostConnected?.());}enableUpdating(t){}disconnectedCallback(){this._$EO?.forEach(t=>t.hostDisconnected?.());}attributeChangedCallback(t,s,i){this._$AK(t,i);}_$ET(t,s){const i=this.constructor.elementProperties.get(t),e=this.constructor._$Eu(t,i);if(void 0!==e&&true===i.reflect){const h=(void 0!==i.converter?.toAttribute?i.converter:u$1).toAttribute(s,i.type);this._$Em=t,null==h?this.removeAttribute(e):this.setAttribute(e,h),this._$Em=null;}}_$AK(t,s){const i=this.constructor,e=i._$Eh.get(t);if(void 0!==e&&this._$Em!==e){const t=i.getPropertyOptions(e),h="function"==typeof t.converter?{fromAttribute:t.converter}:void 0!==t.converter?.fromAttribute?t.converter:u$1;this._$Em=e;const r=h.fromAttribute(s,t.type);this[e]=r??this._$Ej?.get(e)??r,this._$Em=null;}}requestUpdate(t,s,i,e=false,h){if(void 0!==t){const r=this.constructor;if(false===e&&(h=this[t]),i??=r.getPropertyOptions(t),!((i.hasChanged??f$1)(h,s)||i.useDefault&&i.reflect&&h===this._$Ej?.get(t)&&!this.hasAttribute(r._$Eu(t,i))))return;this.C(t,s,i);} false===this.isUpdatePending&&(this._$ES=this._$EP());}C(t,s,{useDefault:i,reflect:e,wrapped:h},r){i&&!(this._$Ej??=new Map).has(t)&&(this._$Ej.set(t,r??s??this[t]),true!==h||void 0!==r)||(this._$AL.has(t)||(this.hasUpdated||i||(s=void 0),this._$AL.set(t,s)),true===e&&this._$Em!==t&&(this._$Eq??=new Set).add(t));}async _$EP(){this.isUpdatePending=true;try{await this._$ES;}catch(t){Promise.reject(t);}const t=this.scheduleUpdate();return null!=t&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??=this.createRenderRoot(),this._$Ep){for(const[t,s]of this._$Ep)this[t]=s;this._$Ep=void 0;}const t=this.constructor.elementProperties;if(t.size>0)for(const[s,i]of t){const{wrapped:t}=i,e=this[s];true!==t||this._$AL.has(s)||void 0===e||this.C(s,void 0,i,e);}}let t=false;const s=this._$AL;try{t=this.shouldUpdate(s),t?(this.willUpdate(s),this._$EO?.forEach(t=>t.hostUpdate?.()),this.update(s)):this._$EM();}catch(s){throw t=false,this._$EM(),s}t&&this._$AE(s);}willUpdate(t){}_$AE(t){this._$EO?.forEach(t=>t.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=true,this.firstUpdated(t)),this.updated(t);}_$EM(){this._$AL=new Map,this.isUpdatePending=false;}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(t){return  true}update(t){this._$Eq&&=this._$Eq.forEach(t=>this._$ET(t,this[t])),this._$EM();}updated(t){}firstUpdated(t){}};y$2.elementStyles=[],y$2.shadowRootOptions={mode:"open"},y$2[d$1("elementProperties")]=new Map,y$2[d$1("finalized")]=new Map,p$2?.({ReactiveElement:y$2}),(a$1.reactiveElementVersions??=[]).push("2.1.2");
 
 /**
  * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const t=globalThis,i$2=t=>t,s$1=t.trustedTypes,e=s$1?s$1.createPolicy("lit-html",{createHTML:t=>t}):void 0,h="$lit$",o$1=`lit$${Math.random().toFixed(9).slice(2)}$`,n="?"+o$1,r=`<${n}>`,l=document,c=()=>l.createComment(""),a=t=>null===t||"object"!=typeof t&&"function"!=typeof t,u=Array.isArray,d=t=>u(t)||"function"==typeof t?.[Symbol.iterator],f="[ \t\n\f\r]",v=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,_=/-->/g,m=/>/g,p$1=RegExp(`>|${f}(?:([^\\s"'>=/]+)(${f}*=${f}*(?:[^ \t\n\f\r"'\`<>=]|("|')|))|$)`,"g"),g=/'/g,$=/"/g,y$1=/^(?:script|style|textarea|title)$/i,x$1=t=>(i,...s)=>({_$litType$:t,strings:i,values:s}),b=x$1(1),E=Symbol.for("lit-noChange"),A=Symbol.for("lit-nothing"),C=new WeakMap,P=l.createTreeWalker(l,129);function V(t,i){if(!u(t)||!t.hasOwnProperty("raw"))throw Error("invalid template strings array");return void 0!==e?e.createHTML(i):i}const N=(t,i)=>{const s=t.length-1,e=[];let n,l=2===i?"<svg>":3===i?"<math>":"",c=v;for(let i=0;i<s;i++){const s=t[i];let a,u,d=-1,f=0;for(;f<s.length&&(c.lastIndex=f,u=c.exec(s),null!==u);)f=c.lastIndex,c===v?"!--"===u[1]?c=_:void 0!==u[1]?c=m:void 0!==u[2]?(y$1.test(u[2])&&(n=RegExp("</"+u[2],"g")),c=p$1):void 0!==u[3]&&(c=p$1):c===p$1?">"===u[0]?(c=n??v,d=-1):void 0===u[1]?d=-2:(d=c.lastIndex-u[2].length,a=u[1],c=void 0===u[3]?p$1:'"'===u[3]?$:g):c===$||c===g?c=p$1:c===_||c===m?c=v:(c=p$1,n=void 0);const x=c===p$1&&t[i+1].startsWith("/>")?" ":"";l+=c===v?s+r:d>=0?(e.push(a),s.slice(0,d)+h+s.slice(d)+o$1+x):s+o$1+(-2===d?i:x);}return [V(t,l+(t[s]||"<?>")+(2===i?"</svg>":3===i?"</math>":"")),e]};class S{constructor({strings:t,_$litType$:i},e){let r;this.parts=[];let l=0,a=0;const u=t.length-1,d=this.parts,[f,v]=N(t,i);if(this.el=S.createElement(f,e),P.currentNode=this.el.content,2===i||3===i){const t=this.el.content.firstChild;t.replaceWith(...t.childNodes);}for(;null!==(r=P.nextNode())&&d.length<u;){if(1===r.nodeType){if(r.hasAttributes())for(const t of r.getAttributeNames())if(t.endsWith(h)){const i=v[a++],s=r.getAttribute(t).split(o$1),e=/([.?@])?(.*)/.exec(i);d.push({type:1,index:l,name:e[2],strings:s,ctor:"."===e[1]?I:"?"===e[1]?L:"@"===e[1]?z:H}),r.removeAttribute(t);}else t.startsWith(o$1)&&(d.push({type:6,index:l}),r.removeAttribute(t));if(y$1.test(r.tagName)){const t=r.textContent.split(o$1),i=t.length-1;if(i>0){r.textContent=s$1?s$1.emptyScript:"";for(let s=0;s<i;s++)r.append(t[s],c()),P.nextNode(),d.push({type:2,index:++l});r.append(t[i],c());}}}else if(8===r.nodeType)if(r.data===n)d.push({type:2,index:l});else {let t=-1;for(;-1!==(t=r.data.indexOf(o$1,t+1));)d.push({type:7,index:l}),t+=o$1.length-1;}l++;}}static createElement(t,i){const s=l.createElement("template");return s.innerHTML=t,s}}function M(t,i,s=t,e){if(i===E)return i;let h=void 0!==e?s._$Co?.[e]:s._$Cl;const o=a(i)?void 0:i._$litDirective$;return h?.constructor!==o&&(h?._$AO?.(false),void 0===o?h=void 0:(h=new o(t),h._$AT(t,s,e)),void 0!==e?(s._$Co??=[])[e]=h:s._$Cl=h),void 0!==h&&(i=M(t,h._$AS(t,i.values),h,e)),i}class R{constructor(t,i){this._$AV=[],this._$AN=void 0,this._$AD=t,this._$AM=i;}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(t){const{el:{content:i},parts:s}=this._$AD,e=(t?.creationScope??l).importNode(i,true);P.currentNode=e;let h=P.nextNode(),o=0,n=0,r=s[0];for(;void 0!==r;){if(o===r.index){let i;2===r.type?i=new k(h,h.nextSibling,this,t):1===r.type?i=new r.ctor(h,r.name,r.strings,this,t):6===r.type&&(i=new Z(h,this,t)),this._$AV.push(i),r=s[++n];}o!==r?.index&&(h=P.nextNode(),o++);}return P.currentNode=l,e}p(t){let i=0;for(const s of this._$AV) void 0!==s&&(void 0!==s.strings?(s._$AI(t,s,i),i+=s.strings.length-2):s._$AI(t[i])),i++;}}class k{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(t,i,s,e){this.type=2,this._$AH=A,this._$AN=void 0,this._$AA=t,this._$AB=i,this._$AM=s,this.options=e,this._$Cv=e?.isConnected??true;}get parentNode(){let t=this._$AA.parentNode;const i=this._$AM;return void 0!==i&&11===t?.nodeType&&(t=i.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,i=this){t=M(this,t,i),a(t)?t===A||null==t||""===t?(this._$AH!==A&&this._$AR(),this._$AH=A):t!==this._$AH&&t!==E&&this._(t):void 0!==t._$litType$?this.$(t):void 0!==t.nodeType?this.T(t):d(t)?this.k(t):this._(t);}O(t){return this._$AA.parentNode.insertBefore(t,this._$AB)}T(t){this._$AH!==t&&(this._$AR(),this._$AH=this.O(t));}_(t){this._$AH!==A&&a(this._$AH)?this._$AA.nextSibling.data=t:this.T(l.createTextNode(t)),this._$AH=t;}$(t){const{values:i,_$litType$:s}=t,e="number"==typeof s?this._$AC(t):(void 0===s.el&&(s.el=S.createElement(V(s.h,s.h[0]),this.options)),s);if(this._$AH?._$AD===e)this._$AH.p(i);else {const t=new R(e,this),s=t.u(this.options);t.p(i),this.T(s),this._$AH=t;}}_$AC(t){let i=C.get(t.strings);return void 0===i&&C.set(t.strings,i=new S(t)),i}k(t){u(this._$AH)||(this._$AH=[],this._$AR());const i=this._$AH;let s,e=0;for(const h of t)e===i.length?i.push(s=new k(this.O(c()),this.O(c()),this,this.options)):s=i[e],s._$AI(h),e++;e<i.length&&(this._$AR(s&&s._$AB.nextSibling,e),i.length=e);}_$AR(t=this._$AA.nextSibling,s){for(this._$AP?.(false,true,s);t!==this._$AB;){const s=i$2(t).nextSibling;i$2(t).remove(),t=s;}}setConnected(t){ void 0===this._$AM&&(this._$Cv=t,this._$AP?.(t));}}class H{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(t,i,s,e,h){this.type=1,this._$AH=A,this._$AN=void 0,this.element=t,this.name=i,this._$AM=e,this.options=h,s.length>2||""!==s[0]||""!==s[1]?(this._$AH=Array(s.length-1).fill(new String),this.strings=s):this._$AH=A;}_$AI(t,i=this,s,e){const h=this.strings;let o=false;if(void 0===h)t=M(this,t,i,0),o=!a(t)||t!==this._$AH&&t!==E,o&&(this._$AH=t);else {const e=t;let n,r;for(t=h[0],n=0;n<h.length-1;n++)r=M(this,e[s+n],i,n),r===E&&(r=this._$AH[n]),o||=!a(r)||r!==this._$AH[n],r===A?t=A:t!==A&&(t+=(r??"")+h[n+1]),this._$AH[n]=r;}o&&!e&&this.j(t);}j(t){t===A?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,t??"");}}class I extends H{constructor(){super(...arguments),this.type=3;}j(t){this.element[this.name]=t===A?void 0:t;}}class L extends H{constructor(){super(...arguments),this.type=4;}j(t){this.element.toggleAttribute(this.name,!!t&&t!==A);}}class z extends H{constructor(t,i,s,e,h){super(t,i,s,e,h),this.type=5;}_$AI(t,i=this){if((t=M(this,t,i,0)??A)===E)return;const s=this._$AH,e=t===A&&s!==A||t.capture!==s.capture||t.once!==s.once||t.passive!==s.passive,h=t!==A&&(s===A||e);e&&this.element.removeEventListener(this.name,this,s),h&&this.element.addEventListener(this.name,this,t),this._$AH=t;}handleEvent(t){"function"==typeof this._$AH?this._$AH.call(this.options?.host??this.element,t):this._$AH.handleEvent(t);}}class Z{constructor(t,i,s){this.element=t,this.type=6,this._$AN=void 0,this._$AM=i,this.options=s;}get _$AU(){return this._$AM._$AU}_$AI(t){M(this,t);}}const B=t.litHtmlPolyfillSupport;B?.(S,k),(t.litHtmlVersions??=[]).push("3.3.2");const D=(t,i,s)=>{const e=s?.renderBefore??i;let h=e._$litPart$;if(void 0===h){const t=s?.renderBefore??null;e._$litPart$=h=new k(i.insertBefore(c(),t),t,void 0,s??{});}return h._$AI(t),h};
+const t$1=globalThis,i$3=t=>t,s$1=t$1.trustedTypes,e$2=s$1?s$1.createPolicy("lit-html",{createHTML:t=>t}):void 0,h="$lit$",o$2=`lit$${Math.random().toFixed(9).slice(2)}$`,n="?"+o$2,r=`<${n}>`,l=document,c=()=>l.createComment(""),a=t=>null===t||"object"!=typeof t&&"function"!=typeof t,u=Array.isArray,d=t=>u(t)||"function"==typeof t?.[Symbol.iterator],f="[ \t\n\f\r]",v=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,_=/-->/g,m=/>/g,p$1=RegExp(`>|${f}(?:([^\\s"'>=/]+)(${f}*=${f}*(?:[^ \t\n\f\r"'\`<>=]|("|')|))|$)`,"g"),g=/'/g,$=/"/g,y$1=/^(?:script|style|textarea|title)$/i,x$1=t=>(i,...s)=>({_$litType$:t,strings:i,values:s}),b=x$1(1),E=Symbol.for("lit-noChange"),A=Symbol.for("lit-nothing"),C=new WeakMap,P=l.createTreeWalker(l,129);function V(t,i){if(!u(t)||!t.hasOwnProperty("raw"))throw Error("invalid template strings array");return void 0!==e$2?e$2.createHTML(i):i}const N=(t,i)=>{const s=t.length-1,e=[];let n,l=2===i?"<svg>":3===i?"<math>":"",c=v;for(let i=0;i<s;i++){const s=t[i];let a,u,d=-1,f=0;for(;f<s.length&&(c.lastIndex=f,u=c.exec(s),null!==u);)f=c.lastIndex,c===v?"!--"===u[1]?c=_:void 0!==u[1]?c=m:void 0!==u[2]?(y$1.test(u[2])&&(n=RegExp("</"+u[2],"g")),c=p$1):void 0!==u[3]&&(c=p$1):c===p$1?">"===u[0]?(c=n??v,d=-1):void 0===u[1]?d=-2:(d=c.lastIndex-u[2].length,a=u[1],c=void 0===u[3]?p$1:'"'===u[3]?$:g):c===$||c===g?c=p$1:c===_||c===m?c=v:(c=p$1,n=void 0);const x=c===p$1&&t[i+1].startsWith("/>")?" ":"";l+=c===v?s+r:d>=0?(e.push(a),s.slice(0,d)+h+s.slice(d)+o$2+x):s+o$2+(-2===d?i:x);}return [V(t,l+(t[s]||"<?>")+(2===i?"</svg>":3===i?"</math>":"")),e]};class S{constructor({strings:t,_$litType$:i},e){let r;this.parts=[];let l=0,a=0;const u=t.length-1,d=this.parts,[f,v]=N(t,i);if(this.el=S.createElement(f,e),P.currentNode=this.el.content,2===i||3===i){const t=this.el.content.firstChild;t.replaceWith(...t.childNodes);}for(;null!==(r=P.nextNode())&&d.length<u;){if(1===r.nodeType){if(r.hasAttributes())for(const t of r.getAttributeNames())if(t.endsWith(h)){const i=v[a++],s=r.getAttribute(t).split(o$2),e=/([.?@])?(.*)/.exec(i);d.push({type:1,index:l,name:e[2],strings:s,ctor:"."===e[1]?I:"?"===e[1]?L:"@"===e[1]?z:H}),r.removeAttribute(t);}else t.startsWith(o$2)&&(d.push({type:6,index:l}),r.removeAttribute(t));if(y$1.test(r.tagName)){const t=r.textContent.split(o$2),i=t.length-1;if(i>0){r.textContent=s$1?s$1.emptyScript:"";for(let s=0;s<i;s++)r.append(t[s],c()),P.nextNode(),d.push({type:2,index:++l});r.append(t[i],c());}}}else if(8===r.nodeType)if(r.data===n)d.push({type:2,index:l});else {let t=-1;for(;-1!==(t=r.data.indexOf(o$2,t+1));)d.push({type:7,index:l}),t+=o$2.length-1;}l++;}}static createElement(t,i){const s=l.createElement("template");return s.innerHTML=t,s}}function M(t,i,s=t,e){if(i===E)return i;let h=void 0!==e?s._$Co?.[e]:s._$Cl;const o=a(i)?void 0:i._$litDirective$;return h?.constructor!==o&&(h?._$AO?.(false),void 0===o?h=void 0:(h=new o(t),h._$AT(t,s,e)),void 0!==e?(s._$Co??=[])[e]=h:s._$Cl=h),void 0!==h&&(i=M(t,h._$AS(t,i.values),h,e)),i}class R{constructor(t,i){this._$AV=[],this._$AN=void 0,this._$AD=t,this._$AM=i;}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(t){const{el:{content:i},parts:s}=this._$AD,e=(t?.creationScope??l).importNode(i,true);P.currentNode=e;let h=P.nextNode(),o=0,n=0,r=s[0];for(;void 0!==r;){if(o===r.index){let i;2===r.type?i=new k(h,h.nextSibling,this,t):1===r.type?i=new r.ctor(h,r.name,r.strings,this,t):6===r.type&&(i=new Z(h,this,t)),this._$AV.push(i),r=s[++n];}o!==r?.index&&(h=P.nextNode(),o++);}return P.currentNode=l,e}p(t){let i=0;for(const s of this._$AV) void 0!==s&&(void 0!==s.strings?(s._$AI(t,s,i),i+=s.strings.length-2):s._$AI(t[i])),i++;}}class k{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(t,i,s,e){this.type=2,this._$AH=A,this._$AN=void 0,this._$AA=t,this._$AB=i,this._$AM=s,this.options=e,this._$Cv=e?.isConnected??true;}get parentNode(){let t=this._$AA.parentNode;const i=this._$AM;return void 0!==i&&11===t?.nodeType&&(t=i.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,i=this){t=M(this,t,i),a(t)?t===A||null==t||""===t?(this._$AH!==A&&this._$AR(),this._$AH=A):t!==this._$AH&&t!==E&&this._(t):void 0!==t._$litType$?this.$(t):void 0!==t.nodeType?this.T(t):d(t)?this.k(t):this._(t);}O(t){return this._$AA.parentNode.insertBefore(t,this._$AB)}T(t){this._$AH!==t&&(this._$AR(),this._$AH=this.O(t));}_(t){this._$AH!==A&&a(this._$AH)?this._$AA.nextSibling.data=t:this.T(l.createTextNode(t)),this._$AH=t;}$(t){const{values:i,_$litType$:s}=t,e="number"==typeof s?this._$AC(t):(void 0===s.el&&(s.el=S.createElement(V(s.h,s.h[0]),this.options)),s);if(this._$AH?._$AD===e)this._$AH.p(i);else {const t=new R(e,this),s=t.u(this.options);t.p(i),this.T(s),this._$AH=t;}}_$AC(t){let i=C.get(t.strings);return void 0===i&&C.set(t.strings,i=new S(t)),i}k(t){u(this._$AH)||(this._$AH=[],this._$AR());const i=this._$AH;let s,e=0;for(const h of t)e===i.length?i.push(s=new k(this.O(c()),this.O(c()),this,this.options)):s=i[e],s._$AI(h),e++;e<i.length&&(this._$AR(s&&s._$AB.nextSibling,e),i.length=e);}_$AR(t=this._$AA.nextSibling,s){for(this._$AP?.(false,true,s);t!==this._$AB;){const s=i$3(t).nextSibling;i$3(t).remove(),t=s;}}setConnected(t){ void 0===this._$AM&&(this._$Cv=t,this._$AP?.(t));}}class H{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(t,i,s,e,h){this.type=1,this._$AH=A,this._$AN=void 0,this.element=t,this.name=i,this._$AM=e,this.options=h,s.length>2||""!==s[0]||""!==s[1]?(this._$AH=Array(s.length-1).fill(new String),this.strings=s):this._$AH=A;}_$AI(t,i=this,s,e){const h=this.strings;let o=false;if(void 0===h)t=M(this,t,i,0),o=!a(t)||t!==this._$AH&&t!==E,o&&(this._$AH=t);else {const e=t;let n,r;for(t=h[0],n=0;n<h.length-1;n++)r=M(this,e[s+n],i,n),r===E&&(r=this._$AH[n]),o||=!a(r)||r!==this._$AH[n],r===A?t=A:t!==A&&(t+=(r??"")+h[n+1]),this._$AH[n]=r;}o&&!e&&this.j(t);}j(t){t===A?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,t??"");}}class I extends H{constructor(){super(...arguments),this.type=3;}j(t){this.element[this.name]=t===A?void 0:t;}}class L extends H{constructor(){super(...arguments),this.type=4;}j(t){this.element.toggleAttribute(this.name,!!t&&t!==A);}}class z extends H{constructor(t,i,s,e,h){super(t,i,s,e,h),this.type=5;}_$AI(t,i=this){if((t=M(this,t,i,0)??A)===E)return;const s=this._$AH,e=t===A&&s!==A||t.capture!==s.capture||t.once!==s.once||t.passive!==s.passive,h=t!==A&&(s===A||e);e&&this.element.removeEventListener(this.name,this,s),h&&this.element.addEventListener(this.name,this,t),this._$AH=t;}handleEvent(t){"function"==typeof this._$AH?this._$AH.call(this.options?.host??this.element,t):this._$AH.handleEvent(t);}}class Z{constructor(t,i,s){this.element=t,this.type=6,this._$AN=void 0,this._$AM=i,this.options=s;}get _$AU(){return this._$AM._$AU}_$AI(t){M(this,t);}}const B=t$1.litHtmlPolyfillSupport;B?.(S,k),(t$1.litHtmlVersions??=[]).push("3.3.2");const D=(t,i,s)=>{const e=s?.renderBefore??i;let h=e._$litPart$;if(void 0===h){const t=s?.renderBefore??null;e._$litPart$=h=new k(i.insertBefore(c(),t),t,void 0,s??{});}return h._$AI(t),h};
 
 /**
  * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */const s=globalThis;let i$1 = class i extends y$2{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0;}createRenderRoot(){const t=super.createRenderRoot();return this.renderOptions.renderBefore??=t.firstChild,t}update(t){const r=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Do=D(r,this.renderRoot,this.renderOptions);}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(true);}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(false);}render(){return E}};i$1._$litElement$=true,i$1["finalized"]=true,s.litElementHydrateSupport?.({LitElement:i$1});const o=s.litElementPolyfillSupport;o?.({LitElement:i$1});(s.litElementVersions??=[]).push("4.2.2");
+ */const s=globalThis;let i$2 = class i extends y$2{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0;}createRenderRoot(){const t=super.createRenderRoot();return this.renderOptions.renderBefore??=t.firstChild,t}update(t){const r=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Do=D(r,this.renderRoot,this.renderOptions);}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(true);}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(false);}render(){return E}};i$2._$litElement$=true,i$2["finalized"]=true,s.litElementHydrateSupport?.({LitElement:i$2});const o$1=s.litElementPolyfillSupport;o$1?.({LitElement:i$2});(s.litElementVersions??=[]).push("4.2.2");
+
+/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+const t={CHILD:2},e$1=t=>(...e)=>({_$litDirective$:t,values:e});let i$1 = class i{constructor(t){}get _$AU(){return this._$AM._$AU}_$AT(t,e,i){this._$Ct=t,this._$AM=e,this._$Ci=i;}_$AS(t,e){return this.update(t,e)}update(t,e){return this.render(...e)}};
+
+/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */class e extends i$1{constructor(i){if(super(i),this.it=A,i.type!==t.CHILD)throw Error(this.constructor.directiveName+"() can only be used in child bindings")}render(r){if(r===A||null==r)return this._t=void 0,this.it=r;if(r===E)return r;if("string"!=typeof r)throw Error(this.constructor.directiveName+"() called with a non-string value");if(r===this.it)return this._t;this.it=r;const s=[r];return s.raw=s,this._t={_$litType$:this.constructor.resultType,strings:s,values:[]}}}e.directiveName="unsafeHTML",e.resultType=1;const o=e$1(e);
 
 /**
  * Copyright (c) 2016-2026, The Cytoscape Consortium.
@@ -37294,9 +37307,11 @@ class WikidataStore {
             return [];
         }
         const sparql = `
+      PREFIX wd: <http://www.wikidata.org/entity/>
+
       SELECT DISTINCT ?subject WHERE {
         ?subject ?p wd:${qid} .
-        ?subject a wikibase:Item .
+        FILTER(STRSTARTS(STR(?subject), "http://www.wikidata.org/entity/Q"))
       } LIMIT ${limit}
     `;
         let incomingQids;
@@ -37746,6 +37761,7 @@ import.meta.url = '';
 if (window) {
     import.meta.url = window.location.origin;
 }
+const DOWNLOAD_TIMEOUT_MS = 30_000;
 const wasmReady = (async () => {
     await __wbg_init({ wasm_hdt });
     await __wbg_init$1({ wasm_oxigraph });
@@ -37789,13 +37805,21 @@ function hdtToOxigraph(hdt) {
 }
 async function loadHdtFromUrl(url) {
     await wasmReady;
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(new DOMException(`Download timed out after ${DOWNLOAD_TIMEOUT_MS} ms`, "TimeoutError")), DOWNLOAD_TIMEOUT_MS);
     let response;
     try {
-        response = await fetch(url);
+        response = await fetch(url, { signal: controller.signal });
     }
     catch (networkError) {
         const message = networkError instanceof Error ? networkError.message : String(networkError);
-        throw new Error(`Network error while fetching HDT file from "${url}": ${message}`);
+        const isTimeout = networkError instanceof DOMException && networkError.name === "AbortError";
+        throw new Error(isTimeout
+            ? `Download of "${url}" timed out after ${DOWNLOAD_TIMEOUT_MS} ms`
+            : `Network error while fetching HDT file from "${url}": ${message}`);
+    }
+    finally {
+        clearTimeout(timeoutId);
     }
     if (!response.ok) {
         throw new Error(`Failed to fetch HDT file from "${url}": HTTP ${response.status} ${response.statusText}`);
@@ -37820,11 +37844,12 @@ async function loadHdtFromUrl(url) {
         throw new Error(`Error parsing HDT data from "${url}" (${buffer.byteLength} bytes): ${message}`);
     }
     const store = hdtToOxigraph(hdt);
+    console.info(`Successfully loaded HDT file from "${url}" with ${store.size} quads`);
     hdt.free();
     return store;
 }
 
-const componentStyles = i$4 `
+const componentStyles = i$5 `
     :host {
       --graph-height: 100vh;
 
@@ -38027,7 +38052,7 @@ const componentStyles = i$4 `
       position: absolute;
       top: 1rem;
       left: 1rem;
-      max-width: 10em; 
+      max-width: 12em; 
       max-height: fit-content;
       border: 1px solid var(--sparql-border);
       background: var(--legend-bg);
@@ -38091,12 +38116,16 @@ const INSTANCE_OF_COLORS = {
     'Q43229': '#e67e22',
     'Q838948': '#2ecc71',
     'Q7397': '#f1c40f',
+    'Q235557': '#dfd1e1',
+    'Q1924747': '#dfd1e1'
 };
 const UI_STRINGS = {
     de: {
         noSrc: 'Kein <code>src</code>-Attribut gesetzt',
-        buildingGraph: 'Graph wird aufgebaut…',
         loading: (src) => `Lade ${src}…`,
+        querying: 'Query wird ausgeführt…',
+        processing: 'Knoten und Labels werden verarbeitet…',
+        layouting: 'Graph-Layout wird berechnet…',
         queryError: (msg) => `Query-Fehler: ${msg}`,
         incomingLinks: 'Eingehende Verbindungen',
         close: 'Schließen',
@@ -38105,8 +38134,10 @@ const UI_STRINGS = {
     },
     en: {
         noSrc: 'No <code>src</code> attribute set',
-        buildingGraph: 'Building graph…',
         loading: (src) => `Loading ${src}…`,
+        querying: 'Running query…',
+        processing: 'Processing nodes and labels…',
+        layouting: 'Computing graph layout…',
         queryError: (msg) => `Query error: ${msg}`,
         incomingLinks: 'Incoming connections',
         close: 'Close',
@@ -38311,6 +38342,26 @@ function shorten(uri) {
     const cut = Math.max(uri.lastIndexOf('#'), uri.lastIndexOf('/'));
     return cut >= 0 ? uri.substring(cut + 1) : uri;
 }
+const LABEL_CACHE_MISS = Symbol('miss');
+class LabelCache {
+    constructor(store, languages) {
+        this._cache = new Map();
+        this._store = store;
+        this._languages = languages;
+    }
+    get(uri) {
+        if (this._cache.has(uri)) {
+            const cached = this._cache.get(uri);
+            return cached === LABEL_CACHE_MISS ? null : cached;
+        }
+        const label = findLabelInStore(this._store, uri, this._languages);
+        this._cache.set(uri, label ?? LABEL_CACHE_MISS);
+        return label;
+    }
+    get size() {
+        return this._cache.size;
+    }
+}
 function findLabelInStore(wikidataStore, uri, languages) {
     const langChain = [...new Set([...languages, 'en', 'mul'])];
     for (const predicate of LABEL_PREDICATES) {
@@ -38387,7 +38438,7 @@ function findExternalIdPredicates(wikidataStore) {
     }
     return result;
 }
-function getPropertiesFromStore(wikidataStore, uri, languages) {
+function getPropertiesFromStore(wikidataStore, uri, languages, labelCache) {
     const externalIdPredicates = findExternalIdPredicates(wikidataStore);
     const predLabelCache = new Map();
     const predIsExternal = new Map();
@@ -38401,7 +38452,10 @@ function getPropertiesFromStore(wikidataStore, uri, languages) {
                 continue;
             const val = row.get('o').value;
             if (!predLabelCache.has(predUri)) {
-                predLabelCache.set(predUri, findLabelInStore(wikidataStore, predUri, languages) ?? shorten(predUri));
+                const predLabel = labelCache?.get(predUri)
+                    ?? findLabelInStore(wikidataStore, predUri, languages)
+                    ?? shorten(predUri);
+                predLabelCache.set(predUri, predLabel);
                 predIsExternal.set(predUri, externalIdPredicates.has(predUri));
             }
             const predLabel = predLabelCache.get(predUri);
@@ -38436,7 +38490,7 @@ function findInstanceOfColor(wikidataStore, uri) {
     }
     return null;
 }
-function buildLegend(cy, wikidataStore, languages) {
+function buildLegend(cy, wikidataStore, languages, labelCache) {
     const usedColors = new Set();
     cy.nodes().forEach((node) => {
         const color = node.data('borderColor');
@@ -38458,7 +38512,7 @@ function buildLegend(cy, wikidataStore, languages) {
         const labels = [];
         for (const qid of qids) {
             const uri = `http://www.wikidata.org/entity/${qid}`;
-            const label = findLabelInStore(wikidataStore, uri, languages) ?? qid;
+            const label = (labelCache?.get(uri) ?? findLabelInStore(wikidataStore, uri, languages)) ?? qid;
             labels.push(label);
         }
         entries.push({ color, label: labels.join(', ') });
@@ -38483,7 +38537,7 @@ function findTaggedPosts(wikidataStore) {
         return new Set();
     }
 }
-function collectNodes(results, wikidataStore, taggedPosts, languages) {
+function collectNodes(results, wikidataStore, taggedPosts, languages, labelCache) {
     const nodeMap = new Map();
     const edges = [];
     for (const binding of results) {
@@ -38492,7 +38546,7 @@ function collectNodes(results, wikidataStore, taggedPosts, languages) {
         const o = binding.get('o');
         const sId = s.value;
         if (!nodeMap.has(sId)) {
-            const storeLabel = findLabelInStore(wikidataStore, sId, languages);
+            const storeLabel = labelCache.get(sId);
             const isTagged = taggedPosts.has(sId);
             const isWd = isWikidataUri(sId);
             let classes = s.termType === 'BlankNode' ? 'blank' : 'uri';
@@ -38519,7 +38573,7 @@ function collectNodes(results, wikidataStore, taggedPosts, languages) {
         else {
             const oId = o.value;
             if (!nodeMap.has(oId)) {
-                const storeLabel = findLabelInStore(wikidataStore, oId, languages);
+                const storeLabel = labelCache.get(oId);
                 const isTagged = taggedPosts.has(oId);
                 const isWd = isWikidataUri(oId);
                 let classes = o.termType === 'BlankNode' ? 'blank' : 'uri';
@@ -38537,7 +38591,7 @@ function collectNodes(results, wikidataStore, taggedPosts, languages) {
     }
     return { nodeMap, edges };
 }
-function buildElements(nodeMap, edges, scaling, wikidataStore) {
+function buildElements(nodeMap, edges, scaling, wikidataStore, labelCache) {
     const indegree = new Map();
     for (const edge of edges) {
         const target = edge.data.target;
@@ -38566,9 +38620,9 @@ function buildElements(nodeMap, edges, scaling, wikidataStore) {
     }
     return [...nodes, ...edges];
 }
-async function resultsToCytoscape(results, wikidataStore, languages, scaling, _wikidataMode) {
+async function resultsToCytoscape(results, wikidataStore, languages, scaling, _wikidataMode, labelCache) {
     const taggedPosts = findTaggedPosts(wikidataStore);
-    const { nodeMap, edges } = collectNodes(results, wikidataStore, taggedPosts, languages);
+    const { nodeMap, edges } = collectNodes(results, wikidataStore, taggedPosts, languages, labelCache);
     return buildElements(nodeMap, edges, scaling, wikidataStore);
 }
 function waitFrames(n) {
@@ -38582,6 +38636,9 @@ function waitFrames(n) {
         }
         requestAnimationFrame(next);
     });
+}
+function yieldToBrowser() {
+    return new Promise(resolve => requestAnimationFrame(() => resolve()));
 }
 function computeNodeRects(nodes) {
     const rects = new Map();
@@ -38684,14 +38741,13 @@ function wikidataEntityToElements(entity, cy, wikidataStore) {
             classes: 'uri wikidata'
         }];
 }
-class RdfGraph extends i$1 {
+class RdfGraph extends i$2 {
     constructor() {
         super(...arguments);
         this.src = '';
         this.languages = ['de', 'en'];
         this.nodeScaling = 'off';
         this.wikidata = 'off';
-        this.autoExecute = false;
         this.language = null;
         this._sparqlQuery = '';
         this._nodeInfo = null;
@@ -38699,6 +38755,7 @@ class RdfGraph extends i$1 {
         this._legend = [];
         this._cy = null;
         this._wikidataStore = null;
+        this._labelCache = null;
         this._loadedSrc = null;
         this._executedQuery = null;
         this._executedLanguages = null;
@@ -38739,11 +38796,6 @@ class RdfGraph extends i$1 {
                 toAttribute(value) { return value; }
             }
         },
-        autoExecute: {
-            type: Boolean,
-            attribute: 'auto-execute',
-            reflect: false,
-        },
         language: {
             type: String,
         },
@@ -38779,6 +38831,7 @@ class RdfGraph extends i$1 {
     }
     disconnectedCallback() {
         super.disconnectedCallback();
+        ++this._workVersion;
         if (this._resizeObserver) {
             this._resizeObserver.disconnect();
             this._resizeObserver = null;
@@ -38792,6 +38845,7 @@ class RdfGraph extends i$1 {
             this._cy = null;
         }
         this._wikidataStore = null;
+        this._labelCache = null;
         this._loadedSrc = null;
     }
     _handleResize() {
@@ -38840,18 +38894,25 @@ class RdfGraph extends i$1 {
         }
     }
     async _doWork(srcChanged, version) {
-        if (srcChanged && this.src && this.src !== this._loadedSrc) {
-            await this._loadData(version);
+        const needsLoad = srcChanged
+            || (this.src !== '' && this.src !== this._loadedSrc)
+            || (this._wikidataStore === null && this.src !== '');
+        if (needsLoad && this.src) {
+            const loaded = await this._loadData(version);
             if (this._workVersion !== version)
                 return;
+            if (!loaded)
+                return;
+        }
+        if (this._wikidataStore === null) {
+            throw new Error('Data source is null');
         }
         const queryToRun = this._sparqlQuery.trim();
         const settingsChanged = queryToRun !== this._executedQuery ||
             !this._arraysEqual(this.languages, this._executedLanguages) ||
             this.nodeScaling !== this._executedScaling ||
             this.wikidata !== this._executedWikidata;
-        const autoTrigger = this.autoExecute && this._executedQuery === null;
-        if (this._wikidataStore && queryToRun && (settingsChanged || autoTrigger)) {
+        if (queryToRun && settingsChanged) {
             await this._buildGraph(queryToRun, version);
         }
     }
@@ -38862,9 +38923,12 @@ class RdfGraph extends i$1 {
             return false;
         return a.every((v, i) => v === b[i]);
     }
-    _updateOverlay(state) {
+    async _showOverlay(state, version) {
         this._loadingState = state;
         this.requestUpdate();
+        await this.updateComplete;
+        await yieldToBrowser();
+        return this._workVersion === version;
     }
     _updateNodeInfo(info) {
         this._nodeInfo = info;
@@ -38895,47 +38959,55 @@ class RdfGraph extends i$1 {
         };
     }
     async _loadData(version) {
-        this._updateOverlay({ status: 'loading-data', message: this._t.loading(this.src) });
+        this._loadingState = { status: 'loading-data', message: this._t.loading(this.src) };
+        this.requestUpdate();
         if (this._cy) {
             this._cy.destroy();
             this._cy = null;
         }
         this._wikidataStore = null;
+        this._labelCache = null;
         this._legend = [];
         this._executedQuery = null;
         this._executedLanguages = null;
         this._executedScaling = null;
         this._executedWikidata = null;
         const loadingSrc = this.src;
+        this._loadedSrc = loadingSrc;
         try {
             const rawStore = await loadHdtFromUrl(this.src);
-            if (this._workVersion !== version || this.src !== loadingSrc)
-                return;
+            if (this._workVersion !== version)
+                return false;
+            if (this.src !== loadingSrc) {
+                this._loadedSrc = null;
+                return false;
+            }
             this._wikidataStore = new WikidataStore(rawStore);
-            this._loadedSrc = loadingSrc;
+            this._labelCache = new LabelCache(this._wikidataStore, this.languages);
             this.dispatchEvent(new CustomEvent('store-loaded', {
                 detail: { quadCount: rawStore.size }, bubbles: true, composed: true
             }));
+            return true;
         }
         catch (error) {
             if (this._workVersion !== version || this.src !== loadingSrc)
-                return;
+                return false;
+            this._loadedSrc = null;
             const message = error instanceof Error ? error.message : String(error);
             console.error('[rdf-graph] Fehler beim Laden der HDT-Datei:', error);
-            this._updateOverlay({ status: 'error', message });
+            this._loadingState = { status: 'error', message };
+            this.requestUpdate();
             this.dispatchEvent(new CustomEvent('load-error', {
                 detail: { error: message }, bubbles: true, composed: true
             }));
+            return false;
         }
     }
     async _buildGraph(query, version) {
         if (!this._wikidataStore)
             return;
-        const isFirstBuild = !this._cy;
-        if (isFirstBuild) {
-            this._updateOverlay({ status: 'building-graph', message: this._t.buildingGraph });
-        }
-        await this.updateComplete;
+        if (!await this._showOverlay({ status: 'querying', message: this._t.querying }, version))
+            return;
         const container = this.renderRoot.querySelector('#cy-container');
         if (!container) {
             console.error('[rdf-graph] _buildGraph: #cy-container nicht gefunden');
@@ -38943,15 +39015,28 @@ class RdfGraph extends i$1 {
         }
         if (container.clientWidth === 0 || container.clientHeight === 0) {
             await waitFrames(FRAMES_CONTAINER_RETRY);
+            if (this._workVersion !== version)
+                return;
             if (container.clientWidth === 0 || container.clientHeight === 0) {
                 console.warn('[rdf-graph] _buildGraph: Container hat keine Größe nach Retry – abgebrochen', { width: container.clientWidth, height: container.clientHeight });
                 return;
             }
         }
+        if (!this._labelCache) {
+            this._labelCache = new LabelCache(this._wikidataStore, this.languages);
+        }
+        const isFirstBuild = !this._cy;
         try {
             const results = this._wikidataStore.query(query);
-            const elements = await resultsToCytoscape(results, this._wikidataStore, this.languages, this.nodeScaling, this.wikidata);
             if (this._workVersion !== version)
+                return;
+            if (!await this._showOverlay({ status: 'processing', message: this._t.processing }, version))
+                return;
+            const labelCache = this._labelCache;
+            const elements = await resultsToCytoscape(results, this._wikidataStore, this.languages, this.nodeScaling, this.wikidata, labelCache);
+            if (this._workVersion !== version)
+                return;
+            if (!await this._showOverlay({ status: 'layouting', message: this._t.layouting }, version))
                 return;
             const sizeMap = buildNodeSizeMap(elements);
             if (!this._cy) {
@@ -38961,6 +39046,8 @@ class RdfGraph extends i$1 {
                     layout: this._layoutOptions(sizeMap),
                 });
                 await waitFrames(2);
+                if (this._workVersion !== version)
+                    return;
                 this._cy.resize();
                 this._setupInteractions();
                 this._observeContainer();
@@ -38974,13 +39061,14 @@ class RdfGraph extends i$1 {
             if (this._cy && this._workVersion === version)
                 removeOverlaps(this._cy);
             if (this._cy && this._wikidataStore) {
-                this._legend = buildLegend(this._cy, this._wikidataStore, this.languages);
+                this._legend = buildLegend(this._cy, this._wikidataStore, this.languages, labelCache);
             }
             this._executedQuery = query;
             this._executedLanguages = [...this.languages];
             this._executedScaling = this.nodeScaling;
             this._executedWikidata = this.wikidata;
-            this._updateOverlay({ status: 'ready' });
+            this._loadingState = { status: 'ready' };
+            this.requestUpdate();
             this.dispatchEvent(new CustomEvent(isFirstBuild ? 'graph-ready' : 'graph-updated', {
                 detail: { cy: this._cy, quadCount: this._wikidataStore.size }, bubbles: true, composed: true
             }));
@@ -38990,9 +39078,11 @@ class RdfGraph extends i$1 {
                 return;
             const message = this._t.queryError(error instanceof Error ? error.message : String(error));
             console.error('[rdf-graph] Fehler beim Ausführen der SPARQL-Query:', error);
-            this._updateOverlay({ status: 'error', message });
+            this._loadingState = { status: 'error', message };
+            this.requestUpdate();
             this.dispatchEvent(new CustomEvent('query-error', {
-                detail: { error: error instanceof Error ? error.message : String(error) }, bubbles: true, composed: true
+                detail: { error: error instanceof Error ? error.message : String(error) },
+                bubbles: true, composed: true
             }));
         }
     }
@@ -39017,7 +39107,7 @@ class RdfGraph extends i$1 {
                 ? findWikipediaUrl(this._wikidataStore, nodeId, this.languages) ?? undefined
                 : undefined;
             const { properties, externalIdKeys } = this._wikidataStore
-                ? getPropertiesFromStore(this._wikidataStore, nodeId, this.languages)
+                ? getPropertiesFromStore(this._wikidataStore, nodeId, this.languages, this._labelCache ?? undefined)
                 : { properties: new Map(), externalIdKeys: new Set() };
             this._updateNodeInfo({
                 label: node.data('label'),
@@ -39045,30 +39135,40 @@ class RdfGraph extends i$1 {
     async _loadIncomingLinks(nodeId, qid) {
         if (!this._cy || !this._wikidataStore)
             return;
-        const node = this._cy.getElementById(nodeId);
+        const version = this._workVersion;
+        const cy = this._cy;
+        const store = this._wikidataStore;
+        const labelCache = this._labelCache;
+        const node = cy.getElementById(nodeId);
         if (node.hasClass('incoming-loaded'))
             return;
         node.addClass('wikidata-loading');
         try {
             const uri = `http://www.wikidata.org/entity/${qid}`;
-            const entities = await this._wikidataStore.enrichIncomingLinks(uri, this.languages);
+            const entities = await store.enrichIncomingLinks(uri, this.languages);
+            if (this._workVersion !== version || this._cy !== cy) {
+                console.warn('[rdf-graph] _loadIncomingLinks: Graph wurde ersetzt, Ergebnis verworfen');
+                return;
+            }
             const newElements = [];
             for (const entity of entities) {
-                newElements.push(...wikidataEntityToElements(entity, this._cy, this._wikidataStore));
+                newElements.push(...wikidataEntityToElements(entity, cy, store));
                 const edgeId = `${entity.uri}__incoming__${nodeId}`;
-                if (!this._cy.getElementById(edgeId).length) {
+                if (!cy.getElementById(edgeId).length) {
                     newElements.push({
                         data: { id: edgeId, source: entity.uri, target: nodeId, label: '→' }
                     });
                 }
             }
-            this._applyNewElements(newElements, node);
+            if (this._workVersion !== version || this._cy !== cy)
+                return;
+            this._applyNewElements(newElements, cy.getElementById(nodeId), cy);
             node.removeClass('wikidata-loading');
             node.addClass('incoming-loaded');
-            if (this._wikidataStore) {
-                this._legend = buildLegend(this._cy, this._wikidataStore, this.languages);
+            if (this._wikidataStore === store) {
+                this._legend = buildLegend(cy, store, this.languages, labelCache ?? undefined);
             }
-            const { properties, externalIdKeys } = getPropertiesFromStore(this._wikidataStore, nodeId, this.languages);
+            const { properties, externalIdKeys } = getPropertiesFromStore(store, nodeId, this.languages, labelCache ?? undefined);
             this._updateNodeInfo({
                 label: node.data('label'),
                 id: nodeId,
@@ -39083,32 +39183,42 @@ class RdfGraph extends i$1 {
             }));
         }
         catch (e) {
-            node.removeClass('wikidata-loading');
-            node.addClass('wikidata-error');
+            if (this._cy === cy) {
+                node.removeClass('wikidata-loading');
+                node.addClass('wikidata-error');
+            }
             console.error('[rdf-graph] Fehler beim Laden eingehender Verbindungen:', e);
         }
     }
-    _applyNewElements(newElements, anchorNode) {
-        if (!this._cy || newElements.length === 0)
+    _applyNewElements(newElements, anchorNode, cy) {
+        if (newElements.length === 0)
             return;
-        this._cy.add(newElements);
-        const neighborhood = anchorNode.neighborhood().add(anchorNode);
-        const localSizeMap = new Map();
-        neighborhood.nodes().forEach((n) => {
-            const s = n.data('nodeSize');
-            localSizeMap.set(n.id(), typeof s === 'number' ? s : NODE_BASE_SIZE);
+        const graphBb = cy.elements().boundingBox({});
+        const graphCx = (graphBb.x1 + graphBb.x2) / 2;
+        const graphCy = (graphBb.y1 + graphBb.y2) / 2;
+        const graphR = Math.max(graphBb.x2 - graphBb.x1, graphBb.y2 - graphBb.y1) / 2;
+        const newNodeIds = new Set(newElements
+            .filter(el => !el.data?.source)
+            .map(el => el.data.id));
+        cy.add(newElements);
+        if (newNodeIds.size === 0)
+            return;
+        const anchorPos = { ...anchorNode.position() };
+        const radius = graphR + 150;
+        const newNodes = cy.nodes().filter(n => newNodeIds.has(n.id()));
+        const count = newNodes.length;
+        const anchorAngle = Math.atan2(anchorPos.y - graphCy, anchorPos.x - graphCx);
+        const spread = Math.min(Math.PI, (count - 1) * 0.4);
+        const startAngle = anchorAngle - spread / 2;
+        newNodes.forEach((node, i) => {
+            const angle = count === 1
+                ? anchorAngle
+                : startAngle + (spread / (count - 1)) * i;
+            node.position({
+                x: graphCx + radius * Math.cos(angle),
+                y: graphCy + radius * Math.sin(angle),
+            });
         });
-        neighborhood.layout({
-            name: 'cose',
-            animate: true,
-            animationDuration: 300,
-            fit: false,
-            nodeDimensionsIncludeLabels: true,
-            nodeRepulsion: nodeRepulsionFn(localSizeMap),
-            idealEdgeLength: idealEdgeLengthFn(localSizeMap),
-            edgeElasticity: () => EDGE_ELASTICITY,
-            gravity: GRAVITY,
-        }).run();
     }
     exportAsSvg() {
         if (!this._cy)
@@ -39154,9 +39264,15 @@ class RdfGraph extends i$1 {
     _renderOverlay() {
         const s = this._loadingState;
         if (s.status === 'idle' && !this.src)
-            return b `<div id="loading-overlay"><span>Kein <code>src</code> Attribut gesetzt</span></div>`;
-        if (s.status === 'loading-data' || s.status === 'building-graph')
-            return b `<div id="loading-overlay"><span><span class="spinner"></span>${s.message}</span></div>`;
+            return b `<div id="loading-overlay"><span>${o(this._t.noSrc)}</span></div>`;
+        if (s.status === 'loading-data' ||
+            s.status === 'querying' ||
+            s.status === 'processing' ||
+            s.status === 'layouting')
+            return b `
+      <div id="loading-overlay">
+        <span><span class="spinner"></span>${s.message}</span>
+      </div>`;
         if (s.status === 'error')
             return b `<div id="loading-overlay"><span class="error">❌ ${s.message}</span></div>`;
         return null;
@@ -39203,7 +39319,9 @@ class RdfGraph extends i$1 {
 
         <div class="node-info-label">${data.label}</div>
         <div class="node-info-id">
-          <a href=${data.id} target="_blank" rel="noopener noreferrer">${data.id}</a>
+          ${data.id.startsWith('http')
+            ? b `<a href=${data.id} target="_blank" rel="noopener noreferrer">${data.id}</a>`
+            : data.id}
         </div>
 
         ${data.qid ? b `

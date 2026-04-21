@@ -1,5 +1,5 @@
 ---
-date: 2026-04-19T19:39:44+02:00
+date: 2026-04-21T15:49:44+02:00
 title: "Blog Metadaten visualisiert"
 tags:
   - Wikidata
@@ -7,7 +7,6 @@ tags:
   - SPARQL
   - Visualisation
   - Website
-draft: true
 wikidata:
   - https://www.wikidata.org/wiki/Q3539533
   - https://www.wikidata.org/wiki/Q115616582
@@ -20,6 +19,8 @@ About a year ago, I tried [visualising the blog content](/en/post/tag-pairs/)...
 ...but that was more of a failure.
 
 Now I’ve given it another go. This time I’ve used the [Triple Store from the last post](/en/post/blog-sparql/) and the result is certainly impressive:
+
+**It may take a moment for the graph to load and calculate.**
 
 {{< graph-viz src="/meta/wikidata/enriched_entities.hdt" languages="mul,en,de" >}}
 
@@ -74,6 +75,7 @@ In addition to the combination of HDT and OxiGraph mentioned in the last post, [
 
 Sure, the graph looks nice, but it also has other advantages:
 * It allows navigation outside the confines of this blog.
+* The outer rings used for classification provide insight into the hierarchy of object relationships ("is a"). For example, the [Dötlingen Artists’ Colony (Q1797167)](http://www.wikidata.org/entity/Q1797167) is neither a place, nor a group, nor an organisation.
 * It can help with quality control of tagging; for example, it highlights that [`libjxl` (Q99738405)](https://www.wikidata.org/wiki/Q99738405), i.e. the implementation, and [JPEG XL (Q72885392)](https://www.wikidata.org/wiki/Q72885392), i.e. the file format, have so far been assigned inconsistently.
 
 ## Further improvements

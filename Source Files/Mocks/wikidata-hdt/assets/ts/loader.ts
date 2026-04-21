@@ -10,6 +10,8 @@ if (window) {
   import.meta.url = window.location.origin;
 }
 
+const DOWNLOAD_TIMEOUT_MS = 30_000;
+
 // Einmalig gecachte Promise – sequenziell weil beide denselben
 // _loadWasmModule-Mechanismus des Bundlers verwenden.
 const wasmReady: Promise<void> = (async () => {
@@ -75,12 +77,25 @@ export async function loadHdtFromUrl(url: string): Promise<oxigraph.Store> {
   // bevor Hdt oder oxigraph.Store instantiiert werden.
   await wasmReady;
 
+  const controller = new AbortController();
+  const timeoutId = setTimeout(
+    () => controller.abort(new DOMException(`Download timed out after ${DOWNLOAD_TIMEOUT_MS} ms`, "TimeoutError")),
+    DOWNLOAD_TIMEOUT_MS
+  );
+
   let response: Response;
   try {
-    response = await fetch(url);
+    response = await fetch(url, { signal: controller.signal });
   } catch (networkError) {
     const message = networkError instanceof Error ? networkError.message : String(networkError);
-    throw new Error(`Network error while fetching HDT file from "${url}": ${message}`);
+    const isTimeout = networkError instanceof DOMException && networkError.name === "AbortError";
+    throw new Error(
+      isTimeout
+        ? `Download of "${url}" timed out after ${DOWNLOAD_TIMEOUT_MS} ms`
+        : `Network error while fetching HDT file from "${url}": ${message}`
+    );
+  } finally {
+    clearTimeout(timeoutId);
   }
 
   if (!response.ok) {
@@ -108,6 +123,7 @@ export async function loadHdtFromUrl(url: string): Promise<oxigraph.Store> {
   }
 
   const store = hdtToOxigraph(hdt);
+  console.info(`Successfully loaded HDT file from "${url}" with ${store.size} quads`);
   hdt.free();
   return store;
 }

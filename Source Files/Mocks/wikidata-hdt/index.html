@@ -24,28 +24,29 @@
     wikidata="incoming"
     >
     <script type="application/sparql-query">
-        PREFIX schema: <http://schema.org/>
-        SELECT ?s ?p ?o ?isTagged WHERE {
-          <https://christianmahnke.de/post/> schema:blogPost ?post .
-          ?post ?p ?o .
-          BIND(?post AS ?s)
-          FILTER(?p NOT IN (
-            schema:author,
-            schema:url,
-            schema:workTranslation,
-            <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
-          ))
-          FILTER(?o NOT IN (
-            schema:BlogPosting
-          ))
-          OPTIONAL {
-            ?post schema:identifier ?ident .
-            ?ident a schema:PropertyValue ;
-                  schema:propertyID &quot;projektemacher&quot; ;
-                  schema:value &quot;tag&quot; .
-            BIND(true AS ?isTagged)
-          }
-        }
+PREFIX schema: <http://schema.org/>
+
+SELECT ?s ?p ?o ?isTagged WHERE {
+  <https://christianmahnke.de/post/> schema:blogPost ?post .
+  ?post ?p ?o .
+  BIND(?post AS ?s)
+  FILTER(?p NOT IN (
+    schema:author,
+    schema:url,
+    schema:workTranslation,
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+  ))
+  FILTER(?o NOT IN (
+    schema:BlogPosting
+  ))
+  OPTIONAL {
+    ?post schema:identifier ?ident .
+    ?ident a schema:PropertyValue ;
+           schema:propertyID "projektemacher" ;
+           schema:value "tag" .
+    BIND(true AS ?isTagged)
+  }
+}
 
     </script>
   </rdf-graph>
