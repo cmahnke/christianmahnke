@@ -37864,7 +37864,7 @@ const componentStyles = i$4 `
     }
 
     #cy-container { 
-      position: absolute; 
+      position: absolute;
       inset: 0; 
       height: var(--graph-height);
     }
@@ -38320,14 +38320,22 @@ function findLabelInStore(wikidataStore, uri, languages) {
                 if (results.length > 0)
                     return results[0].get('label').value;
             }
-            catch { }
+            catch (e) {
+                if (!(e instanceof Error && e.message.includes('No results'))) {
+                    console.warn('[rdf-graph] findLabelInStore query failed', { uri, predicate, lang }, e);
+                }
+            }
         }
         try {
             const results = wikidataStore.query(`SELECT ?label WHERE { <${uri}> <${predicate}> ?label . FILTER(LANG(?label) = "") } LIMIT 1`);
             if (results.length > 0)
                 return results[0].get('label').value;
         }
-        catch { }
+        catch (e) {
+            if (!(e instanceof Error && e.message.includes('No results'))) {
+                console.warn('[rdf-graph] findLabelInStore (no-lang) query failed', { uri, predicate }, e);
+            }
+        }
     }
     return null;
 }
@@ -38346,14 +38354,18 @@ function findWikipediaUrl(wikidataStore, uri, languages) {
         if (results.length > 0)
             return results[0].get('article').value;
     }
-    catch { }
+    catch (e) {
+        console.warn('[rdf-graph] findWikipediaUrl (schema:about) failed', { uri }, e);
+    }
     for (const pred of [FOAF_PAGE, SCHEMA_URL]) {
         try {
             const results = wikidataStore.query(`SELECT ?url WHERE { <${uri}> <${pred}> ?url . FILTER(CONTAINS(STR(?url), "wikipedia.org")) } LIMIT 1`);
             if (results.length > 0)
                 return results[0].get('url').value;
         }
-        catch { }
+        catch (e) {
+            console.warn('[rdf-graph] findWikipediaUrl fallback failed', { uri, pred }, e);
+        }
     }
     return null;
 }
@@ -38419,7 +38431,9 @@ function findInstanceOfColor(wikidataStore, uri) {
             }
         }
     }
-    catch { }
+    catch (e) {
+        console.warn('[rdf-graph] findInstanceOfColor failed', { uri }, e);
+    }
     return null;
 }
 function buildLegend(cy, wikidataStore, languages) {
@@ -38464,7 +38478,8 @@ function findTaggedPosts(wikidataStore) {
     `);
         return new Set(results.map((b) => b.get('post').value));
     }
-    catch {
+    catch (e) {
+        console.warn('[rdf-graph] findTaggedPosts failed', e);
         return new Set();
     }
 }
@@ -38922,12 +38937,16 @@ class RdfGraph extends i$1 {
         }
         await this.updateComplete;
         const container = this.renderRoot.querySelector('#cy-container');
-        if (!container)
+        if (!container) {
+            console.error('[rdf-graph] _buildGraph: #cy-container nicht gefunden');
             return;
+        }
         if (container.clientWidth === 0 || container.clientHeight === 0) {
             await waitFrames(FRAMES_CONTAINER_RETRY);
-            if (container.clientWidth === 0 || container.clientHeight === 0)
+            if (container.clientWidth === 0 || container.clientHeight === 0) {
+                console.warn('[rdf-graph] _buildGraph: Container hat keine Größe nach Retry – abgebrochen', { width: container.clientWidth, height: container.clientHeight });
                 return;
+            }
         }
         try {
             const results = this._wikidataStore.query(query);
@@ -39094,20 +39113,25 @@ class RdfGraph extends i$1 {
     exportAsSvg() {
         if (!this._cy)
             return;
-        const svgContent = this._cy.svg({ full: true, scale: 1 });
-        const blob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
-        const url = URL.createObjectURL(blob);
-        const baseName = this.src
-            ? this.src.split('/').pop()?.replace(/\.[^.]+$/, '') ?? 'graph'
-            : 'graph';
-        const anchor = document.createElement('a');
-        anchor.href = url;
-        anchor.download = `${baseName}.svg`;
-        anchor.click();
-        setTimeout(() => URL.revokeObjectURL(url), SVG_REVOKE_DELAY_MS);
-        this.dispatchEvent(new CustomEvent('svg-exported', {
-            detail: { filename: anchor.download }, bubbles: true, composed: true
-        }));
+        try {
+            const svgContent = this._cy.svg({ full: true, scale: 1 });
+            const blob = new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const baseName = this.src
+                ? this.src.split('/').pop()?.replace(/\.[^.]+$/, '') ?? 'graph'
+                : 'graph';
+            const anchor = document.createElement('a');
+            anchor.href = url;
+            anchor.download = `${baseName}.svg`;
+            anchor.click();
+            setTimeout(() => URL.revokeObjectURL(url), SVG_REVOKE_DELAY_MS);
+            this.dispatchEvent(new CustomEvent('svg-exported', {
+                detail: { filename: anchor.download }, bubbles: true, composed: true
+            }));
+        }
+        catch (e) {
+            console.error('[rdf-graph] exportAsSvg fehlgeschlagen:', e);
+        }
     }
     getCy() { return this._cy; }
     getStore() { return this._wikidataStore; }

@@ -36,9 +36,11 @@ Für Mobilgeräte als [PDF-Download](./graph.pdf), die Datei wird nicht aktualis
 * Blaue Kreise sind Entitäten von Wikidata (die auch als Schlagworte dienen).
 * Grüne Kreise stellen Entitäten der Seite dar (z. B. Linked Art oder andere Metadateneinträge).
 
+Einige Objekte haben eingefärbte Rahmen, diese zeigen den Typ an. Derzeit sind abernur ein paar Typen konfiguriert.
+
 ### Vorauswahl
 
-Die folgende Abfrage wird genutzt um die Daten für den Grpahen oben zu visualisieren:
+Die folgende Abfrage wird genutzt um die Daten für den Graphen oben zu visualisieren:
 
 ```sparql
 PREFIX schema: <http://schema.org/>
@@ -69,10 +71,17 @@ SELECT ?s ?p ?o ?isTagged WHERE {
 
 Neben der Kombination aus HDT und OxiGraph aus dem letzten Post, kommt für die Visualisierung [Cytoscape](https://js.cytoscape.org/) zum Einsatz. Der PDF Export wurde mit [`cytoscape-svg`](https://github.com/kinimesi/cytoscape-svg) erstellt.
 
+# Warum?
+
+Sicher, der Graph ist schön anzusehen, aber er hat auch noch andere Vorteile:
+* Er erlaub die Navigation aus dem Silo dieses Blogs heraus.
+* Er kann der Qualitätskontrolle der Verschlagwortung dienen, so fällt z.B. auf, dass [`libjxl` (Q99738405)](https://www.wikidata.org/wiki/Q99738405),also die Implementierung, und [JPEG XL (Q72885392)](https://www.wikidata.org/wiki/Q72885392), also dsa Dateiformat, bisher inkonsistent vergeben sind.
+
+
 ## Ausblick
 
 Einige Verbesserungen sind noch denkbar:
-* Die Basisklassen (z.B. Personen, Orte, Organisationen, Software) könnten noch vereinfacht visualisiert werden.
+* Die Visualisierung der Basisklassen (z.B. Personen, Orte, Organisationen, Software) ist noch nicht ganz vollständig.
 * Die thematische Nähe der Knoten könnte noch für das Layout des Graphen genutzt werden.
 * Grundsätzlich kann das Layout noch verbessert werden.
 * Cytoscape bietet ästhetisch sehr ansprechende Darstellungen, die schöner sind als die oben gezeigte.

@@ -1,8 +1,6 @@
-@use '../common' as *;
-
+@use '../component-common' as *;
 
 oxigraph-sparql {
-  --sparql-editor-font: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
   --sparql-section-gap: 0;
   --actions-hint-display: none;
   --actions-font-size: 100%;
@@ -10,7 +8,7 @@ oxigraph-sparql {
   --sparql-editor-font: #{ $monospace-font };
   --sparql-font-size: 1.2em;
   --sparql-editor-min-height: 16em;
-  --actions-font-size: 1.2rem;
+  /* --actions-font-size: 1.2rem; */
   --result-font-size: 1rem;
   --sparql-accent-text: #fff;
   --sparql-accent: linear-gradient(100deg, #b2444d, #701611);

@@ -35,6 +35,8 @@ For mobile devices, available as a [PDF download](./graph.pdf); the file is not 
 * Blue circles are Wikidata entities (which also serve as tags).
 * Green circles represent entities on the page (e.g. linked articles or other metadata entries).
 
+Some objects have coloured borders, which indicate the type. However, only a few types are currently configured.
+
 ### Pre-selection
 
 The following query is used to visualise the data for the graph above:
@@ -68,10 +70,16 @@ SELECT ?s ?p ?o ?isTagged WHERE {
 
 In addition to the combination of HDT and OxiGraph mentioned in the last post, [Cytoscape](https://js.cytoscape.org/) is used for visualisation. The PDF export was created using [`cytoscape-svg`](https://github.com/kinimesi/cytoscape-svg).
 
+# Why?
+
+Sure, the graph looks nice, but it also has other advantages:
+* It allows navigation outside the confines of this blog.
+* It can help with quality control of tagging; for example, it highlights that [`libjxl` (Q99738405)](https://www.wikidata.org/wiki/Q99738405), i.e. the implementation, and [JPEG XL (Q72885392)](https://www.wikidata.org/wiki/Q72885392), i.e. the file format, have so far been assigned inconsistently.
+
 ## Further improvements
 
-A few improvements are still possible:
-* The base classes (e.g. people, places, organisations, software) could be visualised in a simpler way.
-* The thematic proximity of the nodes could be utilised in the layout of the graph.
-* Generally speaking, the layout could still be improved.
+There is still room for improvement:
+* The visualisation of the base classes (e.g. people, places, organisations, software) is not yet complete.
+* The thematic proximity of the nodes could be utilised further in the graph layout.
+* In general, the layout could be improved.
 * Cytoscape offers visually appealing visualisations that are more attractive than the one shown above.

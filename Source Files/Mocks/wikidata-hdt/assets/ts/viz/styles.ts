@@ -40,7 +40,7 @@ export const componentStyles = css`
     }
 
     #cy-container { 
-      position: absolute; 
+      position: absolute;
       inset: 0; 
       height: var(--graph-height);
     }

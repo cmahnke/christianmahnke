@@ -1,0 +1,10 @@
+$monospace-font: 'Geist Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+
+oxigraph-sparql, rdf-graph {
+  --sparql-font-family: "Josefin Sans", Futura, sans-serif;;
+  --sparql-font-size: 1.2em;
+  --sparql-line-height: 1.2;
+  --sparql-section-gap: 0;
+  --sparql-accent-text: #fff;
+  --sparql-accent: linear-gradient(100deg, #b2444d, #701611);
+}

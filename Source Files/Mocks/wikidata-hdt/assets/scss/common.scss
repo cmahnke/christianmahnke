@@ -11,15 +11,6 @@ $monospace-font: 'Geist Mono', Consolas, 'Liberation Mono', Menlo, monospace;
 $headings-font: "League Spartan", Futura, sans-serif;
 $body-font: "Josefin Sans", Futura, sans-serif;
 
-oxigraph-sparql, rdf-graph {
-  --sparql-font-family: "Josefin Sans", Futura, sans-serif;;
-  --sparql-font-size: 1.2em;
-  --sparql-line-height: 1.2;
-  --sparql-section-gap: 0;
-  --sparql-accent-text: #fff;
-  --sparql-accent: linear-gradient(100deg, #b2444d, #701611);
-}
-
 h1, h2, h3 {
   font-family: $headings-font;
 }

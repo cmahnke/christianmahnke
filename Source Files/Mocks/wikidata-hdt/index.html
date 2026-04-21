@@ -4,24 +4,7 @@
     <meta charset="UTF-8" />
     <title>HDT Test</title>
     <style>
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        background: rgb(255, 255, 255);
-        color: #1a1a2e;
-        font-family: system-ui;
-      }
 
-      h1 { font-size: 1.5rem; }
-      h2 { font-size: 1.1rem; margin-top: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; }
-      code { font-family: monospace; background: #f4f4f4; padding: 0.1em 0.3em; border-radius: 3px; }
-      pre  { background: #f4f4f4; padding: 1rem; border-radius: 4px; overflow-x: auto; }
-      pre code { background: none; padding: 0; }
-      table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
-      th, td { text-align: left; padding: 0.4rem 0.75rem; border: 1px solid #ddd; }
-      th { background: #f4f4f4; }
-      td:first-child { white-space: nowrap; }
     </style>
   </head>
   <link rel="stylesheet" href="./assets/scss/viz/style.scss" />
@@ -39,31 +22,33 @@
     languages="mul,de,en"
     node-scaling="log"
     wikidata="incoming"
-    sparql-query="
-      PREFIX schema: <http://schema.org/>
-      SELECT ?s ?p ?o ?isTagged WHERE {
-        <https://christianmahnke.de/post/> schema:blogPost ?post .
-        ?post ?p ?o .
-        BIND(?post AS ?s)
-        FILTER(?p NOT IN (
-          schema:author,
-          schema:url,
-          schema:workTranslation,
-          <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
-        ))
-        FILTER(?o NOT IN (
-          schema:BlogPosting
-        ))
-        OPTIONAL {
-          ?post schema:identifier ?ident .
-          ?ident a schema:PropertyValue ;
-                 schema:propertyID &quot;projektemacher&quot; ;
-                 schema:value &quot;tag&quot; .
-          BIND(true AS ?isTagged)
+    >
+    <script type="application/sparql-query">
+        PREFIX schema: <http://schema.org/>
+        SELECT ?s ?p ?o ?isTagged WHERE {
+          <https://christianmahnke.de/post/> schema:blogPost ?post .
+          ?post ?p ?o .
+          BIND(?post AS ?s)
+          FILTER(?p NOT IN (
+            schema:author,
+            schema:url,
+            schema:workTranslation,
+            <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+          ))
+          FILTER(?o NOT IN (
+            schema:BlogPosting
+          ))
+          OPTIONAL {
+            ?post schema:identifier ?ident .
+            ?ident a schema:PropertyValue ;
+                  schema:propertyID &quot;projektemacher&quot; ;
+                  schema:value &quot;tag&quot; .
+            BIND(true AS ?isTagged)
+          }
         }
-      }
-    "
-  ></rdf-graph>
+
+    </script>
+  </rdf-graph>
 
     <script type="module" src="./assets/ts/main.ts"></script>
 

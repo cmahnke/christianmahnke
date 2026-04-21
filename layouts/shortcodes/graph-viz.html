@@ -43,7 +43,11 @@
 {{- with .Get "query" -}}
     {{- $query = . -}}
 {{- end -}}
-<rdf-graph id="{{ $id }}" src="{{ $src }}" languages="{{ $languages }}" node-scaling="{{ $scaling }}" sparql-query="{{ $query }}" auto-execute></rdf-graph>
+<rdf-graph id="{{ $id }}" src="{{ $src }}" languages="{{ $languages }}" node-scaling="{{ $scaling }}" auto-execute>
+  <script type="application/sparql-query">
+    {{ $query }}
+  </script>
+</rdf-graph>
 
 {{- define "_partials/shortcodes/graph-viz-metadata.html" -}}
   {{- (dict "css" slice "js" (slice "js/shortcodes/graph-viz.js") "scss" (slice "scss/shortcodes/graph-viz.scss")) | jsonify -}}
