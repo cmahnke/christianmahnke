@@ -4,6 +4,10 @@ import wasm from '@rollup/plugin-wasm';
 import sassPlugin from 'rollup-plugin-sass';
 import * as sass from 'sass';
 import commonjs from '@rollup/plugin-commonjs';
+import { writeFileSync, mkdirSync } from 'fs';
+import { dirname } from 'path';
+
+const fontURLPath = "/fonts/";
 
 const configs = [ 
   {
@@ -28,19 +32,25 @@ const configs = [
         extensions: ['.ts', '.js', '.wasm']
       }),
       sassPlugin({ 
-        output: 'wikidata-hdt/dist/client-sparql.scss',
         api: 'modern',
         options: {
           importers: [new sass.NodePackageImporter()],
         },
-       }),
+        output: (styles) => {
+          if (!styles) return;
+          const replacedStyles = styles.replace(/@fontsource-variable\/.*?\/files\//g, fontURLPath)
+          const outputPath = 'wikidata-hdt/dist/client-sparql.scss';
+          mkdirSync(dirname(outputPath), { recursive: true });
+          writeFileSync(outputPath, replacedStyles);
+        }
+      }),
       commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
         compilerOptions: {
           outDir: 'wikidata-hdt/dist'
         }
-      })
+      }),
     ]
   },
 
@@ -66,12 +76,19 @@ const configs = [
         extensions: ['.ts', '.js', '.wasm']
       }),
       sassPlugin({ 
-        output: 'wikidata-hdt/dist/graph-viz.scss',
         api: 'modern',
         options: {
           importers: [new sass.NodePackageImporter()],
         },
-       }),
+        output: (styles) => {
+          if (!styles) return;
+          const replacedStyles = styles.replace(/@fontsource-variable\/.*?\/files\//g, fontURLPath)
+          const outputPath = 'wikidata-hdt/dist/graph-viz.scss';
+          mkdirSync(dirname(outputPath), { recursive: true });
+          writeFileSync(outputPath, replacedStyles);
+        }
+      }),
+
       commonjs(),
       typescript({
         tsconfig: './tsconfig.json',
@@ -81,7 +98,6 @@ const configs = [
       }),
     ]
   }
-
 ];
 
 export default configs;
