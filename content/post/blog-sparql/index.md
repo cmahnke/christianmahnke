@@ -159,3 +159,7 @@ Für die Darstellung als Code Editor kommt [`sparql-editor`](https://github.com/
 ## Nächste Schritte
 
 Derzeit werden nur die Inhalte des Blogs abgefragt und Teil der Datengrundlage. Im nächsten Schritt sollen auch die [Sammlungsseite](https://christianmahnke.de/collections/) und weitere Metadatenformate (wie IIIF-Manifeste) integriert werden.
+
+## Update 21.4.26
+
+Der Graph aus diesem Post kann auch zur Visualisierung der Themen dieses Blogs genutzt werden: [Blog Metadaten visualisiert](https://christianmahnke.de/post/blog-visualisation/).

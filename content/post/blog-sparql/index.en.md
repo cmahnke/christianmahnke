@@ -159,3 +159,8 @@ The HDT file created in the first step is loaded using the [WASM](https://en.wik
 ## Next steps
 
 At present, only the blog content is being retrieved and included in the dataset. The next step will be to integrate the [collection page](https://christianmahnke.de/collections/) and other metadata formats (such as IIIF manifests).
+
+
+## Update 21 April 2026
+
+The graph from this post can also be used to visualise the topics covered on this blog: [Blog metadata visualised](https://christianmahnke.de/post/blog-visualisation/)

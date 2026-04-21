@@ -1,5 +1,6 @@
 import type { Store } from 'oxigraph';
 import * as oxigraph from 'oxigraph/web.js';
+import { loadHdtFromUrl } from './loader';
 
 // ── Namespaces ────────────────────────────────────────────────────────────────
 
@@ -15,6 +16,17 @@ export interface WikidataEntity {
   label: string;
   description: string;
   properties: Map<string, string[]>;
+}
+
+export interface WikidataStoreOptions {
+  localStorageKey?: string;
+}
+
+// ── LocalStorage-Struktur ─────────────────────────────────────────────────────
+
+interface PersistedGraph {
+  url:    string;
+  nquads: string;
 }
 
 // ── Plain helpers ─────────────────────────────────────────────────────────────
@@ -65,6 +77,70 @@ function writeLabelsToStore(
   }
 }
 
+// ── URL detection ─────────────────────────────────────────────────────────────
+
+function isUrl(value: string): boolean {
+  try {
+    const { protocol } = new URL(value, 'https://example.com'); // Dummy base
+    return protocol === 'http:' || protocol === 'https:';
+  } catch {
+    // Wenn kein Protokoll, aber Pfad (z. B. /path), ist es eine relative URL
+    return value.startsWith('/') || value.startsWith('./') || value.startsWith('../');
+  }
+}
+
+
+// ── LocalStorage persistence ──────────────────────────────────────────────────
+
+function persistStoreAsync(store: Store, key: string, sourceUrl: string): void {
+  setTimeout(() => {
+    try {
+      const nquads = store.dump({ format: 'application/n-quads' });
+      const entry: PersistedGraph = { url: sourceUrl, nquads };
+      localStorage.setItem(key, JSON.stringify(entry));
+    } catch (e) {
+      console.warn(`[WikidataStore] LocalStorage-Persistenz fehlgeschlagen (key="${key}"):`, e);
+    }
+  }, 0);
+}
+
+function findPersistedGraph(key: string, sourceUrl: string): string | null {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return null;
+
+    const entry: PersistedGraph = JSON.parse(raw);
+
+    if (entry.url !== sourceUrl) {
+      console.debug(
+        `[WikidataStore] LocalStorage-Eintrag gefunden, aber URL stimmt nicht überein.\n` +
+        `  gespeichert: ${entry.url}\n` +
+        `  angefragt:   ${sourceUrl}`
+      );
+      return null;
+    }
+
+    return entry.nquads;
+  } catch (e) {
+    console.warn(`[WikidataStore] LocalStorage-Lesen fehlgeschlagen (key="${key}"):`, e);
+    return null;
+  }
+}
+
+function restoreStore(store: Store, key: string, sourceUrl: string): boolean {
+  const nquads = findPersistedGraph(key, sourceUrl);
+  if (!nquads) return false;
+
+  try {
+    store.load(nquads, { format: 'application/n-quads' });
+    console.debug(`[WikidataStore] Graph aus LocalStorage wiederhergestellt (key="${key}", url="${sourceUrl}").`);
+    return true;
+  } catch (e) {
+    console.warn(`[WikidataStore] LocalStorage-Wiederherstellung fehlgeschlagen (key="${key}"):`, e);
+    return false;
+  }
+}
+
 // ── Exported fetch helpers ────────────────────────────────────────────────────
 
 export async function fetchWikidataLabels(
@@ -81,7 +157,9 @@ export async function fetchWikidataLabels(
   const result = new Map<string, { label: string; description: string }>();
   if (qids.length === 0) return result;
 
+  // Auf den Store warten bevor wir ihn nutzen
   if (wikidataStore) {
+    await wikidataStore.ready;
     for (const qid of qids) {
       if (wikidataStore.isFetchedLabels(qid)) {
         result.set(qid, wikidataStore.getLabelsFromStore(qid));
@@ -131,6 +209,8 @@ export async function fetchWikidataLabels(
           wikidataStore._markLabelsFetched(qid);
         }
       }
+
+      wikidataStore?._persist();
     } catch (e) {
       console.warn('[wikidata] fetchWikidataLabels API error:', e);
     }
@@ -150,6 +230,9 @@ export async function fetchWikidataDetails(
   languages: string[] = ['de', 'en'],
   wikidataStore?: WikidataStore
 ): Promise<WikidataEntity> {
+  // Auf den Store warten bevor wir ihn nutzen
+  if (wikidataStore) await wikidataStore.ready;
+
   if (wikidataStore?.isFetchedEntity(qid)) {
     return wikidataStore.getEntityFromStore(qid);
   }
@@ -178,6 +261,7 @@ export async function fetchWikidataDetails(
     }
     wikidataStore._markEntityFetched(qid);
     wikidataStore._markLabelsFetched(qid);
+    wikidataStore._persist();
     return wikidataStore.getEntityFromStore(qid);
   }
 
@@ -211,19 +295,161 @@ export async function fetchWikidataDetails(
 // ── WikidataStore ─────────────────────────────────────────────────────────────
 
 export class WikidataStore {
-  private readonly _store: Store;
+  private readonly _store:          Store;
   private readonly _fetchedLabels   = new Set<string>();
   private readonly _fetchedEntities = new Set<string>();
+  private readonly _localStorageKey: string | null;
+  private readonly _sourceUrl:       string;
 
-  constructor(store: Store) {
-    this._store = store;
+  /**
+   * Resolved sobald der Store vollständig initialisiert ist.
+   * Bei URL-Übergabe: nach dem Laden der HDT-Datei (oder aus LocalStorage).
+   * Bei Store-Übergabe: sofort.
+   *
+   * Alle öffentlichen Methoden awaiten dies intern – der Aufrufer muss
+   * `ready` nicht selbst abwarten, kann es aber für optimistisches UI nutzen:
+   *
+   * @example
+   * const ws = new WikidataStore('https://example.com/data.hdt');
+   * ws.ready.then(() => console.log('Store bereit, Größe:', ws.size));
+   * // Code hier läuft sofort weiter ↓
+   */
+  readonly ready: Promise<void>;
+
+  // ── Konstruktor ────────────────────────────────────────────────────────────
+
+  /**
+   * @param storeOrUrl  Oxigraph-`Store`-Instanz **oder** HTTP(S)-URL zur HDT-Datei.
+   * @param options     Optionale Einstellungen (z. B. `localStorageKey`).
+   *
+   * @example
+   * // Sofort verfügbar, Laden im Hintergrund
+   * const ws = new WikidataStore('https://example.com/data.hdt', {
+   *   localStorageKey: 'my-app:graph'
+   * });
+   *
+   * // Optional: auf vollständige Initialisierung warten
+   * await ws.ready;
+   *
+   * @example
+   * // Bestehenden Store übergeben
+   * const ws = new WikidataStore(existingStore);
+   */
+  constructor(storeOrUrl: Store | string, options: WikidataStoreOptions = {}) {
+    this._localStorageKey = options.localStorageKey ?? null;
+
+    if (typeof storeOrUrl === 'string') {
+      // ── URL-Pfad: leerer Store, Laden im Hintergrund ───────────────────
+      const url = storeOrUrl;
+
+      if (!isUrl(url)) {
+        throw new Error(
+          `[WikidataStore] Ungültiges Argument: "${url}" ist weder eine ` +
+          `gültige HTTP(S)-URL noch eine Store-Instanz.`
+        );
+      }
+
+      this._store     = new oxigraph.Store();
+      this._sourceUrl = url;
+
+      // `ready` kapselt den gesamten Ladevorgang; der Konstruktor kehrt
+      // sofort zurück, während dies im Hintergrund läuft.
+      this.ready = this._initialize(url);
+
+    } else {
+      // ── Store-Pfad: sofort bereit ──────────────────────────────────────
+      this._store     = storeOrUrl;
+      this._sourceUrl = '';
+      this.ready      = Promise.resolve();
+
+      if (this._localStorageKey) {
+        const restored = restoreStore(this._store, this._localStorageKey, '');
+        if (restored) this._rebuildFetchedSetsFromStore();
+      }
+    }
   }
 
-  get store(): Store  { return this._store; }
-  get size():  number { return this._store.size; }
+  /**
+   * Interner Ladevorgang für den URL-Pfad.
+   * Wird einmalig vom Konstruktor gestartet und in `this.ready` gespeichert.
+   */
+  private async _initialize(url: string): Promise<void> {
+    // 1. Cache prüfen
+    if (this._localStorageKey) {
+      const restored = restoreStore(this._store, this._localStorageKey, url);
+      if (restored) {
+        console.debug(`[WikidataStore] Cache-Hit für "${url}" – HDT wird nicht neu geladen.`);
+        this._rebuildFetchedSetsFromStore();
+        return;
+      }
+      console.debug(`[WikidataStore] Kein Cache für "${url}" – lade HDT von URL.`);
+    }
+
+    // 2. HDT laden
+    const loadedStore = await loadHdtFromUrl(url);
+    for (const quad of loadedStore) {
+      addSafe(this._store, quad as oxigraph.Quad);
+    }
+
+    console.debug(`[WikidataStore] HDT geladen: ${this._store.size} Quads von "${url}".`);
+
+    // 3. Nicht-blockierend persistieren
+    this._persist();
+  }
+
+  // ── Getters ────────────────────────────────────────────────────────────────
+
+  get store():     Store  { return this._store; }
+  get size():      number { return this._store.size; }
+  get sourceUrl(): string { return this._sourceUrl; }
 
   query(sparql: string): unknown {
     return this._store.query(sparql);
+  }
+
+  // ── LocalStorage ───────────────────────────────────────────────────────────
+
+  _persist(): void {
+    if (this._localStorageKey) {
+      persistStoreAsync(this._store, this._localStorageKey, this._sourceUrl);
+    }
+  }
+
+  clearLocalStorage(): void {
+    if (this._localStorageKey) {
+      localStorage.removeItem(this._localStorageKey);
+    }
+  }
+
+  private _rebuildFetchedSetsFromStore(): void {
+    try {
+      const rows = this._store.query(
+        'SELECT DISTINCT ?s WHERE { ?s ?p ?o }'
+      ) as any[];
+
+      for (const row of rows) {
+        const uri = row.get('s')?.value ?? '';
+        const qid = extractQid(uri);
+        if (!qid) continue;
+
+        this._fetchedLabels.add(qid);
+
+        const propRows = this._store.query(
+          `SELECT ?p WHERE { <${WD}${qid}> ?p ?o }`
+        ) as any[];
+
+        if (propRows.length > 2) {
+          this._fetchedEntities.add(qid);
+        }
+      }
+
+      console.debug(
+        `[WikidataStore] Wiederhergestellt: ${this._fetchedLabels.size} Label-QIDs, ` +
+        `${this._fetchedEntities.size} Entity-QIDs.`
+      );
+    } catch (e) {
+      console.warn('[WikidataStore] _rebuildFetchedSetsFromStore fehlgeschlagen:', e);
+    }
   }
 
   // ── Cache state ────────────────────────────────────────────────────────────
@@ -278,8 +504,6 @@ export class WikidataStore {
       return [];
     }
 
-    // Only real Wikidata Items (Q-entities) are returned — Properties,
-    // Statements and other nodes are excluded via the FILTER.
     const sparql = `
       PREFIX wd: <http://www.wikidata.org/entity/>
 

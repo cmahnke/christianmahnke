@@ -10,6 +10,9 @@ import "../../scss/viz/viz.scss";
 
 cytoscape.use(cytoscapeSvg);
 
+// --- Constants ---
+const LOCAL_STORAGE_CACHED = false
+
 // --- Layout constants ---
 
 const NODE_REPULSION_BASE = 8000;
