@@ -156,6 +156,6 @@ Für die Darstellung als Code Editor kommt [`sparql-editor`](https://github.com/
 
 **Die gesamte Anwendung läuft also direkt im Browser, ohne dynamische Serverkomponente.**
 
-# Nächste Schritte
+## Nächste Schritte
 
 Derzeit werden nur die Inhalte des Blogs abgefragt und Teil der Datengrundlage. Im nächsten Schritt sollen auch die [Sammlungsseite](https://christianmahnke.de/collections/) und weitere Metadatenformate (wie IIIF-Manifeste) integriert werden.

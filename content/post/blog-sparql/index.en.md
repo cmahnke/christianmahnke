@@ -156,6 +156,6 @@ The HDT file created in the first step is loaded using the [WASM](https://en.wik
 
 **The entire application therefore runs directly in the browser, without any dynamic server components.**
 
-# Next steps
+## Next steps
 
 At present, only the blog content is being retrieved and included in the dataset. The next step will be to integrate the [collection page](https://christianmahnke.de/collections/) and other metadata formats (such as IIIF manifests).
