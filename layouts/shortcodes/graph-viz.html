@@ -44,7 +44,8 @@ SELECT ?s ?p ?o ?isTagged WHERE {
 {{- with .Get "query" -}}
     {{- $query = . -}}
 {{- end -}}
-<rdf-graph id="{{ $id }}" src="{{ $src }}" languages="{{ $languages }}" node-scaling="{{ $scaling }}" wikidata="incoming">
+<rdf-graph id="{{ $id }}" src="{{ $src }}" languages="{{ $languages }}" 
+  node-scaling="{{ $scaling }}" wikidata="incoming">
   <script type="application/sparql-query">
     {{ $query | safeHTML }}
   </script>
