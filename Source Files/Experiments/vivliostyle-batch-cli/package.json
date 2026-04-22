@@ -1,0 +1,27 @@
+{
+  "name": "vivliostyle-batch",
+  "version": "0.0.1",
+  "type": "module",
+  "bin": {
+    "vivliostyle-batch": "./dist/vivliostyle-batch.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/vivliostyle-batch.js",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@vivliostyle/cli": "^10.5.0",
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "eslint": "^10.2.1",
+    "globals": "^17.5.0",
+    "prettier": "^3.8.3",
+    "rollup": "^4.60.2",
+    "tslib": "^2.8.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.0"
+  }
+}
