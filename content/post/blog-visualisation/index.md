@@ -14,6 +14,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q3475322
   - https://www.wikidata.org/wiki/Q118980507
   - https://www.wikidata.org/wiki/Q116963652
+  - https://www.wikidata.org/wiki/Q375913
 ---
 Vor etwa einem Jahr habe ich schon einmal versucht, die [Bloginhalte in einer Visualisierung darzustellen](/post/tag-pairs/)...
 <!--more-->
@@ -88,3 +89,7 @@ Einige Verbesserungen sind noch denkbar:
 * Die thematische Nähe der Knoten könnte noch für das Layout des Graphen genutzt werden.
 * Grundsätzlich kann das Layout noch verbessert werden.
 * Cytoscape bietet ästhetisch sehr ansprechende Darstellungen, die schöner sind als die oben gezeigte.
+
+## Update 22.4.2026
+
+Wie von [Konrad Höffner vorgeschlagen](https://github.com/KonradHoeffner/hdt/issues/107#issuecomment-4295799504) gibt es nun einen Vollbild Modus und Cytoscape nutzt nun [WebGL](https://de.wikipedia.org/wiki/WebGL).

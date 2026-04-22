@@ -14,6 +14,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q3475322
   - https://www.wikidata.org/wiki/Q118980507
   - https://www.wikidata.org/wiki/Q116963652
+  - https://www.wikidata.org/wiki/Q375913
 ---
 About a year ago, I tried [visualising the blog content](/en/post/tag-pairs/)...<!--more-->
 
@@ -86,3 +87,7 @@ There is still room for improvement:
 * The thematic proximity of the nodes could be utilised further in the graph layout.
 * In general, the layout could be improved.
 * Cytoscape offers visually appealing visualisations that are more attractive than the one shown above.
+
+## Update 22 April 2026
+
+As [suggested by Konrad Höffner](https://github.com/KonradHoeffner/hdt/issues/107#issuecomment-4295799504), there is now a full-screen mode and Cytoscape now uses [WebGL](https://en.wikipedia.org/wiki/WebGL).
