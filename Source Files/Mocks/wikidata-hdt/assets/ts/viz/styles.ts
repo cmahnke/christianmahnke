@@ -2,6 +2,8 @@ import { css } from 'lit';
 
 export const componentStyles = css`
     :host {
+      --graph-background: white;
+
       --graph-height: 100vh;
 
       /* Typografie */
@@ -22,7 +24,6 @@ export const componentStyles = css`
       --sparql-accent-text: #fff;
       --sparql-accent-highlight: #53d8fb;
 
-
       --sparql-border: #333;
       --sparql-text: #e0e0e0;
       --sparql-error: #e94560;
@@ -30,6 +31,9 @@ export const componentStyles = css`
       --legend-bg: #ffffffaa;
 
       --border-radius: .2rem;
+
+      --sparql-export-btn-display: block;
+      --sparql-fullscreen-btn-display: block;
 
       display: block;
       position: relative;
@@ -43,6 +47,7 @@ export const componentStyles = css`
       position: absolute;
       inset: 0; 
       height: var(--graph-height);
+      background: var(--graph-background);
     }
 
     #loading-overlay {
@@ -80,8 +85,7 @@ export const componentStyles = css`
       } 
     }
 
-    #export-btn {
-      display: var(--sparql-export-btn-display, block);
+    .toolbar-button {
       padding: .45em .6em .6em .6em;
       background: var(--sparql-accent);
       color: var(--sparql-accent-text);
@@ -89,22 +93,35 @@ export const componentStyles = css`
       font-size: var(--sparql-font-size);
       cursor: pointer;
       vertical-align: middle;
-      border-radius: .2rem;
-      border: 0;
       line-height: var(--sparql-line-height);
-      right: 2rem;
+      border: 0;
+      border-radius: var(--border-radius);
+    }
+
+    #toolbar {
       top: 2rem;
       position: absolute;
+      right: 2rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    #fullscreen-btn {
+      display: var(--sparql-fullscreen-btn-display, block);
+    }
+
+    #export-btn {
+      display: var(--sparql-export-btn-display, block);
       pointer-events: auto;
     }
 
-    #export-btn:hover {
+    .toolbar-button:hover {
       background: var(--sparql-accent-hover);
       border-color: var(--sparql-accent-highlight);
       color: var(--sparql-accent-highlight);
     }
 
-    #export-btn:active {
+    .toolbar-button:active {
       background: var(--sparql-accent-active);
     }
 

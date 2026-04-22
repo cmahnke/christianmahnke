@@ -61,28 +61,32 @@ type UiLang = 'de' | 'en';
 
 const UI_STRINGS = {
   de: {
-    noSrc:      'Kein <code>src</code>-Attribut gesetzt',
-    loading:    (src: string) => `Lade ${src}…`,
-    querying:   'Query wird ausgeführt…',
-    processing: 'Knoten und Labels werden verarbeitet…',
-    layouting:  'Graph-Layout wird berechnet…',
-    queryError: (msg: string) => `Query-Fehler: ${msg}`,
+    noSrc:         'Kein <code>src</code>-Attribut gesetzt',
+    loading:       (src: string) => `Lade ${src}…`,
+    querying:      'Query wird ausgeführt…',
+    processing:    'Knoten und Labels werden verarbeitet…',
+    layouting:     'Graph-Layout wird berechnet…',
+    queryError:    (msg: string) => `Query-Fehler: ${msg}`,
     incomingLinks: 'Eingehende Verbindungen',
-    close:      'Schließen',
-    wikidata:   'Wikidata',
-    wikipedia:  'Wikipedia',
+    close:         'Schließen',
+    wikidata:      'Wikidata',
+    wikipedia:     'Wikipedia',
+    fullscreen:    'Vollbild',
+    exitFullscreen:'Vollbild beenden',
   },
   en: {
-    noSrc:      'No <code>src</code> attribute set',
-    loading:    (src: string) => `Loading ${src}…`,
-    querying:   'Running query…',
-    processing: 'Processing nodes and labels…',
-    layouting:  'Computing graph layout…',
-    queryError: (msg: string) => `Query error: ${msg}`,
+    noSrc:         'No <code>src</code> attribute set',
+    loading:       (src: string) => `Loading ${src}…`,
+    querying:      'Running query…',
+    processing:    'Processing nodes and labels…',
+    layouting:     'Computing graph layout…',
+    queryError:    (msg: string) => `Query error: ${msg}`,
     incomingLinks: 'Incoming connections',
-    close:      'Close',
-    wikidata:   'Wikidata',
-    wikipedia:  'Wikipedia',
+    close:         'Close',
+    wikidata:      'Wikidata',
+    wikipedia:     'Wikipedia',
+    fullscreen:    'Fullscreen',
+    exitFullscreen:'Exit fullscreen',
   },
 } as const;
 
@@ -877,6 +881,8 @@ export class RdfGraph extends LitElement {
   private _nodeInfo: NodeInfoData | null = null;
   private _loadingState: LoadingState = { status: 'idle' };
   private _legend: LegendEntry[] = [];
+  // ↓ NEU: Vollbild-State
+  private _isFullscreen: boolean = false;
   private _cy: cytoscape.Core | null = null;
   private _wikidataStore: WikidataStore | null = null;
   private _labelCache: LabelCache | null = null;
@@ -909,6 +915,10 @@ export class RdfGraph extends LitElement {
       }
     });
     this._scriptObserver.observe(this, { childList: true, subtree: true });
+
+    // ↓ NEU: auf Fullscreen-Änderungen reagieren (z. B. Esc-Taste)
+    this._onFullscreenChange = this._onFullscreenChange.bind(this);
+    document.addEventListener('fullscreenchange', this._onFullscreenChange);
   }
 
   override disconnectedCallback(): void {
@@ -920,6 +930,49 @@ export class RdfGraph extends LitElement {
     this._wikidataStore = null;
     this._labelCache    = null;
     this._loadedSrc     = null;
+    // ↓ NEU: Event-Listener aufräumen
+    document.removeEventListener('fullscreenchange', this._onFullscreenChange);
+  }
+
+  // ↓ NEU: Vollbild umschalten
+  private _onFullscreenChange!: () => void;
+
+  private _handleFullscreenChange(): void {
+    // Wird aufgerufen wenn der Browser den Fullscreen-Status ändert (z. B. per Esc)
+    this._isFullscreen = !!document.fullscreenElement;
+    this.requestUpdate();
+    // Cytoscape muss nach Größenänderung neu berechnet werden
+    requestAnimationFrame(() => {
+      this._cy?.resize();
+      this._cy?.fit(undefined, FIT_PADDING);
+    });
+  }
+
+  private async _toggleFullscreen(): Promise<void> {
+    if (!document.fullscreenElement) {
+      // Vollbild aktivieren: das Host-Element selbst wird fullscreen
+      try {
+        await this.requestFullscreen();
+        this._isFullscreen = true;
+        this.requestUpdate();
+      } catch (e) {
+        console.error('[rdf-graph] Vollbild konnte nicht aktiviert werden:', e);
+      }
+    } else {
+      // Vollbild beenden
+      try {
+        await document.exitFullscreen();
+        this._isFullscreen = false;
+        this.requestUpdate();
+      } catch (e) {
+        console.error('[rdf-graph] Vollbild konnte nicht beendet werden:', e);
+      }
+    }
+    // Cytoscape nach Größenänderung anpassen
+    requestAnimationFrame(() => {
+      this._cy?.resize();
+      this._cy?.fit(undefined, FIT_PADDING);
+    });
   }
 
   private _handleResize(): void {
@@ -1040,8 +1093,6 @@ export class RdfGraph extends LitElement {
     };
   }
 
-  // Returns true if the store was successfully set, false if the load was
-  // superseded (src changed or version bumped mid-flight) or failed.
   private async _loadData(version: number): Promise<boolean> {
     this._loadingState = { status: 'loading-data', message: this._t.loading(this.src) };
     this.requestUpdate();
@@ -1056,20 +1107,12 @@ export class RdfGraph extends LitElement {
     this._executedWikidata  = null;
 
     const loadingSrc = this.src;
-
-    // Mark optimistically so that a version bump caused by other property
-    // changes (languages, nodeScaling, …) during the await does not trigger
-    // a second load of the same src.
     this._loadedSrc = loadingSrc;
 
     try {
       const rawStore = await loadHdtFromUrl(this.src);
 
-      // Version changed: a newer _doWork iteration will handle the result.
       if (this._workVersion !== version) return false;
-
-      // src changed while awaiting: reset optimistic mark and let the next
-      // iteration load the new src.
       if (this.src !== loadingSrc) {
         this._loadedSrc = null;
         return false;
@@ -1085,7 +1128,6 @@ export class RdfGraph extends LitElement {
       return true;
     } catch (error) {
       if (this._workVersion !== version || this.src !== loadingSrc) return false;
-      // Load failed — clear the optimistic mark so a retry is possible.
       this._loadedSrc = null;
       const message = error instanceof Error ? error.message : String(error);
       console.error('[rdf-graph] Fehler beim Laden der HDT-Datei:', error);
@@ -1383,18 +1425,39 @@ export class RdfGraph extends LitElement {
   getStore(): WikidataStore | null   { return this._wikidataStore; }
   get quadCount(): number            { return this._wikidataStore?.size ?? 0; }
 
+  // ↓ NEU: Fullscreen-Change-Handler (gebunden in connectedCallback)
+  private _boundFullscreenChange = () => this._handleFullscreenChange();
+
   protected override render() {
     const ready = this._loadingState.status === 'ready' && this._cy !== null;
+
+    // ↓ NEU: Icon und Titel je nach aktuellem Vollbild-Status
+    const fullscreenIcon  = this._isFullscreen ? '⛶' : '⛶';
+    const fullscreenTitle = this._isFullscreen
+      ? this._t.exitFullscreen
+      : this._t.fullscreen;
+
     return html`
       <div id="cy-container"></div>
       ${this._renderOverlay()}
       ${this._legend.length > 0 ? this._renderLegend() : null}
-      <button
-        id="export-btn"
-        title="Graph als SVG exportieren"
-        ?disabled=${!ready}
-        @click=${() => this.exportAsSvg()}
-      >SVG</button>
+
+      <div id="toolbar">
+        <button
+          id="export-btn" class="toolbar-button"
+          title="Graph als SVG exportieren"
+          ?disabled=${!ready}
+          @click=${() => this.exportAsSvg()}
+        >SVG</button>
+
+        <!-- ↓ NEU: Vollbild-Button -->
+        <button
+          id="fullscreen-btn" class="toolbar-button"
+          title=${fullscreenTitle}
+          @click=${() => this._toggleFullscreen()}
+        >${this._isFullscreen ? '✕ ⛶' : '⛶'}</button>
+      </div>
+
       ${this._nodeInfo ? this._renderNodeInfo(this._nodeInfo) : null}
     `;
   }

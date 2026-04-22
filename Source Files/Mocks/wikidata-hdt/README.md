@@ -12,4 +12,5 @@ This directory contains triple store based approaches, no need to query wikidata
 * Check federated SPARQL: https://github.com/oxigraph/oxigraph/issues/1631
 * Visualisation
   * 'mul' entries not always working
-
+  * Fullscreen (See https://github.com/KonradHoeffner/hdt/issues/107#issuecomment-4295799504)
+  * WebGL (See enabled WebGL acceleration)
