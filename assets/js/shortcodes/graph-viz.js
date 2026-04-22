@@ -37131,261 +37131,6 @@ async function __wbg_init$1(module_or_path) {
     return __wbg_finalize_init$1(instance);
 }
 
-const WD = 'http://www.wikidata.org/entity/';
-const RDFS_LABEL = 'http://www.w3.org/2000/01/rdf-schema#label';
-const SCHEMA_DESC = 'http://schema.org/description';
-function isWikidataUri(uri) {
-    return uri.startsWith('http://www.wikidata.org/entity/Q')
-        || uri.startsWith('https://www.wikidata.org/entity/Q');
-}
-function extractQid(uri) {
-    const match = uri.match(/wikidata\.org\/entity\/(Q\d+)/);
-    return match ? match[1] : null;
-}
-function addSafe(store, quad) {
-    try {
-        store.add(quad);
-    }
-    catch (e) {
-        console.warn('[wikidata] Could not add quad:', quad.toString(), e);
-    }
-}
-function writeLabelsToStore(store, qid, info) {
-    const subject = namedNode(`${WD}${qid}`);
-    if (info.label) {
-        addSafe(store, quad(subject, namedNode(RDFS_LABEL), literal(info.label), defaultGraph()));
-    }
-    if (info.description) {
-        addSafe(store, quad(subject, namedNode(SCHEMA_DESC), literal(info.description), defaultGraph()));
-    }
-}
-async function fetchWikidataLabels(qids, languages = ['de', 'en'], wikidataStore) {
-    const result = new Map();
-    if (qids.length === 0)
-        return result;
-    if (wikidataStore) {
-        for (const qid of qids) {
-            if (wikidataStore.isFetchedLabels(qid)) {
-                result.set(qid, wikidataStore.getLabelsFromStore(qid));
-            }
-        }
-    }
-    const pending = wikidataStore
-        ? qids.filter(q => !wikidataStore.isFetchedLabels(q))
-        : qids;
-    if (pending.length === 0)
-        return result;
-    const langChain = [...new Set([...languages, 'mul', 'en'])];
-    const langParam = langChain.join('|');
-    for (let i = 0; i < pending.length; i += 50) {
-        const chunk = pending.slice(i, i + 50);
-        const url = `https://www.wikidata.org/w/api.php?` + new URLSearchParams({
-            action: 'wbgetentities',
-            ids: chunk.join('|'),
-            props: 'labels|descriptions',
-            languages: langParam,
-            format: 'json',
-            origin: '*'
-        });
-        try {
-            const response = await fetch(url);
-            const json = await response.json();
-            for (const [qid, entity] of Object.entries(json.entities ?? {})) {
-                let label = null;
-                let description = null;
-                for (const lang of langChain) {
-                    if (!label && entity.labels?.[lang]?.value)
-                        label = entity.labels[lang].value;
-                    if (!description && entity.descriptions?.[lang]?.value)
-                        description = entity.descriptions[lang].value;
-                    if (label && description)
-                        break;
-                }
-                const info = { label: label ?? qid, description: description ?? '' };
-                result.set(qid, info);
-                if (wikidataStore) {
-                    writeLabelsToStore(wikidataStore.store, qid, info);
-                    wikidataStore._markLabelsFetched(qid);
-                }
-            }
-        }
-        catch (e) {
-            console.warn('[wikidata] fetchWikidataLabels API error:', e);
-        }
-    }
-    return result;
-}
-async function fetchWikidataDetails(qid, languages = ['de', 'en'], wikidataStore) {
-    if (wikidataStore?.isFetchedEntity(qid)) {
-        return wikidataStore.getEntityFromStore(qid);
-    }
-    const url = `https://www.wikidata.org/wiki/Special:EntityData/${qid}.jsonld`;
-    let text;
-    try {
-        const res = await fetch(url);
-        if (!res.ok)
-            throw new Error(`HTTP ${res.status} ${res.statusText}`);
-        text = await res.text();
-    }
-    catch (e) {
-        console.error(`[wikidata] fetchWikidataDetails fetch failed for ${qid}:`, e);
-        throw e;
-    }
-    if (wikidataStore) {
-        try {
-            wikidataStore.store.load(text, {
-                format: 'application/ld+json',
-                base_iri: url
-            });
-        }
-        catch (e) {
-            console.error(`[wikidata] fetchWikidataDetails store.load failed for ${qid}:`, e);
-            throw e;
-        }
-        wikidataStore._markEntityFetched(qid);
-        wikidataStore._markLabelsFetched(qid);
-        return wikidataStore.getEntityFromStore(qid);
-    }
-    const json = JSON.parse(text);
-    const graph = json['@graph'] ?? [json];
-    const entityNode = graph.find((n) => n['@id'] === `${WD}${qid}`) ?? {};
-    const properties = new Map();
-    for (const [key, val] of Object.entries(entityNode)) {
-        if (key.startsWith('@'))
-            continue;
-        const values = Array.isArray(val) ? val : [val];
-        const stringValues = values
-            .map((v) => (typeof v === 'object' ? v['@value'] ?? v['@id'] ?? '' : String(v)))
-            .filter(Boolean);
-        if (stringValues.length > 0)
-            properties.set(key, stringValues);
-    }
-    const labelEntry = properties.get(RDFS_LABEL);
-    const label = labelEntry
-        ? (labelEntry.find(l => languages.some(lang => l.startsWith(lang))) ?? labelEntry[0] ?? qid)
-        : qid;
-    const descEntry = properties.get(SCHEMA_DESC);
-    const description = descEntry?.[0] ?? '';
-    return { id: qid, uri: `${WD}${qid}`, label, description, properties };
-}
-class WikidataStore {
-    constructor(store) {
-        this._fetchedLabels = new Set();
-        this._fetchedEntities = new Set();
-        this._store = store;
-    }
-    get store() { return this._store; }
-    get size() { return this._store.size; }
-    query(sparql) {
-        return this._store.query(sparql);
-    }
-    isFetchedLabels(qid) { return this._fetchedLabels.has(qid); }
-    isFetchedEntity(qid) { return this._fetchedEntities.has(qid); }
-    _markLabelsFetched(qid) { this._fetchedLabels.add(qid); }
-    _markEntityFetched(qid) { this._fetchedEntities.add(qid); }
-    async enrichLabels(qids, languages = ['de', 'en']) {
-        return fetchWikidataLabels(qids, languages, this);
-    }
-    async enrichEntity(qid, languages = ['de', 'en']) {
-        return fetchWikidataDetails(qid, languages, this);
-    }
-    async enrichEntities(qids, languages = ['de', 'en']) {
-        const result = new Map();
-        for (const qid of qids) {
-            try {
-                result.set(qid, await this.enrichEntity(qid, languages));
-            }
-            catch {
-            }
-        }
-        return result;
-    }
-    async enrichIncomingLinks(uri, languages = ['de', 'en'], limit = 50) {
-        const qid = extractQid(uri);
-        if (!qid) {
-            console.warn(`[WikidataStore] enrichIncomingLinks: not a Wikidata URI: ${uri}`);
-            return [];
-        }
-        const sparql = `
-      PREFIX wd: <http://www.wikidata.org/entity/>
-
-      SELECT DISTINCT ?subject WHERE {
-        ?subject ?p wd:${qid} .
-        FILTER(STRSTARTS(STR(?subject), "http://www.wikidata.org/entity/Q"))
-      } LIMIT ${limit}
-    `;
-        let incomingQids;
-        try {
-            const res = await fetch('https://query.wikidata.org/sparql', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/sparql-results+json',
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'User-Agent': 'HDT-Browser-Viewer/1.0'
-                },
-                body: new URLSearchParams({ query: sparql })
-            });
-            if (!res.ok)
-                throw new Error(`HTTP ${res.status} ${res.statusText}`);
-            const json = await res.json();
-            incomingQids = json.results.bindings
-                .map(b => extractQid(b.subject?.value ?? ''))
-                .filter((q) => q !== null);
-        }
-        catch (e) {
-            console.error(`[WikidataStore] enrichIncomingLinks SPARQL failed for ${uri}:`, e);
-            throw e;
-        }
-        if (incomingQids.length === 0)
-            return [];
-        const results = [];
-        for (const incomingQid of incomingQids) {
-            try {
-                results.push(await this.enrichEntity(incomingQid, languages));
-            }
-            catch {
-            }
-        }
-        return results;
-    }
-    getLabelsFromStore(qid) {
-        const uri = `${WD}${qid}`;
-        let label = qid;
-        let description = '';
-        try {
-            const lr = this._store.query(`SELECT ?l WHERE { <${uri}> <${RDFS_LABEL}> ?l } LIMIT 1`);
-            if (lr.length > 0)
-                label = lr[0].get('l').value;
-            const dr = this._store.query(`SELECT ?d WHERE { <${uri}> <${SCHEMA_DESC}> ?d } LIMIT 1`);
-            if (dr.length > 0)
-                description = dr[0].get('d').value;
-        }
-        catch (e) {
-            console.warn(`[WikidataStore] getLabelsFromStore failed for ${qid}:`, e);
-        }
-        return { label, description };
-    }
-    getEntityFromStore(qid) {
-        const uri = `${WD}${qid}`;
-        const properties = new Map();
-        const { label, description } = this.getLabelsFromStore(qid);
-        try {
-            const rows = this._store.query(`SELECT ?p ?o WHERE { <${uri}> ?p ?o }`);
-            for (const row of rows) {
-                const key = row.get('p').value;
-                const val = row.get('o').value;
-                if (!properties.has(key))
-                    properties.set(key, []);
-                properties.get(key).push(val);
-            }
-        }
-        catch (e) {
-            console.warn(`[WikidataStore] getEntityFromStore failed for ${qid}:`, e);
-        }
-        return { id: qid, uri, label, description, properties };
-    }
-}
-
 /* @ts-self-types="./hdt.d.ts" */
 
 class Hdt {
@@ -37849,8 +37594,393 @@ async function loadHdtFromUrl(url) {
     return store;
 }
 
+const WD = 'http://www.wikidata.org/entity/';
+const RDFS_LABEL = 'http://www.w3.org/2000/01/rdf-schema#label';
+const SCHEMA_DESC = 'http://schema.org/description';
+function isWikidataUri(uri) {
+    return uri.startsWith('http://www.wikidata.org/entity/Q')
+        || uri.startsWith('https://www.wikidata.org/entity/Q');
+}
+function extractQid(uri) {
+    const match = uri.match(/wikidata\.org\/entity\/(Q\d+)/);
+    return match ? match[1] : null;
+}
+function addSafe(store, quad) {
+    try {
+        store.add(quad);
+    }
+    catch (e) {
+        console.warn('[wikidata] Could not add quad:', quad.toString(), e);
+    }
+}
+function writeLabelsToStore(store, qid, info) {
+    const subject = namedNode(`${WD}${qid}`);
+    if (info.label) {
+        addSafe(store, quad(subject, namedNode(RDFS_LABEL), literal(info.label), defaultGraph()));
+    }
+    if (info.description) {
+        addSafe(store, quad(subject, namedNode(SCHEMA_DESC), literal(info.description), defaultGraph()));
+    }
+}
+function isUrl(value) {
+    try {
+        const { protocol } = new URL(value, 'https://example.com');
+        return protocol === 'http:' || protocol === 'https:';
+    }
+    catch {
+        return value.startsWith('/') || value.startsWith('./') || value.startsWith('../');
+    }
+}
+function persistStoreAsync(store, key, sourceUrl) {
+    setTimeout(() => {
+        try {
+            const nquads = store.dump({ format: 'application/n-quads' });
+            const entry = { url: sourceUrl, nquads };
+            localStorage.setItem(key, JSON.stringify(entry));
+        }
+        catch (e) {
+            console.warn(`[WikidataStore] LocalStorage-Persistenz fehlgeschlagen (key="${key}"):`, e);
+        }
+    }, 0);
+}
+function findPersistedGraph(key, sourceUrl) {
+    try {
+        const raw = localStorage.getItem(key);
+        if (!raw)
+            return null;
+        const entry = JSON.parse(raw);
+        if (entry.url !== sourceUrl) {
+            console.debug(`[WikidataStore] LocalStorage-Eintrag gefunden, aber URL stimmt nicht überein.\n` +
+                `  gespeichert: ${entry.url}\n` +
+                `  angefragt:   ${sourceUrl}`);
+            return null;
+        }
+        return entry.nquads;
+    }
+    catch (e) {
+        console.warn(`[WikidataStore] LocalStorage-Lesen fehlgeschlagen (key="${key}"):`, e);
+        return null;
+    }
+}
+function restoreStore(store, key, sourceUrl) {
+    const nquads = findPersistedGraph(key, sourceUrl);
+    if (!nquads)
+        return false;
+    try {
+        store.load(nquads, { format: 'application/n-quads' });
+        console.debug(`[WikidataStore] Graph aus LocalStorage wiederhergestellt (key="${key}", url="${sourceUrl}").`);
+        return true;
+    }
+    catch (e) {
+        console.warn(`[WikidataStore] LocalStorage-Wiederherstellung fehlgeschlagen (key="${key}"):`, e);
+        return false;
+    }
+}
+async function fetchWikidataLabels(qids, languages = ['de', 'en'], wikidataStore) {
+    const result = new Map();
+    if (qids.length === 0)
+        return result;
+    if (wikidataStore) {
+        await wikidataStore.ready;
+        for (const qid of qids) {
+            if (wikidataStore.isFetchedLabels(qid)) {
+                result.set(qid, wikidataStore.getLabelsFromStore(qid));
+            }
+        }
+    }
+    const pending = wikidataStore
+        ? qids.filter(q => !wikidataStore.isFetchedLabels(q))
+        : qids;
+    if (pending.length === 0)
+        return result;
+    const langChain = [...new Set([...languages, 'mul', 'en'])];
+    const langParam = langChain.join('|');
+    for (let i = 0; i < pending.length; i += 50) {
+        const chunk = pending.slice(i, i + 50);
+        const url = `https://www.wikidata.org/w/api.php?` + new URLSearchParams({
+            action: 'wbgetentities',
+            ids: chunk.join('|'),
+            props: 'labels|descriptions',
+            languages: langParam,
+            format: 'json',
+            origin: '*'
+        });
+        try {
+            const response = await fetch(url);
+            const json = await response.json();
+            for (const [qid, entity] of Object.entries(json.entities ?? {})) {
+                let label = null;
+                let description = null;
+                for (const lang of langChain) {
+                    if (!label && entity.labels?.[lang]?.value)
+                        label = entity.labels[lang].value;
+                    if (!description && entity.descriptions?.[lang]?.value)
+                        description = entity.descriptions[lang].value;
+                    if (label && description)
+                        break;
+                }
+                const info = { label: label ?? qid, description: description ?? '' };
+                result.set(qid, info);
+                if (wikidataStore) {
+                    writeLabelsToStore(wikidataStore.store, qid, info);
+                    wikidataStore._markLabelsFetched(qid);
+                }
+            }
+            wikidataStore?._persist();
+        }
+        catch (e) {
+            console.warn('[wikidata] fetchWikidataLabels API error:', e);
+        }
+    }
+    return result;
+}
+async function fetchWikidataDetails(qid, languages = ['de', 'en'], wikidataStore) {
+    if (wikidataStore)
+        await wikidataStore.ready;
+    if (wikidataStore?.isFetchedEntity(qid)) {
+        return wikidataStore.getEntityFromStore(qid);
+    }
+    const url = `https://www.wikidata.org/wiki/Special:EntityData/${qid}.jsonld`;
+    let text;
+    try {
+        const res = await fetch(url);
+        if (!res.ok)
+            throw new Error(`HTTP ${res.status} ${res.statusText}`);
+        text = await res.text();
+    }
+    catch (e) {
+        console.error(`[wikidata] fetchWikidataDetails fetch failed for ${qid}:`, e);
+        throw e;
+    }
+    if (wikidataStore) {
+        try {
+            wikidataStore.store.load(text, {
+                format: 'application/ld+json',
+                base_iri: url
+            });
+        }
+        catch (e) {
+            console.error(`[wikidata] fetchWikidataDetails store.load failed for ${qid}:`, e);
+            throw e;
+        }
+        wikidataStore._markEntityFetched(qid);
+        wikidataStore._markLabelsFetched(qid);
+        wikidataStore._persist();
+        return wikidataStore.getEntityFromStore(qid);
+    }
+    const json = JSON.parse(text);
+    const graph = json['@graph'] ?? [json];
+    const entityNode = graph.find((n) => n['@id'] === `${WD}${qid}`) ?? {};
+    const properties = new Map();
+    for (const [key, val] of Object.entries(entityNode)) {
+        if (key.startsWith('@'))
+            continue;
+        const values = Array.isArray(val) ? val : [val];
+        const stringValues = values
+            .map((v) => (typeof v === 'object' ? v['@value'] ?? v['@id'] ?? '' : String(v)))
+            .filter(Boolean);
+        if (stringValues.length > 0)
+            properties.set(key, stringValues);
+    }
+    const labelEntry = properties.get(RDFS_LABEL);
+    const label = labelEntry
+        ? (labelEntry.find(l => languages.some(lang => l.startsWith(lang))) ?? labelEntry[0] ?? qid)
+        : qid;
+    const descEntry = properties.get(SCHEMA_DESC);
+    const description = descEntry?.[0] ?? '';
+    return { id: qid, uri: `${WD}${qid}`, label, description, properties };
+}
+class WikidataStore {
+    constructor(storeOrUrl, options = {}) {
+        this._fetchedLabels = new Set();
+        this._fetchedEntities = new Set();
+        this._localStorageKey = options.localStorageKey ?? null;
+        if (typeof storeOrUrl === 'string') {
+            const url = storeOrUrl;
+            if (!isUrl(url)) {
+                throw new Error(`[WikidataStore] Ungültiges Argument: "${url}" ist weder eine ` +
+                    `gültige HTTP(S)-URL noch eine Store-Instanz.`);
+            }
+            this._store = new Store();
+            this._sourceUrl = url;
+            this.ready = this._initialize(url);
+        }
+        else {
+            this._store = storeOrUrl;
+            this._sourceUrl = '';
+            this.ready = Promise.resolve();
+            if (this._localStorageKey) {
+                const restored = restoreStore(this._store, this._localStorageKey, '');
+                if (restored)
+                    this._rebuildFetchedSetsFromStore();
+            }
+        }
+    }
+    async _initialize(url) {
+        if (this._localStorageKey) {
+            const restored = restoreStore(this._store, this._localStorageKey, url);
+            if (restored) {
+                console.debug(`[WikidataStore] Cache-Hit für "${url}" – HDT wird nicht neu geladen.`);
+                this._rebuildFetchedSetsFromStore();
+                return;
+            }
+            console.debug(`[WikidataStore] Kein Cache für "${url}" – lade HDT von URL.`);
+        }
+        const loadedStore = await loadHdtFromUrl(url);
+        for (const quad of loadedStore) {
+            addSafe(this._store, quad);
+        }
+        console.debug(`[WikidataStore] HDT geladen: ${this._store.size} Quads von "${url}".`);
+        this._persist();
+    }
+    get store() { return this._store; }
+    get size() { return this._store.size; }
+    get sourceUrl() { return this._sourceUrl; }
+    query(sparql) {
+        return this._store.query(sparql);
+    }
+    _persist() {
+        if (this._localStorageKey) {
+            persistStoreAsync(this._store, this._localStorageKey, this._sourceUrl);
+        }
+    }
+    clearLocalStorage() {
+        if (this._localStorageKey) {
+            localStorage.removeItem(this._localStorageKey);
+        }
+    }
+    _rebuildFetchedSetsFromStore() {
+        try {
+            const rows = this._store.query('SELECT DISTINCT ?s WHERE { ?s ?p ?o }');
+            for (const row of rows) {
+                const uri = row.get('s')?.value ?? '';
+                const qid = extractQid(uri);
+                if (!qid)
+                    continue;
+                this._fetchedLabels.add(qid);
+                const propRows = this._store.query(`SELECT ?p WHERE { <${WD}${qid}> ?p ?o }`);
+                if (propRows.length > 2) {
+                    this._fetchedEntities.add(qid);
+                }
+            }
+            console.debug(`[WikidataStore] Wiederhergestellt: ${this._fetchedLabels.size} Label-QIDs, ` +
+                `${this._fetchedEntities.size} Entity-QIDs.`);
+        }
+        catch (e) {
+            console.warn('[WikidataStore] _rebuildFetchedSetsFromStore fehlgeschlagen:', e);
+        }
+    }
+    isFetchedLabels(qid) { return this._fetchedLabels.has(qid); }
+    isFetchedEntity(qid) { return this._fetchedEntities.has(qid); }
+    _markLabelsFetched(qid) { this._fetchedLabels.add(qid); }
+    _markEntityFetched(qid) { this._fetchedEntities.add(qid); }
+    async enrichLabels(qids, languages = ['de', 'en']) {
+        return fetchWikidataLabels(qids, languages, this);
+    }
+    async enrichEntity(qid, languages = ['de', 'en']) {
+        return fetchWikidataDetails(qid, languages, this);
+    }
+    async enrichEntities(qids, languages = ['de', 'en']) {
+        const result = new Map();
+        for (const qid of qids) {
+            try {
+                result.set(qid, await this.enrichEntity(qid, languages));
+            }
+            catch {
+            }
+        }
+        return result;
+    }
+    async enrichIncomingLinks(uri, languages = ['de', 'en'], limit = 50) {
+        const qid = extractQid(uri);
+        if (!qid) {
+            console.warn(`[WikidataStore] enrichIncomingLinks: not a Wikidata URI: ${uri}`);
+            return [];
+        }
+        const sparql = `
+      PREFIX wd: <http://www.wikidata.org/entity/>
+
+      SELECT DISTINCT ?subject WHERE {
+        ?subject ?p wd:${qid} .
+        FILTER(STRSTARTS(STR(?subject), "http://www.wikidata.org/entity/Q"))
+      } LIMIT ${limit}
+    `;
+        let incomingQids;
+        try {
+            const res = await fetch('https://query.wikidata.org/sparql', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/sparql-results+json',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'User-Agent': 'HDT-Browser-Viewer/1.0'
+                },
+                body: new URLSearchParams({ query: sparql })
+            });
+            if (!res.ok)
+                throw new Error(`HTTP ${res.status} ${res.statusText}`);
+            const json = await res.json();
+            incomingQids = json.results.bindings
+                .map(b => extractQid(b.subject?.value ?? ''))
+                .filter((q) => q !== null);
+        }
+        catch (e) {
+            console.error(`[WikidataStore] enrichIncomingLinks SPARQL failed for ${uri}:`, e);
+            throw e;
+        }
+        if (incomingQids.length === 0)
+            return [];
+        const results = [];
+        for (const incomingQid of incomingQids) {
+            try {
+                results.push(await this.enrichEntity(incomingQid, languages));
+            }
+            catch {
+            }
+        }
+        return results;
+    }
+    getLabelsFromStore(qid) {
+        const uri = `${WD}${qid}`;
+        let label = qid;
+        let description = '';
+        try {
+            const lr = this._store.query(`SELECT ?l WHERE { <${uri}> <${RDFS_LABEL}> ?l } LIMIT 1`);
+            if (lr.length > 0)
+                label = lr[0].get('l').value;
+            const dr = this._store.query(`SELECT ?d WHERE { <${uri}> <${SCHEMA_DESC}> ?d } LIMIT 1`);
+            if (dr.length > 0)
+                description = dr[0].get('d').value;
+        }
+        catch (e) {
+            console.warn(`[WikidataStore] getLabelsFromStore failed for ${qid}:`, e);
+        }
+        return { label, description };
+    }
+    getEntityFromStore(qid) {
+        const uri = `${WD}${qid}`;
+        const properties = new Map();
+        const { label, description } = this.getLabelsFromStore(qid);
+        try {
+            const rows = this._store.query(`SELECT ?p ?o WHERE { <${uri}> ?p ?o }`);
+            for (const row of rows) {
+                const key = row.get('p').value;
+                const val = row.get('o').value;
+                if (!properties.has(key))
+                    properties.set(key, []);
+                properties.get(key).push(val);
+            }
+        }
+        catch (e) {
+            console.warn(`[WikidataStore] getEntityFromStore failed for ${qid}:`, e);
+        }
+        return { id: qid, uri, label, description, properties };
+    }
+}
+
 const componentStyles = i$5 `
     :host {
+      --graph-background: white;
+
       --graph-height: 100vh;
 
       /* Typografie */
@@ -37871,7 +38001,6 @@ const componentStyles = i$5 `
       --sparql-accent-text: #fff;
       --sparql-accent-highlight: #53d8fb;
 
-
       --sparql-border: #333;
       --sparql-text: #e0e0e0;
       --sparql-error: #e94560;
@@ -37879,6 +38008,9 @@ const componentStyles = i$5 `
       --legend-bg: #ffffffaa;
 
       --border-radius: .2rem;
+
+      --sparql-export-btn-display: block;
+      --sparql-fullscreen-btn-display: block;
 
       display: block;
       position: relative;
@@ -37892,6 +38024,7 @@ const componentStyles = i$5 `
       position: absolute;
       inset: 0; 
       height: var(--graph-height);
+      background: var(--graph-background);
     }
 
     #loading-overlay {
@@ -37929,8 +38062,7 @@ const componentStyles = i$5 `
       } 
     }
 
-    #export-btn {
-      display: var(--sparql-export-btn-display, block);
+    .toolbar-button {
       padding: .45em .6em .6em .6em;
       background: var(--sparql-accent);
       color: var(--sparql-accent-text);
@@ -37938,22 +38070,35 @@ const componentStyles = i$5 `
       font-size: var(--sparql-font-size);
       cursor: pointer;
       vertical-align: middle;
-      border-radius: .2rem;
-      border: 0;
       line-height: var(--sparql-line-height);
-      right: 2rem;
+      border: 0;
+      border-radius: var(--border-radius);
+    }
+
+    #toolbar {
       top: 2rem;
       position: absolute;
+      right: 2rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    #fullscreen-btn {
+      display: var(--sparql-fullscreen-btn-display, block);
+    }
+
+    #export-btn {
+      display: var(--sparql-export-btn-display, block);
       pointer-events: auto;
     }
 
-    #export-btn:hover {
+    .toolbar-button:hover {
       background: var(--sparql-accent-hover);
       border-color: var(--sparql-accent-highlight);
       color: var(--sparql-accent-highlight);
     }
 
-    #export-btn:active {
+    .toolbar-button:active {
       background: var(--sparql-accent-active);
     }
 
@@ -38131,6 +38276,8 @@ const UI_STRINGS = {
         close: 'Schließen',
         wikidata: 'Wikidata',
         wikipedia: 'Wikipedia',
+        fullscreen: 'Vollbild',
+        exitFullscreen: 'Vollbild beenden',
     },
     en: {
         noSrc: 'No <code>src</code> attribute set',
@@ -38143,6 +38290,8 @@ const UI_STRINGS = {
         close: 'Close',
         wikidata: 'Wikidata',
         wikipedia: 'Wikipedia',
+        fullscreen: 'Fullscreen',
+        exitFullscreen: 'Exit fullscreen',
     },
 };
 function detectBrowserLang() {
@@ -38753,6 +38902,7 @@ class RdfGraph extends i$2 {
         this._nodeInfo = null;
         this._loadingState = { status: 'idle' };
         this._legend = [];
+        this._isFullscreen = false;
         this._cy = null;
         this._wikidataStore = null;
         this._labelCache = null;
@@ -38766,6 +38916,7 @@ class RdfGraph extends i$2 {
         this._working = false;
         this._workVersion = 0;
         this._pendingSrcChanged = false;
+        this._boundFullscreenChange = () => this._handleFullscreenChange();
     }
     static get styles() {
         return componentStyles;
@@ -38828,6 +38979,8 @@ class RdfGraph extends i$2 {
             }
         });
         this._scriptObserver.observe(this, { childList: true, subtree: true });
+        this._onFullscreenChange = this._onFullscreenChange.bind(this);
+        document.addEventListener('fullscreenchange', this._onFullscreenChange);
     }
     disconnectedCallback() {
         super.disconnectedCallback();
@@ -38847,6 +39000,41 @@ class RdfGraph extends i$2 {
         this._wikidataStore = null;
         this._labelCache = null;
         this._loadedSrc = null;
+        document.removeEventListener('fullscreenchange', this._onFullscreenChange);
+    }
+    _handleFullscreenChange() {
+        this._isFullscreen = !!document.fullscreenElement;
+        this.requestUpdate();
+        requestAnimationFrame(() => {
+            this._cy?.resize();
+            this._cy?.fit(undefined, FIT_PADDING);
+        });
+    }
+    async _toggleFullscreen() {
+        if (!document.fullscreenElement) {
+            try {
+                await this.requestFullscreen();
+                this._isFullscreen = true;
+                this.requestUpdate();
+            }
+            catch (e) {
+                console.error('[rdf-graph] Vollbild konnte nicht aktiviert werden:', e);
+            }
+        }
+        else {
+            try {
+                await document.exitFullscreen();
+                this._isFullscreen = false;
+                this.requestUpdate();
+            }
+            catch (e) {
+                console.error('[rdf-graph] Vollbild konnte nicht beendet werden:', e);
+            }
+        }
+        requestAnimationFrame(() => {
+            this._cy?.resize();
+            this._cy?.fit(undefined, FIT_PADDING);
+        });
     }
     _handleResize() {
         if (this._cy) {
@@ -39044,6 +39232,10 @@ class RdfGraph extends i$2 {
                     container, elements,
                     style: CYTOSCAPE_STYLES,
                     layout: this._layoutOptions(sizeMap),
+                    renderer: {
+                        name: 'canvas',
+                        webgl: true,
+                    }
                 });
                 await waitFrames(2);
                 if (this._workVersion !== version)
@@ -39248,16 +39440,31 @@ class RdfGraph extends i$2 {
     get quadCount() { return this._wikidataStore?.size ?? 0; }
     render() {
         const ready = this._loadingState.status === 'ready' && this._cy !== null;
+        this._isFullscreen ? '⛶' : '⛶';
+        const fullscreenTitle = this._isFullscreen
+            ? this._t.exitFullscreen
+            : this._t.fullscreen;
         return b `
       <div id="cy-container"></div>
       ${this._renderOverlay()}
       ${this._legend.length > 0 ? this._renderLegend() : null}
-      <button
-        id="export-btn"
-        title="Graph als SVG exportieren"
-        ?disabled=${!ready}
-        @click=${() => this.exportAsSvg()}
-      >SVG</button>
+
+      <div id="toolbar">
+        <button
+          id="export-btn" class="toolbar-button"
+          title="Graph als SVG exportieren"
+          ?disabled=${!ready}
+          @click=${() => this.exportAsSvg()}
+        >SVG</button>
+
+        <!-- ↓ NEU: Vollbild-Button -->
+        <button
+          id="fullscreen-btn" class="toolbar-button"
+          title=${fullscreenTitle}
+          @click=${() => this._toggleFullscreen()}
+        >${this._isFullscreen ? '✕ ⛶' : '⛶'}</button>
+      </div>
+
       ${this._nodeInfo ? this._renderNodeInfo(this._nodeInfo) : null}
     `;
     }

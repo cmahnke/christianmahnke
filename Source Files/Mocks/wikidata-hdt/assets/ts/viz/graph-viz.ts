@@ -930,18 +930,14 @@ export class RdfGraph extends LitElement {
     this._wikidataStore = null;
     this._labelCache    = null;
     this._loadedSrc     = null;
-    // ↓ NEU: Event-Listener aufräumen
     document.removeEventListener('fullscreenchange', this._onFullscreenChange);
   }
 
-  // ↓ NEU: Vollbild umschalten
   private _onFullscreenChange!: () => void;
 
   private _handleFullscreenChange(): void {
-    // Wird aufgerufen wenn der Browser den Fullscreen-Status ändert (z. B. per Esc)
     this._isFullscreen = !!document.fullscreenElement;
     this.requestUpdate();
-    // Cytoscape muss nach Größenänderung neu berechnet werden
     requestAnimationFrame(() => {
       this._cy?.resize();
       this._cy?.fit(undefined, FIT_PADDING);
@@ -950,7 +946,6 @@ export class RdfGraph extends LitElement {
 
   private async _toggleFullscreen(): Promise<void> {
     if (!document.fullscreenElement) {
-      // Vollbild aktivieren: das Host-Element selbst wird fullscreen
       try {
         await this.requestFullscreen();
         this._isFullscreen = true;
@@ -959,7 +954,6 @@ export class RdfGraph extends LitElement {
         console.error('[rdf-graph] Vollbild konnte nicht aktiviert werden:', e);
       }
     } else {
-      // Vollbild beenden
       try {
         await document.exitFullscreen();
         this._isFullscreen = false;
@@ -968,7 +962,6 @@ export class RdfGraph extends LitElement {
         console.error('[rdf-graph] Vollbild konnte nicht beendet werden:', e);
       }
     }
-    // Cytoscape nach Größenänderung anpassen
     requestAnimationFrame(() => {
       this._cy?.resize();
       this._cy?.fit(undefined, FIT_PADDING);
@@ -1188,6 +1181,10 @@ export class RdfGraph extends LitElement {
           container, elements,
           style: CYTOSCAPE_STYLES as any,
           layout: this._layoutOptions(sizeMap),
+          renderer: {
+            name: 'canvas',
+            webgl: true,
+          }
         });
         await waitFrames(2);
         if (this._workVersion !== version) return;
@@ -1425,13 +1422,11 @@ export class RdfGraph extends LitElement {
   getStore(): WikidataStore | null   { return this._wikidataStore; }
   get quadCount(): number            { return this._wikidataStore?.size ?? 0; }
 
-  // ↓ NEU: Fullscreen-Change-Handler (gebunden in connectedCallback)
   private _boundFullscreenChange = () => this._handleFullscreenChange();
 
   protected override render() {
     const ready = this._loadingState.status === 'ready' && this._cy !== null;
 
-    // ↓ NEU: Icon und Titel je nach aktuellem Vollbild-Status
     const fullscreenIcon  = this._isFullscreen ? '⛶' : '⛶';
     const fullscreenTitle = this._isFullscreen
       ? this._t.exitFullscreen
