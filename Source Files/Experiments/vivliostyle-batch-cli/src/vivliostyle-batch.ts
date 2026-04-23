@@ -2,7 +2,7 @@ import { Command } from 'commander'
 import { build } from '@vivliostyle/cli'
 import { resolve, dirname } from 'path'
 
-// Typ direkt aus build() ableiten - kein problematischer Import nötig
+// Typ direkt aus build() ableiten
 type BuildConfig = Parameters<typeof build>[0]
 
 const program = new Command()
@@ -34,7 +34,6 @@ program
     format: string
     logLevel: string
   }) => {
-
     const inputAbs = resolve(input)
 
     const cwd = options.cwd
@@ -86,21 +85,52 @@ program
       logLevel: options.logLevel as 'silent' | 'info' | 'verbose' | 'debug',
     }
 
+    // ✅ Verarbeite alle Optionen nach `--` (unbekannte Optionen für build())
+    const rawArgs = process.argv.slice(2)
+    const doubleDashIndex = rawArgs.indexOf('--')
+
+    if (doubleDashIndex !== -1) {
+      const unknownArgs = rawArgs.slice(doubleDashIndex + 1)
+
+      const extraConfig: Record<string, any> = {}
+
+      for (let i = 0; i < unknownArgs.length; i++) {
+        const arg = unknownArgs[i]
+        if (arg.startsWith('--')) {
+          const key = arg.slice(2) // Entferne `--`
+          const next = unknownArgs[i + 1]
+
+          if (next && !next.startsWith('--')) {
+            // Wert folgt
+            extraConfig[key] = next
+            i++
+          } else {
+            // Boolean-Flag: `--toc`, `--no-embed-fonts`
+            extraConfig[key] = true
+          }
+        }
+      }
+
+      // Füge die zusätzlichen Optionen hinzu
+      Object.assign(config, extraConfig)
+    }
+
     console.log('Starte Build mit Config:')
     console.log(JSON.stringify(config, null, 2))
 
     try {
       await build(config)
-      console.log(`✓ PDF erstellt: ${outputAbs}`)
+      console.log(`✓ Dokument erstellt: ${outputAbs}`)
     } catch (err) {
       console.error('Build fehlgeschlagen:', err)
       process.exit(1)
     }
   })
 
-// Hilfe anzeigen wenn keine Argumente übergeben
+// Hilfe anzeigen, wenn keine Argumente übergeben
 if (process.argv.length <= 2) {
   program.help()
 }
 
+// Starte Parsing
 program.parse()

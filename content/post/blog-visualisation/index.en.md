@@ -1,6 +1,6 @@
 ---
 date: 2026-04-21T15:49:44+02:00
-title: "Blog Metadaten visualisiert"
+title: "Blog metadata visualised"
 tags:
   - Wikidata
   - LOD
@@ -8,6 +8,7 @@ tags:
   - Visualisation
   - Website
 preview: preview.jpg
+cite: true
 wikidata:
   - https://www.wikidata.org/wiki/Q3539533
   - https://www.wikidata.org/wiki/Q115616582
@@ -15,6 +16,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q118980507
   - https://www.wikidata.org/wiki/Q116963652
   - https://www.wikidata.org/wiki/Q375913
+  - https://www.wikidata.org/wiki/Q139274681
 ---
 About a year ago, I tried [visualising the blog content](/en/post/tag-pairs/)...<!--more-->
 
