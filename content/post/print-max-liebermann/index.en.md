@@ -15,6 +15,8 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q158062
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
+  style: 
+    - http://vocab.getty.edu/aat/300021508
 wikidata:
   - https://www.wikidata.org/wiki/Q158062
   - https://www.wikidata.org/wiki/Q84957520
