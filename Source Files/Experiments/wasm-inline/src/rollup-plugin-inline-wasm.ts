@@ -5,7 +5,7 @@ import type { Plugin } from 'rollup';
 import * as pkg from 'brotli-unicode';
 const { compress } = (pkg as any);
 
-const WASM_URL_PATTERN = /new URL$['"]([^'"]+\.wasm)['"]\s*,\s*import\.meta\.url$/g;
+const WASM_URL_PATTERN = /new URL\(['"]([^'"]+\.wasm)['"]\s*,\s*import\.meta\.url\)/g;
 
 export async function inlineWasm(): Promise<Plugin> {
   return {
