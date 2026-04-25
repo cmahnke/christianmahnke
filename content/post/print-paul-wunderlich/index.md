@@ -35,7 +35,7 @@ Ich habe einen Linolschnitt von [Paul Wunderlich](https://de.wikipedia.org/wiki/
 
 Paul Wunderlich studierte ab 1947 an der Kunsthochschule Hamburg (zusammen mit z.B. [Horst Janssen](https://de.wikipedia.org/wiki/Horst_Janssen)). 1963-1968 war er Professor an der [HfbK](https://de.wikipedia.org/wiki/Hochschule_f%C3%BCr_bildende_K%C3%BCnste_Hamburg) Hamburg.
 
-Er ist besonders für seine erotische bis mystisch anmutenden Darstellungen bekannt, sein Stil kann als [Surrealismus](https://de.wikipedia.org/wiki/Surrealismus) bezeichnet werden, diesen Stil entwickelte er ab ca. 1959. 1960 wurde eine Serie seiner Lithographien von der  Hamburger Staatsanwaltschaft wegen "unzüchtiger Darstellungen" beschlagnahmt. 
+Er ist besonders für seine erotische bis mystisch anmutenden Darstellungen bekannt, sein Stil kann als [Surrealismus](https://de.wikipedia.org/wiki/Surrealismus) bezeichnet werden, diesen Stil entwickelte er ab ca. 1959. 1960 wurde eine Serie seiner Lithographien von der Hamburger Staatsanwaltschaft wegen "unzüchtiger Darstellungen" beschlagnahmt. 
 
 Das [Paul-Wunderlich-Haus](https://de.wikipedia.org/wiki/Paul-Wunderlich-Haus) hat einden weiteren Abzug in seinem [Bestand](https://www.paul-wunderlich-haus.de/stiftungssammlung/1946-2/?ggt_2907=Holzschnitt&ggs_2907=lesende). Die Grafik erscheint nicht in seinem Werkverzeichmnis, da diese erst das Schaffen ab 1948 dokumentiert, die Grafik ist auf 1946 datiert.
 

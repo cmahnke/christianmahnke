@@ -23,7 +23,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q188675
 ---
 
-I’ve found a linocut by [Paul Wunderlich](https://en.wikipedia.org/wiki/Paul_Wunderlich) (1927–2010) ([on artnet](https://www.artnet.de/k%C3%BCnstler/paul-wunderlich/))...
+I’ve found a linocut by [Paul Wunderlich](https://en.wikipedia.org/wiki/Paul_Wunderlich) (1927–2010) ([on artnet](https://www.artnet.com/artists/paul-wunderlich/))...
 <!--more-->
 
 {{< gallery >}}
