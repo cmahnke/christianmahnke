@@ -89,3 +89,18 @@ Außerdem sollte eine Zuverlässigkeitsuntergrenze festgelegt werden, deren Übe
 Und zuletzt der "DB Navigator" und dessen Ökosystem, gerade weil die Bahn so viel dafür tut ihre Kunden in die App zu zwingen (z.B. keine Sparpreise mehr am Automaten):
 * Es sollte mindestens einen öffentlichen Bugtracker geben, damit transparenter wird, welche Prozesse und Verantwortlichkeiten z. B. dazu führen, dass man Verspätungen vergangener Fahrten nicht sehen kann oder warum Mehrfahrtentickets nach mindestens zwei Jahren immer noch nicht vernünftig integriert sind.
 * Die Bahn muss alle notwendigen APIs für die Implementierung vollwertiger "DB Navigator"-Klone durch Drittanbieter erlauben. Als Monopolist sollte es einem nicht auch noch erlaubt werden, Gatekeeper in eigener Sache zu spielen.
+
+## Updates
+
+Ich habe mich entschlossen hier weitere Beobachtungen zu ergänzen.
+
+### 24.4.2026
+
+Man kann von den sich immer weiter ausbreitenden Self-Service-Features halten, was man will – heutzutage ist es gesellschaftlich ja akzeptiert, für die eigene Bequemlichkeit die Arbeitsplätze anderer Leute zu gefährden –, aber es wäre schön, wenn die Bahn diese vernünftig implementieren würde. Die Freischaltung muss natürlich einige Minuten vor der Ankunft erfolgen, nicht vor der Abfahrt, denn ab und zu kommen Züge sogar zu früh an.
+
+{{< figure src="checkin.png" title="Der sogenannte Komfort-Check-in" class="center" >}}
+
+### 26.4.2026
+
+Die Kontrolle von elektronischen Tickets in Regionalzügen sollte ausgesetzt werden, bis an jedem Sitzplatz mindestens eine Steckdose und WLAN vorhanden sind (wie auf meiner letzten Zugfahrt in Dänemark im Jahr **2011**).
+Dies sollte grundsätzlich auch für den Fernverkehr gelten – als Teil der Beförderungsbedingungen mit der Möglichkeit, eine Erstattung zu bekommen, wenn es mal nicht funktioniert oder zu langsam ist. Selbstverständlich stünde der Bahngesellschaft in solchen Fällen ein Upgrade in die erste Klasse frei.

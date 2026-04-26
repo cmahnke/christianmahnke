@@ -89,3 +89,18 @@ In addition, a minimum reliability threshold should be set, exceeding which woul
 And finally, the "DB Navigator" and its ecosystem, precisely because the Deutsche Bahn is doing so much to force its customers to use the app (e.g. no more saver fares at ticket machines):
 * There should be at least one public bug tracker to make it more transparent which processes and responsibilities lead, for example, to the inability to see delays on past journeys or why multi-journey tickets are still not properly integrated after at least two years.
 * Deutsche Bahn must allow all necessary APIs for the implementation of fully-fledged DB Navigator clones by third-party providers. As a monopolist, it should not also be allowed to act as a gatekeeper in its own interests.
+
+## Updates
+
+I have decided to add further observations here.
+
+### 24 April 2026
+
+Whatever you may think of the ever-expanding range of self-service features – after all, it is socially acceptable these days to jeopardise other people’s jobs for one’s own convenience – it would be nice if the railway company implemented them sensibly. The system must, of course, be activated a few minutes before arrival, not before departure, as trains do occasionally arrive early.
+
+{{< figure src="checkin.png" title="The so-called Comfort Check-in" class="center" >}}
+
+### 26 April 2026
+
+The checking of electronic tickets on regional trains should be suspended until every seat has at least one power socket and Wi-Fi (as was the case on my last train journey in Denmark in **2011**).
+This should also apply as a matter of principle to long-distance services – as part of the conditions of carriage, with the option of a refund if the service fails or is too slow. Naturally, in such cases, the railway company would be free to offer an upgrade to first class.
