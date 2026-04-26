@@ -1,6 +1,6 @@
 ---
 date: 2026-04-25T10:34:44+01:00
-title: '"Formen am Meer (Sylt)" by Otto Eglau (1917-1988)'
+title: '"Formen am Meer (Sylt)" (Shapes by the Sea (Sylt)) by Otto Eglau (1917-1988)'
 tags:
   - Art
   - Etching
