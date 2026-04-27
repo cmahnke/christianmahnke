@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 import { readFileSync, writeFileSync, existsSync } from "fs";
-import * as pkg from 'brotli-unicode';
-const { compress } = (pkg as any);
+import { compress } from "brotli-unicode";
 
 const args = process.argv.slice(2);
 
@@ -12,12 +11,12 @@ Usage:
   compress <input-file> [options]
 
 Options:
-  -o, --output <file>   Output file (default: <input>.br)
+  -o, --output <file>   Output file (default: <input>.txt)
   -h, --help            Show this help message
 
 Examples:
   compress my-file.txt
-  compress my-file.txt -o output.br
+  compress my-file.txt -o output
 `);
 }
 
@@ -29,7 +28,7 @@ function parseArgs(args: string[]): {
   const result = {
     input: null as string | null,
     output: null as string | null,
-    help: false,
+    help: false
   };
 
   let i = 0;
@@ -81,7 +80,7 @@ async function main(): Promise<void> {
   }
 
   // Determine output path
-  const outputPath = opts.output ?? `${opts.input}.br`;
+  const outputPath = opts.output ?? `${opts.input}.txt`;
 
   console.log(`\n🗜️  Brotli-Unicode Compressor`);
   console.log(`${"─".repeat(40)}`);
@@ -114,7 +113,6 @@ async function main(): Promise<void> {
     console.log(`⏱️  Duration        : ${elapsed}ms`);
     console.log(`${"─".repeat(40)}`);
     console.log(`✨ Done! → ${outputPath}\n`);
-
   } catch (err) {
     console.error("❌ Error during compression:", err);
     process.exit(1);

@@ -1,234 +1,272 @@
-import { describe, it, expect, beforeAll } from 'vitest';
-import { resolve, dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { readFileSync } from 'fs';
+import { describe, it, expect, beforeAll } from "vitest";
+import { resolve, dirname } from "path";
+import { fileURLToPath } from "url";
+import { readFileSync } from "fs";
+import type { Plugin } from "rollup";
+import inlineWasm from "../src/rollup-plugin-inline-wasm";
+import * as pkg from "brotli-unicode";
+const { compress } = pkg;
 
-import { inlineWasm } from '../src/rollup-plugin-inline-wasm';
+import { decompress } from "brotli-unicode/js";
 
+const WASM_FILE = "../node_modules/brotli-wasm/pkg.node/brotli_wasm_bg.wasm";
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const WASM_PATH = resolve(__dirname, '../node_modules/keyframe-resample/dist/release.wasm');
-const IMPORTER_PATH = resolve(__dirname, '../src/rollup-plugin-inline-wasm.ts');
+const WASM_PATH = resolve(__dirname, WASM_FILE);
+const IMPORTER_PATH = resolve(__dirname, "../src/rollup-plugin-inline-wasm.ts");
 
 let loadResult: string;
 
-describe('inlineWasm Plugin', () => {
+describe("inlineWasm Plugin", () => {
+  let plugin: Plugin;
+
   beforeAll(async () => {
-    const plugin = await inlineWasm();
-    loadResult = await (plugin.load as Function)(WASM_PATH);
+    plugin = await inlineWasm();
+    loadResult = await plugin.load(WASM_PATH);
   }, 30_000);
 
-  // ── Metadaten ──────────────────────────────────────────────────────────────
+  // ── Metadata ──────────────────────────────────────────────────────────────
 
-  describe('Plugin-Metadaten', () => {
-    it('hat den korrekten Plugin-Namen', async () => {
+  describe("Plugin Metadata", () => {
+    it("has the correct plugin name", async () => {
       const plugin = await inlineWasm();
-      expect(plugin.name).toBe('inline-wasm');
+      expect(plugin.name).toBe("inline-wasm");
     });
 
-    it('gibt ein Objekt mit den erwarteten Hooks zurück', async () => {
+    it("returns an object with the expected hooks", async () => {
       const plugin = await inlineWasm();
-      expect(plugin.resolveId).toBeTypeOf('function');
-      expect(plugin.load).toBeTypeOf('function');
-      expect(plugin.transform).toBeTypeOf('function');
+      expect(typeof plugin.resolveId).toBe("function");
+      expect(typeof plugin.load).toBe("function");
+      expect(typeof plugin.transform).toBe("function");
     });
   });
 
   // ── resolveId ─────────────────────────────────────────────────────────────
 
-  describe('resolveId', () => {
-    it('gibt null zurück für Nicht-WASM-Dateien', async () => {
+  describe("resolveId", () => {
+    it("returns null for non-WASM files", async () => {
       const plugin = await inlineWasm();
-      expect(await (plugin.resolveId as Function)('module.js', undefined)).toBeNull();
-      expect(await (plugin.resolveId as Function)('module.ts', undefined)).toBeNull();
-      expect(await (plugin.resolveId as Function)('module.css', undefined)).toBeNull();
+      expect(await plugin.resolveId("module.js", undefined)).toBeNull();
+      expect(await plugin.resolveId("module.ts", undefined)).toBeNull();
+      expect(await plugin.resolveId("module.css", undefined)).toBeNull();
     });
 
-    it('löst den Pfad relativ zum Importer auf', async () => {
+    it("resolves the path relative to the importer", async () => {
       const plugin = await inlineWasm();
-      const result = await (plugin.resolveId as Function)('release.wasm', IMPORTER_PATH);
-      expect(result).toBe(resolve(dirname(IMPORTER_PATH), 'release.wasm'));
+      const result = await plugin.resolveId("brotli_wasm_bg.wasm", IMPORTER_PATH);
+      expect(result).toBe(resolve(dirname(IMPORTER_PATH), "brotli_wasm_bg.wasm"));
     });
 
-    it('löst den Pfad absolut auf ohne Importer', async () => {
+    it("resolves the path absolutely without an importer", async () => {
       const plugin = await inlineWasm();
-      const result = await (plugin.resolveId as Function)('release.wasm', undefined);
-      expect(result).toBe(resolve('release.wasm'));
+      const result = await plugin.resolveId("brotli_wasm_bg.wasm", undefined);
+      expect(result).toBe(resolve("brotli_wasm_bg.wasm"));
     });
 
-    it('behandelt verschachtelte relative Pfade korrekt', async () => {
+    it("handles nested relative paths correctly", async () => {
       const plugin = await inlineWasm();
-      const result = await (plugin.resolveId as Function)(
-        '../node_modules/keyframe-resample/dist/release.wasm',
-        IMPORTER_PATH
-      );
-      expect(result).toBe(
-        resolve(dirname(IMPORTER_PATH), '../node_modules/keyframe-resample/dist/release.wasm')
-      );
+      const result = await plugin.resolveId(WASM_FILE, IMPORTER_PATH);
+      expect(result).toBe(resolve(dirname(IMPORTER_PATH), WASM_FILE));
     });
 
-    it('gibt absoluten Pfad unverändert zurück wenn kein Importer', async () => {
+    it("returns an absolute path unchanged when there is no importer", async () => {
       const plugin = await inlineWasm();
-      const result = await (plugin.resolveId as Function)(WASM_PATH, undefined);
+      const result = await plugin.resolveId(WASM_PATH, undefined);
       expect(result).toBe(resolve(WASM_PATH));
     });
   });
 
   // ── load ──────────────────────────────────────────────────────────────────
 
-  describe('load', () => {
-    it('gibt null zurück für Nicht-WASM-Dateien', async () => {
+  describe("load", () => {
+    it("returns null for non-WASM files", async () => {
       const plugin = await inlineWasm();
-      expect(await (plugin.load as Function)('/path/to/file.js')).toBeNull();
-      expect(await (plugin.load as Function)('/path/to/file.ts')).toBeNull();
+      expect(await plugin.load("/path/to/file.js")).toBeNull();
+      expect(await plugin.load("/path/to/file.ts")).toBeNull();
     });
 
-    it('wirft einen Fehler bei nicht existierender Datei', async () => {
+    it("throws an error for a non-existent file", async () => {
       const plugin = await inlineWasm();
-      await expect(
-        (plugin.load as Function)('/nicht/vorhanden.wasm')
-      ).rejects.toThrow();
+      await expect(plugin.load("/non/existent.wasm")).rejects.toThrow();
     });
 
-    it('gibt einen String zurück', () => {
-      expect(loadResult).toBeTypeOf('string');
+    it("returns a string", () => {
+      expect(loadResult).toBeTypeOf("string");
     });
 
-    it('generierter Code enthält ein Uint8Array mit komprimierten Daten', () => {
-      expect(loadResult).toContain('new Uint8Array(');
+    it("generated code contains an embedded compressed string", () => {
+      expect(loadResult).toContain('const wasmStr = "');
     });
 
-    it('generierter Code enthält alle Exports', () => {
-      expect(loadResult).toContain('export async function loadWasm');
-      expect(loadResult).toContain('export function getWasmBytes');
-      expect(loadResult).toContain('export default loadWasm');
+    it("generated code contains all exports", () => {
+      expect(loadResult).toContain("export async function loadWasm");
+      expect(loadResult).toContain("export default loadWasm");
     });
 
-    it('generierter Code enthält die Quell-ID als Kommentar', () => {
+    it("generated code contains the source ID as a comment", () => {
       expect(loadResult).toContain(`Source: ${WASM_PATH}`);
     });
 
-    it('generierter Code enthält brotli decompress', () => {
-      expect(loadResult).toContain("import * as pkg from 'brotli-unicode'");
-      expect(loadResult).toContain('decompress');
+    it("generated code contains brotli decompress", () => {
+      expect(loadResult).toContain("import { decompress } from 'brotli-unicode/js';");
+      expect(loadResult).toContain("decompress");
     });
 
-    it('generierter Code ist syntaktisch valides JavaScript', () => {
-      // Prüfe Struktur statt vollständiges Parsen – generierter Code enthält TS-Syntax
-      expect(loadResult).toContain('export async function loadWasm');
-      expect(loadResult).toContain('export function getWasmBytes');
-      expect(loadResult).toContain('export default loadWasm');
-      expect(loadResult).toContain('WebAssembly.instantiate');
-      expect(loadResult).toContain('decompress(compressed)');
+    it("generated code is syntactically valid JavaScript", () => {
+      expect(loadResult).toContain("export async function loadWasm");
+      expect(loadResult).toContain("export default loadWasm");
+      expect(loadResult).toContain("WebAssembly.instantiate");
+      expect(loadResult).toContain("decompress(compressed)");
     });
 
-    it('dekomprimierte Bytes ergeben das originale WASM zurück', async () => {
-      const { compress, decompress } = (await import('brotli-unicode')) as any;
-      const originalBytes = new Uint8Array(readFileSync(WASM_PATH));
+    // ── Decompress and compare ────────────────────────────────────
 
-      const compressed = await compress(originalBytes);
-      const decompressed = await decompress(compressed);
+    describe("Decompression: Roundtrip Integrity", () => {
+      let originalBytes: Uint8Array;
+      let decompressedBytes: Uint8Array;
 
-      // WASM Magic Number: \0asm
-      expect(decompressed[0]).toBe(0x00);
-      expect(decompressed[1]).toBe(0x61);
-      expect(decompressed[2]).toBe(0x73);
-      expect(decompressed[3]).toBe(0x6d);
-      expect(decompressed.length).toBe(originalBytes.length);
+      beforeAll(async () => {
+        originalBytes = new Uint8Array(readFileSync(WASM_PATH));
+        const compressed = await compress(originalBytes);
+        decompressedBytes = decompress(compressed);
+      }, 30_000);
+
+      it("decompressed length matches the original exactly", () => {
+        expect(decompressedBytes.length).toBe(originalBytes.length);
+      });
+
+      it("decompressed bytes are byte-for-byte identical to the original", () => {
+        const originalBuffer = Buffer.from(originalBytes.buffer, originalBytes.byteOffset, originalBytes.byteLength);
+        const decompressedBuffer = Buffer.from(decompressedBytes.buffer, decompressedBytes.byteOffset, decompressedBytes.byteLength);
+
+        expect(originalBuffer.equals(decompressedBuffer)).toBe(true);
+      });
+
+      it("decompressed bytes contain the correct WASM magic number (\\0asm)", () => {
+        expect(decompressedBytes[0]).toBe(0x00); // \0
+        expect(decompressedBytes[1]).toBe(0x61); //  a
+        expect(decompressedBytes[2]).toBe(0x73); //  s
+        expect(decompressedBytes[3]).toBe(0x6d); //  m
+      });
+
+      it("decompressed bytes contain the correct WASM version (1)", () => {
+        expect(decompressedBytes[4]).toBe(0x01);
+        expect(decompressedBytes[5]).toBe(0x00);
+        expect(decompressedBytes[6]).toBe(0x00);
+        expect(decompressedBytes[7]).toBe(0x00);
+      });
+
+      it("first and last byte are identical to the original", () => {
+        expect(decompressedBytes[0]).toBe(originalBytes[0]);
+        expect(decompressedBytes[decompressedBytes.length - 1]).toBe(originalBytes[originalBytes.length - 1]);
+      });
+
+      it("compressed data embedded in the generated code decompresses to the original", async () => {
+        const match = loadResult.match(/const wasmStr = "([^"]*)"/s);
+        expect(match).not.toBeNull();
+
+        const decompressedFromCode = decompress(match![1]);
+        const originalBytes = new Uint8Array(readFileSync(WASM_PATH));
+
+        expect(decompressedFromCode.length).toBe(originalBytes.length);
+
+        const originalBuffer = Buffer.from(originalBytes.buffer, originalBytes.byteOffset, originalBytes.byteLength);
+        const decompressedBuffer = Buffer.from(
+          decompressedFromCode.buffer,
+          decompressedFromCode.byteOffset,
+          decompressedFromCode.byteLength
+        );
+
+        expect(originalBuffer.equals(decompressedBuffer)).toBe(true);
+      }, 30_000);
     });
   });
 
   // ── transform ─────────────────────────────────────────────────────────────
 
-  describe('transform', () => {
-    it('gibt null zurück für .wasm-Dateien', async () => {
+  describe("transform", () => {
+    it("returns null for .wasm files", async () => {
       const plugin = await inlineWasm();
-      const result = await (plugin.transform as Function)('', WASM_PATH);
+      const result = await plugin.transform("", WASM_PATH);
       expect(result).toBeNull();
     });
 
-    it('gibt null zurück wenn kein WASM URL Pattern vorhanden', async () => {
+    it("returns null when no WASM URL pattern is present", async () => {
       const plugin = await inlineWasm();
       const code = `const x = new URL('./file.js', import.meta.url);`;
-      const result = await (plugin.transform as Function)(code, IMPORTER_PATH);
+      const result = await plugin.transform(code, IMPORTER_PATH);
       expect(result).toBeNull();
     });
 
-    it('transformiert ein einzelnes WASM URL Pattern mit doppelten Anführungszeichen', async () => {
+    it("transforms a single WASM URL pattern with double quotes", async () => {
       const plugin = await inlineWasm();
-      const code = `const url = new URL('./release.wasm', import.meta.url);`;
-      const result = await (plugin.transform as Function)(code, IMPORTER_PATH);
+      const code = `const url = new URL('./brotli_wasm_bg.wasm', import.meta.url);`;
+      const result = await plugin.transform(code, IMPORTER_PATH);
 
       expect(result).not.toBeNull();
-      expect(result!.code).toContain('URL.createObjectURL');
+      expect(result!.code).toContain("URL.createObjectURL");
       expect(result!.code).toContain("new Blob([__wasm_0()], { type: 'application/wasm' })");
     });
 
-    it('transformiert ein einzelnes WASM URL Pattern mit einfachen Anführungszeichen', async () => {
+    it("transforms a single WASM URL pattern with single quotes", async () => {
       const plugin = await inlineWasm();
-      const code = `const url = new URL('./release.wasm', import.meta.url);`;
-      const result = await (plugin.transform as Function)(code, IMPORTER_PATH);
+      const code = `const url = new URL('./brotli_wasm_bg.wasm', import.meta.url);`;
+      const result = await plugin.transform(code, IMPORTER_PATH);
 
       expect(result).not.toBeNull();
-      expect(result!.code).toContain('URL.createObjectURL');
+      expect(result!.code).toContain("URL.createObjectURL");
       expect(result!.code).toContain("new Blob([__wasm_0()], { type: 'application/wasm' })");
     });
 
-    it('fügt den korrekten Import für die WASM-Datei ein', async () => {
+    it("inserts the correct import for the WASM file", async () => {
       const plugin = await inlineWasm();
-      const code = `const url = new URL('./release.wasm', import.meta.url);`;
-      const result = await (plugin.transform as Function)(code, IMPORTER_PATH);
+      const code = `const url = new URL('./brotli_wasm_bg.wasm', import.meta.url);`;
+      const result = await plugin.transform(code, IMPORTER_PATH);
 
-      const expectedPath = resolve(dirname(IMPORTER_PATH), './release.wasm');
-      expect(result!.code).toContain(
-        `import { getWasmBytes as __wasm_0 } from '${expectedPath}'`
-      );
+      const expectedPath = resolve(dirname(IMPORTER_PATH), "./brotli_wasm_bg.wasm");
+      expect(result!.code).toContain(`import { getWasmBytes as __wasm_0 } from '${expectedPath}'`);
     });
 
-    it('transformiert mehrere WASM URL Patterns', async () => {
+    it("transforms multiple WASM URL patterns", async () => {
       const plugin = await inlineWasm();
       const code = [
-        `const url1 = new URL('./release.wasm', import.meta.url);`,
-        `const url2 = new URL('../node_modules/keyframe-resample/dist/release.wasm', import.meta.url);`,
-      ].join('\n');
+        `const url1 = new URL('./brotli_wasm_bg.wasm', import.meta.url);`,
+        `const url2 = new URL('${WASM_FILE}', import.meta.url);`
+      ].join("\n");
 
-      const result = await (plugin.transform as Function)(code, IMPORTER_PATH);
+      const result = await plugin.transform(code, IMPORTER_PATH);
 
-      const path1 = resolve(dirname(IMPORTER_PATH), './release.wasm');
-      const path2 = resolve(dirname(IMPORTER_PATH), '../node_modules/keyframe-resample/dist/release.wasm');
+      const path1 = resolve(dirname(IMPORTER_PATH), "./brotli_wasm_bg.wasm");
+      const path2 = resolve(dirname(IMPORTER_PATH), WASM_FILE);
 
       expect(result!.code).toContain(`from '${path1}'`);
       expect(result!.code).toContain(`from '${path2}'`);
-      expect(result!.code).toContain('__wasm_0');
-      expect(result!.code).toContain('__wasm_1');
+      expect(result!.code).toContain("__wasm_0");
+      expect(result!.code).toContain("__wasm_1");
     });
 
-    it('behält den restlichen Code unverändert', async () => {
+    it("leaves the remaining code unchanged", async () => {
       const plugin = await inlineWasm();
-      const code = [
-        `const x = 42;`,
-        `const url = new URL('./release.wasm', import.meta.url);`,
-        `console.log(x);`,
-      ].join('\n');
+      const code = [`const x = 42;`, `const url = new URL('./brotli_wasm_bg.wasm', import.meta.url);`, `console.log(x);`].join("\n");
 
-      const result = await (plugin.transform as Function)(code, IMPORTER_PATH);
+      const result = await plugin.transform(code, IMPORTER_PATH);
 
-      expect(result!.code).toContain('const x = 42;');
-      expect(result!.code).toContain('console.log(x);');
+      expect(result!.code).toContain("const x = 42;");
+      expect(result!.code).toContain("console.log(x);");
     });
 
-    it('gibt eine leere Source-Map zurück', async () => {
+    it("returns an empty source map", async () => {
       const plugin = await inlineWasm();
-      const code = `const url = new URL('./release.wasm', import.meta.url);`;
-      const result = await (plugin.transform as Function)(code, IMPORTER_PATH);
-      expect(result!.map).toEqual({ mappings: '' });
+      const code = `const url = new URL('./brotli_wasm_bg.wasm', import.meta.url);`;
+      const result = await plugin.transform(code, IMPORTER_PATH);
+      expect(result!.map).toEqual({ mappings: "" });
     });
 
-    it('ist idempotent bei wiederholten Aufrufen (lastIndex-Reset)', async () => {
+    it("is idempotent across repeated calls (lastIndex reset)", async () => {
       const plugin = await inlineWasm();
-      const code = `const url = new URL('./release.wasm', import.meta.url);`;
+      const code = `const url = new URL('./brotli_wasm_bg.wasm', import.meta.url);`;
 
-      const result1 = await (plugin.transform as Function)(code, IMPORTER_PATH);
-      const result2 = await (plugin.transform as Function)(code, IMPORTER_PATH);
+      const result1 = await plugin.transform(code, IMPORTER_PATH);
+      const result2 = await plugin.transform(code, IMPORTER_PATH);
 
       expect(result1!.code).toBe(result2!.code);
     });
@@ -236,21 +274,18 @@ describe('inlineWasm Plugin', () => {
 
   // ── Integration ───────────────────────────────────────────────────────────
 
-  describe('Integration: resolveId → load', () => {
-    it('vollständiger Zyklus: Pfad auflösen und laden', async () => {
+  describe("Integration: resolveId → load", () => {
+    it("full cycle: resolve path and load", async () => {
       const plugin = await inlineWasm();
 
-      const resolvedId = await (plugin.resolveId as Function)(
-        '../node_modules/keyframe-resample/dist/release.wasm',
-        IMPORTER_PATH
-      );
+      const resolvedId = await plugin.resolveId(WASM_FILE, IMPORTER_PATH);
 
       expect(resolvedId).toBe(WASM_PATH);
 
-      const result = await (plugin.load as Function)(resolvedId);
+      const result = await plugin.load(resolvedId);
 
-      expect(result).toBeTypeOf('string');
-      expect(result).toContain('export async function loadWasm');
+      expect(result).toBeTypeOf("string");
+      expect(result).toContain("export async function loadWasm");
       expect(result).toContain(`Source: ${WASM_PATH}`);
     });
   });
