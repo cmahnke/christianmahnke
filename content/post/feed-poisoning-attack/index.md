@@ -38,7 +38,7 @@ Anders als bei klassischen Viren entfaltet Feed Poisoning seine Wirkung über de
 Daher gibt es keine Sicherheit für Nutzer von Nischenbetriebsystemen wie Linux oder macOS. Da die meisten sozialen Netzwerke inzwischen auch native mobile Anwendungen anbieten, die ebenfalls in der Lage sind, Links zu ihren Inhalten aufzulösen und zu öffnen, sind auch diese nicht vor Angriffen geschützt.
 
 ## So gehen die Cyberpropagandisten vor:
-Ein Feed-Poisoning-Angriff beginnt in der Regel mit der Zusendung eines oder mehrerer Links, die in der Regel das Thema der Manipulation platzieren sollen. Dabei erhöht die Anzahl der vom Endanwender angeklickten Links die Erfolgswahrscheinlichkeit erheblich.
+Ein Feed-Poisoning-Angriff beginnt in der Regel mit der Zusendung eines oder mehrerer Links, die das Thema der Manipulation platzieren sollen. Dabei erhöht die Anzahl der vom Endanwender angeklickten Links die Erfolgswahrscheinlichkeit erheblich.
 Wenn erst einmal ein Vertrauensverhältnis besteht, steuern geübte Propagandisten nach, indem sie weiterhin Links schicken, die den Algorithmus der Social-Media-Plattform des Ziels des Angriffs kontinuierlich in die gewünschte Richtung konditionieren.
 
 ## Tipps, um nicht auf Feed Poisoning hereinzufallen:
