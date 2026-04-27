@@ -61,7 +61,7 @@ fi
 
 mkdir -p docs/meta/wikidata/
 
-if [`uname` = "Darwin"]; then
+if [ `uname` = "Darwin" ] ; then
     echo "Downloading Wikidata HDT file"
     wget -O docs/meta/wikidata/enriched_entities.hdt https://christianmahnke.de/meta/wikidata/enriched_entities.hdt
 fi
