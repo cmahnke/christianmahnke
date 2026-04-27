@@ -16,7 +16,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q281876
 ---
 
-Für eine anstehende Veröffenlichung einer Software zur Voisualisierung einer Sammlung habe ich mich etwas mit [Citation File Format](https://citation-file-format.github.io/) beschäftigt.
+Für eine anstehende Veröffenlichung einer Software zur Visualisierung einer Sammlung habe ich mich etwas mit [Citation File Format](https://citation-file-format.github.io/) beschäftigt.
 
 <!--more-->
 CFF ([Citation File Format](https://citation-file-format.github.io/)) ist ein auf YAML basierender Standard, der Zitationsinformationen für Software (und Daten) in Textdateien bereitstellt. Dadurch sind sie sowohl für Menschen als auch für Maschinen lesbar. Dies ermöglicht es Nutzern, Vorschläge zu unterbreiten, wie Code (bzw. Daten) korrekt zitiert werden sollten. 
