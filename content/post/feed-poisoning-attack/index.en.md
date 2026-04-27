@@ -27,6 +27,8 @@ The risks are manifold, as most attacks are designed to have a long-lasting (and
 Particularly in the English-speaking world, the phenomenon of so-called "pipelines" has been described in detail.
 For YouTube, for example, this is the [Alt-Right Pipeline](https://en.wikipedia.org/wiki/Alt-right_pipeline), which has already been replicated in a large number of self-experiments. In this context, the platform's algorithmic escalation means that with increased consumption of, for example, "science-critical" content, Bitcoin/finance content or even the so-called [Manosphere](https://de.wikipedia.org/wiki/Manosphere), more and more right-wing content is gradually suggested.
 
+**Feed poisoning can therefore also become a serious problem for democracy**
+
 ## Antivirus scanners do not detect feed poisoning
 As feed poisoning involves sending links to legitimate content that appear harmless, antivirus scanners do not recognise the threat.
 

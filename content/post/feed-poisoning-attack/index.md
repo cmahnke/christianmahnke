@@ -23,9 +23,11 @@ Dieser Angriff wird als "Feed Poisoning" bezeichnet und gehört zur Klasse der S
 
 ## Gefahren
 
-Die Gefahren sind vielfältig, da die meisten Angriffe auf eine lange (und schleichende) Wirkdauer ausgelegt sind. Die harmloseren Varianten führen lediglich zu neuen Vorschlägen im persönlichen Social-Media-Feed, die nicht den eigenen Gewohnheiten entsprechen (sog. „Bubble Popping”). Die Folgen können jedoch weitaus dramatischer sein. 
+Die Gefahren sind vielfältig, da die meisten Angriffe auf eine lange (und schleichende) Wirkdauer ausgelegt sind. Die harmloseren Varianten führen lediglich zu neuen Vorschlägen im persönlichen Social-Media-Feed, die nicht den eigenen Gewohnheiten entsprechen (sog. "Bubble Popping"). Die Folgen können jedoch weitaus dramatischer sein. 
 Besonders im englischsprachigen Raum ist das Phänomen der sogenannten Pipelines ausführlich beschrieben.
-Für YouTube ist dies beispielsweise die [Alt-Right-Pipeline](https://en.wikipedia.org/wiki/Alt-right_pipeline) (Englisch), die auch schon in einer Vielzahl von Selbstversuchen nachvollzogen wurde. Dabei führt die algorithmische Zuspitzung der Plattform dazu, dass bei erhöhtem Konsum von z. B. „wissenschaftskritischen”, Bitcoin-/Finanz-Inhalten oder auch der sogenannten [Manosphere](https://de.wikipedia.org/wiki/Manosphere) nach und nach immer mehr rechtslastige Inhalte vorgeschlagen werden.
+Für YouTube ist dies beispielsweise die [Alt-Right-Pipeline](https://en.wikipedia.org/wiki/Alt-right_pipeline) (Englisch), die auch schon in einer Vielzahl von Selbstversuchen nachvollzogen wurde. Dabei führt die algorithmische Zuspitzung der Plattform dazu, dass bei erhöhtem Konsum von z. B. "wissenschaftskritischen", Bitcoin-/Finanz-Inhalten oder auch der sogenannten [Manosphere](https://de.wikipedia.org/wiki/Manosphere) nach und nach immer mehr rechtslastige Inhalte vorgeschlagen werden.
+
+**Somit kann sich Feed Poisoning auch zu einem ernsthaften Problem für die Demokratie entwickeln**
 
 ## Virenscanner erkennen kein Feed Poisoning
 Da beim Feed Poisoning nur scheinbar harmlose Links zu legalen Inhalten verschickt werden, erkennen Virenscanner die Gefahr nicht.
