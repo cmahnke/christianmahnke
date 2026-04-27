@@ -29,6 +29,7 @@ Beispiele für einzelne Posts / Seiten:
 * [Kinder von Elsa Haensgen-Dingkuhn](/post/print-elsa-haensgen-dingkuhn/linkedart.json)
 * [Boltenhagen von Tadeusz Kaczmarek](/post/painting-kaczmarek-tadeusz/linkedart.json)
 * ["Alte Steintreppe vor bäuerlichem Gehöft" von François Poggi](https://christianmahnke.de/post/painting-francois-poggi/linkedart.json)
+* [Lithographie "Marine" von Georges Braque](http://localhost:1313/post/print-georges-braque/linkedart.json)
 
 Die jeweiligen JSON-LD Datein sind jeweils im HTML Header referenziert:
 ```html

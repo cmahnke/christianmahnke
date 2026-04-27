@@ -26,9 +26,10 @@ Examples for individual posts / pages:
 
 * [Flamingo by Fritz Neumann](/collections/donations/spandau/linkedart.json)
   * [Also referenced in the IIIF Manifesto](/collections/donations/spandau/manifest.json)
-* [Kinder byElsa Haensgen-Dingkuhn](/post/print-elsa-haensgen-dingkuhn/linkedart.json)
+* [Kinder by Elsa Haensgen-Dingkuhn](/post/print-elsa-haensgen-dingkuhn/linkedart.json)
 * [Boltenhagen by Tadeusz Kaczmarek](/post/painting-kaczmarek-tadeusz/linkedart.json)
 * ["Alte Steintreppe vor bäuerlichem Gehöft" by François Poggi](https://christianmahnke.de/post/painting-francois-poggi/linkedart.json)
+* [Lithography "Marine" by Georges Braque](http://localhost:1313/post/print-georges-braque/linkedart.json)
 
 The respective JSON-LD files are referenced in the HTML header:
 ```html
