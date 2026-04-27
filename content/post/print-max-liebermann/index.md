@@ -17,11 +17,17 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   style: 
     - http://vocab.getty.edu/aat/300021508
+  date: 1914
+  references:
+    - label: "Schiefler, Gustav, und Max Liebermann. 1991. Max Liebermann : Sein Graphisches Werk = the Graphic Work : 1876-1923. 4., erweiterte Aufl. San Francisco: A. Wofsy."
+      content: Nr 155, Seite 98
 wikidata:
   - https://www.wikidata.org/wiki/Q158062
   - https://www.wikidata.org/wiki/Q84957520
   - https://www.wikidata.org/wiki/Q455464
   - https://www.wikidata.org/wiki/Q700347
+notes:
+  - https://www.lelandlittle.com/items/295125/max-liebermann-german-1847-1935-i-am-strande-noordwijk-on-the-beach-noordwijk-i?listId=631
 ---
 
 Ich habe eine Radierung von [Max Liebermann](https://de.wikipedia.org/wiki/Max_Liebermann) (1847-1935) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/max-liebermann/)) gekauft...

@@ -17,6 +17,10 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   style: 
     - http://vocab.getty.edu/aat/300021508
+  date: 1914
+  references:
+    - label: "Schiefler, Gustav, and Max Liebermann. 1991. Max Liebermann : Sein Graphisches Werk = the Graphic Work : 1876-1923. 4., erweiterte Aufl. San Francisco: A. Wofsy."
+      content: Nr 155, Seite 98
 wikidata:
   - https://www.wikidata.org/wiki/Q158062
   - https://www.wikidata.org/wiki/Q84957520

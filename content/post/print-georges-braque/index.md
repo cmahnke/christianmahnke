@@ -16,6 +16,9 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q153793
   date: 1952
   title: Marine
+  references:
+    - label: "Vallier, Dora, und Georges Braque. 1982. Braque : L’oeuvre Gravé : Catalogue Raisonné. [Paris]: Flammarion."
+      content: Seite 293, Maeght, No. 1013
 wikidata: 
   - https://www.wikidata.org/wiki/Q153793
   - https://www.wikidata.org/wiki/Q325242
