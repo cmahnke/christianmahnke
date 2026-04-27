@@ -1,6 +1,7 @@
 ---
 date: 2026-04-07T19:30:44+01:00
-title: 'Digitale "Lost Places"'
+title: 'Digital "Lost Places"'
+keywords: Digital Lost Places
 tags:
   - Göttingen
   - Archive
@@ -14,6 +15,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q2543504
   - https://www.wikidata.org/wiki/Q213602
   - https://www.wikidata.org/wiki/Q577697
+  - https://www.wikidata.org/wiki/Q1870700
 ---
 
 A chance find online that gets you thinking...
