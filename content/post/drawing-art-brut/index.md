@@ -22,6 +22,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q44007
   - https://www.wikidata.org/wiki/Q1122756
   - https://www.wikidata.org/wiki/Q188675
+  - https://www.wikidata.org/wiki/Q871021
 ---
 
 Ich habe einen interessante [Art Brut](https://de.wikipedia.org/wiki/Art_brut) Zeichnung von 1965 gekauft...
@@ -39,3 +40,9 @@ Diese, ein wenig an Paul Klee erinnernde Zeichnung zeigt eine Gruppe, die auf ei
 Nicht nur das Motiv ist interessant, auch die Machart: Die Zeichnung ist auf einer grundierten Leinwand, and der man unten noch die Löcher für die Befestigung auf dem Rahmen sehen kann angefertigt. Da es keine Verzerrungen gibt, wurde die Zeichnung wohl direkt auf der abmontierten Leinwand angefertigt. Sie selbst ist auf einem nicht ganz rechtwinkligem Blatt fixiert, dass dann auch signiert wurde.
 
 Die Zeichnung ist auf 1965 datiert. Bisher habe ich noch nichts über den Künstler herausfinden können...
+
+## Update 27.4.2026
+
+Möglicherweise ist der Österreicher [Josef Mikl](https://de.wikipedia.org/wiki/Josef_Mikl) (1929–2008) der gesuchte Künstler. Die Anzahl der Buchstaben stimmt ungefähr und auch einige seiner satirischen Schöpfungen weisen eine gewisse Ähnlichkeit auf:
+* [Josef Mikl. Das satirische Werk](https://artinwords.de/josef-mikl-das-satirische-werk/)
+* [Maler Josef Mikl: Memoiren einer gefährlichen Journalistenfresserin](https://www.derstandard.de/story/2000074806535/maler-josef-mikl-memoiren-einer-gefaehrlichen-journalistenfresserin)
