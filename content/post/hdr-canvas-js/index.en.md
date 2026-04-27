@@ -8,6 +8,8 @@ tags:
   - DigitalImages
   - HDR
   - JavaScript
+wikidata:
+  - https://www.wikidata.org/wiki/Q7067518
 ---
 
 The JavaScript implementation for the last posts is now also available as NPM module.

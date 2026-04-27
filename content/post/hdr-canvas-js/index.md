@@ -8,6 +8,8 @@ tags:
   - DigitalImages
   - HDR
   - JavaScript
+wikidata:
+  - https://www.wikidata.org/wiki/Q7067518
 ---
 
 Die JavaScript Unterstützung für die letzten Beiträge ist nun auch einzeln als NPM Modul verfügbar.
