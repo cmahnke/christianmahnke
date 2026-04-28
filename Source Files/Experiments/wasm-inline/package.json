@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "./dist/compress.mjs",
-    "build": "rollup -c",
+    "build": "rimraf dist/* && rollup -c",
     "test": "vitest",
     "clean": "rimraf dist/*",
     "lint": "tsc && eslint . -c eslint.config.mjs --report-unused-disable-directives --max-warnings 0",

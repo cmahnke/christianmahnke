@@ -1,4 +1,3 @@
-//window.$ = window.jQuery = require('jquery');
 import { addConsent } from './iframe-consent';
 import { initMap } from './maps/osm-map.js';
 import { checkLinksForQClasses } from './wikidata';
@@ -8,8 +7,12 @@ window.stickybits = stickybits;
 
 window.addConsent = addConsent;
 window.initMap = initMap;
-window.chroma = require('chroma-js');
-window.WordCloud = require('wordcloud');
+import chroma from 'chroma-js';
+window.chroma = chroma;
+//window.chroma = require('chroma-js');
+import WordCloud from 'wordcloud';
+window.WordCloud = WordCloud;
+//window.WordCloud = require('wordcloud');
 
 /*
 document.addEventListener("DOMContentLoaded", function() {

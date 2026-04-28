@@ -15,8 +15,13 @@
     {{- end -}}
 
     {{- partial "html/head/style.html" (dict "context" . "css" "css/style.css") -}}
-    {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
-    {{- partial "html/head/page-scripts.html" . -}}
+    {{- if and (isset .Site.Params "js") (eq .Site.Params.js "esm") -}}
+      {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .) "opts" (dict "format" "esm")) -}}
+      {{- partial "html/head/page-scripts.html" (dict "context" . "opts" (dict "format" "esm")) -}}
+    {{- else -}}
+      {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
+      {{- partial "html/head/page-scripts.html" . -}}
+    {{- end -}}
 
     {{- partial "html/head/preload.html" . -}}
 
