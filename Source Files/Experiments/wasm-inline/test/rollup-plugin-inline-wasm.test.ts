@@ -5,9 +5,7 @@ import { readFileSync } from "fs";
 import type { Plugin } from "rollup";
 import inlineWasm from "../src/rollup-plugin-inline-wasm";
 import * as pkg from "brotli-unicode";
-const { compress } = pkg;
-
-import { decompress } from "brotli-unicode/js";
+const { compress, decompress } = pkg;
 
 const WASM_FILE = "../node_modules/brotli-wasm/pkg.node/brotli_wasm_bg.wasm";
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -99,6 +97,7 @@ describe("inlineWasm Plugin", () => {
 
     it("generated code contains all exports", () => {
       expect(loadResult).toContain("export async function loadWasm");
+      expect(loadResult).toContain("export function getWasmBytes");
       expect(loadResult).toContain("export default loadWasm");
     });
 
@@ -113,6 +112,7 @@ describe("inlineWasm Plugin", () => {
 
     it("generated code is syntactically valid JavaScript", () => {
       expect(loadResult).toContain("export async function loadWasm");
+      expect(loadResult).toContain("export function getWasmBytes");
       expect(loadResult).toContain("export default loadWasm");
       expect(loadResult).toContain("WebAssembly.instantiate");
       expect(loadResult).toContain("decompress(compressed)");
@@ -127,7 +127,7 @@ describe("inlineWasm Plugin", () => {
       beforeAll(async () => {
         originalBytes = new Uint8Array(readFileSync(WASM_PATH));
         const compressed = await compress(originalBytes);
-        decompressedBytes = decompress(compressed);
+        decompressedBytes = await decompress(compressed);
       }, 30_000);
 
       it("decompressed length matches the original exactly", () => {
@@ -164,7 +164,7 @@ describe("inlineWasm Plugin", () => {
         const match = loadResult.match(/const wasmStr = "([^"]*)"/s);
         expect(match).not.toBeNull();
 
-        const decompressedFromCode = decompress(match![1]);
+        const decompressedFromCode = await decompress(match![1]);
         const originalBytes = new Uint8Array(readFileSync(WASM_PATH));
 
         expect(decompressedFromCode.length).toBe(originalBytes.length);

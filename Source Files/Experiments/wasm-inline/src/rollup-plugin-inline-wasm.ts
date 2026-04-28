@@ -112,6 +112,10 @@ export async function loadWasm(imports) {
   return instance;
 }
 
+export function getWasmBytes() {
+  return decompress(compressed);
+}
+
 export default loadWasm;
 `.trim();
 }
