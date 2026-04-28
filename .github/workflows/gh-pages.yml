@@ -92,7 +92,7 @@ jobs:
           ./scripts/post-build/index.sh
 
       - name: Download all workflow run artifacts
-        uses: dawidd6/action-download-artifact@v20
+        uses: dawidd6/action-download-artifact@v21
         id: download-artifact
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
