@@ -345,7 +345,7 @@ timeout = "120s"
 [security]
   [security.http]
     mediaTypes = ['^application/json$', '^application/json;\s?charset=[uU][tT][fF]-8$', '^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$']
-    urls = ['^https://unpkg\.com/.*', '^https://aframe.io\/.*', '^https://www\.wikidata\.org/.*', '^https://query\.wikidata\.org/.*']
+    urls = ['^https://unpkg\.com/.*', '^https://aframe.io\/.*', '^https://www\.wikidata\.org/.*', '^https://query\.wikidata\.org/.*', '^https://de\.wikipedia\.org/.*']
 
 [related]
   includeNewer = true
