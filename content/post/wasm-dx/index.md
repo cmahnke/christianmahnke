@@ -9,6 +9,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q20155677
   - https://www.wikidata.org/wiki/Q111590996
   - https://www.wikidata.org/wiki/Q114900810
+  - https://www.wikidata.org/wiki/Q726780
 ---
 
 Für die letzten beiden Blog-Posts über SPARQL und Triple Stores musste ich mich mit [WASM](https://webassembly.org/) herumschlagen...
@@ -55,4 +56,6 @@ const wasm_obj = await WebAssembly.new("./simple.wasm");
 
 Statt dem ganzen Budenzauber zum Abrufen (`fetch`), ggf. Kompilieren, Instanzieren und "Verheiraten" mit dem JS-Wrapper-Code, den man ja auch noch bündeln bzw. laden muss. Also wirklich "seamless". Natürlich wäre das optional. Wer die bisherige API bevorzugt, soll sie natürlich weiterhin nutzen können.
 
-Da diese Änderung in der Browser-JS-API nicht zu erwarten ist, muss hier beim Bundler angesetzt werden...
+Da diese Änderung in der Browser-JS-API nicht zu erwarten ist, muss beim Bundler bzw. Bundling angesetzt werden. Derzeit bietet sich leider nur die Methode an, das WASM-Artefakt Base64-kodiert als Teil einer JavaScript-Datei zu verteilen. Der Nachteil ist allerdings, dass die Kodierung die Dateigröße um 33–37 % erhöht.
+
+Wenn man also eine WASM Datei über NPM verbreitet, sollte man dafür sorgen, das es mindestens eine Art der Einbindung gibt, bei der das WASM Artefakt Teil einer JS Datei ist. Derzeit häufig in diesen Bereich genutzte Tools, wie [`wasm-pack`](https://github.com/wasm-bindgen/wasm-pack) (für Rust), sollten das als Default machen.

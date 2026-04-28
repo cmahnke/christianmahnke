@@ -3,14 +3,14 @@ import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import { readFileSync } from "fs";
 import type { Plugin } from "rollup";
-import inlineWasm from "../src/rollup-plugin-inline-wasm";
+import inlineWasm from "../src/rollup-plugin-wasm-brotli";
 import * as pkg from "brotli-unicode";
 const { compress, decompress } = pkg;
 
 const WASM_FILE = "../node_modules/brotli-wasm/pkg.node/brotli_wasm_bg.wasm";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const WASM_PATH = resolve(__dirname, WASM_FILE);
-const IMPORTER_PATH = resolve(__dirname, "../src/rollup-plugin-inline-wasm.ts");
+const IMPORTER_PATH = resolve(__dirname, "../src/rollup-plugin-wasm-brotli.ts");
 
 let loadResult: string;
 

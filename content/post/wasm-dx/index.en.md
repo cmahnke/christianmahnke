@@ -56,4 +56,6 @@ const wasm_obj = await WebAssembly.new(‘./simple.wasm’);
 
 Instead of all that faff of fetching (`fetch`), possibly compiling, instantiating and "marrying" it with the JS wrapper code – which you’d also have to bundle or load. So it really is "seamless". Of course, this would be optional. Anyone who prefers the existing API should, of course, still be able to use it.
 
-As this change is not expected in the browser JS API, we need to tackle this at the bundler level...
+As this change is not expected in the browser JS API, the solution must be implemented at the bundler or bundling stage. Unfortunately, the only viable method currently available is to distribute the WASM artefact as a Base64-encoded part of a JavaScript file. The downside, however, is that the encoding increases the file size by 33–37%.
+
+So, if you are distributing a WASM file via NPM, you should ensure that there is at least one method of inclusion where the WASM artefact is part of a JS file. Tools currently frequently used in this area, such as [`wasm-pack`](https://github.com/wasm-bindgen/wasm-pack) (for Rust), should do this by default.

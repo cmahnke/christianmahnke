@@ -5,9 +5,9 @@ import { dts } from "rollup-plugin-dts";
 
 const configs = [
   {
-    input: "src/rollup-plugin-inline-wasm.ts",
+    input: "src/rollup-plugin-wasm-brotli.ts",
     output: {
-      file: "dist/rollup-plugin-inline-wasm.mjs",
+      file: "dist/rollup-plugin-wasm-brotli.js",
       format: "es"
     },
     plugins: [
@@ -22,7 +22,7 @@ const configs = [
     ]
   },
   {
-    input: "src/rollup-plugin-inline-wasm.ts",
+    input: "src/rollup-plugin-wasm-brotli.ts",
     output: {
       file: "dist/index.d.ts",
       format: "es"
