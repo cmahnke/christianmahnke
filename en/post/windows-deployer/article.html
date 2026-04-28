@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="28 Apr 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.924782ad3f68a86bacf0e237c9202f9f7f89b29d08847c72b5f170be4360217b.css" rel="stylesheet" integrity="sha256-kkeCrT9oqGus8OI3ySAvn3&#43;Jsp0IhHxytfFwvkNgIXs=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/windows-deployer/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Windows Deployer</h1><div class="date">
+          <time class="post-data" datetime="2023-08-21T19:22:44&#43;02:00">Monday, August 21, 2023</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/en/post/windows-deployer/</div>
+
+      <div class="tags-heading">Keywords:
+        <ul class="tags"><li>Windows</li><li>Python</li></ul>
+      </div><div class="post-body"><p>How to install a freshly built software from GitLab / GitHub?<br/>
+On a Windows computer.<br/>
+In an internal network - behind a VPN gateway</p>
+<p>For cases for which there are no tools, you have to build your own:
+The first problem is remote deployment on Windows machines (from Linux). There are various approaches such as 
+
+
+<a href="https://en.wikipedia.org/wiki/Windows_Management_Instrumentation" title="WMI" target="_blank">WMI<span class="footnote-number">1</span></a>, but these are not always directly available on other platforms. For example, PowerShell is also available for Mac OS and Linux, but only with a subset of the features. There is also another 
+
+
+<a href="https://gist.github.com/rickheil/7c89a843bf7c853997a1" title="WMI client for Linux" target="_blank">WMI client for Linux<span class="footnote-number">2</span></a>, but this has a problem with Windows 10. Some libraries only run on Windows, as they are simply wrappers around the operating system infrastructure.</p>
+<p>In the end, the Python library 
+
+
+<a href="https://github.com/fortra/impacket" title="impacket" target="_blank"><code>impacket</code><span class="footnote-number">3</span></a> was chosen because it is actively maintained and comes with extensive examples.</p>
+<p>Windows Installer packages (MSI)](
+
+
+<a href="https://en.wikipedia.org/wiki/Windows_Installer" title="https://en.wikipedia.org/wiki/Windows_Installer" target="_blank">https://en.wikipedia.org/wiki/Windows_Installer<span class="footnote-number">4</span></a>) can be installed via WMI, these packages can also be created with the open source project 
+
+
+<a href="https://gitlab.gnome.org/GNOME/msitools" title="msitools" target="_blank"><code>msitools</code><span class="footnote-number">5</span></a> - therefore a corresponding Docker image is also included.</p>
+<p>The second problem is access to a system in an internal network. However, since there is a Cisco VPN gateway, 
+
+
+<a href="https://gitlab.com/openconnect/openconnect" title="openconnect" target="_blank"><code>openconnect</code><span class="footnote-number">6</span></a> and 
+
+
+<a href="https://gitlab.com/openconnect/vpnc-scripts" title="vpnc-scripts" target="_blank"><code>vpnc-scripts</code><span class="footnote-number">7</span></a> can be used for accessing it from the outside. This also works for Docker containers if you specify a corresponding network configuration (for <code>/dev/net/tun</code>) at startup.</p>
+<p>Another easy-to-solve problem was the provision of the file to be installed. You can simply use 
+
+
+<a href="https://www.samba.org/" title="Samba" target="_blank">Samba<span class="footnote-number">8</span></a> for this.</p>
+<p>To simplify the interaction of all these components, the subsystems were packaged as Docker images. This also has the advantage that they can be used relatively easily as part of a GitLab / Github workflow.</p>
+<p>The result and many more details of the implementation can be found 
+
+
+<a href="https://github.com/cmahnke/windows-deployer" title="here" target="_blank">here<span class="footnote-number">9</span></a>.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q107386415" title="impacket" rel="related">Wikidata entry: impacket</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1423114" title="Windows Management Instrumentation" rel="related">Wikidata entry: Windows Management Instrumentation</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q15978834" title="OpenConnect" rel="related">Wikidata entry: OpenConnect</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q181233" title="Windows Installer" rel="related">Wikidata entry: Windows Installer</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q18168774" title="Q18168774" rel="related">Wikidata entry: Q18168774</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1830735" title="Samba" rel="related">Wikidata entry: Samba</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/windows-remote/article.html">Windows Remote Management</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/blog-sparql/article.html">Querying blog metadata via SPARQL</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/simple-wikidata-queries/article.html">Simple data enrichment with Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/patching-osm-data/article.html">&#34;Patching&#34; OpenStreetMap data</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/vite-git-symlink-plugin/article.html">Vite und Git Symlink-Dateien</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">References</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">WMI</span>: <a href="https://en.wikipedia.org/wiki/Windows_Management_Instrumentation" target="_blank">https://en.wikipedia.org/wiki/Windows_Management_Instrumentation</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">WMI client for Linux</span>: <a href="https://gist.github.com/rickheil/7c89a843bf7c853997a1" target="_blank">https://gist.github.com/rickheil/7c89a843bf7c853997a1</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title"><code>impacket</code></span>: <a href="https://github.com/fortra/impacket" target="_blank">https://github.com/fortra/impacket</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">https://en.wikipedia.org/wiki/Windows_Installer</span>: <a href="https://en.wikipedia.org/wiki/Windows_Installer" target="_blank">https://en.wikipedia.org/wiki/Windows_Installer</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title"><code>msitools</code></span>: <a href="https://gitlab.gnome.org/GNOME/msitools" target="_blank">https://gitlab.gnome.org/GNOME/msitools</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title"><code>openconnect</code></span>: <a href="https://gitlab.com/openconnect/openconnect" target="_blank">https://gitlab.com/openconnect/openconnect</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title"><code>vpnc-scripts</code></span>: <a href="https://gitlab.com/openconnect/vpnc-scripts" target="_blank">https://gitlab.com/openconnect/vpnc-scripts</a></span><br/><span class="footnote-number">8</span>: <span class="footnote-content"><span class="footnote-title">Samba</span>: <a href="https://www.samba.org/" target="_blank">https://www.samba.org/</a></span><br/><span class="footnote-number">9</span>: <span class="footnote-content"><span class="footnote-title">here</span>: <a href="https://github.com/cmahnke/windows-deployer" target="_blank">https://github.com/cmahnke/windows-deployer</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

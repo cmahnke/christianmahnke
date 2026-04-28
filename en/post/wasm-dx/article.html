@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="28 Apr 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.924782ad3f68a86bacf0e237c9202f9f7f89b29d08847c72b5f170be4360217b.css" rel="stylesheet" integrity="sha256-kkeCrT9oqGus8OI3ySAvn3&#43;Jsp0IhHxytfFwvkNgIXs=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/wasm-dx/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">My experience with WASM</h1><div class="date">
+          <time class="post-data" datetime="2026-04-26T06:22:44&#43;02:00">Sunday, April 26, 2026</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/en/post/wasm-dx/</div>
+
+      <div class="tags-heading">Keywords:
+        <ul class="tags"><li>JavaScript</li><li>Software development</li><li>Hugo</li></ul>
+      </div><div class="post-body"><p>For the last two blog posts on SPARQL and triple stores, I had to grapple with 
+
+
+<a href="https://webassembly.org/" title="WASM" target="_blank">WASM<span class="footnote-number">1</span></a>&hellip;</p>
+<p>&hellip;and was genuinely surprised at how poor browser integration and the developer experience (DX) still are.</p>
+<p>The former becomes apparent relatively quickly once you’ve embedded the component on a webpage that reloads with every change via a watcher. After a while, the evidence mounts that the browser isn’t reliably clearing out old resources. In Chrome, this can manifest as tabs freezing or crashing, or even esoteric memory errors in the WASM application.
+You can get used to this after a while, and the effects certainly don’t manifest in this form for the end user, but WASM still feels, for the time being, like a botched job.</p>
+<p>The main problem, however, is the integration of WASM artefacts into JavaScript (for the browser): it is complicated or counterintuitive, particularly if you also have to use a bundler. Simply because you are forced to include the WASM code as a separate asset in its own right, following its own loading semantics (asynchronous initialisation), whilst simultaneously ensuring that the JavaScript wrapper for the code is loaded into the WASM file. The 
+
+
+<a href="https://developer.mozilla.org/en-US/docs/WebAssembly" title="MDN documentation" target="_blank">MDN documentation<span class="footnote-number">2</span></a> provides an example of this complexity.</p>
+<p>For older readers: The whole thing seems heavily inspired by the use of inline assembler for various architectures in C. After all, it does contain the word ‘Assembly’ in its name.</p>
+<h2 id="digression">Digression</h2>
+<p>Admittedly, the structure of this blog is also quite complicated:</p>
+<ul>
+<li>I first develop more complex JavaScript functionalities based on 
+
+
+<a href="https://www.typescriptlang.org/" title="Vite" target="_blank">Vite<span class="footnote-number">3</span></a> and 
+
+
+<a href="https://www.typescriptlang.org/" title="TypeScript" target="_blank">TypeScript<span class="footnote-number">4</span></a>.</li>
+<li>These are then bundled together using 
+
+
+<a href="https://rollupjs.org/" title="Rollup" target="_blank">Rollup<span class="footnote-number">5</span></a> (as it makes it easier to generate various artefacts from a single source tree) (one JS and one CSS artefact each)</li>
+<li>A wrapper is then created from this as a 
+
+
+<a href="https://gohugo.io/content-management/shortcodes/" title="Hugo shortcode" target="_blank">Hugo shortcode<span class="footnote-number">6</span></a> – this step is not yet automated. Linking the JavaScript artefact to the shortcode is described here: 
+
+
+<a href="https://christianmahnke.de/post/hugo-shared-metadata/" title="Split metadata for Hugo pages" target="_blank">Split metadata for Hugo pages<span class="footnote-number">7</span></a></li>
+<li>Hugo then uses 
+
+
+<a href="https://esbuild.github.io/" title="esbuild" target="_blank">esbuild<span class="footnote-number">8</span></a> to generate the JavaScript for the browser.</li>
+</ul>
+<p>The fact that it takes more than one step to transform JavaScript (also known as compiling) is a well-known problem in modern web development and is far from ideal.</p>
+<p>This includes the fact that the entire JavaScript ecosystem is designed to cope with its own shortcomings. For more traditional reasons, dating back to the pre-tree-shaking era (i.e. code optimisation where unused functions are prevented from entering the client-side code, as the page load time improves due to the transmission of less data), the entire community tends to atomise its software artefacts and package them into very small units.
+Others have written better and wiser things on this issue (and other problems of ‘modern’ JavaScript in the sense of contemporary, not innovative JavaScript), e.g. in 
+
+
+<a href="https://43081j.com/2026/03/three-pillars-of-javascript-bloat" title="The Three Pillars of JavaScript Bloat" target="_blank">The Three Pillars of JavaScript Bloat<span class="footnote-number">9</span></a></p>
+<p>This pattern is generally regarded as an anti-pattern in other communities, yet it is used in almost everything, including build tools such as bundlers. Consequently, one inevitably has to spend more time on one’s build infrastructure than one would like.
+This has the ‘amusing’ consequence, for example, that not all of these tools cover the full range of modern web technologies on their own.
+For instance, 
+
+
+<a href="https://rollupjs.org/" title="Rollup" target="_blank">Rollup<span class="footnote-number">10</span></a> or 
+
+
+<a href="https://vite.dev/" title="Vite" target="_blank">Vite<span class="footnote-number">11</span></a> require plugins for Wasm.</p>
+<h2 id="back-to-wasm">Back to Wasm:</h2>
+<p>The main problem is probably that, although it’s called WebAssembly, it was designed to be used across many platforms. So if you take the name as an indication of its intended purpose, it suffers from over-generalisation.</p>
+<p>Twenty years ago, with Java, we had something in the browser that was already more advanced in this respect. Admittedly, the language doesn’t have as many fans anymore, but the embedding and also the access to DOM elements on the page where the applet was running were significantly better.</p>
+<h2 id="how-could-it-be-improved">How could it be improved?</h2>
+<p>But WASM also has other theoretical advantages, such as increased execution speed or the ability to use legacy code as a starting point.
+Nevertheless, developers could benefit if the focus were primarily on the web as a platform. The usage scenario should be designed to feel like JavaScript. For example, one could do away with the necessary external JS wrappers by bundling them into the WASM file (or the WASM bytecode into a JS file), so that they are automatically available upon instantiation.
+Building on this, a simplified API would also have been helpful:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">wasm_obj</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">WebAssembly</span><span class="p">.</span><span class="k">new</span><span class="p">(</span><span class="err">‘</span><span class="p">.</span><span class="o">/</span><span class="nx">simple</span><span class="p">.</span><span class="nx">wasm</span><span class="err">’</span><span class="p">);</span>
+</span></span></code></pre></div><p>Instead of all that faff of fetching (<code>fetch</code>), possibly compiling, instantiating and &ldquo;marrying&rdquo; it with the JS wrapper code – which you’d also have to bundle or load. So it really is &ldquo;seamless&rdquo;. Of course, this would be optional. Anyone who prefers the existing API should, of course, still be able to use it.</p>
+<p>As this change is not expected in the browser JS API, we need to tackle this at the bundler level&hellip;</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q111590996" title="Vite" rel="related">Wikidata entry: Vite</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q114900810" title="Rollup" rel="related">Wikidata entry: Rollup</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q20155677" title="WebAssembly" rel="related">Wikidata entry: WebAssembly</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/hugo-cff-codemeta/article.html">CFF zu CodeMeta in Hugo</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/vite-git-symlink-plugin/article.html">Vite und Git Symlink-Dateien</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/mastodon-archive/article.html">Mastodon Archive</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/software-metadata/article.html">Metadaten für Software</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hugo-datauris/article.html">Embed resources as data URLs in Hugo</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">References</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">WASM</span>: <a href="https://webassembly.org/" target="_blank">https://webassembly.org/</a></span><br/><span class="footnote-number">10</span>: <span class="footnote-content"><span class="footnote-title">Rollup</span>: <a href="https://rollupjs.org/" target="_blank">https://rollupjs.org/</a></span><br/><span class="footnote-number">11</span>: <span class="footnote-content"><span class="footnote-title">Vite</span>: <a href="https://vite.dev/" target="_blank">https://vite.dev/</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">MDN documentation</span>: <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" target="_blank">https://developer.mozilla.org/en-US/docs/WebAssembly</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">Vite</span>: <a href="https://www.typescriptlang.org/" target="_blank">https://www.typescriptlang.org/</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">TypeScript</span>: <a href="https://www.typescriptlang.org/" target="_blank">https://www.typescriptlang.org/</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">Rollup</span>: <a href="https://rollupjs.org/" target="_blank">https://rollupjs.org/</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title">Hugo shortcode</span>: <a href="https://gohugo.io/content-management/shortcodes/" target="_blank">https://gohugo.io/content-management/shortcodes/</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title">Split metadata for Hugo pages</span>: <a href="https://christianmahnke.de/post/hugo-shared-metadata/" target="_blank">https://christianmahnke.de/post/hugo-shared-metadata/</a></span><br/><span class="footnote-number">8</span>: <span class="footnote-content"><span class="footnote-title">esbuild</span>: <a href="https://esbuild.github.io/" target="_blank">https://esbuild.github.io/</a></span><br/><span class="footnote-number">9</span>: <span class="footnote-content"><span class="footnote-title">The Three Pillars of JavaScript Bloat</span>: <a href="https://43081j.com/2026/03/three-pillars-of-javascript-bloat" target="_blank">https://43081j.com/2026/03/three-pillars-of-javascript-bloat</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

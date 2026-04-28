@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="28 Apr 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.924782ad3f68a86bacf0e237c9202f9f7f89b29d08847c72b5f170be4360217b.css" rel="stylesheet" integrity="sha256-kkeCrT9oqGus8OI3ySAvn3&#43;Jsp0IhHxytfFwvkNgIXs=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/hugo-datauris/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Embed resources as data URLs in Hugo</h1><div class="date">
+          <time class="post-data" datetime="2025-12-11T11:22:44&#43;01:00">Thursday, December 11, 2025</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/en/post/hugo-datauris/</div>
+
+      <div class="tags-heading">Keywords:
+        <ul class="tags"><li>Hugo</li></ul>
+      </div><div class="post-body"><p>Sometimes it is easier to embed external resources in HTML&hellip;</p>
+<p>One use case could be an additional subsequent processing step where there are problems with the resolution of relative URLs. For such (and other) cases, it is possible to embed resources in HTML as so-called 
+
+
+<a href="https://en.wikipedia.org/wiki/Data_URI_scheme" title="data URIs or data URLs" target="_blank">data URIs or data URLs<span class="footnote-number">1</span></a>.</p>
+<p>These have the following form: <code>data:image/png;base64,data</code>, i.e., they begin with <code>data:</code>, followed by the MIME type (here <code>image/png</code>), a semicolon (<code>;</code>), the encoding method (here <code>base64</code>), a comma (<code>,</code>) and then the encoded data.</p>
+<p>Here is a simple Hugo template to generate these from Hugo resources:</p>
+<h1 id="template">Template</h1>
+<p>This fragment can simply be saved as <code>layouts/_partials/data-uri.html</code> or <code>layouts/partials/data-uri.html</code> for Hugo versions prior to 0.146.0.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="nx">$res</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">eq</span><span class="w"> </span><span class="o">(</span><span class="k">printf</span><span class="w"> </span><span class="s">&#34;%T&#34;</span><span class="w"> </span><span class="nx">$res</span><span class="o">)</span><span class="w"> </span><span class="s">&#34;*resources.resourceAdapter&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    data:<span class="cp">{{</span><span class="w"> </span><span class="nx">$res</span><span class="na">.MediaType</span><span class="w"> </span><span class="cp">}}</span>;base64,<span class="cp">{{</span><span class="w"> </span><span class="nx">$res</span><span class="na">.Content</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">base64Encode</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="nx">warnf</span><span class="w"> </span><span class="s">&#34;[print/data-uri.html] Input need to be a resourceAdapter!&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span></code></pre></div><h1 id="example">Example</h1>
+<p>The new <code>partial</code> must then be called at the point in your own template where the image is to be integrated. The loaded (image) resource is used as a parameter.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="nx">$path</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;path/to/image&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="nx">$src</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="o">(</span><span class="na">.Page.Resources.Get</span><span class="w"> </span><span class="nx">$path</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="nx">resources</span><span class="na">.Get</span><span class="w"> </span><span class="nx">$path</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$src</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;data-uri.html&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span></code></pre></div></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q976554" title="Data URI scheme" rel="related">Wikidata entry: Data URI scheme</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/hugo-shared-metadata/article.html">Shared metadata for Hugo pages</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/wikidata-entities-in-hugo/article.html">Wikidata Links in Hugo</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hugo-draft-menus/article.html">Menus in Hugo draft mode</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/wasm-dx/article.html">My experience with WASM</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/mastodon-archive/article.html">Mastodon Archive</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">References</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">data URIs or data URLs</span>: <a href="https://en.wikipedia.org/wiki/Data_URI_scheme" target="_blank">https://en.wikipedia.org/wiki/Data_URI_scheme</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

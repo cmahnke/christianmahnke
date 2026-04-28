@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Blog metadata visualised · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="en">
+<meta name="dc.type" content="Text">
+<meta name="description" content="About a year ago, I tried visualising the blog content&hellip;">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/en/post/blog-visualisation/" />
+  <meta property="og:title" content="Blog metadata visualised · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/en/post/blog-visualisation/ogPreview.en_hu_6a59bbbde6276ca7.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", Wikidata, Linked Open Data, SPARQL, Visualisation, Website"><meta name="dc.subject" content="Wikidata"><meta name="dc.subject" content="Linked Open Data"><meta name="dc.subject" content="SPARQL"><meta name="dc.subject" content="Visualisation"><meta name="dc.subject" content="Website">
+<meta name="generator" content="Hugo 0.160.1">
+<meta name="projektemacher.org:build-date" content="2026-04-28 01:54:21.005552472 &#43;0000 UTC m=&#43;693.191019119"><meta name="projektemacher.org:git-commit" content="332a7ed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/9323c1b35544ef5fca69ea958e1369ba.min.77f2fe6b037bf843199f6d3c9a9d1564de3978d430aa09491d03b58b01379362.css" rel="stylesheet" integrity="sha256-d/L&#43;awN7&#43;EMZn208mp0VZN45eNQwqglJHQO1iwE3k2I=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<script src="https://christianmahnke.de/js/938a4bc27b1cef15e10d3e4f5a7013c7.80839b6c848cbd23ba7fc1d55afae2766baf502759af7c2cf181cceeb45e7111.js" integrity="sha256-gIObbISMvSO6f8HVWvridmuvUCdZr3ws8YHM7rRecRE="></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/en/post/blog-visualisation/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/en/post/blog-visualisation/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/en/post/blog-visualisation/","@type":"BlogPosting","about":[{"@id":"http://www.wikidata.org/entity/Q115616582","@type":"Thing","name":"Linked Art"},{"@id":"http://www.wikidata.org/entity/Q116963652","@type":"Thing","name":"cytoscape"},{"@id":"http://www.wikidata.org/entity/Q118980507","@type":"Thing","name":"Oxigraph"},{"@id":"http://www.wikidata.org/entity/Q139274681","@type":"Thing","name":"Q139274681"},{"@id":"http://www.wikidata.org/entity/Q3475322","@type":"Thing","name":"Schema.org"},{"@id":"http://www.wikidata.org/entity/Q3539533","@type":"Thing","name":"triplestore"},{"@id":"http://www.wikidata.org/entity/Q375913","@type":"Thing","name":"WebGL"},{"@id":"http://www.wikidata.org/entity/Q72885392","@type":"Thing","name":"JPEG XL"},{"@id":"http://www.wikidata.org/entity/Q99738405","@type":"Thing","name":"libjxl"}],"author":{"@id":"http://www.wikidata.org/entity/Q137668638","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"dateModified":"2026-04-28","datePublished":"2026-04-21","headline":"Blog metadata visualised","inLanguage":"en","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Wikidata","LOD","SPARQL","Visualisation","Website"],"name":"Blog metadata visualised","url":"https://christianmahnke.de/en/post/blog-visualisation/","workTranslation":[{"@id":"https://christianmahnke.de/post/blog-visualisation/","@type":"CreativeWork","inLanguage":"de","name":"Blog Metadaten visualisiert","url":"https://christianmahnke.de/post/blog-visualisation/"}]}
+</script>
+</head><body class="section-post dir-postblog-visualisation blog  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/blog-visualisation/" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Blog metadata visualised</h1><div class="date">
+          <time class="post-data" datetime="2026-04-21T15:49:44&#43;02:00">Tuesday, April 21, 2026</time>
+        </div><div class="post-body"><p>About a year ago, I tried <a href="https://christianmahnke.de/en/post/tag-pairs/">visualising the blog content</a>&hellip;</p>
+<p>&hellip;but that was more of a failure.</p>
+<p>Now I’ve given it another go. This time I’ve used the <a href="https://christianmahnke.de/en/post/blog-sparql/">Triple Store from the last post</a> and the result is certainly impressive:</p>
+<p><strong>It may take a moment for the graph to load and calculate.</strong></p>
+<rdf-graph id="_sparql-e187dc9f72bbb4fb1af160a93110ae3f" src="https://christianmahnke.de/meta/wikidata/enriched_entities.hdt" languages="mul,en,de" 
+  node-scaling="log" wikidata="incoming">
+  <script type="application/sparql-query">
+    PREFIX schema: <http://schema.org/>
+
+SELECT ?s ?p ?o ?isTagged WHERE {
+  <https://christianmahnke.de/post/> schema:blogPost ?post .
+  ?post ?p ?o .
+  BIND(?post AS ?s)
+  FILTER(?p NOT IN (
+    schema:author,
+    schema:url,
+    schema:workTranslation,
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+  ))
+  FILTER(?o NOT IN (
+    schema:BlogPosting
+  ))
+  OPTIONAL {
+    ?post schema:identifier ?ident .
+    ?ident a schema:PropertyValue ;
+           schema:propertyID "projektemacher" ;
+           schema:value "tag" .
+    BIND(true AS ?isTagged)
+  }
+}
+  </script>
+</rdf-graph>
+<p class="wikidata-attribution">Contains data from <a href="https://www.wikidata.org/" target="_blank">Wikidata</a>, licensed under <a href="https://www.wikidata.org/wiki/Wikidata:Text_of_the_Creative_Commons_Public_Domain_Dedication" target="_blank">CC0</a>.</p>
+<p>For mobile devices, available as a <a href="./graph.pdf">PDF download</a>; the file is not updated when new posts are added.</p>
+<h2 id="explanations">Explanations</h2>
+<ul>
+<li>The red rectangles represent the individual blog posts.</li>
+<li>The yellow diamonds represent blog tags.</li>
+<li>Blue circles are Wikidata entities (which also serve as tags).</li>
+<li>Green circles represent entities on the page (e.g. linked articles or other metadata entries).</li>
+</ul>
+<p>Some objects have coloured borders, which indicate the type. However, only a few types are currently configured.</p>
+<h3 id="pre-selection">Pre-selection</h3>
+<p>The following query is used to visualise the data for the graph above:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sparql" data-lang="sparql"><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">schema</span><span class="p">:</span> <span class="nl">&lt;http://schema.org/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">SELECT</span> <span class="nv">?s</span> <span class="nv">?p</span> <span class="nv">?o</span> <span class="nv">?isTagged</span> <span class="k">WHERE</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nl">&lt;https://christianmahnke.de/post/&gt;</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">blogPost</span> <span class="nv">?post</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">?post</span> <span class="nv">?p</span> <span class="nv">?o</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">  <span class="k">BIND</span><span class="p">(</span><span class="nv">?post</span> <span class="k">AS</span> <span class="nv">?s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">FILTER</span><span class="p">(</span><span class="nv">?p</span> <span class="k">NOT IN</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nn">schema</span><span class="p">:</span><span class="nt">author</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nn">schema</span><span class="p">:</span><span class="nt">url</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nn">schema</span><span class="p">:</span><span class="nt">workTranslation</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="k">FILTER</span><span class="p">(</span><span class="nv">?o</span> <span class="k">NOT IN</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nn">schema</span><span class="p">:</span><span class="nt">BlogPosting</span>
+</span></span><span class="line"><span class="cl">  <span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="k">OPTIONAL</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">?post</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">identifier</span> <span class="nv">?ident</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">?ident</span> <span class="k">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">PropertyValue</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nn">schema</span><span class="p">:</span><span class="nt">propertyID</span> <span class="s">&#34;projektemacher&#34;</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nn">schema</span><span class="p">:</span><span class="nt">value</span> <span class="s">&#34;tag&#34;</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">BIND</span><span class="p">(</span><span class="kc">true</span> <span class="k">AS</span> <span class="nv">?isTagged</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h1 id="implementation">Implementation</h1>
+<p>In addition to the combination of HDT and OxiGraph mentioned in the last post, <a href="https://js.cytoscape.org/" target="_blank">Cytoscape</a> is used for visualisation. The PDF export was created using <a href="https://github.com/kinimesi/cytoscape-svg" target="_blank"><code>cytoscape-svg</code></a>.</p>
+<h1 id="why">Why?</h1>
+<p>Sure, the graph looks nice, but it also has other advantages:</p>
+<ul>
+<li>It allows navigation outside the confines of this blog.</li>
+<li>The outer rings used for classification provide insight into the hierarchy of object relationships (&ldquo;is a&rdquo;). For example, the <a href="http://www.wikidata.org/entity/Q1797167" target="_blank">Dötlingen Artists’ Colony (Q1797167)</a> is neither a place, nor a group, nor an organisation.</li>
+<li>It can help with quality control of tagging; for example, it highlights that <a class="wikidata" data-wikidata-entity="Q99738405" href="https://www.wikidata.org/wiki/Q99738405" target="_blank"><code>libjxl</code> (Q99738405)</a>, i.e. the implementation, and <a class="wikidata" data-wikidata-entity="Q72885392" href="https://www.wikidata.org/wiki/Q72885392" target="_blank">JPEG XL (Q72885392)</a>, i.e. the file format, have so far been assigned inconsistently.</li>
+</ul>
+<h2 id="further-improvements">Further improvements</h2>
+<p>There is still room for improvement:</p>
+<ul>
+<li>The visualisation of the base classes (e.g. people, places, organisations, software) is not yet complete.</li>
+<li>The thematic proximity of the nodes could be utilised further in the graph layout.</li>
+<li>In general, the layout could be improved.</li>
+<li>Cytoscape offers visually appealing visualisations that are more attractive than the one shown above.</li>
+</ul>
+<h2 id="update-22-april-2026">Update 22 April 2026</h2>
+<p>As <a href="https://github.com/KonradHoeffner/hdt/issues/107#issuecomment-4295799504" target="_blank">suggested by Konrad Höffner</a>, there is now a full-screen mode and Cytoscape now uses 
+      
+        
+      <a data-wikidata-entity="Q375913" href="https://en.wikipedia.org/wiki/WebGL" target="_blank">WebGL</a>.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q115616582" title="Linked Art" rel="related">Wikidata entry: Linked Art</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q116963652" title="cytoscape" rel="related">Wikidata entry: cytoscape</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q118980507" title="Oxigraph" rel="related">Wikidata entry: Oxigraph</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q139274681" title="Q139274681" rel="related">Wikidata entry: Q139274681</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q3475322" title="Schema.org" rel="related">Wikidata entry: Schema.org</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q3539533" title="triplestore" rel="related">Wikidata entry: triplestore</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q375913" title="WebGL" rel="related">Wikidata entry: WebGL</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Cite this article
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2026)</span>: <span class="cite-title">Blog metadata visualised</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], Apr 21, 2026. Online publication: <a class="cite-link" href="https://christianmahnke.de/post/blog-visualisation/">https://christianmahnke.de/post/blog-visualisation/</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/en/post/blog-visualisation/citation.bib" title="Download as BibTex">Download as BibTex</a>
+  </div>
+</details>
+</div><div class="tags-heading">Tags</div>
+        <div class="tags"><a href="https://christianmahnke.de/en/tags/Wikidata" title="Wikidata">#Wikidata</a><a href="https://christianmahnke.de/en/tags/LOD" title="Linked Open Data">#Linked Open Data</a><a href="https://christianmahnke.de/en/tags/SPARQL" title="SPARQL">#SPARQL</a><a href="https://christianmahnke.de/en/tags/Visualisation" title="Visualisation">#Visualisation</a><a href="https://christianmahnke.de/en/tags/Website" title="Website">#Website</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/blog-sparql/">Querying blog metadata via SPARQL</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/exhibitions-in-wikidata/">Exhibitions in Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/simple-wikidata-queries/">Simple data enrichment with Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/wikidata-entities-in-hugo/">Wikidata Links in Hugo</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/tag-pairs/">Keyword pairs visualised</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/blog-visualisation/" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Contact</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="Send eMail">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Privacy policy">Privacy policy</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

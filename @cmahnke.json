@@ -1,0 +1,25 @@
+{
+    "@context": "https://www.w3.org/ns/activitystreams",
+    "type": "Person",
+    "url": "https://christianmahnke.de/",
+    "discoverable": true,
+    "name": "Christian Mahnke","summary": "Persönliche Homepage von Christian Mahnke","id": "https://christianmahnke.de/@cmahnke",
+        "preferredUsername": "cmahnke","outbox": "https://christianmahnke.de/outbox.json",
+          "icon": {
+            "type": "Image",
+            "mediaType": "image/png",
+            "url": "https://christianmahnke.de/images/logo.png"
+          },
+        "image": {
+            "type": "Image",
+            "mediaType": "image/jpeg",
+            "url": "https://christianmahnke.de/images/background.jpg"
+          },"attachment": [{
+              "type": "PropertyValue",
+              "name": "blog",
+              "value": "\u003ca title=\"Blog\" href=\"https://christianmahnke.de/post/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003eBlog\u003c/a\u003e"
+            },{
+              "type": "PropertyValue",
+              "name": "github",
+              "value": "\u003ca title=\"GitHub\" href=\"https://github.com/cmahnke\" target=\"_blank\" rel=\"nofollow noopener noreferrer\"\u003eGitHub\u003c/a\u003e"
+            }]}

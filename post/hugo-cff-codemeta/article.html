@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="28 Apr 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.924782ad3f68a86bacf0e237c9202f9f7f89b29d08847c72b5f170be4360217b.css" rel="stylesheet" integrity="sha256-kkeCrT9oqGus8OI3ySAvn3&#43;Jsp0IhHxytfFwvkNgIXs=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/hugo-cff-codemeta/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">CFF zu CodeMeta in Hugo</h1><div class="post-description">Teil 1 über Software-Metadaten</div><div class="date">
+          <time class="post-data" datetime="2026-01-13T18:52:22&#43;02:00">Dienstag, 13. Januar 2026</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/hugo-cff-codemeta/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>Software Entwicklung</li><li>Metadaten</li><li>Hugo</li><li>JSON</li></ul>
+      </div><div class="post-body"><p>Für eine anstehende Veröffenlichung einer Software zur Visualisierung einer Sammlung habe ich mich etwas mit 
+
+
+<a href="https://citation-file-format.github.io/" title="Citation File Format" target="_blank">Citation File Format<span class="footnote-number">1</span></a> beschäftigt.</p>
+<p>CFF (
+
+
+<a href="https://citation-file-format.github.io/" title="Citation File Format" target="_blank">Citation File Format<span class="footnote-number">2</span></a>) ist ein auf YAML basierender Standard, der Zitationsinformationen für Software (und Daten) in Textdateien bereitstellt. Dadurch sind sie sowohl für Menschen als auch für Maschinen lesbar. Dies ermöglicht es Nutzern, Vorschläge zu unterbreiten, wie Code (bzw. Daten) korrekt zitiert werden sollten.
+Die aktuelle Version (1.2.0) ist in Plattformen wie 
+
+
+<a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files" title="GitHub" target="_blank">GitHub<span class="footnote-number">3</span></a>, 
+
+
+<a href="https://help.zenodo.org/docs/github/describe-software/citation-file/" title="Zenodo" target="_blank">Zenodo<span class="footnote-number">4</span></a> integriert und erlaubt dort den Export verschiedene Stile und Formate.
+Das erklärte Ziel ist es, die wissenschaftliche Sichtbarkeit von Softwareprojekten zu steigern.
+Zur Erleichterung der Erstellung und Pflege der Datei gibt es auch einen Assistenten: 
+
+
+<a href="https://citation-file-format.github.io/cff-initializer-javascript/#/" title="CFFInit" target="_blank">CFFInit<span class="footnote-number">5</span></a>, das Ergebnis wird einfach in der Wurzel des jeweiligen Git-Repositories als <code>CITATION.cff</code> gespeichert (wie z.B. <code>README.md</code>).</p>
+<h2 id="beispiel">Beispiel</h2>
+<p>Dies ist ein Beipsiel für eine <code>CITATION.cff</code>-Datei.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">cff-version</span><span class="p">:</span><span class="w"> </span><span class="m">1.2.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">Kartenvisualisierung der Metadaten der Kirchhoff-Sammlung</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">message</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;-</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">  If you use this software, please cite it using the
+</span></span></span><span class="line"><span class="cl"><span class="sd">  metadata from this file.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">software</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">authors</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">given-names</span><span class="p">:</span><span class="w"> </span><span class="l">Chrisitian</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">family-names</span><span class="p">:</span><span class="w"> </span><span class="l">Mahnke</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">orcid</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;https://orcid.org/0009-0003-1361-4159&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">affiliation</span><span class="p">:</span><span class="w"> </span><span class="l">Universität Göttingen</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l">mahnke@kustodie.uni-goettingen.de</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">repository-code</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;https://github.com/cmahnke/hermes-studie-10&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="p">&gt;-</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">  Es handelt sich um eine Visualisierung von Metadaten aus
+</span></span></span><span class="line"><span class="cl"><span class="sd">  dem Sammlungsportal der Universität Göttingen für die
+</span></span></span><span class="line"><span class="cl"><span class="sd">  Kirchhoff-Sammlung. Diese werden auf einer Weltkarte und
+</span></span></span><span class="line"><span class="cl"><span class="sd">  als Wortwolke dargestellt.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">keywords</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">Karte</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">Visualisierung</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">Wortwolke</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="l">CC-BY-NC-4.0</span><span class="w">
+</span></span></span></code></pre></div><h2 id="codemeta">CodeMeta</h2>
+<p>Da das grundlegende Ziel die Erhöhung der Sichtbarkeit durch Zitierung ist, sind andere Verwendungszwecke der Daten, wie die Indexierung (und damit das Auffinden), eher nachrangig. Hier kann ein anderes Format Abhilfe schaffen: 
+
+
+<a href="https://codemeta.github.io/" title="CodeMeta" target="_blank">CodeMeta<span class="footnote-number">6</span></a>.
+Denn eines der Ziele dahinter ist, dass es auf 
+
+
+<a href="https://schema.org/" title="Schema.org" target="_blank">Schema.org<span class="footnote-number">7</span></a> basiert, einem Standard zur Auszeichnung strukturierter (Meta-)Daten, z. B. für Suchmaschinen. Softwarespezifische Daten werden dabei in einer JSON-LD-Datei gebündelt.
+Ein weiteres Ziel ist es, die Wiederverwendbarkeit bestehender Daten zu ermöglichen. Dazu dient der Standard auch als 
+
+
+<a href="https://codemeta.github.io/crosswalk/" title="&ldquo;Übersetzungstabelle&rdquo; (Cross-Walk)" target="_blank">&ldquo;Übersetzungstabelle&rdquo; (Cross-Walk)<span class="footnote-number">8</span></a> (mehr 
+
+
+<a href="https://github.com/codemeta/codemeta/tree/master/crosswalks" title="hier" target="_blank">hier<span class="footnote-number">9</span></a>), um Daten aus anderen Schemata und Formaten zu übersetzen.</p>
+<h2 id="realisierung-in-hugo">Realisierung in Hugo</h2>
+<p>Um bestehende <code>CITATION.cff</code>-Dateien in Hugo nutzen zu können, habe ich ein einfaches Hugo-Template geschrieben, das z. B. in den HTML-Header (meist in <code>/layouts/baseof.html</code>) werden kann. Eine andere Möglichkeit ist ein eigenes 
+
+
+<a href="https://gohugo.io/configuration/output-formats/" title="OutputFormat" target="_blank"><code>OutputFormat</code><span class="footnote-number">10</span></a> zu definieren, um die Ausgabe in einer eigenen JSON-LD-Datei umzuleiten. Oder man bindet es in den jeweiligen Eintrag (z.B. <code>BlogArticle</code> oder <code>CreativeWork</code>) als <code>mentions</code> ein.</p>
+<!--
+Damit die Datei mit `cff` in Hugo als YAML gelsen werden kann, muss noch der Medientyp in der Hugo Konfigurieration (`hugo.toml`, `config.toml`) definiert werden.
+
+```toml
+[mediaTypes]
+  [mediaTypes."application/yaml"]
+    suffixes = ["cff"]
+```
+-->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-template" data-lang="go-template"><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="nx">$cffFile</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;CITATION.cff&#34;</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="na">.Resources.Get</span><span class="w"> </span><span class="nx">$cffFile</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">  </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$cff</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">transform</span><span class="na">.Unmarshal</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;format&#34;</span><span class="w"> </span><span class="s">&#34;yaml&#34;</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">  </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$codemeta</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">dict</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">  </span><span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">$cff</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">    </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$authors</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">slice</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">    </span><span class="cp">{{-</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$cff</span><span class="na">.authors</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">      </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$givenName</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="s">&#34;given-names&#34;</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">      </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$familyName</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="s">&#34;family-names&#34;</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">      </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$a</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;@type&#34;</span><span class="w"> </span><span class="s">&#34;Person&#34;</span><span class="w"> </span><span class="s">&#34;givenName&#34;</span><span class="w"> </span><span class="nx">$givenName</span><span class="w"> </span><span class="s">&#34;familyName&#34;</span><span class="w"> </span><span class="nx">$familyName</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">      </span><span class="cp">{{-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="s">&#34;orcid&#34;</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">        </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">merge</span><span class="w"> </span><span class="nx">$a</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;@id&#34;</span><span class="w"> </span><span class="na">.</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">      </span><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">      </span><span class="cp">{{-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="s">&#34;affiliation&#34;</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">        </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">merge</span><span class="w"> </span><span class="nx">$a</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;affiliation&#34;</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;@type&#34;</span><span class="w"> </span><span class="s">&#34;Organization&#34;</span><span class="w"> </span><span class="s">&#34;name&#34;</span><span class="w"> </span><span class="na">.</span><span class="o">))</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">      </span><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">      </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$authors</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">append</span><span class="w"> </span><span class="nx">$a</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">    </span><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">    </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$datePublished</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">(</span><span class="k">index</span><span class="w"> </span><span class="nx">$cff</span><span class="w"> </span><span class="s">&#34;date-released&#34;</span><span class="o">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">default</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">    </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$codemeta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dict</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s">&#34;@context&#34;</span><span class="w"> </span><span class="s">&#34;https://doi.org/10.5063/schema/codemeta-3.0&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s">&#34;@type&#34;</span><span class="w"> </span><span class="s">&#34;SoftwareSourceCode&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s">&#34;name&#34;</span><span class="w"> </span><span class="nx">$cff</span><span class="na">.title</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s">&#34;softwareVersion&#34;</span><span class="w"> </span><span class="nx">$cff</span><span class="na">.version</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s">&#34;description&#34;</span><span class="w"> </span><span class="o">(</span><span class="nx">$cff</span><span class="na">.abstract</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">default</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s">&#34;author&#34;</span><span class="w"> </span><span class="nx">$authors</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s">&#34;datePublished&#34;</span><span class="w"> </span><span class="nx">$datePublished</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s">&#34;license&#34;</span><span class="w"> </span><span class="o">(</span><span class="k">printf</span><span class="w"> </span><span class="s">&#34;https://spdx.org/licenses/%s&#34;</span><span class="w"> </span><span class="nx">$cff</span><span class="na">.license</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s">&#34;codeRepository&#34;</span><span class="w"> </span><span class="o">(</span><span class="k">index</span><span class="w"> </span><span class="nx">$cff</span><span class="w"> </span><span class="s">&#34;repository-code&#34;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">default</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="s">&#34;runtimePlatform&#34;</span><span class="w"> </span><span class="o">(</span><span class="k">index</span><span class="w"> </span><span class="nx">$cff</span><span class="w"> </span><span class="s">&#34;repository&#34;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">default</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="o">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">    </span><span class="cp">{{-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="nx">$cff</span><span class="na">.keywords</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">      </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$codemeta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$codemeta</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">merge</span><span class="w"> </span><span class="nx">$codemeta</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;keywords&#34;</span><span class="w"> </span><span class="na">.</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">    </span><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">    </span><span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="nx">$cff</span><span class="w"> </span><span class="s">&#34;identifiers&#34;</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">      </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$ids</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">slice</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">      </span><span class="cp">{{-</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$cff</span><span class="na">.identifiers</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">        </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$ids</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">append</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;@type&#34;</span><span class="w"> </span><span class="s">&#34;PropertyValue&#34;</span><span class="w"> </span><span class="s">&#34;propertyID&#34;</span><span class="w"> </span><span class="na">.type</span><span class="w"> </span><span class="s">&#34;value&#34;</span><span class="w"> </span><span class="na">.value</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">      </span><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">      </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$codemeta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">merge</span><span class="w"> </span><span class="nx">$codemeta</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;identifier&#34;</span><span class="w"> </span><span class="nx">$ids</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">    </span><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span><span class="x"> 
+</span></span></span><span class="line"><span class="cl"><span class="x">  </span><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">  </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">$codemeta</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">jsonify</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">  </span><span class="cp">{{-</span><span class="w"> </span><span class="nx">errorf</span><span class="w"> </span><span class="s">&#34;[metadata/codemeta.json] %s not found at %s&#34;</span><span class="w"> </span><span class="nx">$cffFile</span><span class="w"> </span><span class="na">.RelPermalink</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span><span class="x">
+</span></span></span></code></pre></div></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q108218387" title="Citation File Format" rel="related">Wikidata Eintrag: Citation File Format</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1713" title="Quellenangabe" rel="related">Wikidata Eintrag: Quellenangabe</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q22661177" title="Zenodo" rel="related">Wikidata Eintrag: Zenodo</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q281876" title="YAML" rel="related">Wikidata Eintrag: YAML</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q364" title="Q364" rel="related">Wikidata Eintrag: Q364</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/wasm-dx/article.html">Meine Erfahrungen mit WASM</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/software-metadata/article.html">Metadaten für Software</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/linkedart-metadata/article.html">Linked Art Metadaten</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/exhibitions-in-wikidata/article.html">Ausstellungen in Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/mastodon-archive/article.html">Mastodon Archiv</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">Citation File Format</span>: <a href="https://citation-file-format.github.io/" target="_blank">https://citation-file-format.github.io/</a></span><br/><span class="footnote-number">10</span>: <span class="footnote-content"><span class="footnote-title"><code>OutputFormat</code></span>: <a href="https://gohugo.io/configuration/output-formats/" target="_blank">https://gohugo.io/configuration/output-formats/</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">Citation File Format</span>: <a href="https://citation-file-format.github.io/" target="_blank">https://citation-file-format.github.io/</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">GitHub</span>: <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files" target="_blank">https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">Zenodo</span>: <a href="https://help.zenodo.org/docs/github/describe-software/citation-file/" target="_blank">https://help.zenodo.org/docs/github/describe-software/citation-file/</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">CFFInit</span>: <a href="https://citation-file-format.github.io/cff-initializer-javascript/#/" target="_blank">https://citation-file-format.github.io/cff-initializer-javascript/#/</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title">CodeMeta</span>: <a href="https://codemeta.github.io/" target="_blank">https://codemeta.github.io/</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title">Schema.org</span>: <a href="https://schema.org/" target="_blank">https://schema.org/</a></span><br/><span class="footnote-number">8</span>: <span class="footnote-content"><span class="footnote-title">&ldquo;Übersetzungstabelle&rdquo; (Cross-Walk)</span>: <a href="https://codemeta.github.io/crosswalk/" target="_blank">https://codemeta.github.io/crosswalk/</a></span><br/><span class="footnote-number">9</span>: <span class="footnote-content"><span class="footnote-title">hier</span>: <a href="https://github.com/codemeta/codemeta/tree/master/crosswalks" target="_blank">https://github.com/codemeta/codemeta/tree/master/crosswalks</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

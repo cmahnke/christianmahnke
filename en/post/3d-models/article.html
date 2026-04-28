@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="28 Apr 2026"/><link href="https://christianmahnke.de/css/8c3758fb7ae80cd920cfc4839cdeb1be.min.18076f4506ebc4859ef4d16391077a74779f93d071991a3623b1c6d37c0940fe.css" rel="stylesheet" integrity="sha256-GAdvRQbrxIWe9NFjkQd6dHefk9BxmRo2I7HG03wJQP4=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<script src="https://christianmahnke.de/js/7c5e413d7214974e3ccfb8f3d2ede61c.7cd3997e19784d62c29d37b5f7055d10ff777aa76ad614882c192ebc615fb6bb.js" integrity="sha256-fNOZfhl4TWLCnTe19wVdEP93eqdq1hSILBkuvGFftrs="></script><link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/3d-models/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">3D Models in the browser</h1><div class="post-description">3D representation of a 60s vase in the browser</div><div class="date">
+          <time class="post-data" datetime="2024-02-24T10:16:44&#43;02:00">Saturday, February 24, 2024</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/en/post/3d-models/</div>
+
+      <div class="tags-heading">Keywords:
+        <ul class="tags"><li>Light</li><li>Licht2024</li><li>3D</li><li>Three.js</li><li>Blender</li><li>Photogrammetry</li></ul>
+      </div><div class="post-body"><p>Maybe it will become a virtual exhibition about orange ceramics&hellip;</p>
+<p>In my office there is a small collection of orange ceramics from the 60s / 70s (mostly summarised as ‘Fat Lava’).</p>
+<h2 id="digitisation">Digitisation</h2>
+<p>The process is called 
+
+
+<a href="https://de.wikipedia.org/wiki/Photogrammetrie" title="photogrammetry" target="_blank">photogrammetry<span class="footnote-number">1</span></a>, whereby a 3D model (and the texture) is reconstructed from individual images from different viewing directions. Despite the relatively simple geometry and low (shown) spatial resolution, between 50 and 70 images were required for each of the exhibits shown.</p>
+<details>
+<summary>Data editing and conversion</summary>
+<ul>
+<li>The created models were post-processed in 
+
+
+<a href="https://www.blender.org/" title="Blender" target="_blank">Blender<span class="footnote-number">2</span></a>.</li>
+<li>The conversion to GLTF/GLB format was done with 
+
+
+<a href="https://github.com/CesiumGS/obj2gltf" title="obj2gltf" target="_blank"><code>obj2gltf</code><span class="footnote-number">3</span></a>.</li>
+<li>The metadata was added with 
+
+
+<a href="https://gltf-transform.dev/" title="gltf-transform" target="_blank"><code>gltf-transform</code><span class="footnote-number">4</span></a>.</li>
+</ul>
+</details>
+<h2 id="presentation">Presentation</h2>
+<p>The exhibits shown can be rotated and enlarged, and a full-screen display is also possible. The presentation using VR glasses could not be tested due to a lack of appropriate equipment. The prototype was realised using the JavaScript library 
+
+
+<a href="https://aframe.io/" title="A-Frame" target="_blank">A-Frame<span class="footnote-number">5</span></a>, so minor problems such as blurred perspectives are possible.
+The display was tested with Chrome and Safari, in Firefox and Edge the objects may be slightly distorted.</p>
+<h2 id="result">Result</h2>
+<div class="aframe-3d-model" id="_gtlf-b77afe8bc5c32a60cc7626c9f1d9905c" >
+  <a-scene renderer="colorManagement: true; antialias: true" xr-mode-ui="enabled: true;" embedded>
+    <a-assets>
+      <a-asset-item id="_gtlf-b77afe8bc5c32a60cc7626c9f1d9905c-src" src="https://christianmahnke.de/applications/digitalkoordinator/vase1/model/LavaVase.glb"></a-asset-item>
+    </a-assets>
+
+    <a-entity camera look-controls="enabled: false" orbit-controls="autoRotate: true; enableDamping: true; dampingFactor: 0.05; minDistance: 5; maxDistance: 10; initialPosition: 0 0.5 6; rotateSpeed:0.15; maxPolarAngle: 90;"  mouse-cursor=""></a-entity>
+    <a-entity gltf-model="#_gtlf-b77afe8bc5c32a60cc7626c9f1d9905c-src" rotation="0 90 0"></a-entity>
+    
+
+  </a-scene>
+</div></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q28135989" title="Q28135989" rel="related">Wikidata entry: Q28135989</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q3010266" title="West German Art Pottery" rel="related">Wikidata entry: West German Art Pottery</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q3525922" title="Three.js" rel="related">Wikidata entry: Three.js</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/uv-photogrammetry/article.html">Ultraviolet Photogrammetry</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/light/article.html">Blog series on the topic of &#34;light&#34;</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hdr-iiif/">HDR IIIF</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hdr-image-analysis/article.html">Contrast enhancement for UV images using HDR</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/ultrahdr/article.html">LibUltraHDR</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">References</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">photogrammetry</span>: <a href="https://de.wikipedia.org/wiki/Photogrammetrie" target="_blank">https://de.wikipedia.org/wiki/Photogrammetrie</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">Blender</span>: <a href="https://www.blender.org/" target="_blank">https://www.blender.org/</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title"><code>obj2gltf</code></span>: <a href="https://github.com/CesiumGS/obj2gltf" target="_blank">https://github.com/CesiumGS/obj2gltf</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title"><code>gltf-transform</code></span>: <a href="https://gltf-transform.dev/" target="_blank">https://gltf-transform.dev/</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">A-Frame</span>: <a href="https://aframe.io/" target="_blank">https://aframe.io/</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

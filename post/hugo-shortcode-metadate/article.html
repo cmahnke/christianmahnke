@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="28 Apr 2026"/><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.924782ad3f68a86bacf0e237c9202f9f7f89b29d08847c72b5f170be4360217b.css" rel="stylesheet" integrity="sha256-kkeCrT9oqGus8OI3ySAvn3&#43;Jsp0IhHxytfFwvkNgIXs=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/hugo-shortcode-metadate/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Metadaten für Hugo Shortcodes</h1><div class="date">
+          <time class="post-data" datetime="2024-01-30T18:22:44&#43;02:00">Dienstag, 30. Januar 2024</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/hugo-shortcode-metadate/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>Hugo</li></ul>
+      </div><div class="post-body"><p>Für meine Blogs benutze ich ein Hugo Theme als eine Art Funktionsbibliothek&hellip;</p>
+<p>&hellip; dazu gehören natürlich auch einige Shortcodes. Und wenn diese z.B. JavaScript Funktionalität benötigen, war e bisher so, dass diese einfach in ein großes Bundle integriert wurde. Völlig egal, ob der Shortcode diese auf einer einer Seite brauchte, es wurde immer ausgeliefert&hellip;</p>
+<p>Keine besonders skalierbare Lösung, besonders nicht, wenn der der Shortcode nie zum Einsatz kommt. Der normale Weg dies Problem in Hugo zu lösen ist ein Flag, das der Shortcode setzt und das dann bei der Generierung des HTML Headers ausgewertet wird. Hier ein ähnliches Beispiel aus der 
+
+
+<a href="https://gohugo.io/content-management/diagrams/" title="Dokumentation" target="_blank">Dokumentation<span class="footnote-number">1</span></a>:</p>
+<p>Als Teil des Shortcodes (Statt 
+
+
+<a href="https://gohugo.io/methods/page/store/" title=".Page.Store" target="_blank"><code>.Page.Store</code><span class="footnote-number">2</span></a> sieht man auch manchmal das ältere 
+
+
+<a href="https://gohugo.io/methods/page/scratch/" title=".Scratch" target="_blank"><code>.Scratch</code><span class="footnote-number">3</span></a>):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="na">.Page.Store.Set</span><span class="w"> </span><span class="s">&#34;hasMermaid&#34;</span><span class="w"> </span><span class="k">true</span><span class="w"> </span><span class="cp">}}</span>
+</span></span></code></pre></div><p>Als Teil des Templates, dass den HTML Header erstellt:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="na">.Store.Get</span><span class="w"> </span><span class="s">&#34;hasMermaid&#34;</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;module&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">import</span> <span class="nx">mermaid</span> <span class="nx">from</span> <span class="s1">&#39;https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">mermaid</span><span class="p">.</span><span class="nx">initialize</span><span class="p">({</span> <span class="nx">startOnLoad</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span>
+</span></span></code></pre></div><p>Aber gerade für eine Funktionsbibliothek (bzw. generell) ist das keine gute / elagante Lösung, da so die Shortcodes und das Header Template hart miteinander verknüpft werden. Daher erfordern neue Shortcodes immer Anpassungen an den Templates. Wäre es nicht schöner, wenn die Informationen zu den benötigten Scripts und Stylesheets direkt bei dem Shortcode hinterlegt werden könnte?</p>
+<h2 id="shortcodes-erweitern">Shortcodes erweitern</h2>
+<p>Da Shortcodes einfach nur Templates sind, kann man auch so ziemlich alles darin machen, z.B. weitere Templates definieren, hier die Datei <code>/layouts/shortcodes/toc.html</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;toc&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;toc-header&#34;</span><span class="p">&gt;</span><span class="cp">{{</span><span class="w"> </span><span class="nx">i18n</span><span class="w"> </span><span class="s">&#34;toc&#34;</span><span class="w"> </span><span class="cp">}}</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="na">.Page.TableOfContents</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">define</span><span class="w"> </span><span class="s">&#34;_partials/shortcodes/toc-metadata.html&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;css&#34;</span><span class="w"> </span><span class="k">slice</span><span class="w"> </span><span class="s">&#34;js&#34;</span><span class="w"> </span><span class="k">slice</span><span class="w"> </span><span class="s">&#34;scss&#34;</span><span class="w"> </span><span class="o">(</span><span class="k">slice</span><span class="w"> </span><span class="s">&#34;scss/toc.scss&#34;</span><span class="o">))</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">jsonify</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span></code></pre></div><p>Der wichtige Teil ist hier die Definition eines zusätzlichen Templates (<code>define</code>), dieses folgt einer Namenskonvention, damit es wieder auffindbar ist:</p>
+<ul>
+<li>Das Template wird im virtuellen Verzeichnis <code>_partials/shortcodes/</code> hinterlegt</li>
+<li>Der Name ist der des Shortcodes / Templates (<code>toc</code>), gefolgt von <code>-metadata.html</code></li>
+</ul>
+<p>Der Shortcode definiert eine einfache Datenstruktur in der Form (als YAML):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">css</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>-<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">js</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>-<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">scss</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>-<span class="w">
+</span></span></span></code></pre></div><p>Diese Struktur wird als JSON serialisiert, damit man sie einfach als String übergeben kann, letzteres ist vermutlich optional.</p>
+<h2 id="shortcode-metadaten-auswerten">Shortcode-Metadaten auswerten</h2>
+<p>Das oben ist aber nur die Hälfte, irgendwie müssen die Daten dann auch bei der Generierung des HTML Headers, oder der jeweiligen Dateien (CSS und JavaScript) zur Verfügung stehen.</p>
+<p>Da man nur prüfen kann, ob ein Shortcode auf einer Seite verwendet wird, braucht es zuerst eine Liste aller genutzten Shortcodes, dieser kann man dann auch gleich als Cache nutzen, um später weniger oft in die benötigten Seiten und Templates schauen zu müssen.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="nx">$includes</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">dict</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="nx">$shortcodeTags</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">slice</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$page</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">$.Site.Pages</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="nx">$page</span><span class="na">.File</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="nx">$matches</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">findRESubmatch</span><span class="w"> </span><span class="s">`{{[&lt;%]\s*([^\s]*)\b.*\s*[%&gt;]}}`</span><span class="w"> </span><span class="nx">$page</span><span class="na">.RawContent</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="nx">$matches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;shortcodes/shortcode-helper-extract-matches.html&#34;</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;matches&#34;</span><span class="w"> </span><span class="nx">$matches</span><span class="o">)</span><span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">$matches</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$shortcodeTags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$shortcodeTags</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">append</span><span class="w"> </span><span class="nx">$matches</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cm">{{/* Remove shortcodes starting with &#39;/&#39; */}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="nx">$shortcodes</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">slice</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$tag</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">$shortcodeTags</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="o">(</span><span class="nx">hasPrefix</span><span class="w"> </span><span class="nx">$tag</span><span class="w"> </span><span class="s">&#34;/&#34;</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="nx">$shortcodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$shortcodes</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">append</span><span class="w"> </span><span class="nx">$tag</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cm">{{/* Remove any duplicates */}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="nx">$shortcodes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$shortcodes</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">uniq</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="nx">$candidates</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">slice</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$shortcode</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">$shortcodes</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">{{/* Find definition of each found shortcode, this way we can make sure to include the ones defined by any theme */}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$shortcodeFile</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">printf</span><span class="w"> </span><span class="s">&#34;layouts/shortcodes/%s.html&#34;</span><span class="w"> </span><span class="nx">$shortcode</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">fileExists</span><span class="w"> </span><span class="nx">$shortcodeFile</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="nx">$shortcodeContent</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">readFile</span><span class="w"> </span><span class="nx">$shortcodeFile</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">{{/* Get the inline partial returning the required metadata for the shortcode */}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="nx">$matches</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">findRESubmatch</span><span class="w"> </span><span class="s">`{{-?\s*define\s*&#34;(.*-metadata.*)&#34;\s*-?}}`</span><span class="w"> </span><span class="nx">$shortcodeContent</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="nx">$template</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="o">(</span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;shortcodes/shortcode-helper-extract-matches.html&#34;</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;matches&#34;</span><span class="w"> </span><span class="nx">$matches</span><span class="o">)</span><span class="w"> </span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="k">len</span><span class="w"> </span><span class="nx">$template</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="nx">$template</span><span class="w"> </span><span class="nx">0</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cm">{{/* Changed for Hugo 0.146.0 */}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">replace</span><span class="w"> </span><span class="nx">$template</span><span class="w"> </span><span class="s">&#34;_partials/&#34;</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$include</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">unmarshal</span><span class="w"> </span><span class="o">(</span><span class="nx">partialCached</span><span class="w"> </span><span class="nx">$template</span><span class="w"> </span><span class="na">.</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">isset</span><span class="w"> </span><span class="nx">$include</span><span class="w"> </span><span class="s">&#34;js&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">        <span class="cp">{{-</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="k">eq</span><span class="w"> </span><span class="o">(</span><span class="k">printf</span><span class="w"> </span><span class="s">&#34;%T&#34;</span><span class="w"> </span><span class="o">(</span><span class="k">index</span><span class="w"> </span><span class="nx">$include</span><span class="w"> </span><span class="s">&#34;js&#34;</span><span class="o">))</span><span class="w"> </span><span class="s">&#34;string&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">          <span class="cp">{{-</span><span class="w"> </span><span class="nx">$include</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">merge</span><span class="w"> </span><span class="nx">$include</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;js&#34;</span><span class="w"> </span><span class="o">(</span><span class="k">slice</span><span class="w"> </span><span class="o">(</span><span class="k">index</span><span class="w"> </span><span class="nx">$include</span><span class="w"> </span><span class="s">&#34;js&#34;</span><span class="o">)))</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">        <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">        <span class="cp">{{-</span><span class="w"> </span><span class="nx">$include</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">merge</span><span class="w"> </span><span class="nx">$include</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;js&#34;</span><span class="w"> </span><span class="k">slice</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="cm">{{/* ... */}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="cp">{{-</span><span class="w"> </span><span class="nx">$includes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">merge</span><span class="w"> </span><span class="nx">$includes</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="nx">$shortcode</span><span class="w"> </span><span class="nx">$include</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cm">{{/* Return a JSON containing all shortcodes and their required includes */}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="nx">$includes</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">jsonify</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">{{/* Can also be a seperate file */}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">define</span><span class="w"> </span><span class="s">&#34;_partials/shortcodes/shortcode-helper-extract-matches.html&#34;</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$matches</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.matches</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">$rMatches</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">slice</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$matches</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{-</span><span class="w"> </span><span class="nx">$rMatches</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$rMatches</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">append</span><span class="w"> </span><span class="o">(</span><span class="k">index</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="nx">1</span><span class="o">)</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{-</span><span class="w"> </span><span class="nx">return</span><span class="w"> </span><span class="nx">$rMatches</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{-</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">-}}</span>
+</span></span></code></pre></div><p>Die resultierenden Datenstruktur hat nun den Vorteil, dass alle möglichen Shortcodes bekannt sind und man nun jede Seite einfach auf der Vorhandensein geprüft werden kann. Das Template oben kann via <code>partialCached</code> in eine Variable gespeichert werden, damit ist sicher gestellt, dass der komplette Seiteninhalt nur einmal komplett durchlaufen werden muss. Im nächsten Fragment wird dann der Einsatz im HTML Header Template gezeigt:</p>
+<pre tabindex="0"><code>{{- $includes := unmarshal (partialCached &#34;shortcodes/shortcode-helper-cache.html&#34; .) -}}
+
+{{- if reflect.IsMap $includes -}}
+  {{/* Loop through the shortcode cache, check if one is used in the current page and collect the necessary requirements (includes) */}}
+  {{- range $shortcodeName, $refs := $includes  -}}
+    {{- if $context.HasShortcode $shortcodeName -}}
+      {{- if isset $refs &#34;js&#34; -}}
+        {{- $js = $js | append (index $refs &#34;js&#34;) -}}
+      {{- end -}}
+      {{- if isset $refs &#34;css&#34; -}}
+        {{- $css = $css | append (index $refs &#34;css&#34;) -}}
+      {{- end -}}
+      {{- if isset $refs &#34;scss&#34; -}}
+        {{- $scss = $scss | append (index $refs &#34;scss&#34;) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+</code></pre><p>Nachdem die Schleife durchlaufen ist, hat man Variablen, die die jeweils benötigten CSS, SCSS und JavaScript Dateien enthalten&hellip;</p>
+<h2 id="potentielle-verbesserungen">Potentielle Verbesserungen</h2>
+<ul>
+<li>Die Serialisierung in JSON zur Übergabe zwischen den Templates ist nicht notwendig. Man könnte einfach darauf verzichten</li>
+<li>Die Überprüfung der ob eine Datei wirklich eine Metadatendeninition enthält ist überflüssig, ohne sie könnten diese auch überschrieben werden, z.B. wenn der Shortcode in einem Theme definiert ist.</li>
+</ul>
+<h2 id="update-1542025">Update 15.4.2025</h2>
+<p>Mit Hugo 0.146.0 hat sich die 
+
+
+<a href="https://github.com/gohugoio/hugo/pull/13541" title="Struktur der Templates geändert" target="_blank">Struktur der Templates geändert<span class="footnote-number">4</span></a>, daher musste der Pfad in <code>define</code> geändert werden.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q110961986" title="Mermaid" rel="related">Wikidata Eintrag: Mermaid</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/wasm-dx/article.html">Meine Erfahrungen mit WASM</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/mastodon-archive/article.html">Mastodon Archiv</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hugo-cff-codemeta/article.html">CFF zu CodeMeta in Hugo</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hugo-datauris/article.html">Ressourcen als Data-URL in Hugo einbetten</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hugo-shared-metadata/article.html">Geteilte Metadaten für Hugo Seiten</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">Dokumentation</span>: <a href="https://gohugo.io/content-management/diagrams/" target="_blank">https://gohugo.io/content-management/diagrams/</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title"><code>.Page.Store</code></span>: <a href="https://gohugo.io/methods/page/store/" target="_blank">https://gohugo.io/methods/page/store/</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title"><code>.Scratch</code></span>: <a href="https://gohugo.io/methods/page/scratch/" target="_blank">https://gohugo.io/methods/page/scratch/</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">Struktur der Templates geändert</span>: <a href="https://github.com/gohugoio/hugo/pull/13541" target="_blank">https://github.com/gohugoio/hugo/pull/13541</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

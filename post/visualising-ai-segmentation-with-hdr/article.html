@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="28 Apr 2026"/><link href="https://christianmahnke.de/css/629ba9ba3f03248a38ee02e5316ac8d3.min.3de0001368b19a52c11bcfa5f18d82cd93a450b764bbb91c4e4fb503d89c5bcd.css" rel="stylesheet" integrity="sha256-PeAAE2ixmlLBG8&#43;l8Y2CzZOkULdku7kcTk&#43;1A9icW80=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<script src="https://christianmahnke.de/js/5c255f817a93e09587e188b3abbce066.83cbaf39bbe6f993625c9e3c6d51105c72d31b147ba7d4c28aec4c15adb4ffed.js" integrity="sha256-g8uvObvm+ZNiXJ48bVEQXHLTGxR7p9TCiuxMFa20/+0="></script><link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/visualising-ai-segmentation-with-hdr/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Visualisierung von KI Segmentierung mit HDR</h1><div class="post-description">Buzzword Blendwerk</div><div class="date">
+          <time class="post-data" datetime="2025-01-14T21:00:44&#43;02:00">Dienstag, 14. Januar 2025</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/visualising-ai-segmentation-with-hdr/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>Digitale Bilder</li><li>HDR</li><li>KI</li><li>Visualisierung</li></ul>
+      </div><div class="post-body"><p>Der erste Schritt zu visuell unterstützter Annotierung mit HDR&hellip;</p>
+<p>&hellip; dient als weiterer Anwendungsfall für HDR.</p>
+<h1 id="beispiel">Beispiel</h1>
+<p>Um Werbung für meine anderen Blogs zu machen dient hier ein Beitrag aus dem Blaufußtölpel Mode Blog: 
+
+
+<a href="https://xn--blaufusstlpel-qmb.de/post/das-herrenjournal-7-1939/" title="Das Herrenjournal Juli 1934" target="_blank">Das Herrenjournal Juli 1934<span class="footnote-number">1</span></a></p>
+<h1 id="umsetzung">Umsetzung</h1>
+<p>
+
+
+<a href="https://www.ultralytics.com/de" title="Ultralytics" target="_blank">Ultralytics<span class="footnote-number">2</span></a> ermöglicht hier (mit Python) die Bildsegmentierung. Es ist ein sehr einfach zu nutzendes Framework mit vortrainierten Modellen, zusätzlich ermöglicht es natürlich Trainieren eigener Modelle&hellip;</p>
+<p>Im Grunde reicht es, sich Bruchstücke aus der 
+
+
+<a href="https://docs.ultralytics.com/tasks/segment/" title="Dokumentation" target="_blank">Dokumentation<span class="footnote-number">3</span></a> zusammenzuklauben:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">jxlpy</span> <span class="kn">import</span> <span class="n">JXLImagePlugin</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cv2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">image_path</span> <span class="o">=</span> <span class="s2">&#34;images/page015.jxl&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Vorher Modell laden und ins richtige Verzeichnis legen</span>
+</span></span><span class="line"><span class="cl"><span class="n">model_path</span> <span class="o">=</span> <span class="s2">&#34;./models/yolo11x-seg.pt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">results</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">np_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">image</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_RGB2BGR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">names</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">names</span>
+</span></span><span class="line"><span class="cl">    <span class="n">boxes</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">boxes</span>
+</span></span><span class="line"><span class="cl">    <span class="n">masks</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">masks</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">masks</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">seg</span><span class="p">,</span> <span class="n">box</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">masks</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">boxes</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">t</span> <span class="o">=</span> <span class="n">names</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">box</span><span class="o">.</span><span class="n">cls</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">seg</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">seg</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+</span></span></code></pre></div><p>Und schon hat man (mit <code>seg</code>) ein NumPy Array, das die Maske in den Abmessungen des Eingangsbilden enthält. Damit kann man dann weitere Bildoperationen durchführen&hellip;</p>
+<p>Es müssen die folgenden Python Module installiert werden:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install jxlpy
+</span></span><span class="line"><span class="cl">pip install ultralytics
+</span></span><span class="line"><span class="cl">pip install opencv-python
+</span></span></code></pre></div><p>Wobei <code>jxlpy</code> nicht notwendig ist, wenn man keine JXL Bilder nutzt.</p>
+<p>Die Modelle können entweder direkt heruntergeladen und eingebunden werden, z.B. um damit direkt zu arbeiten, wie in dem Beispiel, oder über eine entsprechnde Konfiguration. Details bietet die verlinkte Dokumentation.</p>
+<h1 id="ergebnis">Ergebnis</h1>
+<p>Das Bild zeigt die Umrisse der Frau in der Mitte (Klasse <code>person</code>) hervorgehoben.</p>
+<p>Das bisherige Ergebnis kann sicher noch optimiert werden, was die Genauigkeit der Segmentierung angeht.</p>
+<p>Achtung: HDR Ansicht nach dem Klick auf das Vorschaubild, ca 2MB groß.</p>
+<div ></div>
+<details id="_hdr-check-071ea6ebcf3f3430c61be67bc65c82ae" class="hdr-check-result">
+  <summary>HDR Überprüfung</summary>
+  <p></p>
+</details>
+
+<script type="text/javascript">
+  const hdrCheckResult = document.getElementById("_hdr-check-071ea6ebcf3f3430c61be67bc65c82ae");
+  if (checkHDR()) {
+    hdrCheckResult.querySelector('p').innerText = "Ihr Browser unterstützt HDR!";
+    hdrCheckResult.classList.add("success");
+  } else {
+    hdrCheckResult.querySelector('p').innerText = "Ihr Browser unterstützt kein HDR, bitte probieren sie es in einem aktuellen Chromium basiertem Browser, wie Chrome, Edge oder Brave!";
+    hdrCheckResult.classList.add("fail");
+  }
+</script>
+<div id="_gallery-77618f1c520fd826879673e7ca1d0a27" class="gallery "><a class="gallery-image caption" href="img/das-herrenjournal-7-1939-page015.jpeg" data-pswp-width="1438" data-pswp-height="1920" target="_blank"><img src="https://christianmahnke.de/post/visualising-ai-segmentation-with-hdr/img/das-herrenjournal-7-1939-page015_hu_c6bd8e56b33abd62.webp" alt="HDR Aufnahme mit Hervorhebungen" class="gallery-preview" /><div class="hidden-caption-content">HDR Aufnahme mit Hervorhebungen</div></a></div></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q131738293" title="Ultralytics YOLO" rel="related">Wikidata Eintrag: Ultralytics YOLO</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q197520" title="NumPy" rel="related">Wikidata Eintrag: NumPy</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q56933" title="Segmentierung" rel="related">Wikidata Eintrag: Segmentierung</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/vintagereality-apple-spatial/article.html">Historische Stereogramme auf moderner Hardware</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/vintagereality-ai/article.html">KI Segmentierung für Stereoskopie-Karten</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-iiif-vips/article.html">HDR IIIF für alle mit VIPS</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-radiography-visualisation/article.html">HDR Bilder zur Visualisierung von Röntgenuntersuchungen</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/uv-photogrammetry/article.html">UV-Photogrammetrie</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">Das Herrenjournal Juli 1934</span>: <a href="https://xn--blaufusstlpel-qmb.de/post/das-herrenjournal-7-1939/" target="_blank">https://xn--blaufusstlpel-qmb.de/post/das-herrenjournal-7-1939/</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">Ultralytics</span>: <a href="https://www.ultralytics.com/de" target="_blank">https://www.ultralytics.com/de</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">Dokumentation</span>: <a href="https://docs.ultralytics.com/tasks/segment/" target="_blank">https://docs.ultralytics.com/tasks/segment/</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

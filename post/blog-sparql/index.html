@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Blog Metadaten über SPARQL abfragen · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Seit Anfang 2025 erfasse ich zusätzliche Metadaten für die Beiträge in diesem Blog.">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/blog-sparql/" />
+  <meta property="og:title" content="Blog Metadaten über SPARQL abfragen · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/blog-sparql/ogPreview_hu_13951beb24827704.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", Wikidata, Linked Open Data, SPARQL, Python, Webseite"><meta name="dc.subject" content="Wikidata"><meta name="dc.subject" content="Linked Open Data"><meta name="dc.subject" content="SPARQL"><meta name="dc.subject" content="Python"><meta name="dc.subject" content="Webseite">
+<meta name="generator" content="Hugo 0.160.1">
+<meta name="projektemacher.org:build-date" content="2026-04-28 01:42:48.997944351 &#43;0000 UTC m=&#43;1.183410998"><meta name="projektemacher.org:git-commit" content="332a7ed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/742489ff9acd0e4ca586ffbddc692343.min.120664d6cd6e043b393a8c9bd0111edccbdc853e224dbb619125dd6288648534.css" rel="stylesheet" integrity="sha256-EgZk1s1uBDs5Ooyb0BEe3MvchT4iTbthkSXdYohkhTQ=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<script src="https://christianmahnke.de/js/8a85bcb11715b8fa81e389627e7029ce.078e744550de90457c0b53f42a2690bee334b3f257d0a53ace017f36a627a692.js" integrity="sha256-B450RVDekEV8C1P0KiaQvuM0s/JX0KU6zgF/NqYnppI="></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/blog-sparql/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/blog-sparql/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/blog-sparql/","@type":"BlogPosting","about":[{"@id":"http://www.wikidata.org/entity/Q18692990","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Linked Open Data"},{"@id":"http://www.wikidata.org/entity/Q2013","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Wikidata"},{"@id":"http://www.wikidata.org/entity/Q28865","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Python"},{"@id":"http://www.wikidata.org/entity/Q35127","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Website"},{"@id":"http://www.wikidata.org/entity/Q54871","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"SPARQL"},{"@id":"http://www.wikidata.org/entity/Q115616582","@type":"Thing","name":"Linked Art"},{"@id":"http://www.wikidata.org/entity/Q118980507","@type":"Thing","name":"Oxigraph"},{"@id":"http://www.wikidata.org/entity/Q20155677","@type":"Thing","name":"WebAssembly"},{"@id":"http://www.wikidata.org/entity/Q28406945","@type":"Thing","name":"SpaCy"},{"@id":"http://www.wikidata.org/entity/Q3475322","@type":"Thing","name":"Schema.org"},{"@id":"http://www.wikidata.org/entity/Q3539533","@type":"Thing","name":"Triplestore"},{"@id":"http://www.wikidata.org/entity/Q403574","@type":"Thing","name":"NER"},{"@id":"http://www.wikidata.org/entity/Q54871","@type":"Thing","name":"SPARQL"},{"@id":"http://www.wikidata.org/entity/Q56655440","@type":"Thing","name":"HDT"},{"@id":"http://www.wikidata.org/entity/Q575650","@type":"Thing","name":"Q575650"},{"@id":"http://www.wikidata.org/entity/Q6108942","@type":"Thing","name":"JSON-LD"},{"@id":"http://www.wikidata.org/entity/Q611299","@type":"Thing","name":"Art \u0026 Architecture Thesaurus"}],"author":{"@id":"http://www.wikidata.org/entity/Q137668638","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"dateModified":"2026-04-28","datePublished":"2026-04-17","headline":"Blog Metadaten über SPARQL abfragen","inLanguage":"de","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Wikidata","LOD","SPARQL","Python","Website"],"name":"Blog Metadaten über SPARQL abfragen","url":"https://christianmahnke.de/post/blog-sparql/","workTranslation":[{"@id":"https://christianmahnke.de/en/post/blog-sparql/","@type":"CreativeWork","inLanguage":"en","name":"Querying blog metadata via SPARQL","url":"https://christianmahnke.de/en/post/blog-sparql/"}]}
+</script>
+</head><body class="section-post dir-postblog-sparql blog  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/blog-sparql/" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Blog Metadaten über SPARQL abfragen</h1><div class="date">
+          <time class="post-data" datetime="2026-04-17T22:39:44&#43;02:00">Freitag, 17. April 2026</time>
+        </div><div class="post-body"><p>Seit Anfang 2025 erfasse ich zusätzliche Metadaten für die Beiträge in diesem Blog.</p>
+<p>Die Anregung dazu kam von <a href="https://www.vermessungs-bibliothek.de/" target="_blank">Frank Reichert</a> via Mastodon als Kommentar zu dem Beitrag <a href="https://christianmahnke.de/post/archives-citizen-participation/">Archive: Bestandsaufbau durch Bürgerbeteiligung fördern</a>.</p>
+<p>Dazu habe ich zu Beginn des Jahres weitere 
+      
+        
+      <a data-wikidata-entity="Q6108942" href="https://de.wikipedia.org/wiki/JSON-LD" target="_blank">JSON-LD</a>-basierte Metadatenformate wie <a href="https://codemeta.github.io/" target="_blank">Codemeta</a> und <a href="https://linked.art/" target="_blank">Linked Art</a> für einige Beiträge hinzugefügt und die <a href="https://schema.org/" target="_blank">Schema.org</a> verbessert.</p>
+
+<details>
+  <summary>Ausgangsdaten</summary>
+  <p>Für die Erfassung der notwendigen Triplets wird nur diese Schema.org <a href="https://christianmahnke.de/meta/schema.org/index.json">Ausgangsdatei</a> genutzt. Daraus werden alle notwendigen Daten und ihre -quellen gezogen:</p>
+<ul>
+<li><strong>Wikidata Q-IDs</strong></li>
+<li><strong>Linked Art</strong>, siehe <a href="https://christianmahnke.de/post/linkedart-metadata/">Linked Art Metadaten</a></li>
+<li><strong>CodeMeta</strong>, siehe <a href="https://christianmahnke.de/post/software-metadata/">Metadaten für Software</a></li>
+</ul>
+</details>
+
+<p>Auch wenn es weiterhin keine &ldquo;tollen&rdquo; Anwendungen gibt, können nun über diese Daten 
+      
+        
+      <a data-wikidata-entity="Q54871" href="https://de.wikipedia.org/wiki/SPARQL" target="_blank">SPARQL</a>-Abfragen ausgeführt werden. Damit es nicht langweilig wird, sind dabei einige Daten aus Wikidata Teil des Corpus.</p>
+<p>Für die Erstellung werden die Schema.org-Daten des Blogs als Ausgangsbasis genommen und die Linked-Art- und Code-Meta-Einträge hinzugezogen. Der entstandene Graph wird dann mit Daten aus Wikidata angereichert und in das 
+      
+        
+      <a data-wikidata-entity="Q56655440" href="https://en.wikipedia.org/wiki/HDT_%28data_format%29" target="_blank">HDT-Format</a> überführt.</p>
+<p>Dieser Weg ist notwendig, da die Anzahl der Entitäten, besonders seit Anfang dieses Jahres, massiv gestiegen ist: Ursprünglich wurden nur die Tags auf die jeweiligen Wikidata-Entitäten abgebildet, nun existiert jedoch ein Script, das sie semiautomatisch aus den jeweiligen Texten extrapoliiert. Dafür kommt ein Python-Skript auf Basis von SpaCy zum Einsatz.
+Aufgrund des Rate-Limits kommt es bei der Ausführung via SPARQL aus Wikidata recht schnell zu Fehlermeldungen. Andererseits resultiert das Serialisieren der Daten in einem JSON-LD-Graph in einer umfangreichen Datei.</p>
+<h2 id="abfrage">Abfrage</h2>
+<p><strong>Achtung: Die Abfragen können etwas dauern&hellip;</strong></p>
+<oxigraph-sparql
+      id="_sparql-eab373760b511be59415702523cb0419"
+      data-url="https://christianmahnke.de/meta/wikidata/enriched_entities.hdt"
+      auto-execute></oxigraph-sparql>
+<p class="wikidata-attribution">Enhält Daten von <a href="https://www.wikidata.org/" target="_blank">Wikidata</a>., lizensiert unter <a href="https://www.wikidata.org/wiki/Wikidata:Text_of_the_Creative_Commons_Public_Domain_Dedication" target="_blank">CC0</a>.</p>
+<h2 id="beispiele">Beispiele</h2>
+<ul>
+<li>Blog-Posts, in denen es um Künstler geht, die im 19. Jahrhundert geboren wurden, diese Abfrage macht nochmehr, aber die Daten sind noch nicht vorhanden.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sparql" data-lang="sparql"><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">schema</span><span class="p">:</span> <span class="nl">&lt;http://schema.org/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">wdt</span><span class="p">:</span> <span class="nl">&lt;http://www.wikidata.org/prop/direct/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">wd</span><span class="p">:</span> <span class="nl">&lt;http://www.wikidata.org/entity/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">xsd</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">SELECT</span> <span class="nv">?blogPost</span> <span class="nv">?artist</span> <span class="nv">?artistLabel</span> 
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nf">GROUP_CONCAT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="nv">?occLabel</span><span class="p">;</span> <span class="nf">separator</span><span class="o">=</span><span class="s">&#34;, &#34;</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">?occupations</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">?birthDate</span>
+</span></span><span class="line"><span class="cl"><span class="k">WHERE</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">?blogPost</span> <span class="k">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">BlogPosting</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nn">schema</span><span class="p">:</span><span class="nt">about</span> <span class="nv">?artist</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nv">?artist</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P106</span> <span class="nv">?directOccupation</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nv">?directOccupation</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P279</span><span class="o">*</span> <span class="nv">?occupation</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">  <span class="err">VALUES</span> <span class="nv">?occupation</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nn">wd</span><span class="p">:</span><span class="nt">Q483507</span>   <span class="c"># Künstler</span>
+</span></span><span class="line"><span class="cl">    <span class="nn">wd</span><span class="p">:</span><span class="nt">Q1028181</span>  <span class="c"># Maler</span>
+</span></span><span class="line"><span class="cl">    <span class="nn">wd</span><span class="p">:</span><span class="nt">Q1281618</span>  <span class="c"># Bildhauer</span>
+</span></span><span class="line"><span class="cl">    <span class="nn">wd</span><span class="p">:</span><span class="nt">Q42973</span>    <span class="c"># Architekt</span>
+</span></span><span class="line"><span class="cl">    <span class="nn">wd</span><span class="p">:</span><span class="nt">Q15296</span>    <span class="c"># Schriftsteller</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">OPTIONAL</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">?artist</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?artistLabel</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">FILTER</span><span class="p">(</span><span class="nf">LANG</span><span class="p">(</span><span class="nv">?artistLabel</span><span class="p">)</span> <span class="o">=</span> <span class="s">&#34;de&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">OPTIONAL</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">?directOccupation</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?occLabel</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">FILTER</span><span class="p">(</span><span class="nf">LANG</span><span class="p">(</span><span class="nv">?occLabel</span><span class="p">)</span> <span class="o">=</span> <span class="s">&#34;de&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nv">?artist</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P569</span> <span class="nv">?birthDate</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">  <span class="k">FILTER</span><span class="p">(</span><span class="nf">year</span><span class="p">(</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span><span class="p">(</span><span class="nf">str</span><span class="p">(</span><span class="nv">?birthDate</span><span class="p">)))</span> <span class="o">&lt;</span> <span class="mi">1900</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">GROUP BY</span> <span class="nv">?blogPost</span> <span class="nv">?artist</span> <span class="nv">?artistLabel</span> <span class="nv">?birthDate</span>
+</span></span><span class="line"><span class="cl"><span class="k">ORDER BY</span> <span class="nv">?birthDate</span>
+</span></span></code></pre></div><ul>
+<li>Die Koordinaten der Orte, die in Blogbeiträgen mit den Schlagwörtern &ldquo;Museum&rdquo; und &ldquo;Ausstellung&rdquo; vorkommen.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sparql" data-lang="sparql"><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">schema</span><span class="p">:</span> <span class="nl">&lt;http://schema.org/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">wdt</span><span class="p">:</span> <span class="nl">&lt;http://www.wikidata.org/prop/direct/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">wd</span><span class="p">:</span> <span class="nl">&lt;http://www.wikidata.org/entity/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?blogPost</span> <span class="nv">?place</span> <span class="nv">?placeLabel</span> <span class="nv">?coordinates</span>
+</span></span><span class="line"><span class="cl"><span class="k">WHERE</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">?blogPost</span> <span class="k">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">BlogPosting</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nn">schema</span><span class="p">:</span><span class="nt">about</span> <span class="nv">?place</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nv">?place</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P31</span><span class="o">/</span><span class="nn">wdt</span><span class="p">:</span><span class="nt">P279</span><span class="o">*</span> <span class="nv">?type</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">  <span class="err">VALUES</span> <span class="nv">?type</span> <span class="p">{</span> <span class="nn">wd</span><span class="p">:</span><span class="nt">Q33506</span> <span class="nn">wd</span><span class="p">:</span><span class="nt">Q464980</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nv">?place</span> <span class="nn">wdt</span><span class="p">:</span><span class="nt">P625</span> <span class="nv">?coordinates</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">OPTIONAL</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">?place</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?placeLabel</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">FILTER</span><span class="p">(</span><span class="nf">LANG</span><span class="p">(</span><span class="nv">?placeLabel</span><span class="p">)</span> <span class="o">=</span> <span class="s">&#34;de&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
+<li>Anzahl der Triplets</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sparql" data-lang="sparql"><span class="line"><span class="cl"><span class="k">SELECT</span> <span class="p">(</span><span class="nf">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">?count</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">WHERE</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">?s</span> <span class="nv">?p</span> <span class="nv">?o</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
+<li>Abfrage nach Artikeln, die dem Term (Schlagwort) &ldquo;Holzschnitt&rdquo; aus dem 
+      
+        
+      <a data-wikidata-entity="Q611299" href="https://de.wikipedia.org/wiki/Art_and_Architecture_Thesaurus" target="_blank">Getty ATT Thesaurus</a> (<code>http://vocab.getty.edu/aat/300041405</code>) entsprechen.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sparql" data-lang="sparql"><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">schema</span><span class="p">:</span> <span class="nl">&lt;http://schema.org/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">aat</span><span class="p">:</span> <span class="nl">&lt;http://vocab.getty.edu/aat/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">crm</span><span class="p">:</span> <span class="nl">&lt;http://www.cidoc-crm.org/cidoc-crm/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">?article</span> <span class="nv">?object</span> <span class="nv">?technique</span> <span class="nv">?techniqueLabel</span>
+</span></span><span class="line"><span class="cl"><span class="k">WHERE</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">?article</span> <span class="k">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">BlogPosting</span> <span class="p">;</span> 
+</span></span><span class="line"><span class="cl">           <span class="nn">schema</span><span class="p">:</span><span class="nt">about</span> <span class="nv">?object</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nv">?object</span> <span class="k">a</span> <span class="nn">crm</span><span class="p">:</span><span class="nt">E22_Human-Made_Object</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">          <span class="nn">crm</span><span class="p">:</span><span class="nt">P108i_was_produced_by</span> <span class="nv">?production</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nv">?production</span> <span class="nn">crm</span><span class="p">:</span><span class="nt">P32_used_general_technique</span> <span class="nv">?technique</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="err">VALUES</span> <span class="nv">?technique</span> <span class="p">{</span> <span class="nn">aat</span><span class="p">:</span><span class="nt">300041405</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nv">?technique</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?techniqueLabel</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="potentielle-probleme">Potentielle Probleme</h2>
+<p>Während der Umsetzung sind mir mit Chrome ein paar kleine Probleme aufgefallen: Nach mehrmaligem Neuladen der Seite traten Speicherfehler auf – vermutlich räumt der Browser den Arbeitsspeicher eines Tabs nicht richtig auf bzw. cacht mehr als notwendig. In diesem Fall erscheint eine Fehlermeldung (z.B. <code>memory access out of bounds</code>) in der Statusleiste und der Browser muss neu gestartet werden.</p>
+<h2 id="umsetzung">Umsetzung</h2>
+<p>Die im ersten Schritt erstellte HDT-Datei wird mit der 
+      
+        
+      <a data-wikidata-entity="Q20155677" href="https://en.wikipedia.org/wiki/WebAssembly" target="_blank">WASM</a>-Variante der 
+      
+        
+      <a data-wikidata-entity="Q575650" href="https://en.wikipedia.org/wiki/Rust_%28programming_language%29" target="_blank">Rust</a> Bibliothek <a href="https://github.com/KonradHoeffner/hdt" target="_blank">HDT</a> geladen. Die Inhalte werden dann im Arbeitsspeicher konvertiert, damit sie in <a href="https://github.com/oxigraph/oxigraph" target="_blank">OxiGraph</a> (ebenfalls Rust zu Wasm kompiliert) verwendet werden können. Streng genommen ist OxiGraph an dieser Stelle gar nicht notwendig, da HDT auch SPARQL-Abfragen ausführen kann. OxiGraph hat jedoch den Vorteil, auch verteilte SPARQL-Abfragen ausführen zu können.</p>
+<p>Für die Darstellung als Code Editor kommt <a href="https://github.com/aatauil/sparql-editor" target="_blank"><code>sparql-editor</code></a> zum Einsatz.</p>
+<p><strong>Die gesamte Anwendung läuft also direkt im Browser, ohne dynamische Serverkomponente.</strong></p>
+<h2 id="nächste-schritte">Nächste Schritte</h2>
+<p>Derzeit werden nur die Inhalte des Blogs abgefragt und Teil der Datengrundlage. Im nächsten Schritt sollen auch die <a href="https://christianmahnke.de/collections/" target="_blank">Sammlungsseite</a> und weitere Metadatenformate (wie IIIF-Manifeste) integriert werden.</p>
+<h2 id="update-21426">Update 21.4.26</h2>
+<p>Der Graph aus diesem Post kann auch zur Visualisierung der Themen dieses Blogs genutzt werden: <a href="https://christianmahnke.de/post/blog-visualisation/" target="_blank">Blog Metadaten visualisiert</a>.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q115616582" title="Linked Art" rel="related">Wikidata Eintrag: Linked Art</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q118980507" title="Oxigraph" rel="related">Wikidata Eintrag: Oxigraph</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q28406945" title="SpaCy" rel="related">Wikidata Eintrag: SpaCy</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q3475322" title="Schema.org" rel="related">Wikidata Eintrag: Schema.org</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q3539533" title="Triplestore" rel="related">Wikidata Eintrag: Triplestore</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q403574" title="NER" rel="related">Wikidata Eintrag: NER</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Diesen Beitrag zitieren
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2026)</span>: <span class="cite-title">Blog Metadaten über SPARQL abfragen</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], 17.04.2026. Online-Publikation: <a class="cite-link" href="https://christianmahnke.de/post/blog-sparql/">https://christianmahnke.de/post/blog-sparql/</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/post/blog-sparql/citation.bib" title="Als BibTex herunterladen">Als BibTex herunterladen</a>
+  </div>
+</details>
+</div><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/Wikidata" title="Wikidata">#Wikidata</a><a href="https://christianmahnke.de/tags/LOD" title="Linked Open Data">#Linked Open Data</a><a href="https://christianmahnke.de/tags/SPARQL" title="SPARQL">#SPARQL</a><a href="https://christianmahnke.de/tags/Python" title="Python">#Python</a><a href="https://christianmahnke.de/tags/Website" title="Webseite">#Webseite</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/blog-visualisation/">Blog Metadaten visualisiert</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/simple-wikidata-queries/">Einfache Datenanreicherung mit Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/exhibitions-in-wikidata/">Ausstellungen in Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/wikidata-entities-in-hugo/">Wikidata Links in Hugo</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/windows-remote/">Windows Remote Management</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/blog-sparql/" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Museum on Christian Mahnke</title>
+    <link>https://christianmahnke.de/tags/Museum/</link>
+    <description>Recent content in Museum on Christian Mahnke</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <copyright>Christian Mahnke</copyright>
+    <atom:link href="https://christianmahnke.de/tags/Museum/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Museumsstück TFTP</title>
+      <link>https://christianmahnke.de/post/museum-piece-tftp/citation.bib</link>
+      <pubDate>Tue, 17 Mar 2026 14:58:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://christianmahnke.de/post/museum-piece-tftp/citation.bib</guid>
+      <description>&lt;p&gt;Ab und zu fotografiere ich Fehlermeldungen, besonders, wenn sie interessante Informationen über das System preisgeben&amp;hellip;&#xA;Heute: Ein fehlgeschlagener &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q753479&#34; href=&#34;https://de.wikipedia.org/wiki/Bootstrap_Protocol&#34; target=&#34;_blank&#34;&gt;Netzwerkboot&lt;/a&gt; einer Medienstation im &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q96482839&#34; href=&#34;https://de.wikipedia.org/wiki/Technisches_Nationalmuseum_in_Prag&#34; target=&#34;_blank&#34;&gt;Technischen Nationalmuseum&lt;/a&gt; in &#xA;      &#xA;        &#xA;      &lt;a data-wikidata-entity=&#34;Q1085&#34; href=&#34;https://de.wikipedia.org/wiki/Prag&#34; target=&#34;_blank&#34;&gt;Prag&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

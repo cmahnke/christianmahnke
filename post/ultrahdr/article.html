@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="28 Apr 2026"/><link href="https://christianmahnke.de/css/629ba9ba3f03248a38ee02e5316ac8d3.min.3de0001368b19a52c11bcfa5f18d82cd93a450b764bbb91c4e4fb503d89c5bcd.css" rel="stylesheet" integrity="sha256-PeAAE2ixmlLBG8&#43;l8Y2CzZOkULdku7kcTk&#43;1A9icW80=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<script src="https://christianmahnke.de/js/5c255f817a93e09587e188b3abbce066.83cbaf39bbe6f993625c9e3c6d51105c72d31b147ba7d4c28aec4c15adb4ffed.js" integrity="sha256-g8uvObvm+ZNiXJ48bVEQXHLTGxR7p9TCiuxMFa20/+0="></script><link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/ultrahdr/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">LibUltraHDR</h1><div class="date">
+          <time class="post-data" datetime="2024-05-23T11:22:44&#43;02:00">Donnerstag, 23. Mai 2024</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/ultrahdr/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>Licht</li><li>Licht2024</li><li>Digitale Bilder</li><li>HDR</li></ul>
+      </div><div class="post-body"><p>Für ein in Vorbereitung befindliches Projekt war es nach der 
+
+
+<a href="https://christianmahnke.de/post/hdr-awesome-list/" title="Recherche">Recherche<span class="footnote-number">1</span></a> notwendig einige Wege zu erkunden und Werkzeuge zu schaffen. Ausgehend von den Vorarbeiten von 
+
+
+<a href="https://gregbenzphotography.com/hdr/" title="Greg Benz" target="_blank">Greg Benz<span class="footnote-number">2</span></a>, zur HDR-Unterstützung, war LibUltraHDR der sinnvollste Kandidat für weitere Experimente.</p>
+<h1 id="libultrahdr">LibUltraHDR</h1>
+<p>
+
+
+<a href="https://github.com/google/libultrahdr" title="LibUltraHDR" target="_blank">LibUltraHDR<span class="footnote-number">3</span></a> ist primär eine Bibliothek für UltraHDR Inhalte. Das Format selber ist mit 
+
+
+<a href="https://en.wikipedia.org/wiki/JPEG#JPEG_Multi-Picture_Format" title="MPO" target="_blank">MPO<span class="footnote-number">4</span></a> vergleichbar. Es existiert ein primäres Bild, hier ein SDR, dass auch als Fallback für Software ohne UltraHDR Unterstützung fungiert und in den Metadaten ein weiteres Bild, die sogenannte Gain Map. Diese bildet die auf das SDR anzuwendende Verstärkung ab. Mehr Informationen zur Funktionsweise von Gain Maps bietet 
+
+
+<a href="https://helpx.adobe.com/camera-raw/using/gain-map.html" title="Adobe" target="_blank">Adobe<span class="footnote-number">5</span></a>.</p>
+<p>Eine technische Dokumentation bietet 
+
+
+<a href="https://developer.android.com/media/platform/hdr-image-format?hl=de" title="Android Developers" target="_blank">Android Developers<span class="footnote-number">6</span></a> (automatische Übersetzung von mäßiger Qualität).</p>
+<h2 id="status">Status</h2>
+<p>Derzeit arbeiten Greg Benz und weitere daran bei relevanten Open Source Projekten um eine Unterstützung des Formats zu werben:</p>
+<ul>
+<li>
+
+
+<a href="https://github.com/libvips/libvips/issues/3799" title="LibVips #3799" target="_blank">LibVips #3799<span class="footnote-number">7</span></a></li>
+<li>
+
+
+<a href="https://github.com/ImageMagick/ImageMagick/issues/6377" title="ImageMagick #6377" target="_blank">ImageMagick #6377<span class="footnote-number">8</span></a></li>
+<li>
+
+
+<a href="https://github.com/Tom94/tev/issues/226" title="Tev #226" target="_blank"><strong>Tev</strong> #226<span class="footnote-number">9</span></a></li>
+<li>
+
+
+<a href="https://github.com/13thsymphony/HDRImageViewer/issues/66" title="HDRImageViewer #66" target="_blank">HDRImageViewer #66<span class="footnote-number">10</span></a></li>
+<li>
+
+
+<a href="https://trac.ffmpeg.org/ticket/10974" title="ffmpeg #10974" target="_blank"><code>ffmpeg</code> #10974<span class="footnote-number">11</span></a></li>
+<li>
+
+
+<a href="https://github.com/python-pillow/Pillow/issues/8036" title="Pillow #8036" target="_blank">Pillow #8036<span class="footnote-number">12</span></a></li>
+<li>
+
+
+<a href="https://github.com/Fyrd/caniuse/issues/6759" title="CanIUse #6759" target="_blank">CanIUse #6759<span class="footnote-number">13</span></a></li>
+<li>
+
+
+<a href="https://github.com/libjxl/libjxl/issues/2685" title="libjxl #2685" target="_blank"><code>libjxl</code> #2685<span class="footnote-number">14</span></a></li>
+<li>
+
+
+<a href="https://github.com/pulsejet/memories/issues/1110" title="Memories #1110" target="_blank">Memories #1110<span class="footnote-number">15</span></a></li>
+</ul>
+<p>Es existieren auch einige erste Webseiten mit Unterstützung:</p>
+<ul>
+<li>
+
+
+<a href="https://gainmap-creator.monogrid.com/" title="Gainmap Creator" target="_blank">Gainmap Creator<span class="footnote-number">16</span></a></li>
+<li>
+
+
+<a href="https://github.com/albertz/playground/wiki/HDR-demo" title="Demo für Konvertierung mittels ffmpeg und libultrahdr" target="_blank">Demo für Konvertierung mittels <code>ffmpeg</code> und <code>libultrahdr</code><span class="footnote-number">17</span></a> von 
+
+
+<a href="https://github.com/albertz" title="Albert Zeyer" target="_blank">Albert Zeyer<span class="footnote-number">18</span></a></li>
+<li>
+
+
+<a href="https://github.com/albertz/playground/blob/master/ultrahdr.py" title="libultrahdr and Python" target="_blank"><code>libultrahdr</code> and Python<span class="footnote-number">19</span></a>, ebenfalls von Albert Zeyer</li>
+</ul>
+<h2 id="manuelle-konvertierung-mit-ffmpeg">Manuelle Konvertierung mit <code>ffmpeg</code></h2>
+<p>Seit dem Release von Version 0.8 von <code>libultrahdr</code> haben sich die Kommandozeilenoptionen geändert, hier die aktuelle (Mai 2024) Fassung. Wichtig ist, dass:</p>
+<ul>
+<li>Die Abmessungen des Eingangsbildes bekannt sind (X, Y)</li>
+<li>Die Abmessung durch zwei teilbar (gerade) sind</li>
+</ul>
+<p>Im ersten Schritt muss eine YUV Repäsentation des Eingangsbildes erzeugt werden, diese wird als Gain Map genutzt, also als Definition der Verstärkung.</p>
+<pre tabindex="0"><code>ffmpeg -i input.jpg -filter:v format=p010 output.yuv
+</code></pre><p>Im nächsten Schritt kann dann die erstellte Gain Map genutzt werden um das gewünschte Bild zu erzeugen:</p>
+<pre tabindex="0"><code>ultrahdr_app -m 0 -p output.yuv -i input.jpg -w X -h Y -a 0
+</code></pre><p>In den nächsten Monaten kann damit gerechnet werden, dass das etwas esoterische YUV Format entweder leichter erzeugt werden kann oder gänzlich drauf verzichtet werden kann.</p>
+<h2 id="docker-image">Docker Image</h2>
+<p>Es existiert nun auch ein Docker Image, dass die jeweils aktuellste Version von <code>libultrahdr</code> zusammen mit ImageMagick mit UltraHDR Unterstützung bereitstellt.</p>
+<pre tabindex="0"><code>docker pull ghcr.io/cmahnke/hdr-tools:latest
+</code></pre><h1 id="nächste-schritte">Nächste Schritte</h1>
+<p>Derzeit ist die HDR Unterstützung von HDR-Bildern und -Inhalten auf Chrome und davon abgeleitete Browser beschränkt, diese habe allerdings einen Marktanteil von 75%. Die 
+
+
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=hdr" title="HDR Unterstützung von Firefox" target="_blank">HDR Unterstützung von Firefox<span class="footnote-number">20</span></a>, oder besser der Weg dahin, ist eher peinlich - so werden nicht mal HDR Video-Formate voll unterstützt.</p>
+<p>Für die Chrome-basierten Browsern allerdings soll es auch möglich sein, HTML Canvas Elemente mit HDR Inhalten zu bespielen.</p>
+<h1 id="update-6724">Update 6.7.24</h1>
+<p>Hier zwei Beispiele aus meinem Urlaub:</p>
+<div ></div>
+<details id="_hdr-check-73552d63dd10dc2cedd6b8489bd49a1a" class="hdr-check-result">
+  <summary>HDR Überprüfung</summary>
+  <p></p>
+</details>
+
+<script type="text/javascript">
+  const hdrCheckResult = document.getElementById("_hdr-check-73552d63dd10dc2cedd6b8489bd49a1a");
+  if (checkHDR()) {
+    hdrCheckResult.querySelector('p').innerText = "Ihr Browser unterstützt HDR!";
+    hdrCheckResult.classList.add("success");
+  } else {
+    hdrCheckResult.querySelector('p').innerText = "Ihr Browser unterstützt kein HDR, bitte probieren sie es in einem aktuellen Chromium basiertem Browser, wie Chrome, Edge oder Brave!";
+    hdrCheckResult.classList.add("fail");
+  }
+</script>
+<div id="_gallery-e0a55bf24e1fec4a7a9eb84fac09099a" class="gallery "><a class="gallery-image caption" href="img/IMG_5255.hdr.jpeg" data-pswp-width="4032" data-pswp-height="3024" target="_blank"><img src="https://christianmahnke.de/post/ultrahdr/img/IMG_5255.hdr_hu_a9d32f3cc4e732ba.webp" alt="Sonnenuntergang über Hörnum" class="gallery-preview" /><div class="hidden-caption-content">Sonnenuntergang über Hörnum</div></a><a class="gallery-image caption" href="img/IMG_5256.hdr.jpeg" data-pswp-width="8188" data-pswp-height="2340" target="_blank"><img src="https://christianmahnke.de/post/ultrahdr/img/IMG_5256.hdr_hu_f0b44d1d064549c5.webp" alt="Sonnenuntergang auf Föhr" class="gallery-preview" /><div class="hidden-caption-content">Sonnenuntergang auf Föhr</div></a></div>
+<p>HDR wird in der Vollbildansicht aktiviert.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1047199" title="Q1047199" rel="related">Wikidata Eintrag: Q1047199</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q136933249" title="gain map" rel="related">Wikidata Eintrag: gain map</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q2985103" title="Python Imaging Library" rel="related">Wikidata Eintrag: Python Imaging Library</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q6368" title="Webbrowser" rel="related">Wikidata Eintrag: Webbrowser</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q94" title="Android" rel="related">Wikidata Eintrag: Android</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q99738405" title="libjxl" rel="related">Wikidata Eintrag: libjxl</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-iiif/">HDR IIIF</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/uv-photogrammetry/article.html">UV-Photogrammetrie</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-image-analysis/article.html">Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-canvas-js/article.html">JavaScript Bibliothek für HDR</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/pong/article.html">Pong Visualisierung</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">Recherche</span>: <a href="https://christianmahnke.de/post/hdr-awesome-list/">/post/hdr-awesome-list/</a></span><br/><span class="footnote-number">10</span>: <span class="footnote-content"><span class="footnote-title">HDRImageViewer #66</span>: <a href="https://github.com/13thsymphony/HDRImageViewer/issues/66" target="_blank">https://github.com/13thsymphony/HDRImageViewer/issues/66</a></span><br/><span class="footnote-number">11</span>: <span class="footnote-content"><span class="footnote-title"><code>ffmpeg</code> #10974</span>: <a href="https://trac.ffmpeg.org/ticket/10974" target="_blank">https://trac.ffmpeg.org/ticket/10974</a></span><br/><span class="footnote-number">12</span>: <span class="footnote-content"><span class="footnote-title">Pillow #8036</span>: <a href="https://github.com/python-pillow/Pillow/issues/8036" target="_blank">https://github.com/python-pillow/Pillow/issues/8036</a></span><br/><span class="footnote-number">13</span>: <span class="footnote-content"><span class="footnote-title">CanIUse #6759</span>: <a href="https://github.com/Fyrd/caniuse/issues/6759" target="_blank">https://github.com/Fyrd/caniuse/issues/6759</a></span><br/><span class="footnote-number">14</span>: <span class="footnote-content"><span class="footnote-title"><code>libjxl</code> #2685</span>: <a href="https://github.com/libjxl/libjxl/issues/2685" target="_blank">https://github.com/libjxl/libjxl/issues/2685</a></span><br/><span class="footnote-number">15</span>: <span class="footnote-content"><span class="footnote-title">Memories #1110</span>: <a href="https://github.com/pulsejet/memories/issues/1110" target="_blank">https://github.com/pulsejet/memories/issues/1110</a></span><br/><span class="footnote-number">16</span>: <span class="footnote-content"><span class="footnote-title">Gainmap Creator</span>: <a href="https://gainmap-creator.monogrid.com/" target="_blank">https://gainmap-creator.monogrid.com/</a></span><br/><span class="footnote-number">17</span>: <span class="footnote-content"><span class="footnote-title">Demo für Konvertierung mittels <code>ffmpeg</code> und <code>libultrahdr</code></span>: <a href="https://github.com/albertz/playground/wiki/HDR-demo" target="_blank">https://github.com/albertz/playground/wiki/HDR-demo</a></span><br/><span class="footnote-number">18</span>: <span class="footnote-content"><span class="footnote-title">Albert Zeyer</span>: <a href="https://github.com/albertz" target="_blank">https://github.com/albertz</a></span><br/><span class="footnote-number">19</span>: <span class="footnote-content"><span class="footnote-title"><code>libultrahdr</code> and Python</span>: <a href="https://github.com/albertz/playground/blob/master/ultrahdr.py" target="_blank">https://github.com/albertz/playground/blob/master/ultrahdr.py</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">Greg Benz</span>: <a href="https://gregbenzphotography.com/hdr/" target="_blank">https://gregbenzphotography.com/hdr/</a></span><br/><span class="footnote-number">20</span>: <span class="footnote-content"><span class="footnote-title">HDR Unterstützung von Firefox</span>: <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=hdr" target="_blank">https://bugzilla.mozilla.org/show_bug.cgi?id=hdr</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">LibUltraHDR</span>: <a href="https://github.com/google/libultrahdr" target="_blank">https://github.com/google/libultrahdr</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">MPO</span>: <a href="https://en.wikipedia.org/wiki/JPEG#JPEG_Multi-Picture_Format" target="_blank">https://en.wikipedia.org/wiki/JPEG#JPEG_Multi-Picture_Format</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">Adobe</span>: <a href="https://helpx.adobe.com/camera-raw/using/gain-map.html" target="_blank">https://helpx.adobe.com/camera-raw/using/gain-map.html</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title">Android Developers</span>: <a href="https://developer.android.com/media/platform/hdr-image-format?hl=de" target="_blank">https://developer.android.com/media/platform/hdr-image-format?hl=de</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title">LibVips #3799</span>: <a href="https://github.com/libvips/libvips/issues/3799" target="_blank">https://github.com/libvips/libvips/issues/3799</a></span><br/><span class="footnote-number">8</span>: <span class="footnote-content"><span class="footnote-title">ImageMagick #6377</span>: <a href="https://github.com/ImageMagick/ImageMagick/issues/6377" target="_blank">https://github.com/ImageMagick/ImageMagick/issues/6377</a></span><br/><span class="footnote-number">9</span>: <span class="footnote-content"><span class="footnote-title"><strong>Tev</strong> #226</span>: <a href="https://github.com/Tom94/tev/issues/226" target="_blank">https://github.com/Tom94/tev/issues/226</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

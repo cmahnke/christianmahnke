@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="28 Apr 2026"/><link href="https://christianmahnke.de/css/9323c1b35544ef5fca69ea958e1369ba.min.77f2fe6b037bf843199f6d3c9a9d1564de3978d430aa09491d03b58b01379362.css" rel="stylesheet" integrity="sha256-d/L&#43;awN7&#43;EMZn208mp0VZN45eNQwqglJHQO1iwE3k2I=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<script src="https://christianmahnke.de/js/938a4bc27b1cef15e10d3e4f5a7013c7.80839b6c848cbd23ba7fc1d55afae2766baf502759af7c2cf181cceeb45e7111.js" integrity="sha256-gIObbISMvSO6f8HVWvridmuvUCdZr3ws8YHM7rRecRE="></script><link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/blog-visualisation/article.html" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Blog Metadaten visualisiert</h1><div class="date">
+          <time class="post-data" datetime="2026-04-21T15:49:44&#43;02:00">Dienstag, 21. April 2026</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/post/blog-visualisation/</div>
+
+      <div class="tags-heading">Schlagworte:
+        <ul class="tags"><li>Wikidata</li><li>Linked Open Data</li><li>SPARQL</li><li>Visualisierung</li><li>Webseite</li></ul>
+      </div><div class="post-body"><p>Vor etwa einem Jahr habe ich schon einmal versucht, die 
+
+
+<a href="https://christianmahnke.de/post/tag-pairs/" title="Bloginhalte in einer Visualisierung darzustellen">Bloginhalte in einer Visualisierung darzustellen<span class="footnote-number">1</span></a>&hellip;</p>
+<p>&hellip;aber das war eher ein Fehlschlag.</p>
+<p>Nun habe ich einen neuen Versuch gewagt. Diesmal habe ich den 
+
+
+<a href="https://christianmahnke.de/post/blog-sparql/" title="Triple Store aus dem letzten Beitrag verwendet">Triple Store aus dem letzten Beitrag verwendet<span class="footnote-number">2</span></a> verwendet und das Ergebnis kann sich durchaus sehen lassen.</p>
+<p><strong>Es kann etwas dauern, bis der Graph geladen und berechnet wurde.</strong></p>
+<rdf-graph id="_sparql-4dd5c189c8d4de35736f878eb414375f" src="https://christianmahnke.de/meta/wikidata/enriched_entities.hdt" languages="mul,de,en" 
+  node-scaling="log" wikidata="incoming">
+  <script type="application/sparql-query">
+    PREFIX schema: <http://schema.org/>
+
+SELECT ?s ?p ?o ?isTagged WHERE {
+  <https://christianmahnke.de/post/> schema:blogPost ?post .
+  ?post ?p ?o .
+  BIND(?post AS ?s)
+  FILTER(?p NOT IN (
+    schema:author,
+    schema:url,
+    schema:workTranslation,
+    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+  ))
+  FILTER(?o NOT IN (
+    schema:BlogPosting
+  ))
+  OPTIONAL {
+    ?post schema:identifier ?ident .
+    ?ident a schema:PropertyValue ;
+           schema:propertyID "projektemacher" ;
+           schema:value "tag" .
+    BIND(true AS ?isTagged)
+  }
+}
+  </script>
+</rdf-graph>
+<p class="wikidata-attribution">Enhält Daten von 
+
+
+<a href="https://www.wikidata.org/" title="Wikidata" target="_blank">Wikidata<span class="footnote-number">3</span></a>., lizensiert unter 
+
+
+<a href="https://www.wikidata.org/wiki/Wikidata:Text_of_the_Creative_Commons_Public_Domain_Dedication" title="CC0" target="_blank">CC0<span class="footnote-number">4</span></a>.</p>
+<p>Für Mobilgeräte als 
+
+
+<a href="./graph.pdf" title="PDF-Download">PDF-Download<span class="footnote-number">5</span></a>, die Datei wird nicht aktualisiert, wenn neu Beiträge hinzukommen.</p>
+<h2 id="erläuterungen">Erläuterungen</h2>
+<ul>
+<li>Die roten Rechtecke repräsentieren die einzelnen Blogbeiträge.</li>
+<li>Die gelben Rauten repräsentieren Schlagworte des Blogs.</li>
+<li>Blaue Kreise sind Entitäten von Wikidata (die auch als Schlagworte dienen).</li>
+<li>Grüne Kreise stellen Entitäten der Seite dar (z. B. Linked Art oder andere Metadateneinträge).</li>
+</ul>
+<p>Einige Objekte haben eingefärbte Rahmen, diese zeigen den Typ an. Derzeit sind abernur ein paar Typen konfiguriert.</p>
+<h3 id="vorauswahl">Vorauswahl</h3>
+<p>Die folgende Abfrage wird genutzt um die Daten für den Graphen oben zu visualisieren:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sparql" data-lang="sparql"><span class="line"><span class="cl"><span class="k">PREFIX</span> <span class="nn">schema</span><span class="p">:</span> <span class="nl">&lt;http://schema.org/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">SELECT</span> <span class="nv">?s</span> <span class="nv">?p</span> <span class="nv">?o</span> <span class="nv">?isTagged</span> <span class="k">WHERE</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nl">&lt;https://christianmahnke.de/post/&gt;</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">blogPost</span> <span class="nv">?post</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">?post</span> <span class="nv">?p</span> <span class="nv">?o</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">  <span class="k">BIND</span><span class="p">(</span><span class="nv">?post</span> <span class="k">AS</span> <span class="nv">?s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">FILTER</span><span class="p">(</span><span class="nv">?p</span> <span class="k">NOT IN</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nn">schema</span><span class="p">:</span><span class="nt">author</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nn">schema</span><span class="p">:</span><span class="nt">url</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nn">schema</span><span class="p">:</span><span class="nt">workTranslation</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nl">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="k">FILTER</span><span class="p">(</span><span class="nv">?o</span> <span class="k">NOT IN</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nn">schema</span><span class="p">:</span><span class="nt">BlogPosting</span>
+</span></span><span class="line"><span class="cl">  <span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="k">OPTIONAL</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">?post</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">identifier</span> <span class="nv">?ident</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">?ident</span> <span class="k">a</span> <span class="nn">schema</span><span class="p">:</span><span class="nt">PropertyValue</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nn">schema</span><span class="p">:</span><span class="nt">propertyID</span> <span class="s">&#34;projektemacher&#34;</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nn">schema</span><span class="p">:</span><span class="nt">value</span> <span class="s">&#34;tag&#34;</span> <span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="k">BIND</span><span class="p">(</span><span class="kc">true</span> <span class="k">AS</span> <span class="nv">?isTagged</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="umsetzung">Umsetzung</h2>
+<p>Neben der Kombination aus HDT und OxiGraph aus dem letzten Post, kommt für die Visualisierung 
+
+
+<a href="https://js.cytoscape.org/" title="Cytoscape" target="_blank">Cytoscape<span class="footnote-number">6</span></a> zum Einsatz. Der PDF Export wurde mit 
+
+
+<a href="https://github.com/kinimesi/cytoscape-svg" title="cytoscape-svg" target="_blank"><code>cytoscape-svg</code><span class="footnote-number">7</span></a> erstellt.</p>
+<h1 id="warum">Warum?</h1>
+<p>Sicher, der Graph ist schön anzusehen, aber er hat auch noch andere Vorteile:</p>
+<ul>
+<li>Er erlaubt die Navigation aus dem Silo dieses Blogs heraus.</li>
+<li>Die äußeren Ringe zur Klassifikation erlauben Einbicke in die Hierachie der Objektbeziehungen (&ldquo;ist ein&rdquo;). So ist die 
+
+
+<a href="http://www.wikidata.org/entity/Q1797167" title="Künstlerkolonie Dötlingen (Q1797167)" target="_blank">Künstlerkolonie Dötlingen (Q1797167)<span class="footnote-number">8</span></a> weder ein Ort, noch eine Gruppe, noch eine Organisation.</li>
+<li>Er kann der Qualitätskontrolle der Verschlagwortung dienen, so fällt z.B. auf, dass 
+
+
+<a href="https://www.wikidata.org/wiki/Q99738405" title="libjxl (Q99738405)" target="_blank"><code>libjxl</code> (Q99738405)<span class="footnote-number">9</span></a>,also die Implementierung, und 
+
+
+<a href="https://www.wikidata.org/wiki/Q72885392" title="JPEG XL (Q72885392)" target="_blank">JPEG XL (Q72885392)<span class="footnote-number">10</span></a>, also dsa Dateiformat, bisher inkonsistent vergeben sind.</li>
+</ul>
+<h2 id="ausblick">Ausblick</h2>
+<p>Einige Verbesserungen sind noch denkbar:</p>
+<ul>
+<li>Die Visualisierung der Basisklassen (z.B. Personen, Orte, Organisationen, Software) ist noch nicht ganz vollständig.</li>
+<li>Die thematische Nähe der Knoten könnte noch für das Layout des Graphen genutzt werden.</li>
+<li>Grundsätzlich kann das Layout noch verbessert werden.</li>
+<li>Cytoscape bietet ästhetisch sehr ansprechende Darstellungen, die schöner sind als die oben gezeigte.</li>
+</ul>
+<h2 id="update-2242026">Update 22.4.2026</h2>
+<p>Wie von 
+
+
+<a href="https://github.com/KonradHoeffner/hdt/issues/107#issuecomment-4295799504" title="Konrad Höffner vorgeschlagen" target="_blank">Konrad Höffner vorgeschlagen<span class="footnote-number">11</span></a> gibt es nun einen Vollbild Modus und Cytoscape nutzt nun 
+
+
+<a href="https://de.wikipedia.org/wiki/WebGL" title="WebGL" target="_blank">WebGL<span class="footnote-number">12</span></a>.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q115616582" title="Linked Art" rel="related">Wikidata Eintrag: Linked Art</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q116963652" title="cytoscape" rel="related">Wikidata Eintrag: cytoscape</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q118980507" title="Oxigraph" rel="related">Wikidata Eintrag: Oxigraph</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q139274681" title="Q139274681" rel="related">Wikidata Eintrag: Q139274681</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q3475322" title="Schema.org" rel="related">Wikidata Eintrag: Schema.org</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q3539533" title="Triplestore" rel="related">Wikidata Eintrag: Triplestore</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q375913" title="WebGL" rel="related">Wikidata Eintrag: WebGL</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/blog-sparql/article.html">Blog Metadaten über SPARQL abfragen</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/exhibitions-in-wikidata/article.html">Ausstellungen in Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/simple-wikidata-queries/article.html">Einfache Datenanreicherung mit Wikidata</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/wikidata-entities-in-hugo/article.html">Wikidata Links in Hugo</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/tag-pairs/article.html">Schlagwortpaare visualisiert</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">Verweise</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">Bloginhalte in einer Visualisierung darzustellen</span>: <a href="https://christianmahnke.de/post/tag-pairs/">/post/tag-pairs/</a></span><br/><span class="footnote-number">10</span>: <span class="footnote-content"><span class="footnote-title">JPEG XL (Q72885392)</span>: <a href="https://www.wikidata.org/wiki/Q72885392" target="_blank">https://www.wikidata.org/wiki/Q72885392</a></span><br/><span class="footnote-number">11</span>: <span class="footnote-content"><span class="footnote-title">Konrad Höffner vorgeschlagen</span>: <a href="https://github.com/KonradHoeffner/hdt/issues/107#issuecomment-4295799504" target="_blank">https://github.com/KonradHoeffner/hdt/issues/107#issuecomment-4295799504</a></span><br/><span class="footnote-number">12</span>: <span class="footnote-content"><span class="footnote-title">WebGL</span>: <a href="https://de.wikipedia.org/wiki/WebGL" target="_blank">https://de.wikipedia.org/wiki/WebGL</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">Triple Store aus dem letzten Beitrag verwendet</span>: <a href="https://christianmahnke.de/post/blog-sparql/">/post/blog-sparql/</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">Wikidata</span>: <a href="https://www.wikidata.org/" target="_blank">https://www.wikidata.org/</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">CC0</span>: <a href="https://www.wikidata.org/wiki/Wikidata:Text_of_the_Creative_Commons_Public_Domain_Dedication" target="_blank">https://www.wikidata.org/wiki/Wikidata:Text_of_the_Creative_Commons_Public_Domain_Dedication</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">PDF-Download</span>: <a href="./graph.pdf">./graph.pdf</a></span><br/><span class="footnote-number">6</span>: <span class="footnote-content"><span class="footnote-title">Cytoscape</span>: <a href="https://js.cytoscape.org/" target="_blank">https://js.cytoscape.org/</a></span><br/><span class="footnote-number">7</span>: <span class="footnote-content"><span class="footnote-title"><code>cytoscape-svg</code></span>: <a href="https://github.com/kinimesi/cytoscape-svg" target="_blank">https://github.com/kinimesi/cytoscape-svg</a></span><br/><span class="footnote-number">8</span>: <span class="footnote-content"><span class="footnote-title">Künstlerkolonie Dötlingen (Q1797167)</span>: <a href="http://www.wikidata.org/entity/Q1797167" target="_blank">http://www.wikidata.org/entity/Q1797167</a></span><br/><span class="footnote-number">9</span>: <span class="footnote-content"><span class="footnote-title"><code>libjxl</code> (Q99738405)</span>: <a href="https://www.wikidata.org/wiki/Q99738405" target="_blank">https://www.wikidata.org/wiki/Q99738405</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

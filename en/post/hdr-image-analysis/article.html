@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Christian Mahnke</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="author" content="Christian Mahnke"><meta name="subject" content="Christian Mahnke"/>
+    
+    
+    <meta name="date" content="28 Apr 2026"/><link href="https://christianmahnke.de/css/803829516737cf44979003eb57611a97.min.f37acd651882faf873eb5b6b91b3ecc7fbeb8db256a3b09c2f84c5425aad771f.css" rel="stylesheet" integrity="sha256-83rNZRiC&#43;vhz61trkbPsx/vrjbJWo7CcL4TFQlqtdx8=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<script src="https://christianmahnke.de/js/54d70e66532e367508bc3e85124329d0.7c0f6b9a93ac8fb04a0d134aef3cc26225aa3925a1424f707956d640c9651be6.js" integrity="sha256-fA9rmpOsj7BKDRNK7zzCYiWqOSWhQk9weVbWQMllG+Y="></script><link rel="stylesheet" href="https://christianmahnke.de/css/article.4d2ab3e6ac76a4f9e2d8663b1e5d559256a1bd6f8a4ae92501773d05b5ad62bc.css" type="text/css" integrity="sha256-TSqz5qx2pPni2GY7Hl1VklahvW&#43;KSuklAXc9BbWtYrw=">
+    
+  </head>
+  <body class="article">
+    <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/hdr-image-analysis/article.html" title="Deutsch">Deutsch</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Contrast enhancement for UV images using HDR</h1><div class="post-description">An old copy book from Northeim as an example of HDR visualisation of UV images</div><div class="date">
+          <time class="post-data" datetime="2024-06-06T11:33:44&#43;02:00">Thursday, June 6, 2024</time>
+        </div><div class="post-author">Christian Mahnke0009-0003-1361-4159</div>
+      <div class="post-url">URL: https://christianmahnke.de/en/post/hdr-image-analysis/</div>
+
+      <div class="tags-heading">Keywords:
+        <ul class="tags"><li>Light</li><li>Licht2024</li><li>Digital images</li><li>Object</li><li>HDR</li></ul>
+      </div><div class="post-body"><p>This example is about a practical use case for 
+
+
+<a href="https://en.wikipedia.org/wiki/High_dynamic_range" title="HDR" target="_blank">HDR<span class="footnote-number">1</span></a> visualisation in the browser&hellip;</p>
+<p>The example below currently only works with Chrome-based browsers (such as Edge or Brave), as these already support HDR with the HTML canvas element. There are two reasons for this:</p>
+<ul>
+<li>Standardisation is still ongoing</li>
+<li>Not all browsers implement new functions immediately</li>
+</ul>
+<p>The piece shown is an excerpt from a copybook from the first half of the 1920s.</p>
+<p>A copybook is a collection of copied letters in a book. These copies were not made using a photocopier, but were handwritten using a copying pen, then placed on one of the tissue paper pages, with the front and back wrapped in a kind of oilcloth to protect the other pages and pressed in this way. There were either corresponding presses or, as in this case, a cast-iron &ldquo;protective cover&rdquo;, which was also the press.</p>
+<p>This copy book belonged to Carl Spannaus, who in the course of the book also worked as a correspondent for the 
+
+
+<a href="https://de.wikipedia.org/wiki/Hannoverscher_Kurier" title="Hannoverscher Kurier (German)" target="_blank">Hannoverscher Kurier (German)<span class="footnote-number">2</span></a>.</p>
+<p>In the issue of Sunday 14 September 1902 (page 5) of the Hannoverscher Kurier, he is 
+
+
+<a href="https://digitale-sammlungen.gwlb.de/content/73496076X_HannoverscherKurier_19020914_01/pdf/00000005.pdf" title="listed (German)" target="_blank">listed (German)<span class="footnote-number">3</span></a> as an agent of the newspaper and owner of a bookshop in Northeim. He also published 
+
+
+<a href="https://ansichtskarten-lexikon.de/verlag-carl-spannaus-northeim-i-hann-14621.html" title="postcards (German)" target="_blank">postcards (German)<span class="footnote-number">4</span></a>. You can also read in 
+
+
+<a href="https://www.spiegel.de/geschichte/ortstermin-a-946572.html" title="Spiegel (German)" target="_blank">Spiegel (German)<span class="footnote-number">5</span></a> that he was the first citizen of Northeim who became member of the NSDAP&hellip;
+And there are also some entries in the &ldquo;Börsenblatt des deutschen Buchhandels&rdquo;.</p>
+<p>This book also contains copies of stamp impressions. Some of the stamp colours used can be excited by UV radiation&hellip;</p>
+<div id="_gallery-389e1d29b2735bb260d7147d47ccf856" class="gallery "><a class="gallery-image caption" href="img/presse.jpg" data-pswp-width="2884" data-pswp-height="2859" target="_blank"><img src="https://christianmahnke.de/en/post/hdr-image-analysis/img/presse_hu_897e44a025d8aec2.webp" alt="Press" class="gallery-preview" /><div class="hidden-caption-content">Press</div></a><a class="gallery-image caption" href="img/front.jpg" data-pswp-width="2784" data-pswp-height="3196" target="_blank"><img src="https://christianmahnke.de/en/post/hdr-image-analysis/img/front_hu_5e95cc8503dbd627.webp" alt="Book cover" class="gallery-preview" /><div class="hidden-caption-content">Book cover</div></a><a class="gallery-image caption" href="img/page.jpg" data-pswp-width="2362" data-pswp-height="3028" target="_blank"><img src="https://christianmahnke.de/en/post/hdr-image-analysis/img/page_hu_51234537d6accd00.webp" alt="Page" class="gallery-preview" /><div class="hidden-caption-content">Page</div></a></div>
+<h1 id="example">Example</h1>
+<div ></div>
+<details id="_hdr-check-1ea4bb6844d4bcd97e20eeeeeca63fc5" class="hdr-check-result">
+  <summary>HDR check</summary>
+  <p></p>
+</details>
+
+<script type="text/javascript">
+  const hdrCheckResult = document.getElementById("_hdr-check-1ea4bb6844d4bcd97e20eeeeeca63fc5");
+  if (checkHDRCanvas()) {
+    hdrCheckResult.querySelector('p').innerText = "The canvas element of your browser supports HDR!";
+    hdrCheckResult.classList.add("success");
+  } else {
+    hdrCheckResult.querySelector('p').innerText = "The canvas element of your browser doesn\u0027t support HDR, please retry with a recent Cromium-based browser like Chrome, Edge or Brave!";
+    hdrCheckResult.classList.add("fail");
+  }
+</script>
+<p>If the HDR check fails, the colours are not displayed in their full luminance. <strong>Even if the display of HDR images works, the HDR support for the <code>canvas</code> element needs the browser flag <code>enable-experimental-web-platform-features</code> to be enabled. For example, open &ldquo;chrome://flags#enable-experimental-web-platform-features&rdquo; in Chrome to activate it.</strong></p>
+<p>Currently, only the intensities of the individual channels can be adjusted, but in principle significantly more parameters are conceivable.
+Therefore, the example only marginally increases readability in most settings, but makes the potential visible.</p>
+<div class="hdr-canvas-container">
+  <div class="canvas-container">
+    <canvas id="_hdr-canvas-7168a9ba02c4279683cbb15e0e867f93"></canvas>
+  </div>
+
+  <div class="slider-container">
+    <div class="channel-container">
+      <input type="range" min="1" max="100" value="50" class="slider" id="redSlider">
+      <label for="redSlider">Red <span class="value"></span></label>
+    </div>
+    <div class="channel-container">
+      <input type="range" min="1" max="100" value="50" class="slider" id="greenSlider">
+      <label for="greenSlider">Green <span class="value"></span></label>
+    </div>
+    <div class="channel-container">
+      <input type="range" min="1" max="100" value="50" class="slider" id="blueSlider">
+      <label for="blueSlider">Blue <span class="value"></span></label>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    const imageUrl = 'img\/sample.jpeg';
+    const canvas = document.querySelector('#_hdr-canvas-7168a9ba02c4279683cbb15e0e867f93');
+
+    initCanvas(canvas, imageUrl);
+  </script>
+</div></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entites in this post (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1576316" title="Hannoverscher Kurier" rel="related">Wikidata entry: Hannoverscher Kurier</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q178995" title="HTTP cookie" rel="related">Wikidata entry: HTTP cookie</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q278151" title="Der Spiegel" rel="related">Wikidata entry: Der Spiegel</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q498575" title="Northeim" rel="related">Wikidata entry: Northeim</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q7320" title="Nazi Party" rel="related">Wikidata entry: Nazi Party</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q777" title="Google Chrome" rel="related">Wikidata entry: Google Chrome</a>
+      </li></ul><div class="spacer">
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/uv-photogrammetry/article.html">Ultraviolet Photogrammetry</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hdr-iiif/">HDR IIIF</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/ultrahdr/article.html">LibUltraHDR</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/hdr-canvas-js/article.html">JavaScript library for HDR</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/pong/article.html">Pong Visualisation</a></li>
+        
+      </ul>
+    
+  </div><div class="references-heading">References</div><div class="footnote-container"><span class="footnote-number">1</span>: <span class="footnote-content"><span class="footnote-title">HDR</span>: <a href="https://en.wikipedia.org/wiki/High_dynamic_range" target="_blank">https://en.wikipedia.org/wiki/High_dynamic_range</a></span><br/><span class="footnote-number">2</span>: <span class="footnote-content"><span class="footnote-title">Hannoverscher Kurier (German)</span>: <a href="https://de.wikipedia.org/wiki/Hannoverscher_Kurier" target="_blank">https://de.wikipedia.org/wiki/Hannoverscher_Kurier</a></span><br/><span class="footnote-number">3</span>: <span class="footnote-content"><span class="footnote-title">listed (German)</span>: <a href="https://digitale-sammlungen.gwlb.de/content/73496076X_HannoverscherKurier_19020914_01/pdf/00000005.pdf" target="_blank">https://digitale-sammlungen.gwlb.de/content/73496076X_HannoverscherKurier_19020914_01/pdf/00000005.pdf</a></span><br/><span class="footnote-number">4</span>: <span class="footnote-content"><span class="footnote-title">postcards (German)</span>: <a href="https://ansichtskarten-lexikon.de/verlag-carl-spannaus-northeim-i-hann-14621.html" target="_blank">https://ansichtskarten-lexikon.de/verlag-carl-spannaus-northeim-i-hann-14621.html</a></span><br/><span class="footnote-number">5</span>: <span class="footnote-content"><span class="footnote-title">Spiegel (German)</span>: <a href="https://www.spiegel.de/geschichte/ortstermin-a-946572.html" target="_blank">https://www.spiegel.de/geschichte/ortstermin-a-946572.html</a></span><br/></div>
+  </div>
+
+  </body>
+</html>

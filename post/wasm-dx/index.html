@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Meine Erfahrungen mit WASM · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Für die letzten beiden Blog-Posts über SPARQL und Triple Stores musste ich mich mit WASM herumschlagen&hellip;">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/wasm-dx/" />
+  <meta property="og:title" content="Meine Erfahrungen mit WASM · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/wasm-dx/ogPreview_hu_c5a84c6b274d405.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", JavaScript, Software Entwicklung, Hugo"><meta name="dc.subject" content="JavaScript"><meta name="dc.subject" content="Software Entwicklung"><meta name="dc.subject" content="Hugo">
+<meta name="generator" content="Hugo 0.160.1">
+<meta name="projektemacher.org:build-date" content="2026-04-28 01:42:48.997944351 &#43;0000 UTC m=&#43;1.183410998"><meta name="projektemacher.org:git-commit" content="332a7ed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.924782ad3f68a86bacf0e237c9202f9f7f89b29d08847c72b5f170be4360217b.css" rel="stylesheet" integrity="sha256-kkeCrT9oqGus8OI3ySAvn3&#43;Jsp0IhHxytfFwvkNgIXs=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/wasm-dx/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/wasm-dx/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/wasm-dx/","@type":"BlogPosting","about":[{"@id":"http://www.wikidata.org/entity/Q2005","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Q2005"},{"@id":"http://www.wikidata.org/entity/Q24415127","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Hugo"},{"@id":"http://www.wikidata.org/entity/Q638608","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Softwareentwicklung"},{"@id":"http://www.wikidata.org/entity/Q111590996","@type":"Thing","name":"Vite"},{"@id":"http://www.wikidata.org/entity/Q114900810","@type":"Thing","name":"rollup"},{"@id":"http://www.wikidata.org/entity/Q20155677","@type":"Thing","name":"WebAssembly"},{"@id":"http://www.wikidata.org/entity/Q978185","@type":"Thing","name":"TypeScript"}],"author":{"@id":"http://www.wikidata.org/entity/Q137668638","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"dateModified":"2026-04-28","datePublished":"2026-04-26","headline":"Meine Erfahrungen mit WASM","inLanguage":"de","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["JavaScript","SoftwareDevelopment","Hugo"],"name":"Meine Erfahrungen mit WASM","url":"https://christianmahnke.de/post/wasm-dx/","workTranslation":[{"@id":"https://christianmahnke.de/en/post/wasm-dx/","@type":"CreativeWork","inLanguage":"en","name":"My experience with WASM","url":"https://christianmahnke.de/en/post/wasm-dx/"}]}
+</script>
+</head><body class="section-post dir-postwasm-dx blog  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/wasm-dx/" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Meine Erfahrungen mit WASM</h1><div class="date">
+          <time class="post-data" datetime="2026-04-26T06:22:44&#43;02:00">Sonntag, 26. April 2026</time>
+        </div><div class="post-body"><p>Für die letzten beiden Blog-Posts über SPARQL und Triple Stores musste ich mich mit <a href="https://webassembly.org/" target="_blank">WASM</a> herumschlagen&hellip;</p>
+<p>&hellip;und war ernsthaft überrascht, wie schlecht die Browser-Integration und die Developer Experience (DX) immer noch sind.</p>
+<p>Ersteres lässt sich relativ schnell beobachten, wenn man die Komponente auf einer Webseite eingebunden hat, die sich mittels Watcher bei jeder Änderung neu lädt. Nach einiger Zeit verdichten sich die Hinweise darauf, dass der Browser alte Ressourcen nicht zuverlässig aufräumt. Unter Chrome kann sich das in hängenden bis abstürzenden Tabs oder auch esoterischen Speicherfehlern der WASM-Anwendung äußern.
+Daran kann man sich nach einiger Zeit gewöhnen und sicher treten die Effekte beim Endanwender nicht in dieser Form auf, aber trotzdem fühlt sich WASM bisher noch an, wie schlecht dran getackert.</p>
+<p>Das Hauptproblem ist jedoch das Einbinden von WASM-Artefakten in JavaScript (für den Browser): Es ist kompliziert bzw. kontraintuitiv, insbesondere, wenn man zusätzlich einen Bundler einsetzen muss. Allein schon, weil man gezwungen ist, den WASM-Code als zusätzliches eigenes Asset einzubinden und dabei eine eigene Lade-Semantik (asynchrone Initialisierung) zu befolgen, während man gleichzeitig sicherstellt, dass der JavaScript-Wrapper für den Code in der WASM-Datei geladen ist. Die <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" target="_blank">MDN-Dokumentation</a> gibt ein Beispiel zur Komplexität.</p>
+<p>Für die älteren Leser: Das Ganze scheint stark vom Einbinden von Inline-Assembler für verschiedene Architekturen in C inspiriert zu sein. Schließlich enthält es ja auch das Wort &ldquo;Assembly&rdquo; im Namen.</p>
+<h2 id="exkurs">Exkurs</h2>
+<p>Zugegeben ist für dieses Blog der Aufbau auch recht kompliziert:</p>
+<ul>
+<li>Komplexere JavaScript-Funktionalitäten entwickle ich zuerst auf Basis von <a data-wikidata-entity="Q978185" href="https://www.typescriptlang.org/" target="_blank">Vite</a> und <a data-wikidata-entity="Q978185" href="https://www.typescriptlang.org/" target="_blank">Typescript</a>.</li>
+<li>Diese werden dann mit <a data-wikidata-entity="Q114900810" href="https://rollupjs.org/" target="_blank">Rollup</a> (da es damit einfacher ist aus einem Quellbaum verschiedene Artefakte zu erstellen) zusammen gepackt (jeweils ein JS- und ein CSS-Artefakt)</li>
+<li>Daraus wird dann ein Wrapper als <a href="https://gohugo.io/content-management/shortcodes/" target="_blank">Hugo-Shortcode</a> erstellt - diese Schritt ist noch nicht automatisiert. Die Verknüpfung des JavaScript Artefakts mit dem Shortcode ist hier beschrieben: <a href="https://christianmahnke.de/post/hugo-shared-metadata/" target="_blank">Geteilte Metadaten für Hugo Seiten</a></li>
+<li>Hugo nutzt dann <a href="https://esbuild.github.io/" target="_blank">esbuild</a> um darum das JavaScript für den Browser zu erstellen.</li>
+</ul>
+<p>Dass es mehr als einen Schritt braucht, um JavaScript zu transformieren (auch Kompilieren genannt), ist ein bekanntes Problem der modernen Webentwicklung und alles andere als optimal.</p>
+<p>Dazu zählt, dass das gesamte JavaScript-Ökosystem darauf ausgelegt ist, mit den eigenen Unzulänglichkeiten umzugehen. Aus eher traditionellen Gründen, aus der Zeit vor dem Tree Shaking (also der Code-Optimierung, bei der ungenutzte Funktionen nicht in den Client-Code gelangen sollen, da sich die Anzeigezeit einer Webseite durch die Übertragung weniger Daten verbessert), tendiert die gesamte Community dazu, ihre Software-Artefakte zu atomisieren und sie in sehr kleine Einheiten zu verpacken.
+Zu dieser Problematik (und anderen Problemen von &ldquo;modernem&rdquo; JavaScript im Sinne von zeitgenössischem, nicht innovativem JavaScript) haben andere Besseres und Klügeres geschrieben, z. B. in <a href="https://43081j.com/2026/03/three-pillars-of-javascript-bloat" target="_blank">The Three Pillars of JavaScript Bloat</a></p>
+<p>Dieses Muster wird in anderen Communities eher als Antipattern betrachtet, kommt aber bei fast allem zum Einsatz, auch bei Build-Werkzeugen wie Bundlern. Dadurch muss man sich zwangsläufig mehr mit seiner Build-Infrastruktur beschäftigen, als einem lieb ist.
+Das hat beispielsweise die &ldquo;lustige&rdquo; Konsequenz, dass nicht alle diese Werkzeuge die komplette Spannbreite moderner Web-Technologien von sich aus abdecken: So benötigen <a data-wikidata-entity="Q114900810" href="https://rollupjs.org/" target="_blank">Rollup</a> oder <a href="https://vite.dev/" target="_blank">Vite</a> beispielsweise Plugins für Wasm.</p>
+<h2 id="zurück-zu-wasm">Zurück zu Wasm:</h2>
+<p>Das Hauptproblem ist vermutlich, dass sich das Ganze zwar WebAssembly nennt, aber so entworfen wurde, dass es auf vielen Plattformen zum Einsatz kommen kann. Wenn man also den Namen als Zielvorstellung annimmt, leidet man unter Übergeneralisierung.</p>
+<p>Vor 20 Jahren hatten wir mit Java etwas im Browser, das in dieser Hinsicht schon weiter war. Sicher hat die Sprache nicht mehr so viele Freunde, aber die Einbettung und auch der Zugriff auf DOM-Elemente der Seite, auf der das Applet lief, waren deutlich besser.</p>
+<h2 id="wie-ginge-es-besser-">Wie ginge es besser ?</h2>
+<p>Aber WASM hat auch andere theoretische Vorteile, wie die erhöhte Ausführungsgeschwindigkeit oder die Möglichkeit, auch Legacy-Code als Ausgangsbasis zu nutzen.
+Trotzdem könnten Entwickler davon profitieren, wenn der Fokus primär auf dem Web als Plattform liegen würde. Das Nutzungsszenario sollte so gestaltet werden, dass es sich wie JavaScript anfühlt. Beispielsweise könnte man auf die notwendigen externen JS-Wrapper verzichten, indem man sie in der WASM-Datei bündelt (oder den WASM-Bytecode in einer JS Datei), sodass diese automatisch beim Instanzieren verfügbar sind.
+Darauf aufbauende wäre auch eine vereinfachte API hilfreich gewesen:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">wasm_obj</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">WebAssembly</span><span class="p">.</span><span class="k">new</span><span class="p">(</span><span class="s2">&#34;./simple.wasm&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><p>Statt dem ganzen Budenzauber zum Abrufen (<code>fetch</code>), ggf. Kompilieren, Instanzieren und &ldquo;Verheiraten&rdquo; mit dem JS-Wrapper-Code, den man ja auch noch bündeln bzw. laden muss. Also wirklich &ldquo;seamless&rdquo;. Natürlich wäre das optional. Wer die bisherige API bevorzugt, soll sie natürlich weiterhin nutzen können.</p>
+<p>Da diese Änderung in der Browser-JS-API nicht zu erwarten ist, muss hier beim Bundler angesetzt werden&hellip;</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q111590996" title="Vite" rel="related">Wikidata Eintrag: Vite</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q114900810" title="rollup" rel="related">Wikidata Eintrag: rollup</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q20155677" title="WebAssembly" rel="related">Wikidata Eintrag: WebAssembly</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/JavaScript" title="JavaScript">#JavaScript</a><a href="https://christianmahnke.de/tags/SoftwareDevelopment" title="Software Entwicklung">#Software Entwicklung</a><a href="https://christianmahnke.de/tags/Hugo" title="Hugo">#Hugo</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/hugo-cff-codemeta/">CFF zu CodeMeta in Hugo</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/vite-git-symlink-plugin/">Vite und Git Symlink-Dateien</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/mastodon-archive/">Mastodon Archiv</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/software-metadata/">Metadaten für Software</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hugo-datauris/">Ressourcen als Data-URL in Hugo einbetten</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/wasm-dx/" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>

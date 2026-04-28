@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Feed Poisoning Angriffe · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Ein Gespenst geht um im Cyberspace&hellip;">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/feed-poisoning-attack/" />
+  <meta property="og:title" content="Feed Poisoning Angriffe · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/feed-poisoning-attack/ogPreview_hu_9c1b8e89dc412165.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", Spaß, IT-Sicherheit, Soziale Medien"><meta name="dc.subject" content="Spaß"><meta name="dc.subject" content="IT-Sicherheit"><meta name="dc.subject" content="Soziale Medien">
+<meta name="generator" content="Hugo 0.160.1">
+<meta name="projektemacher.org:build-date" content="2026-04-28 01:42:48.997944351 &#43;0000 UTC m=&#43;1.183410998"><meta name="projektemacher.org:git-commit" content="332a7ed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.924782ad3f68a86bacf0e237c9202f9f7f89b29d08847c72b5f170be4360217b.css" rel="stylesheet" integrity="sha256-kkeCrT9oqGus8OI3ySAvn3&#43;Jsp0IhHxytfFwvkNgIXs=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.min.57e904a2e21dffc7d9e88bc03215433e4896f09d45c2c33c09d16f92900e6bcc.js" integrity="sha256-V+kEouId/8fZ6IvAMhVDPkiW8J1FwsM8CdFvkpAOa8w="></script>
+<link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/feed-poisoning-attack/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/feed-poisoning-attack/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/feed-poisoning-attack/","@type":"BlogPosting","about":[{"@id":"http://www.wikidata.org/entity/Q1255864","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Spaß"},{"@id":"http://www.wikidata.org/entity/Q202833","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Soziale Medien"},{"@id":"http://www.wikidata.org/entity/Q3510521","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Computersicherheit"},{"@id":"http://www.wikidata.org/entity/Q113364838","@type":"Thing","name":"Alt-right pipeline"},{"@id":"http://www.wikidata.org/entity/Q17068342","@type":"Thing","name":"Manosphere"},{"@id":"http://www.wikidata.org/entity/Q376934","@type":"Thing","name":"Social Engineering"},{"@id":"http://www.wikidata.org/entity/Q80949","@type":"Thing","name":"Aprilscherz"},{"@id":"http://www.wikidata.org/entity/Q866","@type":"Thing","name":"Q866"}],"author":{"@id":"http://www.wikidata.org/entity/Q137668638","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"dateModified":"2026-04-28","datePublished":"2026-04-01","headline":"Feed Poisoning Angriffe","inLanguage":"de","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Fun","CyberSecurity","SocialMedia"],"name":"Feed Poisoning Angriffe","url":"https://christianmahnke.de/post/feed-poisoning-attack/","workTranslation":[{"@id":"https://christianmahnke.de/en/post/feed-poisoning-attack/","@type":"CreativeWork","inLanguage":"en","name":"Feed Poisoning Angriffe","url":"https://christianmahnke.de/en/post/feed-poisoning-attack/"}]}
+</script>
+</head><body class="section-post dir-postfeed-poisoning-attack blog  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/feed-poisoning-attack/" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Feed Poisoning Angriffe</h1><div class="date">
+          <time class="post-data" datetime="2026-04-01T08:00:00&#43;02:00">Mittwoch, 1. April 2026</time>
+        </div><div class="post-body"><p>Ein Gespenst geht um im Cyberspace&hellip;</p>
+<h2 id="feed-poisoning">Feed Poisoning</h2>
+<p>&ldquo;Feed Poisoning&rdquo; ist ein Angriffsvektor, der die Art und Weise ausnutzt, wie moderne Social-Media-Systeme das Seh- bzw. Konsumverhalten verarbeiten. Dabei werden Links verschickt, die dazu geeignet sind, den Empfehlungsalgorithmus des Empfängers gezielt zu stören, um beispielsweise die Vorschläge oder auch die Werbung zu beeinflussen.</p>
+<p>Dieser Angriff wird als &ldquo;Feed Poisoning&rdquo; bezeichnet und gehört zur Klasse der Social-Engineering-Angriffe.</p>
+<h2 id="gefahren">Gefahren</h2>
+<p>Die Gefahren sind vielfältig, da die meisten Angriffe auf eine lange (und schleichende) Wirkdauer ausgelegt sind. Die harmloseren Varianten führen lediglich zu neuen Vorschlägen im persönlichen Social-Media-Feed, die nicht den eigenen Gewohnheiten entsprechen (sog. &ldquo;Bubble Popping&rdquo;). Die Folgen können jedoch weitaus dramatischer sein.
+Besonders im englischsprachigen Raum ist das Phänomen der sogenannten Pipelines ausführlich beschrieben.
+Für YouTube ist dies beispielsweise die 
+      
+        
+      <a data-wikidata-entity="Q113364838" href="https://en.wikipedia.org/wiki/Alt-right_pipeline" target="_blank">Alt-Right-Pipeline</a> (Englisch), die auch schon in einer Vielzahl von Selbstversuchen nachvollzogen wurde. Dabei führt die algorithmische Zuspitzung der Plattform dazu, dass bei erhöhtem Konsum von z. B. &ldquo;wissenschaftskritischen&rdquo;, Bitcoin-/Finanz-Inhalten oder auch der sogenannten 
+      
+        
+      <a data-wikidata-entity="Q17068342" href="https://de.wikipedia.org/wiki/Manosphere" target="_blank">Manosphere</a> nach und nach immer mehr rechtslastige Inhalte vorgeschlagen werden.</p>
+<p><strong>Somit kann sich Feed Poisoning auch zu einem ernsthaften Problem für die Demokratie entwickeln</strong></p>
+<h2 id="virenscanner-erkennen-kein-feed-poisoning">Virenscanner erkennen kein Feed Poisoning</h2>
+<p>Da beim Feed Poisoning nur scheinbar harmlose Links zu legalen Inhalten verschickt werden, erkennen Virenscanner die Gefahr nicht.</p>
+<h2 id="feed-poisoning-ist-plattformübergreifend">Feed Poisoning ist plattformübergreifend.</h2>
+<p>Anders als bei klassischen Viren entfaltet Feed Poisoning seine Wirkung über den Server des angegriffenen Social-Media-Accounts.</p>
+<p>Daher gibt es keine Sicherheit für Nutzer von Nischenbetriebsystemen wie Linux oder macOS. Da die meisten sozialen Netzwerke inzwischen auch native mobile Anwendungen anbieten, die ebenfalls in der Lage sind, Links zu ihren Inhalten aufzulösen und zu öffnen, sind auch diese nicht vor Angriffen geschützt.</p>
+<h2 id="so-gehen-die-cyberpropagandisten-vor">So gehen die Cyberpropagandisten vor:</h2>
+<p>Ein Feed-Poisoning-Angriff beginnt in der Regel mit der Zusendung eines oder mehrerer Links, die das Thema der Manipulation platzieren sollen. Dabei erhöht die Anzahl der vom Endanwender angeklickten Links die Erfolgswahrscheinlichkeit erheblich.
+Wenn erst einmal ein Vertrauensverhältnis besteht, steuern geübte Propagandisten nach, indem sie weiterhin Links schicken, die den Algorithmus der Social-Media-Plattform des Ziels des Angriffs kontinuierlich in die gewünschte Richtung konditionieren.</p>
+<h2 id="tipps-um-nicht-auf-feed-poisoning-hereinzufallen">Tipps, um nicht auf Feed Poisoning hereinzufallen:</h2>
+<ul>
+<li>Prüfen Sie sorgfältig den Absender. Kennen Sie ihn persönlich? Ist er vertrauenswürdig?</li>
+<li>Öffnen Sie Links aus Messengern oder E-Mails nicht durch einen Klick, sondern kopieren Sie die URL in einen Browser im privaten Modus. Auch auf einem mobilen Endgerät.</li>
+<li>Benutzen Sie für Social Media einen anderen Browser als den Standardbrowser, damit Links nicht damit geöffnet werden.</li>
+</ul></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q113364838" title="Alt-right pipeline" rel="related">Wikidata Eintrag: Alt-right pipeline</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q17068342" title="Manosphere" rel="related">Wikidata Eintrag: Manosphere</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q376934" title="Social Engineering" rel="related">Wikidata Eintrag: Social Engineering</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q80949" title="Aprilscherz" rel="related">Wikidata Eintrag: Aprilscherz</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q866" title="Q866" rel="related">Wikidata Eintrag: Q866</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/Fun" title="Spaß">#Spaß</a><a href="https://christianmahnke.de/tags/CyberSecurity" title="IT-Sicherheit">#IT-Sicherheit</a><a href="https://christianmahnke.de/tags/SocialMedia" title="Soziale Medien">#Soziale Medien</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/503-ticket-machine/">503</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/digital-lost-places/">Digitale &#34;Lost Places&#34;</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/museum-piece-tftp/">Museumsstück TFTP</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/mastodon-archive/">Mastodon Archiv</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/github-action-mastodon-backup/">Mastodon Backups mit GitHub Actions</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/feed-poisoning-attack/" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    document.querySelector(".type-text")&&!document.querySelector(".subsection")?enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})
+</script>
+</div>
+    </body>
+ </html>
