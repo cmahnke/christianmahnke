@@ -1,12 +1,11 @@
-`rollup-plugin-wasm-brotli`
-===========================
+# `rollup-plugin-wasm-brotli`
 
 This [Rollup](https://rollupjs.org/) plugin uses [`brotli-unicode`](https://github.com/kyr0/brotli-unicode) (which in turn uses [Brotli](https://github.com/google/brotli)) to compress an inline a WASM file (`.wasm`), directly into your JavaScript bundle.
-
 
 ## Overview
 
 The `inline-wasm` plugin:
+
 - Automatically detects `new URL('path.wasm', import.meta.url)` calls in your code.
 - Resolves `.wasm` file paths (including from node modules).
 - Reads the `.wasm` file, compresses it using `brotli-unicode`.
@@ -23,8 +22,8 @@ This reduces HTTP requests and improves load performance, especially when bundli
 
 Make sure you have the following installed:
 
-* Rollup
-* This plugin
+- Rollup
+- This plugin
 
 ```bash
 npm install --save-dev rollup rollup-plugin-wasm-brotli
@@ -37,17 +36,15 @@ npm install --save-dev rollup rollup-plugin-wasm-brotli
 ### 1. Create or Update Your `rollup.config.js`
 
 ```javascript
-import inlineWasm from 'rollup-plugin-inline-wasm';
+import inlineWasm from "rollup-plugin-inline-wasm";
 
 export default {
-  input: 'src/main.js',
+  input: "src/main.js",
   output: {
-    dir: 'dist',
-    format: 'esm'
+    dir: "dist",
+    format: "esm"
   },
-  plugins: [
-    await inlineWasm()
-  ]
+  plugins: [await inlineWasm()]
 };
 ```
 
@@ -68,12 +65,13 @@ project-root/
 
 ```js
 // This will be transformed by the plugin
-const wasmUrl = new URL('./math.wasm', import.meta.url);
+const wasmUrl = new URL("./math.wasm", import.meta.url);
 
 const wasmModule = await WebAssembly.instantiateStreaming(fetch(wasmUrl));
 ```
 
 After processing, Rollup will:
+
 - Inline the `math.wasm` file.
 - Replace the `new URL(...)` with a blob URL created from decompressed bytes.
 - Inject necessary imports and functions.
@@ -82,13 +80,12 @@ After processing, Rollup will:
 
 This example is a bit more pactical. Make sure to include `@projektemacher/rollup-plugin-wasm-brotli` before resolving other imports. Also it's important to `await` the results of the plugins, since the compression is async.
 
-
 ```javascript
 // rollup.config.ts
 import { defineConfig } from "rollup";
 import typescript from "@rollup/plugin-typescript";
 import nodeResolve from "@rollup/plugin-node-resolve";
-import commonjs from '@rollup/plugin-commonjs';
+import commonjs from "@rollup/plugin-commonjs";
 import { inlineWasm } from "@projektemacher/rollup-plugin-wasm-brotli";
 
 export default defineConfig({
@@ -108,13 +105,13 @@ export default defineConfig({
 });
 ```
 
-##  Advanced configuration and usage
+## Advanced configuration and usage
 
 The plugin does not accept options currently, but you can customize behavior by modifying the source or extending it.
 
 ### Bundling with Esbuild
 
-By default `esbuild` converts the charset to be ASCII, this leads to ecaped unicode squences which in turn take more byte per unicode character. 
+By default `esbuild` converts the charset to be ASCII, this leads to ecaped unicode squences which in turn take more byte per unicode character.
 You can instruct `esbuild` to create a unicode output like this:
 
 ```
@@ -127,16 +124,16 @@ Usually you need to make sure that the WASM file itself if your wrapper code was
 
 ```javascript
 import init, { Hdt } from 'hdt/hdt.js';
-import wasm_hdt from 'hdt/hdt_bg.wasm'; 
+import wasm_hdt from 'hdt/hdt_bg.wasm';
 
 const wasmReady: Promise<void> = (async () => {
   await init({ wasm_hdt });
 })();
 ```
 
-Make sure this weird construct is present, otherwise the plugin won't find your WASM file. 
+Make sure this weird construct is present, otherwise the plugin won't find your WASM file.
 
-##  How It Works (Under the Hood)
+## How It Works (Under the Hood)
 
 1. **`resolveId`**: Resolves `.wasm` file paths (relative, absolute, or from node modules).
 2. **`load`**: Reads the `.wasm` file, compresses it with `brotli-unicode`, and generates a module that exports `getWasmBytes()` and `loadWasm()`.
@@ -146,11 +143,10 @@ Make sure this weird construct is present, otherwise the plugin won't find your 
 
 This comparision is based on the implementation for this [blog post](https://christianmahnke.de/post/blog-sparql/), which includes [OxiGraph](https://github.com/oxigraph/oxigraph) and [HDT Rust module](https://github.com/KonradHoeffner/hdt)
 
-
 ### Without plugin
 
 | Größe (Bytes) | Datei                                  |
-|---------------|----------------------------------------|
+| ------------- | -------------------------------------- |
 | 1,191,284     | wikidata-hdt/dist/client-sparql.js     |
 | 2,609,124     | wikidata-hdt/dist/client-sparql.js.map |
 | 714           | wikidata-hdt/dist/client-sparql.scss   |
@@ -162,7 +158,7 @@ Without the plugin the files `wikidata-hdt/dist/client-sparql.js` and both WASM 
 ### With plugin
 
 | Größe (Bytes) | Datei                                  |
-|---------------|----------------------------------------|
+| ------------- | -------------------------------------- |
 | 3,060,899     | wikidata-hdt/dist/client-sparql.js     |
 | 4,493,750     | wikidata-hdt/dist/client-sparql.js.map |
 | 714           | wikidata-hdt/dist/client-sparql.scss   |

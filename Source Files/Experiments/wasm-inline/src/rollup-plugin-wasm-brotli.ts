@@ -78,21 +78,15 @@ export default async function inlineWasm(): Promise<Plugin> {
 
         let absoluteWasmPath: string;
         if (isNodeModulePath(wasmPath)) {
-          absoluteWasmPath = resolveNodeModulePath(wasmPath, id) 
-            ?? resolve(dirname(id), wasmPath);
+          absoluteWasmPath = resolveNodeModulePath(wasmPath, id) ?? resolve(dirname(id), wasmPath);
         } else {
           absoluteWasmPath = resolve(dirname(id), wasmPath);
         }
 
         const importName = `__wasm_${wasmImports.length}`;
-        wasmImports.push(
-          `import { getWasmBytes as ${importName} } from '${absoluteWasmPath}';`
-        );
+        wasmImports.push(`import { getWasmBytes as ${importName} } from '${absoluteWasmPath}';`);
 
-        transformedCode = transformedCode.replace(
-          fullMatch,
-          `await ${importName}()`
-        );
+        transformedCode = transformedCode.replace(fullMatch, `await ${importName}()`);
       }
 
       for (const match of importMatches) {
@@ -100,21 +94,15 @@ export default async function inlineWasm(): Promise<Plugin> {
 
         let absoluteWasmPath: string;
         if (isNodeModulePath(wasmPath)) {
-          absoluteWasmPath = resolveNodeModulePath(wasmPath, id) 
-            ?? resolve(dirname(id), wasmPath);
+          absoluteWasmPath = resolveNodeModulePath(wasmPath, id) ?? resolve(dirname(id), wasmPath);
         } else {
           absoluteWasmPath = resolve(dirname(id), wasmPath);
         }
 
         const importName = `__wasm_${wasmImports.length}`;
-        wasmImports.push(
-          `import { getWasmBytes as ${importName} } from '${absoluteWasmPath}';`
-        );
+        wasmImports.push(`import { getWasmBytes as ${importName} } from '${absoluteWasmPath}';`);
 
-        transformedCode = transformedCode.replace(
-          fullMatch,
-          `const ${bindingName} = await ${importName}();`
-        );
+        transformedCode = transformedCode.replace(fullMatch, `const ${bindingName} = await ${importName}();`);
       }
 
       transformedCode = wasmImports.join("\n") + "\n" + transformedCode;

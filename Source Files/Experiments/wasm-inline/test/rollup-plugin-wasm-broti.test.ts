@@ -151,16 +151,8 @@ describe("inlineWasm Plugin", () => {
       });
 
       it("decompressed bytes are byte-for-byte identical to the original", () => {
-        const originalBuffer = Buffer.from(
-          originalBytes.buffer,
-          originalBytes.byteOffset,
-          originalBytes.byteLength
-        );
-        const decompressedBuffer = Buffer.from(
-          decompressedBytes.buffer,
-          decompressedBytes.byteOffset,
-          decompressedBytes.byteLength
-        );
+        const originalBuffer = Buffer.from(originalBytes.buffer, originalBytes.byteOffset, originalBytes.byteLength);
+        const decompressedBuffer = Buffer.from(decompressedBytes.buffer, decompressedBytes.byteOffset, decompressedBytes.byteLength);
         expect(originalBuffer.equals(decompressedBuffer)).toBe(true);
       });
 
@@ -180,9 +172,7 @@ describe("inlineWasm Plugin", () => {
 
       it("first and last byte are identical to the original", () => {
         expect(decompressedBytes[0]).toBe(originalBytes[0]);
-        expect(decompressedBytes[decompressedBytes.length - 1]).toBe(
-          originalBytes[originalBytes.length - 1]
-        );
+        expect(decompressedBytes[decompressedBytes.length - 1]).toBe(originalBytes[originalBytes.length - 1]);
       });
 
       it("compressed data embedded in the generated code decompresses to the original", async () => {
@@ -194,11 +184,7 @@ describe("inlineWasm Plugin", () => {
 
         expect(decompressedFromCode.length).toBe(originalBytes.length);
 
-        const originalBuffer = Buffer.from(
-          originalBytes.buffer,
-          originalBytes.byteOffset,
-          originalBytes.byteLength
-        );
+        const originalBuffer = Buffer.from(originalBytes.buffer, originalBytes.byteOffset, originalBytes.byteLength);
         const decompressedBuffer = Buffer.from(
           decompressedFromCode.buffer,
           decompressedFromCode.byteOffset,
@@ -263,9 +249,7 @@ describe("inlineWasm Plugin", () => {
       const result = await plugin.transform(code, IMPORTER_PATH);
 
       const expectedPath = resolve(dirname(IMPORTER_PATH), "./brotli_wasm_bg.wasm");
-      expect(result!.code).toContain(
-        `import { getWasmBytes as __wasm_0 } from '${expectedPath}'`
-      );
+      expect(result!.code).toContain(`import { getWasmBytes as __wasm_0 } from '${expectedPath}'`);
     });
 
     it("transforms multiple WASM URL patterns", async () => {
@@ -288,11 +272,7 @@ describe("inlineWasm Plugin", () => {
 
     it("leaves the remaining code unchanged", async () => {
       const plugin = await inlineWasm();
-      const code = [
-        `const x = 42;`,
-        `const url = new URL('./brotli_wasm_bg.wasm', import.meta.url);`,
-        `console.log(x);`
-      ].join("\n");
+      const code = [`const x = 42;`, `const url = new URL('./brotli_wasm_bg.wasm', import.meta.url);`, `console.log(x);`].join("\n");
 
       const result = await plugin.transform(code, IMPORTER_PATH);
 
@@ -333,9 +313,7 @@ describe("inlineWasm Plugin", () => {
       const result = await plugin.transform(code, IMPORTER_PATH);
 
       expect(result).not.toBeNull();
-      expect(result!.code).not.toContain(
-        `import wasm from 'brotli-wasm/pkg.bundler/brotli_wasm_bg.wasm'`
-      );
+      expect(result!.code).not.toContain(`import wasm from 'brotli-wasm/pkg.bundler/brotli_wasm_bg.wasm'`);
       expect(result!.code).toContain(`getWasmBytes`);
       expect(result!.code).toContain(`const wasm = await __wasm_`);
     });
@@ -349,9 +327,7 @@ describe("inlineWasm Plugin", () => {
       const require = createRequire(IMPORTER_PATH);
       const expectedPath = require.resolve("brotli-wasm/pkg.bundler/brotli_wasm_bg.wasm");
 
-      expect(result!.code).toContain(
-        `import { getWasmBytes as __wasm_0 } from '${expectedPath}'`
-      );
+      expect(result!.code).toContain(`import { getWasmBytes as __wasm_0 } from '${expectedPath}'`);
     });
 
     it("preserves the original binding name", async () => {
@@ -382,9 +358,7 @@ describe("inlineWasm Plugin", () => {
 
       const result = await plugin.transform(code, IMPORTER_PATH);
 
-      expect(result!.code).toContain(
-        `import init, { CompressStream } from 'brotli-wasm/pkg.bundler/brotli_wasm.js'`
-      );
+      expect(result!.code).toContain(`import init, { CompressStream } from 'brotli-wasm/pkg.bundler/brotli_wasm.js'`);
     });
 
     it("wasm-pack: Uint8Array is valid BufferSource for WebAssembly.instantiate", async () => {
@@ -420,10 +394,7 @@ describe("inlineWasm Plugin", () => {
       expect(embeddedStr).not.toBeNull();
 
       const decompressedBytes = await decompress(embeddedStr!);
-      const wasmBytes =
-        decompressedBytes instanceof Uint8Array
-          ? decompressedBytes
-          : new Uint8Array(decompressedBytes);
+      const wasmBytes = decompressedBytes instanceof Uint8Array ? decompressedBytes : new Uint8Array(decompressedBytes);
 
       expect(WebAssembly.validate(wasmBytes)).toBe(true);
     }, 30_000);
@@ -490,10 +461,7 @@ describe("inlineWasm Plugin", () => {
       expect(embeddedStr).not.toBeNull();
 
       const decompressedBytes = await decompress(embeddedStr!);
-      const wasmBytes =
-        decompressedBytes instanceof Uint8Array
-          ? decompressedBytes
-          : new Uint8Array(decompressedBytes);
+      const wasmBytes = decompressedBytes instanceof Uint8Array ? decompressedBytes : new Uint8Array(decompressedBytes);
 
       try {
         await WebAssembly.instantiate(wasmBytes, {});
@@ -501,9 +469,7 @@ describe("inlineWasm Plugin", () => {
         const message = (e as Error).message;
         if (message.includes("Import") || message.includes("import")) return;
 
-        throw new Error(
-          `Unexpected WebAssembly error (possible magic word mismatch): ${message}`
-        );
+        throw new Error(`Unexpected WebAssembly error (possible magic word mismatch): ${message}`);
       }
     }, 30_000);
 
@@ -512,10 +478,7 @@ describe("inlineWasm Plugin", () => {
       expect(embeddedStr).not.toBeNull();
 
       const decompressedBytes = await decompress(embeddedStr!);
-      const wasmBytes =
-        decompressedBytes instanceof Uint8Array
-          ? decompressedBytes
-          : new Uint8Array(decompressedBytes);
+      const wasmBytes = decompressedBytes instanceof Uint8Array ? decompressedBytes : new Uint8Array(decompressedBytes);
 
       expect(WebAssembly.validate(wasmBytes)).toBe(true);
     }, 30_000);
