@@ -24,7 +24,8 @@
   disableScale = true
   description = "Persönliche Homepage von Christian Mahnke"
   wikidata = true
-  debug = true
+  debug = false
+  js = "esm"
   pagetheme = "#701611"
   keywordAsString = true
   orcid = "0009-0003-1361-4159"

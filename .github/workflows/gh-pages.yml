@@ -19,7 +19,7 @@ permissions:
   id-token: write
 
 env:
-  HUGO_VERSION: 0.160.1
+  HUGO_VERSION: 0.161.0
   DEPENDENCY_MANAGER: npm
   PYTHON_VERSION: '3.13'
 

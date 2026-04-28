@@ -141,3 +141,32 @@ Make sure this weird construct is present, otherwise the plugin won't find your 
 1. **`resolveId`**: Resolves `.wasm` file paths (relative, absolute, or from node modules).
 2. **`load`**: Reads the `.wasm` file, compresses it with `brotli-unicode`, and generates a module that exports `getWasmBytes()` and `loadWasm()`.
 3. **`transform`**: Replaces `new URL('file.wasm', import.meta.url)` with a dynamic blob URL using the inlined compressed data.
+
+## Comparision
+
+This comparision is based on the implementation for this [blog post](https://christianmahnke.de/post/blog-sparql/), which includes [OxiGraph](https://github.com/oxigraph/oxigraph) and [HDT Rust module](https://github.com/KonradHoeffner/hdt)
+
+
+### Without plugin
+
+| Größe (Bytes) | Datei                                  |
+|---------------|----------------------------------------|
+| 1,191,284     | wikidata-hdt/dist/client-sparql.js     |
+| 2,609,124     | wikidata-hdt/dist/client-sparql.js.map |
+| 714           | wikidata-hdt/dist/client-sparql.scss   |
+| 181,638       | wikidata-hdt/dist/hdt_bg.wasm          |
+| 3,954,968     | wikidata-hdt/dist/web_bg.wasm          |
+
+Without the plugin the files `wikidata-hdt/dist/client-sparql.js` and both WASM files are needed. 5,327,890 Bytes in total.
+
+### With plugin
+
+| Größe (Bytes) | Datei                                  |
+|---------------|----------------------------------------|
+| 3,060,899     | wikidata-hdt/dist/client-sparql.js     |
+| 4,493,750     | wikidata-hdt/dist/client-sparql.js.map |
+| 714           | wikidata-hdt/dist/client-sparql.scss   |
+| 181,638       | wikidata-hdt/dist/hdt_bg.wasm          |
+| 3,954,968     | wikidata-hdt/dist/web_bg.wasm          |
+
+With the plugin only `wikidata-hdt/dist/client-sparql.js` is needed. 3,060,899 in total. About 57.4% of the original size.

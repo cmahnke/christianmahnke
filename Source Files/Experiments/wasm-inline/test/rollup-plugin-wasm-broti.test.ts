@@ -113,7 +113,7 @@ describe("inlineWasm Plugin", () => {
     });
 
     it("generated code contains brotli decompress", () => {
-      expect(loadResult).toContain("import { decompress } from 'brotli-unicode';");
+      expect(loadResult).toContain("import { decompress } from 'brotli-unicode/js';");
       expect(loadResult).toContain("decompress");
     });
 
