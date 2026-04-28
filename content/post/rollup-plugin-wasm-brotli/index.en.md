@@ -1,5 +1,5 @@
 ---
-date: 2026-04-27T21:45:44+02:00
+date: 2026-04-28T21:45:44+02:00
 title: "Rollup plugin für WASM Inlining"
 cite: true
 keywords: Brotli, WASM, Rollup
