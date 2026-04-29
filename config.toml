@@ -341,6 +341,16 @@ timeout = "120s"
   [segments.manifests]
     [[segments.manifests.includes]]
       output = 'iiif-manifest'
+  [segments.print]
+    [[segments.print.excludes]]
+      lang = 'en'
+      output = '{html,rss,iiif-manifest,iiif-collection,bibtex,linkedart,codemeta,llms}'
+      path = '{/links/**,/map/**,/about/**,/mastodon/**,/meta/**,/iiif/**,/collections/**}'
+    [[segments.print.includes]]
+      kind = '{page}'
+      output = '{print}'
+      path = '{/post/**}'
+
 
 [security]
   [security.http]
@@ -372,3 +382,11 @@ timeout = "120s"
     pattern = ''
     type = 'basic'
     weight = 80
+
+[caches]
+  [caches.assets]
+    dir = ':resourceDir/_gen'
+    maxAge = -1
+  [caches.getresource]
+    dir = ':resourceDir/:project'
+    maxAge = 259200
