@@ -104,3 +104,11 @@ Natürlich müssen die Varianten für `:link` `:visited`, `:hover` und `:active`
 ## Kann man schon was sehen?
 
 Nein (bzw. nur im Quelltext der Seite)
+
+## Update 29.4.2026
+
+Seit April 2026 prüfen Wikimedia-Dienste wie die Wikipedia oder Wikidata die [Rate Limits](https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits) strenger. Es gibt zwei einfache Möglichkeiten, um höhere Rate Limits zu erhalten:
+* Über einen angepassten `User-Agent` 
+* Über die Nutzung eines Wikimedia Accounts
+
+Zusätzlich wird eine der nächsten Hugo-Versionen die Möglichkeit bieten, auf den `Retry-After`-HTTP-Header zu reagieren, siehe [PR #14828](https://github.com/gohugoio/hugo/issues/14828)

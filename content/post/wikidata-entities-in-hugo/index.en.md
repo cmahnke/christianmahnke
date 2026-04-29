@@ -104,3 +104,11 @@ Of course, the variants for `:link` `:visited`, `:hover` and `:active` also need
 ## Can you see anything yet?
 
 No (or only in the source code of the page)
+
+## Update 29 April 2026
+
+Since April 2026, Wikimedia services such as Wikipedia and Wikidata have been enforcing [rate limits](https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits) more strictly. There are two simple ways to obtain higher rate limits:
+* Via a customised `User-Agent` 
+* By using a Wikimedia account
+
+In addition, one of the upcoming Hugo releases will offer the ability to respond to the `Retry-After` HTTP header; see [PR #14828](https://github.com/gohugoio/hugo/issues/14828)
