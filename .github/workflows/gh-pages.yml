@@ -57,7 +57,7 @@ jobs:
 # https://github.com/cmahnke/projektemacher-hugo/releases/download/latest/hugo_${{ env.HUGO_VERSION }}_linux-amd64.tar.gz
       - name: Install Hugo
         run: |
-          ./themes/projektemacher-base/scripts/github/setup-hugo.sh https://github.com/cmahnke/projektemacher-hugo/releases/download/latest/hugo_${{ env.HUGO_VERSION }}_linux-amd64.tar.gz
+          ./themes/projektemacher-base/scripts/github/setup-hugo.sh ${{ env.HUGO_VERSION }}
 
       - name: Get Hugo cache
         id: cache-hugo-restore
