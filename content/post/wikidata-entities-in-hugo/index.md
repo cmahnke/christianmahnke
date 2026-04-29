@@ -111,4 +111,4 @@ Seit April 2026 prüfen Wikimedia-Dienste wie die Wikipedia oder Wikidata die [R
 * Über einen angepassten `User-Agent` 
 * Über die Nutzung eines Wikimedia Accounts
 
-Zusätzlich wird eine der nächsten Hugo-Versionen die Möglichkeit bieten, auf den `Retry-After`-HTTP-Header zu reagieren, siehe [PR #14828](https://github.com/gohugoio/hugo/issues/14828)
+Zusätzlich wird eine der nächsten Hugo-Versionen die Möglichkeit bieten, auf den `Retry-After`-HTTP-Header zu reagieren, siehe [PR #14829](https://github.com/gohugoio/hugo/issues/14829)

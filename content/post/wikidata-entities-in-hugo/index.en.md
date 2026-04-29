@@ -111,4 +111,4 @@ Since April 2026, Wikimedia services such as Wikipedia and Wikidata have been en
 * Via a customised `User-Agent` 
 * By using a Wikimedia account
 
-In addition, one of the upcoming Hugo releases will offer the ability to respond to the `Retry-After` HTTP header; see [PR #14828](https://github.com/gohugoio/hugo/issues/14828)
+In addition, one of the upcoming Hugo releases will offer the ability to respond to the `Retry-After` HTTP header; see [PR #14829](https://github.com/gohugoio/hugo/issues/14829)
