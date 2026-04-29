@@ -85,6 +85,13 @@ jobs:
         run: |
           ./scripts/post-build/index.sh
 
+      - name: Always Save Hugo cache
+        if: always()
+        uses: actions/cache/save@v5
+        with:
+          key: hugo-cache-${{ runner.os }}-${{ github.run_id }}
+          path: resources
+
       - name: Download all workflow run artifacts
         uses: dawidd6/action-download-artifact@v21
         id: download-artifact
