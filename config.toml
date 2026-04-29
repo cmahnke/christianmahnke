@@ -386,7 +386,7 @@ timeout = "120s"
 [caches]
   [caches.assets]
     dir = ':resourceDir/_gen'
-    maxAge = -1
+    maxAge = 604800
   [caches.getresource]
     dir = ':resourceDir/:project'
-    maxAge = 259200
+    maxAge = 604800

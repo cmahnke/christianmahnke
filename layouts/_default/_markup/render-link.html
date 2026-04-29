@@ -1,10 +1,21 @@
+{{- $debug := partialCached "functions/debug/enabled.html" . -}}
 {{- $wikidataSPARQLEndpoint := "https://query.wikidata.org/sparql" -}}
 
 {{- $target := .Destination -}}
 {{- $wikidataID := "" -}}
 {{- if findRE `(?m)https://(.{2})\.wikipedia.org/wiki/(.[^#]*)` $target -}}
   {{- $queryURL := replaceRE `(?m)https://(.{2}).wikipedia.org/wiki/(.[^#]*)` "https://$1.wikipedia.org/w/api.php?action=query&prop=pageprops&titles=$2&format=json" $target -}}
-  {{- with try (resources.GetRemote $queryURL) -}}
+
+  {{- $queryOpts := dict
+    "method" "get"
+  -}}
+  {{- with site.Params.useragent -}}
+    {{- $queryOpts = $queryOpts | merge (dict "User-Agent" .) -}}
+  {{- end -}}
+  {{- if $debug -}}
+    {{- warnf "[_default/_markup/render-link.html] Getting %s with options %#v" $queryURL $queryOpts -}}
+  {{- end -}}
+  {{- with try (resources.GetRemote $queryURL $queryOpts) -}}
     {{- with .Err -}}
       {{- errorf "[_markup/render-link.html] Unable to get remote resource %s: %s"  $queryURL . -}}
     {{- else with .Value -}}
@@ -25,6 +36,9 @@
     "method" "get"
     "headers" (dict "Accept" "application/sparql-results+json")
   -}}
+  {{- with site.Params.useragent -}}
+    {{- $queryOpts = $queryOpts | merge (dict "User-Agent" .) -}}
+  {{- end -}}
   {{- $target = replace $target `"` "" -}}
   {{- $query := printf `SELECT ?item ?itemLabel ?officialWebsite ?officialBlog ?onlineDatabaseURL WHERE {
       ?item wdt:P856 <%s> . SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" . }
