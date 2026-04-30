@@ -42,6 +42,10 @@ Daher gibt es keine Sicherheit für Nutzer von Nischenbetriebsystemen wie Linux 
 Ein Feed-Poisoning-Angriff beginnt in der Regel mit der Zusendung eines oder mehrerer Links, die das Thema der Manipulation platzieren sollen. Dabei erhöht die Anzahl der vom Endanwender angeklickten Links die Erfolgswahrscheinlichkeit erheblich.
 Wenn erst einmal ein Vertrauensverhältnis besteht, steuern geübte Propagandisten nach, indem sie weiterhin Links schicken, die den Algorithmus der Social-Media-Plattform des Ziels des Angriffs kontinuierlich in die gewünschte Richtung konditionieren.
 
+### Varianten
+
+Es wurden auch kombinierte Angriffe beobachtet. So ist es beispielsweise möglich, die manipulative URL über einen QR-Code zu übermitteln (Quishing).
+
 ## Tipps, um nicht auf Feed Poisoning hereinzufallen:
 * Prüfen Sie sorgfältig den Absender. Kennen Sie ihn persönlich? Ist er vertrauenswürdig?
 * Öffnen Sie Links aus Messengern oder E-Mails nicht durch einen Klick, sondern kopieren Sie die URL in einen Browser im privaten Modus. Auch auf einem mobilen Endgerät. 

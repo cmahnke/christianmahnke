@@ -42,6 +42,10 @@ Consequently, there is no protection for users of niche operating systems such a
 A feed poisoning attack usually begins with the sending of one or more links, which are generally intended to introduce the subject of manipulation. The number of links clicked by the end user significantly increases the likelihood of success.
 Once a relationship of trust has been established, experienced propagandists follow up by continuing to send links that continuously condition the algorithm of the social media platform used by the target of the attack in the desired direction.
 
+### Variants
+
+Combined attacks have also been observed. For example, it is possible to transmit the malicious URL via a QR code (quishing).
+
 ## Tips to avoid falling for feed poisoning:
 * Check the sender carefully. Do you know them personally? Are they trustworthy?
 * Don"t open links from messaging apps or emails by clicking on them; instead, copy the URL into a browser in incognito mode. Do the same on a mobile device.
