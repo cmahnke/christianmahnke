@@ -1219,10 +1219,25 @@ a:visited {
           max-height: 60vh;
         }
 
+        .update,
         .date {
             align-self: flex-end;
-            margin-bottom: .8em;
+            margin-bottom: 1.6em;
         }
+        .date + .update {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 35em) {
+          .date {
+            margin-bottom: 1.4em;
+          }
+
+          .update {
+            display: none;
+          }
+        }
+
     }
 }
 
@@ -1252,16 +1267,21 @@ a:visited {
             align-self: flex-start;
         }
 
+        .post-data,
         .post-date {
             align-self: flex-end;
         }
     }
 
+    .odd .meta {
+      justify-content: flex-start;
+    }
+
     .odd .meta .tags {
-        flex-direction: row-reverse !important;
+        /* flex-direction: row-reverse !important;*/
 
         a {
-            padding-left: 1rem
+          padding-left: 1rem
         }
     }
 
@@ -1269,6 +1289,10 @@ a:visited {
         a {
           padding-right: 1rem
         }
+    }
+
+    .odd .meta {
+      justify-content: flex-end;
     }
 
     .meta {
@@ -1308,6 +1332,7 @@ a:visited {
         .meta .tags {
             right: 0;
         }
+        .post-data,
         .post-date {
             align-self: flex-start;
         }
@@ -1414,7 +1439,7 @@ a:visited {
         display: flex;
         align-self: flex-end;
         font-weight: 200;
-        margin-bottom: .8rem;
+        /* margin-bottom: .8rem; */
     }
 
     p {
@@ -1428,6 +1453,7 @@ a:visited {
         display: flex;
     }
 
+    .update .update-label,
     .date,
     .tags {
         font-weight: 200;
@@ -1437,7 +1463,7 @@ a:visited {
         margin: 3em 0;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        /*justify-content: center;*/
         position: relative;
 
         @media (max-width : 35em) {
@@ -1463,6 +1489,10 @@ a:visited {
             width: max-content;
             align-self: center;
             cursor: pointer;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
             @media (max-width : 35em) {
                 margin-bottom: 1em;
             }
@@ -1476,7 +1506,8 @@ a:visited {
         .tags {
             font-size: 1.6em;
             flex-direction: column;
-            position: absolute;
+            /*position: absolute;*/
+            
             @media (max-width : 35em) {
                 position: unset;
                 text-align: center;

@@ -23,6 +23,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q1122756
   - https://www.wikidata.org/wiki/Q188675
   - https://www.wikidata.org/wiki/Q871021
+lastmod: 2026-04-27T00:00:00
 ---
 
 I bought an interesting [Art Brut](https://en.wikipedia.org/wiki/Outsider_art) drawing from 1965...

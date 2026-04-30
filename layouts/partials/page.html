@@ -8,11 +8,22 @@
       {{- end -}}
       {{- if not .Params.metaPage -}}
         <div class="date">
-          <time class="post-data" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+          <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
             {{- .Date | time.Format ":date_full" -}}
           </time>
         </div>
-      {{- end -}}
+        {{- with .Params.Lastmod -}}
+          {{- $lastmod := time . -}}
+          <!-- TODO: Check how to ignore dated provided by Git
+          <div class="update">
+            <span class="update-label">{{ i18n "updatedOn" }}</span>
+            <time class="date" datetime="{{ $lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+              {{- $lastmod | time.Format ":date_full" -}}
+            </time>
+          </div>
+        -->
+        {{- end -}}
+        {{- end -}}
       {{- with .Params.doi -}}
         <div class="doi-reference">
           {{- partial "doi.html" . -}}

@@ -11,6 +11,7 @@ tags:
 outputs:
   - bibtex
   - html
+cite: true
 wikidata:
   - https://www.wikidata.org/wiki/Q2543504
   - https://www.wikidata.org/wiki/Q213602

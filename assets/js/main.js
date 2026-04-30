@@ -9,10 +9,8 @@ window.addConsent = addConsent;
 window.initMap = initMap;
 import chroma from 'chroma-js';
 window.chroma = chroma;
-//window.chroma = require('chroma-js');
 import WordCloud from 'wordcloud';
 window.WordCloud = WordCloud;
-//window.WordCloud = require('wordcloud');
 
 /*
 document.addEventListener("DOMContentLoaded", function() {
@@ -20,7 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 */
 
-window.enterView = require('enter-view');
+import enterView from 'enter-view';
+window.enterView = enterView;
 
 import Elevator from 'elevator.js';
 
