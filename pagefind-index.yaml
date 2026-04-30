@@ -24,6 +24,8 @@ files:
     - 'privacy/**'
     - 'en/privacy/**'
     - '404.html'
+    - 'post/**/article.html'
+    - 'en/post/**/article.html'
 content:
   ignore:
     - "<meta http-equiv=\"refresh\" content=\"0; url="
