@@ -1,25 +1,24 @@
-{{ if in .Section "mastodon" -}}
-  {{- return -}}
-{{- end -}}
-{{/* check art posts */}}
-{{- if in .Params.tags "Art" -}}
+{{ if not (in .Section "mastodon") -}}
+  {{/* check art posts */}}
+  {{- if in .Params.tags "Art" -}}
+    {{- if not (isset .Params "wikidata") -}}
+      {{- warnf "[check-post.html] Missing Wikidata in %s (Section %s)" .RelPermalink .Section -}}
+    {{- end -}}
+    {{- if not (isset .Params "linkedart") -}}
+      {{- warnf "[check-post.html] Missing LinkedArt in %s" .RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
   {{- if not (isset .Params "wikidata") -}}
-    {{- warnf "[check-post.html] Missing Wikidata in %s" .RelPermalink -}}
+    {{- warnf "[check-post.html] Missing Wikidata in %s (Section %s)" .RelPermalink .Section -}}
   {{- end -}}
-  {{- if not (isset .Params "linkedart") -}}
-    {{- warnf "[check-post.html] Missing LinkedArt in %s" .RelPermalink -}}
-  {{- end -}}
-{{- end -}}
-{{- if not (isset .Params "wikidata") -}}
-  {{- warnf "[check-post.html] Missing Wikidata in %s" .RelPermalink -}}
-{{- end -}}
-{{- $page := . -}}
-{{- if in .Section "post" -}}
-  {{- $langs := slice -}}
-  {{- range .AllTranslations -}}
-    {{- $langs = $langs | append .Language.Name -}}
-  {{- end -}}
-  {{- if not (and (in $langs "de") (in $langs "en")) -}}
-    {{- errorf "[check-post.html] Missing translation for %s" $page.RelPermalink -}}
+  {{- $page := . -}}
+  {{- if in .Section "post" -}}
+    {{- $langs := slice -}}
+    {{- range .AllTranslations -}}
+      {{- $langs = $langs | append .Language.Name -}}
+    {{- end -}}
+    {{- if not (and (in $langs "de") (in $langs "en")) -}}
+      {{- errorf "[check-post.html] Missing translation for %s" $page.RelPermalink -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
