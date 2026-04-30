@@ -354,8 +354,8 @@ timeout = "180s"
 
 [security]
   [security.http]
-    mediaTypes = ['^application/json$', '^application/json;\s?charset=[uU][tT][fF]-8$', '^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$']
-    urls = ['^https://unpkg\.com/.*', '^https://aframe.io\/.*', '^https://www\.wikidata\.org/.*', '^https://query\.wikidata\.org/.*', '^https://(de|en)\.wikipedia\.org/.*', '^http://vocab\.getty\.edu/.*']
+    mediaTypes = ['^application/json$', '^application/json;\s?charset=[uU][tT][fF]-8$', '^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$', '^application/sparql-results\+json$']
+    urls = ['^https://unpkg\.com/.*', '^https://aframe.io\/.*', '^https://www\.wikidata\.org/.*', '^https://query\.wikidata\.org/.*', '^https://(de|en)\.wikipedia\.org/.*', '^http://vocab\.getty\.edu/.*', '^http://data\.getty\.edu/vocab/.*', '^https://qlever\.dev/api/.*']
 
 [related]
   includeNewer = true
@@ -383,10 +383,21 @@ timeout = "180s"
     type = 'basic'
     weight = 80
 
-[caches]
-  [caches.assets]
-    dir = ':resourceDir/_gen'
-    maxAge = 604800
-  [caches.getresource]
-    dir = ':resourceDir/:project'
-    maxAge = 604800
+#[HTTPCache]
+#  respectCacheControlNoStoreInRequest = false
+#  respectCacheControlNoStoreInResponse = false
+#
+#  [HTTPCache.cache]
+#      [HTTPCache.cache.for]
+#        includes = ['**', 'https://de.wikipedia.org/**', 'https://www.wikidata.org/**']
+#
+#  [[HTTPCache.polls]]
+#    disable = true
+#
+#[caches]
+#  [caches.assets]
+#    dir = ':resourceDir/_gen'
+#    maxAge = 604800
+#  [caches.getresource]
+#    dir = ':resourceDir/:project'
+#    maxAge = 604800

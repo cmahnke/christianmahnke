@@ -21,7 +21,6 @@ wikidata:
   - https://www.wikidata.org/wiki/Q24045714
   - https://www.wikidata.org/wiki/Q188675
 gnd: http://d-nb.info/gnd/1139723227
-draft: true
 ---
 
 Ich habe einen Holzschnitt von Christa von Lettow-Vorbeck bei [Zeitzeug](https://zeitzeug.de/) gekauft...

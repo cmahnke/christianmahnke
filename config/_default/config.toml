@@ -26,6 +26,7 @@
   description = "Persönliche Homepage von Christian Mahnke"
   wikidata = true
   debug = false
+  #wikidatasparqlendpoint = "https://qlever.dev/api/wikidata"
   js = "esm"
   pagetheme = "#701611"
   keywordAsString = true

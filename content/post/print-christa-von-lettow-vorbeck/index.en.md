@@ -21,7 +21,6 @@ wikidata:
   - https://www.wikidata.org/wiki/Q24045714
   - https://www.wikidata.org/wiki/Q188675
 gnd: http://d-nb.info/gnd/1139723227
-draft: true
 ---
 
 I bought a woodcut by Christa von Lettow-Vorbeck from [Zeitzeug](https://zeitzeug.de/)...
