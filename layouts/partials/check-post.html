@@ -13,3 +13,13 @@
 {{- if not (isset .Params "wikidata") -}}
   {{- warnf "[check-post.html] Missing Wikidata in %s" .RelPermalink -}}
 {{- end -}}
+{{- $page := . -}}
+{{- if in .Section "post" -}}
+  {{- $langs := slice -}}
+  {{- range .AllTranslations -}}
+    {{- $langs = $langs | append .Language.Name -}}
+  {{- end -}}
+  {{- if not (and (in $langs "de") (in $langs "en")) -}}
+    {{- errorf "[check-post.html] Missing translation for %s" $page.RelPermalink -}}
+  {{- end -}}
+{{- end -}}
