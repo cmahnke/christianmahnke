@@ -30,7 +30,9 @@ Parameters:
 <div class="iiif">
     <div id="iiif-presentation" class="viewer presentation-api touch {{ $orientation }}"></div>
     <script type="text/javascript">
+      window.addEventListener('DOMContentLoaded', (event) => {
         var viewer = touchViewer('iiif-presentation', '{{ $manifestUrl }}');
+      });
     </script>
 </div>
 

@@ -29,7 +29,7 @@
     const imageUrl = '{{ $image | safeJS }}';
     const canvas = document.querySelector('#{{ $id | safeJS }}');
 
-    initCanvas(canvas, imageUrl);
+    window.initCanvas(canvas, imageUrl);
   </script>
 </div>
 

@@ -8,13 +8,15 @@
 
 <script type="text/javascript">
   const hdrCheckResult = document.getElementById("{{ $id | safeJS }}");
-  if (checkHDR()) {
-    hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrSupported" | safeJS }}";
-    hdrCheckResult.classList.add("success");
-  } else {
-    hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrNotSupported" | safeJS }}";
-    hdrCheckResult.classList.add("fail");
-  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    if (window.checkHDR()) {
+      hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrSupported" | safeJS }}";
+      hdrCheckResult.classList.add("success");
+    } else {
+      hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrNotSupported" | safeJS }}";
+      hdrCheckResult.classList.add("fail");
+    }
+  });
 </script>
 
 {{- define "_partials/shortcodes/hdr-check-metadata.html" -}}

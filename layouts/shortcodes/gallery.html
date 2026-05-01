@@ -37,7 +37,9 @@
 </div>
 
 <script type="text/javascript">
-  window.photoswipe("#{{ $id | safeJS }}", "a.gallery-image")
+  window.addEventListener('DOMContentLoaded', (event) => {
+    window.photoswipe("#{{ $id | safeJS }}", "a.gallery-image")
+  });
 </script>
 
 {{- define "_partials/shortcodes/gallery-metadata.html" -}}

@@ -12,7 +12,9 @@
 <script type="text/javascript">
   const modelUrl = '{{ $model | safeJS }}';
   const canvas = document.querySelector('#{{ $id | safeJS }}');
-  initModel(canvas, modelUrl);
+  window.addEventListener('DOMContentLoaded', (event) => {
+    window.initModel(canvas, modelUrl);
+  });
 </script>
 
 {{- define "_partials/shortcodes/hdr-model-metadata.html" -}}

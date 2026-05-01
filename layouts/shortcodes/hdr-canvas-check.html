@@ -8,13 +8,15 @@
 
 <script type="text/javascript">
   const hdrCheckResult = document.getElementById("{{ $id | safeJS }}");
-  if (checkHDRCanvas()) {
-    hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrCanvasSupported" | safeJS }}";
-    hdrCheckResult.classList.add("success");
-  } else {
-    hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrCanvasNotSupported" | safeJS }}";
-    hdrCheckResult.classList.add("fail");
-  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    if (window.checkHDRCanvas()) {
+      hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrCanvasSupported" | safeJS }}";
+      hdrCheckResult.classList.add("success");
+    } else {
+      hdrCheckResult.querySelector('p').innerText = "{{ i18n "hdrCanvasNotSupported" | safeJS }}";
+      hdrCheckResult.classList.add("fail");
+    }
+  });
 </script>
 
 {{- define "_partials/shortcodes/hdr-canvas-check-metadata.html" -}}
