@@ -27,7 +27,7 @@
   wikidata = true
   debug = false
   #wikidatasparqlendpoint = "https://qlever.dev/api/wikidata"
-  js = "esm"
+  #js = "esm"
   pagetheme = "#701611"
   keywordAsString = true
   orcid = "0009-0003-1361-4159"

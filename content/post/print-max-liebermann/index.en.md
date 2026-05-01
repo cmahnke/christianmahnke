@@ -49,3 +49,4 @@ Von ihm stammt der Satz: "Ick kann jar nich soville fressen, wie ick kotzen möc
 ## Update 26 April 2026
 
 The print is published in Gustav Schiefler’s catalogue raisonné on page 98 under number 155: _Schiefler, Gustav, and Max Liebermann. 1991. Max Liebermann: Sein Graphisches Werk = the Graphic Work: 1876–1923. 4th, expanded ed. San Francisco: A. Wofsy._
+Also available on the [Internet Archive](https://archive.org/details/maxliebermanngra0000gust/mode/2up).

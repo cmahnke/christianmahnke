@@ -872,6 +872,18 @@ a:visited {
                 direction: ltr;
               }
             }
+
+            &.donations-section {
+              h2 {
+                font-size: 1.5em;
+              }
+
+              .list-block,
+              p:nth-child(n+2) {
+                font-size: .76em;
+              }
+
+            } 
         }
 
     }
@@ -989,6 +1001,8 @@ a:visited {
             */
         }
     }
+
+
 
     .donations-section,
     .section-content {
