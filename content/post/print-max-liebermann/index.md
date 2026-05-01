@@ -47,3 +47,7 @@ Das [Lindenau-Museum Altenburg](https://guide.lindenau-museum.de/menschenleben-a
 Max Liebermann war ein bedeutender Wegbereiter der deutschen Moderne und prägte als langjähriger Präsident der [Berliner Secession](https://de.wikipedia.org/wiki/Berliner_Secession) den Übergang vom Realismus zum [Impressionismus](https://de.wikipedia.org/wiki/Deutscher_Impressionismus_(Malerei)). Als jüdischer Künstler wurde er von den Nationalsozialisten mit einem Ausstellungsverbot belegt und in die soziale Isolation gedrängt, was ihn schließlich dazu zwang, sich resigniert aus der von ihm mitbegründeten Akademie der Künste zurückzuziehen.
 
 Von ihm stammt der Satz: "Ick kann jar nich soville fressen, wie ick kotzen möchte."
+
+## Update 26.4.2026
+
+Die Grafik ist im Werkverzeichnis von Gustav Schiefler auf Seite 98 unter der Nummer 155 veröffentlicht: _Schiefler, Gustav, und Max Liebermann. 1991. Max Liebermann : Sein Graphisches Werk = the Graphic Work : 1876-1923. 4., erweiterte Aufl. San Francisco: A. Wofsy._

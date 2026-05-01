@@ -45,3 +45,7 @@ The [Lindenau Museum in Altenburg](https://guide.lindenau-museum.de/menschenlebe
 Max Liebermann was a major pioneer of German modernism and, as the long-standing president of the [Berliner Secession](https://en.wikipedia.org/wiki/Berlin_Secession), shaped the transition from realism to [Impressionism](https://en.wikipedia.org/wiki/Impressionism). As a Jewish artist, he was banned from exhibiting by the Nazis and forced into social isolation, which ultimately compelled him to resign himself to withdrawing from the Academy of Arts, which he had helped to found.
 
 Von ihm stammt der Satz: "Ick kann jar nich soville fressen, wie ick kotzen möchte." (I can't eat as much as I'd like to throw up)
+
+## Update 26 April 2026
+
+The print is published in Gustav Schiefler’s catalogue raisonné on page 98 under number 155: _Schiefler, Gustav, and Max Liebermann. 1991. Max Liebermann: Sein Graphisches Werk = the Graphic Work: 1876–1923. 4th, expanded ed. San Francisco: A. Wofsy._
