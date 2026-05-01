@@ -22,8 +22,17 @@
     {{ $format := "2 Jan 2006" }}
     <meta name="date" content="{{ $t.Format $format }}"/>
     {{- partial "html/head/style.html" (dict "context" . "css" "css/style.css") -}}
-    {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
-    {{- partial "html/head/page-scripts.html" . -}}
+    {{- if and (isset site.Params "js") (eq site.Params.js "esm") -}}
+      {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .) "opts" (dict "format" "esm")) -}}
+      {{/*
+      {{- partial "html/head/page-scripts.html" (dict "context" . "opts" (dict "format" "esm")) -}}
+      */}}
+    {{- else -}}
+      {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
+      {{/*
+      {{- partial "html/head/page-scripts.html" . -}}
+      */}}
+    {{- end -}}
     {{- $cssOptions := dict "outputStyle" "compressed" "transpiler" "dartsass" "targetPath" "css/article.css" "includePaths" (slice "assets/css") -}}
     {{- $css := resources.Get "scss/article-pdf.scss" | toCSS $cssOptions | fingerprint -}}
     <link rel="stylesheet" href="{{ substr $css.RelPermalink $relative }}" type="text/css" integrity="{{ $css.Data.Integrity }}">
