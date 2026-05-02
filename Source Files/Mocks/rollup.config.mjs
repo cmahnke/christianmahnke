@@ -6,6 +6,7 @@ import * as sass from 'sass';
 import commonjs from '@rollup/plugin-commonjs';
 import { writeFileSync, mkdirSync } from 'fs';
 import { dirname } from 'path';
+import inlineWasm from '@projektemacher/rollup-plugin-wasm-brotli';
 
 const fontURLPath = "/fonts/";
 
@@ -19,18 +20,19 @@ const configs = [
       chunkFileNames: '[name]-[hash].js'
     },
     plugins: [
-      wasm({
-        targetEnv: 'browser',
-        include: ['**/hdt_bg.wasm', '**/web_bg.wasm'],
-        fileName: '[name][extname]',
-        publicPath: './',
-        maxFileSize: 0
-      }),
+      // wasm({
+      //   targetEnv: 'browser',
+      //   include: ['**/hdt_bg.wasm', '**/web_bg.wasm'],
+      //   fileName: '[name][extname]',
+      //   publicPath: './',
+      //   maxFileSize: 0
+      // }),
       nodeResolve({
         browser: true,
         preferBuiltins: false,
         extensions: ['.ts', '.js', '.wasm']
       }),
+      await inlineWasm(),
       sassPlugin({ 
         api: 'modern',
         options: {
