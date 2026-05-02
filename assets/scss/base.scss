@@ -1488,6 +1488,7 @@ a:visited {
 
         @media (max-width : 35em) {
             flex-direction: column;
+            margin: 1em 0 0 0;
         }
 
         .tags-heading {
@@ -1515,6 +1516,11 @@ a:visited {
 
             @media (max-width : 35em) {
                 margin-bottom: 1em;
+                transform: translateX(-50%);
+                order: 2;
+                position: unset;
+                transform: unset;
+                margin-top: 2em;
             }
 
             .button-gradient {
@@ -1531,6 +1537,7 @@ a:visited {
             @media (max-width : 35em) {
                 position: unset;
                 text-align: center;
+                order: 1;
             }
         }
     }
