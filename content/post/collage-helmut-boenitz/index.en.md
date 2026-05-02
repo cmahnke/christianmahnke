@@ -19,7 +19,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q188675
 ---
 
-I found a collage by Helmut Bönitz (1914-1999)...
+I found a collage by Helmut Bönitz (1914-1999) ([at artnet](https://www.artnet.com/artists/helmut-bonitz/)) ...
 <!--more-->
 
 {{< gallery >}}

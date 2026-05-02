@@ -19,7 +19,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q188675
 ---
 
-Ich habe eine Collage von Helmut Bönitz (1914-1999) gefunden...
+Ich habe eine Collage von Helmut Bönitz (1914-1999) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/helmut-bonitz/))  gefunden...
 <!--more-->
 
 {{< gallery >}}
