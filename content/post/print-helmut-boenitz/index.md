@@ -12,7 +12,7 @@ outputs:
   - linkedart
 linkedart:
   artist:
-    wikidata:https://www.wikidata.org/wiki/Q94634912
+    wikidata: https://www.wikidata.org/wiki/Q94634912
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1976
@@ -34,7 +34,7 @@ Ich habe eine Radierung von Helmut Bönitz (1914-1999) ([bei artnet](https://www
 ]
 {{</ gallery >}}
 
-Helmut Bönitz (1914-1999) war ein Göttinger Künstler, weshalb er auch im [Göttinger Künstlerlexikon](https://univerlag.uni-goettingen.de/bitstream/handle/3/isbn-978-3-86395-504-5/Appel_diss.pdf) von Thomas Appel zu finden.
+Helmut Bönitz (1914-1999) war ein Göttinger Künstler, weshalb er auch im [Göttinger Künstlerlexikon](https://univerlag.uni-goettingen.de/bitstream/handle/3/isbn-978-3-86395-504-5/Appel_diss.pdf) von Thomas Appel zu finden. In diesem Blog ist bereits eine [Collage von ihm zu finden](/post/collage-helmut-boenitz/).
 
 Die Radierung ist auf das Jahr 1976 datiert und zeigt oben Links die [Jacobi-Kirche](https://de.wikipedia.org/wiki/St._Jacobi_(G%C3%B6ttingen)) in Göttingen, sie ist direkt und in der Platte signiert und datiert. Auch wenn es auf dem Bild schwer zu erkennen ist, wurde der Druck mit mehreren Platten angefertigt, wodurch er ein wenig die Anmutung eines Comics mit einzelnen Panels hat.
 
