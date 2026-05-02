@@ -27,6 +27,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q777
   - https://www.wikidata.org/wiki/Q2471924
   - https://www.wikidata.org/wiki/Q1030958
+lastmod: 2025-09-03T00:00:00+02:00
 ---
 
 **In diesem Beitrag wird die weltweit erste HDR Darstellung einer UV-Photogrammetrie im Browser präsentiert.**
@@ -76,6 +77,6 @@ Wenn die HDR Überprüfung fehl geschlagen ist, werden die Farben nicht in volle
 
 Nach dem Update auf Three.js R167 ist eine weitere Anpassung des Models notwendig. Da das Modell nicht beleuchtet werden darf, damit die Textur nicht durch Shading "eingefärbt" werden darf, muss der Typ des Materials auf `MeshBasicMaterial` geändert werden.
 
-# Update für THree.js > R180
+# Update für Three.js > R180
 
 Three.js WebGPU unterstützt nun den `toneMapping` parameter für die Initialisierung von `canvas`. Dieser Parameter ersetzt `colorMetadata` aus der Beschreibung oben. Es wurde in [`hdr-canvas` 0.1.1](https://github.com/cmahnke/hdr-canvas/) implementiert.

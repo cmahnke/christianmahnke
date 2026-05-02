@@ -26,6 +26,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q1329181
   - https://www.wikidata.org/wiki/Q67078785
   - https://www.wikidata.org/wiki/Q126084987
+lastmod: 2025-03-27T00:00:00+02:00
 ---
 
 Heute (26.3.) ist die Eröffnung der Ausstellung ["Was zum Quant?!"](https://www.forum-wissen.de/event/eroeffnung-was-zum-quant/) im Forum Wissen. Zu sehen ist auch ein digitales Exponat, an dem ich beteiligt war...
@@ -48,7 +49,7 @@ Die Karte wurde mit QGIS georeferenziert.
 
 Die Koordinaten der Adressen werden mit [Nominatim](https://nominatim.openstreetmap.org/) des OpenStreetMap Projektes ermittelt.
 
-# Update
+# Update 27.3.2025
 
 {{< figure src="final.jpeg" alt="Fertige Version" class="post-image" caption="Angepasst auf die Ausstellungsgrafik" >}}
 

@@ -11,6 +11,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q800271
   - https://www.wikidata.org/wiki/Q62084783
   - https://www.wikidata.org/wiki/Q76464606
+lastmod: 2026-04-26T00:00:00+02:00
 ---
 
 Dieser Beitrag entstand zum Teil im Zug, der 80 Minuten später als geplant am Zielort ankam.

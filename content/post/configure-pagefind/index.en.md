@@ -12,6 +12,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q978185
   - https://www.wikidata.org/wiki/Q281876
   - https://www.wikidata.org/wiki/Q8811
+lastmod: 2025-06-04T00:00:00+02:00
 ---
 
 Since this page needs a search, I had a look at [Pagefind](https://pagefind.app/)...

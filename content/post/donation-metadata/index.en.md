@@ -18,6 +18,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q751808
   - https://www.wikidata.org/wiki/Q1640667
   - https://www.wikidata.org/wiki/Q102116674
+lastmod: 2025-05-23T00:00:00+02:00
 ---
 
 From time to time I donate objects to cultural institutions...

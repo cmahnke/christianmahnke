@@ -23,6 +23,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q130763950
   - https://www.wikidata.org/wiki/Q1670280
   - https://www.wikidata.org/wiki/Q188675
+lastmod: 2026-01-02T00:00:00+02:00
 ---
 
 I found a woodcut by [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Roemer) (1889-1977) ([at artnet](https://www.artnet.com/artists/eva-roemer/))...
@@ -44,6 +45,6 @@ Since I have been working with Gerbrand Caspers for years, this article is anoth
 
 Eva Roemer was also associated with Göttingen, further information on her can be found in [Göttinger Künstlerlexikon](https://univerlag.uni-goettingen.de/bitstream/handle/3/isbn-978-3-86395-504-5/Appel_diss.pdf) by Thomas Appel.
 
-# Update
+# Update 2 January 2026
 
 The Museum Starnberger See dedicated an exhibition to her from 28 March to 26 October 2025 (https://www.museum-starnberger-see.de/ausstellungen/aktuell/eva-roemer).

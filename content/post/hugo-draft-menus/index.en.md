@@ -4,6 +4,7 @@ title: "Menus in Hugo draft mode"
 cite: true
 tags:
   - Hugo
+lastmod: 2026-04-07T00:00:00+02:00
 ---
 Sometimes you want to add new menu items without publishing them...
 <!--more-->

@@ -15,6 +15,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q118980507
   - https://www.wikidata.org/wiki/Q403574
   - https://www.wikidata.org/wiki/Q28406945
+lastmod: 2026-04-21T00:00:00+02:00
 ---
 
 Seit Anfang 2025 erfasse ich zusätzliche Metadaten für die Beiträge in diesem Blog.

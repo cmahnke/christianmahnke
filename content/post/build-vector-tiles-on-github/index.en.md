@@ -16,6 +16,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q1504505
   - https://www.wikidata.org/wiki/Q16928072
   - https://www.wikidata.org/wiki/Q122904069
+lastmod: 2025-03-14T00:00:00+02:00
 ---
 Since the use of freely available map services requires [communication with external services](/post/maps/) as well as limited design, it was time for something of my own...
 
@@ -108,6 +109,6 @@ This article intentionally does not contain any configuration and code examples,
 
 Roughly speaking, you can create the dump for Europe without buildings up to zoom level 13 in just under 6 hours using all the tricks.
 
-## Update
+## Updates
 
 * **14.3.2025**: [Never Built Göttingen: Map based on self-generated material](https://never-built.goettingen.xyz/map/)

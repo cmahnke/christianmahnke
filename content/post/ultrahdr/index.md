@@ -14,6 +14,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q2985103
   - https://www.wikidata.org/wiki/Q136933249
   - https://www.wikidata.org/wiki/Q6368
+lastmod: 2024-07-06T00:00:00+02:00
 ---
 
 Für ein in Vorbereitung befindliches Projekt war es nach der [Recherche](/post/hdr-awesome-list/) notwendig einige Wege zu erkunden und Werkzeuge zu schaffen. Ausgehend von den Vorarbeiten von [Greg Benz](https://gregbenzphotography.com/hdr/), zur HDR-Unterstützung, war LibUltraHDR der sinnvollste Kandidat für weitere Experimente.

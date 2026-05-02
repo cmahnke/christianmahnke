@@ -16,6 +16,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q1504505
   - https://www.wikidata.org/wiki/Q16928072
   - https://www.wikidata.org/wiki/Q122904069
+lastmod: 2025-03-14T00:00:00+02:00
 ---
 Da die Nutzung von frei verfügbaren Kartendiensten sowohl eine [Kommunikation mit externen Diensten](/post/maps/) erfordert, als auch die Gestaltung eingeschränkt, war es Zeit für etwas eigenes...
 
@@ -109,6 +110,6 @@ Dieser Beitrag enthält absichtlich keine Konfigurations- und Codebeispiele, da 
 
 Grob lässt sich sagen, dass man unter Ausnutzung aller Tricks den Dump für Europa ohne Gebäude bis Zoomstufe 13 in knapp unter 6 Stunden erzeugen kann.
 
-## Update
+## Updates
 
 * **14.3.2025**: [Never Built Göttingen: Karte basierend auf selbst generiertem Material](https://never-built.goettingen.xyz/map/)

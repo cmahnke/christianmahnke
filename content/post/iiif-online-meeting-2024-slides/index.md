@@ -16,6 +16,7 @@ js:
 wikidata:
   - https://www.wikidata.org/wiki/Q1543677
   - https://www.wikidata.org/wiki/Q110611535
+lastmod: 2025-01-25T00:00:00+02:00
 ---
 
 Die Folien meiner Präsentation zu HDR Inhalten über IIIF sind nun verfügbar...

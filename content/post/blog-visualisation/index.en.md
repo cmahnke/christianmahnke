@@ -17,6 +17,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q116963652
   - https://www.wikidata.org/wiki/Q375913
   - https://www.wikidata.org/wiki/Q139274681
+lastmod: 2026-04-22T00:00:00+02:00
 ---
 About a year ago, I tried [visualising the blog content](/en/post/tag-pairs/)...<!--more-->
 

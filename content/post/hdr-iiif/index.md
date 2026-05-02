@@ -31,6 +31,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q777
   - https://www.wikidata.org/wiki/Q1952321
   - https://www.wikidata.org/wiki/Q99738405
+lastmod: 2024-08-28T00:00:00+02:00
 ---
 
 Beim [Zeitzeug](http://www.zeitzeug.de/) wird die Tapetensammlung des Inhabers veräußert und ich habe mir ein besonders grelles Exemplar gesichert...

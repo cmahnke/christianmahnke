@@ -27,6 +27,7 @@ linkedart:
 wikidata: 
   - https://www.wikidata.org/wiki/Q21014973
   - https://www.wikidata.org/wiki/Q2349238
+lastmod: 2025-06-04T00:00:00+02:00
 ---
 
 Random find: Christmas card from [Malte Satorius](https://de.wikipedia.org/wiki/Malte_Sartorius) (1933-2017) ([at artnet](https://www.artnet.com/artists/malte-sartorius/)).
@@ -44,7 +45,7 @@ The graphic probably dates from 1964, depicting lamps, and was used as a Christm
 
 My [this year's Christmas cards](/post/christmas-2024/) was published earlier this year.
 
-# Update 4.6.2024
+# Update 4.6.2025
 
 Following an inquiry to the Malte Sartorius Artists' Foundation, here is Max M. Bergmann gen. Freisenbruch's assessment:
 

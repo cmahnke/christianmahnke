@@ -12,16 +12,24 @@
             {{- .Date | time.Format ":date_full" -}}
           </time>
         </div>
-        {{- with .Params.Lastmod -}}
-          {{- $lastmod := time . -}}
-          <!-- TODO: Check how to ignore dated provided by Git
+        {{- $lastmod := "" -}}
+        {{- if ne .Date .Params.Lastmod -}}
+          {{- with .GitInfo -}}
+            {{- if ne .CommitDate $.Params.Lastmod  -}}
+              {{- $lastmod = time $.Params.Lastmod -}}
+            {{- end -}}
+          {{- else -}}
+            {{- $lastmod = time .Params.Lastmod -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- with $lastmod -}}
           <div class="update">
             <span class="update-label">{{ i18n "updatedOn" }}</span>
             <time class="date" datetime="{{ $lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
               {{- $lastmod | time.Format ":date_full" -}}
             </time>
           </div>
-        -->
         {{- end -}}
         {{- end -}}
       {{- with .Params.doi -}}

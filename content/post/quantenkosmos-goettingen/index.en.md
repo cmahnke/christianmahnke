@@ -26,6 +26,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q1329181
   - https://www.wikidata.org/wiki/Q67078785
   - https://www.wikidata.org/wiki/Q126084987
+lastmod: 2025-03-27T00:00:00+02:00
 ---
 
 Today (26 March) is the opening of the exhibition [‘Was zum Quant?!’](https://www.forum-wissen.de/event/eroeffnung-was-zum-quant/) in the Forum Wissen. You can also see a digital exhibit in which I was involved...
@@ -48,7 +49,7 @@ The map was georeferenced using QGIS.
 
 The coordinates of the addresses are determined using [Nominatim](https://nominatim.openstreetmap.org/) from the OpenStreetMap project.
 
-# Update
+# Update 27 March 2025
 
 {{< figure src="final.jpeg" alt="Final version" class="post-image" caption="Adapted to the exhibition graphics" >}}
 

@@ -10,6 +10,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q24045714
   - https://www.wikidata.org/wiki/Q106394
   - https://www.wikidata.org/wiki/Q77446257
+lastmod: 2024-12-31T00:00:00+02:00
 ---
 
 Archives are institutions of cultural memory - some more, some less...

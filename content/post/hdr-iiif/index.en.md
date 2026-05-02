@@ -31,6 +31,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q777
   - https://www.wikidata.org/wiki/Q1952321
   - https://www.wikidata.org/wiki/Q99738405
+lastmod: 2024-08-28T00:00:00+02:00
 ---
 
 At [Zeitzeug](http://www.zeitzeug.de/) the owner's wallpaper collection is being sold and I have secured a particularly bright example...

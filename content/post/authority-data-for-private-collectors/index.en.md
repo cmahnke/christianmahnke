@@ -13,6 +13,7 @@ wikipedia:
   - https://www.wikidata.org/wiki/Q11203476
   - https://www.wikidata.org/wiki/Q77446257
   - https://www.wikidata.org/wiki/Q27302
+lastmod: 2025-11-20T00:00:00+02:00
 ---
 Since the beginning of the year, I have been adding Wikidata for various functions on my blogs...
 <!--more-->

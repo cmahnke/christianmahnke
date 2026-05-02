@@ -1234,6 +1234,11 @@ a:visited {
           max-height: 60vh;
         }
 
+        /* TODO: Finish this */
+        .update {
+          display: none;
+        }
+
         .update,
         .date {
             align-self: flex-end;

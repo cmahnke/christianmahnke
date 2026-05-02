@@ -20,6 +20,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q62087795
   - https://www.wikidata.org/wiki/Q11189
   - https://www.wikidata.org/wiki/Q21040628 
+lastmod: 2022-04-11T00:00:00+02:00
 ---
 
 To improve the 'displayability' of digital objects such as coins and books, I have written a proxy for IIIF resources...

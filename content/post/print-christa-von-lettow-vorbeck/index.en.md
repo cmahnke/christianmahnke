@@ -21,6 +21,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q24045714
   - https://www.wikidata.org/wiki/Q188675
 gnd: http://d-nb.info/gnd/1139723227
+lastmod: 2026-04-29T00:00:00+02:00
 ---
 
 I bought a woodcut by Christa von Lettow-Vorbeck from [Zeitzeug](https://zeitzeug.de/)...
@@ -39,8 +40,7 @@ Gerbrand Caspers has published an extensive post about [Lettow-Vorbeck](https://
 
 What is interesting about this print is the signature: the surname is given only as "v. Lettow".
 
-# Updates
+# Update 29 April 2026
 
 * Gerbrand Caspers has also dedicated a [post](https://www.dashausderfrau.nl/lettow-vorbeck-christa-von.html) to Christa von Lettow-Vorbeck in ["DAS HAUS DER FRAU"](https://www.dashausderfrau.nl) – the print shown here can also be found there.
-
 * The [Archivportal-D](https://www.archivportal-d.de) contains some [archival material on her from the Archive of the Academy of Arts](https://www.archivportal-d.de/person/gnd/1139723227).

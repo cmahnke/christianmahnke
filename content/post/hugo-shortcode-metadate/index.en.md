@@ -6,6 +6,7 @@ tags:
   - Hugo
 wikidata:
   - https://www.wikidata.org/wiki/Q110961986
+lastmod: 2025-04-15T00:00:00+02:00
 ---
 
 For my blogs I use a Hugo theme as a kind of function library...

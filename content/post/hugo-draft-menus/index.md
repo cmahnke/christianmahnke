@@ -4,6 +4,7 @@ title: "Menüs im Hugo Entwurfsmodus"
 cite: true
 tags:
   - Hugo
+lastmod: 2026-04-07T00:00:00+02:00
 ---
 Manchmal will man neue Menüpunkte hinzufügen, ohne sie zu veröffentlichen...
 <!--more-->

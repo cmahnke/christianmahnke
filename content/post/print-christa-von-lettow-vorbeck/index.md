@@ -21,6 +21,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q24045714
   - https://www.wikidata.org/wiki/Q188675
 gnd: http://d-nb.info/gnd/1139723227
+lastmod: 2026-04-29T00:00:00+02:00
 ---
 
 Ich habe einen Holzschnitt von Christa von Lettow-Vorbeck bei [Zeitzeug](https://zeitzeug.de/) gekauft...
@@ -39,8 +40,7 @@ Gerbrand Caspers hat in seinem Blog ["The Linosaurus"](https://gerrie-thefriendl
 
 Interessant an diesem Druck ist die Signatur: Der Nachname ist nur als "v. Lettow" angegeben.
 
-# Updates
+# Update 29.4.2026
 
 * Gerbrand Caspers hat Christa von Lettow-Vorbeck auch in ["DAS HAUS DER FRAU"](https://www.dashausderfrau.nl) einen [Beitrag](https://www.dashausderfrau.nl/lettow-vorbeck-christa-von.html)  gewidmet - hier ist auch der abgebildete Druck zu finden.
-
 * Im [Archivportal-D](https://www.archivportal-d.de) sind einige [Archivalien zu ihr aus dem Archiv der Akademie der Künste](https://www.archivportal-d.de/person/gnd/1139723227) zu finden.

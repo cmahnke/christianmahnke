@@ -23,6 +23,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q130763950
   - https://www.wikidata.org/wiki/Q1670280
   - https://www.wikidata.org/wiki/Q188675
+lastmod: 2026-01-02T00:00:00+02:00
 ---
 
 Ich habe einen Holzschnitt von [Eva Roemer](https://de.wikipedia.org/wiki/Eva_Roemer) (1889-1977) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/eva-roemer/)) gefunden...
@@ -44,6 +45,6 @@ Da ich seit Jahren eine lockere Zusammenarbeit mit Gerbrand Caspers pflege, biet
 
 Eva Roemer war auch mit Göttingen verbunden, daher sind weitere Informationen zu ihr im [Göttinger Künstlerlexikon](https://univerlag.uni-goettingen.de/bitstream/handle/3/isbn-978-3-86395-504-5/Appel_diss.pdf) von Thomas Appel zu finden.
 
-# Update
+# Update 2.1.2026
 
-Das Museum Starnberger See widmete ihr vom 28. März bis 26.Oktober 2025 eine [Ausstellung](https://www.museum-starnberger-see.de/ausstellungen/aktuell/eva-roemer).
+Das Museum Starnberger See widmete ihr vom 28. März bis 26. Oktober 2025 eine [Ausstellung](https://www.museum-starnberger-see.de/ausstellungen/aktuell/eva-roemer).

@@ -26,6 +26,7 @@ linkedart:
 wikidata: 
   - https://www.wikidata.org/wiki/Q21014973
   - https://www.wikidata.org/wiki/Q2349238
+lastmod: 2025-06-04T00:00:00+02:00
 ---
 
 Zufallsfund: Weihnachtskarte von [Malte Satorius](https://de.wikipedia.org/wiki/Malte_Sartorius) (1933-2017) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/malte-sartorius/)).
@@ -43,7 +44,7 @@ Die Grafik stammt vermutlich aus dem Jahr 1964, stellt Lampen dar und ist als We
 
 Meine [diesjährigen Weihnachtskarten](/post/christmas-2024/) wurde dieses Jahr früher veröffentlicht.
 
-# Update 4.6.2024
+# Update 4.6.2025
 
 Nach einer Anfrage bei der Künstlerstiftung Malte Sartorius, hier die Einschätzung von Max M. Bergmann gen. Freisenbruch:
 
