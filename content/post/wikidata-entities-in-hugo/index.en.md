@@ -10,7 +10,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q6368
   - https://www.wikidata.org/wiki/Q1193600
   - https://www.wikidata.org/wiki/Q20950365
-lastmod: 2029-04-29T00:00:00+02:00
+lastmod: 2026-04-29T00:00:00+02:00
 ---
 Another step towards easier searchability of the site...
 <!--more-->

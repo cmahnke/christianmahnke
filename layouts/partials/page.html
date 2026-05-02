@@ -22,10 +22,9 @@
             {{- $lastmod = time .Params.Lastmod -}}
           {{- end -}}
         {{- end -}}
-
         {{- with $lastmod -}}
           <div class="update">
-            <span class="update-label">{{ i18n "updatedOn" }}</span>
+            <div class="update-label">{{ i18n "updatedOn" }}</div>
             <time class="date" datetime="{{ $lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
               {{- $lastmod | time.Format ":date_full" -}}
             </time>

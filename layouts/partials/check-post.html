@@ -33,8 +33,8 @@
     {{- if and (strings.Contains .RawContent "# Update") (eq $lastmod "") -}}
       {{- errorf "[check-post.html] Missing modification date for %s" $page.RelPermalink -}}
     {{- end -}}
-    {{- if and (ne $lastmod "") (lt $lastmod .Date) -}}
-      {{- errorf "[check-post.html] Modification is earlier then creation date for %s" $page.RelPermalink  -}}
+    {{- if and (ne $lastmod "") (or (lt $lastmod .Date) (gt $lastmod time.Now)) -}}
+      {{- errorf "[check-post.html] Modification is earlier then creation date or in the future for %s" $page.RelPermalink  -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}

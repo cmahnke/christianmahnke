@@ -1234,17 +1234,22 @@ a:visited {
           max-height: 60vh;
         }
 
-        /* TODO: Finish this */
-        .update {
-          display: none;
-        }
-
         .update,
         .date {
             align-self: flex-end;
-            margin-bottom: 1.6em;
         }
-        .date + .update {
+
+        .update {
+          display: flex;
+          gap: .2rem;
+          margin-bottom: 1.6em;
+        }
+
+        .date:not(:has(+ .update)) {
+          margin-bottom: 1.6em;
+        }
+
+        .date ~ .update {
             margin-bottom: 0;
         }
 
@@ -1468,6 +1473,7 @@ a:visited {
 
     .readmore,
     .tags,
+    .update-label
     .date {
         font-family: 'Josefin Sans', Futura, sans-serif;
         display: flex;
