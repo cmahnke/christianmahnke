@@ -20,5 +20,21 @@
     {{- if not (and (in $langs "de") (in $langs "en")) -}}
       {{- errorf "[check-post.html] Missing translation for %s" $page.RelPermalink -}}
     {{- end -}}
+    {{- $lastmod := "" -}}
+    {{- if ne .Date .Params.Lastmod -}}
+      {{- with .GitInfo -}}
+        {{- if ne .CommitDate $.Params.Lastmod  -}}
+          {{- $lastmod = time $.Params.Lastmod -}}
+        {{- end -}}
+      {{- else -}}
+        {{- $lastmod = time .Params.Lastmod -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if and (strings.Contains .RawContent "# Update") (eq $lastmod "") -}}
+      {{- errorf "[check-post.html] Missing modification date for %s" $page.RelPermalink -}}
+    {{- end -}}
+    {{- if and (ne $lastmod "") (lt $lastmod .Date) -}}
+      {{- errorf "[check-post.html] Modification is earlier then creation date for %s" $page.RelPermalink  -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
