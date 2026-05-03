@@ -3,52 +3,61 @@
 <div class="post {{ $class }}">
   <div class="content">
       <h1 class="post-title">{{ .Title }}</h1>
-      {{- with .Params.description -}}
-        <div class="post-description">{{ . }}</div>
-      {{- end -}}
-      {{- if not .Params.metaPage -}}
-        <div class="date">
-          <time class="post-data" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-            {{- .Date | time.Format ":date_full" -}}
-          </time>
-        </div>
-        {{- $lastmod := "" -}}
-        {{- if ne .Date .Params.Lastmod -}}
-          {{- with .GitInfo -}}
-            {{- if ne .CommitDate $.Params.Lastmod  -}}
-              {{- $lastmod = time $.Params.Lastmod -}}
-            {{- end -}}
-          {{- else -}}
-            {{- $lastmod = time .Params.Lastmod -}}
-          {{- end -}}
+      <div class="post-meta">
+        {{- with .Params.description -}}
+          <div class="post-description">{{ . }}</div>
         {{- end -}}
-        {{- with $lastmod -}}
-          <div class="update">
-            <div class="update-label">{{ i18n "updatedOn" }}</div>
-            <time class="date" datetime="{{ $lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
-              {{- $lastmod | time.Format ":date_full" -}}
+        {{- if not .Params.metaPage -}}
+          <div class="date">
+            <time class="post-data" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+              {{- .Date | time.Format ":date_full" -}}
             </time>
           </div>
+          {{- $lastmod := "" -}}
+          {{- if ne .Date .Params.Lastmod -}}
+            {{- with .GitInfo -}}
+              {{- if ne .CommitDate $.Params.Lastmod  -}}
+                {{- $lastmod = time $.Params.Lastmod -}}
+              {{- end -}}
+            {{- else -}}
+              {{- $lastmod = time .Params.Lastmod -}}
+            {{- end -}}
+          {{- end -}}
+          {{- with $lastmod -}}
+            <div class="update">
+              <div class="update-label">{{ i18n "updatedOn" }}</div>
+              <time class="date" datetime="{{ $lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+                {{- $lastmod | time.Format ":date_full" -}}
+              </time>
+            </div>
+          {{- end -}}
         {{- end -}}
-      {{- end -}}
-      <div class="post-author">
-        {{- with site.Params.author -}}
-          <div class="author-name">{{- .name -}}</div>
-          <a class="author-ocid" href="https://orcid.org/{{ .orcid }}">{{- .orcid -}}</a>
-        {{- end -}}
+        <div class="post-author">
+          {{- with site.Params.author -}}
+            <div class="author-name">{{- .name -}}</div>
+            <a class="author-orcid" href="https://orcid.org/{{ .orcid }}">{{- .orcid -}}</a>
+          {{- end -}}
 
-      </div>
-      <div class="post-url">URL: {{ (.OutputFormats.Get "html").Permalink }}</div>
-
-      <div class="tags-heading">{{ i18n "keywords" }}:
-        {{ partial "article/meta/tags.html" . }}
-      </div>
-
-      {{- with .Params.doi -}}
-        <div class="doi-reference">
-          {{- partial "doi.html" . -}}
         </div>
-      {{- end -}}
+        {{- $link := (.OutputFormats.Get "html").Permalink -}}
+        <div class="post-url"><span class="label">URL</span>: <a class="article-link" href="{{ $link }}">{{ $link }}</a></div>
+
+        <div class="tags-heading"><span class="label">{{ i18n "keywords" }}</span>:
+          {{ partial "article/meta/tags.html" . }}
+        </div>
+
+        {{- with .Params.zenodo -}}
+          <div class="zenodo-metadata">
+            {{- partial "article/zenodo.html" . -}}
+          </div>
+        {{- end -}}
+
+        {{- with .Params.doi -}}
+          <div class="doi-reference">
+            {{- partial "doi.html" . -}}
+          </div>
+        {{- end -}}
+      </div>
       <div class="post-body">
         {{- .Content -}}
       </div>
