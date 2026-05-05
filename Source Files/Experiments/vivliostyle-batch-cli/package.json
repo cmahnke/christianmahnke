@@ -12,7 +12,7 @@
   "scripts": {
     "test": "vitest",
     "build": "rimraf dist/* && rollup -c",
-    "start": "node dist/vivliostyle-batch.js",
+    "start": "node dist/vivliostyle-cli.js",
     "format": "prettier . --check",
     "clean": "rimraf dist/*",
     "lint": "tsc && eslint . -c eslint.config.mjs --report-unused-disable-directives --max-warnings 0"

@@ -2,8 +2,8 @@
 
 SCRIPT_LOCATION=`dirname "$(realpath $0)"`
 
-VIVLIOSTYLE="$SCRIPT_LOCATION/../vivliostyle-batch-cli/src/vivliostyle-batch.ts"
-VIVLIOSTYLE_NODE_PATH="$(dirname $VIVLIOSTYLE)/../node_modules"
+VIVLIOSTYLE="$SCRIPT_LOCATION/../vivliostyle-batch-cli/src/vivliostyle-cli.ts"
+VIVLIOSTYLE_NODE_PATH="$(dirname "$VIVLIOSTYLE")/../node_modules"
 
 ROOT="$SCRIPT_LOCATION/../../../"
 echo "Base dir is $ROOT $VIVLIOSTYLE_NODE_PATH"
@@ -19,4 +19,3 @@ find docs/post/ -name article.html | while read -r FILE_PATH; do
     NODE_PATH="$VIVLIOSTYLE_NODE_PATH" node "$VIVLIOSTYLE" -i "$FILE_PATH" --html --asset-base http://localhost:1313/=./docs/ --ignore-asset /livereload.js -o "${BASE_PATH_NAME}.pdf"
 done
 
-#Source Files/Experiments/vivliostyle-batch-cli/src/vivliostyle-batch.ts

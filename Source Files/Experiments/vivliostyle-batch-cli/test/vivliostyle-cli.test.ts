@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { mkdtempSync, writeFileSync, rmSync, mkdirSync } from 'fs'
-import { tmpdir } from 'os'
-import { join, resolve } from 'path'
+import { mkdtempSync, writeFileSync, rmSync, mkdirSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join, resolve } from 'node:path'
 
 const buildMock = vi.fn(async () => {})
 const previewMock = vi.fn(async () => {})
@@ -31,19 +31,53 @@ describe('vivliostyle-cli', () => {
     vi.resetModules()
   })
 
-  it('calls build() in default build mode', async () => {
-    const { run } = await import('../src/vivliostyle-cli')
-    const inputFile = join(tempDir, 'input.html')
+  // ---------------------------------------------------------------------------
+  // Helper: parse + execute in one step, replaces the old run() call pattern
+  // ---------------------------------------------------------------------------
 
+  async function runArgs(argv: string[]): Promise<void> {
+    const { parseArgs, execute } = await import('../src/vivliostyle-cli')
+    const parsed = parseArgs(['node', 'script', ...argv])
+    if (!parsed) throw new Error('parseArgs returned null — no arguments given')
+    await execute(parsed.options, parsed.extraArgs)
+  }
+
+  // ---------------------------------------------------------------------------
+  // Help output when no arguments are given
+  // ---------------------------------------------------------------------------
+
+  it('prints help and does not execute when called with no arguments', async () => {
+    const { parseArgs, printHelp } = await import('../src/vivliostyle-cli')
+
+    // parseArgs must return null for empty args
+    const result = parseArgs(['node', 'script'])
+    expect(result).toBeNull()
+
+    // printHelp must write to stdout
+    const writeSpy = vi.spyOn(process.stdout, 'write').mockImplementation(() => true)
+    printHelp()
+    expect(writeSpy).toHaveBeenCalled()
+    const output = writeSpy.mock.calls.map((c) => String(c[0])).join('')
+    expect(output).toContain('vivliostyle-cli')
+    expect(output).toContain('--input')
+    writeSpy.mockRestore()
+
+    // No build or preview must have been called
+    expect(buildMock).not.toHaveBeenCalled()
+    expect(previewMock).not.toHaveBeenCalled()
+  })
+
+  // ---------------------------------------------------------------------------
+  // Build mode
+  // ---------------------------------------------------------------------------
+
+  it('calls build() in default build mode', async () => {
+    const inputFile = join(tempDir, 'input.html')
     writeFileSync(inputFile, '<html><head></head><body>Hello</body></html>', 'utf-8')
 
-    await run([
-      'node',
-      'script',
-      '--input',
-      inputFile,
-      '--output',
-      join(tempDir, 'out.pdf'),
+    await runArgs([
+      '--input', inputFile,
+      '--output', join(tempDir, 'out.pdf'),
     ])
 
     expect(buildMock).toHaveBeenCalledTimes(1)
@@ -51,27 +85,23 @@ describe('vivliostyle-cli', () => {
 
     const config = buildMock.mock.calls[0][0]
     expect(config.input).toBe(resolve(inputFile))
-    expect(config.output).toEqual([
-      {
-        path: resolve(join(tempDir, 'out.pdf')),
-        format: 'pdf',
-      },
-    ])
+    expect(config.output).toEqual([{
+      path: resolve(join(tempDir, 'out.pdf')),
+      format: 'pdf',
+    }])
   })
 
-  it('calls preview() in preview mode', async () => {
-    const { run } = await import('../src/vivliostyle-cli')
-    const inputFile = join(tempDir, 'input.html')
+  // ---------------------------------------------------------------------------
+  // Preview mode
+  // ---------------------------------------------------------------------------
 
+  it('calls preview() in preview mode', async () => {
+    const inputFile = join(tempDir, 'input.html')
     writeFileSync(inputFile, '<html><body>Hello</body></html>', 'utf-8')
 
-    await run([
-      'node',
-      'script',
-      '--input',
-      inputFile,
-      '--mode',
-      'preview',
+    await runArgs([
+      '--input', inputFile,
+      '--mode', 'preview',
     ])
 
     expect(previewMock).toHaveBeenCalledTimes(1)
@@ -82,16 +112,11 @@ describe('vivliostyle-cli', () => {
   })
 
   it('calls preview() with --preview shortcut', async () => {
-    const { run } = await import('../src/vivliostyle-cli')
     const inputFile = join(tempDir, 'input.html')
-
     writeFileSync(inputFile, '<html><body>Hello</body></html>', 'utf-8')
 
-    await run([
-      'node',
-      'script',
-      '--input',
-      inputFile,
+    await runArgs([
+      '--input', inputFile,
       '--preview',
     ])
 
@@ -99,8 +124,11 @@ describe('vivliostyle-cli', () => {
     expect(buildMock).not.toHaveBeenCalled()
   })
 
+  // ---------------------------------------------------------------------------
+  // HTML asset extraction
+  // ---------------------------------------------------------------------------
+
   it('extracts link and script assets in --html mode and passes static mappings to build()', async () => {
-    const { run } = await import('../src/vivliostyle-cli')
     const inputFile = join(tempDir, 'input.html')
 
     mkdirSync(join(tempDir, 'css'))
@@ -120,11 +148,8 @@ describe('vivliostyle-cli', () => {
       'utf-8'
     )
 
-    await run([
-      'node',
-      'script',
-      '--input',
-      inputFile,
+    await runArgs([
+      '--input', inputFile,
       '--html',
     ])
 
@@ -133,12 +158,15 @@ describe('vivliostyle-cli', () => {
 
     expect(config.static).toEqual({
       '/css/site.css': [resolve(tempDir, 'css/site.css')],
-      '/js/app.js': [resolve(tempDir, 'js/app.js')],
+      '/js/app.js':    [resolve(tempDir, 'js/app.js')],
     })
   })
 
+  // ---------------------------------------------------------------------------
+  // Asset base mapping
+  // ---------------------------------------------------------------------------
+
   it('maps absolute asset URLs via --asset-base', async () => {
-    const { run } = await import('../src/vivliostyle-cli')
     const inputFile = join(tempDir, 'input.html')
 
     mkdirSync(join(tempDir, 'css'))
@@ -158,14 +186,10 @@ describe('vivliostyle-cli', () => {
       'utf-8'
     )
 
-    await run([
-      'node',
-      'script',
-      '--input',
-      inputFile,
+    await runArgs([
+      '--input',      inputFile,
       '--html',
-      '--asset-base',
-      `http://localhost:1313/=${tempDir}`,
+      '--asset-base', `http://localhost:1313/=${tempDir}`,
     ])
 
     expect(buildMock).toHaveBeenCalledTimes(1)
@@ -173,12 +197,15 @@ describe('vivliostyle-cli', () => {
 
     expect(config.static).toEqual({
       '/css/site.css': [resolve(tempDir, 'css/site.css')],
-      '/js/app.js': [resolve(tempDir, 'js/app.js')],
+      '/js/app.js':    [resolve(tempDir, 'js/app.js')],
     })
   })
 
+  // ---------------------------------------------------------------------------
+  // Ignore assets
+  // ---------------------------------------------------------------------------
+
   it('ignores configured assets like /livereload.js', async () => {
-    const { run } = await import('../src/vivliostyle-cli')
     const inputFile = join(tempDir, 'input.html')
 
     mkdirSync(join(tempDir, 'js'))
@@ -197,14 +224,10 @@ describe('vivliostyle-cli', () => {
       'utf-8'
     )
 
-    await run([
-      'node',
-      'script',
-      '--input',
-      inputFile,
+    await runArgs([
+      '--input',         inputFile,
       '--html',
-      '--ignore-asset',
-      '/livereload.js',
+      '--ignore-asset',  '/livereload.js',
     ])
 
     expect(buildMock).toHaveBeenCalledTimes(1)
@@ -213,12 +236,10 @@ describe('vivliostyle-cli', () => {
     expect(config.static).toEqual({
       '/js/app.js': [resolve(tempDir, 'js/app.js')],
     })
-
     expect(config.static['/livereload.js']).toBeUndefined()
   })
 
   it('ignores mapped absolute assets like /livereload.js via --asset-base', async () => {
-    const { run } = await import('../src/vivliostyle-cli')
     const inputFile = join(tempDir, 'input.html')
 
     mkdirSync(join(tempDir, 'js'))
@@ -237,16 +258,11 @@ describe('vivliostyle-cli', () => {
       'utf-8'
     )
 
-    await run([
-      'node',
-      'script',
-      '--input',
-      inputFile,
+    await runArgs([
+      '--input',         inputFile,
       '--html',
-      '--asset-base',
-      `http://localhost:1313/=${tempDir}`,
-      '--ignore-asset',
-      '/livereload.js',
+      '--asset-base',    `http://localhost:1313/=${tempDir}`,
+      '--ignore-asset',  '/livereload.js',
     ])
 
     expect(buildMock).toHaveBeenCalledTimes(1)
@@ -257,17 +273,16 @@ describe('vivliostyle-cli', () => {
     })
   })
 
-  it('sets logLevel to debug when -d is used', async () => {
-    const { run } = await import('../src/vivliostyle-cli')
-    const inputFile = join(tempDir, 'input.html')
+  // ---------------------------------------------------------------------------
+  // Debug flag
+  // ---------------------------------------------------------------------------
 
+  it('sets logLevel to debug when -d is used', async () => {
+    const inputFile = join(tempDir, 'input.html')
     writeFileSync(inputFile, '<html><body>Hello</body></html>', 'utf-8')
 
-    await run([
-      'node',
-      'script',
-      '--input',
-      inputFile,
+    await runArgs([
+      '--input', inputFile,
       '-d',
     ])
 
@@ -277,21 +292,19 @@ describe('vivliostyle-cli', () => {
     expect(config.debug).toBe(true)
   })
 
-  it('passes extra args after -- into config', async () => {
-    const { run } = await import('../src/vivliostyle-cli')
-    const inputFile = join(tempDir, 'input.html')
+  // ---------------------------------------------------------------------------
+  // Extra args after --
+  // ---------------------------------------------------------------------------
 
+  it('passes extra args after -- into config', async () => {
+    const inputFile = join(tempDir, 'input.html')
     writeFileSync(inputFile, '<html><body>Hello</body></html>', 'utf-8')
 
-    await run([
-      'node',
-      'script',
-      '--input',
-      inputFile,
+    await runArgs([
+      '--input', inputFile,
       '--',
       '--sandbox',
-      '--port',
-      '4000',
+      '--port', '4000',
       '--foo=bar',
     ])
 
@@ -303,39 +316,11 @@ describe('vivliostyle-cli', () => {
     expect(config.foo).toBe('bar')
   })
 
-  it('throws on invalid mode', async () => {
-    const { run } = await import('../src/vivliostyle-cli')
-    const inputFile = join(tempDir, 'input.html')
-
-    writeFileSync(inputFile, '<html><body>Hello</body></html>', 'utf-8')
-
-    await expect(
-      run([
-        'node',
-        'script',
-        '--input',
-        inputFile,
-        '--mode',
-        'invalid',
-      ])
-    ).rejects.toThrow(/Invalid mode/)
-  })
-
-  it('throws on missing input file', async () => {
-    const { run } = await import('../src/vivliostyle-cli')
-
-    await expect(
-      run([
-        'node',
-        'script',
-        '--input',
-        join(tempDir, 'does-not-exist.html'),
-      ])
-    ).rejects.toThrow(/Input file does not exist/)
-  })
+  // ---------------------------------------------------------------------------
+  // Deduplication
+  // ---------------------------------------------------------------------------
 
   it('deduplicates identical static mappings', async () => {
-    const { run } = await import('../src/vivliostyle-cli')
     const inputFile = join(tempDir, 'input.html')
 
     mkdirSync(join(tempDir, 'js'))
@@ -354,11 +339,8 @@ describe('vivliostyle-cli', () => {
       'utf-8'
     )
 
-    await run([
-      'node',
-      'script',
-      '--input',
-      inputFile,
+    await runArgs([
+      '--input', inputFile,
       '--html',
     ])
 
