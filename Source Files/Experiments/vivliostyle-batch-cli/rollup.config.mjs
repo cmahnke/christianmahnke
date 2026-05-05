@@ -4,11 +4,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import { dts } from "rollup-plugin-dts";
 import { builtinModules } from "module";
 
-const external = [
-  ...builtinModules,
-  ...builtinModules.map((m) => `node:${m}`),
-  /^[^./]/,
-];
+const external = [...builtinModules, ...builtinModules.map((m) => `node:${m}`), /^[^./]/];
 
 const configs = [
   {
