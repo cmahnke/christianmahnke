@@ -68,6 +68,7 @@ Siehe auch <a id="grolink" href="//publications.goettingen-research-online.de/cr
 
 * NPM
   * [`hdr-canvas`](https://www.npmjs.com/package/hdr-canvas)
+  * [`@projektemacher`](https://www.npmjs.com/org/projektemacher)
 * [Forum Wissen](https://www.forum-wissen.de/)
 * [Projekte bei der SUB Göttingen](https://www.sub.uni-goettingen.de/kontakt/personen-a-z/personendetails/person/christian-mahnke/)
 
