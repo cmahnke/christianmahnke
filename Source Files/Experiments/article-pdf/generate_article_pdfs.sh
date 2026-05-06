@@ -9,13 +9,11 @@ ROOT="$SCRIPT_LOCATION/../../../"
 echo "Base dir is $ROOT $VIVLIOSTYLE_NODE_PATH"
 cd "$ROOT" && hugo --renderSegments print
 
-
-
 find docs/post/ -name article.html | while read -r FILE_PATH; do
     # FILE_PATH: The initial file path (e.g., docs/post/my-post/article.html)
     # BASE_PATH_NAME: The path and base name without the extension (e.g., docs/post/my-post/article)
     BASE_PATH_NAME="${FILE_PATH%.*}"
-    #ls 
-    NODE_PATH="$VIVLIOSTYLE_NODE_PATH" node "$VIVLIOSTYLE" -i "$FILE_PATH" --html --asset-base http://localhost:1313/=./docs/ --ignore-asset /livereload.js -o "${BASE_PATH_NAME}.pdf"
+    echo "Prpcessing $FILE_PATH to $BASE_PATH_NAME.pdf"
+    NODE_PATH="$VIVLIOSTYLE_NODE_PATH" node "$VIVLIOSTYLE" -i "$FILE_PATH" --asset-base https://christianmahnke.de/=./docs/ --asset-base http://localhost:1313/=./docs/ --ignore-asset /livereload.js -o "${BASE_PATH_NAME}.pdf"
 done
 

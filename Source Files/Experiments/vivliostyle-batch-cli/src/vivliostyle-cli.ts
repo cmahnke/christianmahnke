@@ -31,7 +31,7 @@ type CliOptions = {
   author?: string;
   language?: string;
   static: string[];
-  noScripts: boolean;
+  scripts: boolean;
   cwd?: string;
   format: string;
   logLevel: string;
@@ -152,11 +152,12 @@ export function startStaticServer(
   app.disable("x-powered-by");
 
   if (htmlFilePath !== null) {
+    const absHtmlPath = resolve(htmlFilePath);
     app.get("/index.html", (_req, res) => {
-      dbg("[static-server] serving HTML entry", htmlFilePath);
-      res.type("text/html").sendFile(htmlFilePath);
+      dbg("[static-server] serving HTML entry", absHtmlPath);
+      res.type("text/html").sendFile(absHtmlPath);
     });
-    console.log(`[static-server] HTML entry: /index.html → ${htmlFilePath}`);
+    console.log(`[static-server] HTML entry: /index.html → ${absHtmlPath}`);
   }
 
   applyStaticMounts(app, staticMap, assetBases, dbg);
@@ -197,25 +198,29 @@ export function startStaticServer(
 // DOM-level rewriters
 // ---------------------------------------------------------------------------
 
+const URL_ATTR_SELECTORS: Array<[string, string]> = [
+  ["link[href]", "href"],
+  ["script[src]", "src"],
+  ["img[src]", "src"],
+  ["source[src]", "src"],
+  ["video[src]", "src"],
+  ["audio[src]", "src"],
+  ["video[poster]", "poster"],
+  ["input[src]", "src"],
+];
+
 export function rewriteAbsoluteUrlsInDom(document: Document, assetBases: AssetBaseMapping[]): boolean {
   if (assetBases.length === 0) return false;
   let changed = false;
 
-  for (const el of document.querySelectorAll("link[href]")) {
-    const href = el.getAttribute("href") ?? "";
-    const mapped = mapAbsoluteUrlToLocal(href, assetBases);
-    if (mapped) {
-      el.setAttribute("href", mapped.virtualPath);
-      changed = true;
-    }
-  }
-
-  for (const el of document.querySelectorAll("script[src]")) {
-    const src = el.getAttribute("src") ?? "";
-    const mapped = mapAbsoluteUrlToLocal(src, assetBases);
-    if (mapped) {
-      el.setAttribute("src", mapped.virtualPath);
-      changed = true;
+  for (const [selector, attr] of URL_ATTR_SELECTORS) {
+    for (const el of document.querySelectorAll(selector)) {
+      const val = el.getAttribute(attr) ?? "";
+      const mapped = mapAbsoluteUrlToLocal(val, assetBases);
+      if (mapped) {
+        el.setAttribute(attr, mapped.virtualPath);
+        changed = true;
+      }
     }
   }
 
@@ -230,19 +235,13 @@ export function rewriteVirtualPathsToServerInDom(document: Document, staticMapKe
     return staticMapKeys.some((virtual) => path === virtual || path.startsWith(virtual.endsWith("/") ? virtual : `${virtual}/`));
   };
 
-  for (const el of document.querySelectorAll("link[href]")) {
-    const href = el.getAttribute("href") ?? "";
-    if (shouldRewrite(href)) {
-      el.setAttribute("href", `${serverBaseUrl}${href}`);
-      changed = true;
-    }
-  }
-
-  for (const el of document.querySelectorAll("script[src]")) {
-    const src = el.getAttribute("src") ?? "";
-    if (shouldRewrite(src)) {
-      el.setAttribute("src", `${serverBaseUrl}${src}`);
-      changed = true;
+  for (const [selector, attr] of URL_ATTR_SELECTORS) {
+    for (const el of document.querySelectorAll(selector)) {
+      const val = el.getAttribute(attr) ?? "";
+      if (shouldRewrite(val)) {
+        el.setAttribute(attr, `${serverBaseUrl}${val}`);
+        changed = true;
+      }
     }
   }
 
@@ -350,6 +349,9 @@ export function buildPreviewHtml(
     }
     if (!virtualPrefix.endsWith("/")) virtualPrefix = `${virtualPrefix}/`;
     const mapKey = virtualPrefix === "/" ? "/" : virtualPrefix.slice(0, -1);
+    if (Object.hasOwn(extraStatic, mapKey)) {
+      console.warn(`[buildPreviewHtml] Duplicate assetBase virtual prefix "${mapKey}" — overwriting "${extraStatic[mapKey]}" with "${resolve(ab.localBase)}"`);
+    }
     extraStatic[mapKey] = resolve(ab.localBase);
     dbg("buildPreviewHtml: assetBase extra static mount", { mapKey, local: ab.localBase });
   }
@@ -578,19 +580,16 @@ export function urlToStaticMapping(
 }
 
 export function parseStaticMapping(mapping: string): { virtual: string; local: string } {
-  const firstSlash = mapping.indexOf("/");
-  const colonIdx = firstSlash === -1 ? mapping.indexOf(":") : mapping.indexOf(":", firstSlash);
-
+  if (!mapping.startsWith("/")) {
+    throw new Error(`Invalid --static mapping: "${mapping}"\nExpected format: /virtual/path:/local/path`);
+  }
+  const colonIdx = mapping.indexOf(":", 1);
   if (colonIdx === -1) {
     throw new Error(`Invalid --static mapping: "${mapping}"\nExpected format: /virtual/path:/local/path`);
   }
-
   const virtual = mapping.slice(0, colonIdx);
   const local = mapping.slice(colonIdx + 1);
-
-  if (!virtual.startsWith("/")) throw new Error(`Virtual path must start with /: "${virtual}"`);
   if (!local) throw new Error(`Local path missing in --static mapping: "${mapping}"`);
-
   return { virtual, local };
 }
 
@@ -602,7 +601,7 @@ function buildStaticMap(rawMappings: string[]): Record<string, string> {
   const map: Record<string, string> = {};
   for (const mapping of rawMappings) {
     const { virtual, local } = parseStaticMapping(mapping);
-    if (Object.prototype.hasOwnProperty.call(map, virtual)) {
+    if (Object.hasOwn(map, virtual)) {
       console.warn(`[static] Warning: duplicate virtual path "${virtual}" — ` + `"${map[virtual]}" overwritten by "${local}"`);
     }
     map[virtual] = local;
@@ -632,13 +631,22 @@ export function parseExtraArgs(extraArgs: string[]): Record<string, unknown> {
 
     if (arg.includes("=")) {
       const eqIdx = arg.indexOf("=");
-      extraConfig[arg.slice(2, eqIdx)] = arg.slice(eqIdx + 1);
+      const key = arg.slice(2, eqIdx);
+      const val = arg.slice(eqIdx + 1);
+      extraConfig[key] = val === "true" ? true : val === "false" ? false : val;
       continue;
     }
 
     const key = arg.slice(2);
     const next = extraArgs[i + 1];
-    if (next && !next.startsWith("--")) {
+
+    if (next === "true") {
+      extraConfig[key] = true;
+      i++;
+    } else if (next === "false") {
+      extraConfig[key] = false;
+      i++;
+    } else if (next && !next.startsWith("-")) {
       extraConfig[key] = next;
       i++;
     } else {
@@ -707,6 +715,7 @@ function buildProgram(): Command {
       (val: string, prev: string[]) => prev.concat(val),
       []
     )
+    // Fix #11: --no-scripts setzt Commander-intern opts().scripts = false
     .option(
       "--no-scripts",
       [
@@ -804,6 +813,9 @@ export async function execute(options: CliOptions, extraArgs: string[] = []): Pr
   if (!existsSync(inputAbs)) throw new Error(`Input file does not exist: ${inputAbs}`);
 
   const cwd = options.cwd ? resolve(options.cwd) : dirname(inputAbs);
+  if (!existsSync(cwd)) {
+    throw new Error(`Working directory does not exist: ${cwd}`);
+  }
   dbg("cwd", cwd);
 
   const outputAbs = resolve(options.output);
@@ -826,7 +838,6 @@ export async function execute(options: CliOptions, extraArgs: string[] = []): Pr
   }
   dbg("mode", mode);
 
-  // Detect HTML input automatically from file extension.
   const htmlMode = isHtmlInput(inputAbs);
   dbg("htmlMode (auto-detected)", htmlMode);
 
@@ -852,7 +863,8 @@ export async function execute(options: CliOptions, extraArgs: string[] = []): Pr
     const htmlDir = dirname(inputAbs);
     console.log(`[html] Analysing input as HTML: ${inputAbs}`);
 
-    const includeScripts = mode === "preview" ? true : !options.noScripts;
+    // Fix #11: options.scripts (false wenn --no-scripts gesetzt) statt options.noScripts
+    const includeScripts = mode === "preview" ? true : options.scripts;
     const urls = extractUrlsFromHtml(inputAbs, includeScripts);
 
     if (urls.length === 0) {
@@ -902,20 +914,36 @@ export async function execute(options: CliOptions, extraArgs: string[] = []): Pr
   if (mode === "build") {
     let vivliostyleInput = inputAbs;
     let htmlCleanup = (): void => undefined;
-    let serverClose = (): void => undefined;
 
     if (hasStatic || assetBases.length > 0) {
       const server = await startStaticServer(staticMap, assetBases, null, dbg);
-      serverClose = server.close;
 
-      if (htmlMode) {
-        ({ vivliostyleInput, cleanup: htmlCleanup } = prepareInputHtmlForBuild(inputAbs, assetBases, staticMap, server.baseUrl, dbg));
+      try {
+        if (htmlMode) {
+          ({ vivliostyleInput, cleanup: htmlCleanup } = prepareInputHtmlForBuild(inputAbs, assetBases, staticMap, server.baseUrl, dbg));
+        }
+
+        dbg("vivliostyleInput (final)", vivliostyleInput);
+
+        const config: BuildConfig = {
+          cwd,
+          input: vivliostyleInput,
+          output: [{ path: outputAbs, format }],
+          ...metaFields,
+          logLevel,
+          ...(options.debug ? { debug: true } : {}),
+          ...extraConfig
+        };
+        dbg("final BuildConfig", config);
+        await build(config);
+        console.log(`✓ Document created: ${outputAbs}`);
+      } finally {
+        htmlCleanup();
+        server.close();
       }
-    }
+    } else {
+      dbg("vivliostyleInput (final)", vivliostyleInput);
 
-    dbg("vivliostyleInput (final)", vivliostyleInput);
-
-    try {
       const config: BuildConfig = {
         cwd,
         input: vivliostyleInput,
@@ -928,9 +956,6 @@ export async function execute(options: CliOptions, extraArgs: string[] = []): Pr
       dbg("final BuildConfig", config);
       await build(config);
       console.log(`✓ Document created: ${outputAbs}`);
-    } finally {
-      htmlCleanup();
-      serverClose();
     }
 
     // ── PREVIEW mode ───────────────────────────────────────────────────────────
@@ -944,9 +969,8 @@ export async function execute(options: CliOptions, extraArgs: string[] = []): Pr
       previewInput = htmlPath;
       htmlCleanup = cleanup;
 
-      // Merge assetBase directory mounts; explicit --static entries win.
       for (const [virtual, local] of Object.entries(extraStatic)) {
-        if (!Object.prototype.hasOwnProperty.call(previewStaticMap, virtual)) {
+        if (!Object.hasOwn(previewStaticMap, virtual)) {
           previewStaticMap[virtual] = local;
           console.log(`[preview] AssetBase static mount: ${virtual} → ${local}`);
         } else {
@@ -967,15 +991,9 @@ export async function execute(options: CliOptions, extraArgs: string[] = []): Pr
 
     const hasPreviewStatic = Object.keys(previewStaticMap).length > 0;
 
-    // cwd is the directory the HTML lives in. buildPreviewHtml always writes
-    // the sibling file into dirname(inputAbs) so this is correct in both the
-    // rewritten and original-file cases.
     const previewCwd = dirname(previewInput);
     dbg("previewCwd", previewCwd);
 
-    // configData.entry must be relative to cwd.
-    // PreviewConfig.input takes the absolute path — Vivliostyle resolves it
-    // against cwd internally and constructs the correct Vite URL itself.
     const previewEntry = previewInput.slice(previewCwd.length + 1);
     dbg("previewEntry (relative, for configData only)", previewEntry);
 
@@ -1003,6 +1021,7 @@ export async function execute(options: CliOptions, extraArgs: string[] = []): Pr
 
     dbg("final PreviewConfig", config);
 
+    // Fix #3: htmlCleanup() auch bei normalem preview()-Abschluss aufrufen
     const shutdown = (): void => {
       htmlCleanup();
       process.exit(0);
@@ -1013,16 +1032,18 @@ export async function execute(options: CliOptions, extraArgs: string[] = []): Pr
     try {
       await preview(config);
     } catch (err) {
-      htmlCleanup();
       process.off("SIGINT", shutdown);
       process.off("SIGTERM", shutdown);
+      htmlCleanup();
       console.error("[preview] Full error:", err);
       const message = err instanceof Error ? err.message : String(err);
       throw new Error(`preview() failed:\n${message}`);
     }
 
+    // Fix #3: Signal-Handler entfernen UND htmlCleanup() bei normalem Abschluss
     process.off("SIGINT", shutdown);
     process.off("SIGTERM", shutdown);
+    htmlCleanup();
   }
 }
 
@@ -1030,13 +1051,13 @@ export async function execute(options: CliOptions, extraArgs: string[] = []): Pr
 // Direct execution
 // ---------------------------------------------------------------------------
 
-const _resolvedEntry = (() => {
-  try {
-    return resolve(fileURLToPath(import.meta.url));
-  } catch {
-    return null;
-  }
-})();
+// Fix #13: IIFE vereinfacht zu direktem try/catch
+let _resolvedEntry: string | null = null;
+try {
+  _resolvedEntry = resolve(fileURLToPath(import.meta.url));
+} catch {
+  // ESM import.meta.url nicht verfügbar — kein direkter Aufruf möglich
+}
 
 function isDirectExecution(): boolean {
   const entry = process.argv[1];
