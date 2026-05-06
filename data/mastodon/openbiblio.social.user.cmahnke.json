@@ -10,7 +10,7 @@
     "created_at": "2024-09-24T00:00:00+00:00",
     "following_count": 73,
     "followers_count": 28,
-    "statuses_count": 58,
+    "statuses_count": 59,
     "note": "",
     "url": "https://openbiblio.social/@cmahnke",
     "uri": "https://openbiblio.social/users/cmahnke",
@@ -40,7 +40,7 @@
       }
     ],
     "emojis": [],
-    "last_status_at": "2026-05-02T00:00:00",
+    "last_status_at": "2026-05-04T00:00:00",
     "noindex": false,
     "roles": [],
     "role": {
@@ -90,6 +90,217 @@
     "show_featured": null
   },
   "statuses": [
+    {
+      "id": "116517045360035611",
+      "uri": "https://openbiblio.social/users/cmahnke/statuses/116517045360035611/activity",
+      "url": "https://openbiblio.social/users/cmahnke/statuses/116517045360035611/activity",
+      "account": {
+        "id": "113192011891873644",
+        "username": "cmahnke",
+        "acct": "cmahnke",
+        "display_name": "",
+        "discoverable": null,
+        "group": false,
+        "locked": false,
+        "created_at": "2024-09-24T00:00:00+00:00",
+        "following_count": 73,
+        "followers_count": 28,
+        "statuses_count": 59,
+        "note": "",
+        "url": "https://openbiblio.social/@cmahnke",
+        "uri": "https://openbiblio.social/users/cmahnke",
+        "avatar": "https://openbiblio.social/system/accounts/avatars/113/192/011/891/873/644/original/cdfde88ccaca51ed.jpeg",
+        "header": "https://openbiblio.social/headers/original/missing.png",
+        "avatar_static": "https://openbiblio.social/system/accounts/avatars/113/192/011/891/873/644/original/cdfde88ccaca51ed.jpeg",
+        "header_static": "https://openbiblio.social/headers/original/missing.png",
+        "moved": null,
+        "suspended": null,
+        "limited": null,
+        "bot": false,
+        "fields": [
+          {
+            "name": "Website",
+            "value": "<a href=\"https://christianmahnke.de/\" target=\"_blank\" rel=\"nofollow noopener me\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">christianmahnke.de/</span><span class=\"invisible\"></span></a>",
+            "verified_at": "2025-01-02T10:51:12.045+00:00"
+          },
+          {
+            "name": "GitHub",
+            "value": "<a href=\"https://github.com/cmahnke\" target=\"_blank\" rel=\"nofollow noopener me\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">github.com/cmahnke</span><span class=\"invisible\"></span></a>",
+            "verified_at": null
+          },
+          {
+            "name": "ORCID",
+            "value": "<a href=\"https://orcid.org/0009-0003-1361-4159\" target=\"_blank\" rel=\"nofollow noopener me\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">orcid.org/0009-0003-1361-4159</span><span class=\"invisible\"></span></a>",
+            "verified_at": null
+          }
+        ],
+        "emojis": [],
+        "last_status_at": "2026-05-04T00:00:00",
+        "noindex": false,
+        "roles": [],
+        "role": null,
+        "source": null,
+        "mute_expires_at": null,
+        "indexable": false,
+        "hide_collections": null,
+        "memorial": null,
+        "avatar_description": null,
+        "header_description": null,
+        "show_media": null,
+        "show_media_replies": null,
+        "show_featured": null
+      },
+      "in_reply_to_id": null,
+      "in_reply_to_account_id": null,
+      "reblog": {
+        "id": "116516763803921887",
+        "uri": "https://wikis.world/users/wikidata/statuses/116516763444266740",
+        "url": "https://wikis.world/@wikidata/116516763444266740",
+        "account": {
+          "id": "109364724602165066",
+          "username": "wikidata",
+          "acct": "wikidata@wikis.world",
+          "display_name": "Wikidata",
+          "discoverable": true,
+          "group": false,
+          "locked": false,
+          "created_at": "2022-11-18T00:00:00+00:00",
+          "following_count": 113,
+          "followers_count": 4304,
+          "statuses_count": 1017,
+          "note": "<p>The free knowledge base that anyone can edit - sister of Wikipedia (toots mostly by <span class=\"h-card\" translate=\"no\"><a href=\"https://wikis.world/@masssly\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>masssly</span></a></span> and <span class=\"h-card\" translate=\"no\"><a href=\"https://mastodon.online/@nightrose\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>nightrose</span></a></span>)</p>",
+          "url": "https://wikis.world/@wikidata",
+          "uri": "https://wikis.world/users/wikidata",
+          "avatar": "https://openbiblio.social/system/cache/accounts/avatars/109/364/724/602/165/066/original/a753fd9923121a0e.jpg",
+          "header": "https://openbiblio.social/system/cache/accounts/headers/109/364/724/602/165/066/original/41e4d95049679bcc.png",
+          "avatar_static": "https://openbiblio.social/system/cache/accounts/avatars/109/364/724/602/165/066/original/a753fd9923121a0e.jpg",
+          "header_static": "https://openbiblio.social/system/cache/accounts/headers/109/364/724/602/165/066/original/41e4d95049679bcc.png",
+          "moved": null,
+          "suspended": null,
+          "limited": null,
+          "bot": false,
+          "fields": [
+            {
+              "name": "Wikidata",
+              "value": "<a href=\"https://wikidata.org\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">wikidata.org</span><span class=\"invisible\"></span></a>",
+              "verified_at": "2026-05-04T16:07:08.097+00:00"
+            }
+          ],
+          "emojis": [],
+          "last_status_at": "2026-05-04T00:00:00",
+          "noindex": null,
+          "roles": null,
+          "role": null,
+          "source": null,
+          "mute_expires_at": null,
+          "indexable": true,
+          "hide_collections": false,
+          "memorial": null,
+          "avatar_description": null,
+          "header_description": null,
+          "show_media": null,
+          "show_media_replies": null,
+          "show_featured": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "<p>This Week on Wikidata – 4 May 2026: Catch up on the latest updates and community highlights. 👉 Read the full report here: <a href=\"https://www.wikidata.org/wiki/Wikidata:Status_updates/2026_05_04\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"><span class=\"invisible\">https://www.</span><span class=\"ellipsis\">wikidata.org/wiki/Wikidata:Sta</span><span class=\"invisible\">tus_updates/2026_05_04</span></a></p>",
+        "created_at": "2026-05-04T14:25:15+00:00",
+        "reblogs_count": 2,
+        "favourites_count": 0,
+        "reblogged": true,
+        "favourited": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "mentions": [],
+        "media_attachments": [
+          {
+            "id": "116516763790677108",
+            "type": "image",
+            "url": "https://openbiblio.social/system/cache/media_attachments/files/116/516/763/790/677/108/original/38b6af086b34e4d7.png",
+            "remote_url": "https://cdn.masto.host/wikisworld/media_attachments/files/116/516/763/407/618/886/original/f93dca5b145d4a8c.png",
+            "preview_url": "https://openbiblio.social/system/cache/media_attachments/files/116/516/763/790/677/108/small/38b6af086b34e4d7.png",
+            "text_url": null,
+            "meta": {
+              "original": {
+                "width": 550,
+                "height": 550,
+                "aspect": 1.0,
+                "size": "550x550"
+              },
+              "small": {
+                "width": 480,
+                "height": 480,
+                "aspect": 1.0,
+                "size": "480x480"
+              },
+              "colors": null,
+              "focus": null
+            },
+            "blurhash": "UgPGjYrr?HXTRjjFoLa~~qXSM{n}%MbbWCjr",
+            "description": "Wikidata Logo",
+            "preview_remote_url": null
+          }
+        ],
+        "emojis": [],
+        "tags": [],
+        "bookmarked": false,
+        "application": null,
+        "language": "en",
+        "muted": false,
+        "pinned": null,
+        "replies_count": 0,
+        "card": null,
+        "poll": null,
+        "edited_at": null,
+        "filtered": [],
+        "quote": null,
+        "quotes_count": 0,
+        "tagged_collections": null,
+        "quote_approval": {
+          "automatic": [
+            "public"
+          ],
+          "manual": [],
+          "current_user": "automatic"
+        }
+      },
+      "content": "",
+      "created_at": "2026-05-04T15:36:57.335000+00:00",
+      "reblogs_count": 0,
+      "favourites_count": 0,
+      "reblogged": false,
+      "favourited": false,
+      "sensitive": false,
+      "spoiler_text": "",
+      "visibility": "public",
+      "mentions": [],
+      "media_attachments": [],
+      "emojis": [],
+      "tags": [],
+      "bookmarked": false,
+      "application": null,
+      "language": null,
+      "muted": false,
+      "pinned": null,
+      "replies_count": 0,
+      "card": null,
+      "poll": null,
+      "edited_at": null,
+      "filtered": [],
+      "quote": null,
+      "quotes_count": 0,
+      "tagged_collections": null,
+      "quote_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
+    },
     {
       "id": "116506154548121622",
       "uri": "https://openbiblio.social/users/cmahnke/statuses/116506154548121622",
@@ -10177,6 +10388,294 @@
   ],
   "favourites": [
     {
+      "id": "116514871479548688",
+      "uri": "https://chaos.social/users/samvie/statuses/116514866655554690",
+      "url": "https://chaos.social/@samvie/116514866655554690",
+      "account": {
+        "id": "111617920974089773",
+        "username": "samvie",
+        "acct": "samvie@chaos.social",
+        "display_name": "samvie",
+        "discoverable": true,
+        "group": false,
+        "locked": true,
+        "created_at": "2023-12-21T00:00:00+00:00",
+        "following_count": 1317,
+        "followers_count": 624,
+        "statuses_count": 1445,
+        "note": "<p>she/her | <br>Initiatorin @offene_netzwerke<br>Political &amp; Media Scientist |<br><a href=\"https://chaos.social/tags/Policy\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Policy</span></a> &amp; <a href=\"https://chaos.social/tags/Advocacy\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Advocacy</span></a> in the field of <a href=\"https://chaos.social/tags/digitalrights\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>digitalrights</span></a> <a href=\"https://chaos.social/tags/media\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>media</span></a> <a href=\"https://chaos.social/tags/democracies\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>democracies</span></a> | <br>Host @netzpat = netzpolitischer Abend <a href=\"https://chaos.social/tags/%C3%96sterreich\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Österreich</span></a> | <br><a href=\"https://chaos.social/tags/civilsociety\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>civilsociety</span></a> <a href=\"https://chaos.social/tags/publicopenspaces\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>publicopenspaces</span></a> <a href=\"https://chaos.social/tags/openscience\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>openscience</span></a> <a href=\"https://chaos.social/tags/digitalcommons\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>digitalcommons</span></a> <a href=\"https://chaos.social/tags/Fediverse\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Fediverse</span></a> &amp; <a href=\"https://chaos.social/tags/FediForum\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>FediForum</span></a> <a href=\"https://chaos.social/tags/IFG\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>IFG</span></a> <a href=\"https://chaos.social/tags/FediDay\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>FediDay</span></a></p><p>European by heart <a href=\"https://chaos.social/tags/Vienna\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Vienna</span></a> &amp; <a href=\"https://chaos.social/tags/Berlin\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Berlin</span></a>  <br><a href=\"https://chaos.social/tags/birdwatching\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>birdwatching</span></a></p>",
+        "url": "https://chaos.social/@samvie",
+        "uri": "https://chaos.social/users/samvie",
+        "avatar": "https://openbiblio.social/system/cache/accounts/avatars/111/617/920/974/089/773/original/eaf543ccde1ae258.jpg",
+        "header": "https://openbiblio.social/headers/original/missing.png",
+        "avatar_static": "https://openbiblio.social/system/cache/accounts/avatars/111/617/920/974/089/773/original/eaf543ccde1ae258.jpg",
+        "header_static": "https://openbiblio.social/headers/original/missing.png",
+        "moved": null,
+        "suspended": null,
+        "limited": null,
+        "bot": false,
+        "fields": [
+          {
+            "name": "Initiatorin",
+            "value": "<span class=\"h-card\" translate=\"no\"><a href=\"https://eupolicy.social/@offene_netzwerke\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>offene_netzwerke@eupolicy.social</span></a></span>",
+            "verified_at": null
+          },
+          {
+            "name": "Project",
+            "value": "<a href=\"https://netzpolitischerabend.wordpress.com\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">netzpolitischerabend.wordpress</span><span class=\"invisible\">.com</span></a>",
+            "verified_at": null
+          },
+          {
+            "name": "Github",
+            "value": "github.com/sndrbrthl",
+            "verified_at": null
+          }
+        ],
+        "emojis": [],
+        "last_status_at": "2026-05-05T00:00:00",
+        "noindex": null,
+        "roles": null,
+        "role": null,
+        "source": null,
+        "mute_expires_at": null,
+        "indexable": false,
+        "hide_collections": true,
+        "memorial": null,
+        "avatar_description": null,
+        "header_description": null,
+        "show_media": null,
+        "show_media_replies": null,
+        "show_featured": null
+      },
+      "in_reply_to_id": null,
+      "in_reply_to_account_id": null,
+      "reblog": null,
+      "content": "<p>Herzlich willkommen ✨ </p><p>16 Stiftungen sind nun auf <a href=\"https://chaos.social/tags/Mastodon\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Mastodon</span></a> unter <a href=\"https://stiftungen.social\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"><span class=\"invisible\">https://</span><span class=\"\">stiftungen.social</span><span class=\"invisible\"></span></a> im <a href=\"https://chaos.social/tags/Fediverse\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Fediverse</span></a> aktiv 👏 </p><p>Für mehr <a href=\"https://chaos.social/tags/Plus1\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Plus1</span></a> Kommunikation ✨ </p><p><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@schoepflinstiftung\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>schoepflinstiftung</span></a></span> <br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@RobertBoschStiftung\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>RobertBoschStiftung</span></a></span> <br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@volkswagenstiftung\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>volkswagenstiftung</span></a></span> <br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@allianzfoundation\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>allianzfoundation</span></a></span> <br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@hertie_stiftung\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>hertie_stiftung</span></a></span><br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@zeitstiftungbucerius\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>zeitstiftungbucerius</span></a></span><br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@rudolfaugsteinstiftung\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>rudolfaugsteinstiftung</span></a></span> <br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@joachimherzstiftung\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>joachimherzstiftung</span></a></span><br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@carl_zeiss_stiftung\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>carl_zeiss_stiftung</span></a></span> <br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@koerberstiftung\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>koerberstiftung</span></a></span> <br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@BertelsmannStiftung\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>BertelsmannStiftung</span></a></span> <br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@lottosport\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>lottosport</span></a></span> <br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@tazpanterstiftung\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>tazpanterstiftung</span></a></span> <br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@kargstiftung\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>kargstiftung</span></a></span> <br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@MOF4S\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>MOF4S</span></a></span><br><span class=\"h-card\" translate=\"no\"><a href=\"https://stiftungen.social/@nationalstiftung\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>nationalstiftung</span></a></span></p><p>Danke <a href=\"https://chaos.social/tags/savesocial\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>savesocial</span></a> &amp; <span class=\"h-card\" translate=\"no\"><a href=\"https://eimsbuettel.social/@bjoernsta\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>bjoernsta</span></a></span> </p><p><a href=\"https://chaos.social/tags/2mr\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>2mr</span></a> <a href=\"https://chaos.social/tags/Fediday\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Fediday</span></a></p>",
+      "created_at": "2026-05-04T06:22:52+00:00",
+      "reblogs_count": 61,
+      "favourites_count": 60,
+      "reblogged": false,
+      "favourited": true,
+      "sensitive": false,
+      "spoiler_text": "",
+      "visibility": "public",
+      "mentions": [
+        {
+          "url": "https://stiftungen.social/@schoepflinstiftung",
+          "username": "schoepflinstiftung",
+          "acct": "schoepflinstiftung@stiftungen.social",
+          "id": "116514866845815102"
+        },
+        {
+          "url": "https://stiftungen.social/@RobertBoschStiftung",
+          "username": "RobertBoschStiftung",
+          "acct": "RobertBoschStiftung@stiftungen.social",
+          "id": "116443178859073478"
+        },
+        {
+          "url": "https://stiftungen.social/@volkswagenstiftung",
+          "username": "volkswagenstiftung",
+          "acct": "volkswagenstiftung@stiftungen.social",
+          "id": "116296306603591293"
+        },
+        {
+          "url": "https://stiftungen.social/@allianzfoundation",
+          "username": "allianzfoundation",
+          "acct": "allianzfoundation@stiftungen.social",
+          "id": "116490134490020834"
+        },
+        {
+          "url": "https://stiftungen.social/@hertie_stiftung",
+          "username": "hertie_stiftung",
+          "acct": "hertie_stiftung@stiftungen.social",
+          "id": "116367938923935144"
+        },
+        {
+          "url": "https://stiftungen.social/@zeitstiftungbucerius",
+          "username": "zeitstiftungbucerius",
+          "acct": "zeitstiftungbucerius@stiftungen.social",
+          "id": "116487063521065289"
+        },
+        {
+          "url": "https://stiftungen.social/@rudolfaugsteinstiftung",
+          "username": "rudolfaugsteinstiftung",
+          "acct": "rudolfaugsteinstiftung@stiftungen.social",
+          "id": "116514867655138491"
+        },
+        {
+          "url": "https://stiftungen.social/@joachimherzstiftung",
+          "username": "joachimherzstiftung",
+          "acct": "joachimherzstiftung@stiftungen.social",
+          "id": "116461155045366153"
+        },
+        {
+          "url": "https://stiftungen.social/@carl_zeiss_stiftung",
+          "username": "carl_zeiss_stiftung",
+          "acct": "carl_zeiss_stiftung@stiftungen.social",
+          "id": "116477324722068691"
+        },
+        {
+          "url": "https://stiftungen.social/@koerberstiftung",
+          "username": "koerberstiftung",
+          "acct": "koerberstiftung@stiftungen.social",
+          "id": "116514868590072213"
+        },
+        {
+          "url": "https://stiftungen.social/@BertelsmannStiftung",
+          "username": "BertelsmannStiftung",
+          "acct": "BertelsmannStiftung@stiftungen.social",
+          "id": "116514869422574313"
+        },
+        {
+          "url": "https://stiftungen.social/@lottosport",
+          "username": "lottosport",
+          "acct": "lottosport@stiftungen.social",
+          "id": "116514870260301575"
+        },
+        {
+          "url": "https://stiftungen.social/@tazpanterstiftung",
+          "username": "tazpanterstiftung",
+          "acct": "tazpanterstiftung@stiftungen.social",
+          "id": "116514871087847903"
+        },
+        {
+          "url": "https://stiftungen.social/@kargstiftung",
+          "username": "kargstiftung",
+          "acct": "kargstiftung@stiftungen.social",
+          "id": "116486324924405711"
+        },
+        {
+          "url": "https://eimsbuettel.social/@bjoernsta",
+          "username": "bjoernsta",
+          "acct": "bjoernsta@eimsbuettel.social",
+          "id": "111722316846254652"
+        },
+        {
+          "url": "https://stiftungen.social/@MOF4S",
+          "username": "MOF4S",
+          "acct": "MOF4S@stiftungen.social",
+          "id": "116514904915461104"
+        },
+        {
+          "url": "https://stiftungen.social/@nationalstiftung",
+          "username": "nationalstiftung",
+          "acct": "nationalstiftung@stiftungen.social",
+          "id": "116486747015273535"
+        }
+      ],
+      "media_attachments": [],
+      "emojis": [],
+      "tags": [
+        {
+          "name": "mastodon",
+          "url": "https://openbiblio.social/tags/mastodon",
+          "history": null,
+          "following": null,
+          "id": null,
+          "trendable": null,
+          "usable": null,
+          "requires_review": null,
+          "featuring": null
+        },
+        {
+          "name": "fediverse",
+          "url": "https://openbiblio.social/tags/fediverse",
+          "history": null,
+          "following": null,
+          "id": null,
+          "trendable": null,
+          "usable": null,
+          "requires_review": null,
+          "featuring": null
+        },
+        {
+          "name": "plus1",
+          "url": "https://openbiblio.social/tags/plus1",
+          "history": null,
+          "following": null,
+          "id": null,
+          "trendable": null,
+          "usable": null,
+          "requires_review": null,
+          "featuring": null
+        },
+        {
+          "name": "savesocial",
+          "url": "https://openbiblio.social/tags/savesocial",
+          "history": null,
+          "following": null,
+          "id": null,
+          "trendable": null,
+          "usable": null,
+          "requires_review": null,
+          "featuring": null
+        },
+        {
+          "name": "2mr",
+          "url": "https://openbiblio.social/tags/2mr",
+          "history": null,
+          "following": null,
+          "id": null,
+          "trendable": null,
+          "usable": null,
+          "requires_review": null,
+          "featuring": null
+        },
+        {
+          "name": "fediday",
+          "url": "https://openbiblio.social/tags/fediday",
+          "history": null,
+          "following": null,
+          "id": null,
+          "trendable": null,
+          "usable": null,
+          "requires_review": null,
+          "featuring": null
+        }
+      ],
+      "bookmarked": false,
+      "application": null,
+      "language": "de",
+      "muted": false,
+      "pinned": null,
+      "replies_count": 6,
+      "card": {
+        "url": "https://stiftungen.social/",
+        "title": "stiftungen.social",
+        "description": "stiftungen.social ist die Adresse für Stiftungskommunikation im weltweiten Mastodon-Netzwerk, gestartet von der Initiative Save Social im Auftrag der beteiligten Stiftungen.",
+        "type": "link",
+        "image": "https://openbiblio.social/system/cache/preview_cards/images/011/980/172/original/1f7237e8d0c99e6f.png",
+        "author_name": "",
+        "author_url": "",
+        "width": 662,
+        "height": 348,
+        "html": "",
+        "provider_name": "Mastodon hosted on stiftungen.social",
+        "provider_url": "",
+        "blurhash": "UaQ,L1-;xuM{-;M{Rjxu~qM{WBt7M{%Mt7M{",
+        "language": "en",
+        "embed_url": "",
+        "authors": [],
+        "image_description": "",
+        "published_at": null,
+        "history": null,
+        "missing_attribution": null
+      },
+      "poll": null,
+      "edited_at": "2026-05-04T06:32:55+00:00",
+      "filtered": [],
+      "quote": null,
+      "quotes_count": 1,
+      "tagged_collections": null,
+      "quote_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
+    },
+    {
       "id": "116164883217979030",
       "uri": "https://fedihum.org/users/SODa/statuses/116164883154833027",
       "url": "https://fedihum.org/@SODa/116164883154833027",
@@ -12493,9 +12992,9 @@
       "group": false,
       "locked": false,
       "created_at": "2019-03-18T00:00:00+00:00",
-      "following_count": 1546,
+      "following_count": 1548,
       "followers_count": 1024,
-      "statuses_count": 4580,
+      "statuses_count": 4581,
       "note": "<p>web librarian working on <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@lobid\" class=\"u-url mention\">@<span>lobid</span></a></span>, <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@skohub\" class=\"u-url mention\">@<span>skohub</span></a></span>, <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@metafacture\" class=\"u-url mention\">@<span>metafacture</span></a></span>, <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@oersi\" class=\"u-url mention\">@<span>oersi</span></a></span> &amp; other things, <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@swib\" class=\"u-url mention\">@<span>swib</span></a></span> co-organizer, living in Cologne, Germany<br /><a href=\"https://openbiblio.social/tags/librarian\" class=\"mention hashtag\" rel=\"tag\">#<span>librarian</span></a> <a href=\"https://openbiblio.social/tags/lod\" class=\"mention hashtag\" rel=\"tag\">#<span>lod</span></a> <a href=\"https://openbiblio.social/tags/foss\" class=\"mention hashtag\" rel=\"tag\">#<span>foss</span></a> <a href=\"https://openbiblio.social/tags/metadata\" class=\"mention hashtag\" rel=\"tag\">#<span>metadata</span></a> <a href=\"https://openbiblio.social/tags/k%C3%B6ln\" class=\"mention hashtag\" rel=\"tag\">#<span>köln</span></a> <a href=\"https://openbiblio.social/tags/hbz\" class=\"mention hashtag\" rel=\"tag\">#<span>hbz</span></a> <a href=\"https://openbiblio.social/tags/libraries\" class=\"mention hashtag\" rel=\"tag\">#<span>libraries</span></a> <a href=\"https://openbiblio.social/tags/fedi22\" class=\"mention hashtag\" rel=\"tag\">#<span>fedi22</span></a> <a href=\"https://openbiblio.social/tags/openness\" class=\"mention hashtag\" rel=\"tag\">#<span>openness</span></a> searchable<br /><a href=\"https://justmytoots.com/@acka47@openbiblio.social\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">justmytoots.com/@acka47@openbi</span><span class=\"invisible\">blio.social</span></a></p>",
       "url": "https://openbiblio.social/@acka47",
       "uri": "https://openbiblio.social/users/acka47",
@@ -12549,9 +13048,9 @@
       "group": false,
       "locked": false,
       "created_at": "2020-12-30T00:00:00+00:00",
-      "following_count": 2202,
-      "followers_count": 1160,
-      "statuses_count": 7258,
+      "following_count": 2204,
+      "followers_count": 1159,
+      "statuses_count": 7266,
       "note": "<p>Neo-Latin, DH, librarianship, <a href=\"https://openbiblio.social/tags/openGLAM\" class=\"mention hashtag\" rel=\"tag\">#<span>openGLAM</span></a>, and digital cultural heritage <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@digiSberlin\" class=\"u-url mention\">@<span>digiSberlin</span></a></span></p><p><a href=\"https://openbiblio.social/tags/tootfinder\" class=\"mention hashtag\" rel=\"tag\">#<span>tootfinder</span></a></p>",
       "url": "https://openbiblio.social/@awinkler",
       "uri": "https://openbiblio.social/users/awinkler",
@@ -12581,7 +13080,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-05-04T00:00:00",
+      "last_status_at": "2026-05-05T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -12605,9 +13104,9 @@
       "group": false,
       "locked": false,
       "created_at": "2019-03-18T00:00:00+00:00",
-      "following_count": 557,
+      "following_count": 558,
       "followers_count": 409,
-      "statuses_count": 1801,
+      "statuses_count": 1802,
       "note": "<p>IT-Consultant for GLAM-institutions: <a href=\"https://librerli.eu\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">librerli.eu</span><span class=\"invisible\"></span></a> </p><p>Current projects e.g. supporting  ZentralGut (<a href=\"https://zentralgut.ch\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">zentralgut.ch</span><span class=\"invisible\"></span></a>) for <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@zhbluzern\" class=\"u-url mention\">@<span>zhbluzern</span></a></span> (<a href=\"https://zhbluzern.ch\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">zhbluzern.ch</span><span class=\"invisible\"></span></a>) </p><p><a href=\"https://openbiblio.social/tags/wikidata\" class=\"mention hashtag\" rel=\"tag\">#<span>wikidata</span></a> <a href=\"https://openbiblio.social/tags/semanticweb\" class=\"mention hashtag\" rel=\"tag\">#<span>semanticweb</span></a> <a href=\"https://openbiblio.social/tags/linkedopendata\" class=\"mention hashtag\" rel=\"tag\">#<span>linkedopendata</span></a> <a href=\"https://openbiblio.social/tags/openscience\" class=\"mention hashtag\" rel=\"tag\">#<span>openscience</span></a> <a href=\"https://openbiblio.social/tags/bibliothek\" class=\"mention hashtag\" rel=\"tag\">#<span>bibliothek</span></a> <a href=\"https://openbiblio.social/tags/library\" class=\"mention hashtag\" rel=\"tag\">#<span>library</span></a> <a href=\"https://openbiblio.social/tags/openGLAM\" class=\"mention hashtag\" rel=\"tag\">#<span>openGLAM</span></a> <a href=\"https://openbiblio.social/tags/wiki\" class=\"mention hashtag\" rel=\"tag\">#<span>wiki</span></a> <a href=\"https://openbiblio.social/tags/wikisource\" class=\"mention hashtag\" rel=\"tag\">#<span>wikisource</span></a></p>",
       "url": "https://openbiblio.social/@librerli",
       "uri": "https://openbiblio.social/users/librerli",
@@ -12642,7 +13141,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-05-02T00:00:00",
+      "last_status_at": "2026-05-04T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -12666,8 +13165,8 @@
       "group": false,
       "locked": false,
       "created_at": "2022-12-22T00:00:00+00:00",
-      "following_count": 230,
-      "followers_count": 113,
+      "following_count": 228,
+      "followers_count": 118,
       "statuses_count": 265,
       "note": "<p>Fachrefentin für Chemie, Physik und Technik an der SUB Göttingen.<br>Open Access, Open Science, E-Books, Hosting von Nationallizenzen, GöDiscovery, VPN und HAN</p>",
       "url": "https://academiccloud.social/@jmimkes1",
@@ -12682,7 +13181,7 @@
       "bot": false,
       "fields": [],
       "emojis": [],
-      "last_status_at": "2026-03-25T00:00:00",
+      "last_status_at": "2026-05-05T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -12878,9 +13377,9 @@
       "group": false,
       "locked": true,
       "created_at": "2022-04-30T00:00:00+00:00",
-      "following_count": 2818,
-      "followers_count": 776,
-      "statuses_count": 222,
+      "following_count": 2820,
+      "followers_count": 775,
+      "statuses_count": 198,
       "note": "<p><a href=\"https://nrw.social/tags/Architekt\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Architekt</span></a> und <a href=\"https://nrw.social/tags/Stadtplaner\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Stadtplaner</span></a>, großer Fan von lebenswerten öffentlichen Räumen, schönen Häusern und guten Planungsprozessen, die dorthin führen. Und sonst? <a href=\"https://nrw.social/tags/Aikido\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Aikido</span></a> <a href=\"https://nrw.social/tags/Schwimmen\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Schwimmen</span></a> <a href=\"https://nrw.social/tags/Fahrrad\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Fahrrad</span></a> <a href=\"https://nrw.social/tags/Velomobil\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Velomobil</span></a> <a href=\"https://nrw.social/tags/St%C3%A4dtegucken\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Städtegucken</span></a></p><p>Toots evaporieren nach 6 Tagen.</p><p><a href=\"https://nrw.social/tags/architect\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>architect</span></a> and <a href=\"https://nrw.social/tags/urbanist\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>urbanist</span></a>, big fan of livable public spaces, beautiful houses and good planning processes that lead to that. What else? <a href=\"https://nrw.social/tags/aikido\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>aikido</span></a> <a href=\"https://nrw.social/tags/swimming\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>swimming</span></a> <a href=\"https://nrw.social/tags/cycling\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>cycling</span></a> <a href=\"https://nrw.social/tags/velomobile\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>velomobile</span></a> <a href=\"https://nrw.social/tags/city\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>city</span></a>-touring</p><p>Toots evaporate after 6 days.</p>",
       "url": "https://nrw.social/@publixpace",
       "uri": "https://nrw.social/users/publixpace",
@@ -12894,7 +13393,7 @@
       "bot": false,
       "fields": [],
       "emojis": [],
-      "last_status_at": "2026-05-04T00:00:00",
+      "last_status_at": "2026-05-06T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -13126,9 +13625,9 @@
       "group": false,
       "locked": false,
       "created_at": "2018-01-16T00:00:00+00:00",
-      "following_count": 788,
+      "following_count": 791,
       "followers_count": 431,
-      "statuses_count": 2148,
+      "statuses_count": 2156,
       "note": "<p>— what I do: digital libraries, metadata, web archiving, digital preservation, IIIF, Readium LCP <br>— what I love: mountains, bikes, JG Ballard, Colin Wilson</p>",
       "url": "https://digipres.club/@raffaele",
       "uri": "https://digipres.club/users/raffaele",
@@ -13144,7 +13643,7 @@
         {
           "name": "Home",
           "value": "<a href=\"https://atomotic.com\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">atomotic.com</span><span class=\"invisible\"></span></a>",
-          "verified_at": "2026-04-29T15:26:40.195+00:00"
+          "verified_at": "2026-05-04T09:03:14.203+00:00"
         },
         {
           "name": "Blog",
@@ -13153,7 +13652,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-05-02T00:00:00",
+      "last_status_at": "2026-05-05T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -13178,8 +13677,8 @@
       "locked": false,
       "created_at": "2022-11-21T00:00:00+00:00",
       "following_count": 522,
-      "followers_count": 689,
-      "statuses_count": 543,
+      "followers_count": 687,
+      "statuses_count": 544,
       "note": "<p>👩‍🔬 OSL supports universities and research organizations with Wikibase, VIVO, Open Access etc.</p><p>🦄 OSL helps universities, archives &amp; memory institutions to become more open, by means of data stewardship, hackathons, book sprints etc.</p><p>📚 OSL is part of <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@tibhannover\" class=\"u-url mention\">@<span>tibhannover</span></a></span>. We aim for being a friendly environment for learning and developing, close to TIB&#39;s collections, colleagues &amp; users.</p><p>🤝 OSL is part of <span class=\"h-card\" translate=\"no\"><a href=\"https://nfdi.social/@nfdi4culture\" class=\"u-url mention\">@<span>nfdi4culture</span></a></span> and <span class=\"h-card\" translate=\"no\"><a href=\"https://mastodon.social/@leibnizopenscience\" class=\"u-url mention\">@<span>leibnizopenscience</span></a></span></p>",
       "url": "https://openbiblio.social/@tibosl",
       "uri": "https://openbiblio.social/users/tibosl",
@@ -13214,7 +13713,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-04-29T00:00:00",
+      "last_status_at": "2026-05-04T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -13239,7 +13738,7 @@
       "locked": false,
       "created_at": "2022-11-07T00:00:00+00:00",
       "following_count": 451,
-      "followers_count": 520,
+      "followers_count": 519,
       "statuses_count": 320,
       "note": "<p>digital library developer at GWDG, editor of Code4Lib Journal. Java, metadata quality, cultural heritage metadata, data science, big data, History</p>",
       "url": "https://openbiblio.social/@kiru",
@@ -13301,7 +13800,7 @@
       "created_at": "2022-11-18T00:00:00+00:00",
       "following_count": 201,
       "followers_count": 313,
-      "statuses_count": 977,
+      "statuses_count": 978,
       "note": "<p>Head of <a href=\"https://glammr.us/tags/DigitalResearch\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>DigitalResearch</span></a> <a href=\"https://glammr.us/tags/BritishLibrary\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>BritishLibrary</span></a> <a href=\"https://glammr.us/tags/DigitalScholarship\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>DigitalScholarship</span></a> | Executive Committee member: <a href=\"https://glammr.us/tags/iiif\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>iiif</span></a> | <a href=\"https://glammr.us/tags/impactocr\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>impactocr</span></a> | <a href=\"https://glammr.us/tags/ai4lam\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>ai4lam</span></a> | opinions my own.</p>",
       "url": "https://glammr.us/@nfitzger",
       "uri": "https://glammr.us/users/nfitzger",
@@ -13331,7 +13830,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-04-30T00:00:00",
+      "last_status_at": "2026-05-05T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -13357,13 +13856,13 @@
       "created_at": "2023-01-19T00:00:00+00:00",
       "following_count": 529,
       "followers_count": 617,
-      "statuses_count": 333,
+      "statuses_count": 334,
       "note": "<p>International Image Interoperability Framework <a href=\"https://glammr.us/tags/IIIF\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>IIIF</span></a></p>",
       "url": "https://glammr.us/@IIIF",
       "uri": "https://glammr.us/users/IIIF",
-      "avatar": "https://openbiblio.social/system/cache/accounts/avatars/109/722/349/398/195/013/original/d86674e902ea2248.png",
+      "avatar": "https://openbiblio.social/system/cache/accounts/avatars/109/722/349/398/195/013/original/8140ac8ca1a01533.png",
       "header": "https://openbiblio.social/headers/original/missing.png",
-      "avatar_static": "https://openbiblio.social/system/cache/accounts/avatars/109/722/349/398/195/013/original/d86674e902ea2248.png",
+      "avatar_static": "https://openbiblio.social/system/cache/accounts/avatars/109/722/349/398/195/013/original/8140ac8ca1a01533.png",
       "header_static": "https://openbiblio.social/headers/original/missing.png",
       "moved": null,
       "suspended": null,
@@ -13373,17 +13872,17 @@
         {
           "name": "Site",
           "value": "<a href=\"https://iiif.io/\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">iiif.io/</span><span class=\"invisible\"></span></a>",
-          "verified_at": "2026-04-24T16:02:00.110+00:00"
+          "verified_at": "2026-05-05T16:06:55.708+00:00"
         },
         {
           "name": "Github",
           "value": "<a href=\"https://github.com/IIIF/\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">github.com/IIIF/</span><span class=\"invisible\"></span></a>",
-          "verified_at": "2026-04-24T16:02:00.742+00:00"
+          "verified_at": "2026-05-05T16:06:56.454+00:00"
         },
         {
           "name": "Newsletter",
           "value": "<a href=\"https://iiif.io/newsletter/\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">iiif.io/newsletter/</span><span class=\"invisible\"></span></a>",
-          "verified_at": "2026-04-24T16:02:01.051+00:00"
+          "verified_at": "2026-05-05T16:06:56.817+00:00"
         },
         {
           "name": "Training",
@@ -13392,7 +13891,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-04-27T00:00:00",
+      "last_status_at": "2026-05-05T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -13479,7 +13978,7 @@
       "created_at": "2019-03-15T00:00:00+00:00",
       "following_count": 564,
       "followers_count": 522,
-      "statuses_count": 2829,
+      "statuses_count": 2830,
       "note": "<p><a href=\"https://openbiblio.social/tags/openscience\" class=\"mention hashtag\" rel=\"tag\">#<span>openscience</span></a> <a href=\"https://openbiblio.social/tags/openaccess\" class=\"mention hashtag\" rel=\"tag\">#<span>openaccess</span></a> <a href=\"https://openbiblio.social/tags/DiamondOpenAccess\" class=\"mention hashtag\" rel=\"tag\">#<span>DiamondOpenAccess</span></a> <a href=\"https://openbiblio.social/tags/DINI\" class=\"mention hashtag\" rel=\"tag\">#<span>DINI</span></a> <a href=\"https://openbiblio.social/tags/FIS\" class=\"mention hashtag\" rel=\"tag\">#<span>FIS</span></a> <a href=\"https://openbiblio.social/tags/CRIS\" class=\"mention hashtag\" rel=\"tag\">#<span>CRIS</span></a> <a href=\"https://openbiblio.social/tags/DSpace\" class=\"mention hashtag\" rel=\"tag\">#<span>DSpace</span></a> <a href=\"https://openbiblio.social/tags/OJS\" class=\"mention hashtag\" rel=\"tag\">#<span>OJS</span></a> <a href=\"https://openbiblio.social/tags/Familie\" class=\"mention hashtag\" rel=\"tag\">#<span>Familie</span></a> <a href=\"https://openbiblio.social/tags/Strebergarten\" class=\"mention hashtag\" rel=\"tag\">#<span>Strebergarten</span></a></p>",
       "url": "https://openbiblio.social/@dbeucke",
       "uri": "https://openbiblio.social/users/dbeucke",
@@ -13499,7 +13998,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-04-30T00:00:00",
+      "last_status_at": "2026-05-05T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -13571,7 +14070,7 @@
       "created_at": "2023-02-09T00:00:00+00:00",
       "following_count": 2125,
       "followers_count": 3007,
-      "statuses_count": 20508,
+      "statuses_count": 20506,
       "note": "<p>Initiated <span class=\"h-card\" translate=\"no\"><a href=\"https://fedihum.org/@SafeguardingResearch\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>SafeguardingResearch</span></a></span> on Jan 15th, 2025.<br>\"No Musk can shut us down.\"</p><p>Pronouns: he/him<br>🏳️‍🌈 🩷💜💙 <a href=\"https://fedihum.org/tags/SmashFascism\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>SmashFascism</span></a> <a href=\"https://fedihum.org/tags/Histodon\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Histodon</span></a><br><a href=\"https://fedihum.org/tags/BijiRojava\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>BijiRojava</span></a></p><p>(Digital) Historian based in Berlin (Humboldt-University);<br>just doing <a href=\"https://fedihum.org/tags/DigitalHumanities\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>DigitalHumanities</span></a> / <a href=\"https://fedihum.org/tags/DigitalHistory\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>DigitalHistory</span></a> things.<br>Toots in German/English.</p><p>\"Sharing isn’t immoral — it’s a moral imperative.\"<br>Aaron Swartz, Guerrilla Open Access Manifesto, 2008.<br><a href=\"https://openbehavioralscience.org/manifesto/\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">openbehavioralscience.org/mani</span><span class=\"invisible\">festo/</span></a></p>",
       "url": "https://fedihum.org/@lavaeolus",
       "uri": "https://fedihum.org/users/lavaeolus",
@@ -13630,8 +14129,8 @@
       "group": false,
       "locked": false,
       "created_at": "2022-11-18T00:00:00+00:00",
-      "following_count": 417,
-      "followers_count": 224,
+      "following_count": 418,
+      "followers_count": 225,
       "statuses_count": 1246,
       "note": "<p>IT-Berater <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@occ\" class=\"u-url mention\">@<span>occ</span></a></span> // Informathekar <span class=\"h-card\" translate=\"no\"><a href=\"https://wisskomm.social/@SLUBDresden\" class=\"u-url mention\">@<span>SLUBDresden</span></a></span> // Release Manager <a href=\"https://openbiblio.social/tags/Kitodo\" class=\"mention hashtag\" rel=\"tag\">#<span>Kitodo</span></a> // Weltverbesserer <span class=\"h-card\" translate=\"no\"><a href=\"https://dresden.network/@DresdenZero\" class=\"u-url mention\">@<span>DresdenZero</span></a></span> // Weltenbummler <span class=\"h-card\" translate=\"no\"><a href=\"https://social.peregrinor.net/@prgrnr\" class=\"u-url mention\">@<span>prgrnr</span></a></span> // Misanthrop</p>",
       "url": "https://openbiblio.social/@meyse",
@@ -13670,9 +14169,9 @@
       "group": false,
       "locked": false,
       "created_at": "2022-11-01T00:00:00+00:00",
-      "following_count": 2478,
-      "followers_count": 3254,
-      "statuses_count": 4394,
+      "following_count": 2490,
+      "followers_count": 3258,
+      "statuses_count": 4420,
       "note": "<p>🤓 Hey there, I&#39;m a <a href=\"https://openbiblio.social/tags/librarian\" class=\"mention hashtag\" rel=\"tag\">#<span>librarian</span></a>! </p><p>📚 team <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@tibosl\" class=\"u-url mention\">@<span>tibosl</span></a></span></p><p>🤔 exploring futures of knowledge infrastructure and cultural memory</p><p>📺 watch recent talks &amp; interviews of mine: <a href=\"https://www.biblionik.org/category/video/\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://www.</span><span class=\"\">biblionik.org/category/video/</span><span class=\"invisible\"></span></a> </p><p>📍 Hannover, Germany </p><p>✊🏽 Antifascist since 1990, ver.di (workers union) since 2000</p>",
       "url": "https://openbiblio.social/@Lambo",
       "uri": "https://openbiblio.social/users/Lambo",
@@ -13707,7 +14206,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-05-04T00:00:00",
+      "last_status_at": "2026-05-05T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -13772,8 +14271,8 @@
       "locked": false,
       "created_at": "2024-07-25T00:00:00+00:00",
       "following_count": 380,
-      "followers_count": 141,
-      "statuses_count": 2443,
+      "followers_count": 142,
+      "statuses_count": 2452,
       "note": "<p>🌐 Vermessungs- und kartographiehistorisch interessierter <a href=\"https://openbiblio.social/tags/Geod%C3%A4t\" class=\"mention hashtag\" rel=\"tag\">#<span>Geodät</span></a>,<br />📚 unfreiwilliger &quot;Sachwalter&quot; der ehemaligen DVW-<a href=\"https://openbiblio.social/tags/Bibliothek\" class=\"mention hashtag\" rel=\"tag\">#<span>Bibliothek</span></a>,<br />📜 regelmäßiger <a href=\"https://openbiblio.social/tags/Archivnutzer\" class=\"mention hashtag\" rel=\"tag\">#<span>Archivnutzer</span></a>,<br />🗺️ <a href=\"https://openbiblio.social/tags/maps\" class=\"mention hashtag\" rel=\"tag\">#<span>maps</span></a> &amp; <a href=\"https://openbiblio.social/tags/oldmaps\" class=\"mention hashtag\" rel=\"tag\">#<span>oldmaps</span></a>,<br />🧑‍🧑‍🧒 <a href=\"https://openbiblio.social/tags/Genealogie\" class=\"mention hashtag\" rel=\"tag\">#<span>Genealogie</span></a>,<br />💻 <a href=\"https://openbiblio.social/tags/Wikidata\" class=\"mention hashtag\" rel=\"tag\">#<span>Wikidata</span></a>,<br />🤓 <a href=\"https://openbiblio.social/tags/citizenscience\" class=\"mention hashtag\" rel=\"tag\">#<span>citizenscience</span></a>,<br />🏃OL</p>",
       "url": "https://openbiblio.social/@vermessungsbibliothek",
       "uri": "https://openbiblio.social/users/vermessungsbibliothek",
@@ -13803,7 +14302,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-05-02T00:00:00",
+      "last_status_at": "2026-05-05T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -13827,7 +14326,7 @@
       "group": false,
       "locked": false,
       "created_at": "2019-03-19T00:00:00+00:00",
-      "following_count": 119,
+      "following_count": 120,
       "followers_count": 53,
       "statuses_count": 145,
       "note": "<p>The names have been changed to protect the innocent</p>",
