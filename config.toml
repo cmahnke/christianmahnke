@@ -316,7 +316,7 @@ timeout = "180s"
 
   [[module.mounts]]
     source = "node_modules/@projektemacher/lucienne/dist/lucienne-christianmahnke.css"
-    target = "assets/scss/lucienne/lucienne-0.1.0.css"
+    target = "assets/scss/lucienne/lucienne.css"
 
 # See https://github.com/gohugoio/hugo/issues/7844#issuecomment-1843854396
   [[module.mounts]]
