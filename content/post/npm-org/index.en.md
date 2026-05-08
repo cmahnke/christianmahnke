@@ -20,6 +20,6 @@ So far, I’ve only published two JavaScript artefacts:
 
 However, in order to better manage more or less internal tools and modules, these are now also being published as NPM packages. As the GitHub internal package registry requires authentication even for public packages, it is too complex to integrate for my purposes.
 
-The `hdr-canvas` package will therefore be moved in the next version.
-
 Consequently, the ‘organisation’ [`@projektemacher`](https://www.npmjs.com/org/projektemacher) has been created to bring everything together under one roof.
+
+The `hdr-canvas` package will therefore be moved in the next version.
