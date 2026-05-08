@@ -5,6 +5,11 @@ preview:
   image: screenshot.png
   hide: true
 cite: true
+doi: 10.5281/zenodo.20082639
+outputs:
+  - bibtex
+  - html
+  - codemeta
 tags:
 - Projektemacher.org
 - Blog
@@ -59,3 +64,9 @@ The following JavaScript modules were used for the implementation:
 # Update 17.06.25
 
 * Operating instructions added
+
+# Update 8.5.2026
+
+Lucienne is available at [Github](https://github.com/cmahnke/lucienne) and [NPM](https://www.npmjs.com/package/@projektemacher/lucienne).
+
+{{< zenodo doi="10.5281/zenodo.20082639" >}}
