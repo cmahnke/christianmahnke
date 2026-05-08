@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 SEARCH_DIR="docs"
 SCRIPT_LOCATION=`dirname "$(realpath $0)"`
