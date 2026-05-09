@@ -7,7 +7,7 @@ preview:
   image: screenshot.png
   hide: true
 cite: true
-#doi: 10.5281/zenodo.20082639
+#doi: 
 outputs:
   - bibtex
   - html

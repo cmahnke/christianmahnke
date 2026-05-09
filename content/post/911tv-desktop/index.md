@@ -5,6 +5,13 @@ description: "Eine Webseite als Medieninstallation am Beispiel von 911TV"
 preview:
   image: 911tv-mac.png
   hide: true
+cite: true
+#doi: 
+outputs:
+  - bibtex
+  - html
+  - codemeta
+cfffile: https://raw.githubusercontent.com/cmahnke/911tv/refs/heads/main/CITATION.cff
 tags:
 - Website
 - Electron
