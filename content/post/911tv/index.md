@@ -6,12 +6,19 @@ description: "Eine Webanwendung, die den Verlauf der Nachrichten des 11. Septemb
 preview:
   image: screenshot.png
   hide: true
+cite: true
+#doi: 10.5281/zenodo.20082639
+outputs:
+  - bibtex
+  - html
+  - codemeta
+cfffile: https://raw.githubusercontent.com/cmahnke/911tv/refs/heads/main/CITATION.cff
 tags:
-- Website
-- HybridMedia
-- Archive
-- JavaScript
-- MediaInstallation
+  - Website
+  - HybridMedia
+  - Archive
+  - JavaScript
+  - MediaInstallation
 wikidata:
   - https://www.wikidata.org/wiki/Q10806
   - https://www.wikidata.org/wiki/Q191472
