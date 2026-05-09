@@ -68,6 +68,6 @@ The following JavaScript modules were used for the implementation:
 
 # Update 8.5.2026
 
-Lucienne is available at [Github](https://github.com/cmahnke/lucienne) and [NPM](https://www.npmjs.com/package/@projektemacher/lucienne).
+Lucienne is available at [Github](https://github.com/cmahnke/lucienne) [NPM](https://www.npmjs.com/package/@projektemacher/lucienne) and Zenodo.
 
 {{< zenodo doi="10.5281/zenodo.20082639" >}}

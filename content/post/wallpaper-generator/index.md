@@ -68,6 +68,6 @@ Für die Umsetzung kamen unter anderem die folgenden JavaScript Module zum Einsa
 
 # Update 8.5.2026
 
-Lucienne ist nun bei [Github](https://github.com/cmahnke/lucienne) und [NPM](https://www.npmjs.com/package/@projektemacher/lucienne) verfügbar.
+Lucienne ist nun bei [Github](https://github.com/cmahnke/lucienne), [NPM](https://www.npmjs.com/package/@projektemacher/lucienne) und Zenodo verfügbar.
 
 {{< zenodo doi="10.5281/zenodo.20082639" >}}
