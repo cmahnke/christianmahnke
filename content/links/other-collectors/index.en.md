@@ -60,6 +60,7 @@ Other collections and collectors with whom I do not work.
 * [Computer Science Collection Erlangen](https://iser.wisski.data.fau.de/)
 * [8Bit-Museum.de](https://8bit-museum.de/)
 * [Oldcrap.org](https://oldcrap.org/)
+* [Vintage Laptops Museum](https://vintage-laptops.com/en/)
 
 ### Game consoles
 

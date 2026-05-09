@@ -10,13 +10,14 @@ outputs:
   - bibtex
   - html
   - codemeta
+cfffile: https://raw.githubusercontent.com/cmahnke/lucienne/refs/heads/main/CITATION.cff
 tags:
-- Projektemacher.org
-- Blog
-- IIIF
-- DigitalImages
-- Fun
-- JavaScript
+  - Projektemacher.org
+  - Blog
+  - IIIF
+  - DigitalImages
+  - Fun
+  - JavaScript
 wikidata:
   - https://www.wikidata.org/wiki/Q191529
   - https://www.wikidata.org/wiki/Q105134737

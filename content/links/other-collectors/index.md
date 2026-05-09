@@ -60,6 +60,7 @@ Weitere Sammlungen und Sammler, mit denen ich nicht zusammenarbeite.
 * [Informatiksammlung Erlangen](https://iser.wisski.data.fau.de/)
 * [8Bit-Museum.de](https://8bit-museum.de/)
 * [Oldcrap.org](https://oldcrap.org/)
+* [Vintage Laptops Museum](https://vintage-laptops.com/en/)
 
 ### Spielkonsolen
 

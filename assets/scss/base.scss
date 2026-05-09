@@ -665,6 +665,10 @@ a:visited {
 
     &.list {
       @include post-description();
+
+      .post-description {
+        max-width: 70%;
+      }
     }
 
     &.list .post {
