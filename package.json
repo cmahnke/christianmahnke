@@ -16,7 +16,7 @@
     "pdfobject": "2.3.1",
     "photoswipe": "^5.4.4",
     "wordcloud": "^1.2.3",
-    "@projektemacher/vivliostyle-batch-cli": "^0.1.0",
+    "@projektemacher/vivliostyle-batch-cli": "^0.1.1",
     "@projektemacher/lucienne": "^0.1.3"
   },
   "devDependencies": {
