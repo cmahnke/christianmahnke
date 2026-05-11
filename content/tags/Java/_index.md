@@ -1,5 +1,5 @@
 ---
-title: 'JavaScript'
+title: 'Java'
 description: ''
 wikidata: https://www.wikidata.org/wiki/Q251
 ---
