@@ -30,6 +30,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q7951257
   - https://www.wikidata.org/wiki/Q212128
   - https://www.wikidata.org/wiki/Q279925
+lastmod: 2026-05-11T00:00:00+02:00
 ---
 
 An old idea of mine has now been realised:
