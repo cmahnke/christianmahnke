@@ -1,5 +1,5 @@
 ---
-title: 'Serigrafien'
+title: 'Serigrafie'
 description: ''
 wikidata: https://www.wikidata.org/wiki/Q187791
 ---
