@@ -6,23 +6,24 @@ preview:
   image: 911tv-mac.png
   hide: true
 cite: true
-#doi: 
+doi: 10.5281/zenodo.20120652
 outputs:
   - bibtex
   - html
   - codemeta
 cfffile: https://raw.githubusercontent.com/cmahnke/911tv/refs/heads/main/CITATION.cff
 tags:
-- Website
-- Electron
-- HybridMedia
-- Archive
-- JavaScript
-- MediaInstallation
+  - Website
+  - Electron
+  - HybridMedia
+  - Archive
+  - JavaScript
+  - MediaInstallation
 wikidata:
   - https://www.wikidata.org/wiki/Q10806
   - https://www.wikidata.org/wiki/Q11320567
   - https://www.wikidata.org/wiki/Q6368
+lastmod: 2026-05-11T00:00:00+02:00
 ---
 
 I had some time, since I was ill:
@@ -54,3 +55,9 @@ Apart from that, not much has changed implementation wise, some modules have bee
 * {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Tar.gz 64 Bit ARM](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-linux-arm64.tgz)
 
 The application can be downloaded from [GitHub](https://github.com/cmahnke/911tv/releases).
+
+# Update 11 May 2026
+
+911TV is now available on Zenodo.
+
+{{< zenodo doi="10.5281/zenodo.20120652" >}}

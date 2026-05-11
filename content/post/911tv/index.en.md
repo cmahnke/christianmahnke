@@ -7,7 +7,7 @@ preview:
   image: screenshot.png
   hide: true
 cite: true
-#doi: 
+doi: 10.5281/zenodo.20120652
 outputs:
   - bibtex
   - html
@@ -70,3 +70,9 @@ If errors occur, such as longer loading times or missing recordings, there is a 
 ## Technical realisation
 
 The page is realised as a [React](https://react.dev/), i.e. JavaScript application, the additional dependencies are documented on the page. In order to reduce the user interface as much as possible, the interaction options with the screen text are limited to keyboard input.
+
+# Update 11 May 2026
+
+911TV is now available on Zenodo.
+
+{{< zenodo doi="10.5281/zenodo.20120652" >}}

@@ -7,7 +7,7 @@ preview:
   image: screenshot.png
   hide: true
 cite: true
-#doi: 
+doi: 10.5281/zenodo.20120652
 outputs:
   - bibtex
   - html
@@ -30,6 +30,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q7951257
   - https://www.wikidata.org/wiki/Q212128
   - https://www.wikidata.org/wiki/Q279925
+lastmod: 2026-05-11T00:00:00+02:00
 ---
 
 Eine alte Idee von mir ist nun um gesetzt:
@@ -70,3 +71,9 @@ Bei Fehlern, wie längeren Ladezeiten oder fehlende Aufzeichnungen, kommt es zu 
 ## Technische Realisierung
 
 Die Seite ist als [React](https://react.dev/), also JavaScript Anwendung realisiert, die zusätzlichen Abhängigkeiten sind auf der Seite dokumentiert. Um die Nutzerschnittstelle so weit wie möglich zu reduzieren, sind die Interaktionsmöglichkeiten mit dem Bildschirmtext auf Tastatureingaben beschränkt.
+
+# Update 11.5.2026
+
+911TV ist nun bei Zenodo verfügbar.
+
+{{< zenodo doi="10.5281/zenodo.20120652" >}}
