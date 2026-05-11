@@ -8,7 +8,7 @@ updates:
     groups:
       github-actions:
         patterns:
-        - '*'
+          - "*"
   - package-ecosystem: "npm"
     directory: "/"
     versioning-strategy: increase
@@ -19,7 +19,7 @@ updates:
     groups:
       npm:
         patterns:
-        - '*'
+          - "*"
   - package-ecosystem: "gitsubmodule"
     directory: "/"
     schedule:
@@ -33,7 +33,7 @@ updates:
     groups:
       npm-mocks:
         patterns:
-        - '*'
+          - "*"
 
   - package-ecosystem: "npm"
     directory: "/Source Files/Posts/"
@@ -43,7 +43,7 @@ updates:
     groups:
       npm-mocks:
         patterns:
-        - '*'
+          - "*"
 
   - package-ecosystem: "pip"
     directory: "/Source Files/Mocks/"
@@ -52,7 +52,7 @@ updates:
     groups:
       pip-mocks:
         patterns:
-        - '*'
+          - "*"
 
   - package-ecosystem: "pip"
     directory: "/Source Files/Posts/"
@@ -61,4 +61,4 @@ updates:
     groups:
       pip-mocks:
         patterns:
-        - '*'
+          - "*"
