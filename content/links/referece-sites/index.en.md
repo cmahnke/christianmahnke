@@ -26,6 +26,11 @@ weight: 7
 
 * [Retro Consoles Wiki](https://retroconsoles.fandom.com/)
 
+### Console game bootlegs and pirated copies
+
+* [Pirated Game Museum Wiki](https://piratedgamemuseum.fandom.com/wiki/Pirated_Game_Museum_Wiki)
+* [bootleg collection (jensma.de)](https://www.jensma.de/pirates/)
+
 ## Art
 
 ### Computer Art
