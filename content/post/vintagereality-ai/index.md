@@ -3,6 +3,7 @@ date: 2025-12-28T10:22:44+02:00
 title: "KI Segmentierung für Stereoskopie-Karten"
 keywords: "Stereoskopie, Anaglyphen"
 cite: true
+doi: 10.57967/hf/8758
 tags:
   - AI
   - 3D
