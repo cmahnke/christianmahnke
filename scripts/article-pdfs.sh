@@ -3,6 +3,8 @@
 SEARCH_DIR="docs"
 SCRIPT_LOCATION=`dirname "$(realpath $0)"`
 
+$ARGS="$@"
+
 hugo --renderSegments print
 
 if [ ! -d "$SEARCH_DIR" ]; then
@@ -12,12 +14,14 @@ fi
 
 echo "Searching for 'article.html' in '$SEARCH_DIR'..."
 
-find "$SEARCH_DIR" -type f -name "article.html" | while read -r html_file; do
+
+find $SEARCH_DIR -type f -name "article.html" | while read -r html_file; do
     pdf_file="${html_file%.html}-print.pdf"
     pdf_file_web="${html_file%.html}.pdf"
 
     echo "Converting '$html_file' zu '$pdf_file'..."
-    npx vivliostyle-batch-cli -i "$html_file" --asset-base https://christianmahnke.de/=./docs/ --asset-base http://localhost:1313/=./docs/ --ignore-asset /livereload.js -o "$pdf_file"
+    #npx vivliostyle-batch-cli -i "$html_file" --asset-base https://christianmahnke.de/=./docs/ --asset-base http://localhost:1313/=./docs/ --ignore-asset /livereload.js -o "$pdf_file"
+    npx vivliostyle-batch-cli -i "$html_file" --static /:./docs/ --asset-base https://christianmahnke.de/=./docs/ --asset-base http://localhost:1313/=./docs/ --ignore-asset /livereload.js -o "$pdf_file" $@
     if [ $? -eq 0 ]; then
         echo "'$pdf_file' created successfully"
     else
