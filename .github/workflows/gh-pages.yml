@@ -82,9 +82,12 @@ jobs:
       - name: Build Hugo site
         run: hugo --printI18nWarnings --printUnusedTemplates --environment production
 
-      - name: Run post build script
+      - name: Run post build scripts
         run: |
-          ./scripts/post-build/index.sh
+          ./scripts/post-build/index.sh &
+          ./scripts/post-build/pdf.sh &
+          wait
+          find ./docs/ -type f -name "article.html" -exec rm {} \;
 
       - name: Always Save Hugo cache
         if: always() && steps.cache-hugo-restore.outputs.cache-hit != 'true'
