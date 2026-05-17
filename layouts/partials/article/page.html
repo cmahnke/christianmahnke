@@ -42,9 +42,15 @@
         {{- $link := (.OutputFormats.Get "html").Permalink -}}
         <div class="post-url"><span class="label">URL</span>: <a class="article-link" href="{{ $link }}">{{ $link }}</a></div>
 
-        <div class="tags-heading"><span class="label">{{ i18n "keywords" }}</span>:
+        <div class="tags-heading"><span class="label">{{ i18n "keywords" }}</span>
           {{ partial "article/meta/tags.html" . }}
         </div>
+
+        {{- with .Params.abstract -}}
+          <div class="abstract">
+            {{- . | markdownify -}}
+          </div>
+        {{- end -}}
 
         {{- with .Params.zenodo -}}
           <div class="zenodo-metadata">
@@ -88,5 +94,10 @@
     {{ end }}
   </div>
 {{- end -}}
-<div class="references-heading">{{ i18n "references" }}</div>
-{{- partial "article/footnotes.html" . -}}
+{{- $footnotes := partial "article/footnotes.html" . -}}
+{{- if $footnotes -}}
+  <div class="references-heading">{{ i18n "references" }}</div>
+  <div class="footnotes">
+    {{- $footnotes -}}
+  </div>
+{{- end -}}

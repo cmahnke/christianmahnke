@@ -1,0 +1,4 @@
+{{- $id := .Get 0 -}}
+{{- $value := .Get 1 | markdownify -}}
+
+<span class="footnote">{{ $value | safeHTML }}</span>

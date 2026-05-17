@@ -20,7 +20,7 @@ Für die Videometadaten von [911 TV](https://911tv.projektemacher.org/) gab es e
 
 In der Regel versuche ich, Anwendungen so statisch wie möglich zu konzipieren: Weniger bewegliche Teile / Abhängigkeiten reduzieren die potentiellen Probleme stark.
 
-Dazu zählen auch Nutz- und Metadaten, die sich nicht so häufig ändern. Im Fall von 911TV sind das die Zuordnungen von Sender und Zeitcode zur Videodatei, allerdings kommen bei der Beschreibung von 3.000 Stunden internationale TV-Nachrichten von 20 Sendern aus 7 Tagen[^1] (meist aufgespalten in Blöcken von 30 min) einige Daten an.
+Dazu zählen auch Nutz- und Metadaten, die sich nicht so häufig ändern. Im Fall von 911TV sind das die Zuordnungen von Sender und Zeitcode zur Videodatei, allerdings kommen bei der Beschreibung von 3.000 Stunden internationale TV-Nachrichten von 20 Sendern aus 7 Tagen{{< footnote 1 "[Understanding 9/11 - A Television News Archive](https://archive.org/details/911), Internet Archive." >}} (meist aufgespalten in Blöcken von 30 min) einige Daten an.
 
 Für die Anwendung werden diese Daten aus der Webseite des Internet Archivs extrahiert und zusätzlich die Header der Videos ausgelesen, da das Material viele kleine Lücken hat. Am Ende existiert eine 1.62MB große JSON Datei, die wiederum im nächsten Schritt Teil des Anwendungsbündels wird…
 
@@ -154,4 +154,4 @@ let json = parseJson(jsonImport);
 ## Zusammenfassung
 JSON Dateien können mittels `unicode-brotli` sehr effizient komprimiert und gebündelt werden. Wichtig ist allerdings zu erwähnen, dass die Daten zur Laufzeit dekomprimiert werden und somit im Arbeitsspeicher den Clients den kompletten Platz belegen. Das ist aber bis zu einer gewissen Größe der Ausgangsdatei im Vergleich zu den anderen Vorteil zu verkraften.
 
-[^1]: [Understanding 9/11 - A Television News Archive](https://archive.org/details/911), Internet Archive.
+{{< footnote-list >}}

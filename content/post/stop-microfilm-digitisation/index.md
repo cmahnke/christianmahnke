@@ -34,7 +34,7 @@ Da er später als Kunstmaler und Grafiker arbeitete, lag es nahe, Werbeanzeigen 
 Mit Erschrecken musste ich feststellen, dass die Qualität dafür nicht wirklich ausreichte, da die Zeitung nicht vom Original ausgehend, sondern von einer Mikroform digitalisiert wurde! Das hat mich dann doch überrascht!
 
 # Hintergrund
-Das Deutsche Zeitungsportal wurde 2021 unter dem Dach der Deutschen Digitalen Bibliothek (DDB) gestartet. Die "Deutsche Allgemeine Zeitung" wurde bereits 2015 [^1] mit Mitteln aus dem Rahmenantrag: Digitalisierung historischer Zeitungen [^2]  digitalisiert, das Projekt wurde also von der DFG gefördert. Die DFG förderte und fördert viele weitere Digitalisierungsvorhaben und verbindet mit diesen Förderungen das Erfüllen von Anforderungen, die in den [DFG-Praxisregeln "Digitalisierung"](https://zenodo.org/records/7435724) formuliert sind.
+Das Deutsche Zeitungsportal wurde 2021 unter dem Dach der Deutschen Digitalen Bibliothek (DDB) gestartet. Die "Deutsche Allgemeine Zeitung" wurde bereits 2015{{< footnote 1 "https://zefys.staatsbibliothek-berlin.de/list/title/zdb/2807323X/" >}} mit Mitteln aus dem Rahmenantrag: Digitalisierung historischer Zeitungen{{< footnote 2 "https://gepris.dfg.de/gepris/projekt/225572475" >}}  digitalisiert, das Projekt wurde also von der DFG gefördert. Die DFG förderte und fördert viele weitere Digitalisierungsvorhaben und verbindet mit diesen Förderungen das Erfüllen von Anforderungen, die in den [DFG-Praxisregeln "Digitalisierung"](https://zenodo.org/records/7435724) formuliert sind.
 
 # Welche Qualität wofür?
 Letztlich scheint es mir ein Problem zu sein, dass in den DFG-Praxisregeln zur Digitalisierung die Definition der "Qualität" nicht ausgefeilt genug ist. Die Zieldefinition  ist recht abstrakt, um sie in einem Satz zusammenzufassen: Bereitstellung, Nutzbarmachung und Vernetzung von Flachware aus Bibliotheken, Archiven und Museen zur direkten Nachnutzung für geisteswissenschaftliche Forschung, mit dem Anspruch, die physische Vorlage zu schonen.
@@ -68,5 +68,4 @@ Es gibt nun einen [weiteren Artikel](/post/digital-provenance) zu potentiellen E
 # Update 2.4.2025
 Dieser Artikel wurde auch von [Archivalia verlinkt](https://archivalia.hypotheses.org/226296).
 
-[^1]: https://zefys.staatsbibliothek-berlin.de/list/title/zdb/2807323X/
-[^2]: https://gepris.dfg.de/gepris/projekt/225572475)
+{{< footnote-list >}}

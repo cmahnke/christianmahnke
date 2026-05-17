@@ -35,7 +35,7 @@ As he later worked as a painter and graphic artist, it made sense to examine adv
 I was shocked to discover that the quality was not really good enough for this, as the newspaper was not digitised from the original, but from a microform! That really surprised me!
 
 # Background
-The German Newspaper Portal was launched in 2021 under the umbrella of the German Digital Library (DDB). The "Deutsche Allgemeine Zeitung" was already digitised in 2015[^1] with funds from the Framework Proposal: Digitisation of Historical Newspapers[^2] , so the project was funded by the DFG. The DFG has funded and continues to fund many other digitisation projects and links these grants to the fulfilment of requirements that are formulated in the [DFG Code of Practice "Digitisation"](https://zenodo.org/records/7435724).
+The German Newspaper Portal was launched in 2021 under the umbrella of the German Digital Library (DDB). The "Deutsche Allgemeine Zeitung" was already digitised in 2015{{< footnote 1 "https://zefys.staatsbibliothek-berlin.de/list/title/zdb/2807323X/" >}} with funds from the Framework Proposal: Digitisation of Historical Newspapers{{< footnote 2 "https://gepris.dfg.de/gepris/projekt/225572475" >}} , so the project was funded by the DFG. The DFG has funded and continues to fund many other digitisation projects and links these grants to the fulfilment of requirements that are formulated in the [DFG Code of Practice "Digitisation"](https://zenodo.org/records/7435724).
 
 # What quality for what?
 Ultimately, it seems to me to be a problem that the definition of "quality" in the DFG's rules of practice for digitisation is not sophisticated enough. The definition of the objective is quite abstract to summarise in one sentence: Provision, utilisation and networking of flat material from libraries, archives and museums for direct re-use for research in the humanities, with the aim of preserving the physical original.
@@ -70,5 +70,4 @@ There is now a [ another article](/post/digital-provenance) on potential additio
 
 This article was also linked by [Archivalia](https://archivalia.hypotheses.org/226296).
 
-[^1]: https://zefys.staatsbibliothek-berlin.de/list/title/zdb/2807323X/
-[^2]: https://gepris.dfg.de/gepris/projekt/225572475)
+{{< footnote-list >}}

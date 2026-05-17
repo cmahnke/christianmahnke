@@ -20,7 +20,7 @@ For the video metadata of [911 TV](https://911tv.projektemacher.org/) there was 
 
 As a rule, I try to design applications to be as static as possible: Fewer moving parts / dependencies greatly reduce potential problems.
 
-This also includes payload and metadata that doesn't change that often. In the case of 911TV, this is the assignment of the channel and time code to the video file, but when describing 3,000 hours of international TV news from 20 channels over 7 days[^1] (usually split into blocks of 30 minutes), some data is generated.
+This also includes payload and metadata that doesn't change that often. In the case of 911TV, this is the assignment of the channel and time code to the video file, but when describing 3,000 hours of international TV news from 20 channels over 7 days{{< footnote 1 "[Understanding 9/11 - A Television News Archive](https://archive.org/details/911), Internet Archive." >}} (usually split into blocks of 30 minutes), some data is generated.
 
 For the application, this data is extracted from the website of the Internet Archive and the headers of the videos are also read out, as the material has many small gaps. At the end there is a 1.62MB JSON file, which in turn becomes part of the application bundle in the next step...
 
@@ -153,4 +153,4 @@ let json = parseJson(jsonImport);
 ## Summary
 JSON files can be compressed and bundled very efficiently using `unicode-brotli`. However, it is important to note that the data is decompressed at runtime and therefore takes up all the space in the client's working memory. However, this is tolerable up to a certain size of the output file compared to the other advantages.
 
-[^1]: [Understanding 9/11 - A Television News Archive](https://archive.org/details/911), Internet Archive.
+{{< footnote-list >}}

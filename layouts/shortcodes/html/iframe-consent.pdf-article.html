@@ -1,0 +1,10 @@
+{{/* See https://stackoverflow.com/questions/57841380/gdpr-jquery-iframe-consent */}}
+
+{{- $iframe := .Inner | safeHTML -}}
+
+{{- $preview := "" -}}
+{{- with .Get "preview" -}}
+    {{- $preview = . -}}
+{{- end -}}
+
+{{ $iframe }}
