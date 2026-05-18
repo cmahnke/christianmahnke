@@ -36,13 +36,13 @@ Das neueste Kind der [Projektemacher Labs](https://labs.projektemacher.org/) ist
     {{< figure src="screenshot.png" alt="Screenshot VintageReality" class="post-image" >}}
 {{< /zoom-link >}}
 
-# Präsentation
+## Präsentation
 
 Um die Präsentation mit verschiedenen Brillen und Techniken zu ermöglichen, sind neben der IIIF Präsentation auch zusätzliche Format bzw. Repräsentationen verfügbar:
 
 {{< figure src="img/image-tabs.jpg" alt="Derivate" class="post-image" >}}
 
-## Beispiele
+### Beispiele
 
 {{< gallery >}}
 [
@@ -60,6 +60,6 @@ Die Seite bietet zusätzlich u.a. zusätzliche Derivate:
 * [MPO](https://de.wikipedia.org/wiki/Multi_Picture_Object).
 * Vollbild - für die Betrachtung mit einem [Cardboard VR](https://de.wikipedia.org/wiki/Google_Cardboard) (oder ähnlich) Betrachter.
 
-# Umsetzung
+## Umsetzung
 
 Die verschiedenen Derivate wurde teilweise mit Hilfe von [StereoscoPy](https://github.com/2sh/StereoscoPy) erstellt, für die Berechnung Tiefeninformationen wurde [OpenCV](https://opencv.org/) verwendet.

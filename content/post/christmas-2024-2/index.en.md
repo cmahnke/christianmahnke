@@ -32,7 +32,7 @@ The wallpaper used is from [Zeitzeug](http://zeitzeug.de/) in Göttingen and als
 * [Card 2 - Wallpaper 2](https://vorsatzpapier.projektemacher.org/post/tapete-37/)
 
 
-# Preview
+## Preview
 
 {{< pdf-preview pdf="instructions-2024-1.pdf" >}}
 

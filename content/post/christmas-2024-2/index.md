@@ -31,7 +31,7 @@ Die benutzten Tapeten ist von [Zeitzeug](http://zeitzeug.de/) in Göttingen und 
 * [Karte 2 - Tapete 1](https://vorsatzpapier.projektemacher.org/post/tapete-36/)
 * [Karte 2 - Tapete 2](https://vorsatzpapier.projektemacher.org/post/tapete-37/)
 
-# Vorschau
+## Vorschau
 
 {{< pdf-preview pdf="instructions-2024-1.pdf" >}}
 

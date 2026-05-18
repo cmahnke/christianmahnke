@@ -47,7 +47,7 @@ Textil-Lexikon: Ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel un
 
 Darin sind die Muster nicht einfach abgedruckt, sondern aufwendig ausgeschnitten und eingeklebt. Der entsprechende Eintrag findet sich bei [Blaufußtölpel](https://xn--blaufusstlpel-qmb.de/post/textil-atlas-1928/). Diese sollen mit diesem Beitrag auf eine neue Art erfühl und damit erfahrbar gemacht werden.
 
-# Vorbereitung der Bilddaten
+## Vorbereitung der Bilddaten
 
 Der erste Schritt war die Vorbereitung der Bilddaten: Ausgangsbasis für taktiles Feedback sind die Bilddateien, sowie einer manuellen Markierungen für die Abschnitte (Bounding Box) mit Stoff.
 
@@ -119,7 +119,7 @@ Als Beispiel dient hier der Cordsamt:
 {{< / highlight >}}
 </details>
 
-# Präsentation
+## Präsentation
 
 Damit sich die erzeugte Datenstruktur mit dem Digitalisat, in der gewohnten Funktionalität (z.B. Zoom) einbinden lies, musste sie  Teil des IIIF Manifestes werden. In einem Manifest lassen sich über Annotationen Bezüge zwischen beschreibenden Daten und Bildregionen herstellen, das Verfahren kam auch hier zum Einsatz.
 
@@ -159,7 +159,7 @@ Diese SVG Polygone ließen sich dann in [Webannotationen](https://www.w3.org/TR/
 
 Zur Darstellung kommt hier dann [OpenSeadragon](https://openseadragon.github.io/) zusammen mit [Annotorious](https://annotorious.dev/) zum Einsatz.
 
-# Ergebnis
+## Ergebnis
 
 "Leider" wird die Vibrate API nicht von allen Browsern unterstützt. Der erfolgversprechendste Kandidat ist sicher Chrome auf Android, aber auch da müssen ein paar Rahmenbedingungen beachtet werden:
 * Vibration muss aktiviert sein
@@ -176,7 +176,7 @@ Weitere potentielle Browser listet [Can I Use](https://caniuse.com/vibration) au
 
 <a class="iiif-link" href="./manifest-enriched.json">IIIF-Manifest</a>
 
-# Genutzte Bibliotheken
+## Genutzte Bibliotheken
 
 * Bild- und Datenaufbereitung
   * [`jxlpy`](https://github.com/olokelo/jxlpy)
@@ -190,6 +190,6 @@ Weitere potentielle Browser listet [Can I Use](https://caniuse.com/vibration) au
   * [Annotorious](https://annotorious.dev/)
   * [Manifesto](https://github.com/IIIF-Commons/manifesto)
 
-# Und warum?
+## Und warum?
 
 Da meine Interessen sowohl in der innovativen digitalen Vermittlung als auch im Einsatz kostengünstiger (und offenen) Techologien liegen, kann dies auch als Demonstrator für interessante Anwendungen z.B. für (Android-) Smartphones in einem Museum gesehen werden. Also ohne den Einsatz teurer, spezialisierter Hardware.

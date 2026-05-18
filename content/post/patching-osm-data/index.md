@@ -30,11 +30,11 @@ Allerdings hat man dann bestenfalls einen Fork der Daten im OSM XML Format erzeu
 
 Eine andere, die sich nur auf die Erfüllung der konkreten Anforderungen konzentriert, ist hier skizziert:
 
-# Ablauf
+## Ablauf
 
 Als Beispiel dient der prominente [Eintrag zu den drei blauen Türmen](https://never-built.goettingen.xyz/post/staedte-forum-1-71-goettingen/gwz/), er ließ sich recht einfach in JOSM modellieren.
 
-## Extraktion der Änderungen
+### Extraktion der Änderungen
 
 Der erste Schritt ist es die eigenen Änderungen zu isolieren, dazu kann z.B. `osmium` verwendet werden:
 
@@ -46,21 +46,21 @@ Da das Ergebnis als XML gespeichert wurde, kann es wieder in JOSM geöffnet werd
 
 {{< figure src="josm.png" alt="JOSM" class="post-image" >}}
 
-## Bildung einer Maske
+### Bildung einer Maske
 
 Der nächste Schritt ist es aus den isolierten Änderungen eine Art Maske zu erzeugen, die dann wieder zur Filterung eines größeren Gebietes verwendet werden kann. Dieser und die folgenden Schritte wurden mit [PyOsmium](https://docs.osmcode.org/pyosmium/latest/) gemacht, zur Implementierung, siehe unten.
 
 Bei der Bildung der Maske werden auch gleich die OSM IDs der Änderungen angepasst: Diese sind bis hier hin negativ, da sie nicht "echt" also Teil des zentralen OSM Datenbestandes sind. Allerdings mögen verschiedne Bibliotheken oder auch [Planetiler](https://github.com/onthegomap/planetiler) es nicht wenn sie negativ sind, daher werden sie einfach mit -1 multipliziert.
 
-## Eingabedatei aufräumen
+### Eingabedatei aufräumen
 
 Mit der Maske lässt sich nun ein OSM Datendump aufräumen. Dabei wird der gesamte gewünschte Kartenausschnitt durchlaufen und jeder OSM Weg (`way`), der die Maske überschneidet, verworfen. So lassen sich bestehende Gebäude, Grünflächen etc, entfernen.
 
-## Zusammenführung
+### Zusammenführung
 
 Der letzte Schritt ist die Zusammenführung des bereinigten Gebietes mit den eigenen Änderungen.
 
-# Ergebnis
+## Ergebnis
 
 Der nächste Schritt ist dann die Konvertierung der OSM PBF Datei in Vektorkacheln mit [Planetiler](https://github.com/onthegomap/planetiler).
 
@@ -68,7 +68,7 @@ Und so sehen die erzeugten Kartendaten in einem provisorischem [Maplibre JS GL](
 
 {{< figure src="render.png" alt="Mapbox JS GL" class="post-image" caption="Kartendaten: © OpenStreetMap-Beitragende, Höheninformationen: LGLN (2024)" >}}
 
-# Implementierung
+## Implementierung
 
 Diese Python Funktion erledigt die Schritte oben, die einzelnen Parameter:
 * **`base_file`** - Der Datendump des Gesamtgebietes

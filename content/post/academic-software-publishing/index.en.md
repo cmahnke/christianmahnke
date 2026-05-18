@@ -49,7 +49,7 @@ And these are just the more or less technical requirements, there are many more 
 
 Both lists are not even complete.
 
-# Academic software publishers
+## Academic software publishers
 
 One can imagine a (business) model here in which a university software publisher is institutionalised in the same way as the university publishers for publications: An institution or competence centre that turns problem solutions from research into real products. And even if many of these requirements can now be solved by AI-supported methods, a certain level of expertise is required. This is because the requirements are not static, they will change and, above all, increase in scope. It will therefore be necessary to train models, follow standards, regulations and best practices, etc.
 

@@ -23,6 +23,6 @@ Almost a tradition: the [crafting instructions](./instructions-2023.pdf) for the
 
 The wallpaper used is from [Zeitzeug](http://zeitzeug.de/) in Göttingen and also shown in high resolution at [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/tapete-18/) ([second wallpaper](https://vorsatzpapier.projektemacher.org/post/tapete-19/)).
 
-# Preview
+## Preview
 
 {{< pdf-preview pdf="instructions-2023.pdf" >}}

@@ -34,10 +34,10 @@ As he later worked as a painter and graphic artist, it made sense to examine adv
 
 I was shocked to discover that the quality was not really good enough for this, as the newspaper was not digitised from the original, but from a microform! That really surprised me!
 
-# Background
+## Background
 The German Newspaper Portal was launched in 2021 under the umbrella of the German Digital Library (DDB). The "Deutsche Allgemeine Zeitung" was already digitised in 2015{{< footnote 1 "https://zefys.staatsbibliothek-berlin.de/list/title/zdb/2807323X/" >}} with funds from the Framework Proposal: Digitisation of Historical Newspapers{{< footnote 2 "https://gepris.dfg.de/gepris/projekt/225572475" >}} , so the project was funded by the DFG. The DFG has funded and continues to fund many other digitisation projects and links these grants to the fulfilment of requirements that are formulated in the [DFG Code of Practice "Digitisation"](https://zenodo.org/records/7435724).
 
-# What quality for what?
+## What quality for what?
 Ultimately, it seems to me to be a problem that the definition of "quality" in the DFG's rules of practice for digitisation is not sophisticated enough. The definition of the objective is quite abstract to summarise in one sentence: Provision, utilisation and networking of flat material from libraries, archives and museums for direct re-use for research in the humanities, with the aim of preserving the physical original.
 
 There are recommendations for this under 3.2 (Technical parameters of digital reproduction), but these are only recommendations. Why not simply stipulate at least 300 ppi (based on the original) for printed works?
@@ -56,7 +56,7 @@ And while we're at it, the updates should also be adapted in terms of informatio
 A simple comparison can be used to assess the expected reusability of a digitised microform: The result of an automatic full-text capture on the basis of the digitised microform should not be significantly worse than on the basis of the digitised original.
 If an original is indispensable for the corpus, destructive digitisation, e.g. the removal of a spine to enable automated scanning (either to save costs or for conservation reasons because the state of preservation is too poor anyway), should not be taboo if a certain number of other institutions hold further physical copies. In this case, it is preferable to digitising the microform! Overall, it should be argued that microfilm digitisation should only be used for unique material, e.g. from archives (see footnote 30 of the rules of practice).
 
-# Reuse and sustainability
+## Reuse and sustainability
 
 What is the point of saving resources through the cost-effective mass digitisation of microforms if this measure massively restricts subsequent use scenarios? Ultimately, this is not sustainable, and in extreme cases even runs counter to the goal of working directly with the digitised material in a way that preserves it.
 

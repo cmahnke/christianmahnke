@@ -46,11 +46,11 @@ Für die Bildoperationen selbst kommt [OpenCV](https://opencv.org/) zum Einsatz,
 
 Aber hier könnte die Zuverlässigkeit noch etwas erhöht werden.
 
-# Beispiele
+## Beispiele
 
 Die folgende Beispiele zeigen Digitalisate im jeweiligen Portal und im Viewer des Proxies. Der Viewer des Proxies erlaubt das Ändern der Hintergrundfarbe, um den Kontrast erhöhen zu können. In den Beispielen ist ein blauer Hintergrund voreingestellt.
 
-## Transparenter Hintergrund
+### Transparenter Hintergrund
 
 {{< gallery >}}
 [
@@ -65,7 +65,7 @@ Die folgende Beispiele zeigen Digitalisate im jeweiligen Portal und im Viewer de
 Abbildung: Münzkabinett der Universität Göttingen, Stephan Eckardt, Archäologisches Institut Göttingen, 2014 / Lizenz: Namensnennung - Nicht kommerziell 4.0 (CC BY-NC 4.0)
 </div>
 
-## Ohne Falz
+### Ohne Falz
 
 Und mit transparentem Hintergrund...
 

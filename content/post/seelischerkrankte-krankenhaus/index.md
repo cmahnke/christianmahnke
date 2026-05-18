@@ -32,11 +32,11 @@ Die Reproduktion ist das Foto eines Plans aus der Planungsphase der damaligen "I
 
 Sie steht auch heute noch, wobei es einige kleine Unterschiede zu der Zeichnung gibt. Es ist allerdings nicht klar, ob es schon Änderungen bei der Ausführung gab, oder ob es sich umnachträgliche Änderungen handelt.
 
-# Geschichte
+## Geschichte
 
 Heute auch unter Uni-Mitarbeitern kaum bekannt, war die Einrichtung einst Teil der Universität. 1954 wurde sie als "Niedersächsische Landeskrankenhaus" von der Uni getrennt und dann 2007 als ["Asklepios Fachklinikum Göttingen"](https://de.wikipedia.org/wiki/Asklepios_Fachklinikum_G%C3%B6ttingen) privatisiert. Die [Asklepios Gruppe](https://www.asklepios.com/) hat eine ausführliche [Dokumentation der Geschichte veröffentlicht](https://www.asklepios.com/goettingen/unternehmen/klinik-und-kontakt/geschichte/). Zur Baugeschichte findet sich mehr im [Denkmalatlas Niedersachsen](https://denkmalatlas.niedersachsen.de/viewer/metadata/35875465/7/-/). Die Einrichtung hat auch ein eigenes Museum / Sammlung, das aber nur selten offen ist.
 
-# Seelischerkrankte Krankenhaus
+## Seelischerkrankte Krankenhaus
 
 Das wirklich interessante ist allerdings die Änderung, an der Überschrift, die jemand mit einem Kugelschreiber vorgenommen hat:
 Es wurde "Irrenanstalt" durchgestrichen und durch "Seelischerkrankte Krankenhaus" ersetzt, ob die Handschrift ein Indikator für psychische Gesundheit gelten kann, wäre pure Spekulation.

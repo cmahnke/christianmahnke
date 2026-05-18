@@ -25,10 +25,9 @@ In der Vergangenheit ich einige Experimente mit der IIIF Image API gemacht, Beis
 * [IIIF Proxy](https://christianmahnke.de/post/iiif-proxy/),
 * [HDR IIIF](https://christianmahnke.de/post/hdr-iiif/)
 
-
 Dafür habe ich teilweise bestehende Implementierungen erweitert. Da das aber entweder recht langsam wurde oder nicht wirklich intuitiv, habe ich mich entschieden eine eigene "Plattform" zu bauen:
 
-# Fliiifenleger
+## Fliiifenleger
 
 `fliiifenleger` ist ein Java-basiertes Kommandozeilen-Tool zur Erzeugung und Validierung von statischen IIIF-Bildern (International Image Interoperability Framework).
 

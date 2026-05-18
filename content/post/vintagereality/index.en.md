@@ -36,13 +36,13 @@ The latest blog incubated at the [Projektemacher Labs](https://labs.projektemach
     {{< figure src="screenshot.png" alt="Screenshot VintageReality" class="post-image" >}}
 {{< /zoom-link >}}
 
-# Presentation
+## Presentation
 
 To enable presentations with different glasses and techniques, additional formats and representations are available in addition to the IIIF presentation:
 
 {{< figure src="img/image-tabs.jpg" alt="Derivatives" class="post-image" >}}
 
-## Examples
+### Examples
 
 {{< gallery >}}
 [
@@ -60,6 +60,6 @@ The site also offers additional derivatives:
 * [MPO](https://en.wikipedia.org/wiki/JPEG#JPEG_Multi-Picture_Format).
 * Full screen - for viewing with a [Cardboard VR](https://en.wikipedia.org/wiki/Google_Cardboard) (or similar) viewer.
 
-# Implementation
+## Implementation
 
 The various derivatives were partly created with the help of [StereoscoPy](https://github.com/2sh/StereoscoPy), [OpenCV](https://opencv.org/) was used to calculate depth information.

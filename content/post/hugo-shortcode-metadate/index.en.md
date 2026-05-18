@@ -166,6 +166,6 @@ After the loop has run through, you have variables that contain the required CSS
 * Serialisation in JSON for transfer between the templates is not necessary. You could simply do without it
 * The check of whether a file really contains a metadata definition is superfluous, without it these could also be overwritten, e.g. if the shortcode is defined in a theme.
 
-## Update 15.4.2025
+# Update 15.4.2025
 
 With Hugo 0.146.0 the [structure of the templates has changed](https://github.com/gohugoio/hugo/pull/13541), therefore the path had to be changed to `define`.

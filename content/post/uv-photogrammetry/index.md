@@ -33,7 +33,7 @@ lastmod: 2025-09-03T00:00:00+02:00
 **In diesem Beitrag wird die weltweit erste HDR Darstellung einer UV-Photogrammetrie im Browser präsentiert.**
 <!--more-->
 
-# Uranglas
+## Uranglas
 
 Da seit Jahren schon ab und zu [Uranglas](https://de.wikipedia.org/wiki/Uranglas) kaufe, wenn ich es günstig bekommen kann, habe ich inzwischen schon einer kleine Sammlung. Das wirklich faszinierende, ist die Bestrahlung mit UV-Licht: Dann wird das Glas zum leuchten angeregt. Der Effekt tritt auch schon mit dem UV-Anteil im Sonnenlicht auf, ist dann aber deutlich schwächer. Für das geübte Auge auf dem Flohmarkt allerdings meist ausreichend.
 
@@ -45,10 +45,10 @@ Da Uranglas ein beliebtes Sammelgebiet ist, hier ein paar weitere Informationen 
 
 Da eines meiner technischen Interessengebiete ist, die digitale Vermittlung von Artefakten zu verbessern, hier ein Beispiel für eine solches Objekt unter UV-Bestrahlung. Dazu wurde das Objekt mittels Photogrammetrie erfasst, digital leicht nachbearbeitet und die Textur im Farbraum so verschoben, dass sie von einem HDR fähigen Browser angezeigt werden kann. Grundsätzlich funktioniert die Darstellung wie bei der [Vase aus dem Februar](/post/3d-models/), nur die Aufnahmemethode und das Rendering der Textur unterscheiden sich. Letzteres erfordert allerdings (derzeit) einen Chrome-basierten Browser.
 
-# Digitalisierung und Nachbearbeitung
+## Digitalisierung und Nachbearbeitung
 Die Erstellung und Nachbereitung folgte [dem erprobtem Ablauf](/post/3d-models/), allerdings war deutlich mehr Nachbearbeitung notwendig, da bei der Aufnahme unter UV Licht deutlich mehr Schatten geworfen wurden. Ebenfalls wurden violette Reflexionen der UV Lampe entfernt.
 
-# Präsentation
+## Präsentation
 
 Die Umsetzung war einfacher als gedacht, es sind im Grunde nur zwei Schritte erforderlich. Für das Beispiel wurde eine angepasste Version von [Three.js](https://threejs.org/) verwendet.
 * Erstellen eines GLTF Modells mit UltraHDR Textur, für das Konvertieren der Textur siehe [LibUltraHDR](/post/ultrahdr/). Die angepasste Textur muss im nächsten Schritt mit dem Modell zu einem Paket verpackt werden, dabei kommt [`obj2gltf`](https://github.com/CesiumGS/obj2gltf) zum Einsatz:
@@ -65,7 +65,7 @@ colorMetadata: { mode:"extended" }
 
 Zusätzlich sollte die UltraHDR Textur ohne zusätzliche Beleuchtung angezeigt werden, da ansonsten die Beleuchtung zu Umrechnungen er Farbigkeit der Textur führt.
 
-# Beispiel
+## Beispiel
 
 {{< hdr-canvas-check >}}
 

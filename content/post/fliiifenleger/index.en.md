@@ -25,11 +25,9 @@ In the past, I have conducted several experiments with the IIIF Image API. Examp
 * [IIIF Proxy](https://christianmahnke.de/en/post/iiif-proxy/),
 * [HDR IIIF](https://christianmahnke.de/en/post/hdr-iiif/)
 
-
 To do this, I expanded on some existing implementations. However, since this either became quite slow or not very intuitive, I decided to build my own "platform":
 
-# Fliiifenleger
-
+## Fliiifenleger
 
 `fliiifenleger` is a Java-based command line tool for generating and validating static IIIF (International Image Interoperability Framework) images.
 

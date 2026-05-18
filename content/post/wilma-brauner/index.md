@@ -12,6 +12,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q133272311
   - https://www.wikidata.org/wiki/Q3107
   - https://www.wikidata.org/wiki/Q27998
+lastmod: 2022-12-13T00:00:00+02:00
 ---
 
 Ab 6. Dezember findet in der Stadtgalerie "Alte Post", Stephanstraße 4, Sylt / OT Westerland die Ausstellung "Spurensuche im Sylter Archiv -  Zum Leben und Werk von **Wilma Bräuner** (1891 – 1985)" statt, an der Evelyn Kraßmann und ich zusammen mit einem [Team](https://xn--wilmabruner-r8a.projektemacher.org/about/#ausstellung) gearbeitet haben.
@@ -22,7 +23,7 @@ Im Rahmen der Ausstellungsvorbereitung haben wir einen [Wikipedia Eintrag](https
 
 Die Vernissage findet am Montag, den 5. Dezember 2022 um 18 Uhr in der Stadtgalerie statt.
 
-# Nachtrag
+# Update 13.12.2022
 
 {{< html/iframe-consent >}}
 <div style="position:relative;max-width:400px;min-width:100px;">

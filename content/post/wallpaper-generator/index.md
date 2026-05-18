@@ -36,7 +36,7 @@ Und um beides zusammen zu bringen, gibt es nun eine interaktives Spielzeug für 
 
 {{< lucienne uselocation=true src=`[{"label": "Sammlung Vorsatzpapier", "url": "https://vorsatzpapier.projektemacher.org/patterns/collection.json"}]` urlinput=true resize=true download=true >}}
 
-# Bedienungsanleitung
+## Bedienungsanleitung
 
 **Wichtig**: Die Darstellung in mobilen Browsern kann gestaucht oder fehlerhaft sein.
 
@@ -48,11 +48,11 @@ Im nächsten Schritt können nun die Schnittmarken an den Rändern genutzt werde
 
 Im unteren Fenster erhält man eine Vorschau auf das Ergebnis. Zusätzlich ist es möglich die Anzahl der Zeilen und Spalten einzustellen. Nach einer Änderung muss auf "Größe aktualisieren" geklickt werden. Auch ist es hier möglich das Ergebnis herunterzuladen. Dabei wird der Inhalt immer auf die Breite der gewälten Auflösung skaliert. Das Symbol mit den zwei Pfeilen auf der linken Seite kann genutzt werden, um den Inhalt so breit wie das Vorschaufenster zu machen.
 
-# Lucienne Day
+## Lucienne Day
 
 Der Name der Software soll an die Designerin [Lucienne Day](https://de.wikipedia.org/wiki/Lucienne_Day), die auch für ihre Textil und Tapeten Entwürfe der 50er und 60er Jahre berühmt wurde.
 
-# Technische Details
+## Technische Details
 
 Für die Umsetzung kamen unter anderem die folgenden JavaScript Module zum Einsatz:
 * [OpenSeadragon](https://openseadragon.github.io/)

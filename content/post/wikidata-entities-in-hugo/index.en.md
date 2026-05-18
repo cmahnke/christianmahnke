@@ -106,7 +106,7 @@ Of course, the variants for `:link` `:visited`, `:hover` and `:active` also need
 
 No (or only in the source code of the page)
 
-## Update 29 April 2026
+# Update 29 April 2026
 
 Since April 2026, Wikimedia services such as Wikipedia and Wikidata have been enforcing [rate limits](https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits) more strictly. There are two simple ways to obtain higher rate limits:
 * Via a customised `User-Agent` 

@@ -188,7 +188,7 @@ For EAD, information can also be stored in [`<acqinfo>`](https://www.loc.gov/ead
 * Timo Schleier and Stefanie Rühle, Library Centre of the [German Digital Library](https://www.deutsche-digitale-bibliothek.de/)
 * Dr Denise Ruisinger, Archive Department of the [German Digital Library](https://www.deutsche-digitale-bibliothek.de/)
 
-## Updates
+# Updates
 
 * Comments incorporated
   * METS/MODS as metadata formats for libraries not DDB in general

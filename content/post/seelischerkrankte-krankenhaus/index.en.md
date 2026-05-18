@@ -32,11 +32,11 @@ The reproduction is a photograph of a plan from the planning phase of the then "
 
 It still stands today, although there are some minor differences to the drawing. However, it is not clear whether there have already been changes to the design or whether these are subsequent modifications.
 
-# History
+## History
 
 Today hardly known even among university employees, the facility was once part of the university. In 1954, it was separated from the university as the "Niedersächsische Landeskrankenhaus" and then privatized in 2007 as ["Asklepios Fachklinikum Göttingen"](https://de.wikipedia.org/wiki/Asklepios_Fachklinikum_G%C3%B6ttingen). The [Asklepios Group](https://www.asklepios.com/) has published a detailed [documentation of the history](https://www.asklepios.com/goettingen/unternehmen/klinik-und-kontakt/geschichte/) (in German). More information on the history of the building can be found in the [Denkmalatlas Niedersachsen](https://denkmalatlas.niedersachsen.de/viewer/metadata/35875465/7/-/). The hospital also has its own museum/collection, but this is rarely open.
 
-# Seelischerkrankte Krankenhaus
+## Seelischerkrankte Krankenhaus
 
 The really interesting thing, however, is the change that someone made to the headline with a ballpoint pen:
 It crossed out "Irrenanstalt" (Lunatic Asylum) and replaced it with "Seelischerkrankte Krankenhaus" (Mental Health Hospital). Whether the handwriting can be considered an indicator of mental health would be pure speculation.

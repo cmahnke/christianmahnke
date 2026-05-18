@@ -24,7 +24,7 @@ Another use case for HDR images...
 
 ...is the visualisation of X-ray diagnostic images of old paintings. This exciting process is used, for example, to visualise overpaintings, corrections or even underlying drawings "behind" paintings in a non-destructive manner.
 
-# Example
+## Example
 
 The [Metropolitan Museum of Art in New York](https://www.metmuseum.org/) makes some of its highlights available in high resolution and sometimes in different wavelengths under free licences.
 
@@ -32,7 +32,7 @@ The "Mars and Venus United by Love" by [Paolo Veronese](https://en.wikipedia.org
 
 This late Renaissance work shows some conspicuous deviations from visible light in the X-ray image. These include a change in the position of Venus' head and a hidden crack.
 
-# Processing steps
+## Processing steps
 
 The first step is to superimpose the original image and the X-ray image as accurately as possible so that the subsequent image operations produce as few artefacts as possible. It turned out that the X-ray image was minimally distorted.
 
@@ -51,7 +51,7 @@ The initial images and processing steps:
 ]
 {{</ gallery >}}
 
-# Result
+## Result
 
 The previous result can certainly still be optimised in order to achieve better erasure when the X-ray image and greyscale image overlap.
 
@@ -65,6 +65,6 @@ Warning: The result is approx. 14 megabytes in size, HDR view after clicking on 
 ]
 {{</ gallery >}}
 
-# And why?
+## And why?
 
 One application of this HDR enhancement is the improved visualisation of radiographic methods.

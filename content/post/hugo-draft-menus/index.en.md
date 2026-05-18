@@ -46,10 +46,10 @@ hugo -D server
 
 Thanks to [***irkode***](https://discourse.gohugo.io/u/irkode/summary) from the Hugo forum who [helped me](https://discourse.gohugo.io/t/draft-menu-entries/54622) with the solution.
 
-## Update 2.6.2025
+# Update 2.6.2025
 
 The new feature is now available: The [search](/post/site-search/).
 
-## Update 7 April 2026
+# Update 7 April 2026
 
 The `.Site.BuildDrafts` property will be marked as deprecated from Hugo 0.156.0 onwards; options for replacing it are described on the [Hugo Forum](https://discourse.gohugo.io/t/deprecations-in-v0-156-0/56732/11).

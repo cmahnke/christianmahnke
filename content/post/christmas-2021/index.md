@@ -23,6 +23,6 @@ Frohe Weihnachten an alle Leser, dieses Jahr gibt es ein Geschenk...
 
 Die benutzte Tapete ist von [Zeitzeug](http://zeitzeug.de/) in Göttingen und auch bei [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/tapete-16/) hochauflösend abgebildet.
 
-# Vorschau
+## Vorschau
 
 {{< pdf-preview pdf="instructions-2021.pdf" >}}

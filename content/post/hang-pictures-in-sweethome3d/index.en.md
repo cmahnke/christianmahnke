@@ -48,7 +48,7 @@ options:
                         File pattern for directories, default is '**/*.jpg,**/*.pdf'
 ```
 
-# Result
+## Result
 
 With the help of this tool, a simple plan is transformed into a 3D view (here the work preview).
 

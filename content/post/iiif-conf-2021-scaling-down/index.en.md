@@ -19,7 +19,7 @@ Today I gave my talk about the infrastructure of my blogs at this year's IIIF co
 {{< pdf file="./Scaling%20down.pdf" download="false" >}}
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14169349.svg)](https://doi.org/10.5281/zenodo.14169349)
 
-# Recording
+## Recording
 
 {{< html/iframe-consent preview="<img class='video-preview' src='preview.jpg' alt='Preview'>" >}}
     {{< youtube id="7NJhcARjZSs" title="Scaling Down: IIIF at Small Scale - 2021 IIIF Annual Conference" >}}

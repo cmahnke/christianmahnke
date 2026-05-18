@@ -23,12 +23,12 @@ Die Folien meiner Präsentation zu HDR Inhalten über IIIF sind nun verfügbar..
 
 <!--more-->
 
-# Folien
+## Folien
 
 {{< pdf file="./IIIF 2024 Lightning Talk.pdf" download="false" >}}
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14168673.svg)](https://doi.org/10.5281/zenodo.14168673)
 
-# Links zu Beiträgen mit Beispielen
+## Links zu Beiträgen mit Beispielen
 
 Diese Beiträge sind Teil der Demonstration:
 
@@ -37,11 +37,11 @@ Diese Beiträge sind Teil der Demonstration:
 * [Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung](https://christianmahnke.de/post/hdr-image-analysis/)
 * [HDR Bilder zur Visualisierung von Röntgenuntersuchungen alter Gemälde](https://christianmahnke.de/post/hdr-radiography-visualisation/)
 
-# GitHub Issue
+## GitHub Issue
 
 Das erwähnte GitHub Issue ist [IIIF/api#2312](https://github.com/IIIF/api/issues/2312)
 
-# Aufzeichnung
+## Aufzeichnung
 
 {{< html/iframe-consent preview="<img class='video-preview' src='preview.jpg' alt='Vorschau'>" >}}
     {{< youtube id="YhFME0WGkww" start="401" title="HDR Images via Image API - 2024 IIIF Online Meeting: Lightning Talks, Day 3" >}}

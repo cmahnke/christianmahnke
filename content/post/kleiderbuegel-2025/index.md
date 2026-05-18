@@ -26,6 +26,6 @@ Die wichtigsten Neuerungen:
 
 **Zu der Ausstellung gibt es weitere Informationen mehr ab 2026!**
 
-# Screenshot
+## Screenshot
 
 {{< figure src="screenshot.jpeg" alt="Kleiderbügel Blog" class="post-image" caption="Neue Startseite" >}}

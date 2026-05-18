@@ -30,11 +30,11 @@ However, at best, you will then have created a fork of the data in OSM XML forma
 
 Another option, which focuses solely on meeting specific requirements, is outlined here:
 
-# Procedure
+## Procedure
 
 The prominent [entry for the three blue towers](https://never-built.goettingen.xyz/post/staedte-forum-1-71-goettingen/gwz/) serves as an example; it was quite easy to model in JOSM.
 
-## Extracting the changes
+### Extracting the changes
 
 The first step is to isolate your own changes. You can use `osmium` for this, for example:
 
@@ -46,21 +46,21 @@ Since the result was saved as XML, it can be opened again in JOSM:
 
 {{< figure src="josm.png" alt="JOSM" class="post-image" >}}
 
-## Creating a mask
+### Creating a mask
 
 The next step is to create a kind of mask from the isolated changes, which can then be used to filter a larger area. This and the following steps were done with [PyOsmium](https://docs.osmcode.org/pyosmium/latest/); for implementation, see below.
 
 When creating the mask, the OSM IDs of the changes are also adjusted: These are negative up to this point, as they are not "real", i.e. part of the central OSM database. However, various libraries or even [Planetiler](https://github.com/onthegomap/planetiler) do not like it when they are negative, so they are simply multiplied by -1.
 
-## Cleaning up the input file
+### Cleaning up the input file
 
 The mask can now be used to clean up an OSM data dump. The entire desired map section is scanned and any OSM way that intersects the mask is discarded. This allows existing buildings, green spaces, etc. to be removed.
 
-## Merging
+### Merging
 
 The final step is to merge the cleaned-up area with your own changes.
 
-# Result
+## Result
 
 The next step is to convert the OSM PBF file into vector tiles using [Planetiler](https://github.com/onthegomap/planetiler).
 
@@ -68,7 +68,7 @@ And this is what the generated map data looks like in a provisional [Maplibre JS
 
 {{< figure src="render.png" alt="Mapbox JS GL" class="post-image" caption="Map data: © OpenStreetMap contributors, elevation information: LGLN (2024)" >}}
 
-# Implementation
+## Implementation
 
 This Python function performs the steps above, the individual parameters:
 * **`base_file`** - The data dump of the entire area

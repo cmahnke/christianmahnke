@@ -23,6 +23,6 @@ You guessed right, the [instructions](./instructions-2022.pdf) for the Christmas
 
 The wallpaper used is from [Zeitzeug](http://zeitzeug.de/) in Göttingen and is also shown in high resolution at [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/tapete-17/).
 
-# Preview
+## Preview
 
 {{< pdf-preview pdf="instructions-2022.pdf" >}}

@@ -72,11 +72,11 @@ SELECT ?s ?p ?o ?isTagged WHERE {
 }
 ```
 
-# Implementation
+## Implementation
 
 In addition to the combination of HDT and OxiGraph mentioned in the last post, [Cytoscape](https://js.cytoscape.org/) is used for visualisation. The PDF export was created using [`cytoscape-svg`](https://github.com/kinimesi/cytoscape-svg).
 
-# Why?
+## Why?
 
 Sure, the graph looks nice, but it also has other advantages:
 * It allows navigation outside the confines of this blog.
@@ -91,6 +91,6 @@ There is still room for improvement:
 * In general, the layout could be improved.
 * Cytoscape offers visually appealing visualisations that are more attractive than the one shown above.
 
-## Update 22 April 2026
+# Update 22 April 2026
 
 As [suggested by Konrad Höffner](https://github.com/KonradHoeffner/hdt/issues/107#issuecomment-4295799504), there is now a full-screen mode and Cytoscape now uses [WebGL](https://en.wikipedia.org/wiki/WebGL).

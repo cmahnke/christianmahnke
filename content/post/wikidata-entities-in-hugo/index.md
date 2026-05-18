@@ -106,7 +106,7 @@ Natürlich müssen die Varianten für `:link` `:visited`, `:hover` und `:active`
 
 Nein (bzw. nur im Quelltext der Seite)
 
-## Update 29.4.2026
+# Update 29.4.2026
 
 Seit April 2026 prüfen Wikimedia-Dienste wie die Wikipedia oder Wikidata die [Rate Limits](https://www.mediawiki.org/wiki/Wikimedia_APIs/Rate_limits) strenger. Es gibt zwei einfache Möglichkeiten, um höhere Rate Limits zu erhalten:
 * Über einen angepassten `User-Agent` 

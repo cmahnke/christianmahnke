@@ -48,7 +48,7 @@ Dieses Buch enthält auch Kopien von Stempelabdrücken. Teilweise lässt sich di
 ]
 {{</ gallery >}}
 
-# Beispiel
+## Beispiel
 
 {{< hdr-canvas-check >}}
 

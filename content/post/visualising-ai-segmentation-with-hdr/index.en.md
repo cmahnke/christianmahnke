@@ -22,11 +22,11 @@ The first step towards visually supported annotation with HDR...
 
 ... serves as another use case for HDR.
 
-# Example
+## Example
 
 To advertise my other blogs, here is a post from the Blaufußtölpel fashion blog: [The Men's Journal July 1934](https://xn--blaufusstlpel-qmb.de/post/das-herrenjournal-7-1939/)
 
-# Realisation
+## Realisation
 
 [Ultralytics](https://www.ultralytics.com/de) enables image segmentation here (with Python). It is a very easy-to-use framework with pre-trained models, and of course it also allows you to train your own models...
 
@@ -78,7 +78,7 @@ Whereby `jxlpy` is not necessary if you do not use JXL images.
 
 The models can either be downloaded and integrated directly, e.g. to work with them directly, as in the example, or via a corresponding configuration. Details can be found in the linked documentation.
 
-# Result
+## Result
 
 The image shows the outline of the woman in the centre (class ‘person’) highlighted.
 

@@ -24,7 +24,7 @@ Ein weiterer Anwendungsfall für HDR-Bilder...
 
 ...ist die Visualisierung von röntgendiagnostischen Bildern alter Gemälde. Dieses spannende Verfahren wird eingesetzt, um z.B. Übermalungen, Korrekturen oder auch zugrundeliegende Zeichnungen "hinter" Bildern zerstörungsfrei sichtbar zum machen.
 
-# Beispiel
+## Beispiel
 
 Das [Metropolitan Museum of Art in New York](https://www.metmuseum.org/) stellt einige seine Highlights hochauflösend und teilweise auch in unterschiedlichen Wellenlängen unter freien Lizenzen zur Verfügung.
 
@@ -32,7 +32,7 @@ Das hier als Beispiel genutzte "Mars und Venus vereint durch Liebe" von [Paolo V
 
 Dieses Werk der Spätrenaissance zeigt im Röntgenbild einige auffällige Abweichungen von sichtbaren Licht. Dazu gehört eine geänderte Haltung des Kopfes der Venus und ein deutlicher Riss.
 
-# Bearbeitungsschritte
+## Bearbeitungsschritte
 
 Der erste Schritt ist die möglichst genaue Überlagerung des Ausgangsbildes und der Röntgenaufnahme, damit die weiteren Bildoperationen möglichst wenig Artefakte produzieren. Dabei stellte sich heraus, dass die Röntgenaufnahme minimal verzerrt ist.
 
@@ -52,7 +52,7 @@ Die Ausgangsbilder und Bearbeitungsschritte:
 ]
 {{</ gallery >}}
 
-# Ergebnis
+## Ergebnis
 
 Das bisherige Ergebnis kann sicher noch optimiert werden, um eine bessere Auslöschung bei Überlappung von Röntgenaufnahme und Graustufenbild zu erreichen.
 
@@ -66,6 +66,6 @@ Achtung: Das Ergebnis ist ca. 14 Megabyte groß, HDR Ansicht nach dem Klick auf 
 ]
 {{</ gallery >}}
 
-# Und warum?
+## Und warum?
 
 Ein Anwendungsfall dieser HDR Anreicherung ist die bessere visuelle Vermittelbarkeit von radiographischen Methoden.

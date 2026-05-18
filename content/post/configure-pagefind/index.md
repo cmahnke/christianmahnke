@@ -152,6 +152,6 @@ Die Trennung von zu indizierenden Inhalten und der Konfiguration des Indexes erl
 
 Wäre die Konfiguration in JavaScript (statt YAML oder JSON) realisiert, könnten die Callbacks / Plugins auch direkt inline definiert oder importiert werden.
 
-## Update 4.6.2025
+# Update 4.6.2025
 
 Der Entwickler von Pagefind kann sich [vorstellen](https://github.com/Pagefind/pagefind/discussions/821#discussioncomment-13372424), eine entsprechende Funktionalität direkt im Indexer zu integrieren.

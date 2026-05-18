@@ -5,13 +5,15 @@ $body-text: "STIX Two Text Variable";
 
 
 @page  {
-  size: 210mm 210mm !important;
+  size: A4 !important;
   margin-top: 1cm;
   margin-bottom: 1cm;
   margin-left: 1cm;
   margin-right: 1cm;
+  counter-reset: footnote 0;
 
   @footnote {
+    border-top: dashed black 1px;
     float: bottom;
   }
 
@@ -55,6 +57,8 @@ p {
 
 
   .post {
+    margin-top: unset;
+
     .content {
       h1, h2, h3 {
         min-width: 100%;
@@ -191,7 +195,6 @@ p {
           margin-block-start: 0;
         }
 
-
         .footnote-number {
           margin-left: .1cm;
           font-size: 65%;
@@ -209,14 +212,30 @@ p {
 
         code,
         pre:not(:has(code)) {
+          /*
           border-width: 1px 1px 1px 10px;
           border-style: solid;
           border-color: rgb(223, 223, 223) rgb(223, 223, 223) rgb(223, 223, 223) $box-border;
+          */
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(223, 223, 223);
           font-family: "Courier New", Courier, monospace;
           font-size: 0.9rem;
           background-color: #f5f5f5;
           padding: 0.2em 0.4em;
           border-radius: 4px;
+          break-inside: avoid;
+        }
+
+        h1, h2, h3 {
+          &[id*="update"] {
+            column-span: all;
+
+            & ~ p {
+              column-span: all;
+            }
+          }
         }
 
         .post-image {
@@ -255,8 +274,42 @@ a {
   }
 }
 
+.references-heading {
+  font-size: 1.5rem;
+  margin-top: 1.2em;
+  letter-spacing: -1px;
+  font-variant-caps: small-caps;
+
+}
+
 .footnote-container {
   .footnote-number {
     margin-right: 1pt;
   }
 }
+
+@media screen {
+  .footnote {
+    display: none;
+  }
+}
+
+.footnote {
+  float: footnote;
+}
+
+.footnote::footnote-call {
+    content: counter(footnote, decimal) " ";
+    vertical-align: super;
+    font-size: 0.8em;
+}
+
+.footnote::footnote-marker {
+    content: counter(footnote, lower-roman);
+    font-size: 14pt;
+    display: inline-block;
+    width: 2em;
+    padding-right: 1em;
+    text-align: right;
+}
+

@@ -23,6 +23,6 @@ Merry Christmas to all readers, this year there is a present...
 
 The wallpaper used is from [Zeitzeug](http://zeitzeug.de/) in Göttingen and is also shown in high resolution at [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/tapete-16/).
 
-# Preview
+## Preview
 
 {{< pdf-preview pdf="instructions-2021.pdf" >}}

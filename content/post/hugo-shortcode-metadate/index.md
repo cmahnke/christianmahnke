@@ -165,6 +165,6 @@ Nachdem die Schleife durchlaufen ist, hat man Variablen, die die jeweils benöti
 * Die Serialisierung in JSON zur Übergabe zwischen den Templates ist nicht notwendig. Man könnte einfach darauf verzichten
 * Die Überprüfung der ob eine Datei wirklich eine Metadatendeninition enthält ist überflüssig, ohne sie könnten diese auch überschrieben werden, z.B. wenn der Shortcode in einem Theme definiert ist.
 
-## Update 15.4.2025
+# Update 15.4.2025
 
 Mit Hugo 0.146.0 hat sich die [Struktur der Templates geändert](https://github.com/gohugoio/hugo/pull/13541), daher musste der Pfad in `define` geändert werden.

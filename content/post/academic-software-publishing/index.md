@@ -50,7 +50,7 @@ Und das sind nur die mehr oder weniger technischen Anforderungen, dazu kommen no
 
 Beide Listen sind nicht mal vollständig.
 
-# Akademische Software-Verlage
+## Akademische Software-Verlage
 
 Hier kann man sich ein (Geschäfts-)Modell vorstellen, dass analog zu den Uni-Verlagen für Publikationen ein Uni-Softwarepublisher institutionalisiert wird: Eine Einrichtung bzw. ein Kompetenzzentrum, das Problemlösungen aus der Forschung zu echten Produkten macht. Und auch wenn sich inzwischen viele dieser Anforderungen von KI-gestützten Methoden lösen lassen, ist dafür ein gewisses Know-how notwendig. Denn die Anforderungen sind nicht statisch, sie werden sich verändern und vor allem im Umfang erhöhen. Es wird also notwendig werden, Modelle zu trainieren, Standards, Vorschriften und Best-Practices zu verfolgen usw.
 

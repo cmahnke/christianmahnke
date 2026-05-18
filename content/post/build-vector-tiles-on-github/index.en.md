@@ -109,6 +109,6 @@ This article intentionally does not contain any configuration and code examples,
 
 Roughly speaking, you can create the dump for Europe without buildings up to zoom level 13 in just under 6 hours using all the tricks.
 
-## Updates
+# Updates
 
 * **14.3.2025**: [Never Built Göttingen: Map based on self-generated material](https://never-built.goettingen.xyz/map/)

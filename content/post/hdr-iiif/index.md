@@ -41,7 +41,7 @@ Und da ich mit [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/) ein Bl
 
 Das brachte mich auf die Idee mal zu versuchen ein [HDR](https://de.wikipedia.org/wiki/High_Dynamic_Range_Image) (bzw. [UltraHDR](https://developer.android.com/media/platform/hdr-image-format)) Bild in Form von IIIF bereitzustellen. Das Hauptproblem dabei war das zerlegen des Bildes in Kacheln, da gängige Werkzeuge dafür nur die SDR Repräsentation des Bildes heranziehen.
 
-# Image Tiler für UltraHDR
+## Image Tiler für UltraHDR
 
 Da meine Blogs am Anfang `iiif_static.py` aus dem Python Modul [`iiif`](https://github.com/zimeon/iiif) (dass sich aber als zu langsam herausgestellt hat und auch nicht so einfach mit [JPEG XL](https://github.com/libjxl/libjxl) verheiraten war, wie [`vips`](https://github.com/libvips/libvips)), genutzt haben, gab es schon einen Kandidaten für die notwendigen Anpassungen. Zusätzlich hat eine Python Implementierung den Vorteil das [Pillow](https://github.com/python-pillow/Pillow) genutzt werden kann: Die [MPO](https://de.wikipedia.org/wiki/Multi_Picture_Object) (einem JPEG Derivat, das strukturell mit UltraHDR verwand ist) Implementierung ist schon für [VintageReality](https://vintagereality.projektemacher.org/) zum Einsatz gekommen.
 
@@ -50,11 +50,11 @@ Am Ende habe ich einfach ein Backend auf Basis von [`libultrahdr`](/post/ultrahd
 
 Unten das Ergebnis.
 
-# Nächste Schritte
+## Nächste Schritte
 
 Derzeit gibt es für IIIF noch keine standardisierte Möglichkeit auf UltraHDR Inhalte hinzuweisen. Prinzipiell gibt es Felder, die für diese Aufgabe genutzt werden können, aber eine Aufnahme in den Standart ist wünschenswert, damit Viewer Implementierungen darauf hinweisen können, wenn der Monitor die Anzeige nicht unterstützen.
 
-# Ergebnis
+## Ergebnis
 
 {{< hdr-canvas-check >}}
 

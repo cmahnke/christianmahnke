@@ -110,6 +110,6 @@ Dieser Beitrag enthält absichtlich keine Konfigurations- und Codebeispiele, da 
 
 Grob lässt sich sagen, dass man unter Ausnutzung aller Tricks den Dump für Europa ohne Gebäude bis Zoomstufe 13 in knapp unter 6 Stunden erzeugen kann.
 
-## Updates
+# Updates
 
 * **14.3.2025**: [Never Built Göttingen: Karte basierend auf selbst generiertem Material](https://never-built.goettingen.xyz/map/)

@@ -42,7 +42,7 @@ Not only the motif is interesting, but also the way it is made: the drawing is d
 
 The drawing is dated 1965. So far I have not been able to find out anything about the artist...
 
-## Update 27 April 2026
+# Update 27 April 2026
 
 The Austrian [Josef Mikl](https://en.wikipedia.org/wiki/Josef_Mikl) (1929–2008) may well be the artist in question. The number of letters is roughly the same, and some of his satirical works also bear a certain resemblance:
 * [Josef Mikl. The satirical work](https://artinwords.de/josef-mikl-das-satirische-werk/)

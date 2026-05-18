@@ -36,7 +36,7 @@ And to bring the two together, there is now an interactive toy for the [‘Vorsa
 
 {{< lucienne uselocation=true src=`[{"label": "Sammlung Vorsatzpapier", "url": "https://vorsatzpapier.projektemacher.org/patterns/collection.json"}]` urlinput=true resize=true download=true >}}
 
-# Operating instructions
+## Operating instructions
 
 **Important**: The display in mobile browsers may be compressed or incorrect.
 
@@ -48,11 +48,11 @@ In the next step, the crop marks at the edges can be used to select the appropri
 
 A preview of the result is displayed in the lower window. It is also possible to set the number of rows and columns. After a change, click on “Update size”. It is also possible to download the result here. The content is always scaled to the width of the selected resolution. The symbol with the two arrows on the left-hand side can be used to make the content as wide as the preview window.
 
-# Lucienne Day
+## Lucienne Day
 
 The software is named after the designer [Lucienne Day](https://en.wikipedia.org/wiki/Lucienne_Day), who also became famous for her textile and wallpaper designs of the 50s and 60s.
 
-# Technical details
+## Technical details
 
 The following JavaScript modules were used for the implementation:
 * [OpenSeadragon](https://openseadragon.github.io/)

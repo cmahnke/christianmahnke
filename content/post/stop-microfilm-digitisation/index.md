@@ -33,10 +33,10 @@ Da er später als Kunstmaler und Grafiker arbeitete, lag es nahe, Werbeanzeigen 
 
 Mit Erschrecken musste ich feststellen, dass die Qualität dafür nicht wirklich ausreichte, da die Zeitung nicht vom Original ausgehend, sondern von einer Mikroform digitalisiert wurde! Das hat mich dann doch überrascht!
 
-# Hintergrund
+## Hintergrund
 Das Deutsche Zeitungsportal wurde 2021 unter dem Dach der Deutschen Digitalen Bibliothek (DDB) gestartet. Die "Deutsche Allgemeine Zeitung" wurde bereits 2015{{< footnote 1 "https://zefys.staatsbibliothek-berlin.de/list/title/zdb/2807323X/" >}} mit Mitteln aus dem Rahmenantrag: Digitalisierung historischer Zeitungen{{< footnote 2 "https://gepris.dfg.de/gepris/projekt/225572475" >}}  digitalisiert, das Projekt wurde also von der DFG gefördert. Die DFG förderte und fördert viele weitere Digitalisierungsvorhaben und verbindet mit diesen Förderungen das Erfüllen von Anforderungen, die in den [DFG-Praxisregeln "Digitalisierung"](https://zenodo.org/records/7435724) formuliert sind.
 
-# Welche Qualität wofür?
+## Welche Qualität wofür?
 Letztlich scheint es mir ein Problem zu sein, dass in den DFG-Praxisregeln zur Digitalisierung die Definition der "Qualität" nicht ausgefeilt genug ist. Die Zieldefinition  ist recht abstrakt, um sie in einem Satz zusammenzufassen: Bereitstellung, Nutzbarmachung und Vernetzung von Flachware aus Bibliotheken, Archiven und Museen zur direkten Nachnutzung für geisteswissenschaftliche Forschung, mit dem Anspruch, die physische Vorlage zu schonen.
 
 Dazu gibt es unter 3.2 (Technische Parameter der digitalen Reproduktion) Empfehlungen, aber dies sind eben nur Empfehlungen. Warum nicht einfach mindestens 300 ppi (auf Basis der Originalvorlage) für Druckwerke vorschreiben?
@@ -55,7 +55,7 @@ Und wenn man schon dabei ist, sollten die Aktualisierungen auch in informationst
 Zur Bewertung der zur erwartenden Nachnutzbarkeit eines Mikroformendigitalisats bietet sich ein einfacher Vergleich an: Das das Ergebnis einer automatischen Volltexterfassung auf Basis der digitalisierten Mikroform sollte nicht signifikant schlechter sein, als auf Basis des digitalisierten Originals.
 Wenn eine Vorlage für den Corpus unerlässlich ist, sollte auch die destruktive Digitalisierung , also z.B. das Entfernen eines Rückens, um einen automatisierten Einzug zu ermöglichen, (entweder aus Kostenersparnis oder konservatorischen Gründen, weil der Erhaltungszustand ohnehin zu schlecht ist) kein Tabu sein, wenn eine gewisse Anzahl anderer Institutionen weitere physische Exemplare vorhalten. In diesem Fall ist sie der Digitalisierung der Mikroform vorzuziehen! Insgesamt ist dafür zu plädieren, Mikrofilmdigitalisierung nur noch für unikales Material vorzusehen, z. B. aus Archiven (siehe Fußnote 30 der Praxisregeln).
 
-# Nachnutzung und Nachhaltigkeit
+## Nachnutzung und Nachhaltigkeit
 
 Was nutzt es, Ressourcen durch eine kostengünstige Massendigitalisierung von Mikroformen zu sparen, wenn man darauf ausbauende Nachnutzungsszenarien mit dieser Maßnahme massiv einschränkt? Nachhaltig ist das im Endeffekt nicht, sondern läuft im äußersten Falle sogar dem Ziel der direkten, bestandsschonen Arbeit mit dem Digitalisat zuwider.
 

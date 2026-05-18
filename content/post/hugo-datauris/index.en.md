@@ -17,7 +17,7 @@ These have the following form: `data:image/png;base64,data`, i.e., they begin wi
 
 Here is a simple Hugo template to generate these from Hugo resources:
 
-# Template
+## Template
 
 This fragment can simply be saved as `layouts/_partials/data-uri.html` or `layouts/partials/data-uri.html` for Hugo versions prior to 0.146.0.
 
@@ -30,7 +30,7 @@ This fragment can simply be saved as `layouts/_partials/data-uri.html` or `layou
 {{- end -}}
 ```
 
-# Example
+## Example
 
 The new `partial` must then be called at the point in your own template where the image is to be integrated. The loaded (image) resource is used as a parameter.
 

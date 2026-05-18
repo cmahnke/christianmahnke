@@ -20,12 +20,12 @@ Nach dem [Lightning Talk](/post/iiif-online-meeting-2024-slides/) letztes Jahr, 
 
 ...bei dem heutigen Community Call hatte ich die Gelegenheit meinen Vorschlag weiter voranzutreiben. Unten die Folien.
 
-# Folien
+## Folien
 
 {{< pdf file="./IIIF Community Call 15.1.2025.pdf" download="false" >}}
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14652193.svg)](https://doi.org/10.5281/zenodo.14652193)
 
-# Aufzeichnung
+## Aufzeichnung
 
 {{< html/iframe-consent preview="<img class='video-preview' src='preview.jpg' alt='Vorschau'>" >}}
     {{< youtube id="AYvn3htA3wI" start="401" title="IIIF Community Call: HDR Images via Image API" >}}

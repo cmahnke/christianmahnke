@@ -188,7 +188,7 @@ Für EAD lassen sich Informationen statt im [`<odd`>](https://www.loc.gov/ead/EA
 * Timo Schleier und Stefanie Rühle, Fachstelle Bibliothek der [Deutschen Digitalen Bibliothek](https://www.deutsche-digitale-bibliothek.de/)
 * Dr. Denise Ruisinger, Fachstelle Archiv der [Deutschen Digitalen Bibliothek](https://www.deutsche-digitale-bibliothek.de/)
 
-## Updates
+# Updates
 
 * Kommentare eingearbeitet
   * METS/MODS als Metadatenformate für Bibliotheken nicht DDB allgemein

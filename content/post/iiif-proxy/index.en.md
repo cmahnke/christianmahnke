@@ -46,11 +46,11 @@ For the image operations themselves, [OpenCV](https://opencv.org/) is used, wher
 
 But here the reliability could be improved.
 
-# Examples
+## Examples
 
 The following examples show digital copies in the respective portal and in the viewer of the proxy. The viewer of the proxy allows the background colour to be changed in order to increase the contrast. A blue background is preset in the examples.
 
-## Transparent background
+### Transparent background
 
 {{< gallery >}}
 [
@@ -65,7 +65,7 @@ The following examples show digital copies in the respective portal and in the v
 Picture: Coin Cabinet of the University of Göttingen, Stephan Eckardt, Archaeological Institute Göttingen, 2014 / Licence: Namensnennung - Nicht kommerziell 4.0 (CC BY-NC 4.0)
 </div>
 
-## Without page fold
+### Without page fold
 
 And with transparent background...
 

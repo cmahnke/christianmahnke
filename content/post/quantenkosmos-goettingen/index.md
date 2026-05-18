@@ -43,7 +43,7 @@ Die Daten wurden von Pia Denkmann erhoben, die Geodaten-Anreicherung, JSON Trans
 ]
 {{</ gallery >}}
 
-# Technische Details
+## Technische Details
 
 Die Karte wurde mit QGIS georeferenziert.
 

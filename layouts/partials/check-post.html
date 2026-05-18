@@ -36,5 +36,28 @@
     {{- if and (ne $lastmod "") (or (lt $lastmod .Date) (gt $lastmod time.Now)) -}}
       {{- errorf "[check-post.html] Modification is earlier then creation date or in the future for %s" $page.RelPermalink  -}}
     {{- end -}}
+    {{- $headings := partial "check-post/flatten-headings.html" .Fragments.Headings -}}
+    {{- range $headings -}}
+      {{- if hasPrefix .Title "Nachtr" -}}
+        {{- errorf "[check-post.html] Heading with 'Nachtr' in %s" $page.RelPermalink -}}
+      {{- end -}}
+      {{- if and (eq .Level 1) (not (hasPrefix .Title "Update")) -}}
+        {{- errorf "[check-post.html] Level 1 heading in %s" $page.RelPermalink -}}
+      {{- end -}}
+      {{- if and (eq .Level 2) (hasPrefix .Title "Update") -}}
+        {{- errorf "[check-post.html] Level 2 heading with 'Update' in %s" $page.RelPermalink -}}
+      {{- end -}}
+    {{- end -}}
   {{- end -}}
+{{- end -}}
+
+{{- define "_partials/check-post/flatten-headings.html" -}}
+  {{- $headings := slice -}}
+  {{- range $heading := . -}}
+    {{- with $heading.Headings -}}
+      {{- $headings = $headings | append (partial "check-post/flatten-headings.html" $heading.Headings)  -}}
+    {{- end -}}
+    {{- $headings = $headings | append $heading -}}
+  {{- end -}}
+  {{- return $headings -}}
 {{- end -}}

@@ -48,7 +48,7 @@ Textil-Lexikon: Ein Lehrbuch und Nachschlagebuch für den Textileinzelhandel und
 
 The patterns are not simply printed, but carefully cut out and glued in. The corresponding entry can be found at [Blaufußtölpel](https://xn--blaufusstlpel-qmb.de/post/textil-atlas-1928/). The aim of this article is to make them tangible in a new way.
 
-# Preparation of the image data
+## Preparation of the image data
 
 The first step was to prepare the image data: The starting point for tactile feedback is the image files, as well as a manual marker for the sections (bounding box) with fabric.
 
@@ -120,7 +120,7 @@ The Cordsamt (corduroy) serves as an example here:
 {{< / highlight >}}
 </details>
 
-# Presentation
+## Presentation
 
 The generated data structure had to become part of the IIIF manifest so that it could be integrated with the digitised image using the usual functionality (like zooming). In a manifest, annotations can be used to create references between descriptive data and image regions, this capability was also used here.
 
@@ -160,7 +160,7 @@ These SVG polygons can be translated into [web annotations](https://www.w3.org/T
 
 OpenSeadragon](https://openseadragon.github.io/) and [Annotorious](https://annotorious.dev/) are then used to display the result.
 
-# Result
+## Result
 
 "Unfortunately", the Vibrate API is not supported by all browsers. The most promising candidate is certainly Chrome on Android, but even there a few basic conditions must be observed:
 * Vibration must be activated
@@ -177,7 +177,7 @@ Other potential browsers are listed by [Can I Use](https://caniuse.com/vibration
 
 <a class="iiif-link" href="./manifest-enriched.json">IIIF-Manifest</a>
 
-# Used libraries
+## Used libraries
 
 * Image and data processing
   * [`jxlpy`](https://github.com/olokelo/jxlpy)
@@ -191,6 +191,6 @@ Other potential browsers are listed by [Can I Use](https://caniuse.com/vibration
   * [Annotorious](https://annotorious.dev/)
   * [Manifesto](https://github.com/IIIF-Commons/manifesto)
 
-# And why?
+## And why?
 
 As my interests lie both in innovative digital presentation and in the use of low-cost (and open) technologies, this can also be seen as a demonstrator for interesting applications, e.g. for (Android) smartphones in a museum. In other words, without the use of expensive, specialised hardware.

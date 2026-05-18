@@ -22,7 +22,7 @@ wikidata:
 Auch wenn es nicht notwendigerweise der intendierte Use Case ist, kann man mit Docker sehr einfach auch umfangreiche Datenmengen mit Anwendungen zur vereinfachten Bereitstellungen (wie z.B. APIs) verpacken. Das kann besonders hilfreich sein wenn z.B. Normdaten aus verschiedenen Quellen für Datenanreicherungen zusammenführen will.
 <!--more-->
 
-# GND
+## GND
 
 Die [Gemeinsame NormDatei (GND)](https://www.dnb.de/EN/Professionell/Standardisierung/GND/gnd_node.html) beinhaltet Informationen zu Personen, Körperschaften usw., die bei der Nationalbibliothek hinterlegt sind.
 
@@ -36,7 +36,7 @@ docker run -it -p3030:3030  ghcr.io/cmahnke/data-containers/gnd:latest /bin/sh
 
 Nach dem Starten kann der Datenbestand komfortabel im Browser recherchiert werden: [http://localhost:3030/#/dataset/gnd/query](http://localhost:3030/#/dataset/gnd/query)
 
-# GeoNames
+## GeoNames
 
 [GeoNames](https://www.geonames.org/) beinhaltet viele Informationen zu geographischen vielen Entitäten, dazu zählen Koordinaten, Schreibungsvarianten, sowie Hierarchisierung nach Gebieten.
 
@@ -52,7 +52,7 @@ Einfach mit `curl` abgefragt werden, dabei wird das Ergebnis als JSON zurückgeb
 curl http://localhost:8983/solr/geonames/query?debug=query&q=n:G%C3%B6ttingen
 ```
 
-# Weitere Nutzung
+## Weitere Nutzung
 
 Die Kommandos zum Starten können auch mittels `docker-compose` z.B. zusammen mit Werkzeugen zur weiteren Analyse oder Zusammenführung zusammengefasst bzw. automatisiert werden.
 

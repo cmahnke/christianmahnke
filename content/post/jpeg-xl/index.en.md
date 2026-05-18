@@ -31,7 +31,7 @@ wikidata:
 Since my blogs are managed on GitHub, the images have to be stored as storage-saving as possible...
 <!--more-->
 
-# Why JPEG XL?
+## Why JPEG XL?
 [JPEG XL](https://en.wikipedia.org/wiki/JPEG_XL) is a new format for raster images, in fact, is's so recent (at the time this text was written) there haven't even been an entry in the German Wikipedia.
 
 You can read there what exactly JPEG XL does differently or better than the well-known JPEG. We limit ourselves here to the advantages for the Projektemacher blogs:
@@ -44,7 +44,7 @@ Disadvantages are currently:
 
 The reference implementation can be found on [GitLab](https://gitlab.com/wg1/jpeg-xl).
 
-# How?
+## How?
 
 Since the conversion to IIIF derivatives on GitHub is done by a [Docker image](https://github.com/cmahnke/iiif-action), the easiest way to integrate the use of the new format into the tool chain is to add JPEG XL support to this image. For the used [LibVIPS](https://github.com/libvips/libvips) there is a [Pull Request](https://github.com/libvips/libvips/pull/2181), which supports the JPEG XL reference implementation. This is now built into a variant of the image for conversion:
 
@@ -52,9 +52,9 @@ Since the conversion to IIIF derivatives on GitHub is done by a [Docker image](h
 docker pull ghcr.io/cmahnke/iiif-action:latest-jxl
 ```
 
-# Preparations
+## Preparations
 
-## Start an interactive container
+### Start an interactive container
 
 The image can also be used to create the source files.
 
@@ -62,7 +62,7 @@ The image can also be used to create the source files.
 docker run -it -v ${PWD}:${PWD} 'ghcr.io/cmahnke/iiif-action:latest-jxl' /bin/bash -c "cd ${PWD}; $SHELL"
 ```
 
-## File conversion
+### File conversion
 
 Using `vips` directly has the advantage that you can use any supported input file format.
 
@@ -85,13 +85,13 @@ The possible options are linked here:
 * [`vips jxlsave`](https://github.com/libvips/libvips/blob/add-jxl/libvips/foreign/jxlsave.c)
 * [`cjxl`](https://gitlab.com/wg1/jpeg-xl/-/blob/master/doc/man/cjxl.txt)
 
-## Options
+### Options
 
 Since the use of JPEG XL is primarily intended here to reduce the storage requirement and with the same or higher quality, it is important to take this into account during the conversion. If possible, the processed master images (i.e. uncompressed image data) should be used directly to create the derivatives. JPEG files (ImageMagick quality level 95) are currently the source material for creating IIIF derivates.
 
 [`butteraugli`](https://github.com/google/butteraugli) is used to assess the quality.
 
-### Generate comparison file
+#### Generate comparison file
 
 ```
 convert front.tif -quality 95 front.jpg
@@ -99,13 +99,13 @@ convert front.tif -quality 95 front.jpg
 
 `butteraugli` can read JPEG or PNG files.
 
-## Results
+### Results
 
 This post does not claim to achieve the most optimal results. In addition, the JPEG XL encoder is very memory-hungry and can therefore not be fully tried out in the Docker environment. For these reasons there are no benchmarks, comparisons of file sizes, etc.
 
 Basically what was known at the beginning remains: files are smaller with a similar quality.
 
-# IIIF
+## IIIF
 
 After you have created a few JPEG XL files, you can now generate IIIF derivatives:
 

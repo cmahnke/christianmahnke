@@ -24,6 +24,6 @@ Almost a tradition: the [crafting instructions](./instructions-2025.pdf) for the
 
 The wallpaper used is from [Vintage Wonderland](https://www.facebook.com/vintagebythesea/) in Hannover and also shown in high resolution at [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/tapete-50/).
 
-# Preview
+## Preview
 
 {{< pdf-preview pdf="instructions-2025.pdf" >}}

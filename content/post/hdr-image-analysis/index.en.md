@@ -48,7 +48,7 @@ This book also contains copies of stamp impressions. Some of the stamp colours u
 ]
 {{</ gallery >}}
 
-# Example
+## Example
 
 {{< hdr-canvas-check >}}
 

@@ -48,7 +48,7 @@ options:
                         File pattern for directories, default is '**/*.jpg,**/*.pdf'
 ```
 
-# Ergebnis
+## Ergebnis
 
 Mit Hilfe dieses Werkzeugs wird aus einem einfachen Plan.
 

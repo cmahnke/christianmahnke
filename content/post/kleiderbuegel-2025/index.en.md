@@ -26,6 +26,6 @@ The most important innovations:
 
 **More information about the exhibition will be available in 2026!**
 
-# Screenshot
+## Screenshot
 
 {{< figure src="screenshot.jpeg" alt="Kleiderbügel blog" class="post-image" caption="New start page" >}}

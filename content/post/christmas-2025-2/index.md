@@ -24,6 +24,6 @@ Schon fast eine Tradition: Die [Bastelanleitung](./instructions-2025.pdf) für d
 
 Die benutzte Tapeten ist vom [Vintage Wonderland](https://www.facebook.com/vintagebythesea/) in Hannover und auch bei [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/tapete-50/) hochauflösend abgebildet.
 
-# Vorschau
+## Vorschau
 
 {{< pdf-preview pdf="instructions-2025.pdf" >}}

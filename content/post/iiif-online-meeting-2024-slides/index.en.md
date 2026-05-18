@@ -23,12 +23,12 @@ The slides of my presentation on HDR content via IIIF are now available...
 
 <!--more-->
 
-# Slides
+## Slides
 
 {{< pdf file="./IIIF 2024 Lightning Talk.pdf" download="false" >}}
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14168673.svg)](https://doi.org/10.5281/zenodo.14168673)
 
-# Links to example posts
+## Links to example posts
 
 These posts are part of the demo:
 
@@ -37,11 +37,11 @@ These posts are part of the demo:
 * [Image analysis color enhancement example](https://christianmahnke.de/en/post/hdr-image-analysis/)
 * [HDR images for the visualisation of X-ray examinations of old paintings](https://christianmahnke.de/en/post/hdr-radiography-visualisation/)
 
-# GitHub Issue
+## GitHub Issue
 
 The mentioned GitHub issue is [IIIF/api#2312](https://github.com/IIIF/api/issues/2312)
 
-# Recording
+## Recording
 
 {{< html/iframe-consent preview="<img class='video-preview' src='preview.jpg' alt='Vorschau'>" >}}
     {{< youtube id="YhFME0WGkww" start="401" title="HDR Images via Image API - 2024 IIIF Online Meeting: Lightning Talks, Day 3" >}}

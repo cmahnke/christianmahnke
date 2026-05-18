@@ -77,13 +77,12 @@ SELECT ?s ?p ?o ?isTagged WHERE {
 
 Neben der Kombination aus HDT und OxiGraph aus dem letzten Post, kommt für die Visualisierung [Cytoscape](https://js.cytoscape.org/) zum Einsatz. Der PDF Export wurde mit [`cytoscape-svg`](https://github.com/kinimesi/cytoscape-svg) erstellt.
 
-# Warum?
+## Warum?
 
 Sicher, der Graph ist schön anzusehen, aber er hat auch noch andere Vorteile:
 * Er erlaubt die Navigation aus dem Silo dieses Blogs heraus.
 * Die äußeren Ringe zur Klassifikation erlauben Einbicke in die Hierachie der Objektbeziehungen ("ist ein"). So ist die [Künstlerkolonie Dötlingen (Q1797167)](http://www.wikidata.org/entity/Q1797167) weder ein Ort, noch eine Gruppe, noch eine Organisation.
 * Er kann der Qualitätskontrolle der Verschlagwortung dienen, so fällt z.B. auf, dass [`libjxl` (Q99738405)](https://www.wikidata.org/wiki/Q99738405),also die Implementierung, und [JPEG XL (Q72885392)](https://www.wikidata.org/wiki/Q72885392), also dsa Dateiformat, bisher inkonsistent vergeben sind.
-
 
 ## Ausblick
 
@@ -93,6 +92,6 @@ Einige Verbesserungen sind noch denkbar:
 * Grundsätzlich kann das Layout noch verbessert werden.
 * Cytoscape bietet ästhetisch sehr ansprechende Darstellungen, die schöner sind als die oben gezeigte.
 
-## Update 22.4.2026
+# Update 22.4.2026
 
 Wie von [Konrad Höffner vorgeschlagen](https://github.com/KonradHoeffner/hdt/issues/107#issuecomment-4295799504) gibt es nun einen Vollbild Modus und Cytoscape nutzt nun [WebGL](https://de.wikipedia.org/wiki/WebGL).

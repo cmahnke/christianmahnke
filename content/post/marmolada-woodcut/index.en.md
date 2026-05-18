@@ -61,7 +61,7 @@ While the last approach had perhaps already reached its climax with ["Soylent Gr
 
 I acquired this woodcut a few weeks ago and I couldn't find out anything about the monogram and thus the artist. Even the respected experts Gerbrand Caspers (curator of [Das Haus der Frau](https://www.dashausderfrau.nl/) and [The Linosaurus](https://gerrie-thefriendlyghost.blogspot.com/)) and [Wolfgang Barina](http://www.wolfgang-barina.de/kunst/) were unable to identify it. But Wolfgang was able to determine the motif, i.e. the mountain, many thanks for that!
 
-# Perspective
+## Perspective
 
 {{< image-compare image1="img/print.jpg" caption1="Holzschnitt" image2="img/render.jpg" caption2="3D Bild aus Höhenprofil" >}}
 
@@ -71,7 +71,7 @@ The picture shows the mountain [Marmolata](https://de.wikipedia.org/wiki/Marmola
   <iframe src="https://www.google.com/maps/embed?pb=!4v1726427311620!6m8!1m7!1sCAoSLEFGMVFpcE1hWDRoN0Z5NExFdlpaSFFQUXh4NV9MZ3g0aHRYY1d0d0NKMWVS!2m2!1d46.495287!2d11.7513511!3f98.78276099443083!4f4.4556945190209944!5f1.4219312166764295" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 {{< /html/iframe-consent >}}
 
-# The glacier
+## The glacier
 
 The retreat of the glacier in the centre of the picture is a dramatic contrast to the war. It seems so present here because it is the only part of the picture for which no colour has been used. Something that was represented by an omission is soon really gone:
 
@@ -81,7 +81,7 @@ As illustrations are more appealing than statistics, here is a comparison with a
 
 {{< image-compare image1="img/print.jpg" caption1="Woodcut" image2="img/august-2024.jpg" caption2=`Photo August 2024 by <a href="https://maps.app.goo.gl/vFW7pE6TXFaHUbgp7">Marco Beretta</a><br>(sky cut)` >}}
 
-# Notes and acknowledgements
+## Notes and acknowledgements
 * [&lt;img-comparison-slider&gt;](https://img-comparison-slider.sneas.io/examples.html) is used for the image comparison.
 * The [Blender Relief Tutorial](https://somethingaboutmaps.wordpress.com/blender-relief-tutorial-getting-set-up/) by Daniel Huffman was the basis for determining the location.
 * The height information originates from [Tinitaly](https://tinitaly.pi.ingv.it/):

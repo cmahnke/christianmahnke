@@ -43,7 +43,7 @@ The data was collected by Pia Denkmann, the geodata enrichment, JSON transformat
 ]
 {{</ gallery >}}
 
-# Technical details
+## Technical details
 
 The map was georeferenced using QGIS.
 

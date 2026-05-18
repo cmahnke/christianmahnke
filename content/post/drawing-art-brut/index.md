@@ -42,7 +42,7 @@ Nicht nur das Motiv ist interessant, auch die Machart: Die Zeichnung ist auf ein
 
 Die Zeichnung ist auf 1965 datiert. Bisher habe ich noch nichts über den Künstler herausfinden können...
 
-## Update 27.4.2026
+# Update 27.4.2026
 
 Möglicherweise ist der Österreicher [Josef Mikl](https://de.wikipedia.org/wiki/Josef_Mikl) (1929–2008) der gesuchte Künstler. Die Anzahl der Buchstaben stimmt ungefähr und auch einige seiner satirischen Schöpfungen weisen eine gewisse Ähnlichkeit auf:
 * [Josef Mikl. Das satirische Werk](https://artinwords.de/josef-mikl-das-satirische-werk/)

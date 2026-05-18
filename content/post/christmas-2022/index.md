@@ -23,6 +23,6 @@ Richtig geraten, wieder die [Bastelanleitung](./instructions-2022.pdf) für die 
 
 Die benutzte Tapete ist von [Zeitzeug](http://zeitzeug.de/) in Göttingen und auch bei [Vorsatzpapier](https://vorsatzpapier.projektemacher.org/post/tapete-17/) hochauflösend abgebildet.
 
-# Vorschau
+## Vorschau
 
 {{< pdf-preview pdf="instructions-2022.pdf" >}}

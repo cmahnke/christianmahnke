@@ -29,7 +29,7 @@ For some reason I came up with the idea of visualising [Pong](https://de.wikiped
 
 I have a small collection of old game consoles from before 1980, [many](https://en.wikipedia.org/wiki/List_of_first_generation_home_video_game_consoles) of which are based on the [AY-3-8500 chip](https://en.wikipedia.org/wiki/AY-3-8500). The most famous game made possible by this chip is Pong.
 
-# Research
+## Research
 
 Now of course you could make countless games, record them, digitise them and then visualise them, but that would take a long time, especially as you would also need two people, as the old systems do not allow a game against the "computer". Therefore, a programmable simulation was needed. I came across the following interesting projects and sites during my research:
 
@@ -50,13 +50,13 @@ Now of course you could make countless games, record them, digitise them and the
 
     * [POS (Pong Consoles) CPUs and Other Chips](https://emulation.gametechwiki.com/index.php/POS_(Pong_Consoles)_CPUs_and_Other_Chips) in the [Emulation General Wiki](https://emulation.gametechwiki.com/index.php/Main_Page)
 
-# Implementation
+## Implementation
 
 The image was generated on the basis of [`typescript-pong`](https://github.com/adam-s/typescript-pong). This project is a fork (or TypeScript port) of [`javascript-pong`](https://github.com/jakesgordon/javascript-pong). The [documentation](https://codeincomplete.com/articles/javascript-pong/) for the project is very detailed, but the TypeScript variant is easier to customise. Basically, only infrastructural changes, e.g. a non-interactive mode, were necessary.
 
 This required a simple test based on [Playwright](https://playwright.dev/). This allows the recording of the games in the browser and the download of the recording to be automated.
 
-# Post-processing
+## Post-processing
 
 A few post-processing steps are necessary to generate the image based on the recordings:
 * Add video frames together, inspired by [`python-image-averaging`](https://github.com/mexitek/python-image-averaging)
@@ -66,7 +66,7 @@ A few post-processing steps are necessary to generate the image based on the rec
 
 [OpenCV](https://opencv.org/) and [NumPy](https://numpy.org/) are used for the image operations, [Matplotlib](https://matplotlib.org/) for the colouring.
 
-# Visualisation
+## Visualisation
 
 {{< gallery >}}
 [
@@ -80,7 +80,7 @@ The distribution follows this scale: On the left (cyan) little activity, on the 
 
 <div style="content: ' '; display: block; width: 70%; height: 2rem; margin: auto; background: linear-gradient(90deg, rgba(0, 255, 255, 1) 0%, rgba(255, 0, 255, 1) 100%);"></div>
 
-# Statistics
+## Statistics
 
 The image consists of 1777136 individual images, or 2:42 hours of gameplay, or 333 rounds.
 

@@ -30,9 +30,9 @@ wikidata:
 One result of my work with HDR content in the browser is an NPM module, which was also used to create the posts in this blog.
 This article summarises the latest changes. It will be updated when new versions are released.
 
-# Version 0.2.0
+## Version 0.2.0
 
-## Introduction
+### Introduction
 
 The following things have been removed:
 
@@ -44,12 +44,12 @@ The following things have been removed:
 
 Support for Safari started (current target is Safari Technology Preview R232 and later): This requires the feature flag "Canvas Color Types and ImageData Pixel Formats". But this currently doesn't support the `rec2100-hlg` color space.
 
-## Key Changes & New Features
+### Key Changes & New Features
 
 - Check function for Float16Array
 - `Float16Array` support is no handled by [`@petamoriken/float16`](https://www.npmjs.com/package/@petamoriken/float16)
 
-## Removal of [`colorjs.io`](https://colorjs.io/)
+### Removal of [`colorjs.io`](https://colorjs.io/)
 
 Even though `colorjs.io` is quite helpful for color space conversions, it's increases the size of a package considerably. And since there are other packages to handle the `Float16`, the package has been removed. If you need your own conversions, add it to your project:
 
@@ -57,15 +57,15 @@ Even though `colorjs.io` is quite helpful for color space conversions, it's incr
 npm install colorjs.io
 ```
 
-# Version 0.1.1 - 0.1.2
+## Version 0.1.1 - 0.1.2
 
 These updates were necessary to fix the following blog posts:
 * [UV photogrammetry](https://christianmahnke.de/en/post/uv-photogrammetry/)
 * [Contrast enhancement for UV images using HDR rendering](https://christianmahnke.de/en/post/hdr-image-analysis/)
 
-## 0.1.1
+### 0.1.1
 
-### Changes to the initialisation of a `WebGPU` context for `canvas`
+#### Changes to the initialisation of a `WebGPU` context for `canvas`
 
 The changes to the initialisation of a `canvas` for a renderer are described in the [explanation](https://github.com/ccameron-chromium/webgpu-hdr/blob/main/EXPLAINER.md).
 
@@ -75,11 +75,11 @@ The most important change is the renaming of ‘colourMetadata’ to:
 toneMapping: { mode: ‘extended’ }
 ```
 
-## 0.1.2
+### 0.1.2
 
 The colour scaling of `Float16Image` was incorrect; the scaling only worked for 0% - 1%.
 
-# Version 0.1.0
+## Version 0.1.0
 
 A year has passed since the first versions and the browser API was rather experimental at that time. A lot has changed since then - one of the examples had even stopped working in the meantime: The most important change concerns the change from `Uint16` to `Float16` as 16 bit pixel data type for HDR.
 
@@ -89,9 +89,9 @@ In addition to the necessary adjustments, the new version also offers improvemen
 
 The code can be found on [GitHub](https://github.com/cmahnke/hdr-canvas) and [NPM](https://www.npmjs.com/package/hdr-canvas).
 
-## The release notes
+### The release notes
 
-### Introduction
+#### Introduction
 
 Since the last release many areas of handling HDR content in the browser have evolved.
 Most notably is certainly the introduction of the `Float16Array` in the `ImageData` construtor:
@@ -108,17 +108,17 @@ In parallel there have been changes to the UltraHDR image format, especially the
 
 Currently the ThreeJS UHDR loader doesn't know how to handle this change, see [mrdoob/three.js#32293](https://github.com/mrdoob/three.js/issues/32293).
 
-### Key Changes & New Features
+#### Key Changes & New Features
 
 - Better support for official Web-APIs
   - Use `Float16Array` instead of `Uint16Array`
   - Use the correct option for initializing 2D canvas context
 
-#### Improved Documentation
+##### Improved Documentation
 
 The documentation have been greatly improved, there is now also a [site](https://cmahnke.github.io/hdr-canvas/) including the examples and API docs.
 
-#### Examples
+##### Examples
 
 The examples from this blog are now part of this repository:
 
@@ -128,7 +128,7 @@ The examples from this blog are now part of this repository:
 
 These example are also avalable on the new [documentation site](https://cmahnke.github.io/hdr-canvas/)
 
-### Advocacy
+#### Advocacy
 
 Since the changes by the WhatWG weren't picked up already there had to be some Issues in the relevant repos to be raised.
 

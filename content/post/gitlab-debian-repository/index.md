@@ -19,12 +19,12 @@ Manchmal braucht man ein eigenes Debian-Repository, z.B. um [Electron](https://w
 
 Auch wenn GitLab ein [experimentelles Feature](https://docs.gitlab.com/user/packages/debian_repository/) dafür hat, ist es nicht auf jeder Instanz aktiviert.
 
-# Repository erstellen
+## Repository erstellen
 
 Grundsätzlich gibt es zwei Wege bzw. Werkzeuge um statische Debian-Paketquellen zu erzeugen, `dpkg-scanpackages` und `reprepro`. Die folgenden Beispiele gehen davon aus, dass es unterhalb des Arbeitsverzeichnisses ein weiteres mit dem Namen `debian` gibt. Darin befinden sich eine oder mehrere "`.deb`"-Dateien.
 
 
-## `dpkg-scanpackages`
+### `dpkg-scanpackages`
 
 Dies ist die einfachere Variante. Zunächst muss das Paket `dpkg-dev` installiert werden (`apt install -y dpkg-dev`). Anschließend kann das Programm mit dem folgenden Befehl ausgeführt werden:
 
@@ -34,8 +34,7 @@ dpkg-scanpackages -m debian /dev/null | gzip -9c > debian/Packages.gz
 
 Danach kann dann das Verzeichnis `debian` auf einem Web Speicherbereich zur Verfügung gestellt werden.
 
-
-## `reprepro`
+### `reprepro`
 
 Dies ist die Variante, die mehr Möglichkeiten bietet, zuerst muss das Paket `reprepro` installiert werden (`apt install -y reprepro`). Diese Variante hat den Vorteil, dass man auch GPG Schlüssel bereitstellen kann...
 
@@ -72,7 +71,7 @@ done
 
 `reprepro` bietet auch noch [weitere Parameter und Optionen](https://wiki.debian.org/DebianRepository/SetupWithReprepro).
 
-# Verzeichnis-Index erzeugen
+## Verzeichnis-Index erzeugen
 
 Dieser Schritt ist optional und erfordert die Programme `tree`und `find` (`apt install -y tree findutils`). `tree` kann Verzeichnislisten im HTML Format erstellen, `find` wird genutzt um `tree` rekursiv auszuführen:
 
@@ -80,7 +79,7 @@ Dieser Schritt ist optional und erfordert die Programme `tree`und `find` (`apt i
 find . -type d -print -exec sh -c 'tree "$0" -H "." -L 1 --noreport --houtro "" --dirsfirst --charset utf-8 -I "index.html" --timefmt "%d-%b-%Y %H:%M" -s -D -o "$0/index.html"' {} \;
 ```
 
-# Bereitstellung im Web - Beispiel für GitLab
+## Bereitstellung im Web - Beispiel für GitLab
 
 Dieses einfache Beispiel erzeugt ein Debian-Repository auf GitLab Pages.
 

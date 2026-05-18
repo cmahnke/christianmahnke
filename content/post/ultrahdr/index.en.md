@@ -20,13 +20,13 @@ lastmod: 2024-07-06T00:00:00+02:00
 After [research](/en/post/hdr-awesome-list/), it was necessary to explore some possible workflows and to create tools for a project in preparation. Based on [Greg Benz](https://gregbenzphotography.com/hdr/)'s preliminary work on HDR support, LibUltraHDR was the most sensible candidate for further experimentation.
 <!--more-->
 
-# LibUltraHDR
+## LibUltraHDR
 
 [LibUltraHDR](https://github.com/google/libultrahdr) is primarily a library for UltraHDR content. The format itself is comparable to [MPO](https://en.wikipedia.org/wiki/JPEG#JPEG_Multi-Picture_Format). There is a primary (SDR) image, which is also used as a fallback for software without UltraHDR support, and a secondary image in the metadata, the so-called gain map. This maps the luminance gain to be applied to the SDR. More information on how gain maps work can be found at [Adobe](https://helpx.adobe.com/camera-raw/using/gain-map.html).
 
 Technical documentation is available at [Android Developers](https://developer.android.com/media/platform/hdr-image-format).
 
-## Status
+### Status
 Greg Benz and others are currently working on promoting support for the format among relevant open source projects:
 - [LibVips #3799](https://github.com/libvips/libvips/issues/3799)
 - [ImageMagick #6377](https://github.com/ImageMagick/ImageMagick/issues/6377)
@@ -43,7 +43,7 @@ There are also some first websites with support:
 * [Demo for conversion using `ffmpeg` and `libultrahdr`](https://github.com/albertz/playground/wiki/HDR-demo) by [Albert Zeyer](https://github.com/albertz)
 * [`libultrahdr` and Python](https://github.com/albertz/playground/blob/master/ultrahdr.py), also by Albert Zeyer
 
-## Manual conversion with `ffmpeg`
+### Manual conversion with `ffmpeg`
 
 Since the release of version 0.8 of `libultrahdr` the command line options have changed, here is the current (May 2024) version. It is important that:
 * The dimensions of the input image are known (X, Y)
@@ -62,7 +62,7 @@ ultrahdr_app -m 0 -p output.yuv -i input.jpg -w X -h Y -a 0
 
 In the coming months it can be expected that the somewhat esoteric YUV format will either be easier to generate or can be dispensed with altogether.
 
-## Docker Image
+### Docker Image
 
 There is now also a Docker image that provides the latest version of `libultrahdr` together with ImageMagick with UltraHDR support.
 
@@ -70,7 +70,7 @@ There is now also a Docker image that provides the latest version of `libultrahd
 docker pull ghcr.io/cmahnke/hdr-tools:latest
 ```
 
-# Next steps
+## Next steps
 
 Currently, HDR support for HDR images and content is limited to Chrome and its derivative browsers, which have a 75% market share. The [HDR support of Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=hdr), or rather the way to get there, is rather embarrassing - not even HDR video formats are fully supported.
 

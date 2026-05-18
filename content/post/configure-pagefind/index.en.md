@@ -152,6 +152,6 @@ The separation of content to be indexed and the configuration of the index now a
 
 If the configuration were realised in JavaScript (instead of YAML or JSON), the callbacks / plugins could also be defined or imported directly inline.
 
-## Update 4 June 2025
+# Update 4 June 2025
 
 The developer of Pagefind is considering [integrating](https://github.com/Pagefind/pagefind/discussions/821#discussioncomment-13372424) this functionality directly into the indexer.
