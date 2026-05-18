@@ -37,7 +37,7 @@ Ich habe ein Gemälde von [François Poggi](https://www.mahmah.ch/collection/art
 ]
 {{</ gallery >}}
 
-Laut nachträglichher Beschjriftung auf der Rückseite ist der Titel "Alte Steintreppe vor bäuerlichem Gehöft".
+Laut nachträglichher Beschriftung auf der Rückseite ist der Titel "Alte Steintreppe vor bäuerlichem Gehöft".
 
 François Poggi (1838–1900) war ein schweizer Maler des 19. Jahrhunderts, der in Italien geboren wurde. Er siedelte mit seinen Eltern nach Genua über.
 Dort wurde er vor allem als Maler (Öl, Aquarell), Pastellzeichner, Lithograf und Dekorationsmaler bekannt.
