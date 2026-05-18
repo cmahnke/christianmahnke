@@ -15,7 +15,15 @@
     {{- end -}}
     {{- with $imgRes -}}
       <a class="gallery-image {{ if ne $alt "" }}caption{{ end }}" href="{{ $image.src }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank">
-        {{- $preview := $imgRes.Resize (printf "%sx webp picture" $previewWidth) -}}
+        {{- $preview := "" -}}
+        {{- if gt .Width 2048 -}}
+          {{- $preview = $imgRes.Resize (printf "%dx webp picture" 2048) -}}
+        {{- else -}}
+          {{- $preview = $imgRes.Resize (printf "%dx webp picture" .Width) -}}
+        {{- end -}}
+        {{/*
+          {{- $preview := $imgRes.Resize (printf "%dx webp picture" .Width) -}}
+        */}}
         {{- if (not $scalePreview) -}}
           {{- $preview = $imgRes -}}
         {{- end -}}

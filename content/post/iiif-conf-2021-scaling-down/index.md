@@ -22,5 +22,5 @@ Heute war es soweit, ich habe meinen Vortrag zu der Infrastruktur meiner Blogs a
 ## Aufzeichnung
 
 {{< html/iframe-consent preview="<img class='video-preview' src='preview.jpg' alt='Vorschau'>" >}}
-    {{< youtube id="7NJhcARjZSs" title="Scaling Down: IIIF at Small Scale - 2021 IIIF Annual Conference" >}}
+    {{< youtube id="7NJhcARjZSs" title="Scaling Down: IIIF at Small Scale - 2021 IIIF Annual Conference" class="youtube-video" >}}
 {{< /html/iframe-consent >}}

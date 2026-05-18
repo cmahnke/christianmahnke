@@ -40,5 +40,5 @@ Weitere Informationen sind in der [englischen Wikipedia](https://en.wikipedia.or
 Es gibt auch ein kurzes, informatives Youtube Video, dass die Geschichte der Konsole erklärt.
 
 {{< html/iframe-consent preview="<img class='video-preview' src='video-preview.jpg' alt='Vorschau'>" >}}
-    {{< youtube id="khfoqF_rlEs" start="401" title="Dendy: Russlands größte Fake Konsole" >}}
+    {{< youtube id="khfoqF_rlEs" start="401" title="Dendy: Russlands größte Fake Konsole" class="youtube-video" >}}
 {{< /html/iframe-consent >}}

@@ -28,5 +28,5 @@ After the [Lightning Talk](/post/iiif-online-meeting-2024-slides/) last year, no
 ## Recording
 
 {{< html/iframe-consent preview="<img class='video-preview' src='preview.jpg' alt='Preview'>" >}}
-    {{< youtube id="AYvn3htA3wI" start="401" title="IIIF Community Call: HDR Images via Image API" >}}
+    {{< youtube id="AYvn3htA3wI" start="401" title="IIIF Community Call: HDR Images via Image API" class="youtube-video" >}}
 {{< /html/iframe-consent >}}

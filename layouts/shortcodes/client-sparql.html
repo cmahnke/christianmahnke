@@ -11,9 +11,7 @@
 {{- end -}}
 
     <oxigraph-sparql
-      id="{{ $id }}"
-      data-url="{{ $src }}"
-      auto-execute></oxigraph-sparql>
+      id="{{ $id }}" data-url="{{ $src }}" class="script" auto-execute></oxigraph-sparql>
 
 {{- define "_partials/shortcodes/client-sparql-metadata.html" -}}
   {{- (dict "css" slice "js" (slice "js/shortcodes/client-sparql.js") "scss" (slice "scss/shortcodes/client-sparql.scss")) | jsonify -}}

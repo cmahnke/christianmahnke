@@ -39,5 +39,5 @@ Released in the summer of 1993, the Junior is characterized by its compact desig
 There is also a short, informative YouTube video that explains the history of the console (in German).
 
 {{< html/iframe-consent preview="<img class='video-preview' src='video-preview.jpg' alt='Preview'>" >}}
-    {{< youtube id="khfoqF_rlEs" start="401" title="Dendy: Russlands größte Fake Konsole" >}}
+    {{< youtube id="khfoqF_rlEs" start="401" title="Dendy: Russlands größte Fake Konsole" class="youtube-video" >}}
 {{< /html/iframe-consent >}}

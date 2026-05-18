@@ -32,5 +32,5 @@ Das virtuelle Museum hat einen [Artikel zur Herstellerfirma Bresges & Co. G.m.b.
 Das [50er Jahre Museum Datteln](https://50erjahremuseumdatteln.de/) hat dem "Vielfachgerät" auch ein video gewidmet:
 
 {{< html/iframe-consent preview="<img class='video-preview' src='video-preview.jpg' alt='Vorschau'>" >}}
-    {{< youtube id="AMD8BeNsWoU" start="401" title="Vorstellung: Das VORAX- Vielfachgerät" >}}
+    {{< youtube id="AMD8BeNsWoU" start="401" title="Vorstellung: Das VORAX- Vielfachgerät" class="youtube-video" >}}
 {{< /html/iframe-consent >}}

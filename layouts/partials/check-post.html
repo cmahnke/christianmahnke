@@ -49,6 +49,21 @@
       {{- end -}}
     {{- end -}}
   {{- end -}}
+
+  {{- $youtubeShortcodes := findRE `{{<\s*youtube\s+[^>]+>}}` $page.RawContent -}}
+  {{- range $youtubeShortcodes -}}
+    {{- if not (findRE `\bclass\s*=` .) -}}
+      {{- errorf "[check-post.html] No YouTube shortcode with class attribute in %s: %s" $page.RelPermalink . -}}
+    {{- end -}}
+  {{- end -}}
+  {{/* TODO: Finish this
+  {{ with $page.Params.cite }}
+    {{ if not (in $page.OutputFormats "bibtex") }}
+      {{ errorf "[check-post.html] Missing 'bibtex' output format in %s" $page.RelPermalink }}
+    {{ end }}
+  {{ end }}
+  */}}
+
 {{- end -}}
 
 {{- define "_partials/check-post/flatten-headings.html" -}}
