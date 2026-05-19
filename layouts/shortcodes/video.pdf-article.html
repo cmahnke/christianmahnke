@@ -1,0 +1,43 @@
+{{- $videoSuffix := ".mp4" -}}
+{{- $previewSuffix := ".jpg" -}}
+{{- $video := "" -}}
+{{- with .Get "src" -}}
+  {{- $video = . -}}
+{{- end -}}
+
+{{- $class := "html-video" -}}
+
+{{- $videolink := path.Join .Page.Path $video -}}
+
+{{- $file := printf "%s%s" (path.Join .Page.Path $video) $videoSuffix -}}
+{{- $filePath := printf "content%s" $file -}}
+{{- $preview := printf "%s%s" $file $previewSuffix -}}
+{{- $previewPath := printf "content%s" $preview -}}
+
+{{- if not (fileExists $filePath) -}}
+  {{- errorf "[video.pdf-article.html] File %s (URL path %s) doens't exist!" $filePath $file -}}
+{{- end -}}
+{{- if not (fileExists $previewPath) -}}
+  {{- errorf "[video.pdf-article.html] File %s (URL path %s) doens't exist!" $previewPath $preview -}}
+{{- end -}}
+{{- $previewFile := (printf "%s%s%s" $video $videoSuffix $previewSuffix) -}}
+
+{{- $videoAbsURL := printf "%s%s" (absURL $videolink) $videoSuffix -}}
+{{- if ne $video "" -}}
+  <div class="{{ $class }}">
+    {{- with .Page.Resources.Get $previewFile -}}
+      {{- $preview := "" -}}
+      {{- if gt .Width 2048 -}}
+        {{- $preview = .Resize (printf "%dx webp picture" 2048) -}}
+      {{- else -}}
+        {{- $preview = .Resize (printf "%dx webp picture" .Width) -}}
+      {{- end -}}
+      <figure>
+        <img src="{{ $preview.RelPermalink }}" alt="{{ i18n "preview" }}" />
+        <figcaption><h4>{{ i18n "printNoVideo" }}</h4><br />
+          <b>URL:</b> <a class="video-preview-link" href="{{ $videoAbsURL }}" download>{{$videoAbsURL}}</a>
+        </figcaption>
+      </figure>
+    {{- end -}}
+  </div>
+{{- end -}}

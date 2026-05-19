@@ -10,6 +10,7 @@ outputs:
   - bibtex
   - html
   - linkedart
+  - pdf-article
 linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638

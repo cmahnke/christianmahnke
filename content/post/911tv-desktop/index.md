@@ -11,6 +11,7 @@ outputs:
   - bibtex
   - html
   - codemeta
+  - pdf-article
 cfffile: https://raw.githubusercontent.com/cmahnke/911tv/refs/heads/main/CITATION.cff
 tags:
   - Website

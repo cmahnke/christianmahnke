@@ -9,6 +9,7 @@ outputs:
   - bibtex
   - html
   - linkedart
+  - pdf-article
 linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q11376888

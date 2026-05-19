@@ -10,6 +10,7 @@ outputs:
   - bibtex
   - html
   - codemeta
+  - pdf-article
 cfffile: https://raw.githubusercontent.com/cmahnke/lucienne/refs/heads/main/CITATION.cff
 tags:
   - Projektemacher.org

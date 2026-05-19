@@ -7,6 +7,7 @@ outputs:
   - bibtex
   - html
   - codemeta
+  - pdf-article
 tags:
   - Exhibition
   - Website

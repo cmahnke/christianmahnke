@@ -14,7 +14,6 @@ $accent-font: "Strichpunkt Sans";
   margin-left: 1cm;
   margin-right: 1cm;
   counter-reset: footnote 0;
-  counter-reset: figure 0;
 
   @footnote {
     margin-top: 12pt;
@@ -235,7 +234,13 @@ p {
             margin-top: 1.2em;
         }
 
-        code,
+        h4 {
+          font-size: 1.2rem;
+          margin-top: .9em;
+          box-shadow: inset 0 -10px 0 $box-border;
+        }
+
+        /* code, */
         pre:not(:has(code)) {
           /*
           border-width: 1px 1px 1px 10px;
@@ -262,6 +267,12 @@ p {
           border-color: #626464;
         }
 
+        code {
+          border: unset;
+          background-color: unset;
+          padding: 0;
+        }
+
         pre.chroma {
           background-color: unset;
 
@@ -272,6 +283,7 @@ p {
         }
 
         figure {
+          height: auto;
           max-width: 100vw;
           max-height: 100vh;
           margin-block-start: 0;
@@ -302,11 +314,25 @@ p {
           column-span: all;
         }
 
+        .script {
+          max-width: 95vw;
+        }
+
+        .tag-ring {
+          border: 0;
+          display: flex;
+          justify-content: center;
+          box-shadow: unset;
+
+          svg {
+            max-width: 80%;
+          }
+        }
+
+        .html-video,
         .pdf-preview {
           figure {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
+            text-align: center;
 
             img {
               border: 1px solid black;
@@ -332,6 +358,21 @@ p {
             font-family: $accent-font;
             margin-top: 0;
             font-weight: unset;
+            box-shadow: unset;
+          }
+        }
+
+        table {
+          width: max-content;
+          margin: 6pt auto;
+
+          thead {
+            margin-bottom: 6pt;
+            border-bottom: 2px solid $box-border;
+
+          }
+          td {
+            padding-left: 6pt;
           }
         }
 
@@ -363,7 +404,7 @@ p {
           color: red;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
           break-after: avoid-column;
 
           &[id*="update"] {
@@ -430,6 +471,9 @@ a {
 
 .footnote {
   float: footnote;
+  font-weight: normal;
+  font-family: $accent-font;
+
   a {
     word-break: break-all;
     font-style: italic;
@@ -437,18 +481,19 @@ a {
 }
 
 .footnote::footnote-call {
-    content: counter(footnote, decimal) " ";
-    vertical-align: super;
-    font-size: 0.8em;
+  font-family: $body-text;
+  content: counter(footnote, decimal) " ";
+  vertical-align: super;
+  font-size: 0.8em;
 }
 
 .footnote::footnote-marker {
-    content: counter(footnote, decimal) " ";
-    font-size: smaller;
-    display: inline-block;
-    width: 2em;
-    padding-right: 1em;
-    text-align: right;
+  content: counter(footnote, decimal) " ";
+  font-size: smaller;
+  display: inline-block;
+  width: 2em;
+  padding-right: 1em;
+  text-align: right;
 }
 
 .gallery  {

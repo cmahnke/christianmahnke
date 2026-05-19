@@ -78,7 +78,7 @@ Auf dem Bild sind die statischen Bereiche weiß, wie auf dem Spielfeld, die farb
 
 Die Verteilung folgt dieser Skala: Auf der linken Seite (Cyan) wenig Aktivität, rechts (Magenta) viel Aktivität.
 
-<div style="content: ' '; display: block; width: 70%; height: 2rem; margin: auto; background: linear-gradient(90deg, rgba(0, 255, 255, 1) 0%, rgba(255, 0, 255, 1) 100%);"></div>
+<div class="script" style="content: ' '; display: block; width: 70%; height: 2rem; margin: 1rem auto; background: linear-gradient(90deg, rgba(0, 255, 255, 1) 0%, rgba(255, 0, 255, 1) 100%);"></div>
 
 ## Statistik
 

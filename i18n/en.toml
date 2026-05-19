@@ -107,4 +107,4 @@ other = "A PDF file is embedded here."
 other = "HDR content cannot be printed!"
 
 [printNoVideo]
-other = "Video content cannot be printed!"
+other = "A video is embedded here."

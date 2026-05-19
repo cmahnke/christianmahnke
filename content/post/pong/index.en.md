@@ -78,7 +78,7 @@ In the picture, the static areas are white, as in the game; the coloured areas s
 
 The distribution follows this scale: On the left (cyan) little activity, on the right (magenta) a lot of activity.
 
-<div style="content: ' '; display: block; width: 70%; height: 2rem; margin: auto; background: linear-gradient(90deg, rgba(0, 255, 255, 1) 0%, rgba(255, 0, 255, 1) 100%);"></div>
+<div class="script" style="content: ' '; display: block; width: 70%; height: 2rem; margin: 1rem auto; background: linear-gradient(90deg, rgba(0, 255, 255, 1) 0%, rgba(255, 0, 255, 1) 100%);"></div>
 
 ## Statistics
 

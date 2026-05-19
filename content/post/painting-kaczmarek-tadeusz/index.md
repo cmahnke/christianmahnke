@@ -12,6 +12,7 @@ outputs:
   - bibtex
   - html
   - linkedart
+  - pdf-article
 linkedart:
   title: Boltenhagen
   artist:

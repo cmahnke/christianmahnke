@@ -10,6 +10,7 @@ outputs:
   - bibtex
   - html
   - linkedart
+  - pdf-article
 linkedart:
   title: Alte Steintreppe vor bäuerlichem Gehöft
   artist:

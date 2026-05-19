@@ -20,4 +20,5 @@ cascade:
       outputs:
         - bibtex
         - html
+        - pdf-article
 ---

@@ -27,10 +27,10 @@
 {{- $previewPath := printf "content%s" $preview -}}
 
 {{- if not (fileExists $filePath) -}}
-  {{- warnf "File %s (URL path %s) doens't exist!" $filePath $file -}}
+  {{- warnf "[pdf-preview.pdf-article.html] File %s (URL path %s) doens't exist!" $filePath $file -}}
 {{- end -}}
 {{- if not (fileExists $previewPath) -}}
-  {{- errorf "File %s (URL path %s) doens't exist!" $previewPath $preview -}}
+  {{- errorf "[pdf-preview.pdf-article.html] File %s (URL path %s) doens't exist!" $previewPath $preview -}}
 {{- end -}}
 
 {{- $pdfAbsURL := absURL $pdflink -}}

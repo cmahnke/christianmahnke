@@ -9,6 +9,7 @@ outputs:
   - bibtex
   - html
   - linkedart
+  - pdf-article
 linkedart:
   title: Mädchen vom Lesen aufblickend
   artist:

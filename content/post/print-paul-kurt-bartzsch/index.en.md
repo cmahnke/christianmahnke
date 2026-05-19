@@ -11,6 +11,7 @@ outputs:
   - bibtex
   - html
   - linkedart
+  - pdf-article
 linkedart:
   title: Škrlatica
   artist:

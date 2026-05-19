@@ -12,6 +12,7 @@ outputs:
   - bibtex
   - html
   - linkedart
+  - pdf-article
 linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q43379500
