@@ -3,9 +3,9 @@ date: 2024-12-05T10:00:00+02:00
 title: "Christmas 2024"
 keywords: Craft instructions, Christmas card
 description: "Craft instructions for the 2024 Christmas card"
-#preview:
-#  image: card-2024.jpg
-#  hide: true
+preview:
+  image: card-2024-2.jpg
+  hide: true
 tags:
 - DIY
 - Christmas

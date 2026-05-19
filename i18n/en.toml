@@ -99,3 +99,6 @@ other = "Keywords"
 
 [references]
 other = "References"
+
+[pdfPlaceholder]
+other = "A PDF file is embedded here."

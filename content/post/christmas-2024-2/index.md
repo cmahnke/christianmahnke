@@ -3,9 +3,9 @@ date: 2024-12-05T10:00:00+02:00
 title: "Weihnachten 2024"
 keywords: Bastelanleitung, Weihnachtskarte
 description: "Bastelanleitung für die Weihnachtskarte 2024"
-#preview:
-#  image: card-2024.jpg
-#  hide: true
+preview:
+  image: card-2024-2.jpg
+  hide: true
 tags:
 - DIY
 - Christmas

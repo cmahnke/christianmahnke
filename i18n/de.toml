@@ -99,3 +99,6 @@ other = "Schlagworte"
 
 [references]
 other = "Verweise"
+
+[pdfPlaceholder]
+other = "An dieser Stelle ist eine PDF-Datei eingebunden."
