@@ -56,6 +56,9 @@
       {{- errorf "[check-post.html] No YouTube shortcode with class attribute in %s: %s" $page.RelPermalink . -}}
     {{- end -}}
   {{- end -}}
+  {{- if and (.HasShortcode "pdf-preview") (not (isset .Params "preview")) -}}
+    {{- errorf "[check-post.html] Missing preview parameter for pdf-preview shortcode in %s" $page.RelPermalink -}}
+  {{- end -}}
   {{/* TODO: Finish this
   {{ with $page.Params.cite }}
     {{ if not (in $page.OutputFormats "bibtex") }}
