@@ -102,3 +102,9 @@ other = "Verweise"
 
 [pdfPlaceholder]
 other = "An dieser Stelle ist eine PDF-Datei eingebunden."
+
+[printNoHDR]
+other = "HDR-Inhalte können nicht ausgedruckt werden!"
+
+[printNoVideo]
+other = "Video-Inhalte können nicht ausgedruckt werden!"

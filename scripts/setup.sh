@@ -48,7 +48,8 @@ npm run svgo
 ./themes/projektemacher-base/scripts/3d-models.sh
 
 ./scripts/bibtex.sh
-find content/post -name '*.pdf' -print -exec convert -density 300 {}[1] -quality 100 {}.jpg \;
+find content/post -name '*.pdf' -print -exec convert -flatten -density 300 {}[0] -quality 100 {}.jpg \;
+find content/post -name '*.mp4' -print -exec ffmpeg -y -ss 00:00:03 -i {} -vframes 1 {}.jpg \;
 
 hugo --renderSegments manifests
 ./scripts/height-map.sh

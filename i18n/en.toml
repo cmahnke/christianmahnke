@@ -102,3 +102,9 @@ other = "References"
 
 [pdfPlaceholder]
 other = "A PDF file is embedded here."
+
+[printNoHDR]
+other = "HDR content cannot be printed!"
+
+[printNoVideo]
+other = "Video content cannot be printed!"

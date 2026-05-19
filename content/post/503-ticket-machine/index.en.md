@@ -15,8 +15,4 @@ wikidata:
 Spotted at Hanover Central Station...
 <!--more-->
 
-{{< gallery >}}
-[
-  {"src": "503.jpeg"}
-]
-{{</ gallery >}}
+{{< figure src="503.jpeg" caption="Ticket machine displaying error code 503" alt="Ticket machine displaying error code 503" class="center" >}}

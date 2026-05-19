@@ -21,13 +21,13 @@ You would think that it should be pretty easy to import a file containing dimens
 
 The whole thing is also available as [Docker Image](https://github.com/cmahnke/oss-exhibition-tools):
 
-```
+```Bash Session
 docker run -it -v `pwd`:`pwd` ghcr.io/cmahnke/oss-exhibition-tools/image2model:latest --help
 ```
 
 The following options are supported:
 
-```
+```Bash Session
 usage: generate-models.py [-h] (-i [file] | -d [directory] | -s) [-o [directory]] [-z] [-t] [-k] [-p PATTERN]
 
 Generate Collada files from images
@@ -52,7 +52,7 @@ options:
 
 With the help of this tool, a simple plan is transformed into a 3D view (here the work preview).
 
-{{< figure src="img/Gallerie-Alte-Post-plan.svg" alt="Plan of the gallery" class="center" >}}
+{{< figure src="img/Gallerie-Alte-Post-plan.svg" title="Plan of the gallery" alt="Plan of the gallery" class="center" >}}
 
 A 3D view (here the work preview)
-{{< figure src="img/Gallerie-Alte-Post-interior.png" alt="Screenshot Sweet Home 3D" class="center" >}}
+{{< figure src="img/Gallerie-Alte-Post-interior.png" title="Screenshot Sweet Home 3D" alt="Screenshot Sweet Home 3D" class="center" >}}

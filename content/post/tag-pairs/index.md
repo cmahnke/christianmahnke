@@ -18,7 +18,7 @@ Da nach mehr als vier Jahren die Beiträge (aktuell {{< post-count section="post
 
 Daher hier ein Versuch Paarungen von Schlagworten zu visualisieren.
 
-<div id="chordContainer" class="tag-ring">
+<div id="chordContainer" class="tag-ring script">
   <p style="text-align: center; color: #777">Lade Diagramm...</p>
 </div>
 

@@ -1,0 +1,58 @@
+{{- $previewSuffix := ".jpg" -}}
+{{- $pdf := "" -}}
+{{- with .Get "pdf" -}}
+  {{- $pdf = . -}}
+{{- end -}}
+
+{{- $page := 1 -}}
+{{- with .Get "page" -}}
+  {{- $page = . -}}
+{{- end -}}
+
+{{- $class := "pdf-preview" -}}
+{{- with .Get "class" -}}
+  {{- $class = printf "%s %s" $class . -}}
+{{- end -}}
+
+{{- $download := false -}}
+{{- with .Get "download" -}}
+  {{- $download = . -}}
+{{- end -}}
+
+{{- $pdflink := path.Join .Page.Path $pdf -}}
+
+{{- $file := path.Join .Page.Path $pdf -}}
+{{- $filePath := printf "content%s" $file -}}
+{{- $preview := printf "%s%s" $file $previewSuffix -}}
+{{- $previewPath := printf "content%s" $preview -}}
+
+{{- if not (fileExists $filePath) -}}
+  {{- warnf "File %s (URL path %s) doens't exist!" $filePath $file -}}
+{{- end -}}
+{{- if not (fileExists $previewPath) -}}
+  {{- errorf "File %s (URL path %s) doens't exist!" $previewPath $preview -}}
+{{- end -}}
+
+{{- $pdfAbsURL := absURL $pdflink -}}
+{{- if ne $pdf "" -}}
+  <div class="{{ $class }}">
+    {{- with .Page.Resources.Get (printf "%s%s" $pdf $previewSuffix) -}}
+      {{- $preview := "" -}}
+      {{- if gt .Width 2048 -}}
+        {{- $preview = .Resize (printf "%dx webp picture" 2048) -}}
+      {{- else -}}
+        {{- $preview = .Resize (printf "%dx webp picture" .Width) -}}
+      {{- end -}}
+      <figure>
+        <img src="{{ $preview.RelPermalink }}" alt="{{ i18n "preview" }}" class="gallery-preview" />
+        <figcaption><h4>{{ i18n "pdfPlaceholder" }}</h4><br />
+          <b>URL:</b> <a class="pdf-preview-link" href="{{ $pdfAbsURL }}" download>{{$pdfAbsURL}}</a>
+        </figcaption>
+      </figure>
+    {{- end -}}
+  </div>
+{{- end -}}
+
+{{- define "_partials/shortcodes/pdf-preview-metadata.html" -}}
+  {{- (dict "css" slice "js" slice "scss" (slice "scss/pdf-preview.scss")) | jsonify -}}
+{{- end -}}

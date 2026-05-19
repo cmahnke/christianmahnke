@@ -1,9 +1,11 @@
 $box-border: #ff5477;
 
 @import "fonts/stix-two-text";
+@import "fonts/strichpunkt-sans";
 @import "icons";
 
 $body-text: "STIX Two Text Variable";
+$accent-font: "Strichpunkt Sans";
 
 @page  {
   size: A4 !important;
@@ -15,9 +17,10 @@ $body-text: "STIX Two Text Variable";
   counter-reset: figure 0;
 
   @footnote {
+    margin-top: 12pt;
     border-top: solid black 1px;
     float: bottom;
-    font-size: xx-small;
+    font-size: 6pt;
   }
 
   @bottom-right {
@@ -29,7 +32,7 @@ $body-text: "STIX Two Text Variable";
   }
 
    @bottom-center {
-    content: '';
+    content: counter(page);
    }
 }
 
@@ -55,6 +58,10 @@ p {
   h1, h2, h3 {
     letter-spacing: -1px;
     font-variant-caps: small-caps;
+  }
+
+  .content {
+    display: block;
   }
 }
 
@@ -115,8 +122,8 @@ p {
         }
 
         .tags-heading {
-          max-width: 50%;
-          width: 50%;
+          max-width: 70%;
+          width: 70%;
           margin-left: auto;
           display: flex;
           flex-direction: column;
@@ -188,13 +195,18 @@ p {
         font-family: $body-text;
         column-count: 2;
         column-gap: 1.5rem;
-        display: unset;
-        font-size: 1.2rem;
+        display: block;
+        font-size: 12pt;
 
         & > p:first-child {
           font-style: italic;
 
         }
+
+        img {
+          max-width: 100vw;
+          max-height: 95vh;
+        }        
 
         p {
           text-align: justify;
@@ -259,11 +271,76 @@ p {
           margin-left: 1rem;
         }
 
+        figure {
+          max-width: 100vw;
+          max-height: 100vh;
+          margin-block-start: 0;
+          margin-block-end: 0;
+          margin-inline-start: 0;
+          margin-inline-end: 0;
+          counter-increment: figure;
+
+          img {
+            break-after: avoid-page;
+          }
+
+          &.center {
+            text-align: center;
+          }
+        }
+
+        figure,
+        table,
+        /* video, */
+        .pdf-preview,
         .youtube-video,
-        .script {
+        .script,
+        .iiif.iiif-image,
+        .hdr-warning {
+          margin: 12pt;
           break-inside: avoid;
           column-span: all;
         }
+
+        .pdf-preview {
+          figure {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            img {
+              border: 1px solid black;
+            }
+          }
+        }
+
+        figcaption {
+          font-family: $accent-font;
+          margin-top: 6pt;
+          text-align: center;
+
+          &:before {
+            content: "Fig. " counter(figure, decimal) ": ";
+          }
+
+          h4,
+          p {
+            display: inline;
+          }
+
+          h4 {
+            font-family: $accent-font;
+            margin-top: 0;
+            font-weight: unset;
+          }
+        }
+
+        /*
+        table {
+          width: 100%;
+          table-layout: fixed;
+        }
+        */
 
         .youtube-video {
           padding: 1.4em 1.4em 1em 1.4em;
@@ -276,12 +353,24 @@ p {
           }
         }
 
+        .zoom-link-wrapper {
+          display: block;
+        }
+
+        .hdr-warning {
+          font-size: xx-large;
+          text-align: center;
+          color: red;
+        }
+
         h1, h2, h3 {
+          break-after: avoid-column;
+
           &[id*="update"] {
             box-shadow: inset 0 -15px 0 $box-border;
             column-span: all;
 
-            & ~ p {
+            & ~ p, h2, h3 {
               column-span: all;
             }
           }
@@ -343,6 +432,7 @@ a {
   float: footnote;
   a {
     word-break: break-all;
+    font-style: italic;
   }
 }
 
@@ -380,4 +470,9 @@ a {
       }
     }
   }
+}
+
+.toc,
+.related-post {
+  display: none;
 }

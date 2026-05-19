@@ -18,7 +18,7 @@ After more than four years, the posts on this blog (currently totalling {{< post
 
 So here is an attempt to visualise keyword pairings.
 
-<div id="chordContainer" class="tag-ring">
+<div id="chordContainer" class="tag-ring  script">
   <p style="text-align: center; color: #777">Load diagram...</p>
 </div>
 

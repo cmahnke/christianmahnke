@@ -15,8 +15,4 @@ wikidata:
 Gesehen im Hauptbahnhof Hannover...
 <!--more-->
 
-{{< gallery >}}
-[
-  {"src": "503.jpeg"}
-]
-{{</ gallery >}}
+{{< figure src="503.jpeg" caption="Ticketautomat mit 503 Fehlermeldung" alt="Ticketautomat mit 503 Fehlermeldung" class="center" >}}

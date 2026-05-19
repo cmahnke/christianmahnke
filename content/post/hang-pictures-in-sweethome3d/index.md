@@ -21,13 +21,13 @@ Man sollte meinen, das es ziemlich einfach sein sollte, eine Datei, die Abmessun
 
 Das Ganze ist auch als [Docker Image](https://github.com/cmahnke/oss-exhibition-tools) verfügbar:
 
-```
+```Bash Session
 docker run -it -v `pwd`:`pwd` ghcr.io/cmahnke/oss-exhibition-tools/image2model:latest --help
 ```
 
 Die folgenden Parameter werden dabei unterstützt:
 
-```
+```Bash Session
 usage: generate-models.py [-h] (-i [file] | -d [directory] | -s) [-o [directory]] [-z] [-t] [-k] [-p PATTERN]
 
 Generate Collada files from images
@@ -52,7 +52,7 @@ options:
 
 Mit Hilfe dieses Werkzeugs wird aus einem einfachen Plan.
 
-{{< figure src="img/Gallerie-Alte-Post-plan.svg" alt="Plan der Gallerie" class="center" >}}
+{{< figure src="img/Gallerie-Alte-Post-plan.svg" title="Plan der Gallerie" alt="Plan der Gallerie" class="center" >}}
 
 Eine 3D Ansicht (hier die Arbeitsvorschau)
-{{< figure src="img/Gallerie-Alte-Post-interior.png" alt="Screenshot Sweet Home 3D" class="center" >}}
+{{< figure src="img/Gallerie-Alte-Post-interior.png" title="Screenshot Sweet Home 3D" alt="Screenshot Sweet Home 3D" class="center" >}}
