@@ -17,9 +17,9 @@ $accent-font: "Strichpunkt Sans";
 
   @footnote {
     margin-top: 12pt;
-    border-top: solid black 1px;
+    border-top: solid linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 45%, rgba(255, 255, 255, 1) 50%) 1px;
     float: bottom;
-    font-size: 6pt;
+    font-size: 6pt !important;
   }
 
   @bottom-right {

@@ -130,6 +130,10 @@ jobs:
         run: |
           cp archived-urls.txt docs/
 
+      - name: Configure git
+        run: |
+          git config --global http.postBuffer 104857600
+
       - name: Deploy site
         if: ${{ !env.ACT }}
         uses: peaceiris/actions-gh-pages@v4.1.0
