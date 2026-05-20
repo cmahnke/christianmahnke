@@ -36,7 +36,7 @@
                     {{- if eq $imgRes nil -}}
                       {{- errorf "[partials/li.html] Preview image %s missing for %s" $src $.RelPermalink -}}
                     {{- end -}}
-                    <source media="(min-width:{{ . }}px)" srcset="{{ ($imgRes.Resize (printf "%sx" .)).RelPermalink }}">
+                    <source media="(min-width:{{ . }}px)" srcset="{{ ($imgRes.Resize (printf "%sx webp picture" .)).RelPermalink }}">
                   {{- end -}}
                   {{- $imgRes := $.Page.Resources.Get $src -}}
                   <a title="{{ $.Title}}" href="{{ $.RelPermalink }}">

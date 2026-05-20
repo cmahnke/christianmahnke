@@ -2,7 +2,7 @@
 {{- $id := printf "_gallery-%s" (md5 (printf "%s-%s" $src now.UnixNano)) -}}
 {{- $json := .Inner -}}
 {{- $image := unmarshal $json -}}
-{{- $previewWidth := "250" -}}
+{{- $previewWidth := "320" -}}
 
 <div id="{{ $id }}" class="gallery {{ with .Get "class" }}{{ . }}{{ end }}">
   {{- range $image := $image -}}

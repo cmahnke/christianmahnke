@@ -2,7 +2,7 @@
 {{- $id := printf "_gallery-%s" (md5 (printf "%s-%s" $src now.UnixNano)) -}}
 {{- $json := .Inner -}}
 {{- $image := unmarshal $json -}}
-{{- $previewWidth := "1024" -}}
+{{- $previewWidth := "1280" -}}
 
 <div id="{{ $id }}" class="gallery {{ with .Get "class" }}{{ . }}{{ end }}">
   {{- range $image := $image -}}
@@ -14,6 +14,7 @@
       {{- $scalePreview = $image.scalePreview -}}
     {{- end -}}
     {{- with $imgRes -}}
+
       <a class="gallery-image {{ if ne $alt "" }}caption{{ end }}" href="{{ $image.src }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank">
         {{- $preview := "" -}}
         {{- if gt .Width 2048 -}}
