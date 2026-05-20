@@ -21,7 +21,7 @@ for SCRIPT in $PWD/themes/projektemacher-base/scripts/init/*.sh ; do
     bash "$SCRIPT"
 done
 
-# Get MAstodon Backups
+# Get Mastodon Backups
 ./scripts/mastodon-archive.sh
 
 # Generate Previews
