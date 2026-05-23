@@ -88,6 +88,7 @@ p {
           width: max-content;
           align-self: center;
           text-align: center;
+          margin-bottom: 18pt;
 
           .author-orcid {
             white-space: nowrap;
@@ -103,7 +104,7 @@ p {
           }
         }
 
-        
+        .post-doi,
         .post-url {
           display: flex;
           flex-direction: row;

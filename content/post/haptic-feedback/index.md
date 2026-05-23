@@ -5,13 +5,14 @@ description: 'Eine Einzelseite aus "Textil-Atlas: ein Lehrbuch und Nachschlagebu
 keywords: Touch, Berührung, Haptic Internet
 cite: true
 tags:
-- IIIF
-- HapticFeedback
-- DigitalImages
-- JavaScript
+  - IIIF
+  - HapticFeedback
+  - DigitalImages
+  - JavaScript
 outputs:
-- html
-- iiif-manifest
+  - html
+  - iiif-manifest
+  - pdf-article
 #iiifContext: http://iiif.io/api/presentation/2/context.json
 resources:
 - src: "page031.jxl"

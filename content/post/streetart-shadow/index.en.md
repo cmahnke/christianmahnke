@@ -5,8 +5,6 @@ keywords: shadows, Hannover
 tags:
   - StreetArt
   - Fun
-outputs:
-- html
 wikidata:
   - https://www.wikidata.org/wiki/Q1715
   - https://www.wikidata.org/wiki/Q160020

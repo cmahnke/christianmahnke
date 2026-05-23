@@ -6,9 +6,6 @@ tags:
   - ProjectIdea
   - GitHub
   - DigitalSovereignty
-outputs:
-  - bibtex
-  - html
 cite: true
 wikidata:
   - https://www.wikidata.org/wiki/Q364

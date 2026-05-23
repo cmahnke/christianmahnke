@@ -18,6 +18,7 @@ outputs:
   - bibtex
   - html
   - linkedart
+  - pdf-article
 linkedart:
   title: Marmolata
   description: "Ein Farbholzschnitt des Berges Marmolata in den Dolomiten"

@@ -18,6 +18,7 @@ outputs:
   - bibtex
   - html
   - linkedart
+  - pdf-article
 linkedart:
   title: Marmolada
   description: "A colour woodcut of Mount Marmolada in the Dolomites"

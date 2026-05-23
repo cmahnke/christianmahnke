@@ -8,8 +8,9 @@ tags:
 - VIPS
 iiifContext: http://iiif.io/api/presentation/2/context.json
 outputs:
-- html
-- iiif-manifest
+  - html
+  - iiif-manifest
+  - pdf-article
 resources:
 - src: "front.jxl"
   params:

@@ -8,9 +8,6 @@ tags:
   - Fun
   - ProjectIdea
   - Geodata
-outputs:
-  - bibtex
-  - html
 cite: true
 wikidata:
   - https://www.wikidata.org/wiki/Q2543504
