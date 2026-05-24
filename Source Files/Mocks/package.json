@@ -42,7 +42,7 @@
     "hdt": "https://github.com/cmahnke/lod-tools/releases/download/latest/hdt-web.tar.gz",
     "i18next": "^26.0.8",
     "img-comparison-slider": "^8.0.7",
-    "js-cookie": "^3.0.5",
+    "js-cookie": "^3.0.7",
     "lit": "^3.3.2",
     "manifesto.js": "^4.3.4",
     "marked": "^18.0.3",
