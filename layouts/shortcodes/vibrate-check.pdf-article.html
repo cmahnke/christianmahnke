@@ -1,0 +1,10 @@
+{{- $src := .Page.File -}}
+{{- $id := printf "_vibrate-check-%s" (md5 (printf "%s-%s" $src now.UnixNano)) -}}
+<div class="vibrate-check-result">
+  {{- i18n "printNoTouch" -}}
+</div>
+
+
+{{- define "_partials/shortcodes/vibrate-check-metadata.html" -}}
+  {{- (dict "css" slice "js" slice "scss" (slice "scss/vibrate-check.scss")) | jsonify -}}
+{{- end -}}

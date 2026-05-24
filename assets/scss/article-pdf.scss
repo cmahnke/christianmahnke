@@ -31,6 +31,7 @@ $accent-font: "Strichpunkt Sans";
   }
 
    @bottom-center {
+    font-family: $accent-font;
     content: counter(page);
    }
 }
@@ -266,6 +267,10 @@ p {
           padding: 6pt;
           border-width: 2px;
           border-color: #626464;
+          white-space: pre-wrap;
+          word-break: break-all;
+          overflow-wrap: anywhere;
+          border-left: 1px solid;
         }
 
         code {
@@ -283,6 +288,11 @@ p {
           margin-left: 1rem;
         }
 
+        summary:has(+ .highlight) {
+          break-inside: avoid;
+          column-span: all;
+        }
+
         figure {
           height: auto;
           max-width: 100vw;
@@ -295,6 +305,7 @@ p {
 
           img {
             break-after: avoid-page;
+            max-width: 100%;
           }
 
           &.center {
@@ -313,6 +324,15 @@ p {
           margin: 12pt;
           break-inside: avoid;
           column-span: all;
+        }
+
+        .iiif.iiif-image {
+          padding: 0;
+          aspect-ratio: 1.414 / 1;
+
+          .viewer {
+            margin: 0;
+          }
         }
 
         .script {
@@ -399,6 +419,7 @@ p {
           display: block;
         }
 
+        .vibrate-check-result,
         .hdr-warning {
           font-size: xx-large;
           text-align: center;
@@ -412,7 +433,7 @@ p {
             box-shadow: inset 0 -15px 0 $box-border;
             column-span: all;
 
-            & ~ p, h2, h3 {
+            & ~ p, & ~ h2, & ~ h3, & ~ ul, & ~ ol {
               column-span: all;
             }
           }
