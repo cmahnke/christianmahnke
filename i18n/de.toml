@@ -106,5 +106,8 @@ other = "An dieser Stelle ist eine PDF-Datei eingebunden."
 [printNoHDR]
 other = "HDR-Inhalte können nicht ausgedruckt werden!"
 
+[printNoTouch]
+other = "Fühlbare Inhalte können nicht gedruckt werden!"
+
 [printNoVideo]
 other = "An dieser Stelle ist ein Video eingebunden."

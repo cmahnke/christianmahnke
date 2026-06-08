@@ -106,5 +106,8 @@ other = "A PDF file is embedded here."
 [printNoHDR]
 other = "HDR content cannot be printed!"
 
+[printNoTouch]
+other = "Touch sensitive content cannot be printed!"
+
 [printNoVideo]
 other = "A video is embedded here."

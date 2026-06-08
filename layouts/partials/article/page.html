@@ -42,6 +42,15 @@
         {{- $link := (.OutputFormats.Get "html").Permalink -}}
         <div class="post-url"><span class="label">URL</span>: <a class="article-link" href="{{ $link }}">{{ $link }}</a></div>
 
+        {{- with .Params.zenodo.doi -}}
+          <div class="post-doi">
+            {{- $doi := . -}}
+            {{- $resolver := "" -}}
+            {{- $doiPrefix := "https://doi.org/" -}}
+            <span class="doi-prefix">{{ i18n "doiPrefix" }}: </span><a href="{{ $doiPrefix }}{{ $doi }}" title="{{ i18n "doiLink" }}" class="doi-link">{{ $doi }}</a>
+          </div>
+        {{- end -}}
+
         <div class="tags-heading"><span class="label">{{ i18n "keywords" }}</span>
           {{ partial "article/meta/tags.html" . }}
         </div>
@@ -52,17 +61,13 @@
           </div>
         {{- end -}}
 
-        {{- with .Params.zenodo -}}
-          <div class="zenodo-metadata">
-            {{- partial "article/zenodo.html" . -}}
-          </div>
-        {{- end -}}
-
-        {{- with .Params.doi -}}
-          <div class="doi-reference">
-            {{- partial "doi.html" . -}}
-          </div>
-        {{- end -}}
+        {{/*
+          {{- with .Params.doi -}}
+            <div class="doi-reference">
+              {{- partial "doi.html" . -}}
+            </div>
+          {{- end -}}
+        */}}
       </div>
       <div class="post-body">
         {{- .Content -}}
