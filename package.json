@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@annotorious/openseadragon": "^3.8.2",
+    "@annotorious/openseadragon": "^3.8.3",
     "aos": "^2.3.4",
     "chroma-js": "^3.2.0",
     "d3": "^7.9.0",
@@ -9,7 +9,7 @@
     "elevator.js": "^1.0.1",
     "enter-view": "^2.0.1",
     "img-comparison-slider": "^8.0.7",
-    "js-cookie": "^3.0.7",
+    "js-cookie": "^3.0.8",
     "lg-fullscreen": "^1.2.1",
     "lightgallery": "^2.9.0",
     "openseadragon": "^6.0.2",
