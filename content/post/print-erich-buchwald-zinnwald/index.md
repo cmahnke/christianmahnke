@@ -1,6 +1,6 @@
 ---
 date: 2026-05-17T14:07:44+02:00
-title: 'Holzschnitt von Erich Buchwald-Zinnwald (1884-1972)'
+title: 'Holzschnitt "Dresden um 1900" von Erich Buchwald-Zinnwald (1884-1972)'
 tags:
   - Art
   - WoodblockPrint
