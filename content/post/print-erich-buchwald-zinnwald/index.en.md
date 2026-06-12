@@ -3,7 +3,7 @@ date: 2026-05-17T14:07:44+02:00
 title: 'Woodblock print by Erich Buchwald-Zinnwald (1884-1972)'
 tags:
   - Art
-  - woodcut
+  - WoodblockPrint
 preview: img/print.jpg
 outputs:
   - bibtex
