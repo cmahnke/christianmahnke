@@ -16,6 +16,7 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1983
+  title: Lillehaldjas
 wikidata:
   - https://www.wikidata.org/wiki/Q20528886
   - https://www.wikidata.org/wiki/Q13429365

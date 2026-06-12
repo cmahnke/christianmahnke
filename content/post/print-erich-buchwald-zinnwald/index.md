@@ -16,6 +16,7 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1952
+  title: Dresden um 1900
 wikidata:
   - https://www.wikidata.org/wiki/Q21415786
   - https://www.wikidata.org/wiki/Q1731
