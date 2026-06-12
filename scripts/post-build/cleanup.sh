@@ -21,6 +21,6 @@ find $SEARCH_PATH -type f -name "*.jpg" -size +2M -not -path '*/full/full/*' | w
     fi
     if [ "$found" -eq 1 ]; then
         echo "Removing $jpg_file sice there should be a WebP replacement"
-        #rm "$jpg_file"
+        rm "$jpg_file"
     fi
 done
