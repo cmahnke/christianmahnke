@@ -1,11 +1,11 @@
 ---
 date: 2026-06-12T11:33:44+02:00
-title: ""
+title: "Kundenbuch des Ländlichen Einkaufszentrums Darlingerode"
 keywords:
 description: ""
 cite: true
 preview:
-  image: preview.png
+  image: front/full/full/0/default.jpg
 tags:
   - History
   - DigitalEdition
