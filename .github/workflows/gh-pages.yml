@@ -87,6 +87,7 @@ jobs:
           ./scripts/post-build/index.sh &
           #./scripts/post-build/pdf.sh &
           wait
+          ./scripts/post-build/cleanup.sh
           find ./docs/ -type f -name "article.html" -exec rm {} \;
 
       - name: Always Save Hugo cache
