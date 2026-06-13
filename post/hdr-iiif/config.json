@@ -1,0 +1,1 @@
+{"pipeline": ["smoothen", "normalize"], "quality": 85, "contrast": "1.2", "brightness": "-0.15"}

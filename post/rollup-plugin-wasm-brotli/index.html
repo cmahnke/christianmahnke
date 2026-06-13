@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Rollup-Plugin für WASM Inlining · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Nach meinen Erfahrungen mit WASM habe ich einen eigenes Rollup-Plugin geschrieben.">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/rollup-plugin-wasm-brotli/" />
+  <meta property="og:title" content="Rollup-Plugin für WASM Inlining · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/rollup-plugin-wasm-brotli/ogPreview_hu_832f234a48b46d42.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content="Brotli, WASM, Rollup, Software Entwicklung, JavaScript"><meta name="dc.subject" content="Brotli"><meta name="dc.subject" content="WASM"><meta name="dc.subject" content="Rollup"><meta name="dc.subject" content="Software Entwicklung"><meta name="dc.subject" content="JavaScript">
+<meta name="generator" content="Hugo 0.163.1">
+<meta name="projektemacher.org:build-date" content="2026-06-13 01:55:32.595247518 &#43;0000 UTC m=&#43;1.369197281"><meta name="projektemacher.org:git-commit" content="bb89245">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.25abb799f37fa613d5586cb1c82129f060fa151953e4ceaff0d2c77c3ccdf266.css" rel="stylesheet" integrity="sha256-Jau3mfN/phPVWGyxyCEp8GD6FRlT5M6v8NLHfDzN8mY=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.d3b9b1917c3c98abd3ce36aaa31b1510427471b290050baf0ab53c6f6cc7211a.js" integrity="sha256-07mxkXw8mKvTzjaqoxsVEEJ0cbKQBQuvCrU8b2zHIRo="></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/rollup-plugin-wasm-brotli/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/rollup-plugin-wasm-brotli/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/rollup-plugin-wasm-brotli/","@type":"BlogPosting","about":[{"@id":"http://www.wikidata.org/entity/Q2005","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Q2005"},{"@id":"http://www.wikidata.org/entity/Q638608","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Softwareentwicklung"},{"@id":"http://www.wikidata.org/entity/Q114900810","@type":"Thing","name":"rollup"},{"@id":"http://www.wikidata.org/entity/Q18205644","@type":"Thing","name":"Brotli"},{"@id":"http://www.wikidata.org/entity/Q20155677","@type":"Thing","name":"WebAssembly"},{"@id":"http://www.wikidata.org/entity/Q2493","@type":"Thing","name":"Datenkompression"},{"@id":"http://www.wikidata.org/entity/Q7067518","@type":"Thing","name":"npm"},{"@id":"http://www.wikidata.org/entity/Q726780","@type":"Thing","name":"Q726780"}],"author":{"@id":"http://www.wikidata.org/entity/Q137668638","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"dateModified":"2026-06-13","datePublished":"2026-04-28","headline":"Rollup-Plugin für WASM Inlining","inLanguage":"de","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Brotli","WASM","Rollup","SoftwareDevelopment","JavaScript"],"name":"Rollup-Plugin für WASM Inlining","url":"https://christianmahnke.de/post/rollup-plugin-wasm-brotli/","workTranslation":[{"@id":"https://christianmahnke.de/en/post/rollup-plugin-wasm-brotli/","@type":"CreativeWork","inLanguage":"en","name":"Rollup plugin für WASM Inlining","url":"https://christianmahnke.de/en/post/rollup-plugin-wasm-brotli/"}]}
+</script>
+</head><body class="section-post dir-postrollup-plugin-wasm-brotli blog  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/rollup-plugin-wasm-brotli/" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Rollup-Plugin für WASM Inlining</h1><div class="date">
+          <time class="post-date" datetime="2026-04-28T21:45:44&#43;02:00">Dienstag, 28. April 2026</time>
+        </div><div class="post-body"><p>Nach meinen <a href="https://christianmahnke.de/post/wasm-dx/">Erfahrungen mit WASM</a> habe ich einen eigenes <a href="https://rollupjs.org/" target="_blank">Rollup</a>-Plugin geschrieben.</p>
+<p>Schon vor einigen Jahren gab es hier einen <a href="https://christianmahnke.de/post/json-compression/" target="_blank">Artikel</a>, der den innovativen Ansatz zur Kompression von JSON namens <code>brotli-unicode</code> vorstellte. Nachdem ich mich nun mit WASM beschäftigen &ldquo;musste&rdquo;, lag es nahe, die beschriebenen Unzulänglichkeiten damit zu kompensieren.</p>
+<p>Herausgekommen ist ein Plug-in für Rollup, das das Bundling von WASM-Dateien deutlich vereinfacht, indem es die Datei einfach in die erstellte JavaScript-Datei integriert (inline), ohne die klassischen Nachteile der Base64-Kodierung (Größenzuwachs um 33–37 %) zu haben.</p>
+<h2 id="vergleichszahlen">Vergleichszahlen</h2>
+<p>Dieser Vergleich basiert auf der Implementierung aus diesem <a href="https://christianmahnke.de/post/blog-sparql/" target="_blank">Blogbeitrag</a>, der <a href="https://github.com/oxigraph/oxigraph" target="_blank">OxiGraph</a> und das <a href="https://github.com/KonradHoeffner/hdt" target="_blank">HDT-Rust-Modul</a> umfasst.</p>
+<h3 id="ohne-plugin">Ohne Plugin</h3>
+<table>
+	<thead>
+			<tr>
+					<th>Größe (Bytes)</th>
+					<th>Datei</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1,191,284</td>
+					<td>wikidata-hdt/dist/client-sparql.js</td>
+			</tr>
+			<tr>
+					<td>2,609,124</td>
+					<td>wikidata-hdt/dist/client-sparql.js.map</td>
+			</tr>
+			<tr>
+					<td>714</td>
+					<td>wikidata-hdt/dist/client-sparql.scss</td>
+			</tr>
+			<tr>
+					<td>181,638</td>
+					<td>wikidata-hdt/dist/hdt_bg.wasm</td>
+			</tr>
+			<tr>
+					<td>3,954,968</td>
+					<td>wikidata-hdt/dist/web_bg.wasm</td>
+			</tr>
+	</tbody>
+</table>
+<p>Ohne das Plugin werden die Datei <code>wikidata-hdt/dist/client-sparql.js</code> sowie beide WASM-Dateien benötigt. Insgesamt 5.327.890 Byte.</p>
+<h3 id="mit-plugin">Mit Plugin</h3>
+<table>
+	<thead>
+			<tr>
+					<th>Größe (Bytes)</th>
+					<th>Datei</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>3,060,899</td>
+					<td>wikidata-hdt/dist/client-sparql.js</td>
+			</tr>
+			<tr>
+					<td>4,493,750</td>
+					<td>wikidata-hdt/dist/client-sparql.js.map</td>
+			</tr>
+			<tr>
+					<td>714</td>
+					<td>wikidata-hdt/dist/client-sparql.scss</td>
+			</tr>
+			<tr>
+					<td>181,638</td>
+					<td>wikidata-hdt/dist/hdt_bg.wasm</td>
+			</tr>
+			<tr>
+					<td>3,954,968</td>
+					<td>wikidata-hdt/dist/web_bg.wasm</td>
+			</tr>
+	</tbody>
+</table>
+<p>Für das Plugin wird lediglich die Datei <code>wikidata-hdt/dist/client-sparql.js</code> benötigt. Insgesamt 3.060.899. Das entspricht etwa 57,4 % der ursprünglichen Größe.</p>
+<p>Das <a href="https://www.npmjs.com/package/@projektemacher/rollup-plugin-wasm-brotli" target="_blank">Plugin ist über NPM</a> verfügbar, der Quellcode bei <a href="https://github.com/cmahnke/rollup-plugin-wasm-brotli" target="_blank">GitHub</a> verfügbar.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q114900810" title="rollup" rel="related">Wikidata Eintrag: rollup</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q18205644" title="Brotli" rel="related">Wikidata Eintrag: Brotli</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q20155677" title="WebAssembly" rel="related">Wikidata Eintrag: WebAssembly</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q2493" title="Datenkompression" rel="related">Wikidata Eintrag: Datenkompression</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q7067518" title="npm" rel="related">Wikidata Eintrag: npm</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q726780" title="Q726780" rel="related">Wikidata Eintrag: Q726780</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Diesen Beitrag zitieren
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2026)</span>: <span class="cite-title">Rollup-Plugin für WASM Inlining</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], 28.04.2026. Online-Publikation: <a class="cite-link" href="https://christianmahnke.de/post/rollup-plugin-wasm-brotli/">https://christianmahnke.de/post/rollup-plugin-wasm-brotli/</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/post/rollup-plugin-wasm-brotli/citation.bib" title="Als BibTex herunterladen">Als BibTex herunterladen</a>
+  </div>
+</details>
+</div><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/SoftwareDevelopment" title="Software Entwicklung">#Software Entwicklung</a><a href="https://christianmahnke.de/tags/JavaScript" title="JavaScript">#JavaScript</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/npm-org/">NPM Organisation</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/wasm-dx/">Meine Erfahrungen mit WASM</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/vite-git-symlink-plugin/">Vite und Git Symlink-Dateien</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/developer-platforms-fediverse/">Fediverse Anbindung für Entwicklungsplattformen</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/software-metadata/">Metadaten für Software</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/rollup-plugin-wasm-brotli/" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded",e=>{document.querySelector(".type-text")&&!document.querySelector(".subsection")?window.enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&window.enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})})
+</script>
+</div>
+    </body>
+ </html>

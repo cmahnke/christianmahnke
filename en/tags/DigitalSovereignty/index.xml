@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>DigitalSovereignty on Christian Mahnke</title>
+		<link>https://christianmahnke.de/en/tags/DigitalSovereignty/</link>
+		<description>Recent content in DigitalSovereignty on Christian Mahnke</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+			<managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+		
+		
+			<webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+		
+		
+			<copyright>Christian Mahnke</copyright>
+		
+		
+			<lastBuildDate>Sat, 13 Jun 2026 03:39:05 +0200</lastBuildDate>
+		
+			<atom:link href="https://christianmahnke.de/en/tags/DigitalSovereignty/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Fediverse integration for development platforms</title>
+				<link>https://christianmahnke.de/en/post/developer-platforms-fediverse/citation.bib</link>
+				<pubDate>Thu, 30 Apr 2026 17:30:00 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+				<guid>https://christianmahnke.de/en/post/developer-platforms-fediverse/citation.bib</guid>
+				<description>&lt;p&gt;GitHub is currently facing a lot of issues – what does it take to switch?&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
