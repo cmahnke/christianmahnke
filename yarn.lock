@@ -9,21 +9,21 @@
   dependencies:
     zod "^3.24.1"
 
-"@annotorious/annotorious@3.8.3":
-  version "3.8.3"
-  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.8.3.tgz#d81794c5993a2c6bddac04cfd3dde2d2faec82ff"
-  integrity sha512-9N94zU1w/89AU4TU/gyj4OBlR3fOKkqb4Y3g3ByQBqkd8+qLW7FCJxCovM9fyQtS8BdlDL84vi7iRFqVLPljCg==
+"@annotorious/annotorious@3.8.6":
+  version "3.8.6"
+  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.8.6.tgz#31148b40d1f7eb17a452061b6ff600c37154c617"
+  integrity sha512-ym5EiqY88dbMmuGcSGwRjEmFtlSA1MYEz8RUvfLjLnHWXrdyY8JlosGRDGw8hEdO5jS9mTQBOF2UvXLipHwpZA==
   dependencies:
-    "@annotorious/core" "3.8.3"
+    "@annotorious/core" "3.8.6"
     dequal "^2.0.3"
     rbush "^4.0.1"
     simplify-js "^1.2.4"
     uuid "^14.0.0"
 
-"@annotorious/core@3.8.3":
-  version "3.8.3"
-  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.8.3.tgz#e0fa42c23f66256a8144ae90ce616adb9b91fede"
-  integrity sha512-1W/gkvVqLBJ9prrmpPFBUWAEipVxBSc4M/zSwqE4eabPs2/moULiAyUKh4hIipKjZyWYWJI5GEl/Di3HLj606A==
+"@annotorious/core@3.8.6":
+  version "3.8.6"
+  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.8.6.tgz#46dfc1af7bac58c3d8f4f00a9e969361c21014cd"
+  integrity sha512-9Lc4YjTShDw552Jedwf6ZI0Q9nfn5U8CGRWy06/cnd3ki824zca1XvtSC7BYzlemnbrZEfqllUWBQ75ab9SmeQ==
   dependencies:
     dequal "^2.0.3"
     nanoevents "^9.1.0"
@@ -31,13 +31,13 @@
     nanostores "^1.3.0"
     uuid "^14.0.0"
 
-"@annotorious/openseadragon@^3.8.3":
-  version "3.8.3"
-  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.8.3.tgz#b4d0fd973906fe0a1f139e146c70c3d2b63b81e1"
-  integrity sha512-qWKjVRDdddK3sU0hzAt297swFx5fwe/EU07fM/NKn5cl4nttTqtFA90H7cHYjozIXWqboeg/DdGTMwF/HbM7gg==
+"@annotorious/openseadragon@^3.8.6":
+  version "3.8.6"
+  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.8.6.tgz#79df06763b71fea27d24adade4674c971a30347b"
+  integrity sha512-hHidpjY2ZJjqhfIwY2sdPhcV2suS4lwwbevL1MjP6J7qF96dq45cRSdYzwgVV/ghRLorKeLszqsnPCZe1+RYWA==
   dependencies:
-    "@annotorious/annotorious" "3.8.3"
-    "@annotorious/core" "3.8.3"
+    "@annotorious/annotorious" "3.8.6"
+    "@annotorious/core" "3.8.6"
     pixi.js "^7.4.3"
     uuid "^14.0.0"
 
@@ -2734,9 +2734,9 @@ extract-zip@^2.0.1:
     "@types/yauzl" "^2.9.1"
 
 fabric@^7.3.1:
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/fabric/-/fabric-7.3.1.tgz#1dee1b68bb793aca68c0d31936b3897f330ef47b"
-  integrity sha512-RoLAQzUX+/3RNMYKliuN0P2HXdSDEGzyjS7FnmEbo3nhb8LFh59T+l3f6ApIu5LT4YB49YfMNrEajeIbutmD7Q==
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/fabric/-/fabric-7.4.0.tgz#a504ded4ee76e0f025f81b5350f62ccd414aaf01"
+  integrity sha512-NalYDc3eifTl1C33zryQwpH6+XA/2ClxQrH9vkASkZw3tbkRmorpikhYMmxhUTmi7O3e9ODz0vOT8qfaCh9IVA==
   optionalDependencies:
     canvas "^3.2.0"
     jsdom "^26.1.0"
