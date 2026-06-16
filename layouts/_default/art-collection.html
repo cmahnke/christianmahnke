@@ -27,26 +27,33 @@
 
     {{- with .Params.linkedart -}}
       {{- with .artist -}}
+
         {{- $name := dict -}}
         {{- with .wikidata -}}
           {{- $name = partialCached "metadata/wikidata/person.html" (dict "uri" .) . -}}
         {{- else -}}
           {{- with .name -}}
-            {{- $parts = split . " " -}}
-            {{- $last = index $parts (sub (len $parts) 1) -}}
-            {{- $first = delimit (first (sub (len $parts) 1) $parts) " " -}}
-            {{- $name = dict "firstName" $first "lastName"  $last "fullName" . -}}
+            {{- $parts := split . " " -}}
+            {{- $count := len $parts -}}
+            {{- if gt $count 1 -}}
+              {{- $last  := index $parts (sub $count 1) -}}
+              {{- $first := delimit (first (sub $count 1) $parts) " " -}}
+              {{- $name   = dict "firstName" $first "lastName" $last "fullName" . "error" "" -}}
+            {{- else -}}
+              {{- $name = dict "firstName" "" "lastName" . "fullName" . "error" "" -}}
+            {{- end -}}
           {{- end -}}
         {{- end -}}
 
         {{- if and $name (not $name.error) -}}
-          {{- $sortKey = printf "%s %s" $name.lastName $name.firstName | lower -}}
+          {{- $sortKey = printf "%s %s" $name.lastName $name.firstName | lower | strings.TrimRight " " -}}
           {{- if and $name.lastName $name.firstName -}}
             {{- $artistName = printf "%s, %s" $name.lastName $name.firstName -}}
-          {{- else -}}
+          {{- else if $name.fullName -}}
             {{- $artistName = $name.fullName -}}
           {{- end -}}
         {{- end -}}
+
       {{- end -}}
     {{- end -}}
 
@@ -57,109 +64,109 @@
     ) -}}
   {{- end -}}
 
+  {{/* Sort and keep artistName attached to each page */}}
   {{- $sorted := sort $sortable "sortKey" "asc" -}}
 
+  {{/*
+    Build $sortedItems as slice of { page, artistName } — single source
+    of truth for both pagination and headings. Name is NOT resolved again.
+  */}}
+  {{- $sortedItems := slice -}}
   {{- $sortedPages := slice -}}
   {{- range $sorted -}}
+    {{- $sortedItems = $sortedItems | append (dict
+        "page"       .page
+        "artistName" .artistName
+    ) -}}
     {{- $sortedPages = $sortedPages | append .page -}}
   {{- end -}}
 
   {{- $paginator := .Paginate $sortedPages -}}
-    {{- if $paginator.Pages -}}
-      <div class="content-container art-collection">
-        <div class="section-head">
-          <div class="parallax-bg">
-            <h1 class="post-section section-head-title">{{ .Title }}</h1>
-          </div>
-          <div class="post-section section-head-content">
-            {{- .Content -}}
-          </div>
+  {{- if $paginator.Pages -}}
+    <div class="content-container art-collection">
+      <div class="section-head">
+        <div class="parallax-bg">
+          <h1 class="post-section section-head-title">{{ .Title }}</h1>
         </div>
+        <div class="post-section section-head-content">
+          {{- .Content -}}
+        </div>
+      </div>
 
-        {{- $currentItems := slice -}}
-        {{- range $paginator.Pages -}}
-          {{- $page       := . -}}
-          {{- $artistName := i18n "UnknownArtist" -}}
+      {{/*
+        Derive page size from the first pager which always has a full page.
+        This avoids relying on site.Config.Pagination.PagerSize which is
+        not always available depending on Hugo version.
+      */}}
+      {{- $pageSize := (index $paginator.Pagers 0).NumberOfElements -}}
+      {{- $offset   := mul (sub $paginator.PageNumber 1) $pageSize -}}
 
-          {{- with .Params.linkedart -}}
-            {{- with .artist -}}
-              {{- with .wikidata -}}
-                {{- $name := partialCached "metadata/wikidata/person.html" (dict "uri" .) . -}}
-                {{- if and $name (not $name.error) -}}
-                  {{- if and $name.lastName $name.firstName -}}
-                    {{- $artistName = printf "%s, %s" $name.lastName $name.firstName -}}
-                  {{- else -}}
-                    {{- $artistName = $name.fullName -}}
-                  {{- end -}}
-                {{- end -}}
-              {{- end -}}
-            {{- end -}}
+      {{- $lastArtist := "" -}}
+      <div class="posts">
+        {{- range $i, $page := $paginator.Pages -}}
+
+          {{/* Look up artistName from $sortedItems using absolute index */}}
+          {{- $item       := index $sortedItems (add $offset $i) -}}
+          {{- $artistName := $item.artistName -}}
+
+          {{- if ne $artistName $lastArtist -}}
+            <h2 class="artist-header" id="{{ $artistName | urlize }}">
+              {{- $artistName -}}
+            </h2>
+            {{- $lastArtist = $artistName -}}
           {{- end -}}
 
-          {{- $currentItems = $currentItems | append (dict
-              "page"       $page
-              "artistName" $artistName
-          ) -}}
-        {{- end -}}
+          {{- if not $page.Params.linkedart -}}
+            {{- errorf "[art-collection.html] No LinkedArt metadata for %s" $page.RelPermalink -}}
+          {{- end -}}
+          {{- if not $page.Params.preview -}}
+            {{- errorf "[art-collection.html] No preview image for %s" $page.RelPermalink -}}
+          {{- end -}}
 
-        {{- $lastArtist := "" -}}
-        <div class="posts">
-          {{- range $currentItems -}}
-            {{- $artistName := .artistName -}}
-            {{- $page       := .page -}}
-
-            {{- if ne $artistName $lastArtist -}}
-              <h2 class="artist-header" id="{{ $artistName | urlize }}">
-                {{- $artistName -}}
-              </h2>
-              {{- $lastArtist = $artistName -}}
-            {{- end -}}
-
-            {{- if not $page.Params.linkedart -}}
-              {{- errorf "[art-collection.html] No LinkedArt metadata for %s" $page.RelPermalink -}}
-            {{- end -}}
-            {{- if not $page.Params.preview -}}
-              {{- errorf "[art-collection.html] No preview image for %s" $page.RelPermalink -}}
-            {{- end -}}
-
-            <div class="post">
-              <h3 class="post-title"><a class="readmore" href="{{ $page.RelPermalink}}" title="{{ i18n "readmore" }}">{{ $page.Title }}</a></h3>
-              <div class="post-body">
-                <div class="post-preview">
-                  {{- partialCached "preview.html" $page $page.RelPermalink -}}
-                  {{- with $page.Summary -}}
-                    <a href="{{ $page.Permalink }}">
-                      <p>{{ . }}</p>
-                    </a>
-                  {{- end -}}
-                </div>
+          <div class="post">
+            <h3 class="post-title">
+              <a class="readmore" href="{{ $page.RelPermalink }}" title="{{ i18n "readmore" }}">
+                {{- $page.Title -}}
+              </a>
+            </h3>
+            <div class="post-body">
+              <div class="post-preview">
+                {{- partialCached "preview.html" $page $page.RelPermalink -}}
+                {{- with $page.Summary -}}
+                  <a href="{{ $page.Permalink }}">
+                    <p>{{ . }}</p>
+                  </a>
+                {{- end -}}
               </div>
             </div>
+          </div>
+
+        {{- end -}}
+      </div>
+    </div>
+
+    {{- if or $paginator.HasPrev $paginator.HasNext -}}
+      <div class="pagination">
+        <div class="pagination-links">
+          {{- if $paginator.HasPrev -}}
+            <a class="pagination-prev" href="{{ $paginator.Prev.URL }}">&#x25c0;&#xfe0e; {{ i18n "next_page" }}</a>
+          {{- else -}}
+            <div class="pagination-prev"></div>
+          {{- end -}}
+          {{- if $paginator.HasNext -}}
+            <a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "previous_page" }} &#x25b6;&#xfe0e;</a>
+          {{- else -}}
+            <div class="pagination-next"></div>
           {{- end -}}
         </div>
       </div>
-      {{- if or $paginator.HasPrev $paginator.HasNext -}}
-        <div class="pagination">
-          <div class="pagination-links">
-            {{- if $paginator.HasPrev -}}
-              <a class="pagination-prev" href="{{ $paginator.Prev.URL }}">&#x25c0;&#xfe0e; {{ i18n "next_page" }}</a>
-            {{- else -}}
-              <div class="pagination-prev"></div>
-            {{- end -}}
-            {{- if $paginator.HasNext -}}
-              <a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "previous_page" }} &#x25b6;&#xfe0e;</a>
-            {{- else -}}
-              <div class="pagination-next"></div>
-            {{- end -}}
-          </div>
-        </div>
-      {{- end -}}
-
-    {{- else -}}
-      <div class="content-container art-collection">
-        <p class="no-results">
-          No posts found!
-        </p>
-      </div>
     {{- end -}}
+
+  {{- else -}}
+    <div class="content-container art-collection">
+      <p class="no-results">
+        No posts found!
+      </p>
+    </div>
+  {{- end -}}
 {{- end -}}
