@@ -4,6 +4,7 @@ title: 'Collage von Helmut Bönitz (1914-1999)'
 tags:
   - Art
   - Collage
+  - _ArtCollection
 preview: img/collage.jpg
 outputs:
   - bibtex
@@ -13,7 +14,7 @@ outputs:
 linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q94634912
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q94634912
   - https://www.wikidata.org/wiki/Q133742956
   - https://www.wikidata.org/wiki/Q130763950

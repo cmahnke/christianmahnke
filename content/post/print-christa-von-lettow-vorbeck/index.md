@@ -5,6 +5,7 @@ keywords: Christa von Lettow-Vorbeck
 tags:
   - Art
   - WoodblockPrint
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

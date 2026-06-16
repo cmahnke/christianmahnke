@@ -1,0 +1,165 @@
+{{ define "title" -}}
+  {{- if ne .Title "" -}}
+    {{- .Title }} · {{ .Site.Title -}}
+  {{- else -}}
+    {{- .Site.Title -}}
+  {{- end -}}
+{{- end }}
+
+{{ define "content" }}
+  {{- $postSection := "post" -}}
+
+  {{- partial "header.html" . -}}
+
+  {{- $posts := where .Site.Pages "Section" $postSection -}}
+  {{- $mainSite := hugo.Sites.Default -}}
+  {{- if ne $mainSite .Site -}}
+    {{- $posts = ($posts | lang.Merge (where $mainSite.Pages "Section" $postSection)) -}}
+  {{- end -}}
+
+  {{- $artPosts := where $posts ".Params.tags" "intersect" (slice "_ArtCollection") -}}
+
+  {{- $sortable := slice -}}
+  {{- range $artPosts -}}
+    {{- $page       := . -}}
+    {{- $sortKey    := "zzz_unknown" -}}
+    {{- $artistName := i18n "UnknownArtist" -}}
+
+    {{- with .Params.linkedart -}}
+      {{- with .artist -}}
+        {{- $name := dict -}}
+        {{- with .wikidata -}}
+          {{- $name = partialCached "metadata/wikidata/person.html" (dict "uri" .) . -}}
+        {{- else -}}
+          {{- with .name -}}
+            {{- $parts = split . " " -}}
+            {{- $last = index $parts (sub (len $parts) 1) -}}
+            {{- $first = delimit (first (sub (len $parts) 1) $parts) " " -}}
+            {{- $name = dict "firstName" $first "lastName"  $last "fullName" . -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- if and $name (not $name.error) -}}
+          {{- $sortKey = printf "%s %s" $name.lastName $name.firstName | lower -}}
+          {{- if and $name.lastName $name.firstName -}}
+            {{- $artistName = printf "%s, %s" $name.lastName $name.firstName -}}
+          {{- else -}}
+            {{- $artistName = $name.fullName -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- $sortable = $sortable | append (dict
+        "page"       $page
+        "sortKey"    $sortKey
+        "artistName" $artistName
+    ) -}}
+  {{- end -}}
+
+  {{- $sorted := sort $sortable "sortKey" "asc" -}}
+
+  {{- $sortedPages := slice -}}
+  {{- range $sorted -}}
+    {{- $sortedPages = $sortedPages | append .page -}}
+  {{- end -}}
+
+  {{- $paginator := .Paginate $sortedPages -}}
+    {{- if $paginator.Pages -}}
+      <div class="content-container art-collection">
+        <div class="section-head">
+          <div class="parallax-bg">
+            <h1 class="post-section section-head-title">{{ .Title }}</h1>
+          </div>
+          <div class="post-section section-head-content">
+            {{- .Content -}}
+          </div>
+        </div>
+
+        {{- $currentItems := slice -}}
+        {{- range $paginator.Pages -}}
+          {{- $page       := . -}}
+          {{- $artistName := i18n "UnknownArtist" -}}
+
+          {{- with .Params.linkedart -}}
+            {{- with .artist -}}
+              {{- with .wikidata -}}
+                {{- $name := partialCached "metadata/wikidata/person.html" (dict "uri" .) . -}}
+                {{- if and $name (not $name.error) -}}
+                  {{- if and $name.lastName $name.firstName -}}
+                    {{- $artistName = printf "%s, %s" $name.lastName $name.firstName -}}
+                  {{- else -}}
+                    {{- $artistName = $name.fullName -}}
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+
+          {{- $currentItems = $currentItems | append (dict
+              "page"       $page
+              "artistName" $artistName
+          ) -}}
+        {{- end -}}
+
+        {{- $lastArtist := "" -}}
+        <div class="posts">
+          {{- range $currentItems -}}
+            {{- $artistName := .artistName -}}
+            {{- $page       := .page -}}
+
+            {{- if ne $artistName $lastArtist -}}
+              <h2 class="artist-header" id="{{ $artistName | urlize }}">
+                {{- $artistName -}}
+              </h2>
+              {{- $lastArtist = $artistName -}}
+            {{- end -}}
+
+            {{- if not $page.Params.linkedart -}}
+              {{- errorf "[art-collection.html] No LinkedArt metadata for %s" $page.RelPermalink -}}
+            {{- end -}}
+            {{- if not $page.Params.preview -}}
+              {{- errorf "[art-collection.html] No preview image for %s" $page.RelPermalink -}}
+            {{- end -}}
+
+            <div class="post">
+              <h3 class="post-title"><a class="readmore" href="{{ $page.RelPermalink}}" title="{{ i18n "readmore" }}">{{ $page.Title }}</a></h3>
+              <div class="post-body">
+                <div class="post-preview">
+                  {{- partialCached "preview.html" $page $page.RelPermalink -}}
+                  {{- with $page.Summary -}}
+                    <a href="{{ $page.Permalink }}">
+                      <p>{{ . }}</p>
+                    </a>
+                  {{- end -}}
+                </div>
+              </div>
+            </div>
+          {{- end -}}
+        </div>
+      </div>
+      {{- if or $paginator.HasPrev $paginator.HasNext -}}
+        <div class="pagination">
+          <div class="pagination-links">
+            {{- if $paginator.HasPrev -}}
+              <a class="pagination-prev" href="{{ $paginator.Prev.URL }}">&#x25c0;&#xfe0e; {{ i18n "next_page" }}</a>
+            {{- else -}}
+              <div class="pagination-prev"></div>
+            {{- end -}}
+            {{- if $paginator.HasNext -}}
+              <a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "previous_page" }} &#x25b6;&#xfe0e;</a>
+            {{- else -}}
+              <div class="pagination-next"></div>
+            {{- end -}}
+          </div>
+        </div>
+      {{- end -}}
+
+    {{- else -}}
+      <div class="content-container art-collection">
+        <p class="no-results">
+          No posts found!
+        </p>
+      </div>
+    {{- end -}}
+{{- end -}}

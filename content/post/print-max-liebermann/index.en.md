@@ -4,6 +4,7 @@ title: 'Etching by Max Liebermann (1847-1935)'
 tags:
   - Art
   - Etching
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -16,7 +17,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q158062
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
-  style: 
+  style:
     - http://vocab.getty.edu/aat/300021508
   date: 1914
   references:

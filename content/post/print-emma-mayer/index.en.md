@@ -5,7 +5,19 @@ keywords: Emma Mayer, Hamburg
 tags:
   - Art
   - WoodblockPrint
+  - _ArtCollection
 preview: img/print.jpg
+outputs:
+  - bibtex
+  - html
+  - linkedart
+  - pdf-article
+linkedart:
+  title: Blumenstrauß
+  artist:
+    name: Emma Mayer
+  owner:
+    wikidata: https://www.wikidata.org/wiki/Q137668638
 wikidata:
   - https://www.wikidata.org/wiki/Q12310011
   - https://www.wikidata.org/wiki/Q1622237

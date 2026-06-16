@@ -4,6 +4,7 @@ title: '"Liebespaar" (Lovers) by Max Westhäuser (1885-1956)'
 tags:
   - Art
   - WoodblockPrint
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

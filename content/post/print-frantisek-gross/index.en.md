@@ -7,6 +7,7 @@ cite: true
 tags:
   - Art
   - Lithography
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -19,7 +20,7 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1965
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q15735037
   - https://www.wikidata.org/wiki/Q1550936
   - https://www.wikidata.org/wiki/Q213

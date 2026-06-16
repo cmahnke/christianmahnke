@@ -4,6 +4,7 @@ title: 'Holzschnitt "Dresden um 1900" von Erich Buchwald-Zinnwald (1884-1972)'
 tags:
   - Art
   - WoodblockPrint
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

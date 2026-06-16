@@ -5,6 +5,7 @@ tags:
   - Art
   - Serigraphy
   - UnknownArtist
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -16,7 +17,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1969
   description: 'Pop art screen print from 1969'
-  style: 
+  style:
     - http://vocab.getty.edu/aat/300022205
 wikidata:
   - https://www.wikidata.org/wiki/Q134147
@@ -33,5 +34,5 @@ For my new office, I bought a screen print of unknown origin from [Zeitzeug](htt
 ]
 {{</ gallery >}}
 
-I particularly liked the combination of pink and silver; now I just need a pink frame. 
+I particularly liked the combination of pink and silver; now I just need a pink frame.
 The image shows the lead wires and the retaining rod of a stripped light bulb. The print is dated 1969.

@@ -4,6 +4,7 @@ title: '"Formen am Meer (Sylt)" (Shapes by the Sea (Sylt)) by Otto Eglau (1917-1
 tags:
   - Art
   - Etching
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -38,5 +39,4 @@ I’ve found an etching by [Otto Eglau](https://de.wikipedia.org/wiki/Otto_Eglau
 
 Otto Eglau studied at the [Berlin University of the Arts](https://en.wikipedia.org/wiki/Berlin_University_of_the_Arts). In 1953, he became a lecturer in free painting and drawing at the Faculty of Architecture at the Technical University of Berlin. Between 1951 and 1970, he undertook extensive study trips.
 
-He maintained a lifelong connection with Sylt. From 1983 onwards, he also ran a studio in Kampen. Consequently, stages were a recurring motif for him, though it was not only the North Frisian coast that he captured in abstract views. 
-
+He maintained a lifelong connection with Sylt. From 1983 onwards, he also ran a studio in Kampen. Consequently, stages were a recurring motif for him, though it was not only the North Frisian coast that he captured in abstract views.

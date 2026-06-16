@@ -5,6 +5,7 @@ keywords: Leo Frank, Vienna, birds of prey. Buzzard, highland, fog
 tags:
   - Art
   - WoodblockPrint
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

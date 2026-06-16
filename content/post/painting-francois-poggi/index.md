@@ -5,6 +5,7 @@ keywords: François Poggi
 tags:
   - Art
   - Painting
+  - _ArtCollection
 preview: img/painting.jpg
 outputs:
   - bibtex

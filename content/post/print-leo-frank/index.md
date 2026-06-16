@@ -5,6 +5,7 @@ keywords: Leo Frank, Wien, Greifvögel, Bussard, Hochland, Nebel
 tags:
   - Art
   - WoodblockPrint
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

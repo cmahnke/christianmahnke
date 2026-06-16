@@ -5,6 +5,7 @@ keywords: Elsa Haensgen-Dingkuhn
 tags:
   - Art
   - WoodblockPrint
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

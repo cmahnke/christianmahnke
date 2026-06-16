@@ -5,6 +5,7 @@ keywords: Jena, Curt Mücke, Sondershausen, Sidelhof Jena, Stadtmuseum Jena
 tags:
   - Art
   - Etching
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

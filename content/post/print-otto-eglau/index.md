@@ -4,6 +4,7 @@ title: '"Formen am Meer (Sylt)" von Otto Eglau (1917-1988)'
 tags:
   - Art
   - Etching
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -38,5 +39,4 @@ Ich habe einen Radierung von [Otto Eglau](https://de.wikipedia.org/wiki/Otto_Egl
 
 Otto Eglau studierte an der [Hochschule für Bildende Künste Berlin](https://de.wikipedia.org/wiki/Universit%C3%A4t_der_K%C3%BCnste_Berlin). 1953 wurde er Dozent für Freies Malen und Zeichnen an der Architekturfakultät an der Technischen Universität Berlin. Zwischen 1951 und 1970 unternahm er ausgedehnte Studienreisen.
 
-Zeit seines Lebens war er mit Sylt verbunden. So betrieb er ab 1983 in Kampen auch ein Atelier. Daher waren Bühnen ein wiederkehrendes Motiv für ihn, aber nicht nur die nordfriesische Küste hielt er in abstrahierten Ansichten fest. 
-
+Zeit seines Lebens war er mit Sylt verbunden. So betrieb er ab 1983 in Kampen auch ein Atelier. Daher waren Bühnen ein wiederkehrendes Motiv für ihn, aber nicht nur die nordfriesische Küste hielt er in abstrahierten Ansichten fest.

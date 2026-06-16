@@ -4,6 +4,7 @@ title: 'Woodcut by Otto Richard Bossert (1874-1919)'
 tags:
   - Art
   - WoodblockPrint
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

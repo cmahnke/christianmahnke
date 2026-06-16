@@ -5,6 +5,7 @@ tags:
   - Art
   - Etching
   - Göttingen
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -17,7 +18,7 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1976
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q94634912
   - https://www.wikidata.org/wiki/Q133742956
   - https://www.wikidata.org/wiki/Q130763950
@@ -40,5 +41,3 @@ Helmut Bönitz (1914-1999) war ein Göttinger Künstler, weshalb er auch im [Gö
 Die Radierung ist auf das Jahr 1976 datiert und zeigt oben Links die [Jacobi-Kirche](https://de.wikipedia.org/wiki/St._Jacobi_(G%C3%B6ttingen)) in Göttingen, sie ist direkt und in der Platte signiert und datiert. Auch wenn es auf dem Bild schwer zu erkennen ist, wurde der Druck mit mehreren Platten angefertigt, wodurch er ein wenig die Anmutung eines Comics mit einzelnen Panels hat.
 
 Der Buchstabe "b" zwischen den Türmen nimmt Bezug auf den berühmten [Stich der Stadt von Matthäus Merian aus dem Jahr 1654](https://de.wikivoyage.org/wiki/Datei:Merian_1654_goettingen.jpg).
-
-

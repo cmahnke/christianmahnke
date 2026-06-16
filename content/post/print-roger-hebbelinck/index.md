@@ -5,6 +5,7 @@ keywords: Brüssel, Brügge, Peerdenbrug, Peerdenbrücke
 tags:
   - Art
   - Lithography
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

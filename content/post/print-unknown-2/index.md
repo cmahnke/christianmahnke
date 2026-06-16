@@ -5,6 +5,7 @@ tags:
   - Art
   - Linocut
   - UnknownArtist
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

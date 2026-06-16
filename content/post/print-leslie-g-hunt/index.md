@@ -4,6 +4,7 @@ title: 'Farbradierung von Leslie G. Hunt (*1954)'
 tags:
   - Art
   - Etching
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -16,7 +17,7 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1992
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q1589697
   - https://www.wikidata.org/wiki/Q11442
   - https://www.wikidata.org/wiki/Q876222

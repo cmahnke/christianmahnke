@@ -4,6 +4,7 @@ title: 'Serigraphy by Gerhard Wendland (1910 - 1986)'
 tags:
   - Art
   - Serigraphy
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -16,7 +17,7 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1958
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q1292698
   - https://www.wikidata.org/wiki/Q265448
   - https://www.wikidata.org/wiki/Q1792393
@@ -37,4 +38,3 @@ I bought a screen print (serigraphy) by [Gerhard Wendland](https://de.wikipedia.
 Gerhard Wendland, who studied at the Hanover University of Art and Design, took part in the [second documenta](https://en.wikipedia.org/wiki/II._documenta) in Kassel in 1959. In 1960, he became a professor of painting in Nuremberg.
 
 The print is dated 1958 and depicts an abstract cityscape.
-

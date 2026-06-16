@@ -7,6 +7,7 @@ aliases:
 tags:
   - Art
   - Painting
+  - _ArtCollection
 preview: img/painting.jpg
 outputs:
   - bibtex

@@ -6,6 +6,7 @@ tags:
   - ArtBrut
   - Drawing
   - UnknownArtist
+  - _ArtCollection
 preview: img/image.jpg
 outputs:
   - bibtex
@@ -17,7 +18,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1965
   description: "Eine Art Brut Zeichnung von 1965"
-  style: 
+  style:
     - http://vocab.getty.edu/aat/300056472
 wikidata:
   - https://www.wikidata.org/wiki/Q44007

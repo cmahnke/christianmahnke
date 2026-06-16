@@ -5,6 +5,7 @@ tags:
   - Art
   - Retrocomputing
   - UnknownArtist
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

@@ -4,6 +4,7 @@ title: 'Blatt von Imao Keinen (1855-1924)'
 tags:
   - Art
   - WoodblockPrint
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

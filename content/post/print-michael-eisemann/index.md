@@ -4,6 +4,7 @@ title: 'Siebdruck von Michael Eisemann (1943-)'
 tags:
   - Art
   - Serigraphy
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

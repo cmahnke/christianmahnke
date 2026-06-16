@@ -1,0 +1,99 @@
+{{/*
+  Usage: {{- $name := partialCached "metadata/wikidata/person.html" (dict "uri" "https://www.wikidata.org/wiki/Q21014973") . -}}
+  Returns dict: firstName, lastName, fullName, qid, error
+*/}}
+
+{{- $uri       := .uri -}}
+{{- $firstName := "" -}}
+{{- $lastName  := "" -}}
+{{- $error     := "" -}}
+{{- $qid       := "" -}}
+
+{{- $opts := dict
+    "headers" (dict
+      "Accept"     "application/json"
+      "User-Agent" "HugoBot/1.0"
+    )
+-}}
+
+{{- if $uri -}}
+  {{- $qid = replaceRE `^.*/([^/]+)$` "$1" $uri -}}
+
+  {{- $url := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $qid -}}
+
+  {{- with resources.GetRemote $url $opts -}}
+    {{- with .Content | transform.Unmarshal -}}
+      {{- $entity := index .entities $qid -}}
+
+      {{- $givenNameId  := "" -}}
+      {{- $familyNameId := "" -}}
+
+      {{/* P735 = given name, P734 = family name */}}
+      {{- with index $entity.claims "P735" -}}
+        {{- $givenNameId = (index . 0).mainsnak.datavalue.value.id -}}
+      {{- end -}}
+
+      {{- with index $entity.claims "P734" -}}
+        {{- $familyNameId = (index . 0).mainsnak.datavalue.value.id -}}
+      {{- end -}}
+
+      {{- if $givenNameId -}}
+        {{- $nameUrl := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $givenNameId -}}
+        {{- with resources.GetRemote $nameUrl $opts -}}
+          {{- with .Content | transform.Unmarshal -}}
+            {{- $nameEntity := index .entities $givenNameId -}}
+            {{- with index $nameEntity.labels "en" -}}
+              {{- $firstName = .value -}}
+            {{- else -}}
+              {{- with index $nameEntity.labels "de" -}}
+                {{- $firstName = .value -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- if $familyNameId -}}
+        {{- $nameUrl := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $familyNameId -}}
+        {{- with resources.GetRemote $nameUrl $opts -}}
+          {{- with .Content | transform.Unmarshal -}}
+            {{- $nameEntity := index .entities $familyNameId -}}
+            {{- with index $nameEntity.labels "en" -}}
+              {{- $lastName = .value -}}
+            {{- else -}}
+              {{- with index $nameEntity.labels "de" -}}
+                {{- $lastName = .value -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{/* Fallback: use entity label directly if no P734/P735 found */}}
+      {{- if and (not $firstName) (not $lastName) -}}
+        {{- with index $entity.labels "en" -}}
+          {{- $lastName = .value -}}
+        {{- else -}}
+          {{- with index $entity.labels "de" -}}
+            {{- $lastName = .value -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+    {{- end -}}
+  {{- else -}}
+    {{- $error = printf "Wikidata fetch error for %s" $qid -}}
+  {{- end -}}
+
+{{- else -}}
+  {{- $error = "No URI provided" -}}
+{{- end -}}
+
+{{- return dict
+    "firstName" $firstName
+    "lastName"  $lastName
+    "fullName"  (printf "%s %s" $firstName $lastName | strings.TrimSpace)
+    "qid"       $qid
+    "uri"       $uri
+    "error"     $error
+-}}

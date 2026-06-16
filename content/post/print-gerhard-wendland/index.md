@@ -4,6 +4,7 @@ title: 'Serigrafie von Gerhard Wendland (1910 - 1986)'
 tags:
   - Art
   - Serigraphy
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -16,7 +17,7 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1958
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q1292698
   - https://www.wikidata.org/wiki/Q265448
   - https://www.wikidata.org/wiki/Q1792393
@@ -37,4 +38,3 @@ Ich habe einen Siebdruck (Serigrafie) von [Gerhard Wendland](https://de.wikipedi
 Gerhard Wendland, der an der Kunsthochschule Hannover studierte, nahm 1959 an der [zweiten documenta](https://de.wikipedia.org/wiki/Documenta_II) in Kassel teil. 1960 wurde er Professor für Malerei in Nürnberg.
 
 Die Grafik ist auf 1958 datiert und zeigt eine abstrakte Stadtlandschaft.
-

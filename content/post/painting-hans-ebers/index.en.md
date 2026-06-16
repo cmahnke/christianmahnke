@@ -4,6 +4,7 @@ title: 'Gemälde von Hans Ebers (1924-1970)'
 tags:
   - Art
   - Painting
+  - _ArtCollection
 preview: img/painting.jpg
 outputs:
   - bibtex
@@ -16,7 +17,7 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1965
-  style: 
+  style:
     - http://vocab.getty.edu/aat/300022099
 wikidata:
   - https://www.wikidata.org/wiki/Q1579261
@@ -33,7 +34,7 @@ For my [new living room](/post/living-room/), I bought a painting by [Hans Ebers
 ]
 {{</ gallery >}}
 
-Hans Ebers studied at the Werkkunstschule Hannover, amongst other places. In 1956, he moved to Hanover, where he worked as a lecturer at the adult education centre from 1957 to 1969. 
+Hans Ebers studied at the Werkkunstschule Hannover, amongst other places. In 1956, he moved to Hanover, where he worked as a lecturer at the adult education centre from 1957 to 1969.
 
 To mark an exhibition at Langenhagen Town Hall in 2012, a [short film about Hans Ebers](https://vimeo.com/malteebers/hansebers) was also produced.
 

@@ -4,6 +4,7 @@ title: '"Liebespaar" von Max Westhäuser (1885-1956)'
 tags:
   - Art
   - WoodblockPrint
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -14,7 +15,7 @@ linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q112821333
   title: Liebespaar
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q112821333
   - https://www.wikidata.org/wiki/Q131787286
   - https://www.wikidata.org/wiki/Q188675

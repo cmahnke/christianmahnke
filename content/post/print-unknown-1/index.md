@@ -5,6 +5,7 @@ tags:
   - Art
   - Serigraphy
   - UnknownArtist
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -16,7 +17,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1969
   description: 'Popart Siebdruck von 1969'
-  style: 
+  style:
     - http://vocab.getty.edu/aat/300022205
 wikidata:
   - https://www.wikidata.org/wiki/Q134147
@@ -33,5 +34,5 @@ Für mein neues Büro habe ich einen Siebdruck aus unbekannter Urheberschaft bei
 ]
 {{</ gallery >}}
 
-Besonders hat mir die Kombination aus Pink und Silber gefallen, nun brauch ich nur noch einen pinken Rahmen. 
+Besonders hat mir die Kombination aus Pink und Silber gefallen, nun brauch ich nur noch einen pinken Rahmen.
 Das bild zegt die Zuführungsdrähteund den Haltestab einer abtrahierten Glühbirne. Der Drunk ist auf 1969 datiert.

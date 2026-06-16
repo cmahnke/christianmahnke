@@ -5,6 +5,7 @@ tags:
   - Art
   - WoodblockPrint
   - UnknownArtist
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -12,6 +13,8 @@ outputs:
   - linkedart
   - pdf-article
 linkedart:
+  artist:
+    name: Jos. Winkelmann
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   title: Am Hang

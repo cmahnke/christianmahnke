@@ -5,6 +5,7 @@ keywords: Erich Zimmer, Göttingen
 tags:
   - Art
   - WoodblockPrint
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -14,7 +15,7 @@ outputs:
 linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q95259741
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q95259741
   - https://www.wikidata.org/wiki/Q133742956
   - https://www.wikidata.org/wiki/Q130763950

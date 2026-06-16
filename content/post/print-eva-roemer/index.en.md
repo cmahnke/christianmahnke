@@ -5,6 +5,7 @@ keywords: Eva Roemer, Göttingen
 tags:
   - Art
   - WoodblockPrint
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -16,7 +17,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q94743711
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q94743711
   - https://www.wikidata.org/wiki/Q133742956
   - https://www.wikidata.org/wiki/Q137661693

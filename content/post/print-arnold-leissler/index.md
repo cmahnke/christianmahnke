@@ -5,6 +5,7 @@ keywords: Arnold Leissler der Jüngere
 tags:
   - Art
   - Etching
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

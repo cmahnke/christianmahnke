@@ -4,6 +4,7 @@ title: 'Woodblock print "Dresden um 1900" by Erich Buchwald-Zinnwald (1884-1972)
 tags:
   - Art
   - WoodblockPrint
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

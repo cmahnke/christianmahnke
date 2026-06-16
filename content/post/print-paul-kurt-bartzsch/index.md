@@ -6,6 +6,7 @@ tags:
   - Art
   - WoodblockPrint
   - Alps
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

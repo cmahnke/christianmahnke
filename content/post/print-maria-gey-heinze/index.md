@@ -4,6 +4,7 @@ title: 'Radierung von Marie Gey-Heinze (1881-1908)'
 tags:
   - Art
   - Etching
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -15,7 +16,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q1449047
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q1449047
   - https://www.wikidata.org/wiki/Q27557512
   - https://www.wikidata.org/wiki/Q157229

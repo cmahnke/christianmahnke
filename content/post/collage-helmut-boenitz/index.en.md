@@ -4,6 +4,7 @@ title: 'Collage by Helmut Bönitz (1914-1999)'
 tags:
   - Art
   - Collage
+  - _ArtCollection
 preview: img/collage.jpg
 outputs:
   - bibtex

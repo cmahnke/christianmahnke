@@ -4,6 +4,7 @@ title: 'Radierung von Rolf Escher (*1936)'
 tags:
   - Art
   - Etching
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -15,7 +16,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q2163368
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q2163368
   - https://www.wikidata.org/wiki/Q188675
   - https://www.wikidata.org/wiki/Q564783

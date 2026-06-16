@@ -4,6 +4,7 @@ title: 'Etching by Kurt Mühlenhaupt (1921-2006)'
 tags:
   - Art
   - Etching
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -16,7 +17,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q1793892
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q1793892
   - https://www.wikidata.org/wiki/Q780
   - https://www.wikidata.org/wiki/Q188675

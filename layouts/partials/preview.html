@@ -1,0 +1,30 @@
+{{- $previewWidth :=  slice "1280" "640" "320" -}}
+{{- with .Params.preview -}}
+  {{- $src := . -}}
+  {{- $class := "" -}}
+  {{- $hide := false -}}
+  {{- if reflect.IsMap . -}}
+    {{- $src = index . "image" -}}
+    {{- $class = index . "class" -}}
+    {{- if and (isset . "hide") (eq (index . "hide") true) -}}
+      {{- $hide = true -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if eq $hide false -}}
+    <div class="post-preview">
+      <picture>
+        {{- range $previewWidth -}}
+          {{- $imgRes := $.Page.Resources.Get $src -}}
+          {{- if eq $imgRes nil -}}
+            {{- errorf "[partials/li.html] Preview image %s missing for %s" $src $.RelPermalink -}}
+          {{- end -}}
+          <source media="(min-width:{{ . }}px)" srcset="{{ ($imgRes.Resize (printf "%sx webp picture" .)).RelPermalink }}">
+        {{- end -}}
+        {{- $imgRes := $.Page.Resources.Get $src -}}
+        <a title="{{ $.Title}}" href="{{ $.RelPermalink }}">
+          <img src="{{ ($imgRes.Resize (printf "%sx webp picture" "1280")).RelPermalink }}" alt="{{ $.Title }}" {{ if ne $class "" }}class="{{ $class }}"{{ end }} />
+        </a>
+      </picture>
+    </div>
+  {{- end -}}
+{{- end -}}

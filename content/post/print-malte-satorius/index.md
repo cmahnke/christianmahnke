@@ -9,6 +9,7 @@ tags:
   - Art
   - Linocut
   - Christmas
+  - _ArtCollection
 preview: front/full/full/0/default.jpg
 outputs:
   - bibtex
@@ -24,7 +25,7 @@ linkedart:
       - back/info.json
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q21014973
   - https://www.wikidata.org/wiki/Q2349238
 lastmod: 2025-06-04T00:00:00+02:00

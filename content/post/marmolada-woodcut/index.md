@@ -13,6 +13,7 @@ tags:
   - Blender
   - UnknownArtist
   - Visualisation
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

@@ -4,6 +4,7 @@ title: 'Gemälde von Hans Ebers (1924-1970)'
 tags:
   - Art
   - Painting
+  - _ArtCollection
 preview: img/painting.jpg
 outputs:
   - bibtex
@@ -16,7 +17,7 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1965
-  style: 
+  style:
     - http://vocab.getty.edu/aat/300022099
 wikidata:
   - https://www.wikidata.org/wiki/Q1579261
@@ -33,7 +34,7 @@ Für mein [neues Wohnzimmer](/post/living-room/) habe ich ein Gemälde von [Hans
 ]
 {{</ gallery >}}
 
-Hans Ebers studierte unter anderem an der Werkkunstschule Hannover. 1956 zog er nach Hannover, wo er von 1957 bis 1969 als Dozent an der Volkshochschule tätig war. 
+Hans Ebers studierte unter anderem an der Werkkunstschule Hannover. 1956 zog er nach Hannover, wo er von 1957 bis 1969 als Dozent an der Volkshochschule tätig war.
 
 Anlässlich  einer Ausstellung im Rathaus Langenhagen im Jahr 2012 fand eine Ausstellung entstand auch [in kurzer Film über Hans Ebers](https://vimeo.com/malteebers/hansebers).
 

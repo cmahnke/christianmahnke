@@ -7,6 +7,7 @@ tags:
   - Art
   - Painting
   - ArtBrut
+  - _ArtCollection
 preview: img/fronts.jpg
 outputs:
   - bibtex

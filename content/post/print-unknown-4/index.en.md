@@ -5,6 +5,7 @@ tags:
   - Art
   - WoodblockPrint
   - UnknownArtist
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

@@ -4,6 +4,7 @@ title: 'Lithograph "Marine" by Georges Braque (1882–1963)'
 tags:
   - Art
   - Lithography
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -20,7 +21,7 @@ linkedart:
   references:
     - label: "Vallier, Dora, and Georges Braque. 1982. Braque : L’oeuvre Gravé : Catalogue Raisonné. [Paris]: Flammarion."
       content: Seite 293, Maeght, No. 1013
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q153793
   - https://www.wikidata.org/wiki/Q325242
   - https://www.wikidata.org/wiki/Q1200356
@@ -41,7 +42,7 @@ I’ve found a lithograph by [Georges Braque](https://de.wikipedia.org/wiki/Geor
 
 Georges Braque is regarded, alongside Picasso, as a co-founder of Cubism (c. 1908), a movement in which objects are radically broken down into geometric forms and thus abstracted. From 1912 onwards, he produced works using the collage technique (papiers collés), which was adopted by a wide range of artists in the decades that followed.
 
-His late work emerged after the Second World War, and it was particularly his minimalist bird motifs that became famous. 
+His late work emerged after the Second World War, and it was particularly his minimalist bird motifs that became famous.
 
 Another subject of these years was fishing boats on the Normandy coast (around Varengeville-sur-Mer), a theme to which this print also belongs.
 

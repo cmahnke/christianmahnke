@@ -4,6 +4,7 @@ title: 'Radierung von Kurt Mühlenhaupt (1921-2006)'
 tags:
   - Art
   - Etching
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

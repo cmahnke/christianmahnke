@@ -5,6 +5,7 @@ tags:
   - Art
   - Etching
   - Göttingen
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -17,7 +18,7 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1976
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q94634912
   - https://www.wikidata.org/wiki/Q133742956
   - https://www.wikidata.org/wiki/Q130763950
@@ -40,6 +41,3 @@ Helmut Bönitz (1914–1999) was an artist from Göttingen, which is why he can 
 The etching is dated 1976 and shows the [Jacobi Church](https://de.wikipedia.org/wiki/St._Jacobi_(G%C3%B6ttingen)) (in German) in Göttingen in the top left-hand corner; it is signed and dated directly on the plate. Although it is difficult to make out in the image, the print was produced using several plates, giving it the appearance of a comic strip with individual panels.
 
 The letter "b" between the towers refers to the famous [engraving of the city by Matthäus Merian from 1654](https://de.wikivoyage.org/wiki/Datei:Merian_1654_goettingen.jpg).
-
-
-

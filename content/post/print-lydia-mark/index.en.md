@@ -4,6 +4,7 @@ title: 'Etching "Lillehaldjas" by Lüüdia Vallimäe-Mark (1925-2004)'
 tags:
   - Art
   - Etching
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex

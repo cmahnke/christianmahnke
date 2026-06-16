@@ -5,6 +5,7 @@ keywords: Elsa Hoppe, Göttingen
 tags:
   - Art
   - Linocut
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -16,7 +17,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q63485369
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q63485369
   - https://www.wikidata.org/wiki/Q2360104
   - https://www.wikidata.org/wiki/Q133742956

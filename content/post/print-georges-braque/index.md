@@ -4,6 +4,7 @@ title: 'Lithographie "Marine" von Georges Braque (1882-1963)'
 tags:
   - Art
   - Lithography
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -20,7 +21,7 @@ linkedart:
   references:
     - label: "Vallier, Dora, und Georges Braque. 1982. Braque : L’oeuvre Gravé : Catalogue Raisonné. [Paris]: Flammarion."
       content: Seite 293, Maeght, No. 1013
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q153793
   - https://www.wikidata.org/wiki/Q325242
   - https://www.wikidata.org/wiki/Q1200356
@@ -42,7 +43,7 @@ Ich habe einen Lithographie von [Georges Braque](https://de.wikipedia.org/wiki/G
 
 Georges Braque gilt zusammen mit Picasso als Miterfinder des Kubismus (ca. 1908), bei dem Objekte radikal in geometrische Formen zerlegt und somit abstrahiert werden. Ab 1912 fertigte er Werke in der Collage-Technik (Papiers collés), die in den folgenden Jahrzehnten von einer Vielzahl von Künstlern verwendet wurde.
 
-Nach dem Zweiten Weltkrieg entstand sein Spätwerk, aus dem besonders seine reduzierten Vogelmotive bekannt wurden. 
+Nach dem Zweiten Weltkrieg entstand sein Spätwerk, aus dem besonders seine reduzierten Vogelmotive bekannt wurden.
 
 Ein weiteres Sujet dieser Jahre waren Fischboote an der Küste der Normandie (bei Varengeville-sur-Mer), zu denen auch diese Grafik zählt.
 

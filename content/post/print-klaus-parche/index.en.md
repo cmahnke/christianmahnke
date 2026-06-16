@@ -5,6 +5,7 @@ keywords: Klaus Parche
 tags:
   - Art
   - Etching
+  - _ArtCollection
 preview: img/print.jpg
 outputs:
   - bibtex
