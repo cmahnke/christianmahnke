@@ -1,0 +1,51 @@
+.content-container.art-collection {
+  .posts {
+
+    a:before,
+    a:after {
+      content: unset;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .artist-header {
+
+    }
+
+    .post {
+      margin-top: unset;
+
+      .post-body {
+        .post-preview {
+          position: relative;
+          display: block;
+          margin: unset;
+
+          picture {
+            width: fit-content;
+            display: block;
+          }
+
+          .sub-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: .6rem 2rem;
+            background: rgb(255 255 255 / 50%);
+          }
+        }
+
+        .post-summary {
+
+        }
+      }
+    }
+
+
+  }
+
+}

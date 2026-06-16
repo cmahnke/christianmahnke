@@ -6,6 +6,8 @@ archive: false
 news: false
 sectionContent: false
 layout: art-collection
+js:
+  - ts/art-collection.ts
 cascade:
   - _target:
       kind: '{page,section}'
