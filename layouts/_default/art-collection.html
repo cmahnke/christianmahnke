@@ -70,7 +70,6 @@
 
     {{- with .Params.linkedart -}}
       {{- with .artist -}}
-
         {{- $name := dict -}}
         {{- with .wikidata -}}
           {{- $name = partialCached "metadata/wikidata/person.html" (dict "uri" .) . -}}
@@ -144,7 +143,7 @@
           {{- $title := "" -}}
           {{- with $page.Params.linkedart -}}
             {{- with .title -}}
-              {{- $title = . -}}
+              {{- $title = printf `"%s"` . | markdownify -}}
             {{- end -}}
           {{- end -}}
 
