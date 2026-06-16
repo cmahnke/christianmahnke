@@ -1,5 +1,27 @@
-{{- $previewWidth :=  slice "1280" "640" "320" -}}
-{{- with .Params.preview -}}
+{{- $previewWidth := slice "1280" "640" "320" -}}
+
+{{- /* Context ermitteln: explizit via .ctx oder implizit */ -}}
+{{- $ctx := . -}}
+{{- $additional := "" -}}
+{{- if reflect.IsMap . -}}
+  {{- with .ctx -}}
+    {{- $ctx = . -}}
+  {{- end -}}
+  {{- with .additional -}}
+    {{- $additional = . -}}
+  {{- else -}}
+    {{- errorf "[preview.html] Called with dict but without additional text, use the normal calling convention instead in %s" .RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $params := $ctx.Params.preview -}}
+{{- if reflect.IsMap . -}}
+  {{- with .preview -}}
+    {{- $params = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with $params -}}
   {{- $src := . -}}
   {{- $class := "" -}}
   {{- $hide := false -}}
@@ -12,19 +34,21 @@
   {{- end -}}
   {{- if eq $hide false -}}
     <div class="post-preview">
-      <picture>
+      {{- $imgRes := $ctx.Resources.Get $src -}}
+      <picture data-height="{{ $imgRes.Height }}" data-width="{{ $imgRes.Width }}" {{ with $imgRes.Exif.Tags.XResolution }}data-resolution="{{ . }}"{{ end }}>
         {{- range $previewWidth -}}
-          {{- $imgRes := $.Page.Resources.Get $src -}}
+          {{- $imgRes := $ctx.Resources.Get $src -}}
           {{- if eq $imgRes nil -}}
-            {{- errorf "[partials/li.html] Preview image %s missing for %s" $src $.RelPermalink -}}
+            {{- errorf "[preview.html] Preview image %s missing for %s" $src $ctx.RelPermalink -}}
           {{- end -}}
           <source media="(min-width:{{ . }}px)" srcset="{{ ($imgRes.Resize (printf "%sx webp picture" .)).RelPermalink }}">
         {{- end -}}
-        {{- $imgRes := $.Page.Resources.Get $src -}}
-        <a title="{{ $.Title}}" href="{{ $.RelPermalink }}">
-          <img src="{{ ($imgRes.Resize (printf "%sx webp picture" "1280")).RelPermalink }}" alt="{{ $.Title }}" {{ if ne $class "" }}class="{{ $class }}"{{ end }} />
+
+        <a title="{{ $ctx.Title }}" href="{{ $ctx.RelPermalink }}">
+          <img src="{{ ($imgRes.Resize (printf "%sx webp picture" "1280")).RelPermalink }}" alt="{{ $ctx.Title }}" {{ if ne $class "" }}class="{{ $class }}"{{ end }} />
         </a>
       </picture>
+      {{- $additional | safeHTML -}}
     </div>
   {{- end -}}
 {{- end -}}

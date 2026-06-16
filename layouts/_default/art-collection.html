@@ -7,6 +7,8 @@
 {{- end }}
 
 {{ define "content" }}
+  {{- $ignoreTags := slice "Art" "Christmas" "ClimateChange" "Visualisation" "ArtBrut" -}}
+  {{- $labelLangs := slice "de" "en" -}}
   {{- $postSection := "post" -}}
 
   {{- partial "header.html" . -}}
@@ -19,11 +21,52 @@
 
   {{- $artPosts := where $posts ".Params.tags" "intersect" (slice "_ArtCollection") -}}
 
+  {{- $tagsWikidata := dict -}}
+
   {{- $sortable := slice -}}
   {{- range $artPosts -}}
     {{- $page       := . -}}
     {{- $sortKey    := "zzz_unknown" -}}
     {{- $artistName := i18n "UnknownArtist" -}}
+    {{- $technique  := "" -}}
+
+    {{- if not .Params.linkedart -}}
+      {{- errorf "[art-collection.html] No LinkedArt metadata for %s" $page.RelPermalink -}}
+    {{- end -}}
+    {{- if not .Params.preview -}}
+      {{- errorf "[art-collection.html] No preview image for %s" $page.RelPermalink -}}
+    {{- end -}}
+
+    {{- range $tag := .Params.tags -}}
+      {{- if and (ne $tag "") (not (in $ignoreTags $tag)) -}}
+        {{- if isset $tagsWikidata $tag -}}
+          {{- continue -}}
+        {{- end -}}
+        {{- $tagUrl := printf "%s%s" ("tags/" | relLangURL) ($tag | urlize) -}}
+        {{- with $.Site.GetPage $tagUrl -}}
+          {{- if .Params.wikidata -}}
+            {{- if not (reflect.IsSlice .Params.wikidata) -}}
+              {{- $wikidataURL := .Params.wikidata -}}
+              {{- $wikidataID := replaceRE `^.*/([^/]+)$` "$1" $wikidataURL -}}
+              {{- $url := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $wikidataID -}}
+              {{- with resources.GetRemote $url -}}
+                {{- with .Content | transform.Unmarshal -}}
+                  {{- $entity := index .entities $wikidataID -}}
+                  {{/* P1014 : Getty AAT-ID Property */}}
+                  {{- $aatClaims := index $entity.claims "P1014" -}}
+                  {{- if $aatClaims -}}
+                    {{- $technique = i18n $tag -}}
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            {{- else -}}
+              {{- errorf "[art-collection.html] Got a tag with multile URIs %s" .RelPermalink -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+
 
     {{- with .Params.linkedart -}}
       {{- with .artist -}}
@@ -46,12 +89,8 @@
         {{- end -}}
 
         {{- if and $name (not $name.error) -}}
-          {{- $sortKey = printf "%s %s" $name.lastName $name.firstName | lower | strings.TrimRight " " -}}
-          {{- if and $name.lastName $name.firstName -}}
-            {{- $artistName = printf "%s, %s" $name.lastName $name.firstName -}}
-          {{- else if $name.fullName -}}
-            {{- $artistName = $name.fullName -}}
-          {{- end -}}
+          {{- $sortKey = printf "%s, %s" $name.lastName $name.firstName | strings.TrimRight " " -}}
+          {{- $artistName = $name.fullName -}}
         {{- end -}}
 
       {{- end -}}
@@ -61,22 +100,20 @@
         "page"       $page
         "sortKey"    $sortKey
         "artistName" $artistName
+        "technique"  $technique
     ) -}}
   {{- end -}}
 
-  {{/* Sort and keep artistName attached to each page */}}
   {{- $sorted := sort $sortable "sortKey" "asc" -}}
 
-  {{/*
-    Build $sortedItems as slice of { page, artistName } — single source
-    of truth for both pagination and headings. Name is NOT resolved again.
-  */}}
   {{- $sortedItems := slice -}}
   {{- $sortedPages := slice -}}
   {{- range $sorted -}}
     {{- $sortedItems = $sortedItems | append (dict
         "page"       .page
         "artistName" .artistName
+        "sortKey"    .sortKey
+        "technique"  .technique
     ) -}}
     {{- $sortedPages = $sortedPages | append .page -}}
   {{- end -}}
@@ -93,11 +130,6 @@
         </div>
       </div>
 
-      {{/*
-        Derive page size from the first pager which always has a full page.
-        This avoids relying on site.Config.Pagination.PagerSize which is
-        not always available depending on Hugo version.
-      */}}
       {{- $pageSize := (index $paginator.Pagers 0).NumberOfElements -}}
       {{- $offset   := mul (sub $paginator.PageNumber 1) $pageSize -}}
 
@@ -105,22 +137,26 @@
       <div class="posts">
         {{- range $i, $page := $paginator.Pages -}}
 
-          {{/* Look up artistName from $sortedItems using absolute index */}}
           {{- $item       := index $sortedItems (add $offset $i) -}}
           {{- $artistName := $item.artistName -}}
+          {{- $artistNameHeading := $item.sortKey -}}
+          {{- $technique := $item.technique -}}
+          {{- $title := "" -}}
+          {{- with $page.Params.linkedart -}}
+            {{- with .title -}}
+              {{- $title = . -}}
+            {{- end -}}
+          {{- end -}}
+
+          {{- if eq $title "" -}}
+            {{- $title = $technique -}}
+          {{- end -}}
 
           {{- if ne $artistName $lastArtist -}}
             <h2 class="artist-header" id="{{ $artistName | urlize }}">
-              {{- $artistName -}}
+              {{- $artistNameHeading -}}
             </h2>
             {{- $lastArtist = $artistName -}}
-          {{- end -}}
-
-          {{- if not $page.Params.linkedart -}}
-            {{- errorf "[art-collection.html] No LinkedArt metadata for %s" $page.RelPermalink -}}
-          {{- end -}}
-          {{- if not $page.Params.preview -}}
-            {{- errorf "[art-collection.html] No preview image for %s" $page.RelPermalink -}}
           {{- end -}}
 
           <div class="post">
@@ -130,14 +166,16 @@
               </a>
             </h3>
             <div class="post-body">
-              <div class="post-preview">
-                {{- partialCached "preview.html" $page $page.RelPermalink -}}
-                {{- with $page.Summary -}}
+              {{- $subtitle := printf "%s %s %s" $title (i18n "By") $artistName -}}
+              {{- partial "preview.html" (dict "ctx" $page "additional" (printf `<div class="sub-title">%s</div>` $subtitle))  -}}
+
+              {{- with $page.Summary -}}
+                <div class="post-summary">
                   <a href="{{ $page.Permalink }}">
-                    <p>{{ . }}</p>
+                    <p>{{ . | replaceRE "<a[^>]*>(.*?)</a>" "$1" | replaceRE "<p></p>" "" | safeHTML }}</p>
                   </a>
-                {{- end -}}
-              </div>
+                </div>
+              {{- end -}}
             </div>
           </div>
 

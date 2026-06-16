@@ -5,6 +5,7 @@ tags:
   - Art
   - Retrocomputing
   - UnknownArtist
+  - ComputerArt
   - _ArtCollection
 preview: img/print.jpg
 outputs:
