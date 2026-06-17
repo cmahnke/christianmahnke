@@ -22,7 +22,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q564783
 ---
 
-Nachdem mein [Wohnzimmer](/post/living-room/) nun langsam zur Bibliothek wird, habe eine passende Radierug von [Rolf Escher](https://de.wikipedia.org/wiki/Rolf_Escher) (*1936) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/rolf-escher-2/)) gefunden...
+Nachdem mein [Wohnzimmer](/post/living-room/) nun langsam zur Bibliothek wird, habe eine passende Radierung von [Rolf Escher](https://de.wikipedia.org/wiki/Rolf_Escher) (*1936) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/rolf-escher-2/)) gefunden...
 <!--more-->
 
 {{< gallery >}}

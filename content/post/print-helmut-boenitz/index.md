@@ -1,6 +1,6 @@
 ---
 date: 2022-02-17T17:57:44+02:00
-title: 'Radierung von Helmut Bönitz'
+title: 'Radierung von Helmut Bönitz (1914-1999)'
 tags:
   - Art
   - Etching
