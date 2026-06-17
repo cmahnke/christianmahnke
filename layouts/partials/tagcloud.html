@@ -7,6 +7,9 @@
     {{- $tags := $.Site.Taxonomies.tags.ByCount -}}
     const tags = [
       {{- range $tags -}}
+        {{- if or (hasPrefix $tag "hidden_") (hasPrefix $tag "_") -}}
+          {{- continue -}}
+        {{- end -}}
         {{- if .Term -}}
           {{- $tagURL := "" -}}
           {{- if eq .Page.File nil -}}
