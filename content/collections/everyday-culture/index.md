@@ -67,7 +67,7 @@ Meine Sammelschwerpunkte liegen im Bereich der Alltagskultur des 20. Jahrhundert
 Ein (unvollständiger) Katalog meiner Bücher ist bei [Librarything](https://www.librarything.com/profile/cmahnke) einsehbar.
 
 ## Kunst
-* Druckgrafik {{< link link="/tags/Art/" class="external-collection" >}}Blog Beiträge{{< /link >}}
+* Hauptsächlich Druckgrafik {{< link link="/art-collection/" class="external-collection" >}}Kunstsammlung{{< /link >}}
 
 ## Medien
 * Tonbänder

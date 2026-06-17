@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 PYTHON=`which python3.13`
 
 if [ -z "$PYTHON" ] ; then

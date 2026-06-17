@@ -98,6 +98,10 @@ $search-border-color-active: #ff073a;
       border-radius: unset;
       background: $search-button-background-color;
 
+      @media (max-width: 44em) {
+        display: none;
+      }
+
       @media (max-width: 35em) {
         margin-left: .4rem;
       }

@@ -152,7 +152,7 @@
           {{- end -}}
 
           {{- if ne $artistName $lastArtist -}}
-            <h2 class="artist-header" id="{{ $artistName | urlize }}">
+            <h2 class="artist-header" id="{{ $artistName | replaceRE "(?i)[äöüß]" "" | anchorize }}">
               {{- $artistNameHeading -}}
             </h2>
             {{- $lastArtist = $artistName -}}

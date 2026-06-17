@@ -26,6 +26,8 @@ files:
     - '404.html'
     - 'post/**/article.html'
     - 'en/post/**/article.html'
+    - 'art-collection/**'
+    - 'en/art-collection/**'
 content:
   ignore:
     - "<meta http-equiv=\"refresh\" content=\"0; url="

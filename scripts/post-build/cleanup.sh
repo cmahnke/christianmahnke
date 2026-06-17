@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 #SEARCH_PATH=docs/{en/post,post}
 SEARCH_PATH="docs/en/post docs/post"
 SEARCH_FILE="index.html"

@@ -453,10 +453,10 @@ function buildGallery(artworks: Artwork[], postsEl: HTMLElement): void {
             width: ${wrapW}px;
             height: ${CONFIG.CAPTION_HEIGHT_PX}px;
             text-align: center;
-            font-size: 11px;
+            font-size: 1.2rem;
             font-style: italic;
             letter-spacing: 0.04em;
-            color: #888;
+            color: #383838;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -464,6 +464,7 @@ function buildGallery(artworks: Artwork[], postsEl: HTMLElement): void {
             margin: 0;
             padding: 0;
             display: block;
+            mix-blend-mode: darken;
           `;
         }
       }
