@@ -1,11 +1,12 @@
 {{/*
-  Usage: {{- $name := partialCached "metadata/wikidata/person.html" (dict "uri" "https://www.wikidata.org/wiki/Q21014973") . -}}
-  Returns dict: firstName, lastName, fullName, qid, error
+  Usage: {{- $name := partialCached "metadata/wikidata/person.html" (dict "uri" "https://www.wikidata.org/wiki/Q76732") . -}}
+  Returns dict: firstName, lastName, fullName, qid, uri, error
 */}}
 
 {{- $uri       := .uri -}}
 {{- $firstName := "" -}}
 {{- $lastName  := "" -}}
+{{- $fullName  := "" -}}
 {{- $error     := "" -}}
 {{- $qid       := "" -}}
 
@@ -18,64 +19,165 @@
 
 {{- if $uri -}}
   {{- $qid = replaceRE `^.*/([^/]+)$` "$1" $uri -}}
-
   {{- $url := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $qid -}}
 
   {{- with resources.GetRemote $url $opts -}}
     {{- with .Content | transform.Unmarshal -}}
       {{- $entity := index .entities $qid -}}
 
-      {{- $givenNameId  := "" -}}
-      {{- $familyNameId := "" -}}
 
-      {{/* P735 = given name, P734 = family name */}}
-      {{- with index $entity.claims "P735" -}}
-        {{- $givenNameId = (index . 0).mainsnak.datavalue.value.id -}}
-      {{- end -}}
-
-      {{- with index $entity.claims "P734" -}}
-        {{- $familyNameId = (index . 0).mainsnak.datavalue.value.id -}}
-      {{- end -}}
-
-      {{- if $givenNameId -}}
-        {{- $nameUrl := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $givenNameId -}}
-        {{- with resources.GetRemote $nameUrl $opts -}}
-          {{- with .Content | transform.Unmarshal -}}
-            {{- $nameEntity := index .entities $givenNameId -}}
-            {{- with index $nameEntity.labels "en" -}}
-              {{- $firstName = .value -}}
-            {{- else -}}
-              {{- with index $nameEntity.labels "de" -}}
-                {{- $firstName = .value -}}
-              {{- end -}}
-            {{- end -}}
+      {{- with index $entity.claims "P1559" -}}
+        {{- range . -}}
+          {{- $lang  := .mainsnak.datavalue.value.language -}}
+          {{- $value := .mainsnak.datavalue.value.text -}}
+          {{- if eq $lang "de" -}}
+            {{- $fullName = $value -}}
+          {{- else if not $fullName -}}
+            {{- $fullName = $value -}}
           {{- end -}}
         {{- end -}}
       {{- end -}}
 
-      {{- if $familyNameId -}}
-        {{- $nameUrl := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $familyNameId -}}
-        {{- with resources.GetRemote $nameUrl $opts -}}
-          {{- with .Content | transform.Unmarshal -}}
-            {{- $nameEntity := index .entities $familyNameId -}}
-            {{- with index $nameEntity.labels "en" -}}
-              {{- $lastName = .value -}}
-            {{- else -}}
-              {{- with index $nameEntity.labels "de" -}}
-                {{- $lastName = .value -}}
-              {{- end -}}
-            {{- end -}}
-          {{- end -}}
-        {{- end -}}
-      {{- end -}}
-
-      {{/* Fallback: use entity label directly if no P734/P735 found */}}
-      {{- if and (not $firstName) (not $lastName) -}}
-        {{- with index $entity.labels "en" -}}
-          {{- $lastName = .value -}}
+      {{/* Fallback fullName: Entity-Label */}}
+      {{- if not $fullName -}}
+        {{- with index $entity.labels "de" -}}
+          {{- $fullName = .value -}}
         {{- else -}}
-          {{- with index $entity.labels "de" -}}
-            {{- $lastName = .value -}}
+          {{- with index $entity.labels "en" -}}
+            {{- $fullName = .value -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+
+      {{- with index $entity.claims "P735" -}}
+        {{- $entries := slice -}}
+
+        {{- range . -}}
+          {{- $id      := .mainsnak.datavalue.value.id -}}
+          {{- $ordinal := 9999 -}}
+
+          {{- with .qualifiers -}}
+            {{- with index . "P1545" -}}
+              {{- with index . 0 -}}
+                {{- $ordinal = int .datavalue.value -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+
+          {{- if $id -}}
+            {{- $nameUrl := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $id -}}
+            {{- with resources.GetRemote $nameUrl $opts -}}
+              {{- with .Content | transform.Unmarshal -}}
+                {{- $nameEntity := index .entities $id -}}
+                {{- $label := "" -}}
+                {{- with index $nameEntity.labels "de" -}}
+                  {{- $label = .value -}}
+                {{- else -}}
+                  {{- with index $nameEntity.labels "en" -}}
+                    {{- $label = .value -}}
+                  {{- end -}}
+                {{- end -}}
+                {{- if $label -}}
+                  {{- $entries = $entries | append (dict "ordinal" $ordinal "label" $label) -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- $parts := slice -}}
+        {{- range sort $entries "ordinal" "asc" -}}
+          {{- $parts = $parts | append .label -}}
+        {{- end -}}
+        {{- $firstName = delimit $parts " " -}}
+      {{- end -}}
+
+      {{- if and $fullName $firstName -}}
+        {{- $prefix   := printf "%s " $firstName -}}
+        {{- if hasPrefix $fullName $prefix -}}
+          {{- $lastName = strings.TrimPrefix $prefix $fullName -}}
+        {{- else -}}
+          {{/* firstName stimmt nicht mit fullName überein (z.B. andere Sprache) */}}
+          {{/* Fallback: P734-Labels direkt holen */}}
+          {{- with index $entity.claims "P734" -}}
+            {{- $entries := slice -}}
+            {{- range . -}}
+              {{- $id      := .mainsnak.datavalue.value.id -}}
+              {{- $ordinal := 9999 -}}
+              {{- with .qualifiers -}}
+                {{- with index . "P1545" -}}
+                  {{- with index . 0 -}}
+                    {{- $ordinal = int .datavalue.value -}}
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+              {{- if $id -}}
+                {{- $nameUrl := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $id -}}
+                {{- with resources.GetRemote $nameUrl $opts -}}
+                  {{- with .Content | transform.Unmarshal -}}
+                    {{- $nameEntity := index .entities $id -}}
+                    {{- $label := "" -}}
+                    {{- with index $nameEntity.labels "de" -}}
+                      {{- $label = .value -}}
+                    {{- else -}}
+                      {{- with index $nameEntity.labels "en" -}}
+                        {{- $label = .value -}}
+                      {{- end -}}
+                    {{- end -}}
+                    {{- if $label -}}
+                      {{- $entries = $entries | append (dict "ordinal" $ordinal "label" $label) -}}
+                    {{- end -}}
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+            {{/* Nimm nur den ersten P734-Eintrag (enthält oft den vollen Doppelnamen) */}}
+            {{- with sort $entries "ordinal" "asc" -}}
+              {{- $lastName = (index . 0).label -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+
+      {{- else if $fullName -}}
+        {{- $lastName = $fullName -}}
+
+      {{- else if $firstName -}}
+        {{/* Kein fullName: nur P735 vorhanden, P734 direkt holen */}}
+        {{- with index $entity.claims "P734" -}}
+          {{- $entries := slice -}}
+          {{- range . -}}
+            {{- $id      := .mainsnak.datavalue.value.id -}}
+            {{- $ordinal := 9999 -}}
+            {{- with .qualifiers -}}
+              {{- with index . "P1545" -}}
+                {{- with index . 0 -}}
+                  {{- $ordinal = int .datavalue.value -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+            {{- if $id -}}
+              {{- $nameUrl := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $id -}}
+              {{- with resources.GetRemote $nameUrl $opts -}}
+                {{- with .Content | transform.Unmarshal -}}
+                  {{- $nameEntity := index .entities $id -}}
+                  {{- $label := "" -}}
+                  {{- with index $nameEntity.labels "de" -}}
+                    {{- $label = .value -}}
+                  {{- else -}}
+                    {{- with index $nameEntity.labels "en" -}}
+                      {{- $label = .value -}}
+                    {{- end -}}
+                  {{- end -}}
+                  {{- if $label -}}
+                    {{- $entries = $entries | append (dict "ordinal" $ordinal "label" $label) -}}
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+          {{- with sort $entries "ordinal" "asc" -}}
+            {{- $lastName = (index . 0).label -}}
           {{- end -}}
         {{- end -}}
       {{- end -}}
@@ -92,7 +194,7 @@
 {{- return dict
     "firstName" $firstName
     "lastName"  $lastName
-    "fullName"  (printf "%s %s" $firstName $lastName | strings.TrimSpace)
+    "fullName"  $fullName
     "qid"       $qid
     "uri"       $uri
     "error"     $error

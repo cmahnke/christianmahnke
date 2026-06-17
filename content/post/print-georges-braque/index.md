@@ -13,7 +13,7 @@ outputs:
   - pdf-article
 linkedart:
   artist:
-    wikidata: https://www.wikidata.org/wiki/Q1292698
+    wikidata: https://www.wikidata.org/wiki/Q153793
   owner:
     wikidata: https://www.wikidata.org/wiki/Q153793
   date: 1952
