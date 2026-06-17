@@ -15,6 +15,7 @@ outputs:
 linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q131617370
+  title: Sommerabend in Worpswede
 wikidata:
   - https://www.wikidata.org/wiki/Q131617370
   - https://www.wikidata.org/wiki/Q479361
@@ -35,6 +36,6 @@ I found an colourised etching by [Cornelius Rogge](https://de.wikipedia.org/wiki
 
 Cornelius Rogge was an etcher in the [artists' colony of Dötlingen](https://de.wikipedia.org/wiki/K%C3%BCnstlerkolonie_D%C3%B6tlingen) and from 1922 in [Worpswede](https://de.wikipedia.org/wiki/Worpswede), about 60 kilometres away. His motifs mainly depict the North German landscape and he was the brother of [Emy Rogge](https://de.wikipedia.org/wiki/Emy_Rogge). After working as an export merchant, the period of inflation led him to use his self-taught skills to earn a living as an artist.
 
-The picture shows the entrance and windows of a house on a summer evening in Worpswede.
+The picture shows the entrance and a window of a house; the title is "Summer Evening in Worpswede" (Sommerabend in Worpswede).
 
 The website of the Dötlingen Foundation also has an article about [Cornelius Rogge](http://www.kuenstlerkolonie-doetlingen.de/cornelius-rogge.html).

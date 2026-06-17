@@ -15,6 +15,7 @@ outputs:
 linkedart:
   artist:
     wikidata: https://www.wikidata.org/wiki/Q131617370
+  title: Sommerabend in Worpswede
 wikidata:
   - https://www.wikidata.org/wiki/Q131617370
   - https://www.wikidata.org/wiki/Q479361
@@ -35,6 +36,6 @@ Ich habe eine kolorierte Radierung von [Cornelius Rogge](https://de.wikipedia.or
 
 Cornelius Rogge war ein Radierer der [Künstlerkolonie Dötlingen](https://de.wikipedia.org/wiki/K%C3%BCnstlerkolonie_D%C3%B6tlingen) bzw. ab 1922 im ca. 60 Km entfernten [Worpswede](https://de.wikipedia.org/wiki/Worpswede). Seine Motive zeigen hauptsächlich die norddeutsche Landschaft und war der Bruder von [Emy Rogge](https://de.wikipedia.org/wiki/Emy_Rogge). Nach Tätigkeit als Exportkaufmann, brachte ihn die Inflationszeit dazu seine autodidaktisch erworbenen Fähigkeiten zum Verdienst seine Lebensunterhalts als Künstler einzusetzen.
 
-Das Bild zeigt den Eingang und Fenster eines Hauses an einem Sommerabend in Worpswede.
+Das Bild zeigt den Eingang und Fenster eines Hauses, der Titel ist "Sommerabend in Worpswede".
 
 Die Webseite der Stiftung Dötlingen hat auch einen Artikel über [Cornelius Rogge](http://www.kuenstlerkolonie-doetlingen.de/cornelius-rogge.html).

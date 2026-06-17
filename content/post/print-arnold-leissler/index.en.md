@@ -18,6 +18,7 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   date: 1969
+  title: Landschaft mit Pilaster und Skulptur
 wikidata:
   - https://www.wikidata.org/wiki/Q695684
   - https://www.wikidata.org/wiki/Q1715
