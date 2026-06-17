@@ -7,6 +7,9 @@
     {{- if not (isset .Params "linkedart") -}}
       {{- warnf "[check-post.html] Missing LinkedArt in %s" .RelPermalink -}}
     {{- end -}}
+    {{- if not (in .Params.tags "_ArtCollection") -}}
+      {{- warnf "[check-post.html] Art post is not part of the Art collection in %s" .RelPermalink -}}
+    {{- end -}}
   {{- end -}}
   {{- if not (isset .Params "wikidata") -}}
     {{- warnf "[check-post.html] Missing Wikidata in %s (Section %s)" .RelPermalink .Section -}}

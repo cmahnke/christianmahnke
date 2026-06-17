@@ -6,6 +6,7 @@ tags:
   - Art
   - Watercolor
   - Painting
+  - _ArtCollection
 preview: img/painting.jpg
 outputs:
   - bibtex

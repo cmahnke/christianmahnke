@@ -6,6 +6,7 @@ tags:
   - Art
   - Watercolor
   - Painting
+  - _ArtCollection
 preview: img/painting.jpg
 outputs:
   - bibtex
@@ -17,7 +18,7 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q52150547
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata: 
+wikidata:
   - https://www.wikidata.org/wiki/Q52150547
   - https://www.wikidata.org/wiki/Q41638331
   - https://www.wikidata.org/wiki/Q188675
