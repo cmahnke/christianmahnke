@@ -1,51 +1,119 @@
-.content-container.art-collection {
-  .posts {
+.section-art-collection {
+  position: relative; /* Context for absolute children */
+  width: 100%;
+  min-height: 200px;
+  z-index: 1;
+  /*
+  background: url('/images/art-collection-bg.webp');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 
-    a:before,
-    a:after {
-      content: unset;
+
+  background-image: url('/images/art-collection-bg.webp'), url('/images/art-collection-bg.webp');
+  background-size: 100% 100%, 100% 100%;
+  background-repeat: no-repeat, no-repeat;
+  */
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    z-index: -1; /* Pushes background behind content */
+    background-image: url('/images/art-collection-bg.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  &::before {
+    background-position: top;
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+    transform: rotate(180deg) scaleX(-1);
+    background-position: bottom;
+    margin-top: -1px;
+  }
+
+
+  .content-container.art-collection {
+
+
+    /*
+    max-width: min(96em, 100vw - 20em);
+
+    .section-head {
+      max-width: min(64em, 100vw - 20em);
     }
+    */
 
-    a:hover {
-      text-decoration: none;
-    }
 
-    .artist-header {
+    .section-head {
+      .parallax-bg {
+        background-image: unset;
+      }
 
-    }
+      .section-head-title {
+        color: #31527c;
+        mix-blend-mode: hue;
 
-    .post {
-      margin-top: unset;
-
-      .post-body {
-        .post-preview {
-          position: relative;
-          display: block;
-          margin: unset;
-
-          picture {
-            width: fit-content;
-            display: block;
-          }
-
-          .sub-title {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            padding: .6rem 2rem;
-            background: rgb(255 255 255 / 50%);
-          }
-        }
-
-        .post-summary {
-
+        @media (max-width: 65em) {
+          font-size: 12vw;
         }
       }
     }
 
+    .posts {
+      a:before,
+      a:after {
+        content: unset;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      .artist-header {
+
+      }
+
+      .post {
+        margin-top: unset;
+
+        .post-body {
+          .post-preview {
+            position: relative;
+            display: block;
+            margin: unset;
+
+            picture {
+              width: fit-content;
+              display: block;
+            }
+
+            .sub-title {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              width: 100%;
+              padding: .6rem 2rem;
+              background: rgb(255 255 255 / 50%);
+            }
+          }
+
+          .post-summary {
+
+          }
+        }
+      }
+
+
+    }
 
   }
-
 }
