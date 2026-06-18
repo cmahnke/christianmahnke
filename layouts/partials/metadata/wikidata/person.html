@@ -184,11 +184,16 @@
 
     {{- end -}}
   {{- else -}}
+    {{- errorf "[metadata/wikidata/person.html] Wikidata fetch error for %s" $qid -}}
     {{- $error = printf "Wikidata fetch error for %s" $qid -}}
   {{- end -}}
 
 {{- else -}}
   {{- $error = "No URI provided" -}}
+{{- end -}}
+
+{{- if eq $fullName "" -}}
+  {{- errorf "[metadata/wikidata/person.html] No full name for %s" $qid -}}
 {{- end -}}
 
 {{- return dict

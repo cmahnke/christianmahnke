@@ -23,7 +23,6 @@ wikidata:
   - https://www.wikidata.org/wiki/Q1093499
   - https://www.wikidata.org/wiki/Q165680
   - https://www.wikidata.org/wiki/Q564783
-draft: true
 ---
 
 A lithograph by [Hermann Zapf](https://de.wikipedia.org/wiki/Hermann_Zapf) (1918–2015) from my office...
