@@ -41,11 +41,11 @@ function expandDetails() {
   }
 }
 
-function fitTextToContainer(containerSelector) {
-  const container = document.querySelector(containerSelector);
+function fitTextToContainer(containerSelector, widthSelector) {
+  let container = document.querySelector(containerSelector);
 
   if (!container) {
-    console.warn(`Container not found: ${containerSelector}`);
+    //console.warn(`Container not found: ${containerSelector}`);
     return;
   }
 
@@ -53,14 +53,14 @@ function fitTextToContainer(containerSelector) {
     const result = [];
 
     function walk(node) {
-      for (const child of node.children) {
-        const hasDirectText = Array.from(child.childNodes).some(
-          (n) => n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== ""
-        );
+      const hasDirectText = Array.from(node.childNodes).some(
+        (n) => n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== ""
+      );
 
-        if (hasDirectText) {
-          result.push(child);
-        } else {
+      if (hasDirectText) {
+        result.push(node);
+      } else {
+        for (const child of node.children) {
           walk(child);
         }
       }
@@ -94,6 +94,9 @@ function fitTextToContainer(containerSelector) {
 
   document.fonts.ready.then(() => {
     const textElements = getTextElements(container);
+    if (widthSelector != undefined) {
+       container = document.querySelector(widthSelector);
+    }
 
     if (textElements.length === 0) {
       console.warn(`No text elements found in container: ${containerSelector}`);
@@ -112,7 +115,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     duration: 2000
   });
 
-  fitTextToContainer('.section-head');
+  //fitTextToContainer('.section-head');
+  [['.section-head'], ['.single .post-title', '.content']].forEach((sel) => {
+    fitTextToContainer(...sel)
+  })
 
   //const details = document.querySelectorAll('.inline-collection', 'details');
   expandDetails()
