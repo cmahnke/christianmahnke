@@ -815,6 +815,21 @@ a:visited {
     }
 
     .section-head {
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in;
+      animation-duration: .5s forwards;;
+      animation: fadeInOpacity .5s forwards;
+      opacity: 0;
+
+      @keyframes fadeInOpacity {
+      	0% {
+      		opacity: 0;
+      	}
+      	100% {
+      		opacity: 1;
+      	}
+      }
+
         .section-head-title {
             font-size: 8em;
             font-weight: 800;

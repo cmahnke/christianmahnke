@@ -41,6 +41,69 @@ function expandDetails() {
   }
 }
 
+function fitTextToContainer(containerSelector) {
+  const container = document.querySelector(containerSelector);
+
+  if (!container) {
+    console.warn(`Container not found: ${containerSelector}`);
+    return;
+  }
+
+  function getTextElements(root) {
+    const result = [];
+
+    function walk(node) {
+      for (const child of node.children) {
+        const hasDirectText = Array.from(child.childNodes).some(
+          (n) => n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== ""
+        );
+
+        if (hasDirectText) {
+          result.push(child);
+        } else {
+          walk(child);
+        }
+      }
+    }
+
+    walk(root);
+    return result;
+  }
+
+  function fitElement(el) {
+    const computedStyle = window.getComputedStyle(el);
+    const naturalSize = parseFloat(computedStyle.fontSize);
+    const minFontSize = parseFloat(computedStyle.getPropertyValue("--min-font-size")) || 8;
+    const containerWidth = container.clientWidth;
+
+    const previousWhiteSpace = el.style.whiteSpace;
+    const previousDisplay = el.style.display;
+    el.style.whiteSpace = "nowrap";
+    el.style.display = "inline-block";
+
+    const naturalWidth = el.getBoundingClientRect().width;
+
+    el.style.whiteSpace = previousWhiteSpace;
+    el.style.display = previousDisplay;
+
+    if (naturalWidth <= containerWidth) return;
+
+    const fittedSize = Math.max(naturalSize * (containerWidth / naturalWidth), minFontSize);
+    el.style.fontSize = `${fittedSize}px`;
+  }
+
+  document.fonts.ready.then(() => {
+    const textElements = getTextElements(container);
+
+    if (textElements.length === 0) {
+      console.warn(`No text elements found in container: ${containerSelector}`);
+      return;
+    }
+
+    textElements.forEach((el) => fitElement(el));
+  });
+}
+
 window.addEventListener('DOMContentLoaded', (event) => {
   var elevator = new Elevator({
     mainAudio: '/sounds/elevator.mp3',
@@ -48,6 +111,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     element: document.querySelector('.backToTop'),
     duration: 2000
   });
+
+  fitTextToContainer('.section-head');
 
   //const details = document.querySelectorAll('.inline-collection', 'details');
   expandDetails()
