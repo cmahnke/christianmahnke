@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout projektemacher-base repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: cmahnke/projektemacher-base
           ref: main
