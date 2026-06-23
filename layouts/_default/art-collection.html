@@ -19,11 +19,11 @@
     {{- $posts = ($posts | lang.Merge (where $mainSite.Pages "Section" $postSection)) -}}
   {{- end -}}
 
-  {{- $artPosts := where $posts ".Params.tags" "intersect" (slice "_ArtCollection") -}}
-
   {{- with .Params.filtertag -}}
-    {{- $artPosts := where $artPosts ".Params.tags" "intersect" (slice .) -}}
+    {{- $posts = where $posts ".Params.tags" "intersect" (slice .) -}}
   {{- end -}}
+
+  {{- $artPosts := where $posts ".Params.tags" "intersect" (slice "_ArtCollection") -}}
 
   {{- $tagsWikidata := dict -}}
 
@@ -128,7 +128,11 @@
       <div class="content-container art-collection">
         <div class="section-head">
           <div class="parallax-bg">
-            <h1 class="post-section section-head-title">{{ .Title }}</h1>
+            {{- $pageTitle := .Title -}}
+            {{- if and .Parent .Params.filtertag -}}
+              {{- $pageTitle = printf "%s: %s" .Parent.Title $pageTitle -}}
+            {{- end -}}
+            <h1 class="post-section section-head-title">{{ $pageTitle }}</h1>
           </div>
           <div class="post-section section-head-content">
             {{- .Content -}}
@@ -146,7 +150,9 @@
             {{- $artistName := $item.artistName -}}
             {{- $id := $artistName | replaceRE "(?i)[äöüß]" "" | anchorize -}}
             {{- $artistNameHeading := $item.sortKey -}}
-            {{- $artists = $artists | append (dict "id" $id "artist" $artistName "artistNameHeading" $artistNameHeading) -}}
+            {{- if eq $artistNameHeading "zzz_unknown" -}}
+              {{- $artistNameHeading = i18n "UnknownArtist" -}}
+            {{- end -}}
             {{- $technique := $item.technique -}}
             {{- $title := "" -}}
             {{- with $page.Params.linkedart -}}
@@ -160,6 +166,7 @@
             {{- end -}}
 
             {{- if ne $artistName $lastArtist -}}
+              {{- $artists = $artists | append (dict "id" $id "artist" $artistName "artistNameHeading" $artistNameHeading) -}}
               <h2 class="artist-header" id="{{ $id }}">
                 {{- $artistNameHeading -}}
               </h2>
@@ -190,6 +197,7 @@
         </div>
         {{- if len $artists -}}
           <ul class="artists-toc">
+            <div class="toc-header">{{ i18n "toc" }}</div>
             {{- range $artists -}}
               <li><a href="#{{ .id }}">{{ .artistNameHeading }}</li>
             {{- end -}}

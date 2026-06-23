@@ -242,6 +242,7 @@ function extractArtworks(): Artwork[] {
       const img  = pic.querySelector<HTMLImageElement>("img");
       const link = pic.querySelector<HTMLAnchorElement>("a");
       const sub  = postEl.querySelector<HTMLElement>(".sub-title");
+      const id   = postEl.previousElementSibling.getAttribute("id");
       if (!img) return;
 
       result.push({
@@ -253,6 +254,7 @@ function extractArtworks(): Artwork[] {
         imgSrc:      img.src,
         imgAlt:      img.alt,
         subTitle:    sub?.textContent?.trim() ?? "",
+        id:          id,
         postEl,
       });
     });
@@ -407,6 +409,7 @@ function buildGallery(artworks: Artwork[], postsEl: HTMLElement): void {
       const preview = postEl.querySelector<HTMLElement>(".post-preview");
       if (preview) {
         postEl.appendChild(preview);
+        preview.setAttribute("id", aw.id);
         preview.style.cssText = `
           position: absolute;
           top:  ${pad}px;
@@ -497,6 +500,9 @@ function init(): void {
 
   const render = () => buildGallery(artworks, postsEl);
   render();
+
+  document.querySelectorAll<HTMLElement>(".artist-header")
+    .forEach((el) => (el.remove()));
 
   let timer: ReturnType<typeof setTimeout>;
   window.addEventListener("resize", () => {

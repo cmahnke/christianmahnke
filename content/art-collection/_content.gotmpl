@@ -1,19 +1,15 @@
 {{ .EnableAllLanguages }}
 
 {{- $pages := slice -}}
-{{- $tags := slice "WoodblockPrint" "Etching" "Painting" "Serigraphy" "Linocut" "ComputerArt" "Drawing" "Photo" "Lithography" -}}
+{{- $tags := slice "WoodblockPrint" "Etching" "Painting" "Serigraphy" "Linocut" "ComputerArt" "Drawing" "Photo" "Lithography" "Collage" -}}
 
 {{- range $tags -}}
-  {{- $pages = $pages | append (dict "slug" (lower .) "tag" . "title" (i18n .)) -}}
-{{- end -}}
-
-{{- range $pages -}}
   {{- $page := dict
     "kind" "section"
-    "path" .slug
-    "title" .title
+    "path" (lower .)
+    "title" (i18n .)
     "layout" "art-collection"
-    "params" (dict "filtertag" .tag
+    "params" (dict "filtertag" .
                    "js" (slice "ts/art-collection.ts"))
   -}}
   {{- $.AddPage $page -}}

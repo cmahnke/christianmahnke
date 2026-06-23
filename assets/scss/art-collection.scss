@@ -30,6 +30,10 @@
   }
 
 
+  .page-wrapper .main .header .header-spacer {
+    background-image: linear-gradient(#b2444d, #FD3005);
+  }
+
   .content-container.art-collection {
     max-width: min(96em, 100vw - 20em);
 
@@ -63,7 +67,42 @@
     }
 
     .artists-toc {
-      display: none;
+      font-size: 1.2rem;
+      display: flex;
+      list-style-type: none;
+      padding: 1.4em 1.4em 1em 1.4em;
+      border-radius: 1rem;
+      box-shadow: 0 0px 6px #ff5477;
+      margin: 1em;
+      text-justify: none;
+      align-content: center;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #ff5477bb;
+
+      a:before {
+        color: #000;
+        content: '☞ ';
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+      .toc-header {
+        flex-basis: 100%;
+        font-weight: bolder;
+        text-align: center;
+      }
+
+      li {
+        display: inline-block;
+
+        color: rgb(56, 56, 56);
+        mix-blend-mode: darken;
+      }
     }
 
     .posts {
