@@ -16,6 +16,8 @@ cascade:
     params:
       archive: false
       news: false
+      metaPage: true
+      displayinlist: false
       sitemap:
         disable: true
 ---

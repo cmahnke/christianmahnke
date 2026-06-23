@@ -4,7 +4,7 @@
 {{- $tags := slice "WoodblockPrint" "Etching" "Painting" "Serigraphy" "Linocut" "ComputerArt" "Drawing" "Photo" "Lithography" -}}
 
 {{- range $tags -}}
-  {{- $pages = $pages | append (dict "slug" . "tag" . "title" (i18n .)) -}}
+  {{- $pages = $pages | append (dict "slug" (lower .) "tag" . "title" (i18n .)) -}}
 {{- end -}}
 
 {{- range $pages -}}
@@ -18,7 +18,9 @@
     "kind" $kind
     "path" .slug
     "title" .title
-    "params" (dict "filtertag" .tag)
+    "layout" "art-collection"
+    "params" (dict "filtertag" .tag
+                   "js" (slice "ts/art-collection.ts"))
   -}}
   {{- $.AddPage $page -}}
 {{- end -}}

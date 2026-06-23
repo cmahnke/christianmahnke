@@ -11,11 +11,13 @@ js:
 cascade:
   - _target:
       kind: '{page,section}'
-      lang: de
+      lang: en
       path: '**'
     params:
       archive: false
       news: false
+      metaPage: true
+      displayinlist: false
       sitemap:
         disable: true
 ---
