@@ -1,7 +1,6 @@
 {{ .EnableAllLanguages }}
 
 {{- $pages := slice -}}
-{{- $pages = $pages | append (dict "slug" "" "tag" "" "title" (dict "de" "Kunstsammlung" "en" "Art Collection")) -}}
 {{- $tags := slice "WoodblockPrint" "Etching" "Painting" "Serigraphy" "Linocut" "ComputerArt" "Drawing" "Photo" "Lithography" -}}
 
 {{- range $tags -}}
