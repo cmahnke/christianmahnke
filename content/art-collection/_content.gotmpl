@@ -1,0 +1,25 @@
+{{ .EnableAllLanguages }}
+
+{{- $pages := slice -}}
+{{- $pages = $pages | append (dict "slug" "" "tag" "" "title" (dict "de" "Kunstsammlung" "en" "Art Collection")) -}}
+{{- $tags := slice "WoodblockPrint" "Etching" "Painting" "Serigraphy" "Linocut" "ComputerArt" "Drawing" "Photo" "Lithography" -}}
+
+{{- range $tags -}}
+  {{- $pages = $pages | append (dict "slug" . "tag" . "title" (i18n .)) -}}
+{{- end -}}
+
+{{- range $pages -}}
+
+  {{- $kind := "page" -}}
+  {{- if eq .slug "" -}}
+    {{- $kind := "section" -}}
+  {{- end -}}
+
+  {{- $page := dict
+    "kind" $kind
+    "path" .slug
+    "title" .title
+    "params" (dict "filtertag" .tag)
+  -}}
+  {{- $.AddPage $page-}}
+{{- end -}}

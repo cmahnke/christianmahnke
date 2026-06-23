@@ -21,6 +21,10 @@
 
   {{- $artPosts := where $posts ".Params.tags" "intersect" (slice "_ArtCollection") -}}
 
+  {{- with .Params.filtertag -}}
+    {{- $artPosts := where $artPosts ".Params.tags" "intersect" (slice .) -}}
+  {{- end -}}
+
   {{- $tagsWikidata := dict -}}
 
   {{- $sortable := slice -}}
