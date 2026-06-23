@@ -411,10 +411,10 @@ timeout = "180s"
 #  [[HTTPCache.polls]]
 #    disable = true
 #
-#[caches]
-#  [caches.assets]
-#    dir = ':resourceDir/_gen'
-#    maxAge = 604800
-#  [caches.getresource]
-#    dir = ':resourceDir/:project'
-#    maxAge = 604800
+[caches]
+ [caches.assets]
+   dir = ':resourceDir/_gen'
+   maxAge = 604800
+ [caches.getresource]
+   dir = ':resourceDir/:project'
+   maxAge = 604800

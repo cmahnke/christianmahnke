@@ -35,7 +35,7 @@
   {{- if eq $hide false -}}
     <div class="post-preview">
       {{- $imgRes := $ctx.Resources.Get $src -}}
-      <picture data-height="{{ $imgRes.Height }}" data-width="{{ $imgRes.Width }}" {{ with $imgRes.Exif.Tags.XResolution }}data-resolution="{{ . }}"{{ end }}>
+      <picture data-height="{{ $imgRes.Height }}" data-width="{{ $imgRes.Width }}" {{ with $imgRes.Meta.Exif.Tags.XResolution }}data-resolution="{{ . }}"{{ end }}>
         {{- range $previewWidth -}}
           {{- $imgRes := $ctx.Resources.Get $src -}}
           {{- if eq $imgRes nil -}}

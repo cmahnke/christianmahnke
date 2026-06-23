@@ -8,14 +8,8 @@
 {{- end -}}
 
 {{- range $pages -}}
-
-  {{- $kind := "page" -}}
-  {{- if eq .slug "" -}}
-    {{- $kind := "section" -}}
-  {{- end -}}
-
   {{- $page := dict
-    "kind" $kind
+    "kind" "section"
     "path" .slug
     "title" .title
     "layout" "art-collection"

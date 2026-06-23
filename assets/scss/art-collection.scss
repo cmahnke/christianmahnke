@@ -62,6 +62,10 @@
       }
     }
 
+    .artists-toc {
+      display: none;
+    }
+
     .posts {
       a:before,
       a:after {
@@ -106,9 +110,6 @@
           }
         }
       }
-
-
     }
-
   }
 }

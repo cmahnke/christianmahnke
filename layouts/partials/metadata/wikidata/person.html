@@ -1,8 +1,3 @@
-{{/*
-  Usage: {{- $name := partialCached "metadata/wikidata/person.html" (dict "uri" "https://www.wikidata.org/wiki/Q76732") . -}}
-  Returns dict: firstName, lastName, fullName, qid, uri, error
-*/}}
-
 {{- $uri       := .uri -}}
 {{- $firstName := "" -}}
 {{- $lastName  := "" -}}
@@ -10,10 +5,16 @@
 {{- $error     := "" -}}
 {{- $qid       := "" -}}
 
+{{- $agent := "HugoBot/1.0" -}}
+
+{{- with site.Params.useragent -}}
+  {{- $agent := . -}}
+{{- end -}}
+
 {{- $opts := dict
     "headers" (dict
       "Accept"     "application/json"
-      "User-Agent" "HugoBot/1.0"
+      "User-Agent" $agent
     )
 -}}
 
@@ -24,7 +25,6 @@
   {{- with resources.GetRemote $url $opts -}}
     {{- with .Content | transform.Unmarshal -}}
       {{- $entity := index .entities $qid -}}
-
 
       {{- with index $entity.claims "P1559" -}}
         {{- range . -}}
@@ -38,7 +38,6 @@
         {{- end -}}
       {{- end -}}
 
-      {{/* Fallback fullName: Entity-Label */}}
       {{- if not $fullName -}}
         {{- with index $entity.labels "de" -}}
           {{- $fullName = .value -}}
@@ -49,14 +48,12 @@
         {{- end -}}
       {{- end -}}
 
-
+      {{- $firstNameParts := slice -}}
       {{- with index $entity.claims "P735" -}}
         {{- $entries := slice -}}
-
         {{- range . -}}
           {{- $id      := .mainsnak.datavalue.value.id -}}
           {{- $ordinal := 9999 -}}
-
           {{- with .qualifiers -}}
             {{- with index . "P1545" -}}
               {{- with index . 0 -}}
@@ -64,7 +61,6 @@
               {{- end -}}
             {{- end -}}
           {{- end -}}
-
           {{- if $id -}}
             {{- $nameUrl := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $id -}}
             {{- with resources.GetRemote $nameUrl $opts -}}
@@ -85,99 +81,143 @@
             {{- end -}}
           {{- end -}}
         {{- end -}}
-
-        {{- $parts := slice -}}
         {{- range sort $entries "ordinal" "asc" -}}
-          {{- $parts = $parts | append .label -}}
+          {{- $firstNameParts = $firstNameParts | append .label -}}
         {{- end -}}
-        {{- $firstName = delimit $parts " " -}}
+      {{- end -}}
+      {{- if $firstNameParts -}}
+        {{- $firstName = delimit $firstNameParts " " -}}
       {{- end -}}
 
-      {{- if and $fullName $firstName -}}
-        {{- $prefix   := printf "%s " $firstName -}}
-        {{- if hasPrefix $fullName $prefix -}}
-          {{- $lastName = strings.TrimPrefix $prefix $fullName -}}
-        {{- else -}}
-          {{/* firstName stimmt nicht mit fullName überein (z.B. andere Sprache) */}}
-          {{/* Fallback: P734-Labels direkt holen */}}
-          {{- with index $entity.claims "P734" -}}
-            {{- $entries := slice -}}
-            {{- range . -}}
-              {{- $id      := .mainsnak.datavalue.value.id -}}
-              {{- $ordinal := 9999 -}}
-              {{- with .qualifiers -}}
-                {{- with index . "P1545" -}}
-                  {{- with index . 0 -}}
-                    {{- $ordinal = int .datavalue.value -}}
-                  {{- end -}}
-                {{- end -}}
-              {{- end -}}
-              {{- if $id -}}
-                {{- $nameUrl := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $id -}}
-                {{- with resources.GetRemote $nameUrl $opts -}}
-                  {{- with .Content | transform.Unmarshal -}}
-                    {{- $nameEntity := index .entities $id -}}
-                    {{- $label := "" -}}
-                    {{- with index $nameEntity.labels "de" -}}
-                      {{- $label = .value -}}
-                    {{- else -}}
-                      {{- with index $nameEntity.labels "en" -}}
-                        {{- $label = .value -}}
-                      {{- end -}}
-                    {{- end -}}
-                    {{- if $label -}}
-                      {{- $entries = $entries | append (dict "ordinal" $ordinal "label" $label) -}}
-                    {{- end -}}
-                  {{- end -}}
-                {{- end -}}
+      {{- $lastNameParts := slice -}}
+      {{- with index $entity.claims "P734" -}}
+        {{- $entries := slice -}}
+        {{- range . -}}
+          {{- $id      := .mainsnak.datavalue.value.id -}}
+          {{- $ordinal := 9999 -}}
+          {{- with .qualifiers -}}
+            {{- with index . "P1545" -}}
+              {{- with index . 0 -}}
+                {{- $ordinal = int .datavalue.value -}}
               {{- end -}}
             {{- end -}}
-            {{/* Nimm nur den ersten P734-Eintrag (enthält oft den vollen Doppelnamen) */}}
-            {{- with sort $entries "ordinal" "asc" -}}
-              {{- $lastName = (index . 0).label -}}
+          {{- end -}}
+          {{- if $id -}}
+            {{- $nameUrl := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $id -}}
+            {{- with resources.GetRemote $nameUrl $opts -}}
+              {{- with .Content | transform.Unmarshal -}}
+                {{- $nameEntity := index .entities $id -}}
+                {{- $label := "" -}}
+                {{- with index $nameEntity.labels "de" -}}
+                  {{- $label = .value -}}
+                {{- else -}}
+                  {{- with index $nameEntity.labels "en" -}}
+                    {{- $label = .value -}}
+                  {{- end -}}
+                {{- end -}}
+                {{- if $label -}}
+                  {{- $entries = $entries | append (dict "ordinal" $ordinal "label" $label) -}}
+                {{- end -}}
+              {{- end -}}
             {{- end -}}
           {{- end -}}
         {{- end -}}
+        {{- range sort $entries "ordinal" "asc" -}}
+          {{- $lastNameParts = $lastNameParts | append .label -}}
+        {{- end -}}
+      {{- end -}}
 
-      {{- else if $fullName -}}
-        {{- $lastName = $fullName -}}
+      {{- if $lastNameParts -}}
+        {{- if and $fullName $firstName -}}
+          {{- $prefix := printf "%s " $firstName -}}
+          {{- if hasPrefix $fullName $prefix -}}
+            {{- $lastName = strings.TrimPrefix $prefix $fullName -}}
+          {{- end -}}
+        {{- end -}}
 
-      {{- else if $firstName -}}
-        {{/* Kein fullName: nur P735 vorhanden, P734 direkt holen */}}
-        {{- with index $entity.claims "P734" -}}
-          {{- $entries := slice -}}
-          {{- range . -}}
-            {{- $id      := .mainsnak.datavalue.value.id -}}
-            {{- $ordinal := 9999 -}}
-            {{- with .qualifiers -}}
-              {{- with index . "P1545" -}}
-                {{- with index . 0 -}}
-                  {{- $ordinal = int .datavalue.value -}}
-                {{- end -}}
-              {{- end -}}
+        {{- if and $fullName (not $lastName) -}}
+          {{- $remainder := $fullName -}}
+          {{- if $firstName -}}
+            {{- $prefix := printf "%s " $firstName -}}
+            {{- if hasPrefix $remainder $prefix -}}
+              {{- $remainder = strings.TrimPrefix $prefix $remainder -}}
             {{- end -}}
-            {{- if $id -}}
-              {{- $nameUrl := printf "https://www.wikidata.org/wiki/Special:EntityData/%s.json" $id -}}
-              {{- with resources.GetRemote $nameUrl $opts -}}
-                {{- with .Content | transform.Unmarshal -}}
-                  {{- $nameEntity := index .entities $id -}}
-                  {{- $label := "" -}}
-                  {{- with index $nameEntity.labels "de" -}}
-                    {{- $label = .value -}}
-                  {{- else -}}
-                    {{- with index $nameEntity.labels "en" -}}
-                      {{- $label = .value -}}
-                    {{- end -}}
-                  {{- end -}}
-                  {{- if $label -}}
-                    {{- $entries = $entries | append (dict "ordinal" $ordinal "label" $label) -}}
-                  {{- end -}}
-                {{- end -}}
+          {{- end -}}
+
+          {{- $anchored  := "" -}}
+          {{- $searchIn  := $remainder -}}
+          {{- $partCount := len $lastNameParts -}}
+
+          {{- range $i, $part := $lastNameParts -}}
+            {{- if eq $i 0 -}}
+              {{- if hasPrefix $searchIn $part -}}
+                {{- $anchored = $part -}}
+                {{- $searchIn = strings.TrimPrefix $part $searchIn -}}
+              {{- else -}}
+                {{- $anchored = "" -}}
+                {{- $searchIn = "" -}}
+              {{- end -}}
+            {{- else if $searchIn -}}
+              {{- $escapedPart := replaceRE `([.\-$$()*+?{}\\|^$])` `\$1` $part -}}
+              {{- $pattern     := printf `^(.*?)%s` $escapedPart -}}
+              {{- $match       := replaceRE $pattern "$1" $searchIn -}}
+              {{- $matchedFull := printf "%s%s" $match $part -}}
+              {{- if and (hasPrefix $searchIn $matchedFull) (ne $searchIn $match) -}}
+                {{- $anchored = printf "%s%s%s" $anchored $match $part -}}
+                {{- $searchIn = strings.TrimPrefix $matchedFull $searchIn -}}
+              {{- else -}}
+                {{- $anchored = "" -}}
+                {{- $searchIn = "" -}}
               {{- end -}}
             {{- end -}}
           {{- end -}}
-          {{- with sort $entries "ordinal" "asc" -}}
-            {{- $lastName = (index . 0).label -}}
+
+          {{- if $anchored -}}
+            {{- $lastName = $anchored -}}
+          {{- else -}}
+            {{- $lastName = delimit $lastNameParts " " -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- if not $lastName -}}
+          {{- $lastName = delimit $lastNameParts " " -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- if $fullName -}}
+        {{- if and $firstName (not $lastName) -}}
+          {{- $prefix := printf "%s " $firstName -}}
+          {{- if hasPrefix $fullName $prefix -}}
+            {{- $lastName = strings.TrimPrefix $prefix $fullName -}}
+          {{- else -}}
+            {{- $parts := split $fullName " " -}}
+            {{- $count := len $parts -}}
+            {{- if ge $count 2 -}}
+              {{- $lastName = index $parts (sub $count 1) -}}
+            {{- end -}}
+          {{- end -}}
+
+        {{- else if and $lastName (not $firstName) -}}
+          {{- $suffix := printf " %s" $lastName -}}
+          {{- if hasSuffix $fullName $suffix -}}
+            {{- $firstName = strings.TrimSuffix $suffix $fullName -}}
+          {{- else -}}
+            {{- $parts := split $fullName " " -}}
+            {{- $count := len $parts -}}
+            {{- if ge $count 2 -}}
+              {{- $firstName = delimit (first (sub $count 1) $parts) " " -}}
+            {{- end -}}
+          {{- end -}}
+
+        {{- else if and (not $firstName) (not $lastName) -}}
+          {{- $parts := split $fullName " " -}}
+          {{- $count := len $parts -}}
+          {{- if ge $count 2 -}}
+            {{- $firstName = delimit (first (sub $count 1) $parts) " " -}}
+            {{- $lastName  = index $parts (sub $count 1) -}}
+          {{- else if eq $count 1 -}}
+            {{- $firstName = $fullName -}}
+            {{- $lastName  = $fullName -}}
           {{- end -}}
         {{- end -}}
       {{- end -}}
@@ -194,6 +234,10 @@
 
 {{- if eq $fullName "" -}}
   {{- errorf "[metadata/wikidata/person.html] No full name for %s" $qid -}}
+{{- end -}}
+
+{{- if or (eq $firstName "") (eq $lastName "") -}}
+  {{- errorf "[metadata/wikidata/person.html] First or last name empty for %s (firstName=%q lastName=%q)" $qid $firstName $lastName -}}
 {{- end -}}
 
 {{- return dict

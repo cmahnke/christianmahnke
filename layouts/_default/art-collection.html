@@ -121,93 +121,107 @@
     {{- $sortedPages = $sortedPages | append .page -}}
   {{- end -}}
 
-  {{- $paginator := .Paginate $sortedPages 25 -}}
-  {{- if $paginator.Pages -}}
-    <div class="content-container art-collection">
-      <div class="section-head">
-        <div class="parallax-bg">
-          <h1 class="post-section section-head-title">{{ .Title }}</h1>
-        </div>
-        <div class="post-section section-head-content">
-          {{- .Content -}}
-        </div>
-      </div>
-
-      {{- $pageSize := (index $paginator.Pagers 0).NumberOfElements -}}
-      {{- $offset   := mul (sub $paginator.PageNumber 1) $pageSize -}}
-
-      {{- $lastArtist := "" -}}
-      <div class="posts">
-        {{- range $i, $page := $paginator.Pages -}}
-
-          {{- $item       := index $sortedItems (add $offset $i) -}}
-          {{- $artistName := $item.artistName -}}
-          {{- $artistNameHeading := $item.sortKey -}}
-          {{- $technique := $item.technique -}}
-          {{- $title := "" -}}
-          {{- with $page.Params.linkedart -}}
-            {{- with .title -}}
-              {{- $title = printf `"%s"` . | markdownify -}}
-            {{- end -}}
-          {{- end -}}
-
-          {{- if eq $title "" -}}
-            {{- $title = $technique -}}
-          {{- end -}}
-
-          {{- if ne $artistName $lastArtist -}}
-            <h2 class="artist-header" id="{{ $artistName | replaceRE "(?i)[äöüß]" "" | anchorize }}">
-              {{- $artistNameHeading -}}
-            </h2>
-            {{- $lastArtist = $artistName -}}
-          {{- end -}}
-
-          <div class="post">
-            <h3 class="post-title">
-              <a class="readmore" href="{{ $page.RelPermalink }}" title="{{ i18n "readmore" }}">
-                {{- $page.Title -}}
-              </a>
-            </h3>
-            <div class="post-body">
-              {{- $subtitle := printf "%s %s %s" $title (i18n "By") $artistName -}}
-              {{- partial "preview.html" (dict "ctx" $page "additional" (printf `<div class="sub-title">%s</div>` $subtitle))  -}}
-
-              {{- with $page.Summary -}}
-                <div class="post-summary">
-                  <a href="{{ $page.Permalink }}">
-                    <p>{{ . | replaceRE "<a[^>]*>(.*?)</a>" "$1" | replaceRE "<p></p>" "" | safeHTML }}</p>
-                  </a>
-                </div>
-              {{- end -}}
-            </div>
+  {{- if .Page.IsNode -}}
+    {{- $paginator := .Paginate $sortedPages 25 -}}
+    {{- if $paginator.Pages -}}
+      {{- $artists := slice -}}
+      <div class="content-container art-collection">
+        <div class="section-head">
+          <div class="parallax-bg">
+            <h1 class="post-section section-head-title">{{ .Title }}</h1>
           </div>
+          <div class="post-section section-head-content">
+            {{- .Content -}}
+          </div>
+        </div>
 
+        {{- $pageSize := (index $paginator.Pagers 0).NumberOfElements -}}
+        {{- $offset   := mul (sub $paginator.PageNumber 1) $pageSize -}}
+
+        {{- $lastArtist := "" -}}
+        <div class="posts">
+          {{- range $i, $page := $paginator.Pages -}}
+
+            {{- $item       := index $sortedItems (add $offset $i) -}}
+            {{- $artistName := $item.artistName -}}
+            {{- $id := $artistName | replaceRE "(?i)[äöüß]" "" | anchorize -}}
+            {{- $artistNameHeading := $item.sortKey -}}
+            {{- $artists = $artists | append (dict "id" $id "artist" $artistName "artistNameHeading" $artistNameHeading) -}}
+            {{- $technique := $item.technique -}}
+            {{- $title := "" -}}
+            {{- with $page.Params.linkedart -}}
+              {{- with .title -}}
+                {{- $title = printf `"%s"` . | markdownify -}}
+              {{- end -}}
+            {{- end -}}
+
+            {{- if eq $title "" -}}
+              {{- $title = $technique -}}
+            {{- end -}}
+
+            {{- if ne $artistName $lastArtist -}}
+              <h2 class="artist-header" id="{{ $id }}">
+                {{- $artistNameHeading -}}
+              </h2>
+              {{- $lastArtist = $artistName -}}
+            {{- end -}}
+
+            <div class="post">
+              <h3 class="post-title">
+                <a class="readmore" href="{{ $page.RelPermalink }}" title="{{ i18n "readmore" }}">
+                  {{- $page.Title -}}
+                </a>
+              </h3>
+              <div class="post-body">
+                {{- $subtitle := printf "%s %s %s" $title (i18n "By") $artistName -}}
+                {{- partial "preview.html" (dict "ctx" $page "additional" (printf `<div class="sub-title">%s</div>` $subtitle))  -}}
+
+                {{- with $page.Summary -}}
+                  <div class="post-summary">
+                    <a href="{{ $page.Permalink }}">
+                      <p>{{ . | replaceRE "<a[^>]*>(.*?)</a>" "$1" | replaceRE "<p></p>" "" | safeHTML }}</p>
+                    </a>
+                  </div>
+                {{- end -}}
+              </div>
+            </div>
+
+          {{- end -}}
+        </div>
+        {{- if len $artists -}}
+          <ul class="artists-toc">
+            {{- range $artists -}}
+              <li><a href="#{{ .id }}">{{ .artistNameHeading }}</li>
+            {{- end -}}
+          </ul>
         {{- end -}}
       </div>
-    </div>
 
-    {{- if or $paginator.HasPrev $paginator.HasNext -}}
-      <div class="pagination">
-        <div class="pagination-links">
-          {{- if $paginator.HasPrev -}}
-            <a class="pagination-prev" href="{{ $paginator.Prev.URL }}">&#x25c0;&#xfe0e; {{ i18n "next_page" }}</a>
-          {{- else -}}
-            <div class="pagination-prev"></div>
-          {{- end -}}
-          {{- if $paginator.HasNext -}}
-            <a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "previous_page" }} &#x25b6;&#xfe0e;</a>
-          {{- else -}}
-            <div class="pagination-next"></div>
-          {{- end -}}
+      {{- if or $paginator.HasPrev $paginator.HasNext -}}
+        <div class="pagination">
+          <div class="pagination-links">
+            {{- if $paginator.HasPrev -}}
+              <a class="pagination-prev" href="{{ $paginator.Prev.URL }}">&#x25c0;&#xfe0e; {{ i18n "next_page" }}</a>
+            {{- else -}}
+              <div class="pagination-prev"></div>
+            {{- end -}}
+            {{- if $paginator.HasNext -}}
+              <a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "previous_page" }} &#x25b6;&#xfe0e;</a>
+            {{- else -}}
+              <div class="pagination-next"></div>
+            {{- end -}}
+          </div>
         </div>
+      {{- end -}}
+
+    {{- else -}}
+      <div class="content-container art-collection">
+        <p class="no-results">
+          No posts found!
+        </p>
       </div>
     {{- end -}}
-
   {{- else -}}
-    <div class="content-container art-collection">
-      <p class="no-results">
-        No posts found!
-      </p>
-    </div>
+    {{- errorf "[art-collection.html] Pagination only worls in sections" .RelPermalink -}}
   {{- end -}}
 {{- end -}}
