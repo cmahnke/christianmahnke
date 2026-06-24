@@ -21,7 +21,6 @@ outputs:
   - linkedart
   - pdf-article
 linkedart:
-  title: Marmolata
   description: "Ein Farbholzschnitt des Berges Marmolata in den Dolomiten"
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
