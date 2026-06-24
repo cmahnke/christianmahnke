@@ -61,7 +61,7 @@ jobs:
 
       - name: Get Hugo cache
         id: cache-hugo-restore
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         with:
           key: ${{ runner.os }}-hugo-cache
           path: resources
@@ -92,7 +92,7 @@ jobs:
 
       - name: Always Save Hugo cache
         if: always() && steps.cache-hugo-restore.outputs.cache-hit != 'true'
-        uses: actions/cache/save@v5
+        uses: actions/cache/save@v6
         with:
           key: ${{ runner.os }}-hugo-cache
           path: resources
