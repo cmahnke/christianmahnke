@@ -15,7 +15,7 @@
     {{- warnf "[check-post.html] Missing Wikidata in %s (Section %s)" .RelPermalink .Section -}}
   {{- end -}}
   {{- $page := . -}}
-  {{- if in .Section "post" -}}
+  {{- if and (in .Section "post") (not .Draft) -}}
     {{- $langs := slice -}}
     {{- range .AllTranslations -}}
       {{- $langs = $langs | append .Language.Name -}}

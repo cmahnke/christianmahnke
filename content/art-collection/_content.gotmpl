@@ -1,12 +1,12 @@
 {{ .EnableAllLanguages }}
 
 {{- $pages := slice -}}
-{{- $tags := slice "WoodblockPrint" "Etching" "Painting" "Serigraphy" "Linocut" "ComputerArt" "Drawing" "Photo" "Lithography" "Collage" -}}
+{{- $tags := slice "WoodblockPrint" "Etching" "Painting" "Serigraphy" "Linocut" "ComputerArt" "Drawing" "Photo" "Lithography" "Collage" "_Goettingen" "_Niedersachsen" -}}
 
 {{- range $tags -}}
   {{- $page := dict
     "kind" "section"
-    "path" (lower .)
+    "path" (. | strings.TrimPrefix "_" | lower)
     "title" (i18n .)
     "layout" "art-collection"
     "params" (dict "filtertag" .
