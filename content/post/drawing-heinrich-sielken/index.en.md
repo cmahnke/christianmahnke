@@ -6,6 +6,7 @@ tags:
   - Art
   - Drawing
   - Architecture
+  - _ArtCollection
 preview: img/sheet1.jpg
 outputs:
   - bibtex
