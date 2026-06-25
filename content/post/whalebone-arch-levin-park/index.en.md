@@ -25,9 +25,9 @@ I was reminded of this again during the week and took a few photos.
 {{< gallery >}}
 [
   {"src": "img/single.jpeg", "alt": "Current status"},
+  {"src": "img/reconstruction.jpeg", "alt": "Reconstruction"},
   {"src": "img/detail1.jpeg", "alt": "Detail 1: Porous structure (spongiosa)"},
-  {"src": "img/detail2.jpge", "alt": "Detail 2: Fibres"},
-  {"src": "img/reconstruction.jpeg", "alt": "Reconstruction"}
+  {"src": "img/detail2.jpeg", "alt": "Detail 2: Fibres"}
 ]
 {{</ gallery >}}
 
@@ -38,7 +38,7 @@ Now only half of the object remains. However, on Google Maps I found it looking 
 
 I’ve seen structures like this before, for example in North Frisia. Here you can see a whale bone portal at the Dr Carl Häberlin Frisian Museum in Wyk auf Föhr.
 
-{{< figure src="./Friesenmuseum.jpeg" alt="Portal of the Dr Carl Häberlin Frisian Museum in Wyk auf Föhr" caption="Image by [amras_wi](https://commons.wikimedia.org/wiki/File:Friesenmuseum.JPG), public domain" >}}
+{{< figure src="img/Friesenmuseum.jpeg" alt="Portal of the Dr Carl Häberlin Frisian Museum in Wyk auf Föhr" caption="Image by [amras_wi](https://commons.wikimedia.org/wiki/File:Friesenmuseum.JPG), public domain" >}}
 
 Wikimedia Commons contains many [comparative images of arches made from baleen](https://commons.wikimedia.org/wiki/Category:Whale_bone_arches) (more specifically: the lower jaws of baleen whales).
 

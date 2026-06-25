@@ -25,9 +25,9 @@ Im Laufe der Woche wurde ich wieder daran erinnert und habe ein paar Fotos gemac
 {{< gallery >}}
 [
   {"src": "img/single.jpeg", "alt": "Derzeitiger Zustand"},
+  {"src": "img/reconstruction.jpeg", "alt": "Rekonstruktion"},
   {"src": "img/detail1.jpeg", "alt": "Detail 1: Poröse Struktur (Spongiosa)"},
-  {"src": "img/detail2.jpge", "alt": "Detail 2: Fasern"},
-  {"src": "img/reconstruction.jpeg", "alt": "Rekonstruktion"}
+  {"src": "img/detail2.jpeg", "alt": "Detail 2: Fasern"}
 ]
 {{</ gallery >}}
 
@@ -38,7 +38,7 @@ Inzwischen steht nur noch die Hälfte des Objekts. Auf Google Maps habe ich jedo
 
 Ich habe solche Strukturen schon öfter gesehen, beispielsweise in Nordfriesland. Hier ist ein Walknochen-Portal des Dr.-Carl-Häberlin-Friesenmuseums in Wyk auf Föhr zu sehen.
 
-{{< figure src="./Friesenmuseum.jpeg" alt="Portal des Dr.-Carl-Häberlin-Friesenmuseum in Wyk auf Föhr" caption="Bild von [amras_wi](https://commons.wikimedia.org/wiki/File:Friesenmuseum.JPG), gemeinfrei" >}}
+{{< figure src="img/Friesenmuseum.jpeg" alt="Portal des Dr.-Carl-Häberlin-Friesenmuseum in Wyk auf Föhr" caption="Bild von [amras_wi](https://commons.wikimedia.org/wiki/File:Friesenmuseum.JPG), gemeinfrei" >}}
 
 Auf Wikimedia Commons finden sich viele [Vergleichsbilder von Bögen aus Walknochen](https://commons.wikimedia.org/wiki/Category:Whale_bone_arches) (genauer: den Unterkiefern von Bartenwalen).
 
