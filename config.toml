@@ -13,7 +13,7 @@ theme = ["projektemacher-base", "hugo-video"]
 enableGitInfo = true
 preserveTaxonomyNames = true
 enableRobotsTXT = true
-timeout = "180s"
+timeout = "240s"
 
 [languages]
     [languages.de]
