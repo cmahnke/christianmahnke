@@ -34,7 +34,7 @@ Sie steht auch heute noch, wobei es einige kleine Unterschiede zu der Zeichnung 
 
 ## Geschichte
 
-Heute auch unter Uni-Mitarbeitern kaum bekannt, war die Einrichtung einst Teil der Universität. 1954 wurde sie als "Niedersächsische Landeskrankenhaus" von der Uni getrennt und dann 2007 als ["Asklepios Fachklinikum Göttingen"](https://de.wikipedia.org/wiki/Asklepios_Fachklinikum_G%C3%B6ttingen) privatisiert. Die [Asklepios Gruppe](https://www.asklepios.com/) hat eine ausführliche [Dokumentation der Geschichte veröffentlicht](https://www.asklepios.com/goettingen/unternehmen/klinik-und-kontakt/geschichte/). Zur Baugeschichte findet sich mehr im [Denkmalatlas Niedersachsen](https://denkmalatlas.niedersachsen.de/viewer/metadata/35875465/7/-/). Die Einrichtung hat auch ein eigenes Museum / Sammlung, das aber nur selten offen ist.
+Die Einrichtung war einst Teil der Universität, ist heute aber selbst unter Uni-Mitarbeitern kaum bekannt. 1954 wurde sie als "Niedersächsisches Landeskrankenhaus" von der Universität getrennt und dann 2007 als ["Asklepios Fachklinikum Göttingen"](https://de.wikipedia.org/wiki/Asklepios_Fachklinikum_G%C3%B6ttingen) privatisiert. Die [Asklepios Gruppe](https://www.asklepios.com/) hat eine ausführliche [Dokumentation der Geschichte veröffentlicht](https://www.asklepios.com/goettingen/unternehmen/klinik-und-kontakt/geschichte/). Zur Baugeschichte findet sich mehr im [Denkmalatlas Niedersachsen](https://denkmalatlas.niedersachsen.de/viewer/metadata/35875465/7/-/). Die Einrichtung hat auch ein eigenes Museum / Sammlung, das aber nur selten offen ist.
 
 ## Seelischerkrankte Krankenhaus
 
