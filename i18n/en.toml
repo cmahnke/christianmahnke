@@ -111,3 +111,9 @@ other = "Touch sensitive content cannot be printed!"
 
 [printNoVideo]
 other = "A video is embedded here."
+
+[_Niedersachsen]
+other = "Lower Saxony"
+
+[_Goettingen]
+other = "Göttingen"

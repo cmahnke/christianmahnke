@@ -129,7 +129,7 @@
         <div class="section-head">
           <div class="parallax-bg">
             {{- $pageTitle := .Title -}}
-            {{- if and .Parent .Params.filtertag -}}
+            {{- if and .Parent .Params.filtertag (ne $pageTitle "") -}}
               {{- $pageTitle = printf "%s: %s" .Parent.Title $pageTitle -}}
             {{- end -}}
             <h1 class="post-section section-head-title">{{ $pageTitle }}</h1>

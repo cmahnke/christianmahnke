@@ -14,7 +14,7 @@ wikidata:
 draft: true
 ---
 
-In 2017, I worked a lot of overtime and so spent half the spring in [Levinschen Park](https://de.wikipedia.org/wiki/Levinscher_Park)...
+In 2017, I worked a lot of overtime and so spent half the spring in [Levinschen Park](https://de.wikipedia.org/wiki/Levinscher_Park) (German)...
 
 <!--more-->
 
@@ -46,7 +46,7 @@ On closer inspection, even more details become apparent:
 * The material is fibrous in the upper layers and porous in the deeper layers.
 * Organic-looking, upward-facing openings are visible on the front, which are thought to be blood vessels.
 
-The biologist and photographer Dirk Pfuhl regularly documents the wildlife of [Levinscher Park](http://stadt-natur-wildnis.de/category/lebensraeume/levinscher-park-goettingen/) in Göttingen. As I worked with him over 20 years ago, I wrote to him to ask for his opinion.
+The biologist and photographer Dirk Pfuhl regularly documents the wildlife of [Levinscher Park](http://stadt-natur-wildnis.de/category/lebensraeume/levinscher-park-goettingen/) (German) in Göttingen. As I worked with him over 20 years ago, I wrote to him to ask for his opinion.
 
 {{< quote from="Dirk Pfuhl" from-link="http://stadt-natur-wildnis.de/" >}}
 
