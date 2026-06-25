@@ -5,6 +5,7 @@ tags:
   - Art
   - Serigraphy
   - _ArtCollection
+  - _Niedersachsen
 preview: img/print.jpg
 outputs:
   - bibtex

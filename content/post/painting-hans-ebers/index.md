@@ -5,6 +5,7 @@ tags:
   - Art
   - Painting
   - _ArtCollection
+  - _Niedersachsen
 preview: img/painting.jpg
 outputs:
   - bibtex

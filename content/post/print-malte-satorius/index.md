@@ -10,6 +10,7 @@ tags:
   - Linocut
   - Christmas
   - _ArtCollection
+  - _Niedersachsen
 preview: front/full/full/0/default.jpg
 outputs:
   - bibtex

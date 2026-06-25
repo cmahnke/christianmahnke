@@ -7,6 +7,7 @@ tags:
   - WoodblockPrint
   - Alps
   - _ArtCollection
+  - _Niedersachsen
 preview: img/print.jpg
 outputs:
   - bibtex

@@ -5,6 +5,8 @@ tags:
   - Art
   - Collage
   - _ArtCollection
+  - _Goettingen
+  - _Niedersachsen
 preview: img/collage.jpg
 outputs:
   - bibtex

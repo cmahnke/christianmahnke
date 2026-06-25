@@ -6,6 +6,8 @@ tags:
   - Art
   - WoodblockPrint
   - _ArtCollection
+  - _Goettingen
+  - _Niedersachsen
 preview: img/print.jpg
 outputs:
   - bibtex
