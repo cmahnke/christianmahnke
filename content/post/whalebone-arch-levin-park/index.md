@@ -47,8 +47,10 @@ Bei genauerem Hinsehen fallen auch noch mehr Details auf:
 
 Im Eintrag zum [Levinscher Park im Denkmalatlas Niedersachsen](https://denkmalatlas.niedersachsen.de/viewer/metadata/01cbe2c6-9bfa-4156-8db9-4d8fbff5f988/) findet sich auch kein Hinweis.
 
+Der Biologe und Fotograf Dirk Pfuhl dokumentiert regelmäßig die Tierwelt des [Levinschen Parks](http://stadt-natur-wildnis.de/category/lebensraeume/levinscher-park-goettingen/) und hat auch etwas über die [Geschichte des Parks](http://stadt-natur-wildnis.de/geschichte-des-levinschen-parks/) geschrieben, aber auch dort finden sich keine weiteren Hinweise...
+
 <div style="display: none">
-Der Biologe und Fotograf Dirk Pfuhl dokumentiert regelmäßig die Tierwelt des [Levinschen Parks](http://stadt-natur-wildnis.de/category/lebensraeume/levinscher-park-goettingen/) und hat auch etwas über die [Geschichte des Parks](http://stadt-natur-wildnis.de/geschichte-des-levinschen-parks/) geschrieben. Da ich vor über 20 Jahren mit ihm zusammengearbeitet habe, habe ich ihn angeschrieben und um seine Meinung gebeten.
+Da ich vor über 20 Jahren mit ihm zusammengearbeitet habe, habe ich ihn angeschrieben und um seine Meinung gebeten.
 
 {{< quote from="Dirk Pfuhl" from-link="http://stadt-natur-wildnis.de/" >}}
 

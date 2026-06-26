@@ -47,8 +47,10 @@ On closer inspection, even more details become apparent:
 
 There is no mention of it in the entry for [Levinscher Park in the Lower Saxony Monument Atlas](https://denkmalatlas.niedersachsen.de/viewer/metadata/01cbe2c6-9bfa-4156-8db9-4d8fbff5f988/) either.
 
+The biologist and photographer Dirk Pfuhl regularly documents the wildlife of [Levinschen Park](http://stadt-natur-wildnis.de/category/lebensraeume/levinscher-park-goettingen/) and has also written about the [history of the park](http://stadt-natur-wildnis.de/geschichte-des-levinschen-parks/), but there are no further clues to be found there either...
+
 <div style="display: none">
-The biologist and photographer Dirk Pfuhl regularly documents the wildlife of [Levinscher Park](http://stadt-natur-wildnis.de/category/lebensraeume/levinscher-park-goettingen/) (German) in Göttingen. As I worked with him over 20 years ago, I wrote to him to ask for his opinion.
+As I worked with him over 20 years ago, I wrote to him to ask for his opinion.
 
 {{< quote from="Dirk Pfuhl" from-link="http://stadt-natur-wildnis.de/" >}}
 
