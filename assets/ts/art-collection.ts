@@ -460,8 +460,6 @@ function buildGallery(artworks: Artwork[], postsEl: HTMLElement): void {
             font-style: italic;
             letter-spacing: 0.04em;
             color: #383838;
-            white-space: nowrap;
-            overflow: hidden;
             text-overflow: ellipsis;
             z-index: 5;
             margin: 0;
@@ -469,6 +467,10 @@ function buildGallery(artworks: Artwork[], postsEl: HTMLElement): void {
             display: block;
             mix-blend-mode: darken;
           `;
+          /*
+          white-space: nowrap;
+          overflow: hidden;
+          */
         }
       }
 
