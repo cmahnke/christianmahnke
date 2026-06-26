@@ -12,7 +12,7 @@ wikidata:
 Until now, the art collection was only available as overviews under the relevant keywords...
 <!--more-->
 
-The [art collection](/en/art-collection/) is now available online, featuring all the works I still have.
+The [art collection](/en/art-collection/) is now available online, featuring all the works I still have. The gallery is presenting the so-called [Petersburg hanging](https://de.wikipedia.org/wiki/Salonh%C3%A4ngung) (German).
 
 There are also galleries for different techniques:
 

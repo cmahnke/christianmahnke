@@ -12,7 +12,7 @@ wikidata:
 Bisher gab es die Kunstsammlung nur als Übersichten zu den entsprechenden Schlagworten...
 <!--more-->
 
-Nun gibt es die [Kunstsammlung](/art-collection/) online, darin sind alle Werke, die ich noch habe.
+Nun gibt es die [Kunstsammlung](/art-collection/) online, darin sind alle Werke, die ich noch habe. Die Galerie in der sogenannten [Petersburger Hängung](https://de.wikipedia.org/wiki/Salonh%C3%A4ngung) präsentiert.
 
 Zusätzlich gibt es Gallerien für unterschiedliche Techniken:
 
