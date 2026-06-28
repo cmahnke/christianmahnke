@@ -49,12 +49,12 @@ There is no mention of it in the entry for [Levinscher Park in the Lower Saxony 
 
 The biologist and photographer Dirk Pfuhl regularly documents the wildlife of [Levinschen Park](http://stadt-natur-wildnis.de/category/lebensraeume/levinscher-park-goettingen/) and has also written about the [history of the park](http://stadt-natur-wildnis.de/geschichte-des-levinschen-parks/), but there are no further clues to be found there either...
 
-<div style="display: none">
+{{< comment >}}
 As I worked with him over 20 years ago, I wrote to him to ask for his opinion.
 
 {{< quote from="Dirk Pfuhl" from-link="http://stadt-natur-wildnis.de/" >}}
 
 {{</ quote >}}
-</div>
+{{</ comment >}}
 
 Perhaps it’s time to find out how the bones ended up there, and maybe put up a small information board as well.

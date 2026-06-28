@@ -32,29 +32,29 @@ Im Laufe der Woche wurde ich wieder daran erinnert und habe ein paar Fotos gemac
 
 Inzwischen steht nur noch die Hälfte des Objekts. Auf Google Maps habe ich jedoch den Zustand gefunden, an den ich mich erinnere:
 
-* [Bild aus dem Juli 2021](https://maps.app.goo.gl/v9HepKjN1ujBAq4EA). Am Bildrand rechts.
-* [Bild aus dem Juni 2022](https://maps.app.goo.gl/Dnhx4ZmbtxEWKUvHA). Hinter dem roten Klettergerüst rechts.
+* [Bild aus dem Juli 2021](https://maps.app.goo.gl/v9HepKjN1ujBAq4EA), am Bildrand rechts.
+* [Bild aus dem Juni 2022](https://maps.app.goo.gl/Dnhx4ZmbtxEWKUvHA), hinter dem roten Klettergerüst rechts.
 
 Ich habe solche Strukturen schon öfter gesehen, beispielsweise in Nordfriesland. Hier ist das viel größere Walknochen-Portal des Dr.-Carl-Häberlin-Friesenmuseums in Wyk auf Föhr zu sehen.
 
 {{< figure src="img/Friesenmuseum.jpeg" alt="Portal des Dr.-Carl-Häberlin-Friesenmuseum in Wyk auf Föhr" caption="Bild von [amras_wi](https://commons.wikimedia.org/wiki/File:Friesenmuseum.JPG), gemeinfrei" >}}
 
-Auf Wikimedia Commons finden sich viele [Vergleichsbilder von Bögen aus Walknochen](https://commons.wikimedia.org/wiki/Category:Whale_bone_arches) (genauer: den Unterkiefern von Bartenwalen).
+Auf Wikimedia Commons finden sich zahlreiche [Vergleichsbilder von Bögen aus Walknochen](https://commons.wikimedia.org/wiki/Category:Whale_bone_arches) (genauer: den Unterkiefern von Bartenwalen).
 
-Bei genauerem Hinsehen fallen auch noch mehr Details auf:
+Bei genauerem Hinsehen fallen noch weitere Details auf:
 * Das Material ist in den oberen Schichten faserig und in den tieferen porös.
 * Es sind organisch wirkende, nach oben weisende Öffnungen an der Vorderseite erkennbar, die vermutlich für Blutgefäße gedacht sind.
 
-Im Eintrag zum [Levinscher Park im Denkmalatlas Niedersachsen](https://denkmalatlas.niedersachsen.de/viewer/metadata/01cbe2c6-9bfa-4156-8db9-4d8fbff5f988/) findet sich auch kein Hinweis.
+Auch im Eintrag zum [Levinscher Park im Denkmalatlas Niedersachsen](https://denkmalatlas.niedersachsen.de/viewer/metadata/01cbe2c6-9bfa-4156-8db9-4d8fbff5f988/) findet sich auch kein Hinweis.
 
-Der Biologe und Fotograf Dirk Pfuhl dokumentiert regelmäßig die Tierwelt des [Levinschen Parks](http://stadt-natur-wildnis.de/category/lebensraeume/levinscher-park-goettingen/) und hat auch etwas über die [Geschichte des Parks](http://stadt-natur-wildnis.de/geschichte-des-levinschen-parks/) geschrieben, aber auch dort finden sich keine weiteren Hinweise...
+Der Biologe und Fotograf Dirk Pfuhl dokumentiert regelmäßig die Tierwelt des [Levinschen Parks](http://stadt-natur-wildnis.de/category/lebensraeume/levinscher-park-goettingen/) und hat auch etwas über die [Geschichte des Parks](http://stadt-natur-wildnis.de/geschichte-des-levinschen-parks/) geschrieben. Auch dort finden sich jedoch keine weiteren Hinweise..
 
-<div style="display: none">
+{{< comment >}}
 Da ich vor über 20 Jahren mit ihm zusammengearbeitet habe, habe ich ihn angeschrieben und um seine Meinung gebeten.
 
 {{< quote from="Dirk Pfuhl" from-link="http://stadt-natur-wildnis.de/" >}}
 
 {{</ quote >}}
-</div>
+{{</ comment >}}
 
-Vielleicht wäre es ja Zeit für eine Recherche wie die Knochen dort hin kamen und vielleicht auch eine kleine Tafel.
+Vielleicht wäre es ja an der Zeit, zu recherchieren, wie die Knochen dorthin gelangten, und eine kleine Tafel aufzustellen.
