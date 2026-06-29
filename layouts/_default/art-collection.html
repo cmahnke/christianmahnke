@@ -125,6 +125,13 @@
     {{- $paginator := .Paginate $sortedPages 25 -}}
     {{- if $paginator.Pages -}}
       {{- $artists := slice -}}
+      <script type="text/javascript">
+
+        const artCollectionElem = document.querySelector('.section-art-collection');
+        var totalCount = 8;
+        const num = Math.ceil(Math.random() * totalCount);
+        //artCollectionElem.style.cssText = `--bg-image: url(/images/art-collection-bg-${num}.webp)`;
+      </script>
       <div class="content-container art-collection">
         <div class="section-head">
           <div class="parallax-bg">

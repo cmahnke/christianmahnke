@@ -3,6 +3,7 @@
   width: 100%;
   min-height: 200px;
   z-index: 1;
+  --bg-image: url('/images/art-collection-bg-1.webp');
 
   &::before,
   &::after {
@@ -12,7 +13,7 @@
     width: 100%;
     height: 50%;
     z-index: -1;
-    background-image: url('/images/art-collection-bg.webp');
+    background-image: var(--bg-image);
     background-size: 100% 100%;
     background-repeat: no-repeat;
   }
