@@ -47,7 +47,7 @@ Da ich seit Jahren eine lockere Zusammenarbeit mit Gerbrand Caspers pflege, biet
 * [The Linosaurus: Eva Roemer](https://gerrie-thefriendlyghost.blogspot.com/2011/07/eva-roemer.html)
 * [DAS HAUS DER FRAU: Eva Roemer](https://www.dashausderfrau.nl/roemer-eva.html) - hier ist auch der abgebildete Druck zu finden.
 
-Eva Roemer war auch mit Göttingen verbunden, daher sind weitere Informationen zu ihr im [Göttinger Künstlerlexikon](https://univerlag.uni-goettingen.de/bitstream/handle/3/isbn-978-3-86395-504-5/Appel_diss.pdf) von Thomas Appel zu finden.
+Eva Roemer war auch mit Göttingen verbunden (sie lebte 1914–26 in der Stadt), daher sind weitere Informationen zu ihr im [Göttinger Künstlerlexikon](https://univerlag.uni-goettingen.de/bitstream/handle/3/isbn-978-3-86395-504-5/Appel_diss.pdf) von Thomas Appel zu finden.
 
 # Update 2.1.2026
 
