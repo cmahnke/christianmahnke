@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Fediverse Anbindung für Entwicklungsplattformen · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="GitHub hat derzeit viele Probleme, was braucht es für einen Switch?">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/developer-platforms-fediverse/" />
+  <meta property="og:title" content="Fediverse Anbindung für Entwicklungsplattformen · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/developer-platforms-fediverse/ogPreview_hu_2892e7f9bb39689c.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", Software Entwicklung, Projekt Idee, GitHub, Digitale Souveränität"><meta name="dc.subject" content="Software Entwicklung"><meta name="dc.subject" content="Projekt Idee"><meta name="dc.subject" content="GitHub"><meta name="dc.subject" content="Digitale Souveränität">
+<meta name="generator" content="Hugo 0.163.3">
+<meta name="projektemacher.org:build-date" content="2026-07-02 18:02:24.356068135 &#43;0000 UTC m=&#43;1.540333759"><meta name="projektemacher.org:git-commit" content="87223e7">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.b82de37e928e03ba6f7b4a916379a6c9a137d1950ef1ab21fd468ff263f18045.css" rel="stylesheet" integrity="sha256-uC3jfpKOA7pve0qRY3mmyaE30ZUO8ash/UaP8mPxgEU=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.5218e342122f272d658e5b2a449723fa7939d2459414b65221476c0857cc23cb.js" integrity="sha256-UhjjQhIvJy1ljlsqRJcj+nk50kWUFLZSIUdsCFfMI8s="></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/developer-platforms-fediverse/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/developer-platforms-fediverse/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/developer-platforms-fediverse/","@type":"BlogPosting","about":[{"@id":"http://www.wikidata.org/entity/Q131841","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Idee"},{"@id":"http://www.wikidata.org/entity/Q3492424","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Digitale Souveränität"},{"@id":"http://www.wikidata.org/entity/Q364","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"GitHub"},{"@id":"http://www.wikidata.org/entity/Q638608","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Softwareentwicklung"},{"@id":"http://www.wikidata.org/entity/Q16639197","@type":"Thing","name":"Q16639197"},{"@id":"http://www.wikidata.org/entity/Q27986619","@type":"Thing","name":"Mastodon"},{"@id":"http://www.wikidata.org/entity/Q30325419","@type":"Thing","name":"Fediversum"},{"@id":"http://www.wikidata.org/entity/Q364","@type":"Thing","name":"GitHub"},{"@id":"http://www.wikidata.org/entity/Q40463886","@type":"Thing","name":"ActivityPub"},{"@id":"http://www.wikidata.org/entity/Q649124","@type":"Thing","name":"Netzwerkeffekt"}],"author":{"@id":"http://www.wikidata.org/entity/Q137668638","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"dateModified":"2026-07-02","datePublished":"2026-04-30","headline":"Fediverse Anbindung für Entwicklungsplattformen","inLanguage":"de","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["SoftwareDevelopment","ProjectIdea","GitHub","DigitalSovereignty"],"name":"Fediverse Anbindung für Entwicklungsplattformen","url":"https://christianmahnke.de/post/developer-platforms-fediverse/","workTranslation":[{"@id":"https://christianmahnke.de/en/post/developer-platforms-fediverse/","@type":"CreativeWork","inLanguage":"en","name":"Fediverse integration for development platforms","url":"https://christianmahnke.de/en/post/developer-platforms-fediverse/"}]}
+</script>
+</head><body class="section-post dir-postdeveloper-platforms-fediverse blog  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/developer-platforms-fediverse/" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Fediverse Anbindung für Entwicklungsplattformen</h1><div class="date">
+          <time class="post-date" datetime="2026-04-30T17:30:00&#43;02:00">Donnerstag, 30. April 2026</time>
+        </div><div class="post-body"><p>GitHub hat derzeit viele Probleme, was braucht es für einen Switch?</p>
+<p>Über die technischen Probleme (Zuverlässigkeit, Sicherheitsprobleme usw.) wurde bereits viel geschrieben und es wurden zahlreiche Videos erstellt. Auch zum Thema digitale Souveränität und Unabhängigkeit von Microsoft gibt es bereits zahlreiche Informationen.</p>
+<p>Langer Rede kurzer Sinn: Es gibt gute Gründe, sich nach Alternativen zu GitHub umzusehen. Und auf den ersten Blick gibt es da eine gewisse Auswahl:</p>
+<ul>
+<li><a href="https://about.gitlab.com/" target="_blank">GitLab</a></li>
+<li><a href="https://codeberg.org/" target="_blank">Codeberg</a></li>
+<li><a href="https://about.gitea.com/" target="_blank">Gitea</a></li>
+<li><a href="https://forgejo.org/" target="_blank">Forgejo</a></li>
+<li><a href="https://bitbucket.org/" target="_blank">Bitbucket</a></li>
+</ul>
+<p>Einige davon bieten nur Hosting-Services an, andere stellen auch die Software für eine lokale Installation bereit.</p>
+<p>Diese Hosting-Services haben aber einige Nachteile gegenüber GitHub (zumindest, wenn man einen alten Account hat). GitHub bietet sehr viele Ressourcen, um Größenordnungen mehr als die Konkurrenz:</p>
+<ul>
+<li>Speicherplatz: Gerade bei meinen bildlastigen Blogs kann es vorkommen, dass ein Repository einige Gigabyte groß ist. Auch gibt es vereinzelt Dateien, die an die 50 MB groß sind.</li>
+<li>Auch Container-Images mit ein paar GB Größe können abgelegt werden.</li>
+<li>Die Runner haben eine maximale Laufzeit von sechs Stunden und bieten eine virtuelle Maschine, die mit etwas <a href="https://christianmahnke.de/post/build-vector-tiles-on-github/" target="_blank">Trickserei</a> eine mittlere zweistellige Gigabyte-Zahl an freiem Platz bietet und dadurch auch umfangreiche Datentransformationen erlaubt.</li>
+</ul>
+<p>Hinzu kommen CI-Infrastrukturen und andere Automatisierungen, die sich auf GitHub aufsetzen lassen.</p>
+<p>Ein weiterer Faktor, der durch die Größe der Plattform zustande kommt, ist der 
+        
+          
+        <a data-wikidata-entity="Q649124" href="https://de.wikipedia.org/wiki/Netzwerkeffekt" target="_blank">Netzwerkeffekt</a>, der kaum Beachtung findet. Das ist aus meiner Sicht ein großer Fehler, wenn man sich ernsthaft für einen Ersatz einsetzt.</p>
+<h2 id="github-ist-ein-soziales-netzwerk">GitHub ist ein soziales Netzwerk</h2>
+<p>Allein schon, weil inzwischen sehr viele Projekte, besonders aus der JavaScript- und TypeScript-Community, auf GitHub zu finden sind, sind diese nicht nur auf Software-Ebene, sondern auch personell vernetzt. Dabei handelt es sich zwar in erster Linie um Arbeitsbeziehungen, aber trotzdem sollte man nicht vergessen, dass eine einfache At-Notation (@) in einem Issue oder Kommentar genutzt werden kann, um andere Personen auf etwas aufmerksam zu machen. Gleiches gilt für die Verlinkung von Informationen zwischen Projekten. GitHub erkennt auch diese Verlinkungen und integriert sie in verschiedene Verlaufsdarstellungen (Issues, Kommentare, Diskussionen, Pull Requests usw.).</p>
+<p>Anders ausgedrückt: <strong>GitHub ist ein soziales Netzwerk</strong> und daher sind Probleme mit der Souveränität oder der Abhängigkeit vom Big-Tech-Giganten Microsoft für viele Leute schlicht kein hinreichender Grund, dieses bequeme Ökosystem zu verlassen.</p>
+<p>Die Aussicht, von ihrer Community abgeschnitten in einer kleinen Insel ihren Code warten zu müssen, dürfte die Wechselfreude nicht unbedingt beflügeln. Gerade für kleinere Projekte bedeutet der Netzwerk-Effekt auch eine potenzielle erhöhte Sichtbarkeit – beispielsweise, wenn man eigene Projekte pflegt, um auf dem Arbeitsmarkt höhere Chancen zu haben.</p>
+<h2 id="entwicklungsplattformen-müssen-ins-fediverse">Entwicklungsplattformen müssen ins Fediverse!</h2>
+<p>Daher gilt: Wer eine Abnahme der GitHub-Nutzung bzw. einen Ersatz durch dezentrale europäische Lösungen bzw. Provider ernsthaft will, muss sich für die Vernetzung der Plattformen einsetzen. Digitale Souveränität allein ist nicht wirklich sexy.</p>
+<p>
+        
+          
+        <a data-wikidata-entity="Q40463886" href="https://de.wikipedia.org/wiki/ActivityPub" target="_blank">ActivityPub</a> (die technische Grundlage für das Fediverse) bietet alle notwendigen Mechanismen. In jeder Plattform müssen mindestens die folgenden Entitäten adressierbar sein:</p>
+<ul>
+<li>Nutzer*innen</li>
+<li>Issues / Diskussionen – ggf. auch Kommentare</li>
+<li>Pull / Merge Requests</li>
+<li>Tags / Releases</li>
+</ul>
+<p>Auf der Darstellungsebene müssen die Plattformen dann verschiedene &ldquo;Inboxes&rdquo; bereitstellen und in den entsprechenden Kontexten darstellen, also z. B. für Nutzer*innen Notifikationen oder Issue-Diskussionen.</p>
+<p>Inzwischen bieten die Plattformen auch weitere Features wie einfaches Projektmanagement bzw. Boards und Dokumentationen bzw. Wikis. Aber fangen wir erstmal mit den Grundlagen an.</p>
+<p>Die Idee ist nicht neu, es gibt beispielsweise <a href="https://forgefed.org/" target="_blank">ForgeFed</a>, aber die Integration ist bisher sehr überschaubar. Stattdessen werden eher Hype-Themen wie &ldquo;Agentic AI&rdquo; angegangen. Diese haben sicher ihre Berechtigung, besonders wenn man mit Buzzwords (z. B. Organisationen als) Kunden gewinnen muss. Aber (informelle Open-Source-)Communities erreicht man damit nicht.</p>
+<p><strong>Wer eine Zukunft der Open-Source-Zusammenarbeit ohne Abhängigkeiten von Big Tech will, darf Vernetzung nicht als einfaches zusätzliches Feature behandeln, sondern muss sie als infrastrukturelle Notwendigkeit begreifen.</strong></p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q16639197" title="Q16639197" rel="related">Wikidata Eintrag: Q16639197</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q27986619" title="Mastodon" rel="related">Wikidata Eintrag: Mastodon</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q30325419" title="Fediversum" rel="related">Wikidata Eintrag: Fediversum</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q364" title="GitHub" rel="related">Wikidata Eintrag: GitHub</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q40463886" title="ActivityPub" rel="related">Wikidata Eintrag: ActivityPub</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Diesen Beitrag zitieren
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2026)</span>: <span class="cite-title">Fediverse Anbindung für Entwicklungsplattformen</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], 30.04.2026. Online-Publikation: <a class="cite-link" href="https://christianmahnke.de/post/developer-platforms-fediverse/">https://christianmahnke.de/post/developer-platforms-fediverse/</a>.
+    </div>
+    <a class="bibtex-download" href="https://christianmahnke.de/post/developer-platforms-fediverse/citation.bib" title="Als BibTex herunterladen">Als BibTex herunterladen</a>
+  </div>
+</details>
+</div><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/SoftwareDevelopment" title="Software Entwicklung">#Software Entwicklung</a><a href="https://christianmahnke.de/tags/ProjectIdea" title="Projekt Idee">#Projekt Idee</a><a href="https://christianmahnke.de/tags/GitHub" title="GitHub">#GitHub</a><a href="https://christianmahnke.de/tags/DigitalSovereignty" title="Digitale Souveränität">#Digitale Souveränität</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/software-metadata/">Metadaten für Software</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/academic-software-publishing/">KI und Software-&#34;Entwicklung&#34;</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/npm-org/">NPM Organisation</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/rollup-plugin-wasm-brotli/">Rollup-Plugin für WASM Inlining</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/wasm-dx/">Meine Erfahrungen mit WASM</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/developer-platforms-fediverse/" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded",e=>{document.querySelector(".type-text")&&!document.querySelector(".subsection")?window.enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&window.enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})})
+</script>
+</div>
+    </body>
+ </html>
