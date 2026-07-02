@@ -9,37 +9,37 @@
   dependencies:
     zod "^3.24.1"
 
-"@annotorious/annotorious@3.8.6":
-  version "3.8.6"
-  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.8.6.tgz#31148b40d1f7eb17a452061b6ff600c37154c617"
-  integrity sha512-ym5EiqY88dbMmuGcSGwRjEmFtlSA1MYEz8RUvfLjLnHWXrdyY8JlosGRDGw8hEdO5jS9mTQBOF2UvXLipHwpZA==
+"@annotorious/annotorious@3.8.8":
+  version "3.8.8"
+  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.8.8.tgz#21b3b5b922d4810cfa1b03993d81a80c8f0e1e52"
+  integrity sha512-XwnUt7aBUKpv+bqgMhHxxD0g5e6aEHoHppmseEYE+2DBabnmU7xG1QCEZhGXVhkS86GgyE2CO2HD211w/YkxAw==
   dependencies:
-    "@annotorious/core" "3.8.6"
+    "@annotorious/core" "3.8.8"
     dequal "^2.0.3"
     rbush "^4.0.1"
     simplify-js "^1.2.4"
-    uuid "^14.0.0"
+    uuid "^14.0.1"
 
-"@annotorious/core@3.8.6":
-  version "3.8.6"
-  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.8.6.tgz#46dfc1af7bac58c3d8f4f00a9e969361c21014cd"
-  integrity sha512-9Lc4YjTShDw552Jedwf6ZI0Q9nfn5U8CGRWy06/cnd3ki824zca1XvtSC7BYzlemnbrZEfqllUWBQ75ab9SmeQ==
+"@annotorious/core@3.8.8":
+  version "3.8.8"
+  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.8.8.tgz#1687a84dd765e5a397a6dbc30bcd74c14e4c91c7"
+  integrity sha512-ioujpzaUGjKIlD6llttrfni30GrYgVqq+vVJH7t+Lun6XWzzM2dJTJQM3nI9wY/ZCwd7G2aRAwgP0YXKN1tc9A==
   dependencies:
     dequal "^2.0.3"
     nanoevents "^9.1.0"
-    nanoid "^5.1.11"
-    nanostores "^1.3.0"
-    uuid "^14.0.0"
+    nanoid "^5.1.16"
+    nanostores "^1.4.0"
+    uuid "^14.0.1"
 
-"@annotorious/openseadragon@^3.8.6":
-  version "3.8.6"
-  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.8.6.tgz#79df06763b71fea27d24adade4674c971a30347b"
-  integrity sha512-hHidpjY2ZJjqhfIwY2sdPhcV2suS4lwwbevL1MjP6J7qF96dq45cRSdYzwgVV/ghRLorKeLszqsnPCZe1+RYWA==
+"@annotorious/openseadragon@^3.8.8":
+  version "3.8.8"
+  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.8.8.tgz#1748b717fc3ddaa4ea6eda8a2d57bb1b7cf3d36b"
+  integrity sha512-GPfyz3iuoVD/mxJBOGTJ3DWanK75jmUiOWSMEok128uKoC4nuXzKSnr0OwIL+O3tV9p4v42uZkeHcDDWaQ/uXw==
   dependencies:
-    "@annotorious/annotorious" "3.8.6"
-    "@annotorious/core" "3.8.6"
+    "@annotorious/annotorious" "3.8.8"
+    "@annotorious/core" "3.8.8"
     pixi.js "^7.4.3"
-    uuid "^14.0.0"
+    uuid "^14.0.1"
 
 "@asamuzakjp/css-color@^3.2.0":
   version "3.2.0"
@@ -4143,15 +4143,15 @@ nanoid@^3.3.11:
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz"
   integrity sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==
 
-nanoid@^5.1.11:
-  version "5.1.11"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-5.1.11.tgz#559dbdbc41737da341ac938c25514563d2dd94c7"
-  integrity sha512-v+KEsUv2ps74PaSKv0gHTxTCgMXOIfBEbaqa6w6ISIGC7ZsvHN4N9oJ8d4cmf0n5oTzQz2SLmThbQWhjd/8eKg==
+nanoid@^5.1.16:
+  version "5.1.16"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-5.1.16.tgz#fe345c0a1f9007c32fbb5c139e1208bfd3f41ef7"
+  integrity sha512-kVrnsrJqMR8+oLJnGEmSWw9BivK5mt7H3FZatVRjrc5wGqFYuBxX1yG7+A7Gi5AefkX6t/oCkizcQgpu0cY1dQ==
 
-nanostores@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-1.3.0.tgz#ceb0a3d8cf9f41207139fa2b9c8f61f65c6a7e2d"
-  integrity sha512-XPUa/jz+P1oJvN9VBxw4L9MtdFfaH3DAryqPssqhb2kXjmb9npz0dly6rCsgFWOPr4Yg9mTfM3MDZgZZ+7A3lA==
+nanostores@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-1.4.0.tgz#9acc8a6026533dc0410c37cb3b076db00163d277"
+  integrity sha512-i0tloweeudshAEuddpDxcg9Ik6pkPfVsHIgKyf143JrgG7/MOh0+q7BypdLXZPoOP7fOYt1eTcwGkyiVmhJFkA==
 
 napi-build-utils@^2.0.0:
   version "2.0.0"
@@ -6053,10 +6053,10 @@ uuid@11.1.0:
   resolved "https://registry.npmjs.org/uuid/-/uuid-11.1.0.tgz"
   integrity sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==
 
-uuid@^14.0.0:
-  version "14.0.0"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-14.0.0.tgz#0af883220163d264ffe0c084f6b8a89b9666966d"
-  integrity sha512-Qo+uWgilfSmAhXCMav1uYFynlQO7fMFiMVZsQqZRMIXp0O7rR7qjkj+cPvBHLgBqi960QCoo/PH2/6ZtVqKvrg==
+uuid@^14.0.1:
+  version "14.0.1"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-14.0.1.tgz#8a5975b3e038902bfd169a10b5202f5ec0cf3faf"
+  integrity sha512-6ZxzVpzDXDa3bJWaHilVayA+BH/1zmxCJoVgvmqJnid/gPoKHxUrS/aC/T6LGQtNHT+XHG9fXPJB4d+IrU30Ew==
 
 uuid@^8.1.0:
   version "8.3.2"
