@@ -45,7 +45,7 @@ Bei genauerem Hinsehen fallen noch weitere Details auf:
 * Das Material ist in den oberen Schichten faserig und in den tieferen porös.
 * Es sind organisch wirkende, nach oben weisende Öffnungen an der Vorderseite erkennbar, die vermutlich für Blutgefäße gedacht sind.
 
-Auch im Eintrag zum [Levinscher Park im Denkmalatlas Niedersachsen](https://denkmalatlas.niedersachsen.de/viewer/metadata/01cbe2c6-9bfa-4156-8db9-4d8fbff5f988/) findet sich auch kein Hinweis.
+Auch im Eintrag zum [Levinscher Park im Denkmalatlas Niedersachsen](https://denkmalatlas.niedersachsen.de/viewer/metadata/01cbe2c6-9bfa-4156-8db9-4d8fbff5f988/) findet sich kein Hinweis.
 
 Der Biologe und Fotograf Dirk Pfuhl dokumentiert regelmäßig die Tierwelt des [Levinschen Parks](http://stadt-natur-wildnis.de/category/lebensraeume/levinscher-park-goettingen/) und hat auch etwas über die [Geschichte des Parks](http://stadt-natur-wildnis.de/geschichte-des-levinschen-parks/) geschrieben. Auch dort finden sich jedoch keine weiteren Hinweise..
 
