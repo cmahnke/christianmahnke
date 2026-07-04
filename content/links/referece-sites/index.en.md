@@ -22,8 +22,9 @@ weight: 7
 * [8-Bit-Nirvana](https://www.zock.com/)
 * [Virtual Dortmund Computer Museum](http://www.classiccomputer.de/)
 
-### Spielkonsolen
+### Game consoles
 
+* [Handheld Games Museum](https://handheldmuseum.com/)
 * [Retro Consoles Wiki](https://retroconsoles.fandom.com/)
 
 ### Console game bootlegs and pirated copies

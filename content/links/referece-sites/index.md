@@ -24,6 +24,7 @@ weight: 7
 
 ### Spielkonsolen
 
+* [Handheld Games Museum](https://handheldmuseum.com/)
 * [Retro Consoles Wiki](https://retroconsoles.fandom.com/)
 
 ### Konsolenspiele Bootlegs und Raubkopien
