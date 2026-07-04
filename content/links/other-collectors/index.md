@@ -65,6 +65,7 @@ Weitere Sammlungen und Sammler, mit denen ich nicht zusammenarbeite.
 ### Spielkonsolen
 
 * [CONSOLLECTION](https://consollection.de/de)
+* [Electronic Plastic](https://electronicplastic.com/)
 
 ## Tragbare Kassettenabspieler
 * [WalkmanLand](https://walkman.land/)
