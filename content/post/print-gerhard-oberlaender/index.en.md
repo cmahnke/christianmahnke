@@ -26,7 +26,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q564783
 ---
 
-A colour etching by [Gerhard Oberländer](https://de.wikipedia.org/wiki/Gerhard_Oberl%C3%A4nder) (1907–1995) ([at artnet](https://www.artnet.com/artists/gerhard-oberländer/)) from my office...
+A colour etching by [Gerhard Oberländer](https://de.wikipedia.org/wiki/Gerhard_Oberl%C3%A4nder) (German) (1907–1995) ([at artnet](https://www.artnet.com/artists/gerhard-oberländer/)) from my office...
 <!--more-->
 
 {{< gallery >}}
@@ -36,6 +36,6 @@ A colour etching by [Gerhard Oberländer](https://de.wikipedia.org/wiki/Gerhard_
 ]
 {{</ gallery >}}
 
-Gerhard Oberländer (1907–1995) was a German children’s book illustrator. He studied graphic design in Berlin, including at the [University of the Arts](https://de.wikipedia.org/wiki/Universit%C3%A4t_der_K%C3%BCnste_Berlin). For the [Büchergilde Gutenberg](https://de.wikipedia.org/wiki/B%C3%BCchergilde_Gutenberg), he illustrated more than 40 books, for example, and received several awards from the [German Publishers and Booksellers Association](https://de.wikipedia.org/wiki/ B%C3%B6rsenverein_des_Deutschen_Buchhandels) and the [Stiftung Buchkunst](https://de.wikipedia.org/wiki/Stiftung_Buchkunst). In 1987, the [Munich City Museum](https://de.wikipedia.org/wiki/M%C3%BCnchner_Stadtmuseum) dedicated an exhibition to him.
+Gerhard Oberländer (1907–1995) was a German children’s book illustrator. He studied graphic design in Berlin, including at the [University of the Arts](https://en.wikipedia.org/wiki/Berlin_University_of_the_Arts). For the [Büchergilde Gutenberg](https://de.wikipedia.org/wiki/B%C3%BCchergilde_Gutenberg) (German), he illustrated more than 40 books, for example, and received several awards from the [German Publishers and Booksellers Association](https://en.wikipedia.org/wiki/B%C3%B6rsenverein_des_Deutschen_Buchhandels) and the [Stiftung Buchkunst](https://de.wikipedia.org/wiki/Stiftung_Buchkunst). In 1987, the [Munich City Museum](https://en.wikipedia.org/wiki/Munich_Stadtmuseum) dedicated an exhibition to him.
 
 The print depicts marionettes in elaborate costumes, presumably hung up for storage. It can also be found online at [Auctionet](https://auctionet.com/de/4028989-gerhard-oberlander-marionetten-in-prachtigen-kostumen-farbradierung).
