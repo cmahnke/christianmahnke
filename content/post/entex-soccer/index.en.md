@@ -1,6 +1,6 @@
 ---
 date: 2026-07-02T18:30:44+02:00
-title: 'Eine Handheld-Spielekonsole aus dem Jahr 1979'
+title: 'Entex Soccer: A handheld game from 1979'
 keywords: Entex, Soccer, Fussball
 tags:
   - Object
