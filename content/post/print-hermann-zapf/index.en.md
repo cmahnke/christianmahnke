@@ -30,8 +30,8 @@ A lithograph by [Hermann Zapf](https://de.wikipedia.org/wiki/Hermann_Zapf) (1918
 
 {{< gallery >}}
 [
-  {"src": "img/print.jpg", "alt": "Druck"},
-  {"src": "img/signature.jpg", "alt": "Signatur"}
+  {"src": "img/print.jpg", "alt": "Sheet"},
+  {"src": "img/signature.jpg", "alt": "Signature"}
 ]
 {{</ gallery >}}
 
