@@ -8,6 +8,9 @@
 
 {{ define "content" }}
   {{- $itemsPerPage := 30 -}}
+  {{- with site.Params.artcollectionitems -}}
+    {{- $itemsPerPage = . -}}
+  {{- end -}}
   {{- $ignoreTags := slice "Art" "Christmas" "ClimateChange" "Visualisation" "ArtBrut" -}}
   {{- $labelLangs := slice "de" "en" -}}
   {{- $postSection := "post" -}}
