@@ -30,7 +30,9 @@ weight: 7
 ### Konsolenspiele Bootlegs und Raubkopien
 
 * [Pirated Game Museum Wiki](https://piratedgamemuseum.fandom.com/wiki/Pirated_Game_Museum_Wiki)
+* [Bootleg Games Wiki](https://bootleggames.fandom.com/wiki/BootlegGames_Wiki)
 * [bootleg collection (jensma.de)](https://www.jensma.de/pirates/)
+
 
 ## Kunst
 
