@@ -21,7 +21,6 @@ wikidata:
   - https://www.wikidata.org/wiki/Q24879
   - https://www.wikidata.org/wiki/Q385870
 lastmod: 2026-05-10T09:00:44+02:00
-draft: true
 ---
 
 Letzten Sommer habe ich auf dem Flohmarkt ein [Dendy Junior](/post/dendy-junior/) gefunden, nun passende Spiele...
@@ -46,7 +45,7 @@ Bootleg-Spiele sind unautorisierte, inoffizielle Videospiele, die beispielsweise
 ]
 {{</ gallery >}}
 
-## Update 10.5.26
+# Update 10.5.26
 
 Heute habe ich auf dem [Flohmarkt auf der Bürgerweide](https://www.breminale.de/Flohmarkt/_4) in Bremen eine weitere interessante Ergänzung für Dendy-Junior-Spiele (und andere Klone) gefunden: Den "NASA Games Super Adapter For Entertainment System", also einen Adapter, mit dem sich die Spiele auf einer originalen NES-Konsole betreiben lassen.
 

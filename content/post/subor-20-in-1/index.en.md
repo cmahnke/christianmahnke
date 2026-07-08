@@ -21,7 +21,6 @@ wikidata:
   - https://www.wikidata.org/wiki/Q24879
   - https://www.wikidata.org/wiki/Q385870
 lastmod: 2026-05-10T09:00:44+02:00
-draft: true
 ---
 
 Last summer I found a [Dendy Junior](/en/post/dendy-junior/) at the flea market; now I need some games to go with it...
@@ -46,7 +45,7 @@ Bootleg games are unauthorised, unofficial video games which, for example, have 
 ]
 {{</ gallery >}}
 
-## Update 10.5.26
+# Update 10.5.26
 
 Today, at the [Bürgerweide flea market](https://www.breminale.de/Flohmarkt/_4) (German) in Bremen, I found another interesting addition for Dendy Junior games (and other clones): the "NASA Games Super Adapter For Entertainment System", an adapter that allows the games to be played on an original NES console.
 
