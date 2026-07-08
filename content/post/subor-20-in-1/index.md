@@ -27,11 +27,11 @@ draft: true
 Letzten Sommer habe ich auf dem Flohmarkt ein [Dendy Junior](/post/dendy-junior/) gefunden, nun passende Spiele...
 <!--more-->
 
-...diesmal auf dem [Prager Flohmarkt](https://www.blesitrhy.cz/).
+...diesmal auf dem [Prager Flohmarkt](https://www.blesitrhy.cz/) (tschechisch).
 
 Bei dem Cartridge handelt es sich um das Paket "Subor 20 in 1", also eine Bootleg-Spielsammlung.
 
-Das Spiel wurde von der Firma [Subor](https://en.wikipedia.org/wiki/Subor) (englisch) hergestellt. Die Firma stellte in den 1990er Jahren primär [Famicom](https://de.wikipedia.org/wiki/Nintendo_Family_Computer)-Klone mit den dazugehörigen Spielen her. Das Famicom (Kurzform für Family Computer) ist die originale japanische Version der 8-Bit-Konsole von Nintendo. Im Westen ist diese als [NES (Nintendo Entertainment System)](https://de.wikipedia.org/wiki/Nintendo_Entertainment_System) bekannt. Technisch sind sie weitgehend identisch, haben aber beispielsweise eine andere Bauform für die Steckmodule (60 Pins beim Famicom gegenüber 72 Pins beim NES).
+Das Spiel wurde von der Firma [Subor](https://en.wikipedia.org/wiki/Subor) (englisch) hergestellt. Die Firma stellte in den 1990er Jahren primär [Famicom-Klone](https://en.wikipedia.org/wiki/Famiclone) (englisch) mit den dazugehörigen Spielen her. Das [Famicom](https://de.wikipedia.org/wiki/Nintendo_Family_Computer) (Kurzform für Family Computer) ist die originale japanische Version der 8-Bit-Konsole von Nintendo. Im Westen ist diese als [NES (Nintendo Entertainment System)](https://de.wikipedia.org/wiki/Nintendo_Entertainment_System) bekannt. Technisch sind sie weitgehend identisch, haben aber beispielsweise eine andere Bauform für die Steckmodule (60 Pins beim Famicom gegenüber 72 Pins beim NES).
 
 Bootleg-Spiele sind unautorisierte, inoffizielle Videospiele, die beispielsweise ohne Lizenz des Rechteinhabers ("Raubkopie") erstellt wurden und das Urheberrecht ganz oder teilweise verletzen können. Aufgrund ihrer zweifelhaften Natur haben sie sich inzwischen zu einem interessanten Sammelgebiet entwickelt. Auf diesen Seiten findet man üebrsichetn
 

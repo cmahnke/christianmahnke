@@ -24,16 +24,16 @@ lastmod: 2026-05-10T09:00:44+02:00
 draft: true
 ---
 
-Last summer I found a [Dendy Junior](/post/dendy-junior/) at the flea market; now I need some games to go with it...
+Last summer I found a [Dendy Junior](/en/post/dendy-junior/) at the flea market; now I need some games to go with it...
 <!--more-->
 
-..this time at the [Prague Flea Market](https://www.blesitrhy.cz/).
+..this time at the [Prague Flea Market](https://www.blesitrhy.cz/) (Czech).
 
 The cartridge is the ‘Subor 20 in 1’ pack, which is a bootleg games collection.
 
-The game was produced by the company [Subor](https://en.wikipedia.org/wiki/Subor) (English). In the 1990s, the company primarily produced [Famicom](https://de.wikipedia.org/wiki/Nintendo_Family_Computer) clones along with the corresponding games. The Famicom (short for Family Computer) is the original Japanese version of Nintendo’s 8-bit console. In the West, this is known as the [NES (Nintendo Entertainment System)](https://de.wikipedia.org/wiki/Nintendo_Entertainment_System). Technically, they are largely identical, but differ, for example, in the design of the cartridge connectors (60 pins on the Famicom compared to 72 pins on the NES).
+The game was produced by the company [Subor](https://en.wikipedia.org/wiki/Subor). In the 1990s, the company primarily produced [Famicom clones](https://en.wikipedia.org/wiki/Famiclone) along with the corresponding games. The [Famicom](https://en.wikipedia.org/wiki/Nintendo_Family_Computer) (short for Family Computer) is the original Japanese version of Nintendo’s 8-bit console. In the West, this is known as the [NES (Nintendo Entertainment System)](https://en.wikipedia.org/wiki/Nintendo_Entertainment_System). Technically, they are largely identical, but differ, for example, in the design of the cartridge connectors (60 pins on the Famicom compared to 72 pins on the NES).
 
-Bootleg games are unauthorised, unofficial video games which, for example, have been produced without a licence from the rights holder (‘pirated copies’) and may infringe copyright in whole or in part. Due to their dubious nature, they have since become an interesting area of collecting. On these pages you will find overviews of
+Bootleg games are unauthorised, unofficial video games which, for example, have been produced without a licence from the rights holder ("pirated copies") and may infringe copyright in whole or in part. Due to their dubious nature, they have since become an interesting area of collecting. On these pages you will find overviews of
 
 * [Pirated Game Museum Wiki](https://piratedgamemuseum.fandom.com/wiki/Pirated_Game_Museum_Wiki)
 * [Bootleg Games Wiki](https://bootleggames.fandom.com/wiki/BootlegGames_Wiki)
@@ -48,7 +48,7 @@ Bootleg games are unauthorised, unofficial video games which, for example, have 
 
 ## Update 10.5.26
 
-Today, at the [Bürgerweide flea market](https://www.breminale.de/Flohmarkt/_4) in Bremen, I found another interesting addition for Dendy Junior games (and other clones): the "NASA Games Super Adapter For Entertainment System", an adapter that allows the games to be played on an original NES console.
+Today, at the [Bürgerweide flea market](https://www.breminale.de/Flohmarkt/_4) (German) in Bremen, I found another interesting addition for Dendy Junior games (and other clones): the "NASA Games Super Adapter For Entertainment System", an adapter that allows the games to be played on an original NES console.
 
 {{< gallery >}}
 [
