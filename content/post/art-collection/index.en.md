@@ -30,3 +30,6 @@ There are also galleries for different techniques:
 In addition, the following regional groupings:
 * [Göttingen](/en/art-collection/goettingen/)
 * [Lower Saxony](/en/art-collection/niedersachsen/)
+* [Czechia](/art-collection/czechia/)
+
+And an overview of all [works by unknown artists](/en/art-collection/unknownartist/).

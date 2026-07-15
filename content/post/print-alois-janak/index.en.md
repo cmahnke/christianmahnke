@@ -6,6 +6,7 @@ tags:
   - Art
   - Etching
   - _ArtCollection
+  - _Czechia
 preview: img/print.jpg
 outputs:
   - bibtex

@@ -5,6 +5,7 @@ keywords: Worpswede, Cornelius Rogge, Künstlerkolonie Dötlingen
 tags:
   - Art
   - Etching
+  - _Niedersachsen
 preview: img/print.jpg
 outputs:
   - bibtex

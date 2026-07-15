@@ -8,6 +8,7 @@ tags:
   - Art
   - Lithography
   - _ArtCollection
+  - _Czechia
 preview: img/print.jpg
 outputs:
   - bibtex

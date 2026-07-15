@@ -30,3 +30,6 @@ Zusätzlich gibt es Gallerien für unterschiedliche Techniken:
 Zusätzlich die folgenden regionalen Gruppierungen:
 * [Göttingen](/art-collection/goettingen/)
 * [Niedersachsen](/art-collection/niedersachsen/)
+* [Tschechien](/art-collection/czechia/)
+
+Und eine Übersicht aller [Werke unbekannter Urherberschaft](/art-collection/unknownartist/).
