@@ -20,7 +20,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q188675
 ---
 
-Ich habe einen Farbholzschnitt eines unbekannten Künstlers gefunden...
+Ich habe einen Farbholzschnitt von unbekannter Hand gefunden....
 <!--more-->
 
 {{< gallery >}}
@@ -30,6 +30,6 @@ Ich habe einen Farbholzschnitt eines unbekannten Künstlers gefunden...
 ]
 {{</ gallery >}}
 
-Das Bild zeigt ein stark stilisiertes Porträt eines Mädchens oder eine jungen Frau. In der Platte sind die Gesichtskonturen schwarz und Magenta für die Haarschleife eingefärbt worden.
+Das Bild zeigt ein stark stilisiertes Porträt eines Mädchens bzw. einer jungen Frau. Die Gesichtskonturen sind auf der Platte schwarz, die Haarschleife magenta eingefärbt.
 
 Die Signatur lässt sich als "Herzig" lesen, aber bisher ließ sich niemand eindeutig zuordnen.
