@@ -16,10 +16,12 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   description: Woodcut print of unknown origin
-lastmod: 2026-06-29T00:00:00+02:00
+lastmod: 2026-07-08T00:00:00+02:00
 wikidata:
   - https://www.wikidata.org/wiki/Q137661693
   - https://www.wikidata.org/wiki/Q140407779
+  - https://www.wikidata.org/wiki/Q700562
+  - https://www.wikidata.org/wiki/Q137668018
 ---
 
 I've found a colour woodcut by an unknown artist...
@@ -40,3 +42,7 @@ Although one might think that a relatively large castle overlooking a bend in th
 Gerbrand Caspers, the author of the blog “[The Linosaurus](https://gerrie-thefriendlyghost.blogspot.com/)”, believes that the creator of the montage was Erwin Frommbach (1892–1975). Posts about him can be found on his blog:
 * [Who was Erwin Frommbach?](https://gerrie-thefriendlyghost.blogspot.com/2014/07/who-was-erwin-frommbach.html)
 * [Erwin Frommbach: new finds!](https://gerrie-thefriendlyghost.blogspot.com/2016/09/erwin-frommbach-new-finds.html)
+
+# Update 8.7.2026
+
+[Wolfgang Barina](https://www.wolfgang-barina.de/), also a collector of woodcuts, was able to identify the subject. It is the [Königstein Fortress](https://de.wikipedia.org/wiki/Festung_K%C3%B6nigstein).

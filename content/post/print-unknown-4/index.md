@@ -16,10 +16,12 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   description: Holzschnitt unbekannter Herkunft
-lastmod: 2026-06-29T00:00:00+02:00
+lastmod: 2026-07-08T00:00:00+02:00
 wikidata:
   - https://www.wikidata.org/wiki/Q137661693
   - https://www.wikidata.org/wiki/Q140407779
+  - https://www.wikidata.org/wiki/Q700562
+  - https://www.wikidata.org/wiki/Q137668018
 ---
 
 Ich habe einen Farbholzschnitt eines unbekannten Künstlers gefunden...
@@ -40,3 +42,7 @@ Auch wenn man meinen sollte, dass eine relativ große Burg über einer Flussschl
 Gerbrand Caspers, der Betreiber des Blogs "[The Linosaurus](https://gerrie-thefriendlyghost.blogspot.com/)", vermutet das der Urheber des Schnitts Erwin Frommbach (1892-1975). Beiträge über ihn finden sich in seinem Blog:
 * [Who was Erwin Frommbach ?](https://gerrie-thefriendlyghost.blogspot.com/2014/07/who-was-erwin-frommbach.html)
 * [Erwin Frommbach: new finds !](https://gerrie-thefriendlyghost.blogspot.com/2016/09/erwin-frommbach-new-finds.html)
+
+# Update 8.7.2026
+
+[Wolfgang Barina](https://www.wolfgang-barina.de/), ebenfalls ein Sammler von Holzschnitten, konnte das Motiv identifizieren. Es handelt sich um die [Festung Königstein](https://de.wikipedia.org/wiki/Festung_K%C3%B6nigstein).
