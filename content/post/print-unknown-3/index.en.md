@@ -19,7 +19,6 @@ linkedart:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   title: Am Hang
 wikidata:
-  - https://www.wikidata.org/wiki/Q13429365
   - https://www.wikidata.org/wiki/Q188675
 ---
 
