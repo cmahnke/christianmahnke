@@ -16,7 +16,6 @@ linkedart:
   owner:
     wikidata: https://www.wikidata.org/wiki/Q137668638
   description: Holzschnitt unbekannter Herkunft
-lastmod: 2026-06-29T00:00:00+02:00
 wikidata:
   - https://www.wikidata.org/wiki/Q188675
 ---
