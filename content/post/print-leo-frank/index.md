@@ -6,6 +6,7 @@ tags:
   - Art
   - WoodblockPrint
   - _ArtCollection
+  - _Austria
 preview: img/print.jpg
 outputs:
   - bibtex

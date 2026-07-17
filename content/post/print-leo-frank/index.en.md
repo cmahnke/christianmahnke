@@ -6,6 +6,7 @@ tags:
   - Art
   - WoodblockPrint
   - _ArtCollection
+  - _Austria
 preview: img/print.jpg
 outputs:
   - bibtex
@@ -33,8 +34,8 @@ I found a woodcut by [Leo Frank](https://www.geschichtewiki.wien.gv.at/Leo_Frank
 
 {{< gallery >}}
 [
-  {"src": "img/print.jpg", "alt": "Druck"},
-  {"src": "img/signature.jpg", "alt": "Signatur"}
+  {"src": "img/print.jpg", "alt": "Print"},
+  {"src": "img/signature.jpg", "alt": "Signature"}
 ]
 {{</ gallery >}}
 

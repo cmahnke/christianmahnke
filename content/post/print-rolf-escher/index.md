@@ -32,4 +32,4 @@ Nachdem mein [Wohnzimmer](/post/living-room/) nun langsam zur Bibliothek wird, h
 ]
 {{</ gallery >}}
 
-Rolf Escher, der in Düsseldorf Malerei studierte, 1976 wurde er Professor in Münster. Seine Motive drehen sich häufig um Bibliotheken und Bücher, unter anderem hat er 2002 in der SUB Göttingen ausgestellt.
+Rolf Escher, der in Düsseldorf Malerei studierte, wurde 1976 Professor in Münster. Seine Motive drehen sich häufig um Bibliotheken und Bücher, unter anderem hat er 2002 in der SUB Göttingen ausgestellt.
