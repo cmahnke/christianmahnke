@@ -4,7 +4,7 @@ title: 'Colour lithograph by Karl Korab (*1937)'
 keywords: Karl Korab
 tags:
   - Art
-  - Lithograpjy
+  - Lithography
   - _ArtCollection
   - _Austria
 preview: img/print.jpg
@@ -20,7 +20,6 @@ linkedart:
 wikidata:
   - https://www.wikidata.org/wiki/Q1731990
   - https://www.wikidata.org/wiki/Q188675
-draft: true
 ---
 
 I bought a colour lithograph by [Karl Korab](https://de.wikipedia.org/wiki/Karl_Korab) (born 1937) ([at artnet](https://www.artnet.com/artists/karl-korab/))...

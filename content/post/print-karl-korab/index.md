@@ -4,7 +4,7 @@ title: 'Farblithografie von Karl Korab (*1937)'
 keywords: Karl Korab
 tags:
   - Art
-  - Lithograpjy
+  - Lithography
   - _ArtCollection
   - _Austria
 preview: img/print.jpg
@@ -20,7 +20,6 @@ linkedart:
 wikidata:
   - https://www.wikidata.org/wiki/Q1731990
   - https://www.wikidata.org/wiki/Q188675
-draft: true
 ---
 
 Ich habe eine Farblithografie von [Karl Korab](https://de.wikipedia.org/wiki/Karl_Korab) (geb. 1937) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/karl-korab/)) gekauft...
