@@ -1,3 +1,5 @@
+$box-bg-color: #ff5477bb;
+
 .section-art-collection {
   position: relative;
   width: 100%;
@@ -29,7 +31,6 @@
     background-position: bottom;
     margin-top: -1px;
   }
-
 
   .page-wrapper .main .header .header-spacer {
     background-image: linear-gradient(#b2444d, #FD3005);
@@ -81,7 +82,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      background-color: #ff5477bb;
+      background-color: $box-bg-color;
 
       a:before {
         color: #000;
@@ -96,6 +97,7 @@
         flex-basis: 100%;
         font-weight: bolder;
         text-align: center;
+        padding-bottom: .6rem;
       }
 
       li {
@@ -151,5 +153,122 @@
         }
       }
     }
+  }
+
+  $transition-duration: 0.55s;
+  $transition-easing: ease;
+
+  .content-container.art-collection .sub-galleries {
+    text-align: start;
+    width: 90%;
+    margin: auto;
+
+    summary {
+      text-align: start;
+      cursor: pointer;
+      font-weight: 600;
+      padding-top: 0.5em;
+      list-style: none;
+      position: relative;
+      user-select: none;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::before {
+        text-align: start;
+        content: "▶";
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg);
+        transition: transform $transition-duration $transition-easing;
+        font-size: 0.8em;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .toc-list {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows $transition-duration $transition-easing;
+      --header-width: 7rem;
+
+      > * {
+        overflow: hidden;
+      }
+    }
+
+    &[open] {
+      summary::after {
+        transform: translateY(-50%) rotate(90deg);
+      }
+
+      .toc-list {
+        grid-template-rows: 1fr;
+      }
+    }
+
+    .toc-list-inner {
+      box-shadow: 0 0px 6px #ff5477;
+      background-color: $box-bg-color;
+      padding: .6rem;
+      /*
+      padding: 1.4em 1.4em 1em 1.4em;
+      margin: 1em;
+      */
+      border-radius: 1rem;
+
+      .artists-toc {
+        direction: unset;
+        font-size: 1.2rem;
+        list-style-type: none;
+        border-radius: 1rem;
+        box-shadow: unset;
+        margin: .6rem;
+        text-justify: none;
+        align-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        background-color: unset;
+        display: block;
+        list-style: none;
+        padding: 0;
+        padding-left: var(--header-width, 100px);
+        text-indent: calc(var(--header-width, 100px) * -1);
+
+        .toc-header {
+          display: inline;
+          font-weight: bold;
+          flex-basis: unset;
+          margin-right: .8rem;
+        }
+
+        li {
+          display: inline;
+          padding-left: unset;
+
+          &::after {
+            content: " ";
+          }
+
+          a:before {
+            padding-right: .2rem;
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    white-space: nowrap;
+  }
+
+  .artists-toc li a {
+    white-space: nowrap;
   }
 }
