@@ -4,8 +4,18 @@ on:
   workflow_dispatch:
   workflow_call:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.13"
+
+permissions:
+  contents: read
+
 jobs:
-  deploy:
+  archive:
     runs-on: ubuntu-latest
 
     steps:
