@@ -121,15 +121,15 @@ jobs:
           ./themes/projektemacher-base/scripts/github/puppeteer-chrome.sh
           ./themes/projektemacher-base/scripts/github/check-js-errors.sh -e -c test-urls.local.json
 
-      - name: Archive links
-        env:
-          INTERNET_ARCHIVE_ACCESS_KEY: ${{ secrets.INTERNET_ARCHIVE_ACCESS_KEY }}
-          INTERNET_ARCHIVE_SECRET_KEY: ${{ secrets.INTERNET_ARCHIVE_SECRET_KEY }}
-        run: python ./themes/projektemacher-base/scripts/archive.py -d docs/ -e projektemacher.org -a 14 -o archived-urls.txt
+      # - name: Archive links
+      #   env:
+      #     INTERNET_ARCHIVE_ACCESS_KEY: ${{ secrets.INTERNET_ARCHIVE_ACCESS_KEY }}
+      #     INTERNET_ARCHIVE_SECRET_KEY: ${{ secrets.INTERNET_ARCHIVE_SECRET_KEY }}
+      #   run: python ./themes/projektemacher-base/scripts/archive.py -d docs/ -e projektemacher.org -a 14 -o archived-urls.txt
 
-      - name: Save URL list
-        run: |
-          cp archived-urls.txt docs/
+      # - name: Save URL list
+      #   run: |
+      #     cp archived-urls.txt docs/
 
       - name: Configure git
         run: |
@@ -146,4 +146,9 @@ jobs:
   lod-data:
     needs: deploy
     uses: ./.github/workflows/wikidata-hdt.yml
+    secrets: inherit
+
+  archive:
+    needs: deploy
+    uses: ./.github/workflows/archive.yml
     secrets: inherit
