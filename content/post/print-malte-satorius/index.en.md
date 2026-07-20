@@ -30,7 +30,7 @@ linkedart:
 wikidata:
   - https://www.wikidata.org/wiki/Q21014973
   - https://www.wikidata.org/wiki/Q2349238
-lastmod: 2025-06-04T00:00:00+02:00
+lastmod: 2026-07-17T00:00:00+02:00
 ---
 
 Random find: Christmas card from [Malte Satorius](https://de.wikipedia.org/wiki/Malte_Sartorius) (1933-2017) ([at artnet](https://www.artnet.com/artists/malte-sartorius/)).
@@ -57,5 +57,17 @@ Following an inquiry to the Malte Sartorius Artists' Foundation, here is Max M. 
 Some of these self-printed Christmas cards by Malte Sartorius are in the Foundation's possession. However, the artist kept these Christmas cards as part of his correspondence and only in rare cases as part of his artistic work. The fact that your card was signed by both Malte Sartorius and his wife Liesel indicates private correspondence. It must be said, however, that Malte Sartorius also maintained a friendly relationship with some of his regular buyers.
 [...]
 Your comparison with the lamp motifs is very apt. Your card dates from a very short period of the artist's work in the 1960s, during which Sartorius experimented with abstract forms of representation. This makes your card the earliest Christmas card that I have come across to date. I have also only come across one case so far in which Sartorius used a motif from an existing series of works for a Christmas card. It is therefore very likely that even after a complete review of the estate, no counterpart to your motif will emerge.
+[...]
+{{< /quote >}}
+
+# Update 17.7.2026
+
+Max M. Bergmann gen. Freisenbruch hat noch mehr herausgefunden:
+
+{{< quote from="Max M. Bergmann gen. Freisenbruch" >}}
+[...]
+I have now – admittedly by pure chance – managed to identify the motif on the card. It is ‘Lampenformen II’, a linocut from 1963. It is a two-colour print that actually exists only in card format.
+
+If you’re interested, you’ll find your card in the catalogue *Malte Sartorius. Das Graphische Werk – Druckgraphik von 1955 bis 1977*, catalogue no. 209, p. 303
 [...]
 {{< /quote >}}

@@ -29,7 +29,7 @@ linkedart:
 wikidata:
   - https://www.wikidata.org/wiki/Q21014973
   - https://www.wikidata.org/wiki/Q2349238
-lastmod: 2025-06-04T00:00:00+02:00
+lastmod: 2026-07-17T00:00:00+02:00
 ---
 
 Zufallsfund: Weihnachtskarte von [Malte Satorius](https://de.wikipedia.org/wiki/Malte_Sartorius) (1933-2017) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/malte-sartorius/)).
@@ -56,5 +56,17 @@ Nach einer Anfrage bei der Künstlerstiftung Malte Sartorius, hier die Einschät
 Es befinden sich einige dieser selbstgedruckten Weihnachtskarten von Malte Sartorius im Besitz der Stiftung. Allerdings hat der Künstler diese Weihnachtskarten als Teil seiner Korrespondenz und nur in seltenen Fällen als Teil des künstlerischen Werks aufbewahrt. Dass Ihre Karte sowohl von Malte Sartorius, wie auch von dessen Frau Liesel unterschrieben wurde deutet auf private Korrespondenz hin. Wobei man sagen muss, dass Malte Sartorius zu einigen seiner regelmäßigen Käufer*innen auch ein freundschaftliches Verhältnis pflegte.
 [...]
 Ihr vergleich mit den Lampenmotiven ist sehr treffend. Ihre Karte stammt aus einer sehr kurzen Schaffensperiode des Künstlers in den 1960er Jahren, in der Sartorius mit abstrakten Darstellungsformen experimentiert hat. Damit ist Ihre Karte die frühste Weihnachtskarte, die mir bis zum jetzigen Zeitpunkt untergekommen ist. Auch ist mir bis jetzt erst ein Fall untergekommen, in der Sartorius für eine Weihnachtskarte ein Motiv aus einer bestehenden Werkserie benutzt hat. Es ist also sehr wahrscheinlich, dass auch nach einer vollständigen Durchsicht des Nachlasses kein Gegenstück zu Ihrem Motiv auftaucht.
+[...]
+{{< /quote >}}
+
+# Update 17.7.2026
+
+Max M. Bergmann gen. Freisenbruch hat noch mehr herausgefunden:
+
+{{< quote from="Max M. Bergmann gen. Freisenbruch" >}}
+[...]
+Es ist mir nun - und zugegebenermaßen durch puren Zufall - gelungen, das Motiv der Karte zu identifizieren. Dabei handelt es sich um "Lampenformen II". Ein Linolschnitt von 1963. Ein zweifarbiger Druck, der tatsächlich nur als Kartenformat existiert.
+
+Bei Interesse finden Sie Ihre Karte in dem Katalog "Malte Sartorius. Das Graphische Werk - Druckgraphik von 1955 bis 1977", Katalognr. 209, S. 303
 [...]
 {{< /quote >}}
