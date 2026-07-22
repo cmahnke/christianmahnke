@@ -52,7 +52,7 @@
     "pagefind": "^1.5.2",
     "playcanvas": "^2.20.0",
     "sparql-editor": "^0.7.1",
-    "svgo": "4.0.1",
+    "svgo": "4.0.2",
     "three": "^0.184.0",
     "tify": "^0.35.0",
     "ts-pong": "git+https://git@github.com/cmahnke/typescript-pong"
