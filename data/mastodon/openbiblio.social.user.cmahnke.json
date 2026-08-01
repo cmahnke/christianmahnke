@@ -46,9 +46,10 @@
     "role": {
       "id": "-99",
       "name": "",
-      "permissions": "65536",
+      "permissions": "2162688",
       "color": "",
-      "highlighted": false
+      "highlighted": false,
+      "collection_limit": 10
     },
     "source": {
       "privacy": "public",
@@ -83,11 +84,16 @@
     "indexable": false,
     "hide_collections": null,
     "memorial": null,
-    "avatar_description": null,
-    "header_description": null,
-    "show_media": null,
-    "show_media_replies": null,
-    "show_featured": null
+    "avatar_description": "",
+    "header_description": "",
+    "show_media": true,
+    "show_media_replies": true,
+    "show_featured": true,
+    "feature_approval": {
+      "automatic": [],
+      "manual": [],
+      "current_user": "denied"
+    }
   },
   "statuses": [
     {
@@ -15734,11 +15740,16 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [],
+        "manual": [],
+        "current_user": "missing"
+      }
     },
     {
       "id": "111188493168319056",
@@ -15774,11 +15785,16 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [],
+        "manual": [],
+        "current_user": "denied"
+      }
     },
     {
       "id": "108232286898130914",
@@ -15791,7 +15807,7 @@
       "created_at": "2022-05-02T00:00:00+00:00",
       "following_count": 264,
       "followers_count": 125,
-      "statuses_count": 163,
+      "statuses_count": 164,
       "note": "<p>Metadata Librarian at SUB Göttingen</p>",
       "url": "https://openbiblio.social/@alexj",
       "uri": "https://openbiblio.social/users/alexj",
@@ -15805,7 +15821,7 @@
       "bot": false,
       "fields": [],
       "emojis": [],
-      "last_status_at": "2026-06-09T00:00:00",
+      "last_status_at": "2026-07-31T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -15814,11 +15830,18 @@
       "indexable": false,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "20824",
@@ -15860,11 +15883,18 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "762",
@@ -15907,7 +15937,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-07-28T00:00:00",
+      "last_status_at": "2026-07-30T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -15916,11 +15946,18 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "55987",
@@ -15933,7 +15970,7 @@
       "created_at": "2020-12-30T00:00:00+00:00",
       "following_count": 2259,
       "followers_count": 1182,
-      "statuses_count": 7673,
+      "statuses_count": 7676,
       "note": "<p>Neo-Latin, DH, librarianship, <a href=\"https://openbiblio.social/tags/openGLAM\" class=\"mention hashtag\" rel=\"tag\">#<span>openGLAM</span></a>, and digital cultural heritage <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@digiSberlin\" class=\"u-url mention\">@<span>digiSberlin</span></a></span></p><p><a href=\"https://openbiblio.social/tags/tootfinder\" class=\"mention hashtag\" rel=\"tag\">#<span>tootfinder</span></a></p>",
       "url": "https://openbiblio.social/@awinkler",
       "uri": "https://openbiblio.social/users/awinkler",
@@ -15963,7 +16000,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-07-28T00:00:00",
+      "last_status_at": "2026-07-31T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -15972,11 +16009,18 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "914",
@@ -16033,11 +16077,18 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "109558465949241560",
@@ -16073,11 +16124,16 @@
       "indexable": false,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [],
+        "manual": [],
+        "current_user": "missing"
+      }
     },
     {
       "id": "39269",
@@ -16119,11 +16175,18 @@
       "indexable": false,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "111242286159217944",
@@ -16136,7 +16199,7 @@
       "created_at": "2023-10-11T00:00:00+00:00",
       "following_count": 58,
       "followers_count": 54,
-      "statuses_count": 164,
+      "statuses_count": 166,
       "note": "<p>Studied Southeast Asian Studies. Now in Digital Humanities at the Freies Deutsches Hochstift / Frankfurt. Also coding around museum-digital.</p>",
       "url": "https://mastodon.social/@jrenslin",
       "uri": "https://mastodon.social/users/jrenslin",
@@ -16156,7 +16219,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-07-23T00:00:00",
+      "last_status_at": "2026-07-30T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -16165,11 +16228,16 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [],
+        "manual": [],
+        "current_user": "missing"
+      }
     },
     {
       "id": "109280705680306706",
@@ -16205,11 +16273,16 @@
       "indexable": false,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [],
+        "manual": [],
+        "current_user": "missing"
+      }
     },
     {
       "id": "112879773779477271",
@@ -16245,11 +16318,16 @@
       "indexable": false,
       "hide_collections": true,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [],
+        "manual": [],
+        "current_user": "missing"
+      }
     },
     {
       "id": "108219960083875544",
@@ -16262,7 +16340,7 @@
       "created_at": "2022-04-30T00:00:00+00:00",
       "following_count": 2894,
       "followers_count": 785,
-      "statuses_count": 97,
+      "statuses_count": 98,
       "note": "<p><a href=\"https://nrw.social/tags/Architekt\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Architekt</span></a> und <a href=\"https://nrw.social/tags/Stadtplaner\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Stadtplaner</span></a>, großer Fan von lebenswerten öffentlichen Räumen, schönen Häusern und guten Planungsprozessen, die dorthin führen. Und sonst? <a href=\"https://nrw.social/tags/Aikido\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Aikido</span></a> <a href=\"https://nrw.social/tags/Schwimmen\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Schwimmen</span></a> <a href=\"https://nrw.social/tags/Fahrrad\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Fahrrad</span></a> <a href=\"https://nrw.social/tags/Velomobil\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Velomobil</span></a> <a href=\"https://nrw.social/tags/St%C3%A4dtegucken\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Städtegucken</span></a></p><p>Toots evaporieren nach 6 Tagen.</p><p><a href=\"https://nrw.social/tags/architect\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>architect</span></a> and <a href=\"https://nrw.social/tags/urbanist\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>urbanist</span></a>, big fan of livable public spaces, beautiful houses and good planning processes that lead to that. What else? <a href=\"https://nrw.social/tags/aikido\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>aikido</span></a> <a href=\"https://nrw.social/tags/swimming\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>swimming</span></a> <a href=\"https://nrw.social/tags/cycling\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>cycling</span></a> <a href=\"https://nrw.social/tags/velomobile\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>velomobile</span></a> <a href=\"https://nrw.social/tags/city\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>city</span></a>-touring</p><p>Toots evaporate after 6 days.</p>",
       "url": "https://nrw.social/@publixpace",
       "uri": "https://nrw.social/users/publixpace",
@@ -16276,7 +16354,7 @@
       "bot": false,
       "fields": [],
       "emojis": [],
-      "last_status_at": "2026-07-28T00:00:00",
+      "last_status_at": "2026-07-31T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -16285,11 +16363,16 @@
       "indexable": false,
       "hide_collections": true,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [],
+        "manual": [],
+        "current_user": "missing"
+      }
     },
     {
       "id": "158",
@@ -16301,8 +16384,8 @@
       "locked": false,
       "created_at": "2019-03-15T00:00:00+00:00",
       "following_count": 218,
-      "followers_count": 399,
-      "statuses_count": 562,
+      "followers_count": 398,
+      "statuses_count": 563,
       "note": "<p>Head of Library Services at European University <a href=\"https://openbiblio.social/tags/Viadrina\" class=\"mention hashtag\" rel=\"tag\">#<span>Viadrina</span></a> Frankfurt (Oder); Editor-in-Chief of <a href=\"https://openbiblio.social/tags/OA\" class=\"mention hashtag\" rel=\"tag\">#<span>OA</span></a> journal Bibliothek – Forschung und Praxis; <a href=\"https://openbiblio.social/tags/openness\" class=\"mention hashtag\" rel=\"tag\">#<span>openness</span></a> advocate; 3D aficionado; bicycle owner.</p>",
       "url": "https://openbiblio.social/@jmiba",
       "uri": "https://openbiblio.social/users/jmiba",
@@ -16337,7 +16420,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-07-28T00:00:00",
+      "last_status_at": "2026-07-31T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -16346,11 +16429,18 @@
       "indexable": false,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "108698868512064691",
@@ -16363,7 +16453,7 @@
       "created_at": "2022-05-05T00:00:00+00:00",
       "following_count": 422,
       "followers_count": 563,
-      "statuses_count": 1437,
+      "statuses_count": 1436,
       "note": "<p>Redakteurin bei <span class=\"h-card\" translate=\"no\"><a href=\"https://social.heise.de/@techreview_de\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>techreview_de</span></a></span>. Homebase: <a href=\"https://mstdn.social/tags/G%C3%B6ttingen\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Göttingen</span></a>. Meine Themen: <a href=\"https://mstdn.social/tags/Science\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Science</span></a> / <a href=\"https://mstdn.social/tags/Tech\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Tech</span></a> / <a href=\"https://mstdn.social/tags/Musik\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Musik</span></a> (Wirt. + Tech) / <a href=\"https://mstdn.social/tags/KI\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>KI</span></a></p>",
       "url": "https://mstdn.social/@Kultanaamio",
       "uri": "https://mstdn.social/users/Kultanaamio",
@@ -16402,11 +16492,16 @@
       "indexable": false,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [],
+        "manual": [],
+        "current_user": "missing"
+      }
     },
     {
       "id": "70513",
@@ -16453,11 +16548,16 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [],
+        "manual": [],
+        "current_user": "missing"
+      }
     },
     {
       "id": "109313513255971314",
@@ -16493,11 +16593,18 @@
       "indexable": false,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "36882",
@@ -16510,7 +16617,7 @@
       "created_at": "2018-01-16T00:00:00+00:00",
       "following_count": 825,
       "followers_count": 460,
-      "statuses_count": 2383,
+      "statuses_count": 2385,
       "note": "<p>— what I do: digital libraries, metadata, web archiving, digital preservation, IIIF, Readium LCP <br>— what I love: mountains, bikes, JG Ballard, Colin Wilson</p>",
       "url": "https://digipres.club/@raffaele",
       "uri": "https://digipres.club/users/raffaele",
@@ -16535,7 +16642,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-07-28T00:00:00",
+      "last_status_at": "2026-07-31T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -16544,11 +16651,16 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [],
+        "manual": [],
+        "current_user": "missing"
+      }
     },
     {
       "id": "109383376051798181",
@@ -16561,7 +16673,7 @@
       "created_at": "2022-11-21T00:00:00+00:00",
       "following_count": 541,
       "followers_count": 711,
-      "statuses_count": 571,
+      "statuses_count": 572,
       "note": "<p>👩‍🔬 OSL supports universities and research organizations with Wikibase, VIVO, Open Access etc.</p><p>🦄 OSL helps universities, archives &amp; memory institutions to become more open, by means of data stewardship, hackathons, book sprints etc.</p><p>📚 OSL is part of <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@tibhannover\" class=\"u-url mention\">@<span>tibhannover</span></a></span>. We aim for being a friendly environment for learning and developing, close to TIB&#39;s collections, colleagues &amp; users.</p><p>🤝 OSL is part of <span class=\"h-card\" translate=\"no\"><a href=\"https://nfdi.social/@nfdi4culture\" class=\"u-url mention\">@<span>nfdi4culture</span></a></span> and <span class=\"h-card\" translate=\"no\"><a href=\"https://mastodon.social/@leibnizopenscience\" class=\"u-url mention\">@<span>leibnizopenscience</span></a></span></p>",
       "url": "https://openbiblio.social/@tibosl",
       "uri": "https://openbiblio.social/users/tibosl",
@@ -16596,7 +16708,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-07-15T00:00:00",
+      "last_status_at": "2026-07-29T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -16605,11 +16717,18 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "109301595462102949",
@@ -16666,11 +16785,18 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "109369312535322709",
@@ -16683,7 +16809,7 @@
       "created_at": "2022-11-18T00:00:00+00:00",
       "following_count": 210,
       "followers_count": 325,
-      "statuses_count": 1115,
+      "statuses_count": 1121,
       "note": "<p>Head of <a href=\"https://glammr.us/tags/DigitalResearch\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>DigitalResearch</span></a> <a href=\"https://glammr.us/tags/BritishLibrary\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>BritishLibrary</span></a> <a href=\"https://glammr.us/tags/DigitalScholarship\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>DigitalScholarship</span></a> | Executive Committee member: <a href=\"https://glammr.us/tags/iiif\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>iiif</span></a> | <a href=\"https://glammr.us/tags/impactocr\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>impactocr</span></a> | <a href=\"https://glammr.us/tags/ai4lam\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>ai4lam</span></a> | opinions my own.</p>",
       "url": "https://glammr.us/@nfitzger",
       "uri": "https://glammr.us/users/nfitzger",
@@ -16713,7 +16839,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-07-28T00:00:00",
+      "last_status_at": "2026-07-31T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -16722,11 +16848,16 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [],
+        "manual": [],
+        "current_user": "missing"
+      }
     },
     {
       "id": "109722349398195013",
@@ -16737,9 +16868,9 @@
       "group": false,
       "locked": false,
       "created_at": "2023-01-19T00:00:00+00:00",
-      "following_count": 533,
-      "followers_count": 627,
-      "statuses_count": 374,
+      "following_count": 537,
+      "followers_count": 632,
+      "statuses_count": 375,
       "note": "<p>International Image Interoperability Framework <a href=\"https://glammr.us/tags/IIIF\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>IIIF</span></a></p>",
       "url": "https://glammr.us/@IIIF",
       "uri": "https://glammr.us/users/IIIF",
@@ -16755,17 +16886,17 @@
         {
           "name": "Site",
           "value": "<a href=\"https://iiif.io/\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">iiif.io/</span><span class=\"invisible\"></span></a>",
-          "verified_at": "2026-07-06T18:56:36.749+00:00"
+          "verified_at": "2026-07-30T16:39:23.182+00:00"
         },
         {
           "name": "Github",
           "value": "<a href=\"https://github.com/IIIF/\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">github.com/IIIF/</span><span class=\"invisible\"></span></a>",
-          "verified_at": "2026-07-06T18:56:37.325+00:00"
+          "verified_at": "2026-07-30T16:39:23.888+00:00"
         },
         {
           "name": "Newsletter",
           "value": "<a href=\"https://iiif.io/newsletter/\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">iiif.io/newsletter/</span><span class=\"invisible\"></span></a>",
-          "verified_at": "2026-07-06T18:56:37.607+00:00"
+          "verified_at": "2026-07-30T16:39:23.950+00:00"
         },
         {
           "name": "Training",
@@ -16774,7 +16905,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-07-27T00:00:00",
+      "last_status_at": "2026-07-30T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -16783,11 +16914,18 @@
       "indexable": false,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "disabled"
+        ],
+        "manual": [],
+        "current_user": "denied"
+      }
     },
     {
       "id": "41196",
@@ -16844,11 +16982,18 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "195",
@@ -16890,11 +17035,18 @@
       "indexable": false,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "26933",
@@ -16906,8 +17058,8 @@
       "locked": false,
       "created_at": "2019-11-28T00:00:00+00:00",
       "following_count": 189,
-      "followers_count": 714,
-      "statuses_count": 3739,
+      "followers_count": 713,
+      "statuses_count": 3744,
       "note": "<p>Göttingen</p>",
       "url": "https://openbiblio.social/@nichtich",
       "uri": "https://openbiblio.social/users/nichtich",
@@ -16927,7 +17079,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-07-29T00:00:00",
+      "last_status_at": "2026-07-31T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -16936,11 +17088,18 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "109841808159257639",
@@ -16951,9 +17110,9 @@
       "group": false,
       "locked": true,
       "created_at": "2023-02-09T00:00:00+00:00",
-      "following_count": 1787,
-      "followers_count": 2131,
-      "statuses_count": 20736,
+      "following_count": 1800,
+      "followers_count": 2140,
+      "statuses_count": 20850,
       "note": "<p>Background in Digital History, Literary Studies and Linguistics;<br>doing <a href=\"https://fedihum.org/tags/DigitalHumanities\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>DigitalHumanities</span></a> / <a href=\"https://fedihum.org/tags/DigitalHistory\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>DigitalHistory</span></a> things.<br>Toots in German/English.</p><p>Initiated <span class=\"h-card\" translate=\"no\"><a href=\"https://fedihum.org/@SafeguardingResearch\" class=\"u-url mention\" rel=\"nofollow noopener\" target=\"_blank\">@<span>SafeguardingResearch</span></a></span> on Jan 15th, 2025.<br>\"No Musk can shut us down.\"</p><p>Pronouns: he/him<br>🏳️‍🌈 🩷💜💙 <a href=\"https://fedihum.org/tags/SmashFascism\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>SmashFascism</span></a> <a href=\"https://fedihum.org/tags/Histodon\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>Histodon</span></a><br><a href=\"https://fedihum.org/tags/BijiRojava\" class=\"mention hashtag\" rel=\"nofollow noopener\" target=\"_blank\">#<span>BijiRojava</span></a></p><p>\"Sharing isn’t immoral — it’s a moral imperative.\"<br>Aaron Swartz, Guerrilla Open Access Manifesto, 2008.<br><a href=\"https://openbehavioralscience.org/manifesto/\" rel=\"nofollow noopener\" translate=\"no\" target=\"_blank\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">openbehavioralscience.org/mani</span><span class=\"invisible\">festo/</span></a></p>",
       "url": "https://fedihum.org/@lavaeolus",
       "uri": "https://fedihum.org/users/lavaeolus",
@@ -16984,11 +17143,11 @@
         {
           "name": "GitHub",
           "value": "<a href=\"https://github.com/Schoeneh\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">github.com/Schoeneh</span><span class=\"invisible\"></span></a>",
-          "verified_at": "2026-07-28T12:09:44.368+00:00"
+          "verified_at": "2026-07-31T14:45:32.886+00:00"
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-07-28T00:00:00",
+      "last_status_at": "2026-08-01T00:00:00",
       "noindex": null,
       "roles": null,
       "role": null,
@@ -16997,11 +17156,18 @@
       "indexable": true,
       "hide_collections": true,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": false,
+      "feature_approval": {
+        "automatic": [
+          "followers"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "109364804907861096",
@@ -17037,11 +17203,18 @@
       "indexable": false,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "109269203373692348",
@@ -17052,9 +17225,9 @@
       "group": false,
       "locked": false,
       "created_at": "2022-11-01T00:00:00+00:00",
-      "following_count": 2585,
-      "followers_count": 3343,
-      "statuses_count": 4817,
+      "following_count": 2586,
+      "followers_count": 3345,
+      "statuses_count": 4824,
       "note": "<p>🤓 Hey there, I&#39;m a <a href=\"https://openbiblio.social/tags/librarian\" class=\"mention hashtag\" rel=\"tag\">#<span>librarian</span></a>! </p><p>🐈 team <span class=\"h-card\" translate=\"no\"><a href=\"https://openbiblio.social/@tibosl\" class=\"u-url mention\">@<span>tibosl</span></a></span></p><p>🤔 exploring futures of knowledge infrastructure and cultural memory</p><p>📚 my latest book: <a href=\"https://doi.org/RF5N\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">doi.org/RF5N</span><span class=\"invisible\"></span></a> </p><p>🧑🏼‍💻 on the advisory board of <span class=\"h-card\" translate=\"no\"><a href=\"https://social.bund.de/@Weizenbaum_Institut\" class=\"u-url mention\">@<span>Weizenbaum_Institut</span></a></span></p><p>📺 watch recent talks &amp; interviews of mine: <a href=\"https://www.biblionik.org/category/video/\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"><span class=\"invisible\">https://www.</span><span class=\"\">biblionik.org/category/video/</span><span class=\"invisible\"></span></a> </p><p>📍 Hannover, Germany </p><p>✊🏽 Antifascist since 1990, ver.di (trade union) since 2000</p>",
       "url": "https://openbiblio.social/@Lambo",
       "uri": "https://openbiblio.social/users/Lambo",
@@ -17073,8 +17246,8 @@
           "verified_at": "2024-01-19T16:40:57.799+00:00"
         },
         {
-          "name": "follow my ORCID",
-          "value": "<span class=\"h-card\" translate=\"no\"><a href=\"https://encyclia.pub/0000-0003-0232-7085\" class=\"u-url mention\">@<span>0000-0003-0232-7085@encyclia.pub</span></a></span>",
+          "name": "LXMF destination hash",
+          "value": "c0346e81c9c55af873bd45f275e9d6e6",
           "verified_at": null
         },
         {
@@ -17089,7 +17262,7 @@
         }
       ],
       "emojis": [],
-      "last_status_at": "2026-07-29T00:00:00",
+      "last_status_at": "2026-08-01T00:00:00",
       "noindex": false,
       "roles": [],
       "role": null,
@@ -17098,11 +17271,18 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "108198015388475665",
@@ -17138,11 +17318,16 @@
       "indexable": false,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [],
+        "manual": [],
+        "current_user": "missing"
+      }
     },
     {
       "id": "112847969849364700",
@@ -17154,9 +17339,9 @@
       "locked": false,
       "created_at": "2024-07-25T00:00:00+00:00",
       "following_count": 382,
-      "followers_count": 141,
+      "followers_count": 142,
       "statuses_count": 2509,
-      "note": "<p>🌐 Vermessungs- und kartographiehistorisch interessierter <a href=\"https://openbiblio.social/tags/Geod%C3%A4t\" class=\"mention hashtag\" rel=\"tag\">#<span>Geodät</span></a>,<br />📚 unfreiwilliger &quot;Sachwalter&quot; der ehemaligen DVW-<a href=\"https://openbiblio.social/tags/Bibliothek\" class=\"mention hashtag\" rel=\"tag\">#<span>Bibliothek</span></a>,<br />📜 regelmäßiger <a href=\"https://openbiblio.social/tags/Archivnutzer\" class=\"mention hashtag\" rel=\"tag\">#<span>Archivnutzer</span></a>,<br />🗺️ <a href=\"https://openbiblio.social/tags/maps\" class=\"mention hashtag\" rel=\"tag\">#<span>maps</span></a> &amp; <a href=\"https://openbiblio.social/tags/oldmaps\" class=\"mention hashtag\" rel=\"tag\">#<span>oldmaps</span></a>,<br />🧑‍🧑‍🧒 <a href=\"https://openbiblio.social/tags/Genealogie\" class=\"mention hashtag\" rel=\"tag\">#<span>Genealogie</span></a>,<br />💻 <a href=\"https://openbiblio.social/tags/Wikidata\" class=\"mention hashtag\" rel=\"tag\">#<span>Wikidata</span></a>,<br />🤓 <a href=\"https://openbiblio.social/tags/citizenscience\" class=\"mention hashtag\" rel=\"tag\">#<span>citizenscience</span></a>,<br />🏃OL</p>",
+      "note": "<p>🌐 Vermessungs- und kartographiehistorisch interessierter <a href=\"https://openbiblio.social/tags/Geod%C3%A4t\" class=\"mention hashtag\" rel=\"tag\">#<span>Geodät</span></a>,<br />📚 unfreiwilliger &quot;Sachwalter&quot; der ehemaligen DVW-#Bibliothek,<br />📜 regelmäßiger <a href=\"https://openbiblio.social/tags/Archivnutzer\" class=\"mention hashtag\" rel=\"tag\">#<span>Archivnutzer</span></a>,<br />🗺️ <a href=\"https://openbiblio.social/tags/maps\" class=\"mention hashtag\" rel=\"tag\">#<span>maps</span></a> &amp; <a href=\"https://openbiblio.social/tags/oldmaps\" class=\"mention hashtag\" rel=\"tag\">#<span>oldmaps</span></a>,<br />🧑‍🧑‍🧒 <a href=\"https://openbiblio.social/tags/Genealogie\" class=\"mention hashtag\" rel=\"tag\">#<span>Genealogie</span></a>,<br />💻 <a href=\"https://openbiblio.social/tags/Wikidata\" class=\"mention hashtag\" rel=\"tag\">#<span>Wikidata</span></a>,<br />🤓 <a href=\"https://openbiblio.social/tags/citizenscience\" class=\"mention hashtag\" rel=\"tag\">#<span>citizenscience</span></a>,<br />🏃OL</p>",
       "url": "https://openbiblio.social/@vermessungsbibliothek",
       "uri": "https://openbiblio.social/users/vermessungsbibliothek",
       "avatar": "https://openbiblio.social/system/accounts/avatars/112/847/969/849/364/700/original/ceeb171184fcfa75.jpg",
@@ -17194,11 +17379,18 @@
       "indexable": true,
       "hide_collections": false,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [
+          "public"
+        ],
+        "manual": [],
+        "current_user": "automatic"
+      }
     },
     {
       "id": "1030",
@@ -17234,11 +17426,16 @@
       "indexable": false,
       "hide_collections": null,
       "memorial": null,
-      "avatar_description": null,
-      "header_description": null,
-      "show_media": null,
-      "show_media_replies": null,
-      "show_featured": null
+      "avatar_description": "",
+      "header_description": "",
+      "show_media": true,
+      "show_media_replies": true,
+      "show_featured": true,
+      "feature_approval": {
+        "automatic": [],
+        "manual": [],
+        "current_user": "denied"
+      }
     }
   ],
   "mutes": [],
