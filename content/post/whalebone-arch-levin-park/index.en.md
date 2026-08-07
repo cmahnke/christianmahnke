@@ -60,7 +60,7 @@ As I worked with him over 20 years ago, I wrote to him to ask for his opinion.
 
 Perhaps it’s time to find out how the bones ended up there, and maybe put up a small information board as well.
 
-## Update 5.8.2026
+# Update 5.8.2026
 
 * The layout can also be [found on OpenStreetMap](https://www.openstreetmap.org/node/14075420382).
 * Further information about Levinschen Park is available from [goettinger stadtinfo (goest)](https://goest.de/levinpark.htm).
