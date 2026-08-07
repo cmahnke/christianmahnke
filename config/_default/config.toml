@@ -78,6 +78,10 @@
   username = "0009-0003-1361-4159"
   profilelink = "https://orcid.org/0009-0003-1361-4159"
 
+[params.social.gnd]
+  username = "141541968X"
+  profilelink = "http://d-nb.info/gnd/141541968X"
+
 [params.social.mastodon]
   username = "@cmahnke@openbiblio.social"
   profilelink = "https://openbiblio.social/@cmahnke"
