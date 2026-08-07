@@ -11,6 +11,7 @@ preview: img/single.jpeg
 wikidata:
   - https://www.wikidata.org/wiki/Q28913710
   - https://www.wikidata.org/wiki/Q42767
+lastmod: 2026-08-05T00:00:00+02:00
 ---
 
 2017 hatte ich viele Überstunden und daher einen halben Frühling im [Levinschen Park](https://de.wikipedia.org/wiki/Levinscher_Park) verbracht...
@@ -58,3 +59,8 @@ Da ich vor über 20 Jahren mit ihm zusammengearbeitet habe, habe ich ihn angesch
 {{</ comment >}}
 
 Vielleicht wäre es ja an der Zeit, zu recherchieren, wie die Knochen dorthin gelangten, und eine kleine Tafel aufzustellen.
+
+## Update 5.8.2026
+
+* Die Struktur ist auch [in OpenStreetMap zu finden](https://www.openstreetmap.org/node/14075420382).
+* Weitere Informationen über den Levinschen Park hat [goettinger stadtinfo (goest)](https://goest.de/levinpark.htm).

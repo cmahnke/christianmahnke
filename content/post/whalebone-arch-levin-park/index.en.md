@@ -11,6 +11,7 @@ preview: img/single.jpeg
 wikidata:
   - https://www.wikidata.org/wiki/Q28913710
   - https://www.wikidata.org/wiki/Q42767
+lastmod: 2026-08-05T00:00:00+02:00
 ---
 
 In 2017, I worked a lot of overtime and so spent half the spring in [Levinschen Park](https://de.wikipedia.org/wiki/Levinscher_Park) (German)...
@@ -58,3 +59,8 @@ As I worked with him over 20 years ago, I wrote to him to ask for his opinion.
 {{</ comment >}}
 
 Perhaps it’s time to find out how the bones ended up there, and maybe put up a small information board as well.
+
+## Update 5.8.2026
+
+* The layout can also be [found on OpenStreetMap](https://www.openstreetmap.org/node/14075420382).
+* Further information about Levinschen Park is available from [goettinger stadtinfo (goest)](https://goest.de/levinpark.htm).
