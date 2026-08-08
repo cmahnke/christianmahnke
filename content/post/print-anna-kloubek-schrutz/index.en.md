@@ -13,18 +13,18 @@ outputs:
   - html
   - linkedart
   - pdf-article
-  linkedart:
-    artist:
-      wikidata: https://www.wikidata.org/wiki/Q140946340
-  wikidata:
-    - https://www.wikidata.org/wiki/Q140946340
-    - https://www.wikidata.org/wiki/Q414309
-    - https://www.wikidata.org/wiki/Q120549901
-    - https://www.wikidata.org/wiki/Q301415
-    - https://www.wikidata.org/wiki/Q228655
-    - https://www.wikidata.org/wiki/Q939766
-    - https://www.wikidata.org/wiki/Q110279968
-    - https://www.wikidata.org/wiki/Q188675
+linkedart:
+  artist:
+    wikidata: https://www.wikidata.org/wiki/Q140946340
+wikidata:
+  - https://www.wikidata.org/wiki/Q140946340
+  - https://www.wikidata.org/wiki/Q414309
+  - https://www.wikidata.org/wiki/Q120549901
+  - https://www.wikidata.org/wiki/Q301415
+  - https://www.wikidata.org/wiki/Q228655
+  - https://www.wikidata.org/wiki/Q939766
+  - https://www.wikidata.org/wiki/Q110279968
+  - https://www.wikidata.org/wiki/Q188675
 draft: true
 ---
 
