@@ -26,3 +26,5 @@ Beispiel für Aktivitäten auf diesem Gebiet sind:
 ### Seiten über Architektur:
 * [Never Built Göttingen](https://never-built.goettingen.xyz/)
 * [Backsteinexpressionismus](https://backsteinexpressionismus.projektemacher.org/)
+
+Bei Bedarf lege ich außerdem Wikidate-Einträge für Künstler*innen an, von denen ich Werke in meiner [Kunstsammlung](/art-collection/) habe.

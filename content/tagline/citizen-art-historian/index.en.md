@@ -26,3 +26,5 @@ Examples of activities in this area are:
 ### Pages about architecture:
 * [Never Built Göttingen](https://never-built.goettingen.xyz/)
 * [Brick Expressionism](https://backsteinexpressionismus.projektemacher.org/)
+
+If necessary, I also create Wikidate entries for artists whose works I have in my [art collection](/art-collection/).
