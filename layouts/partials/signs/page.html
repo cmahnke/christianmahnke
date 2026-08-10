@@ -1,0 +1,39 @@
+{{ $class := .Params.type }}
+{{- partial "check-post.html" . -}}
+<div class="sign {{ $class }}">
+  <div class="content">
+      {{- with .Params.description -}}
+        <div class="post-description">{{ . }}</div>
+      {{- end -}}
+
+
+      <div class="post-body">
+        {{- .Content -}}
+      </div>
+  </div>
+
+  {{- if eq .Kind "section" -}}
+    {{- partial "section-contents-list.html" . -}}
+  {{- end -}}
+
+  {{- if not .Params.metaPage -}}
+    <div class="post-footer">
+      {{- partial "data/wikidata.html" . -}}
+      {{- partial "data/archive.html" . -}}
+      <div class="spacer">
+      </div>
+
+  {{- end -}}
+</div>
+{{- if and (not .Params.metaPage) (ne .Kind "section") (not (.HasShortcode "related")) -}}
+  <div class="related-posts">
+    {{ with site.RegularPages.Related . | first 5 }}
+      <div class="related-header">{{ i18n "relatedContent" }}:</div>
+      <ul>
+        {{ range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </div>
+{{- end -}}

@@ -25,7 +25,6 @@ wikidata:
   - https://www.wikidata.org/wiki/Q939766
   - https://www.wikidata.org/wiki/Q110279968
   - https://www.wikidata.org/wiki/Q188675
-draft: true
 ---
 
 I bought an etching by Anna Kloubek-Schrutz (1878–?) ([on artnet](https://www.artnet.com/artists/anna-schrutz/))...

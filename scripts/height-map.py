@@ -66,11 +66,50 @@ parser.add_argument('--resolution', '-r', type=int, default=600, help='Default D
 args = parser.parse_args()
 
 if str(args.image).endswith(".jxl"):
-    if "jxlpy" not in sys.modules:
-        import jxlpy
-        from jxlpy import JXLImagePlugin
+    import pyvips
 
-inImg = Image.open(args.image)
+    # Use sequential access for faster loading into memory
+    vips_img = pyvips.Image.new_from_file(str(args.image), access='sequential')
+
+    # libvips stores resolution in pixels per mm, multiply by 25.4 for DPI
+    try:
+        dpi_x = vips_img.xres * 25.4
+        dpi_y = vips_img.yres * 25.4
+    except Exception:
+        dpi_x = 25.4
+        dpi_y = 25.4
+
+    # 1 pixel/mm is the libvips default if no metadata is present (25.4 DPI).
+    # If it matches the default, we omit 'dpi' from info so the script's fallback logic applies.
+    if abs(dpi_x - 25.4) >= 0.01 or abs(dpi_y - 25.4) >= 0.01:
+        inImg_dpi = (dpi_x, dpi_y)
+    else:
+        inImg_dpi = None
+
+    # Cast to 8-bit unsigned char to match standard PIL image behavior
+    # (jxlpy typically loads as 8-bit, and thresholding logic assumes 8-bit)
+    np_img = np.asarray(vips_img.cast("uchar"))
+
+    if np_img.ndim == 2:
+        inImg = Image.fromarray(np_img, mode='L')
+    elif np_img.ndim == 3:
+        bands = np_img.shape[2]
+        if bands == 1:
+            inImg = Image.fromarray(np_img[:, :, 0], mode='L')
+        elif bands == 3:
+            inImg = Image.fromarray(np_img, mode='RGB')
+        elif bands == 4:
+            inImg = Image.fromarray(np_img, mode='RGBA')
+        else:
+            inImg = Image.fromarray(np_img)
+    else:
+        inImg = Image.fromarray(np_img)
+
+    if inImg_dpi is not None:
+        inImg.info['dpi'] = inImg_dpi
+else:
+    inImg = Image.open(args.image)
+
 if "dpi" in inImg.info:
     dpi = inImg.info['dpi']
     if (len(set(dpi)) > 1):
@@ -150,9 +189,6 @@ for i in range(len(metadata)):
         json_fragments.append(heightmap_fragment)
         with open(outFileName, "w", encoding="utf-8") as file:
             file.write(json.dumps(heightmap_fragment))
-        #for h in range(height):
-        #    for w in range(width):
-        #        image.getpixel((0,0))
 
 if args.join and ('json' in outputs):
     outFileName = args.image.parent.joinpath(args.image.stem + '.json')

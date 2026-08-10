@@ -1,0 +1,56 @@
+{{- $scss := "scss/signs/base.scss" -}}
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+  <head>
+    <meta charset="utf-8">
+    <title>{{- block "title" . }}{{ end -}}</title>
+    {{ partial "html/head/meta.html" . }}
+    {{ partialCached "html/head/theme.html" . }}
+
+    {{- if and (eq .Kind "term") (eq .Content "") -}}
+        <meta name="projektemacher:term" content="empty">
+    {{- end -}}
+    {{- if .Params.notes -}}
+        <meta name="projektemacher:notes" content="{{ .Params.notes }}">
+    {{- end -}}
+
+    {{- partial "html/head/style.html" (dict "context" . "css" "css/style.css" "base" $scss) -}}
+    {{- if and (isset site.Params "js") (eq site.Params.js "esm") -}}
+      {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .) "opts" (dict "format" "esm")) -}}
+    {{- else -}}
+      {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
+    {{- end -}}
+
+    {{- partial "html/head/preload.html" . -}}
+
+    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_32 | default "/images/favicon-32.png" | absURL }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_16 | default "/images/favicon-16.png" | absURL }}" sizes="16x16">
+    {{ if and .Site.Params.faviconSVG (ne .Site.Params.faviconsvg "") }}
+        <link rel="icon" type="image/svg+xml" href="{{ .Site.Params.favicon_svg | safeHTML }}">
+    {{ end }}
+
+    <link rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}" type="image/x-icon">
+    <link rel="icon" href="{{ "images/favicon.ico" | absURL }}" type="image/x-icon">
+
+    {{ range .AlternativeOutputFormats -}}
+      {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{- partial "metadata/schema.org/schema.org.html" . -}}
+
+
+
+  </head>
+
+    {{- $class := "sign" }}
+
+    <body class="{{ $class }} {{ if .IsHome }}home{{ end }} ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          {{ block "content" . }}{{ end }}
+        </div>
+      </div>
+    </body>
+ </html>
