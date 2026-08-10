@@ -14,6 +14,7 @@ Examples of immersive or unconventional presentations include these blogs:
 
 Several individual experiments can be found in the blog:
 
+* [3D rendering of Göttingen featuring buildings that were never built](/en/post/never-built-goettingen-3d/)
 * [Blog metadata visualised](/en/post/blog-visualisation/)
 * [Querying blog metadata via SPARQL](/en/post/blog-sparql/) Triple Store in a Browser
 * [Artificial intelligence](/en/post/vintagereality-ai/) and [virtual reality](/en/post/vintagereality-apple-spatial/) for historical photographs

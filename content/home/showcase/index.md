@@ -14,6 +14,7 @@ Beispiele für immersive bzw. unkonventionelle Präsentationen sind unter andere
 
 Dazu sind im Blog mehrere Einzelexperimente zu finden:
 
+* [3D Darstellung von Göttingen mit nicht-gebauen Bauwerken](/post/never-built-goettingen-3d/)
 * [Blog Metadaten visualisiert](/post/blog-visualisation/)
 * [Blog Metadaten über SPARQL abfragen](/post/blog-sparql/) Triple Store im Browser
 * [Künstliche Intelligenz](/post/vintagereality-ai/) und [virtuelle Realität](/post/vintagereality-apple-spatial/) für historische Photographien
