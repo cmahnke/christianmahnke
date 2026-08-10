@@ -25,11 +25,15 @@
   {{- $src := . -}}
   {{- $class := "" -}}
   {{- $hide := false -}}
+  {{- $attribution := false -}}
   {{- if reflect.IsMap . -}}
     {{- $src = index . "image" -}}
     {{- $class = index . "class" -}}
     {{- if and (isset . "hide") (eq (index . "hide") true) -}}
       {{- $hide = true -}}
+    {{- end -}}
+    {{- if isset . "attribution" -}}
+      {{- $attribution = index . "attribution" -}}
     {{- end -}}
   {{- end -}}
   {{- if eq $hide false -}}
@@ -43,10 +47,14 @@
           {{- end -}}
           <source media="(min-width:{{ . }}px)" srcset="{{ ($imgRes.Resize (printf "%sx webp picture" .)).RelPermalink }}">
         {{- end -}}
-
-        <a title="{{ $ctx.Title }}" href="{{ $ctx.RelPermalink }}">
-          <img src="{{ ($imgRes.Resize (printf "%sx webp picture" "1280")).RelPermalink }}" alt="{{ $ctx.Title }}" {{ if ne $class "" }}class="{{ $class }}"{{ end }} />
-        </a>
+        <div class="preview-img-wrapper">
+          <a title="{{ $ctx.Title }}" href="{{ $ctx.RelPermalink }}">
+            <img src="{{ ($imgRes.Resize (printf "%sx webp picture" "1280")).RelPermalink }}" alt="{{ $ctx.Title }}" {{ if ne $class "" }}class="{{ $class }}"{{ end }} />
+          </a>
+          {{- if $attribution -}}
+            <div class="preview-attribution">{{ $attribution | markdownify }}</div>
+          {{- end -}}
+        </div>
       </picture>
       {{- $additional | safeHTML -}}
     </div>

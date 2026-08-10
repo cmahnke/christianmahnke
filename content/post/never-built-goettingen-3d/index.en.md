@@ -16,6 +16,7 @@ tags:
 preview:
   image: img/screenshot.png
   hide: false
+  attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a> and own data'
 wikidata:
   - https://www.wikidata.org/wiki/Q8180985
   - https://www.wikidata.org/wiki/Q152838

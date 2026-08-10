@@ -70,6 +70,27 @@ $down-image-marker:"data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000
     }
 
     .post-preview {
+
+      .preview-img-wrapper {
+        position: relative;
+        
+        @media (min-width : 75em) {
+            width: 60%;
+        }
+
+        .preview-attribution {
+          width: fit-content;
+          padding: .2rem;
+          font-size: xx-small;
+          position: absolute;
+          bottom: 1rem;
+          right: 1rem;
+          text-align: right;
+          background-color: rgba(211, 211, 211, .8);
+          border-radius: .2rem;
+        }
+      }
+
       img {
         border-radius: .6rem;
         /* box-shadow: 4px 4px 4px lightgray; */
