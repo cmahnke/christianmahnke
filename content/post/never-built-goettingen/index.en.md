@@ -36,5 +36,5 @@ My new blog [Never Built Göttingen](https://never-built.goettingen.xyz/) shows 
     {{< figure src="img/screenshot.png" alt="Screenshot Never Build Göttingen" class="post-image" >}}
 {{< /zoom-link >}}
 
-AI was also used in the production process, particularly for image post-processing; specifically, Real-ESRGAN by Xintao Wang.
+AI was also used in the production process, particularly for image post-processing; specifically, [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) by Xintao Wang.
 The creation of the map material is described in the post "[Build vector map material with GitHub](/en/post/build-vector-tiles-on-github/)".

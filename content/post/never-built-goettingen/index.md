@@ -36,5 +36,5 @@ Mein neues Blog [Never Built Göttingen](https://never-built.goettingen.xyz/) ze
     {{< figure src="img/screenshot.png" alt="Screenshot Never Build Göttingen" class="post-image" >}}
 {{< /zoom-link >}}
 
-Für die Umsetzung kam, besonders für die Bildnachbearbeitung, auch KI zum Einsatz.
+Für die Umsetzung kam, besonders für die Bildnachbearbeitung, auch KI zum Einsatz, genauer [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) von Xintao Wang.
 Die Erstellung des Kartenmaterial ist in dem Beitrag "[Vektor Kartenmaterial mit GitHub bauen](/post/build-vector-tiles-on-github/)" beschrieben.
