@@ -14,6 +14,8 @@ wikidata:
 
 Beispiel für Aktivitäten auf diesem Gebiet sind:
 
+* [Die Kunstsammlung](/art-collection/)
+
 ### Blog Beiträge zum Thema:
 * Schlagwort ["Kunst"](/tags/Art/)
 * Ausstellung über [Wilma Bräuner](https://christianmahnke.de/post/wilma-brauner/)

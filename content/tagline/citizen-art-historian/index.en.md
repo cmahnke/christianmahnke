@@ -14,6 +14,8 @@ wikidata:
 
 Examples of activities in this area are:
 
+* [The art collection](/art-collection/)
+
 ### Blog posts on the topic:
 * Tagged with ["Art"](/en/tags/Art/)
 * Exhibition about [Wilma Bräuner](/en/post/wilma-brauner/)

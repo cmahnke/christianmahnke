@@ -1,5 +1,5 @@
 ---
-date: 2026-08-10T23:30:44+02:00
+date: 2026-08-09T23:30:44+02:00
 title: 'Never Built Göttingen in 3D'
 class: never
 pagetheme: white

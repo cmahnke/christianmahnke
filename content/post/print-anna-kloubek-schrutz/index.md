@@ -41,7 +41,7 @@ Ich habe eine Radierung von Anna Kloubek-Schrutz (1878-?) ([bei artnet](https://
 
 Das Bild zeigt eine Szene in einem niederländischen Hafen. Erkennbar ist das am Schiffstyp (Plattbodenschiff) und an den Trachten, wie den Klompen (Holzschuhe).
 Der Ort ist vermutlich der Hafen der Insel [Marken](https://de.wikipedia.org/wiki/Marken_(Niederlande)) in der [Zuiderzee](https://de.wikipedia.org/wiki/Zuiderzee) (heute [Markermeer](https://de.wikipedia.org/wiki/Markermeer)) ([ungefärer Standort bei auf GeoHack](https://geohack.toolforge.org/geohack.php?params=52.458508_N_5.101093_E)).
-Vergleichsbilder finden sich bei der [Zuiderzeecollectie](https://www.zuiderzeecollectie.nl/) und auf [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Havenbuurt_(Marken)). Ein Beispiel sind  [die Hauser auf der rechten Seite](https://www.zuiderzeecollectie.nl/object/collect/Zuiderzee_museum-36792). Ein [weiteres Bild von 1916](https://www.zuiderzeecollectie.nl/object/collect/Zuiderzee_museum-36199), zeigt eine dichtere Bebauung, sodas die Grafik vermutlich früher entstanden ist.
+Vergleichsbilder finden sich bei der [Zuiderzeecollectie](https://www.zuiderzeecollectie.nl/) und auf [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Havenbuurt_(Marken)). Ein Beispiel sind  [die Häuser auf der rechten Seite](https://www.zuiderzeecollectie.nl/object/collect/Zuiderzee_museum-36792). Ein [weiteres Bild von 1916](https://www.zuiderzeecollectie.nl/object/collect/Zuiderzee_museum-36199), zeigt eine dichtere Bebauung, sodas die Grafik vermutlich früher entstanden ist.
 
 Die Insel wurde ab Ende des 19. Jahrhunderts häufig von Künstlern besucht.
 
