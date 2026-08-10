@@ -796,15 +796,23 @@ a:visited {
             margin-right: -2px;
 
         }
-        &:after {
-            content: '_';
-            color: $marker-color;
-            margin-left: -1px;
-        }
         &:hover {
             text-decoration: underline;
             text-decoration-color: $marker-color;
         }
+    }
+
+    .post-body a:not(.wikidata):not(+ sup),
+    a:not(.wikidata):not(+ sup) {
+      &:after {
+          content: '_';
+          color: $marker-color;
+          margin-left: -1px;
+      }
+    }
+
+    .post-body sup {
+      margin-left: -.2rem;
     }
 
     .home-section {
