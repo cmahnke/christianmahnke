@@ -1670,6 +1670,10 @@ a:visited {
     content: url($hf-light);
   }
 
+  &.npm {
+    content: url($npm-light);
+  }
+
   &.projektemacher {
       filter: #{"invert()"};
       border-radius: 50%;

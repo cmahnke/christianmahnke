@@ -19,7 +19,8 @@
            '<a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a>',
            '<a href="http://www.wikidata.org/entity/Q137668638" rel="me" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a>',
            '<a href="https://huggingface.co/cmahnke" rel="me" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a>',
-           '<a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a>'
+           '<a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a>',
+           '<a href="http://npmjs.com/org/projektemacher"  target="_blank" title="NPM" style="display: none;"><div class="link-image npm"></div>NPM</a>',
            ]
   contacts = ['<h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a>']
   disableScale = true
