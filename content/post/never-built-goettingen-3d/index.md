@@ -24,7 +24,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q116859588
 ---
 
-Nachdem "Never Built Göttingen" im Frühjahr 2025 gestartet wurde, gibt es nun eine neue 3D-Visualisierung.
+Nachdem "[Never Built Göttingen](https://never-built.goettingen.xyz/)" im Frühjahr 2025 gestartet wurde, gibt es nun eine neue 3D-Visualisierung.
 <!--more-->
 
 Gegenüber dem Prototyp vom [November 2025](/post/patching-osm-data/) ist die Darstellung nun deutlich "schöner": Es gibt eine Kantenglättung und Bäume werden angezeigt. Auch die Aufbereitung der Daten ist deutlich ausgefeilter, sodass nun auch alternative Straßenverläufe dargestellt werden.

@@ -24,7 +24,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q116859588
 ---
 
-Following the launch of "Never Built Göttingen" in spring 2025, a new 3D visualisation is now available.
+Following the launch of "[Never Built Göttingen](https://never-built.goettingen.xyz/)" in spring 2025, a new 3D visualisation is now available.
 <!--more-->
 
 Compared to the prototype from [November 2025](/en/post/patching-osm-data/), the visualisation is now "prettier": anti-aliasing has been applied and trees are displayed. The data processing is also much more sophisticated, meaning that alternative road alignments are now shown as well.
