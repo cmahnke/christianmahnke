@@ -30,9 +30,9 @@ Nachdem "[Never Built Göttingen](https://never-built.goettingen.xyz/)" im Früh
 Gegenüber dem Prototyp vom [November 2025](/post/patching-osm-data/) ist die Darstellung nun deutlich "schöner": Es gibt eine Kantenglättung und Bäume werden angezeigt. Auch die Aufbereitung der Daten ist deutlich ausgefeilter, sodass nun auch alternative Straßenverläufe dargestellt werden.
 
 {{< zoom-link link="https://never-built.goettingen.xyz/3d-map/" title="Never Build Göttingen 3D" >}}
-    {{< figure src="img/screenshot.png" alt="Screenshot Never Build Göttingen 3D" class="post-image" >}}
+    {{< figure src="img/screenshot.png" alt="Screenshot Never Build Göttingen 3D" class="post-image link-caption" caption=`&copy; [OpenStreetMap contributors](http://openstreetmap.org/copyright") und eigene Daten` >}}
 {{< /zoom-link >}}
 
 Da derzeit nur ein Bruchteil der Gebäude als Modell vorliegt, handelt es sich lediglich um eine Vorschau, die auf der Seite selbst noch nicht verlinkt ist.
 
-Für die Umsetzung kam [Planetier](https://github.com/onthegomap/planetiler) zur Erstellung der Vektor-Tiles mit den Gebäuden und Bäumen und [Maplibe GL JS](https://maplibre.org/projects/gl-js/).
+Für die Umsetzung kam [Planetier](https://github.com/onthegomap/planetiler) zur Erstellung der Vektor-Tiles mit den Gebäuden und Bäumen und [Maplibe GL JS](https://maplibre.org/projects/gl-js/) zur 3D-Dastellung im Browser.

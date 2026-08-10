@@ -30,7 +30,7 @@ Following the launch of "[Never Built Göttingen](https://never-built.goettingen
 Compared to the prototype from [November 2025](/en/post/patching-osm-data/), the visualisation is now "prettier": anti-aliasing has been applied and trees are displayed. The data processing is also much more sophisticated, meaning that alternative road alignments are now shown as well.
 
 {{< zoom-link link="https://never-built.goettingen.xyz/3d-map/" title="Never Build Göttingen 3D" >}}
-    {{< figure src="img/screenshot.png" alt="Screenshot of Never Build Göttingen 3D" class="post-image" >}}
+    {{< figure src="img/screenshot.png" alt="Screenshot of Never Build Göttingen 3D" class="post-image link-caption" caption=`&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a> and own data` >}}
 {{< /zoom-link >}}
 
 As only a fraction of the buildings are currently modelled, this is merely a preview that is not yet linked on the page itself.

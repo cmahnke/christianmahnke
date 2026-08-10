@@ -1412,6 +1412,10 @@ a:visited {
         flex-direction: column;
     }
 
+    figcaption {
+      margin-bottom: 1rem;
+    }
+
     .post-image {
         margin-block-start: 0;
         margin-block-end: 0;
@@ -1427,6 +1431,17 @@ a:visited {
         img {
             width: 100%;
             height: auto;
+        }
+
+        figcaption {
+          font-size: smaller;
+        }
+
+        &.link-caption {
+          a:before,
+          a:after {
+            content: '';
+          }
         }
     }
     .post-body,
