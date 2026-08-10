@@ -27,7 +27,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q188675
 ---
 
-Ich habe eine Radierung von Anna Kloubek-Schrutz (1878-?) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/anna-schrutz/) gekauft...
+Ich habe eine Radierung von Anna Kloubek-Schrutz (1878-?) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/anna-schrutz/)) gekauft...
 <!--more-->
 
 {{< gallery >}}
