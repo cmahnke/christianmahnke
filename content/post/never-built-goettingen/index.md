@@ -20,9 +20,10 @@ wikidata:
   - https://www.wikidata.org/wiki/Q8180985
   - https://www.wikidata.org/wiki/Q152838
   - https://www.wikidata.org/wiki/Q713750
+  - https://www.wikidata.org/wiki/Q117030340
 ---
 
-Wer kennt sie nicht, die drei blauen Türme der Universität Göttingen,...
+Wer kennt sie nicht, die drei blauen Türme der Universität Göttingen...
 
 <!--more-->
 
@@ -35,4 +36,5 @@ Mein neues Blog [Never Built Göttingen](https://never-built.goettingen.xyz/) ze
     {{< figure src="img/screenshot.png" alt="Screenshot Never Build Göttingen" class="post-image" >}}
 {{< /zoom-link >}}
 
-Für die Umsetzung kam, besonders für die Bildbearbeitung, auch KI zum Einsatz. Die Erstellung des Kartenmaterial ist in dem Beitrag "[Vektor Kartenmaterial mit GitHub bauen](/post/build-vector-tiles-on-github/)" beschrieben.
+Für die Umsetzung kam, besonders für die Bildnachbearbeitung, auch KI zum Einsatz.
+Die Erstellung des Kartenmaterial ist in dem Beitrag "[Vektor Kartenmaterial mit GitHub bauen](/post/build-vector-tiles-on-github/)" beschrieben.
