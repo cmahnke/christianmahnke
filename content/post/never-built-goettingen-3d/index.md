@@ -35,4 +35,4 @@ Gegenüber dem Prototyp vom [November 2025](/post/patching-osm-data/) ist die Da
 
 Da derzeit nur ein Bruchteil der Gebäude als Modell vorliegt, handelt es sich lediglich um eine Vorschau, die auf der Seite selbst noch nicht verlinkt ist.
 
-Für die Umsetzung kam [Planetier](https://github.com/onthegomap/planetiler) zur Erstellung der Vektor-tiles mit den Gbäuden und Bäumen und [Maplibe GL JS](https://maplibre.org/projects/gl-js/).
+Für die Umsetzung kam [Planetier](https://github.com/onthegomap/planetiler) zur Erstellung der Vektor-Tiles mit den Gebäuden und Bäumen und [Maplibe GL JS](https://maplibre.org/projects/gl-js/).

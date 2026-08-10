@@ -35,6 +35,4 @@ Compared to the prototype from [November 2025](/en/post/patching-osm-data/), the
 
 As only a fraction of the buildings are currently modelled, this is merely a preview that is not yet linked on the page itself.
 
-[Planetier](https://github.com/onthegomap/planetiler) was used to create the vector tiles featuring the buildings and trees, and [Maplibe GL JS](https://maplibre.org/projects/gl-js/) was used for the implementation.
-
-Translated with DeepL.com (free version)
+For the implementation, [Planetier](https://github.com/onthegomap/planetiler) was used to create the vector tiles featuring the buildings and trees, and [Maplibe GL JS](https://maplibre.org/projects/gl-js/) was used for the 3D rendering in the browser.
