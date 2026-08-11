@@ -18,26 +18,15 @@
     </a>
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
-        //$(document).ready(function() {
           const head = document.querySelector('head');
           const prefetch = "<link rel='prefetch' href='{{ $href }}' as='document'>";
           head.insertAdjacentHTML('beforeend', prefetch);
 
           const wrapper = document.getElementById('{{ $id }}');
-          const img = wrapper.querySelector('a figure img');
+          const img = wrapper.querySelector('figure a img');
           const parent = img.parentNode;
           parent.style.position = 'relative';
 
-          /*
-          var clone = img.clone().appendTo(img.parent()).css({
-            'display': 'none',
-            'position': 'absolute',
-            'top': 0,
-            'bottom': img.offset().top + img.height(),
-            'left': 0,
-            'right': img.offset().left + img.width()
-          });
-          */
           const clone = img.cloneNode(true);
           parent.appendChild(clone);
           clone.style.display = 'none';
