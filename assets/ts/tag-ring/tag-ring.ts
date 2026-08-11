@@ -455,6 +455,7 @@ document.addEventListener("DOMContentLoaded", () => {
         from_tag_url: string;
       }
 
+      data = Object.fromEntries(Object.entries(data).filter(([key]) => !key.startsWith('_')));
       const tagPairs: ConvertedTagPair[] = convertTags(data);
       const processedData: FlowInputRecord[] = tagPairs.map((pair) => {
         const source = pair.from;
