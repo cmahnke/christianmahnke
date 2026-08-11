@@ -20,6 +20,9 @@ Weitere Sammlungen und Sammler, mit denen ich nicht zusammenarbeite.
 * [Telefonzelle, Münzfernsprecher & Kartentelefon in Deutschland](https://telefonzelle.de.tl/)
 
 ## Uhren
+### Allgemein
+* [20th Century Watches](https://20centurywatches.com/)
+
 ### Digital
 * [Digital Watch](https://www.digital-watch.com/DWL)
 * [Magic Digitals](https://digitalwatches.de/)

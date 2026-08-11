@@ -20,6 +20,9 @@ Other collections and collectors with whom I do not work.
 * [Telefonzelle, Münzfernsprecher & Kartentelefon in Deutschland](https://telefonzelle.de.tl/)
 
 ## Watches
+### General
+* [20th Century Watches](https://20centurywatches.com/)
+
 ### Digital
 * [Digital Watch](https://www.digital-watch.com/DWL)
 * [Magic Digitals](https://digitalwatches.de/ENGLISH_INDEX.HTM)
