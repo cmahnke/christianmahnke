@@ -798,8 +798,8 @@ a:visited {
         }
     }
 
-    .post-body a:not(.wikidata):not(+ sup),
-    a:not(.wikidata):not(+ sup) {
+    .post-body a:not(.wikidata):not(:has(+ sup)),
+    a:not(.wikidata):not(:has(+ sup)) {
       &:after {
           content: '_';
           color: $marker-color;
