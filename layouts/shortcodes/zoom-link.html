@@ -23,7 +23,7 @@
           head.insertAdjacentHTML('beforeend', prefetch);
 
           const wrapper = document.getElementById('{{ $id }}');
-          const img = wrapper.querySelector('figure a img');
+          const img = wrapper.querySelector('figure a img, figure img');
           const parent = img.parentNode;
           parent.style.position = 'relative';
 
