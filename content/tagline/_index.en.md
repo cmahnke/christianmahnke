@@ -7,9 +7,11 @@ news: false
 sectionContent: false
 sectionListTitle: 'All "titles"'
 cascade:
-  - _target:
+  - target:
       kind: '{page,section}'
-      lang: de
+      sites:
+        matrix:
+          languages: [en]
       path: '**'
     params:
       archive: false

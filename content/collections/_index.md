@@ -7,7 +7,7 @@ sitemap:
   priority: 0.9
   changeFreq: monthly
 cascade:
-  - _target:
+  - target:
       kind: '{page,section}'
     params:
       Sitemap:

@@ -6,9 +6,11 @@ archive: false
 news: false
 sectionContent: false
 cascade:
-  - _target:
+  - target:
       kind: '{page,section}'
-      lang: de
+      sites:
+        matrix:
+          languages: [de]
       path: '**'
     params:
       archive: false

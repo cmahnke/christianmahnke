@@ -9,9 +9,11 @@ sectionlist: false
 sitemap:
   disable: true
 cascade:
-  - _target:
+  - target:
       kind: '{page,section}'
-      lang: de
+      sites:
+        matrix:
+          languages: [en]
       path: '**'
     params:
       archive: false
