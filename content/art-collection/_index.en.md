@@ -9,7 +9,7 @@ layout: art-collection
 js:
   - ts/art-collection.ts
 cascade:
-  - _target:
+  - target:
       kind: '{page,section}'
       lang: en
       path: '**'
