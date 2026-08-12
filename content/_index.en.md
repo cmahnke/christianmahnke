@@ -9,7 +9,9 @@ outputs:
 cascade:
   - _target:
       kind: '{page,section}'
-      lang: en
+      sites:
+        matrix:
+          languages: [en]
       path: '**'
     params:
       outputs:

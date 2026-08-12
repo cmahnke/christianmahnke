@@ -6,11 +6,11 @@ sitemap:
   priority: 0.9
   changeFreq: monthly
 cascade:
-  - _target:
+  - target:
       kind: section
     params:
       indexRecursive: true
-  - _target:
+  - target:
       kind: page
     params:
       sitemap:

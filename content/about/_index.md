@@ -11,11 +11,11 @@ js:
 preload:
   - /about/contact/self-potrait.jpg
 cascade:
-  - _target:
+  - target:
       kind: section
     params:
       indexRecursive: true
-  - _target:
+  - target:
       kind: '{page,section}'
     params:
       Sitemap:

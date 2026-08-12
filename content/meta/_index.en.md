@@ -8,7 +8,9 @@ sectionContent: false
 cascade:
   - target:
       kind: '{page,section}'
-      lang: de
+      sites:
+        matrix:
+          languages: [en]
       path: '**'
     params:
       archive: false
