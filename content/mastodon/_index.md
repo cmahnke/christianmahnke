@@ -9,7 +9,9 @@ layout: mastodon
 cascade:
   - target:
       kind: '{page,section}'
-      lang: de
+      sites:
+        matrix:
+          languages: [de]
       path: '**'
     params:
       archive: false
