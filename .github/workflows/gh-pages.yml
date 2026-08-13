@@ -113,13 +113,13 @@ jobs:
         if: ${{ !env.ACT }}
         run: |
           ./themes/projektemacher-base/scripts/github/puppeteer-chrome.sh
-          ./themes/projektemacher-base/scripts/github/check-js-errors.sh -e -g
+          ./themes/projektemacher-base/scripts/github/check-js-errors.sh -l -e -g
 
       - name: Puppeteer (local)
         if: ${{ env.ACT }}
         run: |
           ./themes/projektemacher-base/scripts/github/puppeteer-chrome.sh
-          ./themes/projektemacher-base/scripts/github/check-js-errors.sh -e -g -c test-urls.local.json
+          ./themes/projektemacher-base/scripts/github/check-js-errors.sh -l -e -g -c test-urls.local.json
 
       # - name: Archive links
       #   env:
