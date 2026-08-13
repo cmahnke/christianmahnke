@@ -6,13 +6,16 @@ archive: false
 news: false
 sectionContent: false
 cascade:
-  - _target:
+  - target:
       kind: '{page,section}'
-      lang: de
+      sites:
+        matrix:
+          languages: [en]
       path: '**'
     params:
       archive: false
       news: false
+      metaPage: true
       sitemap:
         disable: true
 ---

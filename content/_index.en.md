@@ -7,7 +7,7 @@ title: Blog
 outputs:
   - html
 cascade:
-  - _target:
+  - target:
       kind: '{page,section}'
       sites:
         matrix:
