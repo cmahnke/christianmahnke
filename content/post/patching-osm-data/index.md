@@ -232,4 +232,4 @@ def merge (base_file, patch, output_file, overwrite) -> None:
 ```
 # Update 9.8.24
 
-Inwischen habe ich das Script oben weiter ausgebaut, z.B. um auch Bäume (Punkte) und Wege aktualisieren zu können. Das Ergebnis ist nun auch
+Inzwischen habe ich das Skript oben erweitert, sodass nun auch Bäume (Punkte) und Wege aktualisiert werden können. Das [Ergebnis](/post/never-built-goettingen-3d/) ist als [interaktive Karte online](https://never-built.goettingen.xyz/3d-map/) verfügbar.
