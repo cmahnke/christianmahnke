@@ -16,6 +16,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q25822040
   - https://www.wikidata.org/wiki/Q133818614
   - https://www.wikidata.org/wiki/Q14946528
+lastmod: 2026-08-09TT00:00:00+02:00
 ---
 
 "Counterfactual architecture" yields almost no results on Google (at least in German)....
@@ -229,3 +230,7 @@ def merge (base_file, patch, output_file, overwrite) -> None:
     logger.info(f"Done, {output_file} written")
 
 ```
+
+# Update 9.8.24
+
+I have since expanded the script above so that trees (points) and paths can now also be updated. The [result](/post/never-built-goettingen-3d/) is available as an [interactive map online](https://never-built.goettingen.xyz/3d-map/).

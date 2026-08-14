@@ -16,6 +16,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q25822040
   - https://www.wikidata.org/wiki/Q133818614
   - https://www.wikidata.org/wiki/Q14946528
+lastmod: 2026-08-09TT00:00:00+02:00
 ---
 
 "Kontrafaktische Architektur" liefert fast keine Treffer bei Google....
@@ -229,3 +230,6 @@ def merge (base_file, patch, output_file, overwrite) -> None:
     logger.info(f"Done, {output_file} written")
 
 ```
+# Update 9.8.24
+
+Inwischen habe ich das Script oben weiter ausgebaut, z.B. um auch Bäume (Punkte) und Wege aktualisieren zu können. Das Ergebnis ist nun auch
