@@ -12,7 +12,9 @@ wikidata:
   - https://www.wikidata.org/wiki/Q978185
   - https://www.wikidata.org/wiki/Q281876
   - https://www.wikidata.org/wiki/Q8811
-lastmod: 2025-06-04T00:00:00+02:00
+  - https://www.wikidata.org/wiki/Q364
+  - https://www.wikidata.org/wiki/Q29642950
+lastmod: 2025-08-14T00:00:00+02:00
 ---
 
 Da diese Seite eine Suche braucht, habe ich mir mal [Pagefind](https://pagefind.app/) angesehen...
@@ -155,3 +157,7 @@ Wäre die Konfiguration in JavaScript (statt YAML oder JSON) realisiert, könnte
 # Update 4.6.2025
 
 Der Entwickler von Pagefind kann sich [vorstellen](https://github.com/Pagefind/pagefind/discussions/821#discussioncomment-13372424), eine entsprechende Funktionalität direkt im Indexer zu integrieren.
+
+# Update 12.8.2026
+
+Der aktuelle Quellcode ist nun als [Python Modul auf GitHub](https://github.com/cmahnke/pagefind-indexer) verfügbar.
