@@ -16,7 +16,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q25822040
   - https://www.wikidata.org/wiki/Q133818614
   - https://www.wikidata.org/wiki/Q14946528
-lastmod: 2026-08-09TT00:00:00+02:00
+lastmod: 2026-08-09T00:00:00+02:00
 ---
 
 "Counterfactual architecture" yields almost no results on Google (at least in German)....
