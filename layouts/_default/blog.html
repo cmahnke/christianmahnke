@@ -15,6 +15,7 @@
   {{- partial "header.html" . -}}
     <div class="content-container blog">
       {{- $pages := where .Site.Pages "Section" "post" -}}
+      {{- $updatedPages := where $pages "Params.lastmod" "!=" nil -}}
       {{- $mainSite := hugo.Sites.Default -}}
       {{- if ne $mainSite .Site -}}
         {{- $pages = ($pages | lang.Merge (where $mainSite.Pages "Section" $postSection)) -}}
@@ -73,6 +74,28 @@
             {{- end -}}
           {{- end -}}
           {{- partial "li.html" . -}}
+          {{- $currentDate := $page.Date -}}
+
+          {{- $nextPage := false -}}
+          {{- if lt $i (sub (len $pages) 1) -}}
+            {{- $nextPage = index $pages (add $i 1) -}}
+          {{- else if $paginator.HasNext -}}
+            {{- $nextPage = index $paginator.Next.Pages 0 -}}
+          {{- end -}}
+
+          {{- if ne $nextPage false -}}
+            {{- $nextDate := $nextPage.Date -}}
+            {{- $modifiedPages := where $updatedPages "Params.Lastmod" "lt" $currentDate -}}
+            {{- $modifiedPages = where $modifiedPages "Params.Lastmod" "gt" $nextDate -}}
+    {{ warnf "-->  %s -> %s : num mods %i"  $currentDate $nextDate  (len $modifiedPages) }}
+
+            {{- range $modifiedPages -}}
+
+
+    {{ warnf "==> mod (%s -> %s -> %s): %s"  $currentDate .Params.Lastmod $nextDate .RelPermalink }}
+              {{- partial "mod.html" . -}}
+            {{- end -}}
+          {{- end -}}
         {{- end -}}
       </div>
     </div>

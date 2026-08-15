@@ -10,7 +10,7 @@ disablePathToLower = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base", "hugo-video"]
-enableGitInfo = true
+enableGitInfo = false
 preserveTaxonomyNames = true
 enableRobotsTXT = true
 timeout = "240s"
@@ -411,7 +411,7 @@ timeout = "240s"
 #  [[HTTPCache.polls]]
 #    disable = true
 #
-[caches]
- [caches.getresource]
-   dir = ':resourceDir/'
-   maxAge = 604800
+# [caches]
+#  [caches.getresource]
+#    dir = ':resourceDir/'
+#    maxAge = 604800

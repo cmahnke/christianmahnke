@@ -92,6 +92,9 @@ other = "Archiv"
 one = "Beitrag"
 other = "Beiträge"
 
+[updatedPost]
+other = "Beitrag aktualisiert"
+
 # PDF articles
 
 [keywords]

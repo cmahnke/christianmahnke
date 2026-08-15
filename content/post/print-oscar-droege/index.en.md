@@ -1,6 +1,6 @@
 ---
 date: 2023-09-09T15:15:44+02:00
-title: 'FarbholzschnittColour woodblock print by Oscar Droege (1898-1983)'
+title: 'Colour woodblock print by Oscar Droege (1898-1983)'
 tags:
   - Art
   - WoodblockPrint
