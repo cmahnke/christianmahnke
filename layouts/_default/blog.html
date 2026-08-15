@@ -76,23 +76,14 @@
           {{- partial "li.html" . -}}
           {{- $currentDate := $page.Date -}}
 
-          {{- $nextPage := false -}}
-          {{- if lt $i (sub (len $pages) 1) -}}
-            {{- $nextPage = index $pages (add $i 1) -}}
-          {{- else if $paginator.HasNext -}}
-            {{- $nextPage = index $paginator.Next.Pages 0 -}}
-          {{- end -}}
+          {{- $globalNextIndex := add (mul (sub $paginator.PageNumber 1) $paginator.PagerSize) (add $i 2) -}}
 
-          {{- if ne $nextPage false -}}
+          {{- if lt $globalNextIndex (len $pages) -}}
+            {{- $nextPage := index $pages $globalNextIndex -}}
             {{- $nextDate := $nextPage.Date -}}
             {{- $modifiedPages := where $updatedPages "Params.Lastmod" "lt" $currentDate -}}
             {{- $modifiedPages = where $modifiedPages "Params.Lastmod" "gt" $nextDate -}}
-    {{ warnf "-->  %s -> %s : num mods %i"  $currentDate $nextDate  (len $modifiedPages) }}
-
             {{- range $modifiedPages -}}
-
-
-    {{ warnf "==> mod (%s -> %s -> %s): %s"  $currentDate .Params.Lastmod $nextDate .RelPermalink }}
               {{- partial "mod.html" . -}}
             {{- end -}}
           {{- end -}}

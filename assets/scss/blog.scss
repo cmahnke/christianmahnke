@@ -1,6 +1,8 @@
 @use 'sass:color';
 @use "functions/color" as *;
 
+$text-updated-underline-color: color.adjust(#ff073a, $lightness: 35%);
+
 @mixin light-text {
   font-weight: 200;
   font-size: smaller;
@@ -154,8 +156,21 @@ $down-image-marker:"data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000
         }
 
         &.mod {
-          display: none;
+          margin: 3em 5% 0 5%;
+          /* display: none; */
 
+          .content {
+            .post-title {
+              box-shadow: inset 0 -10px 0 $text-updated-underline-color;
+              font-size: 1.1rem;
+              font-weight: 500;
+            }
+
+            .updated-date {
+              font-weight: 100;
+              text-align: end;
+            }
+          }
         }
       }
     }

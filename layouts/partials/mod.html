@@ -2,13 +2,10 @@
 {{- if ne .Params.type nil -}}
     {{- $class = .Params.type -}}
 {{- end -}}
-{{ warnf "XX %s" .RelPermalink }}
 <div class="post {{ $class }} mod">
     <div class="content">
         <h2 class="post-title"><a class="readmore" href="{{ .RelPermalink}}" title="{{ i18n "readmore" }}">{{ i18n "updatedPost" }}: {{ .Title }}</a></h2>
-        <div class="updated-date">
-          {{- .Params.Lastmod | time.Format ":date_full" -}}
-        </div>
+        <div class="updated-date">{{ i18n "updatedOn" }} {{ .Params.Lastmod | time.Format ":date_full" -}}</div>
         {{/*
         <div class="post-body">
           {{- with .Params.description -}}
