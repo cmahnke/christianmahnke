@@ -98,7 +98,7 @@ jobs:
           path: resources
 
       - name: Download all workflow run artifacts
-        uses: dawidd6/action-download-artifact@v21
+        uses: dawidd6/action-download-artifact@v23
         id: download-artifact
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
