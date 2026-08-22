@@ -2,7 +2,8 @@
 date: 2026-08-20T20:14:44+02:00
 title: "Marode Infrastruktur"
 tags:
-- Linux
+  - Linux
+  - Travel
 wikidata:
   - https://www.wikidata.org/wiki/Q2766
   - https://www.wikidata.org/wiki/Q381
