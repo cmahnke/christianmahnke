@@ -9,3 +9,4 @@ $CTX_PATH/../themes/projektemacher-base/scripts/github/docker-images.sh
 $CTX_PATH/../themes/projektemacher-base/scripts/github/setup-inkscape.sh
 $CTX_PATH/../themes/projektemacher-base/scripts/github/setup-media.sh
 $CTX_PATH/../themes/projektemacher-base/scripts/github/dart-sass.sh
+$CTX_PATH/../themes/projektemacher-base/scripts/github/git-setup.sh
