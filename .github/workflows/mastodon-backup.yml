@@ -21,9 +21,12 @@ permissions:
   packages: write
   contents: write
 
+env:
+  PYTHON_VERSION: "3.14"
+
 jobs:
   backup:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
@@ -42,7 +45,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v7
         with:
-          python-version: "3.x"
+          python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Install mastodon-archive
         run: pip install mastodon-archive
@@ -86,7 +89,7 @@ jobs:
         working-directory: ${{ env.BACKUP_DIRECTORY }}
         run: |
           git config user.name "GitHub Actions Bot"
-          git config user.email "<>"          
+          git config user.email "<>"
           git add *.json
           git add ${{ steps.media-path.outputs.MEDIA_PATH }}/*
           git commit -m "Update Mastodon backup" || echo "No changes to commit"
