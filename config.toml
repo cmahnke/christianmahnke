@@ -262,7 +262,7 @@ timeout = "240s"
 [module]
   [module.hugoVersion]
     extended = true
-    min = '0.146.3'
+    min = '0.156.0'
 
   [[module.mounts]]
       source = "assets/scss"
