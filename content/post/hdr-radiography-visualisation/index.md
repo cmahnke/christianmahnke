@@ -62,7 +62,7 @@ Achtung: Das Ergebnis ist ca. 14 Megabyte groß, HDR Ansicht nach dem Klick auf 
 
 {{< gallery >}}
 [
-  {"src": "img/Mars and Venus United by Love.jpeg", "alt": "HDR Aufnahme mit Hervorhebungen"}
+  {"src": "img/Mars and Venus United by Love.hdr.jpeg", "alt": "HDR Aufnahme mit Hervorhebungen"}
 ]
 {{</ gallery >}}
 

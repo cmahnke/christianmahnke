@@ -61,7 +61,7 @@ Warning: The result is approx. 14 megabytes in size, HDR view after clicking on 
 
 {{< gallery >}}
 [
-  {"src": "img/Mars and Venus United by Love.jpeg", "alt": "HDR image with highlighting"}
+  {"src": "img/Mars and Venus United by Love.hdr.jpeg", "alt": "HDR image with highlighting"}
 ]
 {{</ gallery >}}
 
