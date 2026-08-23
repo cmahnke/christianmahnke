@@ -1,7 +1,6 @@
 baseURL = "https://christianmahnke.de/"
-languageCode = "de"
+locale = "de"
 title = "Christian Mahnke"
-languagecode = "de"
 defaultcontentlanguage = "de"
 copyright = "Christian Mahnke"
 publishDir = "docs"
@@ -17,7 +16,7 @@ timeout = "240s"
 
 [languages]
     [languages.de]
-        languagename = "Deutsch"
+        label = "Deutsch"
         description = "Sammler und Creative Technologist, spezialisiert auf die Alltagskultur des 20. Jahrhunderts und ihre digitale Präsentation."
 
         [languages.de.menu]
@@ -57,7 +56,7 @@ timeout = "240s"
 #                    draft = true
 
     [languages.en]
-        languagename = "English"
+        label = "English"
         decription = "Collector and creative technologist specialising in 20th-century everyday culture and its digital presentation."
 
         [languages.en.menu]
@@ -100,7 +99,6 @@ timeout = "240s"
     defaultMarkdownHandler = 'goldmark'
 
 [markup.goldmark]
-    duplicateResourceFiles = true
 
     [markup.goldmark.renderer]
         unsafe= true
