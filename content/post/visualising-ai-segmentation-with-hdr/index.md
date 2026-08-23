@@ -90,6 +90,6 @@ Achtung: HDR Ansicht nach dem Klick auf das Vorschaubild, ca 2MB groß.
 
 {{< gallery >}}
 [
-  {"src": "img/das-herrenjournal-7-1939-page015.jpeg", "alt": "HDR Aufnahme mit Hervorhebungen"}
+  {"src": "img/das-herrenjournal-7-1939-page015.hdr.jpeg", "alt": "HDR Aufnahme mit Hervorhebungen"}
 ]
 {{</ gallery >}}
