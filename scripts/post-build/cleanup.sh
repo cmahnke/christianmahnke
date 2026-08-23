@@ -7,7 +7,7 @@ SEARCH_PATH="docs/en/post docs/post"
 SEARCH_FILE="index.html"
 SEARCH_STRING=gallery-image
 
-find $SEARCH_PATH -type f -name "*.jpg" -size +2M -not -path '*/full/full/*' | while read -r jpg_file; do
+find $SEARCH_PATH -type f -name "*.jp*g" -size +2M -not -path '*/full/full/*' -and -not -path '*.hdr.*' | while read -r jpg_file; do
     dir=$(dirname "$jpg_file")
     found=0
     check_dir="$dir"
