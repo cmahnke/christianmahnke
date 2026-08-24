@@ -5,6 +5,15 @@
   {{- $model = . -}}
 {{- end -}}
 
+{{- if .Page.IsTranslated -}}
+  {{- range .Page.Translations -}}
+    {{- if .Language.IsDefault -}}
+      {{- $baseURL := .Page.RelPermalink | replaceRE "\\.html$" "/" -}}
+      {{- $model = printf "%s%s" $baseURL $model -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
 <div class="renderer-canvas script">
   <canvas id="{{ $id }}"></canvas>
 </div>
