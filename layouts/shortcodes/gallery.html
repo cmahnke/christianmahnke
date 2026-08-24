@@ -24,14 +24,28 @@
         {{- if (not $scalePreview) -}}
           {{- $preview = $imgRes -}}
         {{- end -}}
-
-        <img src="{{ $preview.RelPermalink }}" alt="{{ $alt }}" class="gallery-preview" />
+          {{- $imageLink := $preview.RelPermalink -}}
+          {{- if strings.Contains $image.src ".hdr." -}}
+            {{- $imageLink = $image.src -}}
+            {{- if $.Page.IsTranslated -}}
+              {{- range $.Page.Translations -}}
+                {{- if .Language.IsDefault -}}
+                  {{- $permalink_pretty := .Page.Permalink | replaceRE "\\.html$" "/" -}}
+                  {{- $imageLink = printf "%s%s" $permalink_pretty  $image.src -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+          <img src="{{ $imageLink }}" alt="{{ $alt }}" class="gallery-preview" />
         {{- if ne $alt "" -}}
           <div class="hidden-caption-content">{{ $alt }}</div>
         {{- end -}}
       </a>
-      {{- else -}}
+    {{- else -}}
+      {{/*
       {{ warnf "[shortcodes/gallery.html] Not found %s for %s" $image.src $.Page.File.Path }}
+      */}}
+      {{- errorf "[shortcodes/gallery.html] Couldn't find resource %s in %s" $image .RelPermalink -}}
     {{- end -}}
   {{- end -}}
 </div>
