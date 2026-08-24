@@ -35,6 +35,9 @@ done
 
 echo "Removing JXL images from output"
 find $SEARCH_PATH -type f -path '*.jxl' -not -path '*hdr*' -exec rm {} \;
+echo "Removing preview templates"
+find $SEARCH_PATH -type f -name ogPreview.svg -exec rm {} \;
+
 echo "Removing post specific output"
 set -x
 rm docs/post/hang-pictures-in-sweethome3d/img/Gallerie-Alte-Post-plan.svg
