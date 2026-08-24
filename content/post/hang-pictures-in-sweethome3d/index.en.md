@@ -52,7 +52,7 @@ options:
 
 With the help of this tool, a simple plan is transformed into a 3D view (here the work preview).
 
-{{< figure src="img/Gallerie-Alte-Post-plan.svg" title="Plan of the gallery" alt="Plan of the gallery" class="center" >}}
+{{< figure src="img/Gallerie-Alte-Post-plan.webp" title="Plan of the gallery" alt="Plan of the gallery" class="center" >}}
 
 A 3D view (here the work preview)
 {{< figure src="img/Gallerie-Alte-Post-interior.png" title="Screenshot Sweet Home 3D" alt="Screenshot Sweet Home 3D" class="center" >}}

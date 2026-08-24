@@ -25,7 +25,7 @@ done
 ./scripts/mastodon-archive.sh
 
 # Generate Previews
-TARGETFORMAT=png ./themes/projektemacher-base/scripts/preview.sh
+TARGETFORMAT=webp ./themes/projektemacher-base/scripts/preview.sh
 
 # Favicons
 SOURCE="themes/projektemacher-base/static/images/cm.svg" OPTIONS="-transparent white" ./themes/projektemacher-base/scripts/favicon.sh
@@ -51,14 +51,15 @@ npm run svgo
 find content/post -name '*.pdf' -print -exec convert -flatten -density 300 {}[0] -quality 100 {}.jpg \;
 find content/post -name '*.mp4' -print -exec ffmpeg -y -ss 00:00:03 -i {} -vframes 1 {}.jpg \;
 
-hugo --renderSegments manifests
-./scripts/height-map.sh
+# PDf Viewer
+mkdir -p static/pdfjs
+cp -r node_modules/pdfjs-dist/web static/pdfjs/
 
-echo "Make sure './scripts/post-build/index.sh' is executed"
-if [ -d ./scripts/post-build ] ; then
-    echo "Don't forget to run post build scripts after 'hugo'!"
-fi
+# ---------------------------
+# - Setup for specific posts
+# ---------------------------
 
+# Wikidata related stuff
 mkdir -p docs/meta/wikidata/
 
 if [ `uname` = "Darwin" ] ; then
@@ -66,5 +67,18 @@ if [ `uname` = "Darwin" ] ; then
     wget -O docs/meta/wikidata/enriched_entities.hdt https://christianmahnke.de/meta/wikidata/enriched_entities.hdt
 fi
 
-mkdir -p static/pdfjs
-cp -r node_modules/pdfjs-dist/web static/pdfjs/
+# IIIF touch
+hugo --renderSegments manifests
+./scripts/height-map.sh
+
+# blog visualisation
+convert -density 300 content/post/blog-visualisation/graph.pdf -quality 90 -define webp:sampling-factor=1x1 -define webp:sharp-yuv=1 content/post/blog-visualisation/graph.pdf.webp
+
+# Plan for Sweethome 3D
+convert -density 300 content/post/hang-pictures-in-sweethome3d/img/Gallerie-Alte-Post-plan.svg -quality 90 -define webp:sampling-factor=1x1 -define webp:sharp-yuv=1  content/post/hang-pictures-in-sweethome3d/img/Gallerie-Alte-Post-plan.svg.webp
+
+
+echo "Make sure './scripts/post-build/index.sh' is executed"
+if [ -d ./scripts/post-build ] ; then
+    echo "Don't forget to run post build scripts after 'hugo'!"
+fi

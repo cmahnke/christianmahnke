@@ -52,7 +52,7 @@ options:
 
 Mit Hilfe dieses Werkzeugs wird aus einem einfachen Plan.
 
-{{< figure src="img/Gallerie-Alte-Post-plan.svg" title="Plan der Gallerie" alt="Plan der Gallerie" class="center" >}}
+{{< figure src="img/Gallerie-Alte-Post-plan.webp" title="Plan der Gallerie" alt="Plan der Gallerie" class="center" >}}
 
 Eine 3D Ansicht (hier die Arbeitsvorschau)
 {{< figure src="img/Gallerie-Alte-Post-interior.png" title="Screenshot Sweet Home 3D" alt="Screenshot Sweet Home 3D" class="center" >}}
