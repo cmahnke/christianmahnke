@@ -9,6 +9,13 @@ Parameters:
 {{- $manifestUrl := .Get "manifestUrl" -}}
 
 {{- $urlBase := $.Page.Permalink | replaceRE "\\.html$" "/" -}}
+{{- if  .Page.IsTranslated -}}
+  {{- range .Page.Translations -}}
+    {{- if .Language.IsDefault -}}
+      {{- $urlBase = .Page.RelPermalink | replaceRE "\\.html$" "/" -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 {{- $manifestUrl = printf "%s%s" $urlBase $manifestUrl -}}
 
 {{- $orientation := "portrait" -}}
