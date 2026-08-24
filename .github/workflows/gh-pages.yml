@@ -113,6 +113,10 @@ jobs:
         run: |
           cp enriched_entities.hdt docs/meta/wikidata/
 
+      - name: Get site size
+        run: |
+          du -chs docs/*
+
       - name: Puppeteer
         if: ${{ !env.ACT }}
         run: |
