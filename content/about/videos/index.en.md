@@ -8,14 +8,14 @@ weight: 6
 In the last few years I had the opportunity to be an extra in short films:
 
 ## Evelyns Geschichte
-{{< html/iframe-consent preview="<img class='video-preview' src='./videos/unverzichtbar-boxed.jpg' alt='Preview'>" >}}
+{{< html/iframe-consent preview="<img class='video-preview' src='/about/videos/unverzichtbar-boxed.jpg' alt='Preview'>" >}}
     {{< youtube id="97_vjxuY1pM" title="Evelyns Geschichte" class="youtube-video" >}}
 {{< /html/iframe-consent >}}
 
 Here I play myself and accompany a very good friend with a serious illness to the flea market.
 
 ## Black as Chalk - Snake Handler
-{{< html/iframe-consent  preview="<img class='video-preview' src='./videos/snakehandler-boxed.jpg' alt='Preview'>" >}}
+{{< html/iframe-consent  preview="<img class='video-preview' src='/about/videos/snakehandler-boxed.jpg' alt='Preview'>" >}}
     {{< youtube id="5QBXHkIaZxE" title="Black as Chalk - Snake Handler" class="youtube-video" >}}
 {{< /html/iframe-consent >}}
 
