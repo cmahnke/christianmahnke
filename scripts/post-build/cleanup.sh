@@ -26,3 +26,6 @@ find $SEARCH_PATH -type f -name "*.jp*g" -size +2M -not -path '*/full/full/*' -a
         rm "$jpg_file"
     fi
 done
+
+# TODO enable this - make sure it won't kill hdr stuff 
+#find $SEARCH_PATH -type f -path '*/full/full/0/default.jpg' -exec mogrify -quality 90 {} \;
