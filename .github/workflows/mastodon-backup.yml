@@ -12,6 +12,7 @@ env:
   BACKUP_BRANCH: mastodon-backup
   BACKUP_FILE: ./openbiblio.social.user.cmahnke.json
   BACKUP_DIRECTORY: ./data/mastodon
+  PYTHON_VERSION: "3.14"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -20,9 +21,6 @@ concurrency:
 permissions:
   packages: write
   contents: write
-
-env:
-  PYTHON_VERSION: "3.14"
 
 jobs:
   backup:

@@ -6,6 +6,7 @@
 {{/* This hack should reduce image size */}}
 {{ if not (findRE "(^|:)//" $image) }}
     {{ $origImage := $image }}
+    {{/* TODO: Check if we should skip webp files */}}
     {{ $imgRes := $.Page.Resources.GetMatch $image }}
     {{ if not $imgRes }}
         {{ $imgRes = resources.Get $image }}
