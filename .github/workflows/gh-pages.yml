@@ -102,7 +102,7 @@ jobs:
           find ./docs/ -type f -name "article.html" -exec rm {} \;
 
       - name: Download all workflow run artifacts
-        uses: dawidd6/action-download-artifact@v23
+        uses: dawidd6/action-download-artifact@v24
         id: download-artifact
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
