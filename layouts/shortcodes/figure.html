@@ -16,7 +16,7 @@
         {{ end }}
     {{ end }}
     {{ if eq $image $origImage }}
-        {{ warnf "figure shortcode: could not create WebP derivative for %q (not found or not processable), using original image." $origImage }}
+        {{ warnf "[figure.html] Could not create WebP derivative for %q (not found or not processable), using original image." $origImage }}
     {{ end }}
 {{ end }}
 
