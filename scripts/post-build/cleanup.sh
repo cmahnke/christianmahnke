@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-set -e
+set -e -o pipefail
+
+# Compress html
+#minhtml --keep-closing-tags  --do-not-minify-doctype --minify-css docs/**/*.html
 
 #SEARCH_PATH=docs/{en/post,post}
 SEARCH_PATH="docs/en/post docs/post"

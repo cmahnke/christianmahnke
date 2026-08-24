@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -e -o pipefail
 
 cd  public
 vips dzsave page031.jpg page031 --tile-size=512 --layout iiif --id http://localhost:5173

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e -o pipefail
+
 IMAGE_PREFIX=content/post
 HEIGHTMAP_SCRIPT=`dirname $0`/./height-map.py
 MANIFEST_SCRIPT=`dirname $0`/./update-manifest.py
