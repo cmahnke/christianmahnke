@@ -148,8 +148,15 @@ timeout = "240s"
 [markup.highlight]
   noClasses = false
 
-[imaging]
-    quality = 95
+#[imaging]
+#  [imaging.jpeg]
+#    quality = 85
+#  [imaging.webp]
+#    compression = 'lossy'
+#    hint = 'photo'
+#    method = 4
+#    quality = 85
+#    useSharpYuv = true
 
 [mediaTypes]
   [mediaTypes."application/geo+json"]
