@@ -20,7 +20,7 @@ for META in `ls -1 $IMAGE_PREFIX/**/*-map.json`
 do
     DIR=`dirname $META`
     IMAGE=`basename $META -map.json`
-    python3 $HEIGHTMAP_SCRIPT -r 600 --image $DIR/$IMAGE.jxl --metadata $META --output json png --debug -j
+    python3 $HEIGHTMAP_SCRIPT -r 600 --image $DIR/$IMAGE.jxl --metadata $META --output json webp --debug -j
     OUT_DIR=`echo $DIR |sed -e "s/content/$DOCS_DIR/"`
     BASE=`echo "$META" |sed -E 's/.*\\/(.*)-map.json/\1/g'`.json
     echo "Updating manifest for $BASE"

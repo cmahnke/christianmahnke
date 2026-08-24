@@ -86,3 +86,4 @@ assets/mastodon
 static/*.wasm
 static/meta/wikidata/enriched_entities.hdt
 *.pdf.jpg
+content/post/haptic-feedback/**/*.webp

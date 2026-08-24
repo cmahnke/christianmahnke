@@ -57,23 +57,23 @@ The first step was to prepare the image data: The starting point for tactile fee
 
 The Cordsamt (corduroy) serves as an example here:
 
-{{< figure src="./page031-1-cut.png" caption="Extracted section" >}}
+{{< figure src="./page031-1-cut.webp" caption="Extracted section" >}}
 
-{{< figure src="./page031-1-filter_0_FIND_EDGES.png" caption="Edge detection" >}}
+{{< figure src="./page031-1-filter_0_FIND_EDGES.webp" caption="Edge detection" >}}
 
-{{< figure src="./page031-1-filter_1_EDGE_ENHANCE.png" caption="Edge enhancement" >}}
+{{< figure src="./page031-1-filter_1_EDGE_ENHANCE.webp" caption="Edge enhancement" >}}
 
-{{< figure src="./page031-1-filter_2_SMOOTH_MORE.png" caption="Smoothen 1" >}}
+{{< figure src="./page031-1-filter_2_SMOOTH_MORE.webp" caption="Smoothen 1" >}}
 
-{{< figure src="./page031-1-filter_3_SMOOTH_MORE.png" caption="Smoothen 2" >}}
+{{< figure src="./page031-1-filter_3_SMOOTH_MORE.webp" caption="Smoothen 2" >}}
 
-{{< figure src="./page031-1-filter_4_GRAYSCALE.png" caption="Grayscaling" >}}
+{{< figure src="./page031-1-filter_4_GRAYSCALE.webp" caption="Grayscaling" >}}
 
-{{< figure src="./page031-1-filter_5_EQUALIZE.png" caption="Average" >}}
+{{< figure src="./page031-1-filter_5_EQUALIZE.webp" caption="Average" >}}
 
-{{< figure src="./page031-1-filter_6_BINARIZE.png" caption="Binarisation" >}}
+{{< figure src="./page031-1-filter_6_BINARIZE.webp" caption="Binarisation" >}}
 
-{{< figure src="./page031-1.png" caption="scaled down to a edge length of 1mm" class="img-center" >}}
+{{< figure src="./page031-1.webp" caption="scaled down to a edge length of 1mm" class="img-center" >}}
 
 <details>
   <summary>Example: The result of preprocessing as a JSON array</summary>

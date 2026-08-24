@@ -56,23 +56,23 @@ Aus ihnen wurden mit etwas automatisierter Nachbearbeitung "Höheninformationen"
 
 Als Beispiel dient hier der Cordsamt:
 
-{{< figure src="./page031-1-cut.png" caption="Ausschnitt zur Analyse" >}}
+{{< figure src="./page031-1-cut.webp" caption="Ausschnitt zur Analyse" >}}
 
-{{< figure src="./page031-1-filter_0_FIND_EDGES.png" caption="Kantenerkennung" >}}
+{{< figure src="./page031-1-filter_0_FIND_EDGES.webp" caption="Kantenerkennung" >}}
 
-{{< figure src="./page031-1-filter_1_EDGE_ENHANCE.png" caption="Kantenverbesserung" >}}
+{{< figure src="./page031-1-filter_1_EDGE_ENHANCE.webp" caption="Kantenverbesserung" >}}
 
-{{< figure src="./page031-1-filter_2_SMOOTH_MORE.png" caption="Weichzeichnen 1" >}}
+{{< figure src="./page031-1-filter_2_SMOOTH_MORE.webp" caption="Weichzeichnen 1" >}}
 
-{{< figure src="./page031-1-filter_3_SMOOTH_MORE.png" caption="Weichzeichnen 2" >}}
+{{< figure src="./page031-1-filter_3_SMOOTH_MORE.webp" caption="Weichzeichnen 2" >}}
 
-{{< figure src="./page031-1-filter_4_GRAYSCALE.png" caption="Graustufen" >}}
+{{< figure src="./page031-1-filter_4_GRAYSCALE.webp" caption="Graustufen" >}}
 
-{{< figure src="./page031-1-filter_5_EQUALIZE.png" caption="Mittelwert" >}}
+{{< figure src="./page031-1-filter_5_EQUALIZE.webp" caption="Mittelwert" >}}
 
-{{< figure src="./page031-1-filter_6_BINARIZE.png" caption="Binarisieren" >}}
+{{< figure src="./page031-1-filter_6_BINARIZE.webp" caption="Binarisieren" >}}
 
-{{< figure src="./page031-1.png" caption="Reduktion auf eine Pixelkantenlänge von 1mm" class="img-center" >}}
+{{< figure src="./page031-1.webp" caption="Reduktion auf eine Pixelkantenlänge von 1mm" class="img-center" >}}
 
 <details>
   <summary>Beispiel: Das Ergebnis der Vorverarbeitung als JSON-Array</summary>

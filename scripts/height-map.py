@@ -9,6 +9,8 @@ from termcolor import cprint
 unit = "mm"
 default_dpi = 600
 
+defaultImageSuffix = ".png"
+
 def image_array(image):
     return np.array(image, dtype=int).tolist()
 
@@ -47,7 +49,7 @@ def filter(operations, image):
                 threshold = 128
             image = image.point(lambda x : 255 if x > threshold else 0, mode='1')
         if (debug):
-            debugFileName = args.image.parent.joinpath(args.image.stem + "-{}-filter_{}_{}".format(i, j, name) + '.png')
+            debugFileName = args.image.parent.joinpath(args.image.stem + "-{}-filter_{}_{}".format(i, j, name) + defaultImageSuffix)
             cprint("Saving image {}".format(debugFileName), 'yellow')
             image.save(debugFileName)
     return image
@@ -58,7 +60,7 @@ parser.add_argument('--image', type=pathlib.Path, help='Image to process', requi
 parser.add_argument('--metadata', type=pathlib.Path, help='File containing metadata', required=True)
 parser.add_argument('--pixel-size', type=int, help=f"Size of a pixel in {unit}", default=1)
 parser.add_argument('--join', '-j', action='store_true', help='Join JSON fragments')
-parser.add_argument('--output', choices=['json', 'png'], action='append', nargs='+', help='Output format', default=[])
+parser.add_argument('--output', choices=['json', 'png', 'webp'], action='append', nargs='+', help='Output format', default=[])
 parser.add_argument('--debug', '-d', action='store_true', help='Create images for each filter step', default=False)
 parser.add_argument('--resolution', '-r', type=int, default=600, help='Default DPI, currently needed for JXL')
 
@@ -130,6 +132,9 @@ if (len(args.output) == 0):
 else:
     outputs = sum(args.output, [])
 
+if ('webp' in outputs) and not ('png' in outputs):
+    defaultImageSuffix = ".webp"
+
 debug = False
 if (args.debug):
     debug = True
@@ -154,7 +159,7 @@ for i in range(len(metadata)):
 
     image = inImg.crop((left, top, right, bottom))
     if (debug):
-        debugFileName = args.image.parent.joinpath(args.image.stem + "-{}-cut".format(i) + '.png')
+        debugFileName = args.image.parent.joinpath(args.image.stem + "-{}-cut".format(i) + defaultImageSuffix)
         cprint("Saving image {}".format(debugFileName), 'yellow')
         image.save(debugFileName)
     if "filters" in metadata[i]:
@@ -180,6 +185,11 @@ for i in range(len(metadata)):
         outFileName = args.image.parent.joinpath(args.image.stem + "-{}".format(i) + '.png')
         cprint("Saving image {}".format(outFileName), 'yellow')
         image.save(outFileName)
+    if ('webp' in outputs):
+        outFileName = args.image.parent.joinpath(args.image.stem + "-{}".format(i) + '.webp')
+        cprint("Saving image {}".format(outFileName), 'yellow')
+        image.save(outFileName)
+
     if ('json' in outputs):
         outFileName = args.image.parent.joinpath(args.image.stem + "-{}".format(i) + '.json')
         cprint("Saving image {}".format(outFileName), 'yellow')
