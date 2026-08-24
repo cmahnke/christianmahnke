@@ -99,6 +99,7 @@ timeout = "240s"
     defaultMarkdownHandler = 'goldmark'
 
 [markup.goldmark]
+    duplicateResourceFiles = false
 
     [markup.goldmark.renderer]
         unsafe= true

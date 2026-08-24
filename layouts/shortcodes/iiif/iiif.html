@@ -27,6 +27,21 @@ Parameters:
   {{- $src = printf "%s/%s" (.Get "contextPath") $src -}}
   {{- $suffix := substr (path.Dir $src) (len (.Get "contextPath")) -}}
   {{- $baseURL = printf "%s%s" (.Get "contextPath") $suffix -}}
+{{- else -}}
+  {{- if .Page.IsTranslated -}}
+    {{- $translationPath := path.Dir .Page.RelPermalink -}}
+    {{- range .Page.Translations -}}
+      {{- if .Language.IsDefault -}}
+        {{- $baseURL = .Page.RelPermalink | replaceRE "\\.html$" "/" -}}
+        {{- $src = printf "%s%s" $baseURL $src -}}
+        {{/*
+        {{- $relPath := partial "functions/url/rel-path.html" (dict "from" $translationPath "to" (path.Dir .Page.RelPermalink)) -}}
+        {{- $baseURL = printf "%s%s" $relPath (strings.TrimSuffix "/" (path.Dir $src)) -}}
+        */}}
+        {{- $baseURL = printf "%s" (strings.TrimSuffix "/" (path.Dir $src)) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
 
 {{- $share := false -}}
