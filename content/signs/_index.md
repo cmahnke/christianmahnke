@@ -18,6 +18,9 @@ cascade:
       metaPage: true
       sitemap:
         disable: true
+      outputs:
+        - qrcode
+        - html
 ---
 
 Übersicht über Schilder und Plaketten
