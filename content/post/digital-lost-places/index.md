@@ -14,6 +14,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q213602
   - https://www.wikidata.org/wiki/Q577697
   - https://www.wikidata.org/wiki/Q1870700
+lastmod: 2025-08-25T00:00:00+02:00
 ---
 
 Ein zufälliges Netzfundstück, das zu Gedanken anregt...
@@ -42,3 +43,7 @@ Wie den [Nutzungsbedingungen](https://support.google.com/contributionpolicy/answ
 Und auch wenn die "offiziellen" Straßenansichten von Google Street View (und vergleichbaren Diensten) langfristig verfügbar sein dürften, wäre es sicher nicht verkehrt, auch diese zu sichern.
 
 **Machen Stadtarchive eigentlich schon Webarchivierung? Wenn nicht, wird es höchste Zeit!**
+
+# Update 25.8.2025
+
+Für alle, die sich für eine Archivierung interessieren, gibt es nun ein einfaches Werkzeug auf Github: den [Streetview-Archiver](https://github.com/cmahnke/streetview-archiver). Aber Vorsicht: Die aufbereiteten Daten können überraschend groß sein. Für eine Archivierung wird deshalb ein Kompressionsschritt empfohlen.

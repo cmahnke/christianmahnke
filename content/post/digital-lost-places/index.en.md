@@ -14,6 +14,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q213602
   - https://www.wikidata.org/wiki/Q577697
   - https://www.wikidata.org/wiki/Q1870700
+lastmod: 2025-08-25T00:00:00+02:00
 ---
 
 A chance find online that gets you thinking...
@@ -42,3 +43,7 @@ As stated in the [Terms of Service](https://support.google.com/contributionpolic
 And even though the ‘official’ street views from Google Street View (and similar services) are likely to remain available in the long term, it would certainly be a good idea to back these up as well.
 
 **Do city archives actually already carry out web archiving? If not, it is high time they did!**
+
+# Update 25.8.2025
+
+For anyone interested in archiving, there is now a simple tool available on GitHub: the [Street View Archiver](https://github.com/cmahnke/streetview-archiver). But be warned: the processed data can be surprisingly large. A compression step is therefore recommended for archiving.
