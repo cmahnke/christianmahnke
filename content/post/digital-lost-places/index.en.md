@@ -14,7 +14,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q213602
   - https://www.wikidata.org/wiki/Q577697
   - https://www.wikidata.org/wiki/Q1870700
-lastmod: 2025-08-25T00:00:00+02:00
+lastmod: 2026-08-25T00:00:00+02:00
 ---
 
 A chance find online that gets you thinking...
