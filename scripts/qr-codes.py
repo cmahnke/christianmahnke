@@ -43,6 +43,7 @@ def process_qrcode_json(json_file_path: Path, source_image_path: str):
             DITHERED_QR_CMD,
             "-i", str(image_to_use),
             "-o", str(output_file),
+            "--scale", "3",
             "--mirror",
             url
         ]
