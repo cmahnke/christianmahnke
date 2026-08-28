@@ -169,6 +169,9 @@ timeout = "240s"
     suffixes = ["jxl"]
   [mediaTypes."text/bibtex"]
     suffixes = ["bib"]
+  [mediaTypes."application/x-qrcode-template"]
+    suffixes = ["json"]
+  # See https://www.loc.gov/
 #  [mediaTypes."application/yaml"]
 #    suffixes = ["cff"]
 
@@ -254,6 +257,13 @@ timeout = "240s"
     mediaType = "text/plain"
     baseName = "llms"
     isPlainText = true
+    notAlternative = true
+
+  [outputFormats.qrcode]
+    mediaType = "application/x-qrcode-template"
+    isPlainText = true
+    isHTML = false
+    baseName = "qrcode"
     notAlternative = true
 
 [outputs]
