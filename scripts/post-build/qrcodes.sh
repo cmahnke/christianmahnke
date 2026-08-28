@@ -2,4 +2,10 @@
 
 set -e -o pipefail
 
-python scripts/qr-codes.py 
+echo "Generating QR-codes"
+
+python scripts/qr-codes.py
+
+echo "Removing QR-Code templates"
+
+find docs -name qrcode.json -exec rm {} \;
