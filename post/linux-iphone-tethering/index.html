@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Marode Infrastruktur · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="Heute war ich mit dem Zug zwischen Hannover, Paderborn und Göttingen unterwegs&hellip;">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/linux-iphone-tethering/" />
+  <meta property="og:title" content="Marode Infrastruktur · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/linux-iphone-tethering/ogPreview_hu_19ffb07c69df391c.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", Linux, Reisen"><meta name="dc.subject" content="Linux"><meta name="dc.subject" content="Reisen">
+<meta name="generator" content="Hugo 0.165.0">
+<meta name="projektemacher.org:build-date" content="2026-09-01 02:18:25.063564867 &#43;0000 UTC m=&#43;2.339673599">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.f8efc1831c746328ecdcc1dec5e6fa8f683b7a3eea3e5633b071f75db4c0a0b7.css" rel="stylesheet" integrity="sha256-&#43;O/Bgxx0Yyjs3MHexeb6j2g7ej7qPlYzsHH3XbTAoLc=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.a1c55b303931c2a71187f118aba900bbc16f7442eb39af68a35ada4f9cb41895.js" integrity="sha256-ocVbMDkxwqcRh/EYq6kAu8FvdELrOa9oo1raT5y0GJU="></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/linux-iphone-tethering/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/linux-iphone-tethering/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/linux-iphone-tethering/","@type":"BlogPosting","about":[{"@id":"http://www.wikidata.org/entity/Q388","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Q388"},{"@id":"http://www.wikidata.org/entity/Q61509","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Reise"},{"@id":"http://www.wikidata.org/entity/Q1246922","@type":"Thing","name":"Dynamic Kernel Module Support"},{"@id":"http://www.wikidata.org/entity/Q1421681","@type":"Thing","name":"IEEE 802.11a"},{"@id":"http://www.wikidata.org/entity/Q14579","@type":"Thing","name":"Linux-Kernel"},{"@id":"http://www.wikidata.org/entity/Q212607","@type":"Thing","name":"Wireless Local Area Network"},{"@id":"http://www.wikidata.org/entity/Q2300474","@type":"Thing","name":"Transmitter Power Control"},{"@id":"http://www.wikidata.org/entity/Q2766","@type":"Thing","name":"iPhone"},{"@id":"http://www.wikidata.org/entity/Q314293","@type":"Thing","name":"Q314293"},{"@id":"http://www.wikidata.org/entity/Q381","@type":"Thing","name":"Q381"},{"@id":"http://www.wikidata.org/entity/Q802375","@type":"Thing","name":"Bahnstrecke Göttingen–Bodenfelde"}],"author":{"@id":"http://www.wikidata.org/entity/Q137668638","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"dateModified":"2026-08-20","datePublished":"2026-08-20","headline":"Marode Infrastruktur","inLanguage":"de","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["Linux","Travel"],"name":"Marode Infrastruktur","url":"https://christianmahnke.de/post/linux-iphone-tethering/","workTranslation":[{"@id":"https://christianmahnke.de/en/post/linux-iphone-tethering/","@type":"CreativeWork","inLanguage":"en","name":"Poor infrastructure","url":"https://christianmahnke.de/en/post/linux-iphone-tethering/"}]}
+</script>
+</head><body class="section-post dir-postlinux-iphone-tethering blog  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/linux-iphone-tethering/" title="English">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Marode Infrastruktur</h1><div class="date">
+          <time class="post-date" datetime="2026-08-20T20:14:44&#43;02:00">Donnerstag, 20. August 2026</time>
+        </div><div class="post-body"><p>Heute war ich mit dem Zug zwischen Hannover, Paderborn und Göttingen unterwegs&hellip;</p>
+<p>Als jemand, der sonst fast nur mit dem ICE fährt, war ich erschüttert, wie schlecht die Fahrgast-Infrastruktur in der Fläche sein kann.
+Nicht nur gibt es in diesem Bereich noch Funklöcher wie in den 2000er Jahren, auch sind Steckdosen und WLAN im Zug offenbar doch nicht so selbstverständlich, wie man erwarten sollte.</p>
+<p>Besonders negativ fällt die Verbindung zwischen 
+        
+          
+        <a data-wikidata-entity="Q802375" href="https://de.wikipedia.org/wiki/Bahnstrecke_G%C3%B6ttingen%E2%80%93Bodenfelde" target="_blank">Paderborn und Göttingen</a> auf. Offensichtlich gibt es immer noch Funklöcher auf Bahnstrecken. Ich war ehrlich überrascht, dass für das (über die Jahre ausgedünnte) Regionalzugnetz im Personenverkehr keine 100-prozentige Netzabdeckung vorgeschrieben ist.</p>
+<p>Natürlich gibt es kein WLAN und auch die Stromversorgung am Platz ist ein bekanntes Problem, nur leider wird der derzeitige Zustand noch bis Ende 2029 bestehen bleiben, Ab Ende 2025 wurde der Vertrag mit dem derzeitigen Betreiber, der 
+        
+          
+        <a data-wikidata-entity="Q314293" href="https://de.wikipedia.org/wiki/NordWestBahn" target="_blank">NordWestBahn</a> <a href="https://www.lok-report.de/news/deutschland/aus-den-laendern/54273-hessen-niedersachsen-nrw-vertragsverlaengerung-mit-der-nordwestbahn-zum-owl-dieselnetz-sued.html" target="_blank">ohne Ausschreibung verlängert</a>, da eine neu Ausschreibung absehbar nicht durchgeführt werden konnte. Warum man dann nicht zumindest um eine deutlich kürzere Laufzeit verlängern konnte, lies sich nicht feststellen.</p>
+<h2 id="moderne-technik-ausgebremst-von-schlechter-infrastruktur">Moderne Technik ausgebremst von schlechter Infrastruktur</h2>
+<p>In diesem Artikel soll es aber eigentlich gar nicht um solche Infrastrukturprobleme gehen, sondern um ein Problem, das solche Lücken mit einem Linux-Laptop verursacht. Eigentlich denkt man, dass sich das fehlende WLAN über ein Mobiltelefon mit Hotspot-Funktionalität kompensieren lässt.  Und mit einem iPhone klappt das in der Regel auch ganz gut. Wenn man jedoch Linux nutzt und die Mobilfunkverbindung nicht stabil ist, kann man eine interessante Fehlerkaskade beobachten: Man fährt durch ein Funkloch und nicht nur die Verbindung bricht zusammen, sondern am Ende stellt der Hotspot seinen Dienst ein.
+Auf dem Notebook erscheinen dazu folgende Meldungen:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ sudo dmesg
+</span></span><span class="line"><span class="cl">Limiting TX power to <span class="m">0</span> dBm as advertised by XX:XX:XX:XX:XX:XX
+</span></span></code></pre></div><h3 id="die-lange-erklärung">Die lange Erklärung:</h3>
+<ul>
+<li>Das iPhone verliert die Verbindung zum Mobilfunknetz.</li>
+<li>Das iPhone versucht, Energie zu sparen, und weist das Notebook an, die Signalstärke zu reduzieren (hier auf 0).</li>
+<li>Der Client folgt blind und setzt die Signalstärke auf Null, wodurch die Verbindung de facto gekappt wird.</li>
+<li>Das iPhone merkt, dass kein Client mehr verbunden ist, und deaktiviert die SSID, um noch mehr Energie zu sparen.</li>
+<li>Damit ist ein automatischer Reconnect erfolgreich ausgeschlossen, da der Client den Hotspot nicht mehr finden kann.</li>
+</ul>
+<p>Nun kann man darüber streiten, auf wessen Seite das Problem liegt, aber die Meldung kommt aus dem Kernel-Modul <code>mac80211</code>. Leider half es auch nicht wirklich das Energiemanagement fürs WLAN zu deaktivieren. Hintergrund ist das &ldquo;
+        
+          
+        <a data-wikidata-entity="Q2300474" href="https://de.wikipedia.org/wiki/Transmitter_Power_Control" target="_blank">Transmit Power Control/Management (TPC)</a>&rdquo;, das für 
+        
+          
+        <a data-wikidata-entity="Q1421681" href="https://de.wikipedia.org/wiki/IEEE_802.11a#Sendeleistung" target="_blank">IEEE 802.11h-2003</a> definiert is. Demnach müssen WLAN-Geräte den Vorgaben eigentlich folgen, es gibt keine Untergrenze. Damit sieht der Standard streng genommen vor, dass er sein eigenes Funktionieren versagen darf.</p>
+<p>Und warum passiert das z. B. mit Windows nicht? Weil es sich vermutlich nicht vom Access Point sagen lässt, dass er die Funktion einstellen soll. Das ist die einzig vernünftige Vorgehensweise für ein Client-Betriebssystem.</p>
+<p>Letztendlich ist das also auch eine Form eines Infrastrukturdefizits&hellip;</p>
+<h3 id="lösung">Lösung</h3>
+<p>Die Lösung ist recht einfach: Dem Kernel darf nicht mehr erlaubt werden, den Wert auf 0 zu setzen – selbst wenn dies vom AP &ldquo;gefordert&rdquo; wird:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-patch" data-lang="patch"><span class="line"><span class="cl"><span class="gd">--- a/mlme.c	2026-08-20 16:53:55.881324546 +0200
+</span></span></span><span class="line"><span class="cl"><span class="gi">+++ b/mlme.c	2026-08-20 16:58:25.384436651 +0200
+</span></span></span><span class="line"><span class="cl"><span class="gu">@@ -2164,7 +2164,12 @@
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> 		if (link-&gt;ap_power_level == new_ap_level)
+</span></span><span class="line"><span class="cl"> 			return 0;
+</span></span><span class="line"><span class="cl"><span class="gd">-
+</span></span></span><span class="line"><span class="cl"><span class="gi">+		if (new_ap_level &lt;= 0) {
+</span></span></span><span class="line"><span class="cl"><span class="gi">+			sdata_dbg(sdata,
+</span></span></span><span class="line"><span class="cl"><span class="gi">+				&#34;Intercepting advertised deactivation (tried to limit TX power to %d dBm by %pM)\n&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="gi">+                          	new_ap_level, link-&gt;u.mgd.bssid);
+</span></span></span><span class="line"><span class="cl"><span class="gi">+			new_ap_level = 12;
+</span></span></span><span class="line"><span class="cl"><span class="gi">+		}
+</span></span></span><span class="line"><span class="cl"> 		sdata_dbg(sdata,
+</span></span><span class="line"><span class="cl"> 			  &#34;Limiting TX power to %d dBm as advertised by %pM\n&#34;,
+</span></span><span class="line"><span class="cl"> 			  pwr_level_cisco, link-&gt;u.mgd.bssid);
+</span></span></code></pre></div><p>Die Lösung habe ich auch bei Github als 
+        
+          
+        <a data-wikidata-entity="Q1246922" href="https://de.wikipedia.org/wiki/Dynamic_Kernel_Module_Support" target="_blank">DKMS</a>-Modul <a href="https://github.com/cmahnke/sane-mac80211" target="_blank">bereitgestellt</a>, die Installation ist recht einfach:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl -fsSL https://cmahnke.github.io/sane-mac80211/repo-dist/public.gpg <span class="p">|</span> sudo gpg --dearmor -o /etc/apt/keyrings/sane-mac80211.gpg
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;deb [signed-by=/etc/apt/keyrings/sane-mac80211.gpg] https://cmahnke.github.io/sane-mac80211/repo-dist/ ./&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/sane-mac80211.list
+</span></span><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt install sane-mac80211
+</span></span></code></pre></div></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1246922" title="Dynamic Kernel Module Support" rel="related">Wikidata Eintrag: Dynamic Kernel Module Support</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q14579" title="Linux-Kernel" rel="related">Wikidata Eintrag: Linux-Kernel</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q212607" title="Wireless Local Area Network" rel="related">Wikidata Eintrag: Wireless Local Area Network</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q2766" title="iPhone" rel="related">Wikidata Eintrag: iPhone</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q314293" title="Q314293" rel="related">Wikidata Eintrag: Q314293</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q381" title="Q381" rel="related">Wikidata Eintrag: Q381</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q802375" title="Bahnstrecke Göttingen–Bodenfelde" rel="related">Wikidata Eintrag: Bahnstrecke Göttingen–Bodenfelde</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/Linux" title="Linux">#Linux</a><a href="https://christianmahnke.de/tags/Travel" title="Reisen">#Reisen</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/503-ticket-machine/">503</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/museum-piece-tftp/">Museumsstück TFTP</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/bahn-dark-patterns/">Ein Rant über die Bahn</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/90ies-train/">Reisen wie 1996</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/image-hildesheimer-boerde/">Hildesheimer Börde</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu">
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog">Blog<i class="link-icon"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/linux-iphone-tethering/" title="English">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" rel="me" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" rel="me" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" rel="me" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" rel="me" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" rel="me" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li><li class="footer-link"><a href="http://npmjs.com/org/projektemacher"  target="_blank" title="NPM" style="display: none;"><div class="link-image npm"></div>NPM</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded",e=>{document.querySelector(".type-text")&&!document.querySelector(".subsection")?window.enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&window.enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})})
+</script>
+</div>
+    </body>
+ </html>
