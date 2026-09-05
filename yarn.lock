@@ -9,37 +9,37 @@
   dependencies:
     zod "^3.24.1"
 
-"@annotorious/annotorious@3.8.9":
-  version "3.8.9"
-  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.8.9.tgz#13b83b61cef5a3b823587848d99f7d6156278985"
-  integrity sha512-BKuXNDY2u+CmW0vPH/uHkoTd1T46A5+50KHoGcTt4g8+puOqH/9LCKphrNDIlAgVn+5se4Lm4ZkcQbdZyzTN3A==
+"@annotorious/annotorious@3.8.10":
+  version "3.8.10"
+  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.8.10.tgz#90a8bf29f928baa2357d46339019c78cd27bb4a8"
+  integrity sha512-s1tWrJp//tJNNu5qKzZilXooMKGwztUzWzWuTqwM2+xfUpsG/XimrgXGhfEuvD0Koy12NcBqNZ83bqg+iCossg==
   dependencies:
-    "@annotorious/core" "3.8.9"
+    "@annotorious/core" "3.8.10"
     dequal "^2.0.3"
     rbush "^4.0.1"
     simplify-js "^1.2.4"
-    uuid "^14.0.1"
+    uuid "^14.0.2"
 
-"@annotorious/core@3.8.9":
-  version "3.8.9"
-  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.8.9.tgz#ce915dbd1188648a2d12f37fc56efdac6fe59149"
-  integrity sha512-XmiWIBNo4Uq/VuC0AXmLN2kxxvZMyPGanyCICctiW086xNXfwbjKE5DphZ3Y3Fjc0lKY1Lzq3N9FmU7wE+XPMg==
+"@annotorious/core@3.8.10":
+  version "3.8.10"
+  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.8.10.tgz#95d879c700490ec00991cdc22aba2b3df9b6ce8f"
+  integrity sha512-c3xM7e7gzP2S83tX3LQlBG3L4DPzTcFYIQ+k/rrtNKi86NwN0x5P4oCpgu/ZZF5JLtCcaIqERC2pzJ+vv5WZFQ==
   dependencies:
     dequal "^2.0.3"
     nanoevents "^10.0.0"
     nanoid "^6.0.1"
-    nanostores "^1.4.2"
-    uuid "^14.0.1"
+    nanostores "^1.5.2"
+    uuid "^14.0.2"
 
-"@annotorious/openseadragon@^3.8.9":
-  version "3.8.9"
-  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.8.9.tgz#cbda4d3ba5d6fe8c8b48aff9dbe71c296b3ca6bc"
-  integrity sha512-FU1AASGYqXN6SBoN6T55crc34B3yi3v3MJQBG+xjXrCBsjn33UU8fJ+f8Tgpbm1Hb7VVk0bARtaLWPMWjrQU6A==
+"@annotorious/openseadragon@^3.8.10":
+  version "3.8.10"
+  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.8.10.tgz#7159df780b9539665fbbe307cf61822d4486c178"
+  integrity sha512-APvir1z3DXRbMnQtR9cUG1dhUHp1MurPfjck626UGMrcIyLB342h8zE5QuU8fSp+QJCaAyrJiYmfo/0T1Tva4g==
   dependencies:
-    "@annotorious/annotorious" "3.8.9"
-    "@annotorious/core" "3.8.9"
+    "@annotorious/annotorious" "3.8.10"
+    "@annotorious/core" "3.8.10"
     pixi.js "^7.4.3"
-    uuid "^14.0.1"
+    uuid "^14.0.2"
 
 "@asamuzakjp/css-color@^3.2.0":
   version "3.2.0"
@@ -4212,10 +4212,10 @@ nanoid@^6.0.1:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-6.0.1.tgz#a04a2304f05b620c600ae8464d94c325ceeebd35"
   integrity sha512-3wVS3i51pE2pi1k5FFL/95BGfVS0kSsvDVuGXHOtxox/TywUmtgq+3qiTOTbs9J7KfHaXPiN171k/A6dBnaXFw==
 
-nanostores@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-1.4.2.tgz#686199c31502e86df450ece2c810411a51b18329"
-  integrity sha512-Wxv8Roefr2nqtiRG0bnaFlpYqpIVtOEeJZHaH+4nGgOK1/7n6OHOuHCb/bhqrNQgZM8fyd0s1PqhdrJc9Ib44g==
+nanostores@^1.5.2:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-1.5.3.tgz#9bae9c45c794e6f0042e3b9c4dde8e1a98cb3560"
+  integrity sha512-rQLB6eV4f2AW/n3L0JmwCROpaisYy9EDEADvEFSd1C/qG8hB6O5TPlh9A791JRbJr4CnMQBzptDcvD9OR1+6WA==
 
 napi-build-utils@^2.0.0:
   version "2.0.0"
@@ -6150,10 +6150,10 @@ uuid@11.1.0:
   resolved "https://registry.npmjs.org/uuid/-/uuid-11.1.0.tgz"
   integrity sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==
 
-uuid@^14.0.1:
-  version "14.0.1"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-14.0.1.tgz#8a5975b3e038902bfd169a10b5202f5ec0cf3faf"
-  integrity sha512-6ZxzVpzDXDa3bJWaHilVayA+BH/1zmxCJoVgvmqJnid/gPoKHxUrS/aC/T6LGQtNHT+XHG9fXPJB4d+IrU30Ew==
+uuid@^14.0.2:
+  version "14.0.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-14.0.2.tgz#d5ae03e4db0881c87271f8b0b9bd7312d02c799a"
+  integrity sha512-xZe/16rV4aa+HGSOCiY2YeLT1OybRLrrkL/Rqaq7p7GMVXjFh+6wN4oMYgjFmnSnhY8t6Xpdl2l9qmnHYuMHwQ==
 
 uuid@^8.1.0:
   version "8.3.2"
