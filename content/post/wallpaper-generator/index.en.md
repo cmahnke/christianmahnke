@@ -72,3 +72,7 @@ The following JavaScript modules were used for the implementation:
 Lucienne is available at [Github](https://github.com/cmahnke/lucienne) [NPM](https://www.npmjs.com/package/@projektemacher/lucienne) and Zenodo.
 
 {{< zenodo doi="10.5281/zenodo.20082639" >}}
+
+# Update 7.9.2026
+
+Version 0.2.0 has been released and reveals a previously hidden feature: it is now possible to move individual tracks horizontally and vertically.

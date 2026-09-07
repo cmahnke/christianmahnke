@@ -25,7 +25,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q238354
   - https://www.wikidata.org/wiki/Q117336820
   - https://www.wikidata.org/wiki/Q1551026
-lastmod: 2025-06-17T00:00:00+02:00
+lastmod: 2025-09-07T00:00:00+02:00
 ---
 
 Da ich eine [umfangreiche Sammlung an gemusterten Papieren](https://vorsatzpapier.projektemacher.org/patterns/) habe, war es Zeit damit etwas zu machen...
@@ -72,3 +72,7 @@ Für die Umsetzung kamen unter anderem die folgenden JavaScript Module zum Einsa
 Lucienne ist nun bei [Github](https://github.com/cmahnke/lucienne), [NPM](https://www.npmjs.com/package/@projektemacher/lucienne) und Zenodo verfügbar.
 
 {{< zenodo doi="10.5281/zenodo.20082639" >}}
+
+# Update 7.9.2026
+
+Die Version 0.2.0 wurde veröffentlicht und macht eine bisher versteckte Funktion sichtbar: Es sind horizontale und vertikale Verschiebungen der einzelnen Bahnen möglich.
