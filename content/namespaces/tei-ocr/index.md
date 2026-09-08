@@ -1,9 +1,7 @@
 ---
 title: "Namespace: TEI OCR"
-url: "/namespaces/tei-ocr/"
 date: 2026-09-08
 description: "Namespace for attributes added by OCR/HTR tooling to TEI documents, currently ocr:conf for exact recognition confidence."
-aliases: ["/namespaces/ocr/"]
 ---
 
 This namespace identifies attributes and elements that are added to
