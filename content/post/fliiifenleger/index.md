@@ -47,8 +47,8 @@ Eine besondere Funktion ist die Möglichkeit, Bildprozessoren zu verketten, um b
 
 # Update 9.9.2026
 
-Version 0.2.0 has now been released; it includes integrations for ideas from other posts:
-* C2PA – [Blog post](https://christianmahnke.de/en/post/digital-provenance/)
-* HDR JPEG (UltraHDR) – [Blog post](https://christianmahnke.de/en/post/hdr-iiif/)
+Inzwischen ist eine Version 0.2.0 erscheinen, diese bietet nun Integrationen für Ideen aus anderen Beiträgen:
+* C2PA - [Blog Beitrag](https://christianmahnke.de/post/digital-provenance/)
+* HDR JPEG (UltraHDR) - [Blog Beitrag](https://christianmahnke.de/en/post/hdr-iiif/)
 
-There is also a simple [project page](https://cmahnke.github.io/fliiifenleger/).
+Zusätzlich gibt es eine einfache [Projektseite](https://cmahnke.github.io/fliiifenleger/).
