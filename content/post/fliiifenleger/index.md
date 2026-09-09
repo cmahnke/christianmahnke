@@ -12,6 +12,10 @@ wikidata:
   - https://www.wikidata.org/wiki/Q214856
   - https://www.wikidata.org/wiki/Q484140
   - https://www.wikidata.org/wiki/Q148443
+  - https://www.wikidata.org/wiki/Q121923035
+  - https://www.wikidata.org/wiki/Q136933249
+  - https://www.wikidata.org/wiki/Q106239881
+lastmod: 2026-09-09T00:00:00+02:00
 ---
 
 {{< figure src="Fliiifenleger.svg" alt="Fliiifenleger Logo" class="center" >}}
@@ -40,3 +44,11 @@ Eine besondere Funktion ist die Möglichkeit, Bildprozessoren zu verketten, um b
 *Der Name ist übrigens ein Spiel mir der visuellen Ähnlichkeit von kleinem [langem S](https://de.wikipedia.org/wiki/Langes_s) und F in Frakturschriften.*
 
 **Der Code ist auf [GitHub](https://github.com/cmahnke/fliiifenleger) verfügbar.**
+
+# Update 9.9.2026
+
+Version 0.2.0 has now been released; it includes integrations for ideas from other posts:
+* C2PA – [Blog post](https://christianmahnke.de/en/post/digital-provenance/)
+* HDR JPEG (UltraHDR) – [Blog post](https://christianmahnke.de/en/post/hdr-iiif/)
+
+There is also a simple [project page](https://cmahnke.github.io/fliiifenleger/).

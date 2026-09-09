@@ -12,6 +12,10 @@ wikidata:
   - https://www.wikidata.org/wiki/Q214856
   - https://www.wikidata.org/wiki/Q484140
   - https://www.wikidata.org/wiki/Q148443
+  - https://www.wikidata.org/wiki/Q121923035
+  - https://www.wikidata.org/wiki/Q136933249
+  - https://www.wikidata.org/wiki/Q106239881
+lastmod: 2026-09-09T00:00:00+02:00
 ---
 
 {{< figure src="Fliiifenleger.svg" alt="Fliiifenleger Logo" class="center" >}}
