@@ -44,3 +44,11 @@ A special feature is the ability to chain image processors, for example to apply
 *The name is a play on the visual similarity between the small [long S](https://en.wikipedia.org/wiki/Long_s) and F in Fraktur fonts.*
 
 **The code is available on [GitHub](https://github.com/cmahnke/fliiifenleger).**
+
+# Update 9.9.2026
+
+Inzwischen ist eine Version 0.2.0 erscheinen, diese bietet nun Integrationen für Ideen aus anderen Beiträgen:
+* C2PA - [Blog Beitrag](https://christianmahnke.de/post/digital-provenance/)
+* HDR JPEG (UltraHDR) - [Blog Beitrag](https://christianmahnke.de/en/post/hdr-iiif/)
+
+Zusätzlich gibt es eine einfache [Projektseite](https://cmahnke.github.io/fliiifenleger/).
