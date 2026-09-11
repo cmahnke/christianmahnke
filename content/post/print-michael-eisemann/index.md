@@ -26,7 +26,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q188675
 ---
 
-Ich habe eines Siebdruck von Michael Eisemann (1943-) erstanden...
+Ich habe einen Siebdruck von Michael Eisemann (1943-) erstanden...
 <!--more-->
 
 {{< gallery >}}
