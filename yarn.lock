@@ -2,12 +2,12 @@
 # yarn lockfile v1
 
 
-"@allmaps/iiif-parser@^1.0.0-beta.47":
-  version "1.0.0-beta.47"
-  resolved "https://registry.yarnpkg.com/@allmaps/iiif-parser/-/iiif-parser-1.0.0-beta.47.tgz#f5bf19132495bbd9c8b7e186daa538961eeec85e"
-  integrity sha512-GG9Oz2MIzdB4B8x/t2UuNx1Lc0Im7oHnGZoFLjNUeSuzq53m1/wLTEgvxQKabH4JVUMSXlPVZHc7BzO+eE7r0Q==
+"@allmaps/iiif-parser@^1.0.0-beta.48":
+  version "1.0.0-beta.48"
+  resolved "https://registry.yarnpkg.com/@allmaps/iiif-parser/-/iiif-parser-1.0.0-beta.48.tgz#7ed6f6b210ac51a782acd7faed2d6e20f0b681b1"
+  integrity sha512-4wjmhbmIqT8gjA9ukJWSzpIU0AhSN8pJHPcOpN2QjBUqJ6Qo262wlJML7iEwqWY4s7yR4TfqI6CASmscUHf4bg==
   dependencies:
-    zod "^3.24.1"
+    zod "^4.3.6"
 
 "@annotorious/annotorious@3.8.10":
   version "3.8.10"
@@ -844,17 +844,17 @@
   resolved "https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.29.tgz"
   integrity sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==
 
-"@projektemacher/lucienne@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@projektemacher/lucienne/-/lucienne-0.1.3.tgz#a8eb8b410b6006047fc0ddbd82e1c2f6f7dfbeed"
-  integrity sha512-VG/Ni6gpgIvYllkgIyGKbiQ9/0sVbdM453EkmCii6ILm5sjck9/cRW88EjX/r6LDLJ8/Sr6xWJfkZifEkHpdAw==
+"@projektemacher/lucienne@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@projektemacher/lucienne/-/lucienne-0.2.0.tgz#f29f7f8ffa0037e44145efa544908b373e031542"
+  integrity sha512-kWurqN+2QfGSKnWJPxW35bskhew3Stj5dWLgOd4uSOp0jxn33hzXoAwFxX2NP5EEswcv5zRMv8Dt+D0MoYZ4ig==
   dependencies:
-    "@allmaps/iiif-parser" "^1.0.0-beta.47"
+    "@allmaps/iiif-parser" "^1.0.0-beta.48"
     "@eslint/js" "^10.0.1"
-    fabric "^7.3.1"
-    i18next "^26.0.10"
+    fabric "^7.4.0"
+    i18next "^26.4.2"
     i18next-browser-languagedetector "^8.2.1"
-    openseadragon "^6.0.2"
+    openseadragon "^6.1.0"
     openseadragon-fabric-overlay "^2.0.0"
 
 "@projektemacher/vivliostyle-batch-cli@^0.1.2":
@@ -2755,7 +2755,7 @@ extract-zip@^2.0.1:
   optionalDependencies:
     "@types/yauzl" "^2.9.1"
 
-fabric@^7.3.1:
+fabric@^7.4.0:
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/fabric/-/fabric-7.4.0.tgz#a504ded4ee76e0f025f81b5350f62ccd414aaf01"
   integrity sha512-NalYDc3eifTl1C33zryQwpH6+XA/2ClxQrH9vkASkZw3tbkRmorpikhYMmxhUTmi7O3e9ODz0vOT8qfaCh9IVA==
@@ -3437,10 +3437,10 @@ i18next-ko@^3.0.1:
   dependencies:
     i18next "^3.4.3"
 
-i18next@^26.0.10:
-  version "26.0.10"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-26.0.10.tgz#7cf2f5548bc49f587d651b500f75e6185537caba"
-  integrity sha512-k3yGPAlWR2RdMYoVXJoDZDT87qeHIWKH7gVksdZMpRty7QX/D9QZeYGvN08KGbKHke9wn01eYT+EEsrqX/YTlw==
+i18next@^26.4.2:
+  version "26.4.2"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-26.4.2.tgz#824233630f147359296bcaddf1404945d2b211bf"
+  integrity sha512-RX+R0VLg13IbvRuJSxnqykUFS9vQZTl8wYpWPCIUDWVrSGjsQywB5Y+pjzrkboxGAuYfJZVH1InFTdgBdxq6ug==
 
 i18next@^3.4.3:
   version "3.5.2"
@@ -4420,7 +4420,7 @@ openseadragon-fabric-overlay@^2.0.0:
   resolved "https://registry.yarnpkg.com/openseadragon-fabric-overlay/-/openseadragon-fabric-overlay-2.0.0.tgz#245970b530e472bab4ee58893ee4692552bccc6f"
   integrity sha512-lMlfg+qCHVFSXoMCf8mvv1MxzsdMQ/jyT7+fGd+lZLr6B3sPD1mHBO1xWBAKvPbbPwDG5Y8dcqh+y06QjCAdoQ==
 
-openseadragon@^6.0.2, openseadragon@^6.1.0:
+openseadragon@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/openseadragon/-/openseadragon-6.1.0.tgz#aebb222a1ab94b0df52d15230dd21b17090d5e23"
   integrity sha512-S2kEBO6zd2pbUByMVZ6PkEldvXHbB2kemL3tAhSltnHyjpArJPgXeM/AH/g8qsoXHy9pMHzx63XyJftE556MbA==
@@ -6531,6 +6531,11 @@ zod@^3.24.1:
   version "3.25.76"
   resolved "https://registry.npmjs.org/zod/-/zod-3.25.76.tgz"
   integrity sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==
+
+zod@^4.3.6:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-4.6.2.tgz#91b2ce79ec994eaa42675499166587d3d223c961"
+  integrity sha512-lh5RCAGFa1Cm2hjtNwLQhSs/AsqdWnTQaBER9fEwN/88pSh7KOtJavtBx/0VlkN/uFd61SwYmljLMDAsHlvzBQ==
 
 zwitch@^1.0.0:
   version "1.0.5"
