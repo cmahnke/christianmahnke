@@ -1,5 +1,5 @@
 ---
-The Arrival
+date: 2026-09-11T15:00:44+02:00
 title: 'Colour etching by Mehmed Güler (1944-)'
 tags:
   - Art
