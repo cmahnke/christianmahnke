@@ -390,6 +390,11 @@ timeout = "240s"
             '^https://qlever\.dev/api/.*',
             '^https://raw.githubusercontent.com/*']
 
+  [security.node]
+    [security.node.permissions]
+      allowRead = ['.']
+
+
 [related]
   includeNewer = true
   threshold = 80

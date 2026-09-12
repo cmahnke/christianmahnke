@@ -2,6 +2,10 @@
 
 set -e
 
+if [ -z "$DEPENDENCY_MANAGER" ] ; then
+  export DEPENDENCY_MANAGER=npm
+fi
+
 echo "Set SKIP_IIIF to something to disable generation of IIIF derivates"
 ./scripts/iiif.sh
 
