@@ -83,7 +83,7 @@
             {{- $nextDate := $nextPage.Date -}}
             {{- $modifiedPages := where $updatedPages "Params.Lastmod" "lt" $currentDate -}}
             {{- $modifiedPages = where $modifiedPages "Params.Lastmod" "gt" $nextDate -}}
-            {{- range $modifiedPages -}}
+            {{- range ($modifiedPages | collections.Reverse) -}}
               {{- partial "mod.html" . -}}
             {{- end -}}
           {{- end -}}
