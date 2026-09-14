@@ -4420,10 +4420,10 @@ openseadragon-fabric-overlay@^2.0.0:
   resolved "https://registry.yarnpkg.com/openseadragon-fabric-overlay/-/openseadragon-fabric-overlay-2.0.0.tgz#245970b530e472bab4ee58893ee4692552bccc6f"
   integrity sha512-lMlfg+qCHVFSXoMCf8mvv1MxzsdMQ/jyT7+fGd+lZLr6B3sPD1mHBO1xWBAKvPbbPwDG5Y8dcqh+y06QjCAdoQ==
 
-openseadragon@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/openseadragon/-/openseadragon-6.1.0.tgz#aebb222a1ab94b0df52d15230dd21b17090d5e23"
-  integrity sha512-S2kEBO6zd2pbUByMVZ6PkEldvXHbB2kemL3tAhSltnHyjpArJPgXeM/AH/g8qsoXHy9pMHzx63XyJftE556MbA==
+openseadragon@^6.1.0, openseadragon@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/openseadragon/-/openseadragon-6.1.1.tgz#fcdb1a106b4e2440ed4336b5eff4a79c0a3390e6"
+  integrity sha512-g4iKe2q8B642SaBT3+x4ZF3/8b1TxPPydyjmtrOLgDrlYWMKd9ZXM+1Cb/xa9DVySkvs/7l6HR1nHKfD5F3Tsw==
 
 os-locale@8.0.0:
   version "8.0.0"
