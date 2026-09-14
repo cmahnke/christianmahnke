@@ -45,10 +45,21 @@ definition of your `info.json` (Image API 2):
 For Image API 3, the equivalent signal is an entry in `extraFeatures`:
 
 ```json
+"@context": [
+  "http://iiif.io/api/image/3/context.json",
+  {
+    "c2pa": "https://christianmahnke.de/iiif/c2pa/",
+    "trustAnchor": {
+      "@id": "c2pa:trustAnchor",
+      "@type": "@id"
+    }
+  }
+],
 "profile": "level0",
 "extraFeatures": [
   "https://christianmahnke.de/iiif/c2pa/"
-]
+],
+"c2pa:trustAnchor": "PEM file URL"
 ```
 
 > This approach is currently not complete, since it lacks a way to provide a custom trust anchor. This will be added for usage with IIIF Image API V3 in the future.
