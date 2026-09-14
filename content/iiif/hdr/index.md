@@ -30,4 +30,13 @@ You can add the URL to this page in the `supports` section of the `profile` defi
 ]
 ```
 
+For Image API 3, the equivalent signal is an entry in `extraFeatures`:
+
+```json
+"profile": "level0",
+"extraFeatures": [
+  "https://christianmahnke.de/iiif/hdr/"
+]
+```
+
 You can join the discussion on HDR for IIIF on [GitHub](https://github.com/IIIF/api/issues/2312).
