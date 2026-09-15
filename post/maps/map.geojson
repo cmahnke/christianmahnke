@@ -1,0 +1,259 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+  "type": "Feature",
+  "properties": {
+      "name": "Eisenbahnzug den Pilatus hinaufkletternd. Schweiz",
+        "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Eisenbahnzug den Pilatus hinaufkletternd. Schweiz\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Ein Abschnitt der \u003ca href=\"https://de.wikipedia.org/wiki/Pilatusbahn\" target=\"_blank\"\u003ePilatusbahn\u003c/a\u003e\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [8.257711,46.977496]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Die eisigen Höhen des Mont Blanc von Le Brévent aus gesehen",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Die eisigen Höhen des Mont Blanc von Le Brévent aus gesehen\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Der Mont Blanc.\n    \u003c/div\u003e\n\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [6.864325,45.832544]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "General View, Niagara Falls, N.Y., U.S.A.",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        General View, Niagara Falls, N.Y., U.S.A.\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die \u003ca href=\"https://de.wikipedia.org/wiki/Niagaraf%C3%A4lle\" target=\"_blank\"\u003eNiagarafälle\u003c/a\u003e.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-79.068899,43.087202]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Der Sphinx und die größte Pyramide von den Ruinen des Tempels aus gesehen",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Der Sphinx und die größte Pyramide von den Ruinen des Tempels aus gesehen\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die große Sphinx von Gizeh.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [31.137557,29.975316]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Milan from its Cathedral Spires, Italy",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Milan from its Cathedral Spires, Italy\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Dieses Bild zeigt einen Blick über Mailand vom Mailänder Dom aus gesehen.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [9.190556,45.464192]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Empfangssaal des Maharajah von Tangore in Calcutta, Indien",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Empfangssaal des Maharajah von Tangore in Calcutta, Indien\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Dieser Saal ist im “Marble Palace” in Kalkutta zu finden.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [88.360145,22.58229]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Stalheims Hotel und das herrliche Naerödal. Norwegen",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Stalheims Hotel und das herrliche Naerödal. Norwegen\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Das berühmte Hotel in Stalheim, Norwegen.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [6.682095,60.835248]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Ein Sommertag am Strade von Brighton. England",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Ein Sommertag am Strade von Brighton. England\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Der Strand von \u003ca href=\"https://de.wikipedia.org/wiki/Brighton\" target=\"_blank\"\u003eBrighton\u003c/a\u003e.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-0.153248,50.821254]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Salon in the harem of a Mohammedan Pasha, Damascus",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Salon in the harem of a Mohammedan Pasha, Damascus\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Vermutlich der Nizam Palast in Damaskus, das Weintraubenzimme.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [36.307778,33.5075]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Calton Jail Edinburgh",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Calton Jail Edinburgh\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Das Calton Jail in Edinburgh, die Reste sind heute als Governor’s House bekannt.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-3.1873873,55.9531559]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Georgetown Loop Railroad - Colorado",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Georgetown Loop Railroad - Colorado\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die Georgetown Loop Railroad in Colorado.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-105.70563,39.699019]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Bischofspalast Beauvais",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Bischofspalast Beauvais\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Nicht das Holstentor, sondern der Bischofspalast in \u003ca href=\"https://de.wikipedia.org/wiki/Beauvais\" target=\"_blank\"\u003eBeauvais\u003c/a\u003e.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [2.080874978937397,49.43219880014176]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Kathedrale von Bayeux",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Kathedrale von Bayeux\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die \u003ca href=\"https://de.wikipedia.org/wiki/Kathedrale_von_Bayeux\" target=\"_blank\"\u003eKathedrale von Bayeux\u003c/a\u003e.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [-0.7042948865940065,49.27527588969518]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Neue Elbbrücke Hamburg",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Neue Elbbrücke Hamburg\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die damals \u003ca href=\"https://de.wikipedia.org/wiki/Hamburger_Elbbr%C3%BCcken#Neue_Elbbr%C3%BCcke\" target=\"_blank\"\u003eneue Elbbrücke\u003c/a\u003e in Hamburg.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [10.02659235098882,53.53347046375686]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Louvre Paris",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Louvre Paris\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Die Galerie d’Apollon im \u003ca href=\"https://de.wikipedia.org/wiki/Louvre\" target=\"_blank\"\u003eLouvre\u003c/a\u003e in Paris. \u003ca href=\"https://en.wikipedia.org/wiki/Galerie_d%27Apollon\" target=\"_blank\"\u003eIn der englischen Wikipedia\u003c/a\u003e\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [2.3346566,48.8599137]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Neues Museum - Gruppe des farnesischen Stiers",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Neues Museum - Gruppe des farnesischen Stiers\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        Das Bild zeigt einen Abguss einer Gruppe aus den \u003ca href=\"https://de.wikipedia.org/wiki/Farnesische_Sammlungen\" target=\"_blank\"\u003eFarnesische Sammlungen\u003c/a\u003e im Apollosaal des \u003ca href=\"https://de.wikipedia.org/wiki/Neues_Museum_%28Berlin%29\" target=\"_blank\"\u003eNeuen Museum Berlin\u003c/a\u003e.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [13.3976604,52.5199828]
+  }
+}
+
+
+
+
+,{
+  "type": "Feature",
+  "properties": {
+      "name": "Trouville-sur-Mer",
+      "popupContent": "\u003cdiv class=\"geojsonPopup\"\u003e\n    \u003cdiv class=\"title\"\u003e\n        Trouville-sur-Mer\n    \u003c/div\u003e\n    \u003cdiv class=\"popup-content\"\u003e\n        \u0026ldquo;Calvaire de la Corniche\u0026rdquo; in \u003ca href=\"https://de.wikipedia.org/wiki/Trouville-sur-Mer\" target=\"_blank\"\u003eTrouville-sur-Mer\u003c/a\u003e.\n    \u003c/div\u003e\u003c/div\u003e\n"
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [0.08650350370885652,49.37426731751075]
+  }
+}
+
+
+
+
+]
+}
