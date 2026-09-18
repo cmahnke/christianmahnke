@@ -32,7 +32,7 @@ Ich habe eine Farblithografie von [Karl Korab](https://de.wikipedia.org/wiki/Kar
 ]
 {{</ gallery >}}
 
-Karl Korab ist ein österreichischer Künstler, der als Maler, Grafiker und auch Bühnenbildner tätig ist. Seine Motive sind häufig Landschaftsbilder oder Stilleben, so wie deise Blatt. Er studierte von 1957 bis 1964 an der Akademie der Bildenden Künste in Wien.
+Karl Korab ist ein österreichischer Künstler, der als Maler, Grafiker und auch Bühnenbildner tätig ist. Er studierte von 1957 bis 1964 an der Akademie der Bildenden Künste in Wien. Seine Motive sind häufig Landschaftsbilder oder Stillleben, so wie dieses Blatt.
 
 Das Bild zeigt eine Art surrealistisches Stillleben, das sich aus geometrischen und organischen Formen, wie beispielsweise einem Gesicht, zusammensetzt.
 
