@@ -35,7 +35,7 @@ lastmod: 2026-07-17T00:00:00+02:00
 Zufallsfund: Weihnachtskarte von [Malte Satorius](https://de.wikipedia.org/wiki/Malte_Sartorius) (1933-2017) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/malte-sartorius/)).
 <!--more-->
 
-Manchmal hat man Glück um Unglück: Vor ein paar Monaten ist mir ein Bücherstapel umgekippt und hat das Glas des Rahmens, in dem die Grafik unten war, zertrümmert.
+Manchmal hat man Glück im Unglück: Vor ein paar Monaten ist mir ein Bücherstapel umgekippt und hat das Glas des Rahmens, in dem die Grafik unten war, zertrümmert.
 
 {{< iiif/iiif src="front/info.json" share=false >}}
 
