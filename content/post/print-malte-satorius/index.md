@@ -1,9 +1,9 @@
 ---
 date: 2024-12-24T12:00:00+02:00
-title: 'Linolschitt von Malte Satorius (1933-2017)'
+title: 'Linolschitt von Malte Sartorius (1933-2017)'
 class: sepia
-keywords: Malte Satorius
-description: "Eine unsignierte Grafik entpuppt sich als Weihnachtskarte von Malte Satorius"
+keywords: Malte Sartorius
+description: "Eine unsignierte Grafik entpuppt sich als Weihnachtskarte von Malte Sartorius"
 cite: true
 tags:
   - Art
@@ -32,7 +32,7 @@ wikidata:
 lastmod: 2026-07-17T00:00:00+02:00
 ---
 
-Zufallsfund: Weihnachtskarte von [Malte Satorius](https://de.wikipedia.org/wiki/Malte_Sartorius) (1933-2017) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/malte-sartorius/)).
+Zufallsfund: Weihnachtskarte von [Malte Sartorius](https://de.wikipedia.org/wiki/Malte_Sartorius) (1933-2017) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/malte-sartorius/)).
 <!--more-->
 
 Manchmal hat man Glück im Unglück: Vor ein paar Monaten ist mir ein Bücherstapel umgekippt und hat das Glas des Rahmens, in dem die Grafik unten war, zertrümmert.
@@ -43,13 +43,13 @@ Nun habe ich mir mal die Mühe gemacht das Glas zu entfernen und war verwundert 
 
 {{< iiif/iiif src="back/info.json" share=false >}}
 
-Die Grafik stammt vermutlich aus dem Jahr 1964, stellt Lampen dar und ist als Weihnachtskarte von Malte Satorius und seiner Frau Elisabeth verwendet worden.
+Die Grafik stammt vermutlich aus dem Jahr 1964, stellt Lampen dar und ist als Weihnachtskarte von Malte Sartorius und seiner Frau Elisabeth verwendet worden.
 
-Meine [diesjährigen Weihnachtskarten](/post/christmas-2024/) wurde dieses Jahr früher veröffentlicht.
+Meine [diesjährigen Weihnachtskarten](/post/christmas-2024/) wurden dieses Jahr früher veröffentlicht.
 
 # Update 4.6.2025
 
-Nach einer Anfrage bei der Künstlerstiftung Malte Sartorius, hier die Einschätzung von Max M. Bergmann gen. Freisenbruch:
+Nach einer Anfrage bei der Künstlerstiftung Malte Sartorius hier die Einschätzung von Max M. Bergmann gen. Freisenbruch:
 
 {{< quote from="Max M. Bergmann gen. Freisenbruch" >}}
 [...]

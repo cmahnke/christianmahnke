@@ -1,9 +1,9 @@
 ---
 date: 2024-12-24T12:00:00+02:00
-title: 'Linoleum cut by Malte Satorius (1933-2017)'
+title: 'Linoleum cut by Malte Sartorius (1933-2017)'
 class: sepia
-keywords: Malte Satorius
-description: "An unsigned graphic turns out to be a Christmas card by Malte Satorius"
+keywords: Malte Sartorius
+description: "An unsigned graphic turns out to be a Christmas card by Malte Sartorius"
 cite: true
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
@@ -33,7 +33,7 @@ wikidata:
 lastmod: 2026-07-17T00:00:00+02:00
 ---
 
-Random find: Christmas card from [Malte Satorius](https://de.wikipedia.org/wiki/Malte_Sartorius) (1933-2017) ([at artnet](https://www.artnet.com/artists/malte-sartorius/)).
+Random find: Christmas card from [Malte Sartorius](https://de.wikipedia.org/wiki/Malte_Sartorius) (1933-2017) ([at artnet](https://www.artnet.com/artists/malte-sartorius/)).
 <!--more-->
 
 Sometimes you're lucky for misfortune: a few months ago, a stack of books tipped over and smashed the glass of the frame in which the graphic below was.
@@ -44,7 +44,7 @@ Now I took the trouble to remove the glass and was amazed at how professionally 
 
 {{< iiif/iiif src="back/info.json" share=false >}}
 
-The graphic probably dates from 1964, depicting lamps, and was used as a Christmas card by Malte Satorius and his wife Elisabeth.
+The graphic probably dates from 1964, depicting lamps, and was used as a Christmas card by Malte Sartorius and his wife Elisabeth.
 
 My [this year's Christmas cards](/post/christmas-2024/) was published earlier this year.
 
