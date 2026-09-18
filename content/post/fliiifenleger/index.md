@@ -23,7 +23,7 @@ lastmod: 2026-09-09T00:00:00+02:00
 Es wurde Zeit für einen experimentellen IIIF Tiler...
 <!--more-->
 
-In der Vergangenheit ich einige Experimente mit der IIIF Image API gemacht, Beispiele sind:
+In der Vergangenheit habe ich einige Experimente mit der IIIF Image API gemacht, Beispiele sind:
 
 * [JPEG XL](https://christianmahnke.de/post/jpeg-xl/),
 * [IIIF Proxy](https://christianmahnke.de/post/iiif-proxy/),
@@ -39,9 +39,9 @@ Es verarbeitet lokale Bilddateien, um IIIF-konforme Kachelstrukturen und die zug
 
 Das Tool bietet Befehle wie `generate` zum Erstellen von Kacheln, `validate` zur Überprüfung von IIIF-Endpunkten und `info` zur Anzeige von Systeminformationen.
 
-Eine besondere Funktion ist die Möglichkeit, Bildprozessoren zu verketten, um beispielsweise Filter vor der Kachelung anzuwenden. Zusätzlich ist die Serialisierung (also das speichern der erstellen kacheln) erweiter- und austauschbar
+Eine besondere Funktion ist die Möglichkeit, Bildprozessoren zu verketten, um beispielsweise Filter vor der Kachelung anzuwenden. Zusätzlich ist die Serialisierung (also das Speichern der erstellten Kacheln) erweiter- und austauschbar.
 
-*Der Name ist übrigens ein Spiel mir der visuellen Ähnlichkeit von kleinem [langem S](https://de.wikipedia.org/wiki/Langes_s) und F in Frakturschriften.*
+*Der Name ist übrigens ein Spiel mir der visuellen Ähnlichkeit von kleinem [langen S](https://de.wikipedia.org/wiki/Langes_s) und F in Frakturschriften.*
 
 **Der Code ist auf [GitHub](https://github.com/cmahnke/fliiifenleger) verfügbar.**
 
