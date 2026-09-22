@@ -1,0 +1,11 @@
+User-agent: *
+
+Disallow: /privacy/
+Disallow: /*.bib$
+Disallow: /*.json$
+Disallow: /*.xml$
+
+Sitemap: https://christianmahnke.de/sitemap.xml
+
+
+<nil>
