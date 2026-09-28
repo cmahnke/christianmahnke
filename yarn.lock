@@ -9,35 +9,35 @@
   dependencies:
     zod "^4.3.6"
 
-"@annotorious/annotorious@3.8.10":
-  version "3.8.10"
-  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.8.10.tgz#90a8bf29f928baa2357d46339019c78cd27bb4a8"
-  integrity sha512-s1tWrJp//tJNNu5qKzZilXooMKGwztUzWzWuTqwM2+xfUpsG/XimrgXGhfEuvD0Koy12NcBqNZ83bqg+iCossg==
+"@annotorious/annotorious@3.9.2":
+  version "3.9.2"
+  resolved "https://registry.yarnpkg.com/@annotorious/annotorious/-/annotorious-3.9.2.tgz#167a18b4feb2eeb2fccf19f0e30903e7b57ff235"
+  integrity sha512-430scqVj/QmH/Zck3OfS7IB+0dohA4fKh7WjH0oi5lOQ04h/MZeLTOImQVB04/HZyHjVQL9WhHa0xmHK98x1Iw==
   dependencies:
-    "@annotorious/core" "3.8.10"
+    "@annotorious/core" "3.9.2"
     dequal "^2.0.3"
     rbush "^4.0.1"
     simplify-js "^1.2.4"
     uuid "^14.0.2"
 
-"@annotorious/core@3.8.10":
-  version "3.8.10"
-  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.8.10.tgz#95d879c700490ec00991cdc22aba2b3df9b6ce8f"
-  integrity sha512-c3xM7e7gzP2S83tX3LQlBG3L4DPzTcFYIQ+k/rrtNKi86NwN0x5P4oCpgu/ZZF5JLtCcaIqERC2pzJ+vv5WZFQ==
+"@annotorious/core@3.9.2":
+  version "3.9.2"
+  resolved "https://registry.yarnpkg.com/@annotorious/core/-/core-3.9.2.tgz#1eaad8256d1b534cf952facae9f24c38550f4646"
+  integrity sha512-ZGOOIjqGk2ojdvnrWcY/p7h2KlJrFYqaJPaj6GhqQHRhVXq2eVFUb5X7aj2+Z5+jfTXVXtId3HcIN38nm43zcA==
   dependencies:
     dequal "^2.0.3"
     nanoevents "^10.0.0"
     nanoid "^6.0.1"
-    nanostores "^1.5.2"
+    nanostores "^1.5.3"
     uuid "^14.0.2"
 
-"@annotorious/openseadragon@^3.8.10":
-  version "3.8.10"
-  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.8.10.tgz#7159df780b9539665fbbe307cf61822d4486c178"
-  integrity sha512-APvir1z3DXRbMnQtR9cUG1dhUHp1MurPfjck626UGMrcIyLB342h8zE5QuU8fSp+QJCaAyrJiYmfo/0T1Tva4g==
+"@annotorious/openseadragon@^3.9.2":
+  version "3.9.2"
+  resolved "https://registry.yarnpkg.com/@annotorious/openseadragon/-/openseadragon-3.9.2.tgz#a22cc1ec496d6428abb747524dbea37a28676416"
+  integrity sha512-OasNJ+/6buW++KoS2uJyBrQnXrTTKAjakmi8rVBsc68o1xXpr+/d2advDjIuiPb3pDvJWTlZ3uRq7Zz0Xc8eww==
   dependencies:
-    "@annotorious/annotorious" "3.8.10"
-    "@annotorious/core" "3.8.10"
+    "@annotorious/annotorious" "3.9.2"
+    "@annotorious/core" "3.9.2"
     pixi.js "^7.4.3"
     uuid "^14.0.2"
 
@@ -4212,10 +4212,10 @@ nanoid@^6.0.1:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-6.0.1.tgz#a04a2304f05b620c600ae8464d94c325ceeebd35"
   integrity sha512-3wVS3i51pE2pi1k5FFL/95BGfVS0kSsvDVuGXHOtxox/TywUmtgq+3qiTOTbs9J7KfHaXPiN171k/A6dBnaXFw==
 
-nanostores@^1.5.2:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-1.5.3.tgz#9bae9c45c794e6f0042e3b9c4dde8e1a98cb3560"
-  integrity sha512-rQLB6eV4f2AW/n3L0JmwCROpaisYy9EDEADvEFSd1C/qG8hB6O5TPlh9A791JRbJr4CnMQBzptDcvD9OR1+6WA==
+nanostores@^1.5.3:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/nanostores/-/nanostores-1.5.4.tgz#f733470fba3e1491af8f56f0067be0bdb3fbb39f"
+  integrity sha512-4UXY7OAJEK0Y6V3SudBU7cXjAzTDc189R78dDOh0Xbm19gpKYto6WizSg58LJf12lTsRxKSLGyE117OiLpM4DQ==
 
 napi-build-utils@^2.0.0:
   version "2.0.0"
@@ -4420,10 +4420,10 @@ openseadragon-fabric-overlay@^2.0.0:
   resolved "https://registry.yarnpkg.com/openseadragon-fabric-overlay/-/openseadragon-fabric-overlay-2.0.0.tgz#245970b530e472bab4ee58893ee4692552bccc6f"
   integrity sha512-lMlfg+qCHVFSXoMCf8mvv1MxzsdMQ/jyT7+fGd+lZLr6B3sPD1mHBO1xWBAKvPbbPwDG5Y8dcqh+y06QjCAdoQ==
 
-openseadragon@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/openseadragon/-/openseadragon-6.1.0.tgz#aebb222a1ab94b0df52d15230dd21b17090d5e23"
-  integrity sha512-S2kEBO6zd2pbUByMVZ6PkEldvXHbB2kemL3tAhSltnHyjpArJPgXeM/AH/g8qsoXHy9pMHzx63XyJftE556MbA==
+openseadragon@^6.1.0, openseadragon@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/openseadragon/-/openseadragon-6.1.1.tgz#fcdb1a106b4e2440ed4336b5eff4a79c0a3390e6"
+  integrity sha512-g4iKe2q8B642SaBT3+x4ZF3/8b1TxPPydyjmtrOLgDrlYWMKd9ZXM+1Cb/xa9DVySkvs/7l6HR1nHKfD5F3Tsw==
 
 os-locale@8.0.0:
   version "8.0.0"
