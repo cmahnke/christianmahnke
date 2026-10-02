@@ -125,7 +125,7 @@
     {{- $sortedPages = $sortedPages | append .page -}}
   {{- end -}}
 
-  {{- if .Page.IsBranch-}}
+  {{- if .Page.IsBranch -}}
     {{- $paginator := .Paginate $sortedPages $itemsPerPage -}}
     {{- if $paginator.Pages -}}
       {{- $artists := slice -}}
