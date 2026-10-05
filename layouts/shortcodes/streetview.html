@@ -1,0 +1,115 @@
+{{/* Hugo Street View Shortcode - 100% Keyless (No API Key Required) */}}
+{{ $url := .Get "url" | default "" }}
+
+{{ $lat := .Get "lat" | default "" }}
+{{ $lng := .Get "lng" | default "" }}
+{{ $pano := .Get "pano" | default "" }}
+{{ $heading := .Get "heading" | default "" }}
+{{ $pitch := .Get "pitch" | default "" }}
+
+{{/* 1. Build-Time URL Parsing (Hugo SSR) */}}
+{{- if $url }}
+  {{/* Coordinates (@lat,lng) */}}
+  {{ $coordsMatch := findRE `@(-?\d+\.\d+),(-?\d+\.\d+)` $url 1 }}
+  {{- if $coordsMatch }}
+    {{ $parts := split (replace (index $coordsMatch 0) "@" "") "," }}
+    {{ if not $lat }}{{ $lat = index $parts 0 }}{{ end }}
+    {{ if not $lng }}{{ $lng = index $parts 1 }}{{ end }}
+  {{ end }}
+
+  {{/* Heading / Yaw (e.g., 270h) */}}
+  {{ $hMatch := findRE `(\d+(?:\.\d+)?)h` $url 1 }}
+  {{- if and $hMatch (not $heading) }}
+    {{ $heading = replace (index $hMatch 0) "h" "" }}
+  {{ end }}
+
+  {{/* Pitch / Tilt (e.g., 90t -> cbp transformation) */}}
+  {{ $tMatch := findRE `(\d+(?:\.\d+)?)t` $url 1 }}
+  {{- if and $tMatch (not $pitch) }}
+    {{ $rawT := replace (index $tMatch 0) "t" "" | float }}
+    {{ $pitch = printf "%v" (sub 90 $rawT) }}
+  {{ end }}
+
+  {{/* Photosphere Pano ID (!1s...) */}}
+  {{ $panoMatch := findRE `!1s([A-Za-z0-9_\-]+)` $url 1 }}
+  {{- if and $panoMatch (not $pano) }}
+    {{ $pano = replace (index $panoMatch 0) "!1s" "" }}
+  {{ end }}
+{{- end }}
+
+{{/* Fallback Defaults */}}
+{{ $lat = $lat | default "37.865101" }}
+{{ $lng = $lng | default "-119.538329" }}
+{{ $heading = $heading | default "0" }}
+{{ $pitch = $pitch | default "0" }}
+{{ $width := .Get "width" | default "100%" }}
+{{ $height := .Get "height" | default "400px" }}
+{{ $id := printf "sv-%s" (substr (md5 (printf "%s%s%s%s%d" $lat $lng $pano $url .Ordinal)) 0 8) }}
+
+<div class="streetview-wrapper" style="position: relative; width: {{ $width }}; height: {{ $height }}; margin: 1rem 0;">
+  <div id="{{ $id }}-container" style="width: 100%; height: 100%;"></div>
+  <button id="{{ $id }}-reset" class="streetview-reset-btn" type="button" style="position: absolute; top: 10px; right: 10px; z-index: 10; padding: 6px 12px; background: #ffffff; border: 1px solid #cccccc; border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+    Reset View
+  </button>
+</div>
+
+<script>
+(function() {
+  const container = document.getElementById("{{ $id }}-container");
+  const resetBtn = document.getElementById("{{ $id }}-reset");
+  if (!container || !resetBtn) return;
+
+  const rawUrl = {{ $url | jsonify }};
+  let lat = {{ $lat | jsonify }};
+  let lng = {{ $lng | jsonify }};
+  let pano = {{ $pano | jsonify }};
+  let heading = {{ $heading | jsonify }};
+  let pitch = {{ $pitch | jsonify }};
+
+  // 2. Client-Side JS Parsing Fallback (runs if Hugo SSR missed parameters)
+  if (rawUrl) {
+    if (!lat || !lng) {
+      const c = rawUrl.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+      if (c) { lat = c[1]; lng = c[2]; }
+    }
+    if (!heading) {
+      const h = rawUrl.match(/(\d+(?:\.\d+)?)h/);
+      if (h) heading = h[1];
+    }
+    if (!pitch) {
+      const t = rawUrl.match(/(\d+(?:\.\d+)?)t/);
+      if (t) pitch = (90 - parseFloat(t[1])).toString();
+    }
+    if (!pano) {
+      const p = rawUrl.match(/!1s([A-Za-z0-9_\-]+)/);
+      if (p) pano = p[1];
+    }
+  }
+
+  lat = lat || "37.865101";
+  lng = lng || "-119.538329";
+  heading = heading || "0";
+  pitch = pitch || "0";
+  pano = pano || "";
+
+  function buildEmbedUrl() {
+    return `https://maps.google.com/maps?q=&layer=c&cbll=${lat},${lng}&panoid=${pano}&cbp=12,${heading},,0,${pitch}&output=embed`;
+  }
+
+  // Render Frame
+  const iframe = document.createElement("iframe");
+  iframe.src = buildEmbedUrl();
+  iframe.width = "100%";
+  iframe.height = "100%";
+  iframe.style.border = "0";
+  iframe.setAttribute("allowfullscreen", "");
+  iframe.setAttribute("loading", "lazy");
+  iframe.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+  container.appendChild(iframe);
+
+  // Reset View without polluting browser history
+  resetBtn.addEventListener("click", function() {
+    iframe.contentWindow.location.replace(buildEmbedUrl());
+  });
+})();
+</script>
