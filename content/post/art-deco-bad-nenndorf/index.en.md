@@ -21,10 +21,10 @@ As you get older, you find yourself visiting places you wouldn’t even have tho
 <!--more-->
 
 Health resorts hold a peculiar fascination for me. They are like time capsules where, for example, you can see independent shops from sectors that are now almost entirely dominated by chains in cities. At the same time, the effects of the dismantling of the welfare state are often evident.
-In the late 1990s, the number of preventive care and rehabilitation facilities peaked; since then, the number of [clinics and beds has been declining](https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Gesundheit/Vorsorgeeinrichtungen-Rehabilitationseinrichtungen/Tabellen/gd-vorsorge-reha-jahre.html) ([as shown in the graph](https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Gesundheit/_Grafik/_Interaktiv/rehaeinrichtungen.html)).
+In the late 1990s, the number of preventive care and rehabilitation facilities peaked; since then, the number of [clinics and beds has been declining](https://www.destatis.de/EN/Themen/Gesellschaft-Umwelt/Gesundheit/Vorsorgeeinrichtungen-Rehabilitationseinrichtungen/Tabellen/gd-vorsorge-reha-jahre.html) ([as shown in the graph](https://www.destatis.de/EN/Themen/Gesellschaft-Umwelt/Gesundheit/_Grafik/_Interaktiv/rehaeinrichtungen.html)).
 And even though the sector is in decline, spa operations have been and remain a source of income, just like tourism. As a result, spa towns usually have a stronger local economy than other towns of a comparable size. This leads to a healthier local retail sector and also to architecture that is more impressive than average.
 
-This weekend we went to [Bad Nenndorf](https://de.wikipedia.org/wiki/Bad_Nenndorf) for a family trip to the [State Garden Show](https://de.wikipedia.org/wiki/Landesgartenschau_Bad_Nenndorf_2026). Although that’s not what this is about, just to say:
+This weekend we went to [Bad Nenndorf](https://en.wikipedia.org/wiki/Bad_Nenndorf) for a family trip to the [State Garden Show](https://de.wikipedia.org/wiki/Landesgartenschau_Bad_Nenndorf_2026) (German). Although that’s not what this is about, just to say:
 * The maze was a disappointment.
 * They could have fitted every drinks stall with a coffee machine.
 
@@ -32,13 +32,13 @@ On the way back to the station, this relief caught my eye:
 
 {{< figure src="wincklerbad-detail.jpg" title="Woman with an umbrella in a frieze at the Wincklerbad" class="center" >}}
 
-It forms part of the entrance to the [Wincklerbad](https://de.wikipedia.org/wiki/Wincklerbad) ([in the Lower Saxony Monument Atlas](https://denkmalatlas.niedersachsen.de/viewer/metadata/ebf8eb0c-24a9-4fad-a6fa-fa8bb4c400c5/1/-/)), built in 1930. Due to low occupancy rates in 2007, the former spa facility was sold and converted.
+It forms part of the entrance to the [Wincklerbad](https://de.wikipedia.org/wiki/Wincklerbad) (German) ([in the Lower Saxony Monument Atlas](https://denkmalatlas.niedersachsen.de/viewer/metadata/ebf8eb0c-24a9-4fad-a6fa-fa8bb4c400c5/1/-/) (German)), built in 1930. Due to low occupancy rates in 2007, the former spa facility was sold and converted.
 
 {{< html/iframe-consent >}}
   <iframe src="https://www.google.com/maps/embed?pb=!4v1791215765613!6m8!1m7!1s0ciqAx9bflBk3vvPXltd7g!2m2!1d52.33200282779765! 2d9.373284955390762!3f250.27791001028018!4f-2.012439838448614! 5f2.2392483794957654" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 {{< /html/iframe-consent >}}
 
-And I remembered that I had seen a few less conspicuous façade ornaments from this period (1920–1930) in the city. Back then, ornaments featuring geometric or at least abstract shapes and jagged edges were all the rage. They can be attributed to the Art Deco style of the 1920s. Bettina Vaupel published an overview article in [Monumente Online in April 2012](https://www.monumente-online.de/de/ausgaben/2012/2/die-kunst-der-sinnlichen-strenge.php).
+And I remembered that I had seen a few less conspicuous façade ornaments from this period (1920–1930) in the city. Back then, ornaments featuring geometric or at least abstract shapes and jagged edges were all the rage. They can be attributed to the Art Deco style of the 1920s. Bettina Vaupel published an overview article in [Monumente Online in April 2012](https://www.monumente-online.de/de/ausgaben/2012/2/die-kunst-der-sinnlichen-strenge.php) (German).
 
 As I was already on my way back, there are no photos of my own here, only views from Google Street View.
 
