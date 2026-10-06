@@ -13,7 +13,7 @@ wikidata:
 Ich wollte endlich eine alte Idee von mir umsetzen...
 <!--more-->
 
-...ein Faltboot an einem Fahrradlift als Wäscheständer. Leider stellt e sich heraus, dass das alte Klepper T66, ohne Hülle nicht wirklich stabil ist. Daher habe ich nun eine neue und ziemlich einzigartige Lampe.
+...ein Faltboot an einem Fahrradlift als Wäscheständer. Leider stellt e sich heraus, dass das altes [Klepper T66](http://www.faltbootbasteln.de/fbb-klepper-t66-slalom58.html), ohne Hülle nicht wirklich stabil ist. Daher habe ich nun eine neue und ziemlich einzigartige Lampe.
 
 {{< gallery >}}
 [

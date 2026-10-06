@@ -7,6 +7,9 @@ preview:
 tags:
 - DIY
 - InteriorDesign
+wikidata:
+  - https://www.wikidata.org/wiki/Q475018
+  - https://www.wikidata.org/wiki/Q191529
 ---
 
 In addition to my blogs, I used the corona period to renovate my living room. Here, too, I was able to realise some ideas that were years old:
