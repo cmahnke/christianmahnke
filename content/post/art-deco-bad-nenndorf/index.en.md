@@ -62,7 +62,7 @@ This ornament is rather hidden and only visible from a side street. The arrangem
 
 Apart from the ornate entrance, this building, too, looks considerably newer, perhaps dating from the 1990s. If it was a conversion, then the alterations were far more extensive than in the previous example, as can be seen from the window lintels.
 
-As both buildings are likely to have strayed considerably from their original form, they are probably not listed as https://de.wikipedia.org/wiki/Liste_der_Baudenkmale_in_Bad_Nenndorf.
+As both buildings are likely to have strayed considerably from their original form, they are probably not listed as [Architectural monuments](https://de.wikipedia.org/wiki/Liste_der_Baudenkmale_in_Bad_Nenndorf).
 
 ## Another mystery
 

@@ -62,7 +62,7 @@ Dieses Ornament ist ziemlich versteckt und nur von einer Seitenstraße aus sicht
 
 Auch dieses Gebäude sieht, abgesehen vom ornamentierten Eingang, deutlich jünger aus, vielleicht aus den 1990er Jahren. Wenn es sich um einen Umbau handelte, dann war dieser deutlich tiefgreifender als im vorherigen Beispiel, wie man an den Fensterstürzen erkennt.
 
-Da sich beide Gebäude sehr von ihrer originalen Form entfernt haben dürften, sind sie vermutlich nicht als Baudenkmale (https://de.wikipedia.org/wiki/Liste_der_Baudenkmale_in_Bad_Nenndorf) geführt.
+Da sich beide Gebäude sehr von ihrer originalen Form entfernt haben dürften, sind sie vermutlich nicht als [Baudenkmale](https://de.wikipedia.org/wiki/Liste_der_Baudenkmale_in_Bad_Nenndorf) geführt.
 
 ## Noch ein Rätsel
 
