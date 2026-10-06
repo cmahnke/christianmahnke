@@ -43,7 +43,7 @@ The picture shows a scene in a Dutch harbour. This is evident from the type of b
 The location is thought to be the harbour on the island of [Marken](https://en.wikipedia.org/wiki/Marken) in the [Zuiderzee](https://en.wikipedia.org/wiki/Zuiderzee) (now the [Markermeer](https://en.wikipedia.org/wiki/Markermeer)) ([approximate location on GeoHack](https://geohack.toolforge.org/geohack.php?params=52.458508_N_5.101093_E)).
 Comparative images can be found in the [Zuiderzee Collection](https://www.zuiderzeecollectie.nl/) and on [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Havenbuurt_(Marken)). One example is [the houses on the right-hand side](https://www.zuiderzeecollectie.nl/object/collect/Zuiderzee_museum-36792). A [further image from 1916](https://www.zuiderzeecollectie.nl/object/collect/Zuiderzee_museum-36199) shows a denser development, suggesting that the illustration was probably created earlier.
 
-{{< details "Approximate location on Google Street View" >}}
+{{< details summary="Approximate location on Google Street View" >}}
   {{< html/iframe-consent >}}
     <iframe src="https://www.google.com/maps/embed?pb=!4v1791301779599!6m8!1m7!1sUCEKn1V9A7H2_qNLDmyikQ!2m2!1d52.45847617565635!2d5.10120351274866!3f0!4f0!5f0.7820865974627469" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
   {{< /html/iframe-consent >}}

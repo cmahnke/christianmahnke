@@ -43,7 +43,7 @@ Das Bild zeigt eine Szene in einem niederländischen Hafen. Erkennbar ist das am
 Der Ort ist vermutlich der Hafen der Insel [Marken](https://de.wikipedia.org/wiki/Marken_(Niederlande)) in der [Zuiderzee](https://de.wikipedia.org/wiki/Zuiderzee) (heute [Markermeer](https://de.wikipedia.org/wiki/Markermeer)) ([ungefährer Standort auf GeoHack](https://geohack.toolforge.org/geohack.php?params=52.458508_N_5.101093_E)).
 Vergleichsbilder finden sich bei der [Zuiderzeecollectie](https://www.zuiderzeecollectie.nl/) und auf [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Havenbuurt_(Marken)). Ein Beispiel sind  [die Häuser auf der rechten Seite](https://www.zuiderzeecollectie.nl/object/collect/Zuiderzee_museum-36792). Ein [weiteres Bild von 1916](https://www.zuiderzeecollectie.nl/object/collect/Zuiderzee_museum-36199) zeigt eine dichtere Bebauung, sodass die Grafik vermutlich früher entstanden ist.
 
-{{< details "Ungefähre Position bei Google Street View" >}}
+{{< details summary="Ungefähre Position bei Google Street View" >}}
   {{< html/iframe-consent >}}
     <iframe src="https://www.google.com/maps/embed?pb=!4v1791301779599!6m8!1m7!1sUCEKn1V9A7H2_qNLDmyikQ!2m2!1d52.45847617565635!2d5.10120351274866!3f0!4f0!5f0.7820865974627469" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
   {{< /html/iframe-consent >}}
