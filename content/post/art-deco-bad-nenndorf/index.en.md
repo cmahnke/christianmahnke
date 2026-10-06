@@ -1,7 +1,6 @@
 ---
 date: 2026-10-05T15:52:22+02:00
 title: 'Art Deco architecture in Bad Nenndorf'
-#keywords:
 cite: true
 tags:
 - Architecture
