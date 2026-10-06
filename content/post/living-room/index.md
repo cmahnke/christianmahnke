@@ -6,6 +6,7 @@ preview:
   hide: true
 tags:
 - DIY
+- InteriorDesign
 ---
 
 Neben meinen Blogs habe ich die Corona-Zeit genutzt mein Wohnzimmer zu renovieren. Auch hier konnte ich einige jahrealte Ideen umsetzen:

@@ -6,6 +6,7 @@ preview:
   hide: true
 tags:
 - DIY
+- InteriorDesign
 ---
 
 In addition to my blogs, I used the corona period to renovate my living room. Here, too, I was able to realise some ideas that were years old:
