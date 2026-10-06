@@ -2,6 +2,8 @@
 
 set -e -o pipefail
 
+MAX_WIDTH=6144
+
 # Compress html
 #minhtml --keep-closing-tags  --do-not-minify-doctype --minify-css docs/**/*.html
 
@@ -23,6 +25,11 @@ find $SEARCH_PATH -type f -name "*.jp*g" -size +1M -not -path '*/full/full/*' -a
     done
     if [ "$check_dir" = "." ] && [ -f "$check_dir/$SEARCH_FILE" ] && grep -q '{{< gallery >}}' "$check_dir/$SEARCH_FILE"; then
         found=1
+    fi
+    WIDTH=$(identify -format "%w" "$jpg_file")
+    if [ "$WIDTH" -gt $MAX_WIDTH ]; then
+      echo "Keeping $jpg_file since its to large (${WIDTH}px) for a WebP replacement"
+      found=0
     fi
     if [ "$found" -eq 1 ]; then
         echo "Removing $jpg_file since there should be a WebP replacement"
