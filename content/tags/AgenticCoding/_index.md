@@ -1,7 +1,7 @@
 ---
-title: 'Softwareentwicklung'
+title: 'Agentenbasierte Programmierung'
 description: ''
 wikidata: https://www.wikidata.org/wiki/Q638608
 ---
 
-Gedanken über [Softwareentwicklung](https://de.wikipedia.org/wiki/Softwareentwicklung)
+Beiträge über [agentenbasierte Programmierung](https://de.wikipedia.org/wiki/KI-Agent)

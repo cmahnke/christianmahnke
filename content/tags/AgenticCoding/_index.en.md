@@ -1,7 +1,7 @@
 ---
-title: 'Software development'
+title: 'Agentic Coding'
 description: ''
-wikidata: https://www.wikidata.org/wiki/Q638608
+wikidata: https://www.wikidata.org/wiki/Q132451509
 ---
 
-Thoughts on [Software development](https://en.wikipedia.org/wiki/Software_development)
+Thoughts on [Agentic Coding](https://en.wikipedia.org/wiki/AI_agent)
