@@ -7,6 +7,9 @@ preview:
 tags:
 - DIY
 - InteriorDesign
+wikidata:
+  - https://www.wikidata.org/wiki/Q475018
+  - https://www.wikidata.org/wiki/Q191529
 ---
 
 Neben meinen Blogs habe ich die Corona-Zeit genutzt mein Wohnzimmer zu renovieren. Auch hier konnte ich einige jahrealte Ideen umsetzen:

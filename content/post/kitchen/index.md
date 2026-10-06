@@ -12,6 +12,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q234021
   - https://www.wikidata.org/wiki/Q37828
   - https://www.wikidata.org/wiki/Q43164
+  - https://www.wikidata.org/wiki/Q191529
 ---
 
 Nachdem ich Anfang des Jahres schon mein Wohnzimmer Renoviert habe, war nun die Küche dran.

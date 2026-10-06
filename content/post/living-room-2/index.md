@@ -7,6 +7,7 @@ tags:
   - InteriorDesign
 wikidata:
   - https://www.wikidata.org/wiki/Q1774171
+  - https://www.wikidata.org/wiki/Q475018
 ---
 
 Ich wollte endlich eine alte Idee von mir umsetzen...

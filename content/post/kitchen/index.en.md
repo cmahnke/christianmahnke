@@ -12,6 +12,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q234021
   - https://www.wikidata.org/wiki/Q37828
   - https://www.wikidata.org/wiki/Q43164
+  - https://www.wikidata.org/wiki/Q191529
 ---
 
 Having already renovated my living room at the start of the year, it was now the kitchen"s turn.
