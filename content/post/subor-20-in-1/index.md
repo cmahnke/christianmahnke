@@ -7,6 +7,7 @@ tags:
   - Fun
   - Retrocomputing
   - Game
+  - Travel
 preview: img/front.jpg
 wikidata:
   - https://www.wikidata.org/wiki/Q172742

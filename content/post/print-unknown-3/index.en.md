@@ -1,6 +1,6 @@
 ---
 date: 2026-05-31T14:31:44+02:00
-title: 'Woodcut "Am Hang" ("On the Slope") by an unknown artist'
+title: 'Woodcut "Am Hang" ("On the Slope") by an unknown artist
 tags:
   - Art
   - WoodblockPrint

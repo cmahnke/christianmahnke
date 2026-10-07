@@ -1,6 +1,6 @@
 ---
 date: 2026-05-31T14:31:44+02:00
-title: Holzschnitt "Am Hang" von einem unbekannten Künstler'
+title: Holzschnitt "Am Hang" von einem unbekannten Künstler
 tags:
   - Art
   - WoodblockPrint
