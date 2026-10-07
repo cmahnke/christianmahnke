@@ -73,8 +73,6 @@ Aber dann sah ich diesen Bau.
 
 Und da stellte ich mir die Frage: **"Kann es sein, dass in Bad Nenndorf einfach architektonische Stilelemente recycelt werden?"**
 
-Es gibt zahlreiche Bildbände und Literatur zur Architektur von Bädern und Kurorten, aber für das 20. Jahrhundert (besonders die zweite Hälfte) gibt es bisher eher wenig...
-
 ## Weitere
 
 Gegenüber dem Parkhotel Deutsches Haus beginnt die Hindenburgstraße. Dort befinden sich an den Häusern mit den Hausnummern 2 bis 10 authentische Art-déco-Fassadenelemente.
@@ -82,3 +80,7 @@ Gegenüber dem Parkhotel Deutsches Haus beginnt die Hindenburgstraße. Dort befi
 {{< html/iframe-consent >}}
   <iframe src="https://www.google.com/maps/embed?pb=!4v1791331662025!6m8!1m7!1spOm36qZiRQvb2XZ6Ll1SXA!2m2!1d52.33768829490916!2d9.373323823402233!3f304.6748396168073!4f0.2720734960570894!5f1.1924812503605782" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 {{< /html/iframe-consent >}}
+
+## Epilog
+
+Es gibt zahlreiche Bildbände und Literatur zur Architektur von Bädern und Kurorten, aber für das 20. Jahrhundert (besonders die zweite Hälfte) gibt es bisher eher wenig...

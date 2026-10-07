@@ -73,8 +73,6 @@ But then I saw this building.
 
 And that’s when I asked myself: **“Could it be that architectural style elements are simply being recycled in Bad Nenndorf?”**
 
-There are numerous illustrated books and publications on the architecture of spas and health resorts, but for the 20th century (particularly the second half), there has been rather little so far...
-
 ## More
 
 Hindenburgstraße begins across from the Parkhotel Deutsches Haus. The buildings at numbers 2 through 10 feature authentic Art Deco facade elements.
@@ -82,3 +80,7 @@ Hindenburgstraße begins across from the Parkhotel Deutsches Haus. The buildings
 {{< html/iframe-consent >}}
   <iframe src="https://www.google.com/maps/embed?pb=!4v1791331662025!6m8!1m7!1spOm36qZiRQvb2XZ6Ll1SXA!2m2!1d52.33768829490916!2d9.373323823402233!3f304.6748396168073!4f0.2720734960570894!5f1.1924812503605782" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 {{< /html/iframe-consent >}}
+
+## Epilog
+
+There are numerous illustrated books and publications on the architecture of spas and health resorts, but for the 20th century (particularly the second half), there has been rather little so far...
