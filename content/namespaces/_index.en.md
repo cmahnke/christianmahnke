@@ -1,5 +1,5 @@
 ---
-title: "IIIF"
+title: "XML Namespaces"
 metaPage: true
 displayinlist: false
 archive: false
