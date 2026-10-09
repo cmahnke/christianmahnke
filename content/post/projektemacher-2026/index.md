@@ -30,3 +30,5 @@ Einige der Höhepunkte sind:
 * Das erste [Buch](https://christianmahnke.de/post/coat-hangers-book/) ist erschienen.
   * Es ist auch im "Shop" [hier](https://merch.projektemacher.org/print/kleiderbuegel/) erhältlich.
 * Die Suche auf [Projektemacher.org](https://projektemacher.org/search/) ist nun auch auf [Pagefind](https://pagefind.app/) umgestellt.
+* [jQuery](https://jquery.com/) wunde in die verdiente Rente geschickt: Keine Seite nutzt es noch.
+* [YAAPB](https://yaapb.projektemacher.org/) wurde renoviert, das von Tumbler mitgenommene Theme hat nun weniger Fehler, die Ladezeiten wurden deutlich reduziert.

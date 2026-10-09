@@ -30,3 +30,5 @@ Some of the highlights are:
 * The first [book](https://christianmahnke.de/post/coat-hangers-book/) has been published.
   * It can also be found in the ‘Shop’ [here](https://merch.projektemacher.org/print/kleiderbuegel/).
 * The search function on [Projektemacher.org](https://projektemacher.org/search/) has now also been switched over to [Pagefind](https://pagefind.app/).
+* [jQuery](https://jquery.com/) has been sent into well-deserved retirement: no website uses it anymore.
+* [YAAPB](https://yaapb.projektemacher.org/) has been revamped; the theme adopted from Tumblr now has fewer bugs, and loading times have been significantly reduced.
