@@ -83,6 +83,11 @@ jobs:
         run: |
           ./themes/projektemacher-base/scripts/stat.py
 
+      - name: Make IIIF ID absolute
+        run: |
+          URL=$(grep '^baseURL' config.toml | cut -d'"' -f2)
+          sed -i "s|\"@id\": \"\./|\"@id\": \"${URL}post/hdr-iiif/|" content/post/hdr-iiif/front-hdr/info.json
+
       - name: Build Hugo site
         run: hugo --printI18nWarnings --printUnusedTemplates --environment production
 
