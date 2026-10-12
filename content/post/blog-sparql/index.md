@@ -38,7 +38,7 @@ Für die Erstellung werden die Schema.org-Daten des Blogs als Ausgangsbasis geno
 Dieser Weg ist notwendig, da die Anzahl der Entitäten, besonders seit Anfang dieses Jahres, massiv gestiegen ist: Ursprünglich wurden nur die Tags auf die jeweiligen Wikidata-Entitäten abgebildet, nun existiert jedoch ein Script, das sie semiautomatisch aus den jeweiligen Texten extrapoliiert. Dafür kommt ein Python-Skript auf Basis von SpaCy zum Einsatz.
 Aufgrund des Rate-Limits kommt es bei der Ausführung via SPARQL aus Wikidata recht schnell zu Fehlermeldungen. Andererseits resultiert das Serialisieren der Daten in einem JSON-LD-Graph in einer umfangreichen Datei.
 
-## Abfrage 
+## Abfrage
 
 **Achtung: Die Abfragen können etwas dauern...**
 
@@ -57,7 +57,7 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT ?blogPost ?artist ?artistLabel 
+SELECT ?blogPost ?artist ?artistLabel
        (GROUP_CONCAT(DISTINCT ?occLabel; separator=", ") AS ?occupations)
        ?birthDate
 WHERE {
@@ -132,7 +132,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?article ?object ?technique ?techniqueLabel
 WHERE {
-  ?article a schema:BlogPosting ; 
+  ?article a schema:BlogPosting ;
            schema:about ?object .
 
   ?object a crm:E22_Human-Made_Object ;
@@ -165,3 +165,7 @@ Derzeit werden nur die Inhalte des Blogs abgefragt und Teil der Datengrundlage. 
 # Update 21.4.26
 
 Der Graph aus diesem Post kann auch zur Visualisierung der Themen dieses Blogs genutzt werden: [Blog Metadaten visualisiert](https://christianmahnke.de/post/blog-visualisation/).
+
+# Update 12.10.26
+
+Das [WASM HDT Modul](https://github.com/KonradHoeffner/hdt) ist nun auch als [`@projektemacher/hdt`](https://www.npmjs.com/package/@projektemacher/hdt) auf NPM verfügbar.

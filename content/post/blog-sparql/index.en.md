@@ -57,7 +57,7 @@ PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT ?blogPost ?artist ?artistLabel 
+SELECT ?blogPost ?artist ?artistLabel
        (GROUP_CONCAT(DISTINCT ?occLabel; separator=", ") AS ?occupations)
        ?birthDate
 WHERE {
@@ -124,7 +124,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?article ?object ?technique ?techniqueLabel
 WHERE {
-  ?article a schema:BlogPosting ; 
+  ?article a schema:BlogPosting ;
            schema:about ?object .
 
   ?object a crm:E22_Human-Made_Object ;
@@ -166,3 +166,7 @@ At present, only the blog content is being retrieved and included in the dataset
 # Update 21 April 2026
 
 The graph from this post can also be used to visualise the topics covered on this blog: [Blog metadata visualised](https://christianmahnke.de/post/blog-visualisation/)
+
+# Update 12.10.26
+
+The [WASM HDT module](https://github.com/KonradHoeffner/hdt) is now also available on NPM as [`@projektemacher/hdt`](https://www.npmjs.com/package/@projektemacher/hdt).
