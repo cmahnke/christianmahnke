@@ -14,6 +14,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q95001953
   - https://www.wikidata.org/wiki/Q106102182
   - https://www.wikidata.org/wiki/Q16639197
+lastmod: 2026-10-13T00:00:00+02:00
 ---
 
 Teil 2 über Software-Metadaten.

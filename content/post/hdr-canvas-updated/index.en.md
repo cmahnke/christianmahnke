@@ -22,6 +22,7 @@ wikidata:
   - https://www.wikidata.org/wiki/Q5439690
   - https://www.wikidata.org/wiki/Q6368
   - https://www.wikidata.org/wiki/Q79534
+lastmod: 2026-10-13T00:00:00+02:00
 ---
 
 `hdr-canvas` has been updated...
@@ -29,6 +30,70 @@ wikidata:
 
 One result of my work with HDR content in the browser is an NPM module, which was also used to create the posts in this blog.
 This article summarises the latest changes. It will be updated when new versions are released.
+
+# Version 0.4.0
+
+# Introduction
+
+This release brings back a lightweight way to scale colors into the HDR range and finishes the `Uint16` cleanup: `Uint16Array` was the pre-137 Chromium experimental HDR path, it is intentionally not part of the WHATWG spec (`Uint8ClampedArray | Float16Array` only) nor the TypeScript DOM lib, so only `Float16` lands.
+
+# Key Changes & New Features
+
+- New `Float16Image` HDR gain scaling (replaces the removed `colorjs.io` based conversion with a dependency-free linear boost)
+  - `applyGain(gain)` (in place) and `scaled(gain)` (on a copy), with uniform `number` or per-channel `[r, g, b]` gain. Alpha is preserved by default.
+  - Values `>1` push into the HDR headroom and only become visible on a canvas with `toneMapping: { mode: "extended" }` (see `getHdrOptions()`), otherwise they clip to SDR white.
+  - The demo image slider (`tests/site/assets/ts/image-slider.ts`) now uses `scaled()` instead of its hand-rolled `pixelCallback` (slider `50` is gain `1`, `100` is gain `2`).
+  - New `Float16ImageGain` test suite.
+- Breaking type cleanup
+  - Removed `Uint16Array` from the exported `HDRImageDataArray` and `HDRImageData` types.
+  - Deprecated `HDRImage.SDR_MULTIPLIER` (kept for compat, use `applyGain()` / `scaled()` instead) and corrected the `HDRImagePixelCallback` docs (`0-65535` ints to float `0-1` SDR / `>1` HDR headroom).
+- Docs: README notes the package scope (`@projektemacher/hdr-canvas` on npm, `@cmahnke/hdr-canvas` on GitHub Packages).
+- Experimental WASM acceleration for gain (AssemblyScript kernel, inlined as base64, disabled by default behind `setWasmEnabled(true)` with transparent JS fallback)
+  - Measured on Node 24 over 12 M values: JS ~12 ms vs WASM ~51 ms (~3 ms copies) — engines with native `Float16Array` use hardware F16C conversion that the scalar kernel can't beat, so the flag stays off for now and exists as tested infrastructure (parity within 1 ulp) for future compute-heavy kernels.
+- Citation metadata maintenance (`url`, `dateReleased`) and dependency updates (including `assemblyscript` as a devDependency).
+
+## Version 0.3.1
+
+## Introduction
+
+Metadata-only release, no functional changes since 0.3.0.
+
+## Key Changes & New Features
+
+- Added `CITATION.cff` and `codemeta.json` (with a workflow keeping them in sync).
+- Added a deploy guard to `.github/workflows/npm.yml`: publishing is skipped when the version already exists on the registry, so forced manual re-deployments no longer fail.
+- Version bump 0.3.0 to 0.3.1.
+
+## Version 0.3.0
+
+### Introduction
+
+This release moves the package into an org and separates WCG from HDR detection.
+
+The package is now published as `@projektemacher/hdr-canvas` on npm (GitHub Packages publishes it as `@cmahnke/hdr-canvas` via a rewrite in `.github/workflows/npm.yml`):
+
+```
+npm i @projektemacher/hdr-canvas
+```
+
+Additionally `main` was fixed to `dist/hdr-canvas.js` and the `LICENCE` typo in the `files` list was corrected to `LICENSE`.
+
+### Key Changes & New Features
+
+- Detect WCG and HDR separately ([#23](https://github.com/cmahnke/hdr-canvas/issues/23), [#107](https://github.com/cmahnke/hdr-canvas/issues/107))
+  - New checks: `checkWCG`, `checkWCGCanvas`, `checkDynamicRangeHigh`, `checkColorGamutP3` / `checkColorGamutRec2020` and `getWcgOptions()` (`display-p3`, for WCG-only browsers like Safari and Firefox on macOS).
+  - New `getDisplayCapabilities()` and `onDisplayChange()` subscription (media query `change` events with polling fallback), so moving a window between screens re-evaluates the display.
+  - Checks hardened against missing `window` / `document` / `screen`.
+  - Demo site, README docs and import fixture updated, new `hdr-check` and `display-change` test suites added.
+- More robust `HDRImage` base class
+  - Removed unimplemented `fromImageData` / `fromImageDataArray` stubs.
+  - `loadSDRImageData()` checks `response.ok` and catches failures instead of rejecting.
+  - `getPixel()` / `setPixel()` throw a `RangeError` outside the image bounds.
+  - Fixed `clone()` to actually deep-copy `data`.
+- Safari handling extracted into `src/browser.ts` (`isSafari()`), reused in `src/hdr-canvas.ts` and (duplicated, kept in sync) in `three/HDRWebGPUBackend.js`.
+- `defaultGetContextHDR()` is now idempotent and only patches `"2d"` contexts, `resetGetContext()` fully restores the original `getContext`.
+- New `tests/version-check.ts` global setup enforcing `engines.node` for the test run.
+- Dependency updates, including `vitest` 4 to 5.
 
 ## Version 0.2.0
 
