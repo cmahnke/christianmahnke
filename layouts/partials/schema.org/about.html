@@ -1,55 +1,17 @@
-{{- $personURI := printf "%s%s" .Site.BaseURL "#person" -}}
-{{- with site.Params.author.uri -}}
-  {{- $personURI = . -}}
-{{- end -}}
+{{- $person := site.Data.person -}}
+
+{{- $aboutPage := dict
+  "@context" "https://schema.org"
+  "@type" "AboutPage"
+  "mainEntity" $person
+  "publisher" (dict
+    "@type" "Person"
+    "name" (index $person "name")
+    "@id" (index $person "@id")
+  )
+  "copyrightYear" (now.Year)
+-}}
+
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "mainEntity": {
-    "@type": "Person",
-    "name": "Christian Mahnke",
-    "url": "https://christianmahnke.de",
-    "email": "mail@christianmahnke.de",
-    "jobTitle": "Experte für digitale Bibliotheken und Museen",
-    "description": "Spezialist für Volltexte, Metadaten, OCR und Linked Open Data im kulturellen Erbe.",
-    "knowsAbout": [
-      "TEI / Digitale Editionen",
-      "OCR (Optical Character Recognition)",
-      "Linked Open Data (Wikidata, SPARQL)",
-      "IIIF (International Image Interoperability Framework)",
-      "Digitalisierungsworkflows (Goobi)",
-      "Computer Vision",
-      "Softwareentwicklung (Java, Python, Go, JavaScript)"
-    ],
-    "memberOf": [
-      {
-        "@type": "Organization",
-        "name": "Deutscher Museumsbund e. V."
-      },
-      {
-        "@type": "Organization",
-        "name": "europeana pro"
-      }
-    ],
-    "sameAs": [
-      "https://orcid.org/0009-0003-1361-4159",
-      "https://github.com/cmahnke",
-      "https://www.linkedin.com/in/christianmahnke",
-      "https://openbiblio.social/@cmahnke",
-      "http://d-nb.info/gnd/141541968X",
-      "https://term.museum-digital.de/md-de/persinst/322830",
-      "https://huggingface.co/cmahnke",
-      "https://www.openstreetmap.org/user/Christian%20Mahnke",
-      "https://scholar.google.com/citations?user=3_Pdl3cAAAAJ",
-      "https://www.reddit.com/user/Projektemacher_org/"
-    ]
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": "Christian Mahnke",
-    "@id": "{{ $personURI }}"
-  },
-  "copyrightYear": "2025"
-}
+  {{ jsonify $aboutPage | safeJS }}
 </script>
