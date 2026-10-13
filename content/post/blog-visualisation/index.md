@@ -42,7 +42,7 @@ Für Mobilgeräte als [PDF-Download](./graph.pdf), die Datei wird nicht aktualis
 * Blaue Kreise sind Entitäten von Wikidata (die auch als Schlagworte dienen).
 * Grüne Kreise stellen Entitäten der Seite dar (z. B. Linked Art oder andere Metadateneinträge).
 
-Einige Objekte haben eingefärbte Rahmen, diese zeigen den Typ an. Derzeit sind abernur ein paar Typen konfiguriert.
+Einige Objekte haben eingefärbte Rahmen, diese zeigen den Typ an. Derzeit sind aber nur ein paar Typen konfiguriert.
 
 ### Vorauswahl
 
