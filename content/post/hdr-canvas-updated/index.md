@@ -135,3 +135,8 @@ Da die Änderungen der WhatWG noch nicht übernommen worden waren, mussten einig
 - [mdn/browser-compat-data#27547](https://github.com/mdn/browser-compat-data/issues/27547)
 - [microsoft/TypeScript-DOM-lib-generator#2107](https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2107)
 - [mrdoob/three.js#32293](https://github.com/mrdoob/three.js/issues/32293).
+
+
+# Update 13.10.2026
+
+Wie bereits [angekündigt](/post/npm-org/) wurde `hdr-canvas` in [`@projektemacher/hdr-canvas`](https://www.npmjs.com/@projektemacher/hdr-canvas) unbenannt.
