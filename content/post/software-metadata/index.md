@@ -39,3 +39,7 @@ Ein konstruiertes Beispiel, das sich an einem vergangenen [Beitrag](/post/vintag
 Dabei ist das "Zusammenstecken" eher das langfristige Ziel; im ersten Schritt würde man auf diesem Wege vermutlich erst einmal Agenten benutzen, um Trainingsdaten zusammenzustellen.
 
 Dafür fehlen jedoch noch normierte Schlagworte bzw. spezifisches kontrolliertes Vokabular. Da das Feld sehr dynamisch ist, wird es sicher auf eine Mischung aus beidem hinauslaufen, um auch nischigere Nutzungsszenarien abbilden zu können.
+
+# Update 13.10.26
+
+Mit der durch künstliche Intelligenz induzierten Explosion von Software wird die automatische Auffindbarkeit immer wichtiger, um in dem schnell wachsenden Dschungel überhaupt noch etwas zu finden. Um die Auffindbarkeit zu gewährleisten, habe ich einen einfachen Validator generiert. Er ist auf [GitHub](https://github.com/cmahnke/code-citation-lint) und [NPM als `@projektemacher/code-citation-lint`](https://www.npmjs.com/package/@projektemacher/code-citation-lint) verfügbar.

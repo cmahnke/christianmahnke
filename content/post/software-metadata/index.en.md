@@ -39,3 +39,7 @@ A constructed example, based on a previous [post](/post/vintagereality-ai/), wou
 In this case, "putting together" is more of a long-term goal; in the first step, agents would probably be used to compile training data.
 
 However, standardised keywords and specific controlled vocabulary are still lacking. As the field is very dynamic, it will certainly end up being a mixture of both in order to be able to map more niche usage scenarios.
+
+# Update 13.10.26
+
+With the explosion in software driven by artificial intelligence, automatic discoverability is becoming increasingly important if we are to find anything at all in this rapidly growing jungle. To ensure discoverability, I have created a simple validator. It is available on [GitHub](https://github.com/cmahnke/code-citation-lint) and on [NPM as `@projektemacher/code-citation-lint`](https://www.npmjs.com/package/@projektemacher/code-citation-lint).
