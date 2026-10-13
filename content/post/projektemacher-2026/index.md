@@ -25,6 +25,8 @@ Einige der Höhepunkte sind:
   * Kunstartikel enthalten nun [LinkedArt](https://linked.art/)-Metadaten
   * [SPARQL Abfragen](/post/blog-sparql/)
   * Die [Kunstsammlung](/art-collection/)
+* [Backsteinexpressionismus](https://backsteinexpressionismus.projektemacher.org/)
+  * Englische Übersetzung verfügbar
 
 ## Verschiedenes
 * Das erste [Buch](https://christianmahnke.de/post/coat-hangers-book/) ist erschienen.

@@ -25,6 +25,8 @@ Some of the highlights are:
   * Art articles now contain [LinkedArt](https://linked.art/) metadata
   * [SPARQL Query](/post/blog-sparql/)
   * The [Art Collection](/en/art-collection/)
+* [Backsteinexpressionismus](https://backsteinexpressionismus.projektemacher.org/)
+  * English translation added
 
 ## Miscellaneous
 * The first [book](https://christianmahnke.de/post/coat-hangers-book/) has been published.
