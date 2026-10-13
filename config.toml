@@ -340,6 +340,10 @@ timeout = "240s"
       target = 'data'
 
   [[module.mounts]]
+      source = 'data'
+      target = 'data'
+
+  [[module.mounts]]
     source = "node_modules/tify/dist/"
     target = "static/tify"
 
