@@ -23,14 +23,21 @@
   {{- $codemeta = partial "metadata/codemeta/codemeta.json" $page | transform.Unmarshal -}}
 {{- end -}}
 
-{{- $author := transform.Unmarshal (partialCached "metadata/schema.org/util/author.html" .) -}}
-{{- $author = $author | merge (dict "url" site.BaseURL) -}}
+{{- $author := dict -}}
+{{- if eq $type "BlogPosting" -}}
+  {{- $author = dict
+    "@id" (index site.Data.person "@id")
+    "@type" "Person"
+    "name" (index site.Data.person "name")
+    "url" (index site.Data.person "url")
+  -}}
+{{- end -}}
 
 <script type="application/ld+json">
   {{- $schemaOrg := transform.Unmarshal (partial "metadata/schema.org/util/post.html" $page) -}}
   {{- $schemaOrg = $schemaOrg | merge (dict "@context" "http://schema.org" "@type" $type) -}}
   {{- $schemaOrg = $schemaOrg | merge (dict "isPartOf" (dict "@type" "Blog" "@id" (printf "%s%s" .Site.BaseURL "post") "name" (printf "%s %s" .Site.Title "Blog"))) -}}
-  {{- if ne $author nil -}}
+  {{- if gt ($author | len) 0 -}}
     {{- $schemaOrg = $schemaOrg | merge (dict "author" $author) -}}
   {{- end -}}
 
