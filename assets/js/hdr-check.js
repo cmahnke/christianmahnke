@@ -1,4 +1,4 @@
-import {checkHDR, checkHDRCanvas} from 'hdr-canvas';
+import {checkHDR, checkHDRCanvas} from '@projektemacher/hdr-canvas';
 
 window.checkHDR = checkHDR;
 window.checkHDRCanvas = checkHDRCanvas;

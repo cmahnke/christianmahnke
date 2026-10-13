@@ -3,7 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import HDRWebGPURenderer from 'hdr-canvas/three/HDRWebGPURenderer.js';
 import WebGPU from 'hdr-canvas/three/WebGPU.js';
-import {checkHDR, checkHDRCanvas} from 'hdr-canvas';
+import {checkHDR, checkHDRCanvas} from '@projektemacher/hdr-canvas';
 
 let scene, renderer, camera, controls, model;
 
