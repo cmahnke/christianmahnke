@@ -31,13 +31,13 @@ lastmod: 2026-10-13T00:00:00+02:00
 Ein Ergebnis meiner Arbeit mit HDR-Inhalten im Browser ist ein NPM-Modul, das auch zur Erstellung der Beiträge in diesem Blog verwendet wurde.
 In diesem Beitrag werden die letzten Änderungen zusammengefasst. Bei neuen Versionen wird er aktualisiert.
 
-# Version 0.4.0
+## Version 0.4.0
 
-# Einleitung
+### Einleitung
 
 Diese Version führt wieder eine ressourcenschonende Methode zur Skalierung von Farben in den HDR-Bereich ein und schließt die Bereinigung von `Uint16` ab: `Uint16Array` war der experimentelle HDR-Pfad in Chromium vor Version 137; er ist bewusst weder Teil der WHATWG-Spezifikation (nur `Uint8ClampedArray | Float16Array`) noch der TypeScript-
 
-# Wichtige Änderungen und neue Funktionen
+### Wichtige Änderungen und neue Funktionen
 
 - Neue HDR-Verstärkungsskalierung `Float16Image` (ersetzt die entfernte, auf `colorjs.io` basierende Konvertierung durch eine abhängigkeitsfreie lineare Verstärkung)
   - `applyGain(gain)` (in situ) und `scaled(gain)` (auf einer Kopie), mit einheitlicher Verstärkung `number` oder kanalweiser Verstärkung `[r, g, b]`. Alpha wird standardmäßig beibehalten.
@@ -54,11 +54,11 @@ Diese Version führt wieder eine ressourcenschonende Methode zur Skalierung von 
 
 ## Version 0.3.1
 
-## Einleitung
+### Einleitung
 
 Reine Metadaten-Veröffentlichung, keine funktionalen Änderungen seit 0.3.0.
 
-## Wichtige Änderungen und neue Funktionen
+### Wichtige Änderungen und neue Funktionen
 
 - `CITATION.cff` und `codemeta.json` wurden hinzugefügt (mit einem Workflow, der die Dateien synchron hält).
 - Ein Deploy-Guard wurde zu `.github/workflows/npm.yml` hinzugefügt: Die Veröffentlichung wird übersprungen, wenn die Version bereits im Registry vorhanden ist, sodass erzwungene manuelle Neuveröffentlichungen nicht mehr fehlschlagen.
