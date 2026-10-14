@@ -45,6 +45,16 @@
     },
     {
       "@type": "PropertyValue",
+      "propertyID": "wikidata",
+      "value": "Q137668638"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "GND",
+      "value": "141541968X"
+    },
+    {
+      "@type": "PropertyValue",
       "propertyID": "museum:digital",
       "value": "322830"
     }
@@ -59,6 +69,11 @@
       "@type": "Specialty",
       "name": "Semantic Web & Linked Data",
       "description": "Practical application of Wikidata, SPARQL, and RDF technologies for Linked Open Data (LOD)."
+    },
+    {
+      "@type": "Specialty",
+      "name": "AI & Agentic Coding",
+      "description": "Use of LLM-based coding assistants and agentic workflows (Claude Code, OpenCode, Copilot) for day-to-day software development, refactoring and prototyping."
     },
     {
       "@type": "Specialty",
@@ -113,7 +128,9 @@
     "Solr",
     "OpenCV",
     "Docker",
-    "Kubernetes"
+    "Kubernetes",
+    "LLM",
+    "AI Agents"
   ],
   "sameAs": [
     "https://github.com/cmahnke",
