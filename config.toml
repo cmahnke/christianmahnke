@@ -269,6 +269,7 @@ timeout = "240s"
     notAlternative = true
 
 [outputs]
+  home = ["html", "rss", "iiif-collection"]
 #  page = ['html', 'print']
 
 [privacy]
@@ -367,6 +368,8 @@ timeout = "240s"
   [segments.manifests]
     [[segments.manifests.includes]]
       output = 'iiif-manifest'
+    [[segments.manifests.includes]]
+      output = 'iiif-collection'
   [segments.print]
     [[segments.print.excludes]]
       output = '{html,rss,iiif-manifest,iiif-collection,bibtex,linkedart,codemeta,llms}'

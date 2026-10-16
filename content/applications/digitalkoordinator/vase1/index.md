@@ -4,6 +4,7 @@ archive: false
 news: false
 iiif:
   presentationVersion: 4
+  behavior: individuals
 outputs:
   - html
   - iiif-manifest

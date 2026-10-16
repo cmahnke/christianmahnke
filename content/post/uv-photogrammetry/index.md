@@ -5,6 +5,7 @@ keywords: Photogrammetrie, UV, UV-Photogrammetrie, Ultraviolet, Ultraviolet-Phot
 description: "3D Modell eines UV-Licht bestrahlten Uranglasobjekts"
 iiif:
   presentationVersion: 4
+  behavior: individuals
 preview:
   image: preview.png
   hide: true

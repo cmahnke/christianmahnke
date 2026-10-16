@@ -5,6 +5,7 @@ keywords: photogrammetry, UV, UV photogrammetry, ultraviolet, ultraviolet photog
 description: "3D model of a uranium glass object exposed to UV light"
 iiif:
   presentationVersion: 4
+  behavior: individuals
 preview:
   image: preview.png
   hide: true

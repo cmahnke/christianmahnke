@@ -5,6 +5,7 @@ keywords: Fat Lava Vase, GLTF, GLB, A-Frame
 description: "3D representation of a 60s vase in the browser"
 iiif:
   presentationVersion: 4
+  behavior: individuals
 preview:
   image: preview.png
   hide: true
