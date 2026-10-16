@@ -3,6 +3,17 @@ title: Art Deco ceramic / earthenware jar
 weight: 1
 archive: false
 news: false
+iiif:
+  presentationVersion: 4
+outputs:
+  - html
+  - iiif-manifest
+resources:
+  - src: model/Dose.jpg
+    name: preview
+  - src: model/Dose.glb
+    params:
+      label: Art Deco jar
 ---
 
 This jar for biscuits or sweets, was probably made in the late 1920s / early 1930s.

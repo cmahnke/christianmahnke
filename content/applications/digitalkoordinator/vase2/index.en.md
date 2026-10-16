@@ -3,6 +3,17 @@ title: Lava Vase
 weight: 3
 archive: false
 news: false
+iiif:
+  presentationVersion: 4
+outputs:
+  - html
+  - iiif-manifest
+resources:
+  - src: model/Vase2.jpg
+    name: preview
+  - src: model/Vase2.glb
+    params:
+      label: Lava Vase
 ---
 
 A 60s Fat Lava vase.

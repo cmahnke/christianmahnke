@@ -3,6 +3,8 @@ date: 2024-09-05T11:33:44+02:00
 title: "Ultraviolet Photogrammetry"
 keywords: photogrammetry, UV, UV photogrammetry, ultraviolet, ultraviolet photogrammetry, uranium glass, 3D, Three.js
 description: "3D model of a uranium glass object exposed to UV light"
+iiif:
+  presentationVersion: 4
 preview:
   image: preview.png
   hide: true
@@ -28,6 +30,15 @@ wikidata:
   - https://www.wikidata.org/wiki/Q2471924
   - https://www.wikidata.org/wiki/Q1030958
 lastmod: 2025-09-03T00:00:00+02:00
+outputs:
+  - html
+  - iiif-manifest
+resources:
+  - src: preview.png
+    name: preview
+  - src: model/uranium.glb
+    params:
+      label: Uranium glass
 ---
 
 **This article presents the world's first HDR model of UV photogrammetry in a browser.**

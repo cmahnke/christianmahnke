@@ -2,6 +2,17 @@
 title: Fat Lava Vase
 archive: false
 news: false
+iiif:
+  presentationVersion: 4
+outputs:
+  - html
+  - iiif-manifest
+resources:
+  - src: model/LavaVase.jpg
+    name: preview
+  - src: model/LavaVase.glb
+    params:
+      label: Fat Lava Vase
 ---
 
 A 60s Fat Lava vase.

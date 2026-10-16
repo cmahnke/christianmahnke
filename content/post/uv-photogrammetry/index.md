@@ -3,6 +3,8 @@ date: 2024-09-05T11:33:44+02:00
 title: "UV-Photogrammetrie"
 keywords: Photogrammetrie, UV, UV-Photogrammetrie, Ultraviolet, Ultraviolet-Photogrammetrie, Uranglas
 description: "3D Modell eines UV-Licht bestrahlten Uranglasobjekts"
+iiif:
+  presentationVersion: 4
 preview:
   image: preview.png
   hide: true
@@ -28,6 +30,15 @@ wikidata:
   - https://www.wikidata.org/wiki/Q2471924
   - https://www.wikidata.org/wiki/Q1030958
 lastmod: 2025-09-03T00:00:00+02:00
+outputs:
+  - html
+  - iiif-manifest
+resources:
+  - src: preview.png
+    name: preview
+  - src: model/uranium.glb
+    params:
+      label: Uranglas
 ---
 
 **In diesem Beitrag wird die weltweit erste HDR Darstellung einer UV-Photogrammetrie im Browser präsentiert.**

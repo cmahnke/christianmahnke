@@ -3,6 +3,17 @@ title: Art Deco Dose aus Keramik / Steingut
 weight: 1
 archive: false
 news: false
+iiif:
+  presentationVersion: 4
+outputs:
+  - html
+  - iiif-manifest
+resources:
+  - src: model/Dose.jpg
+    name: preview
+  - src: model/Dose.glb
+    params:
+      label: Art Deco Dose
 ---
 
 Diese Dose für z.B. Kekse oder Bonbons wurde wahrscheinlich in den späten 20er / frühen 30er Jahren hergestellt.

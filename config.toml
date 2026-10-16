@@ -167,6 +167,8 @@ timeout = "240s"
     suffixes = ["json"]
   [mediaTypes."image/jxl"]
     suffixes = ["jxl"]
+  [mediaTypes."model/gltf-binary"]
+    suffixes = ["glb"]
   [mediaTypes."text/bibtex"]
     suffixes = ["bib"]
   [mediaTypes."application/x-qrcode-template"]

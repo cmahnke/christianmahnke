@@ -3,6 +3,8 @@ date: 2024-02-24T10:16:44+02:00
 title: "3D Modelle im Browser"
 keywords: Fat Lava Vase, GLTF, GLB, A-Frame
 description: "3D Darstellung einer 60er Jahre Vase im Browser"
+iiif:
+  presentationVersion: 4
 preview:
   image: preview.png
   hide: true
@@ -21,6 +23,15 @@ wikidata:
   - https://www.wikidata.org/wiki/Q3010266
   - https://www.wikidata.org/wiki/Q28135989
   - https://www.wikidata.org/wiki/Q3525922
+outputs:
+  - html
+  - iiif-manifest
+resources:
+  - src: preview.png
+    name: preview
+  - src: /applications/digitalkoordinator/vase1/model/LavaVase.glb
+    params:
+      label: Fat Lava Vase
 ---
 
 Vielleicht wird mal eine virtuelle Ausstellung über orangene Keramik draus...
