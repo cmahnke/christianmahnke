@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>hdr-canvas aktualisiert · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="hdr-canvas aktualisiert&hellip;">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/hdr-canvas-updated/" />
+  <meta property="og:title" content="hdr-canvas aktualisiert · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/hdr-canvas-updated/ogPreview_hu_96a4b97586c37144.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content="NPM, TypeScript, JavaScript, HDR"><meta name="dc.subject" content="NPM"><meta name="dc.subject" content="TypeScript"><meta name="dc.subject" content="JavaScript"><meta name="dc.subject" content="HDR">
+<meta name="generator" content="Hugo 0.168.0">
+<meta name="projektemacher.org:build-date" content="2026-10-17 03:52:24.393895178 &#43;0000 UTC m=&#43;1.139535348"><meta name="projektemacher.org:stats" content="{&#34;count&#34;:&#34;959&#34;,&#34;latest&#34;:&#34;2026-12-31T11:33:44&#43;02:00&#34;}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.f77277a38475d50d8012f891cbaf57af5f5868ecb17aba49778b20761c7b495b.css" rel="stylesheet" integrity="sha256-93J3o4R11Q2AEviRy69Xr19YaOyxerpJd4sgdhx7SVs=">
+<script src="https://christianmahnke.de/js/5d85c20c8f862f9ecfa0aee0edbc8fe4.a3dcab707ecab6b9939846d6973c80417fddfc7e4e0630eaa613f0d347fb7535.js" integrity="sha256-o9yrcH7KtrmTmEbWlzyAQX/d/H5OBjDqphPw00f7dTU="></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="shortcut icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://christianmahnke.de/images/favicon.ico" type="image/x-icon">
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/hdr-canvas-updated/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/hdr-canvas-updated/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/hdr-canvas-updated/","@type":"BlogPosting","about":[{"@id":"http://www.wikidata.org/entity/Q106239881","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"High Dynamic Range"},{"@id":"http://www.wikidata.org/entity/Q2005","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"JavaScript"},{"@id":"http://www.wikidata.org/entity/Q106239881","@type":"Thing","name":"High Dynamic Range"},{"@id":"http://www.wikidata.org/entity/Q110650833","@type":"Thing","name":"16-bit unsigned integer data type"},{"@id":"http://www.wikidata.org/entity/Q116963687","@type":"Thing","name":"@petamoriken/float16"},{"@id":"http://www.wikidata.org/entity/Q136933249","@type":"Thing","name":"gain map"},{"@id":"http://www.wikidata.org/entity/Q2005","@type":"Thing","name":"JavaScript"},{"@id":"http://www.wikidata.org/entity/Q28957081","@type":"Thing","name":"WebGPU"},{"@id":"http://www.wikidata.org/entity/Q3525922","@type":"Thing","name":"Three.js"},{"@id":"http://www.wikidata.org/entity/Q5439690","@type":"Thing","name":"Feature Toggle"},{"@id":"http://www.wikidata.org/entity/Q615940","@type":"Thing","name":"WHATWG"},{"@id":"http://www.wikidata.org/entity/Q6368","@type":"Thing","name":"Webbrowser"},{"@id":"http://www.wikidata.org/entity/Q7067518","@type":"Thing","name":"npm"},{"@id":"http://www.wikidata.org/entity/Q79534","@type":"Thing","name":"Chromium OS"},{"@id":"http://www.wikidata.org/entity/Q978185","@type":"Thing","name":"TypeScript"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"dateModified":"2026-10-13","datePublished":"2025-11-30","headline":"hdr-canvas aktualisiert","inLanguage":"de","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["NPM","TypeScript","JavaScript","HDR"],"name":"hdr-canvas aktualisiert","url":"https://christianmahnke.de/post/hdr-canvas-updated/","workTranslation":[{"@id":"https://christianmahnke.de/en/post/hdr-canvas-updated/","@type":"CreativeWork","inLanguage":"en","name":"hdr-canvas 0.1.0 published","url":"https://christianmahnke.de/en/post/hdr-canvas-updated/"}]}
+</script>
+</head><body class="section-post dir-posthdr-canvas-updated blog  ">
+      <a name="top"></a>
+      <div class="page-wrapper">
+        <div class="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu" aria-label="Hauptnavigation">
+    <input type="checkbox" id="menu-toggle" aria-label="Hauptnavigation" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon" aria-hidden="true"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog" aria-current="page">Blog<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/hdr-canvas-updated/" title="English" hreflang="en" lang="en">English</a>
+            </li></ul>
+  </nav>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/"><h1 class="header-title">Christian Mahnke</h1></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top">
+        <div class="backToTop"></div>
+    </a>
+</header>
+<div class="content-container single">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">hdr-canvas aktualisiert</h1><div class="date">
+          <time class="post-date" datetime="2025-11-30T11:22:44&#43;02:00">Sonntag, 30. November 2025</time>
+        </div><div class="update">
+            <div class="update-label">Aktualisiert am</div>
+            <time class="date" datetime="2026-10-13T00:00:00&#43;02:00">Dienstag, 13. Oktober 2026</time>
+          </div><div class="post-body"><p><code>hdr-canvas</code> aktualisiert&hellip;</p>
+<p>Ein Ergebnis meiner Arbeit mit HDR-Inhalten im Browser ist ein NPM-Modul, das auch zur Erstellung der Beiträge in diesem Blog verwendet wurde.
+In diesem Beitrag werden die letzten Änderungen zusammengefasst. Bei neuen Versionen wird er aktualisiert.</p>
+<h2 id="version-040">Version 0.4.0</h2>
+<h3 id="einleitung">Einleitung</h3>
+<p>Diese Version führt wieder eine ressourcenschonende Methode zur Skalierung von Farben in den HDR-Bereich ein und schließt die Bereinigung von <code>Uint16</code> ab: <code>Uint16Array</code> war der experimentelle HDR-Pfad in Chromium vor Version 137; er ist bewusst weder Teil der WHATWG-Spezifikation (nur <code>Uint8ClampedArray | Float16Array</code>) noch der TypeScript-</p>
+<h3 id="wichtige-änderungen-und-neue-funktionen">Wichtige Änderungen und neue Funktionen</h3>
+<ul>
+<li>Neue HDR-Verstärkungsskalierung <code>Float16Image</code> (ersetzt die entfernte, auf <code>colorjs.io</code> basierende Konvertierung durch eine abhängigkeitsfreie lineare Verstärkung)
+<ul>
+<li><code>applyGain(gain)</code> (in situ) und <code>scaled(gain)</code> (auf einer Kopie), mit einheitlicher Verstärkung <code>number</code> oder kanalweiser Verstärkung <code>[r, g, b]</code>. Alpha wird standardmäßig beibehalten.</li>
+<li>Werte <code>&gt;1</code> werden in den HDR-Headroom verschoben und sind nur auf einer Leinwand mit <code>toneMapping: { mode: &quot;extended&quot; }</code> sichtbar (siehe <code>getHdrOptions()</code>), andernfalls werden sie auf SDR-Weiß abgeschnitten.</li>
+<li>Der Demo-Bildschieberegler (<code>tests/site/assets/ts/image-slider.ts</code>) verwendet nun <code>scaled()</code> anstelle seines selbst implementierten <code>pixelCallback</code> (Schieberegler <code>50</code> entspricht Verstärkung <code>1</code>, <code>100</code> entspricht Verstärkung <code>2</code>).</li>
+<li>Neue Testsuite <code>Float16ImageGain</code>.</li>
+</ul>
+</li>
+<li>Bereinigung der Typen (mit Kompatibilitätsbruch)
+<ul>
+<li><code>Uint16Array</code> wurde aus den exportierten Typen <code>HDRImageDataArray</code> und <code>HDRImageData</code> entfernt.</li>
+<li><code>HDRImage.SDR_MULTIPLIER</code> wurde als veraltet markiert (aus Kompatibilitätsgründen beibehalten; verwende stattdessen <code>applyGain()</code> / <code>scaled()</code>) und die Dokumentation zu <code>HDRImagePixelCallback</code> wurde korrigiert (Ganzzahlen von <code>0–65535</code> auf Floats von <code>0–1</code> für SDR bzw. <code>&gt;1</code> für HDR-Headroom).</li>
+</ul>
+</li>
+<li>Dokumentation: In der README-Datei wird der Paketbereich angegeben (<code>@projektemacher/hdr-canvas</code> auf npm, <code>@cmahnke/hdr-canvas</code> auf GitHub Packages).</li>
+<li>Experimentelle WASM-Beschleunigung zur Leistungssteigerung (AssemblyScript-Kernel, als Base64 eingebettet, standardmäßig deaktiviert und über <code>setWasmEnabled(true)</code> mit transparentem JS-Fallback aktiviert)
+<ul>
+<li>Gemessen auf Node 24 über 12 Millionen Werte: JS ~12 ms gegenüber WASM ~51 ms (~3 ms Kopiervorgänge) – Engines mit nativem <code>Float16Array</code> nutzen eine hardwarebasierte F16C-Konvertierung, die der Skalar-Kernel nicht übertreffen kann; daher bleibt das Flag vorerst deaktiviert und dient als getestete Infrastruktur (Parität innerhalb von 1 ulp) für zukünftige rechenintensive Kernel.</li>
+</ul>
+</li>
+<li>Pflege der Zitiermetadaten (<code>url</code>, <code>dateReleased</code>) und Aktualisierung der Abhängigkeiten (einschließlich <code>assemblyscript</code> als <code>devDependency</code>).</li>
+</ul>
+<h2 id="version-031">Version 0.3.1</h2>
+<h3 id="einleitung-1">Einleitung</h3>
+<p>Reine Metadaten-Veröffentlichung, keine funktionalen Änderungen seit 0.3.0.</p>
+<h3 id="wichtige-änderungen-und-neue-funktionen-1">Wichtige Änderungen und neue Funktionen</h3>
+<ul>
+<li><code>CITATION.cff</code> und <code>codemeta.json</code> wurden hinzugefügt (mit einem Workflow, der die Dateien synchron hält).</li>
+<li>Ein Deploy-Guard wurde zu <code>.github/workflows/npm.yml</code> hinzugefügt: Die Veröffentlichung wird übersprungen, wenn die Version bereits im Registry vorhanden ist, sodass erzwungene manuelle Neuveröffentlichungen nicht mehr fehlschlagen.</li>
+<li>Versionssprung von 0.3.0 auf 0.3.1.</li>
+</ul>
+<h2 id="version-030">Version 0.3.0</h2>
+<h3 id="einleitung-2">Einleitung</h3>
+<p>Mit dieser Version wird das Paket in eine Organisation verschoben und WCG von der HDR-Erkennung getrennt.</p>
+<p>Das Paket wird nun als <code>@projektemacher/hdr-canvas</code> auf npm veröffentlicht (GitHub Packages veröffentlicht es als <code>@cmahnke/hdr-canvas</code> über eine Umschreibung in <code>.github/workflows/npm.yml</code>):</p>
+<pre tabindex="0"><code>npm i @projektemacher/hdr-canvas
+</code></pre><p>Außerdem wurde <code>main</code> auf <code>dist/hdr-canvas.js</code> korrigiert und der Tippfehler <code>LICENCE</code> in der Liste <code>files</code> in <code>LICENSE</code> geändert.</p>
+<h2 id="wichtige-änderungen-und-neue-funktionen-2">Wichtige Änderungen und neue Funktionen</h2>
+<ul>
+<li>WCG und HDR separat erkennen (<a href="https://github.com/cmahnke/hdr-canvas/issues/23" target="_blank">#23</a>, <a href="https://github.com/cmahnke/hdr-canvas/issues/107" target="_blank">#107</a>)
+<ul>
+<li>Neue Prüfungen: <code>checkWCG</code>, <code>checkWCGCanvas</code>, <code>checkDynamicRangeHigh</code>, <code>checkColorGamutP3</code> / <code>checkColorGamutRec2020</code> und <code>getWcgOptions()</code> (<code>display-p3</code>, für Browser, die nur WCG unterstützen, wie Safari und Firefox unter macOS).</li>
+<li>Neue Funktionen <code>getDisplayCapabilities()</code> und <code>onDisplayChange()</code> (Abonnements für <code>change</code>-Ereignisse bei Media Queries mit Polling-Fallback), sodass beim Verschieben eines Fensters zwischen Bildschirmen die Anzeige neu bewertet wird.</li>
+<li>Überprüfungen gegen fehlende <code>window</code> / <code>document</code> / <code>screen</code> wurden verstärkt.</li>
+<li>Demo-Website, README-Dokumentation und Import-Fixture wurden aktualisiert; neue Testsuiten <code>hdr-check</code> und <code>display-change</code> wurden hinzugefügt.</li>
+</ul>
+</li>
+<li>Robustere Basisklasse <code>HDRImage</code>
+<ul>
+<li>Nicht implementierte Stubs für <code>fromImageData</code> / <code>fromImageDataArray</code> wurden entfernt.</li>
+<li><code>loadSDRImageData()</code> prüft <code>response.ok</code> und fängt Fehler ab, anstatt den Vorgang abzubrechen.</li>
+<li><code>getPixel()</code> / <code>setPixel()</code> lösen außerhalb der Bildgrenzen einen <code>RangeError</code> aus.</li>
+<li><code>clone()</code> wurde korrigiert, sodass nun tatsächlich eine tiefe Kopie von <code>data</code> erstellt wird.</li>
+</ul>
+</li>
+<li>Die Safari-Handhabung wurde in <code>src/browser.ts</code> (<code>isSafari()</code>) ausgelagert und wird in <code>src/hdr-canvas.ts</code> sowie (dupliziert und synchronisiert) in <code>three/HDRWebGPUBackend.js</code> wiederverwendet.</li>
+<li><code>defaultGetContextHDR()</code> ist nun idempotent und passt nur <code>&quot;2d&quot;</code>-Kontexte an; <code>resetGetContext()</code> stellt den ursprünglichen <code>getContext</code> vollständig wieder her.</li>
+<li>Neue globale Konfiguration in <code>tests/version-check.ts</code>, die <code>engines.node</code> für den Testlauf erzwingt.</li>
+<li>Aktualisierungen der Abhängigkeiten, einschließlich <code>vitest</code> von Version 4 auf 5.</li>
+</ul>
+<h2 id="version-020">Version 0.2.0</h2>
+<h3 id="einleitung-3">Einleitung</h3>
+<p>Folgende Elemente wurden entfernt:</p>
+<ul>
+<li>die Unterstützung für Chrom(e|ium) &lt; 140</li>
+<li><code>Uint16Image</code></li>
+<li>Hilfsfunktionen zur Überprüfung der Browserversion</li>
+<li>gebündelte UMD- und IIFE-Builds</li>
+<li><code>colorjs.io</code> ist keine direkte Abhängigkeit mehr</li>
+</ul>
+<p>Unterstützung für Safari wurde eingeführt (aktuelles Ziel ist Safari Technology Preview R232 und höher): Dies erfordert das Feature-Flag &ldquo;Canvas Color Types and ImageData Pixel Formats&rdquo;. Der Farbraum <code>rec2100-hlg</code> wird derzeit jedoch nicht unterstützt.</p>
+<h3 id="wichtige-änderungen--neue-funktionen">Wichtige Änderungen &amp; neue Funktionen</h3>
+<ul>
+<li>Check-Funktion für <code>Float16Array</code></li>
+<li>Die Unterstützung für <code>Float16Array</code> wird nun von <a href="https://www.npmjs.com/package/@petamoriken/float16" target="_blank"><code>@petamoriken/float16</code></a> übernommen</li>
+</ul>
+<h3 id="entfernung-von-colorjsio">Entfernung von <a href="https://colorjs.io/" target="_blank"><code>colorjs.io</code></a></h3>
+<p>Obwohl <code>colorjs.io</code> für Farbraumkonvertierungen sehr hilfreich ist, vergrößert es das Paket erheblich. Da es andere Pakete für die Verarbeitung von <code>Float16</code> gibt, wurde das Paket entfernt. Wenn Sie eigene Konvertierungen benötigen, fügen Sie es Ihrem Projekt hinzu:</p>
+<pre tabindex="0"><code>npm install colorjs.io
+</code></pre><h2 id="version-011---012">Version 0.1.1 - 0.1.2</h2>
+<p>Diese Aktualisierungen waren notwendig, um diese Blogbeiträge zu reparieren:</p>
+<ul>
+<li><a href="https://christianmahnke.de/post/uv-photogrammetry/" target="_blank">UV-Photogrammetrie</a></li>
+<li><a href="https://christianmahnke.de/post/hdr-image-analysis/" target="_blank">Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung</a></li>
+</ul>
+<h3 id="011">0.1.1</h3>
+<h4 id="änderungen-an-der-initialisierung-eines-webgpu-kontexts-für-canvas">Änderungen an der Initialisierung eines <code>WebGPU</code> Kontexts für <code>canvas</code></h4>
+<p>Die Änderungen bei der Initialisierung eines <code>canvas</code> für einen Renderer werden in der <a href="https://github.com/ccameron-chromium/webgpu-hdr/blob/main/EXPLAINER.md" target="_blank">Erklärung</a> beschrieben.</p>
+<p>Die wichtigste Änderung ist die Umbenennung von „colorMetadata” in:</p>
+<pre tabindex="0"><code>toneMapping: { mode: „extended“ }
+</code></pre><h3 id="012">0.1.2</h3>
+<p>Die Farbskalierung von <code>Float16Image</code> war falsch, die Skalierung funktionierte nur für 0% - 1%.</p>
+<h2 id="version-010">Version 0.1.0</h2>
+<p>Seit den ersten Versionen ist aber ungefähr ein Jahr vergangen und die Browser-API war damals eher als experimentell zu bezeichnen. Seitdem hat sich einiges geändert – eines der Beispiele hatte in der Zwischenzeit sogar aufgehört zu funktionieren: Die wichtigste Änderung betrifft die Änderung von <code>Uint16</code> zu <code>Float16</code> als 16 Bit Pixeldatentyp für HDR.</p>
+<p>Da sich Browser schnell weiterentwickeln und der Betrieb älterer Browser aus Sicherheitsgründen nicht zu empfehlen ist (auch wenn manche das anders sehen), ist <strong>keine Abwärtskompatibilität</strong> zu erwarten.</p>
+<p>Neben den notwendigen Anpassungen bietet die neue Version auch Verbesserungen im Bereich der Dokumentation und der Beispiele.</p>
+<p>Der Code ist auf <a href="https://github.com/cmahnke/hdr-canvas" target="_blank">GitHub</a> und <a href="https://www.npmjs.com/package/hdr-canvas" target="_blank">NPM</a> zu finden.</p>
+<h3 id="die-release-notes">Die Release Notes</h3>
+<h4 id="einleitung-4">Einleitung</h4>
+<p>Seit der letzten Veröffentlichung haben sich viele Bereiche der Verarbeitung von HDR-Inhalten im Browser weiterentwickelt.
+Am auffälligsten ist sicherlich die Einführung von „Float16Array” im „ImageData”-Konstruktor:</p>
+<ul>
+<li>Die <a href="https://html.spec.whatwg.org/multipage/imagebitmap-and-animations.html#imagedataarray" target="_blank">WhatWG-Spezifikation</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageData/ImageData#syntax" target="_blank">MDN</a> und <a href="https://github.com/mdn/browser-compat-data/issues/27547" target="_blank">BCD</a>) wurden entsprechend aktualisiert. Sie können Ihren eigenen Browser mit <code>new ImageData(new Float16Array(4), 1, 1, {pixelFormat:„rgba-float16“})</code> testen.
+<ul>
+<li>Noch offen in <a href="https://bugzil.la/1958830" target="_blank">Firefox</a></li>
+<li>In <a href="https://webkit.org/b/291196" target="_blank">Safari</a> hinter einem Flag versteckt</li>
+<li>Chromium hat es ab <a href="https://source.chromium.org/chromium/chromium/src/&#43;/refs/tags/137.0.7104.0:third_party/blink/renderer/core/html/canvas/image_data.idl" target="_blank">137</a> implementiert: **Der Konstruktor <code>ImageData</code> akzeptiert nur <code>Float16Array</code> anstelle von <code>Uint16Array</code>. Dadurch werden ältere Versionen dieses Moduls überflüssig, da sie auf die Chromium-spezifische Lösung ausgerichtet waren.</li>
+<li>Wenn Safari dies standardmäßig aktiviert, wird es auch in den <a href="https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2107" target="_blank">Typescript-DOM-Typen</a> enthalten sein.</li>
+</ul>
+</li>
+</ul>
+<p>Wie <a href="https://github.com/reitowo" target="_blank">@reitowo</a> bereits angemerkt hat, gab es eine Änderung an der Methode <code>getContext(„2d“)</code>. Der Schlüssel <code>pixelFormat</code> wurde durch <code>colorType</code> ersetzt.</p>
+<p>Parallel dazu gab es Änderungen am UltraHDR-Bildformat, insbesondere bei der Kodierung der Metadaten der Gain-Map. Während dies früher in XMP erfolgte, geschieht dies nun gemäß ISO 21496-1. Dies wurde von Google und Apple in neueren Betriebssystemversionen wie Android 15 und iOS 18 übernommen, um eine plattformübergreifende Fragmentierung zu vermeiden. Die <a href="https://github.com/google/libultrahdr" target="_blank">UltraHDR-Bibliothek</a> wurde bereits so geändert, dass sie <a href="https://github.com/google/libultrahdr/blob/main/docs/building.md" target="_blank">standardmäßig das ISO-Format verwendet</a>.</p>
+<p>Derzeit weiß der ThreeJS UHDR-Loader nicht, wie er mit dieser Änderung umgehen soll, siehe <a href="https://github.com/mrdoob/three.js/issues/32293" target="_blank">mrdoob/three.js#32293</a>.</p>
+<h4 id="wichtige-änderungen-und-neue-funktionen-3">Wichtige Änderungen und neue Funktionen</h4>
+<ul>
+<li>Bessere Unterstützung für offizielle Web-APIs
+<ul>
+<li>Verwendung von <code>Float16Array</code> anstelle von <code>Uint16Array</code></li>
+<li>Verwendung der richtigen Option zur Initialisierung des 2D-Canvas-Kontexts</li>
+</ul>
+</li>
+</ul>
+<h5 id="verbesserte-dokumentation">Verbesserte Dokumentation</h5>
+<p>Die Dokumentation wurde erheblich verbessert. Es gibt jetzt auch eine <a href="https://cmahnke.github.io/hdr-canvas/" target="_blank">Website</a> mit Beispielen und API-Dokumentationen.</p>
+<h5 id="beispiele">Beispiele</h5>
+<p>Die Beispiele aus dem Blog sind nun Teil dieses Repositorys:</p>
+<ul>
+<li><a href="tests/site/assets/ts/hdr-three.js.ts"><code>tests/site/assets/ts/hdr-three.js.ts</code></a> – Three JS mit HDR-Textur</li>
+<li><a href="tests/site/assets/ts/image-slider.ts"><code>tests/site/assets/ts/image-slider.ts</code></a> – Generierte HDR-Inhalte</li>
+<li><a href="tests/site/assets/ts/main.ts"><code>tests/site/assets/ts/main.ts</code></a> – Funktionserkennung</li>
+</ul>
+<p>Diese Beispiele sind auch auf der neuen <a href="https://cmahnke.github.io/hdr-canvas/" target="_blank">Dokumentationsseite</a> verfügbar.</p>
+<h4 id="einflussnahme">Einflussnahme</h4>
+<p>Da die Änderungen der WhatWG noch nicht übernommen worden waren, mussten einige Probleme in den entsprechenden Repositories angesprochen werden.</p>
+<ul>
+<li><a href="https://github.com/mdn/content/issues/40639" target="_blank">mdn/content#40639</a></li>
+<li><a href="https://github.com/mdn/browser-compat-data/issues/27547" target="_blank">mdn/browser-compat-data#27547</a></li>
+<li><a href="https://github.com/microsoft/TypeScript-DOM-lib-generator/issues/2107" target="_blank">microsoft/TypeScript-DOM-lib-generator#2107</a></li>
+<li><a href="https://github.com/mrdoob/three.js/issues/32293" target="_blank">mrdoob/three.js#32293</a>.</li>
+</ul>
+<h1 id="update-13102026">Update 13.10.2026</h1>
+<p>Wie bereits <a href="https://christianmahnke.de/post/npm-org/">angekündigt</a> wurde <code>hdr-canvas</code> in <a href="https://www.npmjs.com/@projektemacher/hdr-canvas" target="_blank"><code>@projektemacher/hdr-canvas</code></a> unbenannt.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Entitäten in diesem Beitrag (Wikidata)</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q106239881" title="High Dynamic Range" rel="related">Wikidata Eintrag: High Dynamic Range</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q110650833" title="16-bit unsigned integer data type" rel="related">Wikidata Eintrag: 16-bit unsigned integer data type</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q116963687" title="@petamoriken/float16" rel="related">Wikidata Eintrag: @petamoriken/float16</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q136933249" title="gain map" rel="related">Wikidata Eintrag: gain map</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q2005" title="JavaScript" rel="related">Wikidata Eintrag: JavaScript</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q28957081" title="WebGPU" rel="related">Wikidata Eintrag: WebGPU</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q3525922" title="Three.js" rel="related">Wikidata Eintrag: Three.js</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q5439690" title="Feature Toggle" rel="related">Wikidata Eintrag: Feature Toggle</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q615940" title="WHATWG" rel="related">Wikidata Eintrag: WHATWG</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q6368" title="Webbrowser" rel="related">Wikidata Eintrag: Webbrowser</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q7067518" title="npm" rel="related">Wikidata Eintrag: npm</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q79534" title="Chromium OS" rel="related">Wikidata Eintrag: Chromium OS</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q978185" title="TypeScript" rel="related">Wikidata Eintrag: TypeScript</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Diesen Beitrag zitieren
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2025)</span>: <span class="cite-title">hdr-canvas aktualisiert</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], 30.11.2025. Online-Publikation: <a class="cite-link" href="https://christianmahnke.de/post/hdr-canvas-updated/">https://christianmahnke.de/post/hdr-canvas-updated/</a>.
+    </div><a class="bibtex-download" href="https://christianmahnke.de/post/hdr-canvas-updated/citation.bib" title="Als BibTex herunterladen">Als BibTex herunterladen</a></div>
+</details>
+</div><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/JavaScript" title="JavaScript">#JavaScript</a><a href="https://christianmahnke.de/tags/HDR" title="HDR">#HDR</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-canvas-js/">JavaScript Bibliothek für HDR</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/paper-tiger-print-css/">Papiertiger CSS für den Druck</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/hdr-iiif-vips/">HDR IIIF für alle mit VIPS</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/vite-git-symlink-plugin/">Vite und Git Symlink-Dateien</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/wallpaper-generator/">Virtuelle Räume tapezieren!</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </div><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h3 class="footer-nav">Navigation</h3>
+                    <nav class="top top-menu" aria-label="Hauptnavigation">
+    <input type="checkbox" id="menu-toggle" aria-label="Hauptnavigation" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon" aria-hidden="true"></i></label>
+    <ul class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog" aria-current="page">Blog<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button"><i class="search-icon"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/hdr-canvas-updated/" title="English" hreflang="en" lang="en">English</a>
+            </li></ul>
+  </nav>
+                </div>
+            </div>
+            <div class="link-wrapper">
+                <h3 class="footer-links">Links</h3>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" rel="me" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" rel="me" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" rel="me" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" rel="me" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" rel="me" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li><li class="footer-link"><a href="http://npmjs.com/org/projektemacher"  target="_blank" title="NPM" style="display: none;"><div class="link-image npm"></div>NPM</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h3 class="footer-contact">Kontakt</h3><div class="footer-contact"><h4 class="contact-link">Mail</h4><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h3 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h3>
+                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</h1>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded",e=>{document.querySelector(".type-text")&&!document.querySelector(".subsection")?window.enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&window.enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop").removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head").classList.add("show-top-button"):document.querySelector("#head").classList.remove("show-top-button")})})})
+</script>
+</div>
+    </body>
+ </html>
