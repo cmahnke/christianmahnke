@@ -1871,6 +1871,16 @@ a:visited {
                 display: flex;
             }
 
+            /* Footer headings were demoted from h3 to h2 (heading order); keep the old h3 look */
+            h2.footer-nav,
+            h2.footer-links,
+            h2.footer-contact,
+            h2.footer-privacy {
+                font-size: 1.17em;
+                margin-block: 1em;
+            }
+
+
             .menu-wrapper,
             .link-wrapper,
             .contact-wrapper {

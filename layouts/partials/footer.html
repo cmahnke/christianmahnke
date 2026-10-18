@@ -4,12 +4,12 @@
         <div class="wrapper">
             <div class="menu-wrapper">
                 <div class="footer-nav">
-                    <h3 class="footer-nav">{{ i18n "footerNavHeading" }}</h3>
+                    <h2 class="footer-nav">{{ i18n "footerNavHeading" }}</h2>
                     {{- partial "menu.html" (dict "page" . "idPrefix" "footer-" "label" (i18n "footerNavigation") "enhance" false) -}}
                 </div>
             </div>
             <div class="link-wrapper">
-                <h3 class="footer-links">{{ i18n "footerLinksHeading" }}</h3>
+                <h2 class="footer-links">{{ i18n "footerLinksHeading" }}</h2>
                 <ul class="footer-links">
                     {{- range .Site.Params.links -}}
                         <li class="footer-link">{{- . | safeHTML -}}</li>
@@ -18,11 +18,11 @@
             </div>
             <div class="footer-placeholder"></div>
             <div class="contact-wrapper">
-                <h3 class="footer-contact">{{ i18n "footerContactHeading" }}</h3>
+                <h2 class="footer-contact">{{ i18n "footerContactHeading" }}</h2>
                 {{- range .Site.Params.contacts -}}
                     <div class="footer-contact">{{- . | safeHTML -}}</div>
                 {{- end -}}
-                <h3 class="footer-privacy"><a href="/privacy" title="{{ i18n "privacyPolicy" }}">{{ i18n "privacyPolicy" }}</a></h3>
+                <h2 class="footer-privacy"><a href="/privacy" title="{{ i18n "privacyPolicy" }}">{{ i18n "privacyPolicy" }}</a></h2>
                 <p class="footer-title"><img class="footer-icon" alt="Projektemacher.org" src="{{ .Site.Params.monogramblack }}">{{- .Site.Title -}}</p>
             </div>
         </div>
