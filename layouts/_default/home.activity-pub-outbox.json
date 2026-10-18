@@ -7,15 +7,15 @@
   "type": "OrderedCollection",
   {{- with .Site.Params.activitypub -}}
     {{- if and  (isset . "outbox") (ne .outbox "") -}}
-      "outbox": "{{ $.Site.BaseURL }}{{ .outbox }}",
+      "id": "{{ $.Site.BaseURL }}{{ .outbox }}",
     {{- end -}}
 
     {{- $actor := "" -}}
     {{- if and (isset . "author") (ne .author "") -}}
-      {{- $actor = printf "%s%s" $.Site.BaseURL .author -}}
+      {{- $actor = printf "%s@%s.json" $.Site.BaseURL .author -}}
     {{- end -}}
 
-    {{- $pages := where $.Site.Pages "Section" "post" -}}
+    {{- $pages := where $.Site.RegularPages "Section" "post" -}}
     {{- $pages = where $pages "Params.displayinlist" "!=" false -}}
     "totalItems": {{ (len $pages) }},
     "orderedItems": [

@@ -23,24 +23,18 @@ Grundsätzlich nicht wirklich schwer, zu mal es auch einige Artikel zu dem Thema
 
 # Umsetzung
 
+Die Seite stellt drei Dateien bereit:
 
+* `/.well-known/webfinger` – statische JRD-Datei, die `acct:cmahnke@christianmahnke.de` auflöst und auf den Actor verweist
+* `/@cmahnke.json` – ein statisches ActivityStreams-`Person`-Objekt, das als Profil dient und auf den echten Mastodon-Account unter [openbiblio.social](https://openbiblio.social/@cmahnke) verlinkt
+* `/outbox.json` – eine `OrderedCollection`, die die Blogartikel als `Create`/`Note`-Objekte auflistet
 
-```
-...
-content-type: application/octet-stream
-...
-```
+Umgesetzt ist das über eigene [Output-Formates](https://gohugo.io/templates/output-formats/) in Hugo (`activity-pub-actor` und `activity-pub-outbox` mit dem Medientyp `application/activity+json`), die Dateien werden also direkt beim Build erzeugt.
 
+# Grenzen
+
+Da die Seite rein statisch ausgeliefert wird, fehlt jeder serverseitige Teil des Protokolls: Es gibt kein `inbox`-Endpunkt, daher sind Folgen, Erwähnungen, Antworten und Löschen nicht möglich. Der Actor dient also nur zur Auffindbarkeit und verweist auf den echten Mastodon-Account. Auch werden die Beiträge aus der Outbox nicht automatisch in Mastodon-Timelines nachgeladen – dort bleiben die Artikel über den echten Account sichtbar.
 
 # Tests
 
-Um die Webfinger
-
-https://git.qoto.org/fedipage/fedipage/
-
-https://socialhub.activitypub.rocks/t/fedipage-v2-1-0-released-a-hugo-based-static-site-generator-with-activitypub-support/3659
-https://justingarrison.com/blog/2022-12-06-mastodon-files-instance/
-https://maho.dev/2024/02/a-guide-to-implementing-activitypub-in-a-static-site-or-any-website-part-4/
-
-
-https://webfinger.net/lookup/
+Die Webfinger-Auflösung lässt sich unter https://webfinger.net/lookup/ prüfen.

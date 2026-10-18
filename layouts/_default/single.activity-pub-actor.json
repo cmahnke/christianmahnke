@@ -1,15 +1,29 @@
 {
-    "@context": "https://www.w3.org/ns/activitystreams",
+    "@context": [
+        "https://www.w3.org/ns/activitystreams",
+        {
+          "ostatus": "http://ostatus.org#",
+          "atomUri": "ostatus:atomUri",
+          "inReplyToAtomUri": "ostatus:inReplyToAtomUri",
+          "conversation": "ostatus:conversation",
+          "sensitive": "as:sensitive",
+          "toot": "http://joinmastodon.org/ns#",
+          "votersCount": "toot:votersCount",
+          "expiry": "toot:expiry",
+          "Hashtag": "as:Hashtag"
+        }
+      ],
     "type": "Person",
-    "url": "{{ .Site.BaseURL }}",
+    "url": "{{ .Site.Params.social.mastodon.profilelink }}",
     "discoverable": true,
-    "name": "{{ .Site.Title }}",
+    "inbox": "{{ $.Site.BaseURL }}inbox",
+    "name": "{{ .Site.Params.author.name }}",
     {{- with .Site.Params.Description -}}
       "summary": "{{ . }}",
     {{- end -}}
     {{- with .Site.Params.activitypub -}}
       {{- if and (isset . "author") (ne .author "") -}}
-        "id": "{{ $.Site.BaseURL }}@{{ .author }}",
+        "id": "{{ $.Site.BaseURL }}@{{ .author }}.json",
         "preferredUsername": "{{ .author }}",
       {{- end -}}
       {{- if and  (isset . "outbox") (ne .outbox "") -}}

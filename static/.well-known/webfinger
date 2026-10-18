@@ -1,7 +1,8 @@
 {
     "subject": "acct:cmahnke@christianmahnke.de",
     "aliases": [
-      "https://christianmahnke.de/@cmahnke"
+      "https://christianmahnke.de/@cmahnke.json",
+      "https://openbiblio.social/@cmahnke"
     ],
     "links": [
       {
@@ -12,7 +13,7 @@
       {
         "rel": "http://webfinger.net/rel/profile-page",
         "type": "text/html",
-        "href": "https://christianmahnke.de/"
+        "href": "https://openbiblio.social/@cmahnke"
       }
     ]
 }
