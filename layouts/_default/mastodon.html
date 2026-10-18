@@ -14,7 +14,7 @@
     {{- $render = printf "tag-%s" (.Params.render) -}}
   {{- end -}}
   {{- partial "header.html" . -}}
-    <div class="content-container mastodon">
+    <div class="content-container mastodon" id="main-content">
       {{- $posts := where .Site.Pages "Section" "mastodon" -}}
       {{- $mainSite := hugo.Sites.Default -}}
       {{- if ne $mainSite .Site -}}

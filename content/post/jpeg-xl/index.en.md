@@ -6,7 +6,7 @@ tags:
 - Projektemacher.org
 - IIIF
 - VIPS
-iiifContext: http://iiif.io/api/presentation/2/context.json
+iiifcontext: http://iiif.io/api/presentation/3/context.json
 outputs:
   - html
   - iiif-manifest

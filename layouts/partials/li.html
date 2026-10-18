@@ -20,7 +20,7 @@
           {{ .Summary }}
         </div>
         <div class="meta">
-            <a class="readmore" href="{{ .RelPermalink}}" title="{{ i18n "readmore" }}"><button class="button-gradient animated">{{ i18n "readmore" }}</button></a>
+            <a class="readmore" href="{{ .RelPermalink }}" aria-label="{{ i18n "readmore" }}: {{ .Title }}"><button class="button-gradient animated" aria-hidden="true" tabindex="-1">{{ i18n "readmore" }}</button></a>
             {{ partial "meta/tags.html" . }}
         </div>
     </div>

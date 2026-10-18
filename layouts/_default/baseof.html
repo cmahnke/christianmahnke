@@ -75,11 +75,12 @@
     {{- end -}}
 
     <body class="{{ $class }} {{ if .IsHome }}home{{ end }} ">
-      <a name="top"></a>
+      <a class="skip-link" href="#main-content">{{ i18n "skipToContent" }}</a>
+      <a name="top" id="top"></a>
       <div class="page-wrapper">
-        <div class="main">
+        <main class="main" id="main">
           {{ block "content" . }}{{ end }}
-        </div>
+        </main>
         {{- $footer := "footer.html" -}}
         {{- if and (ne $outputFormat "") (ne $outputFormat "html")  -}}
           {{- $footerTemplate := printf "partials/%s-footer.html" $outputFormat -}}

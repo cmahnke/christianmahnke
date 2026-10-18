@@ -120,3 +120,16 @@ other = "Niedersachsen"
 
 [_Goettingen]
 other = "Göttingen"
+
+# Accessibility
+[skipToContent]
+other = "Zum Inhalt springen"
+
+[backToTop]
+other = "Zum Seitenanfang"
+
+[scrollDown]
+other = "Weiter nach unten"
+
+[enlargeImage]
+other = "Bild vergrößern:"

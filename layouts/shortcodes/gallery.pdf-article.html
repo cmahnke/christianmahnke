@@ -8,14 +8,14 @@
   {{- range $image := $image -}}
     {{- $imgRes := $.Page.Resources.Get $image.src -}}
     {{- $alt := "" -}}
-    {{- $alt = $image.alt -}}
+    {{- $alt = $image.alt | default "" -}}
     {{- $scalePreview := true -}}
     {{- if isset $image "scalePreview" -}}
       {{- $scalePreview = $image.scalePreview -}}
     {{- end -}}
     {{- with $imgRes -}}
 
-      <a class="gallery-image {{ if ne $alt "" }}caption{{ end }}" href="{{ $image.src }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank">
+      <a class="gallery-image {{ if ne $alt "" }}caption{{ end }}" href="{{ $image.src }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank"{{ if eq $alt "" }} aria-label="{{ i18n "enlargeImage" }} {{ path.BaseName $image.src }}"{{ end }}>
         {{- $preview := "" -}}
         {{- if gt .Width 2048 -}}
           {{- $preview = $imgRes.Resize (printf "%dx webp picture" 2048) -}}

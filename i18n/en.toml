@@ -120,3 +120,16 @@ other = "Lower Saxony"
 
 [_Goettingen]
 other = "Göttingen"
+
+# Accessibility
+[skipToContent]
+other = "Skip to content"
+
+[backToTop]
+other = "Back to top"
+
+[scrollDown]
+other = "Scroll down"
+
+[enlargeImage]
+other = "Enlarge image:"

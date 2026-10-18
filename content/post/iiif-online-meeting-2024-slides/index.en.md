@@ -11,8 +11,6 @@ tags:
 - Conference
 - HDR
 - Recording
-js:
-  - js/pdf-viewer.js
 wikidata:
   - https://www.wikidata.org/wiki/Q1543677
   - https://www.wikidata.org/wiki/Q110611535

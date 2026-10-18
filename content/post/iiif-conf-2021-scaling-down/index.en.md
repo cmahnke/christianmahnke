@@ -10,8 +10,6 @@ tags:
 - IIIF
 - Conference
 - Recording
-js:
-  - js/pdf-viewer.js
 ---
 Today I gave my talk about the infrastructure of my blogs at this year's IIIF conference.
 

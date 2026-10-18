@@ -11,8 +11,6 @@ tags:
 - Talk
 - HDR
 - Recording
-js:
-  - js/pdf-viewer.js
 ---
 
 Nach dem [Lightning Talk](/post/iiif-online-meeting-2024-slides/) letztes Jahr, nun der nächste Schritt...

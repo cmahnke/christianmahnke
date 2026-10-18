@@ -16,7 +16,7 @@
     {{- $class = printf "%s %s" $class .Params.theme -}}
     {{- $theme = printf "themes/%s.html" .Params.theme -}}
   {{- end -}}
-  <div class="{{ $class | safeCSS }}">
+  <div class="{{ $class | safeCSS }}" id="main-content">
     {{- partial $theme . -}}
   </div>
 {{ end }}

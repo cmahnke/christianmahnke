@@ -27,13 +27,13 @@
 
 <img-comparison-slider class="compare script" id="{{ $id }}">
   <figure slot="first" class="first">
-    <img width="100%" src="{{ $image1.RelPermalink }}">
+    <img width="100%" src="{{ $image1.RelPermalink }}" alt="{{ $caption1 }}">
     {{- if ne $caption1 "" -}}
       <figcaption>{{ $caption1 | safeHTML }}</figcaption>
     {{- end -}}
   </figure>
   <figure slot="second" class="second">
-    <img width="100%" src="{{ $image2.RelPermalink }}">
+    <img width="100%" src="{{ $image2.RelPermalink }}" alt="{{ $caption2 }}">
     {{- if ne $caption2 "" -}}
       <figcaption>{{ $caption2 | safeHTML }}</figcaption>
     {{- end -}}

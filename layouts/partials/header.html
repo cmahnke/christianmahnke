@@ -7,7 +7,7 @@
             {{ partial "menu.html" . }}
         </div>
         <div class="home-link">
-            <a href="/"><h1 class="header-title">{{ $.Site.Title }}</h1></a>
+            <a href="/" aria-label="{{ $.Site.Title }}"><h1 class="header-title" aria-hidden="true">{{ $.Site.Title }}</h1></a>
         </div>
 
         {{- $subtitle := .Params.subtitle | default "" -}}
@@ -16,7 +16,7 @@
         {{- end -}}
     </div>
     <div class="header-spacer"></div>
-    <a href="#top">
-        <div class="backToTop"></div>
+    <a href="#top" aria-label="{{ i18n "backToTop" }}">
+        <div class="backToTop" aria-hidden="true"></div>
     </a>
 </header>

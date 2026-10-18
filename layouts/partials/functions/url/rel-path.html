@@ -1,0 +1,43 @@
+{{ $from := .from | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}
+{{ $to := .to | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}
+
+{{ $fromSegs := split $from "/" }}
+{{ $toSegs := split $to "/" }}
+
+{{/* Handle root/empty path segments */}}
+{{ if eq $from "" }}{{ $fromSegs = slice }}{{ end }}
+{{ if eq $to "" }}{{ $toSegs = slice }}{{ end }}
+
+{{/* Find common prefix length */}}
+{{ $common := 0 }}
+{{ $minLen := len $fromSegs }}
+{{ if lt (len $toSegs) $minLen }}{{ $minLen = len $toSegs }}{{ end }}
+
+{{ if gt $minLen 0 }}
+  {{ range $i := seq 0 (sub $minLen 1) }}
+    {{ if and (eq $common $i) (eq (index $fromSegs $i) (index $toSegs $i)) }}
+      {{ $common = add $common 1 }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Up-steps needed to reach common ancestor */}}
+{{ $upCount := sub (len $fromSegs) $common }}
+{{ $upPath := "" }}
+{{ if gt $upCount 0 }}
+  {{ range seq $upCount }}
+    {{ $upPath = print $upPath "../" }}
+  {{ end }}
+{{ end }}
+
+{{/* Down-steps to target path (replacing 'subslice' with 'after') */}}
+{{ $downSegs := after $common $toSegs }}
+{{ $downPath := delimit $downSegs "/" }}
+
+{{/* Assemble final path */}}
+{{ $result := print $upPath $downPath }}
+{{ if eq $result "" }}
+  {{ $result = "." }}
+{{ end }}
+
+{{ return $result }}

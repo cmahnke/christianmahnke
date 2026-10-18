@@ -1,0 +1,78 @@
+{{- /* Local override of the theme menu partial, based on the upstream
+       progressively enhanced version (checkbox hack as no-JS fallback +
+       assets/ts/menu.ts enhancement), extended by:
+       - dict context support: { "page": <context>, "idPrefix": "footer-",
+         "label": "Fußzeilen-Navigation" } — unique IDs when the menu is
+         rendered twice (header and footer) on the same page
+       - the footer nav omits the `top-menu` class, so the menu enhancement
+         only targets the header menu, and its script is only emitted there */ -}}
+{{- $page := . -}}
+{{- $idPrefix := "" -}}
+{{- $label := i18n "mainNavigation" -}}
+{{- $enhance := true -}}
+{{- if reflect.IsMap . -}}
+    {{- $page = .page -}}
+    {{- with .idPrefix -}}{{- $idPrefix = . -}}{{- end -}}
+    {{- with .label -}}{{- $label = . -}}{{- end -}}
+    {{- if isset . "enhance" -}}{{- $enhance = .enhance -}}{{- end -}}
+{{- end -}}
+{{- $menuClass := "" -}}
+{{- if $enhance -}}{{- $menuClass = " top-menu" -}}{{- end -}}
+
+{{- if or $page.Site.Menus.main hugo.IsMultilingual -}}
+  {{- $basePath := "" -}}
+  {{- if and (ne $page.File nil) (ne $page.File.Dir nil) -}}
+    {{- $basePath = trim $page.File.Dir "/" -}}
+  {{- end -}}
+  {{- $basePath = replaceRE "^(.*)/.*$" "$1" $basePath -}}
+  <nav class="top{{ $menuClass }}" aria-label="{{ $label }}" data-menu-open-label="{{ i18n "openNavigation" }}" data-menu-close-label="{{ i18n "closeNavigation" }}">
+    {{/* Checkbox hack kept as the no-JS fallback; assets/ts/menu.ts replaces
+        the label with a real <button> and takes over state handling. */}}
+    <input type="checkbox" id="{{ $idPrefix }}menu-toggle" aria-label="{{ $label }}" />
+    <label class="menu-button float-right" for="{{ $idPrefix }}menu-toggle"><i class="menu-icon" aria-hidden="true"></i></label>
+    <ul id="{{ $idPrefix }}main-navigation-list" class="navigation-list">
+      {{- with $page.Site.Menus.main -}}
+        {{- range sort . -}}
+          {{- if and .Params.draft (not site.BuildDrafts) -}}
+            {{- continue -}}
+          {{- end -}}
+          {{- $class := trim (path.Base .URL) "/" -}}
+          {{- $class = replaceRE "^/$" "root" $class -}}
+          {{- $class = printf "navto-%s" $class -}}
+          {{- $current := false -}}
+          {{- if eq (trim (path.Base .URL) "/") $basePath -}}
+            {{- $class = printf "current %s" $class -}}
+            {{- $current = true -}}
+          {{- end -}}
+          <li class="navigation-item {{ $class }}">
+            {{- if not .Params.html -}}
+              <a class="navigation-link" href="{{ .URL | absLangURL }}" title="{{ .Name }}"{{ if $current }} aria-current="page"{{ end }}>{{ .Name }}<i class="link-icon" aria-hidden="true"></i></a>
+            {{- else -}}
+              {{- /* Strip fixed IDs from injected HTML (e.g. the search form) to avoid duplicates */ -}}
+              {{- if eq $idPrefix "" -}}
+                {{- .Name | safeHTML -}}
+              {{- else -}}
+                {{- replaceRE "(id=\")menu-" (printf "${1}%smenu-" $idPrefix) .Name | safeHTML -}}
+              {{- end -}}
+            {{- end -}}
+          </li>
+        {{- end -}}
+      {{- end -}}
+      {{- if hugo.IsMultilingual -}}
+        {{- range (default $page.Site.Home.AllTranslations $page.Translations) -}}
+          {{- if ne $.Site.Language .Language -}}
+            <li class="navigation-item lang">
+              <a href="{{ .Permalink }}" title="{{ .Language.Label }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}">{{ .Language.Label }}</a>
+            </li>
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    </ul>
+  </nav>
+  {{- if $enhance -}}
+    {{- with resources.Get "ts/menu.ts" -}}
+      {{- $menuJs := . | js.Build (dict "targetPath" "js/menu.js" "minify" (cond hugo.IsDevelopment false true) "sourceMap" (cond hugo.IsDevelopment "linked" "none")) | fingerprint -}}
+      <script defer src="{{ $menuJs.RelPermalink }}" integrity="{{ $menuJs.Data.Integrity | html }}"></script>
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

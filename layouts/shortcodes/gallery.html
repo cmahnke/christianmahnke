@@ -8,7 +8,7 @@
   {{- range $image := $image -}}
     {{- $imgRes := $.Page.Resources.Get $image.src -}}
     {{- $alt := "" -}}
-    {{- $alt = $image.alt -}}
+    {{- $alt = $image.alt | default "" -}}
     {{- $scalePreview := true -}}
     {{- if isset $image "scalePreview" -}}
       {{- $scalePreview = $image.scalePreview -}}
@@ -19,7 +19,7 @@
         {{- $full = .Process "webp" -}}
       {{- end -}}
 
-      <a class="gallery-image {{ if ne $alt "" }}caption{{ end }}" href="{{ $full.RelPermalink }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank">
+      <a class="gallery-image {{ if ne $alt "" }}caption{{ end }}" href="{{ $full.RelPermalink }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank"{{ if eq $alt "" }} aria-label="{{ i18n "enlargeImage" }} {{ path.BaseName $image.src }}"{{ end }}>
         {{- $preview := $imgRes.Resize (printf "%sx webp picture" $previewWidth) -}}
         {{- if (not $scalePreview) -}}
           {{- $preview = $imgRes -}}

@@ -172,10 +172,6 @@ $box-bg-color: #ff5477bb;
       position: relative;
       user-select: none;
 
-      &::-webkit-details-marker {
-        display: none;
-      }
-
       &::before {
         text-align: start;
         content: "▶";

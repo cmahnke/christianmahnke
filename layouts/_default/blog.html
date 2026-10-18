@@ -13,7 +13,7 @@
     {{- $render = printf "tag-%s" (.Params.render) -}}
   {{- end -}}
   {{- partial "header.html" . -}}
-    <div class="content-container blog">
+    <div class="content-container blog" id="main-content">
       {{- $pages := where .Site.Pages "Section" "post" -}}
       {{- $updatedPages := where $pages "Params.lastmod" "!=" nil -}}
       {{- $mainSite := hugo.Sites.Default -}}
@@ -95,12 +95,12 @@
       <div class="pagination">
         <div class="pagination-links">
           {{- if $paginator.HasPrev -}}
-            <a class="pagination-prev" href="{{ $paginator.Prev.URL }}">&#x25c0;&#xfe0e; {{ i18n "next_page" }}</a>
+            <a class="pagination-prev" href="{{ $paginator.Prev.URL }}"><span aria-hidden="true">&#x25c0;&#xfe0e;</span> {{ i18n "previous_page" }}</a>
           {{- else -}}
             <div class="pagination-prev"></div>
           {{- end }}
           {{- if $paginator.HasNext -}}
-            <a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "previous_page" }} &#x25b6;&#xfe0e;</a>
+            <a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "next_page" }} <span aria-hidden="true">&#x25b6;&#xfe0e;</span></a>
           {{- else -}}
             <div class="pagination-next"></div>
           {{- end -}}

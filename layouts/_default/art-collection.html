@@ -136,7 +136,7 @@
         const num = Math.ceil(Math.random() * totalCount);
         //artCollectionElem.style.cssText = `--bg-image: url(/images/art-collection-bg-${num}.webp)`;
       </script>
-      <div class="content-container art-collection">
+      <div class="content-container art-collection" id="main-content">
         <div class="section-head">
           <div class="parallax-bg">
             {{- $pageTitle := .Title -}}
@@ -234,7 +234,7 @@
       {{- end -}}
 
     {{- else -}}
-      <div class="content-container art-collection">
+      <div class="content-container art-collection" id="main-content">
         <p class="no-results">
           No posts found!
         </p>

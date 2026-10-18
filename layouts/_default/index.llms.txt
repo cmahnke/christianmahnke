@@ -1,0 +1,64 @@
+{{- with .Site.Params.robots -}}
+  {{- if .llmsTXT -}}
+
+# {{ site.Title }}
+> {{ site.Params.Description | default "Inhalte" }}
+
+{{/*
+## Kerninhalte
+
+{{ $corePages := (where site.RegularPages "Section" "ne" "post") -}}
+{{- range (where (where $corePages "Params.robots.noindex" "ne" true) "Params.sitemap.disable" "ne" true) | first 20 -}}
+- [{{ .Title }}]({{ .Permalink }}): {{ .Summary | plainify | truncate 150 }}
+{{ end }}
+
+## Blog / Updates
+{{- $blogPages := (where site.RegularPages "Section" "post") -}}
+{{- range (where (where $blogPages "Params.robots.noindex" "ne" true) "Params.sitemap.disable" "ne" true) | first 30 -}}
+- [{{ .Title }}]({{ .Permalink }}) ({{ .Date.Format "02.01.2006" }})
+{{ end }}
+*/}}
+
+{{ range (where (sort site.RegularPages "Weight" "asc" "Date" "desc" "Lastmod" "desc") "Params.sitemap_exclude" "ne" true) -}}
+  {{ if and .Title .RelPermalink -}}
+    - [{{ .Title }}]({{ (.OutputFormats.Get "html").Permalink }}): {{ .Description }}
+  {{ end -}}
+{{ end -}}
+
+{{/* Sections */}}
+{{ range (where (sort ((site.GetPage "/").Sections) "Weight" "asc" "Date" "desc" "Lastmod" "desc") "Params.sitemap_exclude" "ne" true) -}}
+{{ with .Title -}}
+    ## {{ . }}
+{{- end }}
+
+{{ with .Description -}}
+    > {{ . }}
+{{- end }}
+
+{{ range (where (sort .Pages "Weight" "asc" "Date" "desc" "Lastmod" "desc") "Params.sitemap_exclude" "ne" true) -}}
+    {{ if and .Title .RelPermalink -}}
+        - [{{ .Title }}]({{ .Permalink }}){{ with .Description }}: {{ . }}{{ end }}
+    {{- end }}
+{{ end -}}
+
+{{/* Sub-Sections */}}
+{{ range (where (sort .Sections "Weight" "asc" "Date" "desc" "Lastmod" "desc") "Params.sitemap_exclude" "ne" true) -}}
+{{ with .Title -}}
+    ### {{ . }}
+{{- end }}
+
+{{ with .Description -}}
+    > {{ . }}
+{{- end }}
+
+{{ range (where (sort .Pages "Weight" "asc" "Date" "desc" "Lastmod" "desc") "Params.sitemap_exclude" "ne" true) -}}
+    {{ if .Title -}}
+        - [{{ .Title }}]({{ (.OutputFormats.Get "html").Permalink }}){{ with .Description }}: {{ . }}{{ end }}
+    {{- end }}
+{{ end }}
+{{ end -}}
+
+{{ end -}}
+
+  {{- end -}}
+{{- end -}}

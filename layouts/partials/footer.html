@@ -5,7 +5,7 @@
             <div class="menu-wrapper">
                 <div class="footer-nav">
                     <h3 class="footer-nav">{{ i18n "footerNavHeading" }}</h3>
-                    {{ partial "menu.html" . }}
+                    {{- partial "menu.html" (dict "page" . "idPrefix" "footer-" "label" (i18n "footerNavigation") "enhance" false) -}}
                 </div>
             </div>
             <div class="link-wrapper">
@@ -23,7 +23,7 @@
                     <div class="footer-contact">{{- . | safeHTML -}}</div>
                 {{- end -}}
                 <h3 class="footer-privacy"><a href="/privacy" title="{{ i18n "privacyPolicy" }}">{{ i18n "privacyPolicy" }}</a></h3>
-                <h1 class=footer-title><img class="footer-icon" alt="Projektemacher.org" src="{{ .Site.Params.monogramblack }}">{{- .Site.Title -}}</h1>
+                <p class="footer-title"><img class="footer-icon" alt="Projektemacher.org" src="{{ .Site.Params.monogramblack }}">{{- .Site.Title -}}</p>
             </div>
         </div>
     </div>
