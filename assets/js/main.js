@@ -1,5 +1,5 @@
-import { addConsent } from './iframe-consent';
-import { initMap } from './maps/osm-map.js';
+import { addConsent } from '../ts/iframe-consent.ts';
+import { initMap } from '../ts/maps/osm-map.ts';
 import { checkLinksForQClasses } from './wikidata';
 
 import stickybits from 'stickybits'

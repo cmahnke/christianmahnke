@@ -9,7 +9,7 @@ sitemap:
 js:
   - ts/portrait.ts
 preload:
-  - /about/contact/self-potrait.jpg
+  - /about/contact/self-portrait.jpg
 cascade:
   - target:
       kind: section
