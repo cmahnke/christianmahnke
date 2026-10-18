@@ -1,5 +1,7 @@
+[pagination]
+  pagerSize = 5
+
 [params]
-  paginate = 5
   copyrightYears = "MMXX - MMXXVI"
   enableBlogPost = true
   enableTOC = true
@@ -52,7 +54,7 @@
 
 [params.preview]
     outputPrefix = "ogPreview"
-    outputSuffix = ".png"
+    outputSuffix = ".webp"
     format =  "svg"
     image = "front.png"
     source = "post"
@@ -63,6 +65,8 @@
         template = "./Source Files/Other/preview-template.svg"
         scale = "width"
         removeMissing = true
+    [params.preview.og]
+        format = "webp"
 
 [params.activitypub]
     author = "cmahnke"

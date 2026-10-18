@@ -1,27 +1,28 @@
+{{- $page := .page -}}
 {{- $class := "" -}}
-{{- if ne .Params.type nil -}}
-    {{- $class = .Params.type -}}
+{{- if ne $page.Params.type nil -}}
+    {{- $class = $page.Params.type -}}
 {{- end -}}
 
-{{- $class = printf "%s %s" $class (.Scratch.Get "class") -}}
+{{- $class = printf "%s %s" $class (.oddEven | default "") -}}
 <div class="post {{ $class }}">
     <div class="content">
-        <h2 class="post-title"><a class="readmore" href="{{ .RelPermalink}}" title="{{ i18n "readmore" }}">{{ .Title }}</a></h2>
+        <h2 class="post-title"><a class="readmore" href="{{ $page.RelPermalink}}" title="{{ i18n "readmore" }}">{{ $page.Title }}</a></h2>
         <div class="post-date">
-          {{- .Date | time.Format ":date_full" -}}
+          {{- $page.Date | time.Format ":date_full" -}}
         </div>
         <div class="post-body">
-          {{- with .Params.description -}}
+          {{- with $page.Params.description -}}
             <div class="post-description">
               {{- . -}}
             </div>
           {{- end -}}
-          {{- partialCached "preview.html" . .RelPermalink -}}
-          {{ .Summary }}
+          {{- partialCached "preview.html" $page $page.RelPermalink -}}
+          {{ $page.Summary }}
         </div>
         <div class="meta">
-            <a class="readmore" href="{{ .RelPermalink }}" aria-label="{{ i18n "readmore" }}: {{ .Title }}"><button class="button-gradient animated" aria-hidden="true" tabindex="-1">{{ i18n "readmore" }}</button></a>
-            {{ partial "meta/tags.html" . }}
+            <a class="readmore" href="{{ $page.RelPermalink }}" aria-label="{{ i18n "readmore" }}: {{ $page.Title }}"><button class="button-gradient animated" aria-hidden="true" tabindex="-1">{{ i18n "readmore" }}</button></a>
+            {{ partial "meta/tags.html" $page }}
         </div>
     </div>
 </div>

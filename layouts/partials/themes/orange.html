@@ -17,7 +17,7 @@
     {{- $nav = replaceRE "^/$" "root" $nav -}}
     {{- $class = printf "section-%s %s section-%d" $nav $class $i -}}
 
-    {{- $id := substr (md5 $class) 0 8 -}}
+    {{- $id := strings.Substr (md5 $class) 0 8 -}}
     {{- partial "check-section-includes.html" . -}}
 
     {{- if ne .Content "" -}}
