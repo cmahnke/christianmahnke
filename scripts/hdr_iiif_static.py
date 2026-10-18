@@ -23,7 +23,7 @@ from manipulator_uhdr_app import IIIFManipulatorUHDR
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "../../../../themes/projektemacher-base/scripts"))
 
-from PyUHDR import UHDR, get_processors, init_docker
+from PyUHDR import UHDR, get_processors, init_docker, loadPILImage
 
 DEFAULT_LOG_LEVEL = logging.WARN
 INFO_JSON = "info.json"
@@ -37,7 +37,7 @@ logger = logging.getLogger()
 # TODO Finish this
 def check_scale_factors(infile, tilesize):
     Image.MAX_IMAGE_PIXELS = 32768 * 32768
-    image = Image.open(infile)
+    image = loadPILImage(infile)
     size = image.size
 
     # logger.warning("Image process %s dimensions are %s, longest side %s", infile, size, max(size))
@@ -176,10 +176,6 @@ def main(args):
     if args.input:
         if args.input.exists():
             infile = str(args.input)
-            if str(infile).endswith(".jxl"):
-                if "jxlpy" not in sys.modules:
-                    import jxlpy
-                    from jxlpy import JXLImagePlugin
         else:
             print(f"File {str(args.input)} doesn't exist!")
             sys.exit(1)

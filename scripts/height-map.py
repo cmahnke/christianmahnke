@@ -89,7 +89,7 @@ if str(args.image).endswith(".jxl"):
         inImg_dpi = None
 
     # Cast to 8-bit unsigned char to match standard PIL image behavior
-    # (jxlpy typically loads as 8-bit, and thresholding logic assumes 8-bit)
+    # (thresholding logic assumes 8-bit)
     np_img = np.asarray(vips_img.cast("uchar"))
 
     if np_img.ndim == 2:

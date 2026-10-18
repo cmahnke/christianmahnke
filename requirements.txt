@@ -10,3 +10,4 @@ rdflib
 beautifulsoup4
 pyyaml
 zenodo-client
+pyvips
