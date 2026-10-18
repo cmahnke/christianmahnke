@@ -46,7 +46,7 @@
     {{- $class := "sign" }}
 
     <body class="{{ $class }} {{ if .IsHome }}home{{ end }} ">
-      <a name="top"></a>
+      <span id="top"></span>
       <div class="page-wrapper">
         <div class="main">
           {{ block "content" . }}{{ end }}

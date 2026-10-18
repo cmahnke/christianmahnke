@@ -18,5 +18,5 @@ Sitemap: {{ "sitemap.xml" | absLangURL }}
 {{- $llmsGoTXT := resources.Get "llms.go.txt" -}}
 {{- if and $llmsGoTXT (ne $llmsGoTXT nil) .Site.Params.robots.llmsTXT -}}
   {{- $llmsTXT := $llmsGoTXT | resources.ExecuteAsTemplate "llms.txt" . -}}
-  {{- $llmsTXT.Publish -}}
+  {{- $publishErr := $llmsTXT.Publish -}}
 {{- end -}}

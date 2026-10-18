@@ -76,7 +76,7 @@
 
     <body class="{{ $class }} {{ if .IsHome }}home{{ end }} ">
       <a class="skip-link" href="#main-content">{{ i18n "skipToContent" }}</a>
-      <a name="top" id="top"></a>
+      <span id="top"></span>
       <div class="page-wrapper">
         <main class="main" id="main">
           {{ block "content" . }}{{ end }}

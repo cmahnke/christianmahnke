@@ -96,6 +96,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    touch-action: manipulation;
     font-family: "League Spartan Variable", Futura, sans-serif;
 
     .page-wrapper {
