@@ -11,7 +11,7 @@ export type Tags = {
 };
 
 export function tagsToPages(tags: Tags): { [key: string]: string[] } {
-  let posts: { [key: string]: string[] } = {};
+  const posts: { [key: string]: string[] } = {};
 
   for (const [key, value] of Object.entries(tags)) {
     value.posts.forEach((post) => {
@@ -25,28 +25,28 @@ export function tagsToPages(tags: Tags): { [key: string]: string[] } {
   return posts;
 }
 
-function translate(tag, tags = undefined) {
-  if (tags !== undefined && tag in tags && "translations" in tags[tag]) {
-    if (lang in tags[tag]["translations"]) {
-      return tags[tag]["translations"][lang]
-    }
+function translate(tag: string, tags?: Tags): string {
+  const translations = tags?.[tag]?.translations;
+  if (translations !== undefined && lang in translations) {
+    return translations[lang]
   }
   return tag
 }
 
-function page(tag, tags = undefined) {
-  if (tags !== undefined && tag in tags && "url" in tags[tag]) {
-    return tags[tag]["url"]
+function page(tag: string, tags?: Tags): string {
+  const url = tags?.[tag]?.url;
+  if (url !== undefined) {
+    return url
   }
   return '/tags/' + tag
 }
 
-export function convertTags(tags: Tags):{ from: string; to: string; url: string }[] {
-  let pairs: { from: string; to: string; url: string; page: string }[] = [];
+export function convertTags(tags: Tags): { from: string; to: string; url: string; page: string }[] {
+  const pairs: { from: string; to: string; url: string; page: string }[] = [];
   const posts = tagsToPages(tags);
 
   for (const [post, postTags] of Object.entries(posts)) {
-    var combinations = postTags.flatMap((v, i) =>
+    const combinations = postTags.flatMap((v, i) =>
       postTags.slice(i + 1).map((w) => {
         const fromTag = translate(v, tags);
         const toTag = translate(w, tags);

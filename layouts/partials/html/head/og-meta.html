@@ -1,4 +1,4 @@
-{{- if not $.Site.Params.disableOpenGraph -}}
+{{- if not site.Params.disableOpenGraph -}}
   {{- if not .IsHome -}}
       <meta property="og:type" content="article" />
   {{- else -}}
@@ -8,9 +8,9 @@
 
   {{- $title := .Title -}}
   {{- if ne .Title "" -}}
-    {{- $title = printf "%s · %s" .Title .Site.Title -}}
+    {{- $title = printf "%s · %s" .Title site.Title -}}
   {{- else -}}
-    {{- $title = .Site.Title -}}
+    {{- $title = site.Title -}}
   {{- end -}}
   
   <meta property="og:url" content="{{ .Permalink }}" />

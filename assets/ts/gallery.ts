@@ -1,7 +1,7 @@
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import PhotoSwipe from 'photoswipe';
 
-function photoswipe(id, children) {
+function photoswipe(id: string, children?: string) {
   const lightbox = new PhotoSwipeLightbox({
     gallery: id,
     children: children,
@@ -9,15 +9,15 @@ function photoswipe(id, children) {
     pswpModule: PhotoSwipe
   });
   lightbox.on('uiRegister', function() {
-    lightbox.pswp.ui.registerElement({
+    lightbox.pswp!.ui!.registerElement({
       name: 'custom-caption',
       order: 9,
       isButton: false,
       appendTo: 'root',
       html: 'Caption text',
       onInit: (el, pswp) => {
-        lightbox.pswp.on('change', () => {
-          const currSlideElement = lightbox.pswp.currSlide.data.element;
+        lightbox.pswp!.on('change', () => {
+          const currSlideElement = lightbox.pswp!.currSlide?.data.element as HTMLElement | undefined;
           let captionHTML = '';
           if (currSlideElement) {
             const hiddenCaption = currSlideElement.querySelector('.hidden-caption-content');
@@ -26,7 +26,7 @@ function photoswipe(id, children) {
               captionHTML = hiddenCaption.innerHTML;
             } else {
               // get caption from alt attribute
-              captionHTML = currSlideElement.querySelector('img').getAttribute('alt');
+              captionHTML = currSlideElement.querySelector('img')?.getAttribute('alt') ?? '';
             }
           }
           el.innerHTML = captionHTML || '';

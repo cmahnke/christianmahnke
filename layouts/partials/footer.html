@@ -11,7 +11,7 @@
             <div class="link-wrapper">
                 <h2 class="footer-links">{{ i18n "footerLinksHeading" }}</h2>
                 <ul class="footer-links">
-                    {{- range .Site.Params.links -}}
+                    {{- range site.Params.links -}}
                         <li class="footer-link">{{- . | safeHTML -}}</li>
                     {{- end -}}
                 </ul>
@@ -19,16 +19,16 @@
             <div class="footer-placeholder"></div>
             <div class="contact-wrapper">
                 <h2 class="footer-contact">{{ i18n "footerContactHeading" }}</h2>
-                {{- range .Site.Params.contacts -}}
+                {{- range site.Params.contacts -}}
                     <div class="footer-contact">{{- . | safeHTML -}}</div>
                 {{- end -}}
                 <h2 class="footer-privacy"><a href="/privacy" title="{{ i18n "privacyPolicy" }}">{{ i18n "privacyPolicy" }}</a></h2>
-                <p class="footer-title"><img class="footer-icon" alt="Projektemacher.org" src="{{ .Site.Params.monogramblack }}">{{- .Site.Title -}}</p>
+                <p class="footer-title"><img class="footer-icon" alt="Projektemacher.org" src="{{ site.Params.monogramblack }}">{{- site.Title -}}</p>
             </div>
         </div>
     </div>
     <div class="copyright"><a href="{{ $.Sites.Default.Params.copyrightlink }}">&copy; {{ $.Sites.Default.Params.copyrightYears }} {{ hugo.Sites.Default.Copyright | safeHTML }}</a>
-        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="{{ .Site.Params.monogram }}"></a></span>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="{{ site.Params.monogram }}"></a></span>
     </div>
 
 </footer>

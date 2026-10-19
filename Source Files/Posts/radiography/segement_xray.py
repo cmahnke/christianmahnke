@@ -6,16 +6,21 @@ import logging
 import yaml
 import cv2
 import numpy as np
-from segment_anything import SamAutomaticMaskGenerator, sam_model_registry
 
+from lib.line import Line
 from lib.util import rgb2rgba
-from lib.image_processing import clahe_contrast, histogram_median, adjust_histogram
+from lib.image_processing import clahe_contrast, histogram_median, adjust_histogram, safe_rgb
 
 debug = True
 image_list = "./images/images.yaml"
-model_path = "./models/sam_vit_h_4b8939.pth"
+
+model_version = 2
+model_settings = {1: {"path": "./models/sam_vit_h_4b8939.pth", "config": "vit_h"}, 2: {"path": "./models/sam2.1_hiera_large.pt", "config":"configs/sam2.1/sam2.1_hiera_l.yaml"} }
+#model_settings[2] = {"path": "./models/sam2.1_hiera_small.pt", "config": "configs/sam2.1/sam2.1_hiera_s.yaml"}
 debug_path = "./debug"
 debug_prefix = ""
+os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
+os.environ["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.0"
 
 # Defaults
 option_segment_colors = "random"
@@ -26,7 +31,7 @@ option_use_shape_detection = True
 
 logger = logging.getLogger(__name__)
 script_dir = os.path.dirname(os.path.realpath(__file__))
-model_location = os.path.join(script_dir, model_path)
+#model_location = os.path.join(script_dir, model_path)
 image_list_location = os.path.join(script_dir, image_list)
 model = None
 
@@ -120,13 +125,52 @@ class FeatureMatcher:
 
         return good_matches
 
+class MaskGenerator:
+    def __init__(self, path, cfg_str="vit_h", version=1, ):
+        self.version = version
+        model_location = os.path.join(script_dir, path)
+        if self.version == 1:
+            from segment_anything import SamAutomaticMaskGenerator, sam_model_registry
+            self.sam = sam_model_registry[cfg_str](checkpoint=model_location)
+            self.mask_generator = SamAutomaticMaskGenerator(self.sam)
+        elif self.version == 2:
+            import torch
+            self.device = torch.device("cpu")
+            if torch.cuda.is_available():
+                self.device = torch.device("cuda")
+            elif torch.backends.mps.is_available():
+                import cpuinfo
+                cpu_name = cpuinfo.get_cpu_info()['brand_raw']
+                if not "M1" in cpu_name:
+                    self.device = torch.device("mps")
+                else:
+                    logger.info("Detected M1, fallig back to CPU as torch device")
+            logger.debug(f"Using {self.device} for PyTorch")
 
+            #self.predictor = SAM2ImagePredictor.from_pretrained("facebook/sam2-hiera-large")
+            from sam2.build_sam import build_sam2
+            from sam2.automatic_mask_generator import SAM2AutomaticMaskGenerator
+
+            self.sam = build_sam2(cfg_str, model_location, device=self.device, apply_postprocessing=False)
+
+            self.mask_generator = SAM2AutomaticMaskGenerator(self.sam)
+
+        else:
+            raise ValueError(f"Unknown version: {self.version}")
+
+    def generate(self, image):
+        if not isinstance(image, (np.ndarray, np.generic)):
+            raise ValueError("Works only with NumPy array")
+        if self.version == 1 or self.version == 2:
+            return self.mask_generator.generate(image)
+        else:
+            raise ValueError(f"Unknown version: {self.version}")
 
 def debug_image(cv_img, desc, name):
     if debug:
         debug_out = f"{name}.png"
         if debug_prefix != "":
-            debug_out = f"{debug_prefix}-{name}.png"
+            debug_out = f"{debug_prefix}-{name.strip()}.png"
         debug_out = os.path.join(debug_path, debug_out)
         logger.debug(f"Writing {desc} to {debug_out}")
         cv2.imwrite(debug_out, cv_img)
@@ -180,22 +224,6 @@ def draw_matches(features1, features2, matches):
                    singlePointColor = (255,0,0),
                    flags = cv2.DrawMatchesFlags_DEFAULT)
     return cv2.drawMatches(features1.img, features1.kps, features2.img, features2.kps, matches, None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
-
-def init_model(path, type="vit_h", version=1):
-    if version == 1:
-        sam = sam_model_registry[type](checkpoint=path)
-        mask_generator = SamAutomaticMaskGenerator(sam)
-        return mask_generator
-    elif version == 2:
-        import torch
-        from sam2.sam2_image_predictor import SAM2ImagePredictor
-        raise ValueError("Currently not implemented")
-
-        predictor = SAM2ImagePredictor.from_pretrained("facebook/sam2-hiera-large")
-
-        #with torch.inference_mode(), torch.autocast("cuda", dtype=torch.bfloat16):
-        #    predictor.set_image(<your_image>)
-        #    masks, _, _ = predictor.predict(<input_prompts>)
 
 def posterize(cv_image, num_colors):  
     Z = cv_image.reshape((-1,3))
@@ -287,7 +315,7 @@ def create_mask(mask, color=(0,255,0)):
     alpha[mask] = 255
     return colored_mask, alpha
 
-def draw_segments(masks, image=None, reference=None, alpha=0.45, background=(255,255,255), colors=None, alpha_area_weight=.7):
+def draw_segments(masks, image=None, reference=None, alpha=0.45, background=(255,255,255), colors=None, alpha_area_weight=.7, debug_prefix="segment-"):
     if len(masks) == 0:
         return
     sorted_masks = sorted(masks, key=(lambda x: x['area']), reverse=True)
@@ -318,7 +346,7 @@ def draw_segments(masks, image=None, reference=None, alpha=0.45, background=(255
         color_mask, alpha_channel = create_mask(m, color)
         alpha_channel = opacity * alpha_channel
         rgba_overlay = np.concatenate((color_mask, alpha_channel), axis=-1)
-        debug_image(rgba_overlay, f"segment {i} with opacity of {opacity} (weighted by {alpha_area_weight}), color {color}", f"segment-{i}")
+        debug_image(rgba_overlay, f"segment {i} with opacity of {opacity} (weighted by {alpha_area_weight}), color {color}", f"{debug_prefix}{i}")
         
         image = blend2(image, rgba_overlay)
 
@@ -351,14 +379,212 @@ def get_region_color(reference, mask):
 
     return average_color
 
+def segment_frame(image, promt="border", model="FastSAM-x.pt"):
+    if "/" in str(model):
+        from ultralytics.engine.model import Model
+
+        class FastSAM(Model):
+            def __init__(self, model="FastSAM-x.pt"):
+                super().__init__(model=model, task="segment")
+
+        model_file = "./model/sam_l.pt"
+        model_path = os.path.join(script_dir, model_file)
+        predictor = FastSAM(model_path)
+    else:
+        from ultralytics import FastSAM
+        predictor = FastSAM(model)  # or FastSAM-x.pt
+
+    
+    results = predictor(safe_rgb(image), texts=promt)
+    logger.debug(f"Found {len(results)} results for prompt '{promt}'")
+    for result in results:
+        #names = result.names
+        #boxes = result.boxes
+        #masks = result.masks 
+        for m in result.masks.data.numpy():
+        #    print(m.data)
+        #    color_mask, alpha_channel = create_mask(m.data)
+        #    alpha_channel = .5 * alpha_channel
+        #    rgba_overlay = np.concatenate((color_mask, alpha_channel), axis=-1)
+        #    debug_image(rgba_overlay, f"frame", f"frame-segment")
+            print(type(m))
+            debug_image(m * 255, f"frame", f"frame-segment")
+
+            #print(m)
+    #image = draw_segments(masks, image=image, colors=None, alpha=None, debug_prefix="frame-recognition")
+
+def check_mask_for_frame(image, mask, min_size=.7, average_frame_tres_color=(10, 10, 10)):
+    area = np.sum(mask)
+    image_area = image.shape[0] * image.shape[1]
+    #check if mask is larger then half of image
+    if area > image_area * min_size:
+        inverted_m = np.invert(mask)
+        frame_color = get_region_color(image, inverted_m)
+        if np.sum(frame_color) < np.sum(average_frame_tres_color):
+            return True
+
+    return False
+
+def remove_frame(cv_image, thres=40):
+    def remove_contour(contour, image):
+        mask = np.zeros_like(image)
+        cv2.drawContours(mask, [contour], -1, (255, 255, 255), thickness=-1)
+        masked_img = cv2.bitwise_and(image, mask)
+        if(len(mask.shape) > 2):
+            mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
+        if(len(masked_img.shape) < 3):
+            masked_img = cv2.cvtColor(masked_img, cv2.COLOR_GRAY2BGR)
+        masked_img = np.dstack((masked_img, mask))
+        return masked_img
+
+    if(len(cv_image.shape) < 3):
+        gray = cv_image
+    else:
+        gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
+    _, thresh = cv2.threshold(gray, thres, 255, cv2.THRESH_BINARY) #+ cv2.THRESH_OTSU
+    debug_image(thresh, "theresholded image for contours", "countour-tresh")
+    #contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    contours, hierarchy = cv2.findContours(thresh, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
+
+    class HierachicalContours:
+        def __init__(self, contours, hierarchy, contour_mode=cv2.RETR_TREE):
+            self._contours = {}
+            hierarchy = hierarchy[0]
+            for c, h in zip(contours, hierarchy):
+                if contour_mode == cv2.RETR_TREE:
+                
+                    self._contours[c] = h
+                elif contour_mode == cv2.RETR_LIST:
+                    if c[0] < 0:
+                        i = (max(self._contours.keys())) + 1
+                        self._contours[i] = h
+                    else:
+                        self._contours[c[0]] = h
+                elif contour_mode == cv2.RETR_CCOMP:
+
+                else:
+                    raise ValueError(f"Unknown Contour Retrieval Mode: {contour_mode}")
+
+        def sort(self):
+            self._contours = sorted(self._contours, reverse=True, key=lambda x: cv2.contourArea(x[0]))
+
+        def filter(self, max, filter_factor):
+            print(list(self._contours))
+
+            self._contours = list(filter(lambda x: cv2.contourArea(x[0]) > (max * filter_factor), self._contours))
+            print(self._contours)
+
+        def contours(self):
+            #contours, _ = map(list, zip(*self._contours))
+            #print(zip(*self._contours))
+            #contours = [list(t) for t in zip(*self._contours)]
+            #print(contours)
+            #return list(zip(*self._contours))[0]
+            #contours, _ = zip(*self._contours)
+            #contours = list(contours)
+            #print(contours)
+            contours = self._contours.keys()
+            return contours
+
+        def hierarchy(self):
+            #_, hierarchy = map(list, zip(*self._contours))
+            hierarchy = self._contours.values()
+            return hierarchy
+
+        def len(self):
+            return len(list(self._contours))
+
+    hc = HierachicalContours(contours, hierarchy)
+    logger.debug(f"Found {hc.len()} contours")
+
+    if len(contours) > 0:
+        contours = list(contours)
+        print(hc.contours())
+        filter_factor = .5
+        contours = list(filter(lambda x: cv2.contourArea(x) > (cv_image.shape[0] * cv_image.shape[1]) * filter_factor, contours))
+        hc.sort()
+        hc.filter(cv_image.shape[0] * cv_image.shape[1], filter_factor)
+        contours = hc.contours()
+        logger.debug(f"Filtered contours by factor {filter_factor}, remaining {len(contours)}")
+
+        contours.sort(reverse=True, key=cv2.contourArea) 
+        if debug:
+            for i, c in enumerate(contours):
+                print(f"{cv2.contourArea(c)} -> {cv2.boundingRect(c)}")
+                masked_img = remove_contour(c, cv_image)
+                debug_image(masked_img, f"countour {i}", f"contour-{i}")
+
+        largest_contour = max(contours, key=cv2.contourArea)
+        masked_img = remove_contour(largest_contour, cv_image)
+        debug_image(masked_img, "masked-xray", "masked-xray")
+        return masked_img
+    
+    return cv_image
+
+def blend_color(cv_image, color=(0,0,0)):
+    w, h = cv_image.shape
+    image = np.zeros((w, h, 3), np.uint8) + list(color)
+    return blend2(image, cv_image)
+
+def crop_reference(reference, image):
+    def difference(x, y):
+        return ((y - x) / x) * 100
+    
+    image_aspect_ratio = image.shape[1] / image.shape[0]
+    reference_aspect_ratio = reference.shape[1] / reference.shape[0]
+    change_percent = difference(image_aspect_ratio, reference_aspect_ratio)
+    logger.debug(f"Reference image aspect ratio is {reference_aspect_ratio}, image aspect ratio is {image_aspect_ratio}, change in percent {change_percent}")
+
+    tolerance = .3
+    if change_percent > 5:
+        minLineLength = reference.shape[1] * 0.9
+        maxLineGap = reference.shape[1] * 0.05
+        angle_filter = lambda x: (x > 90 - tolerance and x < 90 + tolerance) or (x > -90 - tolerance and x < -90 + tolerance)
+        logger.debug(f"Reference image is {change_percent}% wider, setting min length to {minLineLength} mx gap {maxLineGap}")
+    elif change_percent < -5:
+        minLineLength = reference.shape[0] * 0.9
+        maxLineGap = reference.shape[0] * 0.05
+        angle_filter = lambda x: (x > 180 - tolerance and x < 180 + tolerance) or (x > -180 - tolerance and x < -180 + tolerance)
+        logger.debug(f"Reference image is {change_percent}% higher, setting min length to {minLineLength} mx gap {maxLineGap}")
+    else:
+        return (reference, 0, 0)
+
+    blur = cv2.bilateralFilter(reference,9,75,75)
+    binary = cv2.Canny(blur, 50, 200, None, 3)
+    debug_image(binary, "binarized image", "binary-visible")
+    if debug:
+        line_vis = cv2.cvtColor(binary, cv2.COLOR_GRAY2BGR)
+   
+    lines = cv2.HoughLinesP(binary, 1, np.pi / 180, 150, None, minLineLength, maxLineGap)
+    
+    if lines is not None:
+        candidates = []
+        for line in lines:
+            candidates.append(Line(line[0]))
+        candidates = list(filter(lambda x: angle_filter(x.angle_deg()), candidates)) 
+        candidates.sort(reverse=True, key=lambda x: x.distance())
+
+        points = []
+        for l in candidates[:len(candidates)//4]:
+            points.extend(list(l.tuple()))
+            if debug:
+                l.vis(line_vis)
+        points = np.array(points)
+        tl = [min(points[:,0]), min(points[:,1])]
+        br = [max(points[:,0]), max(points[:,1])]
+        logger.debug(f"Bounding box for extraction is {tl}, {br}")
+
+        debug_image(line_vis, "line visualisation", "lines")    
+        cropped = reference[tl[1]:br[1], tl[0]:br[0]]
+        return (cropped, tl[0], tl[1])
+    
+
 def prepare_xray(xray, reference, options):
     image = xray
-    if options["enhance_contrast"]:
-        image = clahe_contrast(rgb_img=image)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        debug_image(image, "enhanced contrast", "xray-enhaced-contrast")
-    else:
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+    withoutframe = remove_frame(image)
+    #segment_frame(image)
+    debug_image(withoutframe, "removed frame", "removed-frame")
 
     if options["adjust_histogram"]:
         # Removes lower and upper extremes from histogram 
@@ -366,6 +592,13 @@ def prepare_xray(xray, reference, options):
         median_color = histogram_median(image, window)
         image = adjust_histogram(image, window, base=median_color)
         debug_image(image, "cut histogram", "xray-histogram-cut")
+
+    if options["enhance_contrast"]:
+        image = clahe_contrast(rgb_img=image)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        debug_image(image, "enhanced contrast", "xray-enhaced-contrast")
+    else:
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
     if options["use_shape_detection"]:
         logger.info("Generating shapes")
@@ -436,7 +669,10 @@ def main():
     logger.info(f"Default options {options}")
 
     if options["use_shape_detection"]:
-        model = init_model(model_path)
+        #model = init_model(model_path)
+        model_path = model_settings[model_version]["path"]
+        model_cfg = model_settings[model_version]["config"]
+        model = MaskGenerator(model_path, model_cfg, version=model_version)
     with open(image_list_location) as f:
         input_images = yaml.safe_load(f)
 
@@ -450,16 +686,19 @@ def main():
         if "options" in image_set:
             options = image_set["options"]
         else:
-            options = {
-                "segment_colors": segment_colors,
-                "align_method": align_method,
-                "enhance_contrast": enhance_contrast,
-                "adjust_histogram": adjust_histogram,
-                "use_shape_detection": use_shape_detection
-            }
+            options = get_options()
+            #options = {
+            #    "segment_colors": segment_colors,
+            #    "align_method": align_method,
+            #    "enhance_contrast": enhance_contrast,
+            #    "adjust_histogram": adjust_histogram,
+            #    "use_shape_detection": use_shape_detection
+            #}
         logger.info(f"Input files: {str(reference_file)}, {str(image_file)}, {options}")
         reference = cv2.imread(reference_file, cv2.COLOR_RGB2BGR)
         image = cv2.imread(image_file, cv2.COLOR_RGB2BGR)
+        cropped = crop_reference(reference, image)[0]
+        debug_image(cropped, "cropped reference image", "cropped")
         preprocessed_image = prepare_xray(image, reference, options)
         debug_image(preprocessed_image, " preprocessed X-Ray image (with segments)", "xray-with_segments")
         try:

@@ -19,55 +19,65 @@ logger = logging.getLogger(__name__)
 
 def search_wikidata(query, type='item', lang='en', method='api'):
     headers = {'User-Agent': USER_AGENT}
-    try:
-        if method == 'sparql':
-            url = "https://query.wikidata.org/sparql"
-            sparql_query = f"""
-            SELECT ?item WHERE {{
-              ?item wdt:P856 <{query}>.
-            }}
-            LIMIT 1
-            """
-            params = {'query': sparql_query, 'format': 'json'}
-            headers['Accept'] = 'application/json'
-        elif method == 'formatter':
-            url = "https://www.wikidata.org/w/api.php"
-            params = {
-                "action": "wbgetentities",
-                "ids": query,
-                "format": "json",
-                "props": "claims"
-            }
-        else:
-            url = "https://www.wikidata.org/w/api.php"
-            params = {
-                "action": "wbsearchentities",
-                "search": query,
-                "language": lang,
-                "format": "json",
-                "type": type,
-                "limit": 1
-            }
+    for attempt in range(5):
+        try:
+            if method == 'sparql':
+                url = "https://query.wikidata.org/sparql"
+                sparql_query = f"""
+                SELECT ?item WHERE {{
+                  ?item wdt:P856 <{query}>.
+                }}
+                LIMIT 1
+                """
+                params = {'query': sparql_query, 'format': 'json'}
+                headers['Accept'] = 'application/json'
+            elif method == 'formatter':
+                url = "https://www.wikidata.org/w/api.php"
+                params = {
+                    "action": "wbgetentities",
+                    "ids": query,
+                    "format": "json",
+                    "props": "claims"
+                }
+            else:
+                url = "https://www.wikidata.org/w/api.php"
+                params = {
+                    "action": "wbsearchentities",
+                    "search": query,
+                    "language": lang,
+                    "format": "json",
+                    "type": type,
+                    "limit": 1
+                }
 
-        response = requests.get(url, params=params, headers=headers, timeout=10)
-        response.raise_for_status()
-        data = response.json()
+            response = requests.get(url, params=params, headers=headers, timeout=10)
+            if response.status_code == 429:
+                wait = (2 ** attempt) + 5
+                logger.warning(f"Wikidata rate limit hit. Waiting {wait}s...")
+                time.sleep(wait)
+                continue
+            response.raise_for_status()
+            data = response.json()
 
-        if method == 'sparql':
-            if data.get('results', {}).get('bindings'):
-                time.sleep(0.5)
-                item_url = data['results']['bindings'][0]['item']['value']
-                return {'id': item_url.split('/')[-1]}
-        elif method == 'formatter':
-            claims = data.get('entities', {}).get(query, {}).get('claims', {})
-            if 'P1630' in claims:
-                return claims['P1630'][0]['mainsnak']['datavalue']['value']
-        else:
-            if data.get('search'):
-                time.sleep(0.5)
-                return data['search'][0]
-    except Exception as e:
-        logger.error(f"Error searching Wikidata for {query}: {e}")
+            if method == 'sparql':
+                if data.get('results', {}).get('bindings'):
+                    time.sleep(0.5)
+                    item_url = data['results']['bindings'][0]['item']['value']
+                    return {'id': item_url.split('/')[-1]}
+            elif method == 'formatter':
+                claims = data.get('entities', {}).get(query, {}).get('claims', {})
+                if 'P1630' in claims:
+                    return claims['P1630'][0]['mainsnak']['datavalue']['value']
+            else:
+                if data.get('search'):
+                    time.sleep(0.5)
+                    return data['search'][0]
+            break
+        except Exception as e:
+            if attempt == 4:
+                logger.error(f"Error searching Wikidata for {query}: {e}")
+                return None
+            time.sleep(1)
     return None
 
 def validate_qs(qs):

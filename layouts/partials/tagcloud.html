@@ -4,7 +4,7 @@
   </div>
   <div id="tag-cloud" class="tag-cloud background"></div>
   <script type="text/javascript">
-    {{- $tags := $.Site.Taxonomies.tags.ByCount -}}
+    {{- $tags := site.Taxonomies.tags.ByCount -}}
     const tags = [
       {{- range $tags -}}
         {{- if or (hasPrefix .Name "hidden_") (hasPrefix .Name "_") -}}

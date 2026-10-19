@@ -1,5 +1,6 @@
 // aframe-orbit-controls.ts
 import "aframe";
+import type * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 AFRAME.registerComponent("orbit-controls", {

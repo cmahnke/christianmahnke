@@ -18,22 +18,22 @@
   {{- end }}
 {{- end }}
 
-{{- $pages := (where .Site.RegularPages "Section" "post").ByDate.Reverse }}
+{{- $pages := (where site.RegularPages "Section" "post").ByDate.Reverse }}
 
-{{- $limit := .Site.Config.Services.RSS.Limit }}
+{{- $limit := site.Config.Services.RSS.Limit }}
 {{- if ge $limit 1 }}
 {{- $pages = $pages | first $limit }}
 {{- end }}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ .Site.Title }} {{ i18n "Feed" }}</title>
-    <link>{{ (.Site.GetPage "post").Permalink }}</link>
-    <description>{{i18n "LatestPosts"}} {{i18n "By"}} {{ .Site.Title }}</description>
+    <title>{{ site.Title }} {{ i18n "Feed" }}</title>
+    <link>{{ (site.GetPage "post").Permalink }}</link>
+    <description>{{i18n "LatestPosts"}} {{i18n "By"}} {{ site.Title }}</description>
     <generator>Hugo {{ hugo.Version }}</generator>
     <language>{{ site.Language.Locale }}</language>{{ with $authorEmail }}
     <managingEditor>{{.}}{{ with $authorName }} ({{ . }}){{ end }}</managingEditor>{{ end }}{{ with $authorEmail }}
-    <webMaster>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</webMaster>{{ end }}{{ with .Site.Copyright }}
+    <webMaster>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</webMaster>{{ end }}{{ with site.Copyright }}
     <copyright>{{ . }}</copyright>{{ end }}{{ if not .Date.IsZero }}
     <lastBuildDate>{{ (index $pages.ByLastmod.Reverse 0).Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
     {{- with .OutputFormats.Get "RSS" }}

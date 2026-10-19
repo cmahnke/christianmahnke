@@ -3,7 +3,7 @@
 {{- $head := .CurrentSection -}}
 {{- $pages := slice -}}
 {{- if .IsHome -}}
-  {{- $pages = where .Site.Pages "Section" "home" -}}
+  {{- $pages = where site.Pages "Section" "home" -}}
 {{- else -}}
   {{- $pages = .Pages -}}
   {{/* TODO: Add a filter for subsections

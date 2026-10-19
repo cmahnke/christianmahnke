@@ -7,7 +7,7 @@
             {{ partial "menu.html" . }}
         </div>
         <div class="home-link">
-            <a href="/" aria-label="{{ $.Site.Title }}"><span class="header-title" aria-hidden="true">{{ $.Site.Title }}</span></a>
+            <a href="/" aria-label="{{ site.Title }}"><span class="header-title" aria-hidden="true">{{ site.Title }}</span></a>
         </div>
 
         {{- $subtitle := .Params.subtitle | default "" -}}

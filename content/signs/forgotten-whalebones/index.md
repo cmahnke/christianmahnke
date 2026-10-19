@@ -13,3 +13,7 @@ Bei diesem historischen Relikt handelt es sich um einen halben Unterkieferknoche
 Bögen aus Bartenwal-Unterkiefern entstanden vor allem im 18. und 19. Jahrhundert als "Mitbringsel" des damaligen Walfangs. Sie finden sich typischerweise in norddeutschen und nordeuropäischen Küstenregionen und Hafenstädten, die einst Zentren des Walfangs waren.
 
 Da die Entstehungszeit und die genaue Herkunft dieses für Südniedersachsen ungewöhnlichen Naturdenkmals bislang nicht geklärt werden konnten, kann man es als die vergessenen Walknochen Göttingens bezeichnen.
+
+{{< comment >}}
+Weitere Informationen gibt es unter https://christianmahnke.de/post/whalebone-arch-levin-park/
+{{< /comment >}}

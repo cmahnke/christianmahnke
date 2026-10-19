@@ -1,5 +1,7 @@
-import { addConsent } from '../ts/iframe-consent.ts';
-import { initMap } from '../ts/maps/osm-map.ts';
+// @ts-expect-error Resolved through the merged Hugo assets filesystem (theme submodule) at build time
+import { addConsent } from './iframe-consent.ts';
+// @ts-expect-error Resolved through the merged Hugo assets filesystem (theme submodule) at build time
+import { initMap } from './maps/osm-map.ts';
 import { checkLinksForQClasses } from './wikidata';
 
 import stickybits from 'stickybits'
@@ -30,35 +32,36 @@ function expandDetails() {
     const id = hash.substring(1);
     const targetElement = document.getElementById(id);
 
-    if (targetElement && targetElement.tagName === 'DETAILS') {
+    if (targetElement instanceof HTMLDetailsElement) {
       targetElement.open = true;
       targetElement.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         container: 'content-container'
-      });
+      } as ScrollIntoViewOptions);
     }
   }
 }
 
-function fitTextToContainer(containerSelector, widthSelector) {
-  let container = document.querySelector(containerSelector);
+function fitTextToContainer(containerSelector: string, widthSelector?: string) {
+  const initial = document.querySelector(containerSelector);
 
-  if (!container) {
+  if (!initial) {
     //console.warn(`Container not found: ${containerSelector}`);
     return;
   }
+  let container: Element = initial;
 
-  function getTextElements(root) {
-    const result = [];
+  function getTextElements(root: Element): HTMLElement[] {
+    const result: HTMLElement[] = [];
 
-    function walk(node) {
+    function walk(node: Element) {
       const hasDirectText = Array.from(node.childNodes).some(
-        (n) => n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== ""
+        (n) => (n.textContent ?? "").trim() !== ""
       );
 
       if (hasDirectText) {
-        result.push(node);
+        result.push(node as HTMLElement);
       } else {
         for (const child of node.children) {
           walk(child);
@@ -70,7 +73,7 @@ function fitTextToContainer(containerSelector, widthSelector) {
     return result;
   }
 
-  function fitElement(el) {
+  function fitElement(el: HTMLElement, container: Element) {
     const computedStyle = window.getComputedStyle(el);
     const naturalSize = parseFloat(computedStyle.fontSize);
     const minFontSize = parseFloat(computedStyle.getPropertyValue("--min-font-size")) || 8;
@@ -95,7 +98,10 @@ function fitTextToContainer(containerSelector, widthSelector) {
   document.fonts.ready.then(() => {
     const textElements = getTextElements(container);
     if (widthSelector != undefined) {
-       container = document.querySelector(widthSelector);
+       const widthContainer = document.querySelector(widthSelector);
+       if (widthContainer) {
+         container = widthContainer;
+       }
     }
 
     if (textElements.length === 0) {
@@ -103,21 +109,33 @@ function fitTextToContainer(containerSelector, widthSelector) {
       return;
     }
 
-    textElements.forEach((el) => fitElement(el));
+    textElements.forEach((el) => fitElement(el, container));
   });
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  var elevator = new Elevator({
-    mainAudio: '/sounds/elevator.mp3',
-    endAudio: '/sounds/ding.mp3',
-    element: document.querySelector('.backToTop'),
-    duration: 2000
-  });
+window.addEventListener('DOMContentLoaded', () => {
+  const backToTop = document.querySelector<HTMLElement>('.backToTop');
+  if (backToTop !== null) {
+    let elevator: Elevator | null = null;
+    const initElevator = () => {
+      if (elevator !== null) {
+        return;
+      }
+      elevator = new Elevator({
+        mainAudio: '/sounds/elevator.mp3',
+        endAudio: '/sounds/ding.mp3',
+        element: backToTop,
+        duration: 2000
+      });
+    };
+    backToTop.addEventListener('pointerenter', initElevator, { once: true });
+    backToTop.addEventListener('pointerdown', initElevator, { once: true });
+    backToTop.addEventListener('focus', initElevator, { once: true });
+  }
 
   //fitTextToContainer('.section-head');
-  [['.section-head'], ['.single .post-title', '.content']].forEach((sel) => {
-    fitTextToContainer(...sel)
+  ([['.section-head'], ['.single .post-title', '.content']] as [string, string?][]).forEach(([headSelector, contentSelector]) => {
+    fitTextToContainer(headSelector, contentSelector)
   })
 
   //const details = document.querySelectorAll('.inline-collection', 'details');
@@ -126,7 +144,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   const searchButton = document.querySelector("#menu-search-button");
   const searchInput = document.querySelector("#menu-search-input");
   const searchForm = document.querySelector("#menu-search-form");
-  if (searchForm !== null) {
+  if (searchForm instanceof HTMLFormElement && searchInput instanceof HTMLInputElement && searchButton !== null) {
     let focused = false;
     searchInput.addEventListener("focus", () => {
       focused = true;

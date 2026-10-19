@@ -4,3 +4,5 @@
 
 # Models
 * For SAM-2 https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt
+
+https://docs.ultralytics.com/models/fast-sam/#usage-examples

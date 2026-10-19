@@ -9,8 +9,8 @@
   {{- $description = .Summary -}}
 {{- end -}}
 
-{{- if or (and $.Site.Params.description (eq $description "")) $.IsHome -}}
-  {{- $description = $.Site.Params.description -}}
+{{- if or (and site.Params.description (eq $description "")) $.IsHome -}}
+  {{- $description = site.Params.description -}}
 {{- end -}}
 
 {{- if ne $description "" -}}

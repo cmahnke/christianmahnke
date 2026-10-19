@@ -2,12 +2,12 @@ import OpenSeadragon from "openseadragon";
 import * as Annotorious from "@annotorious/openseadragon";
 import { Manifest } from "manifesto.js";
 
-import { loadManifest, getServiceId, loadInfoJson, getAnnotations } from "./manifest-loader.js";
+import { loadManifest, getServiceId, loadInfoJson, getAnnotations } from "./manifest-loader.ts";
 
 
 const debug = false;
 
-export default async function touchViewer(containerId, manifestUrl, page = 0) {
+export default async function touchViewer(containerId: string, manifestUrl: string, page = 0) {
   const manifest = await loadManifest(manifestUrl);
   const id = getServiceId(manifest, page);
   let service;
@@ -30,8 +30,8 @@ export default async function touchViewer(containerId, manifestUrl, page = 0) {
     visibilityRatio: 1,
     minZoomLevel: 0.5,
     defaultZoomLevel: 0.5,
-    drawer: "canvas",
-    crossOriginPolicy: "Anonymous",
+    drawer: "canvas" as const,
+    crossOriginPolicy: "Anonymous" as const,
     //sequenceMode: true,
     tileSources: [service],
     gestureSettingsMouse: {
@@ -52,11 +52,11 @@ export default async function touchViewer(containerId, manifestUrl, page = 0) {
 
   //viewer.addHandler("canvas-click", (e) => {console.log(e)})
 
-  const annoStyle = (an, state) => {
+  const annoStyle = (an: any, state?: { hovered?: boolean; selected?: boolean }): any => {
     //console.log(an, state);
     let touchState = false;
     if (an.bodies[0].type == "Boolean") {
-      touchState = an.bodies[0].value;
+      touchState = an.bodies[0].value === true;
     }
     const { hovered, selected } = state || {};
     if (touchState && debug) {
@@ -91,10 +91,11 @@ export default async function touchViewer(containerId, manifestUrl, page = 0) {
   };
   const anno = Annotorious.createOSDAnnotator(viewer, config);
 
-  anno.on("mouseEnterAnnotation", function (annotation) {
+  anno.on("mouseEnterAnnotation", function (annotation: any) {
     let touchState;
-    if (annotation.body[0].type == "InteractiveResource") {
-      touchState = annotation.body[0].haptics.vibrate;
+    const body = Array.isArray(annotation.body) ? annotation.body[0] : annotation.body;
+    if (body?.type == "InteractiveResource") {
+      touchState = body.haptics?.vibrate;
     }
     if ("vibrate" in window.navigator) {
       if (touchState) {
@@ -105,14 +106,14 @@ export default async function touchViewer(containerId, manifestUrl, page = 0) {
     }
   });
 
-  anno.on("mouseLeaveAnnotation", function (annotation) {
+  anno.on("mouseLeaveAnnotation", function () {
     if ("vibrate" in window.navigator) {
       window.navigator.vibrate(0);
     }
   });
 
   const annotations = getAnnotations(manifest, page);
-  let annotationsJson = annotations.map((a) => {
+  const annotationsJson = annotations.map((a) => {
     return a.__jsonld;
   });
 

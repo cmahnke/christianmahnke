@@ -2,18 +2,18 @@
     <div class="wrapper">
         <div class="img-background">
             <div class="img-wrapper">
-              {{- $img := resources.Get .Site.Params.me -}}
+              {{- $img := resources.Get site.Params.me -}}
               {{- if ne $img nil -}}
                 {{- $img = $img.Process "webp" -}}
                 <img class="me" alt="Christian Mahnke" src="{{ $img.RelPermalink }}">
               {{- else -}}
-                {{- errorf "[hero.html] Can't find Home page image %s" .Site.Params.me -}}
+                {{- errorf "[hero.html] Can't find Home page image %s" site.Params.me -}}
               {{- end -}}
             </div>
         </div>
         <div class="hero-caption">
-            <div class="name">{{- .Site.Title -}}</div>
-            {{- with .Site.Params.subtitle -}}
+            <div class="name">{{- site.Title -}}</div>
+            {{- with site.Params.subtitle -}}
                 <div id="tag-line" class="title">{{- . -}}</div>
             {{- end -}}
         </div>
@@ -91,8 +91,8 @@
       lang = locale.language;
   }
 
-  {{ if isset .Site.Params "subtitles" }}
-    const subtitles = {{ .Site.Params.subtitles | jsonify | safeJS }};
+  {{ if isset site.Params "subtitles" }}
+    const subtitles = {{ site.Params.subtitles | jsonify | safeJS }};
     let titles = [];
     subtitles.forEach((titleInfo) => {
       let title = {};

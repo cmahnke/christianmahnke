@@ -1,21 +1,21 @@
 {
   "@context": "https://www.w3.org/ns/activitystreams",
-  "name": "{{ .Site.Title }}",
-  {{- with .Site.Params.Description -}}
+  "name": "{{ site.Title }}",
+  {{- with site.Params.Description -}}
     "summary": "{{ . }}",
   {{- end -}}
   "type": "OrderedCollection",
-  {{- with .Site.Params.activitypub -}}
+  {{- with site.Params.activitypub -}}
     {{- if and  (isset . "outbox") (ne .outbox "") -}}
-      "id": "{{ $.Site.BaseURL }}{{ .outbox }}",
+      "id": "{{ site.BaseURL }}{{ .outbox }}",
     {{- end -}}
 
     {{- $actor := "" -}}
     {{- if and (isset . "author") (ne .author "") -}}
-      {{- $actor = printf "%s@%s.json" $.Site.BaseURL .author -}}
+      {{- $actor = printf "%s@%s.json" site.BaseURL .author -}}
     {{- end -}}
 
-    {{- $pages := where $.Site.RegularPages "Section" "post" -}}
+    {{- $pages := where site.RegularPages "Section" "post" -}}
     {{- $pages = where $pages "Params.displayinlist" "!=" false -}}
     "totalItems": {{ (len $pages) }},
     "orderedItems": [

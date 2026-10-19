@@ -16,18 +16,18 @@
           {{- $authorList = $authorList | append $authorName -}}
       {{- end -}}
       {{- $authors = delimit $authorList " and " -}}
-  {{- else if .Site.Params.author.name -}}
-      {{- $authors = .Site.Params.author.name -}}
+  {{- else if site.Params.author.name -}}
+      {{- $authors = site.Params.author.name -}}
   {{- end -}}
 
   {{- $authors = split $authors " " | collections.Reverse -}}
   {{- $authors = delimit $authors ", " -}}
 
   {{- $siteTitle := "" -}}
-  {{- if .Site.Params.cite.title -}}
-    {{- $siteTitle = .Site.Params.cite.title -}}
+  {{- if site.Params.cite.title -}}
+    {{- $siteTitle = site.Params.cite.title -}}
   {{- else -}}
-    {{- $siteTitle = .Site.Title -}}
+    {{- $siteTitle = site.Title -}}
   {{- end -}}
 
   {{- $citeLink := .Permalink -}}
@@ -41,7 +41,7 @@
 
   <div class="cite-body">
     <div class="cite-proposal">
-      <span class="cite-author">{{ $authors }}</span> <span class="cite-year">({{ .Date.Year  }})</span>: <span class="cite-title">{{ .Title }}</span>. {{ i18n "cite_in" }}:  <a class="cite-source-link" href="{{ .Site.BaseURL }}">{{ $siteTitle }}</a> [{{ i18n "cite_type_blog" }}], {{ .Date | time.Format ":date_medium" }}. {{ i18n "cite_type_online" }}: <a class="cite-link" href="{{ $citeLink }}">{{ $citeLink }}</a>.
+      <span class="cite-author">{{ $authors }}</span> <span class="cite-year">({{ .Date.Year  }})</span>: <span class="cite-title">{{ .Title }}</span>. {{ i18n "cite_in" }}:  <a class="cite-source-link" href="{{ site.BaseURL }}">{{ $siteTitle }}</a> [{{ i18n "cite_type_blog" }}], {{ .Date | time.Format ":date_medium" }}. {{ i18n "cite_type_online" }}: <a class="cite-link" href="{{ $citeLink }}">{{ $citeLink }}</a>.
     </div>
     {{- if ne $url "" -}}
       <a class="bibtex-download" href="{{ $url }}" title="{{ i18n "bibtex_download"}}">{{ i18n "bibtex_download"}}</a>

@@ -19,7 +19,7 @@
 {{- $menuClass := "" -}}
 {{- if $enhance -}}{{- $menuClass = " top-menu" -}}{{- end -}}
 
-{{- if or $page.Site.Menus.main hugo.IsMultilingual -}}
+{{- if or site.Menus.main hugo.IsMultilingual -}}
   {{- $basePath := "" -}}
   {{- if and (ne $page.File nil) (ne $page.File.Dir nil) -}}
     {{- $basePath = trim $page.File.Dir "/" -}}
@@ -31,7 +31,7 @@
     <input type="checkbox" id="{{ $idPrefix }}menu-toggle" aria-label="{{ $label }}" />
     <label class="menu-button float-right" for="{{ $idPrefix }}menu-toggle"><i class="menu-icon" aria-hidden="true"></i></label>
     <ul id="{{ $idPrefix }}main-navigation-list" class="navigation-list">
-      {{- with $page.Site.Menus.main -}}
+      {{- with site.Menus.main -}}
         {{- range sort . -}}
           {{- if and .Params.draft (not site.BuildDrafts) -}}
             {{- continue -}}
@@ -59,8 +59,8 @@
         {{- end -}}
       {{- end -}}
       {{- if hugo.IsMultilingual -}}
-        {{- range (default $page.Site.Home.AllTranslations $page.Translations) -}}
-          {{- if ne $.Site.Language .Language -}}
+        {{- range (default site.Home.AllTranslations $page.Translations) -}}
+          {{- if ne site.Language .Language -}}
             <li class="navigation-item lang">
               <a href="{{ .Permalink }}" title="{{ .Language.Label }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}">{{ .Language.Label }}</a>
             </li>

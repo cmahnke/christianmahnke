@@ -1,8 +1,8 @@
 {{ define "title" -}}
   {{- if ne .Title "" -}}
-    {{- .Title }} · {{ .Site.Title -}}
+    {{- .Title }} · {{ site.Title -}}
   {{- else -}}
-    {{- .Site.Title -}}
+    {{- site.Title -}}
   {{- end -}}
 {{- end }}
 
@@ -15,7 +15,7 @@
   {{- end -}}
   {{- partial "header.html" . -}}
     <div class="content-container mastodon" id="main-content">
-      {{- $posts := where .Site.Pages "Section" "mastodon" -}}
+      {{- $posts := where site.Pages "Section" "mastodon" -}}
       {{- $mainSite := hugo.Sites.Default -}}
       {{- if ne $mainSite .Site -}}
         {{- $posts = ($posts | lang.Merge (where $mainSite.Pages "Section" $postSection)) -}}

@@ -10,7 +10,7 @@ type FlowInputRecord = [string, string, string, number, string]; // [sourceName,
 interface ChordNode {
   index: number;
   name: string;
-  url: string
+  url?: string
   startAngle?: number;
   endAngle?: number;
   value?: number;
@@ -43,6 +43,12 @@ interface ChordData {
   individualFlows: FlowInputRecord[]; // Original data for individual ribbons
 }
 
+type CustomChordGroup = ChordGroup & {
+  source: { index: number; value: number; startAngle: number; endAngle: number };
+  target: { index: number; value: number; startAngle: number; endAngle: number };
+  angle?: number;
+};
+
 function prepareChordData(inputData: FlowInputRecord[]): ChordData {
   const uniqueNodeNames = Array.from(new Set(inputData.flatMap((d) => [d[0], d[1]])));
   const nodes: ChordNode[] = uniqueNodeNames.map((name, index) => ({ name, index }));
@@ -54,11 +60,8 @@ function prepareChordData(inputData: FlowInputRecord[]): ChordData {
   const urls = new Map<number, string>();
   nodes.forEach((node) => nodeNameMap.set(node.index, node.name));
   nodes.forEach((node) => {
-    let tagUrl = inputData.find((source) => source[0] === node.name);
-    if (tagUrl !== undefined) {
-      tagUrl = tagUrl[4];
-    }
-    urls.set(node.index, tagUrl);
+    const tagUrl = inputData.find((source) => source[0] === node.name)?.[4];
+    urls.set(node.index, tagUrl ?? "");
   });
 
   // Create a symmetrical group matrix based on total connections for initial span estimation.
@@ -101,7 +104,7 @@ function renderD3ChordDiagram(
   linkPrefix: string = "/tags/"
 ): void {
   if (!container) {
-    console.error(`HTML element with ID "${container.id || 'N/A'}" not found!`);
+    console.error("HTML container element not found!");
     return;
   }
   container.innerHTML = "";
@@ -225,7 +228,7 @@ function renderD3ChordDiagram(
 
 
   // --- Step 2: Manually calculate custom arc groups based on accumulated ribbon widths ---
-  const customGroups: ChordGroup[] = [];
+  const customGroups: CustomChordGroup[] = [];
   let totalSumOfActualAngularWidths = 0;
   nodes.forEach(node => {
       totalSumOfActualAngularWidths += nodeAccumulatedRibbonWidth.get(node.index) || 0;
@@ -235,7 +238,7 @@ function renderD3ChordDiagram(
   const scalingFactor = totalSumOfActualAngularWidths > 0 ? totalAvailableAngle / totalSumOfActualAngularWidths : 0;
 
   let currentAngle = 0;
-  const finalNodeGroupMap = new Map<number, ChordGroup>(); // This will be the definitive map for node groups
+  const finalNodeGroupMap = new Map<number, CustomChordGroup>(); // This will be the definitive map for node groups
 
   // Sort nodes by name for consistent arc order
   nodes.sort((a, b) => d3.ascending(a.name, b.name)).forEach(node => {
@@ -243,7 +246,7 @@ function renderD3ChordDiagram(
       const startAngle = currentAngle;
       const endAngle = currentAngle + arcWidth;
 
-      const newGroup: ChordGroup = {
+      const newGroup: CustomChordGroup = {
           index: node.index,
           startAngle: startAngle,
           endAngle: endAngle,
@@ -284,19 +287,19 @@ function renderD3ChordDiagram(
     .append("a")
     .attr("href", (d: ChordGroup) => `${urls.get(d.index) || ""}`)
     .append("text")
-    .each((d: ChordGroup & { angle?: number }) => {
+    .each((d: CustomChordGroup) => {
       d.angle = (d.startAngle + d.endAngle) / 2; // Use the new group angles
     })
     .attr("dy", "0.35em")
     .attr(
       "transform",
-      (d: ChordGroup & { angle: number }) => `
-            rotate(${(d.angle * 180) / Math.PI - 90})
+      (d: CustomChordGroup) => `
+            rotate(${(d.angle! * 180) / Math.PI - 90})
             translate(${outerRadius + labelOffset})
-            ${d.angle > Math.PI ? "rotate(180)" : ""}
+            ${d.angle! > Math.PI ? "rotate(180)" : ""}
         `
     )
-    .attr("text-anchor", (d: ChordGroup & { angle: number }) => (d.angle > Math.PI ? "end" : null))
+    .attr("text-anchor", (d: CustomChordGroup) => (d.angle! > Math.PI ? "end" : null))
     .text((d: ChordGroup) => nodeNameMap.get(d.index) || "")
     .style("fill", "#333");
 
@@ -356,7 +359,7 @@ function renderD3ChordDiagram(
       });
   });
 
-  const ribbonGenerator = ribbon<IndividualRibbonData>()
+  const ribbonGenerator = ribbon<IndividualRibbonData & { effectiveWidth: number }, { index: number; value: number; startAngle: number; endAngle: number }>()
     .radius(innerRadius)
     .source(d => d.source)
     .target(d => d.target);
@@ -365,10 +368,10 @@ function renderD3ChordDiagram(
     .append("g")
     .attr("class", "ribbons-group")
     .selectAll("path")
-    .data(processedRibbonData, d => d.id) // Use the now-modified processedRibbonData
+    .data(processedRibbonData, (d: unknown) => (d as IndividualRibbonData & { effectiveWidth: number }).id) // Use the now-modified processedRibbonData
     .join("path")
     .attr("class", "ribbon-path")
-    .attr("d", ribbonGenerator)
+    .attr("d", ribbonGenerator as unknown as (d: IndividualRibbonData & { effectiveWidth: number }) => string)
     .attr("fill", (d: IndividualRibbonData) => color(nodeNameMap.get(d.originalSourceIndex) || ""))
     .attr("stroke", (d: IndividualRibbonData) => d3.rgb(color(nodeNameMap.get(d.originalSourceIndex) || "")).darker().toString())
     .attr("stroke-width", 0.5)
@@ -452,7 +455,7 @@ document.addEventListener("DOMContentLoaded", () => {
         from: string;
         to: string;
         url: string;
-        from_tag_url: string;
+        page: string;
       }
 
       data = Object.fromEntries(Object.entries(data).filter(([key]) => !key.startsWith('_')));
@@ -461,7 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const source = pair.from;
         const target = pair.to;
         const url = pair.url || '';
-        const from_tag_url = pair.page || '';
+        const from_tag_url = pair.page || '';
 
         const value = 1;
         const recordTuple: FlowInputRecord = [source, target, url, value, from_tag_url];
@@ -476,7 +479,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      let padding =
+      const padding =
         parseInt(window.getComputedStyle(container, null).getPropertyValue("padding-left")) +
         parseInt(window.getComputedStyle(container, null).getPropertyValue("padding-right"));
       const width = container.getBoundingClientRect().width - padding;

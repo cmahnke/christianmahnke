@@ -7,6 +7,7 @@ interface Artwork {
   imgSrc: string;
   imgAlt: string;
   subTitle: string;
+  id: string;
   postEl: HTMLElement;
 }
 
@@ -242,7 +243,7 @@ function extractArtworks(): Artwork[] {
       const img  = pic.querySelector<HTMLImageElement>("img");
       const link = pic.querySelector<HTMLAnchorElement>("a");
       const sub  = postEl.querySelector<HTMLElement>(".sub-title");
-      const id   = postEl.previousElementSibling.getAttribute("id");
+      const id   = postEl.previousElementSibling?.getAttribute("id") ?? "";
       if (!img) return;
 
       result.push({
@@ -518,3 +519,5 @@ if (document.readyState === "loading") {
 } else {
   init();
 }
+
+export {};

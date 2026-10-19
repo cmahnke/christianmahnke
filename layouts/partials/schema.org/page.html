@@ -36,7 +36,7 @@
 <script type="application/ld+json">
   {{- $schemaOrg := transform.Unmarshal (partial "metadata/schema.org/util/post.html" $page) -}}
   {{- $schemaOrg = $schemaOrg | merge (dict "@context" "http://schema.org" "@type" $type) -}}
-  {{- $schemaOrg = $schemaOrg | merge (dict "isPartOf" (dict "@type" "Blog" "@id" (printf "%s%s" .Site.BaseURL "post") "name" (printf "%s %s" .Site.Title "Blog"))) -}}
+  {{- $schemaOrg = $schemaOrg | merge (dict "isPartOf" (dict "@type" "Blog" "@id" (printf "%s%s" site.BaseURL "post") "name" (printf "%s %s" site.Title "Blog"))) -}}
   {{- if gt ($author | len) 0 -}}
     {{- $schemaOrg = $schemaOrg | merge (dict "author" $author) -}}
   {{- end -}}

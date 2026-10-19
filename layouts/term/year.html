@@ -1,8 +1,8 @@
 {{ define "title" -}}
   {{- if ne .Title "" -}}
-    {{- .Title }} · {{ .Site.Title -}}
+    {{- .Title }} · {{ site.Title -}}
   {{- else -}}
-    {{- .Site.Title -}}
+    {{- site.Title -}}
   {{- end -}}
 {{- end }}
 {{ define "content" }}
@@ -17,7 +17,7 @@
     </div>
 
     {{- $year := int .Data.Term -}}
-    {{- $pages := where .Site.Pages "Section" $postSection -}}
+    {{- $pages := where site.Pages "Section" $postSection -}}
     {{- $pages = where $pages "Kind" "page" -}}
     {{- $yearPages := where $pages ".Date.Year" "==" $year -}}
 

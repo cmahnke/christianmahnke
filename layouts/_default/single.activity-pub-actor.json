@@ -14,20 +14,20 @@
         }
       ],
     "type": "Person",
-    "url": "{{ .Site.Params.social.mastodon.profilelink }}",
+    "url": "{{ site.Params.social.mastodon.profilelink }}",
     "discoverable": true,
-    "inbox": "{{ $.Site.BaseURL }}inbox",
-    "name": "{{ .Site.Params.author.name }}",
-    {{- with .Site.Params.Description -}}
+    "inbox": "{{ site.BaseURL }}inbox",
+    "name": "{{ site.Params.author.name }}",
+    {{- with site.Params.Description -}}
       "summary": "{{ . }}",
     {{- end -}}
-    {{- with .Site.Params.activitypub -}}
+    {{- with site.Params.activitypub -}}
       {{- if and (isset . "author") (ne .author "") -}}
-        "id": "{{ $.Site.BaseURL }}@{{ .author }}.json",
+        "id": "{{ site.BaseURL }}@{{ .author }}.json",
         "preferredUsername": "{{ .author }}",
       {{- end -}}
       {{- if and  (isset . "outbox") (ne .outbox "") -}}
-        "outbox": "{{ $.Site.BaseURL }}{{ .outbox }}",
+        "outbox": "{{ site.BaseURL }}{{ .outbox }}",
       {{- end -}}
       {{- if and (isset . "icon") (ne .icon "") -}}
         {{ with resources.Get .icon }}

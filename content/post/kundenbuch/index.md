@@ -133,3 +133,37 @@ https://imkerverband-st.de/wp-content/uploads/2019/02/Agenda_Werniger%C3%B6der_I
 
 
 ## Technische Umsetzung
+
+
+### Auszeichnung
+
+Für die weitere Bearbeitung und Auszeichnung der OCR Ergebnisse wurde [Label Studio]() eingesetzt. Der Vorteil war, das sich damit sehr schnell (weil relativ generisch) Nutzerschnittstellen zur annotation erstellen lassen. Sobald die Daten in Label Studio eingespielt waren, musste für das Projekt nur eine sehr einfache Eingabemaske konfiguriert werden. Dazu kommt ein XML Fragment zum Einsatz:
+
+```xml
+<View>
+	<Image name="image" value="$ocr"/>
+	<Labels name="label" toName="image">
+		<Label value="Text" background="green"/>
+		<Label value="Handwriting" background="blue"/>
+		<Label value="Typewriter" background="beige"/>
+		<Label value="Stamp" background="red"/>
+	</Labels>
+	<Labels name="features" toName="image">
+		<Label value="Underline" background="#CAD2C5"/>
+		<Label value="Date" background="#84A98C"/>
+		<Label value="Time" background="#52796F"/>
+		<Label value="Place" background="#354F52"/>
+		<Label value="Person" background="#354F52"/>
+		<Label value="Signature" background="#2F3E46"/>
+	</Labels>
+	<Rectangle name="bbox" toName="image" strokeWidth="3"/>
+	<TextArea name="transcription" toName="image"
+            editable="true" perRegion="true" transcription="true"
+            maxSubmissions="1" rows="2" placeholder="Recognized Text"
+            displayMode="tag"/>
+</View>
+```
+
+Die daraus resultieren Eingabemaske sieht dann in Verbindung mit den OCR Inhalten so aus
+
+{{< figure src="./label-studio.png" caption="Label Studio Eingabemaske" >}}

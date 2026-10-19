@@ -1,4 +1,4 @@
-{{- $bibtexType := default "article" .Site.Params.citation.type -}}
+{{- $bibtexType := default "article" site.Params.citation.type -}}
 {{- $authors := "" -}}
 {{- if .Params.authors -}}
     {{- $authorList := slice -}}
@@ -9,8 +9,8 @@
         {{- $authorList = $authorList | append $authorName -}}
     {{- end -}}
     {{- $authors = delimit $authorList " and " -}}
-{{- else if .Site.Params.author.name -}}
-    {{- $authors = .Site.Params.author.name -}}
+{{- else if site.Params.author.name -}}
+    {{- $authors = site.Params.author.name -}}
 {{- end -}}
 {{- $url := "" -}}
 {{- with .OutputFormats.Get "html" -}}

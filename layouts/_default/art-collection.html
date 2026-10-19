@@ -1,8 +1,8 @@
 {{ define "title" -}}
   {{- if ne .Title "" -}}
-    {{- .Title }} · {{ .Site.Title -}}
+    {{- .Title }} · {{ site.Title -}}
   {{- else -}}
-    {{- .Site.Title -}}
+    {{- site.Title -}}
   {{- end -}}
 {{- end }}
 
@@ -17,7 +17,7 @@
 
   {{- partial "header.html" . -}}
 
-  {{- $posts := where .Site.Pages "Section" $postSection -}}
+  {{- $posts := where site.Pages "Section" $postSection -}}
   {{- $mainSite := hugo.Sites.Default -}}
   {{- if ne $mainSite .Site -}}
     {{- $posts = ($posts | lang.Merge (where $mainSite.Pages "Section" $postSection)) -}}
@@ -51,7 +51,7 @@
           {{- continue -}}
         {{- end -}}
         {{- $tagUrl := printf "%s%s" ("tags/" | relLangURL) ($tag | urlize) -}}
-        {{- with $.Site.GetPage $tagUrl -}}
+        {{- with site.GetPage $tagUrl -}}
           {{- if .Params.wikidata -}}
             {{- if not (reflect.IsSlice .Params.wikidata) -}}
               {{- $wikidataURL := .Params.wikidata -}}

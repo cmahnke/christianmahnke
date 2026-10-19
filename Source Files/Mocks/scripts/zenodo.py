@@ -50,8 +50,10 @@ class ZenodoEntry:
 def prepare_entry(conf: Config):
     author = conf.config.get("params", {}).get("author", DEFAULT_AUTHOR).get("name")
     license = conf.config.get("params", {}).get("license", DEFAULT_LICENSE)
+    # TODO: check if those better should return None instead of "N/A"
     orcid = conf.config.get("params", {}).get("social", {}).get("orcid", {}).get("username", "N/A")
-    logging.info(f"Global Fallbacks - Author: {author}, License: {license}, ORCID: {orcid}")
+    gnd = conf.config.get("params", {}).get("social", {}).get("gnd", {}).get("username", "N/A")
+    logging.info(f"Global Fallbacks - Author: {author}, License: {license}, ORCID: {orcid}, GND: {gnd}")
     entry = ZenodoEntry(
         title="",
         key="",
@@ -72,7 +74,7 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
     if not entry.upload_files or not entry.key or not entry.title:
         logging.warning(f"Missing required fields for entry '{entry.title}', skipping.")
         return
-    
+
     metadata = Metadata(
         title=entry.title,
         creators=[Creator(name=a["name"], orcid=a.get("orcid"), affiliation=a.get("affiliation")) for a in entry.authors],
@@ -111,7 +113,7 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
             if update:
                 for lang, post in entry.posts.items():
                     post.addMetadata("zenodo", zenodo_post_metadata, lang)
-          
+
             logging.info(f"Success! DOI {zenodo_post_metadata['doi']} in {post} added.")
 
     except Exception as e:
@@ -126,7 +128,7 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
     base_url = conf.baseURL()
     content_root = os.path.join(site_root, conf.publishDir())
     post_root = os.path.join(site_root, conf.contentDir(), subdir)
-    
+
     post_files = {}
     for post in content:
         if post.draft:
@@ -158,12 +160,14 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
                 full_url = f"{base_url.rstrip("/")}/{lang}/{os.path.dirname(post_relative_path)}".rstrip("/") + "/"
             entry.urls[lang] = full_url
             entry.related_identifiers.append({"identifier": full_url, "relation": "isIdenticalTo", "resource_type": "publication-section"})
-        
+
             keywords = post.getKeywords()
             # TODO: This isn't working yet
             #keywords = post.getKeywords(lang)
             keywords = list(set(keywords) - set(IGNORE_KEYWORDS))
             description = post.getMetadata(lang).get("description", "")
+            if "cite" in post.getMetadata(lang):
+                logger.info("Post ist set to be citeable")
             title = post.getMetadata(lang).get("title", "")
             zenodo = post.getMetadata(lang).get("zenodo", {})
             if "publish" in zenodo and zenodo["publish"] is True:
@@ -179,13 +183,13 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
             if "deposition_id" in zenodo:
                 entry.deposition_id = zenodo["deposition_id"]
                 entry.key = entry.deposition_id
-        
+
             entry.keywords.extend(keywords)
             if entry.description != "" and description != "":
                 entry.description = f"{entry.description}\n\n---\n\n{description}"
             elif description != "":
                 entry.description = description
-        
+
             if entry.title != "" and title != "":
                 entry.title = f"{entry.title} / {title}"
             elif title != "":
@@ -201,7 +205,7 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
         logging.info(f"Entry for {post.path} - {entry.to_json()}")
         entries.append(entry)
 
-    return entries        
+    return entries
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Push Hugo posts to Zenodo.")
@@ -212,7 +216,12 @@ if __name__ == "__main__":
     parser.add_argument("--token", help="Zenodo API Token")
     parser.add_argument("--update", "-u", action="store_true", default=False, help="Updated post front matter with archive URLs")
     parser.add_argument("--debug", "-d", action="store_true", help="Enable debug logging")
+    parser.add_argument("-h", "--help", action="help", help="Show this help message and exit")
     args = parser.parse_args()
+
+    if args.help:
+        parser.print_help()
+        sys.exit(0)
 
     if args.debug:
         logging.basicConfig(level=logging.DEBUG)

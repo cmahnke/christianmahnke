@@ -1,14 +1,14 @@
 {{- $relative := 0 -}}
-{{- with .Site.Params.print.relative -}}
+{{- with site.Params.print.relative -}}
   {{- $relative = . -}}
 {{- end -}}
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ site.Language.Lang }}">
   <head>
     <title>{{ site.Title }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{- with .Site.Params.author -}}
+    {{- with site.Params.author -}}
       {{- $author := . -}}
       {{- if reflect.IsMap . -}}
         {{- if (isset . "name") -}}

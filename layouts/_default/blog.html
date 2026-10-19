@@ -1,8 +1,8 @@
 {{ define "title" -}}
   {{- if ne .Title "" -}}
-    {{- .Title }} · {{ .Site.Title -}}
+    {{- .Title }} · {{ site.Title -}}
   {{- else -}}
-    {{- .Site.Title -}}
+    {{- site.Title -}}
   {{- end -}}
 {{- end }}
 
@@ -14,7 +14,7 @@
   {{- end -}}
   {{- partial "header.html" . -}}
     <div class="content-container blog" id="main-content">
-      {{- $pages := where .Site.Pages "Section" "post" -}}
+      {{- $pages := where site.Pages "Section" "post" -}}
       {{- $updatedPages := where $pages "Params.lastmod" "!=" nil -}}
       {{- $mainSite := hugo.Sites.Default -}}
       {{- if ne $mainSite .Site -}}
@@ -31,7 +31,7 @@
         {{/*
         <!-- <h2 class="years-heading">{{ i18n "yearsHeading" }}</h2> -->
         <div class="years">
-          {{- $pages := where .Site.Pages "Section" $postSection -}}
+          {{- $pages := where site.Pages "Section" $postSection -}}
           {{- $pages = where $pages "Kind" "page" -}}
           {{- $firstYear := (index (first 1 $pages) 0).Date.Year -}}
           {{- $lastYear := (index (last 1 $pages) 0).Date.Year -}}

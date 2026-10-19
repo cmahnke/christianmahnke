@@ -12,9 +12,7 @@ const waitFor = async (f) => {
 
 test("test startup", async ({ page }) => {
   await page.goto(".");
-  test
-    .info()
-    .annotations.push({ type: "url", description: `URL '${page.url()}'` });
+  test.info().annotations.push({ type: "url", description: `URL '${page.url()}'` });
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/Pong/);
 });
@@ -24,9 +22,7 @@ test("start recording", async ({ page }) => {
   const iterationTimeout = 3 * 60 * 1000;
   test.setTimeout(timeout);
   test.slow();
-  console.log(
-    `Set timeout to ${timeout}, ${iterationTimeout} for a single game`,
-  );
+  console.log(`Set timeout to ${timeout}, ${iterationTimeout} for a single game`);
   const canvasHandle = await page.locator(`#${canvasID}`);
   expect(canvasHandle).toBeTruthy();
   let counter;
@@ -56,7 +52,7 @@ test("start recording", async ({ page }) => {
     console.log(`3a)Download triggered, saving as '${fileName}'`);
     test.info().annotations.push({
       type: "download",
-      description: `Downloaded to '${fileName}'`,
+      description: `Downloaded to '${fileName}'`
     });
   });
 
