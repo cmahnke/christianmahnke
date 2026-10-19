@@ -14,8 +14,6 @@ updates:
     versioning-strategy: increase
     schedule:
       interval: "daily"
-    ignore:
-      - dependency-name: "svgo"
     groups:
       npm:
         patterns:

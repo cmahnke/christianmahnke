@@ -33,7 +33,7 @@
     <ul id="{{ $idPrefix }}main-navigation-list" class="navigation-list">
       {{- with site.Menus.main -}}
         {{- range sort . -}}
-          {{- if and .Params.draft (not site.BuildDrafts) -}}
+          {{- if .Params.draft -}}
             {{- continue -}}
           {{- end -}}
           {{- $class := trim (path.Base .URL) "/" -}}

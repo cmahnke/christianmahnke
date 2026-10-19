@@ -10,22 +10,12 @@ other = "Contact"
 # Tags
 
 # HDR
-[hdrCheck]
-other = "HDR check"
-
 [hdrNotSupported]
 other = "Your browser doesn't support HDR, please retry with a recent Cromium-based browser like Chrome, Edge or Brave!"
-
-[hdrSupported]
-other = "Your browser supports HDR!"
 
 [hdrCanvasNotSupported]
 other = "The canvas element of your browser doesn't support HDR, please retry with a recent Cromium-based browser like Chrome, Edge or Brave!"
 
-[hdrCanvasSupported]
-other = "The canvas element of your browser supports HDR!"
-
-# Vibrate
 [vibrateCheck]
 other = "Vibrarion API check"
 
@@ -60,9 +50,6 @@ other = "RSS feed"
 
 [WikidataEntries]
 other = "Entites in this post (Wikidata)"
-
-[WikidataEntry]
-other = "Wikidata entry"
 
 [toc]
 other = "Table of contents"
@@ -122,14 +109,9 @@ other = "Lower Saxony"
 other = "Göttingen"
 
 # Accessibility
-[skipToContent]
-other = "Skip to content"
-
 [backToTop]
 other = "Back to top"
 
 [scrollDown]
 other = "Scroll down"
 
-[enlargeImage]
-other = "Enlarge image:"
