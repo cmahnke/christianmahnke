@@ -7,7 +7,6 @@ preview:
 tags:
 - DIY
 - Blog
-draft: true
 wikipedia:
   - https://www.wikidata.org/wiki/Q40463886
 ---
@@ -35,6 +34,7 @@ This is implemented using custom [output formats](https://gohugo.io/templates/ou
 
 Since the site is delivered purely statically, the server-side parts of the protocol are missing: there is no `inbox` endpoint, so following, mentions, replies and deleting are not possible. The actor therefore only serves for discoverability and points to the real Mastodon account. Also, the posts from the outbox are not backfilled into Mastodon timelines automatically – there, the articles stay visible via the real account.
 
+On top of that comes the delivery through GitHub Pages: content types there are derived solely from the file extension according to a fixed [list of MIME types](https://github.com/jshttp/mime-db), custom headers cannot be set. As a result, `/.well-known/webfinger` is served as `application/octet-stream` (instead of `application/jrd+json`), and the two JSON files as `application/json` (instead of `application/activity+json`). Since the fix for [GHSA-jhrq-qvrm-qr36](https://github.com/mastodon/mastodon/security/advisories/GHSA-jhrq-qvrm-qr36) (4.2.13/4.3.1), Mastodon only accepts the latter media types when fetching actors, so the account currently cannot be resolved from there. But WebFinger resolution itself works...
 # Tests
 
-The WebFinger resolution can be checked at https://webfinger.net/lookup/.
+The WebFinger resolution can be checked at https://webfinger.net/lookup/. On the command line, the Rust-based [webfinger-cli](https://crates.io/crates/webfinger-cli) does the job: `cargo install webfinger-cli --locked`, then `webfinger acct:cmahnke@christianmahnke.de`.

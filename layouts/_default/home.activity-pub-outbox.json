@@ -20,18 +20,22 @@
     "totalItems": {{ (len $pages) }},
     "orderedItems": [
       {{ range $i, $page := $pages  }}
+        {{- $link := $page.Permalink -}}
+        {{- with $page.OutputFormats.Get "html" -}}
+          {{- $link = .Permalink -}}
+        {{- end -}}
         {
           "@context": "https://www.w3.org/ns/activitystreams",
-          "id": "{{.Permalink}}",
+          "id": "{{ $link }}",
           "type": "Create",
           {{- if ne $actor "" -}}
             "actor": "{{ $actor }}",
           {{- end -}}
           "object": {
-            "id": "{{ .Permalink }}",
+            "id": "{{ $link }}",
             "type": "Note",
-            "content": {{ printf "<a href=\"%s\">%s</a>" .Permalink .Title | jsonify }},
-            "url": "{{.Permalink}}",
+            "content": {{ printf "<a href=\"%s\">%s</a>" $link $page.Title | jsonify }},
+            "url": "{{ $link }}",
             {{- if ne $actor "" -}}
               "attributedTo": "{{ $actor }}",
             {{- end -}}
