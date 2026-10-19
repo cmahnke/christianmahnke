@@ -1,4 +1,4 @@
-{{- $person := site.Data.person -}}
+{{- $person := hugo.Data.person -}}
 
 {{- (resources.FromString "person.jsonld" (jsonify (dict "indent" "  ") (merge (dict "@context" "https://schema.org") $person))).Publish -}}
 

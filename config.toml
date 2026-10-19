@@ -10,7 +10,6 @@ disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base", "hugo-video"]
 enableGitInfo = false
-preserveTaxonomyNames = true
 enableRobotsTXT = true
 timeout = "240s"
 
@@ -264,11 +263,6 @@ timeout = "240s"
 [outputs]
   home = ["html", "rss", "iiif-collection"]
 #  page = ['html', 'print']
-
-[privacy]
-  [privacy.instagram]
-    disable = false
-    simple = false
 
 [sitemap]
   changeFreq = 'weekly'

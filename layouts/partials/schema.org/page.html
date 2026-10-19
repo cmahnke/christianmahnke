@@ -26,10 +26,10 @@
 {{- $author := dict -}}
 {{- if eq $type "BlogPosting" -}}
   {{- $author = dict
-    "@id" (index site.Data.person "@id")
+    "@id" (index hugo.Data.person "@id")
     "@type" "Person"
-    "name" (index site.Data.person "name")
-    "url" (index site.Data.person "url")
+    "name" (index hugo.Data.person "name")
+    "url" (index hugo.Data.person "url")
   -}}
 {{- end -}}
 
