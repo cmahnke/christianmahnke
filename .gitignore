@@ -87,3 +87,9 @@ static/*.wasm
 static/meta/wikidata/enriched_entities.hdt
 *.pdf.jpg
 content/post/haptic-feedback/**/*.webp
+
+/package-lock.json
+
+/npm-shrinkwrap.json
+
+/pnpm-lock.yaml
