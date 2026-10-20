@@ -1,3 +1,7 @@
+$box-border: #ff5477 !default;
+$box-background: #f1ffb7 !default;
+@use "icons" as *;
+$text-color: #000 !default;
 @use 'sass:color';
 @use "functions/color" as *;
 

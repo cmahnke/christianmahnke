@@ -126,10 +126,10 @@
     "logo-monogram": "svgo -i themes/projektemacher-base/static/images/cm.svg -o static/images/cm.svg && replace-in-file 'fill-opacity:.5' 'fill-opacity:1.0' static/images/cm.svg && cp static/images/cm.svg static/images/cm-black.svg",
     "logo-monogram-black": "npm run logo-monogram && replace-in-file 'fill-opacity:.5' 'fill-opacity:1.0' static/images/cm-black.svg && replace-in-file 'fill:#d40000' 'fill:#000000' static/images/cm-black.svg",
     "logos": "npm run logo-projektemacher && npm run logo-monogram-black",
-    "background": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Background/Background.svg -o static/images/bg.svg",
+    "background": "svgo --config themes/projektemacher-base/config/svgo.config.js -i Source\\ Files/Background/Background.svg -o static/images/bg.svg",
     "icons": "npm run no-emoji && npm run tagcloud",
-    "no-emoji": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Icons/No\\ Emoji.svg -o static/images/no-emoji.svg",
-    "tagcloud": "svgo --config Source\\ Files/svgo.config.js -i Source\\ Files/Icons/Tagcloud.svg -o static/images/tagcloud.svg",
+    "no-emoji": "svgo --config themes/projektemacher-base/config/svgo.config.js -i Source\\ Files/Icons/No\\ Emoji.svg -o static/images/no-emoji.svg",
+    "tagcloud": "svgo --config themes/projektemacher-base/config/svgo.config.js -i Source\\ Files/Icons/Tagcloud.svg -o static/images/tagcloud.svg",
     "svgo": "npm run background && npm run icons && npm run logos",
     "lint-md": "markdownlint 'content/**/*.md' 'content/*.md'"
   },

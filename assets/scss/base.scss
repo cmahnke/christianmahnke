@@ -1,5 +1,42 @@
 @use 'sass:color';
 @use "functions/color" as *;
+@use "normalize";
+@use "npm-fonts/league-spartan";
+@use "npm-fonts/poiret-one";
+@use "npm-fonts/josefin-sans";
+@use "npm-fonts/inconsolata";
+@use "icons" as *;
+@use "filters" as *;
+@use "zoom-link";
+@use "./pagination";
+@use "./code";
+@use "./gallery";
+@use "./blog";
+@use "./tagcloud";
+@use "./iiif-hdr";
+@use "./syntax";
+@use "./doi";
+@use "./zenodo";
+@use "./print";
+@use "./wikidata";
+@use "./footnote";
+@use "./related";
+@use "./featured";
+@use "./tables";
+@use "./tagline";
+@use "./pagefind";
+@use "./cite";
+@use "./collections";
+@use "./mastodon";
+@use "./art-collection";
+@use "blog-themes/uranium";
+@use "blog-themes/night";
+@use "blog-themes/never";
+@use "blog-themes/sepia";
+@use "blog-themes/lucienne";
+@use "blog-themes/toc-text";
+@use "iiif/presentation-tify";
+
 
 /* Also update toc.scss and slider-canvas.scss when changing this  */
 $box-background: #f1ffb7;
@@ -10,48 +47,12 @@ $marker-color: #ff073a;
 
 $external-link-icon: "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='#{encodecolor($marker-color)}' d='M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z'/%3E%3C/svg%3E";
 
-@import "normalize";
-@import "npm-fonts/league-spartan";
-@import "npm-fonts/poiret-one";
-@import "npm-fonts/josefin-sans";
-@import "npm-fonts/inconsolata";
-@import "icons";
-@import "filters";
-@import "zoom-link";
 /* The IIIF/OpenLayers styles (iiif, ol, ol-iiif, map) are attached per page
    via the iiif/iiif and maps/osm shortcode metadata */
-@import "./pagination";
-@import "./code";
-@import "./gallery";
-@import "./blog";
-@import "./tagcloud";
-@import "./iiif-hdr";
-@import "./syntax";
-@import "./doi";
-@import "./zenodo";
-@import "./print";
-@import "./wikidata";
-@import "./footnote";
-@import "./related";
-@import "./featured";
-@import "./tables";
-@import "./tagline";
-@import "./pagefind";
-@import "./cite";
-@import "./collections";
-@import "./mastodon";
-@import "./art-collection";
 
 /* Themes */
-/* @import "blog-themes/base"; */
-@import "blog-themes/uranium";
-@import "blog-themes/night";
-@import "blog-themes/never";
-@import "blog-themes/sepia";
-@import "blog-themes/lucienne";
-@import "blog-themes/toc-text";
+/* @use "blog-themes/base"; */
 
-@import "iiif/presentation-tify";
 
 $gradient-color-light: #b2444d;
 $gradient-color-mid: #a41416;
@@ -76,9 +77,10 @@ $menu-margin: 10em;
 }
 
 :root {
-  --background-color: #{$background-color};
-  --foreground-color: #{$foreground-color};
-  --accents-color: #{$accents-color};
+  /* Values resolved from the blog-themes' import order (pre-@use leakage) */
+  --background-color: #D9CAB0;
+  --foreground-color: #013A40;
+  --accents-color: #BFA249;
   --text-marker-color: 255 7 58;
 }
 
@@ -702,7 +704,7 @@ a:visited {
     }
 
     &.list {
-      @include post-description();
+      @include blog.post-description();
 
       .post-description {
         max-width: 70%;
