@@ -20,7 +20,7 @@ Basically not that hard, especially since there are some articles about it:
 * [Justin Garrison: Mastodon instance with 6 files](https://justingarrison.com/blog/2022-12-06-mastodon-files-instance/)
 * [Maho Pacheco: A guide to implement ActivityPub in a static site (or any website)](https://maho.dev/2024/02/a-guide-to-implement-activitypub-in-a-static-site-or-any-website/)
 
-# Implementation
+## Implementation
 
 The site provides three files:
 
@@ -30,11 +30,12 @@ The site provides three files:
 
 This is implemented using custom [output formats](https://gohugo.io/templates/output-formats/) in Hugo (`activity-pub-actor` and `activity-pub-outbox` with the media type `application/activity+json`), so the files are generated directly during the build.
 
-# Limitations
+## Limitations
 
 Since the site is delivered purely statically, the server-side parts of the protocol are missing: there is no `inbox` endpoint, so following, mentions, replies and deleting are not possible. The actor therefore only serves for discoverability and points to the real Mastodon account. Also, the posts from the outbox are not backfilled into Mastodon timelines automatically – there, the articles stay visible via the real account.
 
 On top of that comes the delivery through GitHub Pages: content types there are derived solely from the file extension according to a fixed [list of MIME types](https://github.com/jshttp/mime-db), custom headers cannot be set. As a result, `/.well-known/webfinger` is served as `application/octet-stream` (instead of `application/jrd+json`), and the two JSON files as `application/json` (instead of `application/activity+json`). Since the fix for [GHSA-jhrq-qvrm-qr36](https://github.com/mastodon/mastodon/security/advisories/GHSA-jhrq-qvrm-qr36) (4.2.13/4.3.1), Mastodon only accepts the latter media types when fetching actors, so the account currently cannot be resolved from there. But WebFinger resolution itself works...
-# Tests
+
+## Tests
 
 The WebFinger resolution can be checked at https://webfinger.net/lookup/. On the command line, the Rust-based [webfinger-cli](https://crates.io/crates/webfinger-cli) does the job: `cargo install webfinger-cli --locked`, then `webfinger acct:cmahnke@christianmahnke.de`.
