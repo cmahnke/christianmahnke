@@ -1,8 +1,8 @@
 $box-border: #ff5477;
 
-@import "npm-fonts/stix-two-text";
-@import "npm-fonts/strichpunkt-sans";
-@import "icons";
+@use "npm-fonts/stix-two-text";
+@use "npm-fonts/strichpunkt-sans";
+@use "icons" as *;
 
 $body-text: "STIX Two Text Variable";
 $accent-font: "Strichpunkt Sans";

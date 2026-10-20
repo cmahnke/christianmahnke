@@ -43,7 +43,7 @@ function expandDetails() {
   }
 }
 
-function fitTextToContainer(containerSelector: string, widthSelector?: string) {
+function fitTextToContainer(containerSelector: string, widthSelector?: string, textSelector?: string) {
   const initial = document.querySelector(containerSelector);
 
   if (!initial) {
@@ -96,7 +96,9 @@ function fitTextToContainer(containerSelector: string, widthSelector?: string) {
   }
 
   document.fonts.ready.then(() => {
-    const textElements = getTextElements(container);
+    const textElements = textSelector
+      ? Array.from(initial.querySelectorAll<HTMLElement>(textSelector))
+      : getTextElements(container);
     if (widthSelector != undefined) {
        const widthContainer = document.querySelector(widthSelector);
        if (widthContainer) {
@@ -134,8 +136,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   //fitTextToContainer('.section-head');
-  ([['.section-head'], ['.single .post-title', '.content']] as [string, string?][]).forEach(([headSelector, contentSelector]) => {
-    fitTextToContainer(headSelector, contentSelector)
+  ([['.section-head', undefined, '.section-head-title'], ['.single .post-title', '.content']] as [string, string?, string?][]).forEach(([headSelector, contentSelector, textSelector]) => {
+    fitTextToContainer(headSelector, contentSelector, textSelector)
   })
 
   //const details = document.querySelectorAll('.inline-collection', 'details');

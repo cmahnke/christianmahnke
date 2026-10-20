@@ -1,10 +1,10 @@
 /* Move to 'blog-themes' */
 
 @use 'sass:color';
-@import "functions/color";
+@use "functions/color" as *;
 
-@import 'npm-fonts/caprasimo';
-@import 'npm-fonts/purple-purse';
+@use 'npm-fonts/caprasimo';
+@use 'npm-fonts/purple-purse';
 
 $background-color: #222222;
 $foreground-color: #d15431;
