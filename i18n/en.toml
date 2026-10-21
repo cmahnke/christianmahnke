@@ -9,13 +9,6 @@ other = "Contact"
 
 # Tags
 
-# HDR
-[hdrNotSupported]
-other = "Your browser doesn't support HDR, please retry with a recent Cromium-based browser like Chrome, Edge or Brave!"
-
-[hdrCanvasNotSupported]
-other = "The canvas element of your browser doesn't support HDR, please retry with a recent Cromium-based browser like Chrome, Edge or Brave!"
-
 [vibrateCheck]
 other = "Vibrarion API check"
 
