@@ -41,6 +41,10 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
+      - name: Lint CITATION.cff
+        run: |
+          npx --yes @projektemacher/code-citation-lint lint -r content
+
       - uses: pnpm/action-setup@v6.1.0
         with:
           version: 9
@@ -106,6 +110,10 @@ jobs:
           ./scripts/post-build/qrcodes.sh
           ./scripts/post-build/cleanup.sh
           find ./docs/ -type f -name "article.html" -exec rm {} \;
+
+      - name: Lint generated CodeMeta
+        run: |
+          find docs -name 'codemeta.json' -exec npx --yes @projektemacher/code-citation-lint lint {} +
 
       - name: Download all workflow run artifacts
         uses: dawidd6/action-download-artifact@v27
