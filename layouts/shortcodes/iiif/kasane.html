@@ -1,0 +1,52 @@
+{{/*
+Hugo Shortcode for embedding the Kasane IIIF viewer
+(https://github.com/nakamura196/iiif-kasane) as a web component.
+The viewer is installed as npm package '@nakamura196/iiif-viewer'
+(GitHub release tarball), JS and CSS are attached via the metadata
+define below.
+
+Parameters:
+* manifest - URL or path of the IIIF manifest. Relative paths are
+  resolved against the page, paths starting with '/' against the
+  site base URL
+* locale - Viewer locale, 'ja' or 'en' (optional - default 'en')
+* class - Additional CSS classes for the wrapper (optional)
+* options - JSON string with viewer options, e.g. '{"panelOpen":false}'
+  (optional, see https://github.com/nakamura196/iiif-kasane README)
+*/}}
+
+{{- $manifest := .Get "manifest" -}}
+
+{{- if or (hasPrefix $manifest "http://") (hasPrefix $manifest "https://") -}}
+  {{/* absolute URL, use as is */}}
+{{- else if hasPrefix $manifest "/" -}}
+  {{- $manifest = $manifest | absURL -}}
+{{- else -}}
+  {{- $urlBase := $.Page.Permalink | replaceRE "\\.html$" "/" -}}
+  {{- if .Page.IsTranslated -}}
+    {{- range .Page.Translations -}}
+      {{- if .Language.IsDefault -}}
+        {{- $urlBase = .Page.RelPermalink | replaceRE "\\.html$" "/" -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $manifest = printf "%s%s" $urlBase $manifest -}}
+{{- end -}}
+
+{{- $locale := "en" -}}
+{{- if .Get "locale" -}}
+  {{- $locale = .Get "locale" -}}
+{{- end -}}
+
+{{- $class := "iiif-kasane" -}}
+{{- if .Get "class" -}}
+  {{- $class = printf "%s %s" $class (.Get "class") -}}
+{{- end -}}
+
+<div class="{{ $class }} script">
+    <iiif-viewer iiif-content="{{ $manifest }}" locale="{{ $locale }}"{{ with .Get "options" }} options="{{ . }}"{{ end }}></iiif-viewer>
+</div>
+
+{{- define "_partials/shortcodes/iiif/kasane-metadata.html" -}}
+  {{- (dict "css" (slice "ts/iiif/kasane.css") "js" (slice "ts/iiif/kasane.ts") "scss" (slice "scss/iiif/kasane.scss")) | jsonify -}}
+{{- end -}}

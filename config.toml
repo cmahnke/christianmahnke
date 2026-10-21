@@ -324,6 +324,10 @@ timeout = "240s"
     source = "node_modules/@projektemacher/lucienne/dist/lucienne-christianmahnke.css"
     target = "assets/scss/lucienne/lucienne.css"
 
+  [[module.mounts]]
+    source = "node_modules/@nakamura196/iiif-viewer/dist/style.css"
+    target = "assets/ts/iiif/kasane.css"
+
 # See https://github.com/gohugoio/hugo/issues/7844#issuecomment-1843854396
   [[module.mounts]]
       source = 'i18n'
