@@ -917,8 +917,7 @@ export class RdfGraph extends LitElement {
     this._scriptObserver.observe(this, { childList: true, subtree: true });
 
     // ↓ NEU: auf Fullscreen-Änderungen reagieren (z. B. Esc-Taste)
-    this._onFullscreenChange = this._onFullscreenChange.bind(this);
-    document.addEventListener('fullscreenchange', this._onFullscreenChange);
+    document.addEventListener('fullscreenchange', this._boundFullscreenChange);
   }
 
   override disconnectedCallback(): void {
@@ -930,10 +929,8 @@ export class RdfGraph extends LitElement {
     this._wikidataStore = null;
     this._labelCache    = null;
     this._loadedSrc     = null;
-    document.removeEventListener('fullscreenchange', this._onFullscreenChange);
+    document.removeEventListener('fullscreenchange', this._boundFullscreenChange);
   }
-
-  private _onFullscreenChange!: () => void;
 
   private _handleFullscreenChange(): void {
     this._isFullscreen = !!document.fullscreenElement;
@@ -943,6 +940,8 @@ export class RdfGraph extends LitElement {
       this._cy?.fit(undefined, FIT_PADDING);
     });
   }
+
+  private _boundFullscreenChange = () => this._handleFullscreenChange();
 
   private async _toggleFullscreen(): Promise<void> {
     if (!document.fullscreenElement) {
@@ -1421,8 +1420,6 @@ export class RdfGraph extends LitElement {
   getCy(): cytoscape.Core | null     { return this._cy; }
   getStore(): WikidataStore | null   { return this._wikidataStore; }
   get quadCount(): number            { return this._wikidataStore?.size ?? 0; }
-
-  private _boundFullscreenChange = () => this._handleFullscreenChange();
 
   protected override render() {
     const ready = this._loadingState.status === 'ready' && this._cy !== null;
