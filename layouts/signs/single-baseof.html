@@ -16,11 +16,7 @@
     {{- end -}}
 
     {{- partial "html/head/style.html" (dict "context" . "css" "css/style.css" "base" $scss) -}}
-    {{- if and (isset site.Params "js") (eq site.Params.js "esm") -}}
-      {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .) "opts" (dict "format" "esm")) -}}
-    {{- else -}}
-      {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
-    {{- end -}}
+    {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
 
     {{- partial "html/head/preload.html" . -}}
 

@@ -22,16 +22,12 @@
     {{ $format := "2 Jan 2006" }}
     <meta name="date" content="{{ $t.Format $format }}"/>
     {{- partial "html/head/style.html" (dict "context" . "css" "css/style.css") -}}
-    {{- if and (isset site.Params "js") (eq site.Params.js "esm") -}}
-      {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .) "opts" (dict "format" "esm")) -}}
-    {{- else -}}
-      {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
-    {{- end -}}
+    {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .)) -}}
     {{- $cssOptions := dict "outputStyle" "compressed" "transpiler" "dartsass" "targetPath" "css/article.css" "includePaths" (slice "assets/css") -}}
     {{- $css := resources.Get "scss/article-pdf.scss" | toCSS $cssOptions | fingerprint -}}
     <link rel="stylesheet" href="{{ strings.Substr $css.RelPermalink $relative }}" type="text/css" integrity="{{ $css.Data.Integrity }}">
 
-    {{- $printJs := "js/print.js" -}}
+    {{- $printJs := "ts/print.ts" -}}
 
     {{- if (fileExists (printf "assets/%s" $printJs)) -}}
       {{- with resources.Get $printJs -}}
@@ -40,13 +36,14 @@
           "sourceMap" (cond hugo.IsDevelopment "external" "")
           "targetPath" "js/print.js"
           "target" "es2020"
+          "format" "esm"
         }}
         {{- with . | js.Build $opts -}}
           {{- if hugo.IsDevelopment -}}
-            <script src="{{ strings.Substr .RelPermalink $relative }}"></script>
+            <script type="module" src="{{ strings.Substr .RelPermalink $relative }}"></script>
           {{- else -}}
             {{- with . | fingerprint -}}
-              <script src="{{ strings.Substr .RelPermalink $relative }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+              <script type="module" src="{{ strings.Substr .RelPermalink $relative }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
             {{- end -}}
           {{- end -}}
         {{- end -}}

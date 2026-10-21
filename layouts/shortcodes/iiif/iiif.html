@@ -14,10 +14,10 @@ Parameters:
 {{- if not (.Get "includeSources") -}}
     {{/* JavaScript */}}
     {{- $defines := dict "process.env.NODE_ENV" `"development"` -}}
-    {{- $opts := dict "targetPath" "js/main.js" "defines" $defines -}}
+    {{- $opts := dict "targetPath" "js/main.js" "defines" $defines "format" "esm" -}}
     {{- $iiifViewer := resources.Get "ts/iiif-image-viewer.ts" | js.Build $opts -}}
     {{- $js := slice $iiifViewer | resources.Concat "js/iiif-ol.js" | minify | fingerprint -}}
-    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+    <script type="module" src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
 {{ end }}
 
 {{- $src := .Get "src" -}}

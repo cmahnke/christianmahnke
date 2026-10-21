@@ -2,6 +2,7 @@
   pagerSize = 5
 
 [params]
+  js = "esm"
   copyrightYears = "MMXX - MMXXVI"
   enableBlogPost = true
   enableTOC = true

@@ -15,11 +15,7 @@
     {{- end -}}
 
     {{- partial "html/head/style.html" (dict "context" . "css" "css/style.css") -}}
-    {{- if and (isset site.Params "js") (eq site.Params.js "esm") -}}
-      {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .) "opts" (dict "format" "esm") "splitBundles" true) -}}
-    {{- else -}}
-      {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .) "splitBundles" true) -}}
-    {{- end -}}
+    {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .) "opts" (dict "splitBundles" true)) -}}
 
     {{- partial "html/head/preload.html" . -}}
 
