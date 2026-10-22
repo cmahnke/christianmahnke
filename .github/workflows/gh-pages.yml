@@ -102,6 +102,10 @@ jobs:
           key: ${{ runner.os }}-hugo-cache
           path: resources
 
+      - name: Lint generated CodeMeta
+        run: |
+          find docs -name 'codemeta.json' -exec npx --yes @projektemacher/code-citation-lint lint {} +
+
       - name: Run post build scripts
         run: |
           ./scripts/post-build/index.sh &
@@ -110,10 +114,6 @@ jobs:
           ./scripts/post-build/qrcodes.sh
           ./scripts/post-build/cleanup.sh
           find ./docs/ -type f -name "article.html" -exec rm {} \;
-
-      - name: Lint generated CodeMeta
-        run: |
-          find docs -name 'codemeta.json' -exec npx --yes @projektemacher/code-citation-lint lint {} +
 
       - name: Download all workflow run artifacts
         uses: dawidd6/action-download-artifact@v27

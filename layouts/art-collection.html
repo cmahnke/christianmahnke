@@ -192,7 +192,7 @@
               </h3>
               <div class="post-body">
                 {{- $subtitle := printf "%s %s %s" $title (i18n "By") $artistName -}}
-                {{- partial "preview.html" (dict "ctx" $page "additional" (printf `<div class="sub-title">%s</div>` $subtitle))  -}}
+                {{- partial "preview.html" (dict "ctx" $page "additional" (printf `<div class="sub-title">%s</div>` $subtitle) "priority" (eq $i 0)) -}}
 
                 {{- with $page.Summary -}}
                   <div class="post-summary">
@@ -207,12 +207,14 @@
           {{- end -}}
         </div>
         {{- if len $artists -}}
-          <ul class="artists-toc">
-            <div class="toc-header">{{ i18n "toc" }}</div>
-            {{- range $artists -}}
-              <li><a href="#{{ .id }}">{{ .artistNameHeading }}</li>
-            {{- end -}}
-          </ul>
+          <nav class="artists-toc-wrap" aria-labelledby="artists-toc-heading">
+            <h2 id="artists-toc-heading" class="toc-header">{{ i18n "toc" }}</h2>
+            <ul class="artists-toc">
+              {{- range $artists -}}
+                <li><a href="#{{ .id }}">{{ .artistNameHeading }}</a></li>
+              {{- end -}}
+            </ul>
+          </nav>
         {{- end -}}
       </div>
 

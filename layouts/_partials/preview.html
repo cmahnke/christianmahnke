@@ -1,4 +1,4 @@
-{{- $previewWidth := slice "1280" "640" "320" -}}
+{{- $previewWidth := slice "320" "640" "800" "1280" -}}
 
 {{- /* Context ermitteln: explizit via .ctx oder implizit */ -}}
 {{- $ctx := . -}}
@@ -11,6 +11,13 @@
     {{- $additional = . -}}
   {{- else -}}
     {{- errorf "[preview.html] Called with dict but without additional text, use the normal calling convention instead in %s" .RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $priority := false -}}
+{{- if reflect.IsMap . -}}
+  {{- with .priority -}}
+    {{- $priority = . -}}
   {{- end -}}
 {{- end -}}
 
@@ -40,16 +47,20 @@
     <div class="post-preview">
       {{- $imgRes := $ctx.Resources.Get $src -}}
       <picture data-height="{{ $imgRes.Height }}" data-width="{{ $imgRes.Width }}" {{ with $imgRes.Meta.Exif.Tags.XResolution }}data-resolution="{{ . }}"{{ end }}>
+        {{- $srcset := slice -}}
         {{- range $previewWidth -}}
-          {{- $imgRes := $ctx.Resources.Get $src -}}
-          {{- if eq $imgRes nil -}}
+          {{- $res := $ctx.Resources.Get $src -}}
+          {{- if eq $res nil -}}
             {{- errorf "[preview.html] Preview image %s missing for %s" $src $ctx.RelPermalink -}}
           {{- end -}}
-          <source media="(min-width:{{ . }}px)" srcset="{{ ($imgRes.Resize (printf "%sx webp picture" .)).RelPermalink }}">
+          {{- $srcset = $srcset | append (printf "%s %sw" ($res.Resize (printf "%sx webp picture" .)).RelPermalink .) -}}
         {{- end -}}
         <div class="preview-img-wrapper">
           <a title="{{ $ctx.Title }}" href="{{ $ctx.RelPermalink }}">
-            <img src="{{ ($imgRes.Resize (printf "%sx webp picture" "1280")).RelPermalink }}" alt="{{ $ctx.Title }}" {{ if ne $class "" }}class="{{ $class }}"{{ end }} />
+            <img src="{{ ($imgRes.Resize (printf "%sx webp picture" "640")).RelPermalink }}"
+                 srcset="{{ delimit $srcset ", " }}"
+                 sizes="(min-width: 75em) 45vw, 90vw"
+                 alt="{{ $ctx.Title }}" {{ if ne $class "" }}class="{{ $class }}"{{ end }}{{ if $priority }} fetchpriority="high"{{ end }} />
           </a>
           {{- if $attribution -}}
             <div class="preview-attribution">{{ $attribution | markdownify }}</div>

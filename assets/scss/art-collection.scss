@@ -68,21 +68,35 @@ $box-bg-color: #ff5477bb;
       }
     }
 
-    .artists-toc {
+    .artists-toc-wrap {
       font-size: 1.2rem;
-      display: flex;
-      list-style-type: none;
       padding: 1.4em 1.4em 1em 1.4em;
       border-radius: 1rem;
       box-shadow: 0 0px 6px #ff5477;
       margin: 1em;
+      background-color: $box-bg-color;
+
+      .toc-header {
+        font-size: inherit;
+        font-weight: bolder;
+        text-align: center;
+        margin: 0;
+        padding-bottom: .6rem;
+      }
+    }
+
+    .artists-toc {
+      font-size: 1.2rem;
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
       text-justify: none;
       align-content: center;
       align-items: center;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      background-color: $box-bg-color;
 
       a:before {
         color: #000;
@@ -91,13 +105,6 @@ $box-bg-color: #ff5477bb;
 
       a:hover {
         text-decoration: none;
-      }
-
-      .toc-header {
-        flex-basis: 100%;
-        font-weight: bolder;
-        text-align: center;
-        padding-bottom: .6rem;
       }
 
       li {
@@ -217,43 +224,43 @@ $box-bg-color: #ff5477bb;
       */
       border-radius: 1rem;
 
-      .artists-toc {
-        direction: unset;
+      .toc-group {
         font-size: 1.2rem;
-        list-style-type: none;
-        border-radius: 1rem;
-        box-shadow: unset;
         margin: .6rem;
-        text-justify: none;
-        align-content: center;
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        background-color: unset;
-        display: block;
-        list-style: none;
-        padding: 0;
         padding-left: var(--header-width, 100px);
         text-indent: calc(var(--header-width, 100px) * -1);
 
         .toc-header {
           display: inline;
+          font-size: inherit;
           font-weight: bold;
-          flex-basis: unset;
+          margin: 0;
           margin-right: .8rem;
         }
 
-        li {
+        a {
+          padding: .35em .25em;
+          margin: -.35em -.25em;
+        }
+
+        .artists-toc {
           display: inline;
-          padding-left: unset;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          text-indent: 0;
 
-          &::after {
-            content: " ";
-          }
+          li {
+            display: inline;
+            padding-left: unset;
 
-          a:before {
-            padding-right: .2rem;
+            &::after {
+              content: " ";
+            }
+
+            a:before {
+              padding-right: .2rem;
+            }
           }
         }
       }
@@ -266,5 +273,7 @@ $box-bg-color: #ff5477bb;
 
   .artists-toc li a {
     white-space: nowrap;
+    padding: .35em .25em;
+    margin: -.35em -.25em;
   }
 }
