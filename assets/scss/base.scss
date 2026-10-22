@@ -5,6 +5,8 @@
 @use "npm-fonts/poiret-one";
 @use "npm-fonts/josefin-sans";
 @use "npm-fonts/inconsolata";
+/* Must come after the npm-fonts: re-declares their @font-face with pinned vertical metrics (see file) */
+@use "font-metrics-overrides";
 @use "icons" as *;
 @use "filters" as *;
 @use "zoom-link";
