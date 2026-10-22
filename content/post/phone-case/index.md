@@ -1,9 +1,10 @@
 ---
 date: 2021-05-31T13:58:44+02:00
 title: "DIY Projekt: Telefonhülle"
-preview:
-  image: open.jpg
-  hide: true
+params:
+  preview:
+    image: open.jpg
+    hide: true
 tags:
 - DIY
 ---

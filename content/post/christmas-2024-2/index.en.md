@@ -3,15 +3,16 @@ date: 2024-12-05T10:00:00+02:00
 title: "Christmas 2024"
 keywords: Craft instructions, Christmas card
 description: "Craft instructions for the 2024 Christmas card"
-preview:
-  image: card-2024-2.jpg
-  hide: true
+params:
+  preview:
+    image: card-2024-2.jpg
+    hide: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q191529
+    - https://www.wikidata.org/wiki/Q622508
 tags:
 - DIY
 - Christmas
-wikidata:
-  - https://www.wikidata.org/wiki/Q191529
-  - https://www.wikidata.org/wiki/Q622508
 ---
 
 Merry Christmas to all readers, this year the traditional present comes a little earlier...

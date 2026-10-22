@@ -6,24 +6,25 @@ tags:
   - Art
   - WoodblockPrint
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    title: Blumenstrauß
+    artist:
+      name: Emma Mayer
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q12310011
+    - https://www.wikidata.org/wiki/Q1622237
+    - https://www.wikidata.org/wiki/Q137661693
+    - https://www.wikidata.org/wiki/Q1187930
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  title: Blumenstrauß
-  artist:
-    name: Emma Mayer
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q12310011
-  - https://www.wikidata.org/wiki/Q1622237
-  - https://www.wikidata.org/wiki/Q137661693
-  - https://www.wikidata.org/wiki/Q1187930
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I found a woodcut by [Emma Mayer](https://www.dashausderfrau.nl/mayer-emma.html) (1874-after 1930)...

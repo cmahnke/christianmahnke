@@ -3,7 +3,17 @@ date: 2024-08-18T11:33:44+02:00
 title: "HDR IIIF"
 keywords: libultrahdr, ultrahdr, Pillow, XMP, JPEGXL
 description: "HDR Bilder über die IIIF Image API"
-cite: true
+params:
+  cite: true
+  iiifContext: http://iiif.io/api/image/2/context.json
+  notes: Add https://iiif.io/api/image/3.0/#57-extra-functionality
+  wikidata:
+    - https://www.wikidata.org/wiki/Q106239881
+    - https://www.wikidata.org/wiki/Q22682088
+    - https://www.wikidata.org/wiki/Q2985103
+    - https://www.wikidata.org/wiki/Q777
+    - https://www.wikidata.org/wiki/Q1952321
+    - https://www.wikidata.org/wiki/Q99738405
 #preview:
 #  image: preview.png
 #  hide: true
@@ -14,7 +24,6 @@ tags:
   - Digitisation
   - HDR
   - IIIF
-iiifContext: http://iiif.io/api/image/2/context.json
 outputs:
   - html
   - iiif-manifest
@@ -24,14 +33,6 @@ resources:
   name: front
   params:
     iiif: front-hdr/info.json
-notes: Add https://iiif.io/api/image/3.0/#57-extra-functionality
-wikidata:
-  - https://www.wikidata.org/wiki/Q106239881
-  - https://www.wikidata.org/wiki/Q22682088
-  - https://www.wikidata.org/wiki/Q2985103
-  - https://www.wikidata.org/wiki/Q777
-  - https://www.wikidata.org/wiki/Q1952321
-  - https://www.wikidata.org/wiki/Q99738405
 lastmod: 2024-08-28T00:00:00+02:00
 ---
 

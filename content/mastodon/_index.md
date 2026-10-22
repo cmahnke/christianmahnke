@@ -1,10 +1,11 @@
 ---
 title: "Mastodon Archiv"
-metaPage: true
-displayinlist: false
-archive: false
-news: false
-sectionContent: false
+params:
+  metaPage: true
+  displayinlist: false
+  archive: false
+  news: false
+  sectionContent: false
 layout: mastodon
 cascade:
   - target:

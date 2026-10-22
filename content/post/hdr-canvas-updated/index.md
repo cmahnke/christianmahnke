@@ -4,24 +4,25 @@ title: "hdr-canvas aktualisiert"
 keywords: NPM, TypeScript
 aliases:
   - /post/hdr-canvas-0.1.0
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q7067518
+    - https://www.wikidata.org/wiki/Q2005
+    - https://www.wikidata.org/wiki/Q106239881
+    - https://www.wikidata.org/wiki/Q978185
+    - https://www.wikidata.org/wiki/Q116963687
+    - https://www.wikidata.org/wiki/Q28957081
+    - https://www.wikidata.org/wiki/Q136933249
+    - https://www.wikidata.org/wiki/Q3525922
+    - https://www.wikidata.org/wiki/Q615940
+    - https://www.wikidata.org/wiki/Q110650833
+    - https://www.wikidata.org/wiki/Q5439690
+    - https://www.wikidata.org/wiki/Q6368
+    - https://www.wikidata.org/wiki/Q79534
 tags:
   - JavaScript
   - HDR
-wikidata:
-  - https://www.wikidata.org/wiki/Q7067518
-  - https://www.wikidata.org/wiki/Q2005
-  - https://www.wikidata.org/wiki/Q106239881
-  - https://www.wikidata.org/wiki/Q978185
-  - https://www.wikidata.org/wiki/Q116963687
-  - https://www.wikidata.org/wiki/Q28957081
-  - https://www.wikidata.org/wiki/Q136933249
-  - https://www.wikidata.org/wiki/Q3525922
-  - https://www.wikidata.org/wiki/Q615940
-  - https://www.wikidata.org/wiki/Q110650833
-  - https://www.wikidata.org/wiki/Q5439690
-  - https://www.wikidata.org/wiki/Q6368
-  - https://www.wikidata.org/wiki/Q79534
 lastmod: 2026-10-13T00:00:00+02:00
 ---
 

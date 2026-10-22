@@ -1,11 +1,12 @@
 ---
 title: "Job applications"
-metaPage: true
-displayinlist: false
-archive: false
-news: false
-sectionContent: false
-sectionlist: false
+params:
+  metaPage: true
+  displayinlist: false
+  archive: false
+  news: false
+  sectionContent: false
+  sectionlist: false
 sitemap:
   disable: true
 cascade:

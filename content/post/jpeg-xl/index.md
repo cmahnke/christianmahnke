@@ -6,7 +6,13 @@ tags:
 - Projektemacher.org
 - IIIF
 - VIPS
-iiifcontext: http://iiif.io/api/presentation/3/context.json
+params:
+  iiifcontext: http://iiif.io/api/presentation/3/context.json
+  wikidata:
+    - https://www.wikidata.org/wiki/Q7907037
+    - https://www.wikidata.org/wiki/Q72885392
+    - https://www.wikidata.org/wiki/Q1047199
+    - https://www.wikidata.org/wiki/Q99738405
 outputs:
   - html
   - iiif-manifest
@@ -22,11 +28,6 @@ resources:
     iiif: back/info.json
     hint: non-paged
     label: Rückseite
-wikidata:
-  - https://www.wikidata.org/wiki/Q7907037
-  - https://www.wikidata.org/wiki/Q72885392
-  - https://www.wikidata.org/wiki/Q1047199
-  - https://www.wikidata.org/wiki/Q99738405
 ---
 
 Da meine Blogs auf GitHub verwaltet werden, müssen die Bilder so platzsparend wie möglich gespeichert werden...

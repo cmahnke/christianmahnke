@@ -5,24 +5,25 @@ tags:
   - Art
   - Etching
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q1589697
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1992
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1589697
+    - https://www.wikidata.org/wiki/Q11442
+    - https://www.wikidata.org/wiki/Q876222
+    - https://www.wikidata.org/wiki/Q540745
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q1589697
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1992
-wikidata:
-  - https://www.wikidata.org/wiki/Q1589697
-  - https://www.wikidata.org/wiki/Q11442
-  - https://www.wikidata.org/wiki/Q876222
-  - https://www.wikidata.org/wiki/Q540745
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I have purchased a colour etching of a bicycle by [Leslie G. Hunt](https://de.wikipedia.org/wiki/Leslie_G._Hunt) (German) (*b.* 1954)...

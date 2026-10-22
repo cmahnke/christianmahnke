@@ -7,12 +7,13 @@ tags:
   - Fun
   - Retrocomputing
   - Game
-preview: top.jpg
-wikidata:
-- https://www.wikidata.org/wiki/Q5380509
-- https://www.wikidata.org/wiki/Q2736
-- https://www.wikidata.org/wiki/Q2249149
-- https://www.wikidata.org/wiki/Q372676
+params:
+  preview: top.jpg
+  wikidata:
+  - https://www.wikidata.org/wiki/Q5380509
+  - https://www.wikidata.org/wiki/Q2736
+  - https://www.wikidata.org/wiki/Q2249149
+  - https://www.wikidata.org/wiki/Q372676
 ---
 
 Ich sammle auch alte elektronische Spiele, heute habe ich bei [Zeitzeug](http://zeitzeug.de/) eine mobile Konsole aus dem Jahr 1979 gefunden.

@@ -1,18 +1,19 @@
 ---
 date: 2025-11-19T20:22:44+02:00
 title: "Normdaten für private Sammlungen (und kleine Kultureinrichtungen)"
-cite: true
+params:
+  cite: true
+  wikipedia:
+    - https://www.wikidata.org/wiki/Q3243461
+    - https://www.wikidata.org/wiki/Q180
+    - https://www.wikidata.org/wiki/Q11203476
+    - https://www.wikidata.org/wiki/Q77446257
+    - https://www.wikidata.org/wiki/Q27302
 tags:
   - CulturalPolicy
   - Metadata
   - Data
   - Wikidata
-wikipedia:
-  - https://www.wikidata.org/wiki/Q3243461
-  - https://www.wikidata.org/wiki/Q180
-  - https://www.wikidata.org/wiki/Q11203476
-  - https://www.wikidata.org/wiki/Q77446257
-  - https://www.wikidata.org/wiki/Q27302
 lastmod: 2025-11-20T00:00:00+02:00
 ---
 

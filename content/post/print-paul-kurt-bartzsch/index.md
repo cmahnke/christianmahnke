@@ -8,24 +8,25 @@ tags:
   - Alps
   - _ArtCollection
   - _Niedersachsen
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    title: Škrlatica
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q137756185
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1954
+  wikidata:
+    - https://www.wikidata.org/wiki/Q137756185
+    - https://www.wikidata.org/wiki/Q392142
+    - https://www.wikidata.org/wiki/Q3014
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  title: Škrlatica
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q137756185
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1954
-wikidata:
-  - https://www.wikidata.org/wiki/Q137756185
-  - https://www.wikidata.org/wiki/Q392142
-  - https://www.wikidata.org/wiki/Q3014
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Holzschnitt von Paul-Kurt Bartzsch (1917-1994) aufgetan...

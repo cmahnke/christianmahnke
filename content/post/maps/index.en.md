@@ -4,10 +4,11 @@ title: "Maps for my Projektemacher blogs"
 tags:
 - Projektemacher.org
 - Geodata
-wikidata:
-  - https://www.wikidata.org/wiki/Q116859588
-  - https://www.wikidata.org/wiki/Q936
-  - https://www.wikidata.org/wiki/Q6368
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q116859588
+    - https://www.wikidata.org/wiki/Q936
+    - https://www.wikidata.org/wiki/Q6368
 lastmod: 2025-03-14T00:00:00+02:00
 ---
 

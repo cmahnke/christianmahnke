@@ -2,31 +2,32 @@
 date: 2025-05-24T15:38:44+02:00
 title: 'Gemälde von Frank Walter (1926-2009)'
 keywords: Frank Walter, Antigua, Karibik
-cite: true
+params:
+  cite: true
+  preview: img/fronts.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q43379500
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q43379500
+    - https://www.wikidata.org/wiki/Q316390
+    - https://www.wikidata.org/wiki/Q386599
+    - https://www.wikidata.org/wiki/Q1721595
+    - https://www.wikidata.org/wiki/Q313695
+    - https://www.wikidata.org/wiki/Q166343
+    - https://www.wikidata.org/wiki/Q57207952
 tags:
   - Art
   - Painting
   - ArtBrut
   - _ArtCollection
-preview: img/fronts.jpg
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q43379500
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q43379500
-  - https://www.wikidata.org/wiki/Q316390
-  - https://www.wikidata.org/wiki/Q386599
-  - https://www.wikidata.org/wiki/Q1721595
-  - https://www.wikidata.org/wiki/Q313695
-  - https://www.wikidata.org/wiki/Q166343
-  - https://www.wikidata.org/wiki/Q57207952
 ---
 
 Ich habe einige Gemälde von [Frank Walter](https://de.wikipedia.org/wiki/Frank_Walter) (1926-2009) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/frank-walter/)) gefunden...

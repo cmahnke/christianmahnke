@@ -4,9 +4,10 @@ title: "Die Kunstsammlung als eigenen Seiten"
 tags:
   - Art
   - Website
-wikidata:
-  - https://www.wikidata.org/wiki/Q137668638
-  - https://www.wikidata.org/wiki/Q768717
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q137668638
+    - https://www.wikidata.org/wiki/Q768717
 ---
 
 Bisher gab es die Kunstsammlung nur als Übersichten zu den entsprechenden Schlagworten...

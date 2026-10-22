@@ -1,17 +1,18 @@
 ---
 date: 2023-08-21T19:22:44+02:00
 title: "Windows Deployer"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q107386415
+    - https://www.wikidata.org/wiki/Q1423114
+    - https://www.wikidata.org/wiki/Q1830735
+    - https://www.wikidata.org/wiki/Q181233
+    - https://www.wikidata.org/wiki/Q15978834
+    - https://www.wikidata.org/wiki/Q18168774
 tags:
   - Windows
   - Python
-wikidata:
-  - https://www.wikidata.org/wiki/Q107386415
-  - https://www.wikidata.org/wiki/Q1423114
-  - https://www.wikidata.org/wiki/Q1830735
-  - https://www.wikidata.org/wiki/Q181233
-  - https://www.wikidata.org/wiki/Q15978834
-  - https://www.wikidata.org/wiki/Q18168774
 ---
 
 How to install a freshly built software from GitLab / GitHub?<br/>

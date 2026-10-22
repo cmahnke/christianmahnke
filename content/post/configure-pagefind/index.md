@@ -3,17 +3,18 @@ date: 2025-05-30T17:33:44+02:00
 title: "Pagefind aufbohren"
 keywords: Pagefind
 description: ""
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q978185
+    - https://www.wikidata.org/wiki/Q281876
+    - https://www.wikidata.org/wiki/Q8811
+    - https://www.wikidata.org/wiki/Q364
+    - https://www.wikidata.org/wiki/Q29642950
 tags:
   - Search
   - Pagefind
   - Python
-wikidata:
-  - https://www.wikidata.org/wiki/Q978185
-  - https://www.wikidata.org/wiki/Q281876
-  - https://www.wikidata.org/wiki/Q8811
-  - https://www.wikidata.org/wiki/Q364
-  - https://www.wikidata.org/wiki/Q29642950
 lastmod: 2025-08-14T00:00:00+02:00
 ---
 

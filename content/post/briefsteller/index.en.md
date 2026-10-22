@@ -2,14 +2,15 @@
 date: 2021-04-27T19:22:44+02:00
 title: "Briefsteller.de started"
 keywords: Briefsteller
-preview:
-  image: screenshot.png
-  hide: true
+params:
+  preview:
+    image: screenshot.png
+    hide: true
+  wikidata:
+  - https://www.wikidata.org/wiki/Q4363806
 tags:
 - Projektemacher.org
 - Blog
-wikidata:
-- https://www.wikidata.org/wiki/Q4363806
 ---
 
 Finally, the last of the blogs stared during the second Corona Lockdown is now online!

@@ -6,24 +6,25 @@ tags:
   - Serigraphy
   - _ArtCollection
   - _Niedersachsen
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q1292698
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1958
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1292698
+    - https://www.wikidata.org/wiki/Q265448
+    - https://www.wikidata.org/wiki/Q1792393
+    - https://www.wikidata.org/wiki/Q414041
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q1292698
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1958
-wikidata:
-  - https://www.wikidata.org/wiki/Q1292698
-  - https://www.wikidata.org/wiki/Q265448
-  - https://www.wikidata.org/wiki/Q1792393
-  - https://www.wikidata.org/wiki/Q414041
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I bought a screen print (serigraphy) by [Gerhard Wendland](https://de.wikipedia.org/wiki/Gerhard_Wendland_(painter)) (in German) (1910–1986) ([at artnet](https://www.artnet.com/artists/gerhard-wendland/)) from [Zeitzeug](http://zeitzeug.de/)...

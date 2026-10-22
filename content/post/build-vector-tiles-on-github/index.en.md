@@ -1,21 +1,22 @@
 ---
 date: 2023-07-01T20:14:44+02:00
 title: "Build vector maps with GitHub"
-class: toc-text
-cite: true
+params:
+  class: toc-text
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q116859588
+    - https://www.wikidata.org/wiki/Q110613565
+    - https://www.wikidata.org/wiki/Q133818614
+    - https://www.wikidata.org/wiki/Q736666
+    - https://www.wikidata.org/wiki/Q1504505
+    - https://www.wikidata.org/wiki/Q16928072
+    - https://www.wikidata.org/wiki/Q122904069
 tags:
 - Projektemacher.org
 - Geodata
 - GitHub
 - Docker
-wikidata:
-  - https://www.wikidata.org/wiki/Q116859588
-  - https://www.wikidata.org/wiki/Q110613565
-  - https://www.wikidata.org/wiki/Q133818614
-  - https://www.wikidata.org/wiki/Q736666
-  - https://www.wikidata.org/wiki/Q1504505
-  - https://www.wikidata.org/wiki/Q16928072
-  - https://www.wikidata.org/wiki/Q122904069
 lastmod: 2025-03-14T00:00:00+02:00
 ---
 Since the use of freely available map services requires [communication with external services](/post/maps/) as well as limited design, it was time for something of my own...

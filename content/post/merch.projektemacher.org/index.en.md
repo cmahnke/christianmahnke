@@ -1,9 +1,10 @@
 ---
 date: 2022-10-26T19:58:44+02:00
 title: "Projektemacher Merch started"
-preview:
-  image: screenshot.png
-  hide: true
+params:
+  preview:
+    image: screenshot.png
+    hide: true
 tags:
 - Fun
 - Projektemacher.org

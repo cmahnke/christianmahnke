@@ -7,12 +7,13 @@ tags:
   - Fun
   - Retrocomputing
   - Game
-preview: top.jpg
-wikidata:
-  - https://www.wikidata.org/wiki/Q5380509
-  - https://www.wikidata.org/wiki/Q2736
-  - https://www.wikidata.org/wiki/Q2249149
-  - https://www.wikidata.org/wiki/Q372676
+params:
+  preview: top.jpg
+  wikidata:
+    - https://www.wikidata.org/wiki/Q5380509
+    - https://www.wikidata.org/wiki/Q2736
+    - https://www.wikidata.org/wiki/Q2249149
+    - https://www.wikidata.org/wiki/Q372676
 ---
 
 I also collect old electronic games; today I found a handheld console from 1979 at [Zeitzeug](http://zeitzeug.de/).

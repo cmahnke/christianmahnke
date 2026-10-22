@@ -3,15 +3,16 @@ date: 2023-12-24T12:22:44+02:00
 title: "Christmas 2023"
 keywords: Craft instructions, Christmas card
 description: "Craft instructions for the 2023 Christmas card"
-preview:
-  image: card-2023.jpg
-  hide: true
+params:
+  preview:
+    image: card-2023.jpg
+    hide: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q191529
+    - https://www.wikidata.org/wiki/Q622508
 tags:
 - DIY
 - Christmas
-wikidata:
-  - https://www.wikidata.org/wiki/Q191529
-  - https://www.wikidata.org/wiki/Q622508
 ---
 
 Merry Christmas to all readers, this year again there is a present...

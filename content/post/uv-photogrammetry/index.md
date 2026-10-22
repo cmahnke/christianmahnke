@@ -3,15 +3,25 @@ date: 2024-09-05T11:33:44+02:00
 title: "UV-Photogrammetrie"
 keywords: Photogrammetrie, UV, UV-Photogrammetrie, Ultraviolet, Ultraviolet-Photogrammetrie, Uranglas
 description: "3D Modell eines UV-Licht bestrahlten Uranglasobjekts"
-iiif:
-  presentationVersion: 4
-  behavior: individuals
-preview:
-  image: preview.png
-  hide: true
-class: uranium
-cite: true
-pagetheme: #5107b7
+params:
+  iiif:
+    presentationVersion: 4
+    behavior: individuals
+  preview:
+    image: preview.png
+    hide: true
+  class: uranium
+  cite: true
+  pagetheme: #5107b7
+  wikidata:
+    - https://www.wikidata.org/wiki/Q11391
+    - https://www.wikidata.org/wiki/Q9128
+    - https://www.wikidata.org/wiki/Q221163
+    - https://www.wikidata.org/wiki/Q106239881
+    - https://www.wikidata.org/wiki/Q980672
+    - https://www.wikidata.org/wiki/Q777
+    - https://www.wikidata.org/wiki/Q2471924
+    - https://www.wikidata.org/wiki/Q1030958
 tags:
   - Light
   - Licht2024
@@ -21,15 +31,6 @@ tags:
   - Three.js
   - Photogrammetry
   - Digitisation
-wikidata:
-  - https://www.wikidata.org/wiki/Q11391
-  - https://www.wikidata.org/wiki/Q9128
-  - https://www.wikidata.org/wiki/Q221163
-  - https://www.wikidata.org/wiki/Q106239881
-  - https://www.wikidata.org/wiki/Q980672
-  - https://www.wikidata.org/wiki/Q777
-  - https://www.wikidata.org/wiki/Q2471924
-  - https://www.wikidata.org/wiki/Q1030958
 lastmod: 2025-09-03T00:00:00+02:00
 outputs:
   - html

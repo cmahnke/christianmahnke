@@ -5,23 +5,24 @@ tags:
   - Art
   - Photo
   - _ArtCollection
-preview: img/photo.jpg
+params:
+  preview: img/photo.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q1912219
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1912219
+    - https://www.wikidata.org/wiki/Q1979766
+    - https://www.wikidata.org/wiki/Q172984
+    - https://www.wikidata.org/wiki/Q131517
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q1912219
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q1912219
-  - https://www.wikidata.org/wiki/Q1979766
-  - https://www.wikidata.org/wiki/Q172984
-  - https://www.wikidata.org/wiki/Q131517
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ein Foto von [Max Baur](https://de.wikipedia.org/wiki/Max_Baur_(Fotograf)) (1898-1988) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/max-baur/)) gefunden...

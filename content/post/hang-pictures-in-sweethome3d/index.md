@@ -3,15 +3,16 @@ date: 2022-11-27T08:33:44+02:00
 title: "Bilder aufhängen in Sweet Home 3D"
 keywords: Sweet Home 3D, PDF, Inkscape, 3D Model
 description: "Ein Werkzeug um PDF Plakate in Sweet Home 3D aufzuhängen"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1685508
+    - https://www.wikidata.org/wiki/Q42332
+    - https://www.wikidata.org/wiki/Q603967
 tags:
   - 3D
   - Exhibition
   - Blender
-wikidata:
-  - https://www.wikidata.org/wiki/Q1685508
-  - https://www.wikidata.org/wiki/Q42332
-  - https://www.wikidata.org/wiki/Q603967
 ---
 
 Für die Planung einer [Ausstellung](/post/wilma-brauner/) in 3D habe ich mich damit beschäftigt, wie vorarrangierte Bilderrahmen in [Sweet Home 3D](https://www.sweethome3d.com/) importiert werden könnten...

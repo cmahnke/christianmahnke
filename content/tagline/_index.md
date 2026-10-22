@@ -1,11 +1,12 @@
 ---
 title: "Taglines"
-metaPage: true
-displayinlist: false
-archive: false
-news: false
-sectionContent: false
-sectionListTitle: 'Alle "Titel"'
+params:
+  metaPage: true
+  displayinlist: false
+  archive: false
+  news: false
+  sectionContent: false
+  sectionListTitle: 'Alle "Titel"'
 cascade:
   - target:
       kind: '{page,section}'

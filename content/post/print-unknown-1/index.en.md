@@ -6,22 +6,23 @@ tags:
   - Serigraphy
   - UnknownArtist
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1969
+    description: 'Pop art screen print from 1969'
+    style:
+      - http://vocab.getty.edu/aat/300022205
+  wikidata:
+    - https://www.wikidata.org/wiki/Q134147
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1969
-  description: 'Pop art screen print from 1969'
-  style:
-    - http://vocab.getty.edu/aat/300022205
-wikidata:
-  - https://www.wikidata.org/wiki/Q134147
-  - https://www.wikidata.org/wiki/Q188675
 ---
 For my new office, I bought a screen print of unknown origin from [Zeitzeug](http://zeitzeug.de/)...
 

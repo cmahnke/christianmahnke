@@ -5,8 +5,9 @@ tags:
   - JavaScript
   - SoftwareDevelopment
   - Windows
-wikidata:
-  - https://www.wikidata.org/wiki/Q186055
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q186055
 ---
 Today, Friday the 13th, I was stuck on the train in the middle of nowhere...
 <!--more-->

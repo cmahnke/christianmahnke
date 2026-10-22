@@ -2,18 +2,19 @@
 date: 2026-01-14T19:52:22+02:00
 title: 'Metadaten für Software'
 description: "Software-Metadaten für die (automatische) Nachnutzung von Funktionionalitäten"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q5205836
+    - https://www.wikidata.org/wiki/Q1142726
+    - https://www.wikidata.org/wiki/Q95001953
+    - https://www.wikidata.org/wiki/Q106102182
+    - https://www.wikidata.org/wiki/Q16639197
 tags:
 - SoftwareDevelopment
 - Metadata
 - ProjectIdea
 - AI
-wikidata:
-  - https://www.wikidata.org/wiki/Q5205836
-  - https://www.wikidata.org/wiki/Q1142726
-  - https://www.wikidata.org/wiki/Q95001953
-  - https://www.wikidata.org/wiki/Q106102182
-  - https://www.wikidata.org/wiki/Q16639197
 lastmod: 2026-10-13T00:00:00+02:00
 ---
 

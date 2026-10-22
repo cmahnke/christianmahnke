@@ -3,15 +3,16 @@ date: 2026-01-01T10:22:44+02:00
 title: "Das Kleiderbügel-Blog als Buch"
 keywords: Buch, Kleiderbügel
 description: "Der Katalog zur Sammlung"
-preview:
-  image: title-page.jpg
+params:
+  preview:
+    image: title-page.jpg
+  wikidata:
+    - https://www.wikidata.org/wiki/Q815240
+    - https://www.wikidata.org/wiki/Q96473517
 tags:
 - Projektemacher.org
 - Printing
 - Book
-wikidata:
-  - https://www.wikidata.org/wiki/Q815240
-  - https://www.wikidata.org/wiki/Q96473517
 ---
 
 Das erste Buch zu einem meiner Blogs ist nun fertig...

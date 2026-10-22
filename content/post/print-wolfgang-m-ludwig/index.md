@@ -8,26 +8,27 @@ tags:
   - _ArtCollection
   - _Goettingen
   - _Niedersachsen
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q139118387
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    title: "10. Göttinger Kunstmarkt 1979"
+    date: 1979
+  wikidata:
+    - https://www.wikidata.org/wiki/Q139118387
+    - https://www.wikidata.org/wiki/Q879216
+    - https://www.wikidata.org/wiki/Q461
+    - https://www.wikidata.org/wiki/Q76636468
+    - https://www.wikidata.org/wiki/Q1559832
+    - https://www.wikidata.org/wiki/Q564783
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q139118387
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  title: "10. Göttinger Kunstmarkt 1979"
-  date: 1979
-wikidata:
-  - https://www.wikidata.org/wiki/Q139118387
-  - https://www.wikidata.org/wiki/Q879216
-  - https://www.wikidata.org/wiki/Q461
-  - https://www.wikidata.org/wiki/Q76636468
-  - https://www.wikidata.org/wiki/Q1559832
-  - https://www.wikidata.org/wiki/Q564783
 ---
 
 Eine Radierung von [Wolfgang M. Ludwig](https://personen.niedersaechsische-bibliographie.de/person/1786737019/) (*1949) zum 10. Göttinger Kunstmarkt 1979...

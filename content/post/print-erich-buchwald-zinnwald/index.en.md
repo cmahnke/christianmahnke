@@ -5,24 +5,25 @@ tags:
   - Art
   - WoodblockPrint
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q21415786
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1952
+    title: Dresden um 1900
+  wikidata:
+    - https://www.wikidata.org/wiki/Q21415786
+    - https://www.wikidata.org/wiki/Q1731
+    - https://www.wikidata.org/wiki/Q16957
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q21415786
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1952
-  title: Dresden um 1900
-wikidata:
-  - https://www.wikidata.org/wiki/Q21415786
-  - https://www.wikidata.org/wiki/Q1731
-  - https://www.wikidata.org/wiki/Q16957
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I bought a Woodblock print by [Erich Buchwald-Zinnwald](https://de.wikipedia.org/wiki/Erich_Buchwald-Zinnwald) (in German) (1884-1972) ([at artnet](https://www.artnet.com/artists/erich-buchwald-zinnwald/))...

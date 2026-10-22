@@ -3,10 +3,20 @@ date: 2024-03-05T19:22:44+02:00
 title: "VintageReality gestartet"
 keywords: "Stereoskopie, Anaglyphen"
 description: "Die Sammlung an alten 3D Bildern hat nun ihr eigenes Blog"
-cite: true
-preview:
-  image: screenshot.png
-  hide: true
+params:
+  cite: true
+  preview:
+    image: screenshot.png
+    hide: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q35158
+    - https://www.wikidata.org/wiki/Q484031
+    - https://www.wikidata.org/wiki/Q2940499
+    - https://www.wikidata.org/wiki/Q16294951
+    - https://www.wikidata.org/wiki/Q7999615
+    - https://www.wikidata.org/wiki/Q1952321
+    - https://www.wikidata.org/wiki/Q17558104
+    - https://www.wikidata.org/wiki/Q484031
 tags:
   - Projektemacher.org
   - Blog
@@ -15,15 +25,6 @@ tags:
   - DigitalImages
   - OpenCV
   - Stereoscopy
-wikidata:
-  - https://www.wikidata.org/wiki/Q35158
-  - https://www.wikidata.org/wiki/Q484031
-  - https://www.wikidata.org/wiki/Q2940499
-  - https://www.wikidata.org/wiki/Q16294951
-  - https://www.wikidata.org/wiki/Q7999615
-  - https://www.wikidata.org/wiki/Q1952321
-  - https://www.wikidata.org/wiki/Q17558104
-  - https://www.wikidata.org/wiki/Q484031
 ---
 
 Das neueste Kind der [Projektemacher Labs](https://labs.projektemacher.org/) ist die seit Anfang 2023 ausgebaute Kategorie "1900 in 3D"...

@@ -1,16 +1,17 @@
 ---
 date: 2026-06-28T19:22:44+02:00
 title: 'Die vergessenen Walknochen von Göttingen'
-cite: true
+params:
+  cite: true
+  preview: img/single.jpeg
+  wikidata:
+    - https://www.wikidata.org/wiki/Q28913710
+    - https://www.wikidata.org/wiki/Q42767
 description: ""
 tags:
   - Object
   - Göttingen
   - History
-preview: img/single.jpeg
-wikidata:
-  - https://www.wikidata.org/wiki/Q28913710
-  - https://www.wikidata.org/wiki/Q42767
 lastmod: 2026-08-05T00:00:00+02:00
 ---
 

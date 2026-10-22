@@ -1,10 +1,11 @@
 ---
 title: "Notizen"
-metaPage: true
-displayinlist: false
-archive: false
-news: false
-sectionContent: false
+params:
+  metaPage: true
+  displayinlist: false
+  archive: false
+  news: false
+  sectionContent: false
 cascade:
   - target:
       kind: '{page,section}'

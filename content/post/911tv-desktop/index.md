@@ -2,17 +2,22 @@
 date: 2024-10-09T19:22:44+02:00
 title: "911TV als Desktop Anwendung"
 description: "Eine Webseite als Medieninstallation am Beispiel von 911TV"
-preview:
-  image: 911tv-mac.png
-  hide: true
-cite: true
-doi: 10.5281/zenodo.20120652
+params:
+  preview:
+    image: 911tv-mac.png
+    hide: true
+  cite: true
+  doi: 10.5281/zenodo.20120652
+  cfffile: https://raw.githubusercontent.com/cmahnke/911tv/refs/heads/main/CITATION.cff
+  wikidata:
+    - https://www.wikidata.org/wiki/Q10806
+    - https://www.wikidata.org/wiki/Q11320567
+    - https://www.wikidata.org/wiki/Q6368
 outputs:
   - bibtex
   - html
   - codemeta
   - pdf-article
-cfffile: https://raw.githubusercontent.com/cmahnke/911tv/refs/heads/main/CITATION.cff
 tags:
   - Website
   - Electron
@@ -20,10 +25,6 @@ tags:
   - Archive
   - JavaScript
   - MediaInstallation
-wikidata:
-  - https://www.wikidata.org/wiki/Q10806
-  - https://www.wikidata.org/wiki/Q11320567
-  - https://www.wikidata.org/wiki/Q6368
 lastmod: 2026-05-11T00:00:00+02:00
 ---
 

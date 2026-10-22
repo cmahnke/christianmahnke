@@ -1,18 +1,19 @@
 ---
 date: 2026-04-28T21:45:44+02:00
 title: "Rollup-Plugin für WASM Inlining"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q7067518
+    - https://www.wikidata.org/wiki/Q20155677
+    - https://www.wikidata.org/wiki/Q114900810
+    - https://www.wikidata.org/wiki/Q18205644
+    - https://www.wikidata.org/wiki/Q2493
+    - https://www.wikidata.org/wiki/Q726780
 keywords: Brotli, WASM, Rollup
 tags:
   - SoftwareDevelopment
   - JavaScript
-wikidata:
-  - https://www.wikidata.org/wiki/Q7067518
-  - https://www.wikidata.org/wiki/Q20155677
-  - https://www.wikidata.org/wiki/Q114900810
-  - https://www.wikidata.org/wiki/Q18205644
-  - https://www.wikidata.org/wiki/Q2493
-  - https://www.wikidata.org/wiki/Q726780
 ---
 
 Nach meinen [Erfahrungen mit WASM](/post/wasm-dx/) habe ich einen eigenes [Rollup](https://rollupjs.org/)-Plugin geschrieben.

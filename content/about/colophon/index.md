@@ -1,7 +1,8 @@
 ---
 title: "Kolophon"
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
 weight: 9
 ---
 
@@ -13,7 +14,6 @@ Folgende Javascript und CSS Frameworks und Bibliotheken kommen zum Einsatz:
 
 <ul class="inline-list">
     <li><a href="https://github.com/gka/chroma.js">chroma.js</a></li>
-    <li><a href="https://jquery.com/">jQuery</a></li>
     <li><a href="https://github.com/js-cookie/js-cookie">js-cookie</a></li>
     <li><a href="https://necolas.github.io/normalize.css/">Normalize.css</a></li>
     <li><a href="https://russellgoldenberg.github.io/enter-view/">Enter-view.js</a></li>

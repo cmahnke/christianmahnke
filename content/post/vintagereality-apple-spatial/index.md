@@ -3,23 +3,24 @@ date: 2025-12-28T18:22:44+02:00
 title: "Historische Stereogramme auf moderner Hardware"
 description: "Das Apple Spatial Image Format"
 keywords: "Stereoskopie, Anaglyphen"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q35158
+    - https://www.wikidata.org/wiki/Q484031
+    - https://www.wikidata.org/wiki/Q24907733
+    - https://www.wikidata.org/wiki/Q117715451
+    - https://www.wikidata.org/wiki/Q1348
+    - https://www.wikidata.org/wiki/Q6164591
+    - https://www.wikidata.org/wiki/Q6755210
+    - https://www.wikidata.org/wiki/Q27153
+    - https://www.wikidata.org/wiki/Q2766
 tags:
   - AI
   - 3D
   - DigitalImages
   - OpenCV
   - Stereoscopy
-wikidata:
-  - https://www.wikidata.org/wiki/Q35158
-  - https://www.wikidata.org/wiki/Q484031
-  - https://www.wikidata.org/wiki/Q24907733
-  - https://www.wikidata.org/wiki/Q117715451
-  - https://www.wikidata.org/wiki/Q1348
-  - https://www.wikidata.org/wiki/Q6164591
-  - https://www.wikidata.org/wiki/Q6755210
-  - https://www.wikidata.org/wiki/Q27153
-  - https://www.wikidata.org/wiki/Q2766
 ---
 
 Ich habe ein neues Telefon...

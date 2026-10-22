@@ -1,13 +1,14 @@
 ---
 date: 2022-04-10T17:22:44+02:00
 title: "Einzigartige Lampe"
-preview: boat-lamp.jpeg
+params:
+  preview: boat-lamp.jpeg
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1774171
+    - https://www.wikidata.org/wiki/Q475018
 tags:
   - DIY
   - InteriorDesign
-wikidata:
-  - https://www.wikidata.org/wiki/Q1774171
-  - https://www.wikidata.org/wiki/Q475018
 ---
 
 Ich wollte endlich eine alte Idee von mir umsetzen...

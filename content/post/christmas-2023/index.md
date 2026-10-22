@@ -3,15 +3,16 @@ date: 2023-12-24T12:22:44+02:00
 title: "Weihnachten 2023"
 keywords: Bastelanleitung, Weihnachtskarte
 description: "Bastelanleitung für die Weihnachtskarte 2023"
-preview:
-  image: card-2023.jpg
-  hide: true
+params:
+  preview:
+    image: card-2023.jpg
+    hide: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q191529
+    - https://www.wikidata.org/wiki/Q622508
 tags:
 - DIY
 - Christmas
-wikidata:
-  - https://www.wikidata.org/wiki/Q191529
-  - https://www.wikidata.org/wiki/Q622508
 ---
 
 Frohe Weihnachten an alle Leser, dieses Jahr wieder gibt es ein Geschenk...

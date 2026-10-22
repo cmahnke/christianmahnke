@@ -7,8 +7,9 @@ tags:
 - DIY
 - Christmas
 - Workshop
-wikidata:
-  - https://www.wikidata.org/wiki/Q112061919
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q112061919
 ---
 
 Da meine Weihnachtskarten aus alten Tapeten und Papieren inzwischen einige Fans gefunden habe, werde ich dieses Jahr einen Workshop im [Forum Wissen](https://www.forum-wissen.de) dazu machen...

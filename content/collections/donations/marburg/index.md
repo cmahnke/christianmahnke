@@ -1,7 +1,8 @@
 ---
 title: Film über Marburg
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
 weight: 1
 ---
 

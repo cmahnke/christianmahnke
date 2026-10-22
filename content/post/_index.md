@@ -1,7 +1,8 @@
 ---
 title: "Blog"
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
 layout: blog
 sitemap:
   changeFreq: daily

@@ -1,9 +1,10 @@
 ---
 date: 2025-05-25T11:22:44+02:00
 title: "Schlagwortpaare visualisiert"
-scss: scss/tag-ring/tag-ring.scss
-js:
-  - ts/tag-ring/tag-ring.ts
+params:
+  scss: scss/tag-ring/tag-ring.scss
+  js:
+    - ts/tag-ring/tag-ring.ts
 tags:
   - Visualisation
   - Website

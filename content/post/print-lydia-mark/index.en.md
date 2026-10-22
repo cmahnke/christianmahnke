@@ -5,21 +5,22 @@ tags:
   - Art
   - Etching
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q20528886
+    date: 1983
+    title: Lillehaldjas
+  wikidata:
+    - https://www.wikidata.org/wiki/Q20528886
+    - https://www.wikidata.org/wiki/Q13429365
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q20528886
-  date: 1983
-  title: Lillehaldjas
-wikidata:
-  - https://www.wikidata.org/wiki/Q20528886
-  - https://www.wikidata.org/wiki/Q13429365
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I've found a etching by [Lüüdia Vallimäe-Mark](https://en.wikipedia.org/wiki/L%C3%BC%C3%BCdia_Vallim%C3%A4e-Mark) (1925-2004) gefunden...

@@ -1,15 +1,16 @@
 ---
 date: 2025-05-28T18:22:44+02:00
 title: "Wikidata Links in Hugo"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q6368
+    - https://www.wikidata.org/wiki/Q1193600
+    - https://www.wikidata.org/wiki/Q20950365
 tags:
   - Hugo
   - Wikidata
   - SPARQL
-wikidata:
-  - https://www.wikidata.org/wiki/Q6368
-  - https://www.wikidata.org/wiki/Q1193600
-  - https://www.wikidata.org/wiki/Q20950365
 lastmod: 2026-04-29T00:00:00+02:00
 ---
 Another step towards easier searchability of the site...

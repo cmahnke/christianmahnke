@@ -1,10 +1,11 @@
 ---
 title: Fat Lava Vase
-archive: false
-news: false
-iiif:
-  presentationVersion: 4
-  behavior: individuals
+params:
+  archive: false
+  news: false
+  iiif:
+    presentationVersion: 4
+    behavior: individuals
 outputs:
   - html
   - iiif-manifest

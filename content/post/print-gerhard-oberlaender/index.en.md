@@ -5,25 +5,26 @@ tags:
   - Art
   - Etching
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q1454166
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1454166
+    - https://www.wikidata.org/wiki/Q55038
+    - https://www.wikidata.org/wiki/Q1020352
+    - https://www.wikidata.org/wiki/Q1020035
+    - https://www.wikidata.org/wiki/Q2348900
+    - https://www.wikidata.org/wiki/Q452685
+    - https://www.wikidata.org/wiki/Q564783
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q1454166
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q1454166
-  - https://www.wikidata.org/wiki/Q55038
-  - https://www.wikidata.org/wiki/Q1020352
-  - https://www.wikidata.org/wiki/Q1020035
-  - https://www.wikidata.org/wiki/Q2348900
-  - https://www.wikidata.org/wiki/Q452685
-  - https://www.wikidata.org/wiki/Q564783
 ---
 
 A colour etching by [Gerhard Oberländer](https://de.wikipedia.org/wiki/Gerhard_Oberl%C3%A4nder) (German) (1907–1995) ([at artnet](https://www.artnet.com/artists/gerhard-oberländer/)) from my office...

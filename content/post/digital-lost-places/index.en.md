@@ -8,12 +8,13 @@ tags:
   - Fun
   - ProjectIdea
   - Geodata
-cite: true
-wikidata:
-  - https://www.wikidata.org/wiki/Q2543504
-  - https://www.wikidata.org/wiki/Q213602
-  - https://www.wikidata.org/wiki/Q577697
-  - https://www.wikidata.org/wiki/Q1870700
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q2543504
+    - https://www.wikidata.org/wiki/Q213602
+    - https://www.wikidata.org/wiki/Q577697
+    - https://www.wikidata.org/wiki/Q1870700
 lastmod: 2026-08-25T00:00:00+02:00
 ---
 

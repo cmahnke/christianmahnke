@@ -3,23 +3,24 @@ date: 2022-01-26T11:44:44+02:00
 title: "IIIF Proxy"
 keywords: Fold removal, proxy server, image processing
 description: "On-the-fly image processing for IIIF resources"
-cite: true
-preview:
-  image: img/Proxy-DE-611-HS-3461927_00000016.png
-  hide: true
+params:
+  cite: true
+  preview:
+    image: img/Proxy-DE-611-HS-3461927_00000016.png
+    hide: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q504453
+    - https://www.wikidata.org/wiki/Q152838
+    - https://www.wikidata.org/wiki/Q564783
+    - https://www.wikidata.org/wiki/Q628106
+    - https://www.wikidata.org/wiki/Q195076
+    - https://www.wikidata.org/wiki/Q62087795
+    - https://www.wikidata.org/wiki/Q11189
+    - https://www.wikidata.org/wiki/Q21040628 
 tags:
   - IIIF
   - OpenCV
   - DigitalImages
-wikidata:
-  - https://www.wikidata.org/wiki/Q504453
-  - https://www.wikidata.org/wiki/Q152838
-  - https://www.wikidata.org/wiki/Q564783
-  - https://www.wikidata.org/wiki/Q628106
-  - https://www.wikidata.org/wiki/Q195076
-  - https://www.wikidata.org/wiki/Q62087795
-  - https://www.wikidata.org/wiki/Q11189
-  - https://www.wikidata.org/wiki/Q21040628 
 lastmod: 2022-04-11T00:00:00+02:00
 ---
 

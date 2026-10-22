@@ -5,20 +5,21 @@ tags:
   - Art
   - WoodblockPrint
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q112821333
+    title: Liebespaar
+  wikidata:
+    - https://www.wikidata.org/wiki/Q112821333
+    - https://www.wikidata.org/wiki/Q131787286
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q112821333
-  title: Liebespaar
-wikidata:
-  - https://www.wikidata.org/wiki/Q112821333
-  - https://www.wikidata.org/wiki/Q131787286
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I have acquired a colour woodcut by [Max Westhäuser (1885-1956)](https://de.wikipedia.org/wiki/Max_Westh%C3%A4user) ([at artnet](https://www.artnet.com/artists/max-westhauser/))...

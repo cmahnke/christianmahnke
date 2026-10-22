@@ -4,10 +4,11 @@ title: 'Ein ungewöhliches Objekt'
 keywords: Vorax, Bohrmachine, Küchenmaschine
 tags:
   - Object
-preview: img/front.jpg
-wikidata:
-  - https://www.wikidata.org/wiki/Q58964
-  - https://www.wikidata.org/wiki/Q621630
+params:
+  preview: img/front.jpg
+  wikidata:
+    - https://www.wikidata.org/wiki/Q58964
+    - https://www.wikidata.org/wiki/Q621630
 ---
 
 Ich habe mal wieder ein interessantes Objekt gefunden...

@@ -6,20 +6,21 @@ tags:
   - WoodblockPrint
   - UnknownArtist
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      name: Jos. Winkelmann
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    title: Am Hang
+  wikidata:
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    name: Jos. Winkelmann
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  title: Am Hang
-wikidata:
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Farbholzschnitt eines unbekannten Künstlers gefunden gefunden...

@@ -5,25 +5,26 @@ tags:
   - Art
   - Serigraphy
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q137755842
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  notes:
+    - https://www.ebay.co.uk/itm/203781943061
+    - https://www.auktionen-in-heidelberg.de/produkt/0392-113-originalgraphiken-kuenstler-der-welt-with-compliments-lufthansa-fuer-selbstbesichtiger/
+  wikidata:
+    - https://www.wikidata.org/wiki/Q137755842
+    - https://www.wikidata.org/wiki/Q9325
+    - https://www.wikidata.org/wiki/Q33935
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q137755842
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-notes:
-  - https://www.ebay.co.uk/itm/203781943061
-  - https://www.auktionen-in-heidelberg.de/produkt/0392-113-originalgraphiken-kuenstler-der-welt-with-compliments-lufthansa-fuer-selbstbesichtiger/
-wikidata:
-  - https://www.wikidata.org/wiki/Q137755842
-  - https://www.wikidata.org/wiki/Q9325
-  - https://www.wikidata.org/wiki/Q33935
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Siebdruck von Michael Eisemann (1943-) erstanden...

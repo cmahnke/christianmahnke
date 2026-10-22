@@ -7,30 +7,31 @@ tags:
   - Drawing
   - Architecture
   - _ArtCollection
-preview: img/sheet1.jpg
+params:
+  preview: img/sheet1.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q131611742
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1926
+  wikidata:
+    - https://www.wikidata.org/wiki/Q131611742
+    - https://www.wikidata.org/wiki/Q917830
+    - https://www.wikidata.org/wiki/Q957441
+    - https://www.wikidata.org/wiki/Q175117
+    - https://www.wikidata.org/wiki/Q4449979
+    - https://www.wikidata.org/wiki/Q220951
+    - https://www.wikidata.org/wiki/Q2060711
+    - https://www.wikidata.org/wiki/Q2588167
+    - https://www.wikidata.org/wiki/Q133274
+    - https://www.wikidata.org/wiki/Q1202202
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q131611742
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1926
-wikidata:
-  - https://www.wikidata.org/wiki/Q131611742
-  - https://www.wikidata.org/wiki/Q917830
-  - https://www.wikidata.org/wiki/Q957441
-  - https://www.wikidata.org/wiki/Q175117
-  - https://www.wikidata.org/wiki/Q4449979
-  - https://www.wikidata.org/wiki/Q220951
-  - https://www.wikidata.org/wiki/Q2060711
-  - https://www.wikidata.org/wiki/Q2588167
-  - https://www.wikidata.org/wiki/Q133274
-  - https://www.wikidata.org/wiki/Q1202202
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Mir sind zwei Zeichnungen von [Heinrich Sielken](https://glass-portal.hier-im-netz.de/hs/s-z/sielken_heinrich.htm) (1874 - 1942) in die Hände gefallen...

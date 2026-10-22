@@ -1,7 +1,8 @@
 ---
 title: 'TTS'
 description: ''
-wikidata: https://www.wikidata.org/wiki/Q16346
+params:
+  wikidata: https://www.wikidata.org/wiki/Q16346
 
 ---
 

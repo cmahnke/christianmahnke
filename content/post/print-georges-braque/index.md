@@ -5,29 +5,30 @@ tags:
   - Art
   - Lithography
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q153793
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q153793
+    date: 1952
+    title: Marine
+    references:
+      - label: "Vallier, Dora, und Georges Braque. 1982. Braque : L’oeuvre Gravé : Catalogue Raisonné. [Paris]: Flammarion."
+        content: Seite 293, Maeght, No. 1013
+  wikidata:
+    - https://www.wikidata.org/wiki/Q153793
+    - https://www.wikidata.org/wiki/Q325242
+    - https://www.wikidata.org/wiki/Q1200356
+    - https://www.wikidata.org/wiki/Q18677875
+    - https://www.wikidata.org/wiki/Q816277
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q153793
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q153793
-  date: 1952
-  title: Marine
-  references:
-    - label: "Vallier, Dora, und Georges Braque. 1982. Braque : L’oeuvre Gravé : Catalogue Raisonné. [Paris]: Flammarion."
-      content: Seite 293, Maeght, No. 1013
-wikidata:
-  - https://www.wikidata.org/wiki/Q153793
-  - https://www.wikidata.org/wiki/Q325242
-  - https://www.wikidata.org/wiki/Q1200356
-  - https://www.wikidata.org/wiki/Q18677875
-  - https://www.wikidata.org/wiki/Q816277
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Lithographie von [Georges Braque](https://de.wikipedia.org/wiki/Georges_Braque) (1882-1963) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/georges-braque/)) gefunden...

@@ -2,19 +2,20 @@
 date: 2025-02-25T15:52:22+02:00
 title: 'KI und Software-"Entwicklung"'
 description: "Oder: Akademische Software-Verlage"
-#keywords:
-cite: true
+params:
+  #keywords:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q48972887
+    - https://www.wikidata.org/wiki/Q95001953
+    - https://www.wikidata.org/wiki/Q29584754
+    - https://www.wikidata.org/wiki/Q5246046
 tags:
 - SoftwareDevelopment
 - ProjectIdea
 - CulturalPolicy
 - DigitalLibrary
 - AI
-wikidata:
-  - https://www.wikidata.org/wiki/Q48972887
-  - https://www.wikidata.org/wiki/Q95001953
-  - https://www.wikidata.org/wiki/Q29584754
-  - https://www.wikidata.org/wiki/Q5246046
 ---
 
 Im letzten Jahr habe ich mich ab und zu mit KI beschäftigt, um meine Blogs mit zusätzlichen Features anzureichern und auch ihre Weiterentwicklung zu beschleunigen.

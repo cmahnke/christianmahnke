@@ -1,34 +1,35 @@
 ---
 date: 2024-12-24T12:00:00+02:00
 title: 'Linolschitt von Malte Sartorius (1933-2017)'
-class: sepia
+params:
+  class: sepia
+  cite: true
+  preview: front/full/full/0/default.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q21014973
+    iiif:
+      image:
+        - front/info.json
+        - back/info.json
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q21014973
+    - https://www.wikidata.org/wiki/Q2349238
 keywords: Malte Sartorius
 description: "Eine unsignierte Grafik entpuppt sich als Weihnachtskarte von Malte Sartorius"
-cite: true
 tags:
   - Art
   - Linocut
   - Christmas
   - _ArtCollection
   - _Niedersachsen
-preview: front/full/full/0/default.jpg
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q21014973
-  iiif:
-    image:
-      - front/info.json
-      - back/info.json
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q21014973
-  - https://www.wikidata.org/wiki/Q2349238
 lastmod: 2026-07-17T00:00:00+02:00
 ---
 

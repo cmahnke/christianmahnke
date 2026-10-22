@@ -1,15 +1,16 @@
 ---
 title: "Bewerbung Digitalkoordinator"
-metaPage: true
-displayinlist: false
-theme: orange
-archive: false
-news: false
-scss:
-  - scss/orange.scss
-  - scss/3d/3d-model.scss
-js:
-  - ts/aframe.ts
+params:
+  metaPage: true
+  displayinlist: false
+  theme: orange
+  archive: false
+  news: false
+  scss:
+    - scss/orange.scss
+    - scss/3d/3d-model.scss
+  js:
+    - ts/aframe.ts
 
 ---
 

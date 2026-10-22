@@ -1,9 +1,18 @@
 ---
 date: 2025-03-14T20:30:44+02:00
 title: 'Never Built Göttingen'
-class: never
-pagetheme: white
-cite: true
+params:
+  class: never
+  pagetheme: white
+  cite: true
+  preview:
+    image: img/screenshot.png
+    hide: false
+  wikidata:
+    - https://www.wikidata.org/wiki/Q8180985
+    - https://www.wikidata.org/wiki/Q152838
+    - https://www.wikidata.org/wiki/Q713750
+    - https://www.wikidata.org/wiki/Q117030340
 tags:
   - Blog
   - Projektemacher.org
@@ -13,14 +22,6 @@ tags:
   - AI
 aliases:
   - /en/post/never-build-goettingen/
-preview:
-  image: img/screenshot.png
-  hide: false
-wikidata:
-  - https://www.wikidata.org/wiki/Q8180985
-  - https://www.wikidata.org/wiki/Q152838
-  - https://www.wikidata.org/wiki/Q713750
-  - https://www.wikidata.org/wiki/Q117030340
 ---
 
 Who doesn't know them, the three blue towers of the University of Göttingen...

@@ -1,7 +1,8 @@
 ---
 title: "Partner"
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
 weight: 1
 draft: true
 ---

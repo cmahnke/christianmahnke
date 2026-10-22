@@ -7,20 +7,21 @@ tags:
   - _ArtCollection
   - _Goettingen
   - _Niedersachsen
-preview: img/collage.jpg
+params:
+  preview: img/collage.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q94634912
+  wikidata:
+    - https://www.wikidata.org/wiki/Q94634912
+    - https://www.wikidata.org/wiki/Q133742956
+    - https://www.wikidata.org/wiki/Q130763950
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q94634912
-wikidata:
-  - https://www.wikidata.org/wiki/Q94634912
-  - https://www.wikidata.org/wiki/Q133742956
-  - https://www.wikidata.org/wiki/Q130763950
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I found a collage by Helmut Bönitz (1914-1999) ([at artnet](https://www.artnet.com/artists/helmut-bonitz/)) ...

@@ -7,14 +7,15 @@ tags:
   - SPARQL
   - Python
   - Website
-cite: true
-wikidata:
-  - https://www.wikidata.org/wiki/Q3539533
-  - https://www.wikidata.org/wiki/Q115616582
-  - https://www.wikidata.org/wiki/Q3475322
-  - https://www.wikidata.org/wiki/Q118980507
-  - https://www.wikidata.org/wiki/Q403574
-  - https://www.wikidata.org/wiki/Q28406945
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q3539533
+    - https://www.wikidata.org/wiki/Q115616582
+    - https://www.wikidata.org/wiki/Q3475322
+    - https://www.wikidata.org/wiki/Q118980507
+    - https://www.wikidata.org/wiki/Q403574
+    - https://www.wikidata.org/wiki/Q28406945
 lastmod: 2026-04-21T00:00:00+02:00
 ---
 

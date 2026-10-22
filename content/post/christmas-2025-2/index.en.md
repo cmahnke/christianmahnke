@@ -3,16 +3,17 @@ date: 2025-12-24T12:22:44+02:00
 title: "Christmas 2025"
 keywords: Craft instructions, Christmas card
 description: "Craft instructions for the 2025 Christmas card"
-preview:
-  image: card-2025.jpg
-  hide: true
+params:
+  preview:
+    image: card-2025.jpg
+    hide: true
+  wikidata: 
+    - https://www.wikidata.org/wiki/Q1715
+    - https://www.wikidata.org/wiki/Q191529
+    - https://www.wikidata.org/wiki/Q622508
 tags:
 - DIY
 - Christmas
-wikidata: 
-  - https://www.wikidata.org/wiki/Q1715
-  - https://www.wikidata.org/wiki/Q191529
-  - https://www.wikidata.org/wiki/Q622508
 ---
 
 Merry Christmas to all readers, this year again there is a present...

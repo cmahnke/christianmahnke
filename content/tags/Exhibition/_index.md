@@ -1,7 +1,8 @@
 ---
 title: 'Ausstellung'
 description: ''
-wikidata: https://www.wikidata.org/wiki/Q464980
+params:
+  wikidata: https://www.wikidata.org/wiki/Q464980
 
 ---
 

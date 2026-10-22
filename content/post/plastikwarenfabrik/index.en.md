@@ -1,8 +1,9 @@
 ---
 date: 2026-03-29T17:58:44+02:00
 title: "New blog for AI Slop"
-preview:
-  image: screenshot.png
+params:
+  preview:
+    image: screenshot.png
 tags:
   - DIY
   - AI

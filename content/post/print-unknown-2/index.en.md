@@ -6,19 +6,20 @@ tags:
   - Linocut
   - UnknownArtist
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    description: "Linocut of a cityscape"
+  wikidata:
+    - https://www.wikidata.org/wiki/Q134147
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  description: "Linocut of a cityscape"
-wikidata:
-  - https://www.wikidata.org/wiki/Q134147
-  - https://www.wikidata.org/wiki/Q188675
 ---
 I bought an unsigned linocut; I liked the contrast...
 

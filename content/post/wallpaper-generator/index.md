@@ -1,17 +1,24 @@
 ---
 date: 2025-06-09T23:22:44+02:00
 title: "Virtuelle Räume tapezieren!"
-preview:
-  image: screenshot.png
-  hide: true
-cite: true
-doi: 10.5281/zenodo.20082639
+params:
+  preview:
+    image: screenshot.png
+    hide: true
+  cite: true
+  doi: 10.5281/zenodo.20082639
+  cfffile: https://raw.githubusercontent.com/cmahnke/lucienne/refs/heads/main/CITATION.cff
+  wikidata:
+    - https://www.wikidata.org/wiki/Q191529
+    - https://www.wikidata.org/wiki/Q105134737
+    - https://www.wikidata.org/wiki/Q238354
+    - https://www.wikidata.org/wiki/Q117336820
+    - https://www.wikidata.org/wiki/Q1551026
 outputs:
   - bibtex
   - html
   - codemeta
   - pdf-article
-cfffile: https://raw.githubusercontent.com/cmahnke/lucienne/refs/heads/main/CITATION.cff
 tags:
   - Projektemacher.org
   - Blog
@@ -19,12 +26,6 @@ tags:
   - DigitalImages
   - Fun
   - JavaScript
-wikidata:
-  - https://www.wikidata.org/wiki/Q191529
-  - https://www.wikidata.org/wiki/Q105134737
-  - https://www.wikidata.org/wiki/Q238354
-  - https://www.wikidata.org/wiki/Q117336820
-  - https://www.wikidata.org/wiki/Q1551026
 lastmod: 2025-09-07T00:00:00+02:00
 ---
 

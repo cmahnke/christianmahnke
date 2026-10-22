@@ -1,7 +1,8 @@
 ---
 date: 2025-11-02T15:22:44+01:00
 title: "Shared metadata for Hugo pages"
-cite: true
+params:
+  cite: true
 tags:
   - Hugo
 ---

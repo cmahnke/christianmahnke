@@ -2,7 +2,11 @@
 date: 2024-11-14T15:30:00+01:00
 title: "IIIF Online Meeting 2024: HDR Images via IIIF Image API"
 description: "Slides and recording of my Lightning Talk about HDR images and IIIF"
-doi: 10.5281/zenodo.14168673
+params:
+  doi: 10.5281/zenodo.14168673
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1543677
+    - https://www.wikidata.org/wiki/Q110611535
 #preview:
 #  image: preview.jpg
 #  hide: true
@@ -11,9 +15,6 @@ tags:
 - Conference
 - HDR
 - Recording
-wikidata:
-  - https://www.wikidata.org/wiki/Q1543677
-  - https://www.wikidata.org/wiki/Q110611535
 lastmod: 2025-01-25T00:00:00+02:00
 ---
 

@@ -2,14 +2,15 @@
 date: 2025-08-08T18:33:44+02:00
 title: "Debian Repository with GitLab Pages"
 keywords: Debian, GitLab
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q16639197
+    - https://www.wikidata.org/wiki/Q7715973
+    - https://www.wikidata.org/wiki/Q305892
 tags:
   - Git
   - SoftwareDevelopment
-wikidata:
-  - https://www.wikidata.org/wiki/Q16639197
-  - https://www.wikidata.org/wiki/Q7715973
-  - https://www.wikidata.org/wiki/Q305892
 ---
 
 A simple Debian repository knitted by yourself...

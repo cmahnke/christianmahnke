@@ -1,15 +1,16 @@
 ---
 date: 2021-01-13T19:22:44+02:00
 title: "Wohnzimmer renoviert"
-preview:
-  image: furnished.jpg
-  hide: true
+params:
+  preview:
+    image: furnished.jpg
+    hide: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q475018
+    - https://www.wikidata.org/wiki/Q191529
 tags:
 - DIY
 - InteriorDesign
-wikidata:
-  - https://www.wikidata.org/wiki/Q475018
-  - https://www.wikidata.org/wiki/Q191529
 ---
 
 Neben meinen Blogs habe ich die Corona-Zeit genutzt mein Wohnzimmer zu renovieren. Auch hier konnte ich einige jahrealte Ideen umsetzen:

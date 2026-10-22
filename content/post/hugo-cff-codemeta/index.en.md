@@ -2,18 +2,19 @@
 date: 2026-01-13T18:52:22+02:00
 title: 'CFF zu CodeMeta in Hugo'
 description: "Part 1 on software metadata"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1713
+    - https://www.wikidata.org/wiki/Q108218387
+    - https://www.wikidata.org/wiki/Q364
+    - https://www.wikidata.org/wiki/Q22661177
+    - https://www.wikidata.org/wiki/Q281876
 tags:
 - SoftwareDevelopment
 - Metadata
 - Hugo
 - JSON
-wikidata:
-  - https://www.wikidata.org/wiki/Q1713
-  - https://www.wikidata.org/wiki/Q108218387
-  - https://www.wikidata.org/wiki/Q364
-  - https://www.wikidata.org/wiki/Q22661177
-  - https://www.wikidata.org/wiki/Q281876
 ---
 
 For an upcoming release of software for visualising a collection, I have been looking into [Citation File Format](https://citation-file-format.github.io/).

@@ -2,7 +2,19 @@
 date: 2025-03-26T07:00:44+02:00
 title: "Quantenkosmos Göttingen"
 description: "Ein digitales Exponat"
-cite: true
+params:
+  cite: true
+  preview: screenshot.png
+  doi: 10.5281/zenodo.18618940
+  wikidata:
+    - https://www.wikidata.org/wiki/Q464980
+    - https://www.wikidata.org/wiki/Q1144457
+    - https://www.wikidata.org/wiki/Q112061919
+    - https://www.wikidata.org/wiki/Q936
+    - https://www.wikidata.org/wiki/Q136992263
+    - https://www.wikidata.org/wiki/Q1329181
+    - https://www.wikidata.org/wiki/Q67078785
+    - https://www.wikidata.org/wiki/Q126084987
 outputs:
   - bibtex
   - html
@@ -16,17 +28,6 @@ tags:
   - Göttingen
   - History
   - OpenStreetMap
-preview: screenshot.png
-doi: 10.5281/zenodo.18618940
-wikidata:
-  - https://www.wikidata.org/wiki/Q464980
-  - https://www.wikidata.org/wiki/Q1144457
-  - https://www.wikidata.org/wiki/Q112061919
-  - https://www.wikidata.org/wiki/Q936
-  - https://www.wikidata.org/wiki/Q136992263
-  - https://www.wikidata.org/wiki/Q1329181
-  - https://www.wikidata.org/wiki/Q67078785
-  - https://www.wikidata.org/wiki/Q126084987
 lastmod: 2025-03-27T00:00:00+02:00
 ---
 

@@ -5,8 +5,9 @@ tags:
   - JavaScript
   - SoftwareDevelopment
   - Windows
-wikidata:
-  - https://www.wikidata.org/wiki/Q186055
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q186055
 ---
 Heute, am Freitag dem 13. sass ich länger in der Pampa im Zug fest...
 <!--more-->

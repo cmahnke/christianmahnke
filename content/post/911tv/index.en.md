@@ -3,34 +3,35 @@ date: 2023-11-09T19:22:44+02:00
 title: "911TV started"
 keywords: React, 911, September 11 attacks, terror, TV, news, live coverage
 description: "A web application that makes it possible to experience the news of 11 September 2001 in real time"
-preview:
-  image: screenshot.png
-  hide: true
-cite: true
-doi: 10.5281/zenodo.20120652
+params:
+  preview:
+    image: screenshot.png
+    hide: true
+  cite: true
+  doi: 10.5281/zenodo.20120652
+  cfffile: https://raw.githubusercontent.com/cmahnke/911tv/refs/heads/main/CITATION.cff
+  wikidata:
+    - https://www.wikidata.org/wiki/Q10806
+    - https://www.wikidata.org/wiki/Q191472
+    - https://www.wikidata.org/wiki/Q954394
+    - https://www.wikidata.org/wiki/Q2264545
+    - https://www.wikidata.org/wiki/Q860605
+    - https://www.wikidata.org/wiki/Q289
+    - https://www.wikidata.org/wiki/Q48340
+    - https://www.wikidata.org/wiki/Q7951257
+    - https://www.wikidata.org/wiki/Q212128
+    - https://www.wikidata.org/wiki/Q279925
 outputs:
   - bibtex
   - html
   - codemeta
   - pdf-article
-cfffile: https://raw.githubusercontent.com/cmahnke/911tv/refs/heads/main/CITATION.cff
 tags:
   - Website
   - HybridMedia
   - Archive
   - JavaScript
   - MediaInstallation
-wikidata:
-  - https://www.wikidata.org/wiki/Q10806
-  - https://www.wikidata.org/wiki/Q191472
-  - https://www.wikidata.org/wiki/Q954394
-  - https://www.wikidata.org/wiki/Q2264545
-  - https://www.wikidata.org/wiki/Q860605
-  - https://www.wikidata.org/wiki/Q289
-  - https://www.wikidata.org/wiki/Q48340
-  - https://www.wikidata.org/wiki/Q7951257
-  - https://www.wikidata.org/wiki/Q212128
-  - https://www.wikidata.org/wiki/Q279925
 lastmod: 2026-05-11T00:00:00+02:00
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: Amateur film about Munich
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
 weight: 4
 ---
 

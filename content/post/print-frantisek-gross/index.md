@@ -3,30 +3,31 @@ date: 2025-09-07T14:00:00+02:00
 title: 'Lithographie von František Gross (1909-1985)'
 keywords: František Gross
 description: ""
-cite: true
+params:
+  cite: true
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q15735037
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1965
+  wikidata:
+    - https://www.wikidata.org/wiki/Q15735037
+    - https://www.wikidata.org/wiki/Q1550936
+    - https://www.wikidata.org/wiki/Q213
+    - https://www.wikidata.org/wiki/Q853348
+    - https://www.wikidata.org/wiki/Q188675
 tags:
   - Art
   - Lithography
   - _ArtCollection
   - _Czechia
-preview: img/print.jpg
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q15735037
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1965
-wikidata:
-  - https://www.wikidata.org/wiki/Q15735037
-  - https://www.wikidata.org/wiki/Q1550936
-  - https://www.wikidata.org/wiki/Q213
-  - https://www.wikidata.org/wiki/Q853348
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Euch habe eine Lithographie von [František Gross](https://cs-m-wikipedia-org.translate.goog/wiki/Franti%C5%A1ek_Gross?_x_tr_sl=cs&_x_tr_tl=de&_x_tr_hl=de&_x_tr_pto=wapp) (automatische Übersetzung) (1909–1985) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/frantisek-gross/)) aufgetan...

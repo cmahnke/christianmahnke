@@ -5,22 +5,23 @@ tags:
   - Art
   - Etching
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q1449047
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1449047
+    - https://www.wikidata.org/wiki/Q27557512
+    - https://www.wikidata.org/wiki/Q157229
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q1449047
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q1449047
-  - https://www.wikidata.org/wiki/Q27557512
-  - https://www.wikidata.org/wiki/Q157229
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I have acquired an etching by [Marie Gey-Heinze](https://de.wikipedia.org/wiki/Marie_Gey-Heinze) (1881-1908)...

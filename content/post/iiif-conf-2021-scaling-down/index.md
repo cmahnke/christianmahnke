@@ -2,10 +2,11 @@
 date: 2021-06-24T16:30:00+02:00
 title: "IIIF Konferenz 2021: Scaling down..."
 description: "Statisches IIIF hosting"
-doi: 10.5281/zenodo.14169349
-preview:
-  image: preview.jpg
-  hide: true
+params:
+  doi: 10.5281/zenodo.14169349
+  preview:
+    image: preview.jpg
+    hide: true
 tags:
 - IIIF
 - Conference

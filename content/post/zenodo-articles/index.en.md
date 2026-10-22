@@ -1,14 +1,15 @@
 ---
 date: 2026-02-18T19:22:44+02:00
 title: "Blog posts at Zenodo"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q96473517
 draft: true
 tags:
   - Blog
   - Archive
   - Zenodo
-wikidata:
-  - https://www.wikidata.org/wiki/Q96473517
 ---
 
 More elaborate blog posts will now also be published on Zenodo...

@@ -6,23 +6,24 @@ tags:
   - Painting
   - _ArtCollection
   - _Niedersachsen
-preview: img/painting.jpg
+params:
+  preview: img/painting.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q1579261
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1965
+    style:
+      - http://vocab.getty.edu/aat/300022099
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1579261
+    - https://www.wikidata.org/wiki/Q123281363
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q1579261
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1965
-  style:
-    - http://vocab.getty.edu/aat/300022099
-wikidata:
-  - https://www.wikidata.org/wiki/Q1579261
-  - https://www.wikidata.org/wiki/Q123281363
 ---
 
 For my [new living room](/post/living-room/), I bought a painting by [Hans Ebers](https://de.wikipedia.org/wiki/Hans_Ebers) (1924–1970) from [Zeitzeug](https://zeitzeug.de/).

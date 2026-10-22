@@ -8,23 +8,24 @@ tags:
   - _ArtCollection
   - _Goettingen
   - _Niedersachsen
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q63485369
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q63485369
+    - https://www.wikidata.org/wiki/Q2360104
+    - https://www.wikidata.org/wiki/Q133742956
+    - https://www.wikidata.org/wiki/Q130763950
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q63485369
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q63485369
-  - https://www.wikidata.org/wiki/Q2360104
-  - https://www.wikidata.org/wiki/Q133742956
-  - https://www.wikidata.org/wiki/Q130763950
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Linolschnitt von Elsa Hoppe (1901-1992) erstanden...

@@ -2,20 +2,21 @@
 date: 2025-01-05T07:52:22+02:00
 title: 'Sammlungsdaten in Wikidata'
 description: ""
-#keywords:
-cite: true
+params:
+  #keywords:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q115564437
+    - https://www.wikidata.org/wiki/Q16354758
+    - https://www.wikidata.org/wiki/Q21831105
+    - https://www.wikidata.org/wiki/Q52
+    - https://www.wikidata.org/wiki/Q27302
+    -  https://www.wikidata.org/wiki/Q234110
 draft: true
 tags:
 - ProjectIdea
 - CulturalPolicy
 - AI
-wikidata:
-  - https://www.wikidata.org/wiki/Q115564437
-  - https://www.wikidata.org/wiki/Q16354758
-  - https://www.wikidata.org/wiki/Q21831105
-  - https://www.wikidata.org/wiki/Q52
-  - https://www.wikidata.org/wiki/Q27302
-  -  https://www.wikidata.org/wiki/Q234110
 ---
 
 "Alle Welt" spricht von KI für Kulturdaten...

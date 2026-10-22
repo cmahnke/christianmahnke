@@ -3,12 +3,13 @@ date: 2026-07-01T11:33:44+02:00
 title: "Guest book of the Darlingerode Rural Shopping Centre"
 keywords:
 description: ""
-cite: true
+params:
+  cite: true
+  iiifContext: http://iiif.io/api/image/2/context.json
 tags:
   - History
   - DigitalEdition
 draft: true
-iiifContext: http://iiif.io/api/image/2/context.json
 outputs:
   - html
   - iiif-manifest

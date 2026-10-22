@@ -5,24 +5,25 @@ tags:
   - Art
   - Etching
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q1917324
+    date: 1985
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  notes:
+    - https://www.ebay.co.uk/itm/203781943061
+    - https://www.auktionen-in-heidelberg.de/produkt/0392-113-originalgraphiken-kuenstler-der-welt-with-compliments-lufthansa-fuer-selbstbesichtiger/
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1917324
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q1917324
-  date: 1985
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-notes:
-  - https://www.ebay.co.uk/itm/203781943061
-  - https://www.auktionen-in-heidelberg.de/produkt/0392-113-originalgraphiken-kuenstler-der-welt-with-compliments-lufthansa-fuer-selbstbesichtiger/
-wikidata:
-  - https://www.wikidata.org/wiki/Q1917324
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe eine Farbradierung von [Mehmed Güler](https://de.wikipedia.org/wiki/Mehmet_G%C3%BCler_(Maler)) (1944-) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/mehmet-guler/)) gekauft...

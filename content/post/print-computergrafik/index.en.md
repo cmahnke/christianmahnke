@@ -7,19 +7,20 @@ tags:
   - UnknownArtist
   - ComputerArt
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q92703
+    - https://www.wikidata.org/wiki/Q47092600
+    - https://www.wikidata.org/wiki/Q539508
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q92703
-  - https://www.wikidata.org/wiki/Q47092600
-  - https://www.wikidata.org/wiki/Q539508
 lastmod: 2024-07-25T00:00:00+02:00
 ---
 

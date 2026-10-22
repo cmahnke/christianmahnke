@@ -1,20 +1,21 @@
 ---
 date: 2024-10-02T09:22:44+02:00
 title: '“Seelischerkrankte Krankenhaus”'
-class: sepia
-cite: true
+params:
+  class: sepia
+  cite: true
+  preview: front/full/full/0/default.jpg
+  wikidata:
+    - https://www.wikidata.org/wiki/Q105241486
+    - https://www.wikidata.org/wiki/Q731994
+    - https://www.wikidata.org/wiki/Q594150
+    - https://www.wikidata.org/wiki/Q1516931
 keywords: Psychatrie, Medizingeschichte, LKH Göttingen, Lukaskirche Göttingen
 description: "Ein Beispiel für den Begriffswandel für psychiatrische Einrichtungen"
 tags:
   - Object
   - Göttingen
   - History
-preview: front/full/full/0/default.jpg
-wikidata:
-  - https://www.wikidata.org/wiki/Q105241486
-  - https://www.wikidata.org/wiki/Q731994
-  - https://www.wikidata.org/wiki/Q594150
-  - https://www.wikidata.org/wiki/Q1516931
 ---
 
 Normalerweise vermeide ich es Reproduktionen zu kaufen...

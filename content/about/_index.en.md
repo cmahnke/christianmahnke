@@ -1,15 +1,16 @@
 ---
 title: "About me"
-metaPage: true
-displayinlist: false
-schema: about.html
+params:
+  metaPage: true
+  displayinlist: false
+  schema: about.html
+  js:
+    - ts/portrait.ts
+  preload:
+    - /about/contact/self-portrait.jpg
 sitemap:
   priority: 1.0
   changeFreq: monthly
-js:
-  - ts/portrait.ts
-preload:
-  - /about/contact/self-portrait.jpg
 cascade:
   - target:
       kind: section

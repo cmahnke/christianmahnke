@@ -5,10 +5,11 @@ description: 'Social Media Kanal "aktualisiert"'
 tags:
 - Projektemacher.org
 - SocialMedia
-wikidata:
-  - https://www.wikidata.org/wiki/Q27986619
-  - https://www.wikidata.org/wiki/Q115232190
-  - https://www.wikidata.org/wiki/Q30325419
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q27986619
+    - https://www.wikidata.org/wiki/Q115232190
+    - https://www.wikidata.org/wiki/Q30325419
 ---
 
 Auch wenn noch nichts passiert ist, aber ich bin nun auch als **[@cmahnke@openbiblio.social](https://openbiblio.social/@cmahnke)** via Mastodon zu erreichen.

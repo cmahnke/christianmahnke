@@ -1,9 +1,20 @@
 ---
 date: 2026-08-09T23:30:44+02:00
 title: 'Never Built Göttingen in 3D'
-class: never
-pagetheme: white
-cite: true
+params:
+  class: never
+  pagetheme: white
+  cite: true
+  preview:
+    image: img/screenshot.png
+    hide: false
+    attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a> and own data'
+  wikidata:
+    - https://www.wikidata.org/wiki/Q8180985
+    - https://www.wikidata.org/wiki/Q152838
+    - https://www.wikidata.org/wiki/Q713750
+    - https://www.wikidata.org/wiki/Q110609581
+    - https://www.wikidata.org/wiki/Q116859588
 tags:
   - Blog
   - Projektemacher.org
@@ -13,16 +24,6 @@ tags:
   - 3D
   - Geodata
   - OpenStreetMap
-preview:
-  image: img/screenshot.png
-  hide: false
-  attribution: '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a> and own data'
-wikidata:
-  - https://www.wikidata.org/wiki/Q8180985
-  - https://www.wikidata.org/wiki/Q152838
-  - https://www.wikidata.org/wiki/Q713750
-  - https://www.wikidata.org/wiki/Q110609581
-  - https://www.wikidata.org/wiki/Q116859588
 ---
 
 Following the launch of "[Never Built Göttingen](https://never-built.goettingen.xyz/)" in spring 2025, a new 3D visualisation is now available.

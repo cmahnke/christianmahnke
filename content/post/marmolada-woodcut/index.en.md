@@ -3,7 +3,22 @@ date: 2024-09-15T18:07:44+02:00
 title: 'Climate change in art...'
 keywords: Marmolada, Dolomites, Alps, Glacier, Elevation profile
 description: "Visually determine camera positions with geodata in Blender"
-cite: true
+params:
+  cite: true
+  preview: img/print.jpg
+  linkedart:
+    description: "A colour woodcut of Mount Marmolada in the Dolomites"
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q203241
+    - https://www.wikidata.org/wiki/Q137668018
+    - https://www.wikidata.org/wiki/Q137661693
+    - https://www.wikidata.org/wiki/Q258031
+    - https://www.wikidata.org/wiki/Q903816
+    - https://www.wikidata.org/wiki/Q3682472
+    - https://www.wikidata.org/wiki/Q1674866
+    - https://www.wikidata.org/wiki/Q124719690
 tags:
   - Art
   - Alps
@@ -14,25 +29,11 @@ tags:
   - UnknownArtist
   - Visualisation
   - _ArtCollection
-preview: img/print.jpg
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  description: "A colour woodcut of Mount Marmolada in the Dolomites"
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q203241
-  - https://www.wikidata.org/wiki/Q137668018
-  - https://www.wikidata.org/wiki/Q137661693
-  - https://www.wikidata.org/wiki/Q258031
-  - https://www.wikidata.org/wiki/Q903816
-  - https://www.wikidata.org/wiki/Q3682472
-  - https://www.wikidata.org/wiki/Q1674866
-  - https://www.wikidata.org/wiki/Q124719690
 resources:
   - src: img/preview.jpg
     params:

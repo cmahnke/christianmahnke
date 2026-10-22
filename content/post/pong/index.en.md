@@ -3,7 +3,16 @@ date: 2024-04-15T13:58:44+02:00
 title: "Pong Visualisation"
 keywords: Pong, video game, browser automation, Playwright
 description: "A 70s video game as a heat map"
-cite: true
+params:
+  cite: true
+  preview: pong-heatmap1.png
+  wikidata:
+    - https://www.wikidata.org/wiki/Q216293
+    - https://www.wikidata.org/wiki/Q614417
+    - https://www.wikidata.org/wiki/Q123162820
+    - https://www.wikidata.org/wiki/Q978185
+    - https://www.wikidata.org/wiki/Q6368
+    - https://www.wikidata.org/wiki/Q175957
 tags:
   - Light
   - Licht2024
@@ -13,14 +22,6 @@ tags:
   - JavaScript
   - Game
   - Visualisation
-preview: pong-heatmap1.png
-wikidata:
-  - https://www.wikidata.org/wiki/Q216293
-  - https://www.wikidata.org/wiki/Q614417
-  - https://www.wikidata.org/wiki/Q123162820
-  - https://www.wikidata.org/wiki/Q978185
-  - https://www.wikidata.org/wiki/Q6368
-  - https://www.wikidata.org/wiki/Q175957
 lastmod: 2024-09-09T00:00:00+02:00
 ---
 

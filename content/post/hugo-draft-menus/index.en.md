@@ -1,7 +1,8 @@
 ---
 date: 2025-05-05T18:22:44+02:00
 title: "Menus in Hugo draft mode"
-cite: true
+params:
+  cite: true
 tags:
   - Hugo
 lastmod: 2026-04-07T00:00:00+02:00

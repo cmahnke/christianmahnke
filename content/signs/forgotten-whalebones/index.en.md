@@ -1,7 +1,8 @@
 ---
-displayinlist: false
-news: false
-archive: false
+params:
+  displayinlist: false
+  news: false
+  archive: false
 title: The forgotten whale bones of Göttingen
 layout: sign
 ---

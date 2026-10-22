@@ -6,9 +6,10 @@ tags:
   - SocialMedia
   - Archive
   - Hugo 
-wikidata:
-  - https://www.wikidata.org/wiki/Q27986619
-  - https://www.wikidata.org/wiki/Q115232190
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q27986619
+    - https://www.wikidata.org/wiki/Q115232190
 ---
 
 Having recently created an [archive of my Mastodon posts](/post/github-action-mastodon-backup/)...

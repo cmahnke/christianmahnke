@@ -2,17 +2,18 @@
 date: 2026-01-11T13:22:44+02:00
 title: "Linked Art Metadaten"
 keywords: Linked Art, Linked Data, Kunst,
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q115616582
+    - https://www.wikidata.org/wiki/Q6108942
+    - https://www.wikidata.org/wiki/Q1249973
+    - https://www.wikidata.org/wiki/Q624005
 tags:
   - Metadata
   - LOD
   - JSON
   - Art
-wikidata:
-  - https://www.wikidata.org/wiki/Q115616582
-  - https://www.wikidata.org/wiki/Q6108942
-  - https://www.wikidata.org/wiki/Q1249973
-  - https://www.wikidata.org/wiki/Q624005
 ---
 
 Zur Vorbereitung zukünftiger Experimente gibt es nun für einige Einträge Linked-Art-Metadaten...

@@ -1,14 +1,15 @@
 ---
 date: 2026-05-07T19:45:44+02:00
 title: "NPM Organisation"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q978185
+    - https://www.wikidata.org/wiki/Q7067518
 keywords: NPM
 tags:
   - SoftwareDevelopment
   - JavaScript
-wikidata:
-  - https://www.wikidata.org/wiki/Q978185
-  - https://www.wikidata.org/wiki/Q7067518
 ---
 
 Ich habe eine NPM "Organisation" angelegt.

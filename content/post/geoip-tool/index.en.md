@@ -1,18 +1,19 @@
 ---
 date: 2023-04-30T16:15:44+02:00
 title: "GeoIP Tool"
-desscription: "A tool to add your own coordinates for IP addresses to an ElasticSearch index, for indoor navigation"
 keywords: IP, Go, Golang, Geolocalisation, ElasticSearch
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q37227
+    - https://www.wikidata.org/wiki/Q11135
+    - https://www.wikidata.org/wiki/Q916335
+    - https://www.wikidata.org/wiki/Q3050461
+  desscription: "A tool to add your own coordinates for IP addresses to an ElasticSearch index, for indoor navigation"
 tags:
   - Data
   - Geodata
   - Search
-wikidata:
-  - https://www.wikidata.org/wiki/Q37227
-  - https://www.wikidata.org/wiki/Q11135
-  - https://www.wikidata.org/wiki/Q916335
-  - https://www.wikidata.org/wiki/Q3050461
 ---
 
 [Kibana](https://www.elastic.co/de/kibana) visualisation with room plans needs data, e.g. from devices in a building. But the data has to come from somewhere...

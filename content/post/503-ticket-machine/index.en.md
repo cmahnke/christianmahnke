@@ -5,11 +5,12 @@ tags:
   - Fun
   - Travel
   - Photo
-preview: 503.jpeg
-wikidata:
-  - https://www.wikidata.org/wiki/Q703918
-  - https://www.wikidata.org/wiki/Q657345
-  - https://www.wikidata.org/wiki/Q17538709
+params:
+  preview: 503.jpeg
+  wikidata:
+    - https://www.wikidata.org/wiki/Q703918
+    - https://www.wikidata.org/wiki/Q657345
+    - https://www.wikidata.org/wiki/Q17538709
 ---
 
 Spotted at Hanover Central Station...

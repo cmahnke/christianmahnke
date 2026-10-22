@@ -1,10 +1,11 @@
 ---
 title: "IIIF C2PA"
-metaPage: true
-displayinlist: false
-archive: false
-news: false
-class: hdr-iiif
+params:
+  metaPage: true
+  displayinlist: false
+  archive: false
+  news: false
+  class: hdr-iiif
 ---
 
 # IIIF C2PA

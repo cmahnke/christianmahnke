@@ -1,7 +1,8 @@
 ---
 title: 'Search'
 description: ''
-wikidata: https://www.wikidata.org/wiki/Q4182287
+params:
+  wikidata: https://www.wikidata.org/wiki/Q4182287
 
 ---
 

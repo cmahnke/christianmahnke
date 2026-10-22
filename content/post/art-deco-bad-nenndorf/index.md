@@ -1,19 +1,20 @@
 ---
 date: 2026-10-05T15:52:22+02:00
 title: 'Art déco Architektur in Bad Nenndorf'
-cite: true
+params:
+  cite: true
+  preview: wincklerbad-detail.jpg
+  wikidata:
+    - https://www.wikidata.org/wiki/Q543342
+    - https://www.wikidata.org/wiki/Q123753430
+    - https://www.wikidata.org/wiki/Q101584497
+    - https://www.wikidata.org/wiki/Q91788671
+    - https://www.wikidata.org/wiki/Q82981060
+    - https://www.wikidata.org/wiki/Q1946541
 tags:
 - Architecture
 - ArtDeco
 - Travel
-preview: wincklerbad-detail.jpg
-wikidata:
-  - https://www.wikidata.org/wiki/Q543342
-  - https://www.wikidata.org/wiki/Q123753430
-  - https://www.wikidata.org/wiki/Q101584497
-  - https://www.wikidata.org/wiki/Q91788671
-  - https://www.wikidata.org/wiki/Q82981060
-  - https://www.wikidata.org/wiki/Q1946541
 ---
 
 Mit dem Älterwerden besucht man auch Orte, an die man vor zehn Jahren noch nicht einmal gedacht hat. In den letzten Jahren sind das immer häufiger Kurorte.

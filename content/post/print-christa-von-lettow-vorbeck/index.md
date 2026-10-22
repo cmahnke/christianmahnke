@@ -6,23 +6,24 @@ tags:
   - Art
   - WoodblockPrint
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q139591340
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q139591340
+    - https://www.wikidata.org/wiki/Q137661693
+    - https://www.wikidata.org/wiki/Q24045714
+    - https://www.wikidata.org/wiki/Q188675
+  gnd: http://d-nb.info/gnd/1139723227
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q139591340
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q139591340
-  - https://www.wikidata.org/wiki/Q137661693
-  - https://www.wikidata.org/wiki/Q24045714
-  - https://www.wikidata.org/wiki/Q188675
-gnd: http://d-nb.info/gnd/1139723227
 lastmod: 2026-04-29T00:00:00+02:00
 ---
 

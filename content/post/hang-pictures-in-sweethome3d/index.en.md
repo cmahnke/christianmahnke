@@ -3,15 +3,16 @@ date: 2022-11-27T08:33:44+02:00
 title: "Hang pictures in Sweet Home 3D"
 keywords: Sweet Home 3D, PDF, Inkscape, 3D Model
 description: "A tool for hanging PDF posters in Sweet Home 3D"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1685508
+    - https://www.wikidata.org/wiki/Q42332
+    - https://www.wikidata.org/wiki/Q603967
 tags:
   - 3D
   - Exhibition
   - Blender
-wikidata:
-  - https://www.wikidata.org/wiki/Q1685508
-  - https://www.wikidata.org/wiki/Q42332
-  - https://www.wikidata.org/wiki/Q603967
 ---
 
 For the planning of an [exhibition](/en/post/wilma-brauner/) using a 3D program, I have been looking into how pre-arranged picture frames could be imported into [Sweet Home 3D](https://www.sweethome3d.com/)...

@@ -4,10 +4,11 @@ title: 'An unusual object'
 keywords: Vorax, drilling machine, kitchen appliance
 tags:
   - Object
-preview: img/front.jpg
-wikidata:
-  - https://www.wikidata.org/wiki/Q58964
-  - https://www.wikidata.org/wiki/Q621630
+params:
+  preview: img/front.jpg
+  wikidata:
+    - https://www.wikidata.org/wiki/Q58964
+    - https://www.wikidata.org/wiki/Q621630
 ---
 
 I have once again found an interesting object...

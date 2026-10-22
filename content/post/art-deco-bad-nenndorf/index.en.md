@@ -1,19 +1,20 @@
 ---
 date: 2026-10-05T15:52:22+02:00
 title: 'Art Deco architecture in Bad Nenndorf'
-cite: true
+params:
+  cite: true
+  preview: wincklerbad-detail.jpg
+  wikidata:
+    - https://www.wikidata.org/wiki/Q543342
+    - https://www.wikidata.org/wiki/Q123753430
+    - https://www.wikidata.org/wiki/Q101584497
+    - https://www.wikidata.org/wiki/Q91788671
+    - https://www.wikidata.org/wiki/Q82981060
+    - https://www.wikidata.org/wiki/Q1946541
 tags:
 - Architecture
 - ArtDeco
 - Travel
-preview: wincklerbad-detail.jpg
-wikidata:
-  - https://www.wikidata.org/wiki/Q543342
-  - https://www.wikidata.org/wiki/Q123753430
-  - https://www.wikidata.org/wiki/Q101584497
-  - https://www.wikidata.org/wiki/Q91788671
-  - https://www.wikidata.org/wiki/Q82981060
-  - https://www.wikidata.org/wiki/Q1946541
 ---
 
 As you get older, you find yourself visiting places you wouldn’t even have thought of ten years ago. In recent years, these have increasingly been spa towns.

@@ -5,22 +5,23 @@ tags:
   - Art
   - Etching
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    title: Hühnervolk
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q1793892
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1793892
+    - https://www.wikidata.org/wiki/Q780
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  title: Hühnervolk
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q1793892
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q1793892
-  - https://www.wikidata.org/wiki/Q780
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I found an etching by [Kurt Mühlenhaupt](https://de.wikipedia.org/wiki/Kurt_M%C3%BChlenhaupt) (1921-2006) ([at artnet](https://www.artnet.com/artists/kurt-muhlenhaupt/))...

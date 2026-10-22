@@ -7,11 +7,12 @@ tags:
   - 3D
   - Photogrammetry
   - Digitisation
-wikidata:
-  - https://www.wikidata.org/wiki/Q22682088
-  - https://www.wikidata.org/wiki/Q28135989
-  - https://www.wikidata.org/wiki/Q190149
-  - https://www.wikidata.org/wiki/Q3525922
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q22682088
+    - https://www.wikidata.org/wiki/Q28135989
+    - https://www.wikidata.org/wiki/Q190149
+    - https://www.wikidata.org/wiki/Q3525922
 ---
 
 In diesem Blog gibt es seit ungefähr 2,5 Jahren auch 3D-Modelle. Nun können sie auch über IIIF (V4) in Manifeste betrachtet werden.

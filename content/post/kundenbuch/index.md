@@ -3,19 +3,20 @@ date: 2026-07-01T11:33:44+02:00
 title: "Kundenbuch des Ländlichen Einkaufszentrums Darlingerode"
 keywords:
 description: ""
-cite: true
+params:
+  cite: true
+  iiifContext: http://iiif.io/api/image/2/context.json
+  wikidata:
+    - https://www.wikidata.org/wiki/Q504034
+    - https://www.wikidata.org/wiki/Q879923
 tags:
   - History
   - DigitalEdition
 draft: true
-iiifContext: http://iiif.io/api/image/2/context.json
 outputs:
   - html
   - iiif-manifest
   - pdf-article
-wikidata:
-  - https://www.wikidata.org/wiki/Q504034
-  - https://www.wikidata.org/wiki/Q879923
 resources:
   - src: "front.jxl"
     name: front

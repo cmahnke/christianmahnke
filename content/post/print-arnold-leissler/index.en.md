@@ -7,23 +7,24 @@ tags:
   - Etching
   - _ArtCollection
   - _Niedersachsen
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q695684
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1969
+    title: Landschaft mit Pilaster und Skulptur
+  wikidata:
+    - https://www.wikidata.org/wiki/Q695684
+    - https://www.wikidata.org/wiki/Q1715
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q695684
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1969
-  title: Landschaft mit Pilaster und Skulptur
-wikidata:
-  - https://www.wikidata.org/wiki/Q695684
-  - https://www.wikidata.org/wiki/Q1715
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I bought an etching by [Arnold Leissler (the Younger)](https://de.wikipedia.org/wiki/Arnold_Leissler_der_J%C3%BCngere) (1939-2014) ([at artnet](https://www.artnet.com/artists/arnold-leissler/))...

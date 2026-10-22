@@ -2,19 +2,20 @@
 date: 2025-07-27T18:22:44+02:00
 title: "Fliiifenleger - eine IIIF Experimentierplattform"
 keywords:
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q72885392
+    - https://www.wikidata.org/wiki/Q214856
+    - https://www.wikidata.org/wiki/Q484140
+    - https://www.wikidata.org/wiki/Q148443
+    - https://www.wikidata.org/wiki/Q121923035
+    - https://www.wikidata.org/wiki/Q136933249
+    - https://www.wikidata.org/wiki/Q106239881
 tags:
 - IIIF
 - DigitalImages
 - Java
-wikidata:
-  - https://www.wikidata.org/wiki/Q72885392
-  - https://www.wikidata.org/wiki/Q214856
-  - https://www.wikidata.org/wiki/Q484140
-  - https://www.wikidata.org/wiki/Q148443
-  - https://www.wikidata.org/wiki/Q121923035
-  - https://www.wikidata.org/wiki/Q136933249
-  - https://www.wikidata.org/wiki/Q106239881
 lastmod: 2026-09-09T00:00:00+02:00
 ---
 

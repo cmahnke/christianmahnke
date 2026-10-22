@@ -3,7 +3,12 @@ date: 2025-05-18T19:22:44+02:00
 title: "Der Kalte Krieg in Kinderhand"
 keywords: Schiffsquartett, Krieg, Schiffe, Kartenspiel
 description: "Ein Kartenspiel aus den 70ern auf Stand gebracht"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q16206135
+    - https://www.wikidata.org/wiki/Q720832
+    - https://www.wikidata.org/wiki/Q2031121
 tags:
   - Object
   - Fun
@@ -11,10 +16,6 @@ tags:
   - Merchandise
   - DIY
   - Game
-wikidata:
-  - https://www.wikidata.org/wiki/Q16206135
-  - https://www.wikidata.org/wiki/Q720832
-  - https://www.wikidata.org/wiki/Q2031121
 ---
 
 Über ein unerwartet zeitgemäßes Spiel...

@@ -8,11 +8,12 @@ tags:
 - Archive
 - Art
 - Etching
-wikidata:
-  - https://www.wikidata.org/wiki/Q76632556
-  - https://www.wikidata.org/wiki/Q3901583
-  - https://www.wikidata.org/wiki/Q76632556
-  - https://www.wikidata.org/wiki/Q158083
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q76632556
+    - https://www.wikidata.org/wiki/Q3901583
+    - https://www.wikidata.org/wiki/Q76632556
+    - https://www.wikidata.org/wiki/Q158083
 lastmod: 2025-02-06T00:00:00+02:00
 ---
 

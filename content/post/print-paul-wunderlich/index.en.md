@@ -5,24 +5,25 @@ tags:
   - Art
   - Linocut
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q316829
+    title: Lesende
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1946
+  wikidata:
+    - https://www.wikidata.org/wiki/Q316829
+    - https://www.wikidata.org/wiki/Q188675
+    - https://www.wikidata.org/wiki/Q1765429
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q316829
-  title: Lesende
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1946
-wikidata:
-  - https://www.wikidata.org/wiki/Q316829
-  - https://www.wikidata.org/wiki/Q188675
-  - https://www.wikidata.org/wiki/Q1765429
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I’ve found a linocut by [Paul Wunderlich](https://en.wikipedia.org/wiki/Paul_Wunderlich) (1927–2010) ([on artnet](https://www.artnet.com/artists/paul-wunderlich/))...

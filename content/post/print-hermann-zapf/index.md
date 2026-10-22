@@ -5,24 +5,25 @@ tags:
   - Art
   - Lithography
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q60302
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q60302
+    - https://www.wikidata.org/wiki/Q147359
+    - https://www.wikidata.org/wiki/Q1214351
+    - https://www.wikidata.org/wiki/Q1093499
+    - https://www.wikidata.org/wiki/Q165680
+    - https://www.wikidata.org/wiki/Q564783
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q60302
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q60302
-  - https://www.wikidata.org/wiki/Q147359
-  - https://www.wikidata.org/wiki/Q1214351
-  - https://www.wikidata.org/wiki/Q1093499
-  - https://www.wikidata.org/wiki/Q165680
-  - https://www.wikidata.org/wiki/Q564783
 ---
 
 Eine Lithografie von [Hermann Zapf](https://de.wikipedia.org/wiki/Hermann_Zapf) (1918 - 2015) aus meinem Büro...

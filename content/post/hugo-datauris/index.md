@@ -1,11 +1,12 @@
 ---
 date: 2025-12-11T11:22:44+01:00
 title: "Ressourcen als Data-URL in Hugo einbetten"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q976554
 tags:
   - Hugo
-wikidata:
-  - https://www.wikidata.org/wiki/Q976554
 ---
 
 Manchmal ist es einfacher externe Ressourcen in HTML einzubinden...

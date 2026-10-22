@@ -1,15 +1,16 @@
 ---
 date: 2021-01-13T19:22:44+02:00
 title: "Living room renovated"
-preview:
-  image: furnished.jpg
-  hide: true
+params:
+  preview:
+    image: furnished.jpg
+    hide: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q475018
+    - https://www.wikidata.org/wiki/Q191529
 tags:
 - DIY
 - InteriorDesign
-wikidata:
-  - https://www.wikidata.org/wiki/Q475018
-  - https://www.wikidata.org/wiki/Q191529
 ---
 
 In addition to my blogs, I used the corona period to renovate my living room. Here, too, I was able to realise some ideas that were years old:

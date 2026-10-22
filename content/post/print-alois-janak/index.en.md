@@ -7,23 +7,24 @@ tags:
   - Etching
   - _ArtCollection
   - _Czechia
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q67313882
+    date: 1997
+  wikidata:
+    - https://www.wikidata.org/wiki/Q67313882
+    - https://www.wikidata.org/wiki/Q213
+    - https://www.wikidata.org/wiki/Q853348
+    - https://www.wikidata.org/wiki/Q197
+    - https://www.wikidata.org/wiki/Q23499
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q67313882
-  date: 1997
-wikidata:
-  - https://www.wikidata.org/wiki/Q67313882
-  - https://www.wikidata.org/wiki/Q213
-  - https://www.wikidata.org/wiki/Q853348
-  - https://www.wikidata.org/wiki/Q197
-  - https://www.wikidata.org/wiki/Q23499
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I bought a colour etching by [Alois Janák](https://www.alois-janak.de/) (born 1924)...

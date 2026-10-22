@@ -1,9 +1,10 @@
 ---
 title: "Creative Technologist"
-metaPage: true
-displayinlist: false
-archive: false
-news: false
+params:
+  metaPage: true
+  displayinlist: false
+  archive: false
+  news: false
 weight: 10
 ---
 

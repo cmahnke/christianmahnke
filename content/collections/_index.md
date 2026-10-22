@@ -1,8 +1,9 @@
 ---
 title: "Sammlungen"
-metaPage: true
-displayinlist: false
-schema: collections.html
+params:
+  metaPage: true
+  displayinlist: false
+  schema: collections.html
 sitemap:
   priority: 0.9
   changeFreq: monthly

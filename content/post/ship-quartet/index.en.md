@@ -3,7 +3,12 @@ date: 2025-05-18T19:22:44+02:00
 title: "The Cold War in children's hands"
 keywords: Ship quartet, war, ships, card game
 description: "A card game from the 70s brought up to date"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q16206135
+    - https://www.wikidata.org/wiki/Q720832
+    - https://www.wikidata.org/wiki/Q2031121
 tags:
   - Object
   - Fun
@@ -11,10 +16,6 @@ tags:
   - Merchandise
   - DIY
   - Game
-wikidata:
-  - https://www.wikidata.org/wiki/Q16206135
-  - https://www.wikidata.org/wiki/Q720832
-  - https://www.wikidata.org/wiki/Q2031121
 ---
 
 About an unexpectedly contemporary game...

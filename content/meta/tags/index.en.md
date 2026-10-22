@@ -1,7 +1,8 @@
 ---
-displayinlist: false
-news: false
-archive: false
+params:
+  displayinlist: false
+  news: false
+  archive: false
 title: Tags
 layout: tag-list
 outputs:

@@ -6,21 +6,22 @@ tags:
   - Art
   - Etching
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    title: DROHjanisches Pferd
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q136641660
+    date: 2003
+  wikidata:
+    - https://www.wikidata.org/wiki/Q136641660
+    - https://www.wikidata.org/wiki/Q545449
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  title: DROHjanisches Pferd
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q136641660
-  date: 2003
-wikidata:
-  - https://www.wikidata.org/wiki/Q136641660
-  - https://www.wikidata.org/wiki/Q545449
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe eine [Aquatinta](https://de.wikipedia.org/wiki/Aquatinta) (Radierung) von [Klaus Parche](http://www.klausparche.de/) (1939-2024) gefunden...

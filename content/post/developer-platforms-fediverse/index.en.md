@@ -6,13 +6,14 @@ tags:
   - ProjectIdea
   - GitHub
   - DigitalSovereignty
-cite: true
-wikidata:
-  - https://www.wikidata.org/wiki/Q364
-  - https://www.wikidata.org/wiki/Q16639197
-  - https://www.wikidata.org/wiki/Q30325419
-  - https://www.wikidata.org/wiki/Q27986619
-  - https://www.wikidata.org/wiki/Q40463886
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q364
+    - https://www.wikidata.org/wiki/Q16639197
+    - https://www.wikidata.org/wiki/Q30325419
+    - https://www.wikidata.org/wiki/Q27986619
+    - https://www.wikidata.org/wiki/Q40463886
 ---
 
 GitHub is currently facing a lot of issues – what does it take to switch?

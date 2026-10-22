@@ -8,20 +8,21 @@ tags:
   - _ArtCollection
   - _Goettingen
   - _Niedersachsen
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q95259741
+  wikidata:
+    - https://www.wikidata.org/wiki/Q95259741
+    - https://www.wikidata.org/wiki/Q133742956
+    - https://www.wikidata.org/wiki/Q130763950
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q95259741
-wikidata:
-  - https://www.wikidata.org/wiki/Q95259741
-  - https://www.wikidata.org/wiki/Q133742956
-  - https://www.wikidata.org/wiki/Q130763950
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I have purchased a woodcut by Erich Zimmer (1908-2001)...

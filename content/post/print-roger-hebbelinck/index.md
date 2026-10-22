@@ -6,23 +6,24 @@ tags:
   - Art
   - Lithography
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q2323392
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q2323392
+    - https://www.wikidata.org/wiki/Q116057564
+    - https://www.wikidata.org/wiki/Q12994
+    - https://www.wikidata.org/wiki/Q2822455
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q2323392
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q2323392
-  - https://www.wikidata.org/wiki/Q116057564
-  - https://www.wikidata.org/wiki/Q12994
-  - https://www.wikidata.org/wiki/Q2822455
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe eine Lithographie von Roger Hebbelinck (1912-1987) aufgetan...

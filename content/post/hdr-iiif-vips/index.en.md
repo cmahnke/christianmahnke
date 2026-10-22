@@ -2,17 +2,18 @@
 date: 2025-11-27T18:33:44+02:00
 title: "HDR IIIF for everyone with VIPS"
 keywords: libultrahdr, ultrahdr, JPEGXL, vips
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q106239881
+    - https://www.wikidata.org/wiki/Q7907037
+    - https://www.wikidata.org/wiki/Q22682088
+    - https://www.wikidata.org/wiki/Q11223506
 tags:
   - DigitalImages
   - VIPS
   - HDR
   - IIIF
-wikidata:
-  - https://www.wikidata.org/wiki/Q106239881
-  - https://www.wikidata.org/wiki/Q7907037
-  - https://www.wikidata.org/wiki/Q22682088
-  - https://www.wikidata.org/wiki/Q11223506
 ---
 HDR IIIF for everyone...
 <!--more-->

@@ -3,18 +3,19 @@ date: 2024-12-01T12:00:00+02:00
 title: "For the pre-Christmas period"
 description: "A children's book with anaglyphs"
 keywords: Children's book, anaglyphs
-preview:
-  image: front.jpg
-  hide: true
+params:
+  preview:
+    image: front.jpg
+    hide: true
+  wikipedia:
+    - https://www.wikidata.org/wiki/Q484031
+    - https://www.wikidata.org/wiki/Q486269
+    - https://www.wikidata.org/wiki/Q8275050
 tags:
 - Projektemacher.org
 - Christmas
 - Stereoscopy
 - Book
-wikipedia:
-  - https://www.wikidata.org/wiki/Q484031
-  - https://www.wikidata.org/wiki/Q486269
-  - https://www.wikidata.org/wiki/Q8275050
 ---
 
 To get in the mood for the pre-Christmas season...

@@ -7,24 +7,25 @@ tags:
   - Etching
   - _ArtCollection
   - _Czechia
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q140946340
+  wikidata:
+    - https://www.wikidata.org/wiki/Q140946340
+    - https://www.wikidata.org/wiki/Q414309
+    - https://www.wikidata.org/wiki/Q120549901
+    - https://www.wikidata.org/wiki/Q301415
+    - https://www.wikidata.org/wiki/Q228655
+    - https://www.wikidata.org/wiki/Q939766
+    - https://www.wikidata.org/wiki/Q110279968
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q140946340
-wikidata:
-  - https://www.wikidata.org/wiki/Q140946340
-  - https://www.wikidata.org/wiki/Q414309
-  - https://www.wikidata.org/wiki/Q120549901
-  - https://www.wikidata.org/wiki/Q301415
-  - https://www.wikidata.org/wiki/Q228655
-  - https://www.wikidata.org/wiki/Q939766
-  - https://www.wikidata.org/wiki/Q110279968
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe eine Radierung von Anna Kloubek-Schrutz (1878-?) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/anna-schrutz/)) gekauft...

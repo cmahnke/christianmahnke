@@ -1,11 +1,12 @@
 ---
 date: 2024-01-30T18:22:44+02:00
 title: "Metadata for Hugo Shortcodes"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q110961986
 tags:
   - Hugo
-wikidata:
-  - https://www.wikidata.org/wiki/Q110961986
 lastmod: 2025-04-15T00:00:00+02:00
 ---
 

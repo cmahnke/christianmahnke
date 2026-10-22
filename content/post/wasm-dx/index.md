@@ -5,11 +5,12 @@ tags:
   - JavaScript
   - SoftwareDevelopment
   - Hugo
-wikidata:
-  - https://www.wikidata.org/wiki/Q20155677
-  - https://www.wikidata.org/wiki/Q111590996
-  - https://www.wikidata.org/wiki/Q114900810
-  - https://www.wikidata.org/wiki/Q726780
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q20155677
+    - https://www.wikidata.org/wiki/Q111590996
+    - https://www.wikidata.org/wiki/Q114900810
+    - https://www.wikidata.org/wiki/Q726780
 ---
 
 Für die letzten beiden Blog-Posts über SPARQL und Triple Stores musste ich mich mit [WASM](https://webassembly.org/) herumschlagen...

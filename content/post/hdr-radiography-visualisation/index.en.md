@@ -3,19 +3,20 @@ date: 2024-11-13T12:00:44+02:00
 title: "HDR images for the visualisation of X-ray examinations"
 description: "A new way to display X-rayed paintings"
 keywords: Radiography, MET, Metropolitan Museum of Art, Paolo Veronese
-cite: true
+params:
+  cite: true
+  preview:
+    image: img/step1-xray.jpg
+    hide: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q160236
+    - https://www.wikidata.org/wiki/Q9440
+    - https://www.wikidata.org/wiki/Q9372005
+    - https://www.wikidata.org/wiki/Q34777
 tags:
   - DigitalImages
   - HDR
   - Art
-preview:
-  image: img/step1-xray.jpg
-  hide: true
-wikidata:
-  - https://www.wikidata.org/wiki/Q160236
-  - https://www.wikidata.org/wiki/Q9440
-  - https://www.wikidata.org/wiki/Q9372005
-  - https://www.wikidata.org/wiki/Q34777
 ---
 
 Another use case for HDR images...

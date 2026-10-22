@@ -5,9 +5,10 @@ keywords: Kleiderbügel, Forum Wissen
 tags:
   - Projektemacher.org
   - Exhibition
-wikidata:
-  - https://www.wikidata.org/wiki/Q112061919
-  - https://www.wikidata.org/wiki/Q815240
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q112061919
+    - https://www.wikidata.org/wiki/Q815240
 ---
 
 Eine meiner Sammlungen nimmt an einer Gruppenausstellung teil....

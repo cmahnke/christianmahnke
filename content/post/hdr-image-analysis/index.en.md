@@ -3,23 +3,24 @@ date: 2024-06-06T11:33:44+02:00
 title: "Contrast enhancement for UV images using HDR"
 keywords: UV, ultraviolet, image analysis, Northeim, copy book, letters
 description: "An old copy book from Northeim as an example of HDR visualisation of UV images"
-cite: true
-preview:
-  image: img/front.jpg
-  hide: true
+params:
+  cite: true
+  preview:
+    image: img/front.jpg
+    hide: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q178995
+    - https://www.wikidata.org/wiki/Q498575
+    - https://www.wikidata.org/wiki/Q1576316
+    - https://www.wikidata.org/wiki/Q7320
+    - https://www.wikidata.org/wiki/Q777
+    - https://www.wikidata.org/wiki/Q278151
 tags:
   - Light
   - Licht2024
   - DigitalImages
   - Object
   - HDR
-wikidata:
-  - https://www.wikidata.org/wiki/Q178995
-  - https://www.wikidata.org/wiki/Q498575
-  - https://www.wikidata.org/wiki/Q1576316
-  - https://www.wikidata.org/wiki/Q7320
-  - https://www.wikidata.org/wiki/Q777
-  - https://www.wikidata.org/wiki/Q278151
 ---
 
 This example is about a practical use case for [HDR](https://en.wikipedia.org/wiki/High_dynamic_range) visualisation in the browser...

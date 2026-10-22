@@ -3,23 +3,24 @@ date: 2024-06-06T11:33:44+02:00
 title: "Kontrasterhöhung für UV Aufnahmen mittels HDR Darstellung"
 keywords: UV, Ultraviolet, Bildanalyse, Northeim, Kopierbuch, Briefe
 description: "Ein altes Kopierbuch aus Northeim als Beispiel für HDR Visualisierung von UV Aufnahmen"
-cite: true
-preview:
-  image: img/front.jpg
-  hide: true
+params:
+  cite: true
+  preview:
+    image: img/front.jpg
+    hide: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q178995
+    - https://www.wikidata.org/wiki/Q498575
+    - https://www.wikidata.org/wiki/Q1576316
+    - https://www.wikidata.org/wiki/Q7320
+    - https://www.wikidata.org/wiki/Q777
+    - https://www.wikidata.org/wiki/Q278151
 tags:
   - Light
   - Licht2024
   - DigitalImages
   - Object
   - HDR
-wikidata:
-  - https://www.wikidata.org/wiki/Q178995
-  - https://www.wikidata.org/wiki/Q498575
-  - https://www.wikidata.org/wiki/Q1576316
-  - https://www.wikidata.org/wiki/Q7320
-  - https://www.wikidata.org/wiki/Q777
-  - https://www.wikidata.org/wiki/Q278151
 ---
 
 In diesem Beispiel geht es um einen praktischen Anwendungsfall für die [HDR](https://de.wikipedia.org/wiki/High_Dynamic_Range_Image) Darstellung im Browser...

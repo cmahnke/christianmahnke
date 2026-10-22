@@ -8,24 +8,25 @@ tags:
   - _ArtCollection
   - _Goettingen
   - _Niedersachsen
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q94634912
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1976
+  wikidata:
+    - https://www.wikidata.org/wiki/Q94634912
+    - https://www.wikidata.org/wiki/Q133742956
+    - https://www.wikidata.org/wiki/Q130763950
+    - https://www.wikidata.org/wiki/Q1805915
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q94634912
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1976
-wikidata:
-  - https://www.wikidata.org/wiki/Q94634912
-  - https://www.wikidata.org/wiki/Q133742956
-  - https://www.wikidata.org/wiki/Q130763950
-  - https://www.wikidata.org/wiki/Q1805915
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I found an etching by Helmut Bönitz (1914–1999) ([on artnet](https://www.artnet.com/artists/helmut-bonitz/)) at [Oxfam](https://shops.oxfam.de/shops/goettingen)...

@@ -7,21 +7,22 @@ tags:
   - Watercolor
   - Painting
   - _ArtCollection
-preview: img/painting.jpg
+params:
+  preview: img/painting.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q52150547
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q52150547
+    - https://www.wikidata.org/wiki/Q41638331
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q52150547
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q52150547
-  - https://www.wikidata.org/wiki/Q41638331
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe Aquarell von [Paul Neidhardt](https://de.wikipedia.org/wiki/Paul_Neidhardt) (1874-1951) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/paul-neidhardt/)) erstanden

@@ -7,19 +7,20 @@ tags:
   - Lithography
   - _ArtCollection
   - _Austria
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q1731990
+    date: 1972
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1731990
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q1731990
-  date: 1972
-wikidata:
-  - https://www.wikidata.org/wiki/Q1731990
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 I bought a colour lithograph by [Karl Korab](https://de.wikipedia.org/wiki/Karl_Korab) (born 1937) ([at artnet](https://www.artnet.com/artists/karl-korab/))...

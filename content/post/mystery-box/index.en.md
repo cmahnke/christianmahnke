@@ -3,18 +3,19 @@ date: 2024-01-23T19:33:44+02:00
 title: "Mystery Box"
 keywords: Scientific equipment, furniture, psychological test, dice box, Kurt Gottschaldt
 description: "A psychological experiment"
-cite: true
-preview:
-  image: img/front.jpeg
-  hide: true
+params:
+  cite: true
+  preview:
+    image: img/front.jpeg
+    hide: true
+  wikidata: 
+    - https://www.wikidata.org/wiki/Q1793574
+    - https://www.wikidata.org/wiki/Q24034344
+    - https://www.wikidata.org/wiki/Q15437417
+    - https://www.wikidata.org/wiki/Q687017
 tags:
   - Object
   - History
-wikidata: 
-  - https://www.wikidata.org/wiki/Q1793574
-  - https://www.wikidata.org/wiki/Q24034344
-  - https://www.wikidata.org/wiki/Q15437417
-  - https://www.wikidata.org/wiki/Q687017
 ---
 
 I bought a (more or less) mysterious box:

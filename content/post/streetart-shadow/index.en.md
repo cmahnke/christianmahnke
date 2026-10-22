@@ -5,10 +5,11 @@ keywords: shadows, Hannover
 tags:
   - StreetArt
   - Fun
-wikidata:
-  - https://www.wikidata.org/wiki/Q1715
-  - https://www.wikidata.org/wiki/Q160020
-preview: img/shadow.jpg
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1715
+    - https://www.wikidata.org/wiki/Q160020
+  preview: img/shadow.jpg
 ---
 Seen today in Hanover...
 <!--more-->

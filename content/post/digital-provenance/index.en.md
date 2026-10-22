@@ -3,19 +3,20 @@ date: 2025-03-16T22:33:44+02:00
 title: "Digital provenance for digitised cultural heritage"
 keywords: CAI, C2PA
 description: "Digitally signed digital reproductions"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q118496507
+    - https://www.wikidata.org/wiki/Q628106
+    - https://www.wikidata.org/wiki/Q1773840
+    - https://www.wikidata.org/wiki/Q121923035
+    - https://www.wikidata.org/wiki/Q6368
 tags:
   - DigitalImages
   - ProjectIdea
   - CulturalPolicy
   - DigitalLibrary
   - Digitisation
-wikidata:
-  - https://www.wikidata.org/wiki/Q118496507
-  - https://www.wikidata.org/wiki/Q628106
-  - https://www.wikidata.org/wiki/Q1773840
-  - https://www.wikidata.org/wiki/Q121923035
-  - https://www.wikidata.org/wiki/Q6368
 lastmod: 2025-04-02T00:00:00+02:00
 ---
 

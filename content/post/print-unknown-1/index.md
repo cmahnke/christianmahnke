@@ -6,22 +6,23 @@ tags:
   - Serigraphy
   - UnknownArtist
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1969
+    description: 'Popart Siebdruck von 1969'
+    style:
+      - http://vocab.getty.edu/aat/300022205
+  wikidata:
+    - https://www.wikidata.org/wiki/Q134147
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1969
-  description: 'Popart Siebdruck von 1969'
-  style:
-    - http://vocab.getty.edu/aat/300022205
-wikidata:
-  - https://www.wikidata.org/wiki/Q134147
-  - https://www.wikidata.org/wiki/Q188675
 ---
 Für mein neues Büro habe ich einen Siebdruck aus unbekannter Urheberschaft bei [Zeitzeug](http://zeitzeug.de/) gekauft...
 

@@ -5,21 +5,22 @@ tags:
   - Art
   - Etching
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q2163368
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q2163368
+    - https://www.wikidata.org/wiki/Q188675
+    - https://www.wikidata.org/wiki/Q564783
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q2163368
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q2163368
-  - https://www.wikidata.org/wiki/Q188675
-  - https://www.wikidata.org/wiki/Q564783
 ---
 
 Now that my [living room](/en/post/living-room/) is gradually turning into a library, I’ve found a suitable etching by [Rolf Escher](https://de.wikipedia.org/wiki/Rolf_Escher) (German) (*1936) ([on artnet](https://www.artnet.com/artists/rolf-escher-2/)). ..

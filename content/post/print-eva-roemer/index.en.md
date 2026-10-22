@@ -8,25 +8,26 @@ tags:
   - _ArtCollection
   - _Goettingen
   - _Niedersachsen
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q94743711
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q94743711
+    - https://www.wikidata.org/wiki/Q133742956
+    - https://www.wikidata.org/wiki/Q137661693
+    - https://www.wikidata.org/wiki/Q131615
+    - https://www.wikidata.org/wiki/Q130763950
+    - https://www.wikidata.org/wiki/Q1670280
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q94743711
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q94743711
-  - https://www.wikidata.org/wiki/Q133742956
-  - https://www.wikidata.org/wiki/Q137661693
-  - https://www.wikidata.org/wiki/Q131615
-  - https://www.wikidata.org/wiki/Q130763950
-  - https://www.wikidata.org/wiki/Q1670280
-  - https://www.wikidata.org/wiki/Q188675
 lastmod: 2026-01-02T00:00:00+02:00
 ---
 

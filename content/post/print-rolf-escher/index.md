@@ -5,21 +5,22 @@ tags:
   - Art
   - Etching
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q2163368
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q2163368
+    - https://www.wikidata.org/wiki/Q188675
+    - https://www.wikidata.org/wiki/Q564783
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q2163368
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q2163368
-  - https://www.wikidata.org/wiki/Q188675
-  - https://www.wikidata.org/wiki/Q564783
 ---
 
 Nachdem mein [Wohnzimmer](/post/living-room/) nun langsam zur Bibliothek wird, habe eine passende Radierung von [Rolf Escher](https://de.wikipedia.org/wiki/Rolf_Escher) (*1936) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/rolf-escher-2/)) gefunden...

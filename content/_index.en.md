@@ -1,7 +1,8 @@
 ---
-displayinlist: false
-news: false
-archive: false
+params:
+  displayinlist: false
+  news: false
+  archive: false
 description: ""
 title: Blog
 outputs:

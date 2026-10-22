@@ -1,7 +1,8 @@
 ---
 title: 'History'
 description: ''
-wikidata: https://www.wikidata.org/wiki/Q309
+params:
+  wikidata: https://www.wikidata.org/wiki/Q309
 ---
 
 Articles on historical topics

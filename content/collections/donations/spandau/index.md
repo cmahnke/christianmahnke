@@ -1,9 +1,21 @@
 ---
 title: Grafik eines Spandauer Künstlers
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
+  iiifContext: http://iiif.io/api/image/2/context.json
+  linkedart:
+    title: Flamingo
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q137662135
+    owner:
+      - wikidata: https://www.wikidata.org/wiki/Q28737496
+      - wikidata: https://www.wikidata.org/wiki/Q137668638
+        until: 2024-11-15
+  wikidata:
+    - https://www.wikidata.org/wiki/Q137662135
+    - https://www.wikidata.org/wiki/Q28737496
 weight: 2
-iiifContext: http://iiif.io/api/image/2/context.json
 tags:
   - Etching
 outputs:
@@ -11,23 +23,12 @@ outputs:
   - html
   - linkedart
   - iiif-manifest
-linkedart:
-  title: Flamingo
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q137662135
-  owner:
-    - wikidata: https://www.wikidata.org/wiki/Q28737496
-    - wikidata: https://www.wikidata.org/wiki/Q137668638
-      until: 2024-11-15
 resources:
 - src: "front.jxl"
   params:
     iiif: front/info.json
     hint: non-paged
     label: Druck
-wikidata:
-  - https://www.wikidata.org/wiki/Q137662135
-  - https://www.wikidata.org/wiki/Q28737496
 ---
 
 Eine Grafik des Spandauer Künstlers Fritz Neumann

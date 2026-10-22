@@ -1,7 +1,8 @@
 ---
 title: "Verzeichnisse, Wikis und Foren"
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
 weight: 7
 ---
 

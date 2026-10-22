@@ -5,12 +5,13 @@ tags:
   - Fun
   - CyberSecurity
   - SocialMedia
-wikidata:
-  - https://www.wikidata.org/wiki/Q80949
-  - https://www.wikidata.org/wiki/Q17068342
-  - https://www.wikidata.org/wiki/Q113364838
-  - https://www.wikidata.org/wiki/Q866
-  - https://www.wikidata.org/wiki/Q376934
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q80949
+    - https://www.wikidata.org/wiki/Q17068342
+    - https://www.wikidata.org/wiki/Q113364838
+    - https://www.wikidata.org/wiki/Q866
+    - https://www.wikidata.org/wiki/Q376934
 ---
 
 A spectre is haunting cyberspace...

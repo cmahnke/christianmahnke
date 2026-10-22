@@ -2,7 +2,8 @@
 date: 2025-01-15T14:30:00+01:00
 title: "IIIF Community Call 15.1.2025: HDR"
 description: "Slides for the IIIF Community Call 15.1.2025"
-doi: 10.5281/zenodo.14652193
+params:
+  doi: 10.5281/zenodo.14652193
 #preview:
 #  image: preview.jpg
 #  hide: true

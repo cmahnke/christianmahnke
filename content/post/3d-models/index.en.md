@@ -3,16 +3,21 @@ date: 2024-02-24T10:16:44+02:00
 title: "3D Models in the browser"
 keywords: Fat Lava Vase, GLTF, GLB, A-Frame
 description: "3D representation of a 60s vase in the browser"
-iiif:
-  presentationVersion: 4
-  behavior: individuals
-preview:
-  image: preview.png
-  hide: true
-scss:
-  - scss/3d/3d-model.scss
-js:
-  - ts/aframe.ts
+params:
+  iiif:
+    presentationVersion: 4
+    behavior: individuals
+  preview:
+    image: preview.png
+    hide: true
+  scss:
+    - scss/3d/3d-model.scss
+  js:
+    - ts/aframe.ts
+  wikidata:
+    - https://www.wikidata.org/wiki/Q3010266
+    - https://www.wikidata.org/wiki/Q28135989
+    - https://www.wikidata.org/wiki/Q3525922
 tags:
   - Light
   - Licht2024
@@ -20,10 +25,6 @@ tags:
   - Three.js
   - Blender
   - Photogrammetry
-wikidata:
-  - https://www.wikidata.org/wiki/Q3010266
-  - https://www.wikidata.org/wiki/Q28135989
-  - https://www.wikidata.org/wiki/Q3525922
 outputs:
   - html
   - iiif-manifest

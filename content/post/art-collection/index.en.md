@@ -4,9 +4,10 @@ title: "The art collection as a separate pages"
 tags:
   - Art
   - Website
-wikidata:
-  - https://www.wikidata.org/wiki/Q137668638
-  - https://www.wikidata.org/wiki/Q768717
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q137668638
+    - https://www.wikidata.org/wiki/Q768717
 ---
 
 Until now, the art collection was only available as overviews under the relevant keywords...

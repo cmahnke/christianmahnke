@@ -2,7 +2,16 @@
 date: 2025-05-21T06:00:00
 title: "Informationen zu Spendern in Kulturerbeaggregatoren"
 keywords: XML, METS, MODS, EAD, museum:digital, LIDO
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q621630
+    - https://www.wikidata.org/wiki/Q24045714
+    - https://www.wikidata.org/wiki/Q1360745
+    - https://www.wikidata.org/wiki/Q1340077
+    - https://www.wikidata.org/wiki/Q751808
+    - https://www.wikidata.org/wiki/Q1640667
+    - https://www.wikidata.org/wiki/Q102116674
 description:
 tags:
   - Donation
@@ -10,14 +19,6 @@ tags:
   - DigitalLibrary
   - Digitisation
   - Archive
-wikidata:
-  - https://www.wikidata.org/wiki/Q621630
-  - https://www.wikidata.org/wiki/Q24045714
-  - https://www.wikidata.org/wiki/Q1360745
-  - https://www.wikidata.org/wiki/Q1340077
-  - https://www.wikidata.org/wiki/Q751808
-  - https://www.wikidata.org/wiki/Q1640667
-  - https://www.wikidata.org/wiki/Q102116674
 lastmod: 2025-05-23T00:00:00+02:00
 ---
 

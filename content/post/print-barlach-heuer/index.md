@@ -5,24 +5,25 @@ tags:
   - Art
   - WoodblockPrint
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q133027901
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    year: 1971
+    title: Ygdrasil
+  wikidata:
+    - https://www.wikidata.org/wiki/Q133027901
+    - https://www.wikidata.org/wiki/Q131135
+    - https://www.wikidata.org/wiki/Q6845
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q133027901
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  year: 1971
-  title: Ygdrasil
-wikidata:
-  - https://www.wikidata.org/wiki/Q133027901
-  - https://www.wikidata.org/wiki/Q131135
-  - https://www.wikidata.org/wiki/Q6845
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Farbholzschnitt von [Barlach Heuer](https://barlach-heuer.com/) (französisch) (1930-2019) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/barlach-heuer/)) erstanden...

@@ -1,9 +1,10 @@
 ---
 title: Postkarten aus Halle/Saale
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
+  iiifContext: http://iiif.io/api/image/2/context.json
 weight: 3
-iiifContext: http://iiif.io/api/image/2/context.json
 resources:
 - src: "page001.jpg"
   params:

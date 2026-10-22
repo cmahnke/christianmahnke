@@ -2,18 +2,19 @@
 date: 2025-02-25T15:52:22+02:00
 title: 'AI and software "development"'
 description: "Or: Academic software publishers"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q48972887
+    - https://www.wikidata.org/wiki/Q95001953
+    - https://www.wikidata.org/wiki/Q29584754
+    - https://www.wikidata.org/wiki/Q5246046
 tags:
 - SoftwareDevelopment
 - ProjectIdea
 - CulturalPolicy
 - DigitalLibrary
 - AI
-wikidata:
-  - https://www.wikidata.org/wiki/Q48972887
-  - https://www.wikidata.org/wiki/Q95001953
-  - https://www.wikidata.org/wiki/Q29584754
-  - https://www.wikidata.org/wiki/Q5246046
 ---
 
 Over the past year, I have occasionally worked with AI to enrich my blogs with additional features and also to accelerate their further development.

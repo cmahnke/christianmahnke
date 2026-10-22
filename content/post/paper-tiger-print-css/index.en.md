@@ -3,23 +3,24 @@ date: 2025-12-10T18:33:44+02:00
 title: "Paper tiger CSS for printing"
 description: "A rant about CSS for printing"
 keywords: PDF, VivlioStyle, CSS, PrinceCSS, XSL-FO
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q46441
+    - https://www.wikidata.org/wiki/Q42332
+    - https://www.wikidata.org/wiki/Q24415127
+    - https://www.wikidata.org/wiki/Q32087
+    - https://www.wikidata.org/wiki/Q6368
+    - https://www.wikidata.org/wiki/Q8811
+    - https://www.wikidata.org/wiki/Q815240
+    - https://www.wikidata.org/wiki/Q3085953
+    - https://www.wikidata.org/wiki/Q2115
+    - https://www.wikidata.org/wiki/Q32061
+    - https://www.wikidata.org/wiki/Q96473517
 tags:
   - CSS
   - Printing
   - JavaScript
-wikidata:
-  - https://www.wikidata.org/wiki/Q46441
-  - https://www.wikidata.org/wiki/Q42332
-  - https://www.wikidata.org/wiki/Q24415127
-  - https://www.wikidata.org/wiki/Q32087
-  - https://www.wikidata.org/wiki/Q6368
-  - https://www.wikidata.org/wiki/Q8811
-  - https://www.wikidata.org/wiki/Q815240
-  - https://www.wikidata.org/wiki/Q3085953
-  - https://www.wikidata.org/wiki/Q2115
-  - https://www.wikidata.org/wiki/Q32061
-  - https://www.wikidata.org/wiki/Q96473517
 ---
 
 II occasionally engage in cross-media publishing...

@@ -3,20 +3,21 @@ date: 2024-04-19T17:33:44+02:00
 title: "Daten Container"
 keywords: GND, Geonames, Datenanreicherung, Datenquellen
 description: "Die GND und Geonames als lokale Datenquellen"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q36578
+    - https://www.wikidata.org/wiki/Q830106
+    - https://www.wikidata.org/wiki/Q1686799
+    - https://www.wikidata.org/wiki/Q56655440
+    - https://www.wikidata.org/wiki/Q178995
+    - https://www.wikidata.org/wiki/Q2858103
 tags:
   - Data
   - Docker
   - DNB
   - Metadata
   - SPARQL
-wikidata:
-  - https://www.wikidata.org/wiki/Q36578
-  - https://www.wikidata.org/wiki/Q830106
-  - https://www.wikidata.org/wiki/Q1686799
-  - https://www.wikidata.org/wiki/Q56655440
-  - https://www.wikidata.org/wiki/Q178995
-  - https://www.wikidata.org/wiki/Q2858103
 ---
 
 Auch wenn es nicht notwendigerweise der intendierte Use Case ist, kann man mit Docker sehr einfach auch umfangreiche Datenmengen mit Anwendungen zur vereinfachten Bereitstellungen (wie z.B. APIs) verpacken. Das kann besonders hilfreich sein wenn z.B. Normdaten aus verschiedenen Quellen für Datenanreicherungen zusammenführen will.

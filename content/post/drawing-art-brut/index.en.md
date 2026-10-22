@@ -7,24 +7,25 @@ tags:
   - Drawing
   - UnknownArtist
   - _ArtCollection
-preview: img/image.jpg
+params:
+  preview: img/image.jpg
+  linkedart:
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1965
+    description: "A Art Brut drawing from 1965"
+    style:
+      - http://vocab.getty.edu/aat/300056472
+  wikidata:
+    - https://www.wikidata.org/wiki/Q44007
+    - https://www.wikidata.org/wiki/Q1122756
+    - https://www.wikidata.org/wiki/Q188675
+    - https://www.wikidata.org/wiki/Q871021
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1965
-  description: "A Art Brut drawing from 1965"
-  style:
-    - http://vocab.getty.edu/aat/300056472
-wikidata:
-  - https://www.wikidata.org/wiki/Q44007
-  - https://www.wikidata.org/wiki/Q1122756
-  - https://www.wikidata.org/wiki/Q188675
-  - https://www.wikidata.org/wiki/Q871021
 lastmod: 2026-04-27T00:00:00
 ---
 

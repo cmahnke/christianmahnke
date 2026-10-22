@@ -7,13 +7,14 @@ tags:
   - Licht2024
   - DigitalImages
   - HDR
-wikidata:
-  - https://www.wikidata.org/wiki/Q99738405 
-  - https://www.wikidata.org/wiki/Q94
-  - https://www.wikidata.org/wiki/Q1047199
-  - https://www.wikidata.org/wiki/Q2985103
-  - https://www.wikidata.org/wiki/Q136933249
-  - https://www.wikidata.org/wiki/Q6368
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q99738405 
+    - https://www.wikidata.org/wiki/Q94
+    - https://www.wikidata.org/wiki/Q1047199
+    - https://www.wikidata.org/wiki/Q2985103
+    - https://www.wikidata.org/wiki/Q136933249
+    - https://www.wikidata.org/wiki/Q6368
 lastmod: 2024-07-06T00:00:00+02:00
 ---
 

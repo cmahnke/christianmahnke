@@ -6,24 +6,25 @@ tags:
   - Serigraphy
   - _ArtCollection
   - _Niedersachsen
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q1292698
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1958
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1292698
+    - https://www.wikidata.org/wiki/Q265448
+    - https://www.wikidata.org/wiki/Q1792393
+    - https://www.wikidata.org/wiki/Q414041
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q1292698
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1958
-wikidata:
-  - https://www.wikidata.org/wiki/Q1292698
-  - https://www.wikidata.org/wiki/Q265448
-  - https://www.wikidata.org/wiki/Q1792393
-  - https://www.wikidata.org/wiki/Q414041
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Siebdruck (Serigrafie) von [Gerhard Wendland](https://de.wikipedia.org/wiki/Gerhard_Wendland_(Maler)) (1910 - 1986) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/gerhard-wendland/)) bei [Zeitzeug](http://zeitzeug.de/) gekauft...

@@ -4,14 +4,15 @@ title: "Poor infrastructure"
 tags:
   - Linux
   - Travel
-wikidata:
-  - https://www.wikidata.org/wiki/Q2766
-  - https://www.wikidata.org/wiki/Q381
-  - https://www.wikidata.org/wiki/Q212607
-  - https://www.wikidata.org/wiki/Q1246922
-  - https://www.wikidata.org/wiki/Q314293
-  - https://www.wikidata.org/wiki/Q14579
-  - https://www.wikidata.org/wiki/Q802375
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q2766
+    - https://www.wikidata.org/wiki/Q381
+    - https://www.wikidata.org/wiki/Q212607
+    - https://www.wikidata.org/wiki/Q1246922
+    - https://www.wikidata.org/wiki/Q314293
+    - https://www.wikidata.org/wiki/Q14579
+    - https://www.wikidata.org/wiki/Q802375
 ---
 
 Today I was travelling by train between Hanover, Paderborn and Göttingen...

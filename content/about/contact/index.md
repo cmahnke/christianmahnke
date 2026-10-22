@@ -1,7 +1,8 @@
 ---
 title: "Kontakt"
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
 weight: 10
 ---
 

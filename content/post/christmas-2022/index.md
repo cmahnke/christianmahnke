@@ -3,15 +3,16 @@ date: 2022-12-24T12:22:44+02:00
 title: "Weihnachten 2022"
 keywords: Bastelanleitung, Weihnachtskarte
 description: "Bastelanleitung für die Weihnachtskarte 2022"
-preview:
-  image: card-2022.jpg
-  hide: true
+params:
+  preview:
+    image: card-2022.jpg
+    hide: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q191529
+    - https://www.wikidata.org/wiki/Q622508
 tags:
 - DIY
 - Christmas
-wikidata:
-  - https://www.wikidata.org/wiki/Q191529
-  - https://www.wikidata.org/wiki/Q622508
 ---
 
 Frohe Weihnachten an alle Leser, dieses Jahr gibt es ein wieder Geschenk...

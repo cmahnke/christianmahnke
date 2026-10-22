@@ -1,18 +1,19 @@
 ---
 date: 2026-02-07T15:30:00+02:00
 title: Ausstellungseröffnung "Sammlungen erzählen"
-preview: Plakat.jpg
+params:
+  preview: Plakat.jpg
+  wikidata:
+    - https://www.wikidata.org/wiki/Q112061919
+    - https://www.wikidata.org/wiki/Q815240
+    - https://www.wikidata.org/wiki/Q2668072
+    - https://www.wikidata.org/wiki/Q989963
+    - https://www.wikidata.org/wiki/Q1559832
+    - https://www.wikidata.org/wiki/Q209330
 tags:
 - Project
 - Website
 - Exhibition
-wikidata:
-  - https://www.wikidata.org/wiki/Q112061919
-  - https://www.wikidata.org/wiki/Q815240
-  - https://www.wikidata.org/wiki/Q2668072
-  - https://www.wikidata.org/wiki/Q989963
-  - https://www.wikidata.org/wiki/Q1559832
-  - https://www.wikidata.org/wiki/Q209330
 lastmod: 2026-02-12T00:00:00+02:00
 ---
 

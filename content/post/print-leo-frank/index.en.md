@@ -7,26 +7,27 @@ tags:
   - WoodblockPrint
   - _ArtCollection
   - _Austria
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q29373725
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+  wikidata:
+    - https://www.wikidata.org/wiki/Q29373725
+    - https://www.wikidata.org/wiki/Q137668018
+    - https://www.wikidata.org/wiki/Q16951207
+    - https://www.wikidata.org/wiki/Q6373
+    - https://www.wikidata.org/wiki/Q414219
+    - https://www.wikidata.org/wiki/Q235152
+    - https://www.wikidata.org/wiki/Q188675
+  gnd: http://d-nb.info/gnd/120740486
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q29373725
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-wikidata:
-  - https://www.wikidata.org/wiki/Q29373725
-  - https://www.wikidata.org/wiki/Q137668018
-  - https://www.wikidata.org/wiki/Q16951207
-  - https://www.wikidata.org/wiki/Q6373
-  - https://www.wikidata.org/wiki/Q414219
-  - https://www.wikidata.org/wiki/Q235152
-  - https://www.wikidata.org/wiki/Q188675
-gnd: http://d-nb.info/gnd/120740486
 ---
 
 I found a woodcut by [Leo Frank](https://www.geschichtewiki.wien.gv.at/Leo_Frank) (1884-1959) ([at artnet](https://www.artnet.com/artists/leo-frank/))...

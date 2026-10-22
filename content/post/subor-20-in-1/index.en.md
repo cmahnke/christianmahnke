@@ -8,19 +8,20 @@ tags:
   - Retrocomputing
   - Game
   - Travel
-preview: img/front.jpg
-wikidata:
-  - https://www.wikidata.org/wiki/Q172742
-  - https://www.wikidata.org/wiki/Q113485247
-  - https://www.wikidata.org/wiki/Q491640
-  - https://www.wikidata.org/wiki/Q2994828
-  - https://www.wikidata.org/wiki/Q2982516
-  - https://www.wikidata.org/wiki/Q11035338
-  - https://www.wikidata.org/wiki/Q1021526
-  - https://www.wikidata.org/wiki/Q43398951
-  - https://www.wikidata.org/wiki/Q1085
-  - https://www.wikidata.org/wiki/Q24879
-  - https://www.wikidata.org/wiki/Q385870
+params:
+  preview: img/front.jpg
+  wikidata:
+    - https://www.wikidata.org/wiki/Q172742
+    - https://www.wikidata.org/wiki/Q113485247
+    - https://www.wikidata.org/wiki/Q491640
+    - https://www.wikidata.org/wiki/Q2994828
+    - https://www.wikidata.org/wiki/Q2982516
+    - https://www.wikidata.org/wiki/Q11035338
+    - https://www.wikidata.org/wiki/Q1021526
+    - https://www.wikidata.org/wiki/Q43398951
+    - https://www.wikidata.org/wiki/Q1085
+    - https://www.wikidata.org/wiki/Q24879
+    - https://www.wikidata.org/wiki/Q385870
 lastmod: 2026-05-10T09:00:44+02:00
 ---
 

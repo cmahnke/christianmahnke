@@ -1,11 +1,12 @@
 ---
 title: Art Deco ceramic / earthenware jar
 weight: 1
-archive: false
-news: false
-iiif:
-  presentationVersion: 4
-  behavior: individuals
+params:
+  archive: false
+  news: false
+  iiif:
+    presentationVersion: 4
+    behavior: individuals
 outputs:
   - html
   - iiif-manifest

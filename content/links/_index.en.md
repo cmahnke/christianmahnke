@@ -1,7 +1,8 @@
 ---
 title: "Links"
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
 sitemap:
   priority: 0.6
   changeFreq: monthly

@@ -1,14 +1,15 @@
 ---
 date: 2024-04-15T13:58:44+02:00
 title: "ActivityPub"
-preview:
-  image: ActivityPub-logo.png
-  hide: true
+params:
+  preview:
+    image: ActivityPub-logo.png
+    hide: true
+  wikipedia:
+    - https://www.wikidata.org/wiki/Q40463886
 tags:
 - DIY
 - Blog
-wikipedia:
-  - https://www.wikidata.org/wiki/Q40463886
 ---
 
 Diese Seite unterstützt nun eine Untermenge von ActivityPub...

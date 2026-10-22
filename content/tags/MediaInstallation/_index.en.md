@@ -1,7 +1,8 @@
 ---
 title: 'Media installation'
 description: ''
-wikidata: https://www.wikidata.org/wiki/Q84363917
+params:
+  wikidata: https://www.wikidata.org/wiki/Q84363917
 
 ---
 

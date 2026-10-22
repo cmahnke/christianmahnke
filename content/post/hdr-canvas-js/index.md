@@ -1,15 +1,16 @@
 ---
 date: 2024-07-06T12:00:44+02:00
 title: "JavaScript Bibliothek für HDR"
-cite: true
+params:
+  cite: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q7067518
 keywords: NPM, canvas, Three.js
 tags:
   - Licht2024
   - DigitalImages
   - HDR
   - JavaScript
-wikidata:
-  - https://www.wikidata.org/wiki/Q7067518
 ---
 
 Die JavaScript Unterstützung für die letzten Beiträge ist nun auch einzeln als NPM Modul verfügbar.

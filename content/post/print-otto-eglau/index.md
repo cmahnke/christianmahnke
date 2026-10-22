@@ -5,26 +5,27 @@ tags:
   - Art
   - Etching
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q1644504
+    title: "Formen am Meer (Sylt)"
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    date: 1958
+  wikidata:
+    - https://www.wikidata.org/wiki/Q1644504
+    - https://www.wikidata.org/wiki/Q3107
+    - https://www.wikidata.org/wiki/Q153084
+    - https://www.wikidata.org/wiki/Q55038
+    - https://www.wikidata.org/wiki/Q27332
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  artist:
-    wikidata: https://www.wikidata.org/wiki/Q1644504
-  title: "Formen am Meer (Sylt)"
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  date: 1958
-wikidata:
-  - https://www.wikidata.org/wiki/Q1644504
-  - https://www.wikidata.org/wiki/Q3107
-  - https://www.wikidata.org/wiki/Q153084
-  - https://www.wikidata.org/wiki/Q55038
-  - https://www.wikidata.org/wiki/Q27332
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Radierung von [Otto Eglau](https://de.wikipedia.org/wiki/Otto_Eglau) (1917-1988) ([bei artnet](https://www.artnet.de/k%C3%BCnstler/otto-eglau/)) gefunden...

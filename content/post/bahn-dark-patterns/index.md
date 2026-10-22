@@ -3,14 +3,15 @@ date: 2026-02-22T10:39:44+02:00
 title: "Ein Rant über die Bahn"
 tags:
   - Travel
-wikidata:
-  - https://www.wikidata.org/wiki/Q129172
-  - https://www.wikidata.org/wiki/Q9322
-  - https://www.wikidata.org/wiki/Q110087903
-  - https://www.wikidata.org/wiki/Q1392385
-  - https://www.wikidata.org/wiki/Q800271
-  - https://www.wikidata.org/wiki/Q62084783
-  - https://www.wikidata.org/wiki/Q76464606
+params:
+  wikidata:
+    - https://www.wikidata.org/wiki/Q129172
+    - https://www.wikidata.org/wiki/Q9322
+    - https://www.wikidata.org/wiki/Q110087903
+    - https://www.wikidata.org/wiki/Q1392385
+    - https://www.wikidata.org/wiki/Q800271
+    - https://www.wikidata.org/wiki/Q62084783
+    - https://www.wikidata.org/wiki/Q76464606
 lastmod: 2026-04-26T00:00:00+02:00
 ---
 

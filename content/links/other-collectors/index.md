@@ -1,7 +1,8 @@
 ---
 title: "Weitere ggf. etwas abseitige Sammlungen"
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
 weight: 8
 ---
 

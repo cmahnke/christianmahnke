@@ -1,17 +1,18 @@
 ---
 date: 2022-12-03T12:00:00+02:00
 title: Exhibition "Wilma Bräuner"
-preview: Plakat.jpg
+params:
+  preview: Plakat.jpg
+  wikidata: 
+    - https://www.wikidata.org/wiki/Q115536963
+    - https://www.wikidata.org/wiki/Q133272311
+    - https://www.wikidata.org/wiki/Q3107
+    - https://www.wikidata.org/wiki/Q27998
 tags:
 - Project
 - Website
 - Archive
 - Exhibition
-wikidata: 
-  - https://www.wikidata.org/wiki/Q115536963
-  - https://www.wikidata.org/wiki/Q133272311
-  - https://www.wikidata.org/wiki/Q3107
-  - https://www.wikidata.org/wiki/Q27998
 lastmod: 2022-12-13T00:00:00+02:00
 ---
 

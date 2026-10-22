@@ -2,11 +2,12 @@
 date: 2025-06-01T20:33:44+02:00
 title: "Nächtliche Schatten"
 draft: true
-class: night
-pagetheme: black
-preview:
-  image: preview.png
-  class: preview-black
+params:
+  class: night
+  pagetheme: black
+  preview:
+    image: preview.png
+    class: preview-black
 tags:
   - Light
   - Licht2024

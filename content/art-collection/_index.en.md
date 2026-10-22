@@ -1,13 +1,14 @@
 ---
 title: "Art Collection"
-metaPage: true
-displayinlist: false
-archive: false
-news: false
-sectionContent: false
+params:
+  metaPage: true
+  displayinlist: false
+  archive: false
+  news: false
+  sectionContent: false
+  js:
+    - ts/art-collection.ts
 layout: art-collection
-js:
-  - ts/art-collection.ts
 cascade:
   - target:
       kind: '{page,section}'

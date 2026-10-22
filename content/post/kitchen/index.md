@@ -1,18 +1,19 @@
 ---
 date: 2021-11-16T19:22:44+02:00
 title: "Küche renoviert"
-preview:
-  image: door.jpeg
-  hide: true
+params:
+  preview:
+    image: door.jpeg
+    hide: true
+  wikidata:
+    - https://www.wikidata.org/wiki/Q2090221
+    - https://www.wikidata.org/wiki/Q234021
+    - https://www.wikidata.org/wiki/Q37828
+    - https://www.wikidata.org/wiki/Q43164
+    - https://www.wikidata.org/wiki/Q191529
 tags:
   - DIY
   - InteriorDesign
-wikidata:
-  - https://www.wikidata.org/wiki/Q2090221
-  - https://www.wikidata.org/wiki/Q234021
-  - https://www.wikidata.org/wiki/Q37828
-  - https://www.wikidata.org/wiki/Q43164
-  - https://www.wikidata.org/wiki/Q191529
 ---
 
 Nachdem ich Anfang des Jahres schon mein Wohnzimmer Renoviert habe, war nun die Küche dran.

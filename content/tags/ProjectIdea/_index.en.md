@@ -1,7 +1,8 @@
 ---
 title: 'Project Ideas'
 description: ''
-wikidata: https://www.wikidata.org/wiki/Q131841
+params:
+  wikidata: https://www.wikidata.org/wiki/Q131841
 
 ---
 

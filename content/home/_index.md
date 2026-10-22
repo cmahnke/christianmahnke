@@ -1,7 +1,8 @@
 ---
 title: "Start"
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
 sitemap:
   priority: 0.9
   changeFreq: monthly

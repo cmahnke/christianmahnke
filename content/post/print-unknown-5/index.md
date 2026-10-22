@@ -6,18 +6,19 @@ tags:
   - WoodblockPrint
   - UnknownArtist
   - _ArtCollection
-preview: img/print.jpg
+params:
+  preview: img/print.jpg
+  linkedart:
+    owner:
+      wikidata: https://www.wikidata.org/wiki/Q137668638
+    description: Holzschnitt unbekannter Herkunft
+  wikidata:
+    - https://www.wikidata.org/wiki/Q188675
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-linkedart:
-  owner:
-    wikidata: https://www.wikidata.org/wiki/Q137668638
-  description: Holzschnitt unbekannter Herkunft
-wikidata:
-  - https://www.wikidata.org/wiki/Q188675
 ---
 
 Ich habe einen Farbholzschnitt von unbekannter Hand gefunden....

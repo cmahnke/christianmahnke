@@ -1,7 +1,8 @@
 ---
 title: Film über München
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
 weight: 4
 ---
 
