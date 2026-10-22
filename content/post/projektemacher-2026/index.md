@@ -27,10 +27,11 @@ Einige der Höhepunkte sind:
   * Die [Kunstsammlung](/art-collection/)
 * [Backsteinexpressionismus](https://backsteinexpressionismus.projektemacher.org/)
   * [Englische Übersetzung](https://backsteinexpressionismus.projektemacher.org/en/) verfügbar
+  * [Zeitstrahl](https://backsteinexpressionismus.projektemacher.org/lists/#zeitstrahl) hinzugefügt
 * [Krähenbeißer](https://krähenbeisser.de/)
   * [Karte](https://xn--krhenbeisser-hcb.de/map/) hinzugefügt
 * [Kinderbücher](https://kinderbücher.projektemacher.org/)
-  * [Zeitliste](https://xn--kinderbcher-zhb.projektemacher.org/timeline/) hinzugefügt
+  * [Zeitstrahl](https://xn--kinderbcher-zhb.projektemacher.org/timeline/) hinzugefügt
 
 ## Verschiedenes
 * Das erste [Buch](https://christianmahnke.de/post/coat-hangers-book/) ist erschienen.

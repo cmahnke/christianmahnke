@@ -27,6 +27,7 @@ Some of the highlights are:
   * The [Art Collection](/en/art-collection/)
 * [Backsteinexpressionismus](https://backsteinexpressionismus.projektemacher.org/)
   * [English translation](https://backsteinexpressionismus.projektemacher.org/en/) available
+  * [Timeline](https://backsteinexpressionismus.projektemacher.org/en/lists/#timeline) added
 * [Krähenbeißer](https://krähenbeisser.de/)
   * [Map](https://xn--krhenbeisser-hcb.de/map/) added
 * [Kinderbücher](https://kinderbücher.projektemacher.org/)

@@ -20,6 +20,7 @@ cascade:
       outputs:
         - bibtex
         - html
+        - linkset
         - pdf-article
 aliases:
   - blog

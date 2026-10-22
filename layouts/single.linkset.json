@@ -1,0 +1,29 @@
+{{- /* Linkset (https://www.w3.org/TR/linkset/) for blog posts - the 'cite'
+     entry is only emitted when the page enables the BibTeX export via
+     'cite: true', the metadata formats are added if they exist */ -}}
+{{- $page := . -}}
+{{- $links := slice
+      (dict "href" $page.Permalink "rel" "self" "type" "text/html")
+-}}
+{{- with $page.OutputFormats.Get "bibtex" -}}
+  {{- if $page.Params.cite -}}
+    {{- $links = $links | append (dict "href" .Permalink "rel" "cite" "type" .MediaType.Type) -}}
+  {{- end -}}
+{{- end -}}
+{{- with $page.OutputFormats.Get "linkedart" -}}
+  {{- $links = $links | append (dict "href" .Permalink "rel" "describedby" "type" "application/ld+json;profile='https://linked.art/ns/v1/linked-art.json'") -}}
+{{- end -}}
+{{- with $page.OutputFormats.Get "codemeta" -}}
+  {{- $links = $links | append (dict "href" .Permalink "rel" "describedby" "type" .MediaType.Type) -}}
+{{- end -}}
+{{- with $page.OutputFormats.Get "geojson" -}}
+  {{- $links = $links | append (dict "href" .Permalink "rel" "alternate" "type" .MediaType.Type) -}}
+{{- end -}}
+{{- with $page.OutputFormats.Get "iiif-manifest" -}}
+  {{- $links = $links | append (dict "href" .Permalink "rel" "manifest" "type" .MediaType.Type) -}}
+{{- end -}}
+{{- $linkset := slice (dict "anchor" $page.Permalink "link" $links) -}}
+{{- with site.Params.orcid -}}
+  {{- $linkset = $linkset | append (dict "anchor" (printf "https://orcid.org/%s" .) "link" (slice (dict "href" (printf "https://orcid.org/%s" .) "rel" "author" "type" "text/html"))) -}}
+{{- end -}}
+{{- dict "linkset" $linkset | jsonify -}}
