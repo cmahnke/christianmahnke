@@ -26,7 +26,11 @@ Einige der Höhepunkte sind:
   * [SPARQL Abfragen](/post/blog-sparql/)
   * Die [Kunstsammlung](/art-collection/)
 * [Backsteinexpressionismus](https://backsteinexpressionismus.projektemacher.org/)
-  * Englische Übersetzung verfügbar
+  * [Englische Übersetzung](https://backsteinexpressionismus.projektemacher.org/en/) verfügbar
+* [Krähenbeißer](https://krähenbeisser.de/)
+  * [Karte](https://xn--krhenbeisser-hcb.de/map/) hinzugefügt
+* [Kinderbücher](https://kinderbücher.projektemacher.org/)
+  * [Zeitliste](https://xn--kinderbcher-zhb.projektemacher.org/timeline/) hinzugefügt
 
 ## Verschiedenes
 * Das erste [Buch](https://christianmahnke.de/post/coat-hangers-book/) ist erschienen.
