@@ -2,8 +2,10 @@
 Hugo Shortcode for embedding the Kasane IIIF viewer
 (https://github.com/nakamura196/iiif-kasane) as a web component.
 The viewer is installed as npm package '@nakamura196/iiif-viewer'
-(GitHub release tarball), JS and CSS are attached via the metadata
-define below.
+(GitHub release tarball). Its stylesheet is loaded by the element
+itself ('new URL("style.css", import.meta.url)' relative to the
+bundle URL) and published via a static module mount to
+/ts/iiif/style.css.
 
 Parameters:
 * manifest - URL or path of the IIIF manifest. Relative paths are
@@ -48,5 +50,5 @@ Parameters:
 </div>
 
 {{- define "_partials/shortcodes/iiif/kasane-metadata.html" -}}
-  {{- (dict "css" (slice "ts/iiif/kasane.css") "js" (slice "ts/iiif/kasane.ts") "scss" (slice "scss/iiif/kasane.scss")) | jsonify -}}
+  {{- (dict "js" (slice "ts/iiif/kasane.ts") "scss" (slice "scss/iiif/kasane.scss")) | jsonify -}}
 {{- end -}}
