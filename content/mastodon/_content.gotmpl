@@ -32,68 +32,77 @@
 
     {{- range (index $data $structure) -}}
 
-      {{- $account := .account.username -}}
-      {{- $content := .content -}}
-      {{- $createdAt := .created_at -}}
+      {{- /* Boosts (reblogs) arrive as an activity wrapper with empty content and
+             the original status nested under "reblog". Flatten the original
+             status into the page and keep the booster for the label. */ -}}
+      {{- $outer := . -}}
+      {{- $source := . -}}
+      {{- $booster := dict -}}
+      {{- with .reblog -}}
+        {{- $source = . -}}
+        {{- with $outer.account -}}
+          {{- $booster = dict "username" .username "url" .url -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- $account := $source.account.username -}}
+      {{- $content := $source.content -}}
+      {{- $createdAt := $source.created_at -}}
       {{- $id := .id -}}
       {{- $media_attachments := slice -}}
-      {{- with .media_attachments -}}
+      {{- with $source.media_attachments -}}
         {{- range . -}}
           {{- $mediaType := .type -}}
           {{- $url := .url -}}
-          {{- $localMedia := path.Join $mastodonMediaPath (urls.Parse .url).Path -}}
-          {{- if os.FileExists (path.Join "assets" $localMedia) -}}
-            {{- $url := $localMedia -}}
-          {{- else -}}
-            {{- warnf "[mastodon/_content.gotmpl] Local media file not found: %s" $localMedia -}}
+          {{- $localMedia := path.Join $mastodonMediaPath (urls.Parse $url).Path -}}
+          {{- with resources.Get $localMedia -}}
+            {{- $url = .RelPermalink -}}
           {{- end -}}
           {{- $previewUrl := .preview_url -}}
-          {{- $localPreview := path.Join $mastodonMediaPath (urls.Parse .preview_url).Path -}}
-          {{- if os.FileExists (path.Join "assets" $localPreview) -}}
-            {{- $previewUrl := $localPreview -}}
-          {{- else -}}
-            {{- warnf "[mastodon/_content.gotmpl] Local preview file not found: %s" $localPreview -}}
+          {{- if $previewUrl -}}
+            {{- $localPreview := path.Join $mastodonMediaPath (urls.Parse $previewUrl).Path -}}
+            {{- with resources.Get $localPreview -}}
+              {{- $previewUrl = .RelPermalink -}}
+            {{- end -}}
           {{- end -}}
           {{- $description := .description -}}
           {{- $media_attachments = $media_attachments | append (dict "type" $mediaType "url" $url "preview_url" $previewUrl "description" $description) -}}
         {{- end -}}
       {{- end -}}
-      {{- $reblog := slice -}}
-      {{- with .reblog -}}
-        {{- range . -}}
-          {{- $reblog = $reblog | append . -}}
-        {{- end -}}
-      {{- end -}}
-      {{- $language := .language -}}
-      {{- $reblogsCount := .reblogs_count -}}
-      {{- $favouritesCount := .favourites_count -}}
+      {{- $language := $source.language -}}
+      {{- $reblogsCount := $source.reblogs_count -}}
+      {{- $favouritesCount := $source.favourites_count -}}
       {{- $card := dict -}}
-      {{- with .card -}}
+      {{- with $source.card -}}
         {{- $url := .url -}}
         {{- $title := .title -}}
         {{- $description := .description -}}
         {{- $card = dict "url" $url "title" $title "description" $description -}}
       {{- end -}}
-      {{- $url := .url -}}
-      {{- $repliesCount := .replies_count -}}
+      {{- $url := $source.url -}}
+      {{- $repliesCount := $source.replies_count -}}
       {{- $tags := slice -}}
-      {{- with .tags -}}
+      {{- with $source.tags -}}
         {{- range . -}}
           {{- $name := .name -}}
           {{- $url := .url -}}
           {{- $tags = $tags | append (dict "name" $name "url" $url) -}}
         {{- end -}}
       {{- end -}}
-      {{- $mentions := .mentions -}}
+      {{- $mentions := $source.mentions -}}
       {{- $reply := dict -}}
-      {{- if and (ne .in_reply_to_id nil) -}}
-        {{- $reply = dict "in_reply_to_id" .in_reply_to_id "in_reply_to_account_id" .in_reply_to_account_id -}}
+      {{- if and (ne $source.in_reply_to_id nil) -}}
+        {{- $reply = dict "in_reply_to_id" $source.in_reply_to_id "in_reply_to_account_id" $source.in_reply_to_account_id -}}
       {{- end -}}
-      {{- $poll := .poll -}}
-      {{- $pinned := .pinned -}}
-      {{- $favourited := .favourited -}}
-      {{- $sensitive := .sensitive -}}
-      {{- $spoilerText := .spoiler_text -}}
+      {{- $poll := $source.poll -}}
+      {{- $pinned := $source.pinned -}}
+      {{- $favourited := $source.favourited -}}
+      {{- $sensitive := $source.sensitive -}}
+      {{- $spoilerText := $source.spoiler_text -}}
+      {{- $type := $structure -}}
+      {{- if $booster -}}
+        {{- $type = "reblog" -}}
+      {{- end -}}
 
       {{ $content := dict
         "mediaType" "text/html"
@@ -115,15 +124,15 @@
           "url" $url
           "replies_count" $repliesCount
           "_tags" $tags
-          "reblog" $reblog
           "mentions" $mentions
           "reply" $reply
           "poll" $poll
           "pinned" $pinned
           "favourited" $favourited
           "sensitive" $sensitive
-          "type" $structure
+          "type" $type
           "spoiler_text" $spoilerText
+          "booster" $booster
         )
         "path" $id
       }}

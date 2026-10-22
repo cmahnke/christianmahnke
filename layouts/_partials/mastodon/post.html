@@ -1,13 +1,27 @@
 <article class="mastodon-post {{.Params.type | safeCSS}}">
   <header>
+    {{- with .Params.booster -}}
+      <p class="boost-hint">
+        <span aria-hidden="true">🔁</span>
+        {{- $name := .username -}}
+        {{- with .url -}}
+          <a href="{{ . }}">@{{ $name }}</a>
+        {{- else -}}
+          <span>@{{ $name }}</span>
+        {{- end -}}
+      </p>
+    {{- end -}}
     <h2><a href="{{ .Params.url }}">@{{ .Params.account }}</a></h2>
     <time datetime="{{ .Params.created_at }}">{{ .Params.created_at | time.Format ":date_full" }} {{ .Params.created_at | time.Format ":time_short" }}</time>
-    {{/* TODO: Move this */}}
     <div class="meta">
-      <div class="reblogs">{{ .Params.reblogs }}</div>
-      <div class="favourites">{{ .Params.favourites }}</div>
-      {{- with .Params.reply -}}
-        <div class="replies">{{ len . }}</div>
+      {{- with (.Params.reblogs_count | default 0 | int) -}}
+        <div class="reblogs">{{ . }}</div>
+      {{- end -}}
+      {{- with (.Params.favourites_count | default 0 | int) -}}
+        <div class="favourites">{{ . }}</div>
+      {{- end -}}
+      {{- with (.Params.replies_count | default 0 | int) -}}
+        <div class="replies">{{ . }}</div>
       {{- end -}}
     </div>
   </header>
@@ -17,7 +31,7 @@
         <summary>{{ .Params.spoiler_text }}</summary>
         {{- with .Params.card -}}
           <a href="{{ .url }}" class="card" target="_blank" rel="noopener">
-            {{- with .image -}}<img src="{{ . }}" alt="">{{- end -}}
+            {{- with .image -}}<img src="{{ . }}" alt="" loading="lazy" decoding="async">{{- end -}}
             <div class="card-text">
               <h3>{{ .title }}</h3>
               <p>{{ .description }}</p>
@@ -30,7 +44,7 @@
       {{ .Content | safeHTML }}
       {{- with .Params.card -}}
         <a href="{{ .url }}" class="card" target="_blank" rel="noopener">
-          {{- with .image -}}<img src="{{ . }}" alt="">{{- end -}}
+          {{- with .image -}}<img src="{{ . }}" alt="" loading="lazy" decoding="async">{{- end -}}
           <div class="card-text">
             <h3>{{ .title }}</h3>
             <p>{{ .description }}</p>
@@ -39,19 +53,24 @@
       {{- end -}}
     {{- end -}}
   </div>
-  {{ with .Params.media_attachments }}
+  {{- with .Params.media_attachments -}}
     <div class="media-attachments">
-      {{ range . }}
-        {{- $image := (urls.Parse .url).Path -}}
+      {{- range . -}}
         <figure>
-          <img src="{{ .preview_url }}" alt="{{ .description }}">
-          {{ if .description }}
-            <figcaption>{{ .description }}</figcaption>
-          {{ end }}
+          {{- if eq .type "image" -}}
+            <img src="{{ .preview_url }}" alt="{{ .description }}" loading="lazy" decoding="async">
+          {{- else if in (slice "gifv" "video") .type -}}
+            <video src="{{ .url }}" controls loop muted preload="metadata"></video>
+          {{- else if .url -}}
+            <a href="{{ .url }}">{{ .type }}</a>
+          {{- end -}}
+          {{- with .description -}}
+            <figcaption>{{ . }}</figcaption>
+          {{- end -}}
         </figure>
-      {{ end }}
+      {{- end -}}
     </div>
-  {{ end }}
+  {{- end -}}
 
   {{- with .Params.mentions -}}
     <div class="mentions">

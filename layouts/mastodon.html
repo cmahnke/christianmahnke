@@ -20,6 +20,11 @@
       {{- if ne $mainSite .Site -}}
         {{- $posts = ($posts | lang.Merge (where $mainSite.Pages "Section" $postSection)) -}}
       {{- end -}}
+      {{- /* Only archive posts have a type param; this excludes the section page
+             itself and stub pages added by the content adapter for other
+             languages. Filter after lang.Merge so unfiltered pages from the
+             main site cannot sneak back in. */ -}}
+      {{- $posts = where $posts "Params.type" "in" (slice "statuses" "favourites" "mentions" "reblog") -}}
       {{- $pages := $posts.ByDate.Reverse -}}
 
       <div class="section-head paginator">
