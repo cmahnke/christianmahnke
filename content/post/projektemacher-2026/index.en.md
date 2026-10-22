@@ -25,11 +25,11 @@ Some of the highlights are:
   * Art articles now contain [LinkedArt](https://linked.art/) metadata
   * [SPARQL Query](/post/blog-sparql/)
   * The [Art Collection](/en/art-collection/)
-* [Brick Expressionism](https://backsteinexpressionismus.projektemacher.org/)
+* [Backsteinexpressionismus](https://backsteinexpressionismus.projektemacher.org/)
   * [English translation](https://backsteinexpressionismus.projektemacher.org/en/) available
-* [Crow-biter](https://krähenbeisser.de/)
+* [Krähenbeißer](https://krähenbeisser.de/)
   * [Map](https://xn--krhenbeisser-hcb.de/map/) added
-* [Children’s books](https://kinderbücher.projektemacher.org/)
+* [Kinderbücher](https://kinderbücher.projektemacher.org/)
   * [Timeline](https://xn--kinderbcher-zhb.projektemacher.org/timeline/) added
 
 ## Miscellaneous
