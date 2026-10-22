@@ -62,7 +62,7 @@
         {{- range (default site.Home.AllTranslations $page.Translations) -}}
           {{- if ne site.Language .Language -}}
             <li class="navigation-item lang">
-              <a href="{{ .Permalink }}" title="{{ .Language.Label }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}">{{ .Language.Label }}</a>
+              <a href="{{ .Permalink }}" title="{{ .Language.Label }}" hreflang="{{ .Language.Name }}" lang="{{ .Language.Name }}">{{ .Language.Label }}</a>
             </li>
           {{- end -}}
         {{- end -}}

@@ -26,10 +26,10 @@
   {{- $external = true -}}
 {{- end -}}
 
-{{- $primaryLang := .Language.Lang -}}
+{{- $primaryLang := .Language.Name -}}
 {{- $langs := slice $primaryLang -}}
 {{- range .Translations -}}
-  {{- $langs = $langs | append .Language.Lang -}}
+  {{- $langs = $langs | append .Language.Name -}}
 {{- end -}}
 {{- $name := partial "data/functions/wikidata-label.html" (dict "url" $id "langs" $langs) -}}
 

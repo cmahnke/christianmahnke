@@ -33,7 +33,7 @@
   {{- $citeLink := .Permalink -}}
   {{- if hugo.IsMultilingual -}}
     {{- range .Translations -}}
-      {{- if eq .Lang hugo.Sites.Default.Language.Lang -}}
+      {{- if eq .Lang hugo.Sites.Default.Language.Name -}}
         {{- $citeLink = .Permalink -}}
       {{- end -}}
     {{- end -}}
