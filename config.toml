@@ -392,7 +392,8 @@ timeout = "240s"
             '^https?://vocab\.getty\.edu/.*',
             '^https?://data\.getty\.edu/vocab/.*',
             '^https://qlever\.dev/api/.*',
-            '^https://raw.githubusercontent.com/*']
+            '^https://raw.githubusercontent.com/*',
+            '^https://static\.projektemacher\.org/.*']
 
   [security.node]
     [security.node.permissions]
