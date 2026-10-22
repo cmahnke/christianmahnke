@@ -2,7 +2,7 @@
   "dependencies": {
     "@annotorious/openseadragon": "^3.9.4",
     "@nakamura196/iiif-viewer": "https://github.com/nakamura196/iiif-kasane/releases/download/iiif-viewer-v0.1.4/nakamura196-iiif-viewer-0.1.4.tgz",
-    "@projektemacher/hdt": "0.6.0",
+    "@projektemacher/hdt": "0.7.3",
     "@projektemacher/vivliostyle-batch-cli": "^0.2.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.8",
