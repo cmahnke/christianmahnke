@@ -25,13 +25,18 @@ Einige der Höhepunkte sind:
   * Kunstartikel enthalten nun [LinkedArt](https://linked.art/)-Metadaten
   * [SPARQL Abfragen](/post/blog-sparql/)
   * Die [Kunstsammlung](/art-collection/)
+  * Die Suche unterstützt nun [WebMCP](https://webmachinelearning.github.io/webmcp/)
 * [Backsteinexpressionismus](https://backsteinexpressionismus.projektemacher.org/)
   * [Englische Übersetzung](https://backsteinexpressionismus.projektemacher.org/en/) verfügbar
   * [Zeitstrahl](https://backsteinexpressionismus.projektemacher.org/lists/#zeitstrahl) hinzugefügt
+  * Die Suche unterstützt nun [WebMCP](https://webmachinelearning.github.io/webmcp/)
 * [Krähenbeißer](https://krähenbeisser.de/)
   * [Karte](https://xn--krhenbeisser-hcb.de/map/) hinzugefügt
 * [Kinderbücher](https://kinderbücher.projektemacher.org/)
   * [Zeitstrahl](https://xn--kinderbcher-zhb.projektemacher.org/timeline/) hinzugefügt
+  * Die Bücher haben nun Inhaltsverzeichnisse
+* [Projektemacher](https://projektemacher.org/)
+  * Die Suche unterstützt nun [WebMCP](https://webmachinelearning.github.io/webmcp/)
 
 ## Verschiedenes
 * Das erste [Buch](https://christianmahnke.de/post/coat-hangers-book/) ist erschienen.

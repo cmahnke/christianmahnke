@@ -31,12 +31,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }
 
   document.addEventListener("DOMContentLoaded", function() {
-    document.querySelector('.backToTop').removeAttribute("href");
-    document.addEventListener("scroll", function(e) {
+    document.querySelector('.backToTop')?.removeAttribute("href");
+    document.addEventListener("scroll", function() {
       if (window.scrollY > window.innerHeight) {
-        document.querySelector('#head').classList.add('show-top-button');
+        document.querySelector('#head')?.classList.add('show-top-button');
       } else {
-        document.querySelector('#head').classList.remove('show-top-button');
+        document.querySelector('#head')?.classList.remove('show-top-button');
       }
     });
   });
