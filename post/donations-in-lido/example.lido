@@ -1,0 +1,27 @@
+<lido:event>
+<lido:eventType>
+<lido:conceptID lido:type="http://terminology.lido-schema.org/identifier_type/uri">http://terminology.lido-schema.org/eventType/transfer_of_custody</lido:conceptID>
+<lido:term xml:lang="en">Donation</lido:term>
+<lido:term>Schenkung</lido:term>
+</lido:eventType>
+<lido:eventActor>
+<lido:displayActorInRole>Meischner, Klaus-Dieter (SchenkerIn)</lido:displayActorInRole>
+<lido:actorInRole>
+<lido:actor lido:type="http://terminology.lido-schema.org/lido00163">
+<lido:nameActorSet>
+<lido:appellationValue>Meischner, Klaus-Dieter</lido:appellationValue>
+</lido:nameActorSet>
+</lido:actor>
+<lido:roleActor>
+<lido:term>SchenkerIn</lido:term>
+</lido:roleActor>
+</lido:actorInRole>
+</lido:eventActor>
+<lido:eventDate>
+<lido:displayDate>1955 - ca. 2000</lido:displayDate>
+<lido:date>
+<lido:earliestDate>1955</lido:earliestDate>
+<lido:latestDate lido:type="approximate">2000</lido:latestDate>
+</lido:date>
+</lido:eventDate>
+</lido:event>
