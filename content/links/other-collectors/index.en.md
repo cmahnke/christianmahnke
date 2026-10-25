@@ -71,5 +71,9 @@ Other collections and collectors with whom I do not work.
 * [CONSOLLECTION](https://consollection.de/)
 * [Electronic Plastic](https://electronicplastic.com/)
 
+### Electronic Toys
+
+* [The Old Robots Web Site](https://www.theoldrobots.com/)
+
 ## Portable cassette players
 * [WalkmanLand](https://walkman.land/)
