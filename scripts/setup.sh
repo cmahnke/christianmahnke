@@ -11,6 +11,7 @@ echo "Set SKIP_IIIF to something to disable generation of IIIF derivates"
 
 # Convert Images
 convert Source\ Files/Images/Textures/Red\ Lether.psd -resize 1000x -quality 20 static/images/red-lether.jpg
+convert Source\ Files/Images/Textures/Red\ Lether.psd -resize 1000x -quality 20 static/images/red-lether.webp
 convert Source\ Files/Images/Bill-Nye.psd[1] -resize 400x static/images/bill-nye.png
 convert Source\ Files/Images/Bills-Finger.psd[0] -resize 110x static/images/bills-finger.png
 

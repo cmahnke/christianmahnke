@@ -3,7 +3,7 @@
 ./themes/projektemacher-base/scripts/cleanup.sh
 rm static/images/*.svg
 rm static/images/bill*.png
-rm static/images/red-lether.jpg
+rm static/images/red-lether.jpg static/images/red-lether.webp
 rm -rf static/pdfjs
 find content/ -name "ogPreview*.*" -exec rm {} \;
 find content -name '*-boxed.jpg' -print -exec rm {} \;
