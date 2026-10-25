@@ -11,6 +11,8 @@ params:
     - https://www.wikidata.org/wiki/Q91788671
     - https://www.wikidata.org/wiki/Q82981060
     - https://www.wikidata.org/wiki/Q1946541
+    - https://www.wikidata.org/wiki/Q28067896
+    - https://www.wikidata.org/wiki/Q4946461
 tags:
 - Architecture
 - ArtDeco
