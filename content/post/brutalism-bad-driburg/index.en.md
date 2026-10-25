@@ -19,7 +19,7 @@ tags:
 Now the photos from my penultimate visit to a spa town are back from the lab...
 <!--more-->
 
-Following my last brief travelogue about [Bad Nenndorf](/post/art-deco-bad-nenndorf), here are a few photos from Bad Driburg.
+Following my last brief travelogue about [Bad Nenndorf](/post/art-deco-bad-nenndorf), here are a few photos from [Bad Driburg](https://en.wikipedia.org/wiki/Bad_Driburg).
 Of course, the changed circumstances mentioned in the last post also apply in Bad Driburg, but here some of the effects can be observed more directly. One of the most striking is certainly this building, which is quite prominently visible from Brunnenstraße:
 
 {{< html/iframe-consent >}}

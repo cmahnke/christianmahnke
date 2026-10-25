@@ -19,7 +19,7 @@ tags:
 Nun sind auch die Bilder vom vorletzten Kurortbesuch aus dem Labor zurück...
 <!--more-->
 
-Nach dem letzten kurzen Reisebericht über [Bad Nenndorf](/post/art-deco-bad-nenndorf) hier nun ein paar Bilder aus Bad Driburg. 
+Nach dem letzten kurzen Reisebericht über [Bad Nenndorf](/post/art-deco-bad-nenndorf) hier nun ein paar Bilder aus [Bad Driburg](https://de.wikipedia.org/wiki/Bad_Driburg). 
 Natürlich gelten auch in Bad Driburg die im letzten Beitrag erwähnten geänderten Rahmenbedingungen, aber hier lassen sich auch einiger der Auswirkungen direkter beobachten. Eine der auffälligsten ist sicher dieses Gebäude, das relativ prominent von der Brunnenstraße aus sichtbar ist:
 
 {{< html/iframe-consent >}}
