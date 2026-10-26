@@ -3,7 +3,7 @@ date: 2026-10-20T18:52:22+02:00
 title: 'Brutalist Architecture in Bad Driburg'
 params:
   cite: true
-  preview: wincklerbad-detail.jpg
+  preview: img/004_N3.jpg
   wikidata:
     - https://www.wikidata.org/wiki/Q242195
     - https://www.wikidata.org/wiki/Q994776
