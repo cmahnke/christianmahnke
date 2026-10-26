@@ -1,7 +1,6 @@
 ---
 date: 2026-10-20T18:52:22+02:00
 title: 'Brutalistische Architektur in Bad Driburg'
-draft: true
 params:
   cite: true
   preview: wincklerbad-detail.jpg
@@ -27,7 +26,7 @@ Natürlich gelten auch in Bad Driburg die im letzten Beitrag erwähnten geänder
 {{< /html/iframe-consent >}}
 
 
-Es handelt sich um das ehemalige Hotel Neuhaus im Steinbergstieg 18, das im Jahre 2009 geschlossen wurde. [2018 gab es Interesses eines Investors](https://www.nw.de/lokal/kreis_hoexter/bad_driburg/22120952_Hollaender-will-Driburger-Hotel-kaufen.html), aber bisher hat sich am Zustand nichts geändert.
+Es handelt sich um das ehemalige Hotel Neuhaus im Steinbergstieg 18, das im Jahre 2009 geschlossen wurde. [2018 gab es Interesse eines Investors](https://www.nw.de/lokal/kreis_hoexter/bad_driburg/22120952_Hollaender-will-Driburger-Hotel-kaufen.html), aber bisher hat sich am Zustand nichts geändert.
 
 {{< gallery >}}
 [
@@ -37,7 +36,7 @@ Es handelt sich um das ehemalige Hotel Neuhaus im Steinbergstieg 18, das im Jahr
 ]
 {{</ gallery >}}
 
-Ein weiteres Zeichen vergangener Zeiten ist der Zustand des [Café Heyse, dass 2022 endgültig schloss](https://bad-driburg-aktuell.info/2022/12/11/nach-37-jahren-ist-schluss/). Im ersten Obergeschoss ist eine eindrucksvolle Sammlung des nicht mehr genutzten Gestühls im zu sehen.
+Ein weiteres Zeichen vergangener Zeiten ist der Zustand des [Café Heyse, dass 2022 endgültig schloss](https://bad-driburg-aktuell.info/2022/12/11/nach-37-jahren-ist-schluss/). Im ersten Obergeschoss ist eine eindrucksvolle Sammlung des nicht mehr genutzten Gestühl zu sehen.
 
 {{< gallery >}}
 [
@@ -46,7 +45,7 @@ Ein weiteres Zeichen vergangener Zeiten ist der Zustand des [Café Heyse, dass 2
 ]
 {{</ gallery >}}
 
-Dass man in Bad Driburg Ende der 1970er Jahre eher mit einem Zuwachs gerechnet hatte, zeigt sich an der Bebauung rund um „Am Hellweg“: eine weitgehend leere, parallele Fußgängerzone, die mit ihrer Kombination aus Geschäftsflächen und Wohneinheiten wie aus einem Lehrbuch für Städtebau jener Zeit wirkt.
+Dass man in Bad Driburg Ende der 1970er Jahre eher mit einem Zuwachs gerechnet hatte, zeigt sich an der Bebauung rund um "Am Hellweg": eine weitgehend leere, parallele Fußgängerzone, die mit ihrer Kombination aus Geschäftsflächen und Wohneinheiten wie aus einem Lehrbuch für Städtebau jener Zeit wirkt.
 
 {{< gallery >}}
 [
