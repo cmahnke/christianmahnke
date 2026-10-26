@@ -7,7 +7,6 @@ tags:
   - Fun
   - Retrocomputing
   - Game
-draft: true
 params:
   preview: top.jpg
   wikidata:
@@ -26,9 +25,9 @@ The game was produced by the Japanese company [Tomy](https://en.wikipedia.org/wi
 
 {{< gallery >}}
 [
-  {"src": "top.jpg", "alt": "Ansicht von oben"},
-  {"src": "box-open.jpg", "alt": "Schachtel aufgeklappt"},
-  {"src": "box.jpg", "alt": "Schachtel"}
+  {"src": "top.jpg", "alt": "Top view"},
+  {"src": "box-open.jpg", "alt": "Box opened out"},
+  {"src": "box.jpg", "alt": "Box"}
 ]
 {{</ gallery >}}
 

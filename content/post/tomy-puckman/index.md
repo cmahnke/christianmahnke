@@ -7,7 +7,6 @@ tags:
   - Fun
   - Retrocomputing
   - Game
-draft: true
 params:
   preview: top.jpg
   wikidata:
@@ -20,7 +19,7 @@ params:
 Wieder eine mobile Konsole, wenn auch nicht ganz so alt wie die [letzte](/post/entex-soccer/)...
 <!--more-->
 
-Dies ist ein ganz besonderer Fund, denn das, was später unter dem Namen [Pac-Man](https://de.wikipedia.org/wiki/Pac-Man) weltberühmt werden sollte, heißt hier noch Puckman. 
+Dies ist ein ganz besonderer Fund, denn das, was später unter dem Namen [Pac-Man](https://de.wikipedia.org/wiki/Pac-Man) weltberühmt werden sollte, heißt hier noch Puckman.
 
 Das Spiel wurde von der japanischen Firma [Tomy](https://de.wikipedia.org/wiki/Takara_Tomy) hergestellt, die in den 1980er- und 1990er-Jahre für ihre elektronischen Speiel bekannt war. Es wurde ursprünglich 1981 (ein Jahr nach der Arcade-Version) in Japan auf den Markt gebracht und erschien wohl 1983 in Deutschland.
 
@@ -32,7 +31,7 @@ Das Spiel wurde von der japanischen Firma [Tomy](https://de.wikipedia.org/wiki/T
 ]
 {{</ gallery >}}
 
-Die Regeln des Spiels sind sicher bekannt: Man steuert Puckman durch ein Labyrinth, um die Punkte zu fressen, während man von vier Gespenstern verfolgt wird. Entweder muss man ihnen ausweichen oder man kann sie (wenn man das entsprechende Power-Up hat) auch selbst (temporär) verspeisen. Das Spiel endet, wenn alle Leben aufgebraucht sind. 
+Die Regeln des Spiels sind sicher bekannt: Man steuert Puckman durch ein Labyrinth, um die Punkte zu fressen, während man von vier Gespenstern verfolgt wird. Entweder muss man ihnen ausweichen oder man kann sie (wenn man das entsprechende Power-Up hat) auch selbst (temporär) verspeisen. Das Spiel endet, wenn alle Leben aufgebraucht sind.
 
 Das Spiel selbst wurde auch unter dem Namen ["Munchman"](https://en.wikipedia.org/wiki/Munchman_(tabletop_electronic_game)) verkauft.
 
