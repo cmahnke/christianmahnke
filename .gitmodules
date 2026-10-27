@@ -7,6 +7,7 @@
 [submodule "themes/projektemacher-base"]
 	path = themes/projektemacher-base
 	url = https://github.com/cmahnke/projektemacher-base.git
+	branch = main
 [submodule "github-cmahnke"]
 	path = github-cmahnke
 	url = https://github.com/cmahnke/cmahnke.git
