@@ -53,11 +53,11 @@
           {{- if eq $res nil -}}
             {{- errorf "[preview.html] Preview image %s missing for %s" $src $ctx.RelPermalink -}}
           {{- end -}}
-          {{- $srcset = $srcset | append (printf "%s %sw" ($res.Filter (images.AutoOrient) (images.Process (printf "%sx webp picture" .))).RelPermalink .) -}}
+          {{- $srcset = $srcset | append (printf "%s %sw" ($res.Filter (images.AutoOrient) (images.Process (printf "resize %sx webp picture" .))).RelPermalink .) -}}
         {{- end -}}
         <div class="preview-img-wrapper">
           <a title="{{ $ctx.Title }}" href="{{ $ctx.RelPermalink }}">
-            <img src="{{ ($imgRes.Filter (images.AutoOrient) (images.Process (printf "%sx webp picture" "640"))).RelPermalink }}"
+            <img src="{{ ($imgRes.Filter (images.AutoOrient) (images.Process (printf "resize %sx webp picture" "640"))).RelPermalink }}"
                  srcset="{{ delimit $srcset ", " }}"
                  sizes="(min-width: 75em) 45vw, 90vw"
                  alt="{{ $ctx.Title }}" {{ if ne $class "" }}class="{{ $class }}"{{ end }}{{ if $priority }} fetchpriority="high"{{ end }} />

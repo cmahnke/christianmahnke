@@ -18,9 +18,9 @@
       <a class="gallery-image {{ if ne $alt "" }}caption{{ end }}" href="{{ $image.src }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank"{{ if eq $alt "" }} aria-label="{{ i18n "enlargeImage" }} {{ path.BaseName $image.src }}"{{ end }}>
         {{- $preview := "" -}}
         {{- if gt .Width 2048 -}}
-          {{- $preview = $imgRes.Filter (images.AutoOrient) (images.Process (printf "%dx webp picture" 2048)) -}}
+          {{- $preview = $imgRes.Filter (images.AutoOrient) (images.Process (printf "resize %dx webp picture" 2048)) -}}
         {{- else -}}
-          {{- $preview = $imgRes.Filter (images.AutoOrient) (images.Process (printf "%dx webp picture" .Width)) -}}
+          {{- $preview = $imgRes.Filter (images.AutoOrient) (images.Process (printf "resize %dx webp picture" .Width)) -}}
         {{- end -}}
         {{/*
           {{- $preview := $imgRes.Resize (printf "%dx webp picture" .Width) -}}

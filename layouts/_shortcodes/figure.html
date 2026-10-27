@@ -12,7 +12,7 @@
         {{ $imgRes = resources.Get $image }}
     {{ end }}
     {{ if and $imgRes (reflect.IsImageResourceProcessable $imgRes) }}
-        {{ with $imgRes.Filter (images.AutoOrient) (images.Process (printf "%dx webp" $imgRes.Width)) }}
+        {{ with $imgRes.Filter (images.AutoOrient) (images.Process (printf "resize %dx webp" $imgRes.Width)) }}
             {{ $image = .RelPermalink }}
         {{ end }}
     {{ end }}
