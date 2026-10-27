@@ -15,7 +15,7 @@ tags:
   - Travel
 ---
 
-Nun sind auch die Bilder vom vorletzten Kurortbesuch aus dem Labor zurück...
+Aus der losen Serie über Kurorte: Nun sind auch die Bilder vom vorletzten Ortsbesuch aus dem Labor zurück...
 <!--more-->
 
 Nach dem letzten kurzen Reisebericht über [Bad Nenndorf](/post/art-deco-bad-nenndorf) hier nun ein paar Bilder aus [Bad Driburg](https://de.wikipedia.org/wiki/Bad_Driburg).

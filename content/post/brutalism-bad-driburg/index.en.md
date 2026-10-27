@@ -15,7 +15,7 @@ tags:
   - Travel
 ---
 
-Now the photos from my penultimate visit to a spa town are back from the lab...
+From the informal series on spa towns: The photos from my penultimate visit are now back from the lab...
 <!--more-->
 
 Following my last brief travelogue about [Bad Nenndorf](/post/art-deco-bad-nenndorf), here are a few photos from [Bad Driburg](https://en.wikipedia.org/wiki/Bad_Driburg).
