@@ -30,8 +30,8 @@ lastmod: 2026-10-21T00:00:00+02:00
 ...and to mark the occasion, the [Forum Wissen](https://forum-wissen.de/) is to feature a multimedia exhibition tracing Carl Friedrich Gauss’s journey as part of the [Gauss Survey](https://de.wikipedia.org/wiki/Gau%C3%9Fsche_Landesaufnahme).
 
 The choice fell on [StoryMapJS](https://storymap.knightlab.com/), as this application met almost all the requirements for the planned story. However, there were also a few gaps:
-* As the media stations are normally relatively limited in scope, I decided against this.
-* Multiple map layers (OpenStreetMap base map), two layers of historical map material, one of which is transparent.
+* However, as the media stations are normally quite limited in their capabilities, I was unable to use any externally hosted software.
+* Several map layers (OpenStreetMap base map), two layers of historical map data, one of which is transparent.
 
 This project therefore provided a good opportunity to put my ideas from last year on [AI-assisted software renovation](/post/academic-software-publishing/) to the test. And with the massive advances in cost-effective models for agentic coding since then, a number of improvements were also possible.
 

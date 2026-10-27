@@ -30,8 +30,8 @@ lastmod: 2026-10-21T00:00:00+02:00
 ...und dafür soll es im [Forum Wissen](https://forum-wissen.de/) eine Medienstation geben, die den Weg von Carl Friedrich Gauß im Rahmen der [Gaußsche Landesaufnahme](https://de.wikipedia.org/wiki/Gau%C3%9Fsche_Landesaufnahme) nachzeichnet.
 
 Die Wahl fiel auf [StoryMapJS](https://storymap.knightlab.com/), da diese Anwendung fast alle Anforderungen an die geplante Geschichte erfüllte. Allerdings gab es auch ein paar Lücken:
-* Da aber die Medienstationen normalerweise relativ eingeschränkt sind, habe ich darauf verzichtet.
-* Mehrere Kartenlayer (OpenStreetmap Basiskarte), zwei Layer historisches Kafrtenmaterial, einer davon mit TRansparenz.
+* Da aber die Medienstationen normalerweise relativ eingeschränkt sind, konnte ich auf keine extern gehostete Software einsetzen.
+* Mehrere Kartenlayer (OpenStreetmap Basiskarte), zwei Layer historisches Kartenmaterial, einer davon mit Transparenz.
 
 Daher war dieses Projekt eine gute Gelegenheit einmal meine Ideen aus dem letzten Jahr über [Ki-gestützte Software Renovierung](/post/academic-software-publishing/) auszuprobieren. Und mit den massiven Fortschritten bei den kostengünstigen Modellen für Agentic Coding seit damals waren auch einige Verbesserungen möglich.
 

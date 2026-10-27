@@ -12,6 +12,9 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     versioning-strategy: increase
+    ignore:
+      - dependency-name: "typescript"
+        versions: [">=7"]
     schedule:
       interval: "daily"
     groups:
@@ -29,6 +32,9 @@ updates:
   - package-ecosystem: "npm"
     directory: "/Source Files/Mocks/"
     versioning-strategy: increase
+    ignore:
+      - dependency-name: "typescript"
+        versions: [">=7"]
     schedule:
       interval: "weekly"
     groups:
