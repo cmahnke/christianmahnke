@@ -15,21 +15,33 @@ SEARCH_STRING=gallery-image
 find $SEARCH_PATH -type f -name "*.jp*g" -size +1M -not -path '*/full/full/*' -and -not -path '*.hdr.*' | while read -r jpg_file; do
     dir=$(dirname "$jpg_file")
     found=0
+    gallery_index=""
     check_dir="$dir"
     while [ "$check_dir" != "." ] && [ "$check_dir" != "/" ]; do
         if [ -f "$check_dir/$SEARCH_FILE" ] && grep -q "$SEARCH_STRING" "$check_dir/$SEARCH_FILE"; then
             found=1
+            gallery_index="$check_dir/$SEARCH_FILE"
             break
         fi
         check_dir=$(dirname "$check_dir")
     done
     if [ "$check_dir" = "." ] && [ -f "$check_dir/$SEARCH_FILE" ] && grep -q '{{< gallery >}}' "$check_dir/$SEARCH_FILE"; then
         found=1
+        gallery_index="$check_dir/$SEARCH_FILE"
     fi
     WIDTH=$(identify -format "%w" "$jpg_file")
     if [ "$WIDTH" -gt $MAX_WIDTH ]; then
       echo "Keeping $jpg_file since its to large (${WIDTH}px) for a WebP replacement"
       found=0
+    fi
+    # The gallery's full view links the original image, so it must not be removed when it's referenced
+    if [ "$found" -eq 1 ] && [ -n "$gallery_index" ]; then
+        base=$(basename "$jpg_file")
+        baseRe=$(printf '%s' "$base" | sed -e 's/[][^$()*+{|.]/\\&/g')
+        if grep -qE "gallery-image[^>]*href=\"[^\"]*/?$baseRe\"" "$gallery_index"; then
+            echo "Keeping $jpg_file since it's the original used by the gallery's full view"
+            found=0
+        fi
     fi
     if [ "$found" -eq 1 ]; then
         echo "Removing $jpg_file since there should be a WebP replacement"
