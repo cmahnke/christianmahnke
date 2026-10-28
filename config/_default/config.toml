@@ -1,6 +1,11 @@
 [pagination]
   pagerSize = 10
 
+[security]
+  [security.http]
+    # Allow the SPARQL results media types used by the Wikidata link lookups
+    mediaTypes = ['^application/sparql-results\+json$', '^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$']
+
 [params]
   js = "esm"
   copyrightYears = "MMXX - MMXXVI"
@@ -28,8 +33,8 @@
   contacts = ['<h3 class="contact-link">Mail</h3><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a>']
   description = "Persönliche Homepage von Christian Mahnke"
   wikidata = true
+  wikidatasparqlbackend = "qlever"
   debug = false
-  #wikidatasparqlendpoint = "https://qlever.dev/api/wikidata"
   #js = "esm"
   pagetheme = "#701611"
   keywordAsString = true
