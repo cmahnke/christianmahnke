@@ -8,8 +8,13 @@ params:
   wikidata:
     - https://www.wikidata.org/wiki/Q117823197
     - https://www.wikidata.org/wiki/Q6368
+lastmod: 2026-10-16T00:00:00+02:00
 ---
 
 Für ein in Vorbereitung befindliches Projekt habe ich eine [Liste von Links](https://github.com/cmahnke/awesome-browser-hdr/blob/main/README.md) zu HDR im Web bzw. im Browser zusammengestellt.
 <!--more-->
 Wer sich nicht mit den verfügbaren Tools und Bibliotheken beschäftigen will, sondern lieber Beispiele ansehen will, dem sein die [Seite von Greg Benz](https://gregbenzphotography.com/hdr/) empfohlen.
+
+# Update 16.10.2026
+
+Die Liste wurde aktualisiert.
