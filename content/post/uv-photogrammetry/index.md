@@ -86,6 +86,10 @@ Wenn die HDR Überprüfung fehl geschlagen ist, werden die Farben nicht in volle
 
 {{< hdr-model model="model/uranium.glb" >}}
 
+# Update 6.9.2024
+
+Nun auch im offiziellen [three.js forum](https://discourse.threejs.org/t/model-with-hdr-texture/70386).
+
 # Update für Three.js R167
 
 Nach dem Update auf Three.js R167 ist eine weitere Anpassung des Models notwendig. Da das Modell nicht beleuchtet werden darf, damit die Textur nicht durch Shading "eingefärbt" werden darf, muss der Typ des Materials auf `MeshBasicMaterial` geändert werden.
