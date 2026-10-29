@@ -8,7 +8,7 @@
 {{- $agent := "HugoBot/1.0" -}}
 
 {{- with site.Params.useragent -}}
-  {{- $agent := . -}}
+  {{- $agent = . -}}
 {{- end -}}
 
 {{- $opts := dict
