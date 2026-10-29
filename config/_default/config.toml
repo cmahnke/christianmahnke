@@ -4,11 +4,13 @@
 [security]
   [security.http]
     # Trust the Content-Type header for the media types used by the Wikidata
-    # lookups (SPARQL results and EntityData JSON). Without this Hugo sniffs
-    # the content, and the sniffed application/json conflicts with the theme's
-    # 'application/linkset+json' registration (same "json" suffix), which can
-    # make media type resolution fail (see Hugo issue #13560).
-    mediaTypes = ['^application/json$', '^application/json;\s?.*$', '^application/sparql-results\+json$', '^application/sparql-results\+json;\s?.*$']
+    # lookups (SPARQL results, EntityData JSON) and the Getty AAT lookups
+    # (JSON-LD). Without this Hugo sniffs the content, which fails for
+    # extension-less URLs (e.g. data.getty.edu/vocab/aat/<id>) and conflicts
+    # with the theme's 'application/linkset+json' registration (same "json"
+    # suffix), which can make media type resolution fail (see Hugo issue
+    # #13560).
+    mediaTypes = ['^application/json$', '^application/json;\s?.*$', '^application/ld\+json$', '^application/ld\+json;\s?.*$', '^application/sparql-results\+json$', '^application/sparql-results\+json;\s?.*$']
 
 [params]
   js = "esm"
