@@ -3,8 +3,12 @@
 
 [security]
   [security.http]
-    # Allow the SPARQL results media types used by the Wikidata link lookups
-    mediaTypes = ['^application/sparql-results\+json$', '^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$']
+    # Trust the Content-Type header for the media types used by the Wikidata
+    # lookups (SPARQL results and EntityData JSON). Without this Hugo sniffs
+    # the content, and the sniffed application/json conflicts with the theme's
+    # 'application/linkset+json' registration (same "json" suffix), which can
+    # make media type resolution fail (see Hugo issue #13560).
+    mediaTypes = ['^application/json$', '^application/json;\s?.*$', '^application/sparql-results\+json$', '^application/sparql-results\+json;\s?.*$']
 
 [params]
   js = "esm"
