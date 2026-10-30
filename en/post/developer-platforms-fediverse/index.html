@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Fediverse integration for development platforms · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="en">
+<meta name="dc.type" content="Text">
+<meta name="description" content="GitHub is currently facing a lot of issues – what does it take to switch?">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/en/post/developer-platforms-fediverse/" />
+  <meta property="og:title" content="Fediverse integration for development platforms · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/en/post/developer-platforms-fediverse/ogPreview.en_hu_727bc4acd6e9c646.webp" />
+  <meta property="og:image:type" content="image/webp" /><meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", Software development, Project idea, GitHub, Digital Sovereignty"><meta name="dc.subject" content="Software development"><meta name="dc.subject" content="Project idea"><meta name="dc.subject" content="GitHub"><meta name="dc.subject" content="Digital Sovereignty">
+<meta name="generator" content="Hugo 0.168.0">
+<meta name="projektemacher.org:build-date" content="2026-10-30 07:44:01.298511215 &#43;0000 UTC m=&#43;1029.528629898"><meta name="projektemacher.org:stats" content="{&#34;count&#34;:&#34;974&#34;,&#34;latest&#34;:&#34;2026-12-31T11:33:44&#43;02:00&#34;}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link rel="preload" href="https://christianmahnke.de/fonts/league-spartan-vietnamese-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/league-spartan-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/league-spartan-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/poiret-one-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/poiret-one-latin-ext-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/poiret-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/josefin-sans-vietnamese-wght-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/josefin-sans-latin-ext-wght-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/josefin-sans-latin-wght-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/josefin-sans-vietnamese-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/josefin-sans-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/josefin-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-vietnamese-standard-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-latin-ext-standard-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-vietnamese-wdth-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-latin-ext-wdth-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-vietnamese-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.c617dcca39cff820b826cba83acf79347ca9c88e4665b69bf60170abcda01b31.css" rel="stylesheet" integrity="sha256-xhfcyjnP&#43;CC4JsuoOs95NHypyI5GZbab9gFwq82gGzE=">
+<script src="https://christianmahnke.de/js/main.50a7290dbe337ba64c1a4a03c3bf361ee619f7b37acba421837c5c0cfa7a7b88.js" integrity="sha256-UKcpDb4ze6ZMGkoDw782HuYZ97N6y6Qhg3xcDPp6e4g=" crossorigin="anonymous" type="module"></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/en/post/developer-platforms-fediverse/citation.bib" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/en/post/developer-platforms-fediverse/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/en/post/developer-platforms-fediverse/","@type":"BlogPosting","about":[{"@id":"http://www.wikidata.org/entity/Q106102182","@type":"Thing","name":"Codeberg"},{"@id":"http://www.wikidata.org/entity/Q115962387","@type":"Thing","name":"Forgejo"},{"@id":"http://www.wikidata.org/entity/Q16639197","@type":"Thing","name":"Q16639197"},{"@id":"http://www.wikidata.org/entity/Q2493781","@type":"Thing","name":"Bitbucket"},{"@id":"http://www.wikidata.org/entity/Q27986619","@type":"Thing","name":"Mastodon"},{"@id":"http://www.wikidata.org/entity/Q30325419","@type":"Thing","name":"Fediverse"},{"@id":"http://www.wikidata.org/entity/Q364","@type":"Thing","name":"GitHub"},{"@id":"http://www.wikidata.org/entity/Q40463886","@type":"Thing","name":"ActivityPub"},{"@id":"http://www.wikidata.org/entity/Q649124","@type":"Thing","name":"network effect"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"dateModified":"2026-04-30","datePublished":"2026-04-30","headline":"Fediverse integration for development platforms","inLanguage":"en","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["SoftwareDevelopment","ProjectIdea","GitHub","DigitalSovereignty"],"name":"Fediverse integration for development platforms","url":"https://christianmahnke.de/en/post/developer-platforms-fediverse/","workTranslation":[{"@id":"https://christianmahnke.de/post/developer-platforms-fediverse/","@type":"CreativeWork","inLanguage":"de","name":"Fediverse Anbindung für Entwicklungsplattformen","url":"https://christianmahnke.de/post/developer-platforms-fediverse/"}]}
+</script>
+<link href="https://static.projektemacher.org/services/webmentions/webmention.php" rel="webmention" /><link href="https://static.projektemacher.org/services/webmentions/webmention.php" rel="pingback" /></head><body class="section-post dir-postdeveloper-platforms-fediverse blog  ">
+      <a class="skip-link" href="#main-content">Skip to content</a>
+      <span id="top"></span>
+      <div class="page-wrapper">
+        <main class="main" id="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu" aria-label="Main navigation" data-menu-open-label="Open main navigation" data-menu-close-label="Close main navigation">
+    
+    <input type="checkbox" id="menu-toggle" aria-label="Main navigation" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon" aria-hidden="true"></i></label>
+    <ul id="main-navigation-list" class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog" aria-current="page">Blog<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Search" aria-label="Search" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button" aria-label="Search"><i class="search-icon" aria-hidden="true"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/developer-platforms-fediverse/" title="Deutsch" hreflang="de" lang="de">Deutsch</a>
+            </li></ul>
+  </nav><script type="module" src="https://christianmahnke.de/js/menu.4e558d33a76c185c2b5983d672cb89d555216f73d29034201829d5d05982cdd1.js" integrity="sha256-TlWNM6dsGFwrWYPWcsuJ1VUhb3PSkDQgGCnV0FmCzdE="></script>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/" aria-label="Christian Mahnke"><span class="header-title" aria-hidden="true">Christian Mahnke</span></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top" aria-label="Back to top">
+        <div class="backToTop" aria-hidden="true"></div>
+    </a>
+</header>
+<div class="content-container single" id="main-content">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">Fediverse integration for development platforms</h1><div class="date">
+          <time class="post-date" datetime="2026-04-30T17:30:00&#43;02:00">Thursday, April 30, 2026</time>
+        </div><div class="post-body"><p>GitHub is currently facing a lot of issues – what does it take to switch?</p>
+<p>A great deal has already been written about the technical issues (reliability, security problems, etc.), and numerous videos have been produced. There is also plenty of information available on the topics of digital sovereignty and independence from Microsoft.</p>
+<p>To cut a long story short: there are good reasons to look for alternatives to GitHub. And at first glance, there is a fair selection available:</p>
+<ul>
+<li><a data-wikidata-entity="Q16639197" href="https://about.gitlab.com/" target="_blank" rel="noopener noreferrer">GitLab</a></li>
+<li><a data-wikidata-entity="Q106102182" href="https://codeberg.org/" target="_blank" rel="noopener noreferrer">Codeberg</a></li>
+<li><a href="https://about.gitea.com/" target="_blank" rel="noopener noreferrer">Gitea</a></li>
+<li><a data-wikidata-entity="Q115962387" href="https://forgejo.org/" target="_blank" rel="noopener noreferrer">Forgejo</a></li>
+<li><a data-wikidata-entity="Q2493781" href="https://bitbucket.org/" target="_blank" rel="noopener noreferrer">Bitbucket</a></li>
+</ul>
+<p>Some of these offer only hosting services, whilst others also provide the software for local installation.</p>
+<p>However, hosting services have a few drawbacks compared to GitHub (at least if you have an old account). GitHub offers a vast array of resources, orders of magnitude more than the competition:</p>
+<ul>
+<li>Storage space: Particularly with my image-heavy blogs, a repository can sometimes run to several gigabytes in size. There are also the odd files that are around 50 MB in size.</li>
+<li>Container images of a few gigabytes in size can also be stored.</li>
+<li>The runners have a maximum runtime of six hours and provide a virtual machine which, with a bit of <a href="https://christianmahnke.de/post/build-vector-tiles-on-github/" target="_blank" rel="noopener noreferrer">fiddling</a>, offers a mid-double-digit gigabyte amount of free space, thereby also allowing for extensive data transformations.</li>
+</ul>
+<p>In addition, there are CI infrastructures and other automation tools that can be set up on GitHub.</p>
+<p>Another factor arising from the platform’s scale is the <a data-wikidata-entity="Q649124" href="https://de.wikipedia.org/wiki/Netzwerkeffekt" target="_blank" rel="noopener noreferrer">network effect</a>, which receives little attention. In my view, this is a major oversight if one is seriously advocating for a replacement.</p>
+<h2 id="github-is-a-social-network">GitHub is a social network</h2>
+<p>Simply because so many projects, particularly from the JavaScript and TypeScript communities, can now be found on GitHub, they are interconnected not only in terms of software but also in terms of the people involved. Although these are primarily working relationships, one should not forget that a simple @ mention in an issue or comment can be used to draw other people’s attention to something. The same applies to linking information between projects. GitHub also recognises these links and integrates them into various history views (issues, comments, discussions, pull requests, etc.).</p>
+<p>In other words: <strong>GitHub is a social network</strong>, and so for many people, concerns about sovereignty or dependence on the big tech giant Microsoft are simply not a sufficient reason to leave this convenient ecosystem.</p>
+<p>The prospect of having to maintain their code on a small island, cut off from their community, is unlikely to inspire much enthusiasm for switching. For smaller projects in particular, the network effect also means potentially increased visibility – for example, when maintaining one’s own projects to improve one’s prospects on the job market.</p>
+<h2 id="development-platforms-must-join-the-fediverse">Development platforms must join the Fediverse!</h2>
+<p>Therefore, the following applies: anyone who is serious about reducing the use of GitHub or replacing it with decentralised European solutions or providers must advocate for the interconnection of platforms. Digital sovereignty alone isn’t really that appealing.</p>
+<p><a data-wikidata-entity="Q40463886" href="https://de.wikipedia.org/wiki/ActivityPub" target="_blank" rel="noopener noreferrer">ActivityPub</a> (the technical foundation of the Fediverse) provides all the necessary mechanisms. Every platform must be able to address at least the following entities:</p>
+<ul>
+<li>Users</li>
+<li>Issues / Discussions – and comments where applicable</li>
+<li>Pull / Merge Requests</li>
+<li>Tags / Releases</li>
+</ul>
+<p>At the presentation level, the platforms must then provide various ‘inboxes’ and display them in the appropriate contexts, e.g. notifications or issue discussions for users.</p>
+<p>Meanwhile, the platforms also offer additional features such as simple project management or boards, and documentation or wikis. But let’s start with the basics first.</p>
+<p>The idea isn’t new; there’s <a href="https://forgefed.org/" target="_blank" rel="noopener noreferrer">ForgeFed</a>, for example, but the integration has been fairly limited so far. Instead, the focus tends to be on hype topics such as &ldquo;Agentic AI&rdquo;. These certainly have their place, particularly when you need to attract customers using buzzwords (e.g. organisations as). But you won’t reach (informal open-source) communities that way.</p>
+<p><strong>Anyone who wants a future of open-source collaboration free from dependence on Big Tech must not treat interconnectivity as a mere additional feature, but must recognise it as an infrastructural necessity.</strong></p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Wikidata entries</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q16639197" title="Q16639197" rel="related">Wikidata entry: Q16639197</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q27986619" title="Mastodon" rel="related">Wikidata entry: Mastodon</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q30325419" title="Fediverse" rel="related">Wikidata entry: Fediverse</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q364" title="GitHub" rel="related">Wikidata entry: GitHub</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q40463886" title="ActivityPub" rel="related">Wikidata entry: ActivityPub</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Cite this article
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2026)</span>: <span class="cite-title">Fediverse integration for development platforms</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], Apr 30, 2026. Online publication: <a class="cite-link" href="https://christianmahnke.de/post/developer-platforms-fediverse/">https://christianmahnke.de/post/developer-platforms-fediverse/</a>.
+    </div><a class="bibtex-download" href="https://christianmahnke.de/en/post/developer-platforms-fediverse/citation.bib" title="Download as BibTex">Download as BibTex</a></div>
+</details>
+</div><div class="tags-heading">Tags</div>
+        <div class="tags"><a href="https://christianmahnke.de/en/tags/SoftwareDevelopment" title="Software development">#Software development</a><a href="https://christianmahnke.de/en/tags/ProjectIdea" title="Project idea">#Project idea</a><a href="https://christianmahnke.de/en/tags/GitHub" title="GitHub">#GitHub</a><a href="https://christianmahnke.de/en/tags/DigitalSovereignty" title="Digital Sovereignty">#Digital Sovereignty</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Related posts:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/en/post/software-metadata/">Metadaten für Software</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/academic-software-publishing/">AI and software &#34;development&#34;</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/ai-software-renovation/">AI - Software Refactoring</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/npm-org/">NPM Organisation</a></li>
+        
+          <li><a href="https://christianmahnke.de/en/post/rollup-plugin-wasm-brotli/">Rollup plugin für WASM Inlining</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </main><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h2 class="footer-nav">Navigation</h2><nav class="top" aria-label="Footer navigation" data-menu-open-label="Open main navigation" data-menu-close-label="Close main navigation">
+    
+    <input type="checkbox" id="footer-menu-toggle" aria-label="Footer navigation" />
+    <label class="menu-button float-right" for="footer-menu-toggle"><i class="menu-icon" aria-hidden="true"></i></label>
+    <ul id="footer-main-navigation-list" class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/en/" title="Focuses">Focuses<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/en/collections" title="Collections">Collections<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/en/post" title="Blog" aria-current="page">Blog<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/en/links" title="Links">Links<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/en/about" title="About">About<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/en/search/" method="get" class="search-form" id="footer-menu-search-form"><input name="q" type="text" placeholder="Search" aria-label="Search" class="search-input" id="footer-menu-search-input"><button type="submit" class="search-button" id="footer-menu-search-button" aria-label="Search"><i class="search-icon" aria-hidden="true"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/post/developer-platforms-fediverse/" title="Deutsch" hreflang="de" lang="de">Deutsch</a>
+            </li></ul>
+  </nav></div>
+            </div>
+            <div class="link-wrapper">
+                <h2 class="footer-links">Links</h2>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" rel="me" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" rel="me" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" rel="me" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" rel="me" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" rel="me" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li><li class="footer-link"><a href="http://npmjs.com/org/projektemacher"  target="_blank" title="NPM" style="display: none;"><div class="link-image npm"></div>NPM</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h2 class="footer-contact">Contact</h2><div class="footer-contact"><h3 class="contact-link">Mail</h3><a href="mailto:mail@christianmahnke.de" title="Send eMail">mail@christianmahnke.de</a></div><h2 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Privacy policy">Privacy policy</a></h2>
+                <p class="footer-title"><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</p>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    "use strict";(()=>{window.addEventListener("DOMContentLoaded",t=>{document.querySelector(".type-text")&&!document.querySelector(".subsection")?window.enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&window.enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop")?.removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head")?.classList.add("show-top-button"):document.querySelector("#head")?.classList.remove("show-top-button")})})});})();
+
+</script>
+</div>
+    </body>
+ </html>

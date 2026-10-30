@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="de">
+
+  <head>
+    <meta charset="utf-8">
+    <title>KI-Softwarerenovierung · Christian Mahnke</title>
+    <meta name="author" content="Christian Mahnke">
+  <meta name="dc.creator" content="Christian Mahnke">
+  <link rel="me" href="https://orcid.org/0009-0003-1361-4159">
+
+
+<meta http-equiv="Content-Language" content="de">
+<meta name="dc.type" content="Text">
+<meta name="description" content="StoryMapJS aktualisiert">
+<meta property="og:type" content="article" /><meta property="og:url" content="https://christianmahnke.de/post/ai-software-renovation/" />
+  <meta property="og:title" content="KI-Softwarerenovierung · Christian Mahnke" />
+<meta property="og:image" content="https://christianmahnke.de/post/ai-software-renovation/ogPreview.de_hu_e20b1b9d724201f9.webp" />
+  <meta property="og:image:type" content="image/webp" /><meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+
+
+<meta name="keywords" content=", Software Entwicklung, Museum, KI, JavaScript, Agentenbasierte Programmierung"><meta name="dc.subject" content="Software Entwicklung"><meta name="dc.subject" content="Museum"><meta name="dc.subject" content="KI"><meta name="dc.subject" content="JavaScript"><meta name="dc.subject" content="Agentenbasierte Programmierung">
+<meta name="generator" content="Hugo 0.168.0">
+<meta name="projektemacher.org:build-date" content="2026-10-30 07:26:53.752617537 &#43;0000 UTC m=&#43;1.982736220"><meta name="projektemacher.org:stats" content="{&#34;count&#34;:&#34;974&#34;,&#34;latest&#34;:&#34;2026-12-31T11:33:44&#43;02:00&#34;}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+<link rel="icon" type="image/svg+xml" href="https://christianmahnke.de/images/cm.svg">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <meta name="theme-color" content="#701611"><link rel="preload" href="https://christianmahnke.de/fonts/league-spartan-vietnamese-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/league-spartan-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/league-spartan-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/poiret-one-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/poiret-one-latin-ext-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/poiret-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/josefin-sans-vietnamese-wght-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/josefin-sans-latin-ext-wght-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/josefin-sans-latin-wght-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/josefin-sans-vietnamese-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/josefin-sans-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/josefin-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-vietnamese-standard-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-latin-ext-standard-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-vietnamese-wdth-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-latin-ext-wdth-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-vietnamese-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://christianmahnke.de/fonts/inconsolata-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link href="https://christianmahnke.de/css/3dcde2e700baa65d3814003bfc8fa7f9.min.c617dcca39cff820b826cba83acf79347ca9c88e4665b69bf60170abcda01b31.css" rel="stylesheet" integrity="sha256-xhfcyjnP&#43;CC4JsuoOs95NHypyI5GZbab9gFwq82gGzE=">
+<script src="https://christianmahnke.de/js/main.50a7290dbe337ba64c1a4a03c3bf361ee619f7b37acba421837c5c0cfa7a7b88.js" integrity="sha256-UKcpDb4ze6ZMGkoDw782HuYZ97N6y6Qhg3xcDPp6e4g=" crossorigin="anonymous" type="module"></script><link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://christianmahnke.de/images/favicon-16.png" sizes="16x16">
+    
+
+    <link rel="alternate" type="text/bibtex" href="https://christianmahnke.de/post/ai-software-renovation/citation.bib" title="Christian Mahnke" />
+    <link rel="linkset" type="application/linkset+json" href="https://christianmahnke.de/post/ai-software-renovation/linkset.json" title="Christian Mahnke" />
+    <link rel="canonical" href="https://christianmahnke.de/post/ai-software-renovation/"><script type="application/ld+json">{"@context":"http://schema.org","@id":"https://christianmahnke.de/post/ai-software-renovation/","@type":"BlogPosting","about":[{"@id":"http://www.wikidata.org/entity/Q11660","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"künstliche Intelligenz"},{"@id":"http://www.wikidata.org/entity/Q2005","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"JavaScript"},{"@id":"http://www.wikidata.org/entity/Q33506","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Museum"},{"@id":"http://www.wikidata.org/entity/Q638608","@type":"Thing","identifier":{"@type":"PropertyValue","propertyID":"projektemacher","value":"tag"},"name":"Softwareentwicklung"},{"@id":"http://www.wikidata.org/entity/Q112061919","@type":"Thing","name":"Forum Wissen"},{"@id":"http://www.wikidata.org/entity/Q126084602","@type":"Thing","name":"StoryMapJS"},{"@id":"http://www.wikidata.org/entity/Q140646955","@type":"Thing","name":"OpenCode"},{"@id":"http://www.wikidata.org/entity/Q1496362","@type":"Thing","name":"Gaußsche Landesaufnahme"},{"@id":"http://www.wikidata.org/entity/Q281876","@type":"Thing","name":"YAML"},{"@id":"http://www.wikidata.org/entity/Q29584754","@type":"Thing","name":"Verlegen von Software"},{"@id":"http://www.wikidata.org/entity/Q5246046","@type":"Thing","name":"wissenschaftliches Publizieren"},{"@id":"http://www.wikidata.org/entity/Q6722","@type":"Thing","name":"Carl Friedrich Gauß"}],"author":{"@id":"https://christianmahnke.de/#person","@type":"Person","name":"Christian Mahnke","url":"https://christianmahnke.de/"},"dateModified":"2026-10-21","datePublished":"2026-09-21","description":"StoryMapJS aktualisiert","headline":"KI-Softwarerenovierung","inLanguage":"de","isPartOf":{"@id":"https://christianmahnke.de/post","@type":"Blog","name":"Christian Mahnke Blog"},"keywords":["SoftwareDevelopment","Museum","AI","JavaScript","AgenticCoding"],"name":"KI-Softwarerenovierung","url":"https://christianmahnke.de/post/ai-software-renovation/","workTranslation":[{"@id":"https://christianmahnke.de/en/post/ai-software-renovation/","@type":"CreativeWork","inLanguage":"en","name":"AI - Software Refactoring","url":"https://christianmahnke.de/en/post/ai-software-renovation/"}]}
+</script>
+<link href="https://static.projektemacher.org/services/webmentions/webmention.php" rel="webmention" /><link href="https://static.projektemacher.org/services/webmentions/webmention.php" rel="pingback" /></head><body class="section-post dir-postai-software-renovation blog  ">
+      <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+      <span id="top"></span>
+      <div class="page-wrapper">
+        <main class="main" id="main">
+          <header class="header header-main" id="head" data-sticky-class="sticky-top">
+    <div class="wrapper">
+        <label class="menu-open" for="menu-toggle">
+            <i class="menu-open-icon"></i>
+        </label>
+        <div class="menu">
+            <nav class="top top-menu" aria-label="Hauptnavigation" data-menu-open-label="Hauptnavigation öffnen" data-menu-close-label="Hauptnavigation schließen">
+    
+    <input type="checkbox" id="menu-toggle" aria-label="Hauptnavigation" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="menu-icon" aria-hidden="true"></i></label>
+    <ul id="main-navigation-list" class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog" aria-current="page">Blog<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="menu-search-form"><input name="q" type="text" placeholder="Suche" aria-label="Suche" class="search-input" id="menu-search-input"><button type="submit" class="search-button" id="menu-search-button" aria-label="Suche"><i class="search-icon" aria-hidden="true"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/ai-software-renovation/" title="English" hreflang="en" lang="en">English</a>
+            </li></ul>
+  </nav><script type="module" src="https://christianmahnke.de/js/menu.4e558d33a76c185c2b5983d672cb89d555216f73d29034201829d5d05982cdd1.js" integrity="sha256-TlWNM6dsGFwrWYPWcsuJ1VUhb3PSkDQgGCnV0FmCzdE="></script>
+        </div>
+        <div class="home-link">
+            <a href="https://christianmahnke.de/" aria-label="Christian Mahnke"><span class="header-title" aria-hidden="true">Christian Mahnke</span></a>
+        </div></div>
+    <div class="header-spacer"></div>
+    <a href="#top" aria-label="Zum Seitenanfang">
+        <div class="backToTop" aria-hidden="true"></div>
+    </a>
+</header>
+<div class="content-container single" id="main-content">
+    <div class="post ">
+  <div class="content">
+      <h1 class="post-title">KI-Softwarerenovierung</h1><div class="post-description">StoryMapJS aktualisiert</div><div class="date">
+          <time class="post-date" datetime="2026-09-21T15:52:22&#43;02:00">Montag, 21. September 2026</time>
+        </div><div class="update">
+            <div class="update-label">Aktualisiert am</div>
+            <time class="date" datetime="2026-10-21T00:00:00&#43;02:00">Mittwoch, 21. Oktober 2026</time>
+          </div><div class="post-body"><p>2027 ist das <a href="https://www.uni-goettingen.de/de/3240.html?id=8224" target="_blank" rel="noopener noreferrer">Gauß-Jahr</a>&hellip;</p>
+<p>&hellip;und dafür soll es im <a href="https://forum-wissen.de/" target="_blank" rel="noopener noreferrer">Forum Wissen</a> eine Medienstation geben, die den Weg von Carl Friedrich Gauß im Rahmen der 
+        
+          
+        <a data-wikidata-entity="Q1496362" href="https://de.wikipedia.org/wiki/Gau%C3%9Fsche_Landesaufnahme" target="_blank" rel="noopener noreferrer">Gaußsche Landesaufnahme</a> nachzeichnet.</p>
+<p>Die Wahl fiel auf <a data-wikidata-entity="Q126084602" href="https://storymap.knightlab.com/" target="_blank" rel="noopener noreferrer">StoryMapJS</a>, da diese Anwendung fast alle Anforderungen an die geplante Geschichte erfüllte. Allerdings gab es auch ein paar Lücken:</p>
+<ul>
+<li>Da aber die Medienstationen normalerweise relativ eingeschränkt sind, konnte ich auf keine extern gehostete Software einsetzen.</li>
+<li>Mehrere Kartenlayer (OpenStreetmap Basiskarte), zwei Layer historisches Kartenmaterial, einer davon mit Transparenz.</li>
+</ul>
+<p>Daher war dieses Projekt eine gute Gelegenheit einmal meine Ideen aus dem letzten Jahr über <a href="https://christianmahnke.de/post/academic-software-publishing/">Ki-gestützte Software Renovierung</a> auszuprobieren. Und mit den massiven Fortschritten bei den kostengünstigen Modellen für Agentic Coding seit damals waren auch einige Verbesserungen möglich.</p>
+<p><strong>Das Projekt wurde mit <a data-wikidata-entity="Q140646955" href="https://opencode.ai/" target="_blank" rel="noopener noreferrer">OpenCode</a> und <a href="https://huggingface.co/zai-org/GLM-5.3-Flash" target="_blank" rel="noopener noreferrer">GLM 5.3 Flash</a> durchgeführt.</strong></p>
+<h2 id="schritte">Schritte</h2>
+<p>Die ersten Schritte bestanden darin die grundlegende Infrastruktur auf einen aktuellen Stand zu heben. Dafür wurden einige moderne Best Practises eingeführt:</p>
+<ul>
+<li>TypeScript statt JavaScript</li>
+<li>Keine Geheimnisse im Repository, kein Tracking</li>
+<li>Jeweils moderne Standards, keine Workarounds für abgekündigte Software</li>
+<li>Und viele mehr - siehe Prompts</li>
+</ul>
+<p>Auf Aktionen die eher kontrovers sein könnten (&ldquo;Opinionated&rdquo;) wie spezifische Frameworks wie React oder Lit (Webcomponents) wurde explizit verzichtet.</p>
+<h3 id="der-anfang">Der Anfang</h3>
+<p>Erstmal die Reduktion der Oberfläche (wir brauchen nur den Viewer) sowie Modernisierung der Infrastruktur</p>
+
+<details>
+  <summary>Prompt</summary>
+  <pre tabindex="0"><code>We need to restructure and renovate this project!
+* Ignore agents.md.
+* At the start, create a Playwright test suite covering the examples completely. After the migration, validate if the new structured code is valid.
+* Remove the backend infrastructure, only keep the viewer.
+* Remove the staging and add GitHub Actions for linting and packaging.
+  * Add a Dependabot config.
+* Add Vite as preview and as a replacement for Webpack (don&#39;t build IIFE or other outdated package formats like UMD, AMD).
+* The new structure should follow a default Vite project.
+* Migrate the tests to Playwright (robot_tests) and Vitest.
+* Add ESLint and Stylelint.
+* Convert JavaScript to TypeScript (V6), make sure everything works with updated dependencies (use `ncu`), no Common JS allowed!
+* The target of TypeScript should be at least ESM 2022.
+* Remove code for browsers from before 2022.
+* Replace Leaflet with OpenLayers.
+  * Make sure you get the line connecting the markers right. Animate the color change with the animation (when the transition is half way thru, half of the line is colored), make sure that the line animation runs backwards (retracts) when the back button is used.
+* Replace Zoomify with IIIF Image API (use OpenLayers for display), integrate OpenLayers Zoomify support for backwards compatibility, but don&#39;t document or advertise.
+* Convert Less to SASS (use SASS only, not postcss-scss), replace vendor specific properties. Make sure to replace SASS &#39;@import&#39; to &#39;@use&#39; and fix other SASS warnings.
+* All fonts should be fetched from NPM and embedded using SCSS (with @font-source-utils/scss).
+* Remove outdated font formats (SVG, EOT).
+* Create a JSON schema and a validation script for storymap.json, check also on load, report all errors to the JavaScript console.
+* Remove all compiled stuff from the repo (compiled/), also AWS_HOSTING, GITHUB_HOSTING and BEST_PRACTICES.
+* After each step, commit to the working Git branch.
+* Remove examples with unclear copyright issues or known IPs (like Game of Thrones or Iron Maiden).
+* Add an important note to the README that this is an unofficial/unapproved fork of the original repo. This is a proof of concept for an AI based renovation using the Model GLM 5.3 Flash.
+
+After each step, commit to the working Git branch. Use subagents
+</code></pre></details>
+
+<p>Darauf aufbauend, können einige Schritte weiter ausgefeilt werden:</p>
+
+<details>
+  <summary>Prompt</summary>
+  <pre tabindex="0"><code>Since we now have modern structures for validation and linting, we should use them:
+* Add prettier and run it
+* Make sure there are no disabled Stylelint rules, fix all resulting errors
+* Make sure all functions have the right Type annotations
+* Remove unnecessary (that aren&#39;t passed around) const definitions for functions (use normal definitions instead), it&#39;s bad style!
+* Check if there are vendor functionalities that should be replaced with external dependencies from NPM. Make sure they are maintained (updated in the last two years), and that Typescript types are available, if not, consider alternatives.
+  * Check: https://github.com/rodrigopolo/minEmoji
+  * Check: https://github.com/ded/morpheus.
+* Make sure JavaScript 2022 features are used where possible, remove polyfills for which native support existed in 2022.
+  * Check if there are modern approaches to the classMixin things (look at https://www.typescriptlang.org/docs/handbook/mixins.html), if so, use them!
+  * Try to remove things from the global window scope, if possible!
+* Make sure to replace SASS &#39;@import&#39; to &#39;@use&#39; to avoid SASS warnings, make sure that import order changes result in the same output stylesheets like before.
+* Check if there are references to external images, icons, etc. for the UI (including TS code and SCSS) and add them to this repository (if the licence permits), don&#39;t check the examples!
+* Remove deprecated code (like meant for older versions).
+* Review the code for obvious bugs and fix them.
+* Remove Google Tag Manager
+* Remove vendor specific CSS property manipulation from src/Dom/Dom.ts.
+* Check if browser detection logic in src/core/Browser.ts is still needed, if not, remove the unneeded parts.
+* Add a fullscreen button, make it configurable via options.
+* Remove all IIFE constructs (also ), if possible
+* Provide a minified build
+* Remove all media type sources that don&#39;t work anymore, use the examples to test, add a placeholder containing the original URL to the fixed examples.
+* Show a vertical scroll bar on desktop if the slide content overflows. If the device is touch enabled, make it wider and style it matching the rest of the application.
+* Replace CSS filters containing &#34;progid:DXImageTransform.&#34; and other outdated proprietary stuff with the real thing, remove all compatibility hacks for specific browsers
+* Remove code only for browsers before 2022 from core/Load.
+* Check the codebase for callbacks that could be replaced with promises, async, await:
+
+After each step, commit to the working Git branch. Use subagents
+</code></pre></details>
+
+<p>Und dann Schritte, um die Nachnutzbarkeit zu verbessern&hellip;</p>
+
+<details>
+  <summary>Prompt</summary>
+  <pre tabindex="0"><code>Now, we should improve reusability:
+* Make sure StoryMap handles resizes and is reactive
+* Create a constructor to StoryMap, where I can pass an element to attach to, the source file as URL or a JSON structure, and all possible options, also add it to the usage documentation and use it in index.html
+* Make sure to expose the OpenLayers options can be passed in the constructor (make sure a passed map element is replaced by the real one).
+  * Add StoryMap options to disable: map, overview, back to the beginning, and full screen
+  * Make sure the examples in contrib still work (with the ES6 version, no IIFE).
+* Make sure map options are exposed by StoryMap to be changed at runtime
+* Add JSdoc to the public API, check if all other docs are aligned with the current state
+* Create a migration guide from the original StoryMap (still in the master branch) to this version:
+* Make sure that the current slide is always part of the URL (by adding a hash identifier).
+* Document how to use custom HTML can be used in the slide content
+* Make it possible to limit the map to a bbox:
+  * Make sure that the background of the slide content isn&#39;t incorporated in the bbox size calculation if this background is a solid color. In that case:
+* Add an option that would each inclusion of an external service would ask for permission due to GDPR.
+  * Use https://github.com/js-cookie/js-cookie to save the consent state locally.
+* Remove the bundled map_access_token and Flickr key.
+* Make sure that the current slide is always part of the URL (by adding a hash identifier).
+* Check if code from Animation/Ease is provided by external modules, can we replace it by dependencies?
+* Make sure we bundle the TS sources in the NPM package!
+* Check for bugs, unused code, and if all docs and examples are consistent with the current implementation:
+* Change the URLs in package.json to this fork, remove the private, add the org &#39;@projektemacher&#39; to the name, add a job to deploy on NPM and GitHub packages (we need to change the org to &#39;@cmahnke&#39; during this deployment). Make sure all GitHub Actions run on the current branch!
+* Make sure the NPM package ship types (using unplugin-dts).
+* Create issue templates (Bug + Feature), also add a category for backward compatibility with the original KnightLab story map, add a field for the storymap.json, mention embed page on github for testing.
+* Add constructor options to disable: map, overview, back to the beginning, and full screen.
+
+After each step, commit to the working Git branch. Use subagents
+</code></pre></details>
+
+<p>Und dann die bestehenden Issues, hier war das Ergebnis eine Liste die dann in Gruppen abgearbeitet werden konnte</p>
+
+<details>
+  <summary>Prompt</summary>
+  <pre tabindex="0"><code>The next phase is to eliminate known bugs.
+* Read every known issue (bugs, enhancements, uncategorised) from: https://github.com/NUKnightLab/StoryMapJS/issues
+* Check if they only apply to the viewer and are unrelated to legacy things like zoomify, and don&#39;t relate to backend stuff like hosting, infrastructures, imports, etc...
+* Create Playwright tests to check if they still apply, if so, write them (with bug ID and test file name) in a Markdown file (KNOWN_ISSUES.md).
+</code></pre></details>
+
+<p>Und dann noch etwas Webseiten-Infrastruktur:</p>
+
+<details>
+  <summary>Prompt</summary>
+  <pre tabindex="0"><code>* Change index.html (and other pages) to make it look like https://storymap.knightlab.com/, get the CSS, but make sure it&#39;s not mixed with the CSS of the StoryMap JS styles, the typography and anything else should look like the given page.
+  * Use the &#34;US WESTWARD EXPANSION&#34; from https://storymap.knightlab.com/ as demo on index.html, make sure it matches as exactly as possible (including CSS and behaviour).
+  * On the page, integrate links (add to navbar-secondary) to HTML Version of README, the migration guide, and the IIIF documentation (also apply the style from the page), as well as advances and help (if they are part of this repository).
+  * Create a section linking to the examples (should look like this: https://storymap.knightlab.com/#examples).
+  * If there are logos of the original authors / institutions (Knight Lab / Northwestern University), add a greyscale filter to them, and change the opacity to .5.
+  * Build JSDocs and add them to the menu in index.html, consider reusing the stylesheet if easily possible!
+* Make sure index.html is deployed using GitHub Pages (using a GH Pages branch).
+
+After each step, commit to the working Git branch. Use subagents
+</code></pre></details>
+
+<h2 id="nacharbeiten">Nacharbeiten</h2>
+<p>Grundsätzlich war es nach diesen Schritten aber nicht getan. Sie waren vielmehr eine Vorbereitung für weitere, eher kleinteilige Schritte, die sich daher nicht wirklich als kompakte Prompts ausdrücken lassen. Diese reichten von visuellen (UI) Fehlerbehebungen über kleinere bis mittlere Verbesserungen der Linien-Animation bis zur Demo-Seite (inklusive der Verbesserung der Dokumentation). Dazu kamen größere Verbesserungen, so hat der Agent alle einfachen bis mittleren Bugs und Verbesserungen aus dem <a href="https://github.com/NUKnightLab/StoryMapJS/issues" target="_blank" rel="noopener noreferrer">Bugtracker</a> behoben bzw. implementiert, falls sie noch aktuell waren. Beispiele:</p>
+
+<details>
+  <summary>Prompt</summary>
+  <pre tabindex="0"><code>* Make sure that the line animation runs backwards (retract) if the back button is used.
+* Transparent backgrounds should be set using RGBA colours, not filters!
+Try to preload at least the next slide, currently, loading external media types seems to slow down the animation!
+* On desktop touch devices, show a bouncing downward arrow if the slide box overflows (center), hide it after the first scroll. Make sure that the touch scroll bar has a better contrast and is wider (wide enough for easy touch).
+
+* Make sure the UI is reactive!
+* Make sure the demo looks like this: (https://uploads.knightlab.com/storymapjs/fe78caa5c21790f56f0bb53cba313ab9/the-most-expensive-transfers-in-football-history/index.html).
+* Use the OSM basemap (from https://tiles.openfreemap.org/styles/bright) and [OpenFreeMap](https://openfreemap.org/) as free tile source
+</code></pre></details>
+
+<h2 id="offene-punkte">Offene Punkte</h2>
+<p>Zwei Features sind bisher offen geblieben, da der Bedarf dafür bisher nicht gegeben war:</p>
+<ul>
+<li>Ein IIIF-Dialekt als internes Format</li>
+<li>Die Verlagerung der Karten-Marker in OpenLayers (als Layer?). Dies würde es beispielsweise erlauben, das Clustering von OpenLayers zu verwenden.</li>
+</ul>
+<h2 id="ergebnis">Ergebnis:</h2>
+<ul>
+<li>Der renovierte Code ist nun auf GitHub verfügbar.</li>
+<li>Viele der offenen <a href="https://github.com/NUKnightLab/StoryMapJS/issues" target="_blank" rel="noopener noreferrer">Probleme der Originalimplementierung</a> konnten behoben werden.</li>
+<li>Es existiert eine <a href="https://cmahnke.github.io/StoryMapJS/" target="_blank" rel="noopener noreferrer">Demo-Seite</a>.</li>
+<li>Zusätzlich kann der Code über <a href="https://www.npmjs.com/package/@projektemacher/storymapjs" target="_blank" rel="noopener noreferrer">NPM bezogen werden</a>.</li>
+</ul>
+<p>Die Anwendung für die Ausstellung kann dann nach der Eröffnung im Forum Wissen bewundert werden&hellip;</p>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>Insgesamt gibt es auch Erkenntnisse, die sich sicher auch auf andere Projekte dieser Art übertragen lassen:</p>
+<ul>
+<li>Ab einem gewissen Projekt-Umfang ist es unrealistisch, auch nur mit manuellen Tests an der Benutzeroberfläche hinterherzukommen!
+<ul>
+<li>Daher muss das automatisiert werden, aber Vorsicht, gerade beim Layout (bzw. alles, was mit CSS zu tun hat), sind LLMs derzeit recht schlampig. Es gibt sogar noch welche, die nicht mal &ldquo;sehen&rdquo; können!</li>
+</ul>
+</li>
+<li>Strukturelle Entscheidungen sollten dokumentiert sein, damit der Agent nicht häufiger gleiche oder ähnliche Entscheidungen abfragt (besonders, wenn der Kontext voll läuft).</li>
+<li>Wenn man die jeweilige Problemstellung gut (strukturell) eingrenzen kann, lassen sich auch mehrere Agenten auf einer Code-Basis einsetzen.</li>
+</ul>
+<h1 id="update-71026">Update 7.10.26</h1>
+<p>Inzwischen ist die Version 0.11.0 <a href="https://www.npmjs.com/package/@projektemacher/storymapjs" target="_blank" rel="noopener noreferrer">veröffentlicht</a>.</p>
+<h1 id="update-211026">Update 21.10.26</h1>
+<p>In den letzten Tagen habe ich ein weiteres Renovierungsprojekt gestartet: meine eigenen Blogprojekte. Durch verschiedene Hugo-Updates sind in den letzten Jahren große Mengen an technischen Schulden aufgelaufen, die langsam mal beseitigt werden wollten. Dabei sind auch deutliche Beschränkungen für solche Renovierungsprojekte aufgefallen: Während sich der Code oben in der Regel einfach durch Interpreter und Tests validieren ließ, sind strukturierte Daten wie z. B. YAML eine völlig andere Problemklasse (wobei das Problem in diesem Fall auch noch durch die Hugo-Frontmatter-Struktur begünstigt wurde: Es gibt keinen Validator). Am Ende war es einfacher, die KI zu benutzen, um Migrationsskripte zu schreiben, als sie es selbst machen lassen.</p></div>
+  </div><div class="post-footer"><ul class="wikidata-summary">
+    <div class="wikidata-title">Wikidata-Einträge</div><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q112061919" title="Forum Wissen" rel="related">Wikidata-Eintrag: Forum Wissen</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q126084602" title="StoryMapJS" rel="related">Wikidata-Eintrag: StoryMapJS</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q140646955" title="OpenCode" rel="related">Wikidata-Eintrag: OpenCode</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q1496362" title="Gaußsche Landesaufnahme" rel="related">Wikidata-Eintrag: Gaußsche Landesaufnahme</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q281876" title="YAML" rel="related">Wikidata-Eintrag: YAML</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q29584754" title="Verlegen von Software" rel="related">Wikidata-Eintrag: Verlegen von Software</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q5246046" title="wissenschaftliches Publizieren" rel="related">Wikidata-Eintrag: wissenschaftliches Publizieren</a>
+      </li><li class="wikidata-entry"><a href="http://www.wikidata.org/entity/Q6722" title="Carl Friedrich Gauß" rel="related">Wikidata-Eintrag: Carl Friedrich Gauß</a>
+      </li></ul><div class="spacer">
+      </div>
+      <div class="meta"><div class="cite-container"><details class="cite">
+  <summary class="cite_summary">
+    Diesen Beitrag zitieren
+  </summary><div class="cite-body">
+    <div class="cite-proposal">
+      <span class="cite-author">Mahnke, Christian</span> <span class="cite-year">(2026)</span>: <span class="cite-title">KI-Softwarerenovierung</span>. In:  <a class="cite-source-link" href="https://christianmahnke.de/">ChristianMahnke.de</a> [Weblog], 21.09.2026. Online-Publikation: <a class="cite-link" href="https://christianmahnke.de/post/ai-software-renovation/">https://christianmahnke.de/post/ai-software-renovation/</a>.
+    </div><a class="bibtex-download" href="https://christianmahnke.de/post/ai-software-renovation/citation.bib" title="Als BibTex herunterladen">Als BibTex herunterladen</a></div>
+</details>
+</div><div class="tags-heading">Schlagworte</div>
+        <div class="tags"><a href="https://christianmahnke.de/tags/SoftwareDevelopment" title="Software Entwicklung">#Software Entwicklung</a><a href="https://christianmahnke.de/tags/Museum" title="Museum">#Museum</a><a href="https://christianmahnke.de/tags/AI" title="KI">#KI</a><a href="https://christianmahnke.de/tags/JavaScript" title="JavaScript">#JavaScript</a><a href="https://christianmahnke.de/tags/AgenticCoding" title="Agentenbasierte Programmierung">#Agentenbasierte Programmierung</a></div>
+      </div>
+    </div></div><div class="related-posts">
+    
+      <div class="related-header">Verwandte Beiträge:</div>
+      <ul>
+        
+          <li><a href="https://christianmahnke.de/post/npm-org/">NPM Organisation</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/rollup-plugin-wasm-brotli/">Rollup-Plugin für WASM Inlining</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/wasm-dx/">Meine Erfahrungen mit WASM</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/software-metadata/">Metadaten für Software</a></li>
+        
+          <li><a href="https://christianmahnke.de/post/vite-git-symlink-plugin/">Vite und Git Symlink-Dateien</a></li>
+        
+      </ul>
+    
+  </div>
+  </div>
+
+        </main><footer class="footer" role="contentinfo">
+    <div class="spacer"></div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="menu-wrapper">
+                <div class="footer-nav">
+                    <h2 class="footer-nav">Navigation</h2><nav class="top" aria-label="Fußzeilen-Navigation" data-menu-open-label="Hauptnavigation öffnen" data-menu-close-label="Hauptnavigation schließen">
+    
+    <input type="checkbox" id="footer-menu-toggle" aria-label="Fußzeilen-Navigation" />
+    <label class="menu-button float-right" for="footer-menu-toggle"><i class="menu-icon" aria-hidden="true"></i></label>
+    <ul id="footer-main-navigation-list" class="navigation-list"><li class="navigation-item navto-"><a class="navigation-link" href="https://christianmahnke.de/" title="Schwerpunkte">Schwerpunkte<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-collections"><a class="navigation-link" href="https://christianmahnke.de/collections" title="Sammlungen">Sammlungen<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item current navto-post"><a class="navigation-link" href="https://christianmahnke.de/post" title="Blog" aria-current="page">Blog<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-links"><a class="navigation-link" href="https://christianmahnke.de/links" title="Links">Links<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-about"><a class="navigation-link" href="https://christianmahnke.de/about" title="Über">Über<i class="link-icon" aria-hidden="true"></i></a></li><li class="navigation-item navto-search"><form action="https://christianmahnke.de/search/" method="get" class="search-form" id="footer-menu-search-form"><input name="q" type="text" placeholder="Suche" aria-label="Suche" class="search-input" id="footer-menu-search-input"><button type="submit" class="search-button" id="footer-menu-search-button" aria-label="Suche"><i class="search-icon" aria-hidden="true"></i></button></form></li><li class="navigation-item lang">
+              <a href="https://christianmahnke.de/en/post/ai-software-renovation/" title="English" hreflang="en" lang="en">English</a>
+            </li></ul>
+  </nav></div>
+            </div>
+            <div class="link-wrapper">
+                <h2 class="footer-links">Links</h2>
+                <ul class="footer-links"><li class="footer-link"><a href="https://github.com/cmahnke" rel="me" target="_blank" title="GitHub"><div class="link-image github"></div>GitHub</a></li><li class="footer-link"><a href="https://projektemacher.org/" target="_blank" title="Projektemacher"><img class="link-image projektemacher" alt="Projektemacher Logo" src="https://christianmahnke.de/images/laborant.svg">Projektemacher</a></li><li class="footer-link"><a href="https://orcid.org/0009-0003-1361-4159" rel="me" target="_blank" title="ORCID"><div class="link-image orcid"></div>0009-0003-1361-4159</a></li><li class="footer-link"><a href="https://www.linkedin.com/in/cmahnke" rel="me" target="_blank" title="LinkedIn"><div class="link-image linkedin"></div>LinkedIn</a></li><li class="footer-link"><a href="https://www.librarything.com/profile/cmahnke" target="_blank" title="LibraryThing"><div class="link-image librarything"></div>LibraryThing</a></li><li class="footer-link"><a href="https://openbiblio.social/@cmahnke" rel="me" target="_blank" title="Mastodon"><div class="link-image mastodon"></div>@cmahnke@openbiblio.social</a></li><li class="footer-link"><a href="https://www.instagram.com/projektemacher/" target="_blank" title="Instagram" style="display: none;"><div class="link-image instagram"></div>Instagram</a></li><li class="footer-link"><a href="http://www.wikidata.org/entity/Q137668638" rel="me" target="_blank" title="Wikidata" style="display: none;"><div class="link-image wikidata"></div>Wikidata</a></li><li class="footer-link"><a href="https://huggingface.co/cmahnke" rel="me" target="_blank" title="Hugging Face"><div class="link-image hf"></div>Hugging Face</a></li><li class="footer-link"><a href="https://term.museum-digital.de/md-de/persinst/322830" target="_blank" title="museum:digital" style="display: none;"><div class="link-image md-term"></div>museum:digital</a></li><li class="footer-link"><a href="http://npmjs.com/org/projektemacher"  target="_blank" title="NPM" style="display: none;"><div class="link-image npm"></div>NPM</a></li></ul>
+            </div>
+            <div class="footer-placeholder"></div>
+            <div class="contact-wrapper">
+                <h2 class="footer-contact">Kontakt</h2><div class="footer-contact"><h3 class="contact-link">Mail</h3><a href="mailto:mail@christianmahnke.de" title="E-Mail senden">mail@christianmahnke.de</a></div><h2 class="footer-privacy"><a href="https://christianmahnke.de/privacy" title="Datenschutzerklärung">Datenschutzerklärung</a></h2>
+                <p class="footer-title"><img class="footer-icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm-black.svg">Christian Mahnke</p>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"><a href="https://christianmahnke.de">&copy; MMXX - MMXXVI Christian Mahnke</a>
+        <span class="icons-right"><a href="https://projektemacher.org"><img class="icon" alt="Projektemacher.org" src="https://christianmahnke.de/images/cm.svg"></a></span>
+    </div>
+
+</footer>
+
+
+<script type="text/javascript">
+    "use strict";(()=>{window.addEventListener("DOMContentLoaded",t=>{document.querySelector(".type-text")&&!document.querySelector(".subsection")?window.enterView({selector:".type-text",enter:function(e){e.classList.add("show")},offset:.25,once:!0}):document.querySelector(".type-text")&&document.querySelectorAll(".type-text").forEach(e=>e.classList.add("show","instant")),document.querySelector(".iframe-wrapper")&&window.enterView({selector:".iframe-wrapper",enter:function(e){e.classList.add("show")},offset:.45,once:!0}),document.addEventListener("DOMContentLoaded",function(){document.querySelector(".backToTop")?.removeAttribute("href"),document.addEventListener("scroll",function(){window.scrollY>window.innerHeight?document.querySelector("#head")?.classList.add("show-top-button"):document.querySelector("#head")?.classList.remove("show-top-button")})})});})();
+
+</script>
+</div>
+    </body>
+ </html>
