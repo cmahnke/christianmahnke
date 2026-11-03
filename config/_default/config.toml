@@ -54,6 +54,9 @@
     {title = "Open GLAM Data Evangelist", url = {de = "/tagline/open-glam-data-evangelist/", en = "/en/tagline/open-glam-data-evangelist/" }, chance = 1}
   ]
 
+[params.webMcpSearch]
+  enabled = true
+
 [params.author]
     email = 'mail@christianmahnke.de'
     name = 'Christian Mahnke'
