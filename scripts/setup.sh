@@ -56,9 +56,9 @@ npm run svgo
 find content/post -name '*.pdf' -print -exec convert -flatten -density 300 {}[0] -quality 100 {}.jpg \;
 find content/post -name '*.mp4' -print -exec ffmpeg -y -ss 00:00:03 -i {} -vframes 1 {}.jpg \;
 
-# PDf Viewer
-mkdir -p static/pdfjs
-cp -r node_modules/pdfjs-dist/web static/pdfjs/
+# PDF Viewer - build the full pdf.js viewer app, the npm pdfjs-dist package
+# doesn't ship web/viewer.html (see scripts/pdfjs.sh)
+./themes/projektemacher-base/scripts/pdfjs.sh
 
 # ---------------------------
 # - Setup for specific posts
