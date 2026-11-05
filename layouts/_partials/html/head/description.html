@@ -1,8 +1,5 @@
 {{- $description := "" -}}
-{{- if .Params.description -}}
-  {{- $description = .Params.description -}}
-{{- end -}}
-{{- if and .Description (eq $description "") -}}
+{{- if .Description -}}
   {{- $description = .Description -}}
 {{- end -}}
 {{- if eq $description "" -}}

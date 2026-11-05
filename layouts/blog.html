@@ -15,7 +15,7 @@
   {{- partial "header.html" . -}}
     <div class="content-container blog" id="main-content">
       {{- $pages := where site.Pages "Section" "post" -}}
-      {{- $updatedPages := where $pages "Params.lastmod" "!=" nil -}}
+      {{- $updatedPages := where $pages "Lastmod" "!=" nil -}}
       {{- $mainSite := hugo.Sites.Default -}}
       {{- if ne $mainSite .Site -}}
         {{- $pages = ($pages | lang.Merge (where $mainSite.Pages "Section" $postSection)) -}}
@@ -81,9 +81,9 @@
           {{- if lt $globalNextIndex (len $pages) -}}
             {{- $nextPage := index $pages $globalNextIndex -}}
             {{- $nextDate := $nextPage.Date -}}
-            {{- $modifiedPages := where $updatedPages "Params.Lastmod" "lt" $currentDate -}}
-            {{- $modifiedPages = where $modifiedPages "Params.Lastmod" "gt" $nextDate -}}
-            {{- $modifiedPages = sort $modifiedPages "Params.Lastmod" "desc" -}}
+            {{- $modifiedPages := where $updatedPages "Lastmod" "lt" $currentDate -}}
+            {{- $modifiedPages = where $modifiedPages "Lastmod" "gt" $nextDate -}}
+            {{- $modifiedPages = sort $modifiedPages "Lastmod" "desc" -}}
             {{- range $modifiedPages -}}
               {{- partial "mod.html" . -}}
             {{- end -}}

@@ -2,7 +2,7 @@
 {{- partial "check-post.html" . -}}
 <div class="sign {{ $class }}">
   <div class="content">
-      {{- with .Params.description -}}
+      {{- with .Description -}}
         <div class="post-description">{{ . }}</div>
       {{- end -}}
 

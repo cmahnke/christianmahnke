@@ -8,7 +8,7 @@
         <div class="updated-date">{{ i18n "updatedOn" }} {{ .Params.Lastmod | time.Format ":date_full" -}}</div>
         {{/*
         <div class="post-body">
-          {{- with .Params.description -}}
+          {{- with .Description -}}
             <div class="post-description">
               {{- . -}}
             </div>

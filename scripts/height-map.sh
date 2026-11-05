@@ -5,7 +5,7 @@ set -e -o pipefail
 IMAGE_PREFIX=content/post
 HEIGHTMAP_SCRIPT=`dirname $0`/./height-map.py
 MANIFEST_SCRIPT=`dirname $0`/./update-manifest.py
-DOCS_DIR=$(grep publishDir config.toml | tr -d '" '  | cut -d "=" -f2 )
+DOCS_DIR=$(grep publishDir hugo.toml | tr -d '" '  | cut -d "=" -f2 )
 
 SED=sed
 OS="`uname`"
