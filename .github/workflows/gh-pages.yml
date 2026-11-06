@@ -45,7 +45,7 @@ jobs:
         run: |
           npx --yes @projektemacher/code-citation-lint lint -r content
 
-      - uses: pnpm/action-setup@v6.1.0
+      - uses: pnpm/action-setup@v6.1.1
         with:
           version: 9
 
