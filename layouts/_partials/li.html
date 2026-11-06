@@ -1,7 +1,7 @@
 {{- $page := .page -}}
 {{- $class := "" -}}
-{{- if ne $page.Params.type nil -}}
-    {{- $class = $page.Params.type -}}
+{{- if ne $page.Params.itemType nil -}}
+    {{- $class = $page.Params.itemType -}}
 {{- end -}}
 
 {{- $class = printf "%s %s" $class (.oddEven | default "") -}}

@@ -1,6 +1,6 @@
 {{- $class := "" -}}
-{{- if ne .Params.type nil -}}
-    {{- $class = .Params.type -}}
+{{- if ne .Params.itemType nil -}}
+    {{- $class = .Params.itemType -}}
 {{- end -}}
 <div class="post {{ $class }} mod">
     <div class="content">
