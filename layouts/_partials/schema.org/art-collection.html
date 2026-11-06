@@ -1,0 +1,118 @@
+{{- $person := hugo.Data.person -}}
+{{- $lang := .Lang -}}
+{{- with site.Language.Locale -}}
+  {{- $lang = . -}}
+{{- end -}}
+{{- $pageURL := site.BaseURL -}}
+{{- with .OutputFormats.Get "html" -}}
+  {{- $pageURL = .Permalink -}}
+{{- end -}}
+
+{{- $postSection := "post" -}}
+{{- $posts := where site.Pages "Section" $postSection -}}
+{{- $mainSite := hugo.Sites.Default -}}
+{{- if ne $mainSite .Site -}}
+  {{- $posts = ($posts | lang.Merge (where $mainSite.Pages "Section" $postSection)) -}}
+{{- end -}}
+{{- $artPosts := where $posts ".Params.tags" "intersect" (slice "_ArtCollection") -}}
+
+{{- $sortable := slice -}}
+{{- range $page := $artPosts -}}
+  {{- $sortKey    := "zzz_unknown" -}}
+  {{- $artistName := i18n "UnknownArtist" -}}
+  {{- with $page.Params.linkedart -}}
+    {{- with .artist -}}
+      {{- $name := dict -}}
+      {{- with .wikidata -}}
+        {{- $name = partialCached "metadata/wikidata/person.html" (dict "uri" .) . -}}
+      {{- else -}}
+        {{- with .name -}}
+          {{- $parts := split . " " -}}
+          {{- $count := len $parts -}}
+          {{- if gt $count 1 -}}
+            {{- $last  := index $parts (sub $count 1) -}}
+            {{- $first := delimit (first (sub $count 1) $parts) " " -}}
+            {{- $name   = dict "firstName" $first "lastName" $last "fullName" . "error" "" -}}
+          {{- else -}}
+            {{- $name = dict "firstName" "" "lastName" . "fullName" . "error" "" -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if and $name (not $name.error) -}}
+        {{- $sortKey    = printf "%s, %s" $name.lastName $name.firstName | strings.TrimRight " " -}}
+        {{- $artistName = $name.fullName -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $sortable = $sortable | append (dict
+      "page"       $page
+      "sortKey"    $sortKey
+      "artistName" $artistName
+  ) -}}
+{{- end -}}
+
+{{- $sorted := sort $sortable "sortKey" "asc" -}}
+
+{{- $items := slice -}}
+{{- range $i, $entry := $sorted -}}
+  {{- $page := $entry.page -}}
+  {{- $permalink := $page.Permalink -}}
+  {{- with $page.OutputFormats.Get "html" -}}
+    {{- $permalink = .Permalink -}}
+  {{- end -}}
+  {{- $title := $page.Title -}}
+  {{- with $page.Params.linkedart -}}
+    {{- with .title -}}
+      {{- $title = . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $work := dict
+    "@type" "CreativeWork"
+    "@id"   $permalink
+    "url"   $permalink
+    "name"  $title
+    "creator" (dict
+      "@type" "Person"
+      "name"  $entry.artistName
+    )
+  -}}
+  {{- with $page.Params.preview -}}
+    {{- with $page.Resources.Get . -}}
+      {{- $work = $work | merge (dict "image" .Permalink) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $items = $items | append (dict
+      "@type" "ListItem"
+      "position" (add $i 1)
+      "item" $work
+  ) -}}
+{{- end -}}
+
+{{- $collectionPage := dict
+  "@context" "https://schema.org"
+  "@type" "CollectionPage"
+  "url" $pageURL
+  "name" (printf "%s - %s" .Title site.Title)
+  "inLanguage" $lang
+  "mainEntity" (dict
+    "@type" "ItemList"
+    "itemListElement" $items
+  )
+  "author" (dict
+    "@type" "Person"
+    "name" (index $person "name")
+    "url" (index $person "url")
+    "@id" (index $person "@id")
+  )
+-}}
+{{- with .Description -}}
+  {{- $collectionPage = $collectionPage | merge (dict "description" .) -}}
+{{- else -}}
+  {{- with site.Params.description -}}
+    {{- $collectionPage = $collectionPage | merge (dict "description" .) -}}
+  {{- end -}}
+{{- end -}}
+
+<script type="application/ld+json">
+  {{ jsonify $collectionPage | safeJS }}
+</script>
