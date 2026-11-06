@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Photogrammetry on Christian Mahnke</title>
+		<link>https://christianmahnke.de/en/tags/Photogrammetry/</link>
+		<description>Recent content in Photogrammetry on Christian Mahnke</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+			<managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+		
+		
+			<webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+		
+		
+			<copyright>Christian Mahnke</copyright>
+		
+		
+			<lastBuildDate>Fri, 16 Oct 2026 15:00:00 +0200</lastBuildDate>
+		
+			<atom:link href="https://christianmahnke.de/en/tags/Photogrammetry/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>IIIF 3D</title>
+				<link>https://christianmahnke.de/en/post/iiif-3d/citation.bib</link>
+				<pubDate>Fri, 16 Oct 2026 15:00:00 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+				<guid>https://christianmahnke.de/en/post/iiif-3d/citation.bib</guid>
+				<description>&lt;p&gt;This blog has also featured 3D models for about 2.5 years. They can now also be viewed via IIIF (V4) in manifests.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Ultraviolet Photogrammetry</title>
+				<link>https://christianmahnke.de/en/post/uv-photogrammetry/</link>
+				<pubDate>Thu, 05 Sep 2024 11:33:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+				<guid>https://christianmahnke.de/en/post/uv-photogrammetry/</guid>
+				<description>&lt;p&gt;&lt;strong&gt;This article presents the world&amp;rsquo;s first HDR model of UV photogrammetry in a browser.&lt;/strong&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>3D Models in the browser</title>
+				<link>https://christianmahnke.de/en/post/3d-models/</link>
+				<pubDate>Sat, 24 Feb 2024 10:16:44 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+				<guid>https://christianmahnke.de/en/post/3d-models/</guid>
+				<description>&lt;p&gt;Maybe it will become a virtual exhibition about orange ceramics&amp;hellip;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
