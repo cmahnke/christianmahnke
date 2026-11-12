@@ -2,43 +2,36 @@
 {{- $defaultRelation := "related" -}}
 {{- $entityBase := "http://www.wikidata.org/entity/" -}}
 {{- $type := "BlogPosting" -}}
+{{- $linkedArtURISuffix := "#linkedart" -}}
 
-{{- $linkedArt := dict -}}
+{{- $hasLinkedArt := false -}}
 {{- with .Params.linkedart -}}
-  {{- $type = "VisualArtwork" -}}
-  {{- $linkedArtRecord := partial "metadata/linked-art/linked-art.json" $ -}}
-  {{- $artist := dict -}}
-  {{- with $linkedArtRecord.produced_by.carried_out_by -}}
-    {{- $artist = dict "@type" (index . 0).type "@id" (index . 0).id "name" (index . 0)._label -}}
-  {{- end -}}
-  {{- if gt ($artist | len) 0 -}}
-    {{- $linkedArt = $linkedArt | merge (dict "artist" $artist) -}}
-  {{- end -}}
-  {{- $linkedArt = $linkedArt | merge (dict "mainEntityOfPage" ($.OutputFormats.Get "html").Permalink) -}}
+  {{- $hasLinkedArt = true -}}
 {{- end -}}
 
+{{- $hasCodemeta := or (.OutputFormats.Get "codemeta") (.Resources.Get "CITATION.cff") (isset .Params "cfffile") (isset .Params "codemeta") -}}
+
 {{- $codemeta := dict -}}
-{{- $cffFile := "CITATION.cff" -}}
-{{- with .Resources.Get $cffFile -}}
+{{- if $hasCodemeta -}}
   {{- $codemeta = partial "metadata/codemeta/codemeta.json" $page | transform.Unmarshal -}}
 {{- end -}}
 
 {{- $author := dict -}}
-{{- if eq $type "BlogPosting" -}}
-  {{- $author = dict
-    "@id" (index hugo.Data.person "@id")
-    "@type" "Person"
-    "name" (index hugo.Data.person "name")
-    "url" (index hugo.Data.person "url")
-  -}}
-{{- end -}}
+{{- $author = dict
+  "@id" (index hugo.Data.person "@id")
+  "@type" "Person"
+  "name" (index hugo.Data.person "name")
+  "url" (index hugo.Data.person "url")
+-}}
+
+{{- $graphMode := and (eq .Section "post") (or $hasLinkedArt $hasCodemeta) -}}
 
 <script type="application/ld+json">
   {{- $schemaOrg := transform.Unmarshal (partial "metadata/schema.org/util/post.html" $page) -}}
   {{- $schemaOrg = $schemaOrg | merge (dict "@context" "http://schema.org" "@type" $type) -}}
   {{- $schemaOrg = $schemaOrg | merge (dict "isPartOf" (dict "@type" "Blog" "@id" (printf "%s%s" site.BaseURL "post") "name" (printf "%s %s" site.Title "Blog"))) -}}
-  {{- if gt ($author | len) 0 -}}
-    {{- $schemaOrg = $schemaOrg | merge (dict "author" $author) -}}
+  {{- with $author -}}
+    {{- $schemaOrg = $schemaOrg | merge (dict "author" .) -}}
   {{- end -}}
 
   {{- $keywords := slice -}}
@@ -75,5 +68,28 @@
   {{- with $codemeta -}}
     {{- $schemaOrg = $schemaOrg | merge (dict "mentions" .) -}}
   {{- end -}}
-  {{ $schemaOrg | jsonify | safeJS }}
+
+  {{- if $graphMode -}}
+    {{- if $hasLinkedArt -}}
+      {{- with ($page.OutputFormats.Get "html").Permalink -}}
+        {{/* The artwork is the main entity of the page */}}
+        {{- $schemaOrg = merge $schemaOrg (dict "mainEntity" (dict "@id" (printf "%s%s" . $linkedArtURISuffix))) -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- $graph := slice $schemaOrg -}}
+    {{- if $hasLinkedArt -}}
+      {{- with partial "metadata/schema.org/util/visual-artwork.html" $page | transform.Unmarshal (dict "format" "json") -}}
+        {{- $graph = $graph | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if $hasCodemeta -}}
+      {{- with partial "metadata/schema.org/util/software-source-code.html" $page | transform.Unmarshal (dict "format" "json") -}}
+        {{- $graph = $graph | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- (dict "@context" "http://schema.org" "@graph" $graph) | jsonify | safeJS }}
+  {{- else -}}
+    {{ $schemaOrg | jsonify | safeJS }}
+  {{- end -}}
 </script>

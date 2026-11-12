@@ -37,6 +37,8 @@ Some of the highlights are:
   * The books now have tables of contents
 * [Projektemacher](http://projektemacher.org/en/)
   * The search function now supports [WebMCP](https://webmachinelearning.github.io/webmcp/)
+* [Ric - An unknown artist](https://ric-unknownartist.projektemacher.org/)
+  * Now has a search
 
 ## Miscellaneous
 * The first [book](https://christianmahnke.de/post/coat-hangers-book/) has been published.

@@ -106,6 +106,14 @@ jobs:
         run: |
           find docs -name 'codemeta.json' -exec npx --yes @projektemacher/code-citation-lint lint {} +
 
+      - name: Validate IIIF manifests
+        run: |
+          ./themes/projektemacher-base/scripts/validate-iiif.sh docs
+
+      - name: Validate Linked Art
+        run: |
+          python3 ./themes/projektemacher-base/scripts/validate-linked-art.py docs --cache "$RUNNER_TEMP/la-schemas"
+
       - name: Run post build scripts
         run: |
           ./scripts/post-build/index.sh &
