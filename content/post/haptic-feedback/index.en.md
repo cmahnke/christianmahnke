@@ -177,7 +177,7 @@ Other potential browsers are listed by [Can I Use](https://caniuse.com/vibration
 
 {{< iiif/touch-iiif manifestUrl="manifest-enriched.json" >}}
 
-<a class="iiif-link" href="./manifest-enriched.json">IIIF-Manifest</a>
+[IIIF-Manifest](./manifest-enriched.json){.iiif-link}
 
 ## Used libraries
 

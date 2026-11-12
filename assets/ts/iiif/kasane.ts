@@ -1,1 +1,1 @@
-import "@nakamura196/iiif-viewer/element";
+import "iiif-kasane/element";
