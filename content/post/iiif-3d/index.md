@@ -1,5 +1,6 @@
 ---
 date: 2026-10-16T15:00:00+02:00
+lastmod: 2026-11-12T00:00:00+02:00
 title: "IIIF 3D"
 keywords: IIIF, Presentation API 4, GLTF, GLB, 3D
 tags:
@@ -15,7 +16,7 @@ params:
     - https://www.wikidata.org/wiki/Q3525922
 ---
 
-In diesem Blog gibt es seit ungefähr 2,5 Jahren auch 3D-Modelle. Nun können sie auch über IIIF (V4) in Manifeste betrachtet werden.
+In diesem Blog gibt es seit ungefähr 2,5 Jahren auch 3D-Modelle. Nun können sie auch über IIIF (V4) Manifeste betrachtet werden.
 <!--more-->
 
 ## IIIF Presentation V4?
@@ -40,3 +41,11 @@ Ein Manifest ist nur die halbe Miete, gebraucht wird auch ein Viewer, der die `S
 ```
 https://kasane.ldas.jp/viewer?iiif-content=<URL-des-Manifests>
 ```
+
+Weitere IIIF 3D Viewer können auf der Site von Glen Robson [ausprobiert werden](https://glenrobson.github.io/iiif_stuff/3d-guide/).
+
+# Update 12.11.2026
+
+Mittlerweile lässt sich der [Kasane](https://github.com/nakamura196/iiif-kasane)-Viewer dank der neuen NPM-Distribution [`iiif-kasana`](https://www.npmjs.com/package/iiif-kasane). Hier das Beispiel der Vase aus dem [3D-Modelle-Beitrag](/post/3d-models/):
+
+{{< iiif/kasane manifest="/post/3d-models/manifest.json" >}}
