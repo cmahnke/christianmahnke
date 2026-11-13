@@ -9,6 +9,7 @@ tags:
   - Photogrammetry
   - Digitisation
 params:
+  cite: true
   wikidata:
     - https://www.wikidata.org/wiki/Q22682088
     - https://www.wikidata.org/wiki/Q28135989
