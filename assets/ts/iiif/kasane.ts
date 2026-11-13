@@ -1,1 +1,0 @@
-import "iiif-kasane/element";
