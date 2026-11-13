@@ -46,6 +46,6 @@ You can [try out](https://glenrobson.github.io/iiif_stuff/3d-guide/) other IIIF 
 
 # Update 12.11.2026
 
-The [Kasane](https://github.com/nakamura196/iiif-kasane) viewer can now be installed thanks to the new NPM package [`iiif-kasana`](https://www.npmjs.com/package/iiif-kasane). Here is an example of the vase from the [3D models post](/post/3d-models/):
+The [Kasane](https://github.com/nakamura196/iiif-kasane) viewer can now be installed thanks to the new NPM package [`iiif-kasana` 0.4.0](https://www.npmjs.com/package/iiif-kasane). Here is an example of the vase from the [3D models post](/post/3d-models/):
 
 {{< iiif/kasane manifest="/post/3d-models/manifest.json" >}}

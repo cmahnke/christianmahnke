@@ -46,6 +46,6 @@ Weitere IIIF 3D Viewer können auf der Site von Glen Robson [ausprobiert werden]
 
 # Update 12.11.2026
 
-Mittlerweile lässt sich der [Kasane](https://github.com/nakamura196/iiif-kasane)-Viewer dank der neuen NPM-Distribution [`iiif-kasana`](https://www.npmjs.com/package/iiif-kasane). Hier das Beispiel der Vase aus dem [3D-Modelle-Beitrag](/post/3d-models/):
+Mittlerweile lässt sich der [Kasane](https://github.com/nakamura196/iiif-kasane)-Viewer dank der neuen NPM-Distribution [`iiif-kasana` 0.4.0](https://www.npmjs.com/package/iiif-kasane). Hier das Beispiel der Vase aus dem [3D-Modelle-Beitrag](/post/3d-models/):
 
 {{< iiif/kasane manifest="/post/3d-models/manifest.json" >}}
