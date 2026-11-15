@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Name }}">
+
+  <head>
+    <meta charset="utf-8">
+    <title>{{- block "title" . }}{{ end -}}</title>
+    {{ partial "html/head/meta.html" . }}
+    {{ partialCached "html/head/theme.html" . }}
+
+    {{- if and (eq .Kind "term") (eq .Content "") -}}
+        <meta name="projektemacher:term" content="empty">
+    {{- end -}}
+    {{- if .Params.notes -}}
+        <meta name="projektemacher:notes" content="{{ .Params.notes }}">
+    {{- end -}}
+
+    {{- partial "html/head/style.html" (dict "context" . "css" "css/style.css") -}}
+    {{- partial "html/head/script.html" (dict "context" . "js" (partial "html/head/iiif-js.html" .) "opts" (dict "splitBundles" true)) -}}
+
+    {{- partial "html/head/preload.html" . -}}
+
+    <link rel="icon" type="image/png" href="{{ site.Params.favicon_32 | default "/images/favicon-32.png" | absURL }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ site.Params.favicon_16 | default "/images/favicon-16.png" | absURL }}" sizes="16x16">
+    {{ if and site.Params.faviconSVG (ne site.Params.faviconsvg "") }}
+        <link rel="icon" type="image/svg+xml" href="{{ site.Params.favicon_svg | safeHTML }}">
+    {{ end }}
+
+    {{ range .AlternativeOutputFormats -}}
+      {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+    {{ end -}}
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{- partial "metadata/schema.org/schema.org.html" . -}}
+
+    {{- if .OutputFormats.Get "linkedart" -}}
+      <link rel="describedby" href="{{ (.OutputFormats.Get "linkedart").RelPermalink }}" type="application/ld+json;profile='https://linked.art/ns/v1/linked-art.json'"/>
+    {{- end -}}
+
+    {{- partialCached "html/head/webmention.html" . "webmentions" -}}
+  </head>
+
+    {{- $class := "" }}
+    {{- with .Page.File -}}
+      {{- if or (hasPrefix .Path "about") (hasPrefix .Path "/about") -}}
+        {{- $class = "about" -}}
+      {{- else -}}
+        {{- $class = printf "section-%s dir-%s" .Section (replace .Dir "/" "" ) -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- if or (hasPrefix .Path "about") (hasPrefix .Path "/post") -}}
+      {{- $class = printf "%s %s" $class "blog" -}}
+    {{- end -}}
+
+    {{- if .Layout -}}
+      {{- $class = printf "%s %s" $class .Layout -}}
+    {{- end -}}
+
+    {{- if .Params.class -}}
+      {{- $class = printf "%s %s" $class .Params.class -}}
+    {{- end -}}
+
+    {{- if .Params.metaPage -}}
+      {{- $class = printf "%s %s" $class "meta" -}}
+    {{- end -}}
+
+    {{- $outputFormat := partial "functions/output/current-format.html" . -}}
+    {{- if and (ne $outputFormat "") (ne $outputFormat "html")  -}}
+      {{- $class = printf "%s %s" $class $outputFormat -}}
+    {{- end -}}
+
+    <body class="{{ $class }} {{ if .IsHome }}home{{ end }} ">
+      <a class="skip-link" href="#main-content">{{ i18n "skipToContent" }}</a>
+      <span id="top"></span>
+      <div class="page-wrapper">
+        <main class="main" id="main">
+          {{ block "content" . }}{{ end }}
+        </main>
+        {{- $footer := "footer.html" -}}
+        {{- if and (ne $outputFormat "") (ne $outputFormat "html")  -}}
+          {{- $footerTemplate := printf "partials/%s-footer.html" $outputFormat -}}
+          {{- if templates.Exists $footerTemplate -}}
+            {{- $footer = $footerTemplate -}}
+          {{- else -}}
+            {{- warnf "Can't find output specific template '%s'" $footerTemplate -}}
+          {{- end -}}
+        {{- end -}}
+        {{- partial $footer . -}}
+      </div>
+    </body>
+ </html>
