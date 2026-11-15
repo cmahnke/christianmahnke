@@ -15,7 +15,6 @@ params:
     - https://www.wikidata.org/wiki/Q2349238
     - https://www.wikidata.org/wiki/Q879216
 keywords: Malte Sartorius
-draft: true
 tags:
   - Art
   - Linocut
