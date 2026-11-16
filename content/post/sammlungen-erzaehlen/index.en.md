@@ -1,6 +1,8 @@
 ---
 date: 2026-01-12T07:22:44+02:00
 title: "Exhibition “Sammlungen erzählen” (Collections Tell Stories)"
+zenodo:
+  publish: true
 keywords: Coat hangers, Forum Wissen
 tags:
   - Projektemacher.org

@@ -1,6 +1,8 @@
 ---
 date: 2026-01-14T19:52:22+02:00
 title: 'Metadaten für Software'
+zenodo:
+  publish: true
 description: "Software-Metadaten für die (automatische) Nachnutzung von Funktionionalitäten"
 params:
   cite: true

@@ -1,6 +1,8 @@
 ---
 date: 2025-03-16T22:33:44+02:00
 title: "Digitale Provenienz für digitalisiertes Kulturgut"
+zenodo:
+  publish: true
 keywords: CAI, C2PA
 description: "Digital signierte Digitalisate"
 params:

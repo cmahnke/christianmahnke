@@ -1,6 +1,8 @@
 ---
 date: 2026-01-12T07:22:44+02:00
 title: "Ausstellung “Sammlungen erzählen”"
+zenodo:
+  publish: true
 keywords: Kleiderbügel, Forum Wissen
 tags:
   - Projektemacher.org

@@ -1,6 +1,8 @@
 ---
 date: 2024-12-28T19:22:44+02:00
 title: "Archives: Fostering collection development through citizen participation"
+zenodo:
+  publish: true
 params:
   cite: true
   wikidata:

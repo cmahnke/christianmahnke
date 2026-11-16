@@ -1,6 +1,8 @@
 ---
 date: 2025-02-25T15:52:22+02:00
 title: 'AI and software "development"'
+zenodo:
+  publish: true
 description: "Or: Academic software publishers"
 params:
   cite: true

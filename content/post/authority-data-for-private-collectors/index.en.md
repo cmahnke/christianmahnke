@@ -1,6 +1,8 @@
 ---
 date: 2025-11-19T20:22:44+02:00
 title: "Authority data for private collections (and small cultural institutions)"
+zenodo:
+  publish: true
 params:
   cite: true
   wikipedia:

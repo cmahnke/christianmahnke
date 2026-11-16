@@ -1,6 +1,8 @@
 ---
 date: 2025-03-16T22:33:44+02:00
 title: "Digital provenance for digitised cultural heritage"
+zenodo:
+  publish: true
 keywords: CAI, C2PA
 description: "Digitally signed digital reproductions"
 params:

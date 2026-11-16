@@ -1,6 +1,8 @@
 ---
 date: 2026-02-21T07:30:00+02:00
 title: Exhibitions in Wikidata
+zenodo:
+  publish: true
 tags:
 - Wikidata
 - LOD

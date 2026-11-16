@@ -1,6 +1,8 @@
 ---
 date: 2025-11-19T20:22:44+02:00
 title: "Normdaten für private Sammlungen (und kleine Kultureinrichtungen)"
+zenodo:
+  publish: true
 params:
   cite: true
   wikipedia:

@@ -1,6 +1,8 @@
 ---
 date: 2025-02-17T17:33:44+02:00
 title: "End microfilm digitisation!"
+zenodo:
+  publish: true
 keywords: Microfilm, microform, microfiche
 #description: ""
 tags:
