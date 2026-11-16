@@ -41,4 +41,4 @@ Dies ist bereits der zweite Druck von Malte Satorius in der Sammlung, der [Erste
 
 Malte Sartorius (1933–2017) war Maler und Grafiker, der über drei Jahrzehnte als Professor an der Hochschule für Bildende Künste Braunschweig (HBK) lehrte. Heute verwaltet die Künstlerstiftung Malte Sartorius seinen Nachlass.
 
-Der Druck ist auch im Werkverzeichnis von Malte Sartorius ("Malte Sartorius. Das Graphische Werk - Druckgraphik von 1955 bis 1977") zu finden: "Ohne Titel", Katalognummer 220, S. 220. Dort ist er allerdings auf der Seite liegend abgebildet, die Auflage beträgt 100.
+Der Druck ist auch im Werkverzeichnis von Malte Sartorius ("Malte Sartorius. Das Graphische Werk - Druckgraphik von 1955 bis 1977") zu finden: "Ohne Titel", Katalognummer 233, S. 228. Dort ist er allerdings auf der Seite liegend abgebildet, die Auflage beträgt 100.

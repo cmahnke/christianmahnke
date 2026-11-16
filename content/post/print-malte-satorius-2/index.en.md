@@ -41,4 +41,4 @@ This is already the second print by Malte Sartorius in the collection; [the firs
 
 Malte Sartorius (1933–2017) was a painter and graphic artist who taught for over three decades as a professor at the Braunschweig University of Art (HBK). Today, the Malte Sartorius Art Foundation manages his estate.
 
-The print can also be found in Malte Sartorius’s catalogue raisonné (“Malte Sartorius. Das Graphische Werk – Druckgraphik von 1955 bis 1977”): “Untitled”, catalogue number 220, p. 220. There, however, it is shown lying on its side; the edition comprises 100 copies.
+The print can also be found in Malte Sartorius’s catalogue raisonné (“Malte Sartorius. Das Graphische Werk – Druckgraphik von 1955 bis 1977”): “Untitled”, catalogue number 233, p. 228. There, however, it is shown lying on its side; the edition comprises 100 copies.
