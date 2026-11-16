@@ -5,7 +5,7 @@
     "@projektemacher/hdt": "0.7.3",
     "@projektemacher/vivliostyle-batch-cli": "^0.2.0",
     "aos": "^2.3.4",
-    "bootstrap": "^5.3.8",
+    "bootstrap": "^5.3.9",
     "chroma-js": "^3.3.0",
     "d3": "^7.9.2",
     "d3-chord": "^3.0.2",
