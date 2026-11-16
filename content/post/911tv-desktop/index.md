@@ -13,6 +13,7 @@ params:
     - https://www.wikidata.org/wiki/Q10806
     - https://www.wikidata.org/wiki/Q11320567
     - https://www.wikidata.org/wiki/Q6368
+    - https://www.wikidata.org/wiki/Q1653619
 outputs:
   - bibtex
   - html

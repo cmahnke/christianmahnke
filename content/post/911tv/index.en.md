@@ -21,6 +21,7 @@ params:
     - https://www.wikidata.org/wiki/Q7951257
     - https://www.wikidata.org/wiki/Q212128
     - https://www.wikidata.org/wiki/Q279925
+    - https://www.wikidata.org/wiki/Q1653619
 outputs:
   - bibtex
   - html
