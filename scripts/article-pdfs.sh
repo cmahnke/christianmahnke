@@ -19,8 +19,7 @@ echo "Searching for 'article.html' in '$SEARCH_DIR'..."
 
 
 find $SEARCH_DIR -type f -name "article.html" | while read -r html_file; do
-    pdf_file="${html_file%.html}-print.pdf"
-    pdf_file_web="${html_file%.html}.pdf"
+    pdf_file="${html_file%.html}.pdf"
 
     echo "Converting '$html_file' zu '$pdf_file'..."
 
@@ -32,7 +31,6 @@ find $SEARCH_DIR -type f -name "article.html" | while read -r html_file; do
     else
         echo "Error converting '$html_file'"
     fi
-    #gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/ebook -dFastWebView -dUseCropBox -dNOPAUSE -dBATCH -sOutputFile="$pdf_file_web" "$pdf_file"
 done
 
 echo "Finished"

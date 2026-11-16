@@ -1,11 +1,11 @@
 import argparse
-from zenodo_client import Creator, Metadata, ensure_zenodo, update_zenodo
+from zenodo_client import Creator, Metadata, ensure_zenodo
 from pathlib import Path
 import sys, os, logging
 import json
 from dataclasses import dataclass
 
-sys.path.append("../../themes/projektemacher-base/scripts/")
+sys.path.append(str(Path(__file__).resolve().parents[1] / "themes" / "projektemacher-base" / "scripts"))
 from PyHugo import Content, Config, Post
 
 DEFAULT_AUTHOR = {"name": "Christian Mahnke"}
@@ -86,7 +86,7 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
 
     if dry_run:
           logging.info(f"[DRY RUN] Would upload '{entry.title}' to Zenodo from file {entry.posts}.")
-          logging.info(f"[DRY RUN] Files to be uploaded: {entry.upload_files.values()}")
+          logging.info(f"[DRY RUN] Files to be uploaded: {list(entry.upload_files.values())}")
           return
 
     try:
@@ -103,18 +103,18 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
                 access_token=token
             )
 
+        res_json = res.json()
+        zenodo_post_metadata = {
+            "doi": res_json.get("doi") or res_json.get("metadata", {}).get("prereserve_doi", {}).get("doi", ""),
+            "deposition_id": str(res_json.get("id", "")),
+        }
         for lang, post in entry.posts.items():
             zenodo = post.getMetadata(lang).get("zenodo", {})
-            zenodo_post_metadata = {
-                "doi": res.metadata.prereserve_doi['doi'],
-                "deposition_id": res.metadata.deposition_id
-            }
-            zenodo_post_metadata = {**zenodo, **zenodo_post_metadata}
+            post_metadata = {**zenodo, **zenodo_post_metadata}
             if update:
-                for lang, post in entry.posts.items():
-                    post.addMetadata("zenodo", zenodo_post_metadata, lang)
+                post.addMetadata("zenodo", post_metadata, lang)
 
-            logging.info(f"Success! DOI {zenodo_post_metadata['doi']} in {post} added.")
+            logging.info(f"Success! DOI {post_metadata['doi']} in {post} added.")
 
     except Exception as e:
         logging.error(f"Error while uploading {entry.posts}: {e}")
@@ -149,6 +149,8 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
             search_path = os.path.join(site_root, search_path)
             logging.info(f"Checking for files in {search_path} for language '{lang}'")
             files = list(Path(search_path).rglob(pattern))
+            if len(files) > 1:
+                logging.warning(f"Multiple files match '{pattern}' for language '{lang}' in {search_path}, using last: {files}")
             for file in files:
                 #relative_path = file.relative_to(content_root)
                 entry.upload_files[lang] = str(file)
@@ -167,7 +169,7 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
             keywords = list(set(keywords) - set(IGNORE_KEYWORDS))
             description = post.getMetadata(lang).get("description", "")
             if "cite" in post.getMetadata(lang):
-                logger.info("Post ist set to be citeable")
+                logging.info("Post is set to be citeable")
             title = post.getMetadata(lang).get("title", "")
             zenodo = post.getMetadata(lang).get("zenodo", {})
             if "publish" in zenodo and zenodo["publish"] is True:
@@ -194,12 +196,13 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
                 entry.title = f"{entry.title} / {title}"
             elif title != "":
                 entry.title = title
-        for lang in conf.langs:
-            if lang not in upload or upload[lang] is not True:
-                logging.warning(f"Post {post.path} in language '{lang}' with pattern '{pattern}' not marked for upload, skipping!")
-                break
-        else:
+        if not all(upload.get(lang) is True for lang in conf.langs):
+            logging.warning(f"Post {post.path} with pattern '{pattern}' not marked for upload in all languages, skipping!")
             continue
+
+        if not entry.key:
+            entry.key = str(relative.with_suffix(""))
+            logging.info(f"Using post path as Zenodo key: {entry.key}")
 
         entry.keywords = list(set(entry.keywords))
         logging.info(f"Entry for {post.path} - {entry.to_json()}")
@@ -214,20 +217,17 @@ if __name__ == "__main__":
     parser.add_argument("--pattern", default="article.pdf", help="File pattern to search")
     parser.add_argument("--dry-run", "-n", action="store_true", help="Perform a dry run without uploading or changing files.")
     parser.add_argument("--token", help="Zenodo API Token")
-    parser.add_argument("--update", "-u", action="store_true", default=False, help="Updated post front matter with archive URLs")
+    parser.add_argument("--production", "-p", action="store_false", dest="sandbox", default=True, help="Upload to production Zenodo instead of the sandbox")
+    parser.add_argument("--update", "-u", action="store_true", default=False, help="Update post front matter with archive URLs")
     parser.add_argument("--debug", "-d", action="store_true", help="Enable debug logging")
-    parser.add_argument("-h", "--help", action="help", help="Show this help message and exit")
     args = parser.parse_args()
-
-    if args.help:
-        parser.print_help()
-        sys.exit(0)
 
     if args.debug:
         logging.basicConfig(level=logging.DEBUG)
 
     site_root = Path(args.basedir).resolve()
     logging.info(f"Trying to load config from {site_root} and process posts in subdir '{args.sub}' with pattern '{args.pattern}'")
+    logging.info(f"Target: {'Zenodo sandbox' if args.sandbox else 'Zenodo production'}")
     posts = check_hugo_posts(site_root, args.sub, args.pattern, args.update)
     for entry in posts:
-        zenodo_push(entry, token=args.token, sandbox=True, dry_run=args.dry_run, update=args.update)
+        zenodo_push(entry, token=args.token, sandbox=args.sandbox, dry_run=args.dry_run, update=args.update)
