@@ -8,6 +8,7 @@
     <title>{{ site.Title }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>:root { --figure-label: "{{ i18n "figureLabel" }}" }</style>
     {{- with site.Params.author -}}
       {{- $author := . -}}
       {{- if reflect.IsMap . -}}

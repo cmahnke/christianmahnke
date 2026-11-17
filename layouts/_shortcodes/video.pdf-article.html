@@ -5,6 +5,11 @@
   {{- $video = . -}}
 {{- end -}}
 
+{{- $defaultPage := $.Page -}}
+{{- range $.Page.Translations -}}
+  {{- if eq .Language.Lang site.DefaultLanguage -}}{{- $defaultPage = . -}}{{- end -}}
+{{- end -}}
+
 {{- $class := "html-video" -}}
 
 {{- $videolink := path.Join .Page.Path $video -}}
@@ -25,7 +30,7 @@
 {{- $videoAbsURL := printf "%s%s" (absURL $videolink) $videoSuffix -}}
 {{- if ne $video "" -}}
   <div class="{{ $class }}">
-    {{- with .Page.Resources.Get $previewFile -}}
+    {{- with $defaultPage.Resources.Get $previewFile -}}
       {{- $preview := "" -}}
       {{- if gt .Width 2048 -}}
         {{- $preview = .Resize (printf "%dx webp picture" 2048) -}}

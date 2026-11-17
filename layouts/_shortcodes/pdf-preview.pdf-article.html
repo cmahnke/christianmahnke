@@ -4,6 +4,11 @@
   {{- $pdf = . -}}
 {{- end -}}
 
+{{- $defaultPage := $.Page -}}
+{{- range $.Page.Translations -}}
+  {{- if eq .Language.Lang site.DefaultLanguage -}}{{- $defaultPage = . -}}{{- end -}}
+{{- end -}}
+
 {{- $page := 1 -}}
 {{- with .Get "page" -}}
   {{- $page = . -}}
@@ -36,7 +41,7 @@
 {{- $pdfAbsURL := absURL $pdflink -}}
 {{- if ne $pdf "" -}}
   <div class="{{ $class }}">
-    {{- with .Page.Resources.Get (printf "%s%s" $pdf $previewSuffix) -}}
+    {{- with $defaultPage.Resources.Get (printf "%s%s" $pdf $previewSuffix) -}}
       {{- $preview := "" -}}
       {{- if gt .Width 2048 -}}
         {{- $preview = .Resize (printf "%dx webp picture" 2048) -}}

@@ -2,11 +2,15 @@
 {{- $id := printf "_gallery-%s" (md5 (printf "%s-%s" $src now.UnixNano)) -}}
 {{- $json := .Inner -}}
 {{- $image := unmarshal $json -}}
+{{- $defaultPage := $.Page -}}
+{{- range $.Page.Translations -}}
+  {{- if eq .Language.Lang site.DefaultLanguage -}}{{- $defaultPage = . -}}{{- end -}}
+{{- end -}}
 {{- $previewWidth := "1280" -}}
 
 <div id="{{ $id }}" class="gallery {{ with .Get "class" }}{{ . }}{{ end }}">
   {{- range $image := $image -}}
-    {{- $imgRes := $.Page.Resources.Get $image.src -}}
+    {{- $imgRes := $defaultPage.Resources.Get $image.src -}}
     {{- $alt := "" -}}
     {{- $alt = $image.alt | default "" -}}
     {{- $scalePreview := true -}}

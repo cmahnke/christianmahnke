@@ -108,3 +108,6 @@ other = "Back to top"
 [scrollDown]
 other = "Scroll down"
 
+
+[figureLabel]
+other = "Fig."

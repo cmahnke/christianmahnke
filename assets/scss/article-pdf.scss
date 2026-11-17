@@ -17,9 +17,15 @@ $accent-font: "Strichpunkt Sans";
 
   @footnote {
     margin-top: 12pt;
-    border-top: solid linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 45%, rgba(255, 255, 255, 1) 50%) 1px;
+    border-top: 1px solid rgba(0, 0, 0, 0.6);
     float: bottom;
-    font-size: 6pt !important;
+    font-size: 8pt !important;
+  }
+
+  @top-center {
+    font-family: $accent-font;
+    font-size: 8pt;
+    content: string(posttitle);
   }
 
   @bottom-right {
@@ -32,8 +38,14 @@ $accent-font: "Strichpunkt Sans";
 
    @bottom-center {
     font-family: $accent-font;
-    content: counter(page);
+    content: counter(page) " / " counter(pages);
    }
+}
+
+@page :first {
+  @top-center {
+    content: '';
+  }
 }
 
 p {
@@ -95,7 +107,12 @@ p {
           text-align: center;
           margin-bottom: 18pt;
 
+          .author-name {
+            font-size: 1.3rem;
+          }
+
           .author-orcid {
+            font-size: .75rem;
             white-space: nowrap;
 
             &:before {
@@ -116,6 +133,11 @@ p {
           justify-content: flex-end;
           white-space: nowrap;
           align-items: center;
+          gap: .25rem;
+        }
+
+        .post-meta time {
+          font-size: .8rem;
         }
 
         .article-link {
@@ -157,9 +179,15 @@ p {
         }
 
         .tags li {
-          border: 1px solid grey;
-          padding: .2rem;
-          border-radius: .2rem;
+          border: unset;
+          padding: .1rem 0;
+          border-radius: unset;
+          font-family: $accent-font;
+          font-variant-caps: small-caps;
+
+          & + li::before {
+            content: ", ";
+          }
         }
 
       }
@@ -170,6 +198,7 @@ p {
         text-align: center;
         width: 100%;
         box-shadow: unset;
+        string-set: posttitle content(text);
       }
 
       .post-description {
@@ -202,6 +231,7 @@ p {
         column-gap: 1.5rem;
         display: block;
         font-size: 12pt;
+        hyphens: auto;
 
         & > p:first-child {
           font-style: italic;
@@ -213,8 +243,14 @@ p {
           max-height: 95vh;
         }
 
+        figure img {
+          max-height: 62vh;
+        }
+
         p {
           text-align: justify;
+          orphans: 3;
+          widows: 3;
         }
 
         div.highlight {
@@ -229,6 +265,12 @@ p {
           margin-left: .1cm;
           font-size: 65%;
           vertical-align: super;
+        }
+
+        ul li::before {
+          color: #000;
+          font-size: 1.1em;
+          vertical-align: baseline;
         }
 
         h1 {
@@ -277,6 +319,17 @@ p {
           border-left: 1px solid;
         }
 
+        pre {
+          position: relative;
+        }
+
+        .wrap-marker {
+          position: absolute;
+          left: 0;
+          font-size: .75em;
+          color: #999;
+        }
+
         code {
           border: unset;
           background-color: unset;
@@ -317,17 +370,28 @@ p {
           }
         }
 
-        figure,
         table,
         /* video, */
-        .pdf-preview,
-        .youtube-video,
         .script,
         .iiif.iiif-image,
         .hdr-warning {
           margin: 12pt;
           break-inside: avoid;
           column-span: all;
+        }
+
+        figure,
+        .pdf-preview,
+        .youtube-video,
+        .html-video {
+          margin: 12pt;
+          break-inside: avoid;
+          float: top;
+          float-reference: page;
+
+          figure {
+            float: none;
+          }
         }
 
         .iiif.iiif-image {
@@ -371,7 +435,7 @@ p {
           text-align: center;
 
           &:before {
-            content: "Fig. " counter(figure, decimal) ": ";
+            content: var(--figure-label, "Fig.") " " counter(figure, decimal) ": ";
           }
 
           h4,
@@ -499,10 +563,12 @@ a {
   float: footnote;
   font-weight: normal;
   font-family: $accent-font;
+  padding-left: 3em;
+  text-indent: -3em;
 
   a {
     word-break: break-all;
-    font-style: italic;
+    font-style: normal;
   }
 }
 
@@ -532,14 +598,14 @@ a {
   .gallery-image.caption {
     counter-increment: figure;
 
-    .hidden-caption-content {
-      min-height: unset;
-      padding: 6pt;
+      .hidden-caption-content {
+        min-height: unset;
+        padding: 6pt;
 
-      &:before {
-        content: "Fig. " counter(figure, decimal) ": ";
+        &:before {
+          content: var(--figure-label, "Fig.") " " counter(figure, decimal) ": ";
+        }
       }
-    }
   }
 }
 

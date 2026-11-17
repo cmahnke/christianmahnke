@@ -11,8 +11,12 @@
             {{- $baseurl_no_trailing_slash := site.BaseURL | replaceRE "/$" "" -}}
             <img src="{{ (printf "%s%s" $baseurl_no_trailing_slash $image) }}"
         {{- else -}}
+            {{- $defaultPage := $.Page -}}
+            {{- range $.Page.Translations -}}
+                {{- if eq .Language.Lang site.DefaultLanguage -}}{{- $defaultPage = . -}}{{- end -}}
+            {{- end -}}
             {{- /* Below variable will always have a trailing slash, even with uglyURLs enabled. */ -}}
-            {{- $permalink_pretty := $.Page.Permalink | replaceRE ".[^/]*\\.html$" "/" -}}
+            {{- $permalink_pretty := $defaultPage.Permalink | replaceRE ".[^/]*\\.html$" "/" -}}
             <img src="{{ (printf "%s%s" $permalink_pretty $image) }}"
         {{- end -}}
             {{- /* Always render an alt attribute: explicit alt, caption text, title (for linked images), or empty for decorative images */ -}}
