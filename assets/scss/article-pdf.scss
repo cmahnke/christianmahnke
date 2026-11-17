@@ -149,8 +149,8 @@ p {
         }
 
         .tags-heading {
-          max-width: 70%;
-          width: 70%;
+          max-width: 75%;
+          width: 75%;
           margin-left: auto;
           display: flex;
           flex-direction: column;
@@ -163,17 +163,14 @@ p {
 
           .tags {
             margin-block-start: 0;
-            display: flex;
-            width: 90%;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-end;
+            display: block;
+            width: 100%;
+            text-align: right;
+            line-height: 1.5;
 
             li {
-              width: fit-content;
-              display: inline-block;
-              margin: .2rem;
-              /*padding: 0 .4rem;*/
+              display: inline;
+              margin: 0;
             }
           }
         }

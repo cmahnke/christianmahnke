@@ -13,7 +13,7 @@
         {{- else -}}
             {{- $defaultPage := $.Page -}}
             {{- range $.Page.Translations -}}
-                {{- if eq .Language.Lang site.DefaultLanguage -}}{{- $defaultPage = . -}}{{- end -}}
+                {{- if .Site.IsDefault -}}{{- $defaultPage = . -}}{{- end -}}
             {{- end -}}
             {{- /* Below variable will always have a trailing slash, even with uglyURLs enabled. */ -}}
             {{- $permalink_pretty := $defaultPage.Permalink | replaceRE ".[^/]*\\.html$" "/" -}}

@@ -6,7 +6,7 @@
 
 {{- $defaultPage := $.Page -}}
 {{- range $.Page.Translations -}}
-  {{- if eq .Language.Lang site.DefaultLanguage -}}{{- $defaultPage = . -}}{{- end -}}
+  {{- if .Site.IsDefault -}}{{- $defaultPage = . -}}{{- end -}}
 {{- end -}}
 
 {{- $page := 1 -}}

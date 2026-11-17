@@ -4,7 +4,7 @@
 {{- $image := unmarshal $json -}}
 {{- $defaultPage := $.Page -}}
 {{- range $.Page.Translations -}}
-  {{- if eq .Language.Lang site.DefaultLanguage -}}{{- $defaultPage = . -}}{{- end -}}
+  {{- if .Site.IsDefault -}}{{- $defaultPage = . -}}{{- end -}}
 {{- end -}}
 {{- $previewWidth := "1280" -}}
 
