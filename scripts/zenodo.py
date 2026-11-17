@@ -54,10 +54,15 @@ def prepare_entry(conf: Config):
     orcid = conf.config.get("params", {}).get("social", {}).get("orcid", {}).get("username", "N/A")
     gnd = conf.config.get("params", {}).get("social", {}).get("gnd", {}).get("username", "N/A")
     logging.info(f"Global Fallbacks - Author: {author}, License: {license}, ORCID: {orcid}, GND: {gnd}")
+    author_data = {"name": author}
+    if orcid != "N/A":
+        author_data["orcid"] = orcid
+    if gnd != "N/A":
+        author_data["gnd"] = gnd
     entry = ZenodoEntry(
         title="",
         key="",
-        authors=[{"name": author, "orcid": orcid}],
+        authors=[author_data],
         description="",
         keywords=[],
         license=license,
@@ -77,7 +82,7 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
 
     metadata = Metadata(
         title=entry.title,
-        creators=[Creator(name=a["name"], orcid=a.get("orcid"), affiliation=a.get("affiliation")) for a in entry.authors],
+        creators=[Creator(name=a["name"], orcid=a.get("orcid"), gnd=a.get("gnd"), affiliation=a.get("affiliation")) for a in entry.authors],
         description=entry.description,
         keywords=entry.keywords,
         license=entry.license,
