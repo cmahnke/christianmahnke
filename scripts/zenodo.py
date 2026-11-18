@@ -1,8 +1,10 @@
 import argparse
-from zenodo_client import Creator, Metadata, ensure_zenodo
+from zenodo_client import Creator, Metadata, ensure_zenodo, update_zenodo
 from pathlib import Path
+from datetime import date, datetime, timezone
 import sys, os, logging
 import json
+import git
 from dataclasses import dataclass
 
 sys.path.append(str(Path(__file__).resolve().parents[1] / "themes" / "projektemacher-base" / "scripts"))
@@ -33,6 +35,9 @@ class ZenodoEntry:
     urls: dict
     deposition_id: str
     doi: str
+    lastmods: dict = None
+    lastmod: str = ""
+    changed: bool = False
 
     def to_json(self):
         from dataclasses import asdict
@@ -71,18 +76,86 @@ def prepare_entry(conf: Config):
         posts={},
         urls={},
         deposition_id="",
-        doi=""
+        doi="",
+        lastmods={},
+        lastmod="",
+        changed=False
     )
     return entry
+
+def _parse_lastmod(value, source):
+    if value is None or value == "":
+        return None
+    try:
+        if isinstance(value, datetime):
+            dt = value
+        elif isinstance(value, date):
+            dt = datetime.combine(value, datetime.min.time())
+        else:
+            dt = datetime.fromisoformat(str(value))
+    except (ValueError, TypeError) as e:
+        logging.error(f"Invalid lastmod value '{value}' in {source}: {e}")
+        sys.exit(1)
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt
+
+def check_post_committed(repo, post):
+    """Check that every content file of a post is identical to HEAD (fully committed).
+
+    Returns (committed, reason) - reason is only set if committed is False."""
+    reasons = []
+    for file in sorted(set(str(f) for f in post.files.values())):
+        rel = os.path.relpath(file, repo.working_dir)
+        try:
+            repo.head.commit.tree[rel]
+        except KeyError:
+            reasons.append(f"{rel} is not committed (missing from HEAD)")
+            continue
+        staged = repo.index.diff("HEAD", paths=[rel])
+        unstaged = repo.index.diff(None, paths=[rel])
+        if len(unstaged) > 0:
+            reasons.append(f"{rel} has unstaged changes")
+        elif len(staged) > 0:
+            reasons.append(f"{rel} has staged but uncommitted changes")
+    if reasons:
+        return False, "; ".join(reasons)
+    return True, None
+
+def _format_creator_name(name):
+    """Zenodo requires the 'Family name, given names' format."""
+    if "," in name:
+        return name
+    parts = name.rsplit(" ", 1)
+    if len(parts) == 2:
+        return f"{parts[1]}, {parts[0]}"
+    return name
+
+def _check_zenodo_response(res_json, already_published, target):
+    """Validate the Zenodo API response before anything is written to front matter.
+
+    Returns None if the response is usable, or an error message otherwise."""
+    res_id = str(res_json.get("id", ""))
+    if not res_id:
+        return "no deposition id in response"
+    if not already_published:
+        doi = res_json.get("doi") or res_json.get("metadata", {}).get("prereserve_doi", {}).get("doi", "")
+        if not doi:
+            return "no DOI in response"
+    return None
 
 def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=False):
     if not entry.upload_files or not entry.key or not entry.title:
         logging.warning(f"Missing required fields for entry '{entry.title}', skipping.")
         return
 
+    target = "Zenodo sandbox" if sandbox else "Zenodo production"
+
     metadata = Metadata(
         title=entry.title,
-        creators=[Creator(name=a["name"], orcid=a.get("orcid"), gnd=a.get("gnd"), affiliation=a.get("affiliation")) for a in entry.authors],
+        upload_type=UPLOAD_TYPE,
+        publication_type=PUBLICATION_TYPE,
+        creators=[Creator(name=_format_creator_name(a["name"]), orcid=a.get("orcid"), gnd=a.get("gnd"), affiliation=a.get("affiliation")) for a in entry.authors],
         description=entry.description,
         keywords=entry.keywords,
         license=entry.license,
@@ -90,16 +163,33 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
     )
 
     if dry_run:
-          logging.info(f"[DRY RUN] Would upload '{entry.title}' to Zenodo from file {entry.posts}.")
-          logging.info(f"[DRY RUN] Files to be uploaded: {list(entry.upload_files.values())}")
-          return
-
-    try:
-        if entry.deposition_id != "" or entry.doi != "":
-            logging.info(f"Entry '{entry.title}' already has a deposition ID or DOI, skipping upload.")
-            return
+        already_published = bool(entry.deposition_id or entry.doi)
+        if already_published and not entry.changed:
+            logging.info(f"[DRY RUN] '{entry.title}' already published and unchanged, would skip.")
+        elif already_published:
+            logging.info(f"[DRY RUN] Would create a new Zenodo version for '{entry.title}' (lastmod {entry.lastmod or 'unknown'}).")
         else:
-            logging.info(f"Uploading {entry.title} to Zenodo...")
+            logging.info(f"[DRY RUN] Would upload '{entry.title}' to Zenodo from file {entry.posts}.")
+        logging.info(f"[DRY RUN] Files to be uploaded: {list(entry.upload_files.values())}")
+        return
+
+    already_published = bool(entry.deposition_id or entry.doi)
+
+    # Phase 1: upload / create version (raises on API failure, front matter untouched)
+    try:
+        if already_published and not entry.changed:
+            logging.info(f"Entry '{entry.title}' already has a deposition ID or DOI and is unchanged, skipping upload.")
+            return
+        elif already_published:
+            logging.info(f"Entry '{entry.title}' changed since last upload (lastmod {entry.lastmod or 'unknown'}), creating new Zenodo version on {target}...")
+            res = update_zenodo(
+                deposition_id=entry.deposition_id,
+                paths=entry.upload_files.values(),
+                sandbox=sandbox,
+                access_token=token
+            )
+        else:
+            logging.info(f"Uploading '{entry.title}' to {target}...")
             res = ensure_zenodo(
                 key=entry.key,
                 data=metadata,
@@ -107,22 +197,56 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
                 sandbox=sandbox,
                 access_token=token
             )
+    except Exception as e:
+        logging.error(f"Upload to {target} failed for {entry.posts}, not updating front matter: {e}")
+        return
 
+    # Phase 2: validate response, build front matter for all languages before writing
+    try:
         res_json = res.json()
+    except Exception as e:
+        logging.error(f"Invalid API response from {target} for {entry.posts}, not updating front matter: {e}")
+        return
+    error = _check_zenodo_response(res_json, already_published, target)
+    if error is not None:
+        logging.error(f"Unexpected API response from {target} for {entry.posts} ({error}), not updating front matter. Response: {json.dumps(res_json)[:500]}")
+        return
+
+    if already_published:
+        new_id = str(res_json.get("id", ""))
+        zenodo_post_metadata = {
+            "deposition_id": new_id if new_id else entry.deposition_id,
+        }
+    else:
         zenodo_post_metadata = {
             "doi": res_json.get("doi") or res_json.get("metadata", {}).get("prereserve_doi", {}).get("doi", ""),
             "deposition_id": str(res_json.get("id", "")),
         }
-        for lang, post in entry.posts.items():
-            zenodo = post.getMetadata(lang).get("zenodo", {})
-            post_metadata = {**zenodo, **zenodo_post_metadata}
-            if update:
+    if entry.lastmod:
+        zenodo_post_metadata["lastmod"] = entry.lastmod
+
+    updates = []
+    for lang, post in entry.posts.items():
+        zenodo = post.getMetadata(lang).get("zenodo", {})
+        post_metadata = {**zenodo, **zenodo_post_metadata}
+        updates.append((lang, post, post_metadata))
+
+    # Phase 3: write front matter; stop on the first failure and report state
+    written, skipped = [], []
+    for index, (lang, post, post_metadata) in enumerate(updates):
+        if update:
+            try:
                 post.addMetadata("zenodo", post_metadata, lang)
+                written.append(lang)
+            except Exception as e:
+                remaining = [l for l, _, _ in updates[index + 1:]]
+                logging.error(
+                    f"Error while writing front matter of {post} (language '{lang}') after successful upload to {target}, "
+                    f"not updating front matter: {e}. Written: {written or 'none'}, not written: {[lang] + remaining}"
+                )
+                return
 
-            logging.info(f"Success! DOI {post_metadata['doi']} in {post} added.")
-
-    except Exception as e:
-        logging.error(f"Error while uploading {entry.posts}: {e}")
+        logging.info(f"Success! DOI {post_metadata.get('doi', 'unchanged')} in {post} added.")
 
 def check_hugo_posts(site_root, subdir, pattern, update=False):
     conf = Config(site_root)
@@ -134,13 +258,26 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
     content_root = os.path.join(site_root, conf.publishDir())
     post_root = os.path.join(site_root, conf.contentDir(), subdir)
 
+    try:
+        repo = git.Repo(site_root)
+    except (git.InvalidGitRepositoryError, git.NoSuchPathError):
+        repo = None
+        logging.warning(f"No git repository found at {site_root}, skipping committed-state checks")
+
     post_files = {}
     for post in content:
         if post.draft:
             logging.info(f"Skipping draft post: {post.path}")
             continue
+        if repo is not None:
+            committed, reason = check_post_committed(repo, post)
+            if not committed:
+                logging.warning(f"Skipping post {post.path}, content is not fully committed: {reason}")
+                continue
         upload = {}
         entry = prepare_entry(conf)
+        entry_lastmods = {}
+        stored_lastmod = None
         if not post.path or not post.getURL():
             logging.warning(f"Post {post} has no path or URL, skipping.")
             continue
@@ -177,6 +314,9 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
                 logging.info("Post is set to be citeable")
             title = post.getMetadata(lang).get("title", "")
             zenodo = post.getMetadata(lang).get("zenodo", {})
+            entry_lastmods[lang] = _parse_lastmod(post.getMetadata(lang).get("lastmod"), post.getFile(lang))
+            if "lastmod" in zenodo:
+                stored_lastmod = _parse_lastmod(zenodo["lastmod"], post.getFile(lang))
             if "publish" in zenodo and zenodo["publish"] is True:
                 upload[lang] = True
             else:
@@ -189,7 +329,6 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
                 entry.doi = zenodo["doi"]
             if "deposition_id" in zenodo:
                 entry.deposition_id = zenodo["deposition_id"]
-                entry.key = entry.deposition_id
 
             entry.keywords.extend(keywords)
             if entry.description != "" and description != "":
@@ -204,6 +343,27 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
         if not all(upload.get(lang) is True for lang in conf.langs):
             logging.warning(f"Post {post.path} with pattern '{pattern}' not marked for upload in all languages, skipping!")
             continue
+
+        # Fail on divergent lastmod dates between the language versions
+        present_lastmods = {lang: dt for lang, dt in entry_lastmods.items() if dt is not None}
+        if present_lastmods:
+            if len(present_lastmods) != len(entry_lastmods) or len(set(present_lastmods.values())) > 1:
+                details = ", ".join(
+                    f"{lang}: {dt.isoformat() if dt is not None else 'missing'}" for lang, dt in entry_lastmods.items()
+                )
+                logging.error(f"Divergent lastmod dates for post {post.path}: {details}")
+                sys.exit(1)
+            lastmod_dt = max(present_lastmods.values())
+            entry.lastmods = {lang: dt.isoformat() for lang, dt in entry_lastmods.items() if dt is not None}
+            entry.lastmod = lastmod_dt.isoformat()
+            if entry.deposition_id or entry.doi:
+                if stored_lastmod is None:
+                    logging.warning(
+                        f"Post {post.path} is published but has no zenodo.lastmod recorded, cannot detect changes, will not create new versions"
+                    )
+                elif lastmod_dt > stored_lastmod:
+                    entry.changed = True
+                    logging.info(f"Post {post.path} changed since last upload: lastmod {lastmod_dt.isoformat()} > zenodo.lastmod {stored_lastmod.isoformat()}")
 
         if not entry.key:
             entry.key = str(relative.with_suffix(""))

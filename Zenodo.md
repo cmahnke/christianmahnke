@@ -17,8 +17,8 @@ Mowinckel.
 
 * Hugo (extended, Dart Sass) – for the `pdf-article` output format
 * `vivliostyle-batch-cli` (`@projektemacher/vivliostyle-batch-cli`, in `package.json`)
-* Python dependencies from `requirements.txt`, notably `zenodo-client` plus the theme's
-  `PyHugo` module (`themes/projektemacher-base/scripts`)
+* Python dependencies from `requirements.txt`, notably `zenodo-client`, `GitPython`
+  plus the theme's `PyHugo` module (`themes/projektemacher-base/scripts`)
 * A Zenodo account
 
 ## API Keys
@@ -135,10 +135,38 @@ npx vivliostyle-batch-cli -i "$html_file" --static /:./docs/ \
 
 The script uses the theme's `PyHugo` module to read posts and metadata.
 
-**`check_hugo_posts()`** collects one `ZenodoEntry` per post (all languages):
+**Preconditions for processing a post:**
 
 * Drafts are skipped
+* The post's content files must be **fully committed** (identical to `HEAD`): the script
+  checks each language file with [GitPython](https://github.com/gitpython-developers/GitPython)
+  (no git CLI is invoked) and skips posts that are untracked, have unstaged changes or
+  staged-but-uncommitted changes, with a warning stating the reason. If `basedir` is not
+  a git repository, the check is skipped with a warning.
+  Because `--update` writes `doi`/`deposition_id`/`lastmod` back into the front matter,
+  those changes have to be committed before the *next* run will process the post again
+  (the check runs before any writes).
 * A post is only uploaded if **every** language version has `zenodo.publish: true`
+* The `lastmod` front matter must be **identical in every language version** – on a
+  mismatch (including `lastmod` present in only one language) the script fails with an
+  error and exits
+
+**Change detection and new versions:**
+
+* The post's effective `lastmod` (the latest across all languages) is compared against
+  the `zenodo.lastmod` value recorded in the front matter at the time of the last upload
+* Published posts that are unchanged are skipped
+* Published posts whose `lastmod` is newer than the recorded `zenodo.lastmod` get a **new
+  Zenodo version**: `zenodo_client`'s `update_zenodo()` opens a new version of the
+  existing deposition and re-uploads the files (metadata is carried over unchanged)
+* Posts published before `zenodo.lastmod` tracking was introduced are skipped with a
+  warning – they cannot be change-detected until a version is created once manually
+* A failed upload (API error or unusable response, on the sandbox and in production)
+  never modifies the post's front matter; if a front-matter write fails after a
+  successful upload, the remaining languages are left untouched and reported
+
+**`check_hugo_posts()`** collects one `ZenodoEntry` per post (all languages):
+
 * For each language it looks for the PDF (`article.pdf` by default) in the language's
   output directory
 * Metadata assembly:
@@ -155,14 +183,14 @@ The script uses the theme's `PyHugo` module to read posts and metadata.
 
 **`zenodo_push()`** then:
 
-* Skips entries that already have a `doi` or `deposition_id` (uploads are never
-  duplicated)
-* Builds a `Metadata` object (title, creators with ORCID, description, keywords,
-  license, related identifiers) and calls `ensure_zenodo()`, which re-uses an existing
+* Skips entries that already have a `doi` or `deposition_id` and are unchanged
+  (uploads are never duplicated)
+* For changed entries with an existing deposition, creates a new version via
+  `update_zenodo()`; for new entries calls `ensure_zenodo()`, which re-uses an existing
   deposition with the same key or creates a new one
 * Extracts `doi` and `deposition_id` from the API response
-* With `--update`, merges `{doi, deposition_id}` into the `zenodo` front matter block of
-  every language version of the post
+* With `--update`, merges `{doi, deposition_id, lastmod}` into the `zenodo` front matter
+  block of every language version of the post
 
 ### 4. Front matter contract
 
@@ -174,14 +202,21 @@ zenodo:
 ```
 
 Optional overrides per language: `zenodo.description` and `zenodo.keywords` (replace the
-derived values). After a successful upload the script adds:
+derived values). The `lastmod` front matter is used to detect changes and **must be
+identical in all language versions** of a post. After a successful upload the script adds:
 
 ```yaml
 zenodo:
   publish: true
   doi: 10.5281/zenodo.XXXXXX
   deposition_id: "12345678"
+  lastmod: 2026-11-18T00:00:00+01:00
 ```
+
+`zenodo.lastmod` records the post's `lastmod` at upload time; if the post's `lastmod`
+is later raised, the next run creates a new Zenodo version with the rebuilt PDF.
+Remember to commit these front-matter changes afterwards, otherwise the next run skips
+the post (see the committed-state check above).
 
 `check-post.html` emits a build warning for any post with a `zenodo` block but no
 `zenodo.doi` ("Zenodo metadata without DOI"), so unpublished-but-marked posts are easy
@@ -274,3 +309,13 @@ python scripts/zenodo.py --production --token "$ZENODO_ACCESS_TOKEN" --update
 Note that `article-pdfs.sh` rebuilds the whole print segment, so step 4 should be
 followed by a regular `hugo` build (or deploy) so the site picks up the new
 `zenodo.doi` front matter written by `--update`.
+
+## Updating an already published post
+
+1. Change the post content **and** raise `lastmod` in **all** language versions
+   (identical values, otherwise the script fails)
+2. Commit the changes
+3. Rebuild the PDFs: `./scripts/article-pdfs.sh`
+4. Run the upload again – the script detects `lastmod` > `zenodo.lastmod` and creates a
+   new Zenodo version with the updated PDF (`doi` in the front matter stays valid)
+5. Commit the front-matter changes written by `--update`, then rebuild/deploy the site
