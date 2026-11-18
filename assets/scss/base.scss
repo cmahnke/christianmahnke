@@ -979,6 +979,11 @@ a:visited {
         display: flex;
         flex-basis: 100%;
         line-height: 1.4;
+        /* Pairs with the line-height above: the underlined headings inside use
+           it to place their text-decoration bar on the old box bottom
+           ((L - A + D) / 2 with the pinned Josefin Sans metrics, see the
+           .section-content-title rule). Update both values together. */
+        --underline-baseline-shift: 0.202em;
         font-size: 1.2em;
         position: relative;
         width: 100%;
@@ -1080,6 +1085,33 @@ a:visited {
                 z-index: -1;
             }
             */
+        }
+
+        /* Baseline-anchored underline for engines with decoration thickness
+           support (Chrome 87+, Firefox 70+, Safari 18+). The inset box-shadow
+           above anchors to the line-box bottom, which sits at metric-dependent
+           positions in different engines (see font-metrics-overrides.scss);
+           text-decoration anchors to the alphabetic baseline and renders
+           identically everywhere. The box-shadow remains as fallback
+           (e.g. Safari <= 17, no text-decoration-thickness).
+
+           The decoration's bottom edge must land on the old box bottom, which
+           sits (L - A + D) / 2 below the baseline (A/D = pinned Josefin Sans
+           metrics 1.242/0.246em). L varies by inherited line-height: 1.15
+           (normalize.css on html) or 1.4 (rules below). Those rules also set
+           --underline-baseline-shift to the matching (L - 0.996em) / 2, the
+           default here covers the 1.15 context: (1.15 - 0.996) / 2 = 0.077em. */
+        @supports (text-decoration-thickness: 15px) {
+            box-shadow: none;
+            text-decoration-line: underline;
+            text-decoration-color: $text-underline-color;
+            text-decoration-thickness: 15px;
+            text-underline-offset: calc(var(--underline-baseline-shift, 0.077em) - 15px);
+            text-decoration-skip-ink: none;
+
+            @media (max-width : 35em) {
+                box-shadow: none;
+            }
         }
     }
 
@@ -1448,6 +1480,11 @@ a:visited {
 
 .post {
     line-height: 1.4;
+    /* Pairs with the line-height above: .post-title and underlined h2/h3
+       inside use it to place their text-decoration bar on the old box bottom
+       ((L - A + D) / 2 with the pinned Josefin Sans metrics, see the
+       .section-content-title rule). Update both values together. */
+    --underline-baseline-shift: 0.202em;
     font-size: 1.2rem;
     margin-top: 3em;
     /* This prevents overlaps in to long tag lists
@@ -1542,6 +1579,18 @@ a:visited {
 
         @media (max-width : 35em) {
             max-width: 95vw;
+        }
+
+        /* Baseline-anchored underline, see the .section-content-title rule
+           above for the rationale and the offset derivation. Inside .post
+           this inherits --underline-baseline-shift: 0.202em. */
+        @supports (text-decoration-thickness: 15px) {
+            box-shadow: none;
+            text-decoration-line: underline;
+            text-decoration-color: $text-underline-color;
+            text-decoration-thickness: 15px;
+            text-underline-offset: calc(var(--underline-baseline-shift, 0.077em) - 15px);
+            text-decoration-skip-ink: none;
         }
     }
 

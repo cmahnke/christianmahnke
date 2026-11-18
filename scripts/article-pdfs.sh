@@ -26,6 +26,11 @@ find $SEARCH_DIR -type f -name "article.html" | while read -r html_file; do
         continue
     fi
 
+    if grep -q 'http-equiv="refresh"' "$html_file"; then
+        echo "Skipping '$html_file' (alias redirect page)"
+        continue
+    fi
+
     echo "Converting '$html_file' zu '$pdf_file'..."
 
     #NODE_PATH="$VIVLIOSTYLE_NODE_PATH" node "$VIVLIOSTYLE" -i "$html_file" --asset-base https://christianmahnke.de/=./docs/ --asset-base http://localhost:1313/=./docs/ --ignore-asset /livereload.js -o "$pdf_file"

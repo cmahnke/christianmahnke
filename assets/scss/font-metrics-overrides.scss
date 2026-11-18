@@ -22,6 +22,12 @@
   League Spartan, Inconsolata and Poiret One kept identical metrics in
   their variable fonts, so they need no override.
 
+  Note: since 2026-11 the heading underlines (base.scss) are drawn as
+  baseline-anchored text-decoration wherever `text-decoration-thickness`
+  is supported, so they no longer depend on these metrics. The overrides
+  remain what pins the line box for the inset box-shadow fallback (and
+  thus for Safari 17, which supports the overrides but not the property).
+
   Keep in sync with the generated npm-fonts files (subsets, unicode-range,
   weight range). If the theme's font generator changes, update or drop
   this file after re-measuring.

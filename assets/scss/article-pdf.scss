@@ -266,12 +266,6 @@ p {
           vertical-align: super;
         }
 
-        ul li::before {
-          color: #000;
-          font-size: 1.1em;
-          vertical-align: baseline;
-        }
-
         h1 {
             font-size: 2rem;
             margin-top: 1.5em;
@@ -357,6 +351,8 @@ p {
           img {
             break-after: avoid-page;
             max-width: 100%;
+            display: block;
+            margin-inline: auto;
           }
 
           &.center {
