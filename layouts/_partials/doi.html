@@ -1,4 +1,10 @@
 {{- $doi := . -}}
-{{- $resolver := "" -}}
+{{- $labelKey := "doiPrefix" -}}
+{{- if reflect.IsMap . -}}
+  {{- $doi = .doi -}}
+  {{- with .labelKey -}}
+    {{- $labelKey = . -}}
+  {{- end -}}
+{{- end -}}
 {{- $doiPrefix := "https://doi.org/" -}}
-<span class="doi-prefix">{{ i18n "doiPrefix" }}: </span><a href="{{ $doiPrefix }}{{ $doi }}" title="{{ i18n "doiLink" }}" class="doi-link">{{ $doi }}</a>
+<span class="doi-prefix">{{ i18n $labelKey }}: </span><a href="{{ $doiPrefix }}{{ $doi }}" title="{{ i18n "doiLink" }}" class="doi-link">{{ $doi }}</a>

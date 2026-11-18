@@ -26,7 +26,11 @@
     title = {{ printf "{%s}" . | safeHTMLAttr }},
     {{- end }}
     url = {{ printf "{%s}" $url | safeURL }},
-    {{- with .Params.doi }}
+    {{- $doi := .Params.doi -}}
+    {{- with .Params.zenodo.doi -}}
+    {{- $doi = . -}}
+    {{- end -}}
+    {{- with $doi }}
     doi = {{ printf "{%s}" . | safeURL }},
     {{- end }}
     {{- with .Date.Year }}

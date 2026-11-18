@@ -69,6 +69,9 @@ other = "Als BibTex herunterladen"
 [doiPrefix]
 other = "DOI des digitalen Objektes"
 
+[zenodoDoiPrefix]
+other = "DOI dieses Artikels"
+
 [yearsHeading]
 other = "Archiv"
 
@@ -112,6 +115,6 @@ other = "Zum Seitenanfang"
 [scrollDown]
 other = "Weiter nach unten"
 
-
 [figureLabel]
 other = "Abb."
+

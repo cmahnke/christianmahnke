@@ -44,10 +44,7 @@
 
         {{- with .Params.zenodo.doi -}}
           <div class="post-doi">
-            {{- $doi := . -}}
-            {{- $resolver := "" -}}
-            {{- $doiPrefix := "https://doi.org/" -}}
-            <span class="doi-prefix">{{ i18n "doiPrefix" }}: </span><a href="{{ $doiPrefix }}{{ $doi }}" title="{{ i18n "doiLink" }}" class="doi-link">{{ $doi }}</a>
+            {{- partial "doi.html" (dict "doi" . "labelKey" "zenodoDoiPrefix") -}}
           </div>
         {{- end -}}
 
@@ -61,13 +58,6 @@
           </div>
         {{- end -}}
 
-        {{/*
-          {{- with .Params.doi -}}
-            <div class="doi-reference">
-              {{- partial "doi.html" . -}}
-            </div>
-          {{- end -}}
-        */}}
       </div>
       <div class="post-body">
         {{- .Content -}}
