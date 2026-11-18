@@ -3,7 +3,7 @@
     "@annotorious/openseadragon": "^3.9.5",
     "iiif-kasane": "0.4.0",
     "@projektemacher/hdt": "0.7.3",
-    "@projektemacher/vivliostyle-batch-cli": "^0.2.0",
+    "@projektemacher/vivliostyle-batch-cli": "^0.3.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.8",
     "chroma-js": "^3.3.0",
