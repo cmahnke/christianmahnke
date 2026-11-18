@@ -570,33 +570,25 @@ a {
   text-align: right;
 }
 
-.gallery  {
-  background-color: unset;
-  box-shadow: unset;
-  border-radius: unset;
-  break-inside: auto;
+.gallery-item {
+  margin: 12pt;
+  break-inside: avoid;
   column-span: all;
 
   img {
     max-height: 40vh;
   }
+}
 
-  .gallery-image {
-    break-inside: avoid;
-  }
+.gallery-item .gallery-image.caption {
+    .hidden-caption-content {
+      min-height: unset;
+      padding: 6pt;
 
-  .gallery-image.caption {
-    counter-increment: figure;
-
-      .hidden-caption-content {
-        min-height: unset;
-        padding: 6pt;
-
-        &:before {
-          content: var(--figure-label, "Fig.") " " counter(figure, decimal) ": ";
-        }
+      &:before {
+        content: var(--figure-label, "Fig.") " " counter(figure, decimal) ": ";
       }
-  }
+    }
 }
 
 .ol-popup {

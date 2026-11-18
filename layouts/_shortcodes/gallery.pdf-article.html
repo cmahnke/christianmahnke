@@ -1,48 +1,37 @@
-{{- $src := .Page.File -}}
-{{- $id := printf "_gallery-%s" (md5 (printf "%s-%s" $src now.UnixNano)) -}}
 {{- $json := .Inner -}}
 {{- $image := unmarshal $json -}}
 {{- $defaultPage := $.Page -}}
 {{- range $.Page.Translations -}}
   {{- if .Site.IsDefault -}}{{- $defaultPage = . -}}{{- end -}}
 {{- end -}}
-{{- $previewWidth := "1280" -}}
 
-<div id="{{ $id }}" class="gallery {{ with .Get "class" }}{{ . }}{{ end }}">
-  {{- range $image := $image -}}
-    {{- $imgRes := $defaultPage.Resources.Get $image.src -}}
-    {{- $alt := "" -}}
-    {{- $alt = $image.alt | default "" -}}
-    {{- $scalePreview := true -}}
-    {{- if isset $image "scalePreview" -}}
-      {{- $scalePreview = $image.scalePreview -}}
+{{- range $image := $image -}}
+  {{- $imgRes := $defaultPage.Resources.Get $image.src -}}
+  {{- $alt := $image.alt | default "" -}}
+  {{- with $imgRes -}}
+    {{- $preview := "" -}}
+    {{- if gt .Width 2048 -}}
+      {{- $preview = $imgRes.Filter (images.AutoOrient) (images.Process (printf "resize %dx webp picture" 2048)) -}}
+    {{- else -}}
+      {{- $preview = $imgRes.Filter (images.AutoOrient) (images.Process (printf "resize %dx webp picture" .Width)) -}}
     {{- end -}}
-    {{- with $imgRes -}}
-
-      <a class="gallery-image {{ if ne $alt "" }}caption{{ end }}" href="{{ $image.src }}" data-pswp-width="{{ $imgRes.Width }}" data-pswp-height="{{ $imgRes.Height }}" target="_blank"{{ if eq $alt "" }} aria-label="{{ i18n "enlargeImage" }} {{ path.BaseName $image.src }}"{{ end }}>
-        {{- $preview := "" -}}
-        {{- if gt .Width 2048 -}}
-          {{- $preview = $imgRes.Filter (images.AutoOrient) (images.Process (printf "resize %dx webp picture" 2048)) -}}
-        {{- else -}}
-          {{- $preview = $imgRes.Filter (images.AutoOrient) (images.Process (printf "resize %dx webp picture" .Width)) -}}
-        {{- end -}}
-        {{/*
-          {{- $preview := $imgRes.Resize (printf "%dx webp picture" .Width) -}}
-        */}}
-        {{- if (not $scalePreview) -}}
-          {{- $preview = $imgRes -}}
-        {{- end -}}
-
+    {{- if (isset $image "scalePreview") -}}
+      {{- if not $image.scalePreview -}}
+        {{- $preview = $imgRes -}}
+      {{- end -}}
+    {{- end -}}
+    <figure class="gallery-item">
+      <a class="gallery-image {{ if ne $alt "" }}caption{{ end }}" href="{{ $image.src }}" data-pswp-width="{{ .Width }}" data-pswp-height="{{ .Height }}" target="_blank"{{ if eq $alt "" }} aria-label="{{ i18n "enlargeImage" }} {{ path.BaseName $image.src }}"{{ end }}>
         <img src="{{ $preview.RelPermalink }}" alt="{{ $alt }}" class="gallery-preview" />
         {{- if ne $alt "" -}}
           <div class="hidden-caption-content">{{ $alt }}</div>
         {{- end -}}
       </a>
-      {{- else -}}
-      {{ warnf "[shortcodes/gallery.html] Not found %s for %s" $image.src $.Page.File.Path }}
-    {{- end -}}
+    </figure>
+  {{- else -}}
+    {{- warnf "[shortcodes/gallery.pdf-article.html] Not found %s for %s" $image.src $.Page.File.Path -}}
   {{- end -}}
-</div>
+{{- end -}}
 
 {{- define "_partials/shortcodes/gallery-metadata.html" -}}
   {{/* The CSS needs to be provided via mount from node_modules  */}}
