@@ -318,6 +318,12 @@ p {
           border-left: 1px solid;
         }
 
+        pre code .line {
+          display: block;
+          padding-left: 2ch;
+          text-indent: -2ch;
+        }
+
         code {
           border: unset;
           background-color: unset;
@@ -499,9 +505,7 @@ p {
       }
 
       .post-footer {
-        .cite-container {
-          display: none;
-        }
+        display: none;
       }
     }
   }
@@ -570,8 +574,16 @@ a {
   background-color: unset;
   box-shadow: unset;
   border-radius: unset;
-  break-inside: avoid;
+  break-inside: auto;
   column-span: all;
+
+  img {
+    max-height: 40vh;
+  }
+
+  .gallery-image {
+    break-inside: avoid;
+  }
 
   .gallery-image.caption {
     counter-increment: figure;
@@ -585,6 +597,10 @@ a {
         }
       }
   }
+}
+
+.ol-popup {
+  display: none !important;
 }
 
 .toc,

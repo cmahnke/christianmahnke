@@ -1,0 +1,12 @@
+{{/* Print variant of the iiif shortcode: render the full image scaled to ~300dpi (2244px for the 190mm A4 content width) instead of the JS viewer */}}
+{{- $src := .Get "src" -}}
+{{- $base := replaceRE "/?info\\.json$" "" $src -}}
+{{- $fullPath := printf "%s/full/full/0/default.jpg" (strings.TrimPrefix "./" $base) -}}
+{{- with $.Page.Resources.Get $fullPath -}}
+  {{- $scaled := .Resize (printf "%dx webp picture" 2244) -}}
+  <figure class="iiif iiif-image">
+    <img src="{{ $scaled.RelPermalink }}" alt="" />
+  </figure>
+{{- else -}}
+  {{- warnf "[shortcodes/iiif.pdf-article.html] Full image not found as page resource: %s" $fullPath -}}
+{{- end -}}

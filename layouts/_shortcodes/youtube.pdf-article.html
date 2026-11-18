@@ -2,11 +2,14 @@
 {{- $title := .Get "title" | default "" -}}
 {{- $url := printf "https://youtu.be/%s" $id -}}
 {{- $img := "" -}}
-{{- $hi := resources.GetRemote (printf "https://img.youtube.com/vi/%s/maxresdefault.jpg" $id) -}}
-{{- if and $hi (gt $hi.Width 200) -}}
-  {{- $img = $hi -}}
+{{- $hi := try (resources.GetRemote (printf "https://img.youtube.com/vi/%s/maxresdefault.jpg" $id)) -}}
+{{- if and (not $hi.Err) (gt $hi.Value.Width 200) -}}
+  {{- $img = $hi.Value -}}
 {{- else -}}
-  {{- $img = resources.GetRemote (printf "https://img.youtube.com/vi/%s/hqdefault.jpg" $id) -}}
+  {{- $hq := try (resources.GetRemote (printf "https://img.youtube.com/vi/%s/hqdefault.jpg" $id)) -}}
+  {{- if not $hq.Err -}}
+    {{- $img = $hq.Value -}}
+  {{- end -}}
 {{- end -}}
 {{- with $img -}}
   <figure class="youtube-video">

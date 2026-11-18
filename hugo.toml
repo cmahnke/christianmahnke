@@ -379,7 +379,8 @@ timeout = "240s"
                   '^application/json;\s?charset=[uU][tT][fF]-8$',
                   '^application/ld\+json;charset=[uU][tT][fF]-8$',
                   '^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$',
-                  '^application/sparql-results\+json$']
+                  '^application/sparql-results\+json$',
+                  '^image/jpeg$']
     urls = ['^https://unpkg\.com/.*',
             '^https://aframe.io\/.*',
             '^https://www\.wikidata\.org/.*',
@@ -389,7 +390,8 @@ timeout = "240s"
             '^https?://data\.getty\.edu/vocab/.*',
             '^https://qlever\.dev/api/.*',
             '^https://raw.githubusercontent.com/*',
-            '^https://static\.projektemacher\.org/.*']
+            '^https://static\.projektemacher\.org/.*',
+            '^https://img\.youtube\.com/.*']
 
   [security.node]
     [security.node.permissions]
