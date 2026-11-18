@@ -1,0 +1,18 @@
+{{- $id := .Get "id" -}}
+{{- $title := .Get "title" | default "" -}}
+{{- $url := printf "https://youtu.be/%s" $id -}}
+{{- $img := "" -}}
+{{- $hi := resources.GetRemote (printf "https://img.youtube.com/vi/%s/maxresdefault.jpg" $id) -}}
+{{- if and $hi (gt $hi.Width 200) -}}
+  {{- $img = $hi -}}
+{{- else -}}
+  {{- $img = resources.GetRemote (printf "https://img.youtube.com/vi/%s/hqdefault.jpg" $id) -}}
+{{- end -}}
+{{- with $img -}}
+  <figure class="youtube-video">
+    <img src="{{ .RelPermalink }}" alt="{{ $title }}" />
+    <figcaption><h4>{{ i18n "printNoVideo" }}</h4><br />
+      <b>URL:</b> <a class="video-preview-link" href="{{ $url }}">{{ $url }}</a>
+    </figcaption>
+  </figure>
+{{- end -}}
