@@ -130,13 +130,18 @@ p {
         .post-url {
           display: flex;
           flex-direction: row;
-          justify-content: flex-end;
+          justify-content: flex-start;
           white-space: nowrap;
           align-items: center;
           gap: .25rem;
+          font-weight: 200;
+
+          .label {
+            font-weight: 400;
+          }
         }
 
-        .post-meta time {
+        & time {
           font-size: .8rem;
         }
 
@@ -146,26 +151,31 @@ p {
 
         .post-url {
           margin-top: 1rem;
+          font-size: 11pt;
         }
 
         .tags-heading {
-          max-width: 75%;
-          width: 75%;
-          margin-left: auto;
+          max-width: 85%;
+          width: 85%;
           display: flex;
-          flex-direction: column;
-          align-items: flex-end;
+          flex-direction: row;
+          gap: .25rem;
+          align-items: baseline;
 
           .label {
-            margin-top: .4rem;
             display: block;
+            font-weight: 400;
+
+            &::after {
+              content: ":";
+            }
           }
 
           .tags {
             margin-block-start: 0;
             display: block;
             width: 100%;
-            text-align: right;
+            text-align: left;
             line-height: 1.5;
 
             li {
@@ -182,6 +192,8 @@ p {
           font-family: $accent-font;
           font-variant-caps: small-caps;
           white-space: nowrap;
+          font-weight: 200;
+          font-size: 11pt;
 
           & + li::before {
             content: ", ";
@@ -264,6 +276,11 @@ p {
           margin-left: .1cm;
           font-size: 65%;
           vertical-align: super;
+        }
+
+        ul li {
+          padding-left: 2.2em;
+          text-indent: -2.2em;
         }
 
         h1 {
