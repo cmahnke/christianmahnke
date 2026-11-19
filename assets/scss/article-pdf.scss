@@ -151,7 +151,6 @@ p {
 
         .post-url {
           margin-top: 1rem;
-          font-size: 11pt;
         }
 
         .tags-heading {
@@ -189,11 +188,9 @@ p {
           border: unset;
           padding: .1rem 0;
           border-radius: unset;
-          font-family: $accent-font;
           font-variant-caps: small-caps;
           white-space: nowrap;
           font-weight: 200;
-          font-size: 11pt;
 
           & + li::before {
             content: ", ";
@@ -278,7 +275,7 @@ p {
         }
 
         ul li {
-          padding-left: 2.2em;
+          padding-left: 3.2em;
           text-indent: -2.2em;
         }
 

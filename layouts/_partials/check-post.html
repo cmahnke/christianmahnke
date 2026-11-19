@@ -14,6 +14,9 @@
   {{- if not (isset .Params "wikidata") -}}
     {{- warnf "[check-post.html] Missing Wikidata in %s (Section %s)" .RelPermalink .Section -}}
   {{- end -}}
+  {{- if and (isset .Params "zenodo") (not (isset .Params.zenodo "doi")) -}}
+    {{- warnf "[check-post.html] Zenodo metadata without DOI in %s" .RelPermalink -}}
+  {{- end -}}
   {{- $page := . -}}
   {{- if and (in .Section "post") (not .Draft) -}}
     {{- $langs := slice -}}
