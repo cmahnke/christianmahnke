@@ -56,7 +56,7 @@
     <link rel="stylesheet" href="{{ strings.Substr $css.RelPermalink $relative }}" type="text/css" integrity="{{ $css.Data.Integrity }}">
     */}}
   </head>
-  <body class="article">
+  <body class="article{{ if in .Params.tags "_ArtCollection" }} art-collection{{ end }}">
     {{ block "content" . }}{{ end }}
   </body>
 </html>

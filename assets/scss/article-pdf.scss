@@ -246,7 +246,6 @@ p {
 
         & > p:first-child {
           font-style: italic;
-
         }
 
         img {
@@ -515,6 +514,14 @@ p {
             break-inside: avoid;
           }
         }
+      }
+
+      body.art-collection & .post-body > p:first-child {
+        column-span: all;
+      }
+
+      body.art-collection & .post-body > figure:first-of-type img {
+        max-height: 40vh;
       }
 
       .post-footer {
