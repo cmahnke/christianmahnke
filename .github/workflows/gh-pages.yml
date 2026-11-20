@@ -182,3 +182,8 @@ jobs:
     needs: deploy
     uses: ./.github/workflows/archive.yml
     secrets: inherit
+
+  pdf:
+    needs: deploy
+    uses: ./.github/workflows/pdf.yml
+    secrets: inherit

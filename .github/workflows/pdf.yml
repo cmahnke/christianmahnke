@@ -1,0 +1,74 @@
+name: Generate and publish article PDFs
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+concurrency:
+  group: ${{ github.workflow }}-pdf-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  HUGO_VERSION: 0.170.0
+  DEPENDENCY_MANAGER: npm
+
+permissions:
+  contents: write
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v7
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+          path: docs
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7.1.0
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Install Node dependencies and Chrome
+        run: |
+          ./themes/projektemacher-base/scripts/init/package.json.sh
+
+      - name: Install Dart SASS
+        run: |
+          ./themes/projektemacher-base/scripts/github/dart-sass.sh
+
+      - name: Install Hugo
+        run: |
+          ./themes/projektemacher-base/scripts/github/setup-hugo.sh ${{ env.HUGO_VERSION }}
+
+      - name: Generate article PDFs
+        run: |
+          ./scripts/article-pdfs.sh
+
+      - name: Commit and push PDFs to gh-pages
+        run: |
+          cd docs
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          find . -type f -name "article.pdf" -print -exec git add {} \;
+
+          MSG="Deploy article PDFs to docs/post/"
+
+          # Only commit if there are changes
+          if git diff --cached --quiet; then
+            echo "ℹ️  No changes detected — skipping commit."
+          else
+            git commit -m "$MSG"
+            git pull --rebase origin gh-pages
+            git push origin gh-pages
+            echo "✅ PDFs pushed to gh-pages."
+          fi

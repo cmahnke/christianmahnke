@@ -26,6 +26,14 @@ $accent-font: "Strichpunkt Sans";
     font-family: $accent-font;
     font-size: 8pt;
     content: string(posttitle);
+    width: 55%;
+    text-align: center;
+    vertical-align: top;
+    margin-top: 8.4pt;
+    margin-bottom: 6.35pt;
+    white-space: nowrap;
+    border-bottom: 0.5pt solid $box-border;
+    padding-bottom: 2pt;
   }
 
   @bottom-right {
@@ -45,6 +53,8 @@ $accent-font: "Strichpunkt Sans";
 @page :first {
   @top-center {
     content: '';
+    border-bottom: none;
+    padding-bottom: 0;
   }
 }
 
