@@ -16,6 +16,16 @@ if [ -n "$1" ] && [[ "$1" != -* ]]; then
     shift
 fi
 
+# Standards labeling of every PDF (PDF/A-2b by default, PDFA_LEVEL=off to skip,
+# VERAPDF=1 to additionally run the full ISO rule set through the verapdf binary)
+PDF_ARGS=()
+if [ "${PDFA_LEVEL:-2b}" != "off" ]; then
+    PDF_ARGS+=(--pdfa "${PDFA_LEVEL:-2b}")
+fi
+if [ "${VERAPDF:-0}" = "1" ]; then
+    PDF_ARGS+=(--verapdf)
+fi
+
 hugo --renderSegments print
 
 if [ ! -d "$SEARCH_DIR" ]; then
@@ -51,7 +61,7 @@ find $SEARCH_DIR -type f -name "article.html" | while read -r html_file; do
 
     #NODE_PATH="$VIVLIOSTYLE_NODE_PATH" node "$VIVLIOSTYLE" -i "$html_file" --asset-base https://christianmahnke.de/=./docs/ --asset-base http://localhost:1313/=./docs/ --ignore-asset /livereload.js -o "$pdf_file"
 
-    node node_modules/@projektemacher/vivliostyle-batch-cli/dist/vivliostyle-batch-cli.js -i "$html_file" --static /:./docs/ --asset-base https://christianmahnke.de/=./docs/ --asset-base http://localhost:1313/=./docs/ --ignore-asset /livereload.js -o "$pdf_file" $@
+    node node_modules/@projektemacher/vivliostyle-batch-cli/dist/vivliostyle-batch-cli.js -i "$html_file" --static /:./docs/ --asset-base https://christianmahnke.de/=./docs/ --asset-base http://localhost:1313/=./docs/ --ignore-asset /livereload.js "${PDF_ARGS[@]}" -o "$pdf_file" $@
     if [ $? -eq 0 ]; then
         echo "'$pdf_file' created successfully"
     else
