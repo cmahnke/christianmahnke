@@ -1,0 +1,60 @@
+{{/* TODO: Add the consent wrapper */}}
+{{- $context := .context -}}
+{{- $geojson := .geojson -}}
+{{- if eq $geojson nil -}}
+  {{/* Check if we only got one param, this will be the geojson referece */}}
+  {{- $geojson := . -}}
+{{- end -}}
+{{- $cluster := .cluster -}}
+{{- if eq $cluster nil -}}
+  {{- $cluster = false -}}
+{{- end -}}
+{{/* See https://openlayers.org/en/latest/apidoc/module-ol_style_Icon.html for options */}}
+{{- $marker := .marker -}}
+{{- if eq $marker nil -}}
+  {{- $marker = false -}}
+{{- end -}}
+{{- $id := md5 $geojson -}}
+{{- $var := printf "_%s" $id -}}
+<div class="map-wrapper script">
+  <div class="map" id="{{ $id }}" aria-label="{{ i18n "interactiveMap" }}"></div>
+  <div id="{{ $id }}-popup" class="ol-popup">
+    <a href="#" id="{{ $id }}-popup-closer" class="ol-popup-closer" role="button" aria-label="{{ i18n "close" }}"></a>
+    <div id="{{ $id }}-popup-content" aria-live="polite"></div>
+  </div>
+</div>
+<script type="text/javascript">
+  (function() {
+    var tries = 0;
+    var start = function() {
+      {{/* The ES module defining window.initMap is deferred; in print rendering
+         (Vivliostyle) document.readyState is never 'loading', so the old
+         DOMContentLoaded branch fired too early. Poll instead. */}}
+      if (typeof window.initMap !== 'function') {
+        if (++tries > 50) {
+          return;
+        }
+        window.setTimeout(start, 100);
+        return;
+      }
+      {{/* In the print rendering context (Vivliostyle) documentElement.lang can
+         be empty, which makes osm-map's toolTips[lang] lookup fail. Restore it
+         from the Hugo site language before initialising. */}}
+      if (!document.documentElement.lang) {
+        document.documentElement.lang = '{{ site.Language.Lang | default "en" }}';
+      }
+      var {{ $var | safeJS }} = window.initMap('{{ $id | safeJS }}', '{{ $geojson | safeJS }}', 'osm', {{ $cluster | safeJS }} {{ if $marker }}, {{ $marker | safeJS}}  {{ end }});
+      {{ $var | safeJS }}.updateSize();
+      var {{ $var | safeJS }}_closer = document.getElementById('{{ $id | safeJS }}-popup-closer');
+      if ({{ $var | safeJS }}_closer) {
+        {{ $var | safeJS }}_closer.addEventListener('keydown', function(event) {
+          if (event.key === ' ' || event.key === 'Spacebar') {
+            event.preventDefault();
+            this.click();
+          }
+        });
+      }
+    };
+    start();
+  })();
+</script>

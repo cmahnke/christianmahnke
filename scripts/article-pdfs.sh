@@ -8,6 +8,14 @@ VIVLIOSTYLE_NODE_PATH="/Users/cmahnke/Blogs/vivliostyle-batch-cli/node_modules"
 
 ARGS="$@"
 
+# Optional first positional argument: regenerate only the matching post
+# (matched against the URL path segment, e.g. ./scripts/article-pdfs.sh whalebone-arch-levin-park)
+SINGLE_POST=""
+if [ -n "$1" ] && [[ "$1" != -* ]]; then
+    SINGLE_POST="$1"
+    shift
+fi
+
 hugo --renderSegments print
 
 if [ ! -d "$SEARCH_DIR" ]; then
@@ -17,9 +25,17 @@ fi
 
 echo "Searching for 'article.html' in '$SEARCH_DIR'..."
 
+if [ -n "$SINGLE_POST" ]; then
+    echo "Single-post mode: regenerating only '$SINGLE_POST'"
+    find $SEARCH_DIR -path "*/$SINGLE_POST/*" -name "article.pdf" -delete
+fi
 
 find $SEARCH_DIR -type f -name "article.html" | while read -r html_file; do
     pdf_file="${html_file%.html}.pdf"
+
+    if [ -n "$SINGLE_POST" ] && [[ "$html_file" != *"/$SINGLE_POST/"* ]]; then
+        continue
+    fi
 
     if [ -f "$pdf_file" ]; then
         echo "Skipping '$pdf_file' (already exists)"

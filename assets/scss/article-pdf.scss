@@ -17,14 +17,20 @@ $accent-font: "Strichpunkt Sans";
 
   @footnote {
     margin-top: 12pt;
-    border-top: 1px solid rgba(0, 0, 0, 0.6);
     float: bottom;
-    font-size: 6pt !important;
+    font-size: 10pt !important;
+  }
+
+  @footnote ::before {
+    border-block-start: 0.5pt solid $box-border;
+    margin-block-end: 0.4em;
+    margin-inline-start: 0;
+    margin-inline-end: 70%; /* 100% − 70% → line spans 30%, left-aligned */
   }
 
   @top-center {
     font-family: $accent-font;
-    font-size: 8pt;
+    font-size: 9pt;
     content: string(posttitle);
     width: 55%;
     text-align: center;
@@ -152,7 +158,11 @@ p {
         }
 
         & time {
-          font-size: .8rem;
+          font-size: 12pt;
+        }
+
+        .update-label {
+          font-size: 12pt;
         }
 
         .article-link {
@@ -247,6 +257,9 @@ p {
         font-family: $body-text;
         column-count: 2;
         column-gap: 1.5rem;
+        /* Vivliostyle extension: balance columns on every page fragment,
+           not just the last one (prevents empty right columns on pages
+           filled by tall blocks such as code listings) */
         display: block;
         font-size: 12pt;
         hyphens: auto;
@@ -272,6 +285,7 @@ p {
 
         div.highlight {
           column-span: all;
+          break-inside: auto;
         }
 
         div.highlight + ul {
@@ -287,6 +301,14 @@ p {
         ul li {
           padding-left: 3.2em;
           text-indent: -2.2em;
+        }
+
+        /* The marker box must exactly match the 2.2em hanging indent:
+           font-size is 1.4em, so 1.57em × 1.4em = 2.2em of the parent font */
+        ul li::before {
+          text-indent: 0;
+          padding-right: 0;
+          width: 1.57em;
         }
 
         h1 {
@@ -339,6 +361,17 @@ p {
           display: block;
           padding-left: 2ch;
           text-indent: -2ch;
+          position: relative;
+
+          .line-wrap-marker {
+            position: absolute;
+            left: 0;
+            width: 2ch;
+            text-indent: 0;
+            font-family: $body-text;
+            font-size: 0.75em;
+            color: inherit;
+          }
         }
 
         code {
@@ -385,12 +418,23 @@ p {
 
         figure,
         table,
+        /* This used to be tho old fix, but it's wrong since it bresks the intenden layout:
+           A spanner (column-span: all) followed by content that still fits on
+           the page makes Vivliostyle emit an extra empty page — figures must
+           not span (they render at column width instead).
+          figure {
+            margin: 12pt;
+            break-inside: avoid;
+          }
+        */
+
+        table,
         /* video, */
-        .pdf-preview,
+        .iiif.iiif-image,
         .youtube-video,
+        .pdf-preview,
         .html-video,
         .script,
-        .iiif.iiif-image,
         .hdr-warning {
           margin: 12pt;
           break-inside: avoid;
@@ -572,6 +616,7 @@ a {
   float: footnote;
   font-weight: normal;
   font-family: $accent-font;
+  font-size: 6pt;
   padding-left: 3em;
   text-indent: -3em;
 
@@ -619,8 +664,26 @@ a {
 }
 
 .ol-popup {
-  display: none !important;
+  /* Vivliostyle drops display:none subtrees from its layout document, which
+     breaks osm-map's popup wiring (closer.onclick on null). Keep the popup in
+     the render tree, but invisible and without any layout footprint. */
+  visibility: hidden !important;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
 }
+
+/* Interactive maps never render in print output; drop the reserved space */
+/*
+.map-wrapper {
+  display: none;
+}
+*/
 
 .toc,
 .related-post {
