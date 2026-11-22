@@ -84,15 +84,17 @@ $menu-margin: 10em;
 @mixin li-marker-hanging {
   @media screen {
     position: absolute;
-    inset-inline-start: 0;
+    left: 0;
   }
 }
 
-/* Companion for li-marker: li reserves the marker gutter on screen */
+/* Companion for li-marker: li reserves the marker gutter on screen. Physical
+   padding-left on purpose: some engines mishandle the cascade between logical
+   and physical padding, which would let the broad 'ul li' padding rule win. */
 @mixin li-marker-item {
   @media screen {
     position: relative;
-    padding-inline-start: 2.5em;
+    padding-left: 2.5em;
   }
 }
 
