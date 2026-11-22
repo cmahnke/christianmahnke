@@ -78,6 +78,24 @@ $menu-margin: 10em;
   padding-right: .8em
 }
 
+/* Takes the marker out of flow on screen so wrapped lines align with the first
+   line's text (hanging indent). Scoped to screen because article-pdf.scss
+   overrides rely on the marker staying inline for its text-indent layout. */
+@mixin li-marker-hanging {
+  @media screen {
+    position: absolute;
+    inset-inline-start: 0;
+  }
+}
+
+/* Companion for li-marker: li reserves the marker gutter on screen */
+@mixin li-marker-item {
+  @media screen {
+    position: relative;
+    padding-inline-start: 2.5em;
+  }
+}
+
 :root {
   /* Values resolved from the blog-themes' import order (pre-@use leakage) */
   --background-color: #D9CAB0;
@@ -776,8 +794,13 @@ a:visited {
           list-style: none;
           padding-inline-start: 0;
 
+          li {
+              @include li-marker-item;
+          }
+
           li:before {
               @include li-marker();
+              @include li-marker-hanging;
           }
 
           .li-heading {
@@ -795,30 +818,14 @@ a:visited {
 
             li {
                 padding-left: 1em;
+
+                @include li-marker-item;
             }
 
             li::before {
               @include li-marker();
-              /*
-                content: '☞';
-                color: $marker-color;
-                font-size: 1.4em;
-                display: inline-block;
-                vertical-align: sub;
-                padding-right: .8em
-              */
+              @include li-marker-hanging;
             }
-
-            /* Doesn't work in Safari
-            li::marker {
-                content: '☞';
-                color: $marker-color;
-                font-size: 1.4em;
-                display: inline-block;
-                vertical-align: sub;
-                padding-right: .4em
-            }
-            */
         }
 
         hr {
@@ -1128,16 +1135,13 @@ a:visited {
             list-style: none;
             padding-inline-start: 0;
 
+            li {
+                @include li-marker-item;
+            }
+
             li::before {
               @include li-marker();
-              /*
-                content: '☞';
-                color: $marker-color;
-                font-size: 1.4em;
-                display: inline-block;
-                vertical-align: sub;
-                padding-right: .4em
-              */
+              @include li-marker-hanging;
             }
         }
 

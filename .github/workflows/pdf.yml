@@ -59,8 +59,37 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install tqdm
 
-      - name: Setup veraPDF
-        uses: cmahnke/vivliostyle-batch-cli/.github/actions/setup-verapdf@v0.3.4
+      - name: Setup Java for veraPDF
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install veraPDF CLI
+        run: |
+          curl -L --fail -o "$RUNNER_TEMP/verapdf-installer.zip" \
+            https://software.verapdf.org/releases/verapdf-installer.zip
+          unzip -q "$RUNNER_TEMP/verapdf-installer.zip" -d "$RUNNER_TEMP/verapdf-installer"
+          cat > "$RUNNER_TEMP/auto-install.xml" <<'EOF'
+          <AutomatedInstallation langpack="eng">
+              <com.izforge.izpack.panels.htmlhello.HTMLHelloPanel id="welcome"/>
+              <com.izforge.izpack.panels.target.TargetPanel id="install_dir">
+                  <installpath>${{ runner.temp }}/verapdf</installpath>
+              </com.izforge.izpack.panels.target.TargetPanel>
+              <com.izforge.izpack.panels.packs.PacksPanel id="sdk_pack_select">
+                  <pack index="0" name="veraPDF GUI" selected="false"/>
+                  <pack index="1" name="veraPDF CLI" selected="true"/>
+                  <pack index="2" name="veraPDF Documentation" selected="false"/>
+                  <pack index="3" name="veraPDF Sample Plugins" selected="false"/>
+              </com.izforge.izpack.panels.packs.PacksPanel>
+              <com.izforge.izpack.panels.install.InstallPanel id="install"/>
+              <com.izforge.izpack.panels.finish.FinishPanel id="finish"/>
+          </AutomatedInstallation>
+          EOF
+          "$RUNNER_TEMP"/verapdf-installer/verapdf-*/verapdf-install "$RUNNER_TEMP/auto-install.xml"
+          "$RUNNER_TEMP/verapdf/verapdf" --version
+          echo "$RUNNER_TEMP/verapdf" >> "$GITHUB_PATH"
+        shell: bash
 
       - name: Generate article PDFs
         run: |
