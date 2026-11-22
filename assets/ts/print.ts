@@ -34,37 +34,96 @@ onReady(() => {
     });
   };
 
+  /* Insert the ↩ markers: for each .line the visual rows are measured with a
+     Range (one rect per rendered line) and a marker is inserted INLINE at the
+     start of every continuation row, before the wrapped characters. No
+     absolute positioning — Vivliostyle does not honor it and would push the
+     marker onto its own line. */
   const markWrappedLines = () => {
     document.querySelectorAll<HTMLElement>('pre code .line').forEach(line => {
-      if (line.querySelector('.line-wrap-marker')) {
+      if (line.querySelector('.line-wrap-marker') || line.clientHeight === 0) {
         return;
       }
 
-      const cs = getComputedStyle(line);
-      let lh = parseFloat(cs.lineHeight);
-      if (!Number.isFinite(lh) || lh <= 0) {
-        const probe = document.createElement('span');
-        probe.style.visibility = 'hidden';
-        probe.textContent = 'A';
-        line.appendChild(probe);
-        lh = probe.getBoundingClientRect().height;
-        probe.remove();
-      }
-      if (!Number.isFinite(lh) || lh <= 0) {
+      // Text nodes in document order with their cumulative offsets.
+      const nodes: { node: Text; start: number }[] = [];
+      let total = 0;
+      const collect = (node: Node) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          nodes.push({ node: node as Text, start: total });
+          total += node.textContent?.length ?? 0;
+        } else {
+          node.childNodes.forEach(collect);
+        }
+      };
+      Array.from(line.childNodes).forEach(collect);
+      if (total === 0 || nodes.length === 0) {
         return;
       }
 
-      const rows = Math.round(line.clientHeight / lh);
-      if (rows < 2 || line.clientHeight === 0) {
+      const range = document.createRange();
+      const rowsAt = (offset: number): number => {
+        try {
+          range.setStart(nodes[0].node, 0);
+          for (const entry of nodes) {
+            if (offset <= entry.start + entry.node.length) {
+              range.setEnd(entry.node, offset - entry.start);
+              break;
+            }
+          }
+          return range.getClientRects().length;
+        } catch {
+          return 0;
+        }
+      };
+
+      const rows = rowsAt(total);
+      if (rows < 2) {
         return;
       }
 
-      for (let n = 1; n < rows; n++) {
+      // The offsets where each continuation row starts, measured before any
+      // insertion (the covered row count only grows with the offset, so a
+      // binary search finds each boundary).
+      const starts: number[] = [];
+      for (let row = 1; row < rows; row++) {
+        let low = 0;
+        let high = total;
+        while (high - low > 1) {
+          const mid = Math.floor((low + high) / 2);
+          if (rowsAt(mid) > row) {
+            high = mid;
+          } else {
+            low = mid;
+          }
+        }
+        starts.push(high);
+      }
+
+      // Insert from the last wrap backwards, so the earlier (node, local)
+      // mappings stay valid while text nodes get split.
+      for (const offset of starts.reverse()) {
+        let node: Text | null = null;
+        let local = 0;
+        for (const entry of nodes) {
+          if (offset <= entry.start + entry.node.length) {
+            node = entry.node;
+            local = offset - entry.start;
+            break;
+          }
+        }
+        if (node === null) {
+          continue;
+        }
         const marker = document.createElement('span');
         marker.className = 'line-wrap-marker';
         marker.textContent = '↩';
-        marker.style.top = `${n * lh}px`;
-        line.appendChild(marker);
+        if (local > 0) {
+          const tail = node.splitText(local);
+          node.parentNode?.insertBefore(marker, tail);
+        } else {
+          node.parentNode?.insertBefore(marker, node);
+        }
       }
     });
   };

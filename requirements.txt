@@ -12,3 +12,4 @@ pyyaml
 zenodo-client
 GitPython
 pyvips
+tqdm

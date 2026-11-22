@@ -1,5 +1,9 @@
 $box-border: #ff5477;
 
+/* YouTube play-button logo in youtube red — the theme's icons.scss only ships
+   dark/light variants; the print overlay uses the brand red. */
+$youtube-red: "data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='%23ff0000' d='M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z'/%3E%3C/svg%3E";
+
 @use "npm-fonts/stix-two-text";
 @use "npm-fonts/strichpunkt-sans";
 @use "icons" as *;
@@ -379,17 +383,15 @@ p {
           display: block;
           padding-left: 2ch;
           text-indent: -2ch;
-          position: relative;
+        }
 
-          .line-wrap-marker {
-            position: absolute;
-            left: 0;
-            width: 2ch;
-            text-indent: 0;
-            font-family: $body-text;
-            font-size: 0.75em;
-            color: inherit;
-          }
+        /* The wrap indicator rides INLINE before the wrapped characters —
+           Vivliostyle ignores absolute positioning, so print.ts places the
+           marker at the measured wrap offset and it flows with the text. */
+        .line-wrap-marker {
+          font-family: $body-text;
+          font-size: 0.75em;
+          color: inherit;
         }
 
         code {
@@ -519,6 +521,7 @@ p {
 
         table {
           width: max-content;
+          max-width: 100%;
           margin: 6pt auto;
 
           thead {
@@ -526,8 +529,10 @@ p {
             border-bottom: 2px solid $box-border;
 
           }
-          td {
+          td,
+          th {
             padding-left: 6pt;
+            overflow-wrap: anywhere;
           }
         }
 
@@ -540,6 +545,26 @@ p {
 
         .youtube-video {
           padding: 1.4em 1.4em 1em 1.4em;
+          position: relative;
+          width: fit-content;
+          margin-inline: auto;
+
+          img {
+            display: block;
+          }
+
+          /* YouTube play icon overlaid on the preview: 40% of the preview
+             width, aspect ratio kept, youtube red. */
+          &::before {
+            content: "";
+            position: absolute;
+            width: 40%;
+            aspect-ratio: 576 / 512;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: url($youtube-red) no-repeat center / contain;
+          }
 
           iframe {
             border-radius: .4rem;
