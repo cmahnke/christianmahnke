@@ -11,5 +11,6 @@ beautifulsoup4
 pyyaml
 zenodo-client
 GitPython
+pikepdf
 pyvips
 tqdm

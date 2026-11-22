@@ -2,12 +2,14 @@
 
 Selected blog posts are published as PDFs on [Zenodo](https://zenodo.org/) to keep them
 citeable and permanently archived (see the background in
-`content/post/zenodo-articles/`). The pipeline has three stages:
+`content/post/zenodo-articles/`). The pipeline has four stages:
 
 1. Hugo renders a print-optimised HTML version of the post (`pdf-article` output format)
 2. [Vivliostyle](https://vivliostyle.org/) converts that HTML into a PDF
-3. [`zenodo-client`](https://github.com/cthoyt/zenodo-client) uploads the PDF with proper
-   metadata (author, ORCID, keywords, license, related identifiers) and a DOI is issued
+3. [`zenodo-client`](https://github.com/cthoyt/zenodo-client) reserves a DOI on a draft
+   deposit, writes it into the PDF's XMP metadata/DocInfo ([pikepdf](https://pikepdf.readthedocs.io/)),
+   then uploads the PDF with proper metadata (author, ORCID, keywords, license, related
+   identifiers) and publishes it, which activates the DOI
 
 The metadata model follows the article
 ["Making your blog FAIR"](https://drmowinckels.io/blog/2024/fair-blog/) by Athanasia Mo
@@ -17,8 +19,9 @@ Mowinckel.
 
 * Hugo (extended, Dart Sass) – for the `pdf-article` output format
 * `vivliostyle-batch-cli` (`@projektemacher/vivliostyle-batch-cli`, in `package.json`)
-* Python dependencies from `requirements.txt`, notably `zenodo-client`, `GitPython`
-  plus the theme's `PyHugo` module (`themes/projektemacher-base/scripts`)
+* Python dependencies from `requirements.txt`, notably `zenodo-client`, `GitPython`,
+  `pikepdf` (writes the DOI into the PDF metadata) plus the theme's `PyHugo` module
+  (`themes/projektemacher-base/scripts`)
 * A Zenodo account
 
 ## API Keys
@@ -60,7 +63,7 @@ untracked `.env` file.
   python scripts/zenodo.py --production   # short form: -p
   ```
 
-The flag is defined in `scripts/zenodo.py:220`
+The flag is defined in `scripts/zenodo.py:515`
 (`action="store_false", dest="sandbox", default=True`) and is forwarded to
 `ensure_zenodo(..., sandbox=sandbox)` in `zenodo_push()`. The target is logged at
 startup: `Target: Zenodo sandbox` / `Target: Zenodo production`.
@@ -165,6 +168,39 @@ The script uses the theme's `PyHugo` module to read posts and metadata.
   never modifies the post's front matter; if a front-matter write fails after a
   successful upload, the remaining languages are left untouched and reported
 
+**Reserve, patch, publish (new posts):**
+
+For a post without a `zenodo.doi`/`deposition_id` the script runs three steps in one go
+– no PDF rebuild is needed to get the DOI into the PDF:
+
+1. **Reserve**: a draft deposit is created with `prereserve_doi: true`
+   (`create_zenodo(..., publish=False)`). The response contains the reserved DOI
+   (`10.5281/zenodo.XXXXXX` in production, `10.5072/...` on the sandbox), which only
+   becomes resolvable once the deposit is published
+2. **Patch**: every `article.pdf` of the post is rewritten **in place** with
+   [pikepdf](https://pikepdf.readthedocs.io/): XMP `dc:identifier` gets the DOI URL,
+   plus `dc:title`, `dc:creator`, `dc:description` and `pdf:Keywords`; DocInfo
+   (Title/Author/Subject/Keywords) is kept in sync via `update_docinfo=True` so the
+   PDF/A-2b conformance stays valid. PDFs that already carry the DOI are left untouched
+3. **Publish**: the patched PDFs are uploaded to the draft and the deposit is published,
+   activating the DOI
+
+Notes:
+
+* An interrupted run (draft reserved, publish failed) resumes the **same** draft on the
+  next run instead of creating a duplicate – the script tracks the draft via the same
+  `pystow` key mapping `zenodo_client` uses
+* Multilingual posts upload both `article.pdf` files – they are renamed to
+  `article-<lang>.pdf` for the deposit, because the Zenodo bucket is keyed by filename
+  and the last upload would otherwise silently replace the previous ones
+* The DOI is only in the PDF **file metadata** (XMP/DocInfo), the rendered page shows no
+  DOI row unless the PDF was built when `zenodo.doi` was already in the front matter
+* A production run that finds a sandbox DOI (`10.5072/...`) in the front matter treats
+  the post as unpublished and creates a fresh production deposit (a sandbox deposition
+  can never be updated on production)
+* The patched PDFs under `docs/` are committed build artifacts – commit them together
+  with the front-matter changes written by `--update`
+
 **`check_hugo_posts()`** collects one `ZenodoEntry` per post (all languages):
 
 * For each language it looks for the PDF (`article.pdf` by default) in the language's
@@ -185,9 +221,9 @@ The script uses the theme's `PyHugo` module to read posts and metadata.
 
 * Skips entries that already have a `doi` or `deposition_id` and are unchanged
   (uploads are never duplicated)
-* For changed entries with an existing deposition, creates a new version via
-  `update_zenodo()`; for new entries calls `ensure_zenodo()`, which re-uses an existing
-  deposition with the same key or creates a new one
+* For new entries, reserves a DOI on a draft deposit, patches the PDFs with it and
+  publishes (see *Reserve, patch, publish* above); for changed entries with an existing
+  deposition, creates a new version via `update_zenodo()`
 * Extracts `doi` and `deposition_id` from the API response
 * With `--update`, merges `{doi, deposition_id, lastmod}` into the `zenodo` front matter
   block of every language version of the post
@@ -299,16 +335,18 @@ Typical workflow for a new post:
 # 2. Preview what would be uploaded (no API call)
 python scripts/zenodo.py --dry-run
 
-# 3. Upload to the sandbox and write the DOI back into the front matter
-python scripts/zenodo.py --token "$ZENODO_SANDBOX_ACCESS_TOKEN" --update
-
-# 4. Check the sandbox entry, then go live
+# 3. Reserve a DOI, patch the PDFs with it, upload and publish, then write the
+#    DOI back into the front matter – all in one run
 python scripts/zenodo.py --production --token "$ZENODO_ACCESS_TOKEN" --update
+
+# 4. Commit the front matter and the patched PDFs, then rebuild/deploy the site
+#    so the DOI badge/row appears on the HTML pages
 ```
 
-Note that `article-pdfs.sh` rebuilds the whole print segment, so step 4 should be
-followed by a regular `hugo` build (or deploy) so the site picks up the new
-`zenodo.doi` front matter written by `--update`.
+For a trial run first, repeat step 3 without `--production` against the sandbox
+(`--token "$ZENODO_SANDBOX_ACCESS_TOKEN"`); a later production run detects the sandbox
+DOI and creates a fresh production deposit with a production DOI (the PDFs get re-patched
+before that upload).
 
 ## Updating an already published post
 

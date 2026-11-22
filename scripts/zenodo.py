@@ -1,10 +1,15 @@
 import argparse
-from zenodo_client import Creator, Metadata, ensure_zenodo, update_zenodo
+from zenodo_client import Creator, Metadata, Zenodo, create_zenodo, update_zenodo
 from pathlib import Path
 from datetime import date, datetime, timezone
 import sys, os, logging
 import json
 import git
+import pikepdf
+import pystow
+import requests
+import shutil
+import tempfile
 from dataclasses import dataclass
 
 sys.path.append(str(Path(__file__).resolve().parents[1] / "themes" / "projektemacher-base" / "scripts"))
@@ -18,8 +23,19 @@ PUBLICATION_TYPE = "section"
 
 IGNORE_KEYWORDS = ["Blog", "Projektemacher.org", "Status", "Suche", "Spaß", "Fun", ""]
 
+SANDBOX_DOI_PREFIX = "10.5072/"
+
 # Logging Setup
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+
+
+class ReserveMetadata(Metadata):
+    """Deposition metadata with a DOI pre-reserved on creation.
+
+    The reserved DOI is returned in the API response (metadata.prereserve_doi.doi)
+    but only becomes resolvable once the deposition is published."""
+
+    prereserve_doi: bool = True
 
 @dataclass
 class ZenodoEntry:
@@ -144,6 +160,112 @@ def _check_zenodo_response(res_json, already_published, target):
             return "no DOI in response"
     return None
 
+def patch_pdf_metadata(pdf_path, doi_url, entry):
+    """Write the DOI and descriptive metadata into a PDF in place.
+
+    XMP and DocInfo are written consistently (pikepdf's update_docinfo) to keep
+    the PDF/A conformance intact; PDFs already carrying the DOI are left untouched."""
+    with pikepdf.open(pdf_path, allow_overwriting_input=True) as pdf:
+        with pdf.open_metadata() as meta:
+            if meta.get("dc:identifier") == doi_url:
+                logging.info(f"{pdf_path} already carries {doi_url}, not patching.")
+                return
+        with pdf.open_metadata(set_pikepdf_as_editor=False, update_docinfo=True) as meta:
+            meta["dc:title"] = entry.title
+            meta["dc:creator"] = [_format_creator_name(a["name"]) for a in entry.authors]
+            meta["dc:description"] = entry.description
+            meta["dc:identifier"] = doi_url
+            if entry.keywords:
+                meta["pdf:Keywords"] = ", ".join(entry.keywords)
+        pdf.save(pdf_path)
+    logging.info(f"Patched {pdf_path} with DOI {doi_url}")
+
+def _patch_entry_pdfs(entry, doi):
+    """Write the DOI and entry metadata into all PDF files of the entry in place."""
+    doi_url = f"https://doi.org/{doi}"
+    for path in entry.upload_files.values():
+        patch_pdf_metadata(path, doi_url, entry)
+
+def _prepare_upload_paths(entry, workdir):
+    """Return the paths to upload for an entry.
+
+    Language versions share the basename article.pdf, and the Zenodo bucket is
+    keyed by filename – without renaming, the last upload silently replaces the
+    previous ones. Multilingual entries therefore get renamed copies
+    (article-<lang>.pdf) in workdir; single language entries upload the file as-is."""
+    if len(entry.upload_files) <= 1:
+        return list(entry.upload_files.values())
+    paths = []
+    for lang, path in entry.upload_files.items():
+        target = Path(workdir) / f"article-{lang}.pdf"
+        shutil.copyfile(path, target)
+        paths.append(target)
+    return paths
+
+def _get_deposition_json(z, deposition_id):
+    """Fetch a deposition (draft or published) as JSON."""
+    res = requests.get(
+        f"{z.depositions_base}/{deposition_id}",
+        params={"access_token": z.access_token},
+        timeout=15,
+        headers={"User-Agent": "zenodo.py"},
+    )
+    res.raise_for_status()
+    return res.json()
+
+def _reserve_and_publish(entry, metadata, workdir, token, sandbox, target):
+    """Reserve a DOI on a new draft deposit, write it into the entry's PDFs, then
+    upload the files and publish the deposit.
+
+    Mirrors zenodo_client's pystow key bookkeeping (see Zenodo.ensure) so an
+    interrupted run – draft reserved, publish failed – resumes the same draft
+    on the next run instead of creating a duplicate deposit.
+
+    Returns the publish response, or None on failure."""
+    module = "zenodo:sandbox" if sandbox else "zenodo"
+    z = Zenodo(access_token=token, sandbox=sandbox)
+    deposition_id = pystow.get_config(module, entry.key)
+    reserved_doi = None
+    if deposition_id:
+        logging.info(f"Found unfinished draft deposition {deposition_id} for key '{entry.key}', resuming.")
+        try:
+            dep = _get_deposition_json(z, deposition_id)
+            reserved_doi = dep.get("metadata", {}).get("prereserve_doi", {}).get("doi", "")
+        except requests.HTTPError as e:
+            if e.response is not None and e.response.status_code in (404, 410):
+                logging.warning(f"Draft deposition {deposition_id} no longer exists on {target}, creating a new one.")
+            else:
+                logging.error(f"Could not fetch draft deposition {deposition_id} on {target}, not uploading: {e}")
+                return None
+        if not reserved_doi:
+            logging.warning(f"Draft deposition {deposition_id} has no pre-reserved DOI, the PDFs will be uploaded without a DOI.")
+    if reserved_doi is None:
+        logging.info(f"Reserving DOI for '{entry.title}' on {target}...")
+        try:
+            dep = create_zenodo(data=metadata, paths=[], publish=False, sandbox=sandbox, access_token=token).json()
+        except Exception as e:
+            logging.error(f"Reserving a DOI on {target} failed for {entry.posts}: {e}")
+            return None
+        error = _check_zenodo_response(dep, already_published=False, target=target)
+        reserved_doi = dep.get("metadata", {}).get("prereserve_doi", {}).get("doi", "")
+        if error is not None or not reserved_doi:
+            logging.error(f"Unexpected API response from {target} for {entry.posts} ({error or 'no pre-reserved DOI'}), not uploading or updating front matter. Response: {json.dumps(dep)[:500]}")
+            return None
+        deposition_id = str(dep["id"])
+        pystow.write_config(module, entry.key, deposition_id)
+    try:
+        _patch_entry_pdfs(entry, reserved_doi)
+        upload_paths = _prepare_upload_paths(entry, workdir)
+    except Exception as e:
+        logging.error(f"Failed to prepare the PDFs for upload (DOI {reserved_doi}) for {entry.posts}, not uploading: {e}")
+        return None
+    logging.info(f"Uploading patched files to draft deposition {deposition_id} and publishing on {target}...")
+    try:
+        return update_zenodo(deposition_id=deposition_id, paths=upload_paths, sandbox=sandbox, access_token=token)
+    except Exception as e:
+        logging.error(f"Publishing draft deposition {deposition_id} on {target} failed for {entry.posts}, it will be resumed on the next run: {e}")
+        return None
+
 def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=False):
     if not entry.upload_files or not entry.key or not entry.title:
         logging.warning(f"Missing required fields for entry '{entry.title}', skipping.")
@@ -151,7 +273,7 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
 
     target = "Zenodo sandbox" if sandbox else "Zenodo production"
 
-    metadata = Metadata(
+    metadata = ReserveMetadata(
         title=entry.title,
         upload_type=UPLOAD_TYPE,
         publication_type=PUBLICATION_TYPE,
@@ -162,44 +284,52 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
         related_identifiers=entry.related_identifiers
     )
 
+    already_published = bool(entry.deposition_id or entry.doi)
+
+    # A sandbox DOI (10.5072/...) can never be updated on production – start over there
+    if already_published and not sandbox and entry.doi.startswith(SANDBOX_DOI_PREFIX):
+        logging.warning(f"Entry '{entry.title}' has a Zenodo sandbox DOI ({entry.doi}) but target is {target}, treating it as unpublished and creating a new deposit.")
+        entry.deposition_id = ""
+        entry.doi = ""
+        entry.changed = False
+        already_published = False
+
     if dry_run:
-        already_published = bool(entry.deposition_id or entry.doi)
         if already_published and not entry.changed:
             logging.info(f"[DRY RUN] '{entry.title}' already published and unchanged, would skip.")
         elif already_published:
             logging.info(f"[DRY RUN] Would create a new Zenodo version for '{entry.title}' (lastmod {entry.lastmod or 'unknown'}).")
         else:
-            logging.info(f"[DRY RUN] Would upload '{entry.title}' to Zenodo from file {entry.posts}.")
+            logging.info(f"[DRY RUN] Would reserve a DOI for '{entry.title}' on {target}, write it into the PDF metadata, then upload and publish.")
         logging.info(f"[DRY RUN] Files to be uploaded: {list(entry.upload_files.values())}")
         return
 
-    already_published = bool(entry.deposition_id or entry.doi)
-
-    # Phase 1: upload / create version (raises on API failure, front matter untouched)
-    try:
-        if already_published and not entry.changed:
-            logging.info(f"Entry '{entry.title}' already has a deposition ID or DOI and is unchanged, skipping upload.")
-            return
-        elif already_published:
-            logging.info(f"Entry '{entry.title}' changed since last upload (lastmod {entry.lastmod or 'unknown'}), creating new Zenodo version on {target}...")
-            res = update_zenodo(
-                deposition_id=entry.deposition_id,
-                paths=entry.upload_files.values(),
-                sandbox=sandbox,
-                access_token=token
-            )
-        else:
-            logging.info(f"Uploading '{entry.title}' to {target}...")
-            res = ensure_zenodo(
-                key=entry.key,
-                data=metadata,
-                paths=entry.upload_files.values(),
-                sandbox=sandbox,
-                access_token=token
-            )
-    except Exception as e:
-        logging.error(f"Upload to {target} failed for {entry.posts}, not updating front matter: {e}")
+    if already_published and not entry.changed:
+        logging.info(f"Entry '{entry.title}' already has a deposition ID or DOI and is unchanged, skipping upload.")
         return
+
+    with tempfile.TemporaryDirectory() as tmp:
+        # Phase 1: reserve (new entries) / upload / create version – raises on API
+        # failure, front matter untouched
+        try:
+            if already_published:
+                logging.info(f"Entry '{entry.title}' changed since last upload (lastmod {entry.lastmod or 'unknown'}), creating new Zenodo version on {target}...")
+                if entry.doi:
+                    _patch_entry_pdfs(entry, entry.doi)
+                res = update_zenodo(
+                    deposition_id=entry.deposition_id,
+                    paths=_prepare_upload_paths(entry, tmp),
+                    sandbox=sandbox,
+                    access_token=token
+                )
+            else:
+                logging.info(f"Uploading '{entry.title}' to {target}...")
+                res = _reserve_and_publish(entry, metadata, tmp, token, sandbox, target)
+                if res is None:
+                    return
+        except Exception as e:
+            logging.error(f"Upload to {target} failed for {entry.posts}, not updating front matter: {e}")
+            return
 
     # Phase 2: validate response, build front matter for all languages before writing
     try:

@@ -49,6 +49,11 @@ def parse_args(argv):
         help="Regenerate only the post matching this URL path segment, e.g. whalebone-arch-levin-park",
     )
     parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Rebuild PDFs even if they already exist",
+    )
+    parser.add_argument(
         "-v",
         "--verbose",
         action="store_true",
@@ -102,7 +107,7 @@ def delete_matching_pdfs(docs_root, post):
     return deleted
 
 
-def collect_jobs(docs_root, post, base_url):
+def collect_jobs(docs_root, post, base_url, force=False):
     jobs = []
     skipped_existing = skipped_redirect = skipped_filter = 0
     for html in sorted(docs_root.rglob(HTML_NAME)):
@@ -110,14 +115,14 @@ def collect_jobs(docs_root, post, base_url):
             skipped_filter += 1
             continue
         pdf = html.with_suffix(".pdf")
-        if pdf.exists():
+        if pdf.exists() and not force:
             skipped_existing += 1
-            logger.info("Skipping '%s' (already exists)", repo_relative(pdf))
+            logger.debug("Skipping '%s' (already exists)", repo_relative(pdf))
             continue
         text = html.read_text(encoding="utf-8", errors="replace")
         if 'http-equiv="refresh"' in text:
             skipped_redirect += 1
-            logger.info("Skipping '%s' (alias redirect page)", repo_relative(html))
+            logger.debug("Skipping '%s' (alias redirect page)", repo_relative(html))
             continue
         doi = DOI_PATTERN.search(text)
         jobs.append(
@@ -213,7 +218,7 @@ def main(argv=None):
         argv = sys.argv[1:]
     args = parse_args(argv)
     logging.basicConfig(
-        level=logging.DEBUG if args.verbose else logging.WARNING,
+        level=logging.DEBUG if args.verbose else logging.INFO,
         format="%(levelname)s: %(message)s",
     )
 
@@ -226,9 +231,17 @@ def main(argv=None):
         return 1
 
     docs_root = Path(args.docs_dir).resolve() if Path(args.docs_dir).is_absolute() else (REPO_ROOT / args.docs_dir).resolve()
-    if not docs_root.is_dir():
-        logger.error("The directory '%s' was not found.", repo_relative(docs_root))
-        return 1
+
+    if docs_root.is_dir() and not args.force and not args.post:
+        jobs, skipped_existing, skipped_redirect, skipped_filter = collect_jobs(docs_root, args.post, args.base_url)
+        if not jobs:
+            logger.info(
+                "Nothing to do: %d article page(s) already have PDFs, %d alias redirect page(s) skipped - skipping hugo",
+                skipped_existing,
+                skipped_redirect,
+            )
+            return 0
+        logger.info("%d article page(s) without PDF found in '%s' - running hugo first", len(jobs), repo_relative(docs_root))
 
     if run_hugo(args) != 0:
         return 1
@@ -237,7 +250,7 @@ def main(argv=None):
         deleted = delete_matching_pdfs(docs_root, args.post)
         logger.info("Single-post mode: regenerating only '%s' (%d existing PDF(s) deleted)", args.post, deleted)
 
-    jobs, skipped_existing, skipped_redirect, skipped_filter = collect_jobs(docs_root, args.post, args.base_url)
+    jobs, skipped_existing, skipped_redirect, skipped_filter = collect_jobs(docs_root, args.post, args.base_url, args.force)
     logger.info(
         "Searching '%s' for 'article.html': %d to convert, %d already exist, %d alias redirect page(s), %d filtered",
         repo_relative(docs_root),
