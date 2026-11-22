@@ -49,6 +49,7 @@ def parse_args(argv):
         help="Regenerate only the post matching this URL path segment, e.g. whalebone-arch-levin-park",
     )
     parser.add_argument(
+        "-f",
         "--force",
         action="store_true",
         help="Rebuild PDFs even if they already exist",
