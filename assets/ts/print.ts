@@ -11,6 +11,29 @@ const onReady = (fn: () => void) => {
 onReady(() => {
   document.querySelectorAll('details').forEach(el => el.open = true);
 
+  /* Plain code blocks (no chroma line wrappers) get their text split into
+     .line spans so the wrap-marker logic below applies to them too.
+     Idempotent: after the split the block has element children. */
+  const splitPlainCodeLines = () => {
+    document.querySelectorAll<HTMLElement>('pre code').forEach(code => {
+      if (code.childElementCount > 0 || code.dataset.lineSplit) {
+        return;
+      }
+      code.dataset.lineSplit = 'true';
+      const fragment = document.createDocumentFragment();
+      (code.textContent ?? '').split('\n').forEach((line, index, lines) => {
+        const span = document.createElement('span');
+        span.className = 'line';
+        span.textContent = line;
+        fragment.appendChild(span);
+        if (index < lines.length - 1) {
+          fragment.appendChild(document.createTextNode('\n'));
+        }
+      });
+      code.replaceChildren(fragment);
+    });
+  };
+
   const markWrappedLines = () => {
     document.querySelectorAll<HTMLElement>('pre code .line').forEach(line => {
       if (line.querySelector('.line-wrap-marker')) {
@@ -76,6 +99,7 @@ onReady(() => {
   };
 
   const tryMeasure = (attempts: number) => {
+    splitPlainCodeLines();
     markWrappedLines();
     sizeCaptions();
     const lines = Array.from(document.querySelectorAll<HTMLElement>('pre code .line'));

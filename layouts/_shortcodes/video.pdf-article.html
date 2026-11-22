@@ -39,8 +39,7 @@
       {{- end -}}
       <figure>
         <img src="{{ $preview.RelPermalink }}" alt="{{ i18n "preview" }}" />
-        <figcaption><h4>{{ i18n "printNoVideo" }}</h4><br />
-          <b>URL:</b> <a class="video-preview-link" href="{{ $videoAbsURL }}" download>{{$videoAbsURL}}</a>
+        <figcaption><h4>{{ i18n "printNoVideo" }}</h4><p><b>URL:</b> <a class="video-preview-link" href="{{ $videoAbsURL }}" download>{{$videoAbsURL}}</a></p>
         </figcaption>
       </figure>
     {{- end -}}

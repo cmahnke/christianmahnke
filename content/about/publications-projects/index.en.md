@@ -69,9 +69,15 @@ See also <a id="grolink" href="//publications.goettingen-research-online.de/cris
 
 ## Projects and participations
 
-* NPM
-  * [`hdr-canvas`](https://www.npmjs.com/package/hdr-canvas)
-  * [`@projektemacher`](https://www.npmjs.com/org/projektemacher)
+* NPM organisation [`@projektemacher`](https://www.npmjs.com/org/projektemacher)
+* Project pages
+  * [`hdr-canvas`](https://cmahnke.github.io/hdr-canvas/)
+  * [Lucienne](https://cmahnke.github.io/lucienne/)
+  * [Fliiifenleger](https://cmahnke.github.io/fliiifenleger/)
+  * [StoryMap JS](https://cmahnke.github.io/StoryMapJS/)
+  * [`tify-plugins`](https://cmahnke.github.io/tify-plugins/)
+  * [`code-citation-lint`](https://cmahnke.github.io/code-citation-lint/)
+  * [`coursereader`](https://cmahnke.github.io/coursereader/)
 * [Forum Wissen](https://www.forum-wissen.de/)
 * [Projects at the SUB Göttingen](https://www.sub.uni-goettingen.de/kontakt/personen-a-z/personendetails/person/christian-mahnke/)
 

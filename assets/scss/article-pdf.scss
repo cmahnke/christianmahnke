@@ -7,6 +7,15 @@ $box-border: #ff5477;
 $body-text: "STIX Two Text Variable";
 $accent-font: "Strichpunkt Sans";
 
+/* Trailing blocks that never render visibly (the wikidata summary inside
+   .post-footer is display:none, .related-posts is dropped by Vivliostyle as
+   trailing content) but still take part in fragmentation — Vivliostyle emits
+   an extra empty page for them. Hide them outright. */
+.post-footer,
+.related-posts {
+  display: none;
+}
+
 @page  {
   size: A4 !important;
   margin-top: 1cm;
@@ -303,12 +312,21 @@ p {
           text-indent: -2.2em;
         }
 
+        /* Nested lists: level 2 and beyond indent by one marker width
+           instead of repeating the full 3.2em list indent per level. */
+        ul ul li {
+          padding-left: 2.2em;
+        }
+
         /* The marker box must exactly match the 2.2em hanging indent:
-           font-size is 1.4em, so 1.57em × 1.4em = 2.2em of the parent font */
+           font-size is 1.4em, so 1.57em × 1.4em = 2.2em of the parent font.
+           line-height 0 keeps the 1.4em marker box from growing the first
+           line box, which showed as a bottom gap under the first list line. */
         ul li::before {
           text-indent: 0;
           padding-right: 0;
           width: 1.57em;
+          line-height: 0;
         }
 
         h1 {
@@ -492,6 +510,7 @@ p {
 
           h4 {
             font-family: $accent-font;
+            font-size: inherit;
             margin-top: 0;
             font-weight: unset;
             box-shadow: unset;

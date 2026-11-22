@@ -50,8 +50,7 @@
       {{- end -}}
       <figure>
         <img src="{{ $preview.RelPermalink }}" alt="{{ i18n "preview" }}" class="gallery-preview" />
-        <figcaption><h4>{{ i18n "pdfPlaceholder" }}</h4><br />
-          <b>URL:</b> <a class="pdf-preview-link" href="{{ $pdfAbsURL }}" download>{{$pdfAbsURL}}</a>
+        <figcaption><h4>{{ i18n "pdfPlaceholder" }}</h4><p><b>URL:</b> <a class="pdf-preview-link" href="{{ $pdfAbsURL }}" download>{{$pdfAbsURL}}</a></p>
         </figcaption>
       </figure>
     {{- end -}}

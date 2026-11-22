@@ -1504,6 +1504,10 @@ a:visited {
 
     figcaption {
       margin-bottom: 1rem;
+
+      h4 {
+        font-size: inherit;
+      }
     }
 
     .post-image {
