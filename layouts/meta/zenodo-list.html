@@ -1,0 +1,28 @@
+{{ define "title" -}}
+  {{- .Title }} · {{ site.Title -}}
+{{- end }}
+{{ define "content" }}
+  {{- partial "header.html" . -}}
+  <div class="content-container single" id="main-content">
+    {{ partial "page.html" . }}
+    {{- $zenodoPages := where site.RegularPages "Params.zenodo.publish" true -}}
+    {{- with $zenodoPages -}}
+      <ul class="zenodo-list">
+        {{- range . -}}
+          {{- $pdfUrl := path.Join (path.Dir .RelPermalink) "article.pdf" -}}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{- partial "shortcodes/exists-link.html" (dict "context" . "url" $pdfUrl "label" (i18n "zenodoPdfLink")) -}}
+            {{- with .Params.zenodo.doi -}}
+              {{- partial "doi.html" (dict "doi" . "labelKey" "zenodoDoiPrefix") -}}
+            {{- end -}}
+          </li>
+        {{- end -}}
+      </ul>
+    {{- end -}}
+    {{- $existsJs := resources.Get "js/shortcodes/exists-link.js" | fingerprint -}}
+    {{- with $existsJs -}}
+      <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" type="module"></script>
+    {{- end -}}
+  </div>
+{{ end }}
