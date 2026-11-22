@@ -74,6 +74,7 @@ See also <a id="grolink" href="//publications.goettingen-research-online.de/cris
   * [`hdr-canvas`](https://cmahnke.github.io/hdr-canvas/)
   * [Lucienne](https://cmahnke.github.io/lucienne/)
   * [Fliiifenleger](https://cmahnke.github.io/fliiifenleger/)
+  * [`vivliostyle-batch-cli`](https://cmahnke.github.io/vivliostyle-batch-cli/)
   * [StoryMap JS](https://cmahnke.github.io/StoryMapJS/)
   * [`tify-plugins`](https://cmahnke.github.io/tify-plugins/)
   * [`code-citation-lint`](https://cmahnke.github.io/code-citation-lint/)
