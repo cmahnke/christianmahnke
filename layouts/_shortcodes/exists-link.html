@@ -1,0 +1,26 @@
+{{- /* exists-link: renders a link to url, but only after the frontend HEAD-checks
+       that the url is reachable (for files that are not available at build time).
+       Usage: {{< exists-link url="https://example.org/file.pdf" >}}
+              {{< exists-link "https://example.org/file.pdf" "Label" >}}
+       The check runs in the browser (js/shortcodes/exists-link.js); until the
+       url answers with 2xx the shortcode renders nothing. */}}
+{{- $url := "" -}}
+{{- with .Get "url" -}}
+    {{- $url = . -}}
+{{- end -}}
+{{- with .Get 0 -}}
+    {{- $url = . -}}
+{{- end -}}
+{{- $label := "" -}}
+{{- with .Get "label" -}}
+    {{- $label = . -}}
+{{- end -}}
+{{- with .Get 1 -}}
+    {{- $label = . -}}
+{{- end -}}
+
+{{- partial "shortcodes/exists-link.html" (dict "context" .Page "url" $url "label" $label) -}}
+
+{{- define "_partials/shortcodes/exists-link-metadata.html" -}}
+  {{- (dict "css" slice "js" (slice "js/shortcodes/exists-link.js") "scss" slice) | jsonify -}}
+{{- end -}}

@@ -1,0 +1,18 @@
+{{/* Renders the exists-link placeholder. Called from the exists-link shortcode
+   (layouts/_shortcodes/exists-link.html), which passes the page context, the
+   url and an optional label. The frontend check lives in
+   js/shortcodes/exists-link.js — until the url answers a HEAD request with a
+   success status, the browser replaces this placeholder with the actual link
+   or removes it entirely. */}}
+{{- $url := .url -}}
+{{- $label := .label -}}
+{{- if eq $label "" -}}
+  {{- with $url -}}
+    {{- $label = path.Base . -}}
+  {{- end -}}
+{{- end -}}
+{{- with $url -}}
+  <span class="exists-link" data-exists-link-url="{{ . | safeURL }}" data-exists-link-label="{{ $label }}"></span>
+{{- else -}}
+  {{- warnf "[partials/shortcodes/exists-link.html] No url given (used in %s)" $.context.File.Path -}}
+{{- end -}}
