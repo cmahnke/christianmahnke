@@ -95,7 +95,7 @@ Other useful flags:
 
 The build is scoped to blog posts via the `print` segment (hugo.toml:364): only pages
 under `/post/**` get the `pdf-article` output, everything else (links, maps, about,
-collections, …) is excluded. `scripts/article-pdfs.sh` triggers it with:
+collections, …) is excluded. `scripts/article_pdfs.py` triggers it with:
 
 ```shell
 hugo --renderSegments print
@@ -122,7 +122,7 @@ The templates involved:
   `layouts/_shortcodes/figure.pdf-article.html`, `footnote.pdf-article.html`,
   `gallery.pdf-article.html`, plus `_markup/render-link.pdf-article.html`
 
-### 2. PDF generation: `scripts/article-pdfs.sh`
+### 2. PDF generation: `scripts/article_pdfs.py`
 
 After the segmented Hugo build the script searches `docs/` (the `publishDir`) for every
 `article.html` and converts each one to `article.pdf` via `vivliostyle-batch-cli`:
@@ -330,7 +330,7 @@ Typical workflow for a new post:
 
 ```shell
 # 1. Build HTML + render the print segment
-./scripts/article-pdfs.sh
+python scripts/article_pdfs.py
 
 # 2. Preview what would be uploaded (no API call)
 python scripts/zenodo.py --dry-run
@@ -353,7 +353,7 @@ before that upload).
 1. Change the post content **and** raise `lastmod` in **all** language versions
    (identical values, otherwise the script fails)
 2. Commit the changes
-3. Rebuild the PDFs: `./scripts/article-pdfs.sh`
+3. Rebuild the PDFs: `python scripts/article_pdfs.py`
 4. Run the upload again – the script detects `lastmod` > `zenodo.lastmod` and creates a
    new Zenodo version with the updated PDF (`doi` in the front matter stays valid)
 5. Commit the front-matter changes written by `--update`, then rebuild/deploy the site

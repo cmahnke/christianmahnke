@@ -24,7 +24,7 @@ The implementation is quite straightforward using a [Hugo Content Adapter](https
 
 At the start of the file, you simply need to specify the source file (`$mastodonFile`) and the folder where the media is stored (`$mastodonMediaPath`).
 
-```gotemplate
+```go-template
 {{- $mastodonFile := "mastodon/mastodon-archive.json" -}}
 {{- $mastodonMediaPath := "mastodon/media/" -}}
 {{- $adapter := . -}}

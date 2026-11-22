@@ -24,7 +24,7 @@ Die Umsetzung ist als [Hugo Content Adapter](https://gohugo.io/content-managemen
 
 Am Anfang der Datei müssen lediglich die Quellldatei (`$mastodonFile`) und der Ordner, in dem die Medien abgelegt sind (`$mastodonMediaPath`), angegeben werden.
 
-```gotemplate
+```go-template
 {{- $mastodonFile := "mastodon/mastodon-archive.json" -}}
 {{- $mastodonMediaPath := "mastodon/media/" -}}
 {{- $adapter := . -}}

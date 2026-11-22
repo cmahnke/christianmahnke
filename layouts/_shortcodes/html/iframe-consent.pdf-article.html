@@ -1,10 +1,35 @@
 {{/* See https://stackoverflow.com/questions/57841380/gdpr-jquery-iframe-consent */}}
 
 {{- $iframe := .Inner | safeHTML -}}
+{{- $page := .Page -}}
 
-{{- $preview := "" -}}
-{{- with .Get "preview" -}}
-    {{- $preview = . -}}
+{{- with findRE `<iframe` (string $iframe) -}}
+  {{/* Interactive embeds (Google Maps/Street View & co.) do not paint into
+     the print rendering at all (cross-origin frames never rasterize before
+     print-to-PDF, regardless of loading mode or wait time) — they would only
+     leave a large empty box. Print the page's preview image instead, with the
+     embed URL as link — the same fallback pattern the youtube/video/pdf-preview
+     shortcodes use. */}}
+  {{- $src := "" -}}
+  {{- with findRESubmatch `src=["']([^"']+)["']` (string $iframe) -}}
+    {{- $src = index (index . 0) 1 -}}
+  {{- end -}}
+  {{- $previewRes := "" -}}
+  {{- with $page.Params.preview -}}
+    {{- $previewRes = partial "get-page-resource.html" (dict "path" . "page" $page) -}}
+  {{- end -}}
+  <figure class="iframe-preview">
+    {{- with $previewRes -}}
+      <img src="{{ . }}" alt="" />
+    {{- end -}}
+    <figcaption><h4>{{ i18n "externalContent" }}</h4><br />
+      {{- with $src -}}
+        <b>URL:</b> <a class="video-preview-link" href="{{ . }}">{{ . }}</a>
+      {{- end -}}
+    </figcaption>
+  </figure>
+{{- else -}}
+  {{/* No iframe in the inner content (e.g. the youtube shortcode renders its
+     own print figure) — pass it through unchanged. */}}
+  {{ $iframe }}
 {{- end -}}
-
-{{ $iframe }}

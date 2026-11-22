@@ -116,10 +116,13 @@ def collect_jobs(docs_root, post, base_url, force=False):
             skipped_filter += 1
             continue
         pdf = html.with_suffix(".pdf")
-        if pdf.exists() and not force:
-            skipped_existing += 1
-            logger.debug("Skipping '%s' (already exists)", repo_relative(pdf))
-            continue
+        if pdf.exists():
+            if not force:
+                skipped_existing += 1
+                logger.debug("Skipping '%s' (already exists)", repo_relative(pdf))
+                continue
+            pdf.unlink()
+            logger.debug("Removing existing '%s'", repo_relative(pdf))
         text = html.read_text(encoding="utf-8", errors="replace")
         if 'http-equiv="refresh"' in text:
             skipped_redirect += 1

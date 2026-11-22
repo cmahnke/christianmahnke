@@ -13,7 +13,7 @@
 {{- end -}}
 {{- with $img -}}
   <figure class="youtube-video">
-    <img src="{{ .RelPermalink }}" alt="{{ $title }}" />
+    <span class="youtube-preview"><img src="{{ .RelPermalink }}" alt="{{ $title }}" /></span>
     <figcaption><h4>{{ i18n "printNoVideo" }}</h4><br />
       <b>URL:</b> <a class="video-preview-link" href="{{ $url }}">{{ $url }}</a>
     </figcaption>

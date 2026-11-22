@@ -16,6 +16,31 @@
 {{- end -}}
 {{- $id := md5 $geojson -}}
 {{- $var := printf "_%s" $id -}}
+{{- $relative := 0 -}}
+{{- with site.Params.print.relative -}}
+  {{- $relative = . -}}
+{{- end -}}
+{{/* Print rendering imports the map module directly: in the Vivliostyle
+   viewer context document scripts are stripped, so the module URL has to be
+   baked in at build time. Built with the same opts the theme's script partial
+   uses for shortcode includes, so the URL (and the module instance) match the
+   emitted module tag. */}}
+{{- $osmModule := "" -}}
+{{- with resources.Get "ts/maps/osm-map.ts" -}}
+  {{- $defines := dict "process.env.NODE_ENV" `"production"` -}}
+  {{- if hugo.IsServer -}}
+    {{- $defines = dict "process.env.NODE_ENV" `"development"` -}}
+  {{- end -}}
+  {{- $osmOpts := dict
+      "targetPath" "ts/maps/osm-map.js"
+      "defines" $defines
+      "minify" (cond hugo.IsDevelopment false true)
+      "sourceMap" (cond hugo.IsDevelopment "linked" "none")
+      "format" "esm"
+  -}}
+  {{- $built := . | js.Build $osmOpts | fingerprint -}}
+  {{- $osmModule = strings.Substr $built.RelPermalink $relative -}}
+{{- end -}}
 <div class="map-wrapper script">
   <div class="map" id="{{ $id }}" aria-label="{{ i18n "interactiveMap" }}"></div>
   <div id="{{ $id }}-popup" class="ol-popup">
@@ -26,22 +51,209 @@
 <script type="text/javascript">
   (function() {
     var tries = 0;
+    {{/* In the print rendering context (Vivliostyle) the layout gate honours
+       __vivReady=false: hold it until the map has been rasterised to a static
+       image, so the paginated output contains the snapshot instead of a clone
+       of the live widget (cloneNode loses canvas pixels and duplicates the
+       controls per page fragment). Refcounted for posts with several maps. */}}
+    var printContext = window.matchMedia && window.matchMedia('print').matches;
+    var holdGate = function() {
+      window.__vivMapPending = (window.__vivMapPending || 0) + 1;
+      if (window.__vivMapPending === 1) {
+        window.__vivReady = false;
+      }
+    };
+    var releaseGate = function() {
+      window.__vivMapPending = Math.max(0, (window.__vivMapPending || 1) - 1);
+      if (window.__vivMapPending === 0 && window.__vivReady === false) {
+        window.__vivReady = true;
+      }
+    };
+    {{/* Print: the map module may not be drained yet (window.initMap only
+       appears after the layout gate opens), so import it directly. */}}
+    var bootPrint = function() {
+      var moduleUrl = '{{ $osmModule | safeJS }}';
+      var run = function(initMap) {
+        try {
+          if (window['__vivMapDone_{{ $id | safeJS }}']) {
+            releaseGate();
+            return;
+          }
+          window['__vivMapDone_{{ $id | safeJS }}'] = true;
+          var map = initMap('{{ $id | safeJS }}', '{{ $geojson | safeJS }}', 'osm', {{ $cluster | safeJS }} {{ if $marker }}, {{ $marker | safeJS}}  {{ end }});
+          map.updateSize();
+          map.getControls().clear();
+          map.getOverlays().clear();
+          var swapped = false;
+          var exportTimer = null;
+          var finish = function() {
+            if (swapped) {
+              return;
+            }
+            swapped = true;
+            if (exportTimer) {
+              window.clearTimeout(exportTimer);
+            }
+            map.setTarget(null);
+            releaseGate();
+          };
+          {{/* Rasterise the fully rendered map (tiles included, OSM source is
+             CORS-anonymous so the canvas is not tainted) and replace the
+             widget with the snapshot. */}}
+          var exportMap = function() {
+            if (swapped) {
+              return;
+            }
+            var size = map.getSize();
+            if (!size || size[0] < 2 || size[1] < 2) {
+              {{/* The paginated source tree may carry no layout at all —
+                 render at an explicit fallback size instead. */}}
+              map.setSize([1200, 600]);
+              size = map.getSize();
+            }
+            try {
+              var canvas = document.createElement('canvas');
+              canvas.width = size[0];
+              canvas.height = size[1];
+              var context = canvas.getContext('2d');
+              Array.prototype.forEach.call(
+                map.getViewport().querySelectorAll('.ol-layers canvas'),
+                function(layerCanvas) {
+                  {{/* Full opacity: the container's style opacity reflects
+                     the load fade-in at export time, not the layer's real
+                     opacity. */}}
+                  context.globalAlpha = 1;
+                  var transform = layerCanvas.style.transform;
+                  if (transform && transform.indexOf('matrix(') === 0) {
+                    var matrix = transform.slice(7, -1).split(',').map(Number);
+                    context.setTransform(matrix[0], matrix[1], matrix[2], matrix[3], matrix[4], matrix[5]);
+                  } else {
+                    context.setTransform(1, 0, 0, 1, 0, 0);
+                  }
+                  context.drawImage(layerCanvas, 0, 0);
+                }
+              );
+              var img = document.createElement('img');
+              img.src = canvas.toDataURL('image/png');
+              img.alt = '';
+              {{/* Vivliostyle only awaits images present at parse time; a late
+                 img has no intrinsic size in its layout, so carry the canvas
+                 geometry explicitly (attributes + aspect-ratio for the
+                 width:100%/height:auto sizing). */}}
+              img.setAttribute('width', String(Math.round(size[0])));
+              img.setAttribute('height', String(Math.round(size[1])));
+              img.style.aspectRatio = Math.round(size[0]) + ' / ' + Math.round(size[1]);
+              var attribution = document.createElement('p');
+              attribution.className = 'map-attribution';
+              attribution.textContent = '© OpenStreetMap contributors';
+              var mapDiv = document.getElementById('{{ $id | safeJS }}');
+              if (!mapDiv) {
+                finish();
+                return;
+              }
+              var wrapper = mapDiv.parentNode;
+              wrapper.classList.add('map-exported');
+              wrapper.replaceChildren(img, attribution);
+              map.setTarget(null);
+              swapped = true;
+              releaseGate();
+            } catch (e) {
+              finish();
+            }
+          };
+          {{/* OpenLayers renders via requestAnimationFrame, which is not
+             reliably scheduled in the print context — so frames are driven by
+             polling with renderSync(). The export waits until no tile/feature
+             load is in flight and the view has been stable for several polls,
+             which covers the geojson fetch, the view fit, the world-view →
+             fitted-view tile switch and the layer fade-in. */}}
+          var inflight = 0;
+          map.getLayers().forEach(function(layer) {
+            var source = typeof layer.getSource === 'function' ? layer.getSource() : null;
+            if (!source || !source.on) {
+              return;
+            }
+            var up = function() { inflight++; };
+            var down = function() { inflight = Math.max(0, inflight - 1); };
+            ['tileloadstart', 'featuresloadstart', 'imageloadstart'].forEach(function(type) {
+              source.on(type, up);
+            });
+            ['tileloadend', 'tileloaderror', 'featuresloadend', 'featuresloaderror', 'imageloadend', 'imageloaderror'].forEach(function(type) {
+              source.on(type, down);
+            });
+          });
+          var pollCount = 0;
+          var stableCount = 0;
+          var lastSignature = '';
+          var pollTimer = window.setInterval(function() {
+            if (swapped) {
+              window.clearInterval(pollTimer);
+              return;
+            }
+            var view = map.getView();
+            var center = view.getCenter() || [0, 0];
+            var signature = [Math.round((view.getResolution() || 0) * 100), Math.round(center[0]), Math.round(center[1]), inflight].join('|');
+            if (signature === lastSignature) {
+              stableCount++;
+            } else {
+              stableCount = 0;
+            }
+            lastSignature = signature;
+            pollCount++;
+            if (inflight === 0 && stableCount >= 3 && pollCount >= 4) {
+              window.clearInterval(pollTimer);
+              exportMap();
+              return;
+            }
+            try {
+              map.renderSync();
+            } catch (e) {}
+            if (pollCount > 30) {
+              window.clearInterval(pollTimer);
+              finish();
+            }
+          }, 300);
+        } catch (e) {
+          console.debug('viv-map: init/render failed', String(e));
+          finish();
+        }
+      };
+      var failed = function() {
+        releaseGate();
+      };
+      if (moduleUrl === '') {
+        failed();
+        return;
+      }
+      import(moduleUrl).then(function(module) {
+        if (typeof module.initMap === 'function') {
+          run(module.initMap);
+        } else {
+          failed();
+        }
+      }, failed);
+    };
     var start = function() {
-      {{/* The ES module defining window.initMap is deferred; in print rendering
-         (Vivliostyle) document.readyState is never 'loading', so the old
-         DOMContentLoaded branch fired too early. Poll instead. */}}
+      {{/* In the print rendering context (Vivliostyle) documentElement.lang can
+         be empty, which makes osm-map's toolTips[lang] lookup fail. Restore it
+         from the Hugo site language before initialising. */}}
+      if (!document.documentElement.lang) {
+        document.documentElement.lang = '{{ site.Language.Lang | default "en" }}';
+      }
+      {{/* Hold the layout gate before anything else runs: the module defining
+         window.initMap is only drained after the gate opens, so the print path
+         imports it directly instead of polling. */}}
+      if (printContext) {
+        holdGate();
+        bootPrint();
+        return;
+      }
       if (typeof window.initMap !== 'function') {
         if (++tries > 50) {
           return;
         }
         window.setTimeout(start, 100);
         return;
-      }
-      {{/* In the print rendering context (Vivliostyle) documentElement.lang can
-         be empty, which makes osm-map's toolTips[lang] lookup fail. Restore it
-         from the Hugo site language before initialising. */}}
-      if (!document.documentElement.lang) {
-        document.documentElement.lang = '{{ site.Language.Lang | default "en" }}';
       }
       var {{ $var | safeJS }} = window.initMap('{{ $id | safeJS }}', '{{ $geojson | safeJS }}', 'osm', {{ $cluster | safeJS }} {{ if $marker }}, {{ $marker | safeJS}}  {{ end }});
       {{ $var | safeJS }}.updateSize();

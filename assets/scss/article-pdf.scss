@@ -345,7 +345,13 @@ p {
         h4 {
           font-size: 1.2rem;
           margin-top: .9em;
-          box-shadow: inset 0 -10px 0 $box-border;
+          text-decoration-line: underline;
+          text-decoration-color: $box-border;
+          text-decoration-thickness: 10px;
+          text-underline-offset: calc(
+            var(--underline-baseline-shift, 0.077em) - 10px
+          );
+          text-decoration-skip-ink: none;
         }
 
         /* code, */
@@ -379,7 +385,11 @@ p {
           border-left: 1px solid;
         }
 
-        pre code .line {
+        /* display:block (not the .chroma .line flex from syntax.scss): the
+           hanging indent must apply and the wrap points have to be identical
+           in the measuring (Chromium) and paginating (Vivliostyle) layouts. */
+        pre code .line,
+        pre code .chroma .line {
           display: block;
           padding-left: 2ch;
           text-indent: -2ch;
@@ -387,7 +397,9 @@ p {
 
         /* The wrap indicator rides INLINE before the wrapped characters —
            Vivliostyle ignores absolute positioning, so print.ts places the
-           marker at the measured wrap offset and it flows with the text. */
+           marker at the measured wrap offset and it flows with the text.
+           print.ts measures the content without the markers, so the marker's
+           own font metrics do not disturb the row detection. */
         .line-wrap-marker {
           font-family: $body-text;
           font-size: 0.75em;
@@ -407,6 +419,21 @@ p {
 
         details > :not(summary) {
           margin-left: 1rem;
+        }
+
+        /* Code spans the full text width like div.highlight does. Bare <pre>
+           blocks (no chroma) and <details> wrappers therefore have to span
+           themselves: column-span only works on direct children of the
+           multicol container. */
+        > pre,
+        > details {
+          column-span: all;
+          break-inside: auto;
+        }
+
+        summary {
+          break-inside: avoid;
+          break-after: avoid-column;
         }
 
         summary:has(+ .highlight) {
@@ -437,17 +464,6 @@ p {
         }
 
         figure,
-        table,
-        /* This used to be tho old fix, but it's wrong since it bresks the intenden layout:
-           A spanner (column-span: all) followed by content that still fits on
-           the page makes Vivliostyle emit an extra empty page — figures must
-           not span (they render at column width instead).
-          figure {
-            margin: 12pt;
-            break-inside: avoid;
-          }
-        */
-
         table,
         /* video, */
         .iiif.iiif-image,
@@ -496,6 +512,17 @@ p {
           }
         }
 
+        /* The iframe-consent print fallback renders the page's preview image
+           as its own figure (see the shortcode). */
+        .iframe-preview {
+          text-align: center;
+
+          img {
+            max-height: 40vh;
+            border: 1px solid black;
+          }
+        }
+
         figcaption {
           font-family: $accent-font;
           margin-top: 6pt;
@@ -515,13 +542,18 @@ p {
             font-size: inherit;
             margin-top: 0;
             font-weight: unset;
-            box-shadow: unset;
+            text-decoration: none;
           }
         }
 
+        /* max-content sizes the table by the unbreakable width of its cells
+           (long URLs in inline code overflow the page) and Vivliostyle's table
+           layout does not honor the max-width clamp. Constrain the table to
+           the page width instead — table-layout: fixed proved to hang
+           Vivliostyle's spanner layout, so the auto algorithm is kept and the
+           cells break long content via overflow-wrap. */
         table {
-          width: max-content;
-          max-width: 100%;
+          width: 100%;
           margin: 6pt auto;
 
           thead {
@@ -536,26 +568,26 @@ p {
           }
         }
 
-        /*
-        table {
-          width: 100%;
-          table-layout: fixed;
-        }
-        */
-
         .youtube-video {
           padding: 1.4em 1.4em 1em 1.4em;
-          position: relative;
           width: fit-content;
           margin-inline: auto;
 
-          img {
+          /* Positioning context for the play icon: only the preview image,
+             not the whole figure incl. the caption below it. */
+          .youtube-preview {
             display: block;
+            position: relative;
+
+            img {
+              display: block;
+              border: 0.5pt solid black;
+            }
           }
 
           /* YouTube play icon overlaid on the preview: 40% of the preview
              width, aspect ratio kept, youtube red. */
-          &::before {
+          .youtube-preview::before {
             content: "";
             position: absolute;
             width: 40%;
@@ -589,7 +621,13 @@ p {
           break-after: avoid-column;
 
           &[id*="update"] {
-            box-shadow: inset 0 -15px 0 $box-border;
+            text-decoration-line: underline;
+            text-decoration-color: $box-border;
+            text-decoration-thickness: 15px;
+            text-underline-offset: calc(
+              var(--underline-baseline-shift, 0.077em) - 15px
+            );
+            text-decoration-skip-ink: none;
             column-span: all;
 
             & ~ p, & ~ h2, & ~ h3, & ~ ul, & ~ ol {
@@ -720,6 +758,27 @@ a {
   padding: 0;
   margin: 0;
   pointer-events: none;
+}
+
+/* The map partial swaps the live widget for a rasterised snapshot before
+   Vivliostyle paginates (cloneNode loses canvas pixels and duplicates the
+   controls per page fragment). The fixed height must stay until the swap
+   happened — the widget needs a sized target to render into. */
+.map-wrapper.map-exported {
+  height: auto;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.map-attribution {
+  font-family: $accent-font;
+  font-size: 8pt;
+  text-align: center;
+  margin: 3pt 0 0;
 }
 
 /* Interactive maps never render in print output; drop the reserved space */
