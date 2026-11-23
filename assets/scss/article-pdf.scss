@@ -6,6 +6,7 @@ $youtube-red: "data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' v
 
 @use "npm-fonts/stix-two-text";
 @use "npm-fonts/strichpunkt-sans";
+@use "underline" as *;
 @use "icons" as *;
 
 $body-text: "STIX Two Text Variable";
@@ -345,13 +346,7 @@ p {
         h4 {
           font-size: 1.2rem;
           margin-top: .9em;
-          text-decoration-line: underline;
-          text-decoration-color: $box-border;
-          text-decoration-thickness: 10px;
-          text-underline-offset: calc(
-            var(--underline-baseline-shift, 0.077em) - 10px
-          );
-          text-decoration-skip-ink: none;
+          @include heading-underline($box-border);
         }
 
         /* code, */
@@ -611,13 +606,7 @@ p {
           break-after: avoid-column;
 
           &[id*="update"] {
-            text-decoration-line: underline;
-            text-decoration-color: $box-border;
-            text-decoration-thickness: 15px;
-            text-underline-offset: calc(
-              var(--underline-baseline-shift, 0.077em) - 15px
-            );
-            text-decoration-skip-ink: none;
+            @include heading-underline($box-border);
             column-span: all;
 
             & ~ p, & ~ h2, & ~ h3, & ~ ul, & ~ ol {

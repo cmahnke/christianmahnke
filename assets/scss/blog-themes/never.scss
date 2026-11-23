@@ -1,3 +1,4 @@
+@use "../underline" as *;
 //TODO: Remove redundent declerations covered by variables
 $background-color: white;
 $foreground-color: black;
@@ -34,7 +35,8 @@ body.never {
 
         .post  {
           .post-title {
-            box-shadow: inset 0 calc(-1 * var(--underline-height, 0.434em)) var(--accents-color);
+            /* Baseline-anchored underline - see _underline.scss; WebKit/Safari keeps the box-shadow fallback. */
+            @include heading-underline(var(--accents-color));
             font-size: 3.2em;
             color: transparent;
             background-clip: text;
@@ -44,24 +46,7 @@ body.never {
               transition: all 750ms ease-out;
               background-size: .375rem .375rem;
               background-position: 0 0, calc(.375rem / 2) calc(.375rem / 2);
-            }
-
-            /* Baseline-anchored underline, see base.scss (.section-content-title
-               rule) for the rationale and the offset derivation. Inside .post
-               this inherits --underline-baseline-shift: 0.202em. The decoration
-               paints in its own color, unaffected by background-clip: text.
-               WebKit/Safari is excluded (renders the thick decoration as a
-               strikethrough) and keeps the box-shadow fallback. */
-            @supports (text-decoration-thickness: 15px) and
-              (not (font: -apple-system-body)) {
-                box-shadow: none;
-                text-decoration-line: underline;
-                text-decoration-color: var(--accents-color);
-                text-decoration-thickness: var(--underline-height, 0.434em);
-                text-underline-offset: calc(var(--underline-baseline-shift, 0.077em) - var(--underline-height, 0.434em));
-                text-decoration-skip-ink: none;
-            }
-          }
+            }          }
 
           .post-body {
             font-size: 1.4em;

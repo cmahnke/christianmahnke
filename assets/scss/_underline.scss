@@ -1,0 +1,41 @@
+/* Baseline-anchored heading underline, shared by base.scss and the
+   blog-themes. Two layers:
+
+   1. `box-shadow: inset` bar — anchors to the line-box bottom and paints
+      beneath the glyphs; the DEFAULT rendering (Safari/WebKit renders the
+      thick text-decoration as a strikethrough, so it is excluded via the
+      WebKit-only `font: -apple-system-body` probe, which parses in WebKit
+      only — validated against Chrome and Firefox).
+
+   2. `text-decoration` bar — anchors to the alphabetic baseline, used by
+      Chrome 87+/Firefox 70+ via the @supports gate above.
+
+   Bar height comes from `--underline-height` (base.scss :root, 0.434em —
+   h2 is the reference: 0.434em × h2's 34.56px = the former fixed 15px; h2
+   is additionally pinned to exactly 15px in base.scss). The vertical
+   anchor comes from `--underline-baseline-shift`, set per line-height
+   context ((L - 0.996em) / 2 with the pinned Josefin Sans metrics — see
+   font-metrics-overrides.scss).
+
+   $kill-mobile-shadow: the ≤35em blocks in base.scss re-add the box-shadow
+   after unsetting it; the decoration path must re-none it there. Only the
+   base.scss call sites need this. */
+@mixin heading-underline($color, $kill-mobile-shadow: false) {
+  box-shadow: inset 0 calc(-1 * var(--underline-height, 0.434em)) 0 $color;
+
+  @supports (text-decoration-thickness: 15px) and
+    (not (font: -apple-system-body)) {
+      box-shadow: none;
+      text-decoration-line: underline;
+      text-decoration-color: $color;
+      text-decoration-thickness: var(--underline-height, 0.434em);
+      text-underline-offset: calc(var(--underline-baseline-shift, 0.077em) - var(--underline-height, 0.434em));
+      text-decoration-skip-ink: none;
+
+      @if $kill-mobile-shadow {
+        @media (max-width : 35em) {
+          box-shadow: none;
+        }
+      }
+  }
+}
