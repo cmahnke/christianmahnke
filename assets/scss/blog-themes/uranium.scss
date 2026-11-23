@@ -32,8 +32,11 @@ body.uranium {
 
             /* Baseline-anchored underline, see base.scss (.section-content-title
                rule) for the rationale and the offset derivation. Inside .post
-               this inherits --underline-baseline-shift: 0.202em. */
-            @supports (text-decoration-thickness: 15px) {
+               this inherits --underline-baseline-shift: 0.202em. WebKit/Safari
+               is excluded (renders the thick decoration as a strikethrough)
+               and keeps the box-shadow fallback. */
+            @supports (text-decoration-thickness: 15px) and
+              (not (font: -apple-system-body)) {
                 box-shadow: none;
                 text-decoration-line: underline;
                 text-decoration-color: var(--accents-color);

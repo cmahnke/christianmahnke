@@ -1097,12 +1097,15 @@ a:visited {
         }
 
         /* Baseline-anchored underline for engines with decoration thickness
-           support (Chrome 87+, Firefox 70+, Safari 18+). The inset box-shadow
-           above anchors to the line-box bottom, which sits at metric-dependent
-           positions in different engines (see font-metrics-overrides.scss);
-           text-decoration anchors to the alphabetic baseline and renders
-           identically everywhere. The box-shadow remains as fallback
-           (e.g. Safari <= 17, no text-decoration-thickness).
+           support and spec-conform rendering (Chrome 87+, Firefox 70+).
+           The inset box-shadow above anchors to the line-box bottom, which
+           sits at metric-dependent positions in different engines (see
+           font-metrics-overrides.scss); text-decoration anchors to the
+           alphabetic baseline and renders identically in those engines.
+           WebKit/Safari renders the thick decoration as a strikethrough,
+           so it is excluded via the WebKit-only `font: -apple-system-body`
+           probe (parses in WebKit only) and keeps the box-shadow fallback,
+           which lands correctly thanks to the pinned font metrics.
 
            The decoration's bottom edge must land on the old box bottom, which
            sits (L - A + D) / 2 below the baseline (A/D = pinned Josefin Sans
@@ -1110,7 +1113,8 @@ a:visited {
            (normalize.css on html) or 1.4 (rules below). Those rules also set
            --underline-baseline-shift to the matching (L - 0.996em) / 2, the
            default here covers the 1.15 context: (1.15 - 0.996) / 2 = 0.077em. */
-        @supports (text-decoration-thickness: 15px) {
+        @supports (text-decoration-thickness: 15px) and
+          (not (font: -apple-system-body)) {
             box-shadow: none;
             text-decoration-line: underline;
             text-decoration-color: $text-underline-color;
@@ -1593,8 +1597,11 @@ a:visited {
 
         /* Baseline-anchored underline, see the .section-content-title rule
            above for the rationale and the offset derivation. Inside .post
-           this inherits --underline-baseline-shift: 0.202em. */
-        @supports (text-decoration-thickness: 15px) {
+           this inherits --underline-baseline-shift: 0.202em. WebKit/Safari
+           is excluded (renders the thick decoration as a strikethrough) and
+           keeps the box-shadow fallback. */
+        @supports (text-decoration-thickness: 15px) and
+          (not (font: -apple-system-body)) {
             box-shadow: none;
             text-decoration-line: underline;
             text-decoration-color: $text-underline-color;
