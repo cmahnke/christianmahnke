@@ -52,7 +52,7 @@ Decisions that might be considered controversial (“opinionated”), such as th
 Firstly, streamlining the user interface (we only need the viewer) and modernising the infrastructure
 
 {{< details summary="Prompt" >}}
-```
+```markdown
 We need to restructure and renovate this project!
 * Ignore agents.md.
 * At the start, create a Playwright test suite covering the examples completely. After the migration, validate if the new structured code is valid.
@@ -85,7 +85,7 @@ After each step, commit to the working Git branch. Use subagents
 Building on this, a few steps can be further refined:
 
 {{< details summary="Prompt" >}}
-```
+```markdown
 Since we now have modern structures for validation and linting, we should use them:
 * Add prettier and run it
 * Make sure there are no disabled Stylelint rules, fix all resulting errors
@@ -120,7 +120,7 @@ After each step, commit to the working Git branch. Use subagents
 And then steps to improve reusability...
 
 {{< details summary="Prompt" >}}
-```
+```markdown
 Now, we should improve reusability:
 * Make sure StoryMap handles resizes and is reactive
 * Create a constructor to StoryMap, where I can pass an element to attach to, the source file as URL or a JSON structure, and all possible options, also add it to the usage documentation and use it in index.html
@@ -153,7 +153,7 @@ After each step, commit to the working Git branch. Use subagents
 And then there were the existing issues; the result here was a list that could then be worked through in groups
 
 {{< details summary="Prompt" >}}
-```
+```markdown
 The next phase is to eliminate known bugs.
 * Read every known issue (bugs, enhancements, uncategorised) from: https://github.com/NUKnightLab/StoryMapJS/issues
 * Check if they only apply to the viewer and are unrelated to legacy things like zoomify, and don't relate to backend stuff like hosting, infrastructures, imports, etc...
@@ -164,7 +164,7 @@ The next phase is to eliminate known bugs.
 And then there’s the website infrastructure:
 
 {{< details summary="Prompt" >}}
-```
+```markdown
 * Change index.html (and other pages) to make it look like https://storymap.knightlab.com/, get the CSS, but make sure it's not mixed with the CSS of the StoryMap JS styles, the typography and anything else should look like the given page.
   * Use the "US WESTWARD EXPANSION" from https://storymap.knightlab.com/ as demo on index.html, make sure it matches as exactly as possible (including CSS and behaviour).
   * On the page, integrate links (add to navbar-secondary) to HTML Version of README, the migration guide, and the IIIF documentation (also apply the style from the page), as well as advances and help (if they are part of this repository).
@@ -183,7 +183,7 @@ After each step, commit to the working Git branch. Use subagents
 However, these steps were not the end of the matter. Rather, they served as preparation for further, more detailed steps, which therefore cannot really be expressed as concise prompts. These ranged from visual (UI) bug fixes, through minor to moderate improvements to the line animation, to the demo page (including improvements to the documentation). In addition, there were more significant improvements: the agent fixed all simple to medium-sized bugs and implemented all improvements listed in the [bug tracker](https://github.com/NUKnightLab/StoryMapJS/issues), provided they were still relevant. Examples:
 
 {{< details summary="Prompt" >}}
-```
+```markdown
 * Make sure that the line animation runs backwards (retract) if the back button is used.
 * Transparent backgrounds should be set using RGBA colours, not filters!
 Try to preload at least the next slide, currently, loading external media types seems to slow down the animation!
