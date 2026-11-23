@@ -28,6 +28,7 @@ tags:
 outputs:
   - html
   - iiif-manifest
+  - pdf-article
 resources:
   - src: preview.png
     name: preview

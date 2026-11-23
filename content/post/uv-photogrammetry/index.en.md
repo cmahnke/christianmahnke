@@ -35,6 +35,7 @@ lastmod: 2025-09-03T00:00:00+02:00
 outputs:
   - html
   - iiif-manifest
+  - pdf-article
 resources:
   - src: preview.png
     name: preview
