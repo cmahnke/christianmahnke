@@ -153,7 +153,7 @@ $down-image-marker: icon("picture", $marker-color);
 
           .content {
             .post-title {
-              box-shadow: inset 0 -10px 0 $text-updated-underline-color;
+              box-shadow: inset 0 calc(-1 * var(--underline-height, 0.434em)) $text-updated-underline-color;
               font-size: 1.1rem;
               font-weight: 500;
             }
