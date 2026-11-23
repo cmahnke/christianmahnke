@@ -93,7 +93,7 @@ jobs:
 
       - name: Generate article PDFs
         run: |
-          python scripts/article_pdfs.py --verapdf
+          python scripts/article_pdfs.py --force --verapdf
 
       - name: Commit and push PDFs to gh-pages
         run: |

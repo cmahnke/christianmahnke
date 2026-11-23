@@ -465,6 +465,7 @@ p {
 
         figure,
         table,
+        iframe,
         /* video, */
         .iiif.iiif-image,
         .youtube-video,
@@ -509,17 +510,6 @@ p {
             img {
               border: 1px solid black;
             }
-          }
-        }
-
-        /* The iframe-consent print fallback renders the page's preview image
-           as its own figure (see the shortcode). */
-        .iframe-preview {
-          text-align: center;
-
-          img {
-            max-height: 40vh;
-            border: 1px solid black;
           }
         }
 

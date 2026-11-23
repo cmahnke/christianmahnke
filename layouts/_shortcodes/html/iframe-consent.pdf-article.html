@@ -1,35 +1,34 @@
 {{/* See https://stackoverflow.com/questions/57841380/gdpr-jquery-iframe-consent */}}
 
 {{- $iframe := .Inner | safeHTML -}}
-{{- $page := .Page -}}
 
-{{- with findRE `<iframe` (string $iframe) -}}
-  {{/* Interactive embeds (Google Maps/Street View & co.) do not paint into
-     the print rendering at all (cross-origin frames never rasterize before
-     print-to-PDF, regardless of loading mode or wait time) — they would only
-     leave a large empty box. Print the page's preview image instead, with the
-     embed URL as link — the same fallback pattern the youtube/video/pdf-preview
-     shortcodes use. */}}
-  {{- $src := "" -}}
-  {{- with findRESubmatch `src=["']([^"']+)["']` (string $iframe) -}}
-    {{- $src = index (index . 0) 1 -}}
-  {{- end -}}
-  {{- $previewRes := "" -}}
-  {{- with $page.Params.preview -}}
-    {{- $previewRes = partial "get-page-resource.html" (dict "path" . "page" $page) -}}
-  {{- end -}}
-  <figure class="iframe-preview">
-    {{- with $previewRes -}}
-      <img src="{{ . }}" alt="" />
-    {{- end -}}
-    <figcaption><h4>{{ i18n "externalContent" }}</h4><br />
-      {{- with $src -}}
-        <b>URL:</b> <a class="video-preview-link" href="{{ . }}">{{ . }}</a>
-      {{- end -}}
-    </figcaption>
-  </figure>
-{{- else -}}
-  {{/* No iframe in the inner content (e.g. the youtube shortcode renders its
-     own print figure) — pass it through unchanged. */}}
-  {{ $iframe }}
+{{- $preview := "" -}}
+{{- with .Get "preview" -}}
+    {{- $preview = . -}}
 {{- end -}}
+
+{{/* In print (Vivliostyle) lazy-loaded cross-origin embeds never load and
+   never paint: the paginated content is laid out off-viewport and out-of-
+   process frames do not rasterize into print-to-PDF. Force eager loading so
+   the embeds (e.g. Google Maps/Street View) boot during rendering. */}}
+{{ $iframe | replaceRE ` loading="lazy"` ` loading="eager"` | safeHTML }}
+{{/* Cross-origin embeds need seconds to boot after their shell loaded — far
+   beyond the layout gate's quiet period. Hold the gate briefly (refcounted,
+   bounded by the gate deadline) so they can paint before the PDF is captured. */}}
+{{ $holdScript := `<script type="text/javascript">
+  (function() {
+    if (!(window.matchMedia && window.matchMedia('print').matches)) {
+      return;
+    }
+    window.__vivIframePending = (window.__vivIframePending || 0) + 1;
+    window.__vivReady = false;
+    window.setTimeout(function() {
+      window.__vivIframePending = Math.max(0, (window.__vivIframePending || 1) - 1);
+      if (window.__vivIframePending === 0 && (window.__vivMapPending || 0) === 0 && window.__vivReady === false) {
+        window.__vivReady = true;
+      }
+    }, 7000);
+  })();
+</script>` -}}
+
+{{ $holdScript | safeHTML }}

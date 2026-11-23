@@ -13,9 +13,11 @@ onReady(() => {
 
   /* Plain code blocks (no chroma line wrappers) get their text split into
      .line spans so the wrap-marker logic below applies to them too.
-     Idempotent: after the split the block has element children. The spans are
-     display:block in print, so no newline separators go between them —
-     preserved newlines would render phantom empty rows. */
+     Idempotent: after the split the block has element children. Newlines are
+     kept BETWEEN the spans: Vivliostyle does not honor display:block on the
+     plain spans, so without them the source lines would flow together. They
+     sit outside the .line elements, so the wrap-marker measurement is not
+     affected. */
   const splitPlainCodeLines = () => {
     document.querySelectorAll<HTMLElement>('pre code').forEach(code => {
       if (code.childElementCount > 0 || code.dataset.lineSplit) {
@@ -23,11 +25,14 @@ onReady(() => {
       }
       code.dataset.lineSplit = 'true';
       const fragment = document.createDocumentFragment();
-      (code.textContent ?? '').split('\n').forEach(line => {
+      (code.textContent ?? '').split('\n').forEach((line, index, lines) => {
         const span = document.createElement('span');
         span.className = 'line';
         span.textContent = line;
         fragment.appendChild(span);
+        if (index < lines.length - 1) {
+          fragment.appendChild(document.createTextNode('\n'));
+        }
       });
       code.replaceChildren(fragment);
     });
@@ -228,7 +233,7 @@ onReady(() => {
           }
           const marker = document.createElement('span');
           marker.className = 'line-wrap-marker';
-          marker.textContent = '↩';
+          marker.textContent = '↪';
           if (local > 0) {
             const tail = node.splitText(local);
             node.parentNode?.insertBefore(marker, tail);
