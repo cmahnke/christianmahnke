@@ -22,7 +22,7 @@ outputs:
   - html
   - linkedart
   - pdf-article
-lastmod: 2026-07-08T00:00:00+02:00
+lastmod: 2026-11-24T00:00:00+02:00
 ---
 
 I've found a colour woodcut by an unknown artist...
@@ -47,3 +47,7 @@ Gerbrand Caspers, the author of the blog “[The Linosaurus](https://gerrie-thef
 # Update 8.7.2026
 
 [Wolfgang Barina](https://www.wolfgang-barina.de/), also a collector of woodcuts, was able to identify the subject. It is the [Königstein Fortress](https://de.wikipedia.org/wiki/Festung_K%C3%B6nigstein).
+
+# Update 24.11.2026
+
+I happened to come across another [painting of Königstein Fortress from the same perspective](https://www.mehlis.eu/de/catalogs/11925/item/4125/) online. The artist in this case is Herbert Grotegut.

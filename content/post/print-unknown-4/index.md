@@ -22,7 +22,7 @@ outputs:
   - html
   - linkedart
   - pdf-article
-lastmod: 2026-07-08T00:00:00+02:00
+lastmod: 2026-11-24T00:00:00+02:00
 ---
 
 Ich habe einen Farbholzschnitt eines unbekannten Künstlers gefunden...
@@ -47,3 +47,7 @@ Gerbrand Caspers, der Betreiber des Blogs "[The Linosaurus](https://gerrie-thefr
 # Update 8.7.2026
 
 [Wolfgang Barina](https://www.wolfgang-barina.de/), ebenfalls ein Sammler von Holzschnitten, konnte das Motiv identifizieren. Es handelt sich um die [Festung Königstein](https://de.wikipedia.org/wiki/Festung_K%C3%B6nigstein).
+
+# Update 24.11.2026
+
+Ich habe zufällig online eine weiteres [Gemälde der Festung Königstein aus der gleichen Perspektive](https://www.mehlis.eu/de/catalogs/11925/item/4125/) gefunden. Der Künstler ist hier Herbert Grotegut.
