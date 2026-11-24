@@ -479,6 +479,34 @@ p {
           column-span: all;
         }
 
+        figure.icon {
+          display: inline;
+          column-span: none;
+          margin: 4pt;
+          vertical-align: middle;
+
+          img {
+            display: inline;
+            margin: 0;
+            vertical-align: middle;
+          }
+        }
+
+        /* A trailing full-width element can emit a phantom empty page after
+           the multicol. Only the last child gets break-after: avoid — every
+           other spanner keeps its current pagination. */
+        > figure:last-child,
+        > table:last-child,
+        > iframe:last-child,
+        > .iiif.iiif-image:last-child,
+        > .youtube-video:last-child,
+        > .pdf-preview:last-child,
+        > .html-video:last-child,
+        > .script:last-child,
+        > .hdr-warning:last-child {
+          break-after: avoid;
+        }
+
         /* Inline width/style attributes on Google Maps embeds otherwise keep
            the iframe narrower than the page; the rule above already spans all
            columns. */

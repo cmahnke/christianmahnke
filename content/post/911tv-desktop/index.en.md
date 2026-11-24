@@ -50,12 +50,12 @@ Apart from that, not much has changed implementation wise, some modules have bee
 ## Download (updated)
 
 * **Windows**
-* {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Zip 64 Bit Intel](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-win-x64.zip)
-* {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Zip 64 Bit ARM](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-win-arm64.zip)
+* {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" class="icon" >}}[Zip 64 Bit Intel](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-win-x64.zip)
+* {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" class="icon" >}}[Zip 64 Bit ARM](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-win-arm64.zip)
 
 * **Linux**
-* {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Tar.gz 64 Bit Intel](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-linux-amd64.tgz)
-* {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" >}}[Tar.gz 64 Bit ARM](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-linux-arm64.tgz)
+* {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" class="icon" >}}[Tar.gz 64 Bit Intel](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-linux-amd64.tgz)
+* {{< figure src="favicon-32.png" alt="Screenshot 911TV Desktop Mac" link="" class="icon" >}}[Tar.gz 64 Bit ARM](https://github.com/cmahnke/911tv/releases/download/2024.10.21/911tv-linux-arm64.tgz)
 
 The application can be downloaded from [GitHub](https://github.com/cmahnke/911tv/releases).
 
