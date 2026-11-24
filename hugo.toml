@@ -391,7 +391,8 @@ timeout = "240s"
             '^https://qlever\.dev/api/.*',
             '^https://raw.githubusercontent.com/*',
             '^https://static\.projektemacher\.org/.*',
-            '^https://img\.youtube\.com/.*']
+            '^https://img\.youtube\.com/.*',
+            '^https://www\.instagram\.com/.*']
 
   [security.node]
     [security.node.permissions]

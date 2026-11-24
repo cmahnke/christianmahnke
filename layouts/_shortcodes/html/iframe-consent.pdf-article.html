@@ -21,6 +21,7 @@
       return;
     }
     window.__vivIframePending = (window.__vivIframePending || 0) + 1;
+    window.__vivRasterizeIframes = true;
     window.__vivReady = false;
     window.setTimeout(function() {
       window.__vivIframePending = Math.max(0, (window.__vivIframePending || 1) - 1);
