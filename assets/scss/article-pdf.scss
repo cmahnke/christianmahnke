@@ -21,8 +21,8 @@ $accent-font: "Strichpunkt Sans";
   display: none;
 }
 
-@page  {
-  size: A4 !important;
+@page {
+  size: a4 !important;
   margin-top: 1cm;
   margin-bottom: 1cm;
   margin-left: 1cm;
@@ -57,22 +57,22 @@ $accent-font: "Strichpunkt Sans";
   }
 
   @bottom-right {
-    content: '';
+    content: "";
   }
 
   @bottom-left {
-    content: '';
+    content: "";
   }
 
-   @bottom-center {
+  @bottom-center {
     font-family: $accent-font;
     content: counter(page) " / " counter(pages);
-   }
+  }
 }
 
 @page :first {
   @top-center {
-    content: '';
+    content: "";
     border-bottom: none;
     padding-bottom: 0;
   }
@@ -97,7 +97,9 @@ p {
     }
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     letter-spacing: -1px;
     font-variant-caps: small-caps;
   }
@@ -118,7 +120,9 @@ p {
     margin-top: unset;
 
     .content {
-      h1, h2, h3 {
+      h1,
+      h2,
+      h3 {
         min-width: 100%;
       }
 
@@ -142,12 +146,12 @@ p {
           }
 
           .author-orcid {
-            font-size: .75rem;
+            font-size: 0.75rem;
             white-space: nowrap;
 
-            &:before {
+            &::before {
               content: url($orcid-dark) !important;
-              margin-right: .6rem;
+              margin-right: 0.6rem;
               vertical-align: sub;
               height: 1.2em;
               width: 1.2em;
@@ -163,7 +167,7 @@ p {
           justify-content: flex-start;
           white-space: nowrap;
           align-items: center;
-          gap: .25rem;
+          gap: 0.25rem;
           font-weight: 200;
 
           .label {
@@ -180,7 +184,7 @@ p {
         }
 
         .article-link {
-          margin-left: .2rem;
+          margin-left: 0.2rem;
         }
 
         .post-url {
@@ -192,7 +196,7 @@ p {
           width: 85%;
           display: flex;
           flex-direction: row;
-          gap: .25rem;
+          gap: 0.25rem;
           align-items: baseline;
 
           .label {
@@ -220,7 +224,7 @@ p {
 
         .tags li {
           border: unset;
-          padding: .1rem 0;
+          padding: 0.1rem 0;
           border-radius: unset;
           font-variant-caps: small-caps;
           white-space: nowrap;
@@ -231,7 +235,6 @@ p {
             white-space: normal;
           }
         }
-
       }
 
       .post-title {
@@ -260,7 +263,6 @@ p {
           margin-right: 0.5em;
           font-size: inherit;
         }
-
       }
 
       .doi-reference {
@@ -307,7 +309,7 @@ p {
         }
 
         .footnote-number {
-          margin-left: .1cm;
+          margin-left: 0.1cm;
           font-size: 65%;
           vertical-align: super;
         }
@@ -335,17 +337,18 @@ p {
         }
 
         h1 {
-            font-size: 2rem;
-            margin-top: 1.5em;
+          font-size: 2rem;
+          margin-top: 1.5em;
         }
+
         h2 {
-            font-size: 1.5rem;
-            margin-top: 1.2em;
+          font-size: 1.5rem;
+          margin-top: 1.2em;
         }
 
         h4 {
           font-size: 1.2rem;
-          margin-top: .9em;
+          margin-top: 0.9em;
           @include heading-underline($box-border);
         }
 
@@ -360,10 +363,9 @@ p {
           border-width: 1px;
           padding: 0.2em 0.4em;
           border-style: solid;
-          border-color: rgb(223, 223, 223);
+          border-color: rgb(223 223 223);
           font-family: "Courier New", Courier, monospace;
           font-size: 0.9rem;
-          background-color: #f5f5f5;
           border-radius: 4px;
           break-inside: avoid;
           background-color: unset;
@@ -409,7 +411,6 @@ p {
 
         pre.chroma {
           background-color: unset;
-
         }
 
         details > :not(summary) {
@@ -533,8 +534,9 @@ p {
           margin-top: 6pt;
           text-align: center;
 
-          &:before {
-            content: var(--figure-label, "Fig.") " " counter(figure, decimal) ": ";
+          &::before {
+            content: var(--figure-label, "Fig.") " " counter(figure, decimal)
+              ": ";
           }
 
           h4,
@@ -564,8 +566,8 @@ p {
           thead {
             margin-bottom: 6pt;
             border-bottom: 2px solid $box-border;
-
           }
+
           td,
           th {
             padding-left: 6pt;
@@ -574,7 +576,7 @@ p {
         }
 
         .youtube-video {
-          padding: 1.4em 1.4em 1em 1.4em;
+          padding: 1.4em 1.4em 1em;
           width: fit-content;
           margin-inline: auto;
 
@@ -604,10 +606,10 @@ p {
           }
 
           iframe {
-            border-radius: .4rem;
+            border-radius: 0.4rem;
             max-width: 100%;
             width: 100%;
-            aspect-ratio: 4/3;;
+            aspect-ratio: 4/3;
           }
         }
 
@@ -622,14 +624,22 @@ p {
           color: red;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
           break-after: avoid-column;
 
           &[id*="update"] {
             @include heading-underline($box-border);
+
             column-span: all;
 
-            & ~ p, & ~ h2, & ~ h3, & ~ ul, & ~ ol {
+            & ~ p,
+            & ~ h2,
+            & ~ h3,
+            & ~ ul,
+            & ~ ol {
               column-span: all;
             }
           }
@@ -668,9 +678,9 @@ p {
 }
 
 a {
-  &:before,
-  &:after {
-    content: '' !important;
+  &::before,
+  &::after {
+    content: "" !important;
   }
 }
 
@@ -734,14 +744,14 @@ a {
 }
 
 .gallery-item .gallery-image.caption {
-    .hidden-caption-content {
-      min-height: unset;
-      padding: 6pt;
+  .hidden-caption-content {
+    min-height: unset;
+    padding: 6pt;
 
-      &:before {
-        content: var(--figure-label, "Fig.") " " counter(figure, decimal) ": ";
-      }
+    &::before {
+      content: var(--figure-label, "Fig.") " " counter(figure, decimal) ": ";
     }
+  }
 }
 
 .ol-popup {
@@ -761,11 +771,9 @@ a {
 
 /* The map partial swaps the live widget for a rasterised snapshot before
    Vivliostyle paginates (cloneNode loses canvas pixels and duplicates the
-   controls per page fragment). The wrapper is a column-spanner float, so its
-   height must be auto from the start — adding it with the runtime swap class
-   leaves the float snapshot at the theme's fixed height and the image and
-   attribution overlap the following content. */
-.map-wrapper {
+   controls per page fragment). The fixed height must stay until the swap
+   happened — the widget needs a sized target to render into. */
+.map-wrapper.map-exported {
   height: auto;
 
   img {
