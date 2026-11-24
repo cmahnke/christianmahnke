@@ -478,6 +478,21 @@ p {
           column-span: all;
         }
 
+        /* Inline width/style attributes on Google Maps embeds otherwise keep
+           the iframe narrower than the page; the rule above already spans all
+           columns. */
+        iframe[src*="google.com/maps"],
+        iframe[src*="maps.google.com"] {
+          display: block;
+          width: 100% !important;
+          max-width: none !important;
+          margin: 0 !important;
+        }
+
+        .instagram-preview {
+          text-align: center;
+        }
+
         .iiif.iiif-image {
           padding: 0;
           aspect-ratio: 1.414 / 1;

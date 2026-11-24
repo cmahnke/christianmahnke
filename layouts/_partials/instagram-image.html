@@ -1,0 +1,18 @@
+{{- /* Print rendering for Instagram embeds: the interactive blockquote
+       never paints in Vivliostyle, so fetch the post image at build time.
+       The media endpoint is deprecated; fall back to a plain link. */ -}}
+{{- $id := . -}}
+{{- $permalink := printf "https://www.instagram.com/p/%s/" $id -}}
+{{- $remote := try (resources.GetRemote (printf "https://www.instagram.com/p/%s/media/?size=l" $id)) -}}
+{{- $image := "" -}}
+{{- if and (not $remote.Err) (eq $remote.Value.MediaType.MainType "image") (gt $remote.Value.Width 200) -}}
+  {{- $image = $remote.Value -}}
+{{- end -}}
+{{- if $image -}}
+  <figure class="instagram-preview">
+    <img src="{{ $image.RelPermalink }}" alt="{{ $permalink }}" />
+    <figcaption><b>URL:</b> <a href="{{ $permalink }}">{{ $permalink }}</a></figcaption>
+  </figure>
+{{- else -}}
+  <p class="instagram-preview"><a href="{{ $permalink }}">{{ $permalink }}</a></p>
+{{- end -}}

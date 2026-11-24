@@ -1,0 +1,4 @@
+{{- /* Print override of the site's insta shortcode, which embeds a fixed
+       post unless an ID is passed. */ -}}
+{{- $id := .Get 0 | default "CmG-hNesauQ" -}}
+{{- partial "instagram-image.html" $id -}}
