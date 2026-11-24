@@ -37,11 +37,7 @@ Alle Seiten mit 3D-Inhalten, ihre Manifeste und der jeweilige Link zum [Kasane](
 
 ## Viewer
 
-Ein Manifest ist nur die halbe Miete, gebraucht wird auch ein Viewer, der die `Scene`-Klasse darstellen kann. [Kasane](https://kasane.ldas.jp) (früher "IIIF 3D Viewer", Universität Tokio) ist ein [Open-Source-Viewer](https://github.com/nakamura196/iiif-kasane) (MIT), der 3D-Modelle, Bilder, Audio und Video aus IIIF-Manifesten darstellt und mit Annotationen erweitern kann. Das Projekt ist momentan noch nicht auf [npm](https://github.com/nakamura196/iiif-kasane/issues/263) veröffentlicht, der Aufruf eines Manifests erfolgt aber bereits per Deep-Link:
-
-```
-https://kasane.ldas.jp/viewer?iiif-content=<URL-des-Manifests>
-```
+Ein Manifest ist nur die halbe Miete, gebraucht wird auch ein Viewer, der die `Scene`-Klasse darstellen kann. [Kasane](https://kasane.ldas.jp) (früher "IIIF 3D Viewer", Universität Tokio) ist ein [Open-Source-Viewer](https://github.com/nakamura196/iiif-kasane) (MIT), der 3D-Modelle, Bilder, Audio und Video aus IIIF-Manifesten darstellt und mit Annotationen erweitern kann. Das Projekt ist momentan noch nicht auf [npm](https://github.com/nakamura196/iiif-kasane/issues/263) veröffentlicht, der Aufruf eines Manifests erfolgt aber bereits per Deep-Link: `https://kasane.ldas.jp/viewer?iiif-content=`<URL-des-Manifests>
 
 Weitere IIIF 3D Viewer können auf der Site von Glen Robson [ausprobiert werden](https://glenrobson.github.io/iiif_stuff/3d-guide/).
 

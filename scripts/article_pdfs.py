@@ -108,6 +108,12 @@ def delete_matching_pdfs(docs_root, post):
     return deleted
 
 
+def pairwise_order_key(html, docs_root):
+    rel = html.relative_to(docs_root).parts
+    language = 0 if rel and rel[0] == "post" else 1
+    return html.parent.name.lower(), language, html.as_posix()
+
+
 def collect_jobs(docs_root, post, base_url, force=False):
     jobs = []
     skipped_existing = skipped_redirect = skipped_filter = 0
@@ -137,6 +143,7 @@ def collect_jobs(docs_root, post, base_url, force=False):
                 doi=doi.group(0) if doi else "",
             )
         )
+    jobs.sort(key=lambda job: pairwise_order_key(job.html, docs_root))
     return jobs, skipped_existing, skipped_redirect, skipped_filter
 
 
