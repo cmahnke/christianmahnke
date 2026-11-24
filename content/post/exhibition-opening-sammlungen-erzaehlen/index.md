@@ -32,7 +32,7 @@ Das Göttinger Tageblatt [berichtet auch über die Eröffnung](https://www.goett
 
 Hier der Instagram Beitrag von [@forumwissengoe](https://www.instagram.com/forumwissengoe/) zur Eröffnung:
 
-{{< instagram DUoVhBbiS4V >}}
+{{< insta DUoVhBbiS4V >}}
 
 {{< related >}}
 Der Katalog meiner Sammlung ist auch [online verfügbar](/post/coat-hangers-book/).

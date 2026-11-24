@@ -1,4 +1,0 @@
-{{- /* Print override of Hugo's embedded instagram shortcode: accepts a
-       post ID or a full post URL. */ -}}
-{{- $id := .Get 0 | replaceRE `^.*instagram\.com/p/([^/?]+).*$` `$1` -}}
-{{- partial "instagram-image.html" $id -}}

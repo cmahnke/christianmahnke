@@ -63,181 +63,183 @@ onReady(() => {
     });
   };
 
-  /* Insert the ↩ markers: for each .line the visual rows are measured with
-     Ranges confined to the content text nodes — markers inserted by earlier
-     rounds are excluded from both the offset bookkeeping and the rects, so
-     the measurement is stable and cannot feed back on itself (markers that
-     take part in the measurement wrap one per row and multiply). Element
-     fragments sharing one row (chroma wraps every token and whitespace run
-     in its own span) are deduplicated by their top coordinate, so the count
-     follows the rendered rows and not the DOM fragments. A marker is
-     inserted INLINE before the first character of every continuation row. No
-     absolute positioning — Vivliostyle does not honor it and would push the
-     marker onto its own line. */
-  /* Content offsets per .line, remembered across invocations: tryMeasure
-     re-runs while other content is still laying out, and a fresh set would
-     re-mark the same rows on every retry. */
-  const markedLines = new WeakMap<HTMLElement, Set<number>>();
-
+  /* Insert the ↪ marker at the start of every visual continuation row. Code
+     uses a monospaced font with word-break: break-all, so row capacities can
+     be computed from the glyph width; single-character Ranges only correct
+     subpixel off-by-one boundaries. The marker uses a proportional font, so
+     its width is measured separately and reserved on continuation rows.
+     Each pass starts from clean text, so repeated tryMeasure rounds cannot
+     accumulate duplicate markers. Vivliostyle ignores absolute positioning,
+     hence the inline marker. */
   const markWrappedLines = () => {
     document.querySelectorAll<HTMLElement>('pre code .line').forEach(line => {
       if (line.clientHeight === 0) {
         return;
       }
 
-      const inMarker = (node: Text): boolean => {
-        let el = node.parentElement;
-        while (el && el !== line) {
-          if (el.classList.contains('line-wrap-marker')) {
-            return true;
-          }
-          el = el.parentElement;
-        }
-        return false;
-      };
+      Array.from(line.querySelectorAll<HTMLElement>('.line-wrap-marker')).forEach(marker => marker.remove());
+      line.normalize();
 
-      /* Content offsets never change between rounds (markers are invisible
-         to the measurement), so remembering the marked offsets makes any
-         later round a no-op. */
-      let markedOffsets = markedLines.get(line);
-      if (!markedOffsets) {
-        markedOffsets = new Set<number>();
-        markedLines.set(line, markedOffsets);
+      const nodes: { node: Text; start: number }[] = [];
+      let total = 0;
+      const collect = (node: Node) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          nodes.push({ node: node as Text, start: total });
+          total += node.textContent?.length ?? 0;
+        } else {
+          node.childNodes.forEach(collect);
+        }
+      };
+      Array.from(line.childNodes).forEach(collect);
+      if (total === 0) {
+        return;
       }
 
-      /* A handful of rounds: every insertion round can create further wraps. */
-      for (let round = 0; round < 8; round++) {
-        // Content text nodes in document order with their cumulative offsets
-        // (marker characters are excluded entirely, keeping the offsets
-        // stable across rounds and invocations).
-        const nodes: { node: Text; start: number }[] = [];
-        let total = 0;
-        const collect = (node: Node) => {
-          if (node.nodeType === Node.TEXT_NODE) {
-            if (!inMarker(node as Text)) {
-              nodes.push({ node: node as Text, start: total });
-              total += node.textContent?.length ?? 0;
-            }
-          } else {
-            node.childNodes.forEach(collect);
+      const charAt = (offset: number): string => {
+        for (const entry of nodes) {
+          if (offset < entry.start + entry.node.length) {
+            return (entry.node.textContent ?? '').charAt(offset - entry.start);
           }
-        };
-        Array.from(line.childNodes).forEach(collect);
-        if (total === 0 || nodes.length === 0) {
-          return;
         }
+        return '';
+      };
 
-        const charAt = (offset: number): string => {
-          for (const entry of nodes) {
-            if (offset < entry.start + entry.node.length) {
-              return (entry.node.textContent ?? '').charAt(offset - entry.start);
-            }
-          }
-          return '';
-        };
+      /* Preserved trailing whitespace would otherwise count as a row. */
+      let end = total;
+      while (end > 0 && /\s/.test(charAt(end - 1))) {
+        end--;
+      }
+      if (end < 2) {
+        return;
+      }
 
-        /* Measure up to the last non-whitespace character: preserved trailing
-           whitespace would otherwise count as an extra (phantom) row. */
-        let end = total;
-        while (end > 0 && /\s/.test(charAt(end - 1))) {
-          end--;
-        }
-        if (end === 0) {
-          return;
-        }
+      const code = line.closest('code');
+      if (!code) {
+        return;
+      }
+      const probe = document.createElement('span');
+      probe.textContent = '0000000000';
+      probe.style.visibility = 'hidden';
+      probe.style.whiteSpace = 'pre';
+      const markerProbe = document.createElement('span');
+      markerProbe.className = 'line-wrap-marker';
+      markerProbe.textContent = '↪';
+      markerProbe.style.visibility = 'hidden';
+      code.appendChild(probe);
+      code.appendChild(markerProbe);
+      const charWidth = probe.getBoundingClientRect().width / 10;
+      const markerWidth = markerProbe.getBoundingClientRect().width;
+      probe.remove();
+      markerProbe.remove();
+      if (!(charWidth > 0)) {
+        return;
+      }
 
-        const lineStyle = window.getComputedStyle(line);
-        const fontSize = parseFloat(lineStyle.fontSize) || 12;
-        const lineHeightValue = parseFloat(lineStyle.lineHeight);
-        const rowTolerance = Math.max(3, (isFinite(lineHeightValue) ? lineHeightValue : fontSize * 1.2) / 3);
+      const codeStyle = window.getComputedStyle(code);
+      const contentWidth = code.clientWidth - parseFloat(codeStyle.paddingLeft) - parseFloat(codeStyle.paddingRight);
+      if (!(contentWidth > 0)) {
+        return;
+      }
+      /* .line has padding-left: 2ch and text-indent: -2ch: the first row
+         starts 2ch to the left and gets the full width, continuation rows
+         are indented by 2ch and additionally carry the marker. */
+      const firstCapacity = Math.max(1, Math.floor(contentWidth / charWidth + 0.01));
+      const continuationCapacity = Math.max(1, Math.floor((contentWidth - 2 * charWidth - markerWidth) / charWidth + 0.01));
 
-        /* Rows of the content prefix [0, offset): every content node is
-           measured with its own (sub-)range — one rect per row per node —
-           and the tops are merged. Ranges spanning several elements would
-           include the marker spans between them. */
-        const rowsAt = (offset: number): number => {
-          const tops: number[] = [];
-          for (const entry of nodes) {
-            if (entry.start >= offset) {
-              break;
-            }
-            const localEnd = Math.min(entry.node.length, offset - entry.start);
+      const lineStyle = window.getComputedStyle(line);
+      const fontSize = parseFloat(lineStyle.fontSize) || 12;
+      const lineHeightValue = parseFloat(lineStyle.lineHeight);
+      const rowTolerance = Math.max(3, (isFinite(lineHeightValue) ? lineHeightValue : fontSize * 1.2) / 2);
+
+      const charTop = (offset: number): number | null => {
+        for (const entry of nodes) {
+          if (offset < entry.start + entry.node.length) {
             try {
               const range = document.createRange();
-              range.setStart(entry.node, 0);
-              range.setEnd(entry.node, localEnd);
-              const rects = range.getClientRects();
-              for (let i = 0; i < rects.length; i++) {
-                const top = rects[i].top;
-                if (tops.every(t => Math.abs(t - top) >= rowTolerance)) {
-                  tops.push(top);
-                }
-              }
+              range.setStart(entry.node, offset - entry.start);
+              range.setEnd(entry.node, offset - entry.start + 1);
+              const rect = range.getClientRects()[0];
+              return rect ? rect.top : null;
             } catch {
-              return 0;
+              return null;
             }
           }
-          return tops.length;
-        };
-
-        const rows = rowsAt(end);
-        if (rows < 2) {
-          return;
         }
+        return null;
+      };
 
-        // The offsets where each continuation row starts, measured on the
-        // current layout (the covered row count only grows with the offset,
-        // so a binary search finds each boundary). The search yields the
-        // first offset whose prefix reaches INTO the row (one past its first
-        // character — a range only counts a row once it includes one of its
-        // characters), so the marker goes before high - 1.
-        const starts: number[] = [];
-        for (let row = 1; row < rows; row++) {
-          let low = 0;
-          let high = end;
-          while (high - low > 1) {
-            const mid = Math.floor((low + high) / 2);
-            if (rowsAt(mid) > row) {
-              high = mid;
-            } else {
-              low = mid;
-            }
-          }
-          const offset = high - 1;
-          if (offset < 0 || markedOffsets.has(offset)) {
+      const predicted: number[] = [];
+      let row = 0;
+      let used = 0;
+      let pending = -1;
+      for (let i = 0; i < end; i++) {
+        if (used >= (row === 0 ? firstCapacity : continuationCapacity)) {
+          row++;
+          used = 0;
+          pending = i;
+        }
+        if (pending >= 0 && !/\s/.test(charAt(i))) {
+          predicted.push(pending);
+          pending = -1;
+        }
+        used++;
+      }
+      if (predicted.length === 0) {
+        return;
+      }
+
+      const starts: number[] = [];
+      for (const candidate of predicted) {
+        let boundary = candidate;
+        let bestDistance = Infinity;
+        const lo = Math.max(1, candidate - 4);
+        const hi = Math.min(end - 1, candidate + 4);
+        for (let i = lo; i <= hi; i++) {
+          const before = charTop(i - 1);
+          const after = charTop(i);
+          if (before === null || after === null || Math.abs(after - before) <= rowTolerance) {
             continue;
           }
-          markedOffsets.add(offset);
-          starts.push(offset);
+          const distance = Math.abs(i - candidate);
+          if (distance < bestDistance) {
+            bestDistance = distance;
+            boundary = i;
+          }
         }
+        while (boundary < end && /\s/.test(charAt(boundary))) {
+          boundary++;
+        }
+        if (boundary < end && !starts.includes(boundary)) {
+          starts.push(boundary);
+        }
+      }
+      if (starts.length === 0) {
+        return;
+      }
 
-        if (starts.length === 0) {
-          return;
+      /* Insert from the last offset backwards so earlier node/local mappings
+         stay valid while text nodes get split. */
+      for (const offset of starts.reverse()) {
+        let node: Text | null = null;
+        let local = 0;
+        for (const entry of nodes) {
+          if (offset < entry.start + entry.node.length) {
+            node = entry.node;
+            local = offset - entry.start;
+            break;
+          }
         }
-        // Insert from the last wrap backwards, so the earlier (node, local)
-        // mappings stay valid while text nodes get split.
-        for (const offset of starts.reverse()) {
-          let node: Text | null = null;
-          let local = 0;
-          for (const entry of nodes) {
-            if (offset < entry.start + entry.node.length) {
-              node = entry.node;
-              local = offset - entry.start;
-              break;
-            }
-          }
-          if (node === null) {
-            continue;
-          }
-          const marker = document.createElement('span');
-          marker.className = 'line-wrap-marker';
-          marker.textContent = '↪';
-          if (local > 0) {
-            const tail = node.splitText(local);
-            node.parentNode?.insertBefore(marker, tail);
-          } else {
-            node.parentNode?.insertBefore(marker, node);
-          }
+        if (node === null) {
+          continue;
+        }
+        const marker = document.createElement('span');
+        marker.className = 'line-wrap-marker';
+        marker.textContent = '↪';
+        if (local > 0) {
+          const tail = node.splitText(local);
+          node.parentNode?.insertBefore(marker, tail);
+        } else {
+          node.parentNode?.insertBefore(marker, node);
         }
       }
     });

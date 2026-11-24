@@ -1,6 +1,5 @@
 import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
-import wasm from '@rollup/plugin-wasm';
 import sassPlugin from 'rollup-plugin-sass';
 import * as sass from 'sass';
 import commonjs from '@rollup/plugin-commonjs';
@@ -17,6 +16,7 @@ const configs = [
       dir: 'wikidata-hdt/dist',
       format: 'esm',
       sourcemap: true,
+      inlineDynamicImports: true,
       chunkFileNames: '[name]-[hash].js'
     },
     plugins: [
@@ -62,21 +62,16 @@ const configs = [
       dir: 'wikidata-hdt/dist',
       format: 'esm',
       sourcemap: true,
+      inlineDynamicImports: true,
       chunkFileNames: '[name]-[hash].js'
     },
     plugins: [
-      wasm({
-        targetEnv: 'browser',
-        include: ['**/hdt_bg.wasm', '**/web_bg.wasm'],
-        fileName: '[name][extname]',
-        publicPath: './',
-        maxFileSize: 0
-      }),
       nodeResolve({
         browser: true,
         preferBuiltins: false,
         extensions: ['.ts', '.js', '.wasm']
       }),
+      await inlineWasm(),
       sassPlugin({ 
         api: 'modern',
         options: {

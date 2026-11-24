@@ -1,4 +1,5 @@
-{{- /* Print override of the site's insta shortcode, which embeds a fixed
-       post unless an ID is passed. */ -}}
-{{- $id := .Get 0 | default "CmG-hNesauQ" -}}
-{{- partial "instagram-image.html" $id -}}
+{{- /* The theme's generic insta shortcode embeds Instagram on the web; for
+       print we render the build-time image + caption instead. */ -}}
+{{- $id := .Get 0 | default "" -}}
+{{- $id = replaceRE `^.*instagram\.com/p/([^/?]+).*$` `$1` $id -}}
+{{- partial "instagram-image.html" (dict "id" $id "caption" (.Get "caption" | default "")) -}}

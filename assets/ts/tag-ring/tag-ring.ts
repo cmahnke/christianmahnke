@@ -447,7 +447,22 @@ function renderD3ChordDiagram(
       });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+const onReady = (fn: () => void) => {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", fn, { once: true });
+  } else {
+    fn();
+  }
+};
+
+const isPrint = () => !!(window.matchMedia && window.matchMedia("print").matches);
+const releasePrintGate = () => {
+  if (isPrint()) window.__vivReady = true;
+};
+
+onReady(() => {
+  if (isPrint()) window.__vivReady = false;
+
   fetch("/meta/tags/index.json")
     .then((response) => response.json())
     .then((data: Tags) => {
@@ -476,13 +491,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!container) {
         console.error(`Container element with ID "${containerId}" not found.`);
+        releasePrintGate();
         return;
       }
 
       const padding =
-        parseInt(window.getComputedStyle(container, null).getPropertyValue("padding-left")) +
-        parseInt(window.getComputedStyle(container, null).getPropertyValue("padding-right"));
-      const width = container.getBoundingClientRect().width - padding;
+        (parseInt(window.getComputedStyle(container, null).getPropertyValue("padding-left"), 10) || 0) +
+        (parseInt(window.getComputedStyle(container, null).getPropertyValue("padding-right"), 10) || 0);
+      const width = Math.max(container.getBoundingClientRect().width, container.clientWidth, 480) - padding;
       const outerRadius = Math.ceil(width / 2.5);
 
       const chartConfig = {
@@ -495,6 +511,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       renderD3ChordDiagram(container, processedData, chartConfig);
+      releasePrintGate();
     })
     .catch((error) => {
       console.error("Error fetching or processing tag data:", error);
@@ -505,5 +522,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     <strong>Error loading chart data. Please try again later.</strong>
                 </p>`;
       }
+      releasePrintGate();
     });
 });

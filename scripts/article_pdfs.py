@@ -22,6 +22,7 @@ HTML_NAME = "article.html"
 BATCH_CLI = REPO_ROOT / "node_modules" / "@projektemacher" / "vivliostyle-batch-cli" / "dist" / "vivliostyle-batch-cli.js"
 PDF_LEVELS = ("1a", "1b", "2a", "2b", "2u", "3a", "3b", "3u", "4", "off")
 DOI_PATTERN = re.compile(r"https://doi\.org/10\.[0-9]+/[A-Za-z0-9._-]+")
+DOI_HREF_PATTERN = re.compile(r'href="(https://doi\.org/10\.[0-9]+/[A-Za-z0-9._-]+)"')
 
 logger = logging.getLogger(__name__)
 
@@ -97,6 +98,42 @@ def repo_relative(path):
         return path.relative_to(REPO_ROOT).as_posix()
     except ValueError:
         return path.as_posix()
+
+
+def verify_doi_links(html_path, pdf_path):
+    """Warn when a DOI link in the article HTML has no clickable PDF annotation."""
+    expected = set(DOI_HREF_PATTERN.findall(html_path.read_text(encoding="utf-8", errors="replace")))
+    if not expected:
+        return
+    try:
+        import pikepdf
+    except ImportError:
+        logger.warning("pikepdf unavailable - cannot verify DOI links in '%s'", repo_relative(pdf_path))
+        return
+    try:
+        with pikepdf.open(pdf_path) as document:
+            targets = set()
+            for page in document.pages:
+                for annotation in page.get("/Annots", []):
+                    if annotation.get("/Subtype") != "/Link":
+                        continue
+                    action = annotation.get("/A")
+                    if action is None:
+                        continue
+                    uri = action.get("/URI")
+                    if uri is not None:
+                        targets.add(str(uri))
+    except Exception as exc:
+        logger.warning("Could not inspect '%s': %s", repo_relative(pdf_path), exc)
+        return
+    missing = expected - targets
+    if missing:
+        logger.warning(
+            "DOI link(s) in '%s' are not clickable in '%s': %s",
+            repo_relative(html_path),
+            repo_relative(pdf_path),
+            ", ".join(sorted(missing)),
+        )
 
 
 def delete_matching_pdfs(docs_root, post):
@@ -202,6 +239,7 @@ def convert_jobs(jobs, args):
             result = subprocess.run(build_command(job, args), cwd=REPO_ROOT)
             if result.returncode == 0:
                 logger.info("'%s' created successfully", repo_relative(job.pdf))
+                verify_doi_links(job.html, job.pdf)
             else:
                 logger.error("Error converting '%s'", repo_relative(job.html))
                 failures.append(job)
@@ -217,7 +255,9 @@ def convert_jobs(jobs, args):
                 stderr=subprocess.STDOUT,
                 text=True,
             )
-            if result.returncode != 0:
+            if result.returncode == 0:
+                verify_doi_links(job.html, job.pdf)
+            else:
                 logger.error("Error converting '%s':\n%s", repo_relative(job.html), result.stdout)
                 failures.append(job)
         bar.close()

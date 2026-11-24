@@ -392,7 +392,8 @@ timeout = "240s"
             '^https://raw.githubusercontent.com/*',
             '^https://static\.projektemacher\.org/.*',
             '^https://img\.youtube\.com/.*',
-            '^https://www\.instagram\.com/.*']
+            '^https://www\.instagram\.com/.*',
+            '^https://scontent-[^.]+\.cdninstagram\.com/.*']
 
   [security.node]
     [security.node.permissions]

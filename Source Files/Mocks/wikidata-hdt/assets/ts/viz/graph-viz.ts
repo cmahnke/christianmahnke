@@ -916,7 +916,7 @@ export class RdfGraph extends LitElement {
     });
     this._scriptObserver.observe(this, { childList: true, subtree: true });
 
-    // ↓ NEU: auf Fullscreen-Änderungen reagieren (z. B. Esc-Taste)
+    // NEW: react to fullscreen changes (e.g. Esc key)
     document.addEventListener('fullscreenchange', this._boundFullscreenChange);
   }
 

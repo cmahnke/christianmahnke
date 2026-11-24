@@ -1,7 +1,8 @@
-import init_hdt, { Hdt } from 'hdt/hdt.js';
+import { Hdt, __wbg_set_wasm } from '@projektemacher/hdt/hdt_bg.js';
+import * as hdtGlue from '@projektemacher/hdt/hdt_bg.js';
 import init_oxigraph, * as oxigraph from "oxigraph/web.js";
 
-import wasm_hdt from 'hdt/hdt_bg.wasm'; 
+import { loadWasm as loadHdtWasm } from '@projektemacher/hdt/hdt_bg.wasm';
 import wasm_oxigraph from 'oxigraph/web_bg.wasm';
 
 import.meta.url = '';
@@ -12,10 +13,11 @@ if (window) {
 
 const DOWNLOAD_TIMEOUT_MS = 30_000;
 
-// Einmalig gecachte Promise – sequenziell weil beide denselben
-// _loadWasmModule-Mechanismus des Bundlers verwenden.
+// Cached once; both WASM modules must be ready before loading an HDT file.
 const wasmReady: Promise<void> = (async () => {
-  await init_hdt({ wasm_hdt });
+  const hdt = await loadHdtWasm({ './hdt_bg.js': hdtGlue });
+  __wbg_set_wasm(hdt.exports);
+  (hdt.exports as WebAssembly.Exports & { __wbindgen_start(): void }).__wbindgen_start();
   await init_oxigraph({ wasm_oxigraph });
 })();
 
@@ -73,8 +75,8 @@ export function hdtToOxigraph(hdt: Hdt): oxigraph.Store {
 }
 
 export async function loadHdtFromUrl(url: string): Promise<oxigraph.Store> {
-  // Sicherstellen dass beide WASM-Module vollständig initialisiert sind
-  // bevor Hdt oder oxigraph.Store instantiiert werden.
+  // Ensure both WASM modules are fully initialized before
+  // instantiating Hdt or oxigraph.Store.
   await wasmReady;
 
   const controller = new AbortController();

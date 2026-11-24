@@ -1,18 +1,48 @@
-{{- /* Print rendering for Instagram embeds: the interactive blockquote
-       never paints in Vivliostyle, so fetch the post image at build time.
-       The media endpoint is deprecated; fall back to a plain link. */ -}}
-{{- $id := . -}}
+{{- /* Print rendering: fetch the post image and caption at build time so
+       Vivliostyle never has to run Instagram's embed script. */ -}}
+{{- $id := .id -}}
+{{- $captionOverride := .caption | default "" -}}
 {{- $permalink := printf "https://www.instagram.com/p/%s/" $id -}}
-{{- $remote := try (resources.GetRemote (printf "https://www.instagram.com/p/%s/media/?size=l" $id)) -}}
+{{- $embedHTML := "" -}}
+{{- $embed := try (resources.GetRemote (printf "https://www.instagram.com/p/%s/embed/captioned/" $id)) -}}
+{{- with $embed.Value -}}
+  {{- $embedHTML = .Content -}}
+{{- end -}}
+{{- $caption := $captionOverride -}}
+{{- $extracted := false -}}
+{{- if eq $caption "" -}}
+  {{- $captionMatches := findRE `(?s)<div class="Caption">(.*?)</div>` $embedHTML -}}
+  {{- if gt (len $captionMatches) 0 -}}
+    {{- $caption = index $captionMatches 0 | replaceRE `<[^>]+>` " " | replaceRE `\s+` " " | plainify | strings.TrimSpace -}}
+    {{- $extracted = ne $caption "" -}}
+  {{- end -}}
+{{- end -}}
+{{- if eq $caption "" -}}
+  {{- $caption = $permalink -}}
+{{- end -}}
 {{- $image := "" -}}
-{{- if and (not $remote.Err) (eq $remote.Value.MediaType.MainType "image") (gt $remote.Value.Width 200) -}}
-  {{- $image = $remote.Value -}}
+{{- $remote := try (resources.GetRemote (printf "https://www.instagram.com/p/%s/media/?size=l" $id)) -}}
+{{- with $remote.Value -}}
+  {{- if and (eq .MediaType.MainType "image") (gt .Width 200) -}}
+    {{- $image = . -}}
+  {{- end -}}
 {{- end -}}
-{{- if $image -}}
-  <figure class="instagram-preview">
-    <img src="{{ $image.RelPermalink }}" alt="{{ $permalink }}" />
-    <figcaption><b>URL:</b> <a href="{{ $permalink }}">{{ $permalink }}</a></figcaption>
-  </figure>
-{{- else -}}
-  <p class="instagram-preview"><a href="{{ $permalink }}">{{ $permalink }}</a></p>
+{{- if not $image -}}
+  {{- $imgTags := findRE `<img class="EmbeddedMediaImage"[^>]*>` $embedHTML -}}
+  {{- if gt (len $imgTags) 0 -}}
+    {{- $src := replaceRE `(?s)^.*src="([^"]+)".*$` `$1` (index $imgTags 0) -}}
+    {{- $src = replaceRE `&amp;` `&` $src -}}
+    {{- $fallback := try (resources.GetRemote $src) -}}
+    {{- with $fallback.Value -}}
+      {{- if and (eq .MediaType.MainType "image") (gt .Width 200) -}}
+        {{- $image = . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
+<figure class="instagram-preview">
+  {{- with $image -}}
+    <img src="{{ .RelPermalink }}" alt="{{ $caption }}" />
+  {{- end -}}
+  <figcaption><span class="instagram-caption{{ if $extracted }} instagram-caption-extracted{{ end }}">{{ $caption }}</span><span class="instagram-caption-separator"> — </span><a class="instagram-caption-source" href="{{ $permalink }}">{{ $permalink }}</a></figcaption>
+</figure>

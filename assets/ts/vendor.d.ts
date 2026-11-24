@@ -51,6 +51,7 @@ interface Window {
   photoswipe(id: string, children: string): void;
   touchViewer: typeof import('./iiif/openseadragon-annotorious3.ts').default;
   anno: unknown;
+  __vivReady?: boolean;
 }
 
 declare const AFRAME: {

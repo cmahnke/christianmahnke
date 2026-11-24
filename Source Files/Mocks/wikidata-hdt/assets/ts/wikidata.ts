@@ -157,7 +157,7 @@ export async function fetchWikidataLabels(
   const result = new Map<string, { label: string; description: string }>();
   if (qids.length === 0) return result;
 
-  // Auf den Store warten bevor wir ihn nutzen
+  // Wait for the store before using it
   if (wikidataStore) {
     await wikidataStore.ready;
     for (const qid of qids) {
@@ -230,7 +230,7 @@ export async function fetchWikidataDetails(
   languages: string[] = ['de', 'en'],
   wikidataStore?: WikidataStore
 ): Promise<WikidataEntity> {
-  // Auf den Store warten bevor wir ihn nutzen
+  // Wait for the store before using it
   if (wikidataStore) await wikidataStore.ready;
 
   if (wikidataStore?.isFetchedEntity(qid)) {
@@ -302,44 +302,44 @@ export class WikidataStore {
   private readonly _sourceUrl:       string;
 
   /**
-   * Resolved sobald der Store vollständig initialisiert ist.
-   * Bei URL-Übergabe: nach dem Laden der HDT-Datei (oder aus LocalStorage).
-   * Bei Store-Übergabe: sofort.
+   * Resolved once the store is fully initialized.
+   * With a URL: after loading the HDT file (or from localStorage).
+   * With a store: immediately.
    *
-   * Alle öffentlichen Methoden awaiten dies intern – der Aufrufer muss
-   * `ready` nicht selbst abwarten, kann es aber für optimistisches UI nutzen:
+   * All public methods await this internally; callers do not need to await
+   * `ready` themselves, but may use it for optimistic UI:
    *
    * @example
    * const ws = new WikidataStore('https://example.com/data.hdt');
-   * ws.ready.then(() => console.log('Store bereit, Größe:', ws.size));
-   * // Code hier läuft sofort weiter ↓
+   * ws.ready.then(() => console.log('Store ready, size:', ws.size));
+   * // Code here continues immediately ↓
    */
   readonly ready: Promise<void>;
 
-  // ── Konstruktor ────────────────────────────────────────────────────────────
+  // ── Constructor ────────────────────────────────────────────────────────────
 
   /**
-   * @param storeOrUrl  Oxigraph-`Store`-Instanz **oder** HTTP(S)-URL zur HDT-Datei.
-   * @param options     Optionale Einstellungen (z. B. `localStorageKey`).
+   * @param storeOrUrl  An Oxigraph `Store` instance **or** an HTTP(S) URL of an HDT file.
+   * @param options     Optional settings (e.g. `localStorageKey`).
    *
    * @example
-   * // Sofort verfügbar, Laden im Hintergrund
+   * // Immediately available, loading in the background
    * const ws = new WikidataStore('https://example.com/data.hdt', {
    *   localStorageKey: 'my-app:graph'
    * });
    *
-   * // Optional: auf vollständige Initialisierung warten
+   * // Optional: wait for full initialization
    * await ws.ready;
    *
    * @example
-   * // Bestehenden Store übergeben
+   * // Pass an existing store
    * const ws = new WikidataStore(existingStore);
    */
   constructor(storeOrUrl: Store | string, options: WikidataStoreOptions = {}) {
     this._localStorageKey = options.localStorageKey ?? null;
 
     if (typeof storeOrUrl === 'string') {
-      // ── URL-Pfad: leerer Store, Laden im Hintergrund ───────────────────
+      // ── URL path: empty store, loading in the background ─────────────
       const url = storeOrUrl;
 
       if (!isUrl(url)) {
@@ -352,12 +352,12 @@ export class WikidataStore {
       this._store     = new oxigraph.Store();
       this._sourceUrl = url;
 
-      // `ready` kapselt den gesamten Ladevorgang; der Konstruktor kehrt
-      // sofort zurück, während dies im Hintergrund läuft.
+      // `ready` covers the whole loading process; the constructor returns
+      // immediately while this runs in the background.
       this.ready = this._initialize(url);
 
     } else {
-      // ── Store-Pfad: sofort bereit ──────────────────────────────────────
+      // ── Store path: immediately ready ─────────────────────────────────
       this._store     = storeOrUrl;
       this._sourceUrl = '';
       this.ready      = Promise.resolve();
@@ -370,11 +370,11 @@ export class WikidataStore {
   }
 
   /**
-   * Interner Ladevorgang für den URL-Pfad.
-   * Wird einmalig vom Konstruktor gestartet und in `this.ready` gespeichert.
+   * Internal loading process for the URL path.
+   * Started once by the constructor and stored in `this.ready`.
    */
   private async _initialize(url: string): Promise<void> {
-    // 1. Cache prüfen
+    // 1. Check cache
     if (this._localStorageKey) {
       const restored = restoreStore(this._store, this._localStorageKey, url);
       if (restored) {
@@ -385,7 +385,7 @@ export class WikidataStore {
       console.debug(`[WikidataStore] Kein Cache für "${url}" – lade HDT von URL.`);
     }
 
-    // 2. HDT laden
+    // 2. Load HDT
     const loadedStore = await loadHdtFromUrl(url);
     for (const quad of loadedStore) {
       addSafe(this._store, quad as oxigraph.Quad);
@@ -393,7 +393,7 @@ export class WikidataStore {
 
     console.debug(`[WikidataStore] HDT geladen: ${this._store.size} Quads von "${url}".`);
 
-    // 3. Nicht-blockierend persistieren
+    // 3. Persist without blocking
     this._persist();
   }
 

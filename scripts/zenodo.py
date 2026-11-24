@@ -1,7 +1,7 @@
 import argparse
 from zenodo_client import Creator, Metadata, Zenodo, create_zenodo, update_zenodo
 from pathlib import Path
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 import sys, os, logging
 import json
 import git
@@ -10,6 +10,7 @@ import pystow
 import requests
 import shutil
 import tempfile
+import time
 from dataclasses import dataclass
 
 sys.path.append(str(Path(__file__).resolve().parents[1] / "themes" / "projektemacher-base" / "scripts"))
@@ -24,6 +25,14 @@ PUBLICATION_TYPE = "section"
 IGNORE_KEYWORDS = ["Blog", "Projektemacher.org", "Status", "Suche", "Spaß", "Fun", ""]
 
 SANDBOX_DOI_PREFIX = "10.5072/"
+
+WAYBACK_AVAILABILITY_URL = "https://archive.org/wayback/available"
+WAYBACK_SAVE_URL = "https://web.archive.org/save/"
+ARCHIVE_MAX_AGE = timedelta(hours=3)
+ARCHIVE_CHECK_TIMEOUT = 15
+ARCHIVE_SAVE_TIMEOUT = 60
+ARCHIVE_POLL_ATTEMPTS = 6
+ARCHIVE_POLL_DELAY = 10
 
 # Logging Setup
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -115,6 +124,64 @@ def _parse_lastmod(value, source):
     if dt.tzinfo is None:
         dt = dt.replace(tzinfo=timezone.utc)
     return dt
+
+def _wayback_snapshot(url):
+    """Return the timestamp of the closest Wayback snapshot, or None."""
+    try:
+        res = requests.get(
+            WAYBACK_AVAILABILITY_URL,
+            params={"url": url},
+            timeout=ARCHIVE_CHECK_TIMEOUT,
+            headers={"User-Agent": "zenodo.py"},
+        )
+        res.raise_for_status()
+        snapshots = res.json().get("archived_snapshots") or {}
+        closest = snapshots.get("closest")
+        if not closest or not closest.get("available", True):
+            return None
+        return datetime.strptime(closest["timestamp"], "%Y%m%d%H%M%S").replace(tzinfo=timezone.utc)
+    except (requests.RequestException, ValueError, KeyError, TypeError, AttributeError) as e:
+        logging.warning(f"Could not check archive.org snapshot for {url}: {e}")
+        return None
+
+def _wayback_fresh(timestamp):
+    return timestamp is not None and datetime.now(timezone.utc) - timestamp <= ARCHIVE_MAX_AGE
+
+def _archive_url(url, dry_run=False):
+    """Ensure a Wayback snapshot no older than ARCHIVE_MAX_AGE exists for url."""
+    if _wayback_fresh(_wayback_snapshot(url)):
+        logging.info(f"Recent archive.org snapshot found for {url}")
+        return True
+    if dry_run:
+        logging.info(f"[DRY RUN] No recent archive.org snapshot for {url}, would save it")
+        return False
+    logging.info(f"No recent archive.org snapshot for {url}, requesting a save")
+    try:
+        res = requests.get(
+            f"{WAYBACK_SAVE_URL}{url}",
+            timeout=ARCHIVE_SAVE_TIMEOUT,
+            headers={"User-Agent": "zenodo.py"},
+        )
+        res.raise_for_status()
+    except requests.RequestException as e:
+        logging.error(f"Could not save {url} to archive.org: {e}")
+        return False
+    for attempt in range(ARCHIVE_POLL_ATTEMPTS):
+        time.sleep(ARCHIVE_POLL_DELAY)
+        if _wayback_fresh(_wayback_snapshot(url)):
+            logging.info(f"Fresh archive.org snapshot confirmed for {url}")
+            return True
+        logging.info(f"Waiting for archive.org snapshot for {url} ({attempt + 1}/{ARCHIVE_POLL_ATTEMPTS})")
+    logging.error(f"No archive.org snapshot newer than {ARCHIVE_MAX_AGE} for {url}")
+    return False
+
+def ensure_archived(entry, dry_run=False):
+    """Gate uploads on a fresh Wayback snapshot for every article URL."""
+    if not entry.urls:
+        logging.error(f"No article URLs available for '{entry.title}', cannot check archive.org")
+        return False
+    results = [_archive_url(url, dry_run) for url in entry.urls.values()]
+    return all(results)
 
 def check_post_committed(repo, post):
     """Check that every content file of a post is identical to HEAD (fully committed).
@@ -266,10 +333,10 @@ def _reserve_and_publish(entry, metadata, workdir, token, sandbox, target):
         logging.error(f"Publishing draft deposition {deposition_id} on {target} failed for {entry.posts}, it will be resumed on the next run: {e}")
         return None
 
-def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=False):
+def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=False, archive=True):
     if not entry.upload_files or not entry.key or not entry.title:
         logging.warning(f"Missing required fields for entry '{entry.title}', skipping.")
-        return
+        return True
 
     target = "Zenodo sandbox" if sandbox else "Zenodo production"
 
@@ -302,11 +369,17 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
         else:
             logging.info(f"[DRY RUN] Would reserve a DOI for '{entry.title}' on {target}, write it into the PDF metadata, then upload and publish.")
         logging.info(f"[DRY RUN] Files to be uploaded: {list(entry.upload_files.values())}")
-        return
+        if archive:
+            ensure_archived(entry, dry_run=True)
+        return True
 
     if already_published and not entry.changed:
         logging.info(f"Entry '{entry.title}' already has a deposition ID or DOI and is unchanged, skipping upload.")
-        return
+        return True
+
+    if archive and not ensure_archived(entry):
+        logging.error(f"Archive.org gate failed for '{entry.title}', skipping Zenodo upload.")
+        return False
 
     with tempfile.TemporaryDirectory() as tmp:
         # Phase 1: reserve (new entries) / upload / create version – raises on API
@@ -326,21 +399,21 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
                 logging.info(f"Uploading '{entry.title}' to {target}...")
                 res = _reserve_and_publish(entry, metadata, tmp, token, sandbox, target)
                 if res is None:
-                    return
+                    return False
         except Exception as e:
             logging.error(f"Upload to {target} failed for {entry.posts}, not updating front matter: {e}")
-            return
+            return False
 
     # Phase 2: validate response, build front matter for all languages before writing
     try:
         res_json = res.json()
     except Exception as e:
         logging.error(f"Invalid API response from {target} for {entry.posts}, not updating front matter: {e}")
-        return
+        return False
     error = _check_zenodo_response(res_json, already_published, target)
     if error is not None:
         logging.error(f"Unexpected API response from {target} for {entry.posts} ({error}), not updating front matter. Response: {json.dumps(res_json)[:500]}")
-        return
+        return False
 
     if already_published:
         new_id = str(res_json.get("id", ""))
@@ -374,9 +447,11 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
                     f"Error while writing front matter of {post} (language '{lang}') after successful upload to {target}, "
                     f"not updating front matter: {e}. Written: {written or 'none'}, not written: {[lang] + remaining}"
                 )
-                return
+                return False
 
         logging.info(f"Success! DOI {post_metadata.get('doi', 'unchanged')} in {post} added.")
+
+    return True
 
 def check_hugo_posts(site_root, subdir, pattern, update=False):
     conf = Config(site_root)
@@ -513,7 +588,8 @@ if __name__ == "__main__":
     parser.add_argument("--dry-run", "-n", action="store_true", help="Perform a dry run without uploading or changing files.")
     parser.add_argument("--token", help="Zenodo API Token")
     parser.add_argument("--production", "-p", action="store_false", dest="sandbox", default=True, help="Upload to production Zenodo instead of the sandbox")
-    parser.add_argument("--update", "-u", action="store_true", default=False, help="Update post front matter with archive URLs")
+    parser.add_argument("--update", "-u", action="store_true", default=False, help="Write the returned doi and deposition_id back into the post front matter")
+    parser.add_argument("--no-archive", dest="archive", action="store_false", default=True, help="Skip the archive.org freshness check before uploading")
     parser.add_argument("--debug", "-d", action="store_true", help="Enable debug logging")
     args = parser.parse_args()
 
@@ -524,5 +600,9 @@ if __name__ == "__main__":
     logging.info(f"Trying to load config from {site_root} and process posts in subdir '{args.sub}' with pattern '{args.pattern}'")
     logging.info(f"Target: {'Zenodo sandbox' if args.sandbox else 'Zenodo production'}")
     posts = check_hugo_posts(site_root, args.sub, args.pattern, args.update)
+    failed = False
     for entry in posts:
-        zenodo_push(entry, token=args.token, sandbox=args.sandbox, dry_run=args.dry_run, update=args.update)
+        if not zenodo_push(entry, token=args.token, sandbox=args.sandbox, dry_run=args.dry_run, update=args.update, archive=args.archive):
+            failed = True
+    if failed:
+        sys.exit(1)

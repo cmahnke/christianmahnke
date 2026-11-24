@@ -74,10 +74,25 @@ Other useful flags:
 | ---------------- | ----------------------------------------------------------------------------- |
 | `-n` `--dry-run` | Log what would be uploaded without contacting Zenodo or changing files        |
 | `-u` `--update`  | Write the returned `doi` and `deposition_id` back into the post front matter  |
+| `--no-archive`   | Skip the archive.org freshness check that runs before each upload             |
 | `-b` `--basedir` | Hugo project root (default `.`)                                               |
 | `--sub`          | Content subdirectory to scan (default `post`)                                 |
 | `--pattern`      | File pattern to upload per language (default `article.pdf`)                   |
 | `-d` `--debug`   | Debug logging                                                                 |
+
+### Archive.org gate
+
+Before every Zenodo upload (a new deposit or a new version), the script checks each
+canonical article URL against the Wayback availability API. A snapshot must be no older
+than three hours. If none is recent, the URL is submitted to the anonymous Save Page Now
+endpoint and the availability API is polled until a fresh snapshot appears. No
+archive.org credentials are required. Unchanged posts are not uploaded and therefore not
+checked.
+
+If a URL cannot be archived in time, that article's upload is skipped, the remaining
+articles are still processed, and the script exits with status 1 when it finishes.
+`--no-archive` disables the check entirely. `--dry-run` checks availability read-only: it
+reports missing or stale snapshots but never saves and never fails the run.
 
 ## Internal Workings
 

@@ -83,6 +83,13 @@ jobs:
         run: |
           ./scripts/setup.sh
 
+      - name: Verify shortcode WASM is inlined
+        run: |
+          if grep -REn "new URL\([^)]*_bg\.wasm|fetch\([^)]*_bg\.wasm" assets/js/shortcodes/*.js; then
+            echo "Shortcode bundles must inline WASM instead of fetching *_bg.wasm"
+            exit 1
+          fi
+
       - name: Generate stats
         run: |
           ./themes/projektemacher-base/scripts/stat.py

@@ -1,0 +1,46 @@
+{{- /* Print rendering: a static, full-width composite replaces the
+       interactive slider. The second image is clipped to its right half and
+       the captions sit at the bottom corners of the image. */ -}}
+{{- $defaultPage := $.Page -}}
+{{- range $.Page.Translations -}}
+  {{- if .Site.IsDefault -}}{{- $defaultPage = . -}}{{- end -}}
+{{- end -}}
+{{- $loader := $defaultPage.Resources -}}
+{{- $caption1 := .Get "caption1" | default "" -}}
+{{- $caption2 := .Get "caption2" | default "" -}}
+{{- $defaultWidth := 1280 -}}
+{{- $spec := printf "resize %dx autoorient" $defaultWidth -}}
+{{- $format := partial "functions/images/format.html" (dict "name" "image-compare" "params" .Params "default" "") -}}
+{{- if ne $format "" -}}
+  {{- $spec = printf "resize %dx autoorient %s" $defaultWidth $format -}}
+{{- end -}}
+{{- $origin := printf "shortcodes/image-compare %s" $.Page.RelPermalink -}}
+<div class="image-compare-static">
+  <div class="image-compare-view">
+    {{- with .Get "image1" -}}
+      {{- with $loader.Get . -}}
+        {{- $image := partial "functions/images/process.html" (dict "image" . "spec" $spec "origin" $origin) -}}
+        <img class="image-compare-first" src="{{ $image.RelPermalink }}" alt="{{ $caption1 }}" />
+      {{- end -}}
+    {{- end -}}
+    {{- with .Get "image2" -}}
+      {{- with $loader.Get . -}}
+        {{- $image := partial "functions/images/process.html" (dict "image" . "spec" $spec "origin" $origin) -}}
+        <div class="image-compare-overlay"><img src="{{ $image.RelPermalink }}" alt="{{ $caption2 }}" /></div>
+      {{- end -}}
+    {{- end -}}
+    {{- if or (ne $caption1 "") (ne $caption2 "") -}}
+      <div class="image-compare-captions">
+        {{- if ne $caption1 "" -}}
+          <span class="first">{{ $caption1 | safeHTML }}</span>
+        {{- end -}}
+        {{- if ne $caption2 "" -}}
+          <span class="second">{{ $caption2 | safeHTML }}</span>
+        {{- end -}}
+      </div>
+    {{- end -}}
+  </div>
+</div>
+{{- define "_partials/shortcodes/image-compare-metadata.html" -}}
+  {{- (dict "css" slice "js" slice "scss" slice) | jsonify -}}
+{{- end -}}
