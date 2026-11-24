@@ -63,14 +63,13 @@ onReady(() => {
     });
   };
 
-  /* Insert the ↪ marker at the start of every visual continuation row. Code
-     uses a monospaced font with word-break: break-all, so row capacities can
-     be computed from the glyph width; single-character Ranges only correct
-     subpixel off-by-one boundaries. The marker uses a proportional font, so
-     its width is measured separately and reserved on continuation rows.
-     Each pass starts from clean text, so repeated tryMeasure rounds cannot
-     accumulate duplicate markers. Vivliostyle ignores absolute positioning,
-     hence the inline marker. */
+  /* Insert the ↪ marker at the start of every visual continuation row. Row
+     boundaries are read from the rendered text with single-character Ranges;
+     inserting a marker narrows the following rows, so the boundaries are
+     re-measured after each insertion until the layout is stable. Every pass
+     starts from clean text, which keeps the repeated tryMeasure rounds
+     idempotent. Vivliostyle ignores absolute positioning, hence the inline
+     marker. */
   const markWrappedLines = () => {
     document.querySelectorAll<HTMLElement>('pre code .line').forEach(line => {
       if (line.clientHeight === 0) {
@@ -80,168 +79,119 @@ onReady(() => {
       Array.from(line.querySelectorAll<HTMLElement>('.line-wrap-marker')).forEach(marker => marker.remove());
       line.normalize();
 
-      const nodes: { node: Text; start: number }[] = [];
-      let total = 0;
-      const collect = (node: Node) => {
-        if (node.nodeType === Node.TEXT_NODE) {
-          nodes.push({ node: node as Text, start: total });
-          total += node.textContent?.length ?? 0;
-        } else {
-          node.childNodes.forEach(collect);
-        }
-      };
-      Array.from(line.childNodes).forEach(collect);
-      if (total === 0) {
-        return;
-      }
-
-      const charAt = (offset: number): string => {
-        for (const entry of nodes) {
-          if (offset < entry.start + entry.node.length) {
-            return (entry.node.textContent ?? '').charAt(offset - entry.start);
-          }
-        }
-        return '';
-      };
-
-      /* Preserved trailing whitespace would otherwise count as a row. */
-      let end = total;
-      while (end > 0 && /\s/.test(charAt(end - 1))) {
-        end--;
-      }
-      if (end < 2) {
-        return;
-      }
-
-      const code = line.closest('code');
-      if (!code) {
-        return;
-      }
-      const probe = document.createElement('span');
-      probe.textContent = '0000000000';
-      probe.style.visibility = 'hidden';
-      probe.style.whiteSpace = 'pre';
-      const markerProbe = document.createElement('span');
-      markerProbe.className = 'line-wrap-marker';
-      markerProbe.textContent = '↪';
-      markerProbe.style.visibility = 'hidden';
-      code.appendChild(probe);
-      code.appendChild(markerProbe);
-      const charWidth = probe.getBoundingClientRect().width / 10;
-      const markerWidth = markerProbe.getBoundingClientRect().width;
-      probe.remove();
-      markerProbe.remove();
-      if (!(charWidth > 0)) {
-        return;
-      }
-
-      const codeStyle = window.getComputedStyle(code);
-      const contentWidth = code.clientWidth - parseFloat(codeStyle.paddingLeft) - parseFloat(codeStyle.paddingRight);
-      if (!(contentWidth > 0)) {
-        return;
-      }
-      /* .line has padding-left: 2ch and text-indent: -2ch: the first row
-         starts 2ch to the left and gets the full width, continuation rows
-         are indented by 2ch and additionally carry the marker. */
-      const firstCapacity = Math.max(1, Math.floor(contentWidth / charWidth + 0.01));
-      const continuationCapacity = Math.max(1, Math.floor((contentWidth - 2 * charWidth - markerWidth) / charWidth + 0.01));
-
       const lineStyle = window.getComputedStyle(line);
       const fontSize = parseFloat(lineStyle.fontSize) || 12;
       const lineHeightValue = parseFloat(lineStyle.lineHeight);
       const rowTolerance = Math.max(3, (isFinite(lineHeightValue) ? lineHeightValue : fontSize * 1.2) / 2);
 
-      const charTop = (offset: number): number | null => {
-        for (const entry of nodes) {
-          if (offset < entry.start + entry.node.length) {
-            try {
-              const range = document.createRange();
-              range.setStart(entry.node, offset - entry.start);
-              range.setEnd(entry.node, offset - entry.start + 1);
-              const rect = range.getClientRects()[0];
-              return rect ? rect.top : null;
-            } catch {
-              return null;
+      /* Marker glyphs still occupy space, but must not be treated as row
+         starts themselves. */
+      const charEntries = (): { node: Text; local: number }[] => {
+        const entries: { node: Text; local: number }[] = [];
+        const walk = (node: Node) => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const text = node as Text;
+            if (text.parentElement?.classList.contains('line-wrap-marker')) {
+              return;
             }
+            for (let i = 0; i < (text.textContent ?? '').length; i++) {
+              entries.push({ node: text, local: i });
+            }
+          } else {
+            node.childNodes.forEach(walk);
           }
-        }
-        return null;
+        };
+        Array.from(line.childNodes).forEach(walk);
+        return entries;
       };
 
-      const predicted: number[] = [];
-      let row = 0;
-      let used = 0;
-      let pending = -1;
-      for (let i = 0; i < end; i++) {
-        if (used >= (row === 0 ? firstCapacity : continuationCapacity)) {
-          row++;
-          used = 0;
-          pending = i;
+      const topOf = (entry: { node: Text; local: number }): number | null => {
+        try {
+          const range = document.createRange();
+          range.setStart(entry.node, entry.local);
+          range.setEnd(entry.node, entry.local + 1);
+          return range.getClientRects()[0]?.top ?? null;
+        } catch {
+          return null;
         }
-        if (pending >= 0 && !/\s/.test(charAt(i))) {
-          predicted.push(pending);
-          pending = -1;
-        }
-        used++;
-      }
-      if (predicted.length === 0) {
-        return;
-      }
+      };
 
-      const starts: number[] = [];
-      for (const candidate of predicted) {
-        let boundary = candidate;
-        let bestDistance = Infinity;
-        const lo = Math.max(1, candidate - 4);
-        const hi = Math.min(end - 1, candidate + 4);
-        for (let i = lo; i <= hi; i++) {
-          const before = charTop(i - 1);
-          const after = charTop(i);
-          if (before === null || after === null || Math.abs(after - before) <= rowTolerance) {
+      for (let round = 0; round < 8; round++) {
+        const entries = charEntries();
+        if (entries.length < 2) {
+          return;
+        }
+
+        const tops = entries.map(topOf);
+        const starts: { node: Text; local: number }[] = [];
+        let previousTop: number | null = null;
+        for (let i = 0; i < entries.length; i++) {
+          const top = tops[i];
+          if (top === null) {
             continue;
           }
-          const distance = Math.abs(i - candidate);
-          if (distance < bestDistance) {
-            bestDistance = distance;
-            boundary = i;
+          if (previousTop !== null && Math.abs(top - previousTop) > rowTolerance) {
+            const entry = entries[i];
+            const before = entry.node.previousSibling;
+            const alreadyMarked = before instanceof HTMLElement && before.classList.contains('line-wrap-marker');
+            if (!alreadyMarked) {
+              starts.push(entry);
+            }
+          }
+          previousTop = top;
+        }
+        if (starts.length === 0) {
+          return;
+        }
+
+        /* Insert from the end so earlier node/local pairs stay valid while
+           text nodes get split. The marker goes before the very first glyph
+           of the row, including preserved whitespace. */
+        for (const entry of starts.reverse()) {
+          const marker = document.createElement('span');
+          marker.className = 'line-wrap-marker';
+          marker.textContent = '↪';
+          if (entry.local > 0) {
+            const tail = entry.node.splitText(entry.local);
+            entry.node.parentNode?.insertBefore(marker, tail);
+          } else {
+            entry.node.parentNode?.insertBefore(marker, entry.node);
           }
         }
-        while (boundary < end && /\s/.test(charAt(boundary))) {
-          boundary++;
-        }
-        if (boundary < end && !starts.includes(boundary)) {
-          starts.push(boundary);
-        }
       }
-      if (starts.length === 0) {
+    });
+  };
+
+  /* The SPARQL result table lives in the component's shadow root, where the
+     PDF stylesheet cannot reach it. Apply print-friendly table rules to
+     every oxigraph-sparql host once its shadow root is available; the host
+     itself already spans both columns via .script in article-pdf.scss. */
+  const styleShadowResultTables = () => {
+    document.querySelectorAll<HTMLElement>('oxigraph-sparql').forEach(host => {
+      const shadow = host.shadowRoot;
+      if (!shadow || shadow.querySelector('style[data-pdf-table-style]')) {
         return;
       }
-
-      /* Insert from the last offset backwards so earlier node/local mappings
-         stay valid while text nodes get split. */
-      for (const offset of starts.reverse()) {
-        let node: Text | null = null;
-        let local = 0;
-        for (const entry of nodes) {
-          if (offset < entry.start + entry.node.length) {
-            node = entry.node;
-            local = offset - entry.start;
-            break;
-          }
+      const style = document.createElement('style');
+      style.setAttribute('data-pdf-table-style', '');
+      style.textContent = `
+        :host, .wrapper, .results-section, .bindings-result, .table-wrap {
+          display: block;
+          width: 100%;
+          max-width: none;
         }
-        if (node === null) {
-          continue;
+        .table-wrap { overflow: visible; margin: 0; }
+        table { width: 100%; }
+        thead th { white-space: normal; overflow-wrap: anywhere; }
+        tbody td {
+          max-width: none;
+          overflow: visible;
+          text-overflow: clip;
+          white-space: normal;
+          overflow-wrap: anywhere;
         }
-        const marker = document.createElement('span');
-        marker.className = 'line-wrap-marker';
-        marker.textContent = '↪';
-        if (local > 0) {
-          const tail = node.splitText(local);
-          node.parentNode?.insertBefore(marker, tail);
-        } else {
-          node.parentNode?.insertBefore(marker, node);
-        }
-      }
+      `;
+      shadow.appendChild(style);
     });
   };
 
@@ -278,16 +228,26 @@ onReady(() => {
     splitPlainCodeLines();
     trimChromaLineBreaks();
     markWrappedLines();
+    styleShadowResultTables();
     sizeCaptions();
     const lines = Array.from(document.querySelectorAll<HTMLElement>('pre code .line'));
     const unlaid = lines.some(line => line.clientHeight === 0 && !line.querySelector('.line-wrap-marker'));
     const unsized = Array.from(document.querySelectorAll<HTMLElement>('figure')).some(fig =>
       fig.querySelector('img') && (fig.querySelector('figcaption') ?? fig.querySelector('.hidden-caption-content')) &&
       !((fig.querySelector('figcaption') ?? fig.querySelector('.hidden-caption-content')) as HTMLElement | null)?.dataset.captionSized);
-    if ((unlaid || unsized) && attempts > 0) {
+    const unstyled = Array.from(document.querySelectorAll<HTMLElement>('oxigraph-sparql'))
+      .some(host => !host.shadowRoot?.querySelector('style[data-pdf-table-style]'));
+    if ((unlaid || unsized || unstyled) && attempts > 0) {
       requestAnimationFrame(() => tryMeasure(attempts - 1));
     }
   };
+
+  if (typeof customElements !== 'undefined' && customElements.whenDefined) {
+    customElements.whenDefined('oxigraph-sparql').then(() => {
+      styleShadowResultTables();
+      requestAnimationFrame(styleShadowResultTables);
+    });
+  }
 
   tryMeasure(20);
 });
