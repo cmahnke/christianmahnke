@@ -136,6 +136,8 @@ jobs:
             echo "ℹ️  No changes detected — skipping commit."
           else
             git commit -m "$MSG"
+            git restore --worktree .
+            git clean -fdq
             git pull --rebase origin gh-pages
             git push origin gh-pages
             echo "✅ PDFs pushed to gh-pages."

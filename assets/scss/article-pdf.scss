@@ -479,6 +479,12 @@ p {
           column-span: all;
         }
 
+        > div:has(> .instagram-media) {
+          column-span: all;
+          break-inside: avoid;
+          margin: 12pt auto;
+        }
+
         figure.icon {
           display: inline;
           column-span: none;
@@ -490,21 +496,6 @@ p {
             margin: 0;
             vertical-align: middle;
           }
-        }
-
-        /* A trailing full-width element can emit a phantom empty page after
-           the multicol. Only the last child gets break-after: avoid — every
-           other spanner keeps its current pagination. */
-        > figure:last-child,
-        > table:last-child,
-        > iframe:last-child,
-        > .iiif.iiif-image:last-child,
-        > .youtube-video:last-child,
-        > .pdf-preview:last-child,
-        > .html-video:last-child,
-        > .script:last-child,
-        > .hdr-warning:last-child {
-          break-after: avoid;
         }
 
         /* Inline width/style attributes on Google Maps embeds otherwise keep
@@ -811,7 +802,7 @@ a {
   }
 }
 
-.map-attribution {
+.content-container .post .content .post-body p.map-attribution {
   font-family: $accent-font;
   font-size: 8pt;
   text-align: right;
