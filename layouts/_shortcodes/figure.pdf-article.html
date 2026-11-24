@@ -17,7 +17,16 @@
             {{- end -}}
             {{- /* Below variable will always have a trailing slash, even with uglyURLs enabled. */ -}}
             {{- $permalink_pretty := $defaultPage.Permalink | replaceRE ".[^/]*\\.html$" "/" -}}
-            <img src="{{ (printf "%s%s" $permalink_pretty $image) }}"
+            {{- $src := printf "%s%s" $permalink_pretty $image -}}
+            {{- with $defaultPage.Resources.Get $image -}}
+                {{- if reflect.IsImageResourceProcessable . -}}
+                    {{- $width := .Width -}}
+                    {{- if gt $width 1600 -}}{{- $width = 1600 -}}{{- end -}}
+                    {{- $processed := .Filter (images.AutoOrient) (images.Process (printf "resize %dx jpeg q85" $width)) -}}
+                    {{- $src = $processed.RelPermalink -}}
+                {{- end -}}
+            {{- end -}}
+            <img src="{{ $src }}"
         {{- end -}}
             {{- /* Always render an alt attribute: explicit alt, caption text, title (for linked images), or empty for decorative images */ -}}
             {{- $alt := "" -}}

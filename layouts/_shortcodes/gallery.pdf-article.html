@@ -10,10 +10,10 @@
   {{- $alt := $image.alt | default "" -}}
   {{- with $imgRes -}}
     {{- $preview := "" -}}
-    {{- if gt .Width 2048 -}}
-      {{- $preview = $imgRes.Filter (images.AutoOrient) (images.Process (printf "resize %dx webp picture" 2048)) -}}
+    {{- if gt .Width 1600 -}}
+      {{- $preview = $imgRes.Filter (images.AutoOrient) (images.Process (printf "resize %dx jpeg q85" 1600)) -}}
     {{- else -}}
-      {{- $preview = $imgRes.Filter (images.AutoOrient) (images.Process (printf "resize %dx webp picture" .Width)) -}}
+      {{- $preview = $imgRes.Filter (images.AutoOrient) (images.Process (printf "resize %dx jpeg q85" .Width)) -}}
     {{- end -}}
     {{- if (isset $image "scalePreview") -}}
       {{- if not $image.scalePreview -}}
