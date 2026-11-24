@@ -49,13 +49,13 @@ Die Referenz-Implementierung ist auf [GitLab](https://gitlab.com/wg1/jpeg-xl) zu
 
 Da die Konvertierung in IIIF Derivate auf GitHub durch ein [Docker Image](https://github.com/cmahnke/iiif-action) erledigt wird, liegt es nahe dieses einfach um eine JPEG XL Unterstützung zu ergänzen. Für die eingesetzte [LibVIPS](https://github.com/libvips/libvips) gibt es ein [Pull Request](https://github.com/libvips/libvips/pull/2181), der die Unterstützung für die JPEG XL Referenz-Implementierung nachrüstet. Diese ist nun in einer Variante des Images zur Konvertierung eingebaut:
 
-```
+```bash
 docker pull ghcr.io/cmahnke/iiif-action:latest-jxl
 ```
 
 Es gibt auch ein  Image, dass nur die JPEG XL Referenz-Implementierung beinhaltet:
 
-```
+```bash
 docker pull ghcr.io/cmahnke/jpeg-xl-action:latest
 ```
 
@@ -65,7 +65,7 @@ docker pull ghcr.io/cmahnke/jpeg-xl-action:latest
 
 Das Image kann auch verwendet werden, um die Ausgangsdateien zu erstellen.
 
-```
+```bash
 docker run -it -v ${PWD}:${PWD} 'ghcr.io/cmahnke/iiif-action:latest-jxl' /bin/bash -c "cd ${PWD}; $SHELL"
 ```
 
@@ -73,7 +73,7 @@ docker run -it -v ${PWD}:${PWD} 'ghcr.io/cmahnke/iiif-action:latest-jxl' /bin/ba
 
 Direkt `vips` zu benutzen hat den Vorteil, dass man jedes unterstützte Dateiformat benutzen kann.
 
-```
+```bash
 vips copy front.tif front.jxl[Q=100]
 ```
 
@@ -84,7 +84,7 @@ Folgende Probleme sind bisher aufgetreten:
 
 `cjxl` kann auch verwendet werden, allerdings sollte man dann eine verlustfrei komprimierte (z.B. PNG) Eingangsdatei verwenden:
 
-```
+```bash
 cjxl front.png front.jxl
 ```
 
@@ -100,13 +100,13 @@ Für die Beurteilung der Qualität wird das Tool [`butteraugli`](https://github.
 
 #### Vergleichsdatei erzeugen
 
-```
+```bash
 convert front.tif -quality 95 front.jpg
 ```
 
 `butteraugli` kann JPEG bzw. PNG lesen.
 
-```
+```bash
 vips jxlsave front.tif front.jxl --distance 1
 ```
 
@@ -120,7 +120,7 @@ Grundsätzlich bleibt was eingangs bekannt war: Dateien sind bei ähnlicher Qual
 
 Nachdem man nun ein paar JPEG XL Dateien erzeugt hat, kann man nun IIIF Derivate generieren:
 
-```
+```bash
 vips dzsave front.jxl front -t 512 --layout iiif
 ```
 

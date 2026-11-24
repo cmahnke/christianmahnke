@@ -127,7 +127,7 @@ Um zu testen, ob die Konfiguration korrekt ist, genügt es, `mapproxy-util serve
 
 Wenn alles (Ausgangsservice, Projektionen, Bild- und Verzeichnisformate) richtig konfiguriert ist, kann mit dem Befehl `mapproxy-seed` der Download gestartet werden:
 
-```
+```bash
 mapproxy-seed -s ./seed.yaml -f ./mapproxy.yaml
 ```
 

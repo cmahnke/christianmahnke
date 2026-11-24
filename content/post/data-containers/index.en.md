@@ -31,7 +31,7 @@ The image is based on [Apache Jena](https://jena.apache.org/) and utilises the [
 
 The container can be started easily:
 
-```
+```bash
 docker run -it -p3030:3030 ghcr.io/cmahnke/data-containers/gnd:latest /bin/sh
 ```
 
@@ -43,13 +43,13 @@ After starting, the database can be conveniently searched in the browser: [http:
 
 However, the container only contains the coordinates and spelling variants, e.g. to be able to retrieve the coordinates for a location. The data is uploaded to an [Apache Solr](https://solr.apache.org/) instance for this purpose and can be accessed after starting
 
-```
+```bash
 docker run -p 8983:8983 -it ghcr.io/cmahnke/data-containers/geonames
 ```
 
 Simply query with `curl` and the result is returned as JSON:
 
-```
+```bash
 curl http://localhost:8983/solr/geonames/query?debug=query&q=n:G%C3%B6ttingen
 ```
 

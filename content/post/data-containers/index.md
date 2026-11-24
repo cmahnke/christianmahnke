@@ -31,7 +31,7 @@ Das Image basiert auf [Apache Jena](https://jena.apache.org/) und nutzt den [HDT
 
 Der Container kann recht einfach gestartet werden:
 
-```
+```bash
 docker run -it -p3030:3030  ghcr.io/cmahnke/data-containers/gnd:latest /bin/sh
 ```
 
@@ -43,13 +43,13 @@ Nach dem Starten kann der Datenbestand komfortabel im Browser recherchiert werde
 
 Der Container beinhaltet aber nur die Koordinaten und Schreibungsvarianten, z.B. um für einen Ort die Koordinaten abrufen zu können. Die Daten werfen dafür in eine [Apache Solr](https://solr.apache.org/) Instanz eingespielt und können nach dem Starten
 
-```
+```bash
 docker run -p 8983:8983 -it ghcr.io/cmahnke/data-containers/geonames
 ```
 
 Einfach mit `curl` abgefragt werden, dabei wird das Ergebnis als JSON zurückgeben:
 
-```
+```bash
 curl http://localhost:8983/solr/geonames/query?debug=query&q=n:G%C3%B6ttingen
 ```
 

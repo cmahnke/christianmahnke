@@ -52,12 +52,12 @@ Since the release of version 0.8 of `libultrahdr` the command line options have 
 
 In the first step, a YUV representation of the input image must be generated, this is used as a gain map, i.e. as a definition of the gain.
 
-```
+```bash
 ffmpeg -i input.jpg -filter:v format=p010 output.yuv
 ```
 
 In the next step, the gain map created can then be used to generate the desired image:
-```
+```bash
 ultrahdr_app -m 0 -p output.yuv -i input.jpg -w X -h Y -a 0
 ```
 
@@ -67,7 +67,7 @@ In the coming months it can be expected that the somewhat esoteric YUV format wi
 
 There is now also a Docker image that provides the latest version of `libultrahdr` together with ImageMagick with UltraHDR support.
 
-```
+```bash
 docker pull ghcr.io/cmahnke/hdr-tools:latest
 ```
 

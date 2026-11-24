@@ -22,13 +22,13 @@ Man sollte meinen, das es ziemlich einfach sein sollte, eine Datei, die Abmessun
 
 Das Ganze ist auch als [Docker Image](https://github.com/cmahnke/oss-exhibition-tools) verfügbar:
 
-```Bash Session
+```bash
 docker run -it -v `pwd`:`pwd` ghcr.io/cmahnke/oss-exhibition-tools/image2model:latest --help
 ```
 
 Die folgenden Parameter werden dabei unterstützt:
 
-```Bash Session
+```bash
 usage: generate-models.py [-h] (-i [file] | -d [directory] | -s) [-o [directory]] [-z] [-t] [-k] [-p PATTERN]
 
 Generate Collada files from images

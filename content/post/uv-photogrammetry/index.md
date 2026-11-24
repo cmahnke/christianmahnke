@@ -67,12 +67,12 @@ Die Erstellung und Nachbereitung folgte [dem erprobtem Ablauf](/post/3d-models/)
 Die Umsetzung war einfacher als gedacht, es sind im Grunde nur zwei Schritte erforderlich. Für das Beispiel wurde eine angepasste Version von [Three.js](https://threejs.org/) verwendet.
 * Erstellen eines GLTF Modells mit UltraHDR Textur, für das Konvertieren der Textur siehe [LibUltraHDR](/post/ultrahdr/). Die angepasste Textur muss im nächsten Schritt mit dem Modell zu einem Paket verpackt werden, dabei kommt [`obj2gltf`](https://github.com/CesiumGS/obj2gltf) zum Einsatz:
 
-```
+```javascript
 obj2gltf -i static/model/3DModel.obj -o static/model/uranium.glb
 ```
 
 * Einen angepassten [Three.js Renderer](https://github.com/mrdoob/three.js/blob/master/examples/jsm/renderers/webgpu/WebGPURenderer.js), hier eine Variante des WebGPURenderers. Dieser wird benötigt um die Initialisierung des Canvas Elements kontrollieren und beeinflussen zu können. Dies selbst geschieht im [`WebGPUBackend`](https://github.com/mrdoob/three.js/blob/master/examples/jsm/renderers/webgpu/WebGPUBackend.js). Dabei sind die folgenden zusätzlichen Parameter bei der Initialisierung notwendig, weitere Informationen [hier](https://github.com/ccameron-chromium/webgpu-hdr/blob/main/EXPLAINER.md#example-use):
-```
+```javascript
 colorSpace: "rec2100-hlg",
 colorMetadata: { mode:"extended" }
 ```

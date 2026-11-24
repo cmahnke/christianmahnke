@@ -138,7 +138,7 @@ Da man nur prüfen kann, ob ein Shortcode auf einer Seite verwendet wird, brauch
 
 Die resultierenden Datenstruktur hat nun den Vorteil, dass alle möglichen Shortcodes bekannt sind und man nun jede Seite einfach auf der Vorhandensein geprüft werden kann. Das Template oben kann via `partialCached` in eine Variable gespeichert werden, damit ist sicher gestellt, dass der komplette Seiteninhalt nur einmal komplett durchlaufen werden muss. Im nächsten Fragment wird dann der Einsatz im HTML Header Template gezeigt:
 
-```
+```go-html-template
 {{- $includes := unmarshal (partialCached "shortcodes/shortcode-helper-cache.html" .) -}}
 
 {{- if reflect.IsMap $includes -}}

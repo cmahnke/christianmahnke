@@ -18,6 +18,6 @@ The JavaScript implementation for the last posts is now also available as NPM mo
 
 Currently available via [GitHub](https://github.com/cmahnke/hdr-canvas/) and [NPM](https://www.npmjs.com/package/hdr-canvas):
 
-```
+```bash
 npm -i hdr-canvas
 ```

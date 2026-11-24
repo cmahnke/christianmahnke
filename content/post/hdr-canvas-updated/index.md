@@ -73,7 +73,7 @@ Mit dieser Version wird das Paket in eine Organisation verschoben und WCG von de
 
 Das Paket wird nun als `@projektemacher/hdr-canvas` auf npm veröffentlicht (GitHub Packages veröffentlicht es als `@cmahnke/hdr-canvas` über eine Umschreibung in `.github/workflows/npm.yml`):
 
-```
+```bash
 npm i @projektemacher/hdr-canvas
 ```
 
@@ -119,7 +119,7 @@ Unterstützung für Safari wurde eingeführt (aktuelles Ziel ist Safari Technolo
 
 Obwohl `colorjs.io` für Farbraumkonvertierungen sehr hilfreich ist, vergrößert es das Paket erheblich. Da es andere Pakete für die Verarbeitung von `Float16` gibt, wurde das Paket entfernt. Wenn Sie eigene Konvertierungen benötigen, fügen Sie es Ihrem Projekt hinzu:
 
-```
+```bash
 npm install colorjs.io
 ```
 
@@ -137,7 +137,7 @@ Die Änderungen bei der Initialisierung eines `canvas` für einen Renderer werde
 
 Die wichtigste Änderung ist die Umbenennung von „colorMetadata” in:
 
-```
+```javascript
 toneMapping: { mode: „extended“ }
 ```
 

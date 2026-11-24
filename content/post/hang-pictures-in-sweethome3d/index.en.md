@@ -22,13 +22,13 @@ You would think that it should be pretty easy to import a file containing dimens
 
 The whole thing is also available as [Docker Image](https://github.com/cmahnke/oss-exhibition-tools):
 
-```Bash Session
+```bash
 docker run -it -v `pwd`:`pwd` ghcr.io/cmahnke/oss-exhibition-tools/image2model:latest --help
 ```
 
 The following options are supported:
 
-```Bash Session
+```bash
 usage: generate-models.py [-h] (-i [file] | -d [directory] | -s) [-o [directory]] [-z] [-t] [-k] [-p PATTERN]
 
 Generate Collada files from images

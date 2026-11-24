@@ -38,7 +38,7 @@ This must then simply be checked in the [Template that generates the menus](http
 ```
 
 Now the entry only appears if you start in draft mode:
-```
+```bash
 hugo -D server
 ```
 

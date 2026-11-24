@@ -52,12 +52,12 @@ Seit dem Release von Version 0.8 von `libultrahdr` haben sich die Kommandozeilen
 
 Im ersten Schritt muss eine YUV Repäsentation des Eingangsbildes erzeugt werden, diese wird als Gain Map genutzt, also als Definition der Verstärkung.
 
-```
+```bash
 ffmpeg -i input.jpg -filter:v format=p010 output.yuv
 ```
 
 Im nächsten Schritt kann dann die erstellte Gain Map genutzt werden um das gewünschte Bild zu erzeugen:
-```
+```bash
 ultrahdr_app -m 0 -p output.yuv -i input.jpg -w X -h Y -a 0
 ```
 
@@ -67,7 +67,7 @@ In den nächsten Monaten kann damit gerechnet werden, dass das etwas esoterische
 
 Es existiert nun auch ein Docker Image, dass die jeweils aktuellste Version von `libultrahdr` zusammen mit ImageMagick mit UltraHDR Unterstützung bereitstellt.
 
-```
+```bash
 docker pull ghcr.io/cmahnke/hdr-tools:latest
 ```
 

@@ -73,7 +73,7 @@ This release moves the package into an org and separates WCG from HDR detection.
 
 The package is now published as `@projektemacher/hdr-canvas` on npm (GitHub Packages publishes it as `@cmahnke/hdr-canvas` via a rewrite in `.github/workflows/npm.yml`):
 
-```
+```bash
 npm i @projektemacher/hdr-canvas
 ```
 
@@ -119,7 +119,7 @@ Support for Safari started (current target is Safari Technology Preview R232 and
 
 Even though `colorjs.io` is quite helpful for color space conversions, it's increases the size of a package considerably. And since there are other packages to handle the `Float16`, the package has been removed. If you need your own conversions, add it to your project:
 
-```
+```bash
 npm install colorjs.io
 ```
 
@@ -137,7 +137,7 @@ The changes to the initialisation of a `canvas` for a renderer are described in 
 
 The most important change is the renaming of ‘colourMetadata’ to:
 
-```
+```javascript
 toneMapping: { mode: ‘extended’ }
 ```
 

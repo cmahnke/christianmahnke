@@ -38,7 +38,7 @@ Dieser muss dann einfach im [Template, dass die Menüs generiert](https://gohugo
 ```
 
 Nun erscheint der Eintrag nur noch wenn man im Entwurfsmodus startet:
-```
+```bash
 hugo -D server
 ```
 

@@ -86,13 +86,13 @@ export function gitSymlinkResolverPlugin() {
 
 Dies kann dan einfach in [`vite.config.js`](https://vite.dev/config/) geladen:
 
-```
+```javascript
 import { gitSymlinkResolverPlugin } from "./plugins/git-symlink-plugin.js";
 ```
 
 und genutzt werden:
 
-```
+```javascript
 plugins: [
   ...
   gitSymlinkResolverPlugin(),

@@ -25,7 +25,7 @@ Wer es jetzt schon ausprobieren will, muss sich die aktuelle Entwicklungsversion
 
 Falls man Unterstützung für mehr Bildformate braucht, bietet [diese Datei](https://github.com/libvips/libvips/blob/master/meson_options.txt) eine Übersicht über die verfügbaren Optionen.  Bereits installierte Bibliotheken in der Regel werden automatisch gefunden, ansonsten müssen weitere Bibliotheken installiert werden.
 
-```
+```bash
 git clone --depth 1 https://github.com/libvips/libvips.git
 cd libvips
 meson setup build --prefix /usr/local -Duhdr=enabled
@@ -37,7 +37,7 @@ sudo meson install
 
 Dann kann man mit dem folgenden Kommando IIIF-Pyramiden für HTML erstellen:
 
-```
+```bash
 vips dzsave $IMAGE_FILE $TARGET_DIR --keep gainmap --tile-size=512 --layout iiif
 ```
 

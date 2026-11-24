@@ -50,7 +50,7 @@ The reference implementation can be found on [GitLab](https://gitlab.com/wg1/jpe
 
 Since the conversion to IIIF derivatives on GitHub is done by a [Docker image](https://github.com/cmahnke/iiif-action), the easiest way to integrate the use of the new format into the tool chain is to add JPEG XL support to this image. For the used [LibVIPS](https://github.com/libvips/libvips) there is a [Pull Request](https://github.com/libvips/libvips/pull/2181), which supports the JPEG XL reference implementation. This is now built into a variant of the image for conversion:
 
-```
+```bash
 docker pull ghcr.io/cmahnke/iiif-action:latest-jxl
 ```
 
@@ -60,7 +60,7 @@ docker pull ghcr.io/cmahnke/iiif-action:latest-jxl
 
 The image can also be used to create the source files.
 
-```
+```bash
 docker run -it -v ${PWD}:${PWD} 'ghcr.io/cmahnke/iiif-action:latest-jxl' /bin/bash -c "cd ${PWD}; $SHELL"
 ```
 
@@ -68,7 +68,7 @@ docker run -it -v ${PWD}:${PWD} 'ghcr.io/cmahnke/iiif-action:latest-jxl' /bin/ba
 
 Using `vips` directly has the advantage that you can use any supported input file format.
 
-```
+```bash
 vips copy front.tif front.jxl[Q=100]
 ```
 
@@ -79,7 +79,7 @@ The following issues have been discovered:
 
 `cjxl` can also be used, but you should use a losslessly compressed (e.g. PNG) input file:
 
-```
+```bash
 cjxl front.png front.jxl
 ```
 
@@ -95,7 +95,7 @@ Since the use of JPEG XL is primarily intended here to reduce the storage requir
 
 #### Generate comparison file
 
-```
+```bash
 convert front.tif -quality 95 front.jpg
 ```
 
@@ -111,7 +111,7 @@ Basically what was known at the beginning remains: files are smaller with a simi
 
 After you have created a few JPEG XL files, you can now generate IIIF derivatives:
 
-```
+```bash
 vips dzsave front.jxl front -t 512 --layout iiif
 ```
 
