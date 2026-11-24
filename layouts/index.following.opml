@@ -1,0 +1,25 @@
+{{- $following := slice -}}
+{{- with resources.Get "mastodon/mastodon-archive.json" -}}
+  {{- with try (transform.Unmarshal .) -}}
+    {{- with .Value -}}
+      {{- $following = .following | default slice -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>{{ printf "%s's followed accounts" site.Params.author.name | html }}</title>
+  </head>
+  <body>
+{{- range $following }}
+{{- $name := .display_name | default .username | default .acct }}
+{{- $url := .url }}
+{{- if $url }}
+    <outline text="{{ $name | html }}" title="{{ $name | html }}" type="rss" xmlUrl="{{ printf "%s.rss" $url | html }}" htmlUrl="{{ $url | html }}" />
+{{- else if .uri }}
+    <outline text="{{ $name | html }}" title="{{ $name | html }}" type="link" url="{{ .uri | html }}" htmlUrl="{{ .uri | html }}" />
+{{- end }}
+{{- end }}
+  </body>
+</opml>

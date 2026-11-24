@@ -176,6 +176,8 @@ timeout = "240s"
     suffixes = ["bib"]
   [mediaTypes."application/x-qrcode-template"]
     suffixes = ["json"]
+  [mediaTypes."text/x-opml"]
+    suffixes = ["opml"]
   # See https://www.loc.gov/
 #  [mediaTypes."application/yaml"]
 #    suffixes = ["cff"]
@@ -262,6 +264,14 @@ timeout = "240s"
     isPlainText = true
     isHTML = false
     baseName = "qrcode"
+    notAlternative = true
+
+  [outputFormats.following]
+    mediaType = "text/x-opml"
+    isPlainText = true
+    isHTML = false
+    baseName = "following"
+    path = ".well-known"
     notAlternative = true
 
 [outputs]
