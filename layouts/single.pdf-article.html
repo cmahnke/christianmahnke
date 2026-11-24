@@ -8,6 +8,11 @@
 {{ define "content" }}
   {{- partial "header.html" . -}}
   <div class="content-container single">
-    {{ partial "article/page.html" . }}
+    {{- /* Vivliostyle snapshots block heights before scripts run, so details
+           must be open in the static HTML — print.ts opening them at runtime
+           paints the expansion but leaves its height out of the layout. */ -}}
+    {{- $html := partial "article/page.html" . -}}
+    {{- $html = replaceRE `<details([^>]*)>` `<details${1} open>` $html -}}
+    {{ $html | safeHTML }}
   </div>
 {{ end }}

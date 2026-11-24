@@ -9,8 +9,6 @@ const onReady = (fn: () => void) => {
 };
 
 onReady(() => {
-  document.querySelectorAll('details').forEach(el => el.open = true);
-
   /* Plain code blocks (no chroma line wrappers) get their text split into
      .line spans so the wrap-marker logic below applies to them too.
      Idempotent: after the split the block has element children. Newlines are

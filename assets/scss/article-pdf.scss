@@ -417,12 +417,17 @@ p {
         }
 
         /* Code spans the full text width like div.highlight does. Bare <pre>
-           blocks (no chroma) and <details> wrappers therefore have to span
-           themselves: column-span only works on direct children of the
-           multicol container. */
+           blocks and <details> containing code have to span themselves:
+           column-span only works on direct children of the multicol
+           container. Plain <details> stay in the current column. */
         > pre,
-        > details {
+        > details:has(pre),
+        > details:has(.highlight) {
           column-span: all;
+          break-inside: auto;
+        }
+
+        > details:not(:has(pre), :has(.highlight)) {
           break-inside: auto;
         }
 
@@ -741,9 +746,11 @@ a {
 
 /* The map partial swaps the live widget for a rasterised snapshot before
    Vivliostyle paginates (cloneNode loses canvas pixels and duplicates the
-   controls per page fragment). The fixed height must stay until the swap
-   happened — the widget needs a sized target to render into. */
-.map-wrapper.map-exported {
+   controls per page fragment). The wrapper is a column-spanner float, so its
+   height must be auto from the start — adding it with the runtime swap class
+   leaves the float snapshot at the theme's fixed height and the image and
+   attribution overlap the following content. */
+.map-wrapper {
   height: auto;
 
   img {
@@ -756,8 +763,8 @@ a {
 .map-attribution {
   font-family: $accent-font;
   font-size: 8pt;
-  text-align: center;
-  margin: 3pt 0 0;
+  text-align: right;
+  margin: 0 0 3pt;
 }
 
 /* Interactive maps never render in print output; drop the reserved space */
