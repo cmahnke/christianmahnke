@@ -28,7 +28,9 @@
     url = {{ printf "{%s}" $url | safeURL }},
     {{- $doi := .Params.doi -}}
     {{- with .Params.zenodo.doi -}}
+    {{- if partialCached "doi-published.html" . -}}
     {{- $doi = . -}}
+    {{- end -}}
     {{- end -}}
     {{- with $doi }}
     doi = {{ printf "{%s}" . | safeURL }},

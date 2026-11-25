@@ -43,9 +43,11 @@
         <div class="post-url"><span class="label">URL</span>: <a class="article-link" href="{{ $link }}">{{ $link }}</a></div>
 
         {{- with .Params.zenodo.doi -}}
-          <div class="post-doi">
-            {{- partial "doi.html" (dict "doi" . "labelKey" "zenodoDoiPrefix") -}}
-          </div>
+          {{- if partialCached "doi-published.html" . -}}
+            <div class="post-doi">
+              {{- partial "doi.html" (dict "doi" . "labelKey" "zenodoDoiPrefix") -}}
+            </div>
+          {{- end -}}
         {{- end -}}
 
         <div class="tags-heading"><span class="label">{{ i18n "keywords" }}</span>

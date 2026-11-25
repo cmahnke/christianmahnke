@@ -37,9 +37,11 @@
         </div>
       {{- end -}}
       {{- with .Params.zenodo.doi -}}
-        <div class="doi-reference">
-          {{- partial "doi.html" (dict "doi" . "labelKey" "zenodoDoiPrefix") -}}
-        </div>
+        {{- if partialCached "doi-published.html" . -}}
+          <div class="doi-reference">
+            {{- partial "doi.html" (dict "doi" . "labelKey" "zenodoDoiPrefix") -}}
+          </div>
+        {{- end -}}
       {{- end -}}
       <div class="post-body">
         {{- .Content -}}

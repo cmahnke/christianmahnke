@@ -275,7 +275,7 @@ timeout = "240s"
     notAlternative = true
 
 [outputs]
-  home = ["html", "rss", "iiif-collection"]
+  home = ["html", "rss", "jsonfeed", "iiif-collection"]
 #  page = ['html', 'print']
 
 [sitemap]
@@ -373,7 +373,7 @@ timeout = "240s"
       output = 'iiif-collection'
   [segments.print]
     [[segments.print.excludes]]
-      output = '{html,rss,iiif-manifest,iiif-collection,bibtex,linkedart,codemeta,llms}'
+      output = '{html,rss,jsonfeed,iiif-manifest,iiif-collection,bibtex,linkedart,codemeta,llms}'
       path = '{/links/**,/map/**,/about/**,/mastodon/**,/meta/**,/iiif/**,/collections/**}'
     [[segments.print.includes]]
       kind = '{page}'
@@ -388,10 +388,15 @@ timeout = "240s"
     mediaTypes = ['^application/json$',
                   '^application/json;\s?charset=[uU][tT][fF]-8$',
                   '^application/ld\+json;charset=[uU][tT][fF]-8$',
-                  '^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$',
+                  '^application/sparql-results\+json;charset=[uU][tT][fF]-8$',
                   '^application/sparql-results\+json$',
-                  '^image/jpeg$']
-    urls = ['^https://unpkg\.com/.*',
+                  '^image/jpeg$',
+                  '^text/html$',
+                  '^text/html;\s?charset=[uU][tT][fF]-8$']
+    urls = ['^https://doi\.org/.*',
+            '^https://zenodo\.org/.*',
+            '^https://sandbox\.zenodo\.org/.*',
+            '^https://unpkg\.com/.*',
             '^https://aframe.io\/.*',
             '^https://www\.wikidata\.org/.*',
             '^https://query\.wikidata\.org/.*',

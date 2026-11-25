@@ -14,7 +14,9 @@
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             {{- partial "shortcodes/exists-link.html" (dict "context" . "url" $pdfUrl "label" (i18n "zenodoPdfLink")) -}}
             {{- with .Params.zenodo.doi -}}
-              {{- partial "doi.html" (dict "doi" . "labelKey" "zenodoDoiPrefix") -}}
+              {{- if partialCached "doi-published.html" . -}}
+                {{- partial "doi.html" (dict "doi" . "labelKey" "zenodoDoiPrefix") -}}
+              {{- end -}}
             {{- end -}}
           </li>
         {{- end -}}

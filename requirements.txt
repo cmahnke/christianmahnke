@@ -10,6 +10,7 @@ rdflib
 beautifulsoup4
 pyyaml
 zenodo-client
+invenio-rest-api-client==12.0.4
 python-dotenv
 GitPython
 pikepdf

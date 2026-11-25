@@ -795,6 +795,26 @@ a:visited {
           }
         }
       }
+
+      .preview-img-wrapper {
+        position: relative;
+
+        @media (min-width : 75em) {
+          width: 60%;
+        }
+
+        .preview-attribution {
+          width: fit-content;
+          padding: .2rem;
+          font-size: xx-small;
+          position: absolute;
+          bottom: 1rem;
+          right: 1rem;
+          text-align: right;
+          background-color: rgba(211, 211, 211, .8);
+          border-radius: .2rem;
+        }
+      }
     }
 
     &.subsection {

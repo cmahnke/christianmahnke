@@ -1,0 +1,11 @@
+{{- $doi := . -}}
+{{- $published := false -}}
+{{- $url := printf "https://doi.org/%s" $doi -}}
+{{- with try (resources.GetRemote $url (dict "timeout" "10s")) -}}
+  {{- with .Err -}}
+    {{- warnf "[doi-published.html] Could not check %s: %s" $url . -}}
+  {{- else with .Value -}}
+    {{- $published = true -}}
+  {{- end -}}
+{{- end -}}
+{{- return $published -}}
