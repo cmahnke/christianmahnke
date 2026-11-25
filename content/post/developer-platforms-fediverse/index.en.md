@@ -8,6 +8,8 @@ tags:
   - DigitalSovereignty
 params:
   cite: true
+  zenodo:
+    publish: true
   wikidata:
     - https://www.wikidata.org/wiki/Q364
     - https://www.wikidata.org/wiki/Q16639197

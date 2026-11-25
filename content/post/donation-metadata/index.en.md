@@ -4,6 +4,8 @@ title: "Information on donors in cultural heritage aggregators"
 keywords: XML, METS, MODS, EAD, museum:digital, LIDO
 params:
   cite: true
+  zenodo:
+    publish: true
   wikidata:
     - https://www.wikidata.org/wiki/Q621630
     - https://www.wikidata.org/wiki/Q24045714

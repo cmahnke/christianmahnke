@@ -6,6 +6,8 @@ tags:
   - CyberSecurity
   - SocialMedia
 params:
+  zenodo:
+    publish: true
   wikidata:
     - https://www.wikidata.org/wiki/Q80949
     - https://www.wikidata.org/wiki/Q17068342
@@ -25,7 +27,7 @@ This attack is known as "feed poisoning" and falls into the category of social e
 
 ## Risks
 
-The risks are manifold, as most attacks are designed to have a long-lasting (and insidious) effect. The more harmless variants merely result in new suggestions in one's personal social media feed that do not correspond to one's own habits (so-called "bubble popping"). The consequences, however, can be far more dramatic. 
+The risks are manifold, as most attacks are designed to have a long-lasting (and insidious) effect. The more harmless variants merely result in new suggestions in one's personal social media feed that do not correspond to one's own habits (so-called "bubble popping"). The consequences, however, can be far more dramatic.
 Particularly in the English-speaking world, the phenomenon of so-called "pipelines" has been described in detail.
 For YouTube, for example, this is the [Alt-Right Pipeline](https://en.wikipedia.org/wiki/Alt-right_pipeline), which has already been replicated in a large number of self-experiments. In this context, the platform's algorithmic escalation means that with increased consumption of, for example, "science-critical" content, Bitcoin/finance content or even the so-called [Manosphere](https://de.wikipedia.org/wiki/Manosphere), more and more right-wing content is gradually suggested.
 
@@ -35,7 +37,7 @@ For YouTube, for example, this is the [Alt-Right Pipeline](https://en.wikipedia.
 As feed poisoning involves sending links to legitimate content that appear harmless, antivirus scanners do not recognise the threat.
 
 ## Feed poisoning is cross-platform.
-Unlike traditional viruses, feed poisoning takes effect via the server of the compromised social media account. 
+Unlike traditional viruses, feed poisoning takes effect via the server of the compromised social media account.
 
 Consequently, there is no protection for users of niche operating systems such as Linux or macOS. As most social networks now also offer native mobile applications that are equally capable of resolving and opening links to their content, these are not protected from attacks either.
 
@@ -51,4 +53,3 @@ Combined attacks have also been observed. For example, it is possible to transmi
 * Check the sender carefully. Do you know them personally? Are they trustworthy?
 * Don"t open links from messaging apps or emails by clicking on them; instead, copy the URL into a browser in incognito mode. Do the same on a mobile device.
 * Use a different browser to your default browser for social media, so that links aren"t opened in it.
-

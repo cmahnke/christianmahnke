@@ -6,6 +6,8 @@ tags:
   - CyberSecurity
   - SocialMedia
 params:
+  zenodo:
+    publish: true
   wikidata:
     - https://www.wikidata.org/wiki/Q80949
     - https://www.wikidata.org/wiki/Q17068342
@@ -25,7 +27,7 @@ Dieser Angriff wird als "Feed Poisoning" bezeichnet und gehört zur Klasse der S
 
 ## Gefahren
 
-Die Gefahren sind vielfältig, da die meisten Angriffe auf eine lange (und schleichende) Wirkdauer ausgelegt sind. Die harmloseren Varianten führen lediglich zu neuen Vorschlägen im persönlichen Social-Media-Feed, die nicht den eigenen Gewohnheiten entsprechen (sog. "Bubble Popping"). Die Folgen können jedoch weitaus dramatischer sein. 
+Die Gefahren sind vielfältig, da die meisten Angriffe auf eine lange (und schleichende) Wirkdauer ausgelegt sind. Die harmloseren Varianten führen lediglich zu neuen Vorschlägen im persönlichen Social-Media-Feed, die nicht den eigenen Gewohnheiten entsprechen (sog. "Bubble Popping"). Die Folgen können jedoch weitaus dramatischer sein.
 Besonders im englischsprachigen Raum ist das Phänomen der sogenannten Pipelines ausführlich beschrieben.
 Für YouTube ist dies beispielsweise die [Alt-Right-Pipeline](https://en.wikipedia.org/wiki/Alt-right_pipeline) (Englisch), die auch schon in einer Vielzahl von Selbstversuchen nachvollzogen wurde. Dabei führt die algorithmische Zuspitzung der Plattform dazu, dass bei erhöhtem Konsum von z. B. "wissenschaftskritischen", Bitcoin-/Finanz-Inhalten oder auch der sogenannten [Manosphere](https://de.wikipedia.org/wiki/Manosphere) nach und nach immer mehr rechtslastige Inhalte vorgeschlagen werden.
 
@@ -35,7 +37,7 @@ Für YouTube ist dies beispielsweise die [Alt-Right-Pipeline](https://en.wikiped
 Da beim Feed Poisoning nur scheinbar harmlose Links zu legalen Inhalten verschickt werden, erkennen Virenscanner die Gefahr nicht.
 
 ## Feed Poisoning ist plattformübergreifend.
-Anders als bei klassischen Viren entfaltet Feed Poisoning seine Wirkung über den Server des angegriffenen Social-Media-Accounts. 
+Anders als bei klassischen Viren entfaltet Feed Poisoning seine Wirkung über den Server des angegriffenen Social-Media-Accounts.
 
 Daher gibt es keine Sicherheit für Nutzer von Nischenbetriebsystemen wie Linux oder macOS. Da die meisten sozialen Netzwerke inzwischen auch native mobile Anwendungen anbieten, die ebenfalls in der Lage sind, Links zu ihren Inhalten aufzulösen und zu öffnen, sind auch diese nicht vor Angriffen geschützt.
 
@@ -49,6 +51,5 @@ Es wurden auch kombinierte Angriffe beobachtet. So ist es beispielsweise möglic
 
 ## Tipps, um nicht auf Feed Poisoning hereinzufallen:
 * Prüfen Sie sorgfältig den Absender. Kennen Sie ihn persönlich? Ist er vertrauenswürdig?
-* Öffnen Sie Links aus Messengern oder E-Mails nicht durch einen Klick, sondern kopieren Sie die URL in einen Browser im privaten Modus. Auch auf einem mobilen Endgerät. 
+* Öffnen Sie Links aus Messengern oder E-Mails nicht durch einen Klick, sondern kopieren Sie die URL in einen Browser im privaten Modus. Auch auf einem mobilen Endgerät.
 * Benutzen Sie für Social Media einen anderen Browser als den Standardbrowser, damit Links nicht damit geöffnet werden.
-
