@@ -1,6 +1,6 @@
 ---
 date: 2026-04-01T08:00:00+02:00
-title: 'Feed Poisoning Angriffe'
+title: 'Feed poisoning attacks'
 tags:
   - Fun
   - CyberSecurity
