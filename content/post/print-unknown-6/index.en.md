@@ -1,10 +1,9 @@
 ---
 date: 2026-07-11T12:31:44+02:00
-title: Woodcut by Juan Castells Martí (1906-1980)
+title: Woodcut print by Juan Castells Martí (1906-1980)
 tags:
   - Art
   - WoodblockPrint
-  - UnknownArtist
   - _ArtCollection
 params:
   preview: img/print.jpg
@@ -12,9 +11,12 @@ params:
     owner:
       wikidata: https://www.wikidata.org/wiki/Q137668638
     description: Holzschnitt unbekannter Herkunft
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q114646579
   wikidata:
     - https://www.wikidata.org/wiki/Q2936
     - https://www.wikidata.org/wiki/Q188675
+    - https://www.wikidata.org/wiki/Q114646579
 outputs:
   - bibtex
   - html

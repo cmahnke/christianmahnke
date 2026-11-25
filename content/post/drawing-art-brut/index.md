@@ -1,12 +1,12 @@
 ---
 date: 2024-11-02T11:55:44+02:00
-title: 'Art Brut Zeichnung von 1965'
+title: 'Art Brut Zeichnung von Hartmut Eing (1938-2021)'
 tags:
   - Art
   - ArtBrut
   - Drawing
-  - UnknownArtist
   - _ArtCollection
+  - _Niedersachsen
 params:
   preview: img/image.jpg
   linkedart:
@@ -16,17 +16,20 @@ params:
     description: "Eine Art Brut Zeichnung von 1965"
     style:
       - http://vocab.getty.edu/aat/300056472
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q133635373
   wikidata:
     - https://www.wikidata.org/wiki/Q44007
     - https://www.wikidata.org/wiki/Q1122756
     - https://www.wikidata.org/wiki/Q188675
     - https://www.wikidata.org/wiki/Q871021
+    - https://www.wikidata.org/wiki/Q133635373
 outputs:
   - bibtex
   - html
   - linkedart
   - pdf-article
-lastmod: 2026-04-27T00:00:00
+lastmod: 2026-11-24T00:00:00+02:00
 ---
 
 Ich habe einen interessante [Art Brut](https://de.wikipedia.org/wiki/Art_brut) Zeichnung von 1965 gekauft...
@@ -50,3 +53,9 @@ Die Zeichnung ist auf 1965 datiert. Bisher habe ich noch nichts über den Künst
 Möglicherweise ist der Österreicher [Josef Mikl](https://de.wikipedia.org/wiki/Josef_Mikl) (1929–2008) der gesuchte Künstler. Die Anzahl der Buchstaben stimmt ungefähr und auch einige seiner satirischen Schöpfungen weisen eine gewisse Ähnlichkeit auf:
 * [Josef Mikl. Das satirische Werk](https://artinwords.de/josef-mikl-das-satirische-werk/)
 * [Maler Josef Mikl: Memoiren einer gefährlichen Journalistenfresserin](https://www.derstandard.de/story/2000074806535/maler-josef-mikl-memoiren-einer-gefaehrlichen-journalistenfresserin)
+
+# Update 24.11.2026
+
+Der Künstler ist gefunden! Es handelt sich um Hartmut Eing (1938-2021), er wurde 1938 in Osterwick geboren und starb im Jahr 2021 in Altenbruch bei Cuxhaven. Er arbeitet als Grundschullehrer. [Der Nachruf der Cuxhavener Nachrichten](https://www.cnv-medien.de/news/ein-kritischer-zeitgenosse-und-mahner.html).
+
+Auf [invaluable ist ein ähnliches Werk zu finden](https://www.invaluable.com/auction-lot/hartmut-eing-1938-2021-1967-handzeichnung-dat-bg--5027-c-4a249ccb7b).

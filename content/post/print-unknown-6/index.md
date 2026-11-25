@@ -11,6 +11,8 @@ params:
     owner:
       wikidata: https://www.wikidata.org/wiki/Q137668638
     description: Holzschnitt unbekannter Herkunft
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q114646579
   wikidata:
     - https://www.wikidata.org/wiki/Q2936
     - https://www.wikidata.org/wiki/Q188675

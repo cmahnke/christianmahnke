@@ -1,12 +1,12 @@
 ---
 date: 2024-11-02T11:55:44+02:00
-title: 'Art Brut drawing from 1965'
+title: 'Art Brut drawing by Hartmut Eing (1938-2021)'
 tags:
   - Art
   - ArtBrut
   - Drawing
-  - UnknownArtist
   - _ArtCollection
+  - _Niedersachsen
 params:
   preview: img/image.jpg
   linkedart:
@@ -16,11 +16,14 @@ params:
     description: "A Art Brut drawing from 1965"
     style:
       - http://vocab.getty.edu/aat/300056472
+    artist:
+      wikidata: https://www.wikidata.org/wiki/Q133635373
   wikidata:
     - https://www.wikidata.org/wiki/Q44007
     - https://www.wikidata.org/wiki/Q1122756
     - https://www.wikidata.org/wiki/Q188675
     - https://www.wikidata.org/wiki/Q871021
+    - https://www.wikidata.org/wiki/Q133635373
 outputs:
   - bibtex
   - html
@@ -50,3 +53,9 @@ The drawing is dated 1965. So far I have not been able to find out anything abou
 The Austrian [Josef Mikl](https://en.wikipedia.org/wiki/Josef_Mikl) (1929–2008) may well be the artist in question. The number of letters is roughly the same, and some of his satirical works also bear a certain resemblance:
 * [Josef Mikl. The satirical work](https://artinwords.de/josef-mikl-das-satirische-werk/)
 * [Painter Josef Mikl: Memoirs of a Dangerous Journalist-Eater](https://www.derstandard.de/story/2000074806535/maler-josef-mikl-memoiren-einer-gefaehrlichen-journalistenfresserin)
+
+# Update 24 November 2026
+
+The artist has been identified! It is Hartmut Eing (1938–2021), who was born in Osterwick in 1938 and died in Altenbruch, near Cuxhaven, in 2021. He worked as a primary school teacher. [The obituary in the Cuxhavener Nachrichten](https://www.cnv-medien.de/news/ein-kritischer-zeitgenosse-und-mahner.html).
+
+A similar work can be found on [invaluable](https://www.invaluable.com/auction-lot/hartmut-eing-1938-2021-1967-handzeichnung-dat-bg--5027-c-4a249ccb7b).
