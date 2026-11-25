@@ -79,6 +79,7 @@ pagefind
 assets/scss/flags/flags.scss
 assets/scss/npm-fonts/
 *.secret
+.env
 assets/mastodon/media
 openbiblio.social.*
 content/mastodon/*.json

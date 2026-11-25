@@ -37,14 +37,18 @@ separate systems with separate accounts and separate tokens**:
 Create the tokens under *Account → Applications → Personal access tokens* on the
 respective host with the `deposit:write` (and `deposit:actions`) scopes.
 
-The token is passed to the script explicitly via `--token`:
+The script loads a `.env` file in the repository root if it exists and reads the
+token for the selected target from it (`ZENODO_SANDBOX_ACCESS_TOKEN` by default,
+`ZENODO_ACCESS_TOKEN` with `--production`). A value in the shell environment takes
+precedence over the file, and an explicit `--token` takes precedence over both:
 
 ```shell
-python scripts/zenodo.py --token "$ZENODO_SANDBOX_ACCESS_TOKEN"
+python scripts/zenodo.py                                            # token from .env / environment
+python scripts/zenodo.py --token "$ZENODO_SANDBOX_ACCESS_TOKEN"    # explicit override
 ```
 
-Tokens must never be committed – keep them in your shell environment or a local
-untracked `.env` file.
+Tokens must never be committed – the root `.gitignore` excludes `.env`; keep the
+token in your shell environment or a local untracked `.env` file.
 
 ## Sandbox vs. Production
 

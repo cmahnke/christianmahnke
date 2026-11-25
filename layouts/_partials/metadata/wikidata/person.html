@@ -39,13 +39,7 @@
       {{- end -}}
 
       {{- if not $fullName -}}
-        {{- with index $entity.labels "de" -}}
-          {{- $fullName = .value -}}
-        {{- else -}}
-          {{- with index $entity.labels "en" -}}
-            {{- $fullName = .value -}}
-          {{- end -}}
-        {{- end -}}
+        {{- $fullName = partial "metadata/wikidata/label.html" $entity.labels -}}
       {{- end -}}
 
       {{- $firstNameParts := slice -}}
@@ -66,14 +60,7 @@
             {{- with resources.GetRemote $nameUrl $opts -}}
               {{- with .Content | transform.Unmarshal -}}
                 {{- $nameEntity := index .entities $id -}}
-                {{- $label := "" -}}
-                {{- with index $nameEntity.labels "de" -}}
-                  {{- $label = .value -}}
-                {{- else -}}
-                  {{- with index $nameEntity.labels "en" -}}
-                    {{- $label = .value -}}
-                  {{- end -}}
-                {{- end -}}
+                {{- $label := partial "metadata/wikidata/label.html" $nameEntity.labels -}}
                 {{- if $label -}}
                   {{- $entries = $entries | append (dict "ordinal" $ordinal "label" $label) -}}
                 {{- end -}}
@@ -107,14 +94,7 @@
             {{- with resources.GetRemote $nameUrl $opts -}}
               {{- with .Content | transform.Unmarshal -}}
                 {{- $nameEntity := index .entities $id -}}
-                {{- $label := "" -}}
-                {{- with index $nameEntity.labels "de" -}}
-                  {{- $label = .value -}}
-                {{- else -}}
-                  {{- with index $nameEntity.labels "en" -}}
-                    {{- $label = .value -}}
-                  {{- end -}}
-                {{- end -}}
+                {{- $label := partial "metadata/wikidata/label.html" $nameEntity.labels -}}
                 {{- if $label -}}
                   {{- $entries = $entries | append (dict "ordinal" $ordinal "label" $label) -}}
                 {{- end -}}
@@ -230,6 +210,19 @@
 
 {{- else -}}
   {{- $error = "No URI provided" -}}
+{{- end -}}
+
+{{- if and $fullName $firstName (not $lastName) -}}
+  {{- $prefix := printf "%s " $firstName -}}
+  {{- if hasPrefix $fullName $prefix -}}
+    {{- $lastName = strings.TrimPrefix $prefix $fullName -}}
+  {{- else -}}
+    {{- $parts := split $fullName " " -}}
+    {{- $count := len $parts -}}
+    {{- if ge $count 2 -}}
+      {{- $lastName = index $parts (sub $count 1) -}}
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
 
 {{- if eq $fullName "" -}}

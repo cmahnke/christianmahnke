@@ -10,6 +10,7 @@ rdflib
 beautifulsoup4
 pyyaml
 zenodo-client
+python-dotenv
 GitPython
 pikepdf
 pyvips

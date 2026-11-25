@@ -611,6 +611,16 @@ p {
           max-width: 95vw;
         }
 
+        .renderer-canvas {
+          width: 100%;
+
+          canvas {
+            display: block;
+            width: 100% !important;
+            height: auto !important;
+          }
+        }
+
         .tag-ring {
           border: 0;
           display: flex;

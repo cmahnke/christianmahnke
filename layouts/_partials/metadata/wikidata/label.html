@@ -1,0 +1,10 @@
+{{- $labels := . -}}
+{{- $value := "" -}}
+{{- range $i, $preferred := slice "de" "en" "mul" -}}
+  {{- if not $value -}}
+    {{- with index $labels $preferred -}}
+      {{- $value = .value -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $value -}}

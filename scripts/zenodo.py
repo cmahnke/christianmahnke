@@ -1,6 +1,7 @@
 import argparse
 from zenodo_client import Creator, Metadata, Zenodo, create_zenodo, update_zenodo
 from pathlib import Path
+from dotenv import load_dotenv
 from datetime import date, datetime, timedelta, timezone
 import sys, os, logging
 import json
@@ -36,6 +37,14 @@ ARCHIVE_POLL_DELAY = 10
 
 # Logging Setup
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+
+
+def _load_env_token(sandbox):
+    env_path = Path(__file__).resolve().parents[1] / ".env"
+    if env_path.is_file():
+        load_dotenv(dotenv_path=env_path, override=False)
+    var = "ZENODO_SANDBOX_ACCESS_TOKEN" if sandbox else "ZENODO_ACCESS_TOKEN"
+    return os.environ.get(var)
 
 
 class ReserveMetadata(Metadata):
@@ -599,10 +608,19 @@ if __name__ == "__main__":
     site_root = Path(args.basedir).resolve()
     logging.info(f"Trying to load config from {site_root} and process posts in subdir '{args.sub}' with pattern '{args.pattern}'")
     logging.info(f"Target: {'Zenodo sandbox' if args.sandbox else 'Zenodo production'}")
+    token = args.token
+    if token is None:
+        token = _load_env_token(args.sandbox)
+        if token:
+            logging.info("Using Zenodo token from environment or local .env file")
+        elif not args.dry_run:
+            var = "ZENODO_SANDBOX_ACCESS_TOKEN" if args.sandbox else "ZENODO_ACCESS_TOKEN"
+            logging.error(f"No Zenodo API token found. Pass --token or set {var} in the environment or a local .env file.")
+            sys.exit(1)
     posts = check_hugo_posts(site_root, args.sub, args.pattern, args.update)
     failed = False
     for entry in posts:
-        if not zenodo_push(entry, token=args.token, sandbox=args.sandbox, dry_run=args.dry_run, update=args.update, archive=args.archive):
+        if not zenodo_push(entry, token=token, sandbox=args.sandbox, dry_run=args.dry_run, update=args.update, archive=args.archive):
             failed = True
     if failed:
         sys.exit(1)
