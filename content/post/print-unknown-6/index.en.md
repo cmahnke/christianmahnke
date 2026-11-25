@@ -1,6 +1,6 @@
 ---
 date: 2026-07-11T12:31:44+02:00
-title: Holzschnitt unbekannter Herkunft
+title: Woodcut by Juan Castells Martí (1906-1980)
 tags:
   - Art
   - WoodblockPrint
@@ -20,6 +20,7 @@ outputs:
   - html
   - linkedart
   - pdf-article
+lastmod: 2026-11-24T00:00:00+02:00
 ---
 
 I have found a colour woodcut whose artist is unknown...
@@ -45,3 +46,9 @@ There is a sticker on the back:
 </div>
 
 Although one might think that a relatively large castle situated above a river bend would not be all that common, unfortunately no information has yet come to light.
+
+# Update 24.11.2026
+
+I have now been able to identify the signature: it is that of [Juan Castells Martí](https://ca.wikipedia.org/wiki/Joan_Castells_i_Mart%C3%AD) (Catalan). He was born in 1906 and died in 1980 in Barcelona, where he also studied.
+
+On [Worthpoint](https://www.worthpoint.com/worthopedia/signed-juan-castells-marti-don-482878462) there is a print featuring a clearly legible signature.
