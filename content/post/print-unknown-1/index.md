@@ -36,4 +36,4 @@ Für mein neues Büro habe ich einen Siebdruck aus unbekannter Urheberschaft bei
 {{</ gallery >}}
 
 Besonders hat mir die Kombination aus Pink und Silber gefallen, nun brauch ich nur noch einen pinken Rahmen.
-Das bild zegt die Zuführungsdrähteund den Haltestab einer abtrahierten Glühbirne. Der Drunk ist auf 1969 datiert.
+Das Bild zeigt die Zuführungsdrähte und den Haltestab einer abstrahierten Glühbirne. Der Druck ist auf 1969 datiert.
