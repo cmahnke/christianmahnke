@@ -9,6 +9,7 @@ outputs:
   - iiif-collection
   - html
   - rss
+  - jsonfeed
   - following
   - activity-pub-outbox
   - bibtex

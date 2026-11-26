@@ -7,6 +7,7 @@ description: ""
 title: Blog
 outputs:
   - html
+  - jsonfeed
 cascade:
   - target:
       kind: '{page,section}'

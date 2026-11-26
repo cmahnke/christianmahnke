@@ -34,8 +34,8 @@ Versuche, andere Modelle direkt dazu zu bringen, die Google-Bildersuche zu nutze
 
 * [Siebdruck einer Glühbirne](/post/print-unknown-1): Könnte von Helga Jahnke (1939-2024) sein - aber die Signaturen und der Stil (der im Netz verfügbaren) Bilder stimmen nicht überein.
 * [Holzschnitt "Am Hang"](/post/print-unknown-3): Hier ist der Künstler zwar dem Namen nach bekannt, aber nicht mehr. Ein Lehrer mit diesem Namen wurde in Danzig identifiziert, allerdings sind keine Vergleichswerke bekannt:
-  * Im Danziger Adressbuch von 1914 (https://pbc.gda.pl/Content/3703/Od_714_8_1914.pdf#page=591) ist unter "Winkelmann" an der Adresse Am Holzraum 20 "Josef, Lehrer" aufgeführt. Auch die Karlsbad-Gästeverzeichnisse für 1913 (https://data.onb.ac.at/ANNO/clk19130612?seite=1) und 1914 (https://data.onb.ac.at/ANNO/clk19140615?seite=4) weisen ihn als Lehrer aus Danzig aus.
-  * Das Danziger Adressbuch von 1939 (https://books.google.com/books?id=pUnxVraz7o0C&dq=%22Winkelmann%22+%22Am+Holzraum%22+%22Lehrer%22) führt in derselben Straße einen Oberlehrer namens "Winkelmann, Jos." auf.
+  * Im [Danziger Adressbuch von 1914](https://pbc.gda.pl/Content/3703/Od_714_8_1914.pdf#page=591) ist unter "Winkelmann" an der Adresse Am Holzraum 20 "Josef, Lehrer" aufgeführt. Auch die [Karlsbad-Gästeverzeichnisse für 1913](https://data.onb.ac.at/ANNO/clk19130612?seite=1) und [1914](https://data.onb.ac.at/ANNO/clk19140615?seite=4) weisen ihn als Lehrer aus Danzig aus.
+  * Das [Danziger Adressbuch von 1939](https://books.google.com/books?id=pUnxVraz7o0C&dq=%22Winkelmann%22+%22Am+Holzraum%22+%22Lehrer%22) führt in derselben Straße einen Oberlehrer namens "Winkelmann, Jos." auf.
 
 Beide Ergebnisse wurden von GPT-6.2 Sol (max) für jeweils ca. 5$ geliefert.
 
