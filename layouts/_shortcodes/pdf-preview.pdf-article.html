@@ -56,7 +56,3 @@
     {{- end -}}
   </div>
 {{- end -}}
-
-{{- define "_partials/shortcodes/pdf-preview-metadata.html" -}}
-  {{- (dict "css" slice "js" slice "scss" (slice "scss/pdf-preview.scss")) | jsonify -}}
-{{- end -}}
