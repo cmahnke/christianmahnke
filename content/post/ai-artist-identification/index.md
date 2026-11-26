@@ -1,5 +1,5 @@
 ---
-date: 2026-11-26T22:52:22+02:00
+date: 2026-11-25T22:52:22+02:00
 title: 'KI unterstützte Zuschreibungen'
 description: "Zwei bisher unbekannte Künstler identifiziert"
 params:
@@ -26,7 +26,7 @@ Diesmal mit Hilfe von KI. Grundsätzlich hat bei beiden geholfen, dass ich (sofe
 * Eine [Zeichnung von Hartmut Eing (1938-2021)](/post/drawing-art-brut/)
 
 Beide Zuschreibungen stammen von der KI der Google-Bildersuche. Die erledigt solche Aufgaben übrigens deutlich besser als Gemini, das ist von alleine leider [nicht in der Lage mit der Google Bildersuche zu interagieren](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/grounding/grounding-with-google-search). Beide Ergebnisse wurden visuell bestätigt.
-Versuche, andere Modelle direkt dazu zu bringen, die Google-Bildersuche zu nutzen, sind bisher an einem Bot-Schutz gescheitert.
+Versuche, andere Modelle direkt dazu zu bringen, die Google-Bildersuche zu nutzen, sind an einem Bot-Schutz gescheitert. Allerdings hat es DeepSeek V4.1 Flash 1017 in Verbindung mit [Omkarcloud Camoufox scraper](https://github.com/omkarcloud/google-scraper) geschafft beide Namen als jeweils ersten Kandidaten zu finden.
 
 ## Weitere Versuche
 
@@ -41,6 +41,6 @@ Beide Ergebnisse wurden von GPT-6.2 Sol (max) für jeweils ca. 5$ geliefert.
 
 ## Nächste Schritte
 
-Wenn sich der Bot-Schutz der Google-Bildersuche automatisiert überwinden lässt, wäre es möglich, die Suche nach visuell ähnlichen Kandidaten durch einen Agenten durchführen zu lassen, inklusive einer groben Klassifikation (Kandidaten mit Signaturen). Diese Klassifikation könnte dann wiederum genutzt werden, um weitere Recherchen zu Techniken, Stilen und Vergleichsmaterialien zu ermöglichen. All das könnte in einem allgemeinen Skill für diese Aufgabe münden.
+Da sich der Bot-Schutz der Google-Bildersuche automatisiert überwinden lässt, ist es möglich, die Suche nach visuell ähnlichen Kandidaten durch einen Agenten durchführen zu lassen, inklusive einer groben Klassifikation (Kandidaten mit Signaturen). Diese Klassifikation könnte dann wiederum genutzt werden, um weitere Recherchen zu Techniken, Stilen und Vergleichsmaterialien zu ermöglichen. ggf. sind so auch direkte Vergleiche von Signaturen möglich. All das könnte in einem allgemeinen Skill für diese Aufgabe münden.
 
 Beim Warten auf den Zug heute Morgen sah ich dann noch einen sehr vergleichbaren Ansatz bei Heise Online:: [KI ermittelt in 22 Minuten den unbekannten Zeichner eines Skizzenbuchs von 1808](https://www.heise.de/news/KI-ermittelt-in-22-Minuten-den-unbekannten-Zeichner-eines-Skizzenbuchs-von-1808-11537049.html).

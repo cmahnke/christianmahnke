@@ -1,5 +1,5 @@
 ---
-date: 2026-11-26T22:52:22+02:00
+date: 2026-11-25T22:52:22+02:00
 title: 'AI-assisted attributions'
 description: "Two previously unknown artists identified"
 params:
