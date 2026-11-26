@@ -45,4 +45,4 @@ Both results were provided by GPT-6.2 Sol (max) for approximately $5 each.
 
 As Google Images' bot protection can be bypassed automatically, it is possible to have an agent carry out the search for visually similar candidates, including a rough classification (candidates with signatures). This classification could then, in turn, be used to facilitate further research into techniques, styles and comparative material. Where appropriate, this may also allow for direct comparisons of signatures. All of this could culminate in a general-purpose skill for this task.
 
-Whilst waiting for the train this morning, I came across a very similar approach on Heise Online:: [AI identifies the unknown artist of an 1808 sketchbook in 22 minutes](https://www.heise.de/news/KI-ermittelt-in-22-Minuten-den-unbekannten-Zeichner-eines-Skizzenbuchs-von-1808-11537049.html).
+Whilst waiting for the train this morning, I came across a very similar approach on Heise Online: [AI identifies the unknown artist of an 1808 sketchbook in 22 minutes](https://www.heise.de/news/KI-ermittelt-in-22-Minuten-den-unbekannten-Zeichner-eines-Skizzenbuchs-von-1808-11537049.html).

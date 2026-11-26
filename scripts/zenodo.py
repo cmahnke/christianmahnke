@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 from datetime import date, datetime, timedelta, timezone
 import sys, os, logging
 import json
+import hashlib
 import git
 import pikepdf
 import pystow
@@ -23,6 +24,7 @@ import random
 from dataclasses import dataclass
 from email.utils import parsedate_to_datetime
 from types import SimpleNamespace
+from functools import lru_cache
 
 sys.path.append(str(Path(__file__).resolve().parents[1] / "themes" / "projektemacher-base" / "scripts"))
 from PyHugo import Content, Config, Post
@@ -39,17 +41,21 @@ WAYBACK_SAVE_URL = "https://web.archive.org/save/"
 ARCHIVE_MAX_AGE = timedelta(hours=3)
 ARCHIVE_CHECK_TIMEOUT = 15
 ARCHIVE_SAVE_TIMEOUT = 60
-ARCHIVE_POLL_ATTEMPTS = 6
+ARCHIVE_POLL_ATTEMPTS = 12
 ARCHIVE_POLL_DELAY = 10
 ARCHIVE_RETRY_ATTEMPTS = 3
 ARCHIVE_RETRY_BACKOFF = 30
 ARCHIVE_MAX_RETRY_DELAY = 300
 ARCHIVE_RATE_LIMIT_DELAY = 60
 ARCHIVE_MIN_SAVE_INTERVAL = 20
-ARCHIVE_JOB_POLL_ATTEMPTS = 30
+ARCHIVE_JOB_STATUS_CHECKS = 3
 ARCHIVE_JOB_POLL_DELAY = 5
 ARCHIVE_RETRYABLE_STATUSES = {429, 500, 502, 503, 504}
 ARCHIVE_USER_AGENT = "zenodo.py"
+
+GITHUB_API = "https://api.github.com"
+DEPLOY_WORKFLOW = "gh-pages.yml"
+GITHUB_TIMEOUT = 20
 
 
 class ArchiveNotFoundError(Exception):
@@ -58,6 +64,100 @@ class ArchiveNotFoundError(Exception):
 
 # Logging Setup
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+
+
+@lru_cache(maxsize=1)
+def _deploy_metadata(site_root):
+    """Return (deployed sha, archive window) from the newest successful deploy+archive run."""
+    try:
+        repo = git.Repo(site_root)
+        origin = next((r for r in repo.remotes if r.name == "origin"), None)
+        urls = list(origin.urls) if origin else []
+        url = urls[0] if urls else ""
+    except Exception as e:
+        logging.warning(f"Could not read git remote for deployed version: {e}")
+        return None
+    url = url.rstrip("/")
+    if url.startswith("git@github.com:"):
+        slug = url.split(":", 1)[1]
+    elif "github.com/" in url:
+        slug = url.split("github.com/", 1)[1]
+    else:
+        slug = ""
+    slug = slug.removesuffix(".git")
+    if "/" not in slug:
+        logging.warning(f"Cannot determine GitHub repository from origin URL '{url}'")
+        return None
+    headers = {"User-Agent": ARCHIVE_USER_AGENT, "Accept": "application/vnd.github+json"}
+    try:
+        runs_url = f"{GITHUB_API}/repos/{slug}/actions/workflows/{DEPLOY_WORKFLOW}/runs"
+        res = requests.get(runs_url, params={"status": "success", "per_page": 5}, headers=headers, timeout=GITHUB_TIMEOUT)
+        res.raise_for_status()
+        runs = res.json().get("workflow_runs", [])
+        for run in runs:
+            jobs_url = f"{GITHUB_API}/repos/{slug}/actions/runs/{run['id']}/jobs"
+            job_res = requests.get(jobs_url, params={"per_page": 100}, headers=headers, timeout=GITHUB_TIMEOUT)
+            job_res.raise_for_status()
+            jobs = job_res.json().get("jobs", [])
+            deploy = next((j for j in jobs if j.get("name") == "deploy" and j.get("conclusion") == "success"), None)
+            archive = next((j for j in jobs if j.get("name", "").startswith("archive") and j.get("conclusion") == "success"), None)
+            if not deploy or not archive:
+                continue
+            deploy_at = datetime.fromisoformat(deploy["completed_at"].replace("Z", "+00:00"))
+            archive_at = datetime.fromisoformat(archive["completed_at"].replace("Z", "+00:00"))
+            window = archive_at - deploy_at
+            if window <= timedelta(0):
+                continue
+            logging.info(f"Deployed version {run.get('head_sha')} at {deploy_at.isoformat()}, archived at {archive_at.isoformat()} (window {window})")
+            return SimpleNamespace(sha=run.get("head_sha"), window=window)
+    except Exception as e:
+        logging.warning(f"Could not read deploy metadata from GitHub: {e}")
+    logging.warning("No successful deploy+archive run found on GitHub")
+    return None
+
+
+def _post_relative_paths(repo, post):
+    paths = []
+    for file in post.files.values():
+        if not file:
+            continue
+        try:
+            paths.append(os.path.relpath(str(file), repo.working_dir))
+        except ValueError:
+            continue
+    return paths
+
+
+def _is_deployed_version(repo, post, deployed_sha):
+    """Return whether the post's files at HEAD are exactly the deployed version."""
+    if repo is None or not deployed_sha:
+        return False
+    paths = _post_relative_paths(repo, post)
+    if not paths:
+        return False
+    try:
+        repo.commit(deployed_sha)
+        diff = repo.git.diff("--name-only", deployed_sha, "HEAD", "--", *paths)
+    except Exception as e:
+        logging.warning(f"Could not compare post with deployed version {deployed_sha}: {e}")
+        return False
+    return not diff.strip()
+
+
+def _deployed_version_date(repo, post, deployed_sha):
+    """Return the commit date of the deployed version of the post's files."""
+    if repo is None or not deployed_sha:
+        return None
+    paths = _post_relative_paths(repo, post)
+    if not paths:
+        return None
+    try:
+        for commit in repo.iter_commits(deployed_sha, paths=paths, max_count=1):
+            return commit.committed_datetime
+        return repo.commit(deployed_sha).committed_datetime
+    except Exception as e:
+        logging.warning(f"Could not determine deployed version date for {post}: {e}")
+        return None
 
 
 def _load_env_token(sandbox):
@@ -203,6 +303,7 @@ class ZenodoEntry:
     primary_url: str = ""
     archive_urls: dict = None
     changed: bool = False
+    deployed_at: str = ""
 
     def to_json(self):
         from dataclasses import asdict
@@ -299,8 +400,8 @@ def _wayback_snapshot(url):
         logging.warning(f"Could not check archive.org snapshot for {url}: {e}")
         return None
 
-def _wayback_fresh(timestamp):
-    return timestamp is not None and datetime.now(timezone.utc) - timestamp <= ARCHIVE_MAX_AGE
+def _wayback_fresh(timestamp, max_age=ARCHIVE_MAX_AGE):
+    return timestamp is not None and datetime.now(timezone.utc) - timestamp <= max_age
 
 
 _snapshot_urls = {}
@@ -422,7 +523,7 @@ def _archive_save_anonymous(url):
 
 
 def _archive_save_authenticated(url, keys):
-    """Submit a capture via SPN2 and wait for the job to finish."""
+    """Submit a capture via SPN2, checking briefly for errors before snapshot polling."""
     access_key, secret_key = keys
     headers = {
         "User-Agent": ARCHIVE_USER_AGENT,
@@ -454,21 +555,22 @@ def _archive_save_authenticated(url, keys):
         return False
     logging.info(f"Archive.org capture job {job_id} started for {url}")
     status_url = f"https://web.archive.org/save/status/{job_id}"
-    for attempt in range(ARCHIVE_JOB_POLL_ATTEMPTS):
+    for attempt in range(ARCHIVE_JOB_STATUS_CHECKS):
         time.sleep(ARCHIVE_JOB_POLL_DELAY)
         res = _archive_request("GET", status_url, headers=headers, timeout=ARCHIVE_CHECK_TIMEOUT, label=f"status {job_id}")
         if res is None or res.status_code >= 400:
-            logging.error(f"Could not check archive.org capture job {job_id} for {url}: {res.status_code if res is not None else 'no response'}")
-            return False
+            logging.warning(f"Could not check archive.org capture job {job_id} for {url}: {res.status_code if res is not None else 'no response'}")
+            break
         try:
             status = res.json()
         except ValueError:
-            logging.error(f"Invalid archive.org status response for job {job_id}: {res.text[:200]}")
-            return False
+            logging.warning(f"Invalid archive.org status response for job {job_id}: {res.text[:200]}")
+            break
         state = status.get("status")
         if state == "success":
             logging.info(f"Archive.org captured {url} (timestamp {status.get('timestamp', 'unknown')})")
-            _capture_timestamps[url] = status.get("timestamp")
+            if status.get("timestamp"):
+                _capture_timestamps[url] = status["timestamp"]
             return True
         if state == "error":
             message = status.get("message") or status.get("status_ext") or state
@@ -476,15 +578,14 @@ def _archive_save_authenticated(url, keys):
                 raise ArchiveNotFoundError(f"archive.org cannot find {url}: {message}")
             logging.error(f"Archive.org capture failed for {url}: {message}")
             return False
-        logging.info(f"Waiting for archive.org capture job {job_id} ({attempt + 1}/{ARCHIVE_JOB_POLL_ATTEMPTS})")
-    logging.error(f"Archive.org capture job {job_id} for {url} did not finish in time")
-    return False
+    logging.info(f"Checking archive.org snapshot availability for {url}")
+    return True
 
 
-def _archive_url(url, dry_run=False, keys=None):
-    """Ensure a Wayback snapshot no older than ARCHIVE_MAX_AGE exists for url."""
+def _archive_url(url, dry_run=False, keys=None, max_age=ARCHIVE_MAX_AGE):
+    """Ensure a Wayback snapshot within max_age exists for url."""
     timestamp = _wayback_snapshot(url)
-    if _wayback_fresh(timestamp):
+    if _wayback_fresh(timestamp, max_age):
         _snapshot_urls[url] = _wayback_url(url, timestamp)
         logging.info(f"Recent archive.org snapshot found for {url}")
         return True
@@ -493,26 +594,27 @@ def _archive_url(url, dry_run=False, keys=None):
         return False
     logging.info(f"No recent archive.org snapshot for {url}, requesting a save")
     if keys:
-        if not _archive_save_authenticated(url, keys):
-            return False
+        submitted = _archive_save_authenticated(url, keys)
         timestamp = _capture_timestamps.get(url)
         if timestamp:
             _snapshot_urls[url] = _wayback_url(url, timestamp)
             return True
+        if not submitted:
+            return False
     elif not _archive_save_anonymous(url):
         return False
     for attempt in range(ARCHIVE_POLL_ATTEMPTS):
         time.sleep(ARCHIVE_POLL_DELAY)
         timestamp = _wayback_snapshot(url)
-        if _wayback_fresh(timestamp):
+        if _wayback_fresh(timestamp, max_age):
             _snapshot_urls[url] = _wayback_url(url, timestamp)
             logging.info(f"Fresh archive.org snapshot confirmed for {url}")
             return True
         logging.info(f"Waiting for archive.org snapshot for {url} ({attempt + 1}/{ARCHIVE_POLL_ATTEMPTS})")
-    logging.error(f"No archive.org snapshot newer than {ARCHIVE_MAX_AGE} for {url}")
+    logging.error(f"No archive.org snapshot within {max_age} for {url}")
     return False
 
-def ensure_archived(entry, dry_run=False):
+def ensure_archived(entry, dry_run=False, max_age=ARCHIVE_MAX_AGE):
     """Gate uploads on a fresh Wayback snapshot for every article URL."""
     if not entry.urls:
         logging.error(f"No article URLs available for '{entry.title}', cannot check archive.org")
@@ -522,7 +624,7 @@ def ensure_archived(entry, dry_run=False):
         logging.info("Using authenticated archive.org Save Page Now (IA_ACCESS_KEY/IA_SECRET_KEY)")
     results = []
     for lang, url in entry.urls.items():
-        result = _archive_url(url, dry_run, keys)
+        result = _archive_url(url, dry_run, keys, max_age)
         if result and url in _snapshot_urls:
             entry.archive_urls[lang] = _snapshot_urls[url]
         results.append(result)
@@ -620,15 +722,36 @@ def _rdm_upload_files(client, draft_id, paths):
     """Initialize, upload and commit each PDF in a draft's file bucket.
 
     Uses the detailed responses because the generated client's commit parser
-    expects HTTP 201 while Zenodo answers 200. Completed files are kept;
-    half-uploaded ones are removed so the resume is clean."""
+    expects HTTP 201 while Zenodo answers 200. Unchanged completed files are
+    kept; changed or half-uploaded ones are replaced so a resumed draft carries
+    the freshly patched PDFs."""
     existing = rdm_list_files(str(draft_id), client=client)
     entries = existing.get("entries", []) if isinstance(existing, dict) else []
-    completed = {entry.get("key") for entry in entries if entry.get("status") == "completed"}
+    completed = {}
     for entry in entries:
-        if entry.get("key") and entry.get("status") != "completed":
-            rdm_delete_file(str(draft_id), entry["key"], client=client)
-    todo = [p for p in paths if Path(p).name not in completed]
+        key = entry.get("key")
+        if not key:
+            continue
+        if entry.get("status") == "completed":
+            completed[key] = entry.get("checksum")
+        else:
+            rdm_delete_file(str(draft_id), key, client=client)
+    def local_checksum(path):
+        digest = hashlib.md5()
+        with open(path, "rb") as f:
+            for chunk in iter(lambda: f.read(1024 * 1024), b""):
+                digest.update(chunk)
+        return f"md5:{digest.hexdigest()}"
+    todo = []
+    for path in paths:
+        key = Path(path).name
+        checksum = local_checksum(path)
+        if key in completed and completed[key] == checksum:
+            continue
+        if key in completed:
+            logging.info(f"Replacing changed PDF {key} in draft {draft_id}")
+            rdm_delete_file(str(draft_id), key, client=client)
+        todo.append(path)
     if not todo:
         logging.info(f"All PDFs already uploaded to draft {draft_id}, skipping upload")
         return
@@ -705,12 +828,16 @@ def _rdm_new_version(entry, metadata, workdir, token, sandbox, target, publish=F
         return record, doi
     return draft, doi
 
-def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=False, archive=True, publish=False):
+def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=False, archive=True, publish=False, archive_window=ARCHIVE_MAX_AGE):
     if not entry.upload_files or not entry.key or not entry.title:
         logging.warning(f"Missing required fields for entry '{entry.title}', skipping.")
         return True
 
     target = "Zenodo sandbox" if sandbox else "Zenodo production"
+
+    if entry.deployed_at:
+        archive_window = datetime.now(timezone.utc) - datetime.fromisoformat(entry.deployed_at)
+        logging.info(f"Archive window for '{entry.title}': {archive_window} since deployed version {entry.deployed_at}")
 
     already_published = bool(entry.deposition_id or entry.doi)
 
@@ -733,14 +860,14 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
             logging.info(f"[DRY RUN] Would reserve a DOI for '{entry.title}' on {target}, write it into the PDF metadata, then upload and {'publish' if publish else 'stage as a draft'}.")
         logging.info(f"[DRY RUN] Files to be uploaded: {list(entry.upload_files.values())}")
         if archive:
-            ensure_archived(entry, dry_run=True)
+            ensure_archived(entry, dry_run=True, max_age=archive_window)
         return True
 
     if already_published and not entry.changed:
         logging.info(f"Entry '{entry.title}' already has a deposition ID or DOI and is unchanged, skipping upload.")
         return True
 
-    if archive and not ensure_archived(entry):
+    if archive and not ensure_archived(entry, max_age=archive_window):
         logging.error(f"Archive.org gate failed for '{entry.title}', skipping Zenodo upload.")
         return False
 
@@ -802,8 +929,11 @@ def zenodo_push(entry: ZenodoEntry, token, sandbox=True, dry_run=True, update=Fa
 
     return True
 
-def check_hugo_posts(site_root, subdir, pattern, update=False):
+def check_hugo_posts(site_root, subdir, pattern, update=False, deployed_sha=None):
     conf = Config(site_root)
+    if deployed_sha is None:
+        meta = _deploy_metadata(str(site_root))
+        deployed_sha = meta.sha if meta else None
     langs = conf.langs
     logging.info(f"Site languages: {langs}, default: {conf.defaultLanguage}")
     content = Content(os.path.join(site_root, Content.DEFAULT_CONTENT_DIR), sub_path=subdir, config=conf, sections=False)
@@ -906,6 +1036,17 @@ def check_hugo_posts(site_root, subdir, pattern, update=False):
                 logging.error(f"Post {post.path} has uncommitted content: {reason}, aborting run")
                 sys.exit(1)
 
+        if not _is_deployed_version(repo, post, deployed_sha):
+            logging.warning(f"Post {post.path} is not the successfully deployed version (deployed {deployed_sha or 'unknown'}), skipping Zenodo upload")
+            continue
+
+        deployed_at = _deployed_version_date(repo, post, deployed_sha)
+        if deployed_at is None:
+            logging.warning(f"Post {post.path} has no deployed version date, skipping Zenodo upload")
+            continue
+        entry.deployed_at = deployed_at.isoformat()
+        logging.info(f"Deployed version of {post.path} committed at {entry.deployed_at}")
+
         for field, values in (("title", titles), ("description", descriptions)):
             present = [value for value in values.values() if value]
             if len(present) > 1 and len(set(present)) == 1:
@@ -973,13 +1114,16 @@ if __name__ == "__main__":
             var = "ZENODO_SANDBOX_ACCESS_TOKEN" if args.sandbox else "ZENODO_ACCESS_TOKEN"
             logging.error(f"No Zenodo API token found. Pass --token or set {var} in the environment or a local .env file.")
             sys.exit(1)
-    posts = check_hugo_posts(site_root, args.sub, args.pattern, args.update)
+    deploy = _deploy_metadata(str(site_root))
+    archive_window = deploy.window if deploy else ARCHIVE_MAX_AGE
+    logging.info(f"Archive freshness window: {archive_window}")
+    posts = check_hugo_posts(site_root, args.sub, args.pattern, args.update, deployed_sha=deploy.sha if deploy else None)
     if args.limit > 0:
         posts = posts[:args.limit]
     failed = False
     for entry in posts:
         try:
-            if not zenodo_push(entry, token=token, sandbox=args.sandbox, dry_run=args.dry_run, update=args.update, archive=args.archive, publish=args.publish):
+            if not zenodo_push(entry, token=token, sandbox=args.sandbox, dry_run=args.dry_run, update=args.update, archive=args.archive, publish=args.publish, archive_window=archive_window):
                 failed = True
         except ArchiveNotFoundError as e:
             logging.error(f"{e}, aborting run")
