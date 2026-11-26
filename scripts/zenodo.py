@@ -304,6 +304,7 @@ class ZenodoEntry:
     archive_urls: dict = None
     changed: bool = False
     deployed_at: str = ""
+    titles: dict = None
 
     def to_json(self):
         from dataclasses import asdict
@@ -661,31 +662,33 @@ def _format_creator_name(name):
         return f"{parts[1]}, {parts[0]}"
     return name
 
-def patch_pdf_metadata(pdf_path, doi_url, entry):
+def patch_pdf_metadata(pdf_path, doi_url, title, entry):
     """Write the DOI and descriptive metadata into a PDF in place.
 
     XMP and DocInfo are written consistently (pikepdf's update_docinfo) to keep
-    the PDF/A conformance intact; PDFs already carrying the DOI are left untouched."""
+    the PDF/A conformance intact; PDFs already carrying the DOI and title are
+    left untouched."""
     with pikepdf.open(pdf_path, allow_overwriting_input=True) as pdf:
         with pdf.open_metadata() as meta:
-            if meta.get("dc:identifier") == doi_url:
-                logging.info(f"{pdf_path} already carries {doi_url}, not patching.")
+            if meta.get("dc:identifier") == doi_url and meta.get("dc:title") == title:
+                logging.info(f"{pdf_path} already carries {doi_url} and title '{title}', not patching.")
                 return
         with pdf.open_metadata(set_pikepdf_as_editor=False, update_docinfo=True) as meta:
-            meta["dc:title"] = entry.title
+            meta["dc:title"] = title
             meta["dc:creator"] = [_format_creator_name(a["name"]) for a in entry.authors]
             meta["dc:description"] = entry.description
             meta["dc:identifier"] = doi_url
             if entry.keywords:
                 meta["pdf:Keywords"] = ", ".join(entry.keywords)
         pdf.save(pdf_path)
-    logging.info(f"Patched {pdf_path} with DOI {doi_url}")
+    logging.info(f"Patched {pdf_path} with DOI {doi_url} and title '{title}'")
 
 def _patch_entry_pdfs(entry, doi):
     """Write the DOI and entry metadata into all PDF files of the entry in place."""
     doi_url = f"https://doi.org/{doi}"
-    for path in entry.upload_files.values():
-        patch_pdf_metadata(path, doi_url, entry)
+    titles = entry.titles or {}
+    for lang, path in entry.upload_files.items():
+        patch_pdf_metadata(path, doi_url, titles.get(lang) or entry.title, entry)
 
 def _prepare_upload_paths(entry, workdir):
     """Return the paths to upload for an entry.
@@ -1026,6 +1029,7 @@ def check_hugo_posts(site_root, subdir, pattern, update=False, deployed_sha=None
                 entry.title = f"{entry.title} / {title}"
             elif title != "":
                 entry.title = title
+        entry.titles = titles
         if not all(upload.get(lang) is True for lang in conf.langs):
             logging.warning(f"Post {post.path} with pattern '{pattern}' not marked for upload in all languages, skipping!")
             continue

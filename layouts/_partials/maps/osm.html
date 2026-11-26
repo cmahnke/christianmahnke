@@ -48,6 +48,7 @@
     <div id="{{ $id }}-popup-content" aria-live="polite"></div>
   </div>
 </div>
+
 <script type="text/javascript">
   (function() {
     var tries = 0;
@@ -146,6 +147,17 @@
               var attribution = document.createElement('p');
               attribution.className = 'map-attribution';
               attribution.textContent = '© OpenStreetMap contributors';
+              /* Inline style, not a stylesheet rule: Vivliostyle fragments
+                 column-span boxes into a render tree where document
+                 stylesheets (including the print sheet) no longer match the
+                 caption — it used to render with UA defaults (left aligned,
+                 gap on top, overlapping the following columns). Inline
+                 styles survive cloning. Right-aligned under the snapshot,
+                 gap below it. */
+              attribution.style.textAlign = 'right';
+              attribution.style.margin = '0 0 10pt';
+              attribution.style.fontSize = '8pt';
+              attribution.style.fontFamily = '"Strichpunkt Sans", sans-serif';
               var mapDiv = document.getElementById('{{ $id | safeJS }}');
               if (!mapDiv) {
                 finish();

@@ -402,14 +402,13 @@ p {
           text-indent: -2ch;
         }
 
-        /* The wrap indicator rides INLINE before the wrapped characters —
-           Vivliostyle ignores absolute positioning, so print.ts places the
-           marker at the measured wrap offset and it flows with the text.
-           print.ts measures the content without the markers, so the marker's
-           own font metrics do not disturb the row detection. */
+        /* The wrap indicator rides INLINE at the start of every wrapped
+           visual row. It is placed by print.ts's re-measure loop, which
+           converges until the marker sits exactly at the paginated row
+           start. */
         .line-wrap-marker {
-          font-family: $body-text;
-          font-size: 0.75em;
+          font-family: inherit;
+          font-size: inherit;
           color: inherit;
         }
 
@@ -901,11 +900,15 @@ a {
   }
 }
 
-.content-container .post .content .post-body p.map-attribution {
+/* Rasterised map caption: the osm partial sets the caption's alignment,
+   spacing and type inline (Vivliostyle fragments column-span boxes into a
+   render tree where document stylesheets no longer match the caption, so
+   stylesheet rules never applied — the caption rendered with UA defaults:
+   left aligned, gap on top, overlapping the following columns). The class
+   itself is kept for identification only. */
+p.map-attribution {
   font-family: $accent-font;
   font-size: 8pt;
-  text-align: right;
-  margin: 0 0 3pt;
 }
 
 /* Interactive maps never render in print output; drop the reserved space */

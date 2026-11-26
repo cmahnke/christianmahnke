@@ -63,13 +63,19 @@ onReady(() => {
     });
   };
 
-  /* Insert the ↪ marker at the start of every visual continuation row. Row
-     boundaries are read from the rendered text with single-character Ranges;
-     inserting a marker narrows the following rows, so the boundaries are
-     re-measured after each insertion until the layout is stable. Every pass
-     starts from clean text, which keeps the repeated tryMeasure rounds
-     idempotent. Vivliostyle ignores absolute positioning, hence the inline
-     marker. */
+  /* Insert the ↪ marker at the start of every visual continuation row (one
+     monospace advance, inline). Row boundaries are read from the rendered
+     text with single-character Ranges. Inserting a marker pushes the row's
+     last char onto the next row, so the marker inserted at the measured
+     boundary ends up one char late inside the paginated row ("second
+     char"). The fix is a closed loop: after each placement, re-measure the
+     layout WITH the markers in place, move the markers to the newly measured
+     starts, and repeat until the measured starts equal the marker positions
+     (fixed point). Then the marker sits exactly at the paginated row start.
+     Marker text is always skipped while measuring, so the markers
+     themselves are never mistaken for row starts, and re-placement from
+     clean text keeps every round idempotent. Vivliostyle ignores absolute
+     positioning, hence the inline marker. */
   const markWrappedLines = () => {
     document.querySelectorAll<HTMLElement>('pre code .line').forEach(line => {
       if (line.clientHeight === 0) {
@@ -110,20 +116,27 @@ onReady(() => {
           const range = document.createRange();
           range.setStart(entry.node, entry.local);
           range.setEnd(entry.node, entry.local + 1);
-          return range.getClientRects()[0]?.top ?? null;
+          const rects = range.getClientRects();
+          /* A char straddling the break can yield two rects; the LAST
+             (lowest) one is the row the glyph actually sits on. Taking
+             [0] attributes it to the previous row and shifts the marker
+             one char late — the 'second char' defect. */
+          if (rects.length === 0) return null;
+          let lowest = rects[0].top;
+          for (let k = 1; k < rects.length; k++) {
+            if (rects[k].top > lowest) lowest = rects[k].top;
+          }
+          return lowest;
         } catch {
           return null;
         }
       };
 
-      for (let round = 0; round < 8; round++) {
+      const readRowStarts = (): number[] => {
         const entries = charEntries();
-        if (entries.length < 2) {
-          return;
-        }
-
+        if (entries.length < 2) return [];
         const tops = entries.map(topOf);
-        const starts: { node: Text; local: number }[] = [];
+        const indices: number[] = [];
         let previousTop: number | null = null;
         for (let i = 0; i < entries.length; i++) {
           const top = tops[i];
@@ -131,23 +144,24 @@ onReady(() => {
             continue;
           }
           if (previousTop !== null && Math.abs(top - previousTop) > rowTolerance) {
-            const entry = entries[i];
-            const before = entry.node.previousSibling;
-            const alreadyMarked = before instanceof HTMLElement && before.classList.contains('line-wrap-marker');
-            if (!alreadyMarked) {
-              starts.push(entry);
-            }
+            indices.push(i);
           }
           previousTop = top;
         }
-        if (starts.length === 0) {
-          return;
-        }
+        return indices;
+      };
 
-        /* Insert from the end so earlier node/local pairs stay valid while
-           text nodes get split. The marker goes before the very first glyph
-           of the row, including preserved whitespace. */
-        for (const entry of starts.reverse()) {
+      /* Place markers at linear char indices (marker-stripped order, so the
+         indices stay valid across remove/re-insert cycles). Insert from the
+         end so earlier node/local pairs stay valid while text nodes get
+         split. */
+      const placeMarkers = (indices: number[]) => {
+        Array.from(line.querySelectorAll<HTMLElement>('.line-wrap-marker')).forEach(marker => marker.remove());
+        if (indices.length === 0) return;
+        const entries = charEntries();
+        for (const index of [...indices].sort((a, b) => b - a)) {
+          const entry = entries[index];
+          if (!entry) continue;
           const marker = document.createElement('span');
           marker.className = 'line-wrap-marker';
           marker.textContent = '↪';
@@ -158,7 +172,25 @@ onReady(() => {
             entry.node.parentNode?.insertBefore(marker, entry.node);
           }
         }
+      };
+
+      let positions = readRowStarts();
+      if (positions.length === 0) {
+        return;
       }
+      const samePositions = (a: number[], b: number[]) =>
+        a.length === b.length && a.every((v, k) => v === b[k]);
+      let measured = positions;
+      for (let round = 0; round < 10; round++) {
+        placeMarkers(measured);
+        const next = readRowStarts();
+        if (samePositions(next, measured)) {
+          measured = next;
+          break;
+        }
+        measured = next;
+      }
+      placeMarkers(measured);
     });
   };
 
