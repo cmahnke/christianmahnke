@@ -8,6 +8,10 @@
     <title>{{ block "title" . }}{{ site.Title }}{{ end }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{- with .Params.zenodo.doi }}
+      <meta name="citation_doi" content="https://doi.org/{{ . }}">
+    {{- end }}
     <style>:root { --figure-label: "{{ i18n "figureLabel" }}" }</style>
     {{- with site.Params.author -}}
       {{- $author := . -}}
@@ -16,15 +20,37 @@
             {{- $author = index . "name" -}}
         {{- end -}}
       {{- end -}}
+      {{- /* Zenodo requires "Family name, given names" (zenodo.py _format_creator_name) */ -}}
+      {{- $parts := split $author " " -}}
+      {{- if eq (len $parts) 2 }}
+        {{- $parts = slice (index $parts 1) (index $parts 0) -}}
+        {{- $author = delimit $parts ", " -}}
+      {{- end }}
       <meta name="author" content="{{ $author }}">
+      <meta name="dc.creator" content="{{ $author }}">
     {{- end -}}
-    {{- with .Description -}}
+    {{- $description := .Params.zenodo.description -}}
+    {{- if not $description -}}
+      {{- $description = .Description -}}
+    {{- end -}}
+    {{- with $description -}}
       <meta name="description" content="{{ . }}">
     {{- end -}}
     {{- $keywords := slice -}}
-    {{- range .Params.tags -}}
-      {{- if and (not (hasPrefix . "hidden_")) (not (hasPrefix . "_")) -}}
-        {{- $keywords = $keywords | append . -}}
+    {{- $ignore := slice "Blog" "Projektemacher.org" "Status" "Suche" "Spaß" "Fun" "" -}}
+    {{- with .Params.zenodo.keywords -}}
+      {{- $keywords = . -}}
+    {{- else -}}
+      {{- range .Params.tags -}}
+        {{- if and (not (hasPrefix . "hidden_")) (not (hasPrefix . "_")) (not (in $ignore .)) -}}
+          {{- $translated := i18n . -}}
+          {{- if eq $translated "" -}}
+            {{- $translated = . -}}
+          {{- end -}}
+          {{- if not (in $keywords $translated) -}}
+            {{- $keywords = $keywords | append $translated -}}
+          {{- end -}}
+        {{- end -}}
       {{- end -}}
     {{- end -}}
     {{- with $keywords -}}

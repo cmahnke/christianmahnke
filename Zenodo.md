@@ -4,12 +4,27 @@ Selected blog posts are published as PDFs on [Zenodo](https://zenodo.org/) to ke
 citeable and permanently archived (see the background in
 `content/post/zenodo-articles/`). The pipeline has four stages:
 
-1. Hugo renders a print-optimised HTML version of the post (`pdf-article` output format)
-2. [Vivliostyle](https://vivliostyle.org/) converts that HTML into a PDF
+1. Hugo renders a print-optimised HTML version of the post (`pdf-article` output format).
+   The template (`layouts/baseof.pdf-article.html`) emits the PDF metadata as HTML
+   `<head>` tags: `<link rel="canonical">` (the `html` output URL, e.g. `/post/x/` or
+   `/en/post/x/`), `<meta name="citation_doi">` (when `zenodo.doi` is set),
+   `author`/`dc.creator` in Zenodo form (`Family, Given`), `description`
+   (`zenodo.description` if set, else `.Description`), and `keywords` (tags translated
+   via `i18n` in the page's own language, deduplicated, minus `IGNORE_KEYWORDS`;
+   `zenodo.keywords` wins if set). `layouts/single.pdf-article.html` titles the page
+   with the plain post title so the extracted `<title>` matches the post title.
+2. [Vivliostyle](https://vivliostyle.org/) (`scripts/article_pdfs.py`) converts that HTML
+   into a PDF, extracting title/author/subject/keywords from the `<head>` and writing
+   them to both the DocInfo dictionary and the XMP packet. It always receives `--url`
+   (the canonical HTML page URL) and `--doi` when `citation_doi` is present (fallback:
+   first DOI URL in the body). XMP `dc:identifier` is then `doi:{bare DOI}` when a DOI
+   exists, otherwise the HTML page URL. This is the same metadata `zenodo.py` patches
+   locally, so GitHub Actions rebuilds keep it without needing pikepdf.
 3. [`zenodo-client`](https://github.com/cthoyt/zenodo-client) reserves a DOI on a draft
-   deposit, writes it into the PDF's XMP metadata/DocInfo ([pikepdf](https://pikepdf.readthedocs.io/)),
-   then uploads the PDF with proper metadata (author, ORCID, keywords, license, related
-   identifiers) and publishes it, which activates the DOI
+   deposit, writes it into the PDF's XMP metadata/DocInfo ([pikepdf](https://pikepdf.readthedocs.io/))
+   in the matching `doi:` form, then uploads the PDF with proper metadata (author,
+   ORCID, keywords, license, related identifiers) and publishes it, which activates
+   the DOI.
 
 The metadata model follows the article
 ["Making your blog FAIR"](https://drmowinckels.io/blog/2024/fair-blog/) by Athanasia Mo
@@ -197,8 +212,9 @@ For a post without a `zenodo.doi`/`deposition_id` the script runs three steps in
    (`10.5281/zenodo.XXXXXX` in production, `10.5072/...` on the sandbox), which only
    becomes resolvable once the deposit is published
 2. **Patch**: every `article.pdf` of the post is rewritten **in place** with
-   [pikepdf](https://pikepdf.readthedocs.io/): XMP `dc:identifier` gets the DOI URL,
-   plus `dc:title`, `dc:creator`, `dc:description` and `pdf:Keywords`; DocInfo
+   [pikepdf](https://pikepdf.readthedocs.io/): XMP `dc:identifier` gets `doi:{doi}`
+   (matching the `vivliostyle-batch-cli` form so CI rebuilds don't churn), plus
+   `dc:title`, `dc:creator`, `dc:description` and `pdf:Keywords`; DocInfo
    (Title/Author/Subject/Keywords) is kept in sync via `update_docinfo=True` so the
    PDF/A-2b conformance stays valid. PDFs that already carry the DOI are left untouched
 3. **Publish**: the patched PDFs are uploaded to the draft and the deposit is published,

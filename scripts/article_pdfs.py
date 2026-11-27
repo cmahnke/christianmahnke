@@ -23,6 +23,7 @@ BATCH_CLI = REPO_ROOT / "node_modules" / "@projektemacher" / "vivliostyle-batch-
 PDF_LEVELS = ("1a", "1b", "2a", "2b", "2u", "3a", "3b", "3u", "4", "off")
 DOI_PATTERN = re.compile(r"https://doi\.org/10\.[0-9]+/[A-Za-z0-9._-]+")
 DOI_HREF_PATTERN = re.compile(r'href="(https://doi\.org/10\.[0-9]+/[A-Za-z0-9._-]+)"')
+CITATION_DOI_PATTERN = re.compile(r'<meta[^>]*name="citation_doi"[^>]*content="(https://doi\.org/10\.[0-9]+/[^"]+)"')
 
 logger = logging.getLogger(__name__)
 
@@ -171,13 +172,13 @@ def collect_jobs(docs_root, post, base_url, force=False):
             skipped_redirect += 1
             logger.debug("Skipping '%s' (alias redirect page)", repo_relative(html))
             continue
-        doi = DOI_PATTERN.search(text)
+        doi_match = CITATION_DOI_PATTERN.search(text) or DOI_PATTERN.search(text)
         jobs.append(
             Job(
                 html=html,
                 pdf=pdf,
                 page_url=page_url_for(html, docs_root, base_url),
-                doi=doi.group(0) if doi else "",
+                doi=doi_match.group(0) if doi_match else "",
             )
         )
     jobs.sort(key=lambda job: pairwise_order_key(job.html, docs_root))
@@ -215,6 +216,7 @@ def build_command(job, args):
         cmd += ["--verapdf"]
     cmd += ["--url", job.page_url]
     if job.doi:
+        # vivliostyle normalizes to doi:{bare DOI} and prefers it over --url (xmp.ts:153-157)
         cmd += ["--doi", job.doi]
     cmd += ["-o", repo_relative(job.pdf)]
     cmd += args.passthrough

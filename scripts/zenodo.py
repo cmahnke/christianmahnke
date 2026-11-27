@@ -684,8 +684,11 @@ def patch_pdf_metadata(pdf_path, doi_url, title, entry):
     logging.info(f"Patched {pdf_path} with DOI {doi_url} and title '{title}'")
 
 def _patch_entry_pdfs(entry, doi):
-    """Write the DOI and entry metadata into all PDF files of the entry in place."""
-    doi_url = f"https://doi.org/{doi}"
+    """Write the DOI and entry metadata into all PDF files of the entry in place.
+
+    Uses the doi: form to match vivliostyle-batch-cli output (xmp.ts:153-154),
+    so PDFs built in GitHub Actions and those patched here share the same XMP."""
+    doi_url = f"doi:{doi}"
     titles = entry.titles or {}
     for lang, path in entry.upload_files.items():
         patch_pdf_metadata(path, doi_url, titles.get(lang) or entry.title, entry)
