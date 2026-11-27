@@ -190,7 +190,31 @@ onReady(() => {
         }
         measured = next;
       }
-      placeMarkers(measured);
+      /* Trailing convention: the wrap marker trails the broken row's last
+         glyph instead of leading the continuation row. Move every measured
+         continuation start back by one char so the marker sits just before
+         the next row's first glyph (i.e. after the previous row's final
+         char); then advance trailing boundaries forward past any spaces so
+         the marker sits immediately after the row's last non-space glyph,
+         iterating until the re-measured row starts agree. */
+      const padTrailing = (starts: number[]): number[] => {
+        const e = charEntries();
+        return starts.map(p => {
+          let q = Math.min(p, e.length - 1);
+          while (q > 0 && (e[q]?.node.textContent?.charAt(e[q].local) === ' ')) q--;
+          return q;
+        });
+      };
+      let trailing = padTrailing(measured.map((p, k) => Math.max((k === 0 ? 0 : measured[k - 1]) + 1, p - 1)));
+      for (let trailingRound = 0; trailingRound < 4; trailingRound++) {
+        placeMarkers(trailing);
+        const nextStarts = readRowStarts();
+        if (nextStarts.length === 0) break;
+        const nextTrailing = padTrailing(nextStarts.map((p, k) => Math.max((k === 0 ? 0 : nextStarts[k - 1]) + 1, p - 1)));
+        if (samePositions(nextTrailing, trailing)) break;
+        trailing = nextTrailing;
+      }
+      placeMarkers(trailing);
     });
   };
 

@@ -15,10 +15,13 @@ $accent-font: "Strichpunkt Sans";
 /* Trailing blocks that never render visibly (the wikidata summary inside
    .post-footer is display:none, .related-posts is dropped by Vivliostyle as
    trailing content) but still take part in fragmentation — Vivliostyle emits
-   an extra empty page for them. Hide them outright. */
+   an extra empty page for them. !important is essential because generic
+   element rules (e.g. ul margins/paddings from the base palette) would
+   otherwise let the trailing content boxes overflow onto a blank terminal
+   page. No text, page number, or column-span rule is affected. */
 .post-footer,
 .related-posts {
-  display: none;
+  display: none !important;
 }
 
 @page {
