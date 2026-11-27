@@ -11,24 +11,44 @@
    never paint: the paginated content is laid out off-viewport and out-of-
    process frames do not rasterize into print-to-PDF. Force eager loading so
    the embeds (e.g. Google Maps/Street View) boot during rendering. */}}
-{{ $iframe | replaceRE ` loading="lazy"` ` loading="eager"` | safeHTML }}
+{{- /* Normalize inline sizing in the print variant only (the web shortcode
+ * keeps whatever the author wrote): inline width/height/margin on the raw
+ * embed would otherwise pin the rasterizer's boundingBox() to a column-width
+ * or off-page box (e.g. "margin: 1rem" on digital-lost-places). The print
+ * box is sized by .streetview-print-box in assets/scss/article-pdf.scss. */}}
+{{- $iframe = $iframe | replaceRE ` width="[^"]*"` ` width="100%"` -}}
+{{- $iframe = $iframe | replaceRE ` height="[^"]*"` ` height="450"` -}}
+{{- $iframe = $iframe | replaceRE ` style="[^"]*"` ` style="border:0;"` -}}
+<div class="streetview-print-box">
+{{- $inner := $iframe | replaceRE ` loading="lazy"` ` loading="eager"` -}}
+{{- $inner = $inner | replaceRE `&lt;` "<" | replaceRE `&gt;` ">" | replaceRE `&quot;` `"` -}}
+{{ $inner | safeHTML }}
+</div>
 {{/* Cross-origin embeds need seconds to boot after their shell loaded — far
-   beyond the layout gate's quiet period. Hold the gate briefly (refcounted,
-   bounded by the gate deadline) so they can paint before the PDF is captured. */}}
+   beyond the layout gate's quiet period. Deterministic pages set __vivReady
+   themselves; the settle gate polls it and opens immediately. The load+5s
+   hold covers the shell-load -> WebGL-paint delay (the embed UI alone is
+   mostly white); the 20s fallback covers a load event that fired before
+   the listener attached. */}}
 {{ $holdScript := `<script type="text/javascript">
   (function() {
     if (!(window.matchMedia && window.matchMedia('print').matches)) {
       return;
     }
-    window.__vivIframePending = (window.__vivIframePending || 0) + 1;
     window.__vivRasterizeIframes = true;
     window.__vivReady = false;
-    window.setTimeout(function() {
-      window.__vivIframePending = Math.max(0, (window.__vivIframePending || 1) - 1);
-      if (window.__vivIframePending === 0 && (window.__vivMapPending || 0) === 0 && window.__vivReady === false) {
-        window.__vivReady = true;
-      }
-    }, 7000);
+    var box = document.currentScript.parentNode;
+    var frame = box ? box.querySelector('iframe') : null;
+    if (frame) {
+      // (The CLI's frame probe already scrollIntoView's every iframe before
+      // measuring its box; nothing to register here.)
+      frame.addEventListener('load', function() {
+        window.setTimeout(function() { window.__vivReady = true; }, 5000);
+      });
+      // Listener may have been attached after the frame already loaded:
+      // the 20s fallback below still signals painted content.
+    }
+    window.setTimeout(function() { window.__vivReady = true; }, 20000);
   })();
 </script>` -}}
 

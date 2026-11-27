@@ -1,0 +1,47 @@
+{{- /* Print-only twin of details.html.
+ * The web shortcode renders its inner content via Page.RenderString
+ * ({{ .Inner | .Page.RenderString (dict "display" "block") }}), which in the
+ * pdf-article segment turns a nested {{< html/iframe-consent >}} into
+ * escaped <pre><code> text, so nested embeds never become live iframes for
+ * the print rasterizer. In print, details are force-opened by
+ * layouts/single.pdf-article.html, so the collapsed-state concern does not
+ * apply here. Strategy: render the inner markdown through RenderString (so
+ * code fences get chroma-highlighted exactly like the web output), then
+ * move any shortcode markup that RenderString escaped back into the tree
+ * where the pdf-article twin for that shortcode can resolve it in the
+ * print segment. Both patterns occur in the corpus:
+ *  - code fences as Markdown: RenderString leaves real <pre> markup alone;
+ *  - nested shortcode with arguments: {{< html/iframe-consent >}} becomes
+ *    &lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt; after the fences.
+ * The un-escaping below restores that fragment as a live shortcode for the
+ * print twin. The web shortcode is untouched. */}}
+{{- $class := or (.Get "class") "" }}
+{{- $id := or (.Get "id") "" }}
+{{- $name := or (.Get "name") "" }}
+{{- $summary := or (.Get "summary") "Details" }}
+{{- $title := or (.Get "title") "" }}
+{{- $open := false }}
+{{- if in (slice "false" false 0) (.Get "open") }}
+  {{- $open = false }}
+{{- else if in (slice "true" true 1) (.Get "open") }}
+  {{- $open = true }}
+{{- end }}
+
+<details
+  {{- with $class }} class="{{ . }}" {{- end }}
+  {{- with $name }} name="{{ . }}" {{- end }}
+  {{- with $open }} open {{- end }}
+  {{- with $title }} title="{{ . }}" {{- end -}}
+  {{- with $id }} id="{{ . }}" {{- end -}}
+>
+  <summary>{{ $summary | .Page.RenderString }}</summary>
+  {{- /* Render markdown fences (chroma <pre>) through RenderString, then
+   * restore any shortcode that RenderString escaped: RenderString only
+   * resolves shortcodes it knows about in the current output segment, and
+   * leaves others as literal <pre><code> text with &lt; escapes. Un-escaping
+   * the entities exposes the shortcode text to Hugo's shortcode parser,
+   * which then resolves it through the print twin for that shortcode. */ -}}
+  {{- $inner := .Inner | .Page.RenderString (dict "display" "block") -}}
+  {{- $inner = $inner | replaceRE `&lt;` "<" | replaceRE `&gt;` ">" -}}
+  {{ $inner | safeHTML }}
+</details>

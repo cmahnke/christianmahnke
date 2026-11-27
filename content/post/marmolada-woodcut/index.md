@@ -69,8 +69,8 @@ Diesen Holzschnitt habe ich vor einigen Wochen erworben und es lies sich nichts 
 
 Das Bild zeigt den Berg [Marmolata](https://de.wikipedia.org/wiki/Marmolata), der z.B. im Ersten Weltkrieg eine bewegte Geschichte hatte, aus nördlicher Richtung, sehr wahrscheinlich aus der Nähe von "falesia Col Rodella" bei [Canazei](https://de.wikipedia.org/wiki/Canazei). Zur genaueren Bestimmung der Perspektive half ein mit Hilfe von [Blender](https://www.blender.org/) in eine 3D Ansicht umgewandeltes Höhenprofil. Kleinere Ungereimtheiten fallen sicher unter künstlerische Freiheit. Zum Vergleich hier eine aktuelle Rundumansicht aus der bestimmten Position:
 
-{{< html/iframe-consent  preview="<img class='video-preview' src='img/preview.jpg' alt='Vorschau'>" >}}
-  <iframe src="https://www.google.com/maps/embed?pb=!4v1726427311620!6m8!1m7!1sCAoSLEFGMVFpcE1hWDRoN0Z5NExFdlpaSFFQUXh4NV9MZ3g0aHRYY1d0d0NKMWVS!2m2!1d46.495287!2d11.7513511!3f98.78276099443083!4f4.4556945190209944!5f1.4219312166764295" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+{{< html/iframe-consent preview="<img class='video-preview' src='img/preview.jpg' alt='Vorschau'>" >}}
+  {{< streetview url="https://www.google.com/maps/embed?pb=!4v1726427311620!6m8!1m7!1sCAoSLEFGMVFpcE1hWDRoN0Z5NExFdlpaSFFQUXh4NV9MZ3g0aHRYY1d0d0NKMWVS!2m2!1d46.495287!2d11.7513511!3f98.78276099443083!4f4.4556945190209944!5f1.4219312166764295" >}}
 {{< /html/iframe-consent >}}
 
 ## Der Gletscher

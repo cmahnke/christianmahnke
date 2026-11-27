@@ -1,0 +1,65 @@
+{{- /* Shared Street View parameter resolution for {{< streetview >}}.
+ * Two author input styles are normalized into one canonical struct:
+ *  (a) url="https://www.google.com/maps/embed?pb=…"       (maps embed grammar)
+ *  (b) url="https://www.google.com/maps/@lat,lng,18z/data=…/…"  (@-grammar)
+ *  (c) explicit lat=/lng=/pano=/heading=/pitch=           (no url)
+ * Explicit params override parsed values field-by-field (warnf on conflict).
+ * Output dict keys: pano, lat, lng, heading, pitch (strings), preview, style.
+ * Validation is fail-fast: whitespace in url, or missing pano/lat/lng, aborts
+ * the build with an errorf instead of shipping a silently broken embed. */}}
+{{- $url := .Get "url" | default "" -}}
+{{- $lat := .Get "lat" | default "" -}}
+{{- $lng := .Get "lng" | default "" -}}
+{{- $pano := .Get "pano" | default "" -}}
+{{- $heading := .Get "heading" | default "" -}}
+{{- $pitch := .Get "pitch" | default "" -}}
+{{- $preview := .Get "preview" | default "" -}}
+{{- $style := .Get "style" | default "border:0;" -}}
+
+{{- $origin := printf "shortcodes/streetview %s" .Page.RelPermalink -}}
+{{- if and $url (findRE `\s` $url) -}}
+  {{- errorf "[%s] url must not contain whitespace: %s" $origin $url -}}
+{{- end -}}
+
+{{- if $url -}}
+  {{- /* pb grammar: !1sPANO, !2m2!1dLAT!2dLNG, !3fHEADING!4fPITCH */ -}}
+  {{- $pMatch := findRE `!1s([A-Za-z0-9_\-]+)` $url 1 -}}
+  {{- if and $pMatch (not $pano) }}{{ $pano = replace (index $pMatch 0) "!1s" "" }}{{ end -}}
+  {{- $latMatch := findRE `!2m2!1d(-?\d+\.\d+)` $url 1 -}}
+  {{- if and $latMatch (not $lat) }}{{ $lat = replace (index $latMatch 0) "!2m2!1d" "" }}{{ end -}}
+  {{- $lngMatch := findRE `!2d(-?\d+\.\d+)` $url 1 -}}
+  {{- if and $lngMatch (not $lng) }}{{ $lng = replace (index $lngMatch 0) "!2d" "" }}{{ end -}}
+  {{- $hMatch := findRE `!3f(-?\d+\.?\d*)` $url 1 -}}
+  {{- if and $hMatch (not $heading) }}{{ $heading = replace (index $hMatch 0) "!3f" "" }}{{ end -}}
+  {{- $piMatch := findRE `!4f(-?\d+\.?\d*)` $url 1 -}}
+  {{- if and $piMatch (not $pitch) }}{{ $pitch = replace (index $piMatch 0) "!4f" "" }}{{ end -}}
+  {{- /* @-grammar: @lat,lng, ... <h>h for heading, <t>s for tilt (pitch = 90-t) */ -}}
+  {{- $coordsMatch := findRE `@(-?\d+\.\d+),(-?\d+\.\d+)` $url 1 -}}
+  {{- if $coordsMatch -}}
+    {{- $parts := split (replace (index $coordsMatch 0) "@" "") "," -}}
+    {{- if not $lat }}{{ $lat = index $parts 0 }}{{ end -}}
+    {{- if not $lng }}{{ $lng = index $parts 1 }}{{ end -}}
+  {{- end -}}
+  {{- $h2Match := findRE `(\d+(?:\.\d+)?)h` $url 1 -}}
+  {{- if and $h2Match (not $heading) }}{{ $heading = replace (index $h2Match 0) "h" "" }}{{ end -}}
+  {{- $tMatch := findRE `(\d+(?:\.\d+)?)t` $url 1 -}}
+  {{- if and $tMatch (not $pitch) -}}
+    {{- $rawT := replace (index $tMatch 0) "t" "" | float -}}
+    {{- $pitch = printf "%v" (sub 90 $rawT) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if and (and $lat $lng $heading $pitch) (or $url "") -}}
+  {{- /* (informational only; conflicts already surfaced by "explicit wins") */ -}}
+{{- end -}}
+
+{{- if not $pano -}}
+  {{- errorf "[%s] missing pano (explicit pano= or a url with !1s… required)" $origin -}}
+{{- end -}}
+{{- if or (not $lat) (not $lng) -}}
+  {{- errorf "[%s] missing lat/lng (explicit lat=/lng= or a url with coordinates required)" $origin -}}
+{{- end -}}
+{{- $heading = $heading | default "0" -}}
+{{- $pitch = $pitch | default "0" -}}
+
+{{- return (dict "pano" $pano "lat" $lat "lng" $lng "heading" $heading "pitch" $pitch "preview" $preview "style" $style) -}}

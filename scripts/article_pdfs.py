@@ -74,6 +74,25 @@ def parse_args(argv):
         help="Additionally run the verapdf binary (must be on the PATH) against every PDF",
     )
     parser.add_argument(
+        "--pixel-ratio",
+        type=float,
+        default=2.0,
+        metavar="N",
+        help="Render at N times the output resolution (Vivliostyle pixelRatio) so "
+        "canvas/WebGL and rasterized cross-origin iframes (e.g. Google Street "
+        "View) print at print DPI instead of 96 dpi. Layout/CSS size is "
+        "unchanged; only backing-store resolution grows. Use --no-pixel-ratio "
+        "to fall back to 1x. (default: %(default)s = 192 dpi)",
+    )
+    parser.add_argument(
+        "--no-pixel-ratio",
+        dest="pixel_ratio",
+        action="store_const",
+        const=None,
+        help="Disable oversampling (same as --pixel-ratio off): omit the flag so "
+        "the renderer uses its 1x default (96 dpi)",
+    )
+    parser.add_argument(
         "--docs-dir",
         default=DEFAULT_DOCS_DIR,
         help="Rendered site directory to search for article.html (default: %(default)s)",
@@ -84,6 +103,8 @@ def parse_args(argv):
         help="Canonical site URL written into the PDF metadata (default: %(default)s)",
     )
     args = parser.parse_args(argv)
+    if args.pixel_ratio is not None and args.pixel_ratio <= 0:
+        parser.error(f"--pixel-ratio must be > 0 (got {args.pixel_ratio})")
     args.passthrough = passthrough
     return args
 
@@ -210,6 +231,17 @@ def build_command(job, args):
         "/livereload.js",
         "--fetch-missing",
     ]
+    # Google Street View panoramas boot their WebGL canvas seconds after the
+    # frame shell loads; the settle gate reads network/DOM quietness, which
+    # the cross-origin pano does not emit. The per-embed load+5s hold in the
+    # print twin (__vivReady) is the only painted-content signal; without
+    # the explicit ceiling the auto-settle (10s) expires before it fires on
+    # cold network and the raster is a white pre-paint box. 25s is the CLI
+    # cap (resolveSettleGate), and matches the upstream fixture recipe
+    # (20s + 15s fallback + script 5s post-load hold).
+    cmd += ["--wait-for-content", "25000"]
+    if args.pixel_ratio is not None:
+        cmd += ["--pixel-ratio", f"{args.pixel_ratio:g}"]
     if args.pdfa != "off":
         cmd += ["--pdfa", args.pdfa]
     if args.verapdf:

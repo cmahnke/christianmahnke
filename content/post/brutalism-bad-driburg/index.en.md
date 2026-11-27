@@ -22,7 +22,7 @@ Following my last brief travelogue about [Bad Nenndorf](/post/art-deco-bad-nennd
 Of course, the changed circumstances mentioned in the last post also apply in Bad Driburg, but here some of the effects can be observed more directly. One of the most striking is certainly this building, which is quite prominently visible from Brunnenstraße:
 
 {{< html/iframe-consent >}}
-  <iframe src="https://www.google.com/maps/embed?pb=!4v1792941879584!6m8!1m7!1sKT_H5oSW2taigbqo5Xox0Q!2m2!1d51.7349293238869!2d9.040126570447756!3f153.32428210997045!4f11.40878142727793!5f2.91778031399262" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  {{< streetview url="https://www.google.com/maps/embed?pb=!4v1792941879584!6m8!1m7!1sKT_H5oSW2taigbqo5Xox0Q!2m2!1d51.7349293238869!2d9.040126570447756!3f153.32428210997045!4f11.40878142727793!5f2.91778031399262" >}}
 {{< /html/iframe-consent >}}
 
 This is the former Hotel Neuhaus at Steinbergstieg 18, which closed in 2009. [In 2018, an investor expressed interest](https://www.nw.de/lokal/kreis_hoexter/bad_driburg/22120952_Hollaender-will-Driburger-Hotel-kaufen.html), but so far, nothing has changed regarding its condition.

@@ -37,7 +37,7 @@ Auf dem Weg zurück zum Bahnhof, fiel mir dieses Relief auf:
 Es ist Teil des Eingangs des [Winklerbads](https://de.wikipedia.org/wiki/Wincklerbad) ([im Denkmalatlas Niedersachsen](https://denkmalatlas.niedersachsen.de/viewer/metadata/ebf8eb0c-24a9-4fad-a6fa-fa8bb4c400c5/1/-/)), erbaut 1930. Auf Grund der geringen Auslastung 2007 wurde die ehemalige Kureinrichtung verkauft und umgebaut.
 
 {{< html/iframe-consent >}}
-  <iframe src="https://www.google.com/maps/embed?pb=!4v1791215765613!6m8!1m7!1s0ciqAx9bflBk3vvPXltd7g!2m2!1d52.33200282779765!2d9.373284955390762!3f250.27791001028018!4f-2.012439838448614!5f2.2392483794957654" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  {{< streetview url="https://www.google.com/maps/embed?pb=!4v1791215765613!6m8!1m7!1s0ciqAx9bflBk3vvPXltd7g!2m2!1d52.33200282779765!2d9.373284955390762!3f250.27791001028018!4f-2.012439838448614!5f2.2392483794957654" >}}
 {{< /html/iframe-consent >}}
 
 Und ich erinnerte mich daran, dass ich in der Stadt noch einige weniger auffällige Fassadenornamente aus dieser Zeit (1920-1930) gesehen hatte. Damals waren Ornamente mit geometrischen oder zumindest abstrahierten Formen bzw. Zacken der letzte Schrei. Sie lassen sich dem Art-déco-Stil der 1920er-Jahre zuordnen. Bettina Vaupel hat im [April 2012 einen Übersichtsartikel in Monumente Online](https://www.monumente-online.de/de/ausgaben/2012/2/die-kunst-der-sinnlichen-strenge.php) veröffentlicht.
@@ -47,7 +47,7 @@ Da ich mich bereits auf der Rückreise befand, gibt es hier keine eigenen Fotos,
 ## Versteckt
 
 {{< html/iframe-consent >}}
-  <iframe src="https://www.google.com/maps/embed?pb=!4v1791215847229!6m8!1m7!1sqi8cu3ogfTxQSXU6P_ZnKw!2m2!1d52.33683922810668!2d9.373466681609143!3f156.027169235938!4f5.261160305715407!5f2.1520668737983963" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  {{< streetview url="https://www.google.com/maps/embed?pb=!4v1791215847229!6m8!1m7!1sqi8cu3ogfTxQSXU6P_ZnKw!2m2!1d52.33683922810668!2d9.373466681609143!3f156.027169235938!4f5.261160305715407!5f2.1520668737983963" >}}
 {{< /html/iframe-consent >}}
 
 **Standort**: Rodenberger Allee 1,
@@ -57,7 +57,7 @@ Dieses Ornament ist ziemlich versteckt und nur von einer Seitenstraße aus sicht
 ## Bis zur Unkenntlichkeit überformt
 
 {{< html/iframe-consent >}}
-  <iframe src="https://www.google.com/maps/embed?pb=!4v1791216089173!6m8!1m7!1s9Ebsj0EfQC4Gtz6LHlEWuA!2m2!1d52.33441180687893!2d9.386648438908944!3f174.71798146288518!4f1.8139261467566854!5f2.9365095097190896" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  {{< streetview url="https://www.google.com/maps/embed?pb=!4v1791216089173!6m8!1m7!1s9Ebsj0EfQC4Gtz6LHlEWuA!2m2!1d52.33441180687893!2d9.386648438908944!3f174.71798146288518!4f1.8139261467566854!5f2.9365095097190896" >}}
 {{< /html/iframe-consent >}}
 
 **Standort**: Buchenallee 13
@@ -81,7 +81,7 @@ Und da stellte ich mir die Frage: **"Kann es sein, dass in Bad Nenndorf einfach 
 Gegenüber dem Parkhotel Deutsches Haus beginnt die Hindenburgstraße. Dort befinden sich an den Häusern mit den Hausnummern 2 bis 10 authentische Art-déco-Fassadenelemente.
 
 {{< html/iframe-consent >}}
-  <iframe src="https://www.google.com/maps/embed?pb=!4v1791331662025!6m8!1m7!1spOm36qZiRQvb2XZ6Ll1SXA!2m2!1d52.33768829490916!2d9.373323823402233!3f304.6748396168073!4f0.2720734960570894!5f1.1924812503605782" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  {{< streetview url="https://www.google.com/maps/embed?pb=!4v1791331662025!6m8!1m7!1spOm36qZiRQvb2XZ6Ll1SXA!2m2!1d52.33768829490916!2d9.373323823402233!3f304.6748396168073!4f0.2720734960570894!5f1.1924812503605782" >}}
 {{< /html/iframe-consent >}}
 
 ## Epilog

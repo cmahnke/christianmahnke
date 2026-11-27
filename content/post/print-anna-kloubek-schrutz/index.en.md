@@ -46,7 +46,7 @@ Comparative images can be found in the [Zuiderzee Collection](https://www.zuider
 
 {{< details summary="Approximate location on Google Street View" >}}
   {{< html/iframe-consent >}}
-    <iframe src="https://www.google.com/maps/embed?pb=!4v1791301779599!6m8!1m7!1sUCEKn1V9A7H2_qNLDmyikQ!2m2!1d52.45847617565635!2d5.10120351274866!3f0!4f0!5f0.7820865974627469" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    {{< streetview url="https://www.google.com/maps/embed?pb=!4v1791301779599!6m8!1m7!1sUCEKn1V9A7H2_qNLDmyikQ!2m2!1d52.45847617565635!2d5.10120351274866!3f0!4f0!5f0.7820865974627469" >}}
   {{< /html/iframe-consent >}}
 {{< /details >}}
 

@@ -22,7 +22,7 @@ Nach dem letzten kurzen Reisebericht über [Bad Nenndorf](/post/art-deco-bad-nen
 Natürlich gelten auch in Bad Driburg die im letzten Beitrag erwähnten geänderten Rahmenbedingungen, aber hier lassen sich auch einiger der Auswirkungen direkter beobachten. Eine der auffälligsten ist sicher dieses Gebäude, das relativ prominent von der Brunnenstraße aus sichtbar ist:
 
 {{< html/iframe-consent >}}
-  <iframe src="https://www.google.com/maps/embed?pb=!4v1792941879584!6m8!1m7!1sKT_H5oSW2taigbqo5Xox0Q!2m2!1d51.7349293238869!2d9.040126570447756!3f153.32428210997045!4f11.40878142727793!5f2.91778031399262" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  {{< streetview url="https://www.google.com/maps/embed?pb=!4v1792941879584!6m8!1m7!1sKT_H5oSW2taigbqo5Xox0Q!2m2!1d51.7349293238869!2d9.040126570447756!3f153.32428210997045!4f11.40878142727793!5f2.91778031399262" >}}
 {{< /html/iframe-consent >}}
 
 

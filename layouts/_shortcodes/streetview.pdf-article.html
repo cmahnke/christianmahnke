@@ -1,0 +1,11 @@
+{{- /* Print-only Street View twin (pass-through, no consent UI).
+ * Emits the same canonical pb iframe as the web shortcode, structured so the
+ * html/iframe-consent print pass-through still applies: this twin returns a
+ * single <div class="streetview-print-box"> whose only child is the iframe;
+ * iframe-consent.pdf-article.html normalization and the repaint hold script
+ * therefore wrap it exactly as they did for raw embeds. EAGER loading so
+ * the embeds boot during rendering. */}}
+{{- $vars := partial "functions/streetview-vars.html" . -}}
+<div class="streetview-print-box">
+<iframe src="https://www.google.com/maps/embed?pb=!4v0!6m8!1m7!1s{{ $vars.pano }}!2m2!1d{{ $vars.lat }}!2d{{ $vars.lng }}!3f{{ $vars.heading }}!4f{{ $vars.pitch }}!5f2" width="100%" height="450" style="{{ $vars.style }}" allowfullscreen="" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>

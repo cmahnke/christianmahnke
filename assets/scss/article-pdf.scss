@@ -454,6 +454,19 @@ p {
           column-span: all;
         }
 
+        /* A heading that introduces a streetview box must stay in the same
+           full-width fragment: otherwise Vivliostyle fragments heading +
+           box into the following column context and prints the frame at
+           column width (art-deco p4/p7, sielken p4: 250pt instead of
+           500pt). Scoped to :has() adjacency, so headings before <pre> or
+           text-only transitions are unaffected. */
+        h1:has(+ .streetview-print-box),
+        h2:has(+ .streetview-print-box),
+        h3:has(+ .streetview-print-box) {
+          column-span: all;
+          break-inside: avoid;
+        }
+
         figure {
           height: auto;
           max-width: 100vw;
@@ -574,13 +587,55 @@ p {
 
         /* Inline width/style attributes on Google Maps embeds otherwise keep
            the iframe narrower than the page; the rule above already spans all
-           columns. */
+           columns. Print-only boxes (.streetview-print-box, injected by
+           html/iframe-consent.pdf-article.html) additionally pin the capture
+           box to the content width; the <img> rule pins the printed raster
+           replacement (produced by vivliostyle-batch-cli at 2x) to the same
+           full-width block. Scope is streetview/maps raster frames only, so
+           gallery/figure images are unaffected. */
         iframe[src*="google.com/maps"],
-        iframe[src*="maps.google.com"] {
+        iframe[src*="maps.google.com"],
+        .streetview-print-box {
           display: block;
           width: 100% !important;
           max-width: none !important;
           margin: 0 !important;
+          column-span: all;
+          break-inside: avoid;
+        }
+
+        .streetview-print-box {
+          /* No fixed height: a 450px-tall column-span box inside the
+             multicol fails to fragment on some pages and Vivliostyle prints
+             it at column width (art-deco p4/p7: 250pt instead of the
+             500pt content width). Height follows the iframe/img. */
+          height: auto;
+          max-height: none;
+          margin: 12pt 0 !important;
+
+          iframe {
+            width: 100% !important;
+            height: 450px;
+            max-width: none !important;
+            border: 0;
+            display: block;
+          }
+        }
+
+        /* The rasterized <img> replaces the iframe inside
+           .streetview-print-box, so it is not a direct child of the multicol
+           container: column-span on the <img> is inert. The box itself spans
+           (rule above), so pin the raster to the box instead. Scoped to the
+           box only: <pre> code fences and other posts' images are not
+           matched by any rule here. */
+        .streetview-print-box {
+          img[src^="data:image/png;base64"] {
+            display: block;
+            width: 100% !important;
+            max-width: none !important;
+            height: auto;
+            margin: 0;
+          }
         }
 
         .instagram-preview {
