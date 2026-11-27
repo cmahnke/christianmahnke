@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Art history on Christian Mahnke</title>
+		<link>https://christianmahnke.de/en/tags/ArtHistory/</link>
+		<description>Recent content in Art history on Christian Mahnke</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+			<managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+		
+		
+			<webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+		
+		
+			<copyright>Christian Mahnke</copyright>
+		
+		
+			<lastBuildDate>Wed, 25 Nov 2026 22:52:22 +0200</lastBuildDate>
+		
+			<atom:link href="https://christianmahnke.de/en/tags/ArtHistory/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>AI-assisted attributions</title>
+				<link>https://christianmahnke.de/en/post/ai-artist-identification/citation.bib</link>
+				<pubDate>Wed, 25 Nov 2026 22:52:22 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+				<guid>https://christianmahnke.de/en/post/ai-artist-identification/citation.bib</guid>
+				<description>&lt;p&gt;Yesterday evening, two works whose artists had previously been unknown were identified&amp;hellip;.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
